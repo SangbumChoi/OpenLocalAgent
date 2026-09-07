@@ -6,12 +6,12 @@ from pathlib import Path
 import pytest
 import yaml
 
-from localagent.model.config import PARAM_BUDGET, ModelConfig
-from localagent.model.transformer import LocalAgentLM
+from openlocalagent.model.config import PARAM_BUDGET, ModelConfig
+from openlocalagent.model.transformer import LocalAgentLM
 
 
 MODEL_DIR = "configs/model"
-TRAIN_DIR = Path("configs/train")
+PRETRAIN_DIR = Path("configs/pretrain")
 PAPER_CATALOG_TOKENS = 3_389
 PROXY_CATALOG_TOKENS = 3_504
 PAPER_MAX_PROMPT_TOKENS = 3_584
@@ -205,7 +205,7 @@ def test_new_paper_tier_training_configs_all_select_4k_models() -> None:
     }
 
     for training_name, expected_model_path in expected_models.items():
-        raw = yaml.safe_load((TRAIN_DIR / training_name).read_text(encoding="utf-8"))
+        raw = yaml.safe_load((PRETRAIN_DIR / training_name).read_text(encoding="utf-8"))
         assert raw["model_config"] == expected_model_path
         model = ModelConfig.from_yaml(expected_model_path)
         assert model.max_seq_len == 4_096

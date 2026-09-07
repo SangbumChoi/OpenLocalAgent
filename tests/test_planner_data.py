@@ -4,10 +4,10 @@ episodes are well-formed, every step's args are exactly recoverable (grounding),
 plan is the ordered tool-name list, and train/eval slot pools stay disjoint.
 """
 
-from localagent.data.agent_synth import (Generator, episode_plan, episode_steps)
-from localagent.data.render import IGNORE, history_text, render_conversation
-from localagent.data.schema import Role
-from localagent.model.tokenizer import load_tokenizer
+from openlocalagent.data.synth.agent_synth import (Generator, episode_plan, episode_steps)
+from openlocalagent.data.render import IGNORE, history_text, render_conversation
+from openlocalagent.data.schema import Role
+from openlocalagent.model.tokenizer import load_tokenizer
 
 # the string args a step copies from context (mirrors pointer_head.PTR_ARGS for our plan tools)
 _STR_ARGS = ("path", "query", "url", "content", "recipient", "title", "task", "duration",
@@ -143,7 +143,7 @@ def test_plan_episodes_render_with_learned_and_masked_labels():
 
 
 def test_eval_split_plan_episodes_use_eval_pools_only():
-    from localagent.data.agent_synth import (PATHS_EVAL, QUERIES_EVAL, URLS_EVAL)
+    from openlocalagent.data.synth.agent_synth import (PATHS_EVAL, QUERIES_EVAL, URLS_EVAL)
     g = Generator(5, 8, "eval")
     paths, queries, urls = set(PATHS_EVAL), set(QUERIES_EVAL), set(URLS_EVAL)
     saw = False

@@ -6,8 +6,8 @@ from pathlib import Path
 
 import pytest
 
-import localagent.data.bfcl_prompts as bfcl_prompts
-from localagent.data.bfcl_prompts import (
+import openlocalagent.data.adapters.bfcl_prompts as bfcl_prompts
+from openlocalagent.data.adapters.bfcl_prompts import (
     BFCL_PROMPT_ADAPTER,
     BFCL_SOURCE_MANIFEST_KIND,
     BFCLPromptLimits,

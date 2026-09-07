@@ -1,14 +1,11 @@
-"""End-to-end GPU training: pretrain -> SFT -> GRPO, for the byte-level tiny-30m agent.
+"""Standalone single-process pipeline for a REMOTE runner (HF Jobs, Colab).
 
-Designed to run as a Hugging Face Job on a GPU (`scripts/launch_hf_job.sh`), but the same code runs
-on CPU for a `--quick` smoke. Data is REAL public datasets with `--real` (FineWeb-edu pretrain +
-xLAM function-calling SFT) or the in-repo synthetic generators otherwise. Each stage checkpoints to
-`runs/`; with `--push <repo>` the final model is uploaded to the Hub.
+This is the path for a machine you do not control: one process, one config, no queue.
+On the training box use scripts/train_queue.sh instead - it resumes, locks per job,
+chains the stages and scores them.
 
-  # local smoke (CPU, synthetic):
-  python scripts/train_job.py --quick
-  # full GPU run (in the Job, real data):
-  python scripts/train_job.py --real --stages pretrain,sft,grpo --push danelcsb/localagent-30m-v2
+Its --stages vocabulary (pretrain,sft,grpo) predates openlocalagent.stages.Stage and is
+kept because the launchers and any saved job command line pass it verbatim.
 """
 import argparse
 import os
@@ -16,19 +13,19 @@ import time
 
 import torch
 
-from localagent.data.render import build_pretrain_stream
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.pretrain import pretrain
-from localagent.train.rl import grpo
-from localagent.train.sft import sft
+from openlocalagent.data.render import build_pretrain_stream
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.pretrain import pretrain
+from openlocalagent.train.rl import grpo
+from openlocalagent.train.sft import sft
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--config", default="configs/model/tiny-30m-byte.yaml")
 ap.add_argument("--stages", default="pretrain,sft,grpo")
 ap.add_argument("--real", action="store_true", help="use real HF datasets (needs `datasets`)")
 ap.add_argument("--quick", action="store_true", help="tiny CPU smoke")
-ap.add_argument("--out", default="runs/job")
+ap.add_argument("--out", default="results/runs/job")
 ap.add_argument("--push", default="", help="HF model repo to push the final checkpoint to")
 ap.add_argument("--init-hub", default="", help="resume: 'repo:file.pt' to load + skip pretrain")
 # stage budgets (full-run defaults; --quick shrinks them)
@@ -42,7 +39,7 @@ ap.add_argument("--dtype", default="auto", help="auto|bf16|fp16|fp32 autocast dt
 ap.add_argument("--compile", action="store_true", help="torch.compile the pretrain/SFT forward")
 args = ap.parse_args()
 
-from localagent.train.device import enable_tf32  # noqa: E402
+from openlocalagent.train.device import enable_tf32  # noqa: E402
 
 enable_tf32()
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
@@ -90,13 +87,13 @@ def save(tag):
 
 
 def synth_samples(n):
-    from localagent.data.agent_synth import Generator
+    from openlocalagent.data.synth.agent_synth import Generator
     return Generator(level=3, seed=7).generate_balanced(n)
 
 
 def real_sft_data(n):
     """Real public function-calling SFT: try Hermes (public) then xLAM (gated); skip on failure."""
-    from localagent.data.hf_datasets import hermes_sft_samples, xlam_sft_samples
+    from openlocalagent.data.corpus.hf_datasets import hermes_sft_samples, xlam_sft_samples
     for loader in (hermes_sft_samples, xlam_sft_samples):
         try:
             rows = loader(tok, n=n)
@@ -112,7 +109,7 @@ t0 = time.time()
 if "pretrain" in stages:
     print("\n=== PRETRAIN ===", flush=True)
     if args.real:
-        from localagent.data.hf_datasets import fineweb_byte_stream
+        from openlocalagent.data.corpus.hf_datasets import fineweb_byte_stream
         stream = fineweb_byte_stream(tok, max_chars=2_000_000 if args.quick else 200_000_000)
     else:
         stream = build_pretrain_stream(synth_samples(2 if args.quick else 40), tok)
@@ -121,7 +118,7 @@ if "pretrain" in stages:
     pretrain(fwd, train_stream, tok, steps=args.pretrain_steps, batch_size=args.batch,
              seq_len=args.seq_len, device=DEVICE, lr_schedule="wsd", amp=AMP, amp_dtype=args.dtype)
     if val:
-        from localagent.eval.bpb import bits_per_byte
+        from openlocalagent.eval.bpb import bits_per_byte
         print(f"  held-out BPB = {bits_per_byte(model, val, seq_len=args.seq_len, device=DEVICE):.3f} "
               f"bits/byte", flush=True)
     save("pretrain")
@@ -129,7 +126,7 @@ if "pretrain" in stages:
 # ---- 2. SFT (tool-call instruction tuning) ----
 if "sft" in stages:
     print("\n=== SFT ===", flush=True)
-    from localagent.data.render import render_sft
+    from openlocalagent.data.render import render_sft
     sft_data = real_sft_data(500 if args.quick else 60000) if args.real else []
     # drop samples whose rendered length overflows the model context (real fn-calling prompts can be
     # very long: full in-context tool schemas), then mix in synthetic so SFT always has enough.

@@ -1,0 +1,86 @@
+{
+  "checkpoint": "results/runs/posttrain-la-93m/latest.pt",
+  "device": "NVIDIA H100 NVL",
+  "torch": "2.10.0",
+  "prompt_tokens": 512,
+  "new_tokens": 128,
+  "kernels": [
+    {
+      "kernel": "eager_fp32",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 78345.8,
+      "decode_tok_s": 172.9,
+      "decode_ms_per_token": 5.783,
+      "peak_mem_mb": 447.8,
+      "repeats": 5,
+      "error": null
+    },
+    {
+      "kernel": "eager_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 84946.4,
+      "decode_tok_s": 175.4,
+      "decode_ms_per_token": 5.702,
+      "peak_mem_mb": 240.1,
+      "repeats": 5,
+      "error": null
+    },
+    {
+      "kernel": "sdpa_flash_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 89852.3,
+      "decode_tok_s": 184.7,
+      "decode_ms_per_token": 5.414,
+      "peak_mem_mb": 240.1,
+      "repeats": 5,
+      "error": null
+    },
+    {
+      "kernel": "sdpa_efficient_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 92937.0,
+      "decode_tok_s": 186.1,
+      "decode_ms_per_token": 5.372,
+      "peak_mem_mb": 240.1,
+      "repeats": 5,
+      "error": null
+    },
+    {
+      "kernel": "sdpa_math_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 78214.7,
+      "decode_tok_s": 166.9,
+      "decode_ms_per_token": 5.992,
+      "peak_mem_mb": 254.6,
+      "repeats": 5,
+      "error": null
+    },
+    {
+      "kernel": "compile_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 80067.5,
+      "decode_tok_s": 378.1,
+      "decode_ms_per_token": 2.645,
+      "peak_mem_mb": 301.6,
+      "repeats": 5,
+      "error": null
+    },
+    {
+      "kernel": "compile_cudagraph_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 0.0,
+      "decode_tok_s": 0.0,
+      "decode_ms_per_token": 0.0,
+      "peak_mem_mb": 0.0,
+      "repeats": 5,
+      "error": "RuntimeError: Error: accessing tensor output of CUDAGraphs that has been overwritten by a subsequent run. Stack trace: File \"/home/jovyan/sbchoi/OpenLocalAgent/scripts/eval_k"
+    }
+  ]
+}

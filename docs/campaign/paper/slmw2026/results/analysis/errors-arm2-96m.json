@@ -1,0 +1,353 @@
+{
+ "model": "catalog:runs/sft-arm2-96m/latest.pt",
+ "suites": {
+  "toolace": {
+   "correct_name": 99,
+   "wrong_in_catalog": 34,
+   "out_of_catalog": 37,
+   "parse_fail": 30,
+   "rows": 200,
+   "shares": {
+    "correct_name": 49.5,
+    "wrong_in_catalog": 17.0,
+    "out_of_catalog": 18.5,
+    "parse_fail": 15.0
+   },
+   "samples": [
+    {
+     "bucket": "parse_fail",
+     "gold": "S_YTD",
+     "predicted": null,
+     "catalog_size": 5
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "Get F1 Drivers and Personalities",
+     "predicted": "Get F1 Drivers and personalities",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "Keyword Research API",
+     "predicted": "keyword Research API",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "Domain Whois Lookup",
+     "predicted": "Generate IP Address",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "Get Cryptocurrency Overview",
+     "predicted": "Crypto Symbols API",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "Search Music",
+     "predicted": "Search Users",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "Powerball Recent Draw",
+     "predicted": "Powerball keywords",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "Croatia Songs API",
+     "predicted": "Corkia Songs API",
+     "catalog_size": 4
+    },
+    {
+     "bucket": "parse_fail",
+     "gold": "Business Name Generator",
+     "predicted": null,
+     "catalog_size": 4
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "topAssistsBySeason",
+     "predicted": "Get Baseball Schedule",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "Historical Stock Prices",
+     "predicted": "symbols/get-summary",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "findpincodebydistrict",
+     "predicted": "address_reverse_geocoding",
+     "catalog_size": 6
+    }
+   ]
+  },
+  "xlam": {
+   "correct_name": 183,
+   "wrong_in_catalog": 10,
+   "out_of_catalog": 4,
+   "parse_fail": 3,
+   "rows": 200,
+   "shares": {
+    "correct_name": 91.5,
+    "wrong_in_catalog": 5.0,
+    "out_of_catalog": 2.0,
+    "parse_fail": 1.5
+   },
+   "samples": [
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "bus_trolley_locations",
+     "predicted": "get_fare",
+     "catalog_size": 4
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "getuserbyname",
+     "predicted": "loginuser",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "falling_three_methods",
+     "predicted": "florida_methods",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "parse_fail",
+     "gold": "get_states",
+     "predicted": null,
+     "catalog_size": 2
+    },
+    {
+     "bucket": "parse_fail",
+     "gold": "channel_details",
+     "predicted": null,
+     "catalog_size": 1
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "convert",
+     "predicted": "test_app_deepfry_get",
+     "catalog_size": 8
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "specificcolorset",
+     "predicted": "specific colorset",
+     "catalog_size": 4
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "get_case_by_id",
+     "predicted": "loginuser",
+     "catalog_size": 2
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "superoffer",
+     "predicted": "Super_offer",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "qrcodepro",
+     "predicted": "download",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "find_first_non_repeating_char",
+     "predicted": "find_majority_element",
+     "catalog_size": 4
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "morning_star",
+     "predicted": "price_forecasts",
+     "catalog_size": 3
+    }
+   ]
+  },
+  "bfcl": {
+   "correct_name": 129,
+   "wrong_in_catalog": 32,
+   "out_of_catalog": 24,
+   "parse_fail": 15,
+   "rows": 200,
+   "shares": {
+    "correct_name": 64.5,
+    "wrong_in_catalog": 16.0,
+    "out_of_catalog": 12.0,
+    "parse_fail": 7.5
+   },
+   "samples": [
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "math.triangle_area_heron",
+     "predicted": "math.triangle_area_base_height",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "parse_fail",
+     "gold": "calculate_average",
+     "predicted": null,
+     "catalog_size": 3
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "math_roots.quadratic",
+     "predicted": "math.roots.quadratic",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "european_history.battle_details",
+     "predicted": "european_history.leader_info",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "functions.intersect",
+     "predicted": "function.intersection",
+     "catalog_size": 2
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "geometry_rectangle.calculate",
+     "predicted": "geometry_square.calculate",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "calculate_gcd",
+     "predicted": "calculate_lcm",
+     "catalog_size": 2
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "ride_hailing.get_rides",
+     "predicted": "hip_hailed.get_rides",
+     "catalog_size": 2
+    },
+    {
+     "bucket": "parse_fail",
+     "gold": "electromagnetism.biot_savart_law",
+     "predicted": null,
+     "catalog_size": 2
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "magnetic_field.calculate",
+     "predicted": "electric_field.calculate",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "calculate.weight_in_space",
+     "predicted": "unit_conversion.convert",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "dice_roll_probability",
+     "predicted": "flip_coin_probability",
+     "catalog_size": 3
+    }
+   ]
+  },
+  "toolbench": {
+   "correct_name": 58,
+   "wrong_in_catalog": 95,
+   "out_of_catalog": 38,
+   "parse_fail": 9,
+   "rows": 200,
+   "shares": {
+    "correct_name": 29.0,
+    "wrong_in_catalog": 47.5,
+    "out_of_catalog": 19.0,
+    "parse_fail": 4.5
+   },
+   "samples": [
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "latest_coupons_for_get_27coupons",
+     "predicted": "trending_coupons_for_get_27coupons",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "getproductbycategory_for_cartify",
+     "predicted": "check_holiday_for_azaprime",
+     "catalog_size": 4
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "random_for_typography",
+     "predicted": "get_for_typography",
+     "catalog_size": 4
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "browserobject_api_for_browserobject",
+     "predicted": "price_for_apfelpreise",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "parse_fail",
+     "gold": "listoforders_for_sandbox_ecombr_com_04_orders",
+     "predicted": null,
+     "catalog_size": 2
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "etthelistofcountriesregistered_for_sandbox_mktplace_eu_04_orders",
+     "predicted": "get_categories_for_my_store",
+     "catalog_size": 5
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "v1_holidays_for_holidays_by_api_ninjas",
+     "predicted": "get_all_genres_for_art_openings_italy",
+     "catalog_size": 9
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "get_a_list_of_domains_for_url_link_shortener",
+     "predicted": "create_a_new_link_for_url_link_shortener",
+     "catalog_size": 2
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "details_for_patreon",
+     "predicted": "gettrendinglistings_for_etsy",
+     "catalog_size": 9
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "anikuendpoint_for_aniku",
+     "predicted": "get_history_for_web_image_storage",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "get_history_for_web_image_storage",
+     "predicted": "show_history_for_web_image_storage",
+     "catalog_size": 2
+    },
+    {
+     "bucket": "parse_fail",
+     "gold": "get_current_status_for_given_flag_for_flag_status",
+     "predicted": null,
+     "catalog_size": 7
+    }
+   ]
+  }
+ }
+}

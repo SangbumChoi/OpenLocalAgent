@@ -1,0 +1,31 @@
+{
+  "model": "Qwen3-0.6B",
+  "kind": "hf",
+  "location": "data/baselines/Qwen3-0.6B/",
+  "parameters": 596049920,
+  "rows_per_suite": 200,
+  "max_new_tokens": 64,
+  "suites": {
+    "toolsandbox": {
+      "rows": 17,
+      "parse_rate": 1.0,
+      "type_match": 0.17647058823529413,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.663498177247889
+    },
+    "mcpatlas": {
+      "rows": 200,
+      "parse_rate": 1.0,
+      "type_match": 0.105,
+      "step_success_rate": 0.025,
+      "seconds_per_row": 0.4013455033302307
+    },
+    "mobileactions": {
+      "rows": 200,
+      "parse_rate": 1.0,
+      "type_match": 0.915,
+      "step_success_rate": 0.54,
+      "seconds_per_row": 0.5698579025268554
+    }
+  }
+}

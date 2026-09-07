@@ -7,12 +7,12 @@ arguments are grounded from your text. Nothing is sent to a server.
 ## Files
 - `index.html` / `app.js` — the UI + agent (byte tokenizer, retriever, grounding, ONNX generation)
 - `catalog.json` — the tool catalog the retriever indexes (regenerate from `agent/demo_tools.py`)
-- `localagent.onnx` — the model weights (you export this; not committed, it's ~4.5 MB)
+- `openlocalagent.onnx` — the model weights (you export this; not committed, it's ~4.5 MB)
 
 ## Run it
 ```bash
 # 1) export the model to ONNX into this folder
-localagent export onnx runs/flywheel/ultra-tiny.pt demos/web/onnx/localagent.onnx
+openlocalagent export onnx results/runs/flywheel/ultra-tiny.pt demos/web/onnx/openlocalagent.onnx
 
 # 2) serve the folder (ONNX Runtime Web needs http, not file://)
 cd demos/web/onnx && python -m http.server 8000
@@ -20,7 +20,7 @@ cd demos/web/onnx && python -m http.server 8000
 ```
 
 The **Agent** panel works even without the `.onnx` (selection is pure JS). The **Model** panel
-loads `localagent.onnx` and generates bytes on WebGPU to prove the network runs client-side.
+loads `openlocalagent.onnx` and generates bytes on WebGPU to prove the network runs client-side.
 
 ## Notes
 - The ONNX export is the full-sequence forward (no KV cache), so generation recomputes the prefix

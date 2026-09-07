@@ -8,8 +8,8 @@ import pytest
 import torch
 from torch import nn
 
-from localagent.data.render import IGNORE
-from localagent.train.loop import pad_batch as real_pad_batch
+from openlocalagent.data.render import IGNORE
+from openlocalagent.train.loop import pad_batch as real_pad_batch
 
 
 class _Tokenizer:
@@ -53,7 +53,7 @@ def test_mps_cache_helper_is_backend_specific(
     device: str,
     expected_events: list[str],
 ) -> None:
-    module = importlib.import_module("localagent.train.sft")
+    module = importlib.import_module("openlocalagent.train.sft")
     events: list[str] = []
     monkeypatch.setattr(torch.mps, "synchronize", lambda: events.append("synchronize"))
     monkeypatch.setattr(torch.mps, "empty_cache", lambda: events.append("empty_cache"))
@@ -66,7 +66,7 @@ def test_mps_cache_helper_is_backend_specific(
 def test_mps_boundary_clears_gradients_without_changing_cpu_behavior(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    module = importlib.import_module("localagent.train.sft")
+    module = importlib.import_module("openlocalagent.train.sft")
     layer = nn.Linear(2, 2)
     for parameter in layer.parameters():
         parameter.grad = torch.ones_like(parameter)
@@ -105,7 +105,7 @@ def test_heldout_evaluation_cleans_each_mps_batch_without_metric_drift(
     device: str,
     expected_events: list[str],
 ) -> None:
-    module = importlib.import_module("localagent.train.sft")
+    module = importlib.import_module("openlocalagent.train.sft")
     events: list[str] = []
     model = _PerfectNextTokenModel(events)
     rows = [

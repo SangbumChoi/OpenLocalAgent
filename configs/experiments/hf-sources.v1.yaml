@@ -46,7 +46,7 @@ sources:
     allow_patterns: ["*.json", "*.jsonl", "*.parquet", "README*", "*.tfrecord*", "*.gz"]
     purpose: public AndroidControl-derived train-side records; original Google Research source remains authoritative
   - id: localagent_tiny_model
-    repo_id: danelcsb/localagent-tiny-30m-byte
+    repo_id: danelcsb/openlocalagent-tiny-30m-byte
     repo_type: model
     revision: main
     policy: model_reference

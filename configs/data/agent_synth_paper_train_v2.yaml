@@ -38,10 +38,10 @@ verification:
 # hash-pinned suites; generation performs no network access or environment/tool execution.
 exact_prompt_holdouts:
   - name: local-realtime-actions
-    path: ../../spaces/localagent-webgpu/benchmark-cases.json
+    path: ../../demos/webgpu/benchmark-cases.json
     bytes: 4596
     sha256: f6e479c10b420edcd1630e99c43df3206a40431f1256d919d5ea1a57bc88142c
   - name: local-browser-tasks
-    path: ../../spaces/localagent-webgpu/browser-task-cases.json
+    path: ../../demos/webgpu/browser-task-cases.json
     bytes: 6285
     sha256: 4c46b5b347257b81e716ec0a20a6c6116df716466e1ba8e8a74a117bb5708971

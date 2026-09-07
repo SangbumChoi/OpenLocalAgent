@@ -5,9 +5,9 @@ import pytest
 import torch
 import torch.nn.functional as F
 
-from localagent.cli import _model_info
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.train.loop import router_loss_terms
+from openlocalagent.cli import _model_info
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.train.loop import router_loss_terms
 
 
 def _sparse_tiny(**overrides) -> ModelConfig:
@@ -160,3 +160,20 @@ def test_model_info_distinguishes_total_and_active_parameters(capsys) -> None:
     assert "webgpu-44m-moe: ~43.86M params" in output
     assert "active/token≈17.32M params" in output
     assert "top-2/8 experts" in output
+
+
+def test_expert_combine_survives_autocast_dtype_split() -> None:
+    """Under autocast the experts return bf16 while the residual stream stays fp32.
+
+    `index_add_` refuses that mix outright, so a sparse model that trains fine in fp32 dies on its
+    first autocast step. This ran green on CPU for a whole refactor and then took down the 300M MoE
+    arm on the H100 - the assertion worth keeping is that mixed precision is exercised at all.
+    """
+    torch.manual_seed(0)
+    model = LocalAgentLM(_sparse_tiny())
+    idx = torch.randint(0, 64, (2, 16))
+    with torch.autocast("cpu", dtype=torch.bfloat16):
+        logits, loss = model(idx, targets=idx)
+    assert torch.isfinite(loss)
+    # The combine widens to the accumulator rather than narrowing the sum.
+    assert logits.shape == (2, 16, 64)

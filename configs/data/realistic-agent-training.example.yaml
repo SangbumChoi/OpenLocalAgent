@@ -49,7 +49,7 @@ forbidden_train_ids:
   - webchorearena
   - timewarp
 normalization:
-  interchange: localagent.data.schema.Conversation
+  interchange: openlocalagent.data.schema.Conversation
   text_first_observation: accessibility_tree_or_cleaned_dom_plus_goal
   action_encoding: canonical_sorted_json
   screenshot_policy: retain_in_provenance_do_not_feed_text_checkpoint

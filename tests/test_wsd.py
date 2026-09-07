@@ -8,7 +8,7 @@ import copy
 
 import torch
 
-from localagent.train.loop import cosine_lr, in_decay_window, wsd_lr
+from openlocalagent.train.loop import cosine_lr, in_decay_window, wsd_lr
 
 
 def test_wsd_three_phases():
@@ -53,10 +53,10 @@ def test_cosine_still_default_and_unchanged():
 def test_sft_default_cosine_byte_identical_to_wsd_off():
     """Defaulted-off (cosine) sft must be deterministic and identical to passing the explicit
     cosine schedule — proving the new params don't perturb the legacy path."""
-    from localagent.data.agent_synth import Generator
-    from localagent.model import LocalAgentLM, ModelConfig
-    from localagent.model.tokenizer import load_tokenizer
-    from localagent.train.sft import sft
+    from openlocalagent.data.synth.agent_synth import Generator
+    from openlocalagent.model import LocalAgentLM, ModelConfig
+    from openlocalagent.model.tokenizer import load_tokenizer
+    from openlocalagent.train.sft import sft
 
     tok = load_tokenizer("byte")
     samples = Generator(level=1, seed=1, split="train").generate(60)
@@ -78,10 +78,10 @@ def test_sft_default_cosine_byte_identical_to_wsd_off():
 
 
 def test_sft_wsd_runs_and_diverges_from_cosine():
-    from localagent.data.agent_synth import Generator
-    from localagent.model import LocalAgentLM, ModelConfig
-    from localagent.model.tokenizer import load_tokenizer
-    from localagent.train.sft import sft
+    from openlocalagent.data.synth.agent_synth import Generator
+    from openlocalagent.model import LocalAgentLM, ModelConfig
+    from openlocalagent.model.tokenizer import load_tokenizer
+    from openlocalagent.train.sft import sft
 
     tok = load_tokenizer("byte")
     samples = Generator(level=1, seed=1, split="train").generate(60)

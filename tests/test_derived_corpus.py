@@ -10,15 +10,15 @@ from typing import Any
 
 import pytest
 
-import localagent.data.derived_corpus as derived
-from localagent.data.pretrain_corpus import (
+import openlocalagent.data.corpus.derived_corpus as derived
+from openlocalagent.data.corpus.pretrain_corpus import (
     CorpusDocument,
     PackedShardDataset,
     build_disk_backed_corpus,
     load_frozen_split_assignment_manifest,
     pack_disk_backed_shards,
 )
-from localagent.model.tokenizer import ByteTokenizer
+from openlocalagent.model.tokenizer import ByteTokenizer
 
 
 def _identity(path: Path) -> dict[str, int | str]:
@@ -74,7 +74,7 @@ def _fixture(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> _Fixture:
         for index, source in enumerate((*sources, *sources))
     ]
     tokenizer_path = tmp_path / "tokenizer.byte"
-    tokenizer_path.write_text("localagent byte tokenizer identity\n", encoding="utf-8")
+    tokenizer_path.write_text("openlocalagent byte tokenizer identity\n", encoding="utf-8")
     tokenizer_identity = _identity(tokenizer_path)
     parent_dir = tmp_path / "parent"
     corpus = build_disk_backed_corpus(
@@ -190,7 +190,7 @@ def _prepare(fixture: _Fixture, **overrides: Any) -> dict[str, dict[str, Any]]:
         "rows_per_shard": 2,
     }
     arguments.update(overrides)
-    return derived.prepare_derived_corpora(**arguments)
+    return derived.build_derived_corpora(**arguments)
 
 
 def _rewrite_mock_freeze(fixture: _Fixture) -> None:
@@ -241,7 +241,7 @@ def test_parent_freeze_fanout_is_one_pass_disjoint_and_split_exact(
         "load_frozen_split_assignment_manifest",
         counted_assignment_loader,
     )
-    import localagent.data.evaluation_denylist_suite as denylist_suite
+    import openlocalagent.data.decontam.evaluation_denylist_suite as denylist_suite
 
     def unexpected_suite_call(*args: Any, **kwargs: Any) -> None:
         pytest.fail("derived fan-out invoked an external denylist suite operation")

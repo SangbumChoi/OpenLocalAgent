@@ -9,8 +9,8 @@ import pytest
 
 import yaml
 
-import localagent.data.hf_corpus as hf_corpus
-from localagent.data.hf_corpus import (
+import openlocalagent.data.corpus.hf_corpus as hf_corpus
+from openlocalagent.data.corpus.hf_corpus import (
     _load_raw_parquet_text,
     _load_raw_jsonl_gzip,
     _selected_raw_files,
@@ -151,10 +151,10 @@ def test_paper_policy_requires_frozen_agent_and_tracked_local_suites():
     }
     local_paths = {
         "local-browser-tasks": (
-            root / "spaces/localagent-webgpu/browser-task-cases.json"
+            root / "demos/webgpu/browser-task-cases.json"
         ),
         "local-realtime-actions": (
-            root / "spaces/localagent-webgpu/benchmark-cases.json"
+            root / "demos/webgpu/benchmark-cases.json"
         ),
     }
     for name, path in local_paths.items():

@@ -1,0 +1,5 @@
+ultra-tiny-1m   0.977M  prefill 15729.1 tok/s  decode(cache)  214.8  decode(no-cache)  241.1  KV speedup x0.89  params 3.91MB
+tiny-30m       31.172M  prefill 15914.4 tok/s  decode(cache)  254.3  decode(no-cache)  236.0  KV speedup x1.08  params 124.69MB
+small-90m      89.314M  prefill 11896.7 tok/s  decode(cache)  190.6  decode(no-cache)  177.9  KV speedup x1.07  params 357.26MB
+
+Device cuda, peak RSS 1462.6 MB. Charts in runs/bench/ (throughput.png, memory.png)

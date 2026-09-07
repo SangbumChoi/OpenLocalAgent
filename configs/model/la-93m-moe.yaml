@@ -1,0 +1,26 @@
+# la-93m with the FFN routed: 8 experts of width 832, top-2, so the ACTIVE parameters match la-93m
+# (matched-active convention, docs/SPARSE_EXPERTS_REAL_DATA.md) while stored parameters are ~2.9x.
+# At 300m the same construction bought nothing (44.3 vs 44.6 sound); this is the 93m point of
+# that line and the unlooped control for la-93m-moe-loop2.
+name: la-93m-moe
+vocab_size: 16384
+d_model: 640
+n_layers: 18
+n_loops: 1
+n_heads: 10
+n_kv_heads: 1
+ffn_hidden: 832
+ffn_num_experts: 8
+ffn_top_k: 2
+router_aux_loss_coef: 0.01
+max_seq_len: 4096
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types:
+  [conv, conv, attn, conv, conv, attn, conv, conv, attn, conv, conv, attn,
+   conv, conv, attn, conv, conv, attn]
+param_budget: 300000000

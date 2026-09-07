@@ -8,11 +8,11 @@ import shutil
 import pytest
 import torch
 
-from localagent.data.agent_synth import Sample
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ByteTokenizer
-from localagent.train.sft import sft
-from localagent.train.stage_data import sha256_file
+from openlocalagent.data.synth.agent_synth import Sample
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ByteTokenizer
+from openlocalagent.train.sft import sft
+from openlocalagent.train.stage_data import sha256_file
 
 
 def _config() -> ModelConfig:
@@ -155,13 +155,16 @@ def test_sft_archive_creation_refuses_to_overwrite_different_valid_checkpoint(
     )
     conflicting_sha256 = sha256_file(archive_path)
 
+    # A fresh run, not a resume: resuming a checkpoint that already completed its steps runs
+    # nothing and writes nothing (the final save is guarded), so it never reaches the archive.
+    # The property under test is that a run which does reach step 1 refuses a different,
+    # valid archive sitting at that step.
     with pytest.raises(FileExistsError, match="refusing to overwrite different"):
         sft(
             _model(initial_state),
             [_sample()],
             ByteTokenizer(),
             checkpoint_path=checkpoint_path,
-            resume_from=checkpoint_path,
             **common,
         )
     assert sha256_file(archive_path) == conflicting_sha256
@@ -221,3 +224,20 @@ def test_sft_archive_contract_rejects_incomplete_or_ambiguous_configuration(
             archive_checkpoints=archive_checkpoints,
             log=lambda *_: None,
         )
+
+
+def test_run_level_no_op_resume_is_decided_from_the_checkpoint_step(tmp_path) -> None:
+    from openlocalagent.train.sft import _sft_already_complete
+
+    out = tmp_path / "run"
+    out.mkdir()
+    config = {"runtime": {"resume": True}, "log": {"out_dir": str(out)},
+              "schedule": {"total_steps": 10}}
+    assert not _sft_already_complete(config, None)          # no checkpoint yet
+    torch.save({"step": 8}, out / "latest.pt")
+    assert not _sft_already_complete(config, None)          # one step left
+    torch.save({"step": 9}, out / "latest.pt")
+    assert _sft_already_complete(config, None)              # last step recorded
+    assert not _sft_already_complete(config, False)         # resume not requested
+    assert not _sft_already_complete({**config, "runtime": {}}, None)
+

@@ -16,10 +16,10 @@ tiny real episodes to confirm wiring, without asserting trained-model accuracy.
 
 from __future__ import annotations
 
-import localagent.agent.caller as caller_mod
-import localagent.eval.harness as harness
-from localagent.data.schema import Conversation, Message, Role, ToolCall
-from localagent.eval import harness as H
+import openlocalagent.agent.caller as caller_mod
+import openlocalagent.eval.harness as harness
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall
+from openlocalagent.eval import harness as H
 
 
 # --- helpers: build an episode by hand so episode_plan/episode_steps read real gold ----------
@@ -181,10 +181,10 @@ def test_real_teacher_forced_path_wires_up(monkeypatch):
     """Exercise the REAL multi_turn_eval + grounded_decode (no stub) on a tiny real model + real
     plan episodes, to confirm the teacher-forced branch is wired correctly. We only mock the
     free-run rollout and assert the metric keys/ranges, not trained accuracy."""
-    from localagent.agent.toolset import STANDARD_TOOLS
-    from localagent.data.agent_synth import Generator, episode_plan, episode_steps
-    from localagent.model import LocalAgentLM, ModelConfig
-    from localagent.model.tokenizer import load_tokenizer
+    from openlocalagent.agent.toolset import STANDARD_TOOLS
+    from openlocalagent.data.synth.agent_synth import Generator, episode_plan, episode_steps
+    from openlocalagent.model import LocalAgentLM, ModelConfig
+    from openlocalagent.model.tokenizer import load_tokenizer
 
     tok = load_tokenizer("byte")
     cfg = ModelConfig(vocab_size=256, d_model=64, embed_dim=64, n_layers=2, n_loops=1,

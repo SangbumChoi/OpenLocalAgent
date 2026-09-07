@@ -1,0 +1,85 @@
+{
+  "model": "posttrain-la-10m-matrix",
+  "kind": "catalog",
+  "location": "/home/jovyan/sbchoi/OpenLocalAgent/runs/posttrain-la-10m-matrix/latest.pt",
+  "constrained_decode": null,
+  "parameters": 10524544,
+  "rows_per_suite": 999999,
+  "max_new_tokens": 64,
+  "suites": {
+    "androidcontrol": {
+      "rows": 904,
+      "parse_rate": 0.9900442477876106,
+      "type_match": 0.7842920353982301,
+      "step_success_rate": 0.46349557522123896,
+      "seconds_per_row": 0.020645230217317564,
+      "grounding_accuracy": 0.184
+    },
+    "mind2web": {
+      "rows": 252,
+      "parse_rate": 1.0,
+      "type_match": 0.8015873015873016,
+      "step_success_rate": 0.01984126984126984,
+      "seconds_per_row": 0.028730693317594983
+    },
+    "toolace": {
+      "rows": 949,
+      "parse_rate": 0.8134878819810326,
+      "type_match": 0.3656480505795574,
+      "step_success_rate": 0.12539515279241306,
+      "seconds_per_row": 0.06974106191709496
+    },
+    "xlam": {
+      "rows": 2941,
+      "parse_rate": 0.9353961237674261,
+      "type_match": 0.694321659299558,
+      "step_success_rate": 0.3597415844950697,
+      "seconds_per_row": 0.07122423275114524,
+      "grounding_accuracy": 0.3333333333333333
+    },
+    "bfcl": {
+      "rows": 204,
+      "parse_rate": 0.8872549019607843,
+      "type_match": 0.6029411764705882,
+      "step_success_rate": 0.08823529411764706,
+      "seconds_per_row": 0.05750398776110481,
+      "grounding_accuracy": 0.0
+    },
+    "agentnet": {
+      "rows": 12482,
+      "parse_rate": 0.8169363883992949,
+      "type_match": 0.08692517224803717,
+      "step_success_rate": 0.018426534209261335,
+      "seconds_per_row": 0.04977557405487999,
+      "grounding_accuracy": 0.0
+    },
+    "toolbench": {
+      "rows": 687,
+      "parse_rate": 0.9141193595342066,
+      "type_match": 0.28093158660844253,
+      "step_success_rate": 0.13100436681222707,
+      "seconds_per_row": 0.048083957105744875
+    },
+    "toolsandbox": {
+      "rows": 17,
+      "parse_rate": 0.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.010655922048232135
+    },
+    "mcpatlas": {
+      "rows": 495,
+      "parse_rate": 0.9616161616161616,
+      "type_match": 0.03434343434343434,
+      "step_success_rate": 0.014141414141414142,
+      "seconds_per_row": 0.05319257505012281
+    },
+    "mobileactions": {
+      "rows": 961,
+      "parse_rate": 0.704474505723205,
+      "type_match": 0.6930280957336108,
+      "step_success_rate": 0.5379812695109261,
+      "seconds_per_row": 0.05458280025486147
+    }
+  }
+}

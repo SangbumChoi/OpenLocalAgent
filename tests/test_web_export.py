@@ -6,7 +6,7 @@ import numpy as np
 import pytest
 import torch
 
-from localagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model import LocalAgentLM, ModelConfig
 
 onnx = pytest.importorskip("onnx")
 ort = pytest.importorskip("onnxruntime")
@@ -15,9 +15,9 @@ pytest.importorskip("onnxscript")
 
 def _make_bundle(tmp_path, *, action_only=False, tie_embeddings=True, fp16=True):
     """Export a small full bundle (model.onnx + heads.json + meta.json) and return paths + model."""
-    from localagent.agent.pointer_head import PointerHead
-    from localagent.agent.tool_head import ToolHead
-    from localagent.inference.export.to_onnx import export_web
+    from openlocalagent.agent.pointer_head import PointerHead
+    from openlocalagent.agent.tool_head import ToolHead
+    from openlocalagent.inference.export.to_onnx import export_web
 
     cfg = ModelConfig(vocab_size=256, d_model=64, embed_dim=64, n_layers=2, n_loops=1,
                       n_heads=4, n_kv_heads=2, ffn_hidden=128, max_seq_len=64, name="t",
@@ -110,9 +110,9 @@ def test_action_only_export_matches_backbone_without_lm_head(tmp_path):
 
 
 def test_web_export_withholds_manifest_when_hard_parity_fails(tmp_path, monkeypatch):
-    from localagent.agent.pointer_head import PointerHead
-    from localagent.agent.tool_head import ToolHead
-    from localagent.inference.export import to_onnx
+    from openlocalagent.agent.pointer_head import PointerHead
+    from openlocalagent.agent.tool_head import ToolHead
+    from openlocalagent.inference.export import to_onnx
 
     cfg = ModelConfig(
         vocab_size=256,
@@ -157,8 +157,8 @@ def test_web_export_withholds_manifest_when_hard_parity_fails(tmp_path, monkeypa
 
 
 def _save_small_action_checkpoint(tmp_path):
-    from localagent.agent.pointer_head import PointerHead
-    from localagent.agent.tool_head import ToolHead
+    from openlocalagent.agent.pointer_head import PointerHead
+    from openlocalagent.agent.tool_head import ToolHead
 
     cfg = ModelConfig(
         vocab_size=256,
@@ -186,7 +186,7 @@ def _save_small_action_checkpoint(tmp_path):
 
 
 def test_web_export_detects_graph_mutation_after_parity(tmp_path, monkeypatch):
-    from localagent.inference.export import to_onnx
+    from openlocalagent.inference.export import to_onnx
 
     checkpoint = _save_small_action_checkpoint(tmp_path)
     out_dir = tmp_path / "web"
@@ -213,7 +213,7 @@ def test_web_export_detects_graph_mutation_after_parity(tmp_path, monkeypatch):
 
 
 def test_web_export_rejects_missing_declared_graph_before_manifest(tmp_path, monkeypatch):
-    from localagent.inference.export import to_onnx
+    from openlocalagent.inference.export import to_onnx
 
     checkpoint = _save_small_action_checkpoint(tmp_path)
     out_dir = tmp_path / "web"
@@ -238,7 +238,7 @@ def test_web_export_rejects_missing_declared_graph_before_manifest(tmp_path, mon
 
 
 def test_bundle_manifest_rechecks_all_artifacts_before_atomic_publish(tmp_path, monkeypatch):
-    from localagent.inference.export import to_onnx
+    from openlocalagent.inference.export import to_onnx
 
     graph = tmp_path / "model.onnx"
     heads = tmp_path / "heads.json"
@@ -285,7 +285,7 @@ def test_bundle_manifest_rechecks_all_artifacts_before_atomic_publish(tmp_path, 
 
 
 def test_bundle_manifest_rejects_declared_graph_without_parity_result(tmp_path):
-    from localagent.inference.export import to_onnx
+    from openlocalagent.inference.export import to_onnx
 
     model_graph = tmp_path / "model.onnx"
     action_graph = tmp_path / "action_model.onnx"
@@ -319,7 +319,7 @@ def test_bundle_manifest_rejects_declared_graph_without_parity_result(tmp_path):
 
 
 def test_web_export_rejects_non_byte_vocab_without_tokenizer(tmp_path):
-    from localagent.inference.export.to_onnx import export_web
+    from openlocalagent.inference.export.to_onnx import export_web
 
     cfg = ModelConfig(vocab_size=320, d_model=64, n_layers=2, n_heads=4, n_kv_heads=2,
                       ffn_hidden=128, max_seq_len=64, name="bpe")
@@ -335,7 +335,7 @@ def test_web_export_rejects_non_byte_vocab_without_tokenizer(tmp_path):
 
 
 def _make_bpe(tmp_path):
-    from localagent.model.tokenizer import train_bpe
+    from openlocalagent.model.tokenizer import train_bpe
 
     corpus = [
         "Open src/app.py and summarize the implementation.",
@@ -348,8 +348,8 @@ def _make_bpe(tmp_path):
 
 
 def _save_web_checkpoint(tmp_path, cfg):
-    from localagent.agent.pointer_head import PointerHead
-    from localagent.agent.tool_head import ToolHead
+    from openlocalagent.agent.pointer_head import PointerHead
+    from openlocalagent.agent.tool_head import ToolHead
 
     model = LocalAgentLM(cfg).eval()
     checkpoint = tmp_path / "bpe.pt"
@@ -363,8 +363,8 @@ def _save_web_checkpoint(tmp_path, cfg):
 
 
 def test_web_export_bundles_validated_bpe_tokenizer(tmp_path):
-    from localagent.inference.export.to_onnx import export_web
-    from localagent.model import tokenizer as tk
+    from openlocalagent.inference.export.to_onnx import export_web
+    from openlocalagent.model import tokenizer as tk
 
     tokenizer, tokenizer_path = _make_bpe(tmp_path)
     cfg = ModelConfig(vocab_size=tokenizer.vocab_size, d_model=64, n_layers=2, n_heads=4,
@@ -421,7 +421,7 @@ def test_web_export_bundles_validated_bpe_tokenizer(tmp_path):
 
 
 def test_web_export_rejects_bpe_tokenizer_hash_mismatch(tmp_path):
-    from localagent.inference.export.to_onnx import export_web
+    from openlocalagent.inference.export.to_onnx import export_web
 
     tokenizer, tokenizer_path = _make_bpe(tmp_path)
     mismatched_path = tmp_path / "mismatched-tokenizer.json"
@@ -465,7 +465,7 @@ def test_web_export_rejects_bpe_tokenizer_hash_mismatch(tmp_path):
 
 
 def test_web_export_rejects_mismatched_bpe_tokenizer(tmp_path):
-    from localagent.inference.export.to_onnx import export_web
+    from openlocalagent.inference.export.to_onnx import export_web
 
     tokenizer, tokenizer_path = _make_bpe(tmp_path)
     cfg = ModelConfig(vocab_size=tokenizer.vocab_size + 1, d_model=64, n_layers=2, n_heads=4,

@@ -5,7 +5,7 @@ from dataclasses import asdict
 import pytest
 import yaml
 
-from localagent.model import ModelConfig
+from openlocalagent.model import ModelConfig
 
 onnx = pytest.importorskip("onnx")
 pytest.importorskip("onnxruntime")
@@ -48,7 +48,7 @@ def _write_matched_configs(tmp_path):
 
 
 def test_matched_random_pair_is_hidden_only_parity_gated_and_honestly_labeled(tmp_path):
-    from localagent.inference.export.to_onnx import export_matched_random_backbones
+    from openlocalagent.inference.export.to_onnx import export_matched_random_backbones
 
     hybrid_config, attention_config = _write_matched_configs(tmp_path)
     result = export_matched_random_backbones(
@@ -116,7 +116,7 @@ def test_matched_random_pair_is_hidden_only_parity_gated_and_honestly_labeled(tm
 
 
 def test_random_hidden_export_repeats_exact_state_and_fp32_graph(tmp_path):
-    from localagent.inference.export.to_onnx import export_random_hidden_backbone
+    from openlocalagent.inference.export.to_onnx import export_random_hidden_backbone
 
     hybrid_config, _ = _write_matched_configs(tmp_path)
     first = export_random_hidden_backbone(
@@ -144,7 +144,7 @@ def test_random_hidden_export_repeats_exact_state_and_fp32_graph(tmp_path):
 
 
 def test_matched_random_pair_rejects_uncontrolled_config_difference(tmp_path):
-    from localagent.inference.export.to_onnx import export_matched_random_backbones
+    from openlocalagent.inference.export.to_onnx import export_matched_random_backbones
 
     hybrid_config, attention_config = _write_matched_configs(tmp_path)
     attention = yaml.safe_load(attention_config.read_text())

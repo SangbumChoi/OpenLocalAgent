@@ -1,8 +1,8 @@
 import torch
 
-from localagent.agent.tool_head import CLASSES, ToolHead, label_of
-from localagent.data.agent_synth import Generator
-from localagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.agent.tool_head import CLASSES, ToolHead, label_of
+from openlocalagent.data.synth.agent_synth import Generator
+from openlocalagent.model import LocalAgentLM, ModelConfig
 
 
 def test_return_hidden_shape():

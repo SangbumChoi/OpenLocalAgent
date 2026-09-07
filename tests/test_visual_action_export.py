@@ -4,9 +4,9 @@ import torch
 onnx = pytest.importorskip("onnx")
 pytest.importorskip("onnxruntime")
 
-from localagent.inference.export.visual_action import VisualActionExport  # noqa: E402
-from localagent.model import LocalAgentLM, ModelConfig  # noqa: E402
-from localagent.model.vision import VisualActionHead  # noqa: E402
+from openlocalagent.inference.export.visual_action import VisualActionExport  # noqa: E402
+from openlocalagent.model import LocalAgentLM, ModelConfig  # noqa: E402
+from openlocalagent.model.vision import VisualActionHead  # noqa: E402
 
 
 def _model() -> tuple[LocalAgentLM, VisualActionHead]:

@@ -15,11 +15,11 @@ from __future__ import annotations
 
 import argparse
 
-from localagent.agent.demo_tools import curated_examples, curated_specs
-from localagent.agent.parser import extract_tool_calls
-from localagent.agent.retriever import ToolRetriever
-from localagent.agent.tools import ToolRegistry
-from localagent.agent.constrained import _tool_bodies
+from openlocalagent.agent.demo_tools import curated_examples, curated_specs
+from openlocalagent.agent.parser import extract_tool_calls
+from openlocalagent.agent.retriever import ToolRetriever
+from openlocalagent.agent.tools import ToolRegistry
+from openlocalagent.agent.constrained import _tool_bodies
 
 
 def _stub_result(name: str, args: dict) -> str:
@@ -41,7 +41,7 @@ class DemoAgent:
         specs = curated_specs()
         examples = curated_examples()
         if scale:                                   # add synthetic tools to show catalog scale
-            from localagent.data.tool_catalog import build_catalog, gen_usages
+            from openlocalagent.data.tool_catalog import build_catalog, gen_usages
             extra = build_catalog(scale, seed=0)
             specs = specs + extra
             for u in gen_usages(extra, "train", per_tool=4, seed=3, paraphrase=True):

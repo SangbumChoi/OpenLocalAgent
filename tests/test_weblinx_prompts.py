@@ -8,8 +8,8 @@ from pathlib import Path
 
 import pytest
 
-import localagent.data.weblinx_prompts as weblinx_prompts
-from localagent.data.weblinx_prompts import (
+import openlocalagent.data.adapters.weblinx_prompts as weblinx_prompts
+from openlocalagent.data.adapters.weblinx_prompts import (
     PRODUCTION_WEBLINX_REVISION,
     PRODUCTION_WEBLINX_SPLIT,
     WEBLINX_PROMPT_ADAPTER_VERSION,

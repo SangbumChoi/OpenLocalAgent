@@ -1,0 +1,367 @@
+{
+  "model": "posttrain-la-300m-moe-matrix",
+  "kind": "catalog",
+  "location": "/home/jovyan/sbchoi/OpenLocalAgent/runs/posttrain-la-300m-moe-matrix/latest.pt",
+  "constrained_decode": null,
+  "parameters": 298701696,
+  "rows_per_suite": 999999,
+  "max_new_tokens": 64,
+  "suites": {
+    "androidcontrol": {
+      "rows": 904,
+      "parse_rate": 1.0,
+      "type_match": 0.8119469026548672,
+      "step_success_rate": 0.5741150442477876,
+      "arguments_given_name": 0.7070844686648501,
+      "step_success_given_parse": 0.5741150442477876,
+      "unique_prompts": 741,
+      "unique_prompt_step_success": 0.5410106462738042,
+      "grounding_accuracy": 0.316,
+      "seconds_per_row": 0.25674577017801,
+      "floors": {
+        "rows": 904,
+        "majority_type_match": 0.1383,
+        "constant_step_success": 0.0,
+        "no_argument_share": 0.3086,
+        "argument_derivability": 0.2891,
+        "reachable_step_success": 0.9779,
+        "fully_derivable_share": 0.5885
+      },
+      "audit": [
+        "text-only: the screenshot is omitted, so this is below the published multimodal number and is not comparable to it"
+      ]
+    },
+    "mind2web": {
+      "rows": 252,
+      "parse_rate": 1.0,
+      "type_match": 0.9206349206349206,
+      "step_success_rate": 0.5634920634920635,
+      "arguments_given_name": 0.6120689655172413,
+      "step_success_given_parse": 0.5634920634920635,
+      "unique_prompts": 252,
+      "unique_prompt_step_success": 0.5634920634920635,
+      "seconds_per_row": 0.38244104385375977,
+      "clean": {
+        "rows": 0,
+        "leaked_rows": 252,
+        "type_match": null,
+        "step_success_rate": null,
+        "note": "no row of this split is outside the training labels"
+      },
+      "floors": {
+        "rows": 252,
+        "majority_type_match": 0.8016,
+        "constant_step_success": 0.0,
+        "no_argument_share": 0.0,
+        "argument_derivability": 0.1556,
+        "reachable_step_success": 1.0,
+        "fully_derivable_share": 0.004
+      },
+      "audit": [
+        "label-leaked: all 252 eval golds (web_click target_id such as '107') are verbatim among 4,508 posttrain golds, while the id is in the observation once and the observation is the task sentence alone (109 chars, no DOM). Exact prompt overlap is 0 and the 38 rows outside the 60-char task-prefix overlap score the same as the rest (57.9 vs 58.7 on la-300m-matrix), so the leak is the label space, not shared tasks. No clean subset exists; the number is memorised label structure. Constant web_click floor: type_match 80%."
+      ]
+    },
+    "toolace": {
+      "rows": 949,
+      "parse_rate": 0.80927291886196,
+      "type_match": 0.6364594309799789,
+      "step_success_rate": 0.3445732349841939,
+      "arguments_given_name": 0.5413907284768212,
+      "step_success_given_parse": 0.42578125,
+      "unique_prompts": 944,
+      "unique_prompt_step_success": 0.3432203389830508,
+      "seconds_per_row": 0.8815296781578105,
+      "floors": {
+        "rows": 949,
+        "majority_type_match": 0.0021,
+        "constant_step_success": 0.0,
+        "no_argument_share": 0.0685,
+        "argument_derivability": 0.6557,
+        "reachable_step_success": 1.0,
+        "fully_derivable_share": 0.5848
+      },
+      "audit": []
+    },
+    "xlam": {
+      "rows": 2941,
+      "parse_rate": 0.9690581434886093,
+      "type_match": 0.939816388983339,
+      "step_success_rate": 0.6844610676640599,
+      "arguments_given_name": 0.7282923299565847,
+      "step_success_given_parse": 0.7063157894736842,
+      "unique_prompts": 2922,
+      "unique_prompt_step_success": 0.6827515400410678,
+      "grounding_accuracy": 0.3333333333333333,
+      "seconds_per_row": 0.8771377423716743,
+      "clean": {
+        "rows": 2851,
+        "leaked_rows": 90,
+        "type_match": 0.938267274640477,
+        "step_success_rate": 0.6780077165906699
+      },
+      "floors": {
+        "rows": 2941,
+        "majority_type_match": 0.0167,
+        "constant_step_success": 0.0,
+        "no_argument_share": 0.0119,
+        "argument_derivability": 0.7807,
+        "reachable_step_success": 0.9997,
+        "fully_derivable_share": 0.7236
+      },
+      "audit": [
+        "90 of 2,941 eval observations (3.1%) are verbatim in the posttrain split (scripts/analyze_harness.py --train-overlap, 2026-09-02); the only exact leak measured, in the suite the headline rests on"
+      ]
+    },
+    "bfcl": {
+      "rows": 204,
+      "parse_rate": 0.946078431372549,
+      "type_match": 0.803921568627451,
+      "step_success_rate": 0.29901960784313725,
+      "arguments_given_name": 0.3719512195121951,
+      "step_success_given_parse": 0.3160621761658031,
+      "unique_prompts": 200,
+      "unique_prompt_step_success": 0.305,
+      "grounding_accuracy": 0.5,
+      "seconds_per_row": 0.6746687877411935,
+      "floors": {
+        "rows": 204,
+        "majority_type_match": 0.0392,
+        "constant_step_success": 0.0,
+        "no_argument_share": 0.0245,
+        "argument_derivability": 0.7827,
+        "reachable_step_success": 0.9951,
+        "fully_derivable_share": 0.6618
+      },
+      "audit": [
+        "appears in no training stage: pure transfer"
+      ]
+    },
+    "agentnet": {
+      "rows": 12482,
+      "parse_rate": 0.9967152699887839,
+      "type_match": 0.7796827431501362,
+      "step_success_rate": 0.05191475725044063,
+      "arguments_given_name": 0.06658446362515413,
+      "step_success_given_parse": 0.05208584518929347,
+      "unique_prompts": 12482,
+      "unique_prompt_step_success": 0.05191475725044063,
+      "grounding_accuracy": 0.0,
+      "seconds_per_row": 0.4334478036770166,
+      "floors": {
+        "rows": 12482,
+        "majority_type_match": 0.729,
+        "constant_step_success": 0.0,
+        "no_argument_share": 0.0,
+        "argument_derivability": 0.0842,
+        "reachable_step_success": 1.0,
+        "fully_derivable_share": 0.0875
+      },
+      "audit": [
+        "eval split keeps its empty upstream catalog; only the train split was catalog-repaired, so this is not inflated against open baselines. type_match is the constant floor: always-click scores 73%, la-93m-matrix 74%. step_success is a click coordinate inferred from a text screen description (8% argument derivability) - a grounding task without the image, not a tool-calling one. 12,482 rows, so it dominates nothing at equal suite weight but is the largest file"
+      ]
+    },
+    "toolbench": {
+      "rows": 687,
+      "parse_rate": 0.9737991266375546,
+      "type_match": 0.45414847161572053,
+      "step_success_rate": 0.2867540029112082,
+      "arguments_given_name": 0.6314102564102564,
+      "step_success_given_parse": 0.2944693572496263,
+      "unique_prompts": 271,
+      "unique_prompt_step_success": 0.2988929889298893,
+      "seconds_per_row": 0.6259824344684984,
+      "floors": {
+        "rows": 687,
+        "majority_type_match": 0.0189,
+        "constant_step_success": 0.0102,
+        "no_argument_share": 0.4745,
+        "argument_derivability": 0.5461,
+        "reachable_step_success": 1.0,
+        "fully_derivable_share": 0.7293
+      },
+      "audit": [
+        "553 of 687 rows are exact-duplicate observations (137 groups, all with consistent golds; 0 overlap with the train split), so the suite is ~271 unique prompts counted with repetition. 47% of golds take no arguments: mostly a selection test among ~200 RapidAPI names"
+      ]
+    },
+    "toolsandbox": {
+      "rows": 17,
+      "parse_rate": 1.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "arguments_given_name": null,
+      "step_success_given_parse": 0.0,
+      "unique_prompts": 17,
+      "unique_prompt_step_success": 0.0,
+      "seconds_per_row": 0.21208572387695312,
+      "floors": {
+        "rows": 17,
+        "majority_type_match": 0.1765,
+        "constant_step_success": 0.1765,
+        "no_argument_share": 1.0,
+        "argument_derivability": null,
+        "reachable_step_success": 1.0,
+        "fully_derivable_share": 1.0
+      },
+      "audit": [
+        "17 rows is below 100: one row moves the ten-suite mean by 0.59 points",
+        "single-turn projection of a stateful benchmark; 17 rows, so one row is 0.59 points of the ten-suite mean - wider than differences we have called results"
+      ]
+    },
+    "mcpatlas": {
+      "rows": 495,
+      "parse_rate": 0.9919191919191919,
+      "type_match": 0.0707070707070707,
+      "step_success_rate": 0.022222222222222223,
+      "arguments_given_name": 0.3142857142857143,
+      "step_success_given_parse": 0.02240325865580448,
+      "unique_prompts": 495,
+      "unique_prompt_step_success": 0.022222222222222223,
+      "seconds_per_row": 0.48143703383628766,
+      "floors": {
+        "rows": 495,
+        "majority_type_match": 0.0848,
+        "constant_step_success": 0.0,
+        "no_argument_share": 0.2828,
+        "argument_derivability": 0.3063,
+        "reachable_step_success": 1.0,
+        "fully_derivable_share": 0.4949
+      },
+      "audit": [
+        "appears in no training stage: pure transfer. In practice a wall, not a gradient: parse_rate 96-99% but type_match 3-4% and step 0.4-1.4% at every tier from 10M to 300M. 43 MCP tool names the model has never seen in 15-tool catalogs; it emits well-formed calls to the wrong one"
+      ]
+    },
+    "mobileactions": {
+      "rows": 961,
+      "parse_rate": 0.6992715920915713,
+      "type_match": 0.6930280957336108,
+      "step_success_rate": 0.6160249739854319,
+      "arguments_given_name": 0.8888888888888888,
+      "step_success_given_parse": 0.8809523809523809,
+      "unique_prompts": 961,
+      "unique_prompt_step_success": 0.6160249739854319,
+      "seconds_per_row": 0.6769712985988462,
+      "floors": {
+        "rows": 961,
+        "majority_type_match": 0.2227,
+        "constant_step_success": 0.0,
+        "no_argument_share": 0.2945,
+        "argument_derivability": 0.848,
+        "reachable_step_success": 1.0,
+        "fully_derivable_share": 0.7388
+      },
+      "audit": [
+        "the one suite where parse_rate is the bottleneck (70-83%): 332-char observations with a date/time preamble and 1.75 multi-field arguments that are 85% copyable from the text. Failures are format, not selection"
+      ]
+    }
+  },
+  "summary": {
+    "headline": {
+      "metric": "sound_tool_calling_mean",
+      "value": 0.442685,
+      "suites": [
+        "toolace",
+        "xlam",
+        "bfcl"
+      ]
+    },
+    "by_category": {
+      "projected_gui": {
+        "suites": {
+          "androidcontrol": {
+            "step_success_rate": 0.5741150442477876,
+            "floor": 0.0,
+            "ceiling": 0.5885
+          },
+          "mobileactions": {
+            "step_success_rate": 0.6160249739854319,
+            "floor": 0.0,
+            "ceiling": 0.7388
+          }
+        },
+        "averaged": true,
+        "mean": 0.59507
+      },
+      "episode_leaked": {
+        "suites": {
+          "mind2web": {
+            "step_success_rate": 0.5634920634920635,
+            "floor": 0.0,
+            "ceiling": 0.004
+          }
+        },
+        "averaged": false,
+        "mean": null
+      },
+      "sound_tool_calling": {
+        "suites": {
+          "toolace": {
+            "step_success_rate": 0.3445732349841939,
+            "floor": 0.0,
+            "ceiling": 0.5848
+          },
+          "xlam": {
+            "step_success_rate": 0.6844610676640599,
+            "floor": 0.0,
+            "ceiling": 0.7236
+          },
+          "bfcl": {
+            "step_success_rate": 0.29901960784313725,
+            "floor": 0.0,
+            "ceiling": 0.6618
+          }
+        },
+        "averaged": true,
+        "mean": 0.442685
+      },
+      "floor_bound": {
+        "suites": {
+          "agentnet": {
+            "step_success_rate": 0.05191475725044063,
+            "floor": 0.0,
+            "ceiling": 0.0875
+          }
+        },
+        "averaged": false,
+        "mean": null
+      },
+      "repetition_weighted": {
+        "suites": {
+          "toolbench": {
+            "step_success_rate": 0.2867540029112082,
+            "floor": 0.0102,
+            "ceiling": 0.7293
+          }
+        },
+        "averaged": false,
+        "mean": null
+      },
+      "noise": {
+        "suites": {
+          "toolsandbox": {
+            "step_success_rate": 0.0,
+            "floor": 0.1765,
+            "ceiling": 1.0
+          }
+        },
+        "averaged": false,
+        "mean": null
+      },
+      "zero_shot_wall": {
+        "suites": {
+          "mcpatlas": {
+            "step_success_rate": 0.022222222222222223,
+            "floor": 0.0,
+            "ceiling": 0.4949
+          }
+        },
+        "averaged": false,
+        "mean": null
+      }
+    },
+    "excluded_from_means": {
+      "toolsandbox": "17 rows < 100: contributes to no mean"
+    },
+    "legacy_ten_suite_mean": 0.344258,
+    "legacy_note": "mean over the standard ten including floor-bound, leaked, wall and noise suites; kept for continuity with every earlier receipt, not for reasoning"
+  }
+}

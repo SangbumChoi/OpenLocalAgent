@@ -1,0 +1,31 @@
+{
+  "ultra-tiny-1m": {
+    "params_M": 0.977,
+    "prefill_tok_s": 15729.1,
+    "decode_cached_tok_s": 214.8,
+    "decode_uncached_tok_s": 241.1,
+    "kv_cache_speedup": 0.89,
+    "param_mb": 3.91,
+    "kv_cache_mb_at_256": 1.573
+  },
+  "tiny-30m": {
+    "params_M": 31.172,
+    "prefill_tok_s": 15914.4,
+    "decode_cached_tok_s": 254.3,
+    "decode_uncached_tok_s": 236.0,
+    "kv_cache_speedup": 1.08,
+    "param_mb": 124.69,
+    "kv_cache_mb_at_256": 3.146
+  },
+  "small-90m": {
+    "params_M": 89.314,
+    "prefill_tok_s": 11896.7,
+    "decode_cached_tok_s": 190.6,
+    "decode_uncached_tok_s": 177.9,
+    "kv_cache_speedup": 1.07,
+    "param_mb": 357.26,
+    "kv_cache_mb_at_256": 4.194
+  },
+  "_peak_rss_mb": 1462.6,
+  "_device": "cuda"
+}

@@ -47,8 +47,8 @@ horizon, and evaluation schedule. Their nominal active counts differ by less tha
 Inspect the counts without constructing a checkpoint:
 
 ```bash
-localagent model-info configs/model/webgpu-44m-moe.yaml
-localagent model-info configs/model/webgpu-17m-dense-moe-control.yaml
+openlocalagent model-info configs/model/webgpu-44m-moe.yaml
+openlocalagent model-info configs/model/webgpu-17m-dense-moe-control.yaml
 ```
 
 The current ONNX exporter does not lower dynamic expert routing into a proven sparse WebGPU
@@ -108,12 +108,12 @@ SHA-256, and local path. The importer performs no network access and fails close
 | [BFCL](https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard) | upstream benchmark protocol | external evaluation only; never training |
 | [WebLINX](https://huggingface.co/datasets/McGill-NLP/WebLINX) | CC-BY-NC-SA-4.0 | evaluation/non-default research only; never the default training mixture |
 
-`localagent.data.public_agent.build_public_agent_dataset()` converts pinned inputs to the one
+`openlocalagent.data.adapters.public_agent.build_public_agent_dataset()` converts pinned inputs to the one
 `Conversation` interchange format. Supported adapters are `xlam_v1`, `mind2web_v1`, and an
-explicit `localagent_v1` audit interchange. Build with:
+explicit `openlocalagent_v1` audit interchange. Build with:
 
 ```bash
-python scripts/ingest_public_agent_data.py configs/data/<public-mixture>.yaml
+python scripts/normalize_public_agent.py configs/data/<public-mixture>.yaml
 ```
 
 The YAML declares `outputs.train`, `outputs.eval`, a self-hashed `manifest`, exact-prompt
@@ -138,7 +138,7 @@ Real-use coverage must contain more than one-call happy paths:
 - distractor tools and wrong-tool avoidance; and
 - failures, corrections, and recovery where the public source supplies a verifiable target.
 
-`localagent.eval.real_use` audits a frozen public evaluation snapshot, then wraps the existing
+`openlocalagent.eval.real_use` audits a frozen public evaluation snapshot, then wraps the existing
 strict whole-output AST/schema and teacher-forced multi-turn scorer. Its thresholds are
 caller-declared—there is no hidden universal production cutoff. The report includes dataset,
 license, category, behavior, capability, multi-action, and source-revision coverage plus a

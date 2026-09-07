@@ -10,8 +10,8 @@ from typing import Any
 
 import pytest
 
-from localagent.data import browsergym_runtime_manifest
-from localagent.data.browsergym_runtime_manifest import (
+from openlocalagent.data.adapters import browsergym_runtime_manifest
+from openlocalagent.data.adapters.browsergym_runtime_manifest import (
     BROWSERGYM_RUNTIME_MANIFEST_KIND,
     BROWSERGYM_RUNTIME_MANIFEST_SCHEMA_VERSION,
     build_active_environment_manifest,
@@ -413,7 +413,7 @@ def test_distribution_discovery_is_scoped_to_active_import_roots(
     environment = _synthetic_environment(tmp_path / "environment")
     environment.activate(monkeypatch)
     external_egg_info = _FakeDistribution(
-        "localagent",
+        "openlocalagent",
         "0.0.1",
         {},
     )
@@ -434,7 +434,7 @@ def test_distribution_discovery_is_scoped_to_active_import_roots(
     manifest = build_active_environment_manifest()
 
     assert observed_paths == [[str(environment.purelib.resolve())]]
-    assert "localagent" not in {
+    assert "openlocalagent" not in {
         distribution["name"]
         for distribution in manifest["installed_distributions"]
     }

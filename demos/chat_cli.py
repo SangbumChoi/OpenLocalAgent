@@ -1,7 +1,7 @@
 """Terminal agent demo (Phase 7): a REPL over agent.runtime.Agent.
 
 Shows the live tool-call / tool-response trace and current memory state inline.
-Run: python demos/chat_cli.py runs/sft/latest.pt
+Run: python demos/chat_cli.py results/runs/sft/latest.pt
 """
 
 from __future__ import annotations
@@ -16,4 +16,4 @@ def main(checkpoint: str) -> None:
 
 
 if __name__ == "__main__":
-    main(sys.argv[1] if len(sys.argv) > 1 else "runs/sft/latest.pt")
+    main(sys.argv[1] if len(sys.argv) > 1 else "results/runs/sft/latest.pt")

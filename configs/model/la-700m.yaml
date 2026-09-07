@@ -1,0 +1,26 @@
+# Ladder tier 4 — first tier above the on-device ceiling, so it declares its own budget.
+#
+# Sized to sit beside the open 700M-class baselines the harness already scores
+# (ft-lfm2-700m-fullharness.json, 33.14 mean step-success), which is what makes "does our recipe
+# beat a fine-tuned open model at matched size" answerable. Same hybrid ratio as every tier below
+# it: twenty-seven blocks, two short convolutions per attention.
+name: la-700m
+vocab_size: 16384
+d_model: 1280
+n_layers: 27
+n_loops: 1
+n_heads: 20
+n_kv_heads: 1
+ffn_hidden: 5120
+max_seq_len: 4096
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types:
+  [conv, conv, attn, conv, conv, attn, conv, conv, attn, conv, conv, attn,
+   conv, conv, attn, conv, conv, attn, conv, conv, attn, conv, conv, attn,
+   conv, conv, attn]
+param_budget: 750000000

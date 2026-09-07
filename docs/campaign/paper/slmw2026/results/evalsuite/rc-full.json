@@ -1,0 +1,82 @@
+{
+  "model": "sft-rc-full",
+  "kind": "catalog",
+  "location": "runs/sft-rc-full/latest.pt",
+  "parameters": 10524544,
+  "rows_per_suite": 200,
+  "max_new_tokens": 64,
+  "suites": {
+    "androidcontrol": {
+      "rows": 200,
+      "parse_rate": 0.995,
+      "type_match": 0.645,
+      "step_success_rate": 0.33,
+      "seconds_per_row": 0.05419053554534912,
+      "grounding_accuracy": 0.0847457627118644
+    },
+    "mind2web": {
+      "rows": 200,
+      "parse_rate": 1.0,
+      "type_match": 0.79,
+      "step_success_rate": 0.01,
+      "seconds_per_row": 0.04856982946395874
+    },
+    "toolace": {
+      "rows": 200,
+      "parse_rate": 0.82,
+      "type_match": 0.26,
+      "step_success_rate": 0.02,
+      "seconds_per_row": 0.08897635102272033
+    },
+    "xlam": {
+      "rows": 200,
+      "parse_rate": 0.895,
+      "type_match": 0.345,
+      "step_success_rate": 0.08,
+      "seconds_per_row": 0.09614421963691712
+    },
+    "agentnet": {
+      "rows": 200,
+      "parse_rate": 0.82,
+      "type_match": 0.51,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.12565819501876832
+    },
+    "toolbench": {
+      "rows": 200,
+      "parse_rate": 0.865,
+      "type_match": 0.11,
+      "step_success_rate": 0.005,
+      "seconds_per_row": 0.1062753963470459
+    },
+    "toolsandbox": {
+      "rows": 17,
+      "parse_rate": 0.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.0050740802989286534
+    },
+    "mcpatlas": {
+      "rows": 200,
+      "parse_rate": 0.925,
+      "type_match": 0.015,
+      "step_success_rate": 0.005,
+      "seconds_per_row": 0.05885672569274902
+    },
+    "mobileactions": {
+      "rows": 200,
+      "parse_rate": 0.86,
+      "type_match": 0.23,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.06307427406311035
+    },
+    "bfcl": {
+      "rows": 200,
+      "parse_rate": 0.805,
+      "type_match": 0.47,
+      "step_success_rate": 0.01,
+      "seconds_per_row": 0.05539225578308105,
+      "grounding_accuracy": 0.0
+    }
+  }
+}

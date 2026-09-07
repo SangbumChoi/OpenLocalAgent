@@ -1,0 +1,1331 @@
+{
+  "tasks": 210,
+  "episode_success": 0.21428571428571427,
+  "milestone_rate": 0.22857142857142856,
+  "mean_steps": 13.523809523809524,
+  "errors": {
+    "schema_invalid": 396,
+    "send_args_do_not_match_draft": 332,
+    "input_requires_focused_email_field": 161,
+    "type_requires_search_focus": 42,
+    "http_404_recoverable": 22
+  },
+  "step_profile": {
+    "steps": 2840,
+    "called_a_tool": 0.9912,
+    "tool_known": 0.9912,
+    "schema_valid": 0.8518,
+    "transitioned": 0.6634,
+    "progressed": 0.018
+  },
+  "per_family": {
+    "abstention": {
+      "n": 30,
+      "success": 0.0,
+      "milestones": 0.0
+    },
+    "browser": {
+      "n": 30,
+      "success": 0.0667,
+      "milestones": 0.0667
+    },
+    "browser_email": {
+      "n": 30,
+      "success": 0.0,
+      "milestones": 0.0
+    },
+    "email": {
+      "n": 30,
+      "success": 0.0333,
+      "milestones": 0.0333
+    },
+    "email_notion": {
+      "n": 30,
+      "success": 0.0,
+      "milestones": 0.1
+    },
+    "notion": {
+      "n": 30,
+      "success": 0.4,
+      "milestones": 0.4
+    },
+    "recovery": {
+      "n": 30,
+      "success": 1.0,
+      "milestones": 1.0
+    }
+  },
+  "per_task": [
+    {
+      "task_id": "eval-email-clean-000",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-clean-001",
+      "success": true,
+      "steps": 2,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-browser-clean-002",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-clean-003",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-clean-004",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-clean-005",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-clean-006",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-wrong_app-007",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-wrong_app-008",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-wrong_app-009",
+      "success": true,
+      "steps": 10,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-recovery-wrong_app-010",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-wrong_app-011",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.5
+    },
+    {
+      "task_id": "eval-browser_email-wrong_app-012",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-wrong_app-013",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-mid_compose-014",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-mid_compose-015",
+      "success": true,
+      "steps": 2,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-browser-mid_compose-016",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-mid_compose-017",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-mid_compose-018",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-mid_compose-019",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-mid_compose-020",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-stale_browser-021",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-stale_browser-022",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-stale_browser-023",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-stale_browser-024",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-stale_browser-025",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-stale_browser-026",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-stale_browser-027",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-clean-028",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-clean-029",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-clean-030",
+      "success": true,
+      "steps": 10,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-recovery-clean-031",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-clean-032",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-clean-033",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-clean-034",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-wrong_app-035",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-wrong_app-036",
+      "success": true,
+      "steps": 2,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-browser-wrong_app-037",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-wrong_app-038",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-wrong_app-039",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-wrong_app-040",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-wrong_app-041",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-mid_compose-042",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-mid_compose-043",
+      "success": true,
+      "steps": 2,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-browser-mid_compose-044",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-mid_compose-045",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-mid_compose-046",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.5
+    },
+    {
+      "task_id": "eval-browser_email-mid_compose-047",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-mid_compose-048",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-stale_browser-049",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-stale_browser-050",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-stale_browser-051",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-stale_browser-052",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-stale_browser-053",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-stale_browser-054",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-stale_browser-055",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-clean-056",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-clean-057",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-clean-058",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-clean-059",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-clean-060",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.5
+    },
+    {
+      "task_id": "eval-browser_email-clean-061",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-clean-062",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-wrong_app-063",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-wrong_app-064",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-wrong_app-065",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-wrong_app-066",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-wrong_app-067",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-wrong_app-068",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-wrong_app-069",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-mid_compose-070",
+      "success": true,
+      "steps": 6,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-notion-mid_compose-071",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-mid_compose-072",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-mid_compose-073",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-mid_compose-074",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-mid_compose-075",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-mid_compose-076",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-stale_browser-077",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-stale_browser-078",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-stale_browser-079",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-stale_browser-080",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-stale_browser-081",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-stale_browser-082",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-stale_browser-083",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-clean-084",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-clean-085",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-clean-086",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-clean-087",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-clean-088",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-clean-089",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-clean-090",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-wrong_app-091",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-wrong_app-092",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-wrong_app-093",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-wrong_app-094",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-wrong_app-095",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-wrong_app-096",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-wrong_app-097",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-mid_compose-098",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-mid_compose-099",
+      "success": true,
+      "steps": 2,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-browser-mid_compose-100",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-mid_compose-101",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-mid_compose-102",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-mid_compose-103",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-mid_compose-104",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-stale_browser-105",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-stale_browser-106",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-stale_browser-107",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-stale_browser-108",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-stale_browser-109",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-stale_browser-110",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-stale_browser-111",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-clean-112",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-clean-113",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-clean-114",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-clean-115",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-clean-116",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-clean-117",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-clean-118",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-wrong_app-119",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-wrong_app-120",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-wrong_app-121",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-wrong_app-122",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-wrong_app-123",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-wrong_app-124",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-wrong_app-125",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-mid_compose-126",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-mid_compose-127",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-mid_compose-128",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-mid_compose-129",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-mid_compose-130",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-mid_compose-131",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-mid_compose-132",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-stale_browser-133",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-stale_browser-134",
+      "success": true,
+      "steps": 2,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-browser-stale_browser-135",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-stale_browser-136",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-stale_browser-137",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-stale_browser-138",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-stale_browser-139",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-clean-140",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-clean-141",
+      "success": true,
+      "steps": 2,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-browser-clean-142",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-clean-143",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-clean-144",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-clean-145",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-clean-146",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-wrong_app-147",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-wrong_app-148",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-wrong_app-149",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-wrong_app-150",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-wrong_app-151",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.5
+    },
+    {
+      "task_id": "eval-browser_email-wrong_app-152",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-wrong_app-153",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-mid_compose-154",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-mid_compose-155",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-mid_compose-156",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-mid_compose-157",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-mid_compose-158",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-mid_compose-159",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-mid_compose-160",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-stale_browser-161",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-stale_browser-162",
+      "success": true,
+      "steps": 2,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-browser-stale_browser-163",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-stale_browser-164",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-stale_browser-165",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-stale_browser-166",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-stale_browser-167",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-clean-168",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-clean-169",
+      "success": true,
+      "steps": 2,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-browser-clean-170",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-clean-171",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-clean-172",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.5
+    },
+    {
+      "task_id": "eval-browser_email-clean-173",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-clean-174",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-wrong_app-175",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-wrong_app-176",
+      "success": true,
+      "steps": 2,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-browser-wrong_app-177",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-wrong_app-178",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-wrong_app-179",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-wrong_app-180",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-wrong_app-181",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-mid_compose-182",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-mid_compose-183",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-mid_compose-184",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-mid_compose-185",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-mid_compose-186",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-mid_compose-187",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-mid_compose-188",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-stale_browser-189",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-stale_browser-190",
+      "success": true,
+      "steps": 2,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-browser-stale_browser-191",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-stale_browser-192",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-stale_browser-193",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.5
+    },
+    {
+      "task_id": "eval-browser_email-stale_browser-194",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-stale_browser-195",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-clean-196",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-clean-197",
+      "success": true,
+      "steps": 2,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-browser-clean-198",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-clean-199",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-clean-200",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-clean-201",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-clean-202",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-email-wrong_app-203",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-notion-wrong_app-204",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser-wrong_app-205",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-recovery-wrong_app-206",
+      "success": true,
+      "steps": 3,
+      "milestones": 1.0
+    },
+    {
+      "task_id": "eval-email_notion-wrong_app-207",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-browser_email-wrong_app-208",
+      "success": false,
+      "steps": 20,
+      "milestones": 0.0
+    },
+    {
+      "task_id": "eval-abstention-wrong_app-209",
+      "success": false,
+      "steps": 0,
+      "milestones": 0.0
+    }
+  ],
+  "copy_fidelity": {
+    "steps_with_text": 2065,
+    "verbatim": 0.2523
+  },
+  "tool_agreement_vs_gold": 0.8565656565656565,
+  "model": "catalog:runs/sft-agentic-11m/latest.pt",
+  "split": "eval",
+  "suite": "generated",
+  "oracle_mode": "tools-cond",
+  "max_steps": 20,
+  "seconds": 101.6
+}

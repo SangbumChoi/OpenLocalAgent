@@ -1,0 +1,48 @@
+# la-45m on the five-source matrix, current tokenizer - second rung of the new-generation ladder.
+# Stage 1 of the ladder for la-45m: language modelling on open text.
+#
+# Corpus is data/shards/pt-big - FineWeb-Edu (260.1M tokens, ODC-BY-1.0), Cosmopedia v2 (69.9M,
+# Apache-2.0) and permissive Python (135.5M, MIT/Apache/BSD/ISC): 460.7M train tokens, every
+# source openly licensed. Bound to the 16K BPE tokenizer the shards were packed with.
+#
+# Global batch is held at 64 rows x 2048 = 131,072 tokens per update across every tier, so the
+# ladder varies capacity and step count and not the batch. 7600 steps = 996.1M tokens
+# = 22.1 tokens per parameter.
+stage: pretrain
+model_config: configs/model/la-45m.yaml
+data:
+  weighting: sqrt_tokens
+  sources:
+    - {name: fineweb, path: data/shards/src/fineweb}
+    - {name: c4, path: data/shards/src/c4}
+    - {name: wikipedia, path: data/shards/src/wikipedia}
+    - {name: cosmopedia, path: data/shards/src/cosmopedia}
+    - {name: finemath, path: data/shards/src/finemath}
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-h100-16k.json
+optim:
+  name: adamw
+  lr: 4.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 152
+  total_steps: 7600
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 16
+  grad_accum_steps: 4
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+  resume: true
+log:
+  out_dir: results/runs/pretrain-la-45m-matrix
+  ckpt_every: 800
+  eval_every: 800
+  eval_batches: 32
+  snapshot_every: 2000
+  snapshot_keep: 2

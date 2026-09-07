@@ -1,0 +1,86 @@
+{
+  "checkpoint": "results/runs/posttrain-la-300m/latest.pt",
+  "device": "NVIDIA H100 NVL",
+  "torch": "2.10.0",
+  "prompt_tokens": 512,
+  "new_tokens": 128,
+  "kernels": [
+    {
+      "kernel": "eager_fp32",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 85838.5,
+      "decode_tok_s": 185.0,
+      "decode_ms_per_token": 5.405,
+      "peak_mem_mb": 1287.4,
+      "repeats": 5,
+      "error": null
+    },
+    {
+      "kernel": "eager_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 92836.7,
+      "decode_tok_s": 184.5,
+      "decode_ms_per_token": 5.419,
+      "peak_mem_mb": 656.6,
+      "repeats": 5,
+      "error": null
+    },
+    {
+      "kernel": "sdpa_flash_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 94262.6,
+      "decode_tok_s": 188.3,
+      "decode_ms_per_token": 5.312,
+      "peak_mem_mb": 656.6,
+      "repeats": 5,
+      "error": null
+    },
+    {
+      "kernel": "sdpa_efficient_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 97140.6,
+      "decode_tok_s": 190.0,
+      "decode_ms_per_token": 5.262,
+      "peak_mem_mb": 656.5,
+      "repeats": 5,
+      "error": null
+    },
+    {
+      "kernel": "sdpa_math_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 82148.9,
+      "decode_tok_s": 172.6,
+      "decode_ms_per_token": 5.795,
+      "peak_mem_mb": 696.6,
+      "repeats": 5,
+      "error": null
+    },
+    {
+      "kernel": "compile_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 86979.9,
+      "decode_tok_s": 395.7,
+      "decode_ms_per_token": 2.527,
+      "peak_mem_mb": 717.6,
+      "repeats": 5,
+      "error": null
+    },
+    {
+      "kernel": "compile_cudagraph_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 81578.7,
+      "decode_tok_s": 927.7,
+      "decode_ms_per_token": 1.078,
+      "peak_mem_mb": 717.6,
+      "repeats": 5,
+      "error": null
+    }
+  ]
+}

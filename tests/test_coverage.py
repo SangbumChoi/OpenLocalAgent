@@ -11,8 +11,8 @@ wrong tools:
 
 import json
 
-from localagent.agent.schema_decode import extract_pools
-from localagent.data.agent_synth import (
+from openlocalagent.agent.schema_decode import extract_pools
+from openlocalagent.data.synth.agent_synth import (
     ENTITIES_EVAL,
     ENTITIES_TRAIN,
     EVENTS_EVAL,

@@ -1,0 +1,11 @@
+24 coding tools + 300 distractors = 324 tools, 48 held-out paraphrased queries
+
+   0 examples/tool -> tool@1=43.8%  full-call=43.8%
+   1 examples/tool -> tool@1=60.4%  full-call=58.3%
+   2 examples/tool -> tool@1=60.4%  full-call=56.2%
+   4 examples/tool -> tool@1=60.4%  full-call=56.2%
+   8 examples/tool -> tool@1=64.6%  full-call=62.5%
+  16 examples/tool -> tool@1=68.8%  full-call=64.6%
+  32 examples/tool -> tool@1=70.8%  full-call=66.7%
+
+INSIGHT: desc-only (0) = 44% tool@1; saturates near best (71%) by ~16 examples/tool -> a handful of example phrasings per tool is enough; more barely helps.

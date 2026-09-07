@@ -139,6 +139,9 @@ suites:
     # The production prompt export is label-blind: ranking sees only the natural-language task
     # and current cleaned HTML. The generic freezer replays this exact config and implementation
     # from the protected archive, then requires byte-identical prompt rows and audit receipts.
+    # The two implementation records below moved when src/openlocalagent/data/ was split by purpose.
+    # Their bytes/sha256 describe the files as they are now; the versions that produced the frozen
+    # prompt export are at the pre-refactor tag.
     prompt_ranker:
       ranker_version: mind2web-dom-lexical-v1
       adapter_version: mind2web-private-prompt-rows-v2
@@ -148,14 +151,14 @@ suites:
         sha256: cf9c6e75c465827a97121601b937e77ce992cda25316620dbae73b32b90a3f46
         config_self_sha256: ea258f0eee464f69f18baa97e0631a259c06051d2a9b2ae8454ce34b3244b8f3
       implementation:
-        module: localagent.data.mind2web_dom_ranker
-        path: src/localagent/data/mind2web_dom_ranker.py
-        bytes: 33592
+        module: openlocalagent.data.adapters.mind2web_dom_ranker
+        path: src/openlocalagent/data/adapters/mind2web_dom_ranker.py
+        bytes: 33610
         sha256: 7b6ed35015e8829481c083ce8634277517991e570bbb9485e0ec9b4354b0ddc8
       adapter_implementation:
-        module: localagent.data.mind2web_prompts
-        path: src/localagent/data/mind2web_prompts.py
-        bytes: 73241
+        module: openlocalagent.data.adapters.mind2web_prompts
+        path: src/openlocalagent/data/adapters/mind2web_prompts.py
+        bytes: 73268
         sha256: 9083ad20cc10f95cdd03ddbaa034faea668e7227c19eda7f5de219c75e22267d
       runtime:
         html_parser: stdlib.html.parser.HTMLParser

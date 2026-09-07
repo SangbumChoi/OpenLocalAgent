@@ -8,10 +8,10 @@ tools are wired into CLASSES 1:1 with STANDARD_TOOLS, and that a GUI episode is 
 
 import json
 
-from localagent.agent.tool_head import CLASSES
-from localagent.agent.toolset import STANDARD_TOOLS
-from localagent.data.agent_synth import Generator, episode_plan
-from localagent.data.schema import Role
+from openlocalagent.agent.tool_head import CLASSES
+from openlocalagent.agent.toolset import STANDARD_TOOLS
+from openlocalagent.data.synth.agent_synth import Generator, episode_plan
+from openlocalagent.data.schema import Role
 
 COMPUTER_USE = ["screenshot", "click", "double_click", "type_text", "key_press", "scroll", "drag",
                 "wait", "move_cursor", "open_app"]
@@ -66,14 +66,14 @@ def test_new_tools_generate_and_are_grounded():
 def test_target_grounds_as_quoted_span_not_path():
     """`click(target)` declares format=quoted even though `target` is also a path-name hint —
     the value must ground as the quoted element description, not a (missing) file path."""
-    from localagent.agent.schema_decode import fill_tool
+    from openlocalagent.agent.schema_decode import fill_tool
     byname = {t.name: t for t in STANDARD_TOOLS}
     got = fill_tool("Click 'the Submit button'.", byname["click"])
     assert got == {"target": "the Submit button"}
 
 
 def test_constrained_decoder_grounds_new_tools():
-    from localagent.agent.constrained import candidates
+    from openlocalagent.agent.constrained import candidates
     bodies = [b for b, _, _ in candidates("Click 'the Login button'.", STANDARD_TOOLS)]
     assert any('"target":"the Login button"' in b and "click" in b for b in bodies)
     bodies = [b for b, _, _ in candidates("Scroll down.", STANDARD_TOOLS)]
@@ -83,7 +83,7 @@ def test_constrained_decoder_grounds_new_tools():
 
 
 def test_train_eval_slot_pools_disjoint():
-    import localagent.data.agent_synth as A
+    import openlocalagent.data.synth.agent_synth as A
     pairs = [
         (A.UI_TARGETS_TRAIN, A.UI_TARGETS_EVAL), (A.TYPED_TEXT_TRAIN, A.TYPED_TEXT_EVAL),
         (A.APPS_TRAIN, A.APPS_EVAL), (A.WAIT_SECONDS_TRAIN, A.WAIT_SECONDS_EVAL),

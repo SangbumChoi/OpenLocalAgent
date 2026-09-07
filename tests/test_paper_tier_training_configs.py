@@ -5,10 +5,10 @@ from pathlib import Path
 
 import yaml
 
-from localagent.model import ModelConfig
+from openlocalagent.model import ModelConfig
 
 ROOT = Path(__file__).resolve().parents[1]
-TRAIN_ROOT = ROOT / "configs" / "train"
+PRETRAIN_ROOT = ROOT / "configs" / "pretrain"
 DATA_ROOT = ROOT / "configs" / "data"
 SEQ_LEN = 2048
 TOKENS_PER_UPDATE = 2 * 8 * SEQ_LEN
@@ -16,7 +16,7 @@ MINIMUM_TOKENS = 19_628_032
 
 
 def _load(name: str) -> dict:
-    return yaml.safe_load((TRAIN_ROOT / name).read_text(encoding="utf-8"))
+    return yaml.safe_load((PRETRAIN_ROOT / name).read_text(encoding="utf-8"))
 
 
 def _without_pair_identity(config: dict) -> dict:
@@ -93,11 +93,11 @@ def test_tier_freeze_names_every_consumer_once() -> None:
     consumers = freeze["training_configs"]
     assert len(consumers) == len(set(consumers)) == 5
     assert set(consumers) == {
-        "configs/train/pretrain-paper-tier-1m.yaml",
-        "configs/train/pretrain-paper-tier-10m-hybrid.yaml",
-        "configs/train/pretrain-paper-tier-10m-attn.yaml",
-        "configs/train/pretrain-paper-tier-96m-hybrid.yaml",
-        "configs/train/pretrain-paper-tier-96m-attn.yaml",
+        "configs/pretrain/pretrain-paper-tier-1m.yaml",
+        "configs/pretrain/pretrain-paper-tier-10m-hybrid.yaml",
+        "configs/pretrain/pretrain-paper-tier-10m-attn.yaml",
+        "configs/pretrain/pretrain-paper-tier-96m-hybrid.yaml",
+        "configs/pretrain/pretrain-paper-tier-96m-attn.yaml",
     }
     assert freeze["tokenizer"] == {
         "kind": "bpe",

@@ -8,10 +8,10 @@ from pathlib import Path
 import pytest
 import yaml
 
-import localagent.data.browsergym_capture as browsergym_capture
-import localagent.data.browsergym_prompts as browsergym_prompts
+import openlocalagent.data.adapters.browsergym_capture as browsergym_capture
+import openlocalagent.data.adapters.browsergym_prompts as browsergym_prompts
 import prompt_freezer_helpers
-from localagent.data.browsergym_prompts import (
+from openlocalagent.data.adapters.browsergym_prompts import (
     BROWSERGYM_PROMPT_ADAPTER,
     BROWSERGYM_PROMPT_AUDIT_SCHEMA_VERSION,
     PRODUCTION_BROWSERGYM_REVISION,

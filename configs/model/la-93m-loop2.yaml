@@ -1,0 +1,23 @@
+# la-93m with the shared block stack run twice (Universal-Transformer depth recurrence).
+# Same parameters (plus a 2 x 640 loop embedding), effective depth 36, about twice the FLOPs per
+# token and twice the KV/conv state. Control for the recurrent-MoE question: does recycling compute
+# through the same weights buy what a wider model buys?
+name: la-93m-loop2
+vocab_size: 16384
+d_model: 640
+n_layers: 18
+n_loops: 2
+n_heads: 10
+n_kv_heads: 1
+ffn_hidden: 1664
+max_seq_len: 4096
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types:
+  [conv, conv, attn, conv, conv, attn, conv, conv, attn, conv, conv, attn,
+   conv, conv, attn, conv, conv, attn]
+param_budget: 100000000

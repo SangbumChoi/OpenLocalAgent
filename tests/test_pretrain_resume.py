@@ -4,11 +4,11 @@ import pytest
 import torch
 import yaml
 
-from localagent.data.pretrain_corpus import pack_shards
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ByteTokenizer
-from localagent.train.pretrain import pretrain
-from localagent.train.pretrain import run as run_pretrain
+from openlocalagent.data.corpus.pretrain_corpus import pack_shards
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ByteTokenizer
+from openlocalagent.train.pretrain import pretrain
+from openlocalagent.train.pretrain import run as run_pretrain
 
 
 def _model():

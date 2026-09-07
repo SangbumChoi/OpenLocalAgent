@@ -10,12 +10,12 @@ import pytest
 import torch
 import yaml
 
-from localagent.agent.dense_selector import DenseToolSelector
-from localagent.agent.pointer_head import PointerHead
-from localagent.agent.routes import RouteHead
-from localagent.agent.tool_head import ToolHead, _feat
-from localagent.agent.toolset import STANDARD_TOOLS
-from localagent.data.conversation_artifact import (
+from openlocalagent.agent.dense_selector import DenseToolSelector
+from openlocalagent.agent.pointer_head import PointerHead
+from openlocalagent.agent.routes import RouteHead
+from openlocalagent.agent.tool_head import ToolHead, _feat
+from openlocalagent.agent.toolset import STANDARD_TOOLS
+from openlocalagent.data.conversation_artifact import (
     CONVERSATION_FORMAT,
     CONVERSATION_SERIALIZATION,
     MANIFEST_KIND,
@@ -23,14 +23,14 @@ from localagent.data.conversation_artifact import (
     FileIdentity,
     self_hashed_manifest,
 )
-from localagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ASSISTANT, USER, ByteTokenizer
-from localagent.train.midtrain import run as run_midtrain
-from localagent.train.rl import _rollout_reward
-from localagent.train.rl import run as run_rl
-from localagent.train.sft import run as run_sft
-from localagent.train.stage_data import (
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ASSISTANT, USER, ByteTokenizer
+from openlocalagent.train.midtrain import run as run_midtrain
+from openlocalagent.train.rl import _rollout_reward
+from openlocalagent.train.rl import run as run_rl
+from openlocalagent.train.sft import run as run_sft
+from openlocalagent.train.stage_data import (
     LINEAGE_VERSION,
     probe_decisions,
     read_conversations,

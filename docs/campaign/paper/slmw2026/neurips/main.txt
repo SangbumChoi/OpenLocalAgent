@@ -1,0 +1,1396 @@
+       OpenLocalAgent: Transfer and Task Completion in
+                 Small Tool-Calling Models
+
+
+                                                  Anonymous Author(s)
+                                                      Afﬁliation
+                                                       Address
+                                                        email
+
+
+
+                                                         Abstract
+1              State-of-the-art tool-calling agents are built on large language models, and the
+2              ﬁeld’s attention follows them, so the abilities of models in the tens of millions
+3              of parameters are rarely examined. We give an end-to-end recipe for a 10 to
+4              95M parameter tool caller, spanning pretraining, midtraining, ﬁne-tuning, and
+5              episode-level supervision, and price each ingredient against nineteen released
+6              checkpoints under one harness on ten public benchmarks. Data and additional pre-
+7              training compute transfer selectively: an imported split improves predominantly
+8              the benchmarks whose tool inventory it shares, and longer pretraining carries
+9              never-trained suites past chance. Naïve cross-shape weight projection does not
+10             help under the maps tested. Coordinate-preserving projections from larger models
+11             do not improve downstream suite scores over random initialisation, though same-
+12             shape weights transfer strongly. Single-call accuracy does not yield task comple-
+13             tion in our simulator: all single-call-trained checkpoints complete zero multi-step
+14             episodes. Episode supervision at a 12.5% mixture share lifts completion to 17.6 to
+15             34.3% without lowering the ten-suite mean, and an oracle decomposition identi-
+16             ﬁes argument ﬁdelity, rather than tool ordering, as the larger remaining bottleneck
+17             in this simulator.
+
+
+18   1 Introduction
+19   Research on tool-calling agents advances on the back of large language models, and open releases
+20   follow the same curve. General-purpose open-weight families commonly bottom out near 0.6B pa-
+21   rameters [9,10], and the smallest general instruction-tuned baseline here is 135M [8]. Specialists
+22   such as the 45M needle2 [37] reach lower and accept runtime tool schemas. What remains rare is
+23   a controlled, stage-by-stage study of catalog-conditioned models from ten to a hundred million pa-
+24   rameters, even though smartphones, Raspberry Pis and low-power embedded systems carry latency
+25   budgets independent of the release curve.
+26   Shrinking past the line is easy; one cuts width, depth, vocabulary and context until a design ﬁts
+27   100M. Making the result worth deploying is hard, because choosing a custom architecture forfeits
+28   compatible released weights. No released pretrained checkpoint shares the newly chosen shape, and
+29   everything the model knows must be put there by training. We ask how tool calling against live
+30   catalogs, and the multi-step task completion a deployed agent needs, are trained into models of 10
+31   to 95M parameters, and what each ingredient of the recipe is worth.
+32   We answer by measurement, with a custom family of 10.5M, 43M and 95.3M models as the in-
+33   strument. One harness applies a single prompt contract, parser and set of chance ﬂoors to nineteen
+34   released checkpoints on ten public agent benchmarks. Fine-tuning is matched in the controlled
+35   comparisons; the stronger ﬁve-source shipped recipe is labelled separately. Decode throughput is
+36   reported alongside accuracy on one server CPU at four threads.
+
+     Submitted to 40th Conference on Neural Information Processing Systems (NeurIPS 2026). Do not distribute.
+37   Three ﬁndings organise the paper. Data and additional pretraining compute transfer selectively; an
+38   imported split improves predominantly the benchmarks whose tool inventory it shares, and longer
+39   pretraining carries never-trained suites past chance (§4). The coordinate-preserving cross-shape
+40   projections tested here do not improve downstream suite scores over random initialisation, though
+41   same-shape weights transfer strongly (§4). And single-call accuracy does not yield task comple-
+42   tion in our simulator; every single-call-trained checkpoint completes zero multi-step episodes until
+43   episode-level supervision enters the mixture, which lifts completion to 17.6 to 34.3% and produces
+44   non-zero completion in two open-model controls (§5, App. E). Figure 1 states these results on the
+45   architecture.
+
+
+46   2 Related work
+
+47   Small models as agents. Tool use in LLMs descends from Toolformer [52], ReAct [53] and Gorilla
+48   [54]; this report asks what survives two orders of magnitude below their usual scale. Belcak et al.
+49   [14] argue that repetitive, schema-constrained agent calls suit small models, but their range is 1B to
+50   7B. We study a three-size 10M to 95M family under one intervention ledger; the gap is controlled
+51   evidence at this scale, not checkpoint availability itself.
+52   Decomposition into small specialists. Shen et al. [15] show a single small model is a weak tool
+53   learner and recover performance by splitting the agent into separately trained planner, caller and
+54   summariser models; Żywot et al. [16] report that orchestrated collectives of small agents can beat
+55   one larger model. Both add structure at inference time; we use one model per decision, without a
+56   planner-caller-summariser ensemble.
+57   Edge deployment of tool callers. TinyAgent [13] ﬁne-tunes 1.1B and 7B models and uses tool
+58   retrieval to shorten prompts. MobileLLM [26] designs sub-billion architectures and includes API-
+59   calling evaluation, although tool calling is not its primary training focus. Octopus v2 [27] maps a
+60   ﬁxed function pool to dedicated functional tokens, reducing context and selection latency while re-
+61   quiring added tokens and further training to extend the pool. Hammer [28] targets cross-benchmark
+62   robustness with irrelevant-function augmentation and function masking. These systems span a con-
+63   tinuum rather than a strict ﬁxed-versus-prompt binary. Our models and the current needle2 [37] both
+64   accept runtime tool descriptions; needle2 additionally retrieves a top-ﬁve subset and applies schema-
+65   compiled constrained decoding, whereas we study free-generation catalog conditioning across train-
+66   ing stages and multi-step episodes.
+67   Multi-step tool use. BUTTON [55] synthesises compositional multi-turn trajectories, PARL-MT
+68   [56] trains progress awareness, and tau-bench [57] and ToolSandbox [39] evaluate stateful comple-
+69   tion rather than isolated calls. We ask a narrower scale question: whether a sparse episode mixture
+70   creates completion at 10 to 95M parameters, and what it costs on the single-call suites.
+71   Weight reuse across shapes. Net2Net [18] and bert2BERT [19] grow a trained network function-
+72   preservingly; LiGO [20] learns the growth operator; HyperCloning [21] and Weight Subcloning
+73   [22] transfer initialisation between sizes. Wiring Beats Blending [58] shows within Pythia that
+74   dense maps destroy structure while selection plus compensation can retain initialisation value. Our
+75   transfer cell is different: a cross-family, cross-architecture coordinate-preserving slice tested as a
+76   substitute for pretraining (§4, App. B). At ﬁner granularity, Yu et al. [46] identify individual super
+77   weights; our band interventions ask whether update magnitude predicts which regions are useful to
+78   transfer or adapt.
+
+
+79   3 One harness, ten benchmarks: how the models compare
+
+80   The practitioner’s decision has three candidate answers, in the order they arise: import open data;
+81   design the architecture when latency forces a shape no release ﬁts; then import open weights into
+82   it. This section ﬁxes the measurement machinery and reads Table 1; §4 prices the transfer routes
+83   lever by lever; §5 tests whether single-call accuracy becomes task completion and what episode
+84   supervision costs; §6 stress-tests the mechanism and states the claim boundaries. App. E gives the
+85   full episode protocol, error proﬁles, seeds and controls.
+86   The evaluation pipeline (Q4). Ten public suites are scored: three GUI-control (AndroidControl,
+87   Mind2Web, AgentNet) and seven function-calling and tool-use (ToolACE, xLAM, BFCL, Tool-
+
+                                                       2
+      Figure 1: The architecture, with the paper’s questions drawn on it. Centre: the layer spine (em-
+      bedding with the 16k task vocabulary, 18 pre-norm blocks of sequence mixer and SwiGLU feed-
+      forward, LM head), trained on task and catalog tokens toward the tool call. Left: the two sequence-
+      mixer alternatives exploded, the gated short-convolution mixer (12 of 18 layers) and the MQA at-
+      tention mixer with QK-Norm (6 of 18). Right: the open ecosystem the questions draw on, its
+      distillation data and released checkpoints, and the four questions: Q1 what to import into training
+      (§4), Q2 whether weights cross the architecture boundary and which regions remain reusable (§4,
+      App. B), Q3 how task completion is trained and what it costs (§5, App. E), and Q4 how any of it is
+      measured (§3, App. A).
+
+
+88    Bench, ToolSandbox, MCP-Atlas, Mobile-Actions), each on its entire evaluation pool. Every row
+89    ﬂows through one pipe: the observation and the task’s own tool catalog are rendered through the
+90    model’s chat template, one parser extracts the ﬁrst call in any emitted spelling, and the call is scored
+91    against the gold; decoding is batched (App. D). Each task carries its own catalog (2.1 to 33 candi-
+92    dates) and several suites have degenerate answer distributions, so raw accuracy misleads: we report
+93    majority-class and chance-in-catalog ﬂoors [29], and read no difference smaller than the measured
+94    replicate spread. The instruction-tuned and generic open blocks use the same four-corpus union
+95    (16,300 rows; 8,000 sampled per run), step budget, batch and selected update type: full-parameter
+96    updates, AdamW at 2e-5, batch 8, 600 steps (the adapter alternative is priced in App. B). Learn-
+97    ing rates and context lengths remain family-speciﬁc, and needle2 uses its vendor trainer (App. B).
+98    Two metrics: function-name match, naming the gold action or tool, and exact match, adding ev-
+99    ery argument; throughput is the median of three sustained-decode measurements, 64 tokens after a
+100   512-token preﬁll on four CPU threads.
+101   Models under test. The custom models are LocalAgent-11M, LocalAgent-43M and LocalAgent-
+102   96M (10.5M, 42.8M and 95.3M parameters), whose weights we pretrain ourselves rather than adopt:
+103   decoder-only, 16k byte-pair vocabulary, one family scaled by depth and width, the 43M sited at
+104   needle2’s 45M point. All three run one chain: 16,000-step pretraining, 700-step midtrain, then full-
+105   parameter SFT, the update type every row in Table 1 now shares. Every accuracy cell in Table 1 is
+106   measured in this study; needle2’s throughput is the stated exception.
+107   Who leads, and what that means. Fine-tuning improves 103 of 110 released model-suite cells, but
+108   released scores partly measure format compliance and are omitted from Table 1. Fine-tuned Qwen3-
+109   0.6B has the best function-name match on ﬁve of the ten suites; Granite-4.0-350M takes Mind2Web;
+110   DistilGPT-2 takes AgentNet; LFM2-700M takes ToolBench; SmolLM2-135M-Inst takes MCP-A;
+111   needle2 takes the 17-row ToolSandbox projection. The LocalAgent-96M row has the best exact
+112   match on Mobile-Actions. ToolBench makes the gap clear: chance is 22.9%; every instruction-tuned
+113   release clears it (44.5 to 66.7%), while the custom rows reach 28.2 to 41.2% only after importing
+114   a covered split and otherwise remain below chance (§4). Residual cross-model differences are not
+115   architecture effects alone: pretraining corpus and budget, tokenizer, chat template and architecture
+116   co-vary. Section 4 intervenes on data and weights within the custom family; App. C isolates the
+117   mixer at ﬁxed size. Mind2Web is a warning, not a win: instruction-tuned models cluster at its 78.6%
+
+                                                         3
+      Table 1: Three ways to obtain a device agent, one harness, one prompt, one parser. Every cell is
+      after ﬁne-tuning and reads function-name match (exact match), in %, full evaluation pools; tok/s is
+      sustained CPU decode. Open models are ﬁne-tuned under the shared recipe (full-parameter AdamW
+      2e-5, the method App. B’s block comparison selects; corpus, step budget, batch and update type
+      shared; per-family rates and context lengths in App. B). This-work rows are the models as shipped,
+      one recipe end to end (16,000-step pretraining, 700-step midtrain, the ﬁve-source SFT of §4); App.
+      B rescores the ladder under the matched stage. The generic block is §4’s substitution arm under
+      the same stage (ladder reading: App. C). Exact match adds every argument; MCP-Atlas ships no
+      schemas and ToolSandbox is scored name-match only, so those columns carry the name score alone
+      (scope notes: App. A). Best function-name match per suite in bold, best exact match underlined. †:
+      needle2 self-reports through its own 2-bit engine. ‡: Granite-4.0-350M’s cache is incompatible with
+      the installed transformers. Suite provenance, pool sizes and ﬂoors: App. A.
+      Model                      Params (M) tok/s                  GUI control                                                  function calling
+                                                      AndroidCtrl Mind2Web       AgentNet      ToolACE          xLAM          BFCL ToolBench ToolSB MCP-A             MobAct
+      Open models: ﬁne-tuned under the shared recipe
+      needle2 [37]                        45 469† 23.3 (15.3) 11.5 (0.0)          8.9 (0.0)   61.2 (34.2)   89.4 (40.0)   73.5 (23.5)   24.7 (14.3)   70.6    2.4   71.3 (28.4)
+      SmolLM2-135M-Inst [8]              135     62 67.0 (42.1) 79.8 (0.8)       53.8 (0.2)   70.8 (24.4)   84.0 (37.7)   91.2 (32.4)   44.5 (21.3)    5.9   13.3   66.5 (20.3)
+      LFM2.5-230M [10]                   230     59 80.5 (48.9) 80.2 (1.2)       70.1 (0.1)   89.6 (49.8)   97.0 (61.0)   92.2 (46.6)   55.5 (35.4)   11.8    3.8   94.9 (47.0)
+      Granite-4.0-H-350M [36]            340     30 67.0 (45.4) 80.2 (1.2)       58.3 (0.1)   89.0 (40.7)   94.0 (56.0)   89.7 (44.6)   56.9 (36.5)   23.5   12.3   88.4 (36.9)
+      Granite-4.0-350M [36]              352 —‡ 80.2 (48.5) 81.3 (0.8)           51.5 (0.5)   90.5 (48.6)   96.3 (34.3)   94.1 (51.5)   62.7 (41.9)   11.8   11.1   96.5 (40.5)
+      LFM2-350M [10]                     354     39 80.6 (48.3) 80.2 (0.8)       67.5 (0.1)   89.5 (47.8)   96.0 (55.1)   93.1 (54.9)   58.1 (37.7)    5.9    5.7   95.2 (56.2)
+      SmolLM2-360M-Inst [8]              362     33 78.9 (47.3) 80.2 (0.8)       22.6 (1.0)   85.2 (40.1)   94.3 (58.9)   95.6 (55.9)   52.3 (32.2)   11.8    8.5   97.5 (39.3)
+      Qwen2.5-0.5B-Inst [9]              494     30 80.5 (48.2) 80.2 (0.4)       26.9 (0.7)   88.7 (47.7)   96.2 (27.8)   94.1 (52.0)   59.1 (40.2)   23.5   13.1   98.6 (52.9)
+      Qwen2.5-Coder-0.5B [9]             494     28 80.8 (49.3) 80.2 (0.0)       54.8 (0.4)   91.8 (52.3)   96.6 (60.8)   95.6 (56.9)   59.4 (40.9)   29.4   11.5   98.8 (53.9)
+      danube3-500M-chat [11]             514     30 80.3 (49.0) 78.6 (1.6)       69.1 (0.3)   86.7 (34.6)   93.5 (36.0)   91.7 (42.2)   58.8 (37.1)    5.9    8.7   94.5 (20.4)
+      Qwen3-0.6B [9]                     596     21 80.9 (50.3) 80.2 (0.8)       52.1 (1.3)   92.2 (54.5)   97.4 (58.1)   97.1 (61.3)   65.4 (44.7)   47.1    9.9   99.6 (64.1)
+      LFM2-700M [10]                     742     21 67.5 (49.8) 80.2 (1.6)       64.9 (0.3)   91.3 (51.8)   96.7 (57.5)   94.1 (58.3)   66.7 (48.0)    5.9   12.5   94.8 (62.5)
+      Generic pretrained backbones under the same stage (§4)
+      Pythia-70M [47]                     70 208         37.1 (8.8) 29.8 (0.0)   21.6 (0.0)    17.3 (0.9)    20.8 (0.7)    23.5 (0.0)   5.4 (1.3)      5.9    0.0     1.5 (0.0)
+      DistilGPT-2 [49]                    82 118 49.0 (18.9) 80.2 (0.4)          72.1 (0.0)    52.2 (7.3)    59.5 (8.7)    74.5 (6.4) 31.3 (9.0)      23.5    3.8    48.5 (3.2)
+      GPT-2 [49]                         124     83 50.8 (27.0) 60.3 (0.0)       63.2 (0.1)   58.9 (13.2)   69.9 (15.1)   83.8 (12.3) 30.0 (7.9)       5.9    6.9   49.9 (17.0)
+      Pythia-160M [47]                   162     78 67.3 (18.9) 44.4 (0.0)       58.2 (0.1)   48.1 (10.1)    55.4 (6.2)    62.3 (6.4) 15.4 (6.7)       5.9    1.0    11.1 (3.2)
+      Mamba-370M [48]                    372     25 54.2 (30.9) 80.2 (0.4)       65.9 (0.1)   67.1 (26.9)   79.5 (36.8)   80.9 (34.8) 39.9 (21.8)      5.9    7.1   41.5 (20.4)
+      Pythia-410M [47]                   405     31 80.3 (45.7) 81.0 (1.2)       60.2 (0.1)   82.2 (34.0)   90.6 (46.9)   90.7 (41.2) 50.2 (32.9)     11.8    6.5   93.2 (14.8)
+      Mamba-790M [48]                    793     16 60.7 (30.1) 80.2 (0.0)       56.9 (0.1)   72.8 (31.5)   86.7 (46.9)   89.7 (43.6) 41.3 (26.8)     17.6    8.5   89.5 (39.3)
+      This work: architecture designed for the budget, as shipped
+      LocalAgent-11M                      11 604 67.1 (39.4) 80.2 (0.8)          55.5 (0.0) 33.4 (9.6) 73.1 (34.1) 49.0 (8.8) 28.2 (13.1)              0.0    4.2 80.6 (67.2)
+      LocalAgent-43M                      43 173 65.7 (40.8) 80.2 (0.8)          38.0 (0.4) 52.5 (20.8) 91.3 (49.3) 69.1 (14.7) 41.0 (20.8)            0.0    2.0 81.2 (69.5)
+      LocalAgent-96M                      95     85 67.4 (41.9) 80.2 (0.8)       47.3 (0.0) 58.5 (25.0) 90.1 (50.2) 66.2 (15.2) 41.2 (20.7)            0.0    2.6 81.9 (70.2)
+
+
+
+
+118   majority ﬂoor (78.6 to 81.3; ours 80.2), so those scores do not demonstrate useful control. Under
+119   the matched stage, LocalAgent-43M averages 39.6 against needle2’s 43.7, and LocalAgent-96M
+120   numerically matches 43.7; excluding the 17-row ToolSandbox projection gives 48.5 against 40.7.
+121   The shipped ﬁve-source 43M reaches 52.1, but no open model has run that recipe, so it measures the
+122   recipe, not an architecture advantage (App. B). The robust architectural result is throughput: 604
+123   tok/s on four CPU threads for 11M versus about 30 for 0.5B models under this protocol. This is a
+124   server-CPU result, not a phone or microcontroller claim; needle2’s self-reported 2-bit speed is not
+125   directly comparable.
+
+
+126   4 Data, weights, or neither: the intervention ledger
+
+127   With the baseline tradeoffs established, each intervention in Table 2 runs against the control isolating
+128   it, chain and hyper-parameters ﬁxed. Terms: adoption copies weights between identical shapes,
+129   projection crosses a shape change; union arms train on the union corpus, wide adds xLAM’s split,
+130   +teacher relabels it.
+131   Generic backbones as a control for purpose pretraining. We compare the generic block with the
+132   matched-stage LocalAgent-96M rescore (App. B), not its stronger ﬁve-source shipped row, and re-
+133   port ten-suite / seven-open-catalog means. Pythia scales from 16.3/10.6 (70M) to 36.9/28.5 (160M)
+134   and 64.7/60.7 (410M); LocalAgent-96M lands at 43.7/29.8, above Pythia-160M overall, level on
+135   open catalogs, and below Pythia-410M. The result is not a universal purpose-pretraining advantage:
+136   DistilGPT-2-82M reaches 49.5/41.9. Against Pythia-160M, only ToolBench clears the replicate
+137   spread (+8.2), and LocalAgent’s 23.6 remains near its 22.9% chance ﬂoor; ToolACE (−4.4), xLAM
+138   (+1.3), BFCL (+2.0) and AndroidControl (+11.9) remain inside their spreads, while Mind2Web is
+139   majority-ﬂoor dominated. The shipped 96M’s 53.5/48.6 is unmatched and its gains concentrate in
+140   inventories added by ﬁve-source SFT, analysed below. Thus the matched evidence places the 96M
+141   between generic Pythia scales; corpus, tokenizer, architecture and budget still co-vary.
+
+                                                                                         4
+142   Covered-inventory data transfers; the tested cross-shape projections do not. Adding one open
+143   split (xLAM’s own, 18,000 rows after a prompt-hash check against the evaluation shards) moves
+144   xLAM 26.7 points, 3.4× its spread, from below chance-in-catalog to well above it. Relabelling that
+145   corpus with the strongest ﬁne-tuned teacher (sequence-level distillation [23], the rung that remains
+146   when vocabularies differ [24]), keeping the teacher’s call only where it agrees with the gold, recov-
+147   ers the device-control points widening cost, inside their spreads, so suggestive only. Projecting a
+148   differently-shaped open checkpoint into our model clears nothing on any open-catalog suite under
+149   the coordinate-preserving maps we test; a learned growth operator in the LiGO style [20] is the
+150   untested alternative.
+151   The dominant measured mechanism is inventory coverage, not broad catalog skill. xLAM rises
+152   26.7 while ToolACE, equally open-catalog, does not move: 99.4% of xLAM’s evaluation tool names
+153   occur in the imported split, against 1.0% of ToolACE’s, and the same import moves ToolBench,
+154   0.0% of whose gold tools it covers, from 12.4 to 11.5, i.e. nowhere. The import primarily teaches
+155   the inventory the evaluation will ask about, rather than a general method for reading an unfamiliar
+156   one, though the resulting behaviour is not mere lookup: renaming its tools costs the 96M rung
+157   under four points and the 11M rung thirty-two (App. B). Hammer [28] documents this name-keyed
+158   shortcutting [17]; the audit turns it into a number to compute before training, the evaluation set’s
+159   tool-name coverage of any imported split. What data import never bought, longer pretraining did:
+160   the same 465M-token corpus run for 4.5 epochs (16,000 steps against 1,599, 3.3 h) moves ToolACE
+161   +12.1 and ToolBench +9.0 (each clearing its spread), BFCL +11.7 inside its wide one, and lifts both
+162   never-trained suites above their chance-in-catalog ﬂoors for the ﬁrst time. A fresh-corpus arm at the
+163   same step count reproduces the ToolACE, xLAM and BFCL gains, whereas ToolBench retains its
+164   gain only with repeated text (App. C). Coverage and compute compose approximately on ToolACE
+165   (+8.0, +12.1, +20.1 together), while the combined arm gives back device-control points. Because
+166   BFCL and ToolBench supply no training rows, those gains cannot be direct adaptation to their train
+167   splits; they are consistent with improved catalog reading, subject to the corpus audit in App. A.
+
+      Table 2: Each intervention as a change in function-name match against the control that isolates it.
+      Every row intervenes on our pretrained model at the stated size; the open models never appear as
+      scored rows here, only as weight donors or teachers. Bold marks a gain above that suite’s measured
+      replicate spread (ﬁve runs, four seeds; App. A); everything else is within noise. Mind2Web is ﬂoor-
+      dominated and never bolded; AgentNet’s spread (25.3) leaves only the largest reallocations readable
+      there (the ToolBench import, identical-shape adoption and the 11M pretraining budget). Outside
+      Mind2Web, 10 of the 21 interventions clear the spread somewhere (the data import, both together at
+      95.3M, the ToolBench import and the Mobile-Actions import among them) and the remaining 11,
+      including teacher relabelling, the Toucan import and the schema-synth import, clear it on no suite.
+      Model                                     Intervention (vs our model’s own control) AndroidCtrl Mind2Web AgentNet ToolACE xLAM BFCL ToolBench ToolSB MCP-A MobAct
+      Import data into our model’s SFT
+      11M                                   add the xLAM train split to the union corpus      -12.3   -0.4   -16.2     -3.4   +26.8    -1.0    -0.9   +0.0   +2.8     +2.7
+      11M                        relabel that corpus with the strongest ﬁne-tuned teacher     +10.2   +0.8    +3.4     +3.5    +5.7    +4.4    -2.6   +0.0   -4.2     -6.7
+      96M                                                 the two imports above together       -2.2   +0.0   +21.3     +4.0   +44.6    +6.4    +9.3   +0.0   -1.8    +22.6
+      96M                                          add Toucan real-MCP trajectories [42]      -12.9   +0.0   -13.7     +2.8    +0.9    -1.0    +1.3   +0.0   +1.0     -1.6
+      96M               add schema-synth conversations from the ToolSandbox inventory          -1.5   -0.8   -32.4     -0.3    -0.9    -2.9    -0.9   +0.0   +0.4     -0.2
+      11M                              add the ToolBench train split (70% name overlap)        -2.3   +0.0   +34.4     -3.6    -3.3    +1.0   +22.0   +0.0   +3.0     -1.8
+      11M                             add the Mobile-Actions split its recipe had omitted      -1.0   -0.4   +11.2     -9.3    -8.7    -8.8    +0.9   +0.0   +0.0    +64.1
+      96M                             add device-assistant data (0% exact name overlap)       +12.4   -0.4    +8.8     -4.8    -2.5    -1.0    -3.8   +0.0   -0.4     +0.8
+      11M                                                     all four splits above at once    -7.4   +0.0   -25.8     -3.0    -5.0    -2.0   +15.1   +0.0   +1.2    +65.9
+      96M                                                     all four splits above at once    +0.3   +0.0   -15.5     -0.3    +0.2    -1.5    +9.3   +0.0   -0.8     -1.1
+      Import weights into our model
+      11M                       initialise from a projected Qwen2.5-0.5B (cross-family)        +1.9   +2.8    +0.1     +0.1    -0.1    +0.0    +0.0   +0.0   +0.0     +0.0
+      11M                    adopt an identical-shape sibling’s weights (positive control)    +16.3   +1.6   +42.6    +32.3   +36.7   +46.1    +9.9   +0.0   +2.2    +20.0
+      11M                          train under a donor’s per-module learning-rate proﬁle       -3.2   +0.0   -12.9     -0.5    +0.2    +1.5    +1.7   +0.0   +0.8     +4.9
+      Scale the model
+      11M→96M                             grow the architecture, recipe unchanged              +0.8   +0.4    -1.8     +5.2    +7.3    +5.4    -2.5   +0.0   +0.6     -4.2
+      96M                                pretraining budget 1,599 → 16,000 steps               +9.0   +1.6    +4.3    +12.1    +2.9   +11.8    +9.0   +0.0   +2.2     +4.6
+      96M       coverage split and a stronger teacher on the 16,000-step backbone              -8.5   -0.8    -6.2     +8.0    +0.0    +6.4    -5.5   +0.0   -1.2     -3.7
+      11M     pretraining budget 1,599 → 16,000 steps under the ﬁve-source SFT                +11.2   +0.0   +51.1     +6.2    +9.9    +7.8    +4.2   +0.0   +2.8     -1.1
+      Swap the pretraining stream
+      96M                     curated web → dialogue and distillation text, SFT matched        +0.4   +0.0     +1.5   +4.5    +1.3   +6.4      -5.2   +0.0    -0.8    -0.5
+      96M                                 the swapped stream under the ﬁve-source SFT          +0.4   +0.8   +21.8    +2.6    +1.5   +2.5      -2.8   +0.0    -0.8    +0.9
+      11M                        the swapped stream under the ﬁve-source SFT at 10.5M          -2.9   +0.4    -17.1   +3.8    +0.7   -4.4      -1.2   +0.0    -0.2    -1.4
+      43M                          the swapped stream under the ﬁve-source SFT at 43M          +1.5   +0.4    -18.9    -2.5    -4.3 -13.2      -8.4   +0.0    -0.2    -0.2
+                                            replicate spread (noise band, 5 runs, 4 seeds)    ±14.8   ±2.4   ±25.3    ±6.5    ±7.8 ±16.7      ±6.4    ±5.9   ±2.2    ±19.7
+
+
+
+
+168   Where same-shape weights remain reusable. Same-shape region adoption [12] dissociates sharply
+169   from where ﬁne-tuning writes. Against the random-init control, the whole backbone gains 20.8
+170   points on the ten-suite mean and 21.0 on the seven open-catalog mean; attention alone gains
+
+                                                                                                 5
+171   11.3/14.7, retaining 54%/70% of those aggregate gains, while feed-forward gains only 2.3/0.6. Yet
+172   the update proﬁle shows ﬁne-tuning writing hardest exactly there. The causal band test agrees:
+173   adapting the third of layers ﬁne-tuning moves least recovers 85% of the all-layer gain against the
+174   most-written third’s 65% (three seeds per band, two models). Update magnitude therefore does not
+175   predict which region is most useful to adopt or adapt under these interventions. Cross-shape pro-
+176   jection fails for pretraining speciﬁcally: every donor from 1.4× to 6.3× lands at the ﬂoor on every
+177   open-catalog suite while keeping device-control accuracy; in these suites, the beneﬁt associated with
+178   pretraining concentrates in catalog reading and is absent after slicing. Anatomy, band test and ﬁgure:
+179   App. B.
+
+180   5 From calls to task completion, and what the recipe costs
+181   From a correct call to a completed task. Tables 1 and 2 score one call, but an agent acts against
+182   state produced by its earlier calls. We therefore evaluate policies in a stateful simulator with real
+183   tool preconditions and twelve error codes: the policy sees the goal, current state and last error, and
+184   success is a path-independent check on the ﬁnal state. The suite contains 210 held-out tasks over
+185   seven families and disjoint slot vocabularies; oracle replay completes 100.0% and uniform sampling
+186   0.5%. Single-call accuracy does not transfer: every Table 1 LocalAgent checkpoint completes 0.0%.
+187   The 96M checkpoint nevertheless emits a schema-valid call on 88% of steps and changes state on
+188   50%, showing that legality is not goal direction.
+      Table 3: Episode task completion in the stateful simulator (%, 210 tasks). Schema/Moved: fraction
+      of steps schema-valid / state-changing. Held-out: a never-trained three-goal composition. Full
+      proﬁles, open-model controls, seeds and paired tests: App. E.
+
+                          Policy                        Episode   Schema   Moved   Held-out
+                          Single-call checkpoint, 96M       0.0       88      50        0.0
+                          12.5% episodes, 11M              20.5       82      59        0.0
+                          12.5% episodes, 43M              34.3       87      81        0.0
+                          12.5% episodes, 96M              17.6       71      56        0.0
+                          38% episodes, 96M                25.2       87      77        0.0
+
+
+189   Episode supervision adds completion, but only inside the trained task family. Re-running the
+190   same ﬁne-tuning with episode decisions at a 12.5% mixture share reaches 20.5%, 34.3% and 17.6%
+191   completion at 11M, 43M and 96M. The ten-suite single-call mean rises at all three sizes; one suite-
+192   level regression exceeds its replicate spread (full ledger in App. E), so the aggregate gain is not a
+193   claim of no interference. The same intervention moves SmolLM2-135M from 0.0% to 8.6% and
+194   Qwen3-0.6B from 0.0% to 54.3% under their own recipes. A diagnostic on the 38% 96M arm sep-
+195   arates the remaining ceiling: giving the gold tool sequence leaves completion at 25.2%, whereas
+196   giving the gold arguments raises it to 78.6%, making argument ﬁdelity the larger measured bottle-
+197   neck in this simulator. Every trained checkpoint remains at 0.0% on the never-trained three-goal
+198   composition. These are controlled simulator results, not evidence of real-world or compositional
+199   task completion; protocol, seed variation, paired tests and error proﬁles are in App. E.
+
+200   6 Stress tests, general cost, and claim boundaries
+201   Is the xLAM gain keyed to names? Rewriting only names and gold answers separates catalog
+202   reading from lookup. LocalAgent-96M is robust: 90.1 unmodiﬁed, 83.4 with opaque identiﬁers
+203   and 86.3 with names rotated; LocalAgent-11M falls from 73.1 to 47.9/41.4. The shortcut is not
+204   family-speciﬁc: Qwen3-0.6B moves 97.5→93.5/44.7, and SmolLM2-135M to 59.3/45.3. Coverage
+205   predicts which suites move, but the 96M result survives name erasure and rotation; memorised
+206   lookup is the smaller rung’s mechanism, not the imported inventory’s only use.
+207   Fresh text tests whether longer pretraining is merely repetition. At the same 16,000-step bud-
+208   get, a correctly packed fresh-token arm reproduces the repeated 465M-token stream’s ToolACE,
+209   xLAM and BFCL gains, but gives back 8.1 of ToolBench’s 9.0 points, beyond that suite’s 6.4-point
+210   spread; device-control differences stay inside spread. Extra optimisation explains three suites, while
+211   ToolBench is repetition-keyed. Neither corpus is randomised, and domain overlap can survive the
+212   prompt-hash audit.
+
+                                                            6
+213   General-suite cost is small on average, not uniformly. On HellaSwag, Winogrande, ARC-e/c,
+214   OpenBookQA and MMLU, the eleven released baselines’ mean change spans −1.8 to +0.7 points,
+215   inside the ±2.9-point sampling error; Granite-4.0 nevertheless loses 5.7–7.3 on ARC-e. The custom
+216   family was not run here, so no preservation claim follows.
+
+      Table 4: General-suite change after the shared agent ﬁne-tuning recipe (percentage points; 300
+      identical rows before/after per suite), scored by length-normalised continuation likelihood. Mean is
+      unweighted across the six suites; absolute scores and chance ﬂoors are in App. C.
+
+      Model                         ARC-e ARC-c HellaSwag OBQA Wino MMLU mean ∆
+      SmolLM2-135M-Inst [8]           +2.0      -0.3         +1.3      +0.0    +2.7      -1.3     +0.73
+      LFM2.5-230M [10]                -2.0      -0.4         +1.0      +0.4    -0.3      +0.7     -0.10
+      LFM2-350M [10]                  +1.7      +0.7         +0.0      +0.0    +0.7      +0.4     +0.58
+      Granite-4.0-H-350M [36]         -5.7      -1.0         -1.3      -2.4    -2.3      +5.7     -1.17
+      Granite-4.0-350M [36]           -7.3      -3.4         +0.3      +0.3    -2.0      +1.3     -1.80
+      SmolLM2-360M-Inst [8]           +2.3      -1.7         +1.3      +0.3    -0.3      -3.0     -0.18
+      danube3-500M-chat [11]          +0.0      +0.0         +0.0      -0.3    +0.7      +3.0     +0.57
+      Qwen2.5-0.5B-Inst [9]           +3.4      +0.4         +0.0      -1.4    +2.0      +0.0     +0.73
+      Qwen2.5-Coder-0.5B [9]          +0.0      +0.7         +1.6      +0.0    +0.3      -0.3     +0.38
+      LFM2-700M [10]                  +1.4      -0.6         -0.3      +0.0    +0.4      -2.4     -0.25
+      Qwen3-0.6B [9]                  +1.7      -1.7         +0.0      -1.0    +0.6      +1.4     +0.17
+
+217   Claim boundaries. First, LocalAgent’s deployment result is four-thread server-CPU decode; App.
+218   A’s Galaxy S22 and Tab A8 measurements are for needle2’s 2-bit vendor engine and are not di-
+219   rectly comparable, so LocalAgent phone latency, memory, energy and thermals remain unmeasured.
+220   ToolBench is ﬁrst action, ToolSandbox has 17 rows, MCP-Atlas lacks schemas and the text-only
+221   GUI suites are ﬂoor-dominated, so none is an ofﬁcial interactive score. Most interventions are one
+222   checkpoint; the band is one conﬁguration’s threshold, not a per-model interval, and suite means are
+223   unweighted. Cross-family rows co-vary corpus, tokenizer, architecture, context, rate and budget; the
+224   shipped recipe is unmatched, and literal audits exclude direct but not semantic or upstream overlap.
+225   Task completion exists only in our simulator (§5, App. E), with every model at zero on the fully
+226   held-out composition.
+
+
+
+
+                                                       7
+227   References
+228    [1] Liu, W. et al. ToolACE: Winning the Points of LLM Function Calling. arXiv:2409.00920, 2024.
+
+229    [2] Li, W. et al. On the Effects of Data Scale on UI Control Agents (AndroidControl). NeurIPS D&B, arXiv:2406.03679,
+230        2024.
+
+231    [3] Deng, X. et al. Mind2Web: Towards a Generalist Agent for the Web. NeurIPS, 2023.
+
+232    [4] Zhang, Z. et al. AgentCPM-GUI: Building Mobile-Use Agents with Reinforcement Fine-Tuning. arXiv:2506.01391,
+233        2025.
+
+234    [5] Wang, X. et al. OpenCUA: Open Foundations for Computer-Use Agents (AgentNet dataset). arXiv:2508.09123, 2025.
+
+235    [6] Liu, Z. et al. APIGen: Automated Pipeline for Generating Veriﬁable and Diverse Function-Calling Datasets (xLAM-
+236        60k). NeurIPS D&B, arXiv:2406.18518, 2024.
+
+237    [7] Hu, E. J. et al. LoRA: Low-Rank Adaptation of Large Language Models. ICLR, 2022.
+
+238    [8] Allal, L. B. et al. SmolLM2: When Smol Goes Big. arXiv:2502.02737, 2025.
+
+239    [9] Qwen Team. Qwen2.5 (arXiv:2412.15115, 2024) and Qwen3 (arXiv:2505.09388, 2025) Technical Reports.
+
+240   [10] Liquid AI. LFM2 Technical Report. arXiv:2511.23404, 2025.
+
+241   [11] Pfeiffer, P. et al. H2O-Danube3 Technical Report. arXiv:2407.09276, 2024.
+
+242   [12] Neyshabur, B., Sedghi, H., Zhang, C. What is Being Transferred in Transfer Learning? NeurIPS, 2020.
+
+243   [13] Erdogan, L. E. et al. TinyAgent: Function Calling at the Edge. EMNLP (Demo), arXiv:2409.00608, 2024.
+
+244   [14] Belcak, P. et al. Small Language Models are the Future of Agentic AI. arXiv:2506.02153, 2025.
+
+245   [15] Shen, W. et al. Small LLMs Are Weak Tool Learners: A Multi-LLM Agent. arXiv:2401.07324, 2024.
+
+246   [16] Żywot, A. et al. Can Small Agents Collaborate to Beat a Single Large Language Model? arXiv:2601.11327, 2026.
+
+247   [17] Qin, Y. et al. ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs (ToolBench). ICLR,
+248        arXiv:2307.16789, 2024.
+
+249   [18] Chen, T., Goodfellow, I., Shlens, J. Net2Net:            Accelerating Learning via Knowledge Transfer. ICLR,
+250        arXiv:1511.05641, 2016.
+
+251   [19] Chen, C. et al. bert2BERT: Towards Reusable Pretrained Language Models. ACL, arXiv:2110.07143, 2022.
+
+252   [20] Wang, P. et al. Learning to Grow Pretrained Models for Efﬁcient Transformer Training (LiGO). ICLR,
+253        arXiv:2303.00980, 2023.
+
+254   [21] Samragh, M. et al. Scaling Smart: Accelerating LLM Pre-training with Small Model Initialization (HyperCloning).
+255        arXiv:2409.12903, 2024.
+
+256   [22] Samragh, M. et al. Weight Subcloning: Direct Initialization of Transformers Using Larger Pretrained Ones.
+257        arXiv:2312.09299, 2023.
+
+258   [23] Kim, Y., Rush, A. M. Sequence-Level Knowledge Distillation. EMNLP, arXiv:1606.07947, 2016.
+
+259   [24] Boizard, N. et al. Towards Cross-Tokenizer Distillation: the Universal Logit Distillation Loss. arXiv:2402.12030,
+260        2024.
+
+261   [25] Minixhofer, B., Paischer, F., Rekabsaz, N. WECHSEL: Effective Initialization of Subword Embeddings for Cross-
+262        lingual Transfer. NAACL, arXiv:2112.06598, 2022.
+
+263   [26] Liu, Z. et al. MobileLLM: Optimizing Sub-billion Parameter Language Models for On-Device Use Cases. ICML,
+264        arXiv:2402.14905, 2024.
+
+265   [27] Chen, W., Li, Z. Octopus v2: On-device Language Model for Super Agent. arXiv:2404.01744, 2024.
+
+266   [28] Lin, Q. et al. Hammer: Robust Function-Calling for On-Device Language Models via Function Masking. ICLR,
+267        arXiv:2410.04587, 2025.
+
+268   [29] Repantis, V. et al. How Many Tools Should an LLM Agent See? A Chance-Corrected Answer. arXiv:2605.24660,
+269        2026.
+
+
+                                                                8
+270   [30] Zhang, Q. et al. AdaLoRA: Adaptive Budget Allocation for Parameter-Efﬁcient Fine-Tuning. ICLR,
+271        arXiv:2303.10512, 2023.
+
+272   [31] Ben Zaken, E., Ravfogel, S., Goldberg, Y. BitFit: Simple Parameter-efﬁcient Fine-tuning for Transformer-based
+273        Masked LMs. ACL, arXiv:2106.10199, 2022.
+
+274   [32] Rücklé, A. et al. AdapterDrop: On the Efﬁciency of Adapters in Transformers. EMNLP, arXiv:2010.11918, 2021.
+
+275   [33] Lee, Y. et al. Surgical Fine-Tuning Improves Adaptation to Distribution Shifts. ICLR, arXiv:2210.11466, 2023.
+
+276   [34] Panigrahi, A., Saunshi, N., Zhao, H., Arora, S. Task-Speciﬁc Skill Localization in Fine-tuned Language Models.
+277        ICML, arXiv:2302.06600, 2023.
+
+278   [35] Hase, P., Bansal, M., Kim, B., Ghandeharioun, A. Does Localization Inform Editing? Surprising Differences in
+279        Causality-Based Localization vs. Knowledge Editing. NeurIPS, arXiv:2301.04213, 2023.
+
+280   [36] IBM Granite Team. Granite 4.0 Language Models. IBM Research, 2025.
+
+281   [37] Ndubuaku, H. et al. Needle 2: A 45M-Parameter Foundation Tool-Calling Model for Tiny Devices. Cactus Compute
+282        model and software release, 2026.
+
+283   [38] Patil, S. G., Mao, H., Ji, C. C.-J., Yan, F., Suresh, V., Stoica, I., Gonzalez, J. E. The Berkeley Function Calling
+284        Leaderboard (BFCL): From Tool Use to Agentic Evaluation of Large Language Models. ICML, PMLR 267, 2025.
+
+285   [39] Lu, J., Holleis, T., Zhang, Y. et al. ToolSandbox: A Stateful, Conversational, Interactive Evaluation Benchmark for
+286        LLM Tool Use Capabilities. arXiv:2408.04682, 2024.
+
+287   [40] Scale AI. MCP Atlas: Benchmarking Tool Use over Real MCP Servers. Technical report; dataset ScaleAI/MCP-Atlas
+288        (Hugging Face); code scaleapi/mcp-atlas (GitHub), 2025.
+
+289   [41] Google. Mobile Actions: Android system-tool function-calling traces, the FunctionGemma-270M training and evalu-
+290        ation set. Dataset google/mobile-actions (Hugging Face), 2025.
+
+291   [42] Agent Ark. Toucan-1.5M: 1.5M tool-agent trajectories synthesized from real-world MCP environments.
+292        arXiv:2510.01179; dataset Agent-Ark/Toucan-1.5M (Hugging Face), 2025.
+
+293   [43] Nous Research and Lambda. Hermes Agent Reasoning Traces: multi-turn tool-calling trajectories with executed tool
+294        results. Dataset lambda/hermes-agent-reasoning-traces (Hugging Face), 2026.
+
+295   [44] Glaive AI. Glaive Function Calling v2. Dataset glaiveai/glaive-function-calling-v2 (Hugging Face), 2023.
+
+296   [45] r0b0tlab. qwen3.8-max-glm5.2-kimi-k3-distillation: pooled frontier-model distillation traces. Hugging Face dataset,
+297        2026.
+
+298   [46] Yu, M. et al. The Super Weight in Large Language Models. arXiv:2411.07191, 2024.
+
+299   [47] Biderman, S. et al. Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling. ICML, 2023.
+
+300   [48] Gu, A., Dao, T. Mamba: Linear-Time Sequence Modeling with Selective State Spaces. COLM, 2024.
+
+301   [49] Radford, A. et al. Language Models are Unsupervised Multitask Learners (GPT-2). OpenAI, 2019; Sanh, V. et al.
+302        DistilBERT distillation applied as DistilGPT-2, 2019.
+
+303   [50] Ding, N. et al. Enhancing Chat Language Models by Scaling High-quality Instructional Conversations (UltraChat).
+304        EMNLP, 2023.
+
+305   [51] Bai, Y. et al. Training a Helpful and Harmless Assistant with RLHF (hh-rlhf). arXiv:2204.05862, 2022.
+
+306   [52] Schick, T. et al. Toolformer: Language Models Can Teach Themselves to Use Tools. NeurIPS, 2023.
+
+307   [53] Yao, S. et al. ReAct: Synergizing Reasoning and Acting in Language Models. ICLR, 2023.
+
+308   [54] Patil, S. G. et al. Gorilla: Large Language Model Connected with Massive APIs. NeurIPS, 2024.
+
+309   [55] Chen, M. et al. Facilitating Multi-turn Function Calling for LLMs via Compositional Instruction Tuning (BUTTON).
+310        ICLR, arXiv:2410.12952, 2025.
+
+311   [56] Chai, H. et al. PARL-MT: Learning to Call Functions in Multi-Turn Conversation with Progress Awareness.
+312        arXiv:2509.23206, 2025.
+
+313   [57] Yao, S., Shinn, N., Razavi, P., Narasimhan, K. tau-bench: A Benchmark for Tool-Agent-User Interaction in Real-
+314        World Domains. arXiv:2406.12045, 2024.
+
+315   [58] Yenugula, R. S. D. P. Wiring Beats Blending: What Transfers Between Transformer Sizes—and What Doesn’t.
+316        arXiv:2608.02829, 2026.
+
+
+
+                                                                 9
+317   A Corpus, suites, and further limitations
+318   These appendices expand the main text’s analyses; every headline number is in the body.
+319   Each suite’s source artifact, scored split, training-corpus use, and reference:
+
+      Table 5: Provenance of the ten evaluation suites. Rows = evaluation-pool size after normalisation;
+      appendix tables score the full pool where their arms have full-pool receipts and the ﬁrst-200 protocol
+      otherwise. Suites marked never contribute no training rows; the three union sources (§3) and three
+      §4 imports use the source’s own train split, deduplicated against the evaluation pool at the rendered-
+      prompt level.
+
+      Suite                Domain               Source artifact            Split scored               Rows    Train split used
+      AndroidControl [2]   mobile GUI           HF OfﬁcerChul/Android-     held-out,                  904     union corpus (§3)
+                                                Control-84k (text-only     action-balanced
+                                                mirror)
+      Mind2Web [3]         web GUI              HF osunlp/Mind2Web         held out from pinned       252     union corpus (§3)
+                                                                           train ﬁle
+      AgentNet [5]         desktop GUI          HF xlangai/AgentNet        evaluation-only            12,482 never
+                                                (OpenCUA)
+      ToolACE [1]          function calling     HF Team-ACE/ToolACE        held-out shard of the      949     union corpus (§3)
+                                                @ 6bda777c                 pinned release
+      xLAM [6]             function calling     HF Salesforce/xlam-        dataset authors’ test      2,941   wide import (§4)
+                                                function-calling-60k       shard
+      BFCL [38]            function calling     HF gorilla-llm/Berkeley-   evaluation-only            204     never
+                                                Function-Calling-
+                                                Leaderboard
+      ToolBench [17]       function calling     OpenBMB/ToolBench          ﬁrst-action projection,    687     never
+                                                (ToolLLM)                  evaluation-only
+                                                G1+G2+G3 DFS split
+      ToolSandbox [39]     function calling     GitHub                     single-tool, single-turn   17      never
+                                                apple/ToolSandbox          projection
+                                                scenarios
+      MCP-Atlas [40]       tool use (MCP)       HF ScaleAI/MCP-Atlas   ﬁrst-action projection         495     never
+                                                                       (495/500 open with a
+                                                                       call)
+      Mobile-Actions [41] mobile system tools HF google/mobile-actions dataset authors’ eval          961     wide3 import (§4)
+                                                                       split
+
+
+320   The AndroidControl deduplication. The text-only mirror replaces screenshots with a ﬁxed preﬁx
+321   plus the instruction, so episodes differing only in screen state collapse into byte-identical user turns;
+322   a test row is dropped when its user turn occurs in the training split. The 200-row protocol lost
+323   a quarter of the sample; the full 904-row pool loses 561 rows (62.1%), contamination larger than
+324   the sample suggested. Among surviving twins, one shares its gold call verbatim across splits (pure
+325   memorisation credit) while another’s golds differ only in capitalisation, charging the memoriser an
+326   exact-match error — why exact match falls harder than name match once twins are removed.
+327   ToolSandbox, what the projection shows. Our catalog-conditioned models emit fully parseable
+328   calls yet select the gold tool 0 of 17 times, indistinguishable from the 3.0% chance-in-catalog ﬂoor.
+329   Ranking all 33 candidates by length-normalised sequence logprob at an 8,192-token window hides
+330   no weak preference: mean gold rank 18.4/18.9 against a uniform 17.0 (z = +0.6/+0.8), reciprocal
+331   rank 0.114/0.099 against 0.124, top-ﬁve 2 of 17 against 2.6 expected. A disclosed control closes
+332   the loop: adding 1,066 conversations synthesised from the same 33 public schemas (no test scenario
+333   read) still selects gold 0 of 17, every other suite inside its spread. The deﬁcit is not name coverage.
+334   ToolBench’s ﬂoor is the most informative of the function-calling suites: 5.9 candidates per task
+335   against 2.1–3.4 for the others puts chance within the row’s own catalog at 22.9% rather than the
+336   45.8–61.4% those suites leave — the most headroom and the sharpest test of catalog reading; the
+337   novel-inventory suites leave lower ﬂoors still (MCP-Atlas 6.7%, ToolSandbox 3.0%).
+338   needle2, and what is and is not claimed. Cactus needle2 [37], the one released model in our size
+339   class (a 45M tool-calling specialist), is a 2-bit engine with grammar-constrained decoding, a top-5
+340   tool-retrieval head and a conﬁdence gate that abstains and escalates; scored through its own engine,
+341   catalogs above ﬁve tools pass through the retrieval head and abstentions count as unparsed, folding
+
+                                                                  10
+342   coverage and correctness together. As precision-when-answering (200-row audit): 90–100% on the
+343   four function-calling suites at 27–37% coverage; its one lead, ToolSandbox (64.7 vs our pretrained
+344   0/17), may reﬂect better compatibility with its pretrained device-assistant distribution or retrieval;
+345   this study does not isolate the cause. Its tok/s cell is the engine’s self-reported decode rate beside
+346   f16 models under the 512-preﬁll/64-decode protocol — not apples-to-apples — and its android build
+347   brackets a 5.8× hardware range: a Galaxy S22 sustains 643–654 tok/s at 23 MB peak RAM (top of
+348   the maker’s 300–700 claim), a sub-$200 Galaxy Tab A8 112 tok/s, below the claimed ﬂoor though
+349   interactive — this study’s only on-device measurements.
+350   needle2, ﬁne-tuned. The tuned variant trains through the vendor’s own trainer, crossing the engine
+351   boundary; it gains open-catalog calling like every model under the recipe (xLAM 34.3→89.4 at full
+352   pools) but, alone among them, loses device control (AndroidControl 37.9→23.3, where all eleven
+353   open baselines gain, +17.4 to +78.0). The vendor’s trainer does not update the conﬁdence head: the
+354   tuned row reports no calibrated conﬁdence and does not share the abstention behaviour above.
+355   The pretraining streams and the midtrain and SFT conversation splits are tabulated below; one SFT
+356   harness consumes them identically for every model, so a row in Table 1 or 2 differs from its neigh-
+357   bour only in the splits its recipe names.
+
+      Table 6: All splits pass the trainer contract (schema whitelist, gold-argument conformance,
+      duplicate-name and marker rejection, real-tokenizer length) and are deduplicated against the eval-
+      uation pools at the rendered-prompt level. Episode rows are one decision each, their user turn
+      byte-identical to the runtime’s observation; the 4× corpus is newly generated tasks at a higher error-
+      injection rate, not the base corpus repeated, and its evaluation split is unchanged. Together the three
+      tables cover every token any stage consumes.
+
+      Split                      Role                                   rows    Source and ﬁlter
+      merged-v2 union            midtrain agent mix; the shared SFT     16,300 four public corpora, dedup vs all eval
+                                 corpus                                        pools
+      distill2 train-clean       the union, teacher-relabelled (§4)     40,812 teacher call kept only on gold agreement
+      xLAM split                 §4 data-import arm                     18,000 Salesforce xlam-function-calling-60k [6]
+      Mobile-Actions train       the ladder’s device split              8,692 ofﬁcial train split [41]
+      ToolBench train            import arm, 70% eval-name overlap      6,000 from the 46,886-row ToolLLaMA split
+                                                                               [17]
+      Toucan calls               diverse real-MCP import                5,911 single-turn originals [42]
+      r0b0t calls                staged midtrain agentic split          4,845 tool rows of [45]
+      device-assistant           stem-overlap control (0% exact)        2,251 API-Bank train + ToolTalk scenarios
+      ToolSandbox schema-synth   same-inventory arm, disclosed          1,066 from the 33 public schemas; no test
+                                                                               scenario read
+      episode decisions (base)   agentic arms’ episode split (App. E)   9,072 1,400 generated tasks, 7 families
+                                                                               balanced, gold plans mean 4.9 / max 10
+                                                                               steps, 1.45M tokens; 2,312 recovery and
+                                                                               200 abstention decisions
+      episode decisions (4×)     the 4× arms’ split: new tasks, error   38,905 5,600 generated tasks, 7 families
+                                 injection 0.45 vs 0.35                        balanced, gold plans mean 4.9 / max 10
+                                                                               steps, 6.27M tokens; 11,797 recovery
+                                                                               and 800 abstention decisions
+
+
+358   One row set for every model. BFCL writes Python-ﬂavoured schema types, and its gold arguments
+359   do not always satisfy their own declared schema; a model that builds its own catalog never notices,
+360   while a catalog-conditioned model’s contract refuses such rows and emits nothing, which the scorer
+361   counts wrong — under the then-200-row protocol our models saw 94 of the 200 sampled rows
+362   and the others saw all of them. The normaliser now coerces the schemas and keeps only rows
+363   the contract will render (204 of 1,510 candidates survive), so both groups are scored on identical
+364   data; the correction moved LocalAgent-96M from 27.5% to 51.5% on BFCL and its parse rate from
+365   43.5% to 91.2%. The ﬁlter applies identically to every model; like ToolBench, this subset is not an
+366   ofﬁcial BFCL score and should not be quoted as one.
+367   The replicate noise ﬂoor. The per-suite spread every claim is read against is the range across ﬁve
+368   runs of one unchanged 10.5M conﬁguration, four training seeds between them, re-scored on the full
+369   pools; each suite’s spread is additionally ﬂoored at the value of one row of its pool: a 17-row suite
+370   cannot resolve a ﬁner difference whatever the replicates do. The band is Table 2’s last row.
+
+                                                               11
+371   Whether that ﬂoor does statistical work, and where it does not. It is a range over replicates, not
+372   a conﬁdence interval, and Table 2 reads 21 interventions against 9 readable suites, so multiplicity
+373   across 189 comparisons is a fair concern. Under a two-proportion z test on each cell’s own pool
+374   sizes, the band is stricter than a Bonferroni-corrected test on most cells but not on all. Of 210
+375   comparisons the band bolds 34; 28 clear Bonferroni at α = .05/189 (z > 3.48) and 6 do not: 4 on
+376   MCP-A (smallest z = 2.60, 1.6 → 4.4); 1 on Mind2Web (smallest z = 0.78, 78.6 → 81.3); 1 on
+377   ToolBench (smallest z = 3.26, 41.0 → 32.6). The failures sit where a base rate is near zero and the
+378   pool is small, so two or three points is large against the replicate band and small against the interval
+379   those rows admit. Those cells are bolded by our rule and should not be read as established; the
+380   MCP-Atlas gains in particular are movement off a ﬂoor, not a measured effect. Three caveats stand:
+381   the band is measured on one 10.5M conﬁguration and assumed to carry — checked at 96M with
+382   three seeds of the Table 1 arm, it holds on 8 of 10 suites and is exceeded on AgentNet (28.3 against
+383   25.3), MCP-A (4.8 against 2.2), so the bolded MCP-Atlas gains of two to three points sit inside the
+384   seed range measured at the very scale they are claimed at; it prices training-run variance while the z
+385   test prices only sampling; and on a small pool the band can be narrower than the interval that pool
+386   admits — the six exceptions above. Where they disagree we obey the band, except those cells. The
+387   z test is also unpaired where McNemar would have more power; the weaker test is conservative.
+388   Which noise source binds, per suite. The band prices training-run variance, not how precisely a
+389   suite can measure a rate — its pool size ﬁxes that; below, the 95% Wilson interval for a cell on each
+390   suite is set against the replicate band. On the large pools the band is the larger and seeds bind; on
+391   the small ones the pool binds, and no number of training runs would resolve a ﬁner difference.
+392   What the cost column measures, and what it does not. One server CPU at four threads, fp16,
+393   a 512-token prompt and a 64-token answer, repeated for every row of Table 1 under one protocol.
+394   Two quantities come out of that run: decode throughput, which the table reports, and preﬁll, time
+395   to ﬁrst token — 22.3 ms for the 10.5M hybrid, at 22,970 tokens/s. That rate is what a long catalog
+396   costs: the 33-schema ToolSandbox prompt, roughly seven times this one, is charged accordingly —
+397   a catalog-in-prompt cost paid before the ﬁrst token. Not measured: resident memory, energy per
+398   decision, and the motivating hardware — no number here was taken on a phone, Raspberry Pi or
+399   embedded board — and the order-of-magnitude decode gap over a 0.5B model is a statement about
+400   this machine under this protocol, not a device measurement.
+
+
+401   B Weight transfer in detail
+
+402   How each model family is ﬁne-tuned. Open baselines take full-parameter updates: AdamW 2e-
+403   5 with warmup-decay, batch 8 at maximum length 1,024, 600 steps on the union corpus, gradient
+404   steps skipped on non-ﬁnite norms. The adapter alternative — LoRA [7] at rank 16 (alpha 32, dropout
+405   0.05) on every attention and feed-forward projection, AdamW at 1e-4 — sums lower over the block
+406   (table below), so the gate selects full parameters; 1e-4 is a normal adapter rate, roughly ﬁve times a
+407   normal full-parameter one: each method runs at its own rate. One scoring exception: Granite-4.0-H
+408   is scored at batch 4, its mamba2 path materialising a six-index tensor whose 32-row batch requests
+409   144 GiB. The objective is token-level cross-entropy with prompt tokens masked (only the answer
+410   span trains) under each model’s own chat template. Declared exceptions: the Mamba baselines
+411   take the same full-parameter updates at batch 2, maximum length 768, for the torch-native scan’s
+412   memory, steps and rate unchanged (the released ladder in App. C keeps their earlier in/x/dt adapter
+413   exception); needle2 uses the vendor’s trainer — the one engine-boundary crossing — its conﬁdence
+414   head not updated (App. A). Our models take full-parameter SFT: length 2,048 under the openai-
+415   full-catalog contract, AdamW 2e-4 with WSD, micro-batch 8, accumulation 4 (effective batch 32),
+416   900 steps on two-source recipes, 1,500 on ﬁve-source (step count saturated; App. C). The weight-
+417   transfer arms below inherit these settings, varying only initialisation.
+418   Fairness of the shared recipe to the open models. Our models train full-parameter because this
+419   trainer has no adapter path, and the method gate has since selected full parameters for the open
+420   block, so update type is matched across Table 1; unmatched are learning rate (2e-4 under WSD
+421   against the block’s 2e-5) and the budget; the table below prices the choice. Re-ﬁne-tuning three
+422   block-spanning models with full parameters at three learning rates on the same corpus and budget
+423   lands the two methods within two points on both larger models at a rate chosen for full updates; the
+424   adapter is not carrying the comparison, and one method serves every open row.
+
+                                                        12
+      Table 7: Which conﬁguration produced each row family. The open-block row follows the method
+      gate; the Mamba and Granite-4.0-H exceptions are as stated above. Steps are optimisation steps;
+      batch is micro-batch × max length. Open episode arms (SmolLM2-135M, Qwen3-0.6B): 2,329
+      episode decisions sampled at seed 2026 into the 16,300-row union (12.5%); one training seed per
+      arm; control = the same model’s Table 1 checkpoint; no episode row exceeds the 1,024-token win-
+      dow (longest 731).
+      Rows                                Update type      Optimiser      Rate Steps               Batch                Corpus                 Script
+      Open block (11 models, Table 1)   full parameters       AdamW         2e-5 600          8 × 1,024          union (16,300)   ﬁnetune_public.py
+      Mamba pair & Granite-4.0-H               as above       as above  as above 600            2 × 768                   union   ﬁnetune_public.py
+      LoRA reference block (App. B)         LoRA r=16         AdamW         1e-4 600          8 × 1,024                   union   ﬁnetune_public.py
+      needle2                            vendor trainer vendor defaults       —   —                  —                    union          vendor CLI
+      This-work Table 1 rows            full parameters       AdamW 2e-4, WSD 1,500 8 × 2,048 (accum 4)              ﬁve-source   localagent train sft
+      This-work baserecipe (App. B)     full parameters       AdamW         1e-4 600          8 × 2,048                   union   localagent train sft
+      Agentic arms (App. E)             full parameters       AdamW 2e-4, WSD 1,500 8 × 2,048 (accum 4) ﬁve-source + episodes     localagent train sft
+      Open episode arms (App. E)        full parameters       AdamW         2e-5 600          8 × 1,024 union + episodes 12.5%    ﬁnetune_public.py
+
+
+
+
+425   Fine-tuning matched, pretraining each party’s own. The matched control gives our base the
+426   open block’s union corpus, 600 steps, batch 8 and AdamW 1e-4. That stage is the block’s LoRA-era
+427   recipe; Table 1’s block has since moved to full parameters at 2e-5, so this control matches its update
+428   type and differs in rate. Re-run at the block’s own 2e-5 the control means 41.6 against 43.7 at 95.3M;
+429   41.1 against 39.6 at 42.8M: the remaining rate asymmetry is worth -2.1/+1.5 points and ran mixed
+430   in sign, priced here rather than argued. LocalAgent-96M then averages 43.7, equal to needle2 (48.5
+431   against 40.7 excluding the 17-row ToolSandbox), below SmolLM2-135M’s 51.5 and Qwen3-0.6B’s
+432   69.9; our ladder is 35.1/39.6/43.7. This is generous to us: midtrain already consumed the union
+433   corpus, and our 2,048-token catalog is untruncated where open harnesses use 1,024.
+434   Where the ﬁve-source points sit. Every readable 43M/96M difference is on a function-calling
+435   suite whose split the ﬁve-source stage adds; uncovered suites do not move. The apparent 96M de-
+436   vice gains are inside spread (AndroidControl +11.8 versus 14.8; AgentNet +21.5 versus 25.3, with
+437   parse rate 67.6→98.6), so we claim none. Mobile-Actions shows naming rather than formatting:
+438   the matched arm parses 93.4% versus 82.5% yet names the tool 17.5% versus 81.9%. On the three
+439   largest drops, union/ﬁve-source name coverage is 14.3/100, 1.9/95.0 and 0.0/70.1%; corpus replace-
+440   ment buys +9.5/+16.4/+12.4 while extra budget buys only −2.6 to +2.5. ToolACE’s −14.9 at nearly
+441   ﬁxed coverage likely reﬂects teacher relabelling; AgentNet remains ﬂoor-dominated.
+442   The least-written third recovers most of the gain. Placement is documented as forgiving [30–32],
+443   shift-dependent [33], a poor guide to intervention [34, 35]; the band test: if ability lived where the
+444   update concentrates, the top third should recover the all-layer recipe and the bottom third should
+445   not. The opposite holds: over three seeds per band on two models, the bottom band recovers 85%
+446   of the gain against the top’s 65%, beating it by 13–16 points on AndroidControl with no seed-range
+447   overlap; a random third lands between. Update magnitude records where optimisation wrote, not
+448   where ability lives; scale relocates the site without changing it (Figure 2b). Depth pruning agrees:
+449   cut to 10 of 28 layers, Qwen3-0.6B keeps any function calling only under the least-written policy
+450   of four (ToolACE 10.0, xLAM 16.2, BFCL 8.8 against 0.0–3.4), though none clears chance: depth
+451   alone only chooses how the model breaks.
+
+
+
+
+      Figure 2: Each layer’s ∥∆W∥/∥W∥ divided by its model’s mean. (a) Mean and min–max band over
+      nine open families across three architecture classes: below the model’s own mean through the ﬁrst
+      third, above it thereafter (the two SmolLM2 outliers are tabulated in App. B). (b) Qwen3 at three
+      scales: the band moves later and turns bimodal at 4B.
+
+452   When shapes match and no projection is needed, parameter share is nearly inverted as a predictor
+453   of value: the embedding table, the largest region in a 16k-vocabulary model at this scale (59.8%
+454   of all weights), is worth less alone than the 40.2% that is everything else. The computation in the
+
+                                                                           13
+455   blocks transfers, not the lookup table in front of them: a vocabulary change, which forces a fresh
+456   embedding, costs far less than its parameter count suggests.
+457   Matched optimisation traces after cross-shape initialisation. Figure 3 reads the actual 16,000-
+458   step matched runs. Initial validation loss spans 9.777–9.878; endpoints are random 2.462, skeleton
+459   2.407, feed-forward 2.437, embedding-only 2.414. Projection ﬁnishes 0.025–0.055 below random,
+460   so optimisation does not fail, but no arm clears an open-catalog replicate spread (Table 2): lower
+461   language-model loss is not behavioural transfer. Same-shape adoption bypasses pretraining and is
+462   tested by the region controls.
+
+
+
+
+      Figure 3: Matched 96M pretraining after random or cross-shape projected initialisation: smoothed
+      per-step training loss; markers show validation every 2,000 steps.
+
+463   What the cross-shape result does and does not cover. The negative result is speciﬁc to coordinate-
+464   preserving projections — leading-block truncation, head-slicing and this appendix’s size-ratio width
+465   crops — which carry nothing across an architecture boundary that random initialisation does not al-
+466   ready give on the downstream suites. Untested methods that could each change the answer: a learned
+467   projection or growth operator in the LiGO style [20], hidden-state or feature distillation, logit distil-
+468   lation, alignment of layers before mapping, low-rank factorisation of the donor, function-preserving
+469   reductions, structured pruning with re-training, and tokenizer-aware embedding conversion; only the
+470   last two have partial evidence, from the depth-pruning arms above. With the same-shape arms trans-
+471   ferring strongly, the supported statement is that naive cross-shape slicing fails, not that cross-shape
+472   transfer is impossible.
+473   What transfers is not evenly distributed. Section 4 says the layers ﬁne-tuning writes hardest are
+474   not the layers worth adapting, a statement about update magnitude within one model, not that no
+475   region is privileged; the same-shape transfer arms say the opposite. Averaged over all seven open-
+476   catalog suites against random initialisation, adopting the ﬁrst half of the blocks gains 0.1 points
+477   and the second half 13.0; attention gains 14.7 and feed-forward 0.6, against 21.0 for the whole
+478   backbone. Two of the four regions, the later blocks and the attention projections, carry nearly
+479   everything. Whether that is where the ability sits, or only where a sibling’s weights happen to be
+480   reusable, these arms do not separate and we do not claim; they establish that the transferable content
+481   is concentrated, positionally and structurally rather than in proportion to parameter count.
+
+482   C General capability, absolute scores
+483   Six suites span what an agent recipe could plausibly damage: commonsense completion (Hel-
+484   laSwag), coreference (Winogrande), grade-school and elementary science (ARC-e, ARC-c, Open-
+485   BookQA) and broad knowledge (MMLU). Scoring is length-normalised continuation likelihood
+486   over 300 rows per suite, identical rows for the released and the adapted weights, so the comparison
+487   is free of prompt-format and generation effects. The headline is unchanged: across the eleven base-
+488   lines the mean change spans −1.8 to +0.7 points, inside the ±2.9-point sampling error, and the one
+489   family-level regression is Granite-4.0’s 5.7–7.3-point loss on ARC-e.
+490   Retraction, and the corrected arm. The ﬁve-corpus pretraining comparison was retracted: shard
+491   preparation copied the reference corpus’s packed tokens alongside the new text, so all ﬁve arms
+492   consumed the original 465M-token corpus — the corpus-identity comparison is void, its arms repli-
+493   cates. A correctly packed fresh-token arm at the same step count reproduces the ToolACE, xLAM
+494   and BFCL gains of §4 but gives back 8.1 of ToolBench’s 9.0 points (outside its 6.4 spread), trailing
+495   on device control only inside wide spreads: epochs are optimisation, not memorisation, ToolBench
+496   alone is repetition-keyed, and a one-epoch pair agrees. Two ﬂags: AgentNet collapses for both
+497   initialisations, and Mobile-Actions separates toward the skeleton arm (§4) against its wide spread.
+
+                                                         14
+      Table 8: Five open corpora as the pretraining stage, packed into the same shard layout and run
+      through the identical chain at the same 1,599-step budget: every arm consumes the same 209.7M
+      tokens, the corpus size below is what the budget samples from, not what it reads, and implied epochs
+      vary by two orders of magnitude. Function-name match (%) after the shared post-training; each
+      pretraining stage took 20–21 minutes on one otherwise idle H100 NVL, sequentially. A packing
+      fault made all ﬁve arms consume the identical original token stream (retraction below the table):
+      read these rows as replicates, not a corpus comparison.
+      Pretraining corpus                   docs tokens (M) chars/tok pretrain (min) ToolACE xLAM BFCL ToolBench ToolSB MCP-A MobAct
+      Qwen3.8-Max distillation (50k)       141k       39     3.28          21     32.1   37.9   46.1     15.7    0.0    1.8    14.4
+      Manus multi-teacher distillation     125k       11     4.39          21     35.5   39.7   45.6     11.8    0.0    3.2    19.3
+      Anthropic HH-RLHF                    361k       94     3.83          21     35.0   38.9   44.1     13.7    0.0    4.8     8.7
+      Qwen3.8/GLM5.2/Kimi-K3 distillation 367k       156     2.94          20     35.8   41.8   47.1      8.0    0.0    3.4    13.3
+      UltraChat-200k                      2671k      520     4.37          20     35.2   42.0   45.6     14.0    0.0    2.4    11.2
+
+
+
+
+498   The open-agent pool, and what pretraining cannot import. Three Apache-2.0 corpora (Toucan-
+499   1.5M [42], Hermes [43], Glaive v2 [44]) ask what open agent data buys in pretraining. Benchmark-
+500   embedding sources were rejected; the one adjacency — Toucan and MCP-Atlas both draw on real
+501   MCP servers — shares none of MCP-Atlas’s 220 catalog names verbatim. Despite hundreds of
+502   millions of genuine MCP tool-call characters, MCP-Atlas stays at or below its 6.7% chance ﬂoor
+503   and neither arm beats the standard mix on any suite. Via SFT, 5,911 Toucan trajectories nudge
+504   the novel-tool suites within spread while device control pays the capacity price (AndroidControl
+505   67.0→54.1) — the clearest claim the 200-row cap manufactured. The xLAM import does clear
+506   its spread (+26.8, 99.4% name overlap, nothing elsewhere): imports buy inventory exactly where
+507   names overlap; whether diversity alone buys generalising catalog skill is left open.
+508   The staged pipeline: agent data need not enter pretraining at all. Pretrain on general distil-
+509   lation and dialogue text only (a 743M-token pool: distillation traces [45], UltraChat [50], hh-rlhf
+510   [51]), concentrating the open agentic data (Toucan [42], r0b0t [45]) in the 700-step midtrain. The
+511   swap is free at full pools: identical two-source SFT lands the staged backbone within spread of
+512   the curated-web one on all ten suites (55.2 against 54.5); with the ﬁve-source SFT it is the best
+513   This-work checkpoint measured (56.2 free, 60.2 under constrain-on-miss, clearing the as-released
+514   Qwen3-0.6B’s mean); doubling SFT steps moves nothing outside spread. At 10.5M and 43M the
+515   staged backbone trails its curated twin (outside spread only on ToolBench at 43M), so Table 1 keeps
+516   the curated ladder. At 96M the pretraining corpus can be whatever general text is cheapest — where
+517   there is model to absorb it.
+518   The vocabulary and context axis. Rebuilt with an LFM-class 65,536-token vocabulary and 8,192
+519   context (127M parameters, almost entirely embedding table), identical chain and corpus, the larger
+520   vocabulary costs open-catalog accuracy (ToolACE 45.7 against 54.9 at the 16k model, beyond that
+521   suite’s replicate spread; BFCL down but not beyond it) and 17% of decode throughput; its one large
+522   gain, on AgentNet, sits under that suite’s 72.9% majority ﬂoor. Doubling context to 16,384 rescues
+523   none of this: ToolACE and BFCL stay down, decode does not recover, and AgentNet’s swing to 33.8
+524   is the ﬂoor-dominated instability that keeps the suite suggestive. At this scale the 16k vocabulary is
+525   the better spend on every axis measured.
+526   The mixer, priced. Three arms hold chain, corpus, tokenizer, schedule and contract ﬁxed, varying
+527   only how many of four blocks are attention (parameters 10,547,072/10,524,544/10,522,496, within
+528   0.23%). Ten-suite means: attention-only 27.9, hybrid 32.8, convolution-heavy 33.0. The mean is a
+529   poor summary of what happened. The suites split into two families that move in opposite directions
+530   with attention count. On the four function-calling suites the means run 31.1, 29.5, 25.2 from four
+531   attention layers down to one, so attention helps; on the three GUI and desktop suites they run 45.6,
+532   62.8, 69.1, so convolution helps, and the largest single movement is AgentNet at +55.9 between the
+533   extremes. The hybrid sits between the two on both families rather than leading either, which is a
+534   more speciﬁc claim than the ten-suite mean can make and not the one this paper made before. On
+535   decode the mixer is worth something rather than nothing: 701 against 541 tokens/s on four CPU
+536   threads, a 22.9% difference — not what puts either arm an order of magnitude ahead of a 0.5B
+537   open model at 30 tokens/s; that is the parameter budget. The withdrawn version reported 1.7% here,
+538   which was two checkpoints of one architecture and measured no mixer at all.
+539   The mixer on episodes. The convheavy conﬁg carried a prediction: if attention count carries ver-
+540   batim copying, the one-attention-layer arm should fall on it. As episode policies all three complete
+
+                                                                    15
+541   nothing, as single-call checkpoints should; the step proﬁle separates them. The fraction of steps
+542   whose call satisﬁes its schema rises 0.000, 0.395, 0.854 from one attention layer to four at ﬁxed
+543   budget, while verbatim copy ﬁdelity stays ﬂat (0.32, 0.41, 0.38). At this size attention carries as-
+544   sembling a legal call from a live state; the copying the conﬁg’s guard names does not vary with
+545   it.
+
+
+546   D Three harness faults, and what they cost
+
+547   Three harness faults changed baseline numbers, each in our favour until ﬁxed. LFM2-350M’s
+548   separate chat_template.jinja was dropped by a pattern-limited snapshot, so the harness fell
+549   back to plain concatenation and the model scored 0.1% on ToolACE; it also answers in a Pythonic
+550   [name(arg="value")] form, now parsed. Qwen3-0.6B’s default thinking block consumed the 64-
+551   token budget before any call; the non-thinking path moves ToolACE 0.5%→88.1%. h2o-danube3-
+552   500M’s template raises on system turns; the harness folds system text into the user turn.
+553   Batched decoding. Every model is decoded in batches of 32. For our architecture this is exactly
+554   free: rows are grouped by identical token length (RoPE broadcasts one absolute-position vector, so
+555   left padding would mis-position short rows), and generations are token-identical to the one-at-a-time
+556   path on a 95.3M and a 10.5M checkpoint. For open models it is not free: batch size changes GEMM
+557   reduction order, ﬂipping near-tied early tokens — over 710 cells, 204 up, 172 down, mean −0.005,
+558   mean absolute 0.36 (SmolLM2-135M at most 1.3, Pythia-160M up to 9.9 on Mind2Web). It is a
+559   protocol choice, applied to the whole open block; no table mixes the two (Granite-4.0-H’s batch-4
+560   scoring exception: App. B). Re-scoring an unchanged checkpoint reproduces every suite exactly, so
+561   the harness is deterministic under a ﬁxed batch size.
+
+
+562   E Episodes: acting from the state rather than from a script
+
+563   An earlier protocol scored these tasks through wrappers that dictate each step and reported 1.0 — for-
+564   matting under dictation. The simulator is sound: _transition enforces preconditions with twelve
+565   error codes and never consults the gold list; task_complete is path-independent containment.
+566   The freed harness. The policy sees goal, state and last error; any of the nine device calls from
+567   any state; the episode ends when the goal holds or budget is spent. The generated suite: 210 eval
+568   tasks, seven families, slot vocabularies partitioned between splits, a quarter starting dirty. Every task
+569   replays its gold plan before use; abstention is scored on the action, whose goal holds at step zero.
+570   Bounds. The oracle reaches 100% in 4.9 steps, progressing on only 24% of them; a uniform policy
+571   reaches 0.5%.
+
+      Table 9: Episode success on the free stateful suite: 210 tasks over seven families, scored on whether
+      the goal state holds when the episode ends rather than on whether each call matched a script. The
+      oracle and the uniform policy bound the metric; the held-out column is a three-goal, twelve-step
+      family that appears in no training corpus. Step columns are fractions of all steps taken, so they
+      describe the episodes a policy did not ﬁnish as well as the ones it did. The uniform policy draws each
+      tool’s arguments from that tool’s own recorded calls and is therefore schema-valid by construction;
+      its column is not a capability.
+
+       Policy                                   Episode   Milestone   Schema ok   State moved   Progressed   Held-out 3-goal
+       Oracle (replays the gold plan)             100.0      100.0         97.1          97.1         23.5               —
+       Uniform over the nine device tools           0.5        0.5        100.0          37.0          0.0                —
+       LocalAgent-11M, Table 1 checkpoint           0.0        0.0          0.5           0.1          0.0               0.0
+       LocalAgent-43M, Table 1 checkpoint           0.0        0.0         12.0           0.3          0.0               0.0
+       LocalAgent-96M, Table 1 checkpoint           0.0        0.0         88.4          50.1          0.0               0.0
+       LocalAgent-11M, agentic arm                 20.5       21.4         82.1          59.1          1.6               0.0
+       LocalAgent-43M, agentic arm                 34.3       39.8         87.2          80.6          4.1               0.0
+       LocalAgent-96M, agentic arm                 17.6       20.5         70.6          56.3          1.7               0.0
+       LocalAgent-11M, agentic arm, 4x corpus      21.4       26.7         78.1          53.7          2.4               0.0
+       LocalAgent-96M, agentic arm, 4x corpus      25.2       32.6         86.7          76.6          3.4               0.0
+
+
+
+                                                           16
+572   What the Table 1 checkpoint does here. LocalAgent-11M, Table 1’s smallest model, completes
+573   0.0% of these episodes and spends 17.1 of its 20 steps. The failure is mostly not format (81% of
+574   outputs parse into a call) but conditioning on the state. Of 3,600 steps, 2,881 (80.0%) are rejected
+575   because the arguments belong to a different tool than the one named, and only 2 (0.1%) change the
+576   state at all, against the uniform policy’s 37%. It selects a plausible tool name and argument bag
+577   from the goal text without reading the state, reproducing shown text on 69% of text-bearing steps:
+578   the arguments are copied faithfully into the wrong call.
+579   Paired tests, at the two units they belong to. Over tasks, checkpoints ﬁxed, McNemar’s exact test
+580   under Bonferroni across all 66 pairs of the LocalAgent grid (27 arm–baseline, 36 among arms, 3
+581   among baselines; the open-family arms follow a different template and budget and are reported sep-
+582   arately) ﬁnds all arm–baseline pairs signiﬁcant (worst p < 10−10 ) and 11 of the 36 pairs among the
+583   arms. 2 of those 11 are seed replicates of the same procedure (smallest p = 2×10−5 , 1/20 discordant)
+584   — the decisive caution: task-level differences between ﬁxed checkpoints are not evidence the train-
+585   ing procedures differ. At the procedure level there are three seeds per arm. Task-level signiﬁcance
+586   does not order the training procedures once between-seed variance is considered. Single-checkpoint
+587   intervals are percentile bootstraps over 210 tasks and speak only for that checkpoint.
+588   What a seed is worth. Three seeds each: agenticxl-96m 0.297 over 3 runs, range 7.1 points, agentic-
+589   11m 0.236 over 3 runs, range 9.0 points. Their 7.1–9.0-point ranges are comparable to the roughly
+590   12-point task-bootstrap width. The 6.0-point mean gap is inside the wider seed range and misses
+591   the corrected procedure-level test, so the arms are not ordered. Table 1 checkpoints remain zero at
+592   every size and seed.
+593   Added, and mostly not traded. Siblings of the Table 1 checkpoints (same midtrain parent, opti-
+594   miser, budget, ﬁve source corpora, plus the episode decisions): was the ability bought with Table 1
+595   accuracy? On the base arms it was not - the ten-suite mean rises, 11M base 47.2 to 49.1, 43M base
+596   52.1 to 54.5, 96M base 53.5 to 56.9 - but not uniformly: 11M 4× 47.2 to 45.4, 96M 4× 53.5 to
+597   47.2. The only losses outside replicate spread: 96M base on ToolBench, 41.2 to 34.2; 11M 4× on
+598   MCP-A, 4.2 to 1.8; 96M 4× on AgentNet, 47.3 to 9.6; 96M 4× on ToolACE, 58.5 to 50.8; 96M
+599   4× on ToolBench, 41.2 to 32.8. Outside spread in the other direction: 43M base on AgentNet, 38.0
+600   to 70.2. The split follows corpus share, not size: the base arms’ 12.5% share adds the ability free
+601   at both sizes; the 4× arms’ 38–40% share pays single-call accuracy at both, and the best arm pays
+602   most.
+603   Sequencing against ﬁdelity, separated. Sequence given forces each step’s tool to the gold plan’s,
+604   keeping the policy’s arguments; arguments given is the reverse. Episode success: best arm 0.252
+605   free, 0.252 sequence given, 0.786 arguments given; 11M arm 0.205 free, 0.214 sequence given,
+606   0.429 arguments given; Table 1 96M 0.000 free, 0.000 sequence given, 0.000 arguments given.
+607   Arguments buy more than sequence: argument ﬁdelity binds harder than sequencing on the arm the
+608   abstract quotes; planning is not exonerated, merely the smaller measured constraint. Substitution
+609   is post hoc, so the sequence probe could be structurally understated (arguments were generated for
+610   the model’s own tool); two checks bound that concern. First, the best arm’s freely chosen tool
+611   already matches the gold plan’s on 93% of steps, so the sequence substitution is close to a no-op
+612   by construction rather than by unfairness. Second, a conditioned variant states the required tool
+613   in the observation and lets the policy re-decode the whole call for it: completion is 0.252, again
+614   indistinguishable from the free run, so the attribution survives conditioning.
+615   The recipe is not ours alone. The same episode decisions at the same 12.5% share, added to two
+616   open models’ own ﬁne-tuning and evaluated through their own chat templates: SmolLM2-135M
+617   moves 0.000→0.086 and Qwen3-0.6B 0.000→0.543. The zero-without-episodes result generalises
+618   — both controls emit near-perfect calls (schema 0.99/1.00, copy ﬁdelity 0.97/1.00) and complete
+619   nothing, choosing the right tool on only 21–23% of steps — and the binding constraint inverts with
+620   scale: the sub-100M arms are limited by verbatim argument ﬁdelity (0.20–0.34), the open models
+621   by tool choice (0.35 and 0.70 agreement after training, at copy ≥0.97). Under each family’s own
+622   post-training conﬁguration — corpus base, budget and serialisation differ, so this prices recipes, not
+623   architectures — the 10.5M LocalAgent arm attains 0.205 against the 135M SmolLM2 arm’s 0.086.
+624   Each open arm is one training seed; Qwen3-0.6B’s 0.543 carries a task-level Wilson 95% interval
+625   of [0.475, 0.609]. The single-call ledger after episode SFT splits by scale: against its own Table 1
+626   control, SmolLM2-135M’s ten-suite mean moves +0.5 points, matching the sub-100M added-not-
+627   traded pattern, while Qwen3-0.6B pays a mean −3.3, concentrated in Mobile-Actions (−16.5) and
+
+
+
+                                                       17
+628   ToolSandbox (−11.8, a 17-row suite); at 0.6B the same 12.5% share is no longer free. On the fully
+629   held-out three-goal composition both trained open arms also complete nothing (0.000 and 0.000);
+630   Qwen3-0.6B reaches 54% of its milestones there without ever assembling the full sequence, so the
+631   compositional ceiling is not an artefact of our family.
+632   The agentic arm. Adding the episode decisions to the same mixture, midtrain parent and 1,500-
+633   step budget moves the 11M rung from 0.0% to 20.5% episode success. The state machine is learned:
+634   schema-satisfying calls rise from 0.5% to 82.1% of steps, state-moving calls from 0.1% to 59.1%.
+635   Exact reproduction of shown text is not, at 29.6% over 1,861 text-bearing steps; the families rank by
+636   how much each needs: recovery 100%, browser 10%, notion 30%, email 3%. The dominant error,
+637   send_args_do_not_match_draft (157), is text disagreeing with the policy’s draft. Argument
+638   ﬁdelity is the largest measured error source; the oracle decomposition separates it from sequencing.
+
+
+
+
+                                                       18
+639   NeurIPS Paper Checklist
+640       1. Claims
+641          Question: Do the main claims made in the abstract and introduction accurately reﬂect the
+642          paper’s contributions and scope?
+643          Answer: [Yes]
+644          Justiﬁcation: The abstract and introduction state only measured claims; each maps to a
+645          section (§3–§6) and every suite carries an explicit claim boundary (Appendix A).
+646          Guidelines:
+647             • The answer [N/A] means that the abstract and introduction do not include the claims
+648                made in the paper.
+649             • The abstract and/or introduction should clearly state the claims made, including the
+650                contributions made in the paper and important assumptions and limitations. A [No] or
+651                [N/A] answer to this question will not be perceived well by the reviewers.
+652             • The claims made should match theoretical and experimental results, and reﬂect how
+653                much the results can be expected to generalize to other settings.
+654             • It is ﬁne to include aspirational goals as motivation as long as it is clear that these
+655                goals are not attained by the paper.
+656       2. Limitations
+657          Question: Does the paper discuss the limitations of the work performed by the authors?
+658          Answer: [Yes]
+659          Justiﬁcation: Section 6 closes with what the study could not settle, and Appendices A and
+660          D add per-suite scope-of-claim notes, exclusions, and the harness faults found and their
+661          cost.
+662          Guidelines:
+663             • The answer [N/A] means that the paper has no limitation while the answer [No] means
+664                that the paper has limitations, but those are not discussed in the paper.
+665             • The authors are encouraged to create a separate “Limitations” section in their paper.
+666             • The paper should point out any strong assumptions and how robust the results are to
+667                violations of these assumptions (e.g., independence assumptions, noiseless settings,
+668                model well-speciﬁcation, asymptotic approximations only holding locally). The au-
+669                thors should reﬂect on how these assumptions might be violated in practice and what
+670                the implications would be.
+671             • The authors should reﬂect on the scope of the claims made, e.g., if the approach was
+672                only tested on a few datasets or with a few runs. In general, empirical results often
+673                depend on implicit assumptions, which should be articulated.
+674             • The authors should reﬂect on the factors that inﬂuence the performance of the ap-
+675                proach. For example, a facial recognition algorithm may perform poorly when image
+676                resolution is low or images are taken in low lighting. Or a speech-to-text system might
+677                not be used reliably to provide closed captions for online lectures because it fails to
+678                handle technical jargon.
+679             • The authors should discuss the computational efﬁciency of the proposed algorithms
+680                and how they scale with dataset size.
+681             • If applicable, the authors should discuss possible limitations of their approach to ad-
+682                dress problems of privacy and fairness.
+683             • While the authors might fear that complete honesty about limitations might be used by
+684                reviewers as grounds for rejection, a worse outcome might be that reviewers discover
+685                limitations that aren’t acknowledged in the paper. The authors should use their best
+686                judgment and recognize that individual actions in favor of transparency play an impor-
+687                tant role in developing norms that preserve the integrity of the community. Reviewers
+688                will be speciﬁcally instructed to not penalize honesty concerning limitations.
+689       3. Theory assumptions and proofs
+690          Question: For each theoretical result, does the paper provide the full set of assumptions and
+691          a complete (and correct) proof?
+
+                                                     19
+692      Answer: [N/A]
+693      Justiﬁcation: The paper is empirical and contains no theoretical results.
+694      Guidelines:
+695         • The answer [N/A] means that the paper does not include theoretical results.
+696         • All the theorems, formulas, and proofs in the paper should be numbered and cross-
+697           referenced.
+698         • All assumptions should be clearly stated or referenced in the statement of any theo-
+699           rems.
+700         • The proofs can either appear in the main paper or the supplemental material, but if
+701           they appear in the supplemental material, the authors are encouraged to provide a
+702           short proof sketch to provide intuition.
+703         • Inversely, any informal proof provided in the core of the paper should be comple-
+704           mented by formal proofs provided in appendix or supplemental material.
+705         • Theorems and Lemmas that the proof relies upon should be properly referenced.
+706   4. Experimental result reproducibility
+707      Question: Does the paper fully disclose all the information needed to reproduce the main
+708      experimental results of the paper to the extent that it affects the main claims and/or conclu-
+709      sions of the paper (regardless of whether the code and data are provided or not)?
+710      Answer: [Yes]
+711      Justiﬁcation: Appendix A pins datasets, splits, prompts, the single evaluation harness, and
+712      the shared ﬁne-tuning recipe; all tables are generated from run receipts.
+713      Guidelines:
+714         • The answer [N/A] means that the paper does not include experiments.
+715         • If the paper includes experiments, a [No] answer to this question will not be per-
+716           ceived well by the reviewers: Making the paper reproducible is important, regardless
+717           of whether the code and data are provided or not.
+718         • If the contribution is a dataset and/or model, the authors should describe the steps
+719           taken to make their results reproducible or veriﬁable.
+720         • Depending on the contribution, reproducibility can be accomplished in various ways.
+721           For example, if the contribution is a novel architecture, describing the architecture
+722           fully might sufﬁce, or if the contribution is a speciﬁc model and empirical evaluation,
+723           it may be necessary to either make it possible for others to replicate the model with
+724           the same dataset, or provide access to the model. In general. releasing code and data
+725           is often one good way to accomplish this, but reproducibility can also be provided via
+726           detailed instructions for how to replicate the results, access to a hosted model (e.g., in
+727           the case of a large language model), releasing of a model checkpoint, or other means
+728           that are appropriate to the research performed.
+729         • While NeurIPS does not require releasing code, the conference does require all sub-
+730           missions to provide some reasonable avenue for reproducibility, which may depend
+731           on the nature of the contribution. For example
+732           (a) If the contribution is primarily a new algorithm, the paper should make it clear
+733               how to reproduce that algorithm.
+734           (b) If the contribution is primarily a new model architecture, the paper should describe
+735               the architecture clearly and fully.
+736           (c) If the contribution is a new model (e.g., a large language model), then there should
+737               either be a way to access this model for reproducing the results or a way to re-
+738               produce the model (e.g., with an open-source dataset or instructions for how to
+739               construct the dataset).
+740           (d) We recognize that reproducibility may be tricky in some cases, in which case au-
+741               thors are welcome to describe the particular way they provide for reproducibility.
+742               In the case of closed-source models, it may be that access to the model is limited in
+743               some way (e.g., to registered users), but it should be possible for other researchers
+744               to have some path to reproducing or verifying the results.
+745   5. Open access to data and code
+
+                                                  20
+746      Question: Does the paper provide open access to the data and code, with sufﬁcient instruc-
+747      tions to faithfully reproduce the main experimental results, as described in supplemental
+748      material?
+749      Answer: [No]
+750      Justiﬁcation: All datasets are pinned public artifacts (Appendix A); the code and receipts
+751      are not released with this submission, and Appendix A states the same policy and commits
+752      to releasing the harness, receipts and conﬁgurations at camera-ready. The harness, recipes,
+753      and protocols are speciﬁed in enough detail to reimplement in the meantime.
+754      Guidelines:
+755         • The answer [N/A] means that paper does not include experiments requiring code.
+756         • Please see the NeurIPS code and data submission guidelines (https://neurips.
+757            cc/public/guides/CodeSubmissionPolicy) for more details.
+758         • While we encourage the release of code and data, we understand that this might not
+759            be possible, so [No] is an acceptable answer. Papers cannot be rejected simply for not
+760            including code, unless this is central to the contribution (e.g., for a new open-source
+761            benchmark).
+762         • The instructions should contain the exact command and environment needed to run to
+763            reproduce the results. See the NeurIPS code and data submission guidelines (https:
+764            //neurips.cc/public/guides/CodeSubmissionPolicy) for more details.
+765         • The authors should provide instructions on data access and preparation, including how
+766            to access the raw data, preprocessed data, intermediate data, and generated data, etc.
+767         • The authors should provide scripts to reproduce all experimental results for the new
+768            proposed method and baselines. If only a subset of experiments are reproducible, they
+769            should state which ones are omitted from the script and why.
+770         • At submission time, to preserve anonymity, the authors should release anonymized
+771            versions (if applicable).
+772         • Providing as much information as possible in supplemental material (appended to the
+773            paper) is recommended, but including URLs to data and code is permitted.
+774   6. Experimental setting/details
+775      Question: Does the paper specify all the training and test details (e.g., data splits, hyperpa-
+776      rameters, how they were chosen, type of optimizer) necessary to understand the results?
+777      Answer: [Yes]
+778      Justiﬁcation: Section 3 (Setup) and Appendix A give the full training and evaluation con-
+779      ﬁguration, including the one shared ﬁne-tuning recipe.
+780      Guidelines:
+781         • The answer [N/A] means that the paper does not include experiments.
+782         • The experimental setting should be presented in the core of the paper to a level of
+783            detail that is necessary to appreciate the results and make sense of them.
+784         • The full details can be provided either with the code, in appendix, or as supplemental
+785            material.
+786   7. Experiment statistical signiﬁcance
+787      Question: Does the paper report error bars suitably and correctly deﬁned or other appropri-
+788      ate information about the statistical signiﬁcance of the experiments?
+789      Answer: [Yes]
+790      Justiﬁcation: Noise ﬂoors are measured, not assumed: ﬁve full-chain replicates and two
+791      seed squares gate every signiﬁcance claim (§6, Appendix C–D); suites whose spread ex-
+792      ceeds their effects are marked suggestive.
+793      Guidelines:
+794         • The answer [N/A] means that the paper does not include experiments.
+795         • The authors should answer [Yes] if the results are accompanied by error bars, conﬁ-
+796            dence intervals, or statistical signiﬁcance tests, at least for the experiments that support
+797            the main claims of the paper.
+
+                                                   21
+798         • The factors of variability that the error bars are capturing should be clearly stated (for
+799           example, train/test split, initialization, random drawing of some parameter, or overall
+800           run with given experimental conditions).
+801         • The method for calculating the error bars should be explained (closed form formula,
+802           call to a library function, bootstrap, etc.)
+803         • The assumptions made should be given (e.g., Normally distributed errors).
+804         • It should be clear whether the error bar is the standard deviation or the standard error
+805           of the mean.
+806         • It is OK to report 1-sigma error bars, but one should state it. The authors should prefer-
+807           ably report a 2-sigma error bar than state that they have a 96% CI, if the hypothesis of
+808           Normality of errors is not veriﬁed.
+809         • For asymmetric distributions, the authors should be careful not to show in tables or ﬁg-
+810           ures symmetric error bars that would yield results that are out of range (e.g., negative
+811           error rates).
+812         • If error bars are reported in tables or plots, the authors should explain in the text how
+813           they were calculated and reference the corresponding ﬁgures or tables in the text.
+814    8. Experiments compute resources
+815      Question: For each experiment, does the paper provide sufﬁcient information on the com-
+816      puter resources (type of compute workers, memory, time of execution) needed to reproduce
+817      the experiments?
+818      Answer: [Yes]
+819      Justiﬁcation: Two H100 pods; per-arm wall-clock is reported in the intervention ledger and
+820      appendices (e.g., 16,000-step pretraining arms at roughly 3.5–3.8 hours each).
+821      Guidelines:
+822         • The answer [N/A] means that the paper does not include experiments.
+823         • The paper should indicate the type of compute workers CPU or GPU, internal cluster,
+824           or cloud provider, including relevant memory and storage.
+825         • The paper should provide the amount of compute required for each of the individual
+826           experimental runs as well as estimate the total compute.
+827         • The paper should disclose whether the full research project required more compute
+828           than the experiments reported in the paper (e.g., preliminary or failed experiments
+829           that didn’t make it into the paper).
+830    9. Code of ethics
+831      Question: Does the research conducted in the paper conform, in every respect, with the
+832      NeurIPS Code of Ethics https://neurips.cc/public/EthicsGuidelines?
+833      Answer: [Yes]
+834      Justiﬁcation: The research conforms to the NeurIPS Code of Ethics.
+835      Guidelines:
+836         • The answer [N/A] means that the authors have not reviewed the NeurIPS Code of
+837           Ethics.
+838         • If the authors answer [No], they should explain the special circumstances that require
+839           a deviation from the Code of Ethics.
+840         • The authors should make sure to preserve anonymity (e.g., if there is a special consid-
+841           eration due to laws or regulations in their jurisdiction).
+842   10. Broader impacts
+843      Question: Does the paper discuss both potential positive societal impacts and negative
+844      societal impacts of the work performed?
+845      Answer: [N/A]
+846      Justiﬁcation: This is a foundational measurement study of sub-billion on-device agents; no
+847      deployment or capability with direct societal-impact pathways is released.
+848      Guidelines:
+
+                                                  22
+849          • The answer [N/A] means that there is no societal impact of the work performed.
+850          • If the authors answer [N/A] or [No], they should explain why their work has no soci-
+851            etal impact or why the paper does not address societal impact.
+852          • Examples of negative societal impacts include potential malicious or unintended uses
+853            (e.g., disinformation, generating fake proﬁles, surveillance), fairness considerations
+854            (e.g., deployment of technologies that could make decisions that unfairly impact spe-
+855            ciﬁc groups), privacy considerations, and security considerations.
+856          • The conference expects that many papers will be foundational research and not tied
+857            to particular applications, let alone deployments. However, if there is a direct path to
+858            any negative applications, the authors should point it out. For example, it is legitimate
+859            to point out that an improvement in the quality of generative models could be used to
+860            generate Deepfakes for disinformation. On the other hand, it is not needed to point out
+861            that a generic algorithm for optimizing neural networks could enable people to train
+862            models that generate Deepfakes faster.
+863          • The authors should consider possible harms that could arise when the technology is
+864            being used as intended and functioning correctly, harms that could arise when the
+865            technology is being used as intended but gives incorrect results, and harms following
+866            from (intentional or unintentional) misuse of the technology.
+867          • If there are negative societal impacts, the authors could also discuss possible mitiga-
+868            tion strategies (e.g., gated release of models, providing defenses in addition to attacks,
+869            mechanisms for monitoring misuse, mechanisms to monitor how a system learns from
+870            feedback over time, improving the efﬁciency and accessibility of ML).
+871   11. Safeguards
+872       Question: Does the paper describe safeguards that have been put in place for responsible
+873       release of data or models that have a high risk for misuse (e.g., pre-trained language models,
+874       image generators, or scraped datasets)?
+875       Answer: [N/A]
+876       Justiﬁcation: No models or data with high misuse risk are released.
+877       Guidelines:
+878          • The answer [N/A] means that the paper poses no such risks.
+879          • Released models that have a high risk for misuse or dual-use should be released with
+880            necessary safeguards to allow for controlled use of the model, for example by re-
+881            quiring that users adhere to usage guidelines or restrictions to access the model or
+882            implementing safety ﬁlters.
+883          • Datasets that have been scraped from the Internet could pose safety risks. The authors
+884            should describe how they avoided releasing unsafe images.
+885          • We recognize that providing effective safeguards is challenging, and many papers do
+886            not require this, but we encourage authors to take this into account and make a best
+887            faith effort.
+888   12. Licenses for existing assets
+889       Question: Are the creators or original owners of assets (e.g., code, data, models), used in
+890       the paper, properly credited and are the license and terms of use explicitly mentioned and
+891       properly respected?
+892       Answer: [Yes]
+893       Justiﬁcation: Appendix A credits every asset and license (CC-BY-4.0 datasets, the Apple
+894       sample-code license, arXiv reports) and documents gated or removed assets that could not
+895       be used.
+896       Guidelines:
+897          • The answer [N/A] means that the paper does not use existing assets.
+898          • The authors should cite the original paper that produced the code package or dataset.
+899          • The authors should state which version of the asset is used and, if possible, include a
+900            URL.
+901          • The name of the license (e.g., CC-BY 4.0) should be included for each asset.
+
+                                                   23
+902          • For scraped data from a particular source (e.g., website), the copyright and terms of
+903             service of that source should be provided.
+904          • If assets are released, the license, copyright information, and terms of use in the pack-
+905             age should be provided. For popular datasets, paperswithcode.com/datasets has
+906             curated licenses for some datasets. Their licensing guide can help determine the li-
+907             cense of a dataset.
+908          • For existing datasets that are re-packaged, both the original license and the license of
+909             the derived asset (if it has changed) should be provided.
+910          • If this information is not available online, the authors are encouraged to reach out to
+911             the asset’s creators.
+912   13. New assets
+913       Question: Are new assets introduced in the paper well documented and is the documenta-
+914       tion provided alongside the assets?
+915       Answer: [Yes]
+916       Justiﬁcation: The new evaluation projections (ToolSandbox, MCP-Atlas, Mobile-Actions)
+917       are documented in Appendix A with their conversion rules and claim boundaries; the con-
+918       verted ﬁles are derivable from the pinned sources.
+919       Guidelines:
+920          • The answer [N/A] means that the paper does not release new assets.
+921          • Researchers should communicate the details of the dataset/code/model as part of their
+922             submissions via structured templates. This includes details about training, license,
+923             limitations, etc.
+924          • The paper should discuss whether and how consent was obtained from people whose
+925             asset is used.
+926          • At submission time, remember to anonymize your assets (if applicable). You can
+927             either create an anonymized URL or include an anonymized zip ﬁle.
+928   14. Crowdsourcing and research with human subjects
+929       Question: For crowdsourcing experiments and research with human subjects, does the pa-
+930       per include the full text of instructions given to participants and screenshots, if applicable,
+931       as well as details about compensation (if any)?
+932       Answer: [N/A]
+933       Justiﬁcation: No crowdsourcing or research with human subjects.
+934       Guidelines:
+935          • The answer [N/A] means that the paper does not involve crowdsourcing nor research
+936             with human subjects.
+937          • Including this information in the supplemental material is ﬁne, but if the main contri-
+938             bution of the paper involves human subjects, then as much detail as possible should
+939             be included in the main paper.
+940          • According to the NeurIPS Code of Ethics, workers involved in data collection, cura-
+941             tion, or other labor should be paid at least the minimum wage in the country of the
+942             data collector.
+943   15. Institutional review board (IRB) approvals or equivalent for research with human
+944       subjects
+945       Question: Does the paper describe potential risks incurred by study participants, whether
+946       such risks were disclosed to the subjects, and whether Institutional Review Board (IRB)
+947       approvals (or an equivalent approval/review based on the requirements of your country or
+948       institution) were obtained?
+949       Answer: [N/A]
+950       Justiﬁcation: No human-subject research requiring IRB approval.
+951       Guidelines:
+952          • The answer [N/A] means that the paper does not involve crowdsourcing nor research
+953             with human subjects.
+
+                                                   24
+954          • Depending on the country in which research is conducted, IRB approval (or equiva-
+955            lent) may be required for any human subjects research. If you obtained IRB approval,
+956            you should clearly state this in the paper.
+957          • We recognize that the procedures for this may vary signiﬁcantly between institutions
+958            and locations, and we expect authors to adhere to the NeurIPS Code of Ethics and the
+959            guidelines for their institution.
+960          • For initial submissions, do not include any information that would break anonymity
+961            (if applicable), such as the institution conducting the review.
+962   16. Declaration of LLM usage
+963       Question: Does the paper describe the usage of LLMs if it is an important, original, or
+964       non-standard component of the core methods in this research? Note that if the LLM is used
+965       only for writing, editing, or formatting purposes and does not impact the core methodology,
+966       scientiﬁc rigor, or originality of the research, declaration is not required.
+967       Answer: [Yes]
+968       Justiﬁcation: An LLM assistant was used for engineering the experiment pipeline and draft-
+969       ing text; all experimental design decisions are documented in the paper and every number
+970       derives from the measured run receipts.
+971       Guidelines:
+972          • The answer [N/A] means that the core method development in this research does not
+973            involve LLMs as any important, original, or non-standard components.
+974          • Please refer to our LLM policy in the NeurIPS handbook for what should or should
+975            not be described.
+
+
+
+
+                                                 25
+

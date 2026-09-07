@@ -1,5 +1,5 @@
-from localagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
-from localagent.train.function_masking import (
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
+from openlocalagent.train.function_masking import (
     FUNCTION_MASKING_KIND,
     augment_conversations,
 )

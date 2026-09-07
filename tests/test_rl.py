@@ -14,18 +14,18 @@ import torch
 import yaml
 from torch import nn
 
-from localagent.data.agent_synth import Generator, Sample
-from localagent.data.conversation_artifact import conversation_semantic_sha256
-from localagent.data.prompt_contract import (
+from openlocalagent.data.synth.agent_synth import Generator, Sample
+from openlocalagent.data.conversation_artifact import conversation_semantic_sha256
+from openlocalagent.data.prompt_contract import (
     LEGACY_CONVERSATION_PROMPT_CONTRACT,
     OPENAI_FULL_CATALOG_V1,
     render_agent_decode_prompt,
 )
-from localagent.data.render import assistant_body, prompt_text
-from localagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ASSISTANT, BPE_EOS, ByteTokenizer, train_bpe
-from localagent.train.rl import (
+from openlocalagent.data.render import assistant_body, prompt_text
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ASSISTANT, BPE_EOS, ByteTokenizer, train_bpe
+from openlocalagent.train.rl import (
     CatalogStringCache,
     _assert_gold_outputs_fit,
     _assert_parent_prompt_contract,
@@ -47,7 +47,7 @@ from localagent.train.rl import (
     project_rl_decisions,
     run,
 )
-from localagent.train.stage_data import canonical_sha256, tokenizer_identity
+from openlocalagent.train.stage_data import canonical_sha256, tokenizer_identity
 
 
 class _ImmediateEosModel:
@@ -329,7 +329,7 @@ def test_grpo_reports_zero_signal_steps_without_claiming_optimizer_updates(
     monkeypatch,
 ) -> None:
     monkeypatch.setattr(
-        "localagent.train.rl._rollout",
+        "openlocalagent.train.rl._rollout",
         lambda *_args, **_kwargs: [ByteTokenizer.eos_id],
     )
 
@@ -389,7 +389,7 @@ def test_grpo_counts_informative_groups_and_realized_policy_epochs(monkeypatch) 
         ]
     )
     monkeypatch.setattr(
-        "localagent.train.rl._rollout",
+        "openlocalagent.train.rl._rollout",
         lambda *_args, **_kwargs: next(generations),
     )
 
@@ -430,7 +430,7 @@ def test_grpo_bounded_prefix_preserves_full_schedule_and_reaches_real_update(
         ]
     )
     monkeypatch.setattr(
-        "localagent.train.rl._rollout",
+        "openlocalagent.train.rl._rollout",
         lambda *_args, **_kwargs: next(generations),
     )
     model = _TrainablePolicy()
@@ -478,7 +478,7 @@ def test_grpo_default_resume_preserves_completed_horizon_noop(monkeypatch, tmp_p
         ]
     )
     monkeypatch.setattr(
-        "localagent.train.rl._rollout",
+        "openlocalagent.train.rl._rollout",
         lambda *_args, **_kwargs: next(generations),
     )
     model = _TrainablePolicy()
@@ -503,7 +503,7 @@ def test_grpo_default_resume_preserves_completed_horizon_noop(monkeypatch, tmp_p
     resumed = _TrainablePolicy()
     resumed.load_state_dict(initial)
     monkeypatch.setattr(
-        "localagent.train.rl._rollout",
+        "openlocalagent.train.rl._rollout",
         lambda *_args, **_kwargs: pytest.fail(
             "completed-horizon resume must not sample another rollout"
         ),
@@ -1073,7 +1073,7 @@ def test_full_rl_holdout_exact_reward_and_format_rate_share_strict_gate(
     outside_text = "outside " + canonical
 
     monkeypatch.setattr(
-        "localagent.train.rl._rollout",
+        "openlocalagent.train.rl._rollout",
         lambda *_args, **_kwargs: [
             *rl_bpe_tokenizer.encode(outside_text),
             rl_bpe_tokenizer.eos_id,
@@ -1094,7 +1094,7 @@ def test_full_rl_holdout_exact_reward_and_format_rate_share_strict_gate(
     assert rejected["tool_format_valid_rate"] == 0.0
 
     monkeypatch.setattr(
-        "localagent.train.rl._rollout",
+        "openlocalagent.train.rl._rollout",
         lambda *_args, **_kwargs: [
             *rl_bpe_tokenizer.encode(canonical),
             rl_bpe_tokenizer.eos_id,

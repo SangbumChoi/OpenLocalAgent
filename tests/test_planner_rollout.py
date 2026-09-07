@@ -14,11 +14,11 @@ from __future__ import annotations
 
 import torch
 
-from localagent.agent.caller import plan_rollout
-from localagent.agent.tool_head import CLASSES
-from localagent.agent.toolset import STANDARD_TOOLS
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
+from openlocalagent.agent.caller import plan_rollout
+from openlocalagent.agent.tool_head import CLASSES
+from openlocalagent.agent.toolset import STANDARD_TOOLS
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
 
 
 def _tiny_model():

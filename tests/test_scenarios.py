@@ -1,5 +1,5 @@
-from localagent.agent.caller import ToolCaller
-from localagent.eval import scenarios_bench as sb
+from openlocalagent.agent.caller import ToolCaller
+from openlocalagent.eval import scenarios_bench as sb
 
 
 def test_modalities_present():

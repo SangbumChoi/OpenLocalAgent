@@ -1,4 +1,4 @@
-from localagent.model.config import PARAM_BUDGET, ModelConfig
+from openlocalagent.model.config import PARAM_BUDGET, ModelConfig
 
 
 def test_yaml_configs_load_and_fit_budget():

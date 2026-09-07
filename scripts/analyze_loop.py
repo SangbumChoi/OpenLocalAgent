@@ -6,7 +6,7 @@ categories the model is failing** in the next round's training data (weight = 1 
 analysis (weakest tools + new sampling weights) is printed and saved each round.
 
 Single-turn only (15→21 tools) for speed, so the 5-round loop completes on CPU.
-Outputs (runs/analyze/): analysis.json, analyze.png
+Outputs (results/runs/analyze/): analysis.json, analyze.png
 Usage:  python scripts/analyze_loop.py [--rounds 5] [--quick]
 """
 
@@ -18,22 +18,22 @@ import os
 
 import torch
 
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
-from localagent.data.agent_synth import REALISTIC_WEIGHTS, Generator
-from localagent.data.render import build_pretrain_stream
-from localagent.eval.harness import (
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.data.synth.agent_synth import REALISTIC_WEIGHTS, Generator
+from openlocalagent.data.render import build_pretrain_stream
+from openlocalagent.eval.harness import (
     evaluate_grounded,
     format_plan_eval,
     multi_turn_eval,
     plan_eval,
 )
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.device import resolve_device
-from localagent.train.pretrain import pretrain
-from localagent.train.sft import sft
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.device import resolve_device
+from openlocalagent.train.pretrain import pretrain
+from openlocalagent.train.sft import sft
 
-OUT = "runs/analyze"
+OUT = "results/runs/analyze"
 K = 3.0  # how aggressively to oversample weak categories
 
 
@@ -61,7 +61,7 @@ def main():
     tok = load_tokenizer("byte")
     cfg = ModelConfig.from_yaml(args.model)
     global OUT
-    OUT = f"runs/analyze_{cfg.name}"
+    OUT = f"results/runs/analyze_{cfg.name}"
     os.makedirs(OUT, exist_ok=True)
     model = LocalAgentLM(cfg).to(device)
     print(f"model {cfg.name}: {model.num_params()/1e6:.3f}M params on {device}", flush=True)

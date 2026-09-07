@@ -8,13 +8,13 @@ import importlib
 import pytest
 import torch
 
-from localagent.data.agent_synth import Sample
-from localagent.data.render import IGNORE, render_sft
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ByteTokenizer
-from localagent.train.sft import sft
-from localagent.train.stage_data import sha256_file
-from localagent.train.stage_sampling import (
+from openlocalagent.data.synth.agent_synth import Sample
+from openlocalagent.data.render import IGNORE, render_sft
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ByteTokenizer
+from openlocalagent.train.sft import sft
+from openlocalagent.train.stage_data import sha256_file
+from openlocalagent.train.stage_sampling import (
     SFT_LOSS_NORMALIZATION_MICROBATCH,
     SFT_LOSS_NORMALIZATION_UPDATE_TOKENS,
 )
@@ -98,7 +98,7 @@ def test_assistant_token_update_mean_matches_full_effective_batch_ce(
                 for parameter in group["params"]
             ]
 
-    sft_module = importlib.import_module("localagent.train.sft")
+    sft_module = importlib.import_module("openlocalagent.train.sft")
     monkeypatch.setattr(sft_module.torch.optim, "AdamW", CaptureOptimizer)
 
     torch.manual_seed(610)

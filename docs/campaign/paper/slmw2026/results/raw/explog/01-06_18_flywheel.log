@@ -1,0 +1,35 @@
+model ultra-tiny-1m: 0.977M params on cuda
+  [pretrain] step    0/200  loss 5.543  loss_tokens 8,192
+  [pretrain] step   25/200  loss 3.509  loss_tokens 212,992
+  [pretrain] step   50/200  loss 3.430  loss_tokens 417,792
+  [pretrain] step   75/200  loss 3.429  loss_tokens 622,592
+  [pretrain] step  100/200  loss 3.416  loss_tokens 827,392
+  [pretrain] step  125/200  loss 3.182  loss_tokens 1,032,192
+  [pretrain] step  150/200  loss 3.000  loss_tokens 1,236,992
+  [pretrain] step  175/200  loss 2.833  loss_tokens 1,441,792
+  [pretrain] step  199/200  loss 2.762  loss_tokens 1,638,400
+
+=== Round 1 (level 1, 2500 single-turn + 120 episodes / 1324 held-out) ===
+  grounded (held-out): overall=17.9%  browser=3% code=22% computer_use=13% define=10% music=7% news=0% parallel=0% planner=0% productivity=25% text=20% tool_call=24% web_search=27%
+  multi-turn: step_acc=17% episode_acc=0% (81 steps)
+
+=== Round 2 (level 2, 2500 single-turn + 120 episodes / 1354 held-out) ===
+  grounded (held-out): overall=22.5%  browser=43% code=24% computer_use=19% define=30% music=13% news=7% parallel=0% planner=50% productivity=14% text=27% tool_call=22% web_search=33%
+  multi-turn: step_acc=8% episode_acc=0% (76 steps)
+
+=== Round 3 (level 3, 2500 single-turn + 120 episodes / 1354 held-out) ===
+  grounded (held-out): overall=31.6%  browser=83% code=35% computer_use=29% define=10% music=17% news=17% parallel=7% planner=70% productivity=30% text=2% tool_call=36% web_search=33%
+  multi-turn: step_acc=25% episode_acc=3% (72 steps)
+
+=== Round 4 (level 4, 2500 single-turn + 120 episodes / 1354 held-out) ===
+  grounded (held-out): overall=38.6%  browser=83% code=43% computer_use=32% define=23% music=20% news=23% parallel=13% planner=80% productivity=40% text=27% tool_call=43% web_search=17%
+  multi-turn: step_acc=22% episode_acc=0% (79 steps)
+
+=== Round 5 (level 5, 2500 single-turn + 120 episodes / 1354 held-out) ===
+  grounded (held-out): overall=40.5%  browser=87% code=50% computer_use=29% define=30% music=10% news=3% parallel=13% planner=53% productivity=44% text=38% tool_call=30% web_search=50%
+  multi-turn: step_acc=19% episode_acc=0% (84 steps)
+
+FINAL free-gen : overall=0.0%  browser=0% code=0% computer_use=0% define=0% music=0% news=0% parallel=0% planner=0% productivity=0% text=0% tool_call=0% web_search=0%
+FINAL grounded : overall=36.3%  browser=80% code=38% computer_use=31% define=45% music=10% news=0% parallel=10% planner=50% productivity=54% text=35% tool_call=26% web_search=20%
+
+Artifacts in runs/flywheel/ (accuracy.png, freegen_vs_grounded.png, loss.png, samples.json)

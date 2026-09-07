@@ -1,0 +1,101 @@
+{
+  "split": "eval",
+  "max_steps": 12,
+  "degenerate_tasks": [
+    "eval-abstain"
+  ],
+  "policies": {
+    "oracle": {
+      "tasks": 5,
+      "episode_success": 1.0,
+      "milestone_rate": 1.0,
+      "mean_steps": 3.0,
+      "errors": {
+        "http_404_recoverable": 1
+      },
+      "per_task": [
+        {
+          "task_id": "eval-email-send",
+          "success": true,
+          "steps": 6,
+          "milestones": 1.0
+        },
+        {
+          "task_id": "eval-notion-create",
+          "success": true,
+          "steps": 2,
+          "milestones": 1.0
+        },
+        {
+          "task_id": "eval-browser-search",
+          "success": true,
+          "steps": 4,
+          "milestones": 1.0
+        },
+        {
+          "task_id": "eval-browser-recovery",
+          "success": true,
+          "steps": 3,
+          "milestones": 1.0
+        },
+        {
+          "task_id": "eval-abstain",
+          "success": true,
+          "steps": 0,
+          "milestones": 1.0
+        }
+      ],
+      "episode_success_acting_only": 1.0,
+      "acting_tasks": 4
+    },
+    "random": {
+      "tasks": 5,
+      "episode_success": 0.2,
+      "milestone_rate": 0.2,
+      "mean_steps": 9.6,
+      "errors": {
+        "schema_invalid": 35,
+        "unsupported_stateful_tool": 5,
+        "enter_requires_search_focus": 2,
+        "compose_click_requires_gmail_inbox": 1,
+        "notion_page_requires_notion_app": 1,
+        "input_requires_focused_email_field": 1,
+        "send_requires_gmail_compose": 1
+      },
+      "per_task": [
+        {
+          "task_id": "eval-email-send",
+          "success": false,
+          "steps": 12,
+          "milestones": 0.0
+        },
+        {
+          "task_id": "eval-notion-create",
+          "success": false,
+          "steps": 12,
+          "milestones": 0.0
+        },
+        {
+          "task_id": "eval-browser-search",
+          "success": false,
+          "steps": 12,
+          "milestones": 0.0
+        },
+        {
+          "task_id": "eval-browser-recovery",
+          "success": false,
+          "steps": 12,
+          "milestones": 0.0
+        },
+        {
+          "task_id": "eval-abstain",
+          "success": true,
+          "steps": 0,
+          "milestones": 1.0
+        }
+      ],
+      "episode_success_acting_only": 0.0,
+      "acting_tasks": 4
+    }
+  }
+}

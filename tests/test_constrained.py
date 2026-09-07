@@ -1,7 +1,7 @@
 """Prompt-grounded constrained decoding: candidate proposal must ground slots in the prompt."""
 
-from localagent.agent.constrained import candidates
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.agent.constrained import candidates
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
 
 
 def _bodies(prompt):
@@ -19,8 +19,8 @@ def test_calculator_expression_extracted():
 
 
 def test_boolean_and_message_slots_are_typed_and_grounded():
-    from localagent.data.schema import ToolSpec
-    from localagent.agent.constrained import _tool_bodies
+    from openlocalagent.data.schema import ToolSpec
+    from openlocalagent.agent.constrained import _tool_bodies
 
     toggle = ToolSpec(
         name="set_wifi_status",
@@ -57,8 +57,8 @@ def test_boolean_and_message_slots_are_typed_and_grounded():
 
 
 def test_identifier_slots_do_not_copy_the_entire_instruction():
-    from localagent.agent.constrained import _tool_bodies
-    from localagent.data.schema import ToolSpec
+    from openlocalagent.agent.constrained import _tool_bodies
+    from openlocalagent.data.schema import ToolSpec
 
     update = ToolSpec(
         name="update_task_status",
@@ -81,15 +81,15 @@ def test_identifier_slots_do_not_copy_the_entire_instruction():
 
 
 def test_phone_grounding_prefers_explicit_number_over_uuid_digits():
-    from localagent.agent.constrained import _phone
+    from openlocalagent.agent.constrained import _phone
 
     prompt = "TOOL_RESULT: person_id=9e137f06-916a-5310-8174-cf0b7e9f7054 phone=+12453344098"
     assert _phone(prompt) == ["+12453344098"]
 
 
 def test_stateful_app_url_and_semantic_targets_prefer_typed_spans():
-    from localagent.agent.constrained import _tool_bodies
-    from localagent.agent.mobile_toolset import mobile_tools
+    from openlocalagent.agent.constrained import _tool_bodies
+    from openlocalagent.agent.mobile_toolset import mobile_tools
 
     app = next(tool for tool in mobile_tools() if tool.name == "mobile_open_app")
     click = next(tool for tool in TOOLS if tool.name == "click")
@@ -125,9 +125,9 @@ def test_best_clamps_overlong_context():
     # A long multi-turn history + a candidate body can exceed max_seq_len; _best must trim the
     # oldest prompt tokens (left) instead of overflowing RoPE. Regression for the flywheel
     # multi-turn-eval crash (constrained.py:_best).
-    from localagent.agent.constrained import _best
-    from localagent.model import LocalAgentLM, ModelConfig
-    from localagent.model.tokenizer import load_tokenizer
+    from openlocalagent.agent.constrained import _best
+    from openlocalagent.model import LocalAgentLM, ModelConfig
+    from openlocalagent.model.tokenizer import load_tokenizer
 
     cfg = ModelConfig(vocab_size=256, d_model=64, embed_dim=64, n_layers=2, n_loops=1,
                       n_heads=4, n_kv_heads=2, ffn_hidden=128, max_seq_len=128,
@@ -142,9 +142,9 @@ def test_best_clamps_overlong_context():
 
 
 def test_context_features_clamp_overlong_multi_turn_history():
-    from localagent.agent.constrained import _ctx_feats
-    from localagent.model import LocalAgentLM, ModelConfig
-    from localagent.model.tokenizer import load_tokenizer
+    from openlocalagent.agent.constrained import _ctx_feats
+    from openlocalagent.model import LocalAgentLM, ModelConfig
+    from openlocalagent.model.tokenizer import load_tokenizer
 
     cfg = ModelConfig(vocab_size=256, d_model=64, embed_dim=64, n_layers=2, n_loops=1,
                       n_heads=4, n_kv_heads=2, ffn_hidden=128, max_seq_len=128,
@@ -157,12 +157,12 @@ def test_context_features_clamp_overlong_multi_turn_history():
 
 
 def test_playwright_abi_forces_navigation_then_snapshot_without_inventing_refs():
-    from localagent.agent.constrained import (
+    from openlocalagent.agent.constrained import (
         _arg_options,
         _playwright_lexical_tool,
         _tool_bodies,
     )
-    from localagent.data.schema import ToolSpec
+    from openlocalagent.data.schema import ToolSpec
 
     tools = [
         ToolSpec(
@@ -205,8 +205,8 @@ def test_playwright_abi_forces_navigation_then_snapshot_without_inventing_refs()
 
 
 def test_browser_lexical_action_guard_prefers_present_ui_schema():
-    from localagent.agent.constrained import _browser_lexical_tool
-    from localagent.data.schema import ToolSpec
+    from openlocalagent.agent.constrained import _browser_lexical_tool
+    from openlocalagent.data.schema import ToolSpec
 
     tools = [
         ToolSpec(name="jira_issue", description="Create an issue", parameters={}),
@@ -228,7 +228,7 @@ def test_browser_lexical_action_guard_prefers_present_ui_schema():
     )
     assert _browser_lexical_tool(prompt, realistic_tools) == "click"
 
-    from localagent.agent.constrained import _target
+    from openlocalagent.agent.constrained import _target
 
     assert _target('Browser task: Click on the "Okay" button.') == ["the Okay"]
 
@@ -238,8 +238,8 @@ def test_hybrid_browser_guard_runs_before_text_route(monkeypatch):
 
     import torch
 
-    import localagent.agent.constrained as constrained
-    from localagent.data.schema import ToolSpec
+    import openlocalagent.agent.constrained as constrained
+    from openlocalagent.data.schema import ToolSpec
 
     click = ToolSpec(
         name="click",
@@ -281,9 +281,9 @@ def test_hybrid_browser_guard_runs_before_text_route(monkeypatch):
 
 
 def test_best_abstains_when_a_grounded_candidate_exceeds_context_window():
-    from localagent.agent.constrained import _best
-    from localagent.model import LocalAgentLM, ModelConfig
-    from localagent.model.tokenizer import load_tokenizer
+    from openlocalagent.agent.constrained import _best
+    from openlocalagent.model import LocalAgentLM, ModelConfig
+    from openlocalagent.model.tokenizer import load_tokenizer
 
     cfg = ModelConfig(vocab_size=256, d_model=64, embed_dim=64, n_layers=2, n_loops=1,
                       n_heads=4, n_kv_heads=2, ffn_hidden=128, max_seq_len=128,
@@ -297,8 +297,8 @@ def test_best_abstains_when_a_grounded_candidate_exceeds_context_window():
 
 
 def test_hybrid_grounding_prompt_does_not_copy_serialized_catalog_text():
-    from localagent.agent.constrained import hybrid_decode
-    from localagent.data.schema import ToolSpec
+    from openlocalagent.agent.constrained import hybrid_decode
+    from openlocalagent.data.schema import ToolSpec
 
     send = ToolSpec(
         name="email_send",
@@ -327,9 +327,9 @@ def test_hybrid_grounding_prompt_does_not_copy_serialized_catalog_text():
 def test_pointer_span_bounds_exclude_serialized_catalog_prefix():
     import torch
 
-    from localagent.agent.constrained import _grounding_span
-    from localagent.agent.pointer_head import PointerHead
-    from localagent.model.tokenizer import ASSISTANT, load_tokenizer
+    from openlocalagent.agent.constrained import _grounding_span
+    from openlocalagent.agent.pointer_head import PointerHead
+    from openlocalagent.model.tokenizer import ASSISTANT, load_tokenizer
 
     tok = load_tokenizer("byte")
     catalog = "<|tool_catalog|>schema prose alice@example.com</|tool_catalog|>"

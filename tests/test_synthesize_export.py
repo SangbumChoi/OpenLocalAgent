@@ -4,17 +4,17 @@ from pathlib import Path
 
 import yaml
 
-from localagent.data import agent_synth
-from localagent.data.agent_synth import synthesize
-from localagent.data.conversation_artifact import (
+from openlocalagent.data.synth import agent_synth
+from openlocalagent.data.synth.agent_synth import synthesize
+from openlocalagent.data.conversation_artifact import (
     CONVERSATION_SERIALIZATION,
     MANIFEST_KIND,
     MANIFEST_SCHEMA_VERSION,
     canonical_json_bytes,
 )
-from localagent.data.render import render_conversation
-from localagent.data.schema import Conversation, Role
-from localagent.model.tokenizer import ByteTokenizer
+from openlocalagent.data.render import render_conversation
+from openlocalagent.data.schema import Conversation, Role
+from openlocalagent.model.tokenizer import ByteTokenizer
 
 
 def test_holdout_prompt_canonicalization_covers_case_whitespace_and_unicode():
@@ -210,7 +210,7 @@ def test_train_config_excludes_every_tracked_suite_query_and_pins_artifacts(tmp_
     ]
     heldout_queries: set[str] = set()
     for filename in ("benchmark-cases.json", "browser-task-cases.json"):
-        suite = json.loads((root / "spaces" / "localagent-webgpu" / filename).read_text())
+        suite = json.loads((root / "demos" / "webgpu" / filename).read_text())
         assert suite["holdout_contract"]["primitive_value_disjointness_claimed"] is False
         heldout_queries.update(case["query"] for case in suite["cases"])
     generated_user_prompts = {

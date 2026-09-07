@@ -1,0 +1,523 @@
+{
+  "raw_documents": 87774,
+  "accepted_documents": 87759,
+  "rejected_documents": 15,
+  "licenses": {
+    "odc-by-1.0": 87759
+  },
+  "filtered_jsonl": "data/shards/h100-small/filtered.jsonl",
+  "staging_database": "data/shards/h100-small/corpus-staging.sqlite3",
+  "corpus_audit": {
+    "evaluation_decontamination": {
+      "anchors_per_entry": 8,
+      "candidate_checks": 0,
+      "denylist_entries": 0,
+      "denylist_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "enabled": false,
+      "exhaustive": false,
+      "input_documents": 87759,
+      "limitations": "Screens only the supplied denylist with conservative normalized/shingle matching; it is not proof that the corpus is free of benchmark contamination.",
+      "matched_denylist_entries": 0,
+      "matched_denylist_entries_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "max_denylist_shingles": 2048,
+      "method": "normalized_exact_short_or_anchor_shingle_containment",
+      "min_coverage": 0.9,
+      "min_shingles": 8,
+      "removed_document_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "removed_documents": 0,
+      "retained_documents": 87759,
+      "shingle_size": 5
+    },
+    "near_deduplication": {
+      "bucket_overflows": 564744,
+      "candidate_pairs": 39765273,
+      "case_sensitive_shingles": true,
+      "code_documents_bypassed": 782,
+      "code_policy": "exact_content_deduplication_only",
+      "enabled": true,
+      "exhaustive": false,
+      "feature_cache_size": 128,
+      "input_documents": 87759,
+      "jaccard_checks": 0,
+      "limitations": "Bounded heuristic screening; LSH bucket caps and sampled shingles can miss near duplicates. Code-like documents bypass heuristic near-dedup after exact content deduplication to preserve potentially semantic case/identifier changes.",
+      "lsh_bands": 8,
+      "max_bucket_size": 64,
+      "max_hamming_distance": 3,
+      "max_shingles_per_document": 256,
+      "method": "sqlite_case_sensitive_simhash64_lsh_then_sampled_shingle_jaccard_with_code_bypass",
+      "min_features": 8,
+      "min_jaccard": 0.95,
+      "removal_pairs_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "removed_document_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "removed_documents": 0,
+      "retained_document_ids_sha256": "01ba555dcb09e21d2f9fd84d66facacef7b88916757b62e864f5ad8a81ac131f",
+      "retained_documents": 87759,
+      "shingle_size": 5
+    },
+    "quality_and_exact_deduplication": {
+      "exact_content_deduplication": true,
+      "exact_dedup_provenance": {
+        "alias_fingerprint_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "alias_occurrences": 0,
+        "alias_records": 0,
+        "constant_python_memory": true,
+        "storage": "sqlite:exact_dedup_aliases",
+        "storage_scales_with": "deduplicated_alias_provenance_not_retained_documents",
+        "stored_fields": [
+          "normalized_content_digest",
+          "provenance_sha256",
+          "doc_id",
+          "source",
+          "license",
+          "meta_json",
+          "raw_text_sha256",
+          "identity",
+          "occurrences"
+        ]
+      },
+      "exact_duplicates_removed": 0,
+      "input_documents": 87774,
+      "normalized_content_sha256": true,
+      "quality_passed_documents": 87759,
+      "quality_rejection_counts": {
+        "control_characters": 1,
+        "repetitive": 5,
+        "replacement_characters": 9
+      },
+      "raw_document_stream_hash_format": "framed_utf8_v2",
+      "raw_document_stream_sha256": "9d477c1f39ae6c195d28baf0802bbac0292024f39113b1e22ef895f5a3602e69",
+      "removed_documents": 15,
+      "retained_documents": 87759
+    },
+    "split_assignment": {
+      "algorithm": "sha256_seeded_exact_validation_count_v1",
+      "assignment_sha256": "cc593bcdb628a1593f6c06ecb6ac7cf2f5132004284c413f3531d366b87d219a",
+      "documents": 87759,
+      "identities": 87759,
+      "mode": "computed",
+      "seed": 42,
+      "val_fraction": 0.01
+    }
+  },
+  "tokenizer_training": {
+    "kind": "bpe",
+    "trained": true,
+    "split": "train",
+    "path": "data/tokenizer-h100-small-16k.json",
+    "requested_vocab_size": 16384,
+    "vocab_size": 16384,
+    "artifact": {
+      "path": "data/tokenizer-h100-small-16k.json",
+      "bytes": 1154892,
+      "sha256": "a5d71249981576932d308a41f8137b97b2439b9f96c53cb80a1b8c15f310a872"
+    },
+    "documents": 86881,
+    "document_ids_sha256": "22e13b46b8aaf34a68edd0ddacf885128320e3aab8001d9d5eedf948f2a9b4e5",
+    "document_set_sha256": "c015092f404084ca9f01a3294c7671faa9bb1a4ceeffb77f42508c2cb26bb140",
+    "excluded_documents": 878
+  },
+  "manifest": {
+    "version": 2,
+    "format": "bos_aligned_rows",
+    "seq_len": 2048,
+    "row_tokens": 2049,
+    "token_dtype": "uint16",
+    "vocab_size": 16384,
+    "seed": 42,
+    "val_fraction": 0.01,
+    "split_assignment_sha256": "cc593bcdb628a1593f6c06ecb6ac7cf2f5132004284c413f3531d366b87d219a",
+    "split_assignment": {
+      "format": "localagent_document_split_jsonl",
+      "schema_version": 1,
+      "path": "generations/8a6a734b24734e4dbe7254e89c39bea9/split-assignment.jsonl",
+      "bytes": 24834105,
+      "sha256": "129b10fa2e4912721bf3e5ddc2035b5af6931cd0f897920419f1b0b823cfc3c0",
+      "records": 87759,
+      "identities": 87759,
+      "assignment_sha256": "cc593bcdb628a1593f6c06ecb6ac7cf2f5132004284c413f3531d366b87d219a",
+      "binding": "sha256(document_id)+sha256(filtered_utf8_text)"
+    },
+    "source_counts": {
+      "mixture:cosmopedia_v2": 87759
+    },
+    "source_token_counts": {
+      "mixture:cosmopedia_v2": 67575545
+    },
+    "license_counts": {
+      "odc-by-1.0": 87759
+    },
+    "provenance_summary": {
+      "source_count_aggregation": {
+        "max_named_groups": 64,
+        "named_groups": 1,
+        "overflow_documents": 0,
+        "overflow_key": null,
+        "selection": "lexicographically_first_distinct_groups",
+        "documents": 87759
+      },
+      "license_count_aggregation": {
+        "max_named_groups": 64,
+        "named_groups": 1,
+        "overflow_documents": 0,
+        "overflow_key": null,
+        "selection": "lexicographically_first_distinct_groups",
+        "documents": 87759
+      },
+      "retained_document_provenance": {
+        "algorithm": "sha256_over_count_sum256_xor256_v1",
+        "records": 87759,
+        "sha256": "9c5dd9bd53f2547478a34108229ad07202cfcc92da27f6439ea5815e0605b2a1"
+      },
+      "source_token_accounting": "Encoded document tokens plus packing EOS targets, attributed to the source family of the document that caused each target."
+    },
+    "splits": {
+      "train": {
+        "documents": 86881,
+        "document_ids_sha256": "22e13b46b8aaf34a68edd0ddacf885128320e3aab8001d9d5eedf948f2a9b4e5",
+        "document_set_sha256": "c015092f404084ca9f01a3294c7671faa9bb1a4ceeffb77f42508c2cb26bb140",
+        "rows": 32669,
+        "tokens": 66904744,
+        "source_token_counts": {
+          "mixture:cosmopedia_v2": 66904744
+        },
+        "shards": [
+          {
+            "tokens": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00000.npy",
+            "lengths": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00000.lengths.npy",
+            "rows": 2048,
+            "bytes": 8392832,
+            "lengths_bytes": 8320,
+            "sha256": "0350cdbe2ffd5b6e1b895efbb2178ef8d2c4b04254f951e0170ba5a2d26477be",
+            "lengths_sha256": "27a69150419fa2d5714fbf400b5b15ef9bbf5b4e5ff9b0ce1b63a6d5ab296359"
+          },
+          {
+            "tokens": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00001.npy",
+            "lengths": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00001.lengths.npy",
+            "rows": 2048,
+            "bytes": 8392832,
+            "lengths_bytes": 8320,
+            "sha256": "690d995ee9a59fcc78d0e5b567fc8f55aa75086ee5744ffb4e90bae15befd403",
+            "lengths_sha256": "1f4a2f9ddc12f271d0b9d789067f46f6e008d79d0e1d314232f6fce6f48f5a17"
+          },
+          {
+            "tokens": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00002.npy",
+            "lengths": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00002.lengths.npy",
+            "rows": 2048,
+            "bytes": 8392832,
+            "lengths_bytes": 8320,
+            "sha256": "4a2203ffaff2344c591699c9da98ff3cd6bd25bcb3806189da6eaf39fdbaa179",
+            "lengths_sha256": "db7d840317e95d845eb98130515525c862308dfdf12f087840836ce988a4fc68"
+          },
+          {
+            "tokens": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00003.npy",
+            "lengths": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00003.lengths.npy",
+            "rows": 2048,
+            "bytes": 8392832,
+            "lengths_bytes": 8320,
+            "sha256": "6f87f2266deb50eed67bc5a73b1b13444133c192d3cbe299b96e01cbd0048bb0",
+            "lengths_sha256": "28ee5a732fb69bcff16bdb8a5ccd7c9f6758a848232cf659a5166eea0644ffcb"
+          },
+          {
+            "tokens": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00004.npy",
+            "lengths": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00004.lengths.npy",
+            "rows": 2048,
+            "bytes": 8392832,
+            "lengths_bytes": 8320,
+            "sha256": "fcb23e6fdf096bb0df642861919c64708eb45ee4ec87a1656469a8522438d913",
+            "lengths_sha256": "8976a8721bf2f4038bbf32d95873f35872c53543feed62e27da64444dd7d6ed2"
+          },
+          {
+            "tokens": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00005.npy",
+            "lengths": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00005.lengths.npy",
+            "rows": 2048,
+            "bytes": 8392832,
+            "lengths_bytes": 8320,
+            "sha256": "94638178e79aced3e5d9bb573d80edfdc0b6afadc60d6f078894721f8c03256f",
+            "lengths_sha256": "4f524f2f1e5d2406ce1914fd5a6bba480a00839f2bb13abf48238c995cbf676b"
+          },
+          {
+            "tokens": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00006.npy",
+            "lengths": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00006.lengths.npy",
+            "rows": 2048,
+            "bytes": 8392832,
+            "lengths_bytes": 8320,
+            "sha256": "83dadded00e36bafb5f146952da53e2cf9769e53025347f643ef30bec01e1e14",
+            "lengths_sha256": "2b691465c27614eb003e1b483a46063e4b91ff94cc0d47f1601c029f2fc3f9fc"
+          },
+          {
+            "tokens": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00007.npy",
+            "lengths": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00007.lengths.npy",
+            "rows": 2048,
+            "bytes": 8392832,
+            "lengths_bytes": 8320,
+            "sha256": "2fb7589b669d0984ad8388c7ccb7f11d93811189827fa33dccd8d1c6067b4a8f",
+            "lengths_sha256": "8d30ded75ab6b3bafebf509e42d44b9d3909b9bff7d7f33de15228380df06c99"
+          },
+          {
+            "tokens": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00008.npy",
+            "lengths": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00008.lengths.npy",
+            "rows": 2048,
+            "bytes": 8392832,
+            "lengths_bytes": 8320,
+            "sha256": "7e8ec5bd7e04adee0b93acab4a1f176c088514c73e17fa5ac1565077742cdcf6",
+            "lengths_sha256": "be05be01195d6ba0ebc00616de1071d57c5b003637095206761e73cf1155b616"
+          },
+          {
+            "tokens": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00009.npy",
+            "lengths": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00009.lengths.npy",
+            "rows": 2048,
+            "bytes": 8392832,
+            "lengths_bytes": 8320,
+            "sha256": "1730d02c4d2db02bd46ec3cb0eefeb3df3dc394902bb89a6643cc796ba313569",
+            "lengths_sha256": "dab872d04f1d3aecea87fb04b650a1b592a34356eaeadaa920724b6a74c0b96e"
+          },
+          {
+            "tokens": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00010.npy",
+            "lengths": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00010.lengths.npy",
+            "rows": 2048,
+            "bytes": 8392832,
+            "lengths_bytes": 8320,
+            "sha256": "9990f09011c91c5206f335b8226ecb3e5c3b7386208cce0a362a2f51d427fe8c",
+            "lengths_sha256": "3de5c93ddcbf418680b75753f84d29e3a34c13d7896d39e725b04f7daa29b7a9"
+          },
+          {
+            "tokens": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00011.npy",
+            "lengths": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00011.lengths.npy",
+            "rows": 2048,
+            "bytes": 8392832,
+            "lengths_bytes": 8320,
+            "sha256": "b9fe1aaeb727e99c07deaad642e307cdb08bae2ae65d70134531da1daf79e137",
+            "lengths_sha256": "0ecbe78a12be1e78f4b084c24f14acae87fcef48a03604d02c869462b102417b"
+          },
+          {
+            "tokens": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00012.npy",
+            "lengths": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00012.lengths.npy",
+            "rows": 2048,
+            "bytes": 8392832,
+            "lengths_bytes": 8320,
+            "sha256": "029caf7515dd09cb3f60de0b4af08233b0682229b7ad7b84a98bb086fade0b2b",
+            "lengths_sha256": "567dc378996b722853d698421d5d44b06a1fb911425020cdd2608628c71d3568"
+          },
+          {
+            "tokens": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00013.npy",
+            "lengths": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00013.lengths.npy",
+            "rows": 2048,
+            "bytes": 8392832,
+            "lengths_bytes": 8320,
+            "sha256": "202fc7d2a4325ec8c724ba2cda7ad94759d519859e6800aa16f58be347eb8943",
+            "lengths_sha256": "62a6e8974d486db647df0f6b67e77e98fc50252d7b9e6e5bfd1adb6efca538e2"
+          },
+          {
+            "tokens": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00014.npy",
+            "lengths": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00014.lengths.npy",
+            "rows": 2048,
+            "bytes": 8392832,
+            "lengths_bytes": 8320,
+            "sha256": "90b8db26b3b6c02ba1f79e8fcce307dc5e269a314f5df492e2ceb9d7aa8e33d6",
+            "lengths_sha256": "7367a1fdd5506127c5738dc666e56b2bf3999402ac50985fe17841a8c30a8e44"
+          },
+          {
+            "tokens": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00015.npy",
+            "lengths": "generations/8a6a734b24734e4dbe7254e89c39bea9/train-00015.lengths.npy",
+            "rows": 1949,
+            "bytes": 7987130,
+            "lengths_bytes": 7924,
+            "sha256": "ca86c2301a919642c6ef8268bf432b3dea3c945ef94080f01febb2e78c0cf12c",
+            "lengths_sha256": "b21f4e12453866b495aa687aa36b06f1e1d9995e858530c896ad84386fd96f3a"
+          }
+        ]
+      },
+      "val": {
+        "documents": 878,
+        "document_ids_sha256": "e5593080ebd5cf8a298e7da9d87bfb9f02438925325b52b595317a56c09523c6",
+        "document_set_sha256": "1e109bae47a759fa1c72cd66e11aa98aeb005b9267918bc3150f233bac7a4226",
+        "rows": 328,
+        "tokens": 670801,
+        "source_token_counts": {
+          "mixture:cosmopedia_v2": 670801
+        },
+        "shards": [
+          {
+            "tokens": "generations/8a6a734b24734e4dbe7254e89c39bea9/val-00000.npy",
+            "lengths": "generations/8a6a734b24734e4dbe7254e89c39bea9/val-00000.lengths.npy",
+            "rows": 328,
+            "bytes": 1344272,
+            "lengths_bytes": 1440,
+            "sha256": "59fc59d521c4cb0a855210ff3096c529c90cb20ae4c7ec2920cbdd5bf8ad88a0",
+            "lengths_sha256": "47296b1c1d2f79316733cc840c7451bfb4fe6aae99637187b03f642cbdbeea1b"
+          }
+        ]
+      }
+    },
+    "corpus_audit": {
+      "evaluation_decontamination": {
+        "anchors_per_entry": 8,
+        "candidate_checks": 0,
+        "denylist_entries": 0,
+        "denylist_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "enabled": false,
+        "exhaustive": false,
+        "input_documents": 87759,
+        "limitations": "Screens only the supplied denylist with conservative normalized/shingle matching; it is not proof that the corpus is free of benchmark contamination.",
+        "matched_denylist_entries": 0,
+        "matched_denylist_entries_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "max_denylist_shingles": 2048,
+        "method": "normalized_exact_short_or_anchor_shingle_containment",
+        "min_coverage": 0.9,
+        "min_shingles": 8,
+        "removed_document_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "removed_documents": 0,
+        "retained_documents": 87759,
+        "shingle_size": 5
+      },
+      "near_deduplication": {
+        "bucket_overflows": 564744,
+        "candidate_pairs": 39765273,
+        "case_sensitive_shingles": true,
+        "code_documents_bypassed": 782,
+        "code_policy": "exact_content_deduplication_only",
+        "enabled": true,
+        "exhaustive": false,
+        "feature_cache_size": 128,
+        "input_documents": 87759,
+        "jaccard_checks": 0,
+        "limitations": "Bounded heuristic screening; LSH bucket caps and sampled shingles can miss near duplicates. Code-like documents bypass heuristic near-dedup after exact content deduplication to preserve potentially semantic case/identifier changes.",
+        "lsh_bands": 8,
+        "max_bucket_size": 64,
+        "max_hamming_distance": 3,
+        "max_shingles_per_document": 256,
+        "method": "sqlite_case_sensitive_simhash64_lsh_then_sampled_shingle_jaccard_with_code_bypass",
+        "min_features": 8,
+        "min_jaccard": 0.95,
+        "removal_pairs_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "removed_document_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "removed_documents": 0,
+        "retained_document_ids_sha256": "01ba555dcb09e21d2f9fd84d66facacef7b88916757b62e864f5ad8a81ac131f",
+        "retained_documents": 87759,
+        "shingle_size": 5
+      },
+      "quality_and_exact_deduplication": {
+        "exact_content_deduplication": true,
+        "exact_dedup_provenance": {
+          "alias_fingerprint_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "alias_occurrences": 0,
+          "alias_records": 0,
+          "constant_python_memory": true,
+          "storage": "sqlite:exact_dedup_aliases",
+          "storage_scales_with": "deduplicated_alias_provenance_not_retained_documents",
+          "stored_fields": [
+            "normalized_content_digest",
+            "provenance_sha256",
+            "doc_id",
+            "source",
+            "license",
+            "meta_json",
+            "raw_text_sha256",
+            "identity",
+            "occurrences"
+          ]
+        },
+        "exact_duplicates_removed": 0,
+        "input_documents": 87774,
+        "normalized_content_sha256": true,
+        "quality_passed_documents": 87759,
+        "quality_rejection_counts": {
+          "control_characters": 1,
+          "repetitive": 5,
+          "replacement_characters": 9
+        },
+        "raw_document_stream_hash_format": "framed_utf8_v2",
+        "raw_document_stream_sha256": "9d477c1f39ae6c195d28baf0802bbac0292024f39113b1e22ef895f5a3602e69",
+        "removed_documents": 15,
+        "retained_documents": 87759
+      },
+      "split_assignment": {
+        "algorithm": "sha256_seeded_exact_validation_count_v1",
+        "assignment_sha256": "cc593bcdb628a1593f6c06ecb6ac7cf2f5132004284c413f3531d366b87d219a",
+        "documents": 87759,
+        "identities": 87759,
+        "mode": "computed",
+        "seed": 42,
+        "val_fraction": 0.01
+      }
+    },
+    "preparation": {
+      "mode": "sqlite_disk_backed",
+      "staging_database": {
+        "path": "data/shards/h100-small/corpus-staging.sqlite3",
+        "bytes": 557535232,
+        "sha256": "1cb4abcb65118ea5db69aa2c9412a641d83748f5c974d2b7dbe7fb8d4a078bf9",
+        "staging_version": 2
+      },
+      "staging_config": {
+        "decontam_anchors_per_entry": 8,
+        "decontam_coverage": 0.9,
+        "decontam_max_denylist_shingles": 2048,
+        "decontam_min_shingles": 8,
+        "decontam_shingle_size": 5,
+        "max_chars": 2000000,
+        "max_control_ratio": 0.01,
+        "max_repetition_ratio": 0.35,
+        "min_chars": 200,
+        "near_dedup": true,
+        "near_dedup_feature_cache_size": 128,
+        "near_dedup_hamming": 3,
+        "near_dedup_jaccard": 0.95,
+        "near_dedup_lsh_bands": 8,
+        "near_dedup_max_bucket_size": 64,
+        "near_dedup_max_shingles": 256,
+        "near_dedup_min_features": 8,
+        "near_dedup_shingle_size": 5,
+        "seed": 42,
+        "split_assignment_mode": "computed",
+        "val_fraction": 0.01
+      },
+      "python_memory_scope": "No full document corpus is materialized in Python RAM. Memory still scales with one quality-bounded document, the evaluation denylist, the bounded near-dedup feature cache/candidate set, tokenizer trainer state, and one output shard buffer.",
+      "limitations": "Near-deduplication is a bounded non-exhaustive heuristic. SQLite staging needs additional local disk, and the tokenizer library's internal trainer state is not claimed to be constant-memory.",
+      "provenance": {
+        "input_paths": [
+          "data/raw/paper/download_state/001-cosmopedia_v2.jsonl"
+        ],
+        "included_mixture_sources": [],
+        "source_manifests": [],
+        "evaluation_denylist_paths": [],
+        "evaluation_denylist": {
+          "inputs": [],
+          "input_count": 0,
+          "inputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "list_manifests": [],
+          "required_suites": [],
+          "required_suite_policy_sources": [],
+          "normalized_entries": 0
+        },
+        "filtered_jsonl": {
+          "path": "data/shards/h100-small/filtered.jsonl",
+          "bytes": 365821611,
+          "sha256": "2f632c6d16a6f5a3dca111aa1eb520acca94a7a8a9d482c2af5c99ace1ae01fa"
+        }
+      }
+    },
+    "tokenizer_training": {
+      "kind": "bpe",
+      "trained": true,
+      "split": "train",
+      "path": "data/tokenizer-h100-small-16k.json",
+      "requested_vocab_size": 16384,
+      "vocab_size": 16384,
+      "artifact": {
+        "path": "data/tokenizer-h100-small-16k.json",
+        "bytes": 1154892,
+        "sha256": "a5d71249981576932d308a41f8137b97b2439b9f96c53cb80a1b8c15f310a872"
+      },
+      "documents": 86881,
+      "document_ids_sha256": "22e13b46b8aaf34a68edd0ddacf885128320e3aab8001d9d5eedf948f2a9b4e5",
+      "document_set_sha256": "c015092f404084ca9f01a3294c7671faa9bb1a4ceeffb77f42508c2cb26bb140",
+      "excluded_documents": 878
+    },
+    "total_documents": 87759,
+    "total_tokens": 67575545,
+    "train_tokens": 66904744,
+    "generation": "8a6a734b24734e4dbe7254e89c39bea9"
+  }
+}
+PREP_SMALL_RC=0

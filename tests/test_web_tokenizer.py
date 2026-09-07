@@ -7,11 +7,11 @@ from pathlib import Path
 
 import pytest
 
-from localagent.model.tokenizer import ASSISTANT, TOOL_CALL_OPEN, USER, train_bpe
+from openlocalagent.model.tokenizer import ASSISTANT, TOOL_CALL_OPEN, USER, train_bpe
 
 
 ROOT = Path(__file__).parents[1]
-WEB_TOKENIZER = ROOT / "spaces" / "localagent-webgpu" / "tokenizer.js"
+WEB_TOKENIZER = ROOT / "demos" / "webgpu" / "tokenizer.js"
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="Node.js is required for browser parity")

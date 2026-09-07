@@ -1,0 +1,80 @@
+{
+  "model": "pythia-70m",
+  "kind": "hf",
+  "location": "data/baselines/pythia-70m/",
+  "parameters": 70426624,
+  "rows_per_suite": 200,
+  "max_new_tokens": 64,
+  "suites": {
+    "androidcontrol": {
+      "rows": 200,
+      "parse_rate": 0.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.021127505302429198
+    },
+    "mind2web": {
+      "rows": 200,
+      "parse_rate": 0.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.046637765169143676
+    },
+    "toolace": {
+      "rows": 200,
+      "parse_rate": 0.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.1374063503742218
+    },
+    "xlam": {
+      "rows": 200,
+      "parse_rate": 0.005,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.05252819180488586
+    },
+    "bfcl": {
+      "rows": 200,
+      "parse_rate": 0.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.05406695604324341
+    },
+    "agentnet": {
+      "rows": 200,
+      "parse_rate": 0.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.056727641820907594
+    },
+    "toolbench": {
+      "rows": 200,
+      "parse_rate": 0.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.018858325481414796
+    },
+    "toolsandbox": {
+      "rows": 17,
+      "parse_rate": 0.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.06294012069702148
+    },
+    "mcpatlas": {
+      "rows": 200,
+      "parse_rate": 0.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.04099835515022278
+    },
+    "mobileactions": {
+      "rows": 200,
+      "parse_rate": 0.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.05405359745025635
+    }
+  }
+}

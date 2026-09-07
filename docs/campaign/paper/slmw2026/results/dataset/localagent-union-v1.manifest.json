@@ -1,0 +1,45 @@
+{
+  "cap_per_public_source": 1000,
+  "composition": {
+    "androidcontrol": 1000,
+    "mind2web": 1000,
+    "synthetic_episodes": 360,
+    "toolace": 1000
+  },
+  "kind": "localagent_designed_union_corpus",
+  "output": {
+    "bytes": 10797072,
+    "path": "data/public/localagent-union-v1.jsonl",
+    "sha256": "2642431f65f08a2044a842381751ea1d1490da8e53fee883216807cb6423e57d"
+  },
+  "rationale": "A naive union drowns the multi-turn trajectory signal: public agent corpora are overwhelmingly single-step. Public sources are capped and the synthetic episodes are kept whole so trajectory competence survives the mixture.",
+  "schema_version": 1,
+  "seed": 2026,
+  "sources": [
+    {
+      "available": 8044,
+      "bytes": 28617032,
+      "kept": 1000,
+      "path": "data/public/toolace-train.jsonl",
+      "sha256": "7e05ce3f84d0f137413c5e9917608d1ba74138e1fbe85ff8f9f38e457506ae40",
+      "source": "toolace"
+    },
+    {
+      "available": 3028,
+      "bytes": 11257889,
+      "kept": 1000,
+      "path": "data/public/mind2web-train.jsonl",
+      "sha256": "b54ca3737aa0f381f2cb50cd997211d20beeccf77f8025024777dc08f5d27ec5",
+      "source": "mind2web"
+    },
+    {
+      "available": 82944,
+      "bytes": 269227779,
+      "kept": 1000,
+      "path": "data/public/androidcontrol-train.jsonl",
+      "sha256": "69b0a4b070974fa9d401cf0a0f954bd579edd50f639298f142cc658ece43307b",
+      "source": "androidcontrol"
+    }
+  ],
+  "total_rows": 3360
+}

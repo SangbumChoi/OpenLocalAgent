@@ -19,12 +19,12 @@ import random
 from dataclasses import asdict
 from pathlib import Path
 
-from localagent.data.conversation_artifact import (rendered_assistant_prompts,
+from openlocalagent.data.conversation_artifact import (rendered_assistant_prompts,
                                                    rendered_prompt_sha256)
-from localagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1
-from localagent.data.render import render_conversation_rows
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.stage_data import read_conversations
+from openlocalagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1
+from openlocalagent.data.render import render_conversation_rows
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.stage_data import read_conversations
 
 
 def fits(conversation, tok, max_seq_len: int) -> bool:

@@ -5,18 +5,25 @@ Raising a score honestly starts with knowing which failure is being paid for: a 
 a format problem, an emitted tool outside the row's catalog is a reading problem, and a wrong
 choice within the catalog is a discrimination problem. Each points at a different lever.
 
-  python scripts/analyze_errors.py --model catalog:runs/sft-distill-96m/latest.pt \
-      --suites toolace,xlam,bfcl,toolbench --out runs/analysis/errors-distill-96m.json
+  python scripts/analyze_errors.py --model catalog:results/runs/sft-distill-96m/latest.pt \
+      --suites toolace,xlam,bfcl,toolbench --out results/runs/analysis/errors-distill-96m.json
 """
 
 from __future__ import annotations
 
 import argparse
-import importlib
 import json
-import sys
 from enum import StrEnum
 from pathlib import Path
+
+from openlocalagent.eval.suite import (
+    SUITES,
+    CatalogAdapter,
+    HuggingFaceAdapter,
+    LoraAdapter,
+    build_tasks,
+    parse_call,
+)
 
 
 class Bucket(StrEnum):
@@ -25,8 +32,6 @@ class Bucket(StrEnum):
     out_of_catalog = "out_of_catalog"
     parse_fail = "parse_fail"
 
-sys.path.insert(0, "scripts")
-eval_suite = importlib.import_module("eval_suite")
 
 
 def main() -> None:
@@ -43,20 +48,20 @@ def main() -> None:
     # dashboard scores.
     spec_kind, location = args.model.split(":", 1)
     if spec_kind == "catalog":
-        adapter = eval_suite.CatalogAdapter(location, args.device)
+        adapter = CatalogAdapter(location, args.device)
     elif spec_kind == "lora":
-        adapter = eval_suite.LoraAdapter(location, args.device)
+        adapter = LoraAdapter(location, args.device)
     else:
-        adapter = eval_suite.HuggingFaceAdapter(location, args.device)
+        adapter = HuggingFaceAdapter(location, args.device)
 
     report = {"model": args.model, "suites": {}}
     for suite in args.suites.split(","):
-        path = eval_suite.SUITES[suite]
-        tasks = eval_suite.build_tasks(path, args.rows)
+        path = SUITES[suite]
+        tasks = build_tasks(path, args.rows)
         counts = {bucket: 0 for bucket in Bucket} | {"rows": len(tasks)}
         samples: list[dict] = []
         for task in tasks:
-            prediction = eval_suite.parse_call(adapter.predict(task, args.max_new_tokens))
+            prediction = parse_call(adapter.predict(task, args.max_new_tokens))
             catalog = {tool["name"] for tool in task.tools} if task.tools else set()
             if prediction is None:
                 counts[Bucket.parse_fail] += 1
