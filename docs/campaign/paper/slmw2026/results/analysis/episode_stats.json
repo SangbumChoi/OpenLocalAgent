@@ -1,0 +1,647 @@
+{
+  "draws": 10000,
+  "arms": {
+    "ep-agentic-11m-fixed": {
+      "tasks": 210,
+      "episode_success": 0.2048,
+      "ci95": [
+        0.1524,
+        0.2619
+      ]
+    },
+    "ep-agentic-11m-s101-fixed": {
+      "tasks": 210,
+      "episode_success": 0.2095,
+      "ci95": [
+        0.1571,
+        0.2667
+      ]
+    },
+    "ep-agentic-11m-s202-fixed": {
+      "tasks": 210,
+      "episode_success": 0.2952,
+      "ci95": [
+        0.2333,
+        0.3571
+      ]
+    },
+    "ep-agentic-40m-fixed": {
+      "tasks": 210,
+      "episode_success": 0.3429,
+      "ci95": [
+        0.281,
+        0.4095
+      ]
+    },
+    "ep-agentic-96m-fixed": {
+      "tasks": 210,
+      "episode_success": 0.1762,
+      "ci95": [
+        0.1286,
+        0.2286
+      ]
+    },
+    "ep-agenticxl-11m-fixed": {
+      "tasks": 210,
+      "episode_success": 0.2143,
+      "ci95": [
+        0.1619,
+        0.2714
+      ]
+    },
+    "ep-agenticxl-96m-fixed": {
+      "tasks": 210,
+      "episode_success": 0.2524,
+      "ci95": [
+        0.1952,
+        0.3095
+      ]
+    },
+    "ep-agenticxl-96m-s101-fixed": {
+      "tasks": 210,
+      "episode_success": 0.3143,
+      "ci95": [
+        0.2524,
+        0.3762
+      ]
+    },
+    "ep-agenticxl-96m-s202-fixed": {
+      "tasks": 210,
+      "episode_success": 0.3238,
+      "ci95": [
+        0.2619,
+        0.3857
+      ]
+    },
+    "ep-fcall-11m-big-fixed": {
+      "tasks": 210,
+      "episode_success": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "ep-fcall-40m-fixed": {
+      "tasks": 210,
+      "episode_success": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "ep-fcall-96m-fixed": {
+      "tasks": 210,
+      "episode_success": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "pairs": {
+    "ep-agentic-11m-fixed vs ep-agentic-11m-s101-fixed": {
+      "tasks": 210,
+      "a_only": 7,
+      "b_only": 8,
+      "p": 1.0,
+      "significant_bonferroni": false,
+      "same_procedure": true
+    },
+    "ep-agentic-11m-fixed vs ep-agentic-11m-s202-fixed": {
+      "tasks": 210,
+      "a_only": 1,
+      "b_only": 20,
+      "p": 2.09808349609375e-05,
+      "significant_bonferroni": true,
+      "same_procedure": true
+    },
+    "ep-agentic-11m-fixed vs ep-agentic-40m-fixed": {
+      "tasks": 210,
+      "a_only": 0,
+      "b_only": 29,
+      "p": 3.725290298461914e-09,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-fixed vs ep-agentic-96m-fixed": {
+      "tasks": 210,
+      "a_only": 21,
+      "b_only": 15,
+      "p": 0.40503224614076316,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-fixed vs ep-agenticxl-11m-fixed": {
+      "tasks": 210,
+      "a_only": 7,
+      "b_only": 9,
+      "p": 0.803619384765625,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-fixed vs ep-agenticxl-96m-fixed": {
+      "tasks": 210,
+      "a_only": 18,
+      "b_only": 28,
+      "p": 0.18392482137699062,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-fixed vs ep-agenticxl-96m-s101-fixed": {
+      "tasks": 210,
+      "a_only": 17,
+      "b_only": 40,
+      "p": 0.003201543767450382,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-fixed vs ep-agenticxl-96m-s202-fixed": {
+      "tasks": 210,
+      "a_only": 0,
+      "b_only": 25,
+      "p": 5.960464477539063e-08,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-fixed vs ep-fcall-11m-big-fixed": {
+      "tasks": 210,
+      "a_only": 43,
+      "b_only": 0,
+      "p": 2.2737367544323206e-13,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-fixed vs ep-fcall-40m-fixed": {
+      "tasks": 210,
+      "a_only": 43,
+      "b_only": 0,
+      "p": 2.2737367544323206e-13,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-fixed vs ep-fcall-96m-fixed": {
+      "tasks": 210,
+      "a_only": 43,
+      "b_only": 0,
+      "p": 2.2737367544323206e-13,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s101-fixed vs ep-agentic-11m-s202-fixed": {
+      "tasks": 210,
+      "a_only": 1,
+      "b_only": 19,
+      "p": 4.00543212890625e-05,
+      "significant_bonferroni": true,
+      "same_procedure": true
+    },
+    "ep-agentic-11m-s101-fixed vs ep-agentic-40m-fixed": {
+      "tasks": 210,
+      "a_only": 1,
+      "b_only": 29,
+      "p": 5.774199962615967e-08,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s101-fixed vs ep-agentic-96m-fixed": {
+      "tasks": 210,
+      "a_only": 22,
+      "b_only": 15,
+      "p": 0.3240086000878364,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s101-fixed vs ep-agenticxl-11m-fixed": {
+      "tasks": 210,
+      "a_only": 12,
+      "b_only": 13,
+      "p": 1.0,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s101-fixed vs ep-agenticxl-96m-fixed": {
+      "tasks": 210,
+      "a_only": 18,
+      "b_only": 27,
+      "p": 0.23269319190831084,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s101-fixed vs ep-agenticxl-96m-s101-fixed": {
+      "tasks": 210,
+      "a_only": 19,
+      "b_only": 41,
+      "p": 0.0062176026593266705,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s101-fixed vs ep-agenticxl-96m-s202-fixed": {
+      "tasks": 210,
+      "a_only": 0,
+      "b_only": 24,
+      "p": 1.1920928955078125e-07,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s101-fixed vs ep-fcall-11m-big-fixed": {
+      "tasks": 210,
+      "a_only": 44,
+      "b_only": 0,
+      "p": 1.1368683772161603e-13,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s101-fixed vs ep-fcall-40m-fixed": {
+      "tasks": 210,
+      "a_only": 44,
+      "b_only": 0,
+      "p": 1.1368683772161603e-13,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s101-fixed vs ep-fcall-96m-fixed": {
+      "tasks": 210,
+      "a_only": 44,
+      "b_only": 0,
+      "p": 1.1368683772161603e-13,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s202-fixed vs ep-agentic-40m-fixed": {
+      "tasks": 210,
+      "a_only": 10,
+      "b_only": 20,
+      "p": 0.09873714670538902,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s202-fixed vs ep-agentic-96m-fixed": {
+      "tasks": 210,
+      "a_only": 40,
+      "b_only": 15,
+      "p": 0.0010158471941252856,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s202-fixed vs ep-agenticxl-11m-fixed": {
+      "tasks": 210,
+      "a_only": 22,
+      "b_only": 5,
+      "p": 0.0015137195587158203,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s202-fixed vs ep-agenticxl-96m-fixed": {
+      "tasks": 210,
+      "a_only": 28,
+      "b_only": 19,
+      "p": 0.24296021728332562,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s202-fixed vs ep-agenticxl-96m-s101-fixed": {
+      "tasks": 210,
+      "a_only": 29,
+      "b_only": 33,
+      "p": 0.7035366713552734,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s202-fixed vs ep-agenticxl-96m-s202-fixed": {
+      "tasks": 210,
+      "a_only": 10,
+      "b_only": 16,
+      "p": 0.32693958282470703,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s202-fixed vs ep-fcall-11m-big-fixed": {
+      "tasks": 210,
+      "a_only": 62,
+      "b_only": 0,
+      "p": 4.336808689942018e-19,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s202-fixed vs ep-fcall-40m-fixed": {
+      "tasks": 210,
+      "a_only": 62,
+      "b_only": 0,
+      "p": 4.336808689942018e-19,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-11m-s202-fixed vs ep-fcall-96m-fixed": {
+      "tasks": 210,
+      "a_only": 62,
+      "b_only": 0,
+      "p": 4.336808689942018e-19,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-40m-fixed vs ep-agentic-96m-fixed": {
+      "tasks": 210,
+      "a_only": 43,
+      "b_only": 8,
+      "p": 6.867117736675254e-07,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-40m-fixed vs ep-agenticxl-11m-fixed": {
+      "tasks": 210,
+      "a_only": 31,
+      "b_only": 4,
+      "p": 3.4654513001441956e-06,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-40m-fixed vs ep-agenticxl-96m-fixed": {
+      "tasks": 210,
+      "a_only": 30,
+      "b_only": 11,
+      "p": 0.00432400493446039,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-40m-fixed vs ep-agenticxl-96m-s101-fixed": {
+      "tasks": 210,
+      "a_only": 21,
+      "b_only": 15,
+      "p": 0.40503224614076316,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-40m-fixed vs ep-agenticxl-96m-s202-fixed": {
+      "tasks": 210,
+      "a_only": 14,
+      "b_only": 10,
+      "p": 0.5412561893463135,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-40m-fixed vs ep-fcall-11m-big-fixed": {
+      "tasks": 210,
+      "a_only": 72,
+      "b_only": 0,
+      "p": 4.235164736271502e-22,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-40m-fixed vs ep-fcall-40m-fixed": {
+      "tasks": 210,
+      "a_only": 72,
+      "b_only": 0,
+      "p": 4.235164736271502e-22,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-40m-fixed vs ep-fcall-96m-fixed": {
+      "tasks": 210,
+      "a_only": 72,
+      "b_only": 0,
+      "p": 4.235164736271502e-22,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-96m-fixed vs ep-agenticxl-11m-fixed": {
+      "tasks": 210,
+      "a_only": 11,
+      "b_only": 19,
+      "p": 0.20048842206597328,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-96m-fixed vs ep-agenticxl-96m-fixed": {
+      "tasks": 210,
+      "a_only": 23,
+      "b_only": 39,
+      "p": 0.05589722669971113,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agentic-96m-fixed vs ep-agenticxl-96m-s101-fixed": {
+      "tasks": 210,
+      "a_only": 6,
+      "b_only": 35,
+      "p": 4.873598300036974e-06,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-96m-fixed vs ep-agenticxl-96m-s202-fixed": {
+      "tasks": 210,
+      "a_only": 6,
+      "b_only": 37,
+      "p": 1.636124125070637e-06,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-96m-fixed vs ep-fcall-11m-big-fixed": {
+      "tasks": 210,
+      "a_only": 37,
+      "b_only": 0,
+      "p": 1.4551915228366852e-11,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-96m-fixed vs ep-fcall-40m-fixed": {
+      "tasks": 210,
+      "a_only": 37,
+      "b_only": 0,
+      "p": 1.4551915228366852e-11,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agentic-96m-fixed vs ep-fcall-96m-fixed": {
+      "tasks": 210,
+      "a_only": 37,
+      "b_only": 0,
+      "p": 1.4551915228366852e-11,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agenticxl-11m-fixed vs ep-agenticxl-96m-fixed": {
+      "tasks": 210,
+      "a_only": 18,
+      "b_only": 26,
+      "p": 0.2912152365458951,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agenticxl-11m-fixed vs ep-agenticxl-96m-s101-fixed": {
+      "tasks": 210,
+      "a_only": 10,
+      "b_only": 31,
+      "p": 0.0014504910141113214,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-agenticxl-11m-fixed vs ep-agenticxl-96m-s202-fixed": {
+      "tasks": 210,
+      "a_only": 0,
+      "b_only": 23,
+      "p": 2.384185791015625e-07,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agenticxl-11m-fixed vs ep-fcall-11m-big-fixed": {
+      "tasks": 210,
+      "a_only": 45,
+      "b_only": 0,
+      "p": 5.684341886080802e-14,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agenticxl-11m-fixed vs ep-fcall-40m-fixed": {
+      "tasks": 210,
+      "a_only": 45,
+      "b_only": 0,
+      "p": 5.684341886080802e-14,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agenticxl-11m-fixed vs ep-fcall-96m-fixed": {
+      "tasks": 210,
+      "a_only": 45,
+      "b_only": 0,
+      "p": 5.684341886080802e-14,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agenticxl-96m-fixed vs ep-agenticxl-96m-s101-fixed": {
+      "tasks": 210,
+      "a_only": 22,
+      "b_only": 35,
+      "p": 0.11116111910399348,
+      "significant_bonferroni": false,
+      "same_procedure": true
+    },
+    "ep-agenticxl-96m-fixed vs ep-agenticxl-96m-s202-fixed": {
+      "tasks": 210,
+      "a_only": 10,
+      "b_only": 25,
+      "p": 0.01667384780012071,
+      "significant_bonferroni": false,
+      "same_procedure": true
+    },
+    "ep-agenticxl-96m-fixed vs ep-fcall-11m-big-fixed": {
+      "tasks": 210,
+      "a_only": 53,
+      "b_only": 0,
+      "p": 2.220446049250313e-16,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agenticxl-96m-fixed vs ep-fcall-40m-fixed": {
+      "tasks": 210,
+      "a_only": 53,
+      "b_only": 0,
+      "p": 2.220446049250313e-16,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agenticxl-96m-fixed vs ep-fcall-96m-fixed": {
+      "tasks": 210,
+      "a_only": 53,
+      "b_only": 0,
+      "p": 2.220446049250313e-16,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agenticxl-96m-s101-fixed vs ep-agenticxl-96m-s202-fixed": {
+      "tasks": 210,
+      "a_only": 18,
+      "b_only": 20,
+      "p": 0.8714146793645341,
+      "significant_bonferroni": false,
+      "same_procedure": true
+    },
+    "ep-agenticxl-96m-s101-fixed vs ep-fcall-11m-big-fixed": {
+      "tasks": 210,
+      "a_only": 66,
+      "b_only": 0,
+      "p": 2.710505431213761e-20,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agenticxl-96m-s101-fixed vs ep-fcall-40m-fixed": {
+      "tasks": 210,
+      "a_only": 66,
+      "b_only": 0,
+      "p": 2.710505431213761e-20,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agenticxl-96m-s101-fixed vs ep-fcall-96m-fixed": {
+      "tasks": 210,
+      "a_only": 66,
+      "b_only": 0,
+      "p": 2.710505431213761e-20,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agenticxl-96m-s202-fixed vs ep-fcall-11m-big-fixed": {
+      "tasks": 210,
+      "a_only": 68,
+      "b_only": 0,
+      "p": 6.776263578034403e-21,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agenticxl-96m-s202-fixed vs ep-fcall-40m-fixed": {
+      "tasks": 210,
+      "a_only": 68,
+      "b_only": 0,
+      "p": 6.776263578034403e-21,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-agenticxl-96m-s202-fixed vs ep-fcall-96m-fixed": {
+      "tasks": 210,
+      "a_only": 68,
+      "b_only": 0,
+      "p": 6.776263578034403e-21,
+      "significant_bonferroni": true,
+      "same_procedure": false
+    },
+    "ep-fcall-11m-big-fixed vs ep-fcall-40m-fixed": {
+      "tasks": 210,
+      "a_only": 0,
+      "b_only": 0,
+      "p": 1.0,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-fcall-11m-big-fixed vs ep-fcall-96m-fixed": {
+      "tasks": 210,
+      "a_only": 0,
+      "b_only": 0,
+      "p": 1.0,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    },
+    "ep-fcall-40m-fixed vs ep-fcall-96m-fixed": {
+      "tasks": 210,
+      "a_only": 0,
+      "b_only": 0,
+      "p": 1.0,
+      "significant_bonferroni": false,
+      "same_procedure": false
+    }
+  },
+  "replicates": {
+    "ep-agentic-11m-fixed": {
+      "runs": 3,
+      "mean": 0.2365,
+      "min": 0.2048,
+      "max": 0.2952,
+      "spread_points": 9.04
+    },
+    "ep-agenticxl-96m-fixed": {
+      "runs": 3,
+      "mean": 0.2968,
+      "min": 0.2524,
+      "max": 0.3238,
+      "spread_points": 7.14
+    }
+  }
+}

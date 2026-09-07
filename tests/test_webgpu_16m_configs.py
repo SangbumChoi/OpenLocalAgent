@@ -1,7 +1,7 @@
 from dataclasses import asdict
 
-from localagent.model.config import ModelConfig
-from localagent.model.transformer import LocalAgentLM
+from openlocalagent.model.config import ModelConfig
+from openlocalagent.model.transformer import LocalAgentLM
 
 
 def _load_pair() -> tuple[ModelConfig, ModelConfig]:

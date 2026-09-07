@@ -9,7 +9,7 @@ import pytest
 
 
 ROOT = Path(__file__).parents[1]
-WEB_APP = ROOT / "spaces" / "localagent-webgpu" / "app.js"
+WEB_APP = ROOT / "demos" / "webgpu" / "app.js"
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="Node.js is required for browser parity")

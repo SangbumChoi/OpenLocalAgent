@@ -3,11 +3,11 @@ from pathlib import Path
 import pytest
 import torch
 
-from localagent.agent.runtime import Agent
-from localagent.agent.tools import ToolRegistry
-from localagent.data.schema import ToolSpec
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ByteTokenizer, BPETokenizer, train_bpe
+from openlocalagent.agent.runtime import Agent
+from openlocalagent.agent.tools import ToolRegistry
+from openlocalagent.data.schema import ToolSpec
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ByteTokenizer, BPETokenizer, train_bpe
 
 
 def _bpe(tmp_path: Path):

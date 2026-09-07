@@ -5,12 +5,12 @@ from dataclasses import replace
 
 import pytest
 
-from localagent.data.conversation_artifact import (
+from openlocalagent.data.conversation_artifact import (
     canonical_json_bytes,
     conversation_semantic_sha256,
 )
-from localagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
-from localagent.data.stratified_eval_selector import (
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
+from openlocalagent.data.decontam.stratified_eval_selector import (
     InsufficientStratumCapacityError,
     conversation_eval_strata,
     select_stratified_eval_subset,

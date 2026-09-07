@@ -30,7 +30,7 @@ const summary = suite.mobileTaskSummary(suite.MOBILE_TASKS.map((task) => ({
 process.stdout.write(JSON.stringify({ ids, families, state, summary }));
 """
     result = subprocess.run(
-        [shutil.which("node"), "-e", script, "./spaces/localagent-webgpu/mobile-tasks.js"],
+        [shutil.which("node"), "-e", script, "./demos/webgpu/mobile-tasks.js"],
         check=True,
         capture_output=True,
         text=True,

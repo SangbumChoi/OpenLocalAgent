@@ -1,5 +1,5 @@
-from localagent.agent.caller import ToolCaller
-from localagent.eval import codebench
+from openlocalagent.agent.caller import ToolCaller
+from openlocalagent.eval import codebench
 
 
 def test_catalog_size_and_gold():

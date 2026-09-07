@@ -1,0 +1,25 @@
+# Ladder tier 4 — the dense control for the sparse-routing arm, and the first tier where tool
+# knowledge rather than context length looks like the binding constraint.
+#
+# Natural next rung from la-93m: same eighteen blocks, same two short convolutions per attention,
+# width 640 -> 1152. Pairs with la-300m-moe, which holds total parameters fixed and halves the
+# active ones.
+name: la-300m
+vocab_size: 16384
+d_model: 1152
+n_layers: 18
+n_loops: 1
+n_heads: 18
+n_kv_heads: 1
+ffn_hidden: 3200
+max_seq_len: 4096
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types:
+  [conv, conv, attn, conv, conv, attn, conv, conv, attn, conv, conv, attn,
+   conv, conv, attn, conv, conv, attn]
+param_budget: 350000000

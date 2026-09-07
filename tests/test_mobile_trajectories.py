@@ -27,7 +27,7 @@ const summary = suite.trajectorySummary(suite.MOBILE_TRAJECTORIES.flatMap((traje
 process.stdout.write(JSON.stringify({trajectoryIds, stepIds, summary}));
 """
     result = subprocess.run(
-        [shutil.which("node"), "-e", script, "./spaces/localagent-webgpu/mobile-trajectories.js"],
+        [shutil.which("node"), "-e", script, "./demos/webgpu/mobile-trajectories.js"],
         check=True,
         capture_output=True,
         text=True,
@@ -49,7 +49,7 @@ const prompt = suite.trajectoryPrompt(trajectory, trajectory.steps[0], suite.tra
 process.stdout.write(JSON.stringify({prompt, state: suite.trajectoryInitialState()}));
 """
     result = subprocess.run(
-        [shutil.which("node"), "-e", script, "./spaces/localagent-webgpu/mobile-trajectories.js"],
+        [shutil.which("node"), "-e", script, "./demos/webgpu/mobile-trajectories.js"],
         check=True,
         capture_output=True,
         text=True,
@@ -69,7 +69,7 @@ const expected = {tool: "open_url", args: {url: "https://example.local/mail"}};
 process.stdout.write(JSON.stringify({exact: suite.trajectoryActionExact(action, expected)}));
 """
     result = subprocess.run(
-        [shutil.which("node"), "-e", script, "./spaces/localagent-webgpu/mobile-trajectories.js"],
+        [shutil.which("node"), "-e", script, "./demos/webgpu/mobile-trajectories.js"],
         check=True,
         capture_output=True,
         text=True,
@@ -78,6 +78,6 @@ process.stdout.write(JSON.stringify({exact: suite.trajectoryActionExact(action, 
 
 
 def test_mobile_trajectory_page_loads_bundle_tool_schemas() -> None:
-    html = Path("spaces/localagent-webgpu/mobile-trajectories.html").read_text()
+    html = Path("demos/webgpu/mobile-trajectories.html").read_text()
     assert 'fetch("meta.json")' in html
     assert "META_FOR_MOBILE_TASKS" in html

@@ -1,0 +1,32 @@
+{
+  "model": "data-union",
+  "kind": "localagent",
+  "location": "runs/region/data-union/model.pt",
+  "parameters": 28322304,
+  "rows_per_suite": 12,
+  "max_new_tokens": 64,
+  "suites": {
+    "androidcontrol": {
+      "rows": 12,
+      "parse_rate": 1.0,
+      "type_match": 0.08333333333333333,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.39768977959950763,
+      "grounding_accuracy": 0.0
+    },
+    "toolace": {
+      "rows": 12,
+      "parse_rate": 1.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.3290775418281555
+    },
+    "agentnet": {
+      "rows": 12,
+      "parse_rate": 0.75,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.9901282588640848
+    }
+  }
+}

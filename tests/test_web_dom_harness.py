@@ -9,7 +9,7 @@ import pytest
 
 
 ROOT = Path(__file__).parents[1]
-WEB_DIR = ROOT / "spaces" / "localagent-webgpu"
+WEB_DIR = ROOT / "demos" / "webgpu"
 DOM_CASES = WEB_DIR / "browser-task-cases.json"
 DOM_HARNESS = WEB_DIR / "browser-tasks.js"
 DOM_HTML = WEB_DIR / "browser-tasks.html"

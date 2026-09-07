@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-from localagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model import LocalAgentLM, ModelConfig
 
 
 def _cfg(**overrides):

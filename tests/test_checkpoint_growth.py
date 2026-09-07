@@ -5,19 +5,19 @@ import pytest
 import torch
 import yaml
 
-from localagent.cli import main as cli_main
-from localagent.data.pretrain_corpus import pack_shards
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ByteTokenizer
-from localagent.train.checkpoint_growth import (
+from openlocalagent.cli import main as cli_main
+from openlocalagent.data.corpus.pretrain_corpus import pack_shards
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ByteTokenizer
+from openlocalagent.train.checkpoint_growth import (
     assert_growth_compatible,
     grow_checkpoint,
     parse_layer_map,
     verify_growth_checkpoint,
     write_grown_checkpoint,
 )
-from localagent.train.pretrain import run as run_pretrain
-from localagent.train.stage_data import canonical_sha256, sha256_file, tokenizer_identity
+from openlocalagent.train.pretrain import run as run_pretrain
+from openlocalagent.train.stage_data import canonical_sha256, sha256_file, tokenizer_identity
 
 TOKENIZER_SHA256 = "a" * 64
 

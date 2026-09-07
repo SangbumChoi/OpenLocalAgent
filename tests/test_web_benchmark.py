@@ -8,12 +8,12 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).parents[1]
-WEB_BENCHMARK = ROOT / "spaces" / "localagent-webgpu" / "benchmark.js"
-WEB_APP = ROOT / "spaces" / "localagent-webgpu" / "app.js"
-WEB_BENCHMARK_HTML = ROOT / "spaces" / "localagent-webgpu" / "benchmark.html"
+WEB_BENCHMARK = ROOT / "demos" / "webgpu" / "benchmark.js"
+WEB_APP = ROOT / "demos" / "webgpu" / "app.js"
+WEB_BENCHMARK_HTML = ROOT / "demos" / "webgpu" / "benchmark.html"
 PRETRAIN_PAPER_CONFIG = ROOT / "configs" / "data" / "pretrain-paper.yaml"
 WEB_BENCHMARK_CASES = (
-    ROOT / "spaces" / "localagent-webgpu" / "benchmark-cases.json"
+    ROOT / "demos" / "webgpu" / "benchmark-cases.json"
 )
 
 
@@ -313,10 +313,10 @@ process.stdout.write(JSON.stringify({
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="Node.js is required for browser parity")
 def test_browser_full_catalog_prompt_matches_training_contract_exactly():
-    from localagent.agent.toolset import STANDARD_TOOLS
-    from localagent.data.prompt_contract import render_agent_decode_prompt
-    from localagent.data.schema import Message, Role
-    from localagent.model import tokenizer as tk
+    from openlocalagent.agent.toolset import STANDARD_TOOLS
+    from openlocalagent.data.prompt_contract import render_agent_decode_prompt
+    from openlocalagent.data.schema import Message, Role
+    from openlocalagent.model import tokenizer as tk
 
     query = "Open the settings page."
     meta = {
@@ -834,10 +834,10 @@ const { verifyArtifactBytesAgainstManifest } = require(process.argv[1]);
 @pytest.mark.parametrize(
     ("suite_name", "suite_path"),
     [
-        ("local-realtime-actions", ROOT / "spaces" / "localagent-webgpu" / "benchmark-cases.json"),
+        ("local-realtime-actions", ROOT / "demos" / "webgpu" / "benchmark-cases.json"),
         (
             "local-browser-tasks",
-            ROOT / "spaces" / "localagent-webgpu" / "browser-task-cases.json",
+            ROOT / "demos" / "webgpu" / "browser-task-cases.json",
         ),
     ],
 )
@@ -856,7 +856,7 @@ def test_browser_suite_pins_match_decontamination_config_and_reject_tampering(
     runner = (
         WEB_BENCHMARK
         if suite_name == "local-realtime-actions"
-        else ROOT / "spaces" / "localagent-webgpu" / "browser-tasks.js"
+        else ROOT / "demos" / "webgpu" / "browser-tasks.js"
     ).read_text()
     assert f"bytes: {expected['bytes']}" in runner
     assert f'sha256: "{expected["sha256"]}"' in runner
@@ -1201,7 +1201,7 @@ process.stdout.write(JSON.stringify({
 def test_benchmark_bundle_contract_requires_hidden_only_action_export():
     app = WEB_APP.read_text()
     benchmark = WEB_BENCHMARK.read_text()
-    deploy = (ROOT / "spaces" / "localagent-webgpu" / "DEPLOY.md").read_text()
+    deploy = (ROOT / "demos" / "webgpu" / "DEPLOY.md").read_text()
     assert "Benchmark-grade runs require bundle-manifest.json" in app
     assert "re-export with action_only=True" in app
     assert 'BENCHMARK_GRADE ? ["hidden"] : null' in app

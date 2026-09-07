@@ -18,17 +18,17 @@ import random
 from dataclasses import asdict, replace
 from pathlib import Path
 
-from localagent.agent.toolset import STANDARD_TOOLS
-from localagent.data.agent_synth import Generator
-from localagent.data.conversation_artifact import (
+from openlocalagent.agent.toolset import STANDARD_TOOLS
+from openlocalagent.data.synth.agent_synth import Generator
+from openlocalagent.data.conversation_artifact import (
     conversation_semantic_sha256,
     rendered_assistant_prompts,
     rendered_prompt_sha256,
 )
-from localagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1
-from localagent.data.render import render_conversation_rows
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.stage_data import read_conversations
+from openlocalagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1
+from openlocalagent.data.render import render_conversation_rows
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.stage_data import read_conversations
 
 PUBLIC = Path("data/public")
 SOURCES = {

@@ -1,4 +1,4 @@
-from localagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
 
 
 def test_conversation_roundtrip():
@@ -21,7 +21,7 @@ def test_conversation_roundtrip():
 def test_generate_weighted_oversamples():
     from collections import Counter
 
-    from localagent.data.agent_synth import Generator
+    from openlocalagent.data.synth.agent_synth import Generator
     s = Generator(2, 1, "train").generate_weighted(300, {"weather": 12.0})
     c = Counter(x.category for x in s)
     assert c["weather"] > 50  # heavy weight dominates

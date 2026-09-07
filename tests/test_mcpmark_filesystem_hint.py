@@ -1,13 +1,13 @@
 """Regression tests for generic MCP filesystem operation hints."""
 
-from localagent.agent.constrained import (
+from openlocalagent.agent.constrained import (
     _filesystem_lexical_tool,
     _next_output_path,
     _output_filenames,
     _text_arg,
     _workspace_output_path,
 )
-from localagent.data.schema import ToolSpec
+from openlocalagent.data.schema import ToolSpec
 
 
 def _tools() -> list[ToolSpec]:

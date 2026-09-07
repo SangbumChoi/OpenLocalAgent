@@ -1,6 +1,6 @@
 """Regression tests for generic filesystem path grounding."""
 
-from localagent.agent.constrained import _arg_options, _path
+from openlocalagent.agent.constrained import _arg_options, _path
 
 
 def test_path_prefers_explicit_absolute_workspace_over_task_identifier() -> None:

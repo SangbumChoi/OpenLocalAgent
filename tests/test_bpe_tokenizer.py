@@ -1,4 +1,4 @@
-from localagent.model.tokenizer import (
+from openlocalagent.model.tokenizer import (
     ASSISTANT,
     TOOL,
     TOOL_CALL_OPEN,
@@ -8,7 +8,7 @@ from localagent.model.tokenizer import (
     batched_token_lengths,
     train_bpe,
 )
-from localagent.train.sft import _encode_with_value_span
+from openlocalagent.train.sft import _encode_with_value_span
 
 
 def test_bpe_roundtrip_special_markers_and_reload(tmp_path):

@@ -1,0 +1,43 @@
+{
+  "model": "data/baselines/Qwen2.5-0.5B-Instruct",
+  "adapter": "runs/lora/qwen25-05b",
+  "tag": "qwen25-05b",
+  "rows_requested": 300,
+  "rows": {
+    "arc-easy": 300,
+    "arc-challenge": 300,
+    "hellaswag": 300,
+    "openbookqa": 300,
+    "winogrande": 300,
+    "mmlu": 300
+  },
+  "scores": {
+    "base": {
+      "arc-easy": 56.3,
+      "arc-challenge": 35.3,
+      "hellaswag": 48.3,
+      "openbookqa": 37.7,
+      "winogrande": 55.7,
+      "mmlu": 37.3,
+      "seconds": 120.8
+    },
+    "finetuned": {
+      "arc-easy": 59.7,
+      "arc-challenge": 35.7,
+      "hellaswag": 48.3,
+      "openbookqa": 36.3,
+      "winogrande": 57.7,
+      "mmlu": 37.3,
+      "seconds": 183.4
+    }
+  },
+  "delta": {
+    "arc-easy": 3.4,
+    "arc-challenge": 0.4,
+    "hellaswag": 0.0,
+    "openbookqa": -1.4,
+    "winogrande": 2.0,
+    "mmlu": 0.0
+  },
+  "mean_delta": 0.73
+}

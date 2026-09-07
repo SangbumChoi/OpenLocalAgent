@@ -1,0 +1,20 @@
+{
+  "checkpoint": "results/runs/posttrain-la-93m/latest.pt",
+  "device": "NVIDIA H100 NVL",
+  "torch": "2.10.0",
+  "prompt_tokens": 512,
+  "new_tokens": 128,
+  "kernels": [
+    {
+      "kernel": "compile_cudagraph_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 79140.8,
+      "decode_tok_s": 1122.5,
+      "decode_ms_per_token": 0.891,
+      "peak_mem_mb": 240.1,
+      "repeats": 5,
+      "error": null
+    }
+  ]
+}

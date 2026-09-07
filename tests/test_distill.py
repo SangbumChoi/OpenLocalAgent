@@ -9,18 +9,18 @@ import copy
 
 import torch
 
-from localagent.data.agent_synth import Generator
-from localagent.data.render import render_sft
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.data.render import prompt_text
-from localagent.train.distill import (
+from openlocalagent.data.synth.agent_synth import Generator
+from openlocalagent.data.render import render_sft
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.data.render import prompt_text
+from openlocalagent.train.distill import (
     cache_teacher_topk,
     distill,
     distill_on_policy,
     _topk_kd_loss,
 )
-from localagent.train.sft import sft
+from openlocalagent.train.sft import sft
 
 
 def _tiny_cfg(vocab=256, name="t"):

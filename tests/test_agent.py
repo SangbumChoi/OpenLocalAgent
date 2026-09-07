@@ -1,6 +1,6 @@
-from localagent.agent.parser import extract_tool_calls, strip_tool_calls
-from localagent.agent.tools import default_registry
-from localagent.eval.tool_eval import irrelevance_correct, match_calls
+from openlocalagent.agent.parser import extract_tool_calls, strip_tool_calls
+from openlocalagent.agent.tools import default_registry
+from openlocalagent.eval.tool_eval import irrelevance_correct, match_calls
 
 
 def test_parser_extracts_tool_call():
@@ -28,7 +28,7 @@ def test_unknown_tool_is_safe():
 
 
 def test_ast_match_is_order_insensitive():
-    from localagent.data.schema import ToolCall
+    from openlocalagent.data.schema import ToolCall
 
     pred = [ToolCall("a", {"x": 1}), ToolCall("b", {"y": 2})]
     ref = [ToolCall("b", {"y": 2}), ToolCall("a", {"x": 1})]

@@ -7,14 +7,14 @@ from collections.abc import Callable
 
 import pytest
 
-from localagent.data.decision_quota_order import (
+from openlocalagent.data.corpus.decision_quota_order import (
     ORDERING_CONTRACT,
     QUOTA_SAMPLING_MODE,
     DecisionOrdering,
     order_assistant_decisions,
     quota_sampling_contract,
 )
-from localagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
 
 
 def _tool(

@@ -1,0 +1,40 @@
+model tiny-30m-byte: 28.322M params on cuda
+  [pretrain] step    0/200  loss 5.589  loss_tokens 8,192
+  [pretrain] step   25/200  loss 2.000  loss_tokens 212,992
+  [pretrain] step   50/200  loss 1.077  loss_tokens 417,792
+  [pretrain] step   75/200  loss 0.885  loss_tokens 622,592
+  [pretrain] step  100/200  loss 0.770  loss_tokens 827,392
+  [pretrain] step  125/200  loss 0.699  loss_tokens 1,032,192
+  [pretrain] step  150/200  loss 0.605  loss_tokens 1,236,992
+  [pretrain] step  175/200  loss 0.452  loss_tokens 1,441,792
+  [pretrain] step  199/200  loss 0.514  loss_tokens 1,638,400
+
+=== Round 1: overall=25.9%  (trained with 10000 single-turn + 160 episodes) ===
+  weakest: planner=0%, write_file=0%, run_tests=0%, screenshot=0%, key_press=0%
+  multi-turn: step_acc=31% episode_acc=5% (101 steps)
+  -> next round oversamples: plannerx4.0, write_filex4.8, run_testsx4.0, screenshotx4.4, key_pressx5.2
+  (saved best model: score=38.2, overall=25.9% mt_step=31%)
+
+=== Round 2: overall=25.8%  (trained with 10000 single-turn + 160 episodes) ===
+  weakest: weather=0%, planner=0%, get_news=0%, write_file=0%, run_tests=0%
+  multi-turn: step_acc=30% episode_acc=8% (103 steps)
+  -> next round oversamples: weatherx2.4, plannerx4.0, get_newsx4.0, write_filex4.8, run_testsx4.0
+
+=== Round 3: overall=25.4%  (trained with 10000 single-turn + 160 episodes) ===
+  weakest: planner=0%, play_music=0%, get_news=0%, write_file=0%, run_tests=0%
+  multi-turn: step_acc=35% episode_acc=12% (100 steps)
+  -> next round oversamples: plannerx4.0, play_musicx4.0, get_newsx4.0, write_filex4.8, run_testsx4.0
+  (saved best model: score=39.0, overall=25.4% mt_step=35%)
+
+=== Round 4: overall=30.4%  (trained with 10000 single-turn + 160 episodes) ===
+  weakest: planner=0%, get_news=0%, write_file=0%, run_tests=0%, set_reminder=0%
+  multi-turn: step_acc=35% episode_acc=5% (107 steps)
+  -> next round oversamples: plannerx4.0, get_newsx4.0, write_filex4.8, run_testsx4.0, set_reminderx4.8
+  (saved best model: score=50.1, overall=30.4% mt_step=35%)
+
+=== Round 5: overall=32.6%  (trained with 10000 single-turn + 160 episodes) ===
+  weakest: planner=0%, play_music=0%, run_tests=0%, key_press=0%, drag=0%
+  multi-turn: step_acc=31% episode_acc=8% (115 steps)
+  -> next round oversamples: plannerx4.0, play_musicx4.0, run_testsx4.0, key_pressx5.2, dragx4.8
+
+Done. overall by round: [26, 26, 25, 30, 33]  mt_step by round: [31, 30, 35, 35, 31]  (best score=50.1 saved to runs/analyze_tiny-30m-byte/model.pt)

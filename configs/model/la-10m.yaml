@@ -1,0 +1,22 @@
+# Ladder tier 1 — the smallest agent that still parses a tool catalog.
+#
+# Shape is unchanged from the arm that produced results/evalsuite-full/agentic-11m.json
+# (17.40 mean step-success over the ten suites); only the name moved onto the ladder. Four
+# blocks alternate short-conv and attention, so half the stack keeps constant decode state.
+name: la-10m
+vocab_size: 16384
+d_model: 384
+n_layers: 4
+n_loops: 1
+n_heads: 6
+n_kv_heads: 1
+ffn_hidden: 512
+max_seq_len: 2048
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types: [conv, attn, conv, attn]
+param_budget: 100000000

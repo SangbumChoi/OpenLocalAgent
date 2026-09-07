@@ -6,7 +6,7 @@ import json
 
 import pytest
 
-from localagent.train.resume_git_receipt import (
+from openlocalagent.train.resume_git_receipt import (
     assert_resume_git_receipt,
     build_resume_git_receipt,
     load_resume_git_receipt,

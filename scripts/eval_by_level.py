@@ -5,7 +5,7 @@ The flywheel's published ~100% grounded figure is reported without the enrichmen
 measured at, and level r controls how hard the held-out set is. This scores a single trained
 checkpoint on levels 1..5 so the difficulty axis can be separated from the training-budget axis.
 
-  python scripts/eval_by_level.py --ckpt runs/ablate/cuda-s0-x10/model.pt --out runs/eval_by_level.json
+  python scripts/eval_by_level.py --ckpt results/runs/ablate/cuda-s0-x10/model.pt --out results/runs/eval_by_level.json
 """
 
 from __future__ import annotations
@@ -15,11 +15,11 @@ import json
 
 import torch
 
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
-from localagent.data.agent_synth import Generator
-from localagent.eval.harness import evaluate, evaluate_grounded, multi_turn_eval
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.data.synth.agent_synth import Generator
+from openlocalagent.eval.harness import evaluate, evaluate_grounded, multi_turn_eval
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
 
 
 def main():
@@ -38,8 +38,8 @@ def main():
     model.load_state_dict(state["state_dict"])
     model.eval()
 
-    from localagent.agent.pointer_head import PointerHead
-    from localagent.agent.tool_head import ToolHead
+    from openlocalagent.agent.pointer_head import PointerHead
+    from openlocalagent.agent.tool_head import ToolHead
 
     head = ptr = None
     if state.get("tool_head") is not None:

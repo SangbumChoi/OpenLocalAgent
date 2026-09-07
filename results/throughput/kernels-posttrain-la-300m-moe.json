@@ -1,0 +1,75 @@
+{
+  "checkpoint": "results/runs/posttrain-la-300m-moe/latest.pt",
+  "device": "NVIDIA H100 NVL",
+  "torch": "2.10.0",
+  "prompt_tokens": 512,
+  "new_tokens": 128,
+  "kernels": [
+    {
+      "kernel": "eager_fp32",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 17382.9,
+      "decode_tok_s": 60.7,
+      "decode_ms_per_token": 16.483,
+      "peak_mem_mb": 1307.8,
+      "repeats": 5,
+      "error": null
+    },
+    {
+      "kernel": "eager_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 14960.5,
+      "decode_tok_s": 51.8,
+      "decode_ms_per_token": 19.303,
+      "peak_mem_mb": 652.4,
+      "repeats": 5,
+      "error": null
+    },
+    {
+      "kernel": "sdpa_flash_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 17138.1,
+      "decode_tok_s": 56.3,
+      "decode_ms_per_token": 17.748,
+      "peak_mem_mb": 652.4,
+      "repeats": 5,
+      "error": null
+    },
+    {
+      "kernel": "sdpa_efficient_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 17234.1,
+      "decode_tok_s": 56.9,
+      "decode_ms_per_token": 17.583,
+      "peak_mem_mb": 652.4,
+      "repeats": 5,
+      "error": null
+    },
+    {
+      "kernel": "sdpa_math_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 13148.3,
+      "decode_tok_s": 43.6,
+      "decode_ms_per_token": 22.958,
+      "peak_mem_mb": 691.4,
+      "repeats": 5,
+      "error": null
+    },
+    {
+      "kernel": "compile_bf16",
+      "prompt_tokens": 512,
+      "new_tokens": 128,
+      "prefill_tok_s": 16264.0,
+      "decode_tok_s": 46.8,
+      "decode_ms_per_token": 21.375,
+      "peak_mem_mb": 713.4,
+      "repeats": 5,
+      "error": null
+    }
+  ]
+}

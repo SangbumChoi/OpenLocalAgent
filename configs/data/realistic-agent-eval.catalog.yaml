@@ -34,7 +34,7 @@ entries:
     train_policy: train
     integration:
       status: supported_text_first_pilot
-      target_adapter: localagent.data.androidcontrol_via_localagent_v1
+      target_adapter: openlocalagent.data.androidcontrol_via_localagent_v1
       source_split_policy: official_split_file_required
     webgpu_projection:
       status: feasible_text_first
@@ -72,7 +72,7 @@ entries:
     train_policy: train
     integration:
       status: supported_text_first_pilot
-      target_adapter: localagent.data.aitw_via_localagent_v1
+      target_adapter: openlocalagent.data.aitw_via_localagent_v1
       source_split_policy: official_task_app_platform_split_required
     webgpu_projection:
       status: feasible_text_first

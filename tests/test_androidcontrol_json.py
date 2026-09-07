@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from localagent.data.androidcontrol_json import canonical_action_from_conversation, json_row_to_conversation
+from openlocalagent.data.adapters.androidcontrol_json import canonical_action_from_conversation, json_row_to_conversation
 
 
 def _row(action: dict[str, object]) -> dict[str, object]:

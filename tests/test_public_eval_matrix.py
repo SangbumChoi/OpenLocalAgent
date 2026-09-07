@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-from localagent.data.public_eval_matrix import (
+from openlocalagent.data.decontam.public_eval_matrix import (
     entries_by_family,
     load_matrix,
     trainable_entries,

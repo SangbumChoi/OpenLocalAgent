@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-from localagent.model.vision import ANDROID_ACTIONS, VisualActionHead
+from openlocalagent.model.vision import ANDROID_ACTIONS, VisualActionHead
 
 
 def test_visual_action_head_emits_action_and_normalized_pointer() -> None:

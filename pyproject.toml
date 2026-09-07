@@ -3,7 +3,7 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "localagent"
+name = "openlocalagent"
 version = "0.0.1"
 description = "A <100M-parameter LLM, pretrained from scratch, that works as a local tool-calling agent. Minimal pure-PyTorch pipeline."
 readme = "README.md"
@@ -27,11 +27,15 @@ demo = ["gradio>=4.0", "matplotlib>=3.7"]              # web demo + flywheel/ben
 # ONNX path (GGUF/ExecuTorch use their own toolchains).
 export = ["onnx>=1.16", "onnxruntime>=1.18", "onnxscript>=0.5"]
 hub = ["huggingface_hub>=0.23", "safetensors>=0.4"]    # push trained weights to the HF Hub
+# transformers is needed only to VERIFY an exported bundle loads through Auto*; the training
+# path never imports it, and the bundle carries its own vendored modeling code.
+hf-verify = ["transformers>=4.40"]
 tracking = ["wandb>=0.17"]                             # optional online/offline experiment logging
 dev = ["pytest>=8.0", "ruff>=0.4"]
 
 [project.scripts]
-localagent = "localagent.cli:main"
+openlocalagent = "openlocalagent.cli:main"
+openlocalagent-eval-suite = "openlocalagent.eval.suite:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

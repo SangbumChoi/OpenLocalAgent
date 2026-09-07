@@ -11,8 +11,8 @@ import pytest
 import torch
 import yaml
 
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.train.stage_data import (
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.train.stage_data import (
     LINEAGE_VERSION,
     canonical_sha256,
     tokenizer_identity,
@@ -193,7 +193,7 @@ def _minimal_single_decode_provenance() -> dict:
 def test_matched_trained_cached_decode_export_binds_checkpoint_and_quality_provenance(
     tmp_path,
 ):
-    from localagent.inference.export.to_onnx import (
+    from openlocalagent.inference.export.to_onnx import (
         _state_dict_sha256,
         export_matched_cached_decode,
     )
@@ -325,7 +325,7 @@ def test_matched_trained_cached_decode_export_binds_checkpoint_and_quality_prove
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="Node.js is required")
 def test_single_decode_wrapper_is_self_consistent_and_matches_browser_contract(tmp_path):
-    from localagent.inference.export.to_onnx import (
+    from openlocalagent.inference.export.to_onnx import (
         _write_single_trained_cached_decode_manifest,
     )
 
@@ -363,7 +363,7 @@ def test_single_decode_wrapper_is_self_consistent_and_matches_browser_contract(t
         },
     }
 
-    decode_js = Path(__file__).parents[1] / "spaces" / "localagent-webgpu" / "decode-benchmark.js"
+    decode_js = Path(__file__).parents[1] / "demos" / "webgpu" / "decode-benchmark.js"
     script = """
 global.window = { __localAgentSkipInit: true };
 const api = require(process.argv[1]);
@@ -421,7 +421,7 @@ def test_single_decode_wrapper_fails_closed_before_publication(
     mutate,
     message,
 ):
-    from localagent.inference.export.to_onnx import (
+    from openlocalagent.inference.export.to_onnx import (
         _write_single_trained_cached_decode_manifest,
     )
 
@@ -442,7 +442,7 @@ def test_single_decode_wrapper_fails_closed_before_publication(
 
 @pytest.mark.parametrize("stage", ["pretrain", "midtrain", "sft", "rl"])
 def test_cached_decode_loader_accepts_lineage_validated_lm_stages(tmp_path, stage):
-    from localagent.inference.export.to_onnx import (
+    from openlocalagent.inference.export.to_onnx import (
         _load_cached_decode_checkpoint,
         _training_lineage_export,
     )
@@ -477,7 +477,7 @@ def test_cached_decode_loader_accepts_lineage_validated_lm_stages(tmp_path, stag
 
 
 def test_cached_decode_loader_rejects_pickle_code_execution(tmp_path):
-    from localagent.inference.export.to_onnx import _load_cached_decode_checkpoint
+    from openlocalagent.inference.export.to_onnx import _load_cached_decode_checkpoint
 
     cfg, _, _, _ = _write_matched_configs(tmp_path)
     checkpoint_path = tmp_path / "unsafe.pt"
@@ -494,7 +494,7 @@ def test_cached_decode_loader_rejects_pickle_code_execution(tmp_path):
 
 
 def test_cached_decode_loader_rejects_symlink_checkpoint(tmp_path):
-    from localagent.inference.export.to_onnx import _load_cached_decode_checkpoint
+    from openlocalagent.inference.export.to_onnx import _load_cached_decode_checkpoint
 
     cfg, _, _, _ = _write_matched_configs(tmp_path)
     checkpoint_path = tmp_path / "checkpoint.pt"
@@ -511,8 +511,8 @@ def test_cached_decode_loader_rejects_symlink_checkpoint(tmp_path):
 
 
 def test_cached_decode_loader_validates_but_does_not_attach_sft_heads(tmp_path):
-    from localagent.agent.routes import RouteHead
-    from localagent.inference.export.to_onnx import _load_cached_decode_checkpoint
+    from openlocalagent.agent.routes import RouteHead
+    from openlocalagent.inference.export.to_onnx import _load_cached_decode_checkpoint
 
     cfg, _, _, _ = _write_matched_configs(tmp_path)
     checkpoint_path = tmp_path / "sft.pt"
@@ -555,7 +555,7 @@ def test_cached_decode_loader_rejects_incompatible_auxiliary_heads(
     mutation,
     message,
 ):
-    from localagent.inference.export.to_onnx import _load_cached_decode_checkpoint
+    from openlocalagent.inference.export.to_onnx import _load_cached_decode_checkpoint
 
     cfg, _, _, _ = _write_matched_configs(tmp_path)
     checkpoint_path = tmp_path / "sft.pt"
@@ -570,8 +570,8 @@ def test_cached_decode_loader_rejects_incompatible_auxiliary_heads(
 
 
 def test_cached_decode_loader_rejects_stale_heads_in_rl_checkpoint(tmp_path):
-    from localagent.agent.routes import RouteHead
-    from localagent.inference.export.to_onnx import _load_cached_decode_checkpoint
+    from openlocalagent.agent.routes import RouteHead
+    from openlocalagent.inference.export.to_onnx import _load_cached_decode_checkpoint
 
     cfg, _, _, _ = _write_matched_configs(tmp_path)
     checkpoint_path = tmp_path / "rl.pt"
@@ -604,7 +604,7 @@ def test_cached_decode_loader_rejects_invalid_posttraining_lineage(
     lineage_update,
     message,
 ):
-    from localagent.inference.export.to_onnx import _load_cached_decode_checkpoint
+    from openlocalagent.inference.export.to_onnx import _load_cached_decode_checkpoint
 
     cfg, _, _, _ = _write_matched_configs(tmp_path)
     checkpoint_path = tmp_path / "sft.pt"
@@ -621,7 +621,7 @@ def test_cached_decode_loader_rejects_invalid_posttraining_lineage(
 
 
 def test_matched_checkpoint_export_requires_both_arms_before_writing(tmp_path):
-    from localagent.inference.export.to_onnx import export_matched_cached_decode
+    from openlocalagent.inference.export.to_onnx import export_matched_cached_decode
 
     hybrid_cfg, hybrid_config, _, attention_config = _write_matched_configs(tmp_path)
     hybrid_checkpoint = tmp_path / "hybrid.pt"
@@ -642,7 +642,7 @@ def test_matched_checkpoint_export_requires_both_arms_before_writing(tmp_path):
 def test_trained_cached_decode_rejects_architecture_and_vocab_mismatch_before_writing(
     tmp_path,
 ):
-    from localagent.inference.export.to_onnx import export_cached_decode
+    from openlocalagent.inference.export.to_onnx import export_cached_decode
 
     hybrid_cfg, hybrid_config, _, _ = _write_matched_configs(tmp_path)
     wrong_cfg = ModelConfig(**{**asdict(hybrid_cfg), "vocab_size": 257})
@@ -665,7 +665,7 @@ def test_trained_cached_decode_rejects_architecture_and_vocab_mismatch_before_wr
 def test_trained_cached_decode_rejects_tampered_tokenizer_lineage_before_writing(
     tmp_path,
 ):
-    from localagent.inference.export.to_onnx import export_cached_decode
+    from openlocalagent.inference.export.to_onnx import export_cached_decode
 
     hybrid_cfg, hybrid_config, _, _ = _write_matched_configs(tmp_path)
     checkpoint = tmp_path / "wrong-tokenizer.pt"
@@ -685,9 +685,9 @@ def test_trained_cached_decode_rejects_tampered_tokenizer_lineage_before_writing
 
 
 def test_trained_cached_decode_verifies_recorded_bpe_artifact_and_vocabulary(tmp_path):
-    from localagent.inference.export.to_onnx import _load_cached_decode_checkpoint
-    from localagent.model.tokenizer import train_bpe
-    from localagent.train.stage_data import sha256_file
+    from openlocalagent.inference.export.to_onnx import _load_cached_decode_checkpoint
+    from openlocalagent.model.tokenizer import train_bpe
+    from openlocalagent.train.stage_data import sha256_file
 
     tokenizer_path = tmp_path / "tokenizer.json"
     corpus = [
@@ -737,7 +737,7 @@ def test_trained_cached_decode_verifies_recorded_bpe_artifact_and_vocabulary(tmp
         yaml.safe_dump(asdict(cfg), sort_keys=True),
         encoding="utf-8",
     )
-    from localagent.inference.export.to_onnx import export_cached_decode
+    from openlocalagent.inference.export.to_onnx import export_cached_decode
 
     result = export_cached_decode(
         str(config_path),
@@ -784,7 +784,7 @@ def test_trained_cached_decode_verifies_recorded_bpe_artifact_and_vocabulary(tmp
 def test_trained_cached_decode_strictly_rejects_missing_state_key_before_writing(
     tmp_path,
 ):
-    from localagent.inference.export.to_onnx import export_cached_decode
+    from openlocalagent.inference.export.to_onnx import export_cached_decode
 
     hybrid_cfg, hybrid_config, _, _ = _write_matched_configs(tmp_path)
     state_dict = dict(LocalAgentLM(hybrid_cfg).state_dict())

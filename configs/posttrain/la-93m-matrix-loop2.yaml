@@ -1,0 +1,80 @@
+# Depth-recurrence arm: la-93m-matrix-loop2's spine on la-93m-loop2 (same weights run twice). Everything but model_config and the run paths is la-93m-matrix-loop2's.
+# Identical except for the chain: only pretrain differs (a mixture of five packed
+# corpora instead of one merged one), so anything changed here would confound it.
+# Stage 3 of the ladder for la-93m: the benchmarks' own training data.
+#
+# This is where the model is taught the surfaces it will be scored on - the train split of every
+# suite that has one, plus the curated and synthetic sets built from them:
+#
+#   androidcontrol   82,944      agentnet         49,309      xlam        24,000
+#   merged-v2        16,300      mobileactions     8,692      toolace      8,044
+#   toolbench         6,000      mind2web          3,028      toolsandbox  1,066 (synthetic)
+#                                                            ------------------
+#                                                            199,383 rows
+#
+# Train splits only, and BFCL and MCP-Atlas appear nowhere: they are evaluation-only by repository
+# policy and have no training split here, so their scores are pure transfer.
+#
+# openai_full_catalog_v1 is the contract the eval suite's catalog adapter renders, matched here and
+# in midtrain. AgentNet enters through the repaired file that carries its own eight-action desktop
+# space (scripts/repair_agentnet_catalog.py); its eval split keeps the empty catalog the open
+# baselines were scored against.
+stage: posttrain
+model_config: configs/model/la-93m-loop2.yaml
+init_from: results/runs/midtrain-la-93m-matrix-loop2/latest.pt
+data:
+  conversation_prompt_contract: openai_full_catalog_v1
+  strict_conversation_artifacts: false
+  conversations:
+  # Sources are filtered to rows that render inside seq_len. openai_full_catalog_v1 renders the
+  # whole catalog and refuses to truncate - a row missing part of its own catalog has an
+  # unreachable answer - so one oversized conversation aborts the stage
+  # (tokens=6502, max_seq_len=2048). scripts/filter_by_context.py writes the fit2048-* files and
+  # reports what it dropped; measured, 99.9%+ of rows already fit, so the cost is negligible.
+    - path: data/public/fit2048-2f49a644-merged-v2.jsonl
+    - path: data/public/fit2048-2f49a644-androidcontrol.jsonl
+    - path: data/public/fit2048-2f49a644-agentnet.jsonl
+    - path: data/public/fit2048-2f49a644-xlam.jsonl
+    - path: data/public/fit2048-2f49a644-mobileactions.jsonl
+    - path: data/public/fit2048-2f49a644-toolace.jsonl
+    - path: data/public/fit2048-2f49a644-toolbench.jsonl
+    - path: data/public/fit2048-2f49a644-mind2web.jsonl
+    - path: data/public/fit2048-2f49a644-toolsandbox.jsonl
+  # No in-training holdout, deliberately. merged-v2/eval was drawn from the same public pools this
+  # stage now trains on - the contamination guard measures 1,834 overlapping rows and 3,214
+  # overlapping rendered prompts - and every other candidate is either in this mixture or in
+  # midtrain's. Rather than quote a number from a contaminated split, this stage reports only its
+  # loss curve, and evaluation is the ten-benchmark suite, whose files are separate splits.
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-h100-16k.json
+  seq_len: 2048
+  function_masking: false
+  shuffle: true
+optim:
+  name: adamw
+  lr: 1.2e-04
+  weight_decay: 0.0
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 64
+  total_steps: 2000
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 8
+  grad_accum_steps: 8
+evaluation:
+  batch_size: 8
+heads:
+  joint_tool_pointer: false
+  train_route_head: false
+  train_dense_selector: false
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+  resume: true
+log:
+  out_dir: results/runs/posttrain-la-93m-matrix-loop2
+  ckpt_every: 1000

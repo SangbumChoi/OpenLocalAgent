@@ -7,10 +7,10 @@ from pathlib import Path
 
 import pytest
 
-from localagent.data.decision_quota_order import order_assistant_decisions
-from localagent.data.format_bootstrap import FORMAT_BOOTSTRAP_PHASES
-from localagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
-from localagent.train.replay_sampling import (
+from openlocalagent.data.corpus.decision_quota_order import order_assistant_decisions
+from openlocalagent.data.synth.format_bootstrap import FORMAT_BOOTSTRAP_PHASES
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
+from openlocalagent.train.replay_sampling import (
     CENTERED_UPDATE_QUANTILES_CONTRACT,
     GENERAL_COVERAGE_SPREAD_CONTRACT,
     MIXED_REPLAY_ORDERING_CONTRACT,

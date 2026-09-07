@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 import torch
 
-from localagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model import LocalAgentLM, ModelConfig
 
 pytest.importorskip("onnx")
 ort = pytest.importorskip("onnxruntime")
@@ -10,7 +10,7 @@ pytest.importorskip("onnxscript")
 
 
 def test_onnx_export_parity(tmp_path):
-    from localagent.inference.export.to_onnx import export
+    from openlocalagent.inference.export.to_onnx import export
     cfg = ModelConfig(vocab_size=256, d_model=64, embed_dim=32, n_layers=2, n_loops=2,
                       n_heads=4, n_kv_heads=2, ffn_hidden=128, max_seq_len=64, name="t")
     m = LocalAgentLM(cfg)

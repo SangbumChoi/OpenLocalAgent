@@ -5,7 +5,7 @@ from dataclasses import asdict
 import pytest
 import yaml
 
-from localagent.model import ModelConfig
+from openlocalagent.model import ModelConfig
 
 onnx = pytest.importorskip("onnx")
 pytest.importorskip("onnxruntime")
@@ -58,7 +58,7 @@ def _elem_types(path):
 def test_matched_cached_decode_export_has_dynamic_cache_abi_and_trajectory_parity(tmp_path):
     from onnx import TensorProto
 
-    from localagent.inference.export.to_onnx import export_matched_random_cached_decode
+    from openlocalagent.inference.export.to_onnx import export_matched_random_cached_decode
 
     hybrid_config, attention_config = _write_matched_configs(tmp_path)
     result = export_matched_random_cached_decode(
@@ -201,7 +201,7 @@ def test_matched_cached_decode_export_has_dynamic_cache_abi_and_trajectory_parit
 
 
 def test_cached_decode_reuses_exact_graph_across_different_prompt_lengths(tmp_path):
-    from localagent.inference.export.to_onnx import export_random_cached_decode
+    from openlocalagent.inference.export.to_onnx import export_random_cached_decode
 
     hybrid_config, _ = _write_matched_configs(tmp_path)
     result = export_random_cached_decode(
@@ -221,7 +221,7 @@ def test_cached_decode_reuses_exact_graph_across_different_prompt_lengths(tmp_pa
 
 
 def test_cached_decode_rejects_short_parity_trajectory(tmp_path):
-    from localagent.inference.export.to_onnx import export_random_cached_decode
+    from openlocalagent.inference.export.to_onnx import export_random_cached_decode
 
     hybrid_config, _ = _write_matched_configs(tmp_path)
     with pytest.raises(ValueError, match="at least three"):
@@ -246,7 +246,7 @@ def test_cached_decode_rejects_fixture_lengths_that_cannot_prove_dynamic_rope(
     fixture_lengths,
     message,
 ):
-    from localagent.inference.export.to_onnx import export_random_cached_decode
+    from openlocalagent.inference.export.to_onnx import export_random_cached_decode
 
     hybrid_config, _ = _write_matched_configs(tmp_path)
     output = tmp_path / "hybrid"
@@ -278,7 +278,7 @@ def test_cached_decode_rejects_bypassable_cache_tolerances(
     field,
     value,
 ):
-    from localagent.inference.export.to_onnx import export_random_cached_decode
+    from openlocalagent.inference.export.to_onnx import export_random_cached_decode
 
     hybrid_config, _ = _write_matched_configs(tmp_path)
     output = tmp_path / "hybrid"

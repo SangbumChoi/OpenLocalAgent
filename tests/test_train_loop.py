@@ -5,8 +5,8 @@ from __future__ import annotations
 import pytest
 import torch
 
-from localagent.data.render import IGNORE
-from localagent.train.loop import pad_batch
+from openlocalagent.data.render import IGNORE
+from openlocalagent.train.loop import pad_batch
 
 
 def test_pad_batch_can_right_pad_to_an_exact_post_shift_input_width() -> None:

@@ -1,0 +1,43 @@
+{
+  "model": "data/baselines/SmolLM2-135M-Instruct",
+  "adapter": "runs/lora/smollm2-135m",
+  "tag": "smollm2-135m",
+  "rows_requested": 300,
+  "rows": {
+    "arc-easy": 300,
+    "arc-challenge": 300,
+    "hellaswag": 300,
+    "openbookqa": 300,
+    "winogrande": 300,
+    "mmlu": 300
+  },
+  "scores": {
+    "base": {
+      "arc-easy": 49.0,
+      "arc-challenge": 27.3,
+      "hellaswag": 42.0,
+      "openbookqa": 35.0,
+      "winogrande": 50.3,
+      "mmlu": 23.3,
+      "seconds": 122.5
+    },
+    "finetuned": {
+      "arc-easy": 51.0,
+      "arc-challenge": 27.0,
+      "hellaswag": 43.3,
+      "openbookqa": 35.0,
+      "winogrande": 53.0,
+      "mmlu": 22.0,
+      "seconds": 191.3
+    }
+  },
+  "delta": {
+    "arc-easy": 2.0,
+    "arc-challenge": -0.3,
+    "hellaswag": 1.3,
+    "openbookqa": 0.0,
+    "winogrande": 2.7,
+    "mmlu": -1.3
+  },
+  "mean_delta": 0.73
+}

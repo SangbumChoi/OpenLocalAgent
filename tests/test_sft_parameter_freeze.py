@@ -10,15 +10,15 @@ import pytest
 import torch
 import yaml
 
-from localagent.data.agent_synth import Sample
-from localagent.data.decision_quota_order import QUOTA_SAMPLING_MODE
-from localagent.data.schema import Conversation, Message, Role
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ByteTokenizer
-from localagent.train.replay_sampling import (
+from openlocalagent.data.synth.agent_synth import Sample
+from openlocalagent.data.corpus.decision_quota_order import QUOTA_SAMPLING_MODE
+from openlocalagent.data.schema import Conversation, Message, Role
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ByteTokenizer
+from openlocalagent.train.replay_sampling import (
     PARENT_ANCHORED_FORMAT_PULSE_SAMPLING_MODE,
 )
-from localagent.train.sft import (
+from openlocalagent.train.sft import (
     SFT_CONTINUATION_MODE,
     _sealed_resume_sha256,
     _validate_parent_anchored_sampling_parent,
@@ -26,7 +26,7 @@ from localagent.train.sft import (
     run as run_sft,
     sft,
 )
-from localagent.train.stage_data import (
+from openlocalagent.train.stage_data import (
     LINEAGE_VERSION,
     canonical_sha256,
     sha256_file,
@@ -809,7 +809,7 @@ def test_runner_dispatches_parent_anchored_pulses_and_validates_update_width(
         )
         return ((0, 1),), {"update_layout": {"update_decisions": 3}}
 
-    sft_module = importlib.import_module("localagent.train.sft")
+    sft_module = importlib.import_module("openlocalagent.train.sft")
     monkeypatch.setattr(
         sft_module,
         "assert_prompt_contract_tokenizer",

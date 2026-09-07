@@ -5,7 +5,7 @@ A naive concatenation of the public corpora costs multi-turn ability, so the mix
 source and the synthetic trajectory episodes are kept whole. The manifest records every source
 file's bytes and SHA-256, the cap that was applied, and the realised composition.
 
-  python scripts/build_union_dataset.py --cap 1000 --out data/public/localagent-union-v1.jsonl
+  python scripts/build_union_dataset.py --cap 1000 --out data/public/openlocalagent-union-v1.jsonl
 """
 
 from __future__ import annotations
@@ -17,8 +17,8 @@ import random
 from dataclasses import asdict, is_dataclass
 from pathlib import Path
 
-from localagent.data.agent_synth import Generator
-from localagent.train.stage_data import read_conversations
+from openlocalagent.data.synth.agent_synth import Generator
+from openlocalagent.train.stage_data import read_conversations
 
 PUBLIC = Path("data/public")
 SOURCES = {
@@ -45,8 +45,8 @@ def main():
     ap.add_argument("--cap", type=int, default=1000, help="rows kept per public source")
     ap.add_argument("--episodes", type=int, default=360, help="synthetic trajectory episodes kept")
     ap.add_argument("--seed", type=int, default=2026)
-    ap.add_argument("--out", default="data/public/localagent-union-v1.jsonl")
-    ap.add_argument("--manifest", default="data/public/localagent-union-v1.manifest.json")
+    ap.add_argument("--out", default="data/public/openlocalagent-union-v1.jsonl")
+    ap.add_argument("--manifest", default="data/public/openlocalagent-union-v1.manifest.json")
     args = ap.parse_args()
 
     rows, composition, provenance = [], {}, []

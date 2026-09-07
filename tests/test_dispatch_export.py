@@ -11,22 +11,22 @@ import numpy as np
 import pytest
 import torch
 
-from localagent.agent.dense_selector import (
+from openlocalagent.agent.dense_selector import (
     BoundSelector,
     DenseToolSelector,
     tool_embeddings,
 )
-from localagent.agent.routes import ROUTES, RouteHead
-from localagent.agent.tool_head import _feat
-from localagent.agent.toolset import REALISTIC_BROWSER_TOOLS, STANDARD_TOOLS
-from localagent.inference.export.to_dispatch import (
+from openlocalagent.agent.routes import ROUTES, RouteHead
+from openlocalagent.agent.tool_head import _feat
+from openlocalagent.agent.toolset import REALISTIC_BROWSER_TOOLS, STANDARD_TOOLS
+from openlocalagent.inference.export.to_dispatch import (
     dispatch_heads_json,
     parity_dispatch,
     retrieval_tool_matrix,
     selector_tool_matrix,
 )
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model import tokenizer as tk
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model import tokenizer as tk
 
 _PROMPTS = [
     "What is the color of a monkey?",
@@ -139,7 +139,7 @@ def test_selector_tool_matrix_matches_bound_embs(tmp_path):
 
 def test_retrieval_tool_matrix_matches_runtime_retriever():
     """The compact exported retrieval sidecar must match the Python runtime index exactly."""
-    from localagent.agent.retriever import ToolRetriever
+    from openlocalagent.agent.retriever import ToolRetriever
 
     examples = {STANDARD_TOOLS[0].name: ["the weather in Paris"]}
     exported = retrieval_tool_matrix(STANDARD_TOOLS, examples, dim=256).numpy()

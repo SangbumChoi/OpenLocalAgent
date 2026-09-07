@@ -7,7 +7,7 @@ from pathlib import Path
 
 import yaml
 
-from localagent.data.evaluation_denylist_suite import (
+from openlocalagent.data.decontam.evaluation_denylist_suite import (
     CONTRACT_KIND,
     freeze_evaluation_denylist_suite,
     verify_evaluation_denylist_suite,

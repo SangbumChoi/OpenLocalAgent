@@ -1,0 +1,31 @@
+{
+  "model": "LFM2-350M",
+  "kind": "hf",
+  "location": "data/baselines/LFM2-350M/",
+  "parameters": 354483968,
+  "rows_per_suite": 200,
+  "max_new_tokens": 64,
+  "suites": {
+    "toolsandbox": {
+      "rows": 17,
+      "parse_rate": 1.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.5527126789093018
+    },
+    "mcpatlas": {
+      "rows": 200,
+      "parse_rate": 0.46,
+      "type_match": 0.05,
+      "step_success_rate": 0.005,
+      "seconds_per_row": 0.4292048954963684
+    },
+    "mobileactions": {
+      "rows": 200,
+      "parse_rate": 0.59,
+      "type_match": 0.25,
+      "step_success_rate": 0.09,
+      "seconds_per_row": 0.34200257658958433
+    }
+  }
+}

@@ -1,38 +1,50 @@
 # CLAUDE.md
 
-Project guidance for Claude Code. **Read `AGENTS.md` first** — it has the setup, build/test
-commands, and conventions, and is the source of truth shared with Cursor and Codex. This file
-adds Claude-specific sub-agent routing.
+Project guidance for Claude Code. **Read [`AGENTS.md`](AGENTS.md) first** — it has the setup,
+build/test commands and conventions, and is the source of truth shared with Cursor and Codex. This
+file adds only Claude-specific sub-agent routing.
 
 ## TL;DR
-Pure-PyTorch, <100M-param, from-scratch tool-calling agent. Three tiers (ultra-tiny ~1M byte-level,
-tiny ~30M, small ~90M). Keep `pytest -q` green and `ruff check` clean. Never bypass the model
-param-budget guard. Report real eval numbers — no faking 100%.
+
+Pure-PyTorch tool-calling agent trained from scratch on open data. Seven tiers from `la-10m` to
+`la-700m`, including a sparse-expert arm with two matched dense controls, through
+`pretrain → midtrain → posttrain`, scored on ten public agent benchmarks. Keep `pytest -q` green
+and `ruff check src tests scripts demos` clean. Never bypass a model config's declared
+`param_budget`. Report real eval numbers.
 
 ## Sub-agents (delegate by area)
-Specialized sub-agents live in `.claude/agents/`. Prefer delegating focused work to them so each
-keeps a tight context. Route like this:
+
+Specialized sub-agents live in `.claude/agents/`. Prefer delegating focused work so each keeps a
+tight context.
 
 | When the task is about… | Use sub-agent |
 |---|---|
-| synthetic data, templates, enrichment, the `Conversation` schema, the flywheel | `data-engineer` |
-| the model architecture, training loops (pretrain/SFT/GRPO), the KV cache, optimizers | `model-trainer` |
-| eval harness, AST tool scoring, accuracy/regression checks, benchmarks | `evaluator` |
-| export to GGUF/ONNX/ExecuTorch, quantization, parity, on-device perf | `exporter` |
+| corpora, the `Conversation` schema, synthesis, source adapters | `data-engineer` |
+| model architecture, the three training stages, KV cache, optimizers | `model-trainer` |
+| the ten-benchmark suite, tool scoring, regression checks | `evaluator` |
+| GGUF/ONNX/ExecuTorch export, quantization, parity, on-device perf | `exporter` |
 
-The main thread stays the orchestrator: it plans, wires stages in `scripts/flywheel.py` /
-`pipeline/flow.py`, and integrates sub-agent results. Sub-agents own *their* module and must keep
-the shared contracts (the `Conversation` schema, config YAMLs, the budget guard) intact — they
-control their own part, not the cross-cutting interfaces.
+The main thread stays the orchestrator: it plans, wires stages in `src/openlocalagent/pipeline.py`, and
+integrates results. Sub-agents own *their* module and must leave the shared contracts intact — the
+`Conversation` schema, the `Stage` enum, config YAMLs, the budget guard. They control their own
+part, not the cross-cutting interfaces.
 
 ## Guardrails
-- Do not add heavy ML frameworks (`transformers`, `trl`, `deepspeed`, …). Pure PyTorch.
-- Do not edit the `Conversation` schema or a model config without saying so explicitly — these are
-  cross-cutting contracts other sub-agents depend on.
-- Training/benchmark runs are CPU-friendly but can be slow; use `--quick` for smoke checks and run
-  long jobs in the background.
-- Artifacts (`runs/`, checkpoints, `*.png`) are git-ignored; surface PNGs to the user instead of
-  committing them.
 
-## Useful commands
-See `AGENTS.md`. Quickest signal: `pytest -q` then `python scripts/flywheel.py --quick`.
+- Do not add heavy ML frameworks (`transformers`, `trl`, `deepspeed`, …) to the training path.
+- Do not edit the `Conversation` schema, `openlocalagent/stages.py`, the prompt contract, or a model
+  config without saying so explicitly — they are the cross-cutting contracts, and other sub-agents
+  depend on them.
+- Scripts start with one of eight verbs and shell scripts `set -euo pipefail`; both are enforced by
+  `tests/test_scripts_naming.py`.
+- Long training runs go on the GPU box, detached, via `scripts/train_queue.sh`, supervised by
+  `tools/kfsupervise.py` — the box stops every few hours regardless of load. Use
+  `scripts/speedrun.sh` for a CPU smoke check.
+- Artifacts (`runs/`, checkpoints, `*.png` outside `docs/figures/`) are git-ignored — surface
+  them, don't commit them.
+- Deleted campaign code lives under the `pre-refactor` tag. Recover from there rather than
+  rewriting it from memory; see `docs/CAMPAIGN.md`.
+
+## Quickest signal
+
+`pytest -q`, then `bash scripts/speedrun.sh`.

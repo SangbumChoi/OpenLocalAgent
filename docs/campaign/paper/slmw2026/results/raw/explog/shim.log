@@ -1,0 +1,45 @@
+hf shim :8899 -> http://nexus.tossbank.bz/repository/huggingface-proxy snapshot=hf_api_snapshot cache=/home/jovyan/sbchoi/hfcache
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 43388)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/jovyan/sbchoi/localagent/hf_api_shim.py", line 177, in do_GET
+    self._route()
+  File "/home/jovyan/sbchoi/localagent/hf_api_shim.py", line 172, in _route
+    self._api(body)
+  File "/home/jovyan/sbchoi/localagent/hf_api_shim.py", line 97, in _api
+    kind, repo_id, verb, revision = match.groups()
+                                    ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'groups'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53072)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/jovyan/sbchoi/localagent/hf_api_shim.py", line 177, in do_GET
+    self._route()
+  File "/home/jovyan/sbchoi/localagent/hf_api_shim.py", line 172, in _route
+    self._api(body)
+  File "/home/jovyan/sbchoi/localagent/hf_api_shim.py", line 97, in _api
+    kind, repo_id, verb, revision = match.groups()
+                                    ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'groups'
+----------------------------------------

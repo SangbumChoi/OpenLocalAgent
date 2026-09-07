@@ -1,0 +1,43 @@
+{
+  "model": "data/baselines/Qwen2.5-Coder-0.5B-Instruct",
+  "adapter": "runs/lora/qwen25-coder-05b",
+  "tag": "qwen25-coder-05b",
+  "rows_requested": 300,
+  "rows": {
+    "arc-easy": 300,
+    "arc-challenge": 300,
+    "hellaswag": 300,
+    "openbookqa": 300,
+    "winogrande": 300,
+    "mmlu": 300
+  },
+  "scores": {
+    "base": {
+      "arc-easy": 46.7,
+      "arc-challenge": 23.3,
+      "hellaswag": 41.7,
+      "openbookqa": 31.3,
+      "winogrande": 53.0,
+      "mmlu": 23.0,
+      "seconds": 108.1
+    },
+    "finetuned": {
+      "arc-easy": 46.7,
+      "arc-challenge": 24.0,
+      "hellaswag": 43.3,
+      "openbookqa": 31.3,
+      "winogrande": 53.3,
+      "mmlu": 22.7,
+      "seconds": 163.9
+    }
+  },
+  "delta": {
+    "arc-easy": 0.0,
+    "arc-challenge": 0.7,
+    "hellaswag": 1.6,
+    "openbookqa": 0.0,
+    "winogrande": 0.3,
+    "mmlu": -0.3
+  },
+  "mean_delta": 0.38
+}

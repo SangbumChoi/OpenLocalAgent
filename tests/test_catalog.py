@@ -1,5 +1,5 @@
-from localagent.agent.retriever import ToolRetriever, embed
-from localagent.data.tool_catalog import (VALUES_EVAL, VALUES_TRAIN, build_catalog, gen_episodes,
+from openlocalagent.agent.retriever import ToolRetriever, embed
+from openlocalagent.data.tool_catalog import (VALUES_EVAL, VALUES_TRAIN, build_catalog, gen_episodes,
                                           gen_usages)
 
 

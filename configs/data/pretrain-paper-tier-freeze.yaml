@@ -18,8 +18,8 @@ expected:
   tokenizer_training_split: train
 
 training_configs:
-  - configs/train/pretrain-paper-tier-1m.yaml
-  - configs/train/pretrain-paper-tier-10m-hybrid.yaml
-  - configs/train/pretrain-paper-tier-10m-attn.yaml
-  - configs/train/pretrain-paper-tier-96m-hybrid.yaml
-  - configs/train/pretrain-paper-tier-96m-attn.yaml
+  - configs/pretrain/pretrain-paper-tier-1m.yaml
+  - configs/pretrain/pretrain-paper-tier-10m-hybrid.yaml
+  - configs/pretrain/pretrain-paper-tier-10m-attn.yaml
+  - configs/pretrain/pretrain-paper-tier-96m-hybrid.yaml
+  - configs/pretrain/pretrain-paper-tier-96m-attn.yaml

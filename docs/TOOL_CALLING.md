@@ -6,8 +6,8 @@ call on *any* JSON-schema tools — or abstain. No model, no fine-tuning require
 ## API
 
 ```python
-from localagent import ToolCaller
-from localagent.data.schema import ToolSpec
+from openlocalagent import ToolCaller
+from openlocalagent.data.schema import ToolSpec
 
 caller = ToolCaller(tools, retrieve_k=12, examples=None, min_score=0.0)
 caller.call(query)        # -> ToolCall(name, arguments)  |  None  (abstain)
@@ -40,7 +40,7 @@ caller.explain(query)     # -> {candidates, call}         debug view
 
 ## Benchmark
 
-`python scripts/toolcall_eval.py [--scale N] [--min-score S]` — 18 realistic multi-arg tools
+`python scripts/eval_toolcall.py [--scale N] [--min-score S]` — 18 realistic multi-arg tools
 (`eval/toolcall_bench.py`), paraphrased held-out queries (verb synonyms), disjoint train/eval
 slot values, plus irrelevant queries for abstention.
 

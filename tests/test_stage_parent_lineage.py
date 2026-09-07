@@ -6,9 +6,9 @@ from pathlib import Path
 import pytest
 import torch
 
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.train import stage_data
-from localagent.train.stage_data import (
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.train import stage_data
+from openlocalagent.train.stage_data import (
     LINEAGE_VERSION,
     build_continuation_lineage,
     build_stage_lineage,
@@ -327,3 +327,25 @@ def test_parent_lineage_uses_loaded_bytes_after_path_mutation(
 
     assert loaded_sha256 == original_sha256
     assert lineage["parent_checkpoint_sha256"] == original_sha256
+
+
+def test_parent_loader_accepts_a_pretrain_parent_for_sft_only_when_declared(tmp_path: Path) -> None:
+    """Model A of the mid-training ablation: posttrain straight from pretrain, by declaration."""
+    cfg = _config()
+    tokenizer_sha256 = _tokenizer_sha256()
+    path = tmp_path / "pretrain.pt"
+    torch.save(
+        _checkpoint(cfg, stage="pretrain", lineage_tokenizer_sha256=tokenizer_sha256,
+                    tokenizer_sha256=tokenizer_sha256),
+        path,
+    )
+    with pytest.raises(ValueError, match="requires an exact midtrain parent"):
+        load_stage_parent_checkpoint(path, stage="sft", requested_model_config=cfg,
+                                     expected_tokenizer_sha256=tokenizer_sha256)
+    checkpoint, _ = load_stage_parent_checkpoint(
+        path, stage="sft", requested_model_config=cfg,
+        expected_tokenizer_sha256=tokenizer_sha256, parent_stage="pretrain")
+    assert checkpoint["stage"] == "pretrain"
+    with pytest.raises(ValueError, match="unknown parent stage override"):
+        load_stage_parent_checkpoint(path, stage="sft", requested_model_config=cfg,
+                                     expected_tokenizer_sha256=tokenizer_sha256, parent_stage="bogus")

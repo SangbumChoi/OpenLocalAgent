@@ -1,5 +1,5 @@
-from localagent.agent.routes import route_of
-from localagent.agent.toolset import REALISTIC_BROWSER_TOOLS, STANDARD_TOOLS
+from openlocalagent.agent.routes import route_of
+from openlocalagent.agent.toolset import REALISTIC_BROWSER_TOOLS, STANDARD_TOOLS
 
 
 def test_realistic_browser_tools_extend_without_mutating_legacy_catalog():

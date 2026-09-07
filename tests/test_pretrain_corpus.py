@@ -8,8 +8,8 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from localagent.data import pretrain_corpus
-from localagent.data.pretrain_corpus import (
+from openlocalagent.data.corpus import pretrain_corpus
+from openlocalagent.data.corpus.pretrain_corpus import (
     CorpusDocument,
     DiskBackedCorpus,
     PackedShardDataset,
@@ -25,7 +25,7 @@ from localagent.data.pretrain_corpus import (
     split_documents,
     suggested_training_tokens,
 )
-from localagent.model.tokenizer import ByteTokenizer
+from openlocalagent.model.tokenizer import ByteTokenizer
 
 
 def test_quality_filter_deduplicates_and_preserves_provenance():
@@ -412,7 +412,7 @@ def test_eval_denylist_rejects_invalid_utf8_without_replacement(tmp_path):
 
 
 def test_prepare_corpus_trains_bpe_on_exact_train_split(tmp_path, monkeypatch, capsys):
-    script_path = Path(__file__).parents[1] / "scripts" / "prepare_corpus.py"
+    script_path = Path(__file__).parents[1] / "scripts" / "build_corpus.py"
     spec = importlib.util.spec_from_file_location("prepare_corpus_script", script_path)
     assert spec is not None and spec.loader is not None
     prepare_corpus = importlib.util.module_from_spec(spec)
@@ -455,7 +455,7 @@ def test_prepare_corpus_trains_bpe_on_exact_train_split(tmp_path, monkeypatch, c
         sys,
         "argv",
         [
-            "prepare_corpus.py",
+            "build_corpus.py",
             str(raw_path),
             "--out",
             str(output_dir),

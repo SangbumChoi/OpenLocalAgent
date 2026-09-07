@@ -1,6 +1,6 @@
-from localagent.agent.runtime import Agent
-from localagent.agent.tools import ToolRegistry
-from localagent.data.tool_catalog import build_catalog
+from openlocalagent.agent.runtime import Agent
+from openlocalagent.agent.tools import ToolRegistry
+from openlocalagent.data.tool_catalog import build_catalog
 
 
 def _agent(n=80):
@@ -38,7 +38,7 @@ def test_selector_path_keeps_retrieved_catalog_bounded(monkeypatch):
         seen["candidate_names"] = [tool.name for tool in candidates]
         return f'<tool_call>{{"name":"{candidates[0].name}","arguments":{{}}}}</tool_call>'
 
-    monkeypatch.setattr("localagent.agent.constrained.hybrid_decode", fake_decode)
+    monkeypatch.setattr("openlocalagent.agent.constrained.hybrid_decode", fake_decode)
     agent.model = object()
     agent.tokenizer = object()
     agent.selector = DummySelector()
@@ -64,7 +64,7 @@ def test_agent_runs_bounded_multi_hop_loop_and_exposes_tool_results(monkeypatch)
             return f'<tool_call>{{"name":"{name}","arguments":{{"value":"second"}}}}</tool_call>'
         return "done"
 
-    monkeypatch.setattr("localagent.agent.constrained.hybrid_decode", fake_decode)
+    monkeypatch.setattr("openlocalagent.agent.constrained.hybrid_decode", fake_decode)
     agent.model = object()
     agent.tokenizer = object()
     agent.selector = object()
@@ -95,7 +95,7 @@ def test_agent_stops_repeated_identical_call_before_second_dispatch(monkeypatch)
         dispatches["count"] += 1
         return {"ok": True}
 
-    monkeypatch.setattr("localagent.agent.constrained.hybrid_decode", fake_decode)
+    monkeypatch.setattr("openlocalagent.agent.constrained.hybrid_decode", fake_decode)
     monkeypatch.setattr(agent.tools, "dispatch", dispatch)
     agent.model = object()
     agent.tokenizer = object()

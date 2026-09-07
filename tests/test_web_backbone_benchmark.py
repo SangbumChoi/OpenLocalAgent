@@ -9,7 +9,7 @@ import pytest
 
 
 ROOT = Path(__file__).parents[1]
-WEB_DIR = ROOT / "spaces" / "localagent-webgpu"
+WEB_DIR = ROOT / "demos" / "webgpu"
 BACKBONE_JS = WEB_DIR / "backbone-benchmark.js"
 BACKBONE_HTML = WEB_DIR / "backbone-benchmark.html"
 SHA = "a" * 64

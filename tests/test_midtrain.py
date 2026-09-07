@@ -7,12 +7,12 @@ from types import SimpleNamespace
 import pytest
 import torch
 
-from localagent.data.pretrain_corpus import CorpusDocument, PackedShardDataset, pack_shards
-from localagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1
-from localagent.data.schema import Conversation, Message, Role
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ByteTokenizer, train_bpe
-from localagent.train.midtrain import (
+from openlocalagent.data.corpus.pretrain_corpus import CorpusDocument, PackedShardDataset, pack_shards
+from openlocalagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1
+from openlocalagent.data.schema import Conversation, Message, Role
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ByteTokenizer, train_bpe
+from openlocalagent.train.midtrain import (
     ConversationDataset,
     ConversationTokenCountDataset,
     MixtureSource,
@@ -22,7 +22,7 @@ from localagent.train.midtrain import (
     midtrain,
     validate_packed_source,
 )
-from localagent.train.stage_sampling import (
+from openlocalagent.train.stage_sampling import (
     next_midtrain_microbatch,
     next_midtrain_microbatch_counts,
 )

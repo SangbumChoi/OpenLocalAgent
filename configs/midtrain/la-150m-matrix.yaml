@@ -1,0 +1,94 @@
+# Derived from configs/midtrain/la-150m.yaml; chain retargeted, sources refit under tokenizer 2f49a644.
+# Stage 2 of the ladder for la-150m: agentic behaviour the benchmarks do not teach.
+#
+# Midtrain and posttrain are disjoint by construction, and the line between them is one question:
+# does this corpus correspond to a suite the ten-benchmark harness scores? If it does, it belongs
+# to posttrain. Everything here is agentic data that answers no:
+#
+#   distill_reasoning   40,812   multi-step reasoning traces
+#   free_episodes        9,072   free-form episode decisions
+#   toucan               5,911   tool use outside the scored suites
+#   r0b0t_tools          4,845   tool use outside the scored suites
+#   device               2,251   device control outside the scored suites
+#                       ------
+#                       62,891 rows
+#
+# So this stage cannot be learning the benchmarks - it has no access to them. What it buys has to
+# show up as transfer, which makes it a real measurement rather than a rehearsal.
+#
+# Known coverage gap: with the benchmark splits moved to posttrain, what remains is tool use and
+# task comprehension. There is no GUI or web data here, because every GUI and web corpus available
+# is the train split of something scored. Closing that needs a non-benchmark open source.
+#
+# Middle budget: 4,000 steps, between pretraining's and posttraining's.
+stage: midtrain
+model_config: configs/model/la-150m.yaml
+init_from: results/runs/pretrain-la-150m-matrix/latest.pt
+data:
+  conversation_prompt_contract: openai_full_catalog_v1
+  strict_conversation_artifacts: false
+  mixture:
+    unit: input_tokens
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-h100-16k.json
+  sources:
+    - name: general_replay
+      type: shards
+      path: data/shards/src/c4
+      split: train
+      weight: 0.4500
+      end_weight: 0.2500
+    - name: distill_reasoning
+      type: conversations
+      path: data/public/fit2048-2f49a644-distill_reasoning.jsonl
+      weight: 0.2262
+      end_weight: 0.3085
+    - name: free_episodes
+      type: conversations
+      path: data/public/fit2048-2f49a644-free_episodes.jsonl
+      weight: 0.1066
+      end_weight: 0.1454
+    - name: toucan
+      type: conversations
+      path: data/public/fit2048-2f49a644-toucan.jsonl
+      weight: 0.0861
+      end_weight: 0.1174
+    - name: r0b0t_tools
+      type: conversations
+      path: data/public/fit2048-2f49a644-r0b0t_tools.jsonl
+      weight: 0.0779
+      end_weight: 0.1063
+    - name: device
+      type: conversations
+      path: data/public/fit2048-2f49a644-device.jsonl
+      weight: 0.0531
+      end_weight: 0.0724
+  # General text only. Every agent corpus this stage could hold out from is either in its own
+  # mixture or in posttrain's, so an agent holdout here would measure contamination, not skill.
+  eval_sources:
+    - name: general_holdout
+      type: shards
+      path: data/shards/src/c4
+      split: val
+optim:
+  name: adamw
+  lr: 1.0e-04
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 80
+  total_steps: 3200
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 8
+  grad_accum_steps: 8
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+  resume: true
+log:
+  out_dir: results/runs/midtrain-la-150m-matrix
+  ckpt_every: 500

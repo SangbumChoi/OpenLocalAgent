@@ -1,0 +1,68 @@
+{
+  "model": "sft-catalog-10m",
+  "kind": "catalog",
+  "location": "runs/sft-catalog-10m/latest.pt",
+  "parameters": 10524544,
+  "rows_per_suite": 200,
+  "max_new_tokens": 64,
+  "suites": {
+    "androidcontrol": {
+      "rows": 200,
+      "parse_rate": 0.995,
+      "type_match": 0.63,
+      "step_success_rate": 0.345,
+      "seconds_per_row": 0.039581750631332395,
+      "grounding_accuracy": 0.0847457627118644
+    },
+    "toolace": {
+      "rows": 200,
+      "parse_rate": 0.825,
+      "type_match": 0.245,
+      "step_success_rate": 0.015,
+      "seconds_per_row": 0.06433784008026124
+    },
+    "agentnet": {
+      "rows": 200,
+      "parse_rate": 0.545,
+      "type_match": 0.39,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.08319533109664917
+    },
+    "toolbench": {
+      "rows": 200,
+      "parse_rate": 0.86,
+      "type_match": 0.145,
+      "step_success_rate": 0.005,
+      "seconds_per_row": 0.11146369218826294
+    },
+    "bfcl": {
+      "rows": 200,
+      "parse_rate": 0.8,
+      "type_match": 0.405,
+      "step_success_rate": 0.01,
+      "seconds_per_row": 0.055685019493103026,
+      "grounding_accuracy": 0.0
+    },
+    "toolsandbox": {
+      "rows": 17,
+      "parse_rate": 0.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.004932487712186926
+    },
+    "mcpatlas": {
+      "rows": 200,
+      "parse_rate": 0.925,
+      "type_match": 0.01,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.06509491205215454
+    },
+    "mobileactions": {
+      "rows": 200,
+      "parse_rate": 0.74,
+      "type_match": 0.225,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.0732551383972168
+    }
+  }
+}

@@ -1,6 +1,6 @@
 """Curriculum ordering (LFM2-style easy->hard) for SFT samples."""
 
-from localagent.data.agent_synth import (
+from openlocalagent.data.synth.agent_synth import (
     Generator,
     curriculum_order,
     difficulty_score,

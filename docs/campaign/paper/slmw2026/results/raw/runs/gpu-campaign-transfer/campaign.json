@@ -1,0 +1,748 @@
+{
+  "campaign_config": {
+    "bytes": 2031,
+    "path": "/home/jovyan/sbchoi/localagent/configs/experiments/webgpu-realistic-campaign.v1.yaml",
+    "sha256": "aa62d13270fcffc82f65eaf348d0287b91c18126f91c6924dbb5e9e596a380f3"
+  },
+  "checkpoint": {
+    "bytes": 4264459,
+    "path": "/home/jovyan/sbchoi/localagent/runs/ablate/cuda-s0-x3/model.pt",
+    "sha256": "6fb71b18e255da549fd31f267978a6e1344cc45912ad1d5ea89c09e3686f49b8"
+  },
+  "checkpoint_note": "Checkpoint identity only. Run the pinned native/browser evaluators separately and add their receipts; this campaign does not infer task success from checkpoint presence.",
+  "claim_boundary": "This receipt joins portable architecture/transfer measurements and source-linked matrix validation. It is not a training-quality, native-mobile, desktop, WebGPU-browser, or external-account score unless a separate bound receipt is supplied.",
+  "comparisons": [
+    {
+      "architecture": "attention_vs_hybrid",
+      "control": "same_data_seed_steps_and_tokenizer"
+    },
+    {
+      "architecture": "10m_vs_16m_vs_35m_vs_96m",
+      "control": "same_protocol_and_target_context"
+    },
+    {
+      "architecture": "vision_sidecar",
+      "control": "matched_warm_vs_random_backbone_and_native_visual_verifier"
+    },
+    {
+      "architecture": "weight_transfer",
+      "control": "matched_no_transfer_ablation"
+    },
+    {
+      "architecture": "kv_cache",
+      "control": "cached_vs_uncached_decode"
+    }
+  ],
+  "evaluation_policy": {
+    "eval_rows": "never_copy_task_prompts_or_verifiers_into_training",
+    "external_side_effects": "disabled_by_default",
+    "native_rows": "require_pinned_runtime_and_independent_verifier",
+    "train_rows": "use_only_explicit_train_policy_rows"
+  },
+  "finished_at_unix": 1786462159.0085943,
+  "kind": "localagent_gpu_realistic_campaign",
+  "model_inventory": [
+    {
+      "active_parameters": 10547072,
+      "block_types": [
+        "attn",
+        "attn",
+        "attn",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 680,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-10m-attn.yaml",
+        "sha256": "51fbc78ccfa0968512ad24845d5eedb1ce0b6cac125971aaefa705e067f3c133"
+      },
+      "effective_depth": 4,
+      "name": "webgpu-10m-attn",
+      "parameters": 10547072,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 10524544,
+      "block_types": [
+        "conv",
+        "attn",
+        "conv",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 749,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-10m-hybrid.yaml",
+        "sha256": "8609bca200f40e2f67c154f73a1641c905509f4d69a1ec7f80273b0cc6f12a98"
+      },
+      "effective_depth": 4,
+      "name": "webgpu-10m-hybrid",
+      "parameters": 10524544,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 10612224,
+      "block_types": [
+        "conv",
+        "attn",
+        "conv",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 609,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-10m-vision.yaml",
+        "sha256": "eef9923eecb125b1df34713808eeab445b604861ff66ce05d149fe33914c8da3"
+      },
+      "effective_depth": 4,
+      "name": "webgpu-10m-vision",
+      "parameters": 10612224,
+      "sparse_ffn": false,
+      "vision_enabled": true
+    },
+    {
+      "active_parameters": 15618112,
+      "block_types": [
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 702,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-16m-attn.yaml",
+        "sha256": "9be3c6de10c701c5bf004f76541ee47ee0c2582cfffeb49530852068592acdfc"
+      },
+      "effective_depth": 9,
+      "name": "webgpu-16m-attn",
+      "parameters": 15618112,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 15638464,
+      "block_types": [
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 679,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-16m-hybrid.yaml",
+        "sha256": "074e95103d9c22d83d6b01733c04ba521e78b351a4df2f42d82034cae89d90f4"
+      },
+      "effective_depth": 9,
+      "name": "webgpu-16m-hybrid",
+      "parameters": 15638464,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 34275776,
+      "block_types": [
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 655,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-35m-attn.yaml",
+        "sha256": "903561dfbbc13734cd8c0ab85df10c14af6a1618067efb736831f6edb13d53be"
+      },
+      "effective_depth": 12,
+      "name": "webgpu-35m-attn",
+      "parameters": 34275776,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 34199488,
+      "block_types": [
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 889,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-35m-hybrid.yaml",
+        "sha256": "b1ad26e9f94353948f6f6461ea797dbb64d0d854269b615681c8cb12f3111156"
+      },
+      "effective_depth": 12,
+      "name": "webgpu-35m-hybrid",
+      "parameters": 34199488,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 95298944,
+      "block_types": [
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 831,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-96m-attn.yaml",
+        "sha256": "c6426e11350a53f96849ee1c4839e6222c08aa7dc1dab916bbba10c49d2cc3bd"
+      },
+      "effective_depth": 18,
+      "name": "webgpu-96m-attn",
+      "parameters": 95298944,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 95320448,
+      "block_types": [
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 1137,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-96m-hybrid.yaml",
+        "sha256": "dc3b8e19aad13a35cf6ec2d5d9ce6841bc13f6ad353d79aacdc380677695f2cf"
+      },
+      "effective_depth": 18,
+      "name": "webgpu-96m-hybrid",
+      "parameters": 95320448,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    }
+  ],
+  "preflight": {
+    "adb": null,
+    "claim_boundary": "Runtime inventory only; no device or external service was mutated.",
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "cuda_devices": [
+      "NVIDIA H100 NVL"
+    ],
+    "docker": null,
+    "emulator": null,
+    "git": "/usr/bin/git",
+    "hf_cli": "/usr/local/bin/hf",
+    "huggingface_hub_importable": true,
+    "mps_available": false,
+    "platform": "Linux-5.14.0-570.23.1.el9_6.x86_64-x86_64-with-glibc2.39",
+    "python_version": "3.12.3",
+    "requested_device": "cuda",
+    "requested_dtype": "auto",
+    "resolved_device": "cuda",
+    "torch_version": "2.10.0",
+    "wandb_importable": true
+  },
+  "receipt_self_sha256": "f274be60c72ad26a5cf7abd0466f90c09c46f870af2b968b7c4ca77efb2cb17a",
+  "schema_version": 1,
+  "started_at_unix": 1786462158.6213326,
+  "training_plan": {
+    "midtrain": [
+      "configs/train/midtrain-paper-tier-10m-attn.yaml",
+      "configs/train/midtrain-paper-tier-10m-hybrid.yaml",
+      "configs/train/midtrain-paper-tier-96m-attn.yaml",
+      "configs/train/midtrain-paper-tier-96m-hybrid.yaml"
+    ],
+    "pretrain": [
+      "configs/train/pretrain-paper-tier-10m-attn.yaml",
+      "configs/train/pretrain-paper-tier-10m-hybrid.yaml",
+      "configs/train/pretrain-paper-tier-96m-attn.yaml",
+      "configs/train/pretrain-paper-tier-96m-hybrid.yaml"
+    ],
+    "rl": [
+      "configs/train/rl-paper-tier-10m-attn.yaml",
+      "configs/train/rl-paper-tier-10m-hybrid.yaml",
+      "configs/train/rl-paper-tier-96m-attn.yaml",
+      "configs/train/rl-paper-tier-96m-hybrid.yaml"
+    ],
+    "sft": [
+      "configs/train/sft-paper-tier-10m-attn.yaml",
+      "configs/train/sft-paper-tier-10m-hybrid.yaml",
+      "configs/train/sft-paper-tier-96m-attn.yaml",
+      "configs/train/sft-paper-tier-96m-hybrid.yaml"
+    ]
+  },
+  "wandb": {
+    "enabled": false
+  },
+  "weight_transfer": [
+    {
+      "base": {
+        "auxiliary_tensors": 5,
+        "lineage": null,
+        "model_tensors": 23,
+        "path": "/home/jovyan/sbchoi/localagent/runs/ablate/cuda-s0/model.pt",
+        "sha256": "3f6a59884b9c112e1a530c0fb0bdde656e3e1aceb4933a18bb45155b92823001",
+        "stage": null,
+        "step": null
+      },
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 28,
+        "tokenizer_sha256_equal": null
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 59.040221442364555,
+          "delta_l2": 4.194378990968825,
+          "parameters": 86835,
+          "relative_delta_l2": 0.07104273812833518,
+          "target_l2": 59.22695521682267
+        },
+        "attention_or_mixer": {
+          "base_l2": 26.064305030502396,
+          "delta_l2": 26.90560802456814,
+          "parameters": 196992,
+          "relative_delta_l2": 1.0322779753030509,
+          "target_l2": 32.21584529712984
+        },
+        "embedding": {
+          "base_l2": 13.339224189999246,
+          "delta_l2": 17.071428065700335,
+          "parameters": 16384,
+          "relative_delta_l2": 1.279791674728671,
+          "target_l2": 18.594107409927876
+        },
+        "ffn": {
+          "base_l2": 36.77848892385509,
+          "delta_l2": 51.77196314063266,
+          "parameters": 737664,
+          "relative_delta_l2": 1.4076696638575754,
+          "target_l2": 56.16742057184502
+        },
+        "normalization": {
+          "base_l2": 15.429055051433021,
+          "delta_l2": 3.9279608790699188,
+          "parameters": 192,
+          "relative_delta_l2": 0.25458207686575707,
+          "target_l2": 19.205344058465794
+        },
+        "other": {
+          "base_l2": 12.72689722540846,
+          "delta_l2": 18.23285709251834,
+          "parameters": 25728,
+          "relative_delta_l2": 1.4326238964291764,
+          "target_l2": 17.298460753596405
+        }
+      },
+      "kind": "localagent_weight_transfer_analysis",
+      "per_tensor": {
+        "blocks.0.attn.k.weight": {
+          "base_l2": 4.589819042445836,
+          "cosine": 0.5373257022107335,
+          "delta_l2": 5.367108145898293,
+          "parameters": 12288,
+          "relative_delta_l2": 1.1693507077870011,
+          "shape": [
+            64,
+            192
+          ],
+          "target_l2": 6.183981130549836
+        },
+        "blocks.0.attn.o.weight": {
+          "base_l2": 7.109166547371258,
+          "cosine": 0.3756520131744279,
+          "delta_l2": 10.873947638238565,
+          "parameters": 36864,
+          "relative_delta_l2": 1.5295671533056716,
+          "shape": [
+            192,
+            192
+          ],
+          "target_l2": 11.321263271540552
+        },
+        "blocks.0.attn.q.weight": {
+          "base_l2": 8.619034780188105,
+          "cosine": 0.3631354093547244,
+          "delta_l2": 12.186762627622567,
+          "parameters": 36864,
+          "relative_delta_l2": 1.4139358917120646,
+          "shape": [
+            192,
+            192
+          ],
+          "target_l2": 12.296421933966913
+        },
+        "blocks.0.attn.v.weight": {
+          "base_l2": 4.00704365086072,
+          "cosine": 0.5833163790195378,
+          "delta_l2": 5.478804736452162,
+          "parameters": 12288,
+          "relative_delta_l2": 1.3672934996042043,
+          "shape": [
+            64,
+            192
+          ],
+          "target_l2": 6.744665950789537
+        },
+        "blocks.0.attn_norm.weight": {
+          "base_l2": 13.503456883428145,
+          "cosine": 0.9982668701461406,
+          "delta_l2": 1.3912185389941312,
+          "parameters": 192,
+          "relative_delta_l2": 0.10302684349675505,
+          "shape": [
+            192
+          ],
+          "target_l2": 12.338130990468896
+        },
+        "blocks.0.ffn.down.weight": {
+          "base_l2": 12.227200813260335,
+          "cosine": 0.3323389158537126,
+          "delta_l2": 19.28461375672805,
+          "parameters": 122880,
+          "relative_delta_l2": 1.5771895833929535,
+          "shape": [
+            192,
+            640
+          ],
+          "target_l2": 19.520111371756087
+        },
+        "blocks.0.ffn.gate.weight": {
+          "base_l2": 13.023430483090056,
+          "cosine": 0.38930301958014546,
+          "delta_l2": 20.723491748393204,
+          "parameters": 122880,
+          "relative_delta_l2": 1.5912467744425018,
+          "shape": [
+            640,
+            192
+          ],
+          "target_l2": 21.96854847661105
+        },
+        "blocks.0.ffn.up.weight": {
+          "base_l2": 12.012156481843347,
+          "cosine": 0.3600219710157475,
+          "delta_l2": 19.026094450534227,
+          "parameters": 122880,
+          "relative_delta_l2": 1.5839033132221187,
+          "shape": [
+            640,
+            192
+          ],
+          "target_l2": 19.700038784553623
+        },
+        "blocks.0.ffn_norm.weight": {
+          "base_l2": 13.405579650334044,
+          "cosine": 0.9984769052347905,
+          "delta_l2": 1.3399091648534425,
+          "parameters": 192,
+          "relative_delta_l2": 0.09995160222855819,
+          "shape": [
+            192
+          ],
+          "target_l2": 12.26786849513153
+        },
+        "blocks.1.attn.k.weight": {
+          "base_l2": 4.3109245861844085,
+          "cosine": 0.421939237483893,
+          "delta_l2": 5.903118142806355,
+          "parameters": 12288,
+          "relative_delta_l2": 1.3693392275347582,
+          "shape": [
+            64,
+            192
+          ],
+          "target_l2": 6.242895078443903
+        },
+        "blocks.1.attn.o.weight": {
+          "base_l2": 7.543313002855674,
+          "cosine": 0.23038273211638122,
+          "delta_l2": 12.573088042113248,
+          "parameters": 36864,
+          "relative_delta_l2": 1.6667859384004682,
+          "shape": [
+            192,
+            192
+          ],
+          "target_l2": 11.945742632256676
+        },
+        "blocks.1.attn.q.weight": {
+          "base_l2": 7.5911859409011875,
+          "cosine": 0.26997178992169224,
+          "delta_l2": 12.33333206704629,
+          "parameters": 36864,
+          "relative_delta_l2": 1.6246910776608035,
+          "shape": [
+            192,
+            192
+          ],
+          "target_l2": 11.983440537081075
+        },
+        "blocks.1.attn.v.weight": {
+          "base_l2": 4.557693325986257,
+          "cosine": 0.34964313719410983,
+          "delta_l2": 7.0008336071045925,
+          "parameters": 12288,
+          "relative_delta_l2": 1.5360475368512547,
+          "shape": [
+            64,
+            192
+          ],
+          "target_l2": 7.14140865202775
+        },
+        "blocks.1.attn_norm.weight": {
+          "base_l2": 13.459921523839467,
+          "cosine": 0.998545375043209,
+          "delta_l2": 1.5300603204761398,
+          "parameters": 192,
+          "relative_delta_l2": 0.11367527795508925,
+          "shape": [
+            192
+          ],
+          "target_l2": 12.093345499928189
+        },
+        "blocks.1.ffn.down.weight": {
+          "base_l2": 12.573036477276348,
+          "cosine": 0.2766450340711563,
+          "delta_l2": 21.444971711578205,
+          "parameters": 122880,
+          "relative_delta_l2": 1.7056318694641814,
+          "shape": [
+            192,
+            640
+          ],
+          "target_l2": 21.195601833476886
+        },
+        "blocks.1.ffn.gate.weight": {
+          "base_l2": 14.277070510474879,
+          "cosine": 0.3819629138195316,
+          "delta_l2": 23.696970675986766,
+          "parameters": 122880,
+          "relative_delta_l2": 1.6597922282866533,
+          "shape": [
+            640,
+            192
+          ],
+          "target_l2": 25.137068275830657
+        },
+        "blocks.1.ffn.up.weight": {
+          "base_l2": 12.811274215068552,
+          "cosine": 0.3008369919476993,
+          "delta_l2": 22.19593483869606,
+          "parameters": 122880,
+          "relative_delta_l2": 1.7325313989914697,
+          "shape": [
+            640,
+            192
+          ],
+          "target_l2": 22.384752872104038
+        },
+        "blocks.1.ffn_norm.weight": {
+          "base_l2": 13.546101339759845,
+          "cosine": 0.9975921962064429,
+          "delta_l2": 1.0470666357995686,
+          "parameters": 192,
+          "relative_delta_l2": 0.07729653053209269,
+          "shape": [
+            192
+          ],
+          "target_l2": 13.051139348752653
+        },
+        "embed.weight": {
+          "base_l2": 13.339224189999246,
+          "cosine": 0.4681715324465738,
+          "delta_l2": 17.071428065700335,
+          "parameters": 16384,
+          "relative_delta_l2": 1.279791674728671,
+          "shape": [
+            256,
+            64
+          ],
+          "target_l2": 18.594107409927876
+        },
+        "in_proj.weight": {
+          "base_l2": 3.9174643680128756,
+          "cosine": 0.6271623519210368,
+          "delta_l2": 4.677161681225141,
+          "parameters": 12288,
+          "relative_delta_l2": 1.1939257749005692,
+          "shape": [
+            192,
+            64
+          ],
+          "target_l2": 6.001685731232465
+        },
+        "loop_embed": {
+          "base_l2": 0.6777671488906398,
+          "cosine": 0.4534630320127306,
+          "delta_l2": 1.21020738760716,
+          "parameters": 1152,
+          "relative_delta_l2": 1.7855798847554225,
+          "shape": [
+            6,
+            192
+          ],
+          "target_l2": 1.356004794767833
+        },
+        "norm.weight": {
+          "base_l2": 15.429055051433021,
+          "cosine": 0.9980282856752696,
+          "delta_l2": 3.9279608790699188,
+          "parameters": 192,
+          "relative_delta_l2": 0.25458207686575707,
+          "shape": [
+            192
+          ],
+          "target_l2": 19.205344058465794
+        },
+        "out_proj.weight": {
+          "base_l2": 12.089996592362782,
+          "cosine": 0.2518381175237103,
+          "delta_l2": 17.581144287072348,
+          "parameters": 12288,
+          "relative_delta_l2": 1.4541893500762695,
+          "shape": [
+            64,
+            192
+          ],
+          "target_l2": 16.16718169081434
+        },
+        "ptr_head.arg_emb.weight": {
+          "base_l2": 57.711785516578466,
+          "cosine": 0.9998551907694818,
+          "delta_l2": 0.9822636229773999,
+          "parameters": 3264,
+          "relative_delta_l2": 0.017020156527564577,
+          "shape": [
+            17,
+            192
+          ],
+          "target_l2": 57.72057142785987
+        },
+        "ptr_head.end.weight": {
+          "base_l2": 8.128073029596932,
+          "cosine": 0.9562852316768418,
+          "delta_l2": 2.481446380743934,
+          "parameters": 36864,
+          "relative_delta_l2": 0.3052933175807093,
+          "shape": [
+            192,
+            192
+          ],
+          "target_l2": 8.48531771593038
+        },
+        "ptr_head.start.weight": {
+          "base_l2": 8.120264668935555,
+          "cosine": 0.9571249202511476,
+          "delta_l2": 2.449038430548527,
+          "parameters": 36864,
+          "relative_delta_l2": 0.3015958876214264,
+          "shape": [
+            192,
+            192
+          ],
+          "target_l2": 8.453832421582032
+        },
+        "tool_head.fc.bias": {
+          "base_l2": 0.308914017636205,
+          "cosine": 0.9578125411661915,
+          "delta_l2": 0.09461799074049311,
+          "parameters": 51,
+          "relative_delta_l2": 0.30629231869924634,
+          "shape": [
+            51
+          ],
+          "target_l2": 0.32860306263084793
+        },
+        "tool_head.fc.weight": {
+          "base_l2": 4.795608732326985,
+          "cosine": 0.9337149191883692,
+          "delta_l2": 2.1127364615288484,
+          "parameters": 9792,
+          "relative_delta_l2": 0.4405564714416724,
+          "shape": [
+            51,
+            192
+          ],
+          "target_l2": 5.7089385153108685
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      },
+      "schema_version": 1,
+      "target": {
+        "auxiliary_tensors": 5,
+        "lineage": null,
+        "model_tensors": 23,
+        "path": "/home/jovyan/sbchoi/localagent/runs/ablate/cuda-s0-x3/model.pt",
+        "sha256": "6fb71b18e255da549fd31f267978a6e1344cc45912ad1d5ea89c09e3686f49b8",
+        "stage": null,
+        "step": null
+      }
+    }
+  ]
+}

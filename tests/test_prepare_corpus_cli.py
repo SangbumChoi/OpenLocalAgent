@@ -7,17 +7,17 @@ from pathlib import Path
 import pytest
 import yaml
 
-from localagent.data.evaluation_denylist_manifest import (
+from openlocalagent.data.decontam.evaluation_denylist_manifest import (
     build_evaluation_denylist_manifest,
 )
-from localagent.data.evaluation_denylist_suite import (
+from openlocalagent.data.decontam.evaluation_denylist_suite import (
     CONTRACT_KIND,
     freeze_evaluation_denylist_suite,
 )
-from localagent.data.pretrain_corpus import CorpusDocument
+from openlocalagent.data.corpus.pretrain_corpus import CorpusDocument
 
 
-_SCRIPT = Path(__file__).parents[1] / "scripts" / "prepare_corpus.py"
+_SCRIPT = Path(__file__).parents[1] / "scripts" / "build_corpus.py"
 _SPEC = importlib.util.spec_from_file_location("prepare_corpus_cli", _SCRIPT)
 assert _SPEC is not None and _SPEC.loader is not None
 _MODULE = importlib.util.module_from_spec(_SPEC)
@@ -350,7 +350,7 @@ def test_prepare_cli_reuses_frozen_base_split_for_single_family(tmp_path, monkey
         sys,
         "argv",
         [
-            "prepare_corpus.py",
+            "build_corpus.py",
             str(raw_path),
             "--out",
             str(base_out),
@@ -382,7 +382,7 @@ def test_prepare_cli_reuses_frozen_base_split_for_single_family(tmp_path, monkey
         sys,
         "argv",
         [
-            "prepare_corpus.py",
+            "build_corpus.py",
             str(raw_path),
             "--out",
             str(derived_out),

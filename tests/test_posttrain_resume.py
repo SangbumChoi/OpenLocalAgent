@@ -14,16 +14,16 @@ import torch
 import yaml
 from torch import nn
 
-from localagent.data.agent_synth import Sample
-from localagent.data.schema import Conversation, Message, Role
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ByteTokenizer
-from localagent.train.resume_git_receipt import build_resume_git_receipt
-from localagent.train.rl import grpo
-from localagent.train.rl import run as run_rl
-from localagent.train.sft import run as run_sft
-from localagent.train.sft import sft
-from localagent.train.stage_data import LINEAGE_VERSION, sha256_file, tokenizer_identity
+from openlocalagent.data.synth.agent_synth import Sample
+from openlocalagent.data.schema import Conversation, Message, Role
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ByteTokenizer
+from openlocalagent.train.resume_git_receipt import build_resume_git_receipt
+from openlocalagent.train.rl import grpo
+from openlocalagent.train.rl import run as run_rl
+from openlocalagent.train.sft import run as run_sft
+from openlocalagent.train.sft import sft
+from openlocalagent.train.stage_data import LINEAGE_VERSION, sha256_file, tokenizer_identity
 
 
 def _write_unpickle_marker(path: str) -> None:
@@ -632,7 +632,7 @@ def test_grpo_periodic_resume_restores_reference_generator_and_optimizer(
     tmp_path,
     monkeypatch,
 ) -> None:
-    monkeypatch.setattr("localagent.train.rl._rollout", _sampled_ab_rollout)
+    monkeypatch.setattr("openlocalagent.train.rl._rollout", _sampled_ab_rollout)
     torch.manual_seed(303)
     initial_state = copy.deepcopy(_TinyPolicy().state_dict())
     sample = _text_sample()
@@ -666,7 +666,7 @@ def test_grpo_periodic_resume_restores_reference_generator_and_optimizer(
             raise RuntimeError("simulated RL interruption")
         return _sampled_ab_rollout(*args, **kwargs)
 
-    monkeypatch.setattr("localagent.train.rl._rollout", crash_in_third_step)
+    monkeypatch.setattr("openlocalagent.train.rl._rollout", crash_in_third_step)
     with pytest.raises(RuntimeError, match="simulated RL interruption"):
         grpo(
             _policy_from_state(initial_state),
@@ -688,7 +688,7 @@ def test_grpo_periodic_resume_restores_reference_generator_and_optimizer(
     assert periodic["step"] == 1
     assert periodic["reference_state_dict"] is not None
 
-    monkeypatch.setattr("localagent.train.rl._rollout", _sampled_ab_rollout)
+    monkeypatch.setattr("openlocalagent.train.rl._rollout", _sampled_ab_rollout)
     resumed = _policy_from_state(initial_state)
     actual_history, actual_metrics = grpo(
         resumed,
@@ -747,7 +747,7 @@ def test_grpo_resume_rejects_incomplete_or_tampered_state(
     mutation,
     message,
 ) -> None:
-    monkeypatch.setattr("localagent.train.rl._rollout", _sampled_ab_rollout)
+    monkeypatch.setattr("openlocalagent.train.rl._rollout", _sampled_ab_rollout)
     torch.manual_seed(404)
     initial_state = copy.deepcopy(_TinyPolicy().state_dict())
     checkpoint_path = tmp_path / f"{mutation}.pt"
@@ -792,7 +792,7 @@ def test_grpo_resume_rejects_incomplete_or_tampered_state(
 
 
 def test_grpo_resume_rejects_reward_row_drift(tmp_path, monkeypatch) -> None:
-    monkeypatch.setattr("localagent.train.rl._rollout", _sampled_ab_rollout)
+    monkeypatch.setattr("openlocalagent.train.rl._rollout", _sampled_ab_rollout)
     torch.manual_seed(505)
     initial_state = copy.deepcopy(_TinyPolicy().state_dict())
     checkpoint_path = tmp_path / "rl-data-drift.pt"
@@ -1029,7 +1029,7 @@ def test_sft_stage_runner_starts_fresh_optimizer_child_from_completed_sft(
 def test_sft_continuation_rejects_an_incomplete_parent_fixed_horizon(
     tmp_path,
 ) -> None:
-    module = importlib.import_module("localagent.train.sft")
+    module = importlib.import_module("openlocalagent.train.sft")
     cfg = _sft_config()
     model_config_path = tmp_path / "model.yaml"
     _write_yaml(model_config_path, cfg.__dict__)
@@ -1103,7 +1103,7 @@ def test_sft_stage_runner_fresh_computes_pre_but_resume_reuses_sealed_baseline(
     tmp_path,
     monkeypatch,
 ) -> None:
-    module = importlib.import_module("localagent.train.sft")
+    module = importlib.import_module("openlocalagent.train.sft")
     config_path, out_dir, _ = _write_sft_runner_with_eval(tmp_path)
     real_evaluate = module._evaluate_conversations
     evaluation_calls = 0
@@ -1141,7 +1141,7 @@ def test_sft_stage_runner_rejects_bad_sealed_baseline_before_training(
     mutation: str,
     message: str,
 ) -> None:
-    module = importlib.import_module("localagent.train.sft")
+    module = importlib.import_module("openlocalagent.train.sft")
     config_path, out_dir, _ = _write_sft_runner_with_eval(tmp_path)
     run_sft(str(config_path))
     checkpoint_path = out_dir / "latest.pt"
@@ -1171,7 +1171,7 @@ def test_sft_stage_runner_rejects_current_heldout_contract_drift_before_training
     tmp_path,
     monkeypatch,
 ) -> None:
-    module = importlib.import_module("localagent.train.sft")
+    module = importlib.import_module("openlocalagent.train.sft")
     config_path, _, eval_path = _write_sft_runner_with_eval(tmp_path)
     run_sft(str(config_path))
     _write_conversations(
@@ -1270,7 +1270,7 @@ def test_rl_stage_runner_resumes_with_original_reference_and_prompt_progress(
             "log": {"out_dir": str(out_dir), "ckpt_every": 1},
         }
 
-    monkeypatch.setattr("localagent.train.rl._rollout", _sampled_ab_rollout)
+    monkeypatch.setattr("openlocalagent.train.rl._rollout", _sampled_ab_rollout)
     reference_dir = tmp_path / "rl-reference"
     reference_config = tmp_path / "rl-reference.yaml"
     _write_yaml(reference_config, config_for(reference_dir))
@@ -1292,7 +1292,7 @@ def test_rl_stage_runner_resumes_with_original_reference_and_prompt_progress(
                 raise RuntimeError("simulated RL runner interruption")
         return _sampled_ab_rollout(*args, **kwargs)
 
-    monkeypatch.setattr("localagent.train.rl._rollout", crash_in_third_step)
+    monkeypatch.setattr("openlocalagent.train.rl._rollout", crash_in_third_step)
     with pytest.raises(RuntimeError, match="simulated RL runner interruption"):
         run_rl(str(resumed_config))
     periodic = torch.load(resumed_dir / "latest.pt", map_location="cpu", weights_only=False)
@@ -1300,7 +1300,7 @@ def test_rl_stage_runner_resumes_with_original_reference_and_prompt_progress(
     assert periodic["step"] == 1
     assert periodic["reference_state_dict"] is not None
 
-    monkeypatch.setattr("localagent.train.rl._rollout", _sampled_ab_rollout)
+    monkeypatch.setattr("openlocalagent.train.rl._rollout", _sampled_ab_rollout)
     run_rl(str(resumed_config), resume=True)
     reference = torch.load(reference_dir / "latest.pt", map_location="cpu", weights_only=False)
     resumed = torch.load(resumed_dir / "latest.pt", map_location="cpu", weights_only=False)
@@ -1326,7 +1326,7 @@ def test_rl_stage_runner_resumes_with_original_reference_and_prompt_progress(
             pytest.fail("completed RL runner resume must not sample a training rollout")
         return _sampled_ab_rollout(*args, **kwargs)
 
-    monkeypatch.setattr("localagent.train.rl._rollout", holdout_only_rollout)
+    monkeypatch.setattr("openlocalagent.train.rl._rollout", holdout_only_rollout)
     run_rl(str(resumed_config), resume=True)
     completed_resume = torch.load(
         resumed_dir / "latest.pt",

@@ -8,14 +8,14 @@ from pathlib import Path
 import pytest
 import yaml
 
-import localagent.data.conversation_artifact as artifact_module
-from localagent.data.agent_synth import synthesize
-from localagent.data.conversation_artifact import (
+import openlocalagent.data.conversation_artifact as artifact_module
+from openlocalagent.data.synth.agent_synth import synthesize
+from openlocalagent.data.conversation_artifact import (
     canonical_json_bytes,
     load_verified_conversation_artifact,
     self_hashed_manifest,
 )
-from localagent.data.schema import Conversation, Message, ToolCall, ToolSpec
+from openlocalagent.data.schema import Conversation, Message, ToolCall, ToolSpec
 
 
 def _synthesize_artifact(tmp_path: Path) -> tuple[Path, Path, Path]:

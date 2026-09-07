@@ -3,8 +3,8 @@ bound to (by description embedding), so it ranks any/unseen tools without a fixe
 
 import torch
 
-from localagent.agent.dense_selector import BoundSelector, DenseToolSelector, tool_embeddings
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.agent.dense_selector import BoundSelector, DenseToolSelector, tool_embeddings
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
 
 
 def test_scores_shape_matches_tool_count():

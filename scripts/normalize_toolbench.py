@@ -26,10 +26,10 @@ import re
 from dataclasses import asdict
 from pathlib import Path
 
-from localagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1
-from localagent.data.render import render_conversation_rows
-from localagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
-from localagent.model.tokenizer import load_tokenizer
+from openlocalagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1
+from openlocalagent.data.render import render_conversation_rows
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
+from openlocalagent.model.tokenizer import load_tokenizer
 
 # The ReAct trajectory writes its call as two lines; the input is JSON with occasional trailing
 # prose, so the brace span is taken rather than the rest of the string.

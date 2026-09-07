@@ -1,5 +1,5 @@
-from localagent.agent.mobile_toolset import mobile_tools, realistic_productivity_tools
-from localagent.agent.routes import route_of
+from openlocalagent.agent.mobile_toolset import mobile_tools, realistic_productivity_tools
+from openlocalagent.agent.routes import route_of
 
 
 def test_mobile_toolset_is_additive_and_schema_complete():

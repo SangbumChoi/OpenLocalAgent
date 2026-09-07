@@ -8,7 +8,7 @@ from pathlib import Path
 import pytest
 import yaml
 
-from localagent.data.conversation_artifact import (
+from openlocalagent.data.conversation_artifact import (
     CONVERSATION_FORMAT,
     CONVERSATION_SERIALIZATION,
     MANIFEST_KIND,
@@ -18,7 +18,7 @@ from localagent.data.conversation_artifact import (
     load_verified_conversation_artifact,
     self_hashed_manifest,
 )
-from localagent.data.format_bootstrap import (
+from openlocalagent.data.synth.format_bootstrap import (
     FORMAT_BOOTSTRAP_ALGORITHM,
     FORMAT_BOOTSTRAP_CONFIG_KIND,
     FORMAT_BOOTSTRAP_PHASES,
@@ -27,8 +27,8 @@ from localagent.data.format_bootstrap import (
     classify_format_bootstrap_phase,
     select_format_bootstrap,
 )
-from localagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
-from localagent.model.tokenizer import ByteTokenizer, train_bpe
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
+from openlocalagent.model.tokenizer import ByteTokenizer, train_bpe
 
 
 def _tools() -> list[ToolSpec]:

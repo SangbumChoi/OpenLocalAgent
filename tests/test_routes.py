@@ -2,8 +2,8 @@
 emit maps to exactly one of the 5 stable routes, so the route head never silently mis-buckets a new
 tool. This is the guard that keeps the small closed set honest as the tool pool grows."""
 
-from localagent.agent.routes import ROUTES, route_of, route_of_sample
-from localagent.agent.tool_head import CLASSES
+from openlocalagent.agent.routes import ROUTES, route_of, route_of_sample
+from openlocalagent.agent.tool_head import CLASSES
 
 
 def test_five_stable_routes():

@@ -5,20 +5,20 @@ from pathlib import Path
 import pytest
 import yaml
 
-from localagent.agent.schema_decode import fill_tool
-from localagent.agent.toolset import STANDARD_TOOLS
-from localagent.data import agent_synth
-from localagent.data.agent_synth import Generator, synthesize
-from localagent.data.agent_synth_paper_v2 import (
+from openlocalagent.agent.schema_decode import fill_tool
+from openlocalagent.agent.toolset import STANDARD_TOOLS
+from openlocalagent.data.synth import agent_synth
+from openlocalagent.data.synth.agent_synth import Generator, synthesize
+from openlocalagent.data.synth.agent_synth_paper_v2 import (
     PAPER_TRAIN_V2_MODE,
     PAPER_TRAIN_V2_MODE_VERSION,
     build_paper_train_v2_tools,
 )
-from localagent.data.conversation_artifact import (
+from openlocalagent.data.conversation_artifact import (
     canonical_json_bytes,
     load_verified_conversation_artifact,
 )
-from localagent.data.schema import Conversation
+from openlocalagent.data.schema import Conversation
 
 
 def _bounded_v2_config(out: Path) -> dict:

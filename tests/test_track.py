@@ -1,4 +1,4 @@
-from localagent.track import Tracker
+from openlocalagent.track import Tracker
 
 
 def test_run_and_metrics(tmp_path):

@@ -1,0 +1,26 @@
+# Recurrent MoE: la-93m-moe's routed stack run twice with shared weights. The MoEUT thesis
+# (Csordas et al., 2024) is that a looped shared stack is parameter-starved and experts put the
+# parameters back without depth; this arm tests that claim on the tool-calling harness against
+# three controls: la-93m (dense), la-93m-loop2 (dense, looped), la-93m-moe (routed, unlooped).
+name: la-93m-moe-loop2
+vocab_size: 16384
+d_model: 640
+n_layers: 18
+n_loops: 2
+n_heads: 10
+n_kv_heads: 1
+ffn_hidden: 832
+ffn_num_experts: 8
+ffn_top_k: 2
+router_aux_loss_coef: 0.01
+max_seq_len: 4096
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types:
+  [conv, conv, attn, conv, conv, attn, conv, conv, attn, conv, conv, attn,
+   conv, conv, attn, conv, conv, attn]
+param_budget: 300000000

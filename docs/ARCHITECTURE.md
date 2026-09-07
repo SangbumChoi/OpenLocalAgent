@@ -1,8 +1,15 @@
 # LocalAgent — Architecture
 
-A minimal, hackable, **pure-PyTorch** pipeline for a **< 100M-parameter** LLM that acts as a
-local **agent** (tool calling + text generation). Design choices are justified in
-[`RESEARCH.md`](./RESEARCH.md); build order is in [`ROADMAP.md`](./ROADMAP.md).
+A minimal, hackable, **pure-PyTorch** pipeline for an LLM that acts as a local **agent** (tool
+calling + text generation).
+
+The ladder now spans **10M to 700M** parameters; the "< 100M" framing below predates the 150M/300M/
+700M tiers and survives only where it describes the on-device tiers specifically. Each model config
+declares the `param_budget` it is held to — see [CONVENTIONS.md](CONVENTIONS.md).
+
+Design rationale is in [`campaign/RESEARCH.md`](campaign/RESEARCH.md) and the original build order
+in [`campaign/ROADMAP.md`](campaign/ROADMAP.md); both are campaign-era and describe the repository
+as it was. For what the stages do now, read [STAGES.md](STAGES.md).
 
 ---
 
@@ -11,7 +18,7 @@ local **agent** (tool calling + text generation). Design choices are justified i
 ```
                          ┌───────────────────────────────────────────────┐
                          │                  PIPELINE                      │
-                         │  (localagent.pipeline.flow — orchestrates)     │
+                         │  (openlocalagent.pipeline — orchestrates)     │
                          └───────────────────────────────────────────────┘
                                             │
    DATA                  TRAIN                          EVAL              SERVE
@@ -34,13 +41,13 @@ local **agent** (tool calling + text generation). Design choices are justified i
                               GGUF / ExecuTorch remain honest stubs
 ```
 
-Everything is a small Python module under `src/localagent/`, driven by YAML configs in
-`configs/` and a single CLI (`localagent ...`). No training framework; just PyTorch + a BPE
+Everything is a small Python module under `src/openlocalagent/`, driven by YAML configs in
+`configs/` and a single CLI (`openlocalagent ...`). No training framework; just PyTorch + a BPE
 tokenizer.
 
 ---
 
-## 2. The model (`localagent.model`)
+## 2. The model (`openlocalagent.model`)
 
 A compact decoder, sized to stay strictly **< 100M params**, favoring depth over width and a
 small KV-head count. Sequence mixing is an experimental axis: periodic full causal
@@ -91,7 +98,7 @@ from user-controlled data.
 
 ---
 
-## 3. Agent format & runtime (`localagent.agent`)
+## 3. Agent format & runtime (`openlocalagent.agent`)
 
 ### Wire format (ChatML-ish, tool-native)
 ```
@@ -127,7 +134,7 @@ build prompt(system+tools+history+memory) → generate →
 
 ---
 
-## 4. Data (`localagent.data`)
+## 4. Data (`openlocalagent.data`)
 
 - `schema.py` — canonical dataclasses: `Message`, `ToolSpec`, `ToolCall`, `Conversation`,
   `Sample`. One JSONL line = one `Conversation`. This is the single interchange format across
@@ -158,7 +165,7 @@ build prompt(system+tools+history+memory) → generate →
   training rows, **verify** split/schema/provenance policy, and idempotently append to the
   SFT/distill pool. Production SQLite feedback ingestion remains Phase 8.
 
-## 5. Training (`localagent.train`)
+## 5. Training (`openlocalagent.train`)
 
 All stages share `train/device.py` (one **device abstraction**: CUDA / MPS / CPU / XPU / other
 accelerators, autocast + dtype policy) so the *same* loop runs on GPU, CPU, or NPU-ish backends.
@@ -177,7 +184,7 @@ write periodic atomic checkpoints and restore their optimizer, backend RNG, dete
 decision/prompt schedule, accounting, history, and stage-specific auxiliary state. Every resume
 path fails closed on lineage, execution, or sealed-state drift.
 
-## 6. Evaluation (`localagent.eval`)
+## 6. Evaluation (`openlocalagent.eval`)
 
 - `tool_eval.py` — strict whole-output AST/schema scoring for single, parallel, sequential,
   multi-turn, text, and abstention decisions. It is an internal **BFCL-style** scorecard, not an
@@ -194,7 +201,7 @@ path fails closed on lineage, execution, or sealed-state drift.
   dead-expert, and category-divergence evidence.
 - Exported models are checked for **parity** vs the PyTorch reference here.
 
-## 7. Conversation store + data flywheel (`localagent.agent.memory` + `localagent.data.flywheel`)
+## 7. Conversation store + data flywheel (`openlocalagent.agent.memory`)
 
 Every served conversation is persisted (SQLite to start) with optional **feedback signals**
 (Airbnb AITL): pairwise preference, adoption decision + rationale, knowledge-relevance,
@@ -207,7 +214,7 @@ log conversations ─▶ mine candidates ─▶ dual-verify ─▶ append to tra
 ```
 This is what makes the system improve from real local usage instead of staying static.
 
-## 8. Inference & export (`localagent.inference`)
+## 8. Inference & export (`openlocalagent.inference`)
 
 - `generate.py` — KV-cached sampling (greedy / temperature / top-p) for PyTorch runtime/eval.
 - `export/to_onnx.py` — PyTorch/ONNX parity plus separate cache-bearing prefill and single-token
@@ -227,12 +234,12 @@ This is what makes the system improve from real local usage instead of staying s
 - The static WebGPU demo and benchmark surfaces visualize tool/action paths and measured runtime
   evidence. The CLI `chat` command remains an honest Phase-7 stub.
 
-## 10. Orchestration (`localagent.pipeline.flow` + `scripts/speedrun.sh`)
+## 10. Orchestration (`openlocalagent.pipeline` + `scripts/speedrun.sh`)
 
 `flow.py` dispatches config-bound stages (`pretrain → midtrain → SFT → optional distill/RL →
 eval → export`) with lineage-bearing artifacts. `speedrun.sh` remains the toy CPU-oriented
 nanochat-style smoke path; the real paper recipe is intentionally a separately frozen,
-resource-gated sequence in [`TRAINING_SYSTEM.md`](./TRAINING_SYSTEM.md).
+resource-gated sequence in [`TRAINING_SYSTEM.md`](campaign/TRAINING_SYSTEM.md).
 
 ---
 

@@ -1,0 +1,34 @@
+=== campaign HF dry-run ===
+refusing to overwrite runs/hf-dryrun/campaign.json; pass --force
+=== pretrain mixture dry-run ===
+        "id": "websight-card",
+        "path": null,
+        "scope": "dataset-card-terms",
+        "sha256": "be37caf530a8c4ea5c13a3b30fe0d01a5c40b835776663269713331fb1bfaadd",
+        "status": "missing",
+        "url": "https://huggingface.co/datasets/HuggingFaceM4/WebSight/resolve/7795db7d595faf39443cd9440bd9186609c42b6e/README.md"
+      }
+    ],
+    "plan_sha256": "e4b6bc62da62a8fe14011af2c52a36592a4497bdf8aa9a476c22fe415f43d58d",
+    "ready": false,
+    "runtime": {
+      "localagent_hf_corpus_sha256": "df4c7d02a9544db822d758ee87d3dbc7535a20cc6aa2916696a274ff423822e0",
+      "packages": {
+        "PyYAML": "6.0.2",
+        "datasets": "4.1.0",
+        "fsspec": "2025.9.0",
+        "huggingface_hub": "1.26.1",
+        "pyarrow": "25.0.1"
+      },
+      "pyproject_sha256": "cdb9b905bdc0370bfd32e58299d80177e545f1fc30d00a1b779dc800954d3309",
+      "python": {
+        "implementation": "cpython",
+        "version": "3.12.3"
+      },
+      "runtime_sha256": "e3f425b05f6eb538ce12e604e6d8de9862f3d8e231523804cce367ca45aad94e",
+      "uv_lock_sha256": "1559595cdf071d663c8d98520887b080af032bc775bfe9a431bd82357db12925"
+    },
+    "version": 1
+  }
+}
+DRYRUN_DONE

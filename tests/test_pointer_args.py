@@ -2,7 +2,7 @@ import torch
 
 
 def test_browser_pointer_vocabulary_is_backward_compatible():
-    from localagent.agent.pointer_head import (
+    from openlocalagent.agent.pointer_head import (
         BROWSER_PTR_ARGS,
         PTR_ARGS,
         PointerHead,
@@ -21,9 +21,9 @@ def test_browser_pointer_vocabulary_is_backward_compatible():
 
 
 def test_exported_pointer_heads_use_checkpoint_argument_metadata():
-    from localagent.agent.pointer_head import BROWSER_PTR_ARGS, PointerHead
-    from localagent.agent.tool_head import ToolHead
-    from localagent.inference.export.to_onnx import _heads_json
+    from openlocalagent.agent.pointer_head import BROWSER_PTR_ARGS, PointerHead
+    from openlocalagent.agent.tool_head import ToolHead
+    from openlocalagent.inference.export.to_onnx import _heads_json
 
     d_model = 16
     ptr = PointerHead(d_model, args=BROWSER_PTR_ARGS)
@@ -39,7 +39,7 @@ def test_exported_pointer_heads_use_checkpoint_argument_metadata():
 
 
 def test_public_browser_names_map_only_for_legacy_auxiliary_head():
-    from localagent.agent.tool_head import canonical_tool_name
+    from openlocalagent.agent.tool_head import canonical_tool_name
 
     assert canonical_tool_name("web_click") == "click"
     assert canonical_tool_name("web_type") == "type_text"

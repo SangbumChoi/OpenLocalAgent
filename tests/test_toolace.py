@@ -2,16 +2,16 @@ import hashlib
 import json
 from pathlib import Path
 
-from localagent.data.conversation_artifact import canonical_json_bytes
-from localagent.data.toolace import (
+from openlocalagent.data.conversation_artifact import canonical_json_bytes
+from openlocalagent.data.adapters.toolace import (
     TOOLACE_ACTION_HISTORY_ADAPTER_VERSION,
     TOOLACE_ADAPTER_VERSION,
     TOOLACE_MULTITURN_ADAPTER_VERSION,
     normalize_toolace_snapshot,
     parse_toolace_calls,
 )
-from localagent.data.schema import Conversation
-from localagent.data.prompt_contract import assistant_training_turns
+from openlocalagent.data.schema import Conversation
+from openlocalagent.data.prompt_contract import assistant_training_turns
 
 
 def _row(prompt: str, *, tool: str = "email_send", value: str = "a@example.com") -> dict:

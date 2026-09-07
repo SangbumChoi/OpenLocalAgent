@@ -1,6 +1,6 @@
-from localagent.agent.caller import ToolCaller
-from localagent.agent.schema_decode import fill_tool, validate
-from localagent.data.schema import ToolSpec
+from openlocalagent.agent.caller import ToolCaller
+from openlocalagent.agent.schema_decode import fill_tool, validate
+from openlocalagent.data.schema import ToolSpec
 
 
 def _T(name, desc, props, required=None):
@@ -54,7 +54,7 @@ def test_caller_abstains_below_threshold():
 
 
 def test_caller_scales_with_distractors():
-    from localagent.data.tool_catalog import build_catalog
+    from openlocalagent.data.tool_catalog import build_catalog
     c = ToolCaller([WEATHER] + build_catalog(500, seed=1))
     assert c.call("What's the weather in Oslo?").name == "get_weather"
 

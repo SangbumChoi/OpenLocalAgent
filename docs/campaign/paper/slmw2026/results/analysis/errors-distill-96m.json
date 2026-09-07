@@ -1,0 +1,353 @@
+{
+ "model": "catalog:runs/sft-distill-96m/latest.pt",
+ "suites": {
+  "toolace": {
+   "correct_name": 69,
+   "wrong_in_catalog": 54,
+   "out_of_catalog": 41,
+   "parse_fail": 36,
+   "rows": 200,
+   "shares": {
+    "correct_name": 34.5,
+    "wrong_in_catalog": 27.0,
+    "out_of_catalog": 20.5,
+    "parse_fail": 18.0
+   },
+   "samples": [
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "S_YTD",
+     "predicted": "GetMarkdownInStorageToPdf",
+     "catalog_size": 5
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "Rental Property Ratings",
+     "predicted": "Rental Properties API",
+     "catalog_size": 5
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "Get F1 Drivers and Personalities",
+     "predicted": "Get F1 Drivers and Technories",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "Keyword Research API",
+     "predicted": "Keyword research API",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "Get Addresses by Postcode",
+     "predicted": "Facilities Lookup",
+     "catalog_size": 4
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "Domain Whois Lookup",
+     "predicted": "Generate QR Code",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "Get Cryptocurrency Overview",
+     "predicted": "Top Collections Today",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "parse_fail",
+     "gold": "Powerball Recent Draw",
+     "predicted": null,
+     "catalog_size": 3
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "Croatia Songs API",
+     "predicted": "Cleaner Songs API",
+     "catalog_size": 4
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "topAssistsBySeason",
+     "predicted": "Football Search API",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "findpincodebydistrict",
+     "predicted": "Address_reverse_geocoding",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "Search Flights by Location",
+     "predicted": "Get Properties on",
+     "catalog_size": 5
+    }
+   ]
+  },
+  "xlam": {
+   "correct_name": 178,
+   "wrong_in_catalog": 11,
+   "out_of_catalog": 5,
+   "parse_fail": 6,
+   "rows": 200,
+   "shares": {
+    "correct_name": 89.0,
+    "wrong_in_catalog": 5.5,
+    "out_of_catalog": 2.5,
+    "parse_fail": 3.0
+   },
+   "samples": [
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "searchjobs",
+     "predicted": "search_jobs",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "parse_fail",
+     "gold": "feeds_list_similarities",
+     "predicted": null,
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "chat",
+     "predicted": "get_php",
+     "catalog_size": 5
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "bus_trolley_locations",
+     "predicted": "bus_tradley_locations",
+     "catalog_size": 4
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "channel_shorts",
+     "predicted": "real_time_hashtag_search",
+     "catalog_size": 4
+    },
+    {
+     "bucket": "parse_fail",
+     "gold": "hotel_photos",
+     "predicted": null,
+     "catalog_size": 4
+    },
+    {
+     "bucket": "parse_fail",
+     "gold": "std_deviation",
+     "predicted": null,
+     "catalog_size": 5
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "getuserbyname",
+     "predicted": "loginuser",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "falling_three_methods",
+     "predicted": "bin_forecasts",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "convert",
+     "predicted": "gen_image",
+     "catalog_size": 8
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "search_torrents",
+     "predicted": "search_by_Aries",
+     "catalog_size": 2
+    },
+    {
+     "bucket": "parse_fail",
+     "gold": "get_user_feed",
+     "predicted": null,
+     "catalog_size": 2
+    }
+   ]
+  },
+  "bfcl": {
+   "correct_name": 105,
+   "wrong_in_catalog": 29,
+   "out_of_catalog": 48,
+   "parse_fail": 18,
+   "rows": 200,
+   "shares": {
+    "correct_name": 52.5,
+    "wrong_in_catalog": 14.5,
+    "out_of_catalog": 24.0,
+    "parse_fail": 9.0
+   },
+   "samples": [
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "math.triangle_area_heron",
+     "predicted": "math.triangle_area_base_height",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "country_info.capital",
+     "predicted": "country_info.largest_city",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "corporate_finance.calculate_YOY_growth_rate",
+     "predicted": "corporate_finance.calculate_TimeE",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "european_history.battle_details",
+     "predicted": "evesan_history.leader_info",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "sports_data.basketball.most_points_single_game",
+     "predicted": "sports_data.basketball",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "game_rewards.get",
+     "predicted": "game_scores.get",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "functions.intersect",
+     "predicted": "ize.intersection",
+     "catalog_size": 2
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "geometry_rectangle.calculate",
+     "predicted": "geometry_square.calculate",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "math.lcm",
+     "predicted": "math.gcd",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "parse_fail",
+     "gold": "kinematics.final_velocity",
+     "predicted": null,
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "ride_hailing.get_rides",
+     "predicted": "grocery_delivery.order",
+     "catalog_size": 2
+    },
+    {
+     "bucket": "parse_fail",
+     "gold": "electromagnetism.biot_savart_law",
+     "predicted": null,
+     "catalog_size": 2
+    }
+   ]
+  },
+  "toolbench": {
+   "correct_name": 36,
+   "wrong_in_catalog": 93,
+   "out_of_catalog": 55,
+   "parse_fail": 16,
+   "rows": 200,
+   "shares": {
+    "correct_name": 18.0,
+    "wrong_in_catalog": 46.5,
+    "out_of_catalog": 27.5,
+    "parse_fail": 8.0
+   },
+   "samples": [
+    {
+     "bucket": "out_of_catalog",
+     "gold": "racecards_for_greyhound_racing_uk",
+     "predicted": "racecards_for_giver_uk",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "parse_fail",
+     "gold": "latest_coupons_for_get_27coupons",
+     "predicted": null,
+     "catalog_size": 6
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "browserobject_api_for_browserobject",
+     "predicted": "get_product_detail_for_tokopediaapi",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "listoforders_for_sandbox_ecombr_com_04_orders",
+     "predicted": "listofcountriesregistered_for_sandbox_ecombr_com_04_orders",
+     "catalog_size": 2
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "etthelistofcountriesregistered_for_sandbox_mktplace_eu_04_orders",
+     "predicted": "get_products_in_category_for_my_store",
+     "catalog_size": 5
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "languages_for_microsoft_translator_text",
+     "predicted": "languages_for_microsoft_translator",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "v1_holidays_for_holidays_by_api_ninjas",
+     "predicted": "country_of_days_for_enoch_calendar",
+     "catalog_size": 9
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "get_a_list_of_domains_for_url_link_shortener",
+     "predicted": "create_a_new_link_for_url_link_shortener",
+     "catalog_size": 2
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "details_for_patreon",
+     "predicted": "gettrendinglistings_for_etsy",
+     "catalog_size": 9
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "anikuendpoint_for_aniku",
+     "predicted": "get_history_for_image_cdn",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "get_history_for_web_image_storage",
+     "predicted": "show_history_for_image_cdn",
+     "catalog_size": 2
+    },
+    {
+     "bucket": "parse_fail",
+     "gold": "get_current_status_for_given_flag_for_flag_status",
+     "predicted": null,
+     "catalog_size": 7
+    }
+   ]
+  }
+ }
+}

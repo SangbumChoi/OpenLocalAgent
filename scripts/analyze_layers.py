@@ -8,7 +8,7 @@ If the curve's shape agrees across architectures (GQA transformers, LFM2 conv hy
 mamba hybrid), the concentration is a property of the task, not of any one architecture — which is
 the paper's data-attribution hypothesis stated at the weight level.
 
-  python scripts/analyze_layers.py --out runs/analysis/layer_profiles.json
+  python scripts/analyze_layers.py --out results/runs/analysis/layer_profiles.json
 """
 
 from __future__ import annotations
@@ -21,7 +21,7 @@ from pathlib import Path
 import torch
 
 LAYER_OF = re.compile(r"\.(?:layers|blocks|h)\.(\d+)\.")
-ADAPTERS = Path("runs/lora")
+ADAPTERS = Path("results/runs/lora")
 BASELINES = Path("data/baselines")
 # adapter tag -> baseline directory, mirrored from the fine-tuning campaign.
 BASE_DIR = {
@@ -105,7 +105,7 @@ def profile(tag: str) -> dict | None:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default="runs/analysis/layer_profiles.json")
+    ap.add_argument("--out", default="results/runs/analysis/layer_profiles.json")
     ap.add_argument("--tags", default="", help="comma list; empty profiles every known adapter")
     args = ap.parse_args()
 

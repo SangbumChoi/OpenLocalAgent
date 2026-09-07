@@ -5,8 +5,8 @@ from pathlib import Path
 import pytest
 import yaml
 
-from localagent.data.agent_synth import synthesize
-from localagent.data.conversation_artifact import (
+from openlocalagent.data.synth.agent_synth import synthesize
+from openlocalagent.data.conversation_artifact import (
     FileIdentity,
     assert_no_conversation_overlap,
     audit_conversation_overlap,
@@ -15,17 +15,17 @@ from localagent.data.conversation_artifact import (
     rendered_assistant_prompts,
     self_hashed_manifest,
 )
-from localagent.data.prompt_contract import (
+from openlocalagent.data.prompt_contract import (
     LEGACY_CONVERSATION_PROMPT_CONTRACT,
     OPENAI_FULL_CATALOG_V1,
     FunctionCatalogCache,
     assistant_training_examples,
     render_function_catalog,
 )
-from localagent.data.render import history_text
-from localagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
-from localagent.model.tokenizer import ASSISTANT, BPE_EOS, USER
-from localagent.train.stage_data import load_conversation_source
+from openlocalagent.data.render import history_text
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
+from openlocalagent.model.tokenizer import ASSISTANT, BPE_EOS, USER
+from openlocalagent.train.stage_data import load_conversation_source
 
 
 def _synthesize_small(

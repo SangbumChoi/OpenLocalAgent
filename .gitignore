@@ -16,7 +16,10 @@ data/synth/
 # Protected benchmark prompts, labels, and acquisition receipts must never be staged.
 /private/
 /data/private/
-runs/
+# Training working state: checkpoints and per-step curves, written while a run is in flight.
+# Under results/ because a run and its receipt are the same output, but ignored because the
+# artifacts are gigabytes - results/ tracks the JSON evidence, not the weights.
+results/runs/
 *.gguf
 *.onnx
 *.pte
@@ -25,11 +28,15 @@ runs/
 *.sqlite
 *.db
 
+# Operator tooling for the training box - machine-specific paths, credentials in the
+# environment, and useful only to whoever is driving the GPUs. Not part of the pipeline.
+tools/
+
 # Tooling
 .pytest_cache/
 .ruff_cache/
 .DS_Store
 
 # committed results gallery
-!figures/
-!figures/*.png
+!docs/figures/
+!docs/figures/*.png

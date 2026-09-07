@@ -1,8 +1,8 @@
-from localagent.data.agent_synth import PATHS_EVAL, QUERIES_EVAL, Generator
-from localagent.data.render import IGNORE, history_text, render_conversation
-from localagent.data.schema import Role
-from localagent.model.tokenizer import load_tokenizer
-from localagent.agent.pointer_head import PointerHead, gold_span
+from openlocalagent.data.synth.agent_synth import PATHS_EVAL, QUERIES_EVAL, Generator
+from openlocalagent.data.render import IGNORE, history_text, render_conversation
+from openlocalagent.data.schema import Role
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.agent.pointer_head import PointerHead, gold_span
 
 
 def test_episode_is_multiturn_with_tool_response():

@@ -1,0 +1,84 @@
+{
+ "model": "distilgpt2",
+ "kind": "hf",
+ "location": "data/baselines/distilgpt2/",
+ "constrained_decode": null,
+ "parameters": 81912576,
+ "rows_per_suite": 999999,
+ "max_new_tokens": 64,
+ "suites": {
+  "androidcontrol": {
+   "rows": 904,
+   "parse_rate": 0.0022123893805309734,
+   "type_match": 0.0,
+   "step_success_rate": 0.0,
+   "seconds_per_row": 0.012358491663384227
+  },
+  "mind2web": {
+   "rows": 252,
+   "parse_rate": 0.007936507936507936,
+   "type_match": 0.0,
+   "step_success_rate": 0.0,
+   "seconds_per_row": 0.026742676893870037
+  },
+  "toolace": {
+   "rows": 949,
+   "parse_rate": 0.02107481559536354,
+   "type_match": 0.0,
+   "step_success_rate": 0.0,
+   "seconds_per_row": 0.02270214499864488
+  },
+  "xlam": {
+   "rows": 2941,
+   "parse_rate": 0.04896293777626658,
+   "type_match": 0.014620877252635158,
+   "step_success_rate": 0.0,
+   "seconds_per_row": 0.008960977941498145,
+   "grounding_accuracy": 0.0
+  },
+  "bfcl": {
+   "rows": 204,
+   "parse_rate": 0.03431372549019608,
+   "type_match": 0.0196078431372549,
+   "step_success_rate": 0.0,
+   "seconds_per_row": 0.040787734237371705,
+   "grounding_accuracy": 0.0
+  },
+  "agentnet": {
+   "rows": 12482,
+   "parse_rate": 0.13691716071142446,
+   "type_match": 0.0,
+   "step_success_rate": 0.0,
+   "seconds_per_row": 0.00729019029498425,
+   "grounding_accuracy": 0.0
+  },
+  "toolbench": {
+   "rows": 687,
+   "parse_rate": 0.0,
+   "type_match": 0.0,
+   "step_success_rate": 0.0,
+   "seconds_per_row": 0.010983152681042534
+  },
+  "toolsandbox": {
+   "rows": 17,
+   "parse_rate": 0.0,
+   "type_match": 0.0,
+   "step_success_rate": 0.0,
+   "seconds_per_row": 0.17183221087736242
+  },
+  "mcpatlas": {
+   "rows": 495,
+   "parse_rate": 0.012121212121212121,
+   "type_match": 0.0,
+   "step_success_rate": 0.0,
+   "seconds_per_row": 0.009221464214902936
+  },
+  "mobileactions": {
+   "rows": 961,
+   "parse_rate": 0.02081165452653486,
+   "type_match": 0.0,
+   "step_success_rate": 0.0,
+   "seconds_per_row": 0.008685955271884628
+  }
+ }
+}

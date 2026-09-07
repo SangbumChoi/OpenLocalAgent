@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.data.toolace import normalize_toolace_snapshot
+from openlocalagent.data.adapters.toolace import normalize_toolace_snapshot
 
 
 def main() -> int:

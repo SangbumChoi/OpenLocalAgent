@@ -1,0 +1,36 @@
+coding tool benchmark: 24 tools, 48 held-out queries
+
++   0 distractors (  24 tools): full-call=72.9%  tool@1=77.1%  args-exact=94.6%  | 1-arg=68%  2-arg=88%  3-arg=100%
++ 100 distractors ( 124 tools): full-call=62.5%  tool@1=66.7%  args-exact=93.8%  | 1-arg=55%  2-arg=88%  3-arg=100%
++ 500 distractors ( 524 tools): full-call=62.5%  tool@1=66.7%  args-exact=93.8%  | 1-arg=55%  2-arg=88%  3-arg=100%
++1000 distractors (1024 tools): full-call=60.4%  tool@1=64.6%  args-exact=93.5%  | 1-arg=55%  2-arg=75%  3-arg=100%
+
+abstention (min_score 0.14): 100%  (9 irrelevant)
+
+misses (no distractors):
+  'open web/main.ts.'
+    gold read_file{'path': 'web/main.ts'}
+    got  git_checkout{'branch': 'web/main.ts'}
+  'make the file api/routes.go.'
+    gold write_file{'path': 'api/routes.go'}
+    got  read_file{'path': 'api/routes.go'}
+  'rm out/z.bin.'
+    gold delete_file{'path': 'out/z.bin'}
+    got  git_checkout{'branch': 'out/z.bin'}
+  'add the directory pkg/api.'
+    gold create_directory{'path': 'pkg/api'}
+    got  list_directory{'path': 'pkg/api'}
+  'ls the directory pkg.'
+    gold list_directory{'path': 'pkg'}
+    got  rename_symbol{'old_name': 'the directory pkg', 'new_name': 'the directory pkg'}
+  'show the files in pkg.'
+    gold list_directory{'path': 'pkg'}
+    got  glob_files{'pattern': 'pkg'}
+  "find for 'class User'."
+    gold grep_search{'pattern': 'class User'}
+    got  find_symbol{'symbol': 'class User'}
+  "check in 'tidy imports'."
+    gold git_commit{'message': 'tidy imports'}
+    got  git_checkout{'branch': 'tidy imports'}
+
+report + chart in runs/codebench/

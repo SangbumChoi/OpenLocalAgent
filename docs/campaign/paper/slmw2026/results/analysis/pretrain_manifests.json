@@ -1,0 +1,174 @@
+{
+ "pt-big": {
+  "source_counts": {
+   "mixture:cosmopedia_v2": 87759,
+   "mixture:fineweb_edu_dedup": 228233,
+   "mixture:permissive_python": 51788
+  },
+  "row_tokens": 2049,
+  "seq_len": 2048,
+  "seed": 42,
+  "license_counts": {
+   "apache-2.0": 18485,
+   "bsd-2-clause": 2030,
+   "bsd-3-clause": 10550,
+   "isc": 224,
+   "mit": 20499,
+   "odc-by-1.0": 315992
+  },
+  "format": "bos_aligned_rows",
+  "generation": "cde1ffbb5760437295cece8c0488693f",
+  "preparation": {
+   "limitations": "Near-deduplication is a bounded non-exhaustive heuristic. SQLite staging needs additional local disk, and the tokenizer library's internal trainer state is not claimed to be constant-memory.",
+   "mode": "sqlite_disk_backed",
+   "provenance": {
+    "evaluation_denylist": {
+     "input_count": 0,
+     "inputs": [],
+     "inputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+     "list_manifests": [],
+     "normalized_entries": 0,
+     "required_suite_policy_sources": [],
+     "required_suites": []
+    },
+    "evaluation_denylist_paths": [],
+    "filtered_jsonl": {
+     "bytes": 2079190331,
+     "path": "data/shards/h100-mix/filtered.jsonl",
+     "sha256": "b8f310b14addc6b56fb0ac21b13e71b24c81b087216ff2a8279899ca4e745491"
+    },
+    "included_mixture_sources": [],
+    "input_paths": [
+     "data/raw/paper/download_state/000-fineweb_edu_dedup.jsonl",
+     "data/raw/paper/download_state/001-cosmopedia_v2.jsonl",
+     "data/raw/paper/download_state/002-permissive_python.jsonl"
+    ],
+    "source_manifests": []
+   },
+   "python_memory_scope": "No full document corpus is materialized in Python RAM. Memory still scales with one quality-bounded document, the evaluation denylist, the bounded near-dedup feature cache/candidate set, tokenizer trainer state, and one output shard buffer.",
+   "staging_config": {
+    "decontam_anchors_per_entry": 8,
+    "decontam_coverage": 0.9,
+    "decontam_max_denylist_shingles": 2048,
+    "decontam_min_shingles": 8,
+    "decontam_shingle_size": 5,
+    "max_chars": 2000000,
+    "max_control_ratio": 0.01,
+    "max_repetition_ratio": 0.35,
+    "min_chars": 200,
+    "near_dedup": true,
+    "near_dedup_feature_cache_size": 128,
+    "near_dedup_hamming": 3,
+    "near_dedup_jaccard": 0.95,
+    "near_dedup_lsh_bands": 8,
+    "near_dedup_max_bucket_size": 64,
+    "near_dedup_max_shingles": 256,
+    "near_dedup_min_features": 8,
+    "near_dedup_shingle_size": 5,
+    "seed": 42,
+    "split_assignment_mode": "computed",
+    "val_fraction": 0.01
+   },
+   "staging_database": {
+    "bytes": 2931003392,
+    "path": "data/shards/h100-mix/corpus-staging.sqlite3",
+    "sha256": "35a2d51b9ef3a749cf21ef9ebca012b0d6cb18fcde3f51f2d03d57c3003445ec",
+    "staging_version": 2
+   }
+  }
+ },
+ "h100-mix": {
+  "source_counts": {
+   "mixture:cosmopedia_v2": 87759,
+   "mixture:fineweb_edu_dedup": 228233,
+   "mixture:permissive_python": 51788
+  },
+  "row_tokens": 2049,
+  "seq_len": 2048,
+  "seed": 42,
+  "license_counts": {
+   "apache-2.0": 18485,
+   "bsd-2-clause": 2030,
+   "bsd-3-clause": 10550,
+   "isc": 224,
+   "mit": 20499,
+   "odc-by-1.0": 315992
+  },
+  "format": "bos_aligned_rows",
+  "generation": "cde1ffbb5760437295cece8c0488693f",
+  "preparation": {
+   "limitations": "Near-deduplication is a bounded non-exhaustive heuristic. SQLite staging needs additional local disk, and the tokenizer library's internal trainer state is not claimed to be constant-memory.",
+   "mode": "sqlite_disk_backed",
+   "provenance": {
+    "evaluation_denylist": {
+     "input_count": 0,
+     "inputs": [],
+     "inputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+     "list_manifests": [],
+     "normalized_entries": 0,
+     "required_suite_policy_sources": [],
+     "required_suites": []
+    },
+    "evaluation_denylist_paths": [],
+    "filtered_jsonl": {
+     "bytes": 2079190331,
+     "path": "data/shards/h100-mix/filtered.jsonl",
+     "sha256": "b8f310b14addc6b56fb0ac21b13e71b24c81b087216ff2a8279899ca4e745491"
+    },
+    "included_mixture_sources": [],
+    "input_paths": [
+     "data/raw/paper/download_state/000-fineweb_edu_dedup.jsonl",
+     "data/raw/paper/download_state/001-cosmopedia_v2.jsonl",
+     "data/raw/paper/download_state/002-permissive_python.jsonl"
+    ],
+    "source_manifests": []
+   },
+   "python_memory_scope": "No full document corpus is materialized in Python RAM. Memory still scales with one quality-bounded document, the evaluation denylist, the bounded near-dedup feature cache/candidate set, tokenizer trainer state, and one output shard buffer.",
+   "staging_config": {
+    "decontam_anchors_per_entry": 8,
+    "decontam_coverage": 0.9,
+    "decontam_max_denylist_shingles": 2048,
+    "decontam_min_shingles": 8,
+    "decontam_shingle_size": 5,
+    "max_chars": 2000000,
+    "max_control_ratio": 0.01,
+    "max_repetition_ratio": 0.35,
+    "min_chars": 200,
+    "near_dedup": true,
+    "near_dedup_feature_cache_size": 128,
+    "near_dedup_hamming": 3,
+    "near_dedup_jaccard": 0.95,
+    "near_dedup_lsh_bands": 8,
+    "near_dedup_max_bucket_size": 64,
+    "near_dedup_max_shingles": 256,
+    "near_dedup_min_features": 8,
+    "near_dedup_shingle_size": 5,
+    "seed": 42,
+    "split_assignment_mode": "computed",
+    "val_fraction": 0.01
+   },
+   "staging_database": {
+    "bytes": 2931003392,
+    "path": "data/shards/h100-mix/corpus-staging.sqlite3",
+    "sha256": "35a2d51b9ef3a749cf21ef9ebca012b0d6cb18fcde3f51f2d03d57c3003445ec",
+    "staging_version": 2
+   }
+  }
+ },
+ "pool-general": {
+  "source_counts": {
+   "mixture:hh-rlhf": 325905,
+   "mixture:kimi-k3-distill": 85857,
+   "mixture:manus-distill": 185,
+   "mixture:qwen38-50k": 73740,
+   "mixture:r0b0t-general": 45011,
+   "mixture:ultrachat": 1713855
+  },
+  "row_tokens": 2049,
+  "seq_len": 2048,
+  "seed": 42,
+  "license_counts": {
+   "unknown": 2244553
+  }
+ }
+}
