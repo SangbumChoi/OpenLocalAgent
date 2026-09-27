@@ -1,0 +1,1426 @@
+{
+  "claim_boundary": "Public task-metadata inventory only; no emulator, APK, adb, screenshot, task verifier, AndroidWorld reward, leaderboard score, or training artifact is claimed. All task templates remain evaluation-only.",
+  "coverage": {
+    "categories": {
+      "AudioRecorder": 2,
+      "Browser": 3,
+      "Camera": 2,
+      "Clock": 3,
+      "Contacts": 2,
+      "Expense": 9,
+      "Files": 2,
+      "Markor": 14,
+      "Notes": 4,
+      "OpenApp": 1,
+      "OsmAnd": 3,
+      "Recipe": 13,
+      "Retro": 4,
+      "SaveCopy": 1,
+      "SimpleCalendar": 17,
+      "SimpleDrawPro": 1,
+      "SimpleSms": 6,
+      "SportsTracker": 6,
+      "System": 13,
+      "Tasks": 6,
+      "TurnOffWifiAndTurnOnBluetooth": 1,
+      "TurnOnWifiAndOpenApp": 1,
+      "Vlc": 2
+    },
+    "difficulties": {
+      "easy": 61,
+      "hard": 19,
+      "medium": 36
+    },
+    "optimal_steps": {
+      "max": 60,
+      "mean": 8.413793103448276,
+      "median": 6.0,
+      "min": 1
+    },
+    "parameterized_tasks": 90,
+    "tags": {
+      "complex_ui_understanding": 18,
+      "data_edit": 19,
+      "data_entry": 34,
+      "game_playing": 2,
+      "information_retrieval": 19,
+      "math_counting": 7,
+      "memorization": 6,
+      "multi_app": 8,
+      "parameterized": 96,
+      "repetition": 12,
+      "requires_setup": 7,
+      "screen_reading": 24,
+      "search": 22,
+      "transcription": 8,
+      "verification": 7
+    },
+    "task_templates": 116,
+    "unique_task_names": 116
+  },
+  "dataset": "google-research/android_world",
+  "kind": "localagent_androidworld_metadata_receipt",
+  "license": "Apache-2.0",
+  "receipt_self_sha256": "7c8b5805d2d1e3126360ef5208fc3d20f6547c50b189b71366badd78190dcbbf",
+  "revision": "3e50888527ef9f29b9157ecd537e408008bb1c85",
+  "runtime_requirements": {
+    "adb": true,
+    "android_emulator": true,
+    "apk_setup": true,
+    "task_verifiers": "upstream AndroidWorld environment reward/checkpointer"
+  },
+  "schema_version": 1,
+  "source": {
+    "adb_invoked": false,
+    "bytes": 34757,
+    "emulator_executed": false,
+    "format": "androidworld_task_metadata_json",
+    "metadata_only": true,
+    "path": "androidworld-task-metadata.json",
+    "sha256": "fd3cf23ebb26e461a961dd60ff3f011d7e6ec78c992c10babbbdb86f9dd591e1"
+  },
+  "source_file_url": "https://github.com/google-research/android_world/blob/3e50888527ef9f29b9157ecd537e408008bb1c85/android_world/task_metadata.json",
+  "source_url": "https://github.com/google-research/android_world",
+  "task_inventory": [
+    {
+      "category": "AudioRecorder",
+      "difficulty": "easy",
+      "optimal_steps": 6,
+      "tags": [
+        "requires_setup"
+      ],
+      "task_name": "AudioRecorderRecordAudio",
+      "template_has_parameters": false
+    },
+    {
+      "category": "AudioRecorder",
+      "difficulty": "easy",
+      "optimal_steps": 10,
+      "tags": [
+        "complex_ui_understanding",
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "AudioRecorderRecordAudioWithFileName",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Browser",
+      "difficulty": "easy",
+      "optimal_steps": 5,
+      "tags": [
+        "game_playing",
+        "parameterized"
+      ],
+      "task_name": "BrowserDraw",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Browser",
+      "difficulty": "easy",
+      "optimal_steps": 9,
+      "tags": [
+        "complex_ui_understanding",
+        "game_playing",
+        "memorization",
+        "multi_app",
+        "parameterized"
+      ],
+      "task_name": "BrowserMaze",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Browser",
+      "difficulty": "hard",
+      "optimal_steps": 11,
+      "tags": [
+        "math_counting",
+        "memorization",
+        "screen_reading"
+      ],
+      "task_name": "BrowserMultiply",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Camera",
+      "difficulty": "easy",
+      "optimal_steps": 2,
+      "tags": [
+        ""
+      ],
+      "task_name": "CameraTakePhoto",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Camera",
+      "difficulty": "medium",
+      "optimal_steps": 3,
+      "tags": [
+        ""
+      ],
+      "task_name": "CameraTakeVideo",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Clock",
+      "difficulty": "easy",
+      "optimal_steps": 1,
+      "tags": [
+        "verification"
+      ],
+      "task_name": "ClockStopWatchPausedVerify",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Clock",
+      "difficulty": "easy",
+      "optimal_steps": 3,
+      "tags": [
+        ""
+      ],
+      "task_name": "ClockStopWatchRunning",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Clock",
+      "difficulty": "easy",
+      "optimal_steps": 3,
+      "tags": [
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "ClockTimerEntry",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Contacts",
+      "difficulty": "easy",
+      "optimal_steps": 5,
+      "tags": [
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "ContactsAddContact",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Contacts",
+      "difficulty": "easy",
+      "optimal_steps": 6,
+      "tags": [
+        "data_entry",
+        "screen_reading"
+      ],
+      "task_name": "ContactsNewContactDraft",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Expense",
+      "difficulty": "medium",
+      "optimal_steps": 20,
+      "tags": [
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "ExpenseAddMultiple",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Expense",
+      "difficulty": "hard",
+      "optimal_steps": 10,
+      "tags": [
+        "data_entry",
+        "information_retrieval",
+        "multi_app",
+        "parameterized",
+        "screen_reading"
+      ],
+      "task_name": "ExpenseAddMultipleFromGallery",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Expense",
+      "difficulty": "hard",
+      "optimal_steps": 15,
+      "tags": [
+        "data_entry",
+        "memorization",
+        "multi_app",
+        "parameterized",
+        "repetition",
+        "transcription"
+      ],
+      "task_name": "ExpenseAddMultipleFromMarkor",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Expense",
+      "difficulty": "easy",
+      "optimal_steps": 6,
+      "tags": [
+        "data_entry",
+        "parameterized",
+        "search"
+      ],
+      "task_name": "ExpenseAddSingle",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Expense",
+      "difficulty": "medium",
+      "optimal_steps": 6,
+      "tags": [
+        "data_edit",
+        "parameterized"
+      ],
+      "task_name": "ExpenseDeleteDuplicates",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Expense",
+      "difficulty": "medium",
+      "optimal_steps": 9,
+      "tags": [
+        "data_edit",
+        "parameterized",
+        "requires_setup"
+      ],
+      "task_name": "ExpenseDeleteDuplicates2",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Expense",
+      "difficulty": "easy",
+      "optimal_steps": 10,
+      "tags": [
+        "data_edit",
+        "parameterized"
+      ],
+      "task_name": "ExpenseDeleteMultiple",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Expense",
+      "difficulty": "hard",
+      "optimal_steps": 17,
+      "tags": [
+        "parameterized",
+        "screen_reading"
+      ],
+      "task_name": "ExpenseDeleteMultiple2",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Expense",
+      "difficulty": "easy",
+      "optimal_steps": 3,
+      "tags": [
+        "parameterized",
+        "screen_reading"
+      ],
+      "task_name": "ExpenseDeleteSingle",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Files",
+      "difficulty": "medium",
+      "optimal_steps": 4,
+      "tags": [
+        "data_edit",
+        "parameterized"
+      ],
+      "task_name": "FilesDeleteFile",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Files",
+      "difficulty": "medium",
+      "optimal_steps": 10,
+      "tags": [
+        "parameterized",
+        "screen_reading",
+        "search"
+      ],
+      "task_name": "FilesMoveFile",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Markor",
+      "difficulty": "medium",
+      "optimal_steps": 6,
+      "tags": [
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "MarkorAddNoteHeader",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Markor",
+      "difficulty": "medium",
+      "optimal_steps": 5,
+      "tags": [
+        "data_entry",
+        "parameterized",
+        "requires_setup"
+      ],
+      "task_name": "MarkorChangeNoteContent",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Markor",
+      "difficulty": "easy",
+      "optimal_steps": 4,
+      "tags": [
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "MarkorCreateFolder",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Markor",
+      "difficulty": "medium",
+      "optimal_steps": 8,
+      "tags": [
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "MarkorCreateNote",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Markor",
+      "difficulty": "hard",
+      "optimal_steps": 9,
+      "tags": [
+        "data_entry",
+        "multi_app",
+        "parameterized"
+      ],
+      "task_name": "MarkorCreateNoteAndSms",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Markor",
+      "difficulty": "medium",
+      "optimal_steps": 7,
+      "tags": [
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "MarkorCreateNoteFromClipboard",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Markor",
+      "difficulty": "easy",
+      "optimal_steps": 7,
+      "tags": [
+        "data_edit",
+        "parameterized",
+        "repetition"
+      ],
+      "task_name": "MarkorDeleteAllNotes",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Markor",
+      "difficulty": "easy",
+      "optimal_steps": 4,
+      "tags": [
+        "data_edit",
+        "parameterized"
+      ],
+      "task_name": "MarkorDeleteNewestNote",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Markor",
+      "difficulty": "easy",
+      "optimal_steps": 5,
+      "tags": [
+        "data_edit",
+        "parameterized",
+        "requires_setup"
+      ],
+      "task_name": "MarkorDeleteNote",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Markor",
+      "difficulty": "easy",
+      "optimal_steps": 4,
+      "tags": [
+        "data_edit",
+        "parameterized",
+        "transcription"
+      ],
+      "task_name": "MarkorEditNote",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Markor",
+      "difficulty": "hard",
+      "optimal_steps": 39,
+      "tags": [
+        "data_edit",
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "MarkorMergeNotes",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Markor",
+      "difficulty": "medium",
+      "optimal_steps": 7,
+      "tags": [
+        "complex_ui_understanding",
+        "parameterized"
+      ],
+      "task_name": "MarkorMoveNote",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Markor",
+      "difficulty": "medium",
+      "optimal_steps": 9,
+      "tags": [
+        "data_entry",
+        "memorization",
+        "multi_app",
+        "parameterized",
+        "screen_reading",
+        "transcription"
+      ],
+      "task_name": "MarkorTranscribeReceipt",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Markor",
+      "difficulty": "hard",
+      "optimal_steps": 10,
+      "tags": [
+        "memorization",
+        "multi_app",
+        "parameterized",
+        "requires_setup",
+        "screen_reading",
+        "transcription"
+      ],
+      "task_name": "MarkorTranscribeVideo",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Notes",
+      "difficulty": "easy",
+      "optimal_steps": 2,
+      "tags": [
+        "information_retrieval",
+        "parameterized"
+      ],
+      "task_name": "NotesIsTodo",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Notes",
+      "difficulty": "easy",
+      "optimal_steps": 3,
+      "tags": [
+        "parameterized",
+        "search"
+      ],
+      "task_name": "NotesMeetingAttendeeCount",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Notes",
+      "difficulty": "easy",
+      "optimal_steps": 2,
+      "tags": [
+        "parameterized",
+        "search"
+      ],
+      "task_name": "NotesRecipeIngredientCount",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Notes",
+      "difficulty": "medium",
+      "optimal_steps": 5,
+      "tags": [
+        "information_retrieval",
+        "math_counting",
+        "parameterized"
+      ],
+      "task_name": "NotesTodoItemCount",
+      "template_has_parameters": true
+    },
+    {
+      "category": "OpenApp",
+      "difficulty": "easy",
+      "optimal_steps": 2,
+      "tags": [
+        "parameterized"
+      ],
+      "task_name": "OpenAppTaskEval",
+      "template_has_parameters": true
+    },
+    {
+      "category": "OsmAnd",
+      "difficulty": "medium",
+      "optimal_steps": 6,
+      "tags": [
+        "complex_ui_understanding",
+        "parameterized",
+        "search"
+      ],
+      "task_name": "OsmAndFavorite",
+      "template_has_parameters": true
+    },
+    {
+      "category": "OsmAnd",
+      "difficulty": "hard",
+      "optimal_steps": 10,
+      "tags": [
+        "complex_ui_understanding",
+        "parameterized",
+        "search"
+      ],
+      "task_name": "OsmAndMarker",
+      "template_has_parameters": true
+    },
+    {
+      "category": "OsmAnd",
+      "difficulty": "hard",
+      "optimal_steps": 60,
+      "tags": [
+        "complex_ui_understanding",
+        "data_entry",
+        "parameterized",
+        "repetition",
+        "search"
+      ],
+      "task_name": "OsmAndTrack",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Recipe",
+      "difficulty": "medium",
+      "optimal_steps": 34,
+      "tags": [
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "RecipeAddMultipleRecipes",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Recipe",
+      "difficulty": "hard",
+      "optimal_steps": 13,
+      "tags": [
+        "complex_ui_understanding",
+        "data_entry",
+        "parameterized",
+        "screen_reading",
+        "transcription"
+      ],
+      "task_name": "RecipeAddMultipleRecipesFromImage",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Recipe",
+      "difficulty": "hard",
+      "optimal_steps": 24,
+      "tags": [
+        "data_entry",
+        "memorization",
+        "multi_app",
+        "parameterized",
+        "screen_reading"
+      ],
+      "task_name": "RecipeAddMultipleRecipesFromMarkor",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Recipe",
+      "difficulty": "hard",
+      "optimal_steps": 26,
+      "tags": [
+        "complex_ui_understanding",
+        "data_entry",
+        "information_retrieval",
+        "multi_app",
+        "parameterized",
+        "repetition",
+        "screen_reading"
+      ],
+      "task_name": "RecipeAddMultipleRecipesFromMarkor2",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Recipe",
+      "difficulty": "easy",
+      "optimal_steps": 12,
+      "tags": [
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "RecipeAddSingleRecipe",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Recipe",
+      "difficulty": "easy",
+      "optimal_steps": 4,
+      "tags": [
+        "data_edit",
+        "parameterized",
+        "repetition",
+        "screen_reading",
+        "search"
+      ],
+      "task_name": "RecipeDeleteDuplicateRecipes",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Recipe",
+      "difficulty": "medium",
+      "optimal_steps": 11,
+      "tags": [
+        "data_edit",
+        "parameterized",
+        "repetition"
+      ],
+      "task_name": "RecipeDeleteDuplicateRecipes2",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Recipe",
+      "difficulty": "medium",
+      "optimal_steps": 16,
+      "tags": [
+        "data_edit",
+        "parameterized"
+      ],
+      "task_name": "RecipeDeleteDuplicateRecipes3",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Recipe",
+      "difficulty": "easy",
+      "optimal_steps": 12,
+      "tags": [
+        "data_edit",
+        "parameterized"
+      ],
+      "task_name": "RecipeDeleteMultipleRecipes",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Recipe",
+      "difficulty": "hard",
+      "optimal_steps": 20,
+      "tags": [
+        "parameterized",
+        "repetition",
+        "screen_reading"
+      ],
+      "task_name": "RecipeDeleteMultipleRecipesWithConstraint",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Recipe",
+      "difficulty": "medium",
+      "optimal_steps": 17,
+      "tags": [
+        "complex_ui_understanding",
+        "parameterized",
+        "repetition",
+        "search"
+      ],
+      "task_name": "RecipeDeleteMultipleRecipesWithNoise",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Recipe",
+      "difficulty": "easy",
+      "optimal_steps": 5,
+      "tags": [
+        "data_edit",
+        "parameterized",
+        "search"
+      ],
+      "task_name": "RecipeDeleteSingleRecipe",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Recipe",
+      "difficulty": "easy",
+      "optimal_steps": 10,
+      "tags": [
+        "data_edit",
+        "parameterized",
+        "screen_reading",
+        "search"
+      ],
+      "task_name": "RecipeDeleteSingleWithRecipeWithNoise",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Retro",
+      "difficulty": "medium",
+      "optimal_steps": 12,
+      "tags": [
+        "data_entry",
+        "parameterized",
+        "repetition"
+      ],
+      "task_name": "RetroCreatePlaylist",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Retro",
+      "difficulty": "easy",
+      "optimal_steps": 16,
+      "tags": [
+        "parameterized"
+      ],
+      "task_name": "RetroPlayingQueue",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Retro",
+      "difficulty": "medium",
+      "optimal_steps": 15,
+      "tags": [
+        "complex_ui_understanding",
+        "math_counting",
+        "parameterized",
+        "repetition"
+      ],
+      "task_name": "RetroPlaylistDuration",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Retro",
+      "difficulty": "hard",
+      "optimal_steps": 25,
+      "tags": [
+        "parameterized",
+        "repetition",
+        "search"
+      ],
+      "task_name": "RetroSavePlaylist",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SaveCopy",
+      "difficulty": "hard",
+      "optimal_steps": 8,
+      "tags": [
+        "complex_ui_understanding",
+        "parameterized"
+      ],
+      "task_name": "SaveCopyOfReceiptTaskEval",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleCalendar",
+      "difficulty": "hard",
+      "optimal_steps": 17,
+      "tags": [
+        "complex_ui_understanding",
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "SimpleCalendarAddOneEvent",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleCalendar",
+      "difficulty": "medium",
+      "optimal_steps": 10,
+      "tags": [
+        "data_entry",
+        "math_counting",
+        "parameterized"
+      ],
+      "task_name": "SimpleCalendarAddOneEventInTwoWeeks",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleCalendar",
+      "difficulty": "easy",
+      "optimal_steps": 17,
+      "tags": [
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "SimpleCalendarAddOneEventRelativeDay",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleCalendar",
+      "difficulty": "easy",
+      "optimal_steps": 13,
+      "tags": [
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "SimpleCalendarAddOneEventTomorrow",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleCalendar",
+      "difficulty": "easy",
+      "optimal_steps": 14,
+      "tags": [
+        "complex_ui_understanding",
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "SimpleCalendarAddRepeatingEvent",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleCalendar",
+      "difficulty": "easy",
+      "optimal_steps": 4,
+      "tags": [
+        "information_retrieval",
+        "parameterized"
+      ],
+      "task_name": "SimpleCalendarAnyEventsOnDate",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleCalendar",
+      "difficulty": "easy",
+      "optimal_steps": 7,
+      "tags": [
+        "data_edit",
+        "parameterized"
+      ],
+      "task_name": "SimpleCalendarDeleteEvents",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleCalendar",
+      "difficulty": "medium",
+      "optimal_steps": 6,
+      "tags": [
+        "data_edit",
+        "parameterized"
+      ],
+      "task_name": "SimpleCalendarDeleteEventsOnRelativeDay",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleCalendar",
+      "difficulty": "easy",
+      "optimal_steps": 6,
+      "tags": [
+        "complex_ui_understanding",
+        "data_edit",
+        "parameterized"
+      ],
+      "task_name": "SimpleCalendarDeleteOneEvent",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleCalendar",
+      "difficulty": "medium",
+      "optimal_steps": 3,
+      "tags": [
+        "information_retrieval",
+        "parameterized"
+      ],
+      "task_name": "SimpleCalendarEventOnDateAtTime",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleCalendar",
+      "difficulty": "easy",
+      "optimal_steps": 3,
+      "tags": [
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "SimpleCalendarEventsInNextWeek",
+      "template_has_parameters": false
+    },
+    {
+      "category": "SimpleCalendar",
+      "difficulty": "easy",
+      "optimal_steps": 2,
+      "tags": [
+        "complex_ui_understanding",
+        "information_retrieval",
+        "parameterized",
+        "screen_reading",
+        "search",
+        "transcription"
+      ],
+      "task_name": "SimpleCalendarEventsInTimeRange",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleCalendar",
+      "difficulty": "medium",
+      "optimal_steps": 4,
+      "tags": [
+        "information_retrieval",
+        "parameterized"
+      ],
+      "task_name": "SimpleCalendarEventsOnDate",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleCalendar",
+      "difficulty": "easy",
+      "optimal_steps": 2,
+      "tags": [
+        "parameterized",
+        "screen_reading"
+      ],
+      "task_name": "SimpleCalendarFirstEventAfterStartTime",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleCalendar",
+      "difficulty": "easy",
+      "optimal_steps": 4,
+      "tags": [
+        "parameterized",
+        "search"
+      ],
+      "task_name": "SimpleCalendarLocationOfEvent",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleCalendar",
+      "difficulty": "easy",
+      "optimal_steps": 4,
+      "tags": [
+        "complex_ui_understanding",
+        "information_retrieval",
+        "parameterized",
+        "screen_reading"
+      ],
+      "task_name": "SimpleCalendarNextEvent",
+      "template_has_parameters": false
+    },
+    {
+      "category": "SimpleCalendar",
+      "difficulty": "medium",
+      "optimal_steps": 5,
+      "tags": [
+        "information_retrieval",
+        "parameterized"
+      ],
+      "task_name": "SimpleCalendarNextMeetingWithPerson",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleDrawPro",
+      "difficulty": "easy",
+      "optimal_steps": 9,
+      "tags": [
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "SimpleDrawProCreateDrawing",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleSms",
+      "difficulty": "easy",
+      "optimal_steps": 4,
+      "tags": [
+        "data_entry",
+        "parameterized",
+        "search"
+      ],
+      "task_name": "SimpleSmsReply",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleSms",
+      "difficulty": "medium",
+      "optimal_steps": 5,
+      "tags": [
+        "parameterized"
+      ],
+      "task_name": "SimpleSmsReplyMostRecent",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleSms",
+      "difficulty": "medium",
+      "optimal_steps": 6,
+      "tags": [
+        "parameterized"
+      ],
+      "task_name": "SimpleSmsResend",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleSms",
+      "difficulty": "medium",
+      "optimal_steps": 6,
+      "tags": [
+        "parameterized"
+      ],
+      "task_name": "SimpleSmsSend",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleSms",
+      "difficulty": "easy",
+      "optimal_steps": 6,
+      "tags": [
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "SimpleSmsSendClipboardContent",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SimpleSms",
+      "difficulty": "medium",
+      "optimal_steps": 9,
+      "tags": [
+        "information_retrieval",
+        "parameterized"
+      ],
+      "task_name": "SimpleSmsSendReceivedAddress",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SportsTracker",
+      "difficulty": "easy",
+      "optimal_steps": 3,
+      "tags": [
+        "parameterized",
+        "requires_setup",
+        "search"
+      ],
+      "task_name": "SportsTrackerActivitiesCountForWeek",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SportsTracker",
+      "difficulty": "hard",
+      "optimal_steps": 10,
+      "tags": [
+        "complex_ui_understanding",
+        "information_retrieval",
+        "parameterized",
+        "screen_reading",
+        "search",
+        "transcription"
+      ],
+      "task_name": "SportsTrackerActivitiesOnDate",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SportsTracker",
+      "difficulty": "easy",
+      "optimal_steps": 6,
+      "tags": [
+        "information_retrieval",
+        "parameterized"
+      ],
+      "task_name": "SportsTrackerActivityDuration",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SportsTracker",
+      "difficulty": "easy",
+      "optimal_steps": 2,
+      "tags": [
+        "information_retrieval",
+        "math_counting",
+        "parameterized",
+        "screen_reading"
+      ],
+      "task_name": "SportsTrackerLongestDistanceActivity",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SportsTracker",
+      "difficulty": "hard",
+      "optimal_steps": 11,
+      "tags": [
+        "math_counting",
+        "parameterized",
+        "search"
+      ],
+      "task_name": "SportsTrackerTotalDistanceForCategoryOverInterval",
+      "template_has_parameters": true
+    },
+    {
+      "category": "SportsTracker",
+      "difficulty": "hard",
+      "optimal_steps": 8,
+      "tags": [
+        "math_counting",
+        "parameterized",
+        "search"
+      ],
+      "task_name": "SportsTrackerTotalDurationForCategoryThisWeek",
+      "template_has_parameters": true
+    },
+    {
+      "category": "System",
+      "difficulty": "easy",
+      "optimal_steps": 2,
+      "tags": [
+        ""
+      ],
+      "task_name": "SystemBluetoothTurnOff",
+      "template_has_parameters": true
+    },
+    {
+      "category": "System",
+      "difficulty": "easy",
+      "optimal_steps": 2,
+      "tags": [
+        "verification"
+      ],
+      "task_name": "SystemBluetoothTurnOffVerify",
+      "template_has_parameters": true
+    },
+    {
+      "category": "System",
+      "difficulty": "easy",
+      "optimal_steps": 2,
+      "tags": [
+        "screen_reading"
+      ],
+      "task_name": "SystemBluetoothTurnOn",
+      "template_has_parameters": true
+    },
+    {
+      "category": "System",
+      "difficulty": "easy",
+      "optimal_steps": 2,
+      "tags": [
+        "verification"
+      ],
+      "task_name": "SystemBluetoothTurnOnVerify",
+      "template_has_parameters": true
+    },
+    {
+      "category": "System",
+      "difficulty": "easy",
+      "optimal_steps": 3,
+      "tags": [
+        ""
+      ],
+      "task_name": "SystemBrightnessMax",
+      "template_has_parameters": true
+    },
+    {
+      "category": "System",
+      "difficulty": "easy",
+      "optimal_steps": 2,
+      "tags": [
+        "verification"
+      ],
+      "task_name": "SystemBrightnessMaxVerify",
+      "template_has_parameters": true
+    },
+    {
+      "category": "System",
+      "difficulty": "easy",
+      "optimal_steps": 3,
+      "tags": [
+        ""
+      ],
+      "task_name": "SystemBrightnessMin",
+      "template_has_parameters": true
+    },
+    {
+      "category": "System",
+      "difficulty": "easy",
+      "optimal_steps": 3,
+      "tags": [
+        "verification"
+      ],
+      "task_name": "SystemBrightnessMinVerify",
+      "template_has_parameters": true
+    },
+    {
+      "category": "System",
+      "difficulty": "easy",
+      "optimal_steps": 2,
+      "tags": [
+        "data_entry",
+        "parameterized"
+      ],
+      "task_name": "SystemCopyToClipboard",
+      "template_has_parameters": true
+    },
+    {
+      "category": "System",
+      "difficulty": "easy",
+      "optimal_steps": 3,
+      "tags": [
+        "screen_reading"
+      ],
+      "task_name": "SystemWifiTurnOff",
+      "template_has_parameters": true
+    },
+    {
+      "category": "System",
+      "difficulty": "easy",
+      "optimal_steps": 3,
+      "tags": [
+        "verification"
+      ],
+      "task_name": "SystemWifiTurnOffVerify",
+      "template_has_parameters": true
+    },
+    {
+      "category": "System",
+      "difficulty": "easy",
+      "optimal_steps": 3,
+      "tags": [
+        "screen_reading"
+      ],
+      "task_name": "SystemWifiTurnOn",
+      "template_has_parameters": true
+    },
+    {
+      "category": "System",
+      "difficulty": "easy",
+      "optimal_steps": 3,
+      "tags": [
+        "verification"
+      ],
+      "task_name": "SystemWifiTurnOnVerify",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Tasks",
+      "difficulty": "medium",
+      "optimal_steps": 5,
+      "tags": [
+        "information_retrieval",
+        "parameterized",
+        "search"
+      ],
+      "task_name": "TasksCompletedTasksForDate",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Tasks",
+      "difficulty": "medium",
+      "optimal_steps": 6,
+      "tags": [
+        "information_retrieval",
+        "parameterized"
+      ],
+      "task_name": "TasksDueNextWeek",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Tasks",
+      "difficulty": "easy",
+      "optimal_steps": 2,
+      "tags": [
+        "parameterized",
+        "search"
+      ],
+      "task_name": "TasksDueOnDate",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Tasks",
+      "difficulty": "medium",
+      "optimal_steps": 2,
+      "tags": [
+        "complex_ui_understanding",
+        "information_retrieval",
+        "parameterized",
+        "search",
+        "transcription"
+      ],
+      "task_name": "TasksHighPriorityTasks",
+      "template_has_parameters": false
+    },
+    {
+      "category": "Tasks",
+      "difficulty": "medium",
+      "optimal_steps": 5,
+      "tags": [
+        "information_retrieval",
+        "parameterized",
+        "screen_reading"
+      ],
+      "task_name": "TasksHighPriorityTasksDueOnDate",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Tasks",
+      "difficulty": "easy",
+      "optimal_steps": 2,
+      "tags": [
+        "information_retrieval",
+        "parameterized",
+        "screen_reading"
+      ],
+      "task_name": "TasksIncompleteTasksOnDate",
+      "template_has_parameters": true
+    },
+    {
+      "category": "TurnOffWifiAndTurnOnBluetooth",
+      "difficulty": "medium",
+      "optimal_steps": 5,
+      "tags": [
+        ""
+      ],
+      "task_name": "TurnOffWifiAndTurnOnBluetooth",
+      "template_has_parameters": false
+    },
+    {
+      "category": "TurnOnWifiAndOpenApp",
+      "difficulty": "easy",
+      "optimal_steps": 4,
+      "tags": [
+        "parameterized"
+      ],
+      "task_name": "TurnOnWifiAndOpenApp",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Vlc",
+      "difficulty": "medium",
+      "optimal_steps": 14,
+      "tags": [
+        "data_edit",
+        "parameterized",
+        "repetition"
+      ],
+      "task_name": "VlcCreatePlaylist",
+      "template_has_parameters": true
+    },
+    {
+      "category": "Vlc",
+      "difficulty": "medium",
+      "optimal_steps": 24,
+      "tags": [
+        "data_entry",
+        "parameterized",
+        "requires_setup"
+      ],
+      "task_name": "VlcCreateTwoPlaylists",
+      "template_has_parameters": true
+    }
+  ]
+}

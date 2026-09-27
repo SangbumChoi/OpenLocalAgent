@@ -1,0 +1,57 @@
+{
+  "child": {
+    "bytes": 10717,
+    "path": "/private/tmp/m281-appworld-api-head.pt",
+    "sha256": "10e6e7f416cc62a571b88269a2abb71db64771d7cdaa41bedc4812cfb8edb264"
+  },
+  "claim_boundary": "Frozen-backbone AppWorld app.api schema head trained on public train rows and measured on disjoint dev rows. This sidecar restricts bounded schema replay; it is not a complete AppWorld trajectory, official leaderboard score, or external-account result.",
+  "classes": [
+    "phone.search_contacts",
+    "spotify.show_album_library",
+    "spotify.show_playlist_library",
+    "spotify.show_recommendations",
+    "spotify.show_song_library"
+  ],
+  "hyperparameters": {
+    "batch_size": 16,
+    "device": "cpu",
+    "learning_rate": 0.005,
+    "seed": 2027,
+    "steps": 256
+  },
+  "kind": "localagent_appworld_api_head_training_report",
+  "metrics": {
+    "eval": {
+      "accuracy": 0.5,
+      "exact": 6,
+      "rows": 12
+    },
+    "train": {
+      "accuracy": 1.0,
+      "exact": 24,
+      "rows": 24
+    }
+  },
+  "parent": {
+    "bytes": 52247329,
+    "path": "/private/tmp/m280-appworld-long-sft.pt",
+    "sha256": "5cd04ab0a878d37aacdad87a8691e0a2021144781a66fd5c2bb6486829b72105"
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "appworld",
+    "eval_input": {
+      "bytes": 14083,
+      "path": "/private/tmp/appworld-action-dev12.jsonl",
+      "sha256": "d64c5f8cde624e380e81071fd808cccd05a94a3bf4d81ae416a013f6d7a1f6e5"
+    },
+    "eval_rows": 12,
+    "revision": "appworld-0.2.0-data-0.2.0",
+    "train_input": {
+      "bytes": 28425,
+      "path": "/private/tmp/appworld-action-train24.jsonl",
+      "sha256": "d250f1b5628203a5de542f96ad710820df705a61ea5e6e2755fd84fb5089ca09"
+    },
+    "train_rows": 24
+  }
+}

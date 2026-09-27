@@ -1,0 +1,35 @@
+{
+  "model": "sft-fcall-11m-big",
+  "kind": "catalog",
+  "location": "runs/sft-fcall-11m-big/latest.pt",
+  "constrained_decode": null,
+  "parameters": 10524544,
+  "rows_per_suite": 999999,
+  "max_new_tokens": 64,
+  "suites": {
+    "xlam": {
+      "rows": 2941,
+      "parse_rate": 0.9319959197551854,
+      "type_match": 0.731383883032982,
+      "step_success_rate": 0.3413804828289697,
+      "seconds_per_row": 0.0999360260449474,
+      "grounding_accuracy": 0.3333333333333333
+    },
+    "xlam_opaque": {
+      "rows": 2941,
+      "parse_rate": 0.930635838150289,
+      "type_match": 0.43998639918395105,
+      "step_success_rate": 0.19789187351241075,
+      "seconds_per_row": 0.0981943740280499,
+      "grounding_accuracy": 0.5
+    },
+    "xlam_shuffled": {
+      "rows": 2941,
+      "parse_rate": 0.9129547772866372,
+      "type_match": 0.49880992859571577,
+      "step_success_rate": 0.23733424005440326,
+      "seconds_per_row": 0.10386418023509908,
+      "grounding_accuracy": 0.3333333333333333
+    }
+  }
+}

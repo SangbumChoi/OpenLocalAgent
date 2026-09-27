@@ -1,0 +1,241 @@
+{
+  "checkpoint": {
+    "bytes": 52221012,
+    "config": "webgpu-10m-hybrid",
+    "path": "/private/tmp/m75-stateful-error-recovery-child.pt",
+    "sha256": "e563b91a5ad7540801d41fc9f71692d6d29a29a5a17f45c33773d34c2e457e86",
+    "stage": "stateful_productivity_lowrate_probe"
+  },
+  "claim_boundary": "The oracle pass validates the local reset/retry/verifier contract and is expected to reach 100%. The model pass is checkpoint-in-loop evidence for this synthetic runtime. Neither pass is an AndroidWorld, BrowserGym, OSWorld, MCPMark, ToolSandbox, email, Notion, or native WebGPU benchmark result.",
+  "configuration": {
+    "device": "cpu",
+    "max_attempts_per_step": 3,
+    "rejection_memory": "exact_decoder_output_per_episode",
+    "reward_spec": {
+      "exact_args": 0.25,
+      "exact_tool": 0.25,
+      "schema_valid": 0.1,
+      "state_transition": 0.25,
+      "terminal": 0.15
+    },
+    "selector_first": true,
+    "tool_pool_sha256": "4bdc35dc13c05a688df5717edd6fb81d74e1c095e22c3ae49358623ff5efbe8f",
+    "tool_pool_size": 62,
+    "top_m": 5
+  },
+  "kind": "localagent_stateful_runtime_evaluation",
+  "model": {
+    "abstention_exact": 1.0,
+    "accepted_steps": 16,
+    "attempt_success_rate": 0.8,
+    "attempts": 20,
+    "by_family": {
+      "abstention": {
+        "accepted_steps": 1,
+        "attempts": 1,
+        "expected_steps": 1,
+        "task_complete_rate": 1.0,
+        "tasks": 1
+      },
+      "browser": {
+        "accepted_steps": 4,
+        "attempts": 6,
+        "expected_steps": 4,
+        "task_complete_rate": 1.0,
+        "tasks": 1
+      },
+      "email": {
+        "accepted_steps": 6,
+        "attempts": 8,
+        "expected_steps": 6,
+        "task_complete_rate": 1.0,
+        "tasks": 1
+      },
+      "notion": {
+        "accepted_steps": 2,
+        "attempts": 2,
+        "expected_steps": 2,
+        "task_complete_rate": 1.0,
+        "tasks": 1
+      },
+      "recovery": {
+        "accepted_steps": 3,
+        "attempts": 3,
+        "expected_steps": 3,
+        "task_complete_rate": 1.0,
+        "tasks": 1
+      }
+    },
+    "expected_steps": 16,
+    "max_attempts_per_step": 3,
+    "mean_shaped_reward": 0.8345833333333333,
+    "recovery_task_complete_rate": 1.0,
+    "task_complete_rate": 1.0,
+    "task_rows": [
+      {
+        "accepted_steps": 6,
+        "attempts": 8,
+        "event_sha256": "af463d38afeae307e0b88a849cae58b5c51eaa54d6fabee432369bb794b7b3ad",
+        "expected_steps": 6,
+        "family": "email",
+        "mean_shaped_reward": 0.6812499999999999,
+        "task_complete": true,
+        "task_id": "eval-email-send"
+      },
+      {
+        "accepted_steps": 2,
+        "attempts": 2,
+        "event_sha256": "eb4c532e52152a5824a900c9bd21b7af0a9205ed7d3507d4533fc82606fe79e8",
+        "expected_steps": 2,
+        "family": "notion",
+        "mean_shaped_reward": 0.925,
+        "task_complete": true,
+        "task_id": "eval-notion-create"
+      },
+      {
+        "accepted_steps": 4,
+        "attempts": 6,
+        "event_sha256": "257306510aa8171d0a642c8b9cfde76a422ba4ad8baa9539f5d113c568f14b49",
+        "expected_steps": 4,
+        "family": "browser",
+        "mean_shaped_reward": 0.6666666666666666,
+        "task_complete": true,
+        "task_id": "eval-browser-search"
+      },
+      {
+        "accepted_steps": 3,
+        "attempts": 3,
+        "event_sha256": "98b56ed3a4d373fe61699414dba1b45ed7198eabc71bf4257cde396d19d2e71b",
+        "expected_steps": 3,
+        "family": "recovery",
+        "mean_shaped_reward": 0.9,
+        "task_complete": true,
+        "task_id": "eval-browser-recovery"
+      },
+      {
+        "accepted_steps": 1,
+        "attempts": 1,
+        "event_sha256": "f3529c87b96668565fc476b4e4f724fece9de607828fe0ba047d923fa0359d2a",
+        "expected_steps": 1,
+        "family": "abstention",
+        "mean_shaped_reward": 1.0,
+        "task_complete": true,
+        "task_id": "eval-abstain"
+      }
+    ],
+    "tasks": 5
+  },
+  "model_event_sha256": "35cefeb2efd6f45f19849e8c4a0ec449343989f9d0c542a7621a7db91b179f56",
+  "oracle": {
+    "abstention_exact": 1.0,
+    "accepted_steps": 16,
+    "attempt_success_rate": 1.0,
+    "attempts": 16,
+    "by_family": {
+      "abstention": {
+        "accepted_steps": 1,
+        "attempts": 1,
+        "expected_steps": 1,
+        "task_complete_rate": 1.0,
+        "tasks": 1
+      },
+      "browser": {
+        "accepted_steps": 4,
+        "attempts": 4,
+        "expected_steps": 4,
+        "task_complete_rate": 1.0,
+        "tasks": 1
+      },
+      "email": {
+        "accepted_steps": 6,
+        "attempts": 6,
+        "expected_steps": 6,
+        "task_complete_rate": 1.0,
+        "tasks": 1
+      },
+      "notion": {
+        "accepted_steps": 2,
+        "attempts": 2,
+        "expected_steps": 2,
+        "task_complete_rate": 1.0,
+        "tasks": 1
+      },
+      "recovery": {
+        "accepted_steps": 3,
+        "attempts": 3,
+        "expected_steps": 3,
+        "task_complete_rate": 1.0,
+        "tasks": 1
+      }
+    },
+    "expected_steps": 16,
+    "max_attempts_per_step": 3,
+    "mean_shaped_reward": 0.9175000000000001,
+    "recovery_task_complete_rate": 1.0,
+    "task_complete_rate": 1.0,
+    "task_rows": [
+      {
+        "accepted_steps": 6,
+        "attempts": 6,
+        "event_sha256": "274945dc579c8bb75bc72ecbaf3be22f5304afa56481c6ad73872dce682b32bc",
+        "expected_steps": 6,
+        "family": "email",
+        "mean_shaped_reward": 0.875,
+        "task_complete": true,
+        "task_id": "eval-email-send"
+      },
+      {
+        "accepted_steps": 2,
+        "attempts": 2,
+        "event_sha256": "eb4c532e52152a5824a900c9bd21b7af0a9205ed7d3507d4533fc82606fe79e8",
+        "expected_steps": 2,
+        "family": "notion",
+        "mean_shaped_reward": 0.925,
+        "task_complete": true,
+        "task_id": "eval-notion-create"
+      },
+      {
+        "accepted_steps": 4,
+        "attempts": 4,
+        "event_sha256": "764cd4c0fb26320629373703a63d665b7dc1fa21d63f4b09b9eca2b6932788d5",
+        "expected_steps": 4,
+        "family": "browser",
+        "mean_shaped_reward": 0.8875,
+        "task_complete": true,
+        "task_id": "eval-browser-search"
+      },
+      {
+        "accepted_steps": 3,
+        "attempts": 3,
+        "event_sha256": "128481cf3d22f24c178da6409283d8292b3993f14ea5f92c09144138330c86c3",
+        "expected_steps": 3,
+        "family": "recovery",
+        "mean_shaped_reward": 0.9,
+        "task_complete": true,
+        "task_id": "eval-browser-recovery"
+      },
+      {
+        "accepted_steps": 1,
+        "attempts": 1,
+        "event_sha256": "f3529c87b96668565fc476b4e4f724fece9de607828fe0ba047d923fa0359d2a",
+        "expected_steps": 1,
+        "family": "abstention",
+        "mean_shaped_reward": 1.0,
+        "task_complete": true,
+        "task_id": "eval-abstain"
+      }
+    ],
+    "tasks": 5
+  },
+  "oracle_event_sha256": "9df12b73719cf53fde32debf557c06944115f7a072ad02a5b9798a70af6ec4d2",
+  "receipt_self_sha256": "913625f5016a868c07c377e599f433f37e79a7b70d038d2bfdb72b9b0a62d242",
+  "runtime": {
+    "environment_executed": true,
+    "external_accounts_used": false,
+    "kind": "local_resettable_state_machine",
+    "public_benchmark": false,
+    "tool_side_effects": "in_memory_only"
+  },
+  "schema_version": 1,
+  "suite": "localagent-stateful-productivity-v1"
+}

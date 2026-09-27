@@ -1,0 +1,28 @@
+# Unbenchmarked near-budget feasibility candidate for the frozen 16K-BPE paper stream.
+#
+# This is a dense, browser-oriented interpretation of current large-model ideas, not a miniature
+# MoE/MLA/KDA claim: QK-Norm, RoPE, SwiGLU, MQA, and periodic global attention are retained, while
+# twelve of eighteen mixers are constant-state gated short convolutions. At a 4K context this cuts
+# the FP16 decode-state estimate by 66.3% versus the parameter-matched all-attention control.
+#
+# Theoretical packed weights are 45.45 MiB at 4 bits before runtime metadata/alignment, but the
+# current browser exporter is FP16 and provides no int4/Q4 runtime. The model remains strictly
+# below LocalAgent's 100M hard ceiling: 95,320,448 parameters. No 4K WebGPU throughput is claimed.
+name: webgpu-96m-hybrid
+vocab_size: 16384
+d_model: 640
+n_layers: 18
+n_loops: 1
+n_heads: 10
+n_kv_heads: 1
+ffn_hidden: 1728
+max_seq_len: 4096
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types:
+  [conv, conv, attn, conv, conv, attn, conv, conv, attn, conv, conv, attn,
+   conv, conv, attn, conv, conv, attn]

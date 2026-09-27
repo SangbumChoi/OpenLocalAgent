@@ -1,0 +1,112 @@
+{
+  "kind": "localagent_webgpu_native_capability_receipt",
+  "schema_version": 1,
+  "backend": "webgpu",
+  "environment_executed": true,
+  "hardware_adapter": "vendor=apple; architecture=metal-3",
+  "adapter": {
+    "identity": "vendor=apple; architecture=metal-3",
+    "vendor": "apple",
+    "architecture": "metal-3",
+    "device": null,
+    "description": null,
+    "adapter_name": null,
+    "is_fallback_adapter": null,
+    "identity_fields": ["vendor", "architecture"]
+  },
+  "capability": {
+    "evaluated_cases": 3,
+    "exact_actions": 1,
+    "closed_loop_success": 0,
+    "external_side_effects_executed": false,
+    "cases": [
+      {
+        "prompt": "Email Dana the quarterly report",
+        "expected_tool": "send_email",
+        "observed_tool": "email_send",
+        "schema_valid": true,
+        "exact_action_rate": 0.0,
+        "inference_ms_p50": 7.199999928474426,
+        "wall_latency_ms_p50": 7.200000047683716,
+        "input_tokens": 10,
+        "tokens_per_second_p50": 1388.8889026862605,
+        "selection_policy": "productivity_email_intent_guard"
+      },
+      {
+        "prompt": "Open https://example.com",
+        "expected_tool": "open_url",
+        "observed_tool": "open_url",
+        "schema_valid": true,
+        "exact_action_rate": 1.0,
+        "inference_ms_p50": 6.299999952316284,
+        "wall_latency_ms_p50": 6.699999988079071,
+        "input_tokens": 8,
+        "tokens_per_second_p50": 1269.8412794525002,
+        "selection_policy": "explicit_url_safety_guard"
+      },
+      {
+        "prompt": "Write 'WebGPU state loop passed' to Notion",
+        "expected_tool": "notion_write",
+        "observed_tool": "notion_create_page",
+        "schema_valid": true,
+        "exact_action_rate": 0.0,
+        "inference_ms_p50": 7.200000047683716,
+        "wall_latency_ms_p50": 8.0,
+        "input_tokens": 14,
+        "tokens_per_second_p50": 1944.4444315668977,
+        "selection_policy": "productivity_notion_intent_guard"
+      }
+    ]
+  },
+  "protocol": {
+    "page": "spaces/localagent-webgpu/webgpu-capability.html",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+    "ort_version": "1.27.0",
+    "requested_provider": ["webgpu"],
+    "session_provider_retry": false,
+    "warmups_per_case": 3,
+    "measured_repetitions_per_case": 30,
+    "action_graph": {
+      "path": "action_model.fp16.onnx",
+      "bytes": 21430301,
+      "sha256": "9f0cc76426611b061994f6efc27a1539082156327dfbbd5a2984e681e74c143a"
+    },
+    "bundle_manifest": {
+      "path": "bundle-manifest.json",
+      "bytes": 9325,
+      "sha256": "db4aad83ad26f726e456abe98aa7c2aad964ac468a30dd92a06288233ec51738"
+    }
+  },
+  "performance": {
+    "tokens_per_second_p50": 1388.8889026862605,
+    "tokens_per_second_definition": "action-graph input tokens divided by p50 model inference ms",
+    "latency_ms_p50": 7.200000047683716,
+    "peak_memory_mb": 20.458142280578613,
+    "peak_memory_method": "conservative action-graph bytes plus largest host input/output tensors; driver VRAM counter unavailable",
+    "largest_input_bytes": 112,
+    "largest_output_bytes": 21504
+  },
+  "runtime": {
+    "navigator_gpu_available": true,
+    "device_features": ["core-features-and-limits"],
+    "device_limits": {
+      "max_storage_buffer_binding_size": 134217728,
+      "max_buffer_size": 268435456,
+      "max_compute_workgroups_per_dimension": 65535
+    }
+  },
+  "deployment_bundle": {
+    "verification_receipt_sha256": "90f33a00d5a2b5a02188b4b8ed508dbf3e8cc74ecf1a336c6ca8e19ec409d52e",
+    "bundle_identity_sha256": "c750c254140c47824b5cb82063b99ea0c22c1112606ee725bed23ae911251791",
+    "manifest_sha256": "db4aad83ad26f726e456abe98aa7c2aad964ac468a30dd92a06288233ec51738",
+    "parity_gate_passed": true,
+    "artifact_count": 8
+  },
+  "checkpoint": {
+    "source": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/latest.pt",
+    "parameters": 10524544,
+    "sha256": "79387105de75d332413262e8d8ddb847b6cc13bc03f5e4df3c81663d9897aef1"
+  },
+  "claim_boundary": "Native browser WebGPU adapter and action-graph dispatch receipt. The calls are local predictions only: no real email, browser navigation, or Notion account was touched; closed_loop_success is zero. This is one Apple Metal browser environment, not a cross-device throughput claim.",
+  "receipt_self_sha256": "285f1c6e3487baccf62b1f755521a973e577ac90fd9247f0189827b3da60a106"
+}

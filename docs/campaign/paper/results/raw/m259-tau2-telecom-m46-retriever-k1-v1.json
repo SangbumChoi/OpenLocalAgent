@@ -1,0 +1,507 @@
+{
+  "checkpoint": {
+    "bytes": 52231121,
+    "path": "runs/sft-mind2web-trajectory-continuation-20260802-m46/latest.pt",
+    "sha256": "b19828908594463385870607d89c084afc1bb237cc5fb51752ac6860a204a041"
+  },
+  "claim_boundary": "Native resettable tau2-bench domain diagnostic with one LocalAgent turn per task and an oracle contract replay. This is not a complete domain split, user-simulator run, leaderboard score, external-service result, or WebGPU deployment claim. Task text, tool outputs, and checkpoint internals are hash-only.",
+  "configuration": {
+    "domain": "telecom",
+    "max_agent_turns": 1,
+    "retrieve_k": 1,
+    "selector_first": false,
+    "selector_mode": "retriever",
+    "split": "base",
+    "tasks": [
+      "[mobile_data_issue]airplane_mode_on|user_abroad_roaming_enabled_off[PERSONA:None]",
+      "[mobile_data_issue]airplane_mode_on|data_mode_off[PERSONA:None]",
+      "[mobile_data_issue]airplane_mode_on|bad_network_preference[PERSONA:Hard]",
+      "[mobile_data_issue]data_saver_mode_on|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+      "[mobile_data_issue]bad_network_preference|user_abroad_roaming_enabled_off[PERSONA:Hard]",
+      "[mobile_data_issue]data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+      "[mobile_data_issue]data_mode_off|data_usage_exceeded[PERSONA:None]",
+      "[mobile_data_issue]data_saver_mode_on|data_usage_exceeded[PERSONA:Easy]"
+    ],
+    "user_simulator": false
+  },
+  "contract_verification": {
+    "environment_reward": 1.0,
+    "gold_trajectory_replayed": true,
+    "passed": true,
+    "task_id": "[mobile_data_issue]bad_network_preference|user_abroad_roaming_enabled_off[PERSONA:Hard]"
+  },
+  "environment": {
+    "external_accounts": false,
+    "external_services": false,
+    "native_runtime_executed": true,
+    "reset_per_task": true,
+    "screenshots": false
+  },
+  "kind": "localagent_tau2_domain_checkpoint_native_probe",
+  "receipt_self_sha256": "ad2d15e3b0a7e493a58839517312439ef96f05305c363bc78eb28dbc38344c3b",
+  "runner": {
+    "package": "tau2",
+    "root": "/private/tmp/tau2-bench",
+    "source_revision": "363133ada1936491fb5bcec33cd62c3518a99f65",
+    "version": "1.0.1"
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "tau2-bench",
+    "domain": "telecom",
+    "files": {
+      "LICENSE": {
+        "bytes": 1072,
+        "path": "/private/tmp/tau2-bench/LICENSE",
+        "sha256": "e67c5aa0074dfcaefd3c3a1aedb94cb539234aecd15d5a972574e3200e6252fe"
+      },
+      "README.md": {
+        "bytes": 10443,
+        "path": "/private/tmp/tau2-bench/README.md",
+        "sha256": "ed39688aa5d40bd73007355df65f4e41a6c250960642e56764c3ad44da1df8d2"
+      },
+      "data/tau2/domains/telecom/audio_difficulty.json": {
+        "bytes": 975551,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/audio_difficulty.json",
+        "sha256": "88d9986c8b8a140c1897750f5996d036de757ea3f2698f03e286543d338cc02d"
+      },
+      "data/tau2/domains/telecom/db.toml": {
+        "bytes": 9628,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/db.toml",
+        "sha256": "562d647ef9d7df8df91eafd8ee76036e707c8f9e32aaedc4a7fde06975aea2c0"
+      },
+      "data/tau2/domains/telecom/main_policy.md": {
+        "bytes": 5699,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/main_policy.md",
+        "sha256": "95943844a0cf11fdf0e2842b483b81d9f9338aa53235712ed131db075d086ed7"
+      },
+      "data/tau2/domains/telecom/main_policy_solo.md": {
+        "bytes": 5200,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/main_policy_solo.md",
+        "sha256": "781296ae5419169cb64aac0c4fa2aa6129c78f3c1592f64abd80df6fbabb7042"
+      },
+      "data/tau2/domains/telecom/split_tasks.json": {
+        "bytes": 356149,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/split_tasks.json",
+        "sha256": "605b488bb9a6acb3c7f4505240a855fdc8681d09aadb16a8f38b2efcfc5c3aec"
+      },
+      "data/tau2/domains/telecom/tasks.json": {
+        "bytes": 13977063,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/tasks.json",
+        "sha256": "37e562e1ae3242577407e1303b1548bc64e7ea68e37d36173e6747990ceaf8a4"
+      },
+      "data/tau2/domains/telecom/tasks_full.json": {
+        "bytes": 13977063,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/tasks_full.json",
+        "sha256": "37e562e1ae3242577407e1303b1548bc64e7ea68e37d36173e6747990ceaf8a4"
+      },
+      "data/tau2/domains/telecom/tasks_small.json": {
+        "bytes": 83833,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/tasks_small.json",
+        "sha256": "c8ea6f75adc18a8ad363974292cbd26b6e8b0e348ec87d265a4188e0088a8f24"
+      },
+      "data/tau2/domains/telecom/tasks_voice.json": {
+        "bytes": 62196350,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/tasks_voice.json",
+        "sha256": "6b8b6cbff3947d8f7d0a99919ebd91433db0b5865663d7564a47b50a59878f54"
+      },
+      "data/tau2/domains/telecom/tech_support_manual.md": {
+        "bytes": 17589,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/tech_support_manual.md",
+        "sha256": "015a3ee49ec8c199c5e1a059c922081937b92cf3a5ea74fedbc4357816f389ba"
+      },
+      "data/tau2/domains/telecom/tech_support_workflow.md": {
+        "bytes": 16390,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/tech_support_workflow.md",
+        "sha256": "64f3ccd13875d14f358b21b9af221dab09e0e7bf5690d0e4322fb91855a43a4d"
+      },
+      "data/tau2/domains/telecom/tech_support_workflow_solo.md": {
+        "bytes": 15470,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/tech_support_workflow_solo.md",
+        "sha256": "b174d1f9705b5d7df49468daf99560a5633f86d23e10499a1166a7753706a412"
+      },
+      "data/tau2/domains/telecom/user_db.toml": {
+        "bytes": 933,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/user_db.toml",
+        "sha256": "4886107ea0c16f8e16d74bef91cfb557de61822afe9361f5a9b241806aea2e4c"
+      },
+      "data/tau2/domains/telecom/workflows/dot_2_pdf.py": {
+        "bytes": 1105,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/workflows/dot_2_pdf.py",
+        "sha256": "d805e103bbb546cf9ab7df0c4b1ca71f4878770e0fd10bd16ea4d626dea4b378"
+      },
+      "data/tau2/domains/telecom/workflows/tech_support_path1_no_service.dot": {
+        "bytes": 5821,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/workflows/tech_support_path1_no_service.dot",
+        "sha256": "d593247f1b5de4ebdcdeeb8d168b49fbf65eaabd235e6ec5cd09b097245ff163"
+      },
+      "data/tau2/domains/telecom/workflows/tech_support_path1_no_service.pdf": {
+        "bytes": 31570,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/workflows/tech_support_path1_no_service.pdf",
+        "sha256": "6a7db2e788aff847d0418d778e29e9dc4c62a9e2617b6c5cf04d1c9b001e5584"
+      },
+      "data/tau2/domains/telecom/workflows/tech_support_path1_no_service.png": {
+        "bytes": 146038,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/workflows/tech_support_path1_no_service.png",
+        "sha256": "910f61fd0454b7b5398d3427ab210347f0d60f616c8950ef983c6a28e9f0dec0"
+      },
+      "data/tau2/domains/telecom/workflows/tech_support_path2_mobile_data.dot": {
+        "bytes": 12313,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/workflows/tech_support_path2_mobile_data.dot",
+        "sha256": "61565fe4d77ff886559dc9a53b99af1a3af00f7d2349ea1a4055c47a81bc571b"
+      },
+      "data/tau2/domains/telecom/workflows/tech_support_path2_mobile_data.pdf": {
+        "bytes": 44922,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/workflows/tech_support_path2_mobile_data.pdf",
+        "sha256": "ee40aa5414b8b39125f729ca51c7cb8a0d820b31bf65c6f58eaa9fe3a9ae5cb7"
+      },
+      "data/tau2/domains/telecom/workflows/tech_support_path2_mobile_data.png": {
+        "bytes": 598165,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/workflows/tech_support_path2_mobile_data.png",
+        "sha256": "cf6bf13aba2975cf1f0d69a9274ef458f977bb8cb7e73f31939ad413304c7ddf"
+      },
+      "data/tau2/domains/telecom/workflows/tech_support_path3_mms.dot": {
+        "bytes": 5961,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/workflows/tech_support_path3_mms.dot",
+        "sha256": "f3dcf3c4418dcc593cc14eedb09f0d031fda07d4524260bd0387dc7dacb566bb"
+      },
+      "data/tau2/domains/telecom/workflows/tech_support_path3_mms.pdf": {
+        "bytes": 43300,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/workflows/tech_support_path3_mms.pdf",
+        "sha256": "2593f669da761a8f015ef79e9a34fd40bb4fa85a8091816dca2e66de420413be"
+      },
+      "data/tau2/domains/telecom/workflows/tech_support_path3_mms.png": {
+        "bytes": 206268,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/telecom/workflows/tech_support_path3_mms.png",
+        "sha256": "25564d13c2d52a3b3805fe18b37d274c39d6b6fc9c8d94a71553862d9181c41e"
+      },
+      "pyproject.toml": {
+        "bytes": 2417,
+        "path": "/private/tmp/tau2-bench/pyproject.toml",
+        "sha256": "23d59670b4ad7bbc0f57420fd9643a8d9188c24abe4f29c9c965544d8cc4cb8d"
+      }
+    },
+    "license": "MIT",
+    "revision": "363133ada1936491fb5bcec33cd62c3518a99f65",
+    "source_url": "https://github.com/sierra-research/tau2-bench",
+    "split": "base",
+    "task_count": 114,
+    "task_ids": [
+      "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Hard]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Hard]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_sms_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:None]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_sms_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:None]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_storage_permission|data_mode_off|data_usage_exceeded|unseat_sim_card[PERSONA:Easy]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_storage_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_storage_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_storage_permission|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_app_sms_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_app_storage_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Hard]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_app_storage_permission|unseat_sim_card[PERSONA:Hard]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:None]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|break_apn_mms_setting|break_app_storage_permission[PERSONA:None]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|break_apn_mms_setting|data_mode_off|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|break_apn_mms_setting|data_usage_exceeded[PERSONA:Hard]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|break_app_both_permissions|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Hard]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|break_app_storage_permission|data_mode_off|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+      "[mms_issue]airplane_mode_on|bad_network_preference|data_usage_exceeded[PERSONA:None]",
+      "[mms_issue]airplane_mode_on|bad_wifi_calling|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:None]",
+      "[mms_issue]airplane_mode_on|bad_wifi_calling|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+      "[mms_issue]airplane_mode_on|break_app_both_permissions[PERSONA:Hard]",
+      "[mms_issue]airplane_mode_on|break_app_both_permissions|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "[mms_issue]bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_storage_permission|data_mode_off|data_usage_exceeded|unseat_sim_card[PERSONA:Easy]",
+      "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_both_permissions|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_both_permissions|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+      "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_sms_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+      "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_sms_permission|data_mode_off|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Hard]",
+      "[mms_issue]bad_network_preference|break_app_both_permissions[PERSONA:Easy]",
+      "[mms_issue]bad_network_preference|break_app_sms_permission|data_mode_off|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:None]",
+      "[mms_issue]bad_network_preference|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:Hard]",
+      "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_on[PERSONA:None]",
+      "[mms_issue]bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "[mms_issue]bad_network_preference|user_abroad_roaming_disabled_on[PERSONA:None]",
+      "[mms_issue]bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "[mms_issue]bad_wifi_calling|break_apn_mms_setting|break_app_sms_permission|data_usage_exceeded[PERSONA:Hard]",
+      "[mms_issue]bad_wifi_calling|break_apn_mms_setting|data_mode_off|data_usage_exceeded|unseat_sim_card[PERSONA:None]",
+      "[mms_issue]bad_wifi_calling|break_apn_mms_setting|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+      "[mms_issue]bad_wifi_calling|data_mode_off|data_usage_exceeded[PERSONA:Easy]",
+      "[mms_issue]break_apn_mms_setting|data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:Hard]",
+      "[mms_issue]break_apn_mms_setting|data_mode_off|user_abroad_roaming_disabled_on[PERSONA:Hard]",
+      "[mms_issue]break_apn_mms_setting|user_abroad_roaming_enabled_off[PERSONA:Hard]",
+      "[mms_issue]break_app_both_permissions|data_usage_exceeded[PERSONA:Hard]",
+      "[mms_issue]break_app_both_permissions|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Hard]",
+      "[mms_issue]break_app_sms_permission|data_mode_off[PERSONA:None]",
+      "[mms_issue]break_app_sms_permission|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]",
+      "[mms_issue]break_app_storage_permission|data_usage_exceeded[PERSONA:Easy]",
+      "[mms_issue]break_app_storage_permission|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+      "[mobile_data_issue]airplane_mode_on|bad_network_preference[PERSONA:Hard]",
+      "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+      "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]",
+      "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+      "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+      "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+      "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:None]",
+      "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+      "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on[PERSONA:Hard]",
+      "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]",
+      "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]",
+      "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|user_abroad_roaming_disabled_on[PERSONA:Hard]",
+      "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+      "[mobile_data_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+      "[mobile_data_issue]airplane_mode_on|data_mode_off[PERSONA:None]",
+      "[mobile_data_issue]airplane_mode_on|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Hard]",
+      "[mobile_data_issue]airplane_mode_on|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:None]",
+      "[mobile_data_issue]airplane_mode_on|user_abroad_roaming_enabled_off[PERSONA:None]",
+      "[mobile_data_issue]bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on[PERSONA:None]",
+      "[mobile_data_issue]bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+      "[mobile_data_issue]bad_network_preference|bad_vpn|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+      "[mobile_data_issue]bad_network_preference|bad_vpn|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+      "[mobile_data_issue]bad_network_preference|bad_vpn|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+      "[mobile_data_issue]bad_network_preference|bad_vpn|user_abroad_roaming_disabled_on[PERSONA:None]",
+      "[mobile_data_issue]bad_network_preference|bad_vpn|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+      "[mobile_data_issue]bad_network_preference|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+      "[mobile_data_issue]bad_network_preference|data_saver_mode_on|data_usage_exceeded[PERSONA:Hard]",
+      "[mobile_data_issue]bad_network_preference|user_abroad_roaming_enabled_off[PERSONA:Hard]",
+      "[mobile_data_issue]bad_vpn|data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "[mobile_data_issue]bad_vpn|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:None]",
+      "[mobile_data_issue]data_mode_off|data_usage_exceeded[PERSONA:None]",
+      "[mobile_data_issue]data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+      "[mobile_data_issue]data_saver_mode_on|data_usage_exceeded[PERSONA:Easy]",
+      "[mobile_data_issue]data_saver_mode_on|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+      "[mobile_data_issue]data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+      "[service_issue]airplane_mode_on|break_apn_settings[PERSONA:Hard]",
+      "[service_issue]airplane_mode_on|break_apn_settings|contract_end_suspension|lock_sim_card_pin[PERSONA:None]",
+      "[service_issue]airplane_mode_on|break_apn_settings|contract_end_suspension|lock_sim_card_pin|unseat_sim_card[PERSONA:Easy]",
+      "[service_issue]airplane_mode_on|break_apn_settings|contract_end_suspension|unseat_sim_card[PERSONA:Easy]",
+      "[service_issue]airplane_mode_on|break_apn_settings|lock_sim_card_pin[PERSONA:None]",
+      "[service_issue]airplane_mode_on|break_apn_settings|lock_sim_card_pin|overdue_bill_suspension[PERSONA:Hard]",
+      "[service_issue]airplane_mode_on|break_apn_settings|lock_sim_card_pin|overdue_bill_suspension|unseat_sim_card[PERSONA:None]",
+      "[service_issue]airplane_mode_on|break_apn_settings|lock_sim_card_pin|unseat_sim_card[PERSONA:None]",
+      "[service_issue]airplane_mode_on|break_apn_settings|overdue_bill_suspension[PERSONA:None]",
+      "[service_issue]airplane_mode_on|break_apn_settings|overdue_bill_suspension|unseat_sim_card[PERSONA:None]",
+      "[service_issue]airplane_mode_on|break_apn_settings|unseat_sim_card[PERSONA:None]",
+      "[service_issue]airplane_mode_on|contract_end_suspension|lock_sim_card_pin|unseat_sim_card[PERSONA:Hard]",
+      "[service_issue]airplane_mode_on|lock_sim_card_pin[PERSONA:Easy]",
+      "[service_issue]airplane_mode_on|lock_sim_card_pin|overdue_bill_suspension[PERSONA:Easy]",
+      "[service_issue]airplane_mode_on|lock_sim_card_pin|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]",
+      "[service_issue]airplane_mode_on|lock_sim_card_pin|unseat_sim_card[PERSONA:Hard]",
+      "[service_issue]airplane_mode_on|overdue_bill_suspension[PERSONA:None]",
+      "[service_issue]airplane_mode_on|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]",
+      "[service_issue]airplane_mode_on|unseat_sim_card[PERSONA:None]",
+      "[service_issue]break_apn_settings|contract_end_suspension|lock_sim_card_pin[PERSONA:Hard]",
+      "[service_issue]break_apn_settings|contract_end_suspension|lock_sim_card_pin|unseat_sim_card[PERSONA:Hard]",
+      "[service_issue]break_apn_settings|lock_sim_card_pin[PERSONA:None]",
+      "[service_issue]break_apn_settings|lock_sim_card_pin|overdue_bill_suspension[PERSONA:Easy]",
+      "[service_issue]break_apn_settings|lock_sim_card_pin|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]",
+      "[service_issue]break_apn_settings|overdue_bill_suspension|unseat_sim_card[PERSONA:Hard]",
+      "[service_issue]contract_end_suspension|lock_sim_card_pin[PERSONA:Hard]",
+      "[service_issue]contract_end_suspension|unseat_sim_card[PERSONA:Hard]",
+      "[service_issue]lock_sim_card_pin|overdue_bill_suspension[PERSONA:Easy]",
+      "[service_issue]overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]"
+    ]
+  },
+  "summary": {
+    "bounded_native_success_rate": 0.0,
+    "bounded_native_successes": 0,
+    "first_action_exact": 0,
+    "model_tool_calls": 8,
+    "tasks": 8
+  },
+  "tasks": [
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 2,
+        "sha256": "310cd73331050abd046ea7217e5824cadaf240cd901685bdbeb5e4d41e3fc548"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 1591,
+        "sha256": "45f68dccf5bcc7f91ef70ebfb7fd30bef276e7e5ec730296dcd75913d0cecc55"
+      },
+      "model_output": {
+        "bytes": 375,
+        "sha256": "7da8ba4f066f98249247b6bc66d89de2f6a4536873c71b11d489621e791b6e36"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "ba382605f85b3ed741d98dde3bdcf4be0b2479f096dadd128f478f4125e36677"
+      },
+      "task_id": "[mobile_data_issue]airplane_mode_on|user_abroad_roaming_enabled_off[PERSONA:None]"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 2,
+        "sha256": "997bcbc1b44187e0040baf24b734a9aa5607939de81998313770b2a0b4dfc617"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 1603,
+        "sha256": "b7ccc45a3a9817ecdf02f4fa0688fb7bbd85f00a4a8f22bea15aa78c299b7d56"
+      },
+      "model_output": {
+        "bytes": 387,
+        "sha256": "443e94ecf5d3e7582a6da7ade3ec579d1844c7b10bcbfad6b46feb0407021d72"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "742fe377fff9341648cc56cf85dc0ae8f2f6ee16eb5898d555a2f808923ea637"
+      },
+      "task_id": "[mobile_data_issue]airplane_mode_on|data_mode_off[PERSONA:None]"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 2,
+        "sha256": "ca9f0d7ee36f26d3769b025e18186015d9f64c8916e375086833ac427aa9d833"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 1603,
+        "sha256": "b7ccc45a3a9817ecdf02f4fa0688fb7bbd85f00a4a8f22bea15aa78c299b7d56"
+      },
+      "model_output": {
+        "bytes": 387,
+        "sha256": "443e94ecf5d3e7582a6da7ade3ec579d1844c7b10bcbfad6b46feb0407021d72"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "742fe377fff9341648cc56cf85dc0ae8f2f6ee16eb5898d555a2f808923ea637"
+      },
+      "task_id": "[mobile_data_issue]airplane_mode_on|bad_network_preference[PERSONA:Hard]"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 2,
+        "sha256": "a685b79f84a32dd922955fd316a0a71521413e9fa032f9f7d088b7bc2863ba4f"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 1591,
+        "sha256": "45f68dccf5bcc7f91ef70ebfb7fd30bef276e7e5ec730296dcd75913d0cecc55"
+      },
+      "model_output": {
+        "bytes": 375,
+        "sha256": "7da8ba4f066f98249247b6bc66d89de2f6a4536873c71b11d489621e791b6e36"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "ba382605f85b3ed741d98dde3bdcf4be0b2479f096dadd128f478f4125e36677"
+      },
+      "task_id": "[mobile_data_issue]data_saver_mode_on|user_abroad_roaming_enabled_off[PERSONA:Easy]"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 2,
+        "sha256": "2da14520d6f9c772c8dbf01d16f144c5054ad3f5b5b150dc0b37e4e2b55245bb"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 1591,
+        "sha256": "45f68dccf5bcc7f91ef70ebfb7fd30bef276e7e5ec730296dcd75913d0cecc55"
+      },
+      "model_output": {
+        "bytes": 375,
+        "sha256": "7da8ba4f066f98249247b6bc66d89de2f6a4536873c71b11d489621e791b6e36"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "ba382605f85b3ed741d98dde3bdcf4be0b2479f096dadd128f478f4125e36677"
+      },
+      "task_id": "[mobile_data_issue]bad_network_preference|user_abroad_roaming_enabled_off[PERSONA:Hard]"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 2,
+        "sha256": "3f3cc50c5f2e783a07cec77e0f9e6db9cfad3cd22daac5c3425259ffca48d66c"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 1591,
+        "sha256": "45f68dccf5bcc7f91ef70ebfb7fd30bef276e7e5ec730296dcd75913d0cecc55"
+      },
+      "model_output": {
+        "bytes": 375,
+        "sha256": "7da8ba4f066f98249247b6bc66d89de2f6a4536873c71b11d489621e791b6e36"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "ba382605f85b3ed741d98dde3bdcf4be0b2479f096dadd128f478f4125e36677"
+      },
+      "task_id": "[mobile_data_issue]data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 2,
+        "sha256": "827f9cc3a4465825338ae4945e74e8c8ef667339c27562def7c924f37641cb6d"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 1603,
+        "sha256": "b7ccc45a3a9817ecdf02f4fa0688fb7bbd85f00a4a8f22bea15aa78c299b7d56"
+      },
+      "model_output": {
+        "bytes": 387,
+        "sha256": "443e94ecf5d3e7582a6da7ade3ec579d1844c7b10bcbfad6b46feb0407021d72"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "742fe377fff9341648cc56cf85dc0ae8f2f6ee16eb5898d555a2f808923ea637"
+      },
+      "task_id": "[mobile_data_issue]data_mode_off|data_usage_exceeded[PERSONA:None]"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 2,
+        "sha256": "d02470569f5817b819f1529aa3ed86e7123ee8294fa022251ea837990be58ef3"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 1603,
+        "sha256": "b7ccc45a3a9817ecdf02f4fa0688fb7bbd85f00a4a8f22bea15aa78c299b7d56"
+      },
+      "model_output": {
+        "bytes": 387,
+        "sha256": "443e94ecf5d3e7582a6da7ade3ec579d1844c7b10bcbfad6b46feb0407021d72"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "742fe377fff9341648cc56cf85dc0ae8f2f6ee16eb5898d555a2f808923ea637"
+      },
+      "task_id": "[mobile_data_issue]data_saver_mode_on|data_usage_exceeded[PERSONA:Easy]"
+    }
+  ]
+}

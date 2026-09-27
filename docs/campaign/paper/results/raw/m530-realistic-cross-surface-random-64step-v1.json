@@ -1,0 +1,774 @@
+{
+  "after": {
+    "eval": {
+      "assistant_loss_tokens": 1481,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.24577987846049967,
+      "mean_loss": 8.681995131694167,
+      "rows": 29
+    },
+    "eval_by_source": {
+      "agentnet": {
+        "assistant_loss_tokens": 259,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.2702702702702703,
+        "mean_loss": 8.586351784960183,
+        "rows": 8
+      },
+      "androidcontrol": {
+        "assistant_loss_tokens": 217,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.37327188940092165,
+        "mean_loss": 8.428987705213133,
+        "rows": 8
+      },
+      "mcpmark": {
+        "assistant_loss_tokens": 515,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.07572815533980583,
+        "mean_loss": 9.321122667627428,
+        "rows": 5
+      },
+      "mind2web": {
+        "assistant_loss_tokens": 490,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.3551020408163265,
+        "mean_loss": 8.172859534438775,
+        "rows": 8
+      }
+    },
+    "train": {
+      "assistant_loss_tokens": 3003,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.2634032634032634,
+      "mean_loss": 8.589869074610286,
+      "rows": 58
+    }
+  },
+  "before": {
+    "eval": {
+      "assistant_loss_tokens": 1481,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.0,
+      "mean_loss": 9.779239919844066,
+      "rows": 29
+    },
+    "eval_by_source": {
+      "agentnet": {
+        "assistant_loss_tokens": 259,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.0,
+        "mean_loss": 9.783885116282578,
+        "rows": 8
+      },
+      "androidcontrol": {
+        "assistant_loss_tokens": 217,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.0,
+        "mean_loss": 9.660911735851094,
+        "rows": 8
+      },
+      "mcpmark": {
+        "assistant_loss_tokens": 515,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.0,
+        "mean_loss": 9.78460183745449,
+        "rows": 5
+      },
+      "mind2web": {
+        "assistant_loss_tokens": 490,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.0,
+        "mean_loss": 9.823551598373724,
+        "rows": 8
+      }
+    },
+    "train": {
+      "assistant_loss_tokens": 3003,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.0,
+      "mean_loss": 9.779411608085924,
+      "rows": 58
+    }
+  },
+  "child": {
+    "bytes": 52252014,
+    "path": "/private/tmp/localagent-public-data/m530-random.pt",
+    "sha256": "a7c626355d755ec3131e4e747a12571c613a6a2a33877020540e0d4f0c0e18ed"
+  },
+  "claim_boundary": "Public-train-only text/accessibility continuation across mobile, browser, and desktop projections with source-disjoint held-out metrics; no official benchmark score, native emulator/browser/desktop/MCP execution, screenshot grounding, or external-account claim.",
+  "eval_sources": [
+    {
+      "datasets": [],
+      "input": {
+        "bytes": 838022,
+        "path": "/private/tmp/localagent-public-data/androidcontrol-eval-256.jsonl",
+        "sha256": "5168c544664cd4f7c0723387280a423b1ba3e518da2ba381305522f0dea270bc"
+      },
+      "label": "androidcontrol",
+      "public_reference": {
+        "dataset": "AndroidControl",
+        "url": "https://github.com/google-research/google-research/tree/master/android_control"
+      },
+      "revisions": [
+        "hf:OfficerChul/Android-Control-84k@0248027f747c9d57bd09c14e8f044f9a8103dddd"
+      ],
+      "rows": 8,
+      "source_families": [
+        "androidcontrol_json_mirror"
+      ],
+      "source_urls": [],
+      "splits": [
+        "test"
+      ],
+      "unique_parent_records": 0,
+      "visual_input_omitted_rows": 8
+    },
+    {
+      "datasets": [
+        "xlangai/AgentNet"
+      ],
+      "input": {
+        "bytes": 483445,
+        "path": "/private/tmp/localagent-public-data/agentnet-eval-64.jsonl",
+        "sha256": "7f0f080e33c4a069c532f3efcc0ec72e73d456f606cd4e5608df6f4dd949ac43"
+      },
+      "label": "agentnet",
+      "public_reference": {
+        "dataset": "OpenCUA-AgentNet",
+        "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+      },
+      "revisions": [
+        "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+      ],
+      "rows": 8,
+      "source_families": [
+        "xlangai/AgentNet"
+      ],
+      "source_urls": [],
+      "splits": [
+        "ubuntu_jsonl_bounded_prefix"
+      ],
+      "unique_parent_records": 1,
+      "visual_input_omitted_rows": 0
+    },
+    {
+      "datasets": [
+        "osunlp/Mind2Web"
+      ],
+      "input": {
+        "bytes": 113763,
+        "path": "/Users/sangbumchoi/Documents/LocalAgent/data/private/mind2web/normalized/m420/eval.jsonl",
+        "sha256": "2b3e502978496dd75151a244477ad8efebfec0ebdd912bf97f0910c14f0d7ed9"
+      },
+      "label": "mind2web",
+      "public_reference": {
+        "dataset": "Mind2Web-train",
+        "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+      },
+      "revisions": [
+        "17ece8eb89862368edc0cc806acee6fca5163474"
+      ],
+      "rows": 8,
+      "source_families": [],
+      "source_urls": [
+        "https://huggingface.co/datasets/osunlp/Mind2Web"
+      ],
+      "splits": [
+        "train"
+      ],
+      "unique_parent_records": 4,
+      "visual_input_omitted_rows": 0
+    },
+    {
+      "datasets": [
+        "Jakumetsu/mcpmark-trajectory-log"
+      ],
+      "input": {
+        "bytes": 79133,
+        "path": "/private/tmp/localagent-public-data/mcpmark-traj/mcpmark-eval.jsonl",
+        "sha256": "34c8e24ec58994f97372d9702fca54709a62140a2fef4a4d5e3099f6f4dcca89"
+      },
+      "label": "mcpmark",
+      "public_reference": {
+        "dataset": "MCPMark trajectory-log",
+        "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log"
+      },
+      "revisions": [
+        "e50578f0ab904d8e6a7c576c387c1e76ae482c89"
+      ],
+      "rows": 5,
+      "source_families": [
+        "Jakumetsu/mcpmark-trajectory-log"
+      ],
+      "source_urls": [],
+      "splits": [],
+      "unique_parent_records": 5,
+      "visual_input_omitted_rows": 0
+    }
+  ],
+  "hyperparameters": {
+    "backbone_init": "random",
+    "batch_size": 4,
+    "device": "cpu",
+    "learning_rate": 1e-05,
+    "max_eval_rows_per_source": 8,
+    "max_seq_len": 128,
+    "max_train_rows_per_source": 16,
+    "random_backbone_seed": 2028,
+    "seed": 2027,
+    "steps": 64
+  },
+  "kind": "localagent_cross_surface_public_continuation_report",
+  "loss_history": [
+    9.71670913696289,
+    9.829601287841797,
+    9.808013916015625,
+    9.720846176147461,
+    9.606143951416016,
+    9.604418754577637,
+    9.58460807800293,
+    9.712423324584961,
+    9.472002983093262,
+    9.535738945007324,
+    9.566263198852539,
+    9.546857833862305,
+    9.426441192626953,
+    9.503108978271484,
+    9.593344688415527,
+    9.529032707214355,
+    9.12122917175293,
+    9.404570579528809,
+    9.308257102966309,
+    9.002076148986816,
+    9.122443199157715,
+    9.00436019897461,
+    9.11303424835205,
+    8.952655792236328,
+    9.001851081848145,
+    8.741385459899902,
+    8.683274269104004,
+    9.00012493133545,
+    8.73277473449707,
+    8.608742713928223,
+    8.914859771728516,
+    9.019801139831543,
+    8.963152885437012,
+    9.196126937866211,
+    8.546964645385742,
+    8.746614456176758,
+    8.467556953430176,
+    8.385342597961426,
+    8.904438972473145,
+    8.73043441772461,
+    8.458785057067871,
+    8.390460014343262,
+    8.60343074798584,
+    8.658384323120117,
+    8.748666763305664,
+    8.39116096496582,
+    8.805737495422363,
+    9.012656211853027,
+    8.40868091583252,
+    8.88400650024414,
+    8.289087295532227,
+    8.756141662597656,
+    8.729795455932617,
+    8.579706192016602,
+    8.77507495880127,
+    8.387345314025879,
+    8.292047500610352,
+    8.810515403747559,
+    8.142410278320312,
+    8.977570533752441,
+    8.566661834716797,
+    8.173066139221191,
+    8.272395133972168,
+    8.693286895751953
+  ],
+  "parent": {
+    "bytes": 52246937,
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "rows": {
+    "eval": 29,
+    "train": 58
+  },
+  "schema_version": 1,
+  "split_contract": {
+    "cross_source_slot_reuse_allowed": true,
+    "labels_checked": [
+      "agentnet",
+      "androidcontrol",
+      "mcpmark",
+      "mind2web"
+    ],
+    "mode": "source_local_parent_and_slot_disjoint"
+  },
+  "token_accounting": {
+    "dataset_token_accounting": {
+      "decay": null,
+      "main": {
+        "input_tokens": 6405,
+        "loss_tokens": 3003,
+        "sources": {
+          "multi_turn": {
+            "input_tokens": 6405,
+            "loss_tokens": 3003,
+            "rows": 58
+          }
+        }
+      }
+    },
+    "fixed_horizon_progress": {
+      "completed_optimizer_updates": 64,
+      "partial": false,
+      "planned_optimizer_updates": 64
+    },
+    "lm_sampling": {
+      "mode": "iid_with_replacement_v1"
+    },
+    "loss_components": {
+      "lm_loss": [
+        9.71670913696289,
+        9.829601287841797,
+        9.808013916015625,
+        9.720846176147461,
+        9.606143951416016,
+        9.604418754577637,
+        9.58460807800293,
+        9.712423324584961,
+        9.472002983093262,
+        9.535738945007324,
+        9.566263198852539,
+        9.546857833862305,
+        9.426441192626953,
+        9.503108978271484,
+        9.593344688415527,
+        9.529032707214355,
+        9.12122917175293,
+        9.404570579528809,
+        9.308257102966309,
+        9.002076148986816,
+        9.122443199157715,
+        9.00436019897461,
+        9.11303424835205,
+        8.952655792236328,
+        9.001851081848145,
+        8.741385459899902,
+        8.683274269104004,
+        9.00012493133545,
+        8.73277473449707,
+        8.608742713928223,
+        8.914859771728516,
+        9.019801139831543,
+        8.963152885437012,
+        9.196126937866211,
+        8.546964645385742,
+        8.746614456176758,
+        8.467556953430176,
+        8.385342597961426,
+        8.904438972473145,
+        8.73043441772461,
+        8.458785057067871,
+        8.390460014343262,
+        8.60343074798584,
+        8.658384323120117,
+        8.748666763305664,
+        8.39116096496582,
+        8.805737495422363,
+        9.012656211853027,
+        8.40868091583252,
+        8.88400650024414,
+        8.289087295532227,
+        8.756141662597656,
+        8.729795455932617,
+        8.579706192016602,
+        8.77507495880127,
+        8.387345314025879,
+        8.292047500610352,
+        8.810515403747559,
+        8.142410278320312,
+        8.977570533752441,
+        8.566661834716797,
+        8.173066139221191,
+        8.272395133972168,
+        8.693286895751953
+      ],
+      "optimization": [
+        9.71670913696289,
+        9.829601287841797,
+        9.808013916015625,
+        9.720846176147461,
+        9.606143951416016,
+        9.604418754577637,
+        9.58460807800293,
+        9.712423324584961,
+        9.472002983093262,
+        9.535738945007324,
+        9.566263198852539,
+        9.546857833862305,
+        9.426441192626953,
+        9.503108978271484,
+        9.593344688415527,
+        9.529032707214355,
+        9.12122917175293,
+        9.404570579528809,
+        9.308257102966309,
+        9.002076148986816,
+        9.122443199157715,
+        9.00436019897461,
+        9.11303424835205,
+        8.952655792236328,
+        9.001851081848145,
+        8.741385459899902,
+        8.683274269104004,
+        9.00012493133545,
+        8.73277473449707,
+        8.608742713928223,
+        8.914859771728516,
+        9.019801139831543,
+        8.963152885437012,
+        9.196126937866211,
+        8.546964645385742,
+        8.746614456176758,
+        8.467556953430176,
+        8.385342597961426,
+        8.904438972473145,
+        8.73043441772461,
+        8.458785057067871,
+        8.390460014343262,
+        8.60343074798584,
+        8.658384323120117,
+        8.748666763305664,
+        8.39116096496582,
+        8.805737495422363,
+        9.012656211853027,
+        8.40868091583252,
+        8.88400650024414,
+        8.289087295532227,
+        8.756141662597656,
+        8.729795455932617,
+        8.579706192016602,
+        8.77507495880127,
+        8.387345314025879,
+        8.292047500610352,
+        8.810515403747559,
+        8.142410278320312,
+        8.977570533752441,
+        8.566661834716797,
+        8.173066139221191,
+        8.272395133972168,
+        8.693286895751953
+      ],
+      "router_aux": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "router_weighted": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "token_accounting": {
+      "input_tokens": 28328,
+      "loss_tokens": 12939,
+      "sources": {
+        "multi_turn": {
+          "input_tokens": 28328,
+          "loss_tokens": 12939,
+          "rows": 256
+        }
+      }
+    },
+    "token_accounting_scope": "language_model_microbatches"
+  },
+  "train_sources": [
+    {
+      "datasets": [],
+      "input": {
+        "bytes": 1680018,
+        "path": "/private/tmp/localagent-public-data/androidcontrol-train-512.jsonl",
+        "sha256": "34c68424d9bc660a5c594a6f21c946b822f87c8ed0ad0cede43a11cc585f6c29"
+      },
+      "label": "androidcontrol",
+      "public_reference": {
+        "dataset": "AndroidControl",
+        "url": "https://github.com/google-research/google-research/tree/master/android_control"
+      },
+      "revisions": [
+        "hf:OfficerChul/Android-Control-84k@0248027f747c9d57bd09c14e8f044f9a8103dddd"
+      ],
+      "rows": 16,
+      "source_families": [
+        "androidcontrol_json_mirror"
+      ],
+      "source_urls": [],
+      "splits": [
+        "train"
+      ],
+      "unique_parent_records": 0,
+      "visual_input_omitted_rows": 16
+    },
+    {
+      "datasets": [
+        "xlangai/AgentNet"
+      ],
+      "input": {
+        "bytes": 1512718,
+        "path": "/private/tmp/localagent-public-data/agentnet-train-64.jsonl",
+        "sha256": "fb17df74512f3f9a7c15c030ffbf82701f728803b987539e7c872e025967edf8"
+      },
+      "label": "agentnet",
+      "public_reference": {
+        "dataset": "OpenCUA-AgentNet",
+        "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+      },
+      "revisions": [
+        "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+      ],
+      "rows": 16,
+      "source_families": [
+        "xlangai/AgentNet"
+      ],
+      "source_urls": [],
+      "splits": [
+        "ubuntu_jsonl_bounded_prefix"
+      ],
+      "unique_parent_records": 3,
+      "visual_input_omitted_rows": 0
+    },
+    {
+      "datasets": [
+        "osunlp/Mind2Web"
+      ],
+      "input": {
+        "bytes": 352766,
+        "path": "/Users/sangbumchoi/Documents/LocalAgent/data/private/mind2web/normalized/m420/train.jsonl",
+        "sha256": "b6cc595007bb91aa37f4d89e15e477b5b223bb9a66913856273c7cf995abf866"
+      },
+      "label": "mind2web",
+      "public_reference": {
+        "dataset": "Mind2Web-train",
+        "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+      },
+      "revisions": [
+        "17ece8eb89862368edc0cc806acee6fca5163474"
+      ],
+      "rows": 16,
+      "source_families": [],
+      "source_urls": [
+        "https://huggingface.co/datasets/osunlp/Mind2Web"
+      ],
+      "splits": [
+        "train"
+      ],
+      "unique_parent_records": 8,
+      "visual_input_omitted_rows": 0
+    },
+    {
+      "datasets": [
+        "Jakumetsu/mcpmark-trajectory-log"
+      ],
+      "input": {
+        "bytes": 133877,
+        "path": "/private/tmp/localagent-public-data/mcpmark-traj/mcpmark-train.jsonl",
+        "sha256": "21322d7218dd1f5906c4ae22162f1ef3e9ecb988d5633ca6a8f6d2943b8314d6"
+      },
+      "label": "mcpmark",
+      "public_reference": {
+        "dataset": "MCPMark trajectory-log",
+        "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log"
+      },
+      "revisions": [
+        "e50578f0ab904d8e6a7c576c387c1e76ae482c89"
+      ],
+      "rows": 10,
+      "source_families": [
+        "Jakumetsu/mcpmark-trajectory-log"
+      ],
+      "source_urls": [],
+      "splits": [],
+      "unique_parent_records": 10,
+      "visual_input_omitted_rows": 0
+    }
+  ],
+  "weight_transfer": {
+    "compatibility": {
+      "added_tensors": [],
+      "config_mismatches": {},
+      "removed_tensors": [],
+      "shape_mismatches": {},
+      "shared_tensor_count": 51,
+      "tokenizer_sha256_equal": true
+    },
+    "groups": {
+      "action_heads": {
+        "base_l2": 87.12721149777144,
+        "delta_l2": 0.0,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.0,
+        "target_l2": 87.12721149777144
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.686243041747026,
+        "delta_l2": 40.25567635831629,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.7788470198114756,
+        "target_l2": 50.41162799736464
+      },
+      "embedding": {
+        "base_l2": 76.26811513665427,
+        "delta_l2": 91.27946423431295,
+        "parameters": 6291456,
+        "relative_delta_l2": 1.1968233916724167,
+        "target_l2": 50.17634385104304
+      },
+      "ffn": {
+        "base_l2": 50.599417154543154,
+        "delta_l2": 44.42430439529666,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.8779607927026872,
+        "target_l2": 49.795154951948064
+      },
+      "normalization": {
+        "base_l2": 21.431829234008912,
+        "delta_l2": 1.8354986234443402,
+        "parameters": 384,
+        "relative_delta_l2": 0.08564358195481024,
+        "target_l2": 19.59734541479925
+      }
+    },
+    "recommendation": {
+      "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+      "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+      "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+      "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+    }
+  }
+}

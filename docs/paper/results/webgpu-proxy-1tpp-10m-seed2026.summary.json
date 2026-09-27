@@ -1,0 +1,376 @@
+{
+  "schema_version": 1,
+  "kind": "localagent_webgpu_proxy_pretrain_summary",
+  "recorded_on": "2026-07-28",
+  "status": "complete_proxy_quality_and_trained_latency",
+  "scope": {
+    "seed": 2026,
+    "seeds": 1,
+    "tokens_per_parameter_label": "approximately_1_tpp",
+    "agent_training": false,
+    "agent_quality_evaluation": false,
+    "structured_source_present": false,
+    "trained_webgpu_latency_collected": true,
+    "paper_architecture_selection_run": false
+  },
+  "corpus": {
+    "raw": {
+      "config_path": "configs/data/pretrain-colab.yaml",
+      "config_sha256": "2860b483059d947d60ccd2da0a37182e1f61c599c54bdc53e31855af930a8f20",
+      "download_manifest_path": "data/raw/webgpu-proxy-120m/download_manifest.json",
+      "download_manifest_sha256": "e943616aee83185ce952eb149732d11004603cf55563a82851d7feb8acec8f16",
+      "mixture_path": "data/raw/webgpu-proxy-120m/mixture.jsonl",
+      "mixture_bytes": 131509555,
+      "mixture_sha256": "22d4270ad6157a9701e86be8bfd73a4fc9c480dd2cfd82337a4d6a5218183e6c",
+      "requested_chars": 120000000,
+      "accepted_chars": 120014016,
+      "accepted_documents": 24125,
+      "sources": {
+        "fineweb_edu_dedup": {
+          "dataset": "HuggingFaceTB/smollm-corpus",
+          "subset": "fineweb-edu-dedup",
+          "revision": "3ba9d605774198c5868892d7a8deda78031a781f",
+          "license": "odc-by-1.0",
+          "accepted_chars": 78002243,
+          "accepted_documents": 16764
+        },
+        "cosmopedia_v2": {
+          "dataset": "HuggingFaceTB/smollm-corpus",
+          "subset": "cosmopedia-v2",
+          "revision": "3ba9d605774198c5868892d7a8deda78031a781f",
+          "license": "odc-by-1.0",
+          "accepted_chars": 18001053,
+          "accepted_documents": 4781
+        },
+        "python_code": {
+          "dataset": "codeparrot/codeparrot-clean",
+          "revision": "35a59fb025bc0a102f7d96eac09d145b896d487b",
+          "accepted_chars": 24010720,
+          "accepted_documents": 2580,
+          "license_rejections": 1601,
+          "accepted_license_document_counts": {
+            "apache-2.0": 840,
+            "bsd-2-clause": 98,
+            "bsd-3-clause": 483,
+            "isc": 16,
+            "mit": 1143
+          }
+        }
+      }
+    },
+    "packed": {
+      "manifest_path": "data/shards/webgpu-proxy-120m/manifest.json",
+      "manifest_bytes": 14959,
+      "manifest_sha256": "6a10cc606902a648258dc58ddb3ba19aa68c5b5ed6d812fcb2f06cbedfcaa9fd",
+      "manifest_canonical_sha256": "0959bc556ceb47259f8e52aafb2c06e8629e49183eb5365022b8827a30b17002",
+      "generation": "feeabb54739a4e5d8624488058364445",
+      "filtered_documents": 24004,
+      "quality_rejections": {
+        "repetitive": 114,
+        "replacement_characters": 7
+      },
+      "train": {
+        "documents": 23764,
+        "tokens": 28045897,
+        "document_set_sha256": "7f2e9e5569c0f75b7dadedff89998b342fc4f54ec3aaaa47516676b89236cd80"
+      },
+      "validation": {
+        "documents": 240,
+        "packed_tokens": 287995,
+        "scorecard_tokens": 287615,
+        "utf8_bytes": 1197009,
+        "document_set_sha256": "29f7302550af5e15fe7a3c9cda305bf8ca56c084cd0d20f38a7a26db1274b0a6",
+        "document_content_sha256": "c32a0bf500b2283c6e77822b421eb1bf1dd044a2737872922b66024e72dc6808",
+        "source_documents": {
+          "mixture:cosmopedia_v2": 57,
+          "mixture:fineweb_edu_dedup": 159,
+          "mixture:python_code": 24
+        }
+      },
+      "split_assignment_sha256": "1135168824cea6f6ed6ec2d983933a303023794fd0064d8e0041b4afaf7b904b",
+      "tokenizer": {
+        "path": "data/tokenizer-webgpu-proxy-16k.json",
+        "bytes": 1134224,
+        "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+        "vocab_size": 16384,
+        "training_split": "train"
+      },
+      "evaluation_decontamination": {
+        "enabled": true,
+        "local_inputs": [
+          "local-agent-eval",
+          "local-browser-tasks",
+          "local-realtime-actions"
+        ],
+        "denylist_entries": 4854,
+        "denylist_sha256": "ba56cf6f9d31dbdd2ecb32eafceabdf0ab1c432dc76d6fb69726979f7b8e66a9",
+        "removed_documents": 0,
+        "external_paper_suite_exports_present": false,
+        "limitations": "Bounded non-exhaustive screening of three local prompt exports only; BFCL, Mind2Web, WebLINX, and BrowserGym exports were not supplied."
+      }
+    }
+  },
+  "training_contract": {
+    "architecture_pair": "webgpu-10m hybrid versus parameter-matched all-attention",
+    "schedule": "wsd",
+    "optimizer": "adamw",
+    "learning_rate": 0.0003,
+    "sequence_length": 2048,
+    "micro_batch_size": 2,
+    "gradient_accumulation_steps": 8,
+    "updates": 322,
+    "scheduled_input_tokens_per_arm": 10551296,
+    "realized_loss_tokens_per_arm": 10551291,
+    "shared_data_lineage_sha256": "7a3b5b971aee3534bea66b8f6b3f9a85ebb723d028b6a8e9e754d3b13efb860a",
+    "matched_fields": [
+      "corpus",
+      "tokenizer",
+      "seed",
+      "draws",
+      "optimizer",
+      "learning_rate",
+      "schedule",
+      "batch",
+      "sequence_length",
+      "updates",
+      "scorecard_documents"
+    ]
+  },
+  "arms": {
+    "attention": {
+      "model_config_path": "configs/model/webgpu-10m-attn.yaml",
+      "model_config_file_sha256": "51fbc78ccfa0968512ad24845d5eedb1ce0b6cac125971aaefa705e067f3c133",
+      "model_config_canonical_sha256": "99a32acaec2fca6f597b4a9f40bb41228048bd0148734369a47df5827036dbca",
+      "train_config_path": "configs/train/pretrain-webgpu-proxy-1tpp-attn-seed2026.yaml",
+      "train_config_file_sha256": "a2e5e24150c92a01a6e5d16f534a7f65b1c3e20f4f02a50435f9b5a848a4a0cc",
+      "train_config_canonical_sha256": "30d2a98ff57c572e43b01e6166c6e2e7eb11d091c81c293b7591419ba2b0f718",
+      "parameters": 10547072,
+      "loss_tokens_per_parameter": 1.000400016231993,
+      "checkpoint": {
+        "path": "runs/pretrain-webgpu-proxy-1tpp-attn-seed2026/latest.pt",
+        "bytes": 126638155,
+        "sha256": "b86929f708b0294ff305fa9ffbfa5059e04a807facfc0c5c55d64c471215f4a9",
+        "stored_step_index": 321,
+        "completed_updates": 322
+      },
+      "metrics_path": "runs/pretrain-webgpu-proxy-1tpp-attn-seed2026/metrics.json",
+      "metrics_sha256": "eb68377b9b8763155155ec5bb5cb9dd6ebceea31537bbd455468f1edb13aa16c",
+      "scorecard_path": "runs/pretrain-webgpu-proxy-1tpp-attn-seed2026/scorecard.json",
+      "scorecard_sha256": "46b74b33d760acdc8e6a44d4ca3d83ea79f937944da4b76660f0ffc61ce218a4",
+      "last_training_loss": 5.954884707927704,
+      "scorecard": {
+        "aggregate": {
+          "cross_entropy_nats_per_token": 6.05471144812604,
+          "bits_per_byte": 2.098853403412534,
+          "top1_accuracy": 0.1524225092571667,
+          "tokens": 287615,
+          "documents": 240
+        },
+        "general": {
+          "cross_entropy_nats_per_token": 6.190128047524986,
+          "bits_per_byte": 2.078498419973135,
+          "top1_accuracy": 0.1439059959434769,
+          "tokens": 238628,
+          "documents": 216
+        },
+        "code": {
+          "cross_entropy_nats_per_token": 5.39506312752319,
+          "bits_per_byte": 2.2203861237007594,
+          "top1_accuracy": 0.19390858799273278,
+          "tokens": 48987,
+          "documents": 24
+        }
+      }
+    },
+    "hybrid": {
+      "model_config_path": "configs/model/webgpu-10m-hybrid.yaml",
+      "model_config_file_sha256": "8609bca200f40e2f67c154f73a1641c905509f4d69a1ec7f80273b0cc6f12a98",
+      "model_config_canonical_sha256": "06f1e4707906d6bf0eda65764e76f8561a723d46fb829542e4554946680bf454",
+      "train_config_path": "configs/train/pretrain-webgpu-proxy-1tpp-hybrid-seed2026.yaml",
+      "train_config_file_sha256": "c478ffd8e138942ffb162a9152c714fa0e9c0c818df866346237c9b62630474f",
+      "train_config_canonical_sha256": "0b4d69287dc2decfadb1ce42383a68f80b04f8d5271335483e8a52e12eb9b6a0",
+      "parameters": 10524544,
+      "loss_tokens_per_parameter": 1.0025413927672306,
+      "checkpoint": {
+        "path": "runs/pretrain-webgpu-proxy-1tpp-hybrid-seed2026/latest.pt",
+        "bytes": 126360971,
+        "sha256": "00dd2cf6651b0a27e18d707d287b464361e4f0636c7c787fafc7570682ab2e6d",
+        "stored_step_index": 321,
+        "completed_updates": 322
+      },
+      "metrics_path": "runs/pretrain-webgpu-proxy-1tpp-hybrid-seed2026/metrics.json",
+      "metrics_sha256": "ec29ba7371bd51db057c6a41aa805d031bb3570b89b4e9b70dd84de399eff9ae",
+      "scorecard_path": "runs/pretrain-webgpu-proxy-1tpp-hybrid-seed2026/scorecard.json",
+      "scorecard_sha256": "787353c64242922100a585c82bb773fbfbf707a91cfed4f6091836245249fe27",
+      "last_training_loss": 5.753251910209656,
+      "scorecard": {
+        "aggregate": {
+          "cross_entropy_nats_per_token": 5.861697424938398,
+          "bits_per_byte": 2.03194548501799,
+          "top1_accuracy": 0.17281435251986163,
+          "tokens": 287615,
+          "documents": 240
+        },
+        "general": {
+          "cross_entropy_nats_per_token": 6.00425026123716,
+          "bits_per_byte": 2.016085060808162,
+          "top1_accuracy": 0.16227349682350772,
+          "tokens": 238628,
+          "documents": 216
+        },
+        "code": {
+          "cross_entropy_nats_per_token": 5.167286699229515,
+          "bits_per_byte": 2.1266427125978793,
+          "top1_accuracy": 0.22416151223794067,
+          "tokens": 48987,
+          "documents": 24
+        }
+      }
+    }
+  },
+  "paired_deltas": {
+    "parameter_delta_attention_minus_hybrid": 22528,
+    "parameter_delta_percent_of_hybrid": 0.21405202923756125,
+    "aggregate": {
+      "attention_minus_hybrid_cross_entropy_nats_per_token": 0.19301402318764183,
+      "attention_minus_hybrid_bits_per_byte": 0.06690791839454402,
+      "hybrid_minus_attention_top1_percentage_points": 2.039184326269494
+    },
+    "general": {
+      "attention_minus_hybrid_cross_entropy_nats_per_token": 0.18587778628782647,
+      "attention_minus_hybrid_bits_per_byte": 0.06241335916497315,
+      "hybrid_minus_attention_top1_percentage_points": 1.8367500880030834
+    },
+    "code": {
+      "attention_minus_hybrid_cross_entropy_nats_per_token": 0.22777642829367473,
+      "attention_minus_hybrid_bits_per_byte": 0.09374341110288009,
+      "hybrid_minus_attention_top1_percentage_points": 3.0252924245207895
+    }
+  },
+  "paired_document_bootstrap": {
+    "artifact_path": "runs/pretrain-webgpu-proxy-1tpp-paired-comparison-seed2026.json",
+    "artifact_bytes": 8696,
+    "artifact_file_sha256": "1b976e2fc0058697fc64819a179eadbd905f3f54a6e7a9ae7683b63c5b3f459d",
+    "comparison_canonical_sha256": "3429a7a99ef233e445b8510288d340155c234e12fa3e5f31f24e12895396a400",
+    "method": "paired nonparametric document resampling with replacement",
+    "resamples": 10000,
+    "seed": 2026,
+    "confidence": 0.95,
+    "difference": "attention_minus_hybrid",
+    "aggregate": {
+      "cross_entropy_nats_per_token": {
+        "estimate": 0.1930140231876424,
+        "percentile_ci": [
+          0.18345915201354507,
+          0.2034141987837352
+        ],
+        "hybrid_win_fraction": 1.0
+      },
+      "bits_per_byte": {
+        "estimate": 0.0669079183945441,
+        "percentile_ci": [
+          0.06341848245860873,
+          0.07072525021190731
+        ],
+        "hybrid_win_fraction": 1.0
+      },
+      "top1_accuracy": {
+        "estimate": -0.02039184326269492,
+        "percentile_ci": [
+          -0.022711271993261593,
+          -0.018343023404995426
+        ],
+        "hybrid_win_fraction": 1.0
+      }
+    },
+    "general": {
+      "cross_entropy_nats_per_token": {
+        "estimate": 0.18587778628782667,
+        "percentile_ci": [
+          0.17679970060317213,
+          0.19647867911392417
+        ],
+        "hybrid_win_fraction": 1.0
+      },
+      "bits_per_byte": {
+        "estimate": 0.062413359164973294,
+        "percentile_ci": [
+          0.05991882950986848,
+          0.06528624650219263
+        ],
+        "hybrid_win_fraction": 1.0
+      },
+      "top1_accuracy": {
+        "estimate": -0.018367500880030842,
+        "percentile_ci": [
+          -0.020351608239424036,
+          -0.016521685391526365
+        ],
+        "hybrid_win_fraction": 1.0
+      }
+    },
+    "code": {
+      "cross_entropy_nats_per_token": {
+        "estimate": 0.22777642829367517,
+        "percentile_ci": [
+          0.21019579805113028,
+          0.25399531583982804
+        ],
+        "hybrid_win_fraction": 1.0
+      },
+      "bits_per_byte": {
+        "estimate": 0.09374341110288027,
+        "percentile_ci": [
+          0.0841040478854324,
+          0.11026226691065369
+        ],
+        "hybrid_win_fraction": 1.0
+      },
+      "top1_accuracy": {
+        "estimate": -0.030252924245207913,
+        "percentile_ci": [
+          -0.0419613639362254,
+          -0.023921094854265752
+        ],
+        "hybrid_win_fraction": 1.0
+      }
+    },
+    "limitation": "Intervals condition on this one architecture seed and these 240 held-out documents; they are not multi-seed architecture uncertainty."
+  },
+  "interpretation": {
+    "supported": "On this one-seed, approximately-one-token-per-parameter pretraining proxy, the hybrid checkpoint has lower held-out CE and BPB and higher token accuracy than the matched attention checkpoint on the aggregate, general, and code slices. Paired document-bootstrap intervals exclude zero for all three metrics on all slices. The exact hybrid checkpoint also exceeds 100 p50 wall decode tok/s at every tested context in all three browser runs.",
+    "not_supported": [
+      "architecture selection",
+      "multi-seed architecture uncertainty",
+      "WSD-versus-cosine schedule attribution",
+      "agent, tool-use, structured-output, or browser-task quality",
+      "structured-data quality",
+      "a complete p50-throughput plus p95-tail-latency acceptance pass",
+      "cross-device or cross-browser latency generalization",
+      "paper-corpus contamination clearance"
+    ],
+    "next_required": "Run the preregistered multi-seed at-least-5-TPP comparison, add the structured midtrain/SFT/RL stages, and reduce p95 browser tail latency before architecture selection."
+  },
+  "trained_webgpu_result": {
+    "status": "collected_partial_gate",
+    "summary_path": "docs/paper/results/m5-webgpu-cached-decode-10m-trained-proxy-20260728.summary.json",
+    "device_scope": "one Apple M5, Chrome 150, ONNX Runtime Web 1.27.0",
+    "page_session_runs": 3,
+    "measured_samples": 720,
+    "hybrid_p50_wall_decode_tokens_per_second_by_context": {
+      "128": 137.711258,
+      "512": 128.231913,
+      "1024": 123.779377,
+      "1536": 116.475774
+    },
+    "hybrid_p95_tpot_ms_by_context": {
+      "128": 10.305161,
+      "512": 9.609516,
+      "1024": 10.213548,
+      "1536": 10.205484
+    },
+    "p50_wall_at_least_100_every_context_and_page_run": true,
+    "joint_p50_wall_and_p95_tpot_gate_pass": false,
+    "capability_artifact": false
+  }
+}

@@ -1,0 +1,302 @@
+{
+  "child": {
+    "bytes": 52236728,
+    "path": "/private/tmp/m94-mind2web-mcp-service-random-child.pt",
+    "sha256": "8e74228882f1738a5afed2b2214c4da98b82702efd6f435f22aa91bf661c221a"
+  },
+  "claim_boundary": "Matched random-backbone control for a synthetic service/tool-contract probe; MCPMark values are task-description routing proxy metrics only, not live MCP execution, verifier success, pass@k, or an official leaderboard score.",
+  "comparison": {
+    "random_backbone": {
+      "route_accuracy": 0.4728033472803347,
+      "selector_top1": 0.17154811715481172,
+      "selector_top3": 0.6527196652719666
+    },
+    "random_minus_transfer": {
+      "route_accuracy": 0.20920502092050203,
+      "selector_top1": -0.050209205020920494,
+      "selector_top3": 0.0
+    },
+    "rows": 239,
+    "transfer_pretrained_frozen": {
+      "route_accuracy": 0.26359832635983266,
+      "selector_top1": 0.2217573221757322,
+      "selector_top3": 0.6527196652719666
+    }
+  },
+  "head_metrics": {
+    "route_accuracy": 1.0,
+    "rows": 28,
+    "selector_top1": 1.0,
+    "selector_top3": 1.0,
+    "tool_rows": 28
+  },
+  "kind": "localagent_mcp_service_contract_no_transfer_probe",
+  "mcpmark": {
+    "easy": {
+      "by_difficulty": {
+        "L1": {
+          "route_accuracy": 0.2714285714285714,
+          "route_correct": 19,
+          "rows": 70,
+          "selector_top1": 0.18571428571428572,
+          "selector_top3": 0.6428571428571429
+        }
+      },
+      "by_service": {
+        "filesystem": {
+          "route_accuracy": 0.6,
+          "route_correct": 6,
+          "rows": 10,
+          "selector_top1": 0.0,
+          "selector_top3": 0.5
+        },
+        "github": {
+          "route_accuracy": 0.7,
+          "route_correct": 7,
+          "rows": 10,
+          "selector_top1": 0.0,
+          "selector_top3": 0.9
+        },
+        "notion": {
+          "route_accuracy": 0.2,
+          "route_correct": 2,
+          "rows": 10,
+          "selector_top1": 1.0,
+          "selector_top3": 1.0
+        },
+        "playwright": {
+          "route_accuracy": 0.1,
+          "route_correct": 1,
+          "rows": 10,
+          "selector_top1": 0.0,
+          "selector_top3": 0.0
+        },
+        "postgres": {
+          "route_accuracy": 0.1,
+          "route_correct": 3,
+          "rows": 30,
+          "selector_top1": 0.1,
+          "selector_top3": 0.7
+        }
+      },
+      "checkpoint": {
+        "bytes": 52236728,
+        "path": "/private/tmp/m94-mind2web-mcp-service-random-child.pt",
+        "sha256": "8e74228882f1738a5afed2b2214c4da98b82702efd6f435f22aa91bf661c221a"
+      },
+      "claim_boundary": "Public MCPMark task-description service-routing proxy only; not live MCP execution, verifier success, pass@k, or official leaderboard evaluation.",
+      "dataset": {
+        "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+        "suite": "easy",
+        "url": "https://github.com/eval-sys/mcpmark"
+      },
+      "kind": "localagent_mcpmark_task_router_proxy",
+      "overall": {
+        "route_accuracy": 0.2714285714285714,
+        "route_correct": 19,
+        "rows": 70,
+        "selector_top1": 0.18571428571428572,
+        "selector_top3": 0.6428571428571429
+      },
+      "schema_version": 1,
+      "source": {
+        "checkout": "/private/tmp/mcpmark",
+        "mcp_servers_executed": false,
+        "metadata_and_description_bytes": 385446,
+        "task_manifest_sha256": "f8eea15c843ee222c3899849d724ddbe6cd89f0f709ff7a84659d9cafef52f06",
+        "task_rows": 70,
+        "task_text_retained": false,
+        "verifiers_executed": false
+      },
+      "tool_family_contract": {
+        "filesystem": [
+          "find_files",
+          "grep_search",
+          "list_dir",
+          "make_dir",
+          "read_file",
+          "unzip",
+          "write_file"
+        ],
+        "github": [
+          "apply_patch",
+          "git_commit",
+          "git_diff",
+          "git_status",
+          "http_request",
+          "read_file",
+          "run_command",
+          "write_file"
+        ],
+        "notion": [
+          "notion_create_page",
+          "notion_write"
+        ],
+        "playwright": [
+          "click",
+          "double_click",
+          "drag",
+          "key_press",
+          "move_cursor",
+          "open_url",
+          "screenshot",
+          "scroll",
+          "type_text",
+          "wait"
+        ],
+        "postgres": [
+          "sql_query"
+        ]
+      }
+    },
+    "standard": {
+      "by_difficulty": {
+        "L3": {
+          "route_accuracy": 0.5562130177514792,
+          "route_correct": 94,
+          "rows": 169,
+          "selector_top1": 0.16568047337278108,
+          "selector_top3": 0.6568047337278107
+        }
+      },
+      "by_service": {
+        "filesystem": {
+          "route_accuracy": 0.7333333333333333,
+          "route_correct": 22,
+          "rows": 30,
+          "selector_top1": 0.0,
+          "selector_top3": 0.4666666666666667
+        },
+        "github": {
+          "route_accuracy": 0.782608695652174,
+          "route_correct": 18,
+          "rows": 23,
+          "selector_top1": 0.0,
+          "selector_top3": 0.43478260869565216
+        },
+        "notion": {
+          "route_accuracy": 0.10714285714285714,
+          "route_correct": 3,
+          "rows": 28,
+          "selector_top1": 0.75,
+          "selector_top3": 1.0
+        },
+        "playwright": {
+          "route_accuracy": 0.84,
+          "route_correct": 21,
+          "rows": 25,
+          "selector_top1": 0.04,
+          "selector_top3": 0.32
+        },
+        "postgres": {
+          "route_accuracy": 0.47619047619047616,
+          "route_correct": 30,
+          "rows": 63,
+          "selector_top1": 0.09523809523809523,
+          "selector_top3": 0.8095238095238095
+        }
+      },
+      "checkpoint": {
+        "bytes": 52236728,
+        "path": "/private/tmp/m94-mind2web-mcp-service-random-child.pt",
+        "sha256": "8e74228882f1738a5afed2b2214c4da98b82702efd6f435f22aa91bf661c221a"
+      },
+      "claim_boundary": "Public MCPMark task-description service-routing proxy only; not live MCP execution, verifier success, pass@k, or official leaderboard evaluation.",
+      "dataset": {
+        "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+        "suite": "standard",
+        "url": "https://github.com/eval-sys/mcpmark"
+      },
+      "kind": "localagent_mcpmark_task_router_proxy",
+      "overall": {
+        "route_accuracy": 0.5562130177514792,
+        "route_correct": 94,
+        "rows": 169,
+        "selector_top1": 0.16568047337278108,
+        "selector_top3": 0.6568047337278107
+      },
+      "schema_version": 1,
+      "source": {
+        "checkout": "/private/tmp/mcpmark",
+        "mcp_servers_executed": false,
+        "metadata_and_description_bytes": 1272143,
+        "task_manifest_sha256": "b35b92adfb8a846eb32dc36c411c17aa5ecf757e5b63aeaa1671755f475686d5",
+        "task_rows": 169,
+        "task_text_retained": false,
+        "verifiers_executed": false
+      },
+      "tool_family_contract": {
+        "filesystem": [
+          "find_files",
+          "grep_search",
+          "list_dir",
+          "make_dir",
+          "read_file",
+          "unzip",
+          "write_file"
+        ],
+        "github": [
+          "apply_patch",
+          "git_commit",
+          "git_diff",
+          "git_status",
+          "http_request",
+          "read_file",
+          "run_command",
+          "write_file"
+        ],
+        "notion": [
+          "notion_create_page",
+          "notion_write"
+        ],
+        "playwright": [
+          "click",
+          "double_click",
+          "drag",
+          "key_press",
+          "move_cursor",
+          "open_url",
+          "screenshot",
+          "scroll",
+          "type_text",
+          "wait"
+        ],
+        "postgres": [
+          "sql_query"
+        ]
+      }
+    }
+  },
+  "parent": {
+    "bytes": 52231121,
+    "path": "runs/sft-mind2web-trajectory-continuation-20260802-m46/latest.pt",
+    "sha256": "b19828908594463385870607d89c084afc1bb237cc5fb51752ac6860a204a041"
+  },
+  "receipt_self_sha256": "cee879d44e64e5f0dd2ce8c6a07be8facd7e4b4838fac83e022c0e7e4df3960a",
+  "schema_version": 1,
+  "training": {
+    "backbone_initialization": "deterministic_random",
+    "decisions": 28,
+    "mcpmark_task_text_used": false,
+    "random_seed": 2028,
+    "route_steps": 800,
+    "rows": 28,
+    "selector_steps": 800,
+    "services": [
+      "filesystem",
+      "github",
+      "notion",
+      "playwright",
+      "postgres"
+    ],
+    "source_text": "generated service/tool contracts only"
+  },
+  "transfer_reference": {
+    "backbone_initialization": "pretrained_frozen",
+    "combined_route_accuracy": 0.26359832635983266,
+    "combined_selector_top1": 0.2217573221757322,
+    "combined_selector_top3": 0.6527196652719666,
+    "receipt": "docs/paper/results/raw/m93-mind2web-mcp-service-contract-v1.json",
+    "receipt_sha256": "f008cf88527684dac926e4bfe51bf36b24cfd90b88ca96f81404e06801e81ad7"
+  }
+}

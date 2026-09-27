@@ -1,0 +1,50 @@
+{
+  "benchmark_id": "realistic_agent_catalog",
+  "catalog": {
+    "entries": 40,
+    "sha256": "fadf942db3d1acbbf73df6cb00fd64ad07a50e652f5a980cdbddc63f08bc3643",
+    "train_rows": 4,
+    "evaluation_or_restricted_rows": 36,
+    "runnable_rows": 4,
+    "blocked_rows": 36
+  },
+  "claim_boundary": "This is a read-only dependency and runtime-capability audit. It does not download benchmark payloads, start an emulator/VM/service, admit evaluation rows to training, or claim an official score. A runnable adapter is not equivalent to a native benchmark receipt.",
+  "dependency_probes": {
+    "command:adb": false,
+    "command:docker": false,
+    "command:osascript": true,
+    "command:qemu-system-x86_64": false,
+    "module:android_world": false,
+    "module:browsergym": false,
+    "module:datasets": true,
+    "module:gymnasium": false,
+    "module:huggingface_hub": true,
+    "module:mcpmark": false,
+    "module:osworld": false,
+    "module:playwright": true
+  },
+  "generated_at": "2026-08-05",
+  "kind": "localagent_realistic_agent_runtime_capability_audit",
+  "native_blockers": {
+    "androidworld": ["command:adb", "integration_status:environment_runner_pending"],
+    "iosworld": ["integration_status:ios_runner_pending", "CoreSimulatorService_unavailable"],
+    "osworld": ["command:docker_or_qemu-system-x86_64", "integration_status:vm_runner_pending"],
+    "osworld_v2": ["command:docker_or_qemu-system-x86_64", "integration_status:VM_runner_pending"],
+    "mcpmark": ["command:docker", "integration_status:MCP_runner_pending"],
+    "toolsandbox": ["command:docker", "official_split_runner_not_implemented"],
+    "enterpriseopsgym": ["integration_status:verifier_runner_pending"],
+    "agentnet": ["integration_status:offline_trajectory_adapter_ready"]
+  },
+  "receipt_self_sha256": "2609480c257bcbea6163540896368b6b3049cb082b8a259adf135fc0b16cb936",
+  "runnable_ids": [
+    "androidcontrol",
+    "android_in_the_wild",
+    "xlam_function_calling",
+    "mind2web_train"
+  ],
+  "schema_version": 1,
+  "source": {
+    "preflight": "scripts/realistic_agent_preflight.py",
+    "catalog": "configs/data/realistic-agent-eval.catalog.yaml"
+  }
+}

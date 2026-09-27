@@ -1,0 +1,17 @@
+{
+ "what": "Distinct gold tool names of each evaluation suite, and the share of them that each fine-tuning corpus ever calls / lists in a catalog. Union = data/merged-v2/train.jsonl (16,300 rows, what the open baselines see). Five-source = the Table 1 recipe (distill2 train-clean + mobileactions + toucan + toolbench + device, 63,666 rows).",
+ "union": {"rows": 16300, "distinct_called": 7202, "distinct_catalog": 12180},
+ "five_source": {"rows": 63666, "distinct_called": 13533, "distinct_catalog": 25177},
+ "suites": {
+  "mobileactions": {"gold_names": 7, "union_called": 14.3, "union_catalog": 14.3, "five_called": 100.0, "five_catalog": 100.0},
+  "xlam": {"gold_names": 1313, "union_called": 1.9, "union_catalog": 2.7, "five_called": 95.0, "five_catalog": 99.6},
+  "toolbench": {"gold_names": 197, "union_called": 0.0, "union_catalog": 0.0, "five_called": 70.1, "five_catalog": 87.8},
+  "toolace": {"gold_names": 929, "union_called": 26.4, "union_catalog": 48.8, "five_called": 21.4, "five_catalog": 53.9},
+  "bfcl": {"gold_names": 152, "union_called": 5.3, "union_catalog": 5.3, "five_called": 6.6, "five_catalog": 7.9},
+  "androidcontrol": {"gold_names": 8, "union_called": 87.5, "union_catalog": 100.0, "five_called": 87.5, "five_catalog": 100.0},
+  "agentnet": {"gold_names": 8, "union_called": 62.5, "union_catalog": 100.0, "five_called": 25.0, "five_catalog": 100.0},
+  "mcpatlas": {"gold_names": 43, "union_called": 0.0, "union_catalog": 0.0, "five_called": 0.0, "five_catalog": 0.0},
+  "toolsandbox": {"gold_names": 14, "union_called": 21.4, "union_catalog": 21.4, "five_called": 28.6, "five_catalog": 28.6}
+ },
+ "correlation_coverage_gain_vs_score_change": -0.86
+}

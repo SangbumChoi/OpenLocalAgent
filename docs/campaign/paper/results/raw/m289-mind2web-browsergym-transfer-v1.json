@@ -1,0 +1,61 @@
+{
+  "claim_boundary": "Public Mind2Web train-split DOM-enriched continuation plus a 20-episode pinned BrowserGym/MiniWoW canary. This is not an official Mind2Web test score, BrowserGym full-plan score, visual-agent result, real-account email/Notion execution, or external side effect.",
+  "generated_at": "2026-08-04",
+  "kind": "localagent_mind2web_browsergym_transfer_receipt",
+  "checkpoint": {
+    "parent": {"path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt", "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361", "parameters": 10524544},
+    "child": {"path": "/private/tmp/m289-mind2web-warm.pt", "sha256": "17ecb1443b0d7c5eb519814c6c58147957e63aa9c8ec546fbe012b24cfd07d23"}
+  },
+  "source": {
+    "dataset": "osunlp/Mind2Web",
+    "url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+    "original_url": "https://github.com/OSU-NLP-Group/Mind2Web",
+    "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+    "license": "CC-BY-4.0",
+    "upstream_split": "train",
+    "train": {"path": "/private/tmp/mind2web-grounded-offset8-train-disjoint.jsonl", "bytes": 282261, "sha256": "78f7e647c3728106901c51ecc772c834467ef6a019c1c083af6849700b361621", "conversations": 36, "decisions": 219},
+    "eval": {"path": "/private/tmp/mind2web-grounded-offset8-eval-disjoint.jsonl", "bytes": 81803, "sha256": "46305cb512f7368ed31817c79b798f5469e8658db12aed5d6880ea81b4e6fcbe", "conversations": 12, "decisions": 63},
+    "split_audit": {"parent_record_disjoint": true, "typed_slot_disjoint": true, "official_test_consumed": false, "screenshots_consumed": false}
+  },
+  "training": {
+    "backbone_init": "compatible_current_parent",
+    "steps": 64,
+    "batch_size": 1,
+    "learning_rate": 0.00001,
+    "device": "cpu",
+    "pointer_vocab_expanded": ["target_id", "value"],
+    "heldout_pointer_span_before": {"exact_span": 0.0, "span_rows": 63},
+    "heldout_pointer_span_after": {"exact_span": 0.0, "span_rows": 63},
+    "weight_audit": {
+      "config_mismatches": {},
+      "tokenizer_sha256_equal": true,
+      "shape_mismatch_expected": "ptr_head.arg_emb.weight: [17,384] -> [19,384]",
+      "relative_delta_l2": {"embedding": 0.0029273587, "attention_or_mixer": 0.0028589779, "ffn": 0.0030874282, "normalization": 0.0001058063, "action_heads": 0.0011974254}
+    }
+  },
+  "browsergym_canary": {
+    "benchmark_id": "browsergym_miniwob",
+    "environment_executed": true,
+    "official_split_verified": false,
+    "episodes": 20,
+    "successes": 0,
+    "success_rate": 0.0,
+    "tool_pool": "standard",
+    "coordinate_fallback": false,
+    "browsergym_revision": "9e779f087de9a65668b6974d11f9ce9816026e96",
+    "miniwob_revision": "7fd85d71a4b60325c6585396ec4f48377d049838",
+    "chromium_revision": "1117",
+    "chromium_version": "125.0.6422.26",
+    "playwright_version": "1.44.0",
+    "max_steps": 10,
+    "browser_executable_sha256": "c6cf40504b92a677552e51dfaf1addfc95dc60c8b57ce5f6b41c9ee0575cf230"
+  },
+  "decision": {
+    "promote_child_to_deployment": false,
+    "adopt_as_browser_policy": false,
+    "keep_as_negative_transfer_receipt": true,
+    "reason": "Train-only Mind2Web pointer continuation did not improve held-out pointer spans and did not produce native success on the 20-episode accessibility-only BrowserGym canary. The small shared-backbone movement supports compatibility and low-rate optimization policy, not capability adoption.",
+    "native_gate_status": "unchanged_blocked"
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,341 @@
+{
+  "claim_boundary": "Public AndroidControl/AITW text-and-accessibility action projection with a disjoint 904-row held-out file plus a 20-task native MobileGym simulator canary. Screenshots were omitted; this is not Android emulator/AndroidWorld success, the official full MobileGym score, BrowserGym/OSWorld/MCP success, real email or Notion access, or a WebGPU hardware throughput claim.",
+  "comparison": {
+    "native_success_delta_vs_parent_same_range": 0.0,
+    "native_success_rate": 0.05,
+    "parent_native_same_range_success_rate": 0.05,
+    "route_accuracy_after": 1.0,
+    "selector_top1_after": 0.41261061946902655
+  },
+  "decision": "diagnostic_only",
+  "kind": "localagent_realistic_mobile_dispatch_transfer_receipt",
+  "native_canary": {
+    "claim_boundary": "Bounded native MobileGym simulator canary over selected official test IDs using a DOM/text observation projection; this is not the full official test split, a visual mobile-agent score, or an Android emulator result.",
+    "environment_executed": true,
+    "errors": [],
+    "failed_tasks": 19,
+    "observation_mode": "text_projection",
+    "official_split_verified": true,
+    "official_test_task_count": 256,
+    "passed_tasks": 1,
+    "receipt": {
+      "path": "/private/tmp/m158-mobilegym-canary.json",
+      "sha256": "af75bab3f123e535dbb554fe8a17049a0e55964be1af19ae3565b15cda4c0797"
+    },
+    "run": {
+      "elapsed_seconds": 57.83,
+      "full_official_test_split": false,
+      "limit": 20,
+      "max_steps": 5,
+      "seed": 0,
+      "selector_top_m": 1,
+      "start": 0
+    },
+    "success_rate": 0.05,
+    "task_count": 20,
+    "tool_counts": {
+      "mobile_submit_answer": 13
+    },
+    "vision_used": false
+  },
+  "parent_native_canary": {
+    "claim_boundary": "This is a bounded native simulator canary, not a full MobileGym score, visual/mobile screenshot result, or publication gate receipt.",
+    "environment_executed": true,
+    "errors": null,
+    "failed_tasks": null,
+    "observation_mode": "text_projection",
+    "official_split_verified": true,
+    "official_test_task_count": 256,
+    "passed_tasks": 1,
+    "receipt": {
+      "path": "docs/paper/results/raw/m135-mobile-action-focus-canary-v1.json",
+      "sha256": "ca28294a60d327df05bf9d53ca4a6c63854722557d94dc7694ae6ab7fd1d6142"
+    },
+    "run": {},
+    "success_rate": 0.05,
+    "task_count": null,
+    "tool_counts": {
+      "mobile_submit_answer": 14
+    },
+    "vision_used": false
+  },
+  "receipt_self_sha256": "b84f9f9a9513f7b59f05a05a7834c9d505cdf0c93f700771335701c2e1bade9e",
+  "schema_version": 1,
+  "source": {
+    "dataset": "AndroidControl / Android-in-the-Wild (AITW) public projection",
+    "eval_jsonl": {
+      "bytes": 2735008,
+      "path": "/private/tmp/androidcontrol84k-conversations.test.jsonl",
+      "sha256": "2d798115fe0feb14ac6d65f86a4b51b4463b593a35281eedce4de8751356bc95"
+    },
+    "eval_manifest": {
+      "bytes": 1480,
+      "path": "/private/tmp/androidcontrol84k-conversations.test.manifest.json",
+      "sha256": "40f0bc2839b4598928e95f2f8b6292eb5a6b31d32f98ee24030917962e4b4a41"
+    },
+    "license": "Apache-2.0 (reformatted public mirror; verify upstream terms before redistribution)",
+    "mirror": "OfficerChul/Android-Control-84k",
+    "mirror_url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k",
+    "original_aitw_url": "https://github.com/google-research/google-research/tree/master/android_in_the_wild",
+    "original_androidcontrol_url": "https://github.com/google-research/google-research/tree/master/android_control",
+    "split_boundary": "public train projection only; the 904-row eval projection stayed outside optimization",
+    "train_jsonl": {
+      "bytes": 12435496,
+      "path": "/private/tmp/androidcontrol84k-conversations.train4096.jsonl",
+      "sha256": "6971d5fe81fe3c6e8ee12e0072481ec653f98bdb5699af54e8f63649358743fd"
+    },
+    "train_manifest": {
+      "bytes": 1473,
+      "path": "/private/tmp/androidcontrol84k-conversations.train4096.manifest.json",
+      "sha256": "9c82d43a28d26b7ee74407ca9649a09e9e69dbfeefea4988ef696724e7eb62f4"
+    },
+    "visual_input_omitted": true
+  },
+  "training": {
+    "child": {
+      "path": "/private/tmp/m158-m142-mobile-focused.pt",
+      "sha256": "fdc6a9134e7dee13c93bf0762e0f477f36590544352850fb0401553203745d17"
+    },
+    "focus_repeat": 8,
+    "focus_tools": [
+      "mobile_long_press",
+      "mobile_navigate_home",
+      "mobile_submit_answer"
+    ],
+    "held_out": {
+      "by_tool": {
+        "mobile_click": {
+          "route_accuracy": 1.0,
+          "route_correct": 125,
+          "rows": 125,
+          "selector_correct": 33,
+          "selector_top1": 0.264
+        },
+        "mobile_input_text": {
+          "route_accuracy": 1.0,
+          "route_correct": 125,
+          "rows": 125,
+          "selector_correct": 67,
+          "selector_top1": 0.536
+        },
+        "mobile_long_press": {
+          "route_accuracy": 1.0,
+          "route_correct": 125,
+          "rows": 125,
+          "selector_correct": 0,
+          "selector_top1": 0.0
+        },
+        "mobile_navigate_back": {
+          "route_accuracy": 1.0,
+          "route_correct": 125,
+          "rows": 125,
+          "selector_correct": 107,
+          "selector_top1": 0.856
+        },
+        "mobile_navigate_home": {
+          "route_accuracy": 1.0,
+          "route_correct": 29,
+          "rows": 29,
+          "selector_correct": 0,
+          "selector_top1": 0.0
+        },
+        "mobile_open_app": {
+          "route_accuracy": 1.0,
+          "route_correct": 125,
+          "rows": 125,
+          "selector_correct": 43,
+          "selector_top1": 0.344
+        },
+        "mobile_scroll": {
+          "route_accuracy": 1.0,
+          "route_correct": 125,
+          "rows": 125,
+          "selector_correct": 73,
+          "selector_top1": 0.584
+        },
+        "mobile_wait": {
+          "route_accuracy": 1.0,
+          "route_correct": 125,
+          "rows": 125,
+          "selector_correct": 50,
+          "selector_top1": 0.4
+        }
+      },
+      "route_accuracy": 1.0,
+      "rows": 904,
+      "selector_top1": 0.41261061946902655
+    },
+    "held_out_rows": 904,
+    "parent": {
+      "path": "/private/tmp/m142-five-surface-public-child.pt",
+      "sha256": "8cc3ee42ed38b830b9b04935e156f80d166abeece2dd0c37184ee4d692de7eb1"
+    },
+    "pointer_training": {
+      "examples": 22,
+      "held_out": {
+        "exact": 1,
+        "exact_rate": 0.25,
+        "rows": 4
+      },
+      "steps": 300,
+      "train_rows": 4244
+    },
+    "probe_initialization": "parent_heads",
+    "productivity_held_out": {
+      "by_tool": {
+        "email_send": {
+          "route_accuracy": 0.5,
+          "route_correct": 1,
+          "rows": 2,
+          "selector_correct": 0,
+          "selector_top1": 0.0
+        },
+        "notion_create_page": {
+          "route_accuracy": 1.0,
+          "route_correct": 2,
+          "rows": 2,
+          "selector_correct": 2,
+          "selector_top1": 1.0
+        }
+      },
+      "route_accuracy": 0.75,
+      "rows": 4,
+      "selector_top1": 0.5
+    },
+    "report": {
+      "bytes": 75364,
+      "path": "/private/tmp/m158-m142-mobile-focused.json",
+      "sha256": "03e6f5c5f130b90c398e9eddd0ec3c86458d7af02b4ad462770ef226ee62aa19"
+    },
+    "steps": 300,
+    "train": {
+      "by_tool": {
+        "email_send": {
+          "route_accuracy": 1.0,
+          "route_correct": 6,
+          "rows": 6,
+          "selector_correct": 1,
+          "selector_top1": 0.16666666666666666
+        },
+        "mobile_click": {
+          "route_accuracy": 1.0,
+          "route_correct": 676,
+          "rows": 676,
+          "selector_correct": 185,
+          "selector_top1": 0.27366863905325445
+        },
+        "mobile_input_text": {
+          "route_accuracy": 1.0,
+          "route_correct": 676,
+          "rows": 676,
+          "selector_correct": 346,
+          "selector_top1": 0.5118343195266272
+        },
+        "mobile_long_press": {
+          "route_accuracy": 1.0,
+          "route_correct": 42,
+          "rows": 42,
+          "selector_correct": 0,
+          "selector_top1": 0.0
+        },
+        "mobile_navigate_back": {
+          "route_accuracy": 1.0,
+          "route_correct": 676,
+          "rows": 676,
+          "selector_correct": 585,
+          "selector_top1": 0.8653846153846154
+        },
+        "mobile_open_app": {
+          "route_accuracy": 1.0,
+          "route_correct": 676,
+          "rows": 676,
+          "selector_correct": 282,
+          "selector_top1": 0.4171597633136095
+        },
+        "mobile_scroll": {
+          "route_accuracy": 1.0,
+          "route_correct": 675,
+          "rows": 675,
+          "selector_correct": 388,
+          "selector_top1": 0.5748148148148148
+        },
+        "mobile_wait": {
+          "route_accuracy": 1.0,
+          "route_correct": 675,
+          "rows": 675,
+          "selector_correct": 316,
+          "selector_top1": 0.46814814814814815
+        },
+        "notion_create_page": {
+          "route_accuracy": 1.0,
+          "route_correct": 6,
+          "rows": 6,
+          "selector_correct": 6,
+          "selector_top1": 1.0
+        }
+      },
+      "route_accuracy": 1.0,
+      "rows": 4108,
+      "selector_top1": 0.5133885102239533
+    },
+    "train_rows": 4096,
+    "weight_transfer": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 94.09067543933597,
+          "delta_l2": 117.40132255978737,
+          "parameters": 2518968,
+          "relative_delta_l2": 1.2477466232610979,
+          "target_l2": 138.94450066522757
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.61133395911824,
+          "delta_l2": 0.0,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0,
+          "target_l2": 51.61133395911824
+        },
+        "embedding": {
+          "base_l2": 69.24045846519778,
+          "delta_l2": 0.0,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.0,
+          "target_l2": 69.24045846519778
+        },
+        "ffn": {
+          "base_l2": 50.52476794746291,
+          "delta_l2": 0.0,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.0,
+          "target_l2": 50.52476794746291
+        },
+        "normalization": {
+          "base_l2": 21.27917815497167,
+          "delta_l2": 0.0,
+          "parameters": 384,
+          "relative_delta_l2": 0.0,
+          "target_l2": 21.27917815497167
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      },
+      "report": {
+        "bytes": 18442,
+        "path": "/private/tmp/m158-weight.json",
+        "sha256": "7a503bcdbd477ebb227b0e5a2b9a9ed1925cc8ee7843e073bfe0839ddfb14c86"
+      }
+    }
+  }
+}

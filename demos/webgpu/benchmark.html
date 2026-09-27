@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LocalAgent — Complete-Action WebGPU Benchmark</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    window.__localAgentBenchmarkStart = performance.now();
+    window.__localAgentRequestedBackend =
+      new URLSearchParams(window.location.search).get("backend") || "webgpu";
+  </script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>⏱️ LocalAgent <span class="sub">complete-action benchmark</span></h1>
+      <p class="tagline">
+        Measures time to a complete, schema-valid action—not aggregate token throughput—on the
+        same local bundle as the <a href="index.html">interactive demo</a>. This page defaults to a
+        WebGPU-only session; use <a href="?backend=wasm">?backend=wasm</a> for the matched fallback.
+      </p>
+    </header>
+
+    <section id="status" class="status loading">
+      <span class="dot"></span>
+      <span id="status-text">Loading model…</span>
+      <span id="backend-badge" class="badge" hidden></span>
+    </section>
+
+    <section class="benchmark-panel">
+      <div class="benchmark-settings">
+        <label>
+          Action policy
+          <select id="benchmark-policy">
+            <option value="structured_one_forward">Structured one-forward</option>
+            <option value="raw_autoregressive_json">Raw autoregressive JSON</option>
+            <option value="grounded_candidate_trie_autoregressive">
+              Grounded candidate-trie autoregressive
+            </option>
+          </select>
+        </label>
+        <label>
+          AR max output tokens
+          <input id="benchmark-max-output-tokens" type="number" min="1" max="512" value="192" />
+        </label>
+        <label>
+          Target input tokens
+          <select id="benchmark-context-tokens">
+            <option value="">Natural prompt</option>
+            <option value="128">128</option>
+            <option value="512" selected>512</option>
+            <option value="1024">1,024</option>
+            <option value="1536">1,536</option>
+          </select>
+        </label>
+        <label>
+          Warm-up actions
+          <input id="benchmark-warmups" type="number" min="0" max="20" value="3" />
+        </label>
+        <label>
+          Repetitions per case
+          <input id="benchmark-repetitions" type="number" min="1" max="50" value="30" />
+        </label>
+        <label>
+          Case-order seed
+          <input id="benchmark-seed" type="text" value="slmw2026-v2-trailing" />
+        </label>
+      </div>
+      <div class="row">
+        <span id="benchmark-progress" class="timing">Waiting for the model bundle…</span>
+        <div class="button-row">
+          <button id="download-benchmark" class="secondary-button" disabled>Download JSON</button>
+          <button id="start-benchmark" class="primary-button" disabled>Run benchmark</button>
+        </div>
+      </div>
+      <div id="benchmark-output"></div>
+    </section>
+
+    <!-- app.js shares its production initialization path with this page. -->
+    <section class="io" hidden>
+      <textarea id="prompt"></textarea>
+      <input id="plan-mode" type="checkbox" />
+      <button id="run" disabled>Run</button>
+    </section>
+    <section id="result" hidden></section>
+
+    <footer>
+      <p>
+        Fixed held-out cases span computer use, code, web, app actions, and abstention. Results
+        include p50/p90/p95/p99 TTFA, exact-action accuracy, schema validity, and the fraction of
+        correct actions delivered before each deadline. Structured mode emits no tokens. Raw mode
+        selects from final-token logits until EOS or the token cap. Candidate-trie mode
+        masks each next-token choice against a trie of complete prompt-grounded schema-valid
+        actions; it is still iterative autoregressive decoding, not the structured head. Both AR
+        controls require the final lineage-bound cached bundle, run one prefill, then rebind present
+        tensors into one-token decode calls. Their JSON records report
+        <code>decode_cache: true</code> and identify logits as the decision source; exported
+        <code>next_token</code> is a compatibility argmax cross-check.
+        For the structured policy, fixed-compute controls append whitespace after the complete
+        natural prompt, run the full graph, and dispatch from the natural assistant-marker state;
+        this preserves the SFT feature contract while recording both natural and compute token
+        counts. Autoregressive controls retain the older pre-assistant whitespace stress condition
+        because generation consumes the final prefix state. The largest target is 1,536 so a
+        2,048-token model still has room for the declared autoregressive output cap.
+      </p>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.27.0/dist/ort.webgpu.min.js"></script>
+  <script src="tokenizer.js"></script>
+  <script src="app.js"></script>
+  <script src="benchmark.js"></script>
+</body>
+</html>

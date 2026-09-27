@@ -1,0 +1,59 @@
+# Parameter-matched all-attention exact-reward RL control for the 4K-capable 10.5M paper tier.
+stage: rl
+model_config: configs/model/webgpu-10m-attn-4k.yaml
+init_from: runs/sft-paper-tier-10m-attn/latest.pt
+data:
+  conversation_prompt_contract: openai_full_catalog_v1
+  strict_conversation_artifacts: true
+  conversations:
+    - path: data/synth/agent_sft_paper_train_v2.jsonl
+      artifact:
+        generator_config: configs/data/agent_synth_paper_train_v2.yaml
+        manifest: data/synth/agent_sft_paper_train_v2.jsonl.manifest.v1.json
+        expected_split: train
+        expected_rule_verified: true
+        environment_policy: forbid
+  eval_conversations:
+    - path: data/synth/agent_eval.jsonl
+      artifact:
+        generator_config: configs/data/agent_synth_eval.yaml
+        manifest: data/synth/agent_eval.jsonl.manifest.v1.json
+        expected_split: eval
+        expected_rule_verified: true
+        environment_policy: forbid
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-paper-16k.json
+evaluation:
+  max_conversations: 512
+  selection: greedy_uncovered_strata_then_semantic_sha256_fill_v1
+environment:
+  name: canonical_toolcalls
+  learned_judge: false
+rollout:
+  prompts_per_step: 8
+  group_size: 4
+  max_new_tokens: 256
+  temperature: 1.0
+  prompt_sampling:
+    mode: quota_stratified_no_replacement_v1
+policy:
+  clip_ratio: 0.2
+  kl_beta: 0.02
+  epochs_per_rollout: 2
+reward:
+  format_weight: 0.1
+  truncation_penalty: 0.05
+optim:
+  name: adamw
+  lr: 2.0e-5
+schedule:
+  warmup_steps: 1
+  total_steps: 48
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+log:
+  out_dir: runs/rl-paper-tier-10m-attn
+  ckpt_every: 4

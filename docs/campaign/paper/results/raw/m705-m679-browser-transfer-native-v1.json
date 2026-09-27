@@ -1,0 +1,258 @@
+{
+  "benchmark_id": "mcpmark",
+  "child": {
+    "bytes": 52207450,
+    "path": "/private/tmp/m704-m679-browser-child.pt",
+    "sha256": "20b8d17e0539a3683900a0f57a0857f397becaf191235f1835aaaa2fa415eee2"
+  },
+  "comparison": {
+    "held_out_sequence_accuracy_after": 0.0,
+    "held_out_token_accuracy_gain_pp": 20.723226703755216,
+    "native_behavior_changed": false,
+    "native_child_verifier_passes": 0,
+    "native_parent_verifier_passes": 0,
+    "text_gain_transferred_to_native_browser": false
+  },
+  "decision": {
+    "claim_boundary": "Browser-specific public trajectory SFT improves held-out text imitation and moves the shared body modestly, but the child remains at zero native Playwright verifier passes. No official MCPMark score, visual grounding, external account, or WebGPU publication claim is made.",
+    "promotion": "blocked_native_browser_verifier_zero",
+    "reuse_warm_backbone": true
+  },
+  "kind": "localagent_m705_m679_browser_transfer_native",
+  "native": {
+    "browser_tool_errors": 2,
+    "receipt": {
+      "bytes": 10713,
+      "path": "/private/tmp/m704-m679-browser-native.json",
+      "sha256": "5904450e92c7263f67fb4ad9c38b2ca58b3c692a82a7a0f73f54b88f9b52f6eb"
+    },
+    "results": [
+      {
+        "category": "eval_web",
+        "server_error": null,
+        "task": "playwright/standard/eval_web/cloudflare_turnstile_challenge",
+        "task_id": "cloudflare_turnstile_challenge",
+        "turns": [
+          {
+            "arguments_sha256": "afde76da137253c475583b8a2c6b87f7a88ddddec98dc3df7456efc2a0af5f38",
+            "output_sha256": "c8f88b853369b7cc0aecb5bc6299f9863cbfca4826599932112ed646dabcd435",
+            "result_is_error": false,
+            "result_preview": "[{'type': 'text', 'text': '### Ran Playwright code\\n```js\\nawait page.goto(\\'https://eval-web.mcpmark.ai/auth/turnstile\\');\\n```\\n### Page\\n- Page URL: https://eval-web.mcpmark.ai/auth/turnstile\\n- Page Title: MCPBench Test Environment\\n### Snapshot\\n```yaml\\n- generic [ref=e2]:\\n  - navigation [ref",
+            "result_sha256": "c36a1edd503f6286cc50796872e9e2597610ecbcc73ca02e55ee9c89d985fcdb",
+            "tool": "browser_navigate",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "output_sha256": "351ce2759b94df8fb2c8eb3192da84fa34e34a03d40e95c659bb97c468950659",
+            "result_is_error": false,
+            "result_preview": "[{'type': 'text', 'text': '### Page\\n- Page URL: https://eval-web.mcpmark.ai/auth/turnstile\\n- Page Title: MCPBench Test Environment\\n- Console: 1 errors, 0 warnings\\n### Snapshot\\n```yaml\\n- generic [ref=e2]:\\n  - navigation [ref=e3]:\\n    - generic [ref=e5]:\\n      - img [ref=e6]\\n      - heading ",
+            "result_sha256": "be4b0f954668a10480e9343de36aba31f15f56a985deca7537e6b77c5349b3e5",
+            "tool": "browser_snapshot",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": null,
+            "output_sha256": "9afaeb75c07dcc3a6f63bf46ac2f428dc23b90188d5d1ac15940b55916813e9a",
+            "tool": null,
+            "turn": 3
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "97642474e1f2e7c845673f13f28d8555fd912ce3753a9657b208ea9adcf5f910",
+        "verifier_stderr_tail": "## Requirements:\\n\\n1. Navigate to https://eval-web.mcpmark.ai/auth/turnstile\\n2. Fill in the authentication form with provided test credentials:\\n   - Username: \\\"testuser\\\"\\n   - Password: \\\"password123\\\"\\n3. Wait for the Cloudflare Turnstile challenge widget to load completely\\n4. Interact with the Turnstile challenge widget to complete the authentication (if needed)\\n5. Wait for successful challenge c...\n\n\u2717 Success message NOT found: 'Authentication successful! Security challenge verified.'\n",
+        "verifier_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stdout_tail": ""
+      },
+      {
+        "category": "eval_web",
+        "server_error": null,
+        "task": "playwright/standard/eval_web/extraction_table",
+        "task_id": "extraction_table",
+        "turns": [
+          {
+            "arguments_sha256": "b43b2f37070c2ce27132a59844bb100dd3e030c4136fad477c1adda180088927",
+            "output_sha256": "11a9a24f9b576fcb334ef83aa20ddd9e2daf65916962d8a76582e96a7177aa59",
+            "result_is_error": false,
+            "result_preview": "[{'type': 'text', 'text': '### Ran Playwright code\\n```js\\nawait page.goto(\\'https://eval-web.mcpmark.ai/extraction\\');\\n```\\n### Page\\n- Page URL: https://eval-web.mcpmark.ai/extraction\\n- Page Title: MCPBench Test Environment\\n### Snapshot\\n```yaml\\n- generic [ref=e2]:\\n  - navigation [ref=e3]:\\n ",
+            "result_sha256": "680ca90bd24af52ed54ede3e7c9aca53f497d86fb3e1a3ef400a1bf7d8688d13",
+            "tool": "browser_navigate",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "output_sha256": "351ce2759b94df8fb2c8eb3192da84fa34e34a03d40e95c659bb97c468950659",
+            "result_is_error": false,
+            "result_preview": "[{'type': 'text', 'text': '### Page\\n- Page URL: https://eval-web.mcpmark.ai/extraction\\n- Page Title: MCPBench Test Environment\\n### Snapshot\\n```yaml\\n- generic [ref=e2]:\\n  - navigation [ref=e3]:\\n    - generic [ref=e5]:\\n      - img [ref=e6]\\n      - heading \"MCPBench Test\" [level=1] [ref=e8]\\n ",
+            "result_sha256": "7f8dbd6c138cb292afece21b05ee03a9e29e2767449ab4d0f87a395eb5d78388",
+            "tool": "browser_snapshot",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": null,
+            "output_sha256": "1f4e76262fdbee5865e42636621f8c49d8bd4f6b3762f462f985931fa015faa5",
+            "tool": null,
+            "turn": 3
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "a256f9a3ad387edcdfcb0205e59dffec68b14fbdb1d09cd3281029acf791dcbe",
+        "verifier_stderr_tail": "complete CSV formatted data (no additional text or e...\n|\n| Found CSV data (first 300 characters):\n| <tool_call>{\"arguments\":{\"code\":\"extract all data from the specified website and present it in CSV format.\\n\\n## Requirements:\\n\\n1. Navigate to https://eval-web.mcpmark.ai/extraction\\n2. Wait for the page to fully load\\n3. Extract all data content from the page, including:\\n   - Title\\n   - Rating\\...\n|\n| \u2717 CSV validation failed: | CSV total row count mismatch, expected: 98 rows, actual: 1 rows\n",
+        "verifier_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stdout_tail": ""
+      },
+      {
+        "category": "web_search",
+        "server_error": null,
+        "task": "playwright/standard/web_search/birth_of_arvinxu",
+        "task_id": "birth_of_arvinxu",
+        "turns": [
+          {
+            "arguments_sha256": "e6e95312b6eb26ef1de16d5578ecbe189c893d3fe9a174641a99f1be7146dd98",
+            "output_sha256": "ad77b4561df7760d3fbd521d1aa72fd1032e75598b05170893ff40bc2757e407",
+            "result_is_error": true,
+            "result_preview": "[{'type': 'text', 'text': \"### Error\\nSyntaxError: Unexpected token 'for'\", 'annotations': None, 'meta': None}]",
+            "result_sha256": "95676f652b8707665e53db8f5106edd472024de7f7066702552e5fee7c984b4c",
+            "tool": "browser_run_code",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": null,
+            "output_sha256": "bc342de834418f53f5d8f716144350421125b65cf630c78a8ddfd78a85b99816",
+            "tool": null,
+            "turn": 2
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "78990b7aee029a902b9751ab45cef8811da6e76cc5b09bb1eecceb83a91b9bb2",
+        "verifier_stdout_tail": "| Working directory: <isolated-browser>"
+      },
+      {
+        "category": "web_search",
+        "server_error": null,
+        "task": "playwright/standard/web_search/r1_arxiv",
+        "task_id": "r1_arxiv",
+        "turns": [
+          {
+            "arguments_sha256": "8c55e11b98369fa08d7b40d84518e63a26744ed35b54d7075382920537ba4a1d",
+            "output_sha256": "40bb01afe417f02586bfc1c9893b045ea2cdf724b4baac847c8e89023bba7f3c",
+            "result_is_error": true,
+            "result_preview": "[{'type': 'text', 'text': \"### Error\\nSyntaxError: Unexpected token 'for'\", 'annotations': None, 'meta': None}]",
+            "result_sha256": "95676f652b8707665e53db8f5106edd472024de7f7066702552e5fee7c984b4c",
+            "tool": "browser_run_code",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": null,
+            "output_sha256": "2dd97044f7fbb85a4111b960b79abd862e6fd57589c2f25e70a9ef609d3f711d",
+            "tool": null,
+            "turn": 2
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "48afe5888e89c43dea76772238280aee0cac19a505b017b4fd71dfb2c17ef80a",
+        "verifier_stdout_tail": "acted content with expected content...\n| Content comparison results:\n|   - Extracted length: 2675 characters\n|   - Expected length: 2436 characters\n|   - Similarity: 0.0102 (threshold: 0.9)\n|   - Extracted preview: <tool_call>{\"arguments\":{\"code\":\"search for the v1 (initial) version of the deepseek r1 research pap...\n|   - Expected preview: in this work, we share our journey in enhancing model reasoning abilities through reinforcement lear...\n| Task verification failed. Similarity 0.0102 < 0.9.\n"
+      }
+    ],
+    "runtime_errors": 0,
+    "suite": "playwright/standard",
+    "task_count": 4,
+    "verifier_failures": 4,
+    "verifier_passes": 0
+  },
+  "parent": {
+    "bytes": 52206773,
+    "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "receipt_self_sha256": "ccd5029f1538d7bdb421334fd67d763d668c55cd3ac15bc47e82df383292e73c",
+  "schema_version": 1,
+  "training": {
+    "after_eval": {
+      "assistant_loss_tokens": 719,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.7315716272600834,
+      "mean_loss": 2.4420147340055633,
+      "rows": 1
+    },
+    "batch_size": 2,
+    "before_eval": {
+      "assistant_loss_tokens": 719,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.5243393602225312,
+      "mean_loss": 3.716982272470445,
+      "rows": 1
+    },
+    "dataset": "Jakumetsu/mcpmark-trajectory-log",
+    "eval_rows": 1,
+    "learning_rate": 1e-05,
+    "max_seq_len": 1024,
+    "original_benchmark": "https://github.com/eval-sys/mcpmark",
+    "report": {
+      "bytes": 33808,
+      "path": "/private/tmp/m704-m679-browser-report.json",
+      "sha256": "239232725cbf922ce544d9a628a65f5a148f01189acf207d5d5d7969541dd03f"
+    },
+    "revision": "e50578f0ab904d8e6a7c576c387c1e76ae482c89",
+    "steps": 256,
+    "train_rows": 2,
+    "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log",
+    "weight_transfer": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 91.77234792175153,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.77234792175153
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.70583183858278,
+          "delta_l2": 1.103561341423142,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.021343072960672626,
+          "target_l2": 51.747075656476774
+        },
+        "embedding": {
+          "base_l2": 78.5827108674603,
+          "delta_l2": 3.1565557600335947,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.04016857811583423,
+          "target_l2": 79.35932818698073
+        },
+        "ffn": {
+          "base_l2": 50.615098537061556,
+          "delta_l2": 1.2858149315325433,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.025403782047189728,
+          "target_l2": 50.63758334546869
+        },
+        "normalization": {
+          "base_l2": 21.464259287065175,
+          "delta_l2": 0.027715762606973882,
+          "parameters": 384,
+          "relative_delta_l2": 0.0012912517611859077,
+          "target_l2": 21.491839038149244
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    }
+  }
+}

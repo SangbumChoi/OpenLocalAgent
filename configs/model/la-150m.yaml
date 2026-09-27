@@ -1,0 +1,33 @@
+# The active-compute control for la-300m-moe.
+#
+# The sparse arm has two controls, because "matched" means two different things and they answer
+# two different questions:
+#
+#   la-150m       149,294,784 total/active   matched to the MoE's ACTIVE count (-0.07%)
+#                 asks: does the MoE's extra stored capacity earn anything, at equal compute?
+#   la-300m       298,535,808 total/active   matched to the MoE's TOTAL count (+0.06%)
+#                 asks: at equal stored parameters, does routing beat spending them densely?
+#
+# docs/SPARSE_EXPERTS_REAL_DATA.md established the matched-active convention for this repository
+# (webgpu-44m-moe against webgpu-17m-dense-moe-control), so that is the primary control and this
+# config exists to keep the new arm comparable with that prior work. Running only the total-matched
+# control would have quietly changed the question.
+name: la-150m
+vocab_size: 16384
+d_model: 704
+n_layers: 24
+n_loops: 1
+n_heads: 11
+n_kv_heads: 1
+ffn_hidden: 1920
+max_seq_len: 4096
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types:
+  [conv, conv, attn, conv, conv, attn, conv, conv, attn, conv, conv, attn,
+   conv, conv, attn, conv, conv, attn, conv, conv, attn, conv, conv, attn]
+param_budget: 350000000

@@ -1,0 +1,43 @@
+# Teacher-forced retention sweep for every immutable mixed-replay pilot archive.
+#
+# This is intentionally strict: a format-recovery candidate is not eligible for greedy action
+# evaluation unless it preserves the exact held-out token/sequence accuracies and changes mean
+# loss by no more than a small numerical tolerance. The sweep independently reconstructs the
+# verified train/eval overlap audit and re-hashes every checkpoint before and after evaluation.
+kind: localagent_sft_checkpoint_sweep_config
+schema_version: 2
+training_config: configs/train/sft-paper-tier-1m-mixed-replay-pilot.yaml
+expected_parent_checkpoint_sha256: 1913123ea0982f675f0add7c5b23154faf6adda99424a0a2009130104c32021f
+
+checkpoints:
+  paths:
+    - runs/sft-paper-tier-1m-mixed-replay-pilot/latest.step-00000032.pt
+    - runs/sft-paper-tier-1m-mixed-replay-pilot/latest.step-00000064.pt
+    - runs/sft-paper-tier-1m-mixed-replay-pilot/latest.step-00000096.pt
+    - runs/sft-paper-tier-1m-mixed-replay-pilot/latest.step-00000128.pt
+    - runs/sft-paper-tier-1m-mixed-replay-pilot/latest.step-00000160.pt
+    - runs/sft-paper-tier-1m-mixed-replay-pilot/latest.step-00000192.pt
+    - runs/sft-paper-tier-1m-mixed-replay-pilot/latest.step-00000224.pt
+    - runs/sft-paper-tier-1m-mixed-replay-pilot/latest.step-00000256.pt
+
+expected_eval:
+  conversations: 512
+  assistant_decisions: 820
+  assistant_loss_tokens: 18460
+
+expected_baseline:
+  metrics:
+    rows: 820
+    assistant_loss_tokens: 18460
+    mean_loss: 2.637802802651055
+    assistant_token_accuracy: 0.6330444203683641
+    assistant_sequence_accuracy: 0.0
+  absolute_tolerances:
+    mean_loss: 1.0e-6
+    assistant_token_accuracy: 0.0
+    assistant_sequence_accuracy: 0.0
+
+thresholds:
+  max_mean_loss_increase: 1.0e-4
+  max_assistant_token_accuracy_drop: 0.0
+  max_assistant_sequence_accuracy_drop: 0.0

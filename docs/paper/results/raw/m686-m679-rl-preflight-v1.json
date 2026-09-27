@@ -1,0 +1,48 @@
+{
+  "claim_boundary": "Current-checkpoint one-update RL preflight on an in-memory deterministic email/Notion/browser simulator. It proves the RL runner performed nonzero-LR updates and lineage binding; it is not native browser/mobile/MCP execution, a public benchmark score, or evidence of external side effects.",
+  "current_checkpoint": {
+    "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "kind": "localagent_one_update_training_preflight",
+  "measurement": {
+    "peak_mps_driver_allocated_bytes": 458752,
+    "peak_process_rss_bytes": 1077264384,
+    "wall_seconds": 38.39289095799904
+  },
+  "metrics": {
+    "lineage": {
+      "config_sha256": "4d8188e1e86cc4dcaedc34d922216ddaf02cca7e5eedd6571e2c9279493b5168",
+      "data_sha256": "661421949fdb32f1aff853b5f318615e12af195aa5cfba0d7afe6ca8b10cef0d",
+      "model_config_sha256": "893fdd2f896c6c246ceed64031b9fbd4b5b770ce2fb72cd3de5fc02703161393",
+      "parent_checkpoint_sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533",
+      "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+    },
+    "policy_transition": {
+      "actual_learning_rates": [0.0, 2e-05],
+      "at_least_one_policy_tensor_changed": true,
+      "changed_model_parameter_count": 40,
+      "nonzero_learning_rate_executed": true
+    },
+    "rl_accounting": {
+      "attempted_rollout_steps": 2,
+      "attempted_rollouts": 32,
+      "generated_tokens": 1226,
+      "informative_groups": 5,
+      "realized_optimizer_updates": 2,
+      "reward_unique_values": 3,
+      "truncated_rollouts": 5,
+      "zero_signal_steps": 0
+    }
+  },
+  "receipt_self_sha256": "387def60e74f5bdec4397d28d002353abbacfb6101c3a22dea85643efa9bbfb1",
+  "schema_version": 1,
+  "source": {
+    "external_accounts_used": false,
+    "native_runtime_executed": false,
+    "public_benchmark_text_used": false,
+    "script": "scripts/run_stateful_productivity_rl_preflight.py",
+    "source_kind": "local_deterministic_state_machine"
+  },
+  "status": "passed"
+}

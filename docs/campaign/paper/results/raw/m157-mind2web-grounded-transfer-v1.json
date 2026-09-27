@@ -1,0 +1,187 @@
+{
+  "claim_boundary": "Public Mind2Web train-split DOM-enriched continuation on a task- and typed-slot-disjoint in-source holdout. This is pointer-span/action replay evidence only: it is not the official Mind2Web test score, BrowserGym/WebArena success, screenshot-grounded native control, real browser account, email, Notion, MCP, or external side effect.",
+  "comparison": {
+    "random_exact_span": 0.0,
+    "warm_exact_span": 0.23809523809523808,
+    "warm_minus_random_exact_span": 0.23809523809523808
+  },
+  "compatibility_policy": "The two additional pointer-argument rows are an intentional BROWSER_PTR_ARGS vocabulary expansion; tokenizer/config compatibility is required, while the ptr_head.arg_emb shape difference is expected and is not treated as a backbone mismatch.",
+  "dataset": "osunlp/Mind2Web",
+  "decision": "diagnostic_only",
+  "inputs": {
+    "eval": {
+      "bytes": 81803,
+      "path": "/private/tmp/mind2web-grounded-offset8-eval-disjoint.jsonl",
+      "sha256": "46305cb512f7368ed31817c79b798f5469e8658db12aed5d6880ea81b4e6fcbe"
+    },
+    "train": {
+      "bytes": 282261,
+      "path": "/private/tmp/mind2web-grounded-offset8-train-disjoint.jsonl",
+      "sha256": "78f7e647c3728106901c51ecc772c834467ef6a019c1c083af6849700b361621"
+    }
+  },
+  "kind": "localagent_grounded_mind2web_transfer_receipt",
+  "license": "CC-BY-4.0",
+  "manifest": {
+    "bytes": 756,
+    "path": "/private/tmp/mind2web-offset8-valid.yaml",
+    "sha256": "8b53f76b06f4e8d0f95f5b6aaa8deed199f3bb54910b5513c56267aa0f9d47c4"
+  },
+  "receipt_self_sha256": "f14c777df2f27c264193a599fb64b35d2d3b5e7e6236c5adf1ffe4de812a0b23",
+  "schema_version": 1,
+  "source": {
+    "bytes": 100222027,
+    "path": "/private/tmp/mind2web-offset8-16-source.json",
+    "sha256": "649c96a9eff16c0f120605b6ef61cc8a1bf13b772bcaedcdf5041df3e34c6e96"
+  },
+  "source_revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+  "source_url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+  "split_audit": {
+    "eval_conversations": 12,
+    "eval_decisions": 63,
+    "eval_parent_record_ids_sha256": "d57d59464a2cb7b93b3e41a74568c59d055d3493829eeeb031ea9998a47b4438",
+    "eval_parent_records": 3,
+    "task_id_disjoint": true,
+    "train_conversations": 36,
+    "train_decisions": 219,
+    "train_parent_record_ids_sha256": "85d4facd2095119d733e6b0799e3f0059dfc75ea083fbb56071891ccdbe1919c",
+    "train_parent_records": 9,
+    "typed_slot_disjoint": true
+  },
+  "training": {
+    "random": {
+      "after": {
+        "exact_span": 0.0,
+        "span_rows": 63
+      },
+      "before": {
+        "exact_span": 0.0,
+        "span_rows": 63
+      },
+      "child": {
+        "bytes": 52236379,
+        "path": "/private/tmp/m157-mind2web-grounded-random-v3.pt",
+        "sha256": "74e1d0c8d785fcd011e87f8b183b93da4c7c10a25f225619123c2b14f231d0e4"
+      },
+      "hyperparameters": {
+        "batch_size": 1,
+        "device": "cpu",
+        "learning_rate": 2e-05,
+        "steps": 64
+      },
+      "parent": {
+        "bytes": 52240681,
+        "path": "/private/tmp/m142-five-surface-random-child.pt",
+        "sha256": "95ea7ead7967a881a7db7100ad037ccd1ae23777f5a436498daa8f917bb7c059"
+      },
+      "report": {
+        "bytes": 1727,
+        "path": "/private/tmp/m157-mind2web-grounded-random-v3.json",
+        "sha256": "5b972ae49d62c31bb44235e4fe0b5036b9b017b813ec03294b1896ef2e368abe"
+      },
+      "rows": {
+        "eval_conversations": 12,
+        "eval_decisions": 63,
+        "train_conversations": 36,
+        "train_decisions": 219
+      },
+      "weight_transfer": {
+        "compatibility": {
+          "added_tensors": [],
+          "config_mismatches": {},
+          "removed_tensors": [],
+          "shape_mismatches": {
+            "ptr_head.arg_emb.weight": {
+              "base": [
+                17,
+                384
+              ],
+              "target": [
+                19,
+                384
+              ]
+            }
+          },
+          "shared_tensor_count": 50,
+          "tokenizer_sha256_equal": true
+        },
+        "path": "/private/tmp/m157-mind2web-grounded-random-v3-weight.json",
+        "relative_delta_l2": {
+          "action_heads": 0.4649259097869458,
+          "attention_or_mixer": 0.004905755185213574,
+          "embedding": 0.021037640010120092,
+          "ffn": 0.0049259444470633245,
+          "normalization": 0.00020604498023499802
+        },
+        "sha256": "12694ab384844f94d8dd4238c905116c6545cad5f2ef2c4195bb9c461e63929a"
+      }
+    },
+    "warm": {
+      "after": {
+        "exact_span": 0.23809523809523808,
+        "span_rows": 63
+      },
+      "before": {
+        "exact_span": 0.0,
+        "span_rows": 63
+      },
+      "child": {
+        "bytes": 52236265,
+        "path": "/private/tmp/m157-mind2web-grounded-warm-v3.pt",
+        "sha256": "f3ac3318dbc7f2719ee20db2fd83e7f14d923c9a64d84857f86475273c62c223"
+      },
+      "hyperparameters": {
+        "batch_size": 1,
+        "device": "cpu",
+        "learning_rate": 2e-05,
+        "steps": 64
+      },
+      "parent": {
+        "bytes": 52240681,
+        "path": "/private/tmp/m142-five-surface-public-child.pt",
+        "sha256": "8cc3ee42ed38b830b9b04935e156f80d166abeece2dd0c37184ee4d692de7eb1"
+      },
+      "report": {
+        "bytes": 1741,
+        "path": "/private/tmp/m157-mind2web-grounded-warm-v3.json",
+        "sha256": "740234576e8a17e0b9e7a15912663228ca8c401911b73b05c9224fea91fc3714"
+      },
+      "rows": {
+        "eval_conversations": 12,
+        "eval_decisions": 63,
+        "train_conversations": 36,
+        "train_decisions": 219
+      },
+      "weight_transfer": {
+        "compatibility": {
+          "added_tensors": [],
+          "config_mismatches": {},
+          "removed_tensors": [],
+          "shape_mismatches": {
+            "ptr_head.arg_emb.weight": {
+              "base": [
+                17,
+                384
+              ],
+              "target": [
+                19,
+                384
+              ]
+            }
+          },
+          "shared_tensor_count": 50,
+          "tokenizer_sha256_equal": true
+        },
+        "path": "/private/tmp/m157-mind2web-grounded-warm-v3-weight.json",
+        "relative_delta_l2": {
+          "action_heads": 0.4640141531713792,
+          "attention_or_mixer": 0.005019469649710073,
+          "embedding": 0.008974196838550408,
+          "ffn": 0.005499254345014657,
+          "normalization": 0.0001910775971376903
+        },
+        "sha256": "1b3787aff86af6f92abf6f26b247ebd5464bf6cc561da7880721174649e34afa"
+      }
+    }
+  }
+}

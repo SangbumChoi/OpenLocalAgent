@@ -1,0 +1,68 @@
+{
+  "kind": "localagent_toolsandbox_text_projection_eval",
+  "schema_version": 1,
+  "measurement": "m272_toolsandbox_current_checkpoint_text_projection",
+  "generated_at": "2026-08-04",
+  "checkpoint": {
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "bytes": 52242001,
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "parameters": 10524544,
+    "stage": "sft",
+    "tokenizer": "checkpoint-recorded BPE tokenizer"
+  },
+  "dataset": {
+    "name": "apple/ToolSandbox",
+    "source_url": "https://github.com/apple/ToolSandbox",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "projection_path": "/private/tmp/toolsandbox-probe-new/toolsandbox-eval.jsonl",
+    "projection_bytes": 45613,
+    "projection_sha256": "925ce977082ffb980e46bce5b25ea81fdd335d25e5996feefd503015ba3ff46",
+    "rows": 20,
+    "candidate_tools": 25,
+    "official_split_verified": false,
+    "simulator_executed": false,
+    "verifiers_executed": false,
+    "external_api_called": false
+  },
+  "evaluator": {
+    "script": "scripts/evaluate_toolsandbox_text.py",
+    "script_sha256": "862327b2d654b0e799b80f956023a189b967fe1561c214660a9bf96ae0518487",
+    "decoder": "localagent.agent.constrained.hybrid_decode",
+    "candidate_mode": "row_retriever",
+    "schema_checker": "localagent.data.prompt_contract.schema_matches",
+    "device": "cpu"
+  },
+  "metrics": {
+    "rows": 20,
+    "route_rate": 0.95,
+    "tool_exact_rate": 0.55,
+    "arguments_exact_rate": 0.30,
+    "schema_valid_rate": 0.95,
+    "by_category": {
+      "CANONICALIZATION": {
+        "rows": 14,
+        "route_rate": 1.0,
+        "tool_exact_rate": 0.6428571428571429,
+        "arguments_exact_rate": 0.35714285714285715,
+        "schema_valid_rate": 1.0
+      },
+      "STATE_DEPENDENCY": {
+        "rows": 4,
+        "route_rate": 1.0,
+        "tool_exact_rate": 0.25,
+        "arguments_exact_rate": 0.25,
+        "schema_valid_rate": 1.0
+      },
+      "UNCATEGORIZED": {
+        "rows": 4,
+        "route_rate": 0.75,
+        "tool_exact_rate": 0.5,
+        "arguments_exact_rate": 0.25,
+        "schema_valid_rate": 0.75
+      }
+    }
+  },
+  "claim_boundary": "Offline ToolSandbox text-observation/action projection only. The checkpoint-backed decoder was run against each retained candidate list and schema, but the upstream ToolSandbox simulator, user simulator, milestone verifiers, external services, and official benchmark split were not executed. This is not an official ToolSandbox score, MCPMark score, or native WebGPU capability result.",
+  "receipt_self_sha256": "d026cffc11a9443c82a32eeee62192faa2415226f43980791f9cbe9882e5fe4b"
+}

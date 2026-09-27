@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenLocalAgent Workbench</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="workbench.css?v=9" />
+</head>
+<body>
+  <!-- ───────────── top bar ───────────── -->
+  <header class="bar">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span class="brand-name">OpenLocalAgent</span>
+      <span class="brand-sub">workbench</span>
+    </div>
+    <div id="status" class="status loading"><span class="dot"></span><span id="status-text">Loading model…</span><span id="backend-badge" class="badge" hidden></span></div>
+    <div class="bar-right">
+      <span id="policy-badge" class="mono muted">policy –</span>
+      <button id="toggle-registry" class="btn ghost" title="show / hide the tool registry">Registry</button>
+      <button id="fit-view" class="btn ghost" title="fit the canvas to the graph">Fit</button>
+    </div>
+  </header>
+
+  <!-- app.js compatibility: its own UI wiring is skipped, but it may read these ids -->
+  <div hidden><textarea id="prompt"></textarea><input type="checkbox" id="plan-mode" /><button id="run"></button><div id="result"></div></div>
+
+  <div class="stage">
+    <!-- ───────────── registry drawer ───────────── -->
+    <aside id="registry" class="drawer">
+      <div class="drawer-head">
+        <h2>Tool registry</h2>
+        <span id="registry-count" class="mono muted"></span>
+      </div>
+      <p class="help">The enabled tools <em>are</em> the catalog the model reads. Register one and it is selectable on the next run; disable one and it leaves the model's world.</p>
+      <div class="drawer-actions">
+        <button id="add-tool" class="btn accent">+ Register tool</button>
+        <button id="import-tools" class="btn ghost">Import</button>
+        <button id="export-tools" class="btn ghost">Export</button>
+        <button id="enable-none" class="btn ghost">None</button>
+        <button id="reset-tools" class="btn ghost">Defaults</button>
+        <input id="import-file" type="file" accept="application/json" hidden />
+      </div>
+      <div class="drawer-filter">
+        <input id="registry-search" type="search" placeholder="filter…" />
+        <label class="check"><input type="checkbox" id="only-external" /> external only</label>
+      </div>
+      <ul id="tool-list" class="tool-list"></ul>
+    </aside>
+
+    <!-- ───────────── canvas ───────────── -->
+    <section class="canvas-wrap">
+      <div class="composer">
+        <textarea id="wb-prompt" rows="1" placeholder="Ask for something a tool can do…"></textarea>
+        <div class="composer-row">
+          <label class="check"><input type="checkbox" id="wb-multistep" /> multi-step</label>
+          <label class="field">steps <input id="wb-max-steps" type="number" min="1" max="8" value="4" /></label>
+          <label class="field">temp <input id="wb-temp" type="number" min="0" max="1.5" step="0.1" value="0" /></label>
+          <button id="wb-run" class="btn accent" disabled>Run ↵</button>
+        </div>
+        <div class="examples">
+          <div class="example-group"><span class="eyebrow">bundle</span>
+            <button class="chip" data-plan="0" data-tools="get_weather,calculator,define,set_timer" title="enables: get_weather, calculator, define, set_timer">What's the weather in Tokyo?</button>
+            <button class="chip" data-plan="0" data-tools="list_dir,read_file,find_files,grep_search" title="enables: list_dir, read_file, find_files, grep_search">List the files in the src directory</button>
+            <button class="chip" data-plan="0" data-tools="define,web_search,get_news" title="enables: define, web_search, get_news">What does ephemeral mean?</button>
+            <button class="chip" data-plan="0" data-tools="set_timer,set_reminder,calendar_event" title="enables: set_timer, set_reminder, calendar_event">Set a timer for 10 minutes</button>
+          </div>
+          <div class="example-group"><span class="eyebrow">external</span>
+            <button class="chip" data-plan="0" data-tools="stock_price,web_search,get_news" title="enables: stock_price, web_search, get_news">What is the NVDA stock price right now?</button>
+            <button class="chip" data-plan="0" data-tools="translate_text,define,web_search" title="enables: translate_text, define, web_search">Translate "good morning" into Korean</button>
+            <button class="chip" data-plan="0" data-tools="book_table,calendar_event,send_email" title="enables: book_table, calendar_event, send_email">Book a table for 4 at Osteria Mozza tonight at 7pm</button>
+            <button class="chip" data-plan="0" data-tools="ip_lookup,http_request,get_weather" title="enables: ip_lookup, http_request, get_weather">What is my public IP address?</button>
+          </div>
+          <div class="example-group"><span class="eyebrow">multi-step</span>
+            <button class="chip" data-plan="1" data-tools="web_search,notion_write,get_news" title="enables: web_search, notion_write, get_news">Search the web for AI news, then save it to Notion.</button>
+            <button class="chip" data-plan="1" data-tools="stock_price,write_file,read_file" title="enables: stock_price, write_file, read_file">Get the NVDA price and write it to a file called nvda.txt</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="canvas" class="canvas">
+        <svg id="edges" class="edges"></svg>
+        <div id="nodes" class="nodes"></div>
+      </div>
+      <div class="canvas-hint mono muted">drag to pan · wheel to zoom · click a node for its full output</div>
+      <div id="wb-metrics" class="metrics"></div>
+    </section>
+
+    <!-- ───────────── detail sheet ───────────── -->
+    <aside id="sheet" class="sheet" hidden>
+      <div class="sheet-head">
+        <div><span id="sheet-kicker" class="eyebrow"></span><h3 id="sheet-title"></h3></div>
+        <button id="sheet-close" class="btn ghost">✕</button>
+      </div>
+      <div id="sheet-body" class="sheet-body"></div>
+    </aside>
+  </div>
+
+  <!-- ───────────── tool editor ───────────── -->
+  <dialog id="tool-dialog" class="dialog">
+    <form method="dialog" id="tool-form">
+      <span class="eyebrow">registry</span>
+      <h2 id="tool-dialog-title">Register a tool</h2>
+      <p class="help">Name and description are what the model reads. Parameters are a JSON schema (<code>type: object</code>). The executor decides what happens when the model calls it.</p>
+      <div class="form-grid">
+        <label>name <input name="name" required pattern="[a-z][a-z0-9_]*" placeholder="stock_price" /></label>
+        <label>description <input name="description" required placeholder="Get the latest price of a stock ticker." /></label>
+        <label class="wide">parameters (JSON schema)
+          <textarea name="schema" rows="6" spellcheck="false">{"type":"object","properties":{"ticker":{"type":"string"}},"required":["ticker"]}</textarea>
+        </label>
+        <label>executor
+          <select name="executor">
+            <option value="mock">mock — return a template</option>
+            <option value="js">javascript — run a function here</option>
+            <option value="http">http — call a URL</option>
+          </select>
+        </label>
+        <label>side effect
+          <select name="side_effect">
+            <option value="read">read-only (runs immediately)</option>
+            <option value="write">state-changing (asks before dispatch)</option>
+          </select>
+        </label>
+        <label class="wide" data-executor="mock">mock response (<code>{arg}</code> placeholders)
+          <textarea name="mock" rows="2" spellcheck="false">{"ticker":"{ticker}","price":123.45,"currency":"USD"}</textarea>
+        </label>
+        <label class="wide" data-executor="js" hidden>function body — receives <code>args</code>, may be async, returns the observation
+          <textarea name="js" rows="4" spellcheck="false">return { ticker: args.ticker, price: (100 + Math.random() * 50).toFixed(2) };</textarea>
+        </label>
+        <label class="wide" data-executor="http" hidden>request — method and URL template (<code>{arg}</code> placeholders); POST sends the arguments as JSON
+          <div class="http"><select name="method"><option>GET</option><option>POST</option></select>
+          <input name="url" placeholder="https://api.example.com/price?ticker={ticker}" /></div>
+        </label>
+      </div>
+      <div class="dialog-actions">
+        <button value="cancel" class="btn ghost" formnovalidate>Cancel</button>
+        <button value="save" class="btn accent" id="tool-save">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+    <script>
+    // Served from anywhere but a local dev server, the bundle comes from the Hub; ?bundle= overrides.
+    if (!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) window.__localAgentBundleBase = "https://huggingface.co/danelcsb/openlocalagent-10m-matrix-webgpu/resolve/main/";
+  </script>
+<script>window.__localAgentSkipInit = true;</script>
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.27.0/dist/ort.webgpu.min.js"></script>
+  <script src="tokenizer.js"></script>
+  <script src="app.js?v=m621"></script>
+  <script src="workbench.js?v=11"></script>
+</body>
+</html>

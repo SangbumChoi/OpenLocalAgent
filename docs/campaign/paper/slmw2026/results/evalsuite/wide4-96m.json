@@ -1,0 +1,83 @@
+{
+  "model": "sft-wide4-96m",
+  "kind": "catalog",
+  "location": "runs/sft-wide4-96m/latest.pt",
+  "parameters": 95320448,
+  "rows_per_suite": 200,
+  "max_new_tokens": 64,
+  "suites": {
+    "androidcontrol": {
+      "rows": 200,
+      "parse_rate": 1.0,
+      "type_match": 0.53,
+      "step_success_rate": 0.285,
+      "seconds_per_row": 0.1304197645187378,
+      "grounding_accuracy": 0.11864406779661017
+    },
+    "mind2web": {
+      "rows": 200,
+      "parse_rate": 1.0,
+      "type_match": 0.79,
+      "step_success_rate": 0.005,
+      "seconds_per_row": 0.11304200172424317
+    },
+    "toolace": {
+      "rows": 200,
+      "parse_rate": 0.85,
+      "type_match": 0.615,
+      "step_success_rate": 0.255,
+      "seconds_per_row": 0.18526193499565125
+    },
+    "xlam": {
+      "rows": 200,
+      "parse_rate": 0.97,
+      "type_match": 0.91,
+      "step_success_rate": 0.525,
+      "seconds_per_row": 0.15309351444244385
+    },
+    "bfcl": {
+      "rows": 200,
+      "parse_rate": 0.94,
+      "type_match": 0.675,
+      "step_success_rate": 0.16,
+      "seconds_per_row": 0.1837277102470398,
+      "grounding_accuracy": 1.0
+    },
+    "agentnet": {
+      "rows": 200,
+      "parse_rate": 0.785,
+      "type_match": 0.46,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.1839062750339508,
+      "grounding_accuracy": 0.0
+    },
+    "toolbench": {
+      "rows": 200,
+      "parse_rate": 0.935,
+      "type_match": 0.355,
+      "step_success_rate": 0.185,
+      "seconds_per_row": 0.16626089572906494
+    },
+    "toolsandbox": {
+      "rows": 17,
+      "parse_rate": 0.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.004393858068129595
+    },
+    "mcpatlas": {
+      "rows": 200,
+      "parse_rate": 0.96,
+      "type_match": 0.035,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.13442001819610597
+    },
+    "mobileactions": {
+      "rows": 200,
+      "parse_rate": 0.83,
+      "type_match": 0.825,
+      "step_success_rate": 0.665,
+      "seconds_per_row": 0.1977872908115387
+    }
+  }
+}

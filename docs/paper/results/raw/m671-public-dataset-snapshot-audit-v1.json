@@ -1,0 +1,415 @@
+{
+  "audit_sha256": "9330d0b64ded30adb23202391423abbcacba4ffc30d1cda5d9a2fc234c056a67",
+  "datasets": [
+    {
+      "created_at": "2025-10-12T07:09:27+00:00",
+      "dataset": "OfficerChul/Android-Control-84k",
+      "file_count": 6,
+      "file_sample": [
+        {
+          "rfilename": ".gitattributes",
+          "size": null
+        },
+        {
+          "rfilename": "README.md",
+          "size": null
+        },
+        {
+          "rfilename": "and_ctrl_test.json",
+          "size": null
+        },
+        {
+          "rfilename": "and_ctrl_train.json",
+          "size": null
+        },
+        {
+          "rfilename": "download_android_control.ipynb",
+          "size": null
+        },
+        {
+          "rfilename": "episode_goals.jsonl",
+          "size": null
+        }
+      ],
+      "hub_url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k",
+      "id": "androidcontrol_mirror",
+      "last_modified": "2025-10-12T07:51:27+00:00",
+      "license": "apache-2.0",
+      "original_url": "https://github.com/google-research/google-research/tree/master/android_control",
+      "policy": "train_only_official_train_projection",
+      "private": false,
+      "revision": "0248027f747c9d57bd09c14e8f044f9a8103dddd"
+    },
+    {
+      "created_at": "2025-07-14T07:32:24+00:00",
+      "dataset": "xlangai/AgentNet",
+      "file_count": 44,
+      "file_sample": [
+        {
+          "rfilename": ".gitattributes",
+          "size": null
+        },
+        {
+          "rfilename": "LICENSE.txt",
+          "size": null
+        },
+        {
+          "rfilename": "README.md",
+          "size": null
+        },
+        {
+          "rfilename": "agentnet_ubuntu_5k.jsonl",
+          "size": null
+        },
+        {
+          "rfilename": "win_mac_images/images.z21",
+          "size": null
+        },
+        {
+          "rfilename": "win_mac_images/images.z22",
+          "size": null
+        },
+        {
+          "rfilename": "win_mac_images/images.z23",
+          "size": null
+        },
+        {
+          "rfilename": "win_mac_images/images.zip",
+          "size": null
+        }
+      ],
+      "hub_url": "https://huggingface.co/datasets/xlangai/AgentNet",
+      "id": "agentnet",
+      "last_modified": "2026-01-09T03:23:13+00:00",
+      "license": "mit",
+      "original_url": "https://github.com/xlang-ai/OpenCUA",
+      "policy": "train_only_official_train_projection;images_dropped_for_text_first_model",
+      "private": false,
+      "revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+    },
+    {
+      "created_at": "2023-06-10T02:38:11+00:00",
+      "dataset": "osunlp/Mind2Web",
+      "file_count": 15,
+      "file_sample": [
+        {
+          "rfilename": ".gitattributes",
+          "size": null
+        },
+        {
+          "rfilename": "README.md",
+          "size": null
+        },
+        {
+          "rfilename": "data/train/train_0.json",
+          "size": null
+        },
+        {
+          "rfilename": "data/train/train_1.json",
+          "size": null
+        },
+        {
+          "rfilename": "data/train/train_8.json",
+          "size": null
+        },
+        {
+          "rfilename": "data/train/train_9.json",
+          "size": null
+        },
+        {
+          "rfilename": "scores_all_data.pkl",
+          "size": null
+        },
+        {
+          "rfilename": "test.zip",
+          "size": null
+        }
+      ],
+      "hub_url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+      "id": "mind2web",
+      "last_modified": "2025-10-19T19:15:03+00:00",
+      "license": "cc-by-4.0",
+      "original_url": "https://github.com/OSU-NLP-Group/Mind2Web",
+      "policy": "train_only_train_split;test_archives_never_training_inputs",
+      "private": false,
+      "revision": "17ece8eb89862368edc0cc806acee6fca5163474"
+    },
+    {
+      "created_at": "2024-06-13T02:27:32+00:00",
+      "dataset": "Salesforce/xlam-function-calling-60k",
+      "file_count": 6,
+      "file_sample": [
+        {
+          "rfilename": ".gitattributes",
+          "size": null
+        },
+        {
+          "rfilename": "README.md",
+          "size": null
+        },
+        {
+          "rfilename": "figures/dataset_pie_chart.png",
+          "size": null
+        },
+        {
+          "rfilename": "figures/function-call-overview.png",
+          "size": null
+        },
+        {
+          "rfilename": "figures/overview.jpg",
+          "size": null
+        },
+        {
+          "rfilename": "xlam_function_calling_60k.json",
+          "size": null
+        }
+      ],
+      "hub_url": "https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k",
+      "id": "xlam_function_calling",
+      "last_modified": "2025-01-24T19:25:58+00:00",
+      "license": "cc-by-4.0",
+      "original_url": "https://github.com/SalesforceAIResearch/xlam",
+      "policy": "train_only_official_train_projection;denylist_eval_prompts",
+      "private": false,
+      "revision": "26d14ebfe18b1f7b524bd39b404b50af5dc97866"
+    },
+    {
+      "created_at": "2025-07-22T07:59:19+00:00",
+      "dataset": "xlangai/computer-agent-arena",
+      "file_count": 15,
+      "file_sample": [
+        {
+          "rfilename": ".gitattributes",
+          "size": null
+        },
+        {
+          "rfilename": "README.md",
+          "size": null
+        },
+        {
+          "rfilename": "agent_arena_data.jsonl",
+          "size": null
+        },
+        {
+          "rfilename": "images.tar.gz",
+          "size": null
+        },
+        {
+          "rfilename": "images_part_08_of_10.tar.gz",
+          "size": null
+        },
+        {
+          "rfilename": "images_part_09_of_10.tar.gz",
+          "size": null
+        },
+        {
+          "rfilename": "images_part_10_of_10.tar.gz",
+          "size": null
+        },
+        {
+          "rfilename": "sessions.csv",
+          "size": null
+        }
+      ],
+      "hub_url": "https://huggingface.co/datasets/xlangai/computer-agent-arena",
+      "id": "computer_agent_arena",
+      "last_modified": "2025-09-03T08:25:25+00:00",
+      "license": "cc-by-4.0",
+      "original_url": "https://huggingface.co/datasets/xlangai/computer-agent-arena",
+      "policy": "evaluation_only_until_task_and_model_identity_deduplication",
+      "private": false,
+      "revision": "897b9f45287c516a44f9e79879b14bc3c1bc5b0a"
+    },
+    {
+      "created_at": "2026-06-06T10:31:39+00:00",
+      "dataset": "xlangai/osworld2.0-trajectory",
+      "file_count": 99146,
+      "file_sample": [
+        {
+          "rfilename": ".gitattributes",
+          "size": null
+        },
+        {
+          "rfilename": "cache-sonnet46-500steps.zip",
+          "size": null
+        },
+        {
+          "rfilename": "claude-opus-47_300steps_run1_0608.zip",
+          "size": null
+        },
+        {
+          "rfilename": "claude-opus-47_300steps_run2_0608.zip",
+          "size": null
+        },
+        {
+          "rfilename": "website_demo/claude-sonnet-4-6-max/tasks/107/step_217_20260611@154256852377.png",
+          "size": null
+        },
+        {
+          "rfilename": "website_demo/claude-sonnet-4-6-max/tasks/107/step_218_20260611@154308221423.png",
+          "size": null
+        },
+        {
+          "rfilename": "website_demo/claude-sonnet-4-6-max/tasks/107/step_219_20260611@154410018680.png",
+          "size": null
+        },
+        {
+          "rfilename": "website_demo/claude-sonnet-4-6-max/tasks/107/step_21_20260611@142417683644.png",
+          "size": null
+        }
+      ],
+      "hub_url": "https://huggingface.co/datasets/xlangai/osworld2.0-trajectory",
+      "id": "osworld2_trajectory",
+      "last_modified": "2026-07-22T15:18:48+00:00",
+      "license": null,
+      "original_url": "https://github.com/xlang-ai/OSWorld",
+      "policy": "evaluation_only;release_matched_vm_required",
+      "private": false,
+      "revision": "f94fa61bfeaf7b49da9816ddee83c80494cc4a31"
+    },
+    {
+      "created_at": "2025-08-04T11:40:04+00:00",
+      "dataset": "xlangai/ubuntu_osworld_verified_trajs",
+      "file_count": 104,
+      "file_sample": [
+        {
+          "rfilename": ".gitattributes",
+          "size": null
+        },
+        {
+          "rfilename": "OSWorldSurfer-Holo3-35B-A3B-20260330-OSWorld-Verified_20260420_verified-run_with-local-rewards.zip",
+          "size": null
+        },
+        {
+          "rfilename": "OSWorldSurfer-Holo3-35B-A3B-20260330-OSWorld-Verified_hcompany-internal-runs-20260416_complete-with-rewards.zip",
+          "size": null
+        },
+        {
+          "rfilename": "README.md",
+          "size": null
+        },
+        {
+          "rfilename": "uitars15-7b-15step-1.zip",
+          "size": null
+        },
+        {
+          "rfilename": "uitars15-7b-15step.zip",
+          "size": null
+        },
+        {
+          "rfilename": "uitars15-7b-50step-1.zip",
+          "size": null
+        },
+        {
+          "rfilename": "uitars15-7b-50step.zip",
+          "size": null
+        }
+      ],
+      "hub_url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_verified_trajs",
+      "id": "osworld_verified_trajectories",
+      "last_modified": "2026-08-07T14:04:34+00:00",
+      "license": "mit",
+      "original_url": "https://github.com/xlang-ai/OSWorld",
+      "policy": "evaluation_and_provenance_only;task_identity_leakage_audit_required",
+      "private": false,
+      "revision": "5473c39e42a538a187a9b2c2b499db59d560fd8c"
+    },
+    {
+      "created_at": "2026-02-28T21:11:46+00:00",
+      "dataset": "ServiceNow-AI/EnterpriseOps-Gym",
+      "file_count": 36,
+      "file_sample": [
+        {
+          "rfilename": ".gitattributes",
+          "size": null
+        },
+        {
+          "rfilename": "README.md",
+          "size": null
+        },
+        {
+          "rfilename": "assets/csmgym.png",
+          "size": null
+        },
+        {
+          "rfilename": "assets/teaser.png",
+          "size": null
+        },
+        {
+          "rfilename": "plus_5_tools/hr-00000-of-00001.parquet",
+          "size": null
+        },
+        {
+          "rfilename": "plus_5_tools/hybrid-00000-of-00001.parquet",
+          "size": null
+        },
+        {
+          "rfilename": "plus_5_tools/itsm-00000-of-00001.parquet",
+          "size": null
+        },
+        {
+          "rfilename": "plus_5_tools/teams-00000-of-00001.parquet",
+          "size": null
+        }
+      ],
+      "hub_url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym",
+      "id": "enterpriseopsgym",
+      "last_modified": "2026-04-30T15:27:14+00:00",
+      "license": "apache-2.0",
+      "original_url": "https://github.com/ServiceNow/EnterpriseOps-Gym",
+      "policy": "evaluation_only;verifier_and_server_state_never_training_inputs",
+      "private": false,
+      "revision": "c8e538eae8a6205294f0a86675fefdc1fac408f6"
+    },
+    {
+      "created_at": "2026-03-18T20:18:42+00:00",
+      "dataset": "obaydata/mcp-agent-trajectory-benchmark",
+      "file_count": 413,
+      "file_sample": [
+        {
+          "rfilename": ".gitattributes",
+          "size": null
+        },
+        {
+          "rfilename": "README.md",
+          "size": null
+        },
+        {
+          "rfilename": "accountant/conversation.jsonl",
+          "size": null
+        },
+        {
+          "rfilename": "accountant/mcp_server.py",
+          "size": null
+        },
+        {
+          "rfilename": "us-stock-analysis/workspace/IDENTITY.md",
+          "size": null
+        },
+        {
+          "rfilename": "us-stock-analysis/workspace/SOUL.md",
+          "size": null
+        },
+        {
+          "rfilename": "us-stock-analysis/workspace/TOOLS.md",
+          "size": null
+        },
+        {
+          "rfilename": "us-stock-analysis/workspace/USER.md",
+          "size": null
+        }
+      ],
+      "hub_url": "https://huggingface.co/datasets/obaydata/mcp-agent-trajectory-benchmark",
+      "id": "mcp_trajectory_benchmark",
+      "last_modified": "2026-03-26T08:37:05+00:00",
+      "license": "apache-2.0",
+      "original_url": "https://huggingface.co/datasets/obaydata/mcp-agent-trajectory-benchmark",
+      "policy": "train_only_public_train_projection;agent_disjoint_internal_holdout_not_official",
+      "private": false,
+      "revision": "f4f449d65271abc1e4ccd5157d121a59a1dd38c4"
+    }
+  ],
+  "kind": "localagent_public_dataset_snapshot_audit",
+  "registry_policy": "metadata_only;no_payload_download;train_eval_policy_is_explicit",
+  "schema_version": 1
+}

@@ -1,0 +1,37 @@
+# Parameter-matched all-MQA control. Keep tokenizer, shard order, optimizer, and seed identical to
+# pretrain-paper-hybrid.yaml; only the architecture/checkpoint directory differs.
+stage: pretrain
+model_config: configs/model/webgpu-35m-attn.yaml
+data:
+  shards_dir: data/shards/paper-all
+  min_train_tokens: 171409408
+  corpus_freeze:
+    spec: configs/data/pretrain-paper-freeze.yaml
+    path: data/shards/paper-all/freeze.json
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-paper-16k.json
+optim:
+  name: adamw
+  lr: 3.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 400
+  # Match the hybrid schedule at >=20 tokens/parameter for the slightly larger attention arm.
+  total_steps: 20921
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 2
+  grad_accum_steps: 8
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+  resume: true
+log:
+  out_dir: runs/pretrain-paper-attn
+  ckpt_every: 250
+  eval_every: 250
+  eval_batches: 16

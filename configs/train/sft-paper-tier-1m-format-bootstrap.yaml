@@ -1,0 +1,69 @@
+# Targeted fresh-optimizer SFT child for the completed 1M paper checkpoint.
+#
+# The verified derived corpus contains 8,192 unchanged train rows ordered as four curriculum
+# phases: strict short single-call format, multi-argument calls, parallel calls, then text and
+# explicit restraint. Effective batch 16 consumes it exactly once in 512 updates. This child is
+# an intervention after the sealed 348-step run; it must not replace the RL parent until the
+# scorecard and isolated RL-readiness gates both pass.
+stage: sft
+model_config: configs/model/webgpu-1m-bpe-router.yaml
+init_from: runs/sft-paper-tier-1m/latest.pt
+continuation:
+  mode: fresh_optimizer_sft_child_v1
+data:
+  conversation_prompt_contract: openai_full_catalog_v1
+  strict_conversation_artifacts: true
+  conversations:
+    - path: data/synth/agent_sft_format_bootstrap_v1.jsonl
+      artifact:
+        generator_config: configs/data/agent_sft_format_bootstrap_v1.yaml
+        manifest: data/synth/agent_sft_format_bootstrap_v1.jsonl.manifest.v1.json
+        expected_split: train
+        expected_rule_verified: true
+        environment_policy: forbid
+  eval_conversations:
+    - path: data/synth/agent_eval.jsonl
+      artifact:
+        generator_config: configs/data/agent_synth_eval.yaml
+        manifest: data/synth/agent_eval.jsonl.manifest.v1.json
+        expected_split: eval
+        expected_rule_verified: true
+        environment_policy: forbid
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-paper-16k.json
+  seq_len: 4096
+  function_masking: false
+  # Preserve the four-phase order sealed by the derived artifact.
+  shuffle: false
+optim:
+  name: adamw
+  lr: 2.5e-5
+  weight_decay: 0.0
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 10
+  total_steps: 512
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 2
+  grad_accum_steps: 8
+  # Fixed post-shift input width collapses shape-specific MPS/MPSGraph cache growth.
+  pad_to_input_tokens: 3529
+evaluation:
+  batch_size: 8
+  max_conversations: 512
+  selection: greedy_uncovered_strata_then_semantic_sha256_fill_v1
+  pad_to_input_tokens: 3598
+heads:
+  joint_tool_pointer: false
+  train_route_head: false
+  train_dense_selector: false
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+log:
+  out_dir: runs/sft-paper-tier-1m-format-bootstrap
+  ckpt_every: 50

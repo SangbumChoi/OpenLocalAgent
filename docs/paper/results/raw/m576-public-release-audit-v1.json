@@ -1,0 +1,43 @@
+{
+  "kind": "localagent_public_release_audit",
+  "schema_version": 1,
+  "public": true,
+  "model_url": "https://huggingface.co/danelcsb/localagent-tiny-30m-byte",
+  "demo_url": "https://huggingface.co/spaces/danelcsb/localagent-webgpu",
+  "artifact_sha256": "a0043408fe287de4171bc63d83d3e1fa76d638241893e72bc7f034e287c1d0c2",
+  "current_checkpoint_sha256": null,
+  "current_checkpoint": {
+    "path": "/private/tmp/m553-multisurface-lineage-child.pt",
+    "sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+    "parameters": 10524544
+  },
+  "local_candidate": {
+    "published": false,
+    "model_repo_intended": "danelcsb/localagent-m553-preview",
+    "space_repo_intended": "danelcsb/localagent-m553-webgpu",
+    "model_parameters": 10524544,
+    "model_config_sha256": "6e599afc6ff45add670d6439695470d4b403e15a0039ab3e5db4eb3fdb84d99f",
+    "model_weights_sha256": "78f0a31001a4db610483f7e7b2193ff401ea13d0390b1b24c549e485778e0ce7",
+    "web_bundle_manifest_sha256": "6e469cb182b24adf8d968c8d6112c23d955aef8d26c55942cc2fbe6ad9870714",
+    "web_bundle_identity_sha256": "91ac74b37cf93cddc20d6da1050171d1eb98dda0c9b6763dc076bef9c5929b82",
+    "webgpu_bundle_verified": true,
+    "onnx_parity_gate": true
+  },
+  "public_existing_release": {
+    "public": true,
+    "model_url": "https://huggingface.co/danelcsb/localagent-tiny-30m-byte",
+    "demo_url": "https://huggingface.co/spaces/danelcsb/localagent-webgpu",
+    "model_repo": "danelcsb/localagent-tiny-30m-byte",
+    "space_repo": "danelcsb/localagent-webgpu",
+    "model_revision": "d15db7c46d32a3987169a1a6e8cd43a525ad2a4c",
+    "space_revision": "3c07f7db500ac5ab23222e8d1e2fc5033fa5aeb0",
+    "model_file": "model.safetensors",
+    "model_sha256": "a0043408fe287de4171bc63d83d3e1fa76d638241893e72bc7f034e287c1d0c2",
+    "demo_model_file": "model.fp16.onnx",
+    "demo_model_sha256": "59f06336320d05c3ea796492da5d342f67be028cd01e7600d5a659c125d3d34c",
+    "current_checkpoint_match": false,
+    "audit_raw_sha256": "0b030552da0eba2e1a67c1c93fd676ceda5a7056796e08a7b154e2d38a05d637"
+  },
+  "claim_boundary": "The existing public HF model and Space are reachable but are a legacy byte-level release and do not bind the current m553 checkpoint. The current candidate is locally export- and parity-verified only; no HF upload or current public URL is claimed.",
+  "receipt_self_sha256": "1d8d0da0ea5466fc7674b29edfa76eb1c591b46b15d79d42a6cab6eb6a310772"
+}

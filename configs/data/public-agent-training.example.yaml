@@ -1,0 +1,58 @@
+# Offline public-agent ingestion template. Acquisition is intentionally separate: download only
+# the pinned TRAIN payloads, record their exact byte counts/SHA-256 values below, then run:
+#   python scripts/ingest_public_agent_data.py configs/data/public-agent-training.example.yaml
+#
+# The all-zero source identities are deliberate placeholders and make this example fail closed
+# until an operator replaces them with the identities of the locally acquired pinned snapshots.
+schema_version: 1
+seed: 42
+enrichment_level: 3
+max_source_bytes: 2147483648
+outputs:
+  train: ../../data/public/agent-public-train.jsonl
+manifest: ../../data/public/agent-public.manifest.json
+
+sources:
+  - source_id: xlam-train
+    dataset: Salesforce/xlam-function-calling-60k
+    subset: default
+    revision: 26d14ebfe18b1f7b524bd39b404b50af5dc97866
+    url: https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k
+    license: cc-by-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    adapter: xlam_v1
+    split: train
+    path: ../../data/private/xlam/xlam_function_calling_60k.json
+    bytes: 0  # replace after gated acquisition
+    sha256: 0000000000000000000000000000000000000000000000000000000000000000
+
+  # Repeat this entry for train_0.json through train_10.json, with a unique source_id and pin.
+  - source_id: mind2web-train-0
+    dataset: osunlp/Mind2Web
+    subset: train
+    revision: 17ece8eb89862368edc0cc806acee6fca5163474
+    url: https://huggingface.co/datasets/osunlp/Mind2Web
+    license: cc-by-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    adapter: mind2web_v1
+    split: train
+    path: ../../data/private/mind2web/data/train/train_0.json
+    bytes: 0  # replace after acquisition
+    sha256: 0000000000000000000000000000000000000000000000000000000000000000
+    max_actions_per_record: 12
+
+# These are frozen external evaluation prompts already present in the local paper workspace.
+# Keep all three pins when producing a training artifact.
+exact_prompt_holdouts:
+  - name: bfcl-v4
+    path: ../../data/private/bfcl/bfcl-v4-denylist-v3.jsonl
+    bytes: 989817
+    sha256: fecb44c23bd00aad0ae65ec9c0bf6457df5125a08bccffeda7d292a785d9668c
+  - name: mind2web-test
+    path: ../../data/private/mind2web/mind2web-denylist-v3.jsonl
+    bytes: 18330792
+    sha256: 759a19c0135ecd5da3d657c2ca43d2c047148bbba243e34d389070756a113f27
+  - name: weblinx-test-web
+    path: ../../data/private/weblinx/weblinx-test-web-denylist-v3.jsonl
+    bytes: 14721944
+    sha256: 1bc701bb14dad35fbba4e1f5fd0018249519a0d895f8ec441f30728938e5e979

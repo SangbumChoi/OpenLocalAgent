@@ -1,0 +1,104 @@
+{
+  "kind": "localagent_mobile_dispatch_transfer_and_native_v1",
+  "schema_version": 1,
+  "checkpoint": {
+    "parent": {
+      "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+      "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+    },
+    "warm_child": {
+      "path": "/private/tmp/m292-mobile-dispatch-warm.pt",
+      "sha256": "3b11d7b845d276eed4fc01cf7909dc0d433cacc981d87e8497646866b0bed7d3"
+    },
+    "random_child": {
+      "path": "/private/tmp/m292-mobile-dispatch-random.pt",
+      "sha256": "7414ab882cbc0b02835489f913bae5d2ecde892134834a56d19d959a85c01835"
+    },
+    "parameter_count": 10524544,
+    "tokenizer": "checkpoint-recorded BPE"
+  },
+  "public_data": {
+    "train": {
+      "path": "/private/tmp/androidcontrol84k-conversations.train4096.jsonl",
+      "sha256": "6971d5fe81fe3c6e8ee12e0072481ec653f98bdb5699af54e8f63649358743fd",
+      "rows": 4096,
+      "split": "train"
+    },
+    "eval": {
+      "path": "/private/tmp/androidcontrol84k-conversations.test.jsonl",
+      "sha256": "2d798115fe0feb14ac6d65f86a4b51b4463b593a35281eedce4de8751356bc95",
+      "rows": 904,
+      "split": "test"
+    },
+    "mirror": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k",
+    "original": "https://github.com/google-research/google-research/tree/master/android_control",
+    "license": "Apache-2.0",
+    "visual_input_omitted": true,
+    "claim_boundary": "Text-first action/dispatch projection; no screenshot grounding claim."
+  },
+  "static_transfer": {
+    "steps": 120,
+    "probe": "route plus dense selector; frozen backbone",
+    "warm": {
+      "held_out_rows": 904,
+      "route_accuracy": 1.0,
+      "selector_top1": 0.4280973451327434,
+      "by_tool": {
+        "mobile_click": 0.08,
+        "mobile_input_text": 0.44,
+        "mobile_long_press": 0.0,
+        "mobile_navigate_back": 0.584,
+        "mobile_navigate_home": 0.0,
+        "mobile_open_app": 0.896,
+        "mobile_scroll": 0.504,
+        "mobile_wait": 0.592
+      }
+    },
+    "random_control": {
+      "held_out_rows": 904,
+      "route_accuracy": 1.0,
+      "selector_top1": 0.3893805309734513,
+      "by_tool": {
+        "mobile_click": 0.24,
+        "mobile_input_text": 0.216,
+        "mobile_long_press": 0.0,
+        "mobile_navigate_back": 0.768,
+        "mobile_navigate_home": 0.0,
+        "mobile_open_app": 0.888,
+        "mobile_scroll": 0.264,
+        "mobile_wait": 0.44
+      }
+    },
+    "decision": "Warm parent-head geometry is modestly better overall, but route is a synthetic/easy signal and long-press/home remain unsolved."
+  },
+  "native_mobilegym": {
+    "repository": "https://github.com/Purewhiter/mobilegym",
+    "revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "source_root": "/private/tmp/m122-mobilegym-source/mobilegym-093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "official_test_split": true,
+    "canary_tasks": 20,
+    "max_steps": 10,
+    "warm_success": 0,
+    "warm_success_rate": 0.0,
+    "warm_errors": 0,
+    "warm_tool_counts": {
+      "mobile_press_enter": 19,
+      "mobile_submit_answer": 1
+    },
+    "parent_reference": {
+      "receipt": "m262-mobilegym-native-current-v1",
+      "first_20_success": 0,
+      "first_20_tool_counts": {
+        "mobile_press_enter": 19,
+        "mobile_input_text": 1
+      },
+      "note": "Parent reference used max_steps=2 in the complete official run; the warm canary used max_steps=10."
+    },
+    "claim_boundary": "Pinned simulator and state-diff judge executed; this is not Android emulator, screenshot, or visual-agent evidence."
+  },
+  "adoption": {
+    "promote_warm_child": false,
+    "reason": "Static selector transfer does not improve native closed-loop MobileGym success (0/20), and the child collapses to a repeated press-enter policy."
+  },
+  "receipt_self_sha256": "8bae82ab53b5bf4195703b370eb3b2fb1f8ac5b770e6a4273dba07e7ca11fdb8"
+}

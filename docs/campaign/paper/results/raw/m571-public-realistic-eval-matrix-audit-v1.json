@@ -1,0 +1,42 @@
+{
+  "kind": "localagent_public_realistic_eval_source_audit",
+  "schema_version": 1,
+  "audited_at": "2026-08-09",
+  "matrix": {
+    "path": "configs/data/realistic-agent-public-eval-matrix.v1.json",
+    "bytes": 30388,
+    "sha256": "09eb5c51d329d4752aff79534217974048f88a934d83570456759f3cc8aab13e",
+    "canonical_sha256": "11539e9ab640f782cb5556538815270b52d3638fb2c35a3e3cb7adbb699fc563",
+    "entries": 28
+  },
+  "coverage": {
+    "families": {"browser": 4, "computer": 4, "mobile": 9, "terminal": 1, "tool_api": 10},
+    "train_policy": {"eval_only": 18, "no_static_data": 3, "restricted": 1, "train": 6},
+    "local_status": {
+      "adapter_ready": 3,
+      "manifest_audited_native_pending": 2,
+      "measured": 4,
+      "measured_official_text_projection": 1,
+      "metadata_only": 10,
+      "native_mock_diagnostic": 1,
+      "not_started": 6,
+      "runtime_pending": 1
+    },
+    "train_eligible": ["androidcontrol", "android_in_the_wild", "mind2web", "agentnet", "xlam_function_calling", "toolace"]
+  },
+  "upstream": [
+    {"id": "androidworld", "url": "https://github.com/google-research/android_world", "revision": "3e50888527ef9f29b9157ecd537e408008bb1c85", "contract": "116 tasks across 20 apps; live Android emulator; durable rewards"},
+    {"id": "browsergym", "url": "https://github.com/ServiceNow/BrowserGym", "revision": "9e779f087de9a65668b6974d11f9ce9816026e96", "contract": "MiniWoB, WebArena, VisualWebArena, WorkArena, AssistantBench, WebLINX, OpenApps, TimeWarp"},
+    {"id": "opencua", "url": "https://github.com/xlang-ai/OpenCUA", "revision": "dfc91ba89f700d10f26ec50362d308571482ab8b", "contract": "AgentNet: 22.6K human-annotated tasks across Windows, macOS, Ubuntu; AgentNetBench offline evaluator"},
+    {"id": "toolsandbox", "url": "https://github.com/apple/ToolSandbox", "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219", "contract": "Stateful conversational tool use with simulator and milestone verification"},
+    {"id": "mcpmark", "url": "https://github.com/eval-sys/mcpmark", "revision": "cd45b7f57923b9b3985467f5139927575f83141c", "contract": "Notion, GitHub, filesystem, Postgres, and Playwright MCP services with strict verifiers"},
+    {"id": "mobilesafetybench", "url": "https://github.com/jylee425/mobilesafetybench", "revision": "d775aa475f4ec3524c0502489b167673c2087282", "contract": "Android emulator plus ADB/Appium; safety/helpfulness and injection tasks"},
+    {"id": "mobileworld", "url": "https://github.com/Tongyi-MAI/MobileWorld", "revision": "0dcd0980eac64d76f498f93568a1ec0594b743c4", "contract": "201 tasks across 20 apps; long-horizon, agent-user, and MCP-augmented workflows"},
+    {"id": "osworld", "url": "https://github.com/xlang-ai/OSWorld", "revision": "091f5ef1d5544bc74953c77875d5feb5bed30108", "contract": "Execution-based real desktop VM evaluation from screenshots and desktop state"},
+    {"id": "webchorearena", "url": "https://github.com/WebChoreArena/WebChoreArena", "revision": "542abc538fd9558362119714989166904d82f5f4", "contract": "532 reproducible labor-intensive web tasks layered on WebArena"},
+    {"id": "xlam", "url": "https://github.com/SalesforceAIResearch/xlam", "revision": "a88aa3aeddbc2d7d6aa7a87687d1a085c34e2aec", "contract": "Public function-calling training corpus and schema-constrained tool-call model"}
+  ],
+  "method": "Validated the local JSON matrix with scripts/audit_public_eval_matrix.py; resolved current upstream repository HEADs with git ls-remote; cross-checked benchmark contracts against official README/repository pages. No task payloads, screenshots, credentials, emulator/VM images, MCP service state, or verifier outputs were downloaded by this audit.",
+  "claim_boundary": "This receipt proves source-linked coverage and train/evaluation policy separation, not benchmark capability. The six train rows still require byte-level acquisition manifests and source-specific adapters; all runtime rows require release-matched native execution before a score or publication claim.",
+  "receipt_self_sha256": "65a9310fe4c4e897bb97e41e12c4e4ec020023ee1381f5daa0f9232256184c9e"
+}

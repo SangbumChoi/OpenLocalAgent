@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LocalAgent — mobile and productivity closed loop</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    window.__localAgentBrowserTasksStart = performance.now();
+    window.__localAgentRequestedBackend =
+      new URLSearchParams(window.location.search).get("backend") || "webgpu";
+  </script>
+</head>
+<body>
+  <main class="browser-task-main">
+    <header>
+      <h1>📱 LocalAgent <span class="sub">mobile + productivity loop</span></h1>
+      <p class="tagline">
+        A text-first, stateful pilot for Android-style actions plus local email and Notion tool
+        calls. It uses the same WebGPU bundle and schema validation as the demo; it does not claim
+        screenshot grounding, trusted OS input, or access to real accounts.
+      </p>
+    </header>
+
+    <section id="status" class="status loading">
+      <span class="dot"></span>
+      <span id="status-text">Loading the WebGPU model…</span>
+      <span id="backend-badge" class="badge" hidden></span>
+    </section>
+
+    <section class="benchmark-panel browser-task-panel">
+      <p class="browser-task-scope">
+        Scope: deterministic in-memory Android/email/Notion state, one action per step, one
+        concurrency, exact tool-and-argument scoring, independent schema validation, and closed
+        loop state assertions. Mobile selections made by the optional lexical guard are reported
+        separately from the learned dense selector; use <code>mobile_guard=0</code> for a no-guard
+        run, or add <code>selector=retrieval</code> for retrieval-only or
+        <code>selector=retrieval_then_dense</code> to retrieve ten candidates before dense scoring.
+      </p>
+      <div class="row browser-task-controls">
+        <span id="mobile-task-progress" class="timing">Waiting for the model bundle…</span>
+        <div class="button-row">
+          <button id="download-mobile-tasks" class="secondary-button" disabled>
+            Download raw JSON
+          </button>
+          <button id="start-mobile-tasks" class="primary-button" disabled>Run pilot</button>
+        </div>
+      </div>
+      <div id="mobile-task-output"></div>
+    </section>
+
+    <section class="browser-task-fixture-shell" aria-labelledby="mobile-task-fixture-title">
+      <div class="browser-task-fixture-heading">
+        <div>
+          <h2 id="mobile-task-fixture-title">Local state</h2>
+          <p id="mobile-task-current-prompt">A deterministic task appears here for each action.</p>
+        </div>
+        <span id="mobile-task-fixture-badge" class="badge">state v1</span>
+      </div>
+      <pre id="mobile-task-state" class="browser-task-stage">No task is active.</pre>
+    </section>
+
+    <!-- app.js production initialization hooks. -->
+    <section class="io" hidden>
+      <textarea id="prompt"></textarea>
+      <input id="plan-mode" type="checkbox" />
+      <button id="run" disabled>Run</button>
+    </section>
+    <section id="result" hidden></section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.27.0/dist/ort.webgpu.min.js"></script>
+  <script src="tokenizer.js"></script>
+  <script src="app.js"></script>
+  <script src="mobile-tasks.js"></script>
+</body>
+</html>

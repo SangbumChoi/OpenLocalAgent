@@ -1,0 +1,44 @@
+{
+  "kind": "localagent_m724_current_checkpoint_visual_webgpu_probe",
+  "schema_version": 1,
+  "checkpoint_sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+  "graph": {
+    "file": "visual_action_model.current.fp16.onnx",
+    "bytes": 44255651,
+    "sha256": "5f87d6cb0380600433a21f97f98baa9e12467bcbaa4d285570c2f2d827ccbdd5",
+    "cpu_onnx_parity": {"passed": true, "max_abs_diffs": [1.1920928955078125e-06, 5.960464477539063e-08]}
+  },
+  "runtime": {
+    "page": "spaces/localagent-webgpu/visual-action.html?graph=visual_action_model.current.fp16.onnx&manifest=visual-action-current-manifest.json",
+    "onnxruntime_web": "1.27.0",
+    "requested_provider": "webgpu",
+    "session_ready": true,
+    "first_inference_ms": 77.7999999821186,
+    "warm_inference_ms": [24.200000017881393, 24.900000005960464, 26.5],
+    "warm_inference_p50_ms": 24.900000005960464,
+    "per_node_gpu_placement": "unknown"
+  },
+  "input_contract": {
+    "task": "Open the Settings app.",
+    "raw_utf8_bytes": 37,
+    "image": [1, 3, 96, 96],
+    "image_range": "float32 RGB [0,1]",
+    "screenshot_sha256": "402a4ea0b8ddf7e96226865e813d39cf334170d7843b041f154cebab1bdde500"
+  },
+  "outputs": {
+    "action_names": ["click", "input_text", "long_press", "navigate_back", "open_app", "scroll", "wait"],
+    "action": "click",
+    "action_index": 0,
+    "action_logits": [1.2770633697509766, -0.25410962104797363, -3.0353074073791504, -0.948933482170105, 0.7823526263237, 0.5386539697647095, -0.002504311501979828],
+    "pointer_xy": [0.4820232391357422, 0.37249812483787537]
+  },
+  "verification": {
+    "graph_identity_checked_in_browser": true,
+    "webgpu_session_created": true,
+    "output_shape_checked": true,
+    "native_android_emulator": false,
+    "official_androidcontrol_score": false,
+    "external_side_effect": false
+  },
+  "claim_boundary": "This proves the current WebGPU release checkpoint’s trained visual sidecar loads under an explicit onnxruntime-web WebGPU session and emits the declared ABI. It does not prove physical per-node GPU placement, Android emulator control, official AndroidControl success, or HF publication."
+}

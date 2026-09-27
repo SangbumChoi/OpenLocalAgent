@@ -1,0 +1,45 @@
+{
+  "benchmark_id": "mobilegym",
+  "claim_boundary": "This receipt reconciles the public registry with the existing complete MobileGym native text-projection receipt. It is not a visual mobile-agent score: screenshots, pixels, Android emulator control, and visual grounding were not used. No MobileGym task rows or benchmark data were admitted to training.",
+  "generated_at": "2026-08-05",
+  "kind": "localagent_mobilegym_current_catalog_reconciliation",
+  "measurement": "m337_mobilegym_current_catalog_reconciliation",
+  "receipt_self_sha256": "0b9d21f66a992dfef44875d0d8a6f2b44221d6ba56394e015bd9a20b31fcf81e",
+  "schema_version": 1,
+  "source": {
+    "repository": "https://github.com/Purewhiter/mobilegym",
+    "revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "license": {
+      "code": "Apache-2.0",
+      "benchmark_data": "CC-BY-NC-4.0"
+    },
+    "apps": 28,
+    "task_templates": 416,
+    "train_templates": 160,
+    "official_test_tasks": 256,
+    "official_split": "test",
+    "test_split_sha256": "a3d485015d480f4f1ebbd12dbbf02c25c0aa667d1afcf5f6fa35f0263a82c567",
+    "train_split_sha256": "0ecef460fecfd8aa91dcbb2cd4cca17b033f620f85a50d7f0b598ed19a27c0eb",
+    "test_ids_sha256": "cf61a0b2e71721864a1b526a531c433f852e128d2ffa8b81504fc3d74b9830bf"
+  },
+  "native_evidence": {
+    "receipt": "docs/paper/results/raw/m262-mobilegym-native-current-browser-context-v1.json",
+    "receipt_file_sha256": "d2397d30a32bdacafd442b335e7f62eb7a052141248894fcbb83befc2ab6b697",
+    "receipt_self_sha256": "efcf643005002df1122ca7e849c9b735c09f665c23c4648cd787f01b0da2b107",
+    "checkpoint_sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "environment_executed": true,
+    "official_split_verified": true,
+    "native_receipt_eligible": true,
+    "observation_mode": "text_projection",
+    "vision_used": false,
+    "passed_tasks": 1,
+    "failed_tasks": 255,
+    "success_rate": 0.00390625,
+    "full_official_test_split": true
+  },
+  "admission": {
+    "training_rows_admitted": 0,
+    "benchmark_payload_retained": false,
+    "registry_status": "measured_official_text_projection"
+  }
+}

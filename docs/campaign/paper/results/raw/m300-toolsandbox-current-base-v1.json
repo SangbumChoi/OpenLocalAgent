@@ -1,0 +1,43 @@
+{
+  "kind": "localagent_toolsandbox_current_base_native_receipt",
+  "schema_version": 1,
+  "benchmark_id": "toolsandbox",
+  "source_url": "https://github.com/apple/ToolSandbox",
+  "source_revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+  "official_split_verified": false,
+  "environment_executed": true,
+  "verifier_executed": true,
+  "user_simulator_executed": false,
+  "external_api_called": false,
+  "protocol": "single_step_smoke",
+  "scenario_selection": "all 129 upstream base/no-distraction scenario names, sorted",
+  "scripted_user_policy": "terminate_after_first_agent_response; multi-tool and multi-user-turn scenarios are intentionally truncated",
+  "task_count": 129,
+  "success_count": 29,
+  "success_rate": 0.2248062015503876,
+  "exceptions": 0,
+  "category_summary": {
+    "NO_DISTRACTION_TOOLS": {"tasks": 129, "successes": 29, "mean_similarity": 0.27916324047376495},
+    "INSUFFICIENT_INFORMATION": {"tasks": 28, "successes": 26, "mean_similarity": 0.9285714285714286},
+    "SINGLE_TOOL_CALL": {"tasks": 19, "successes": 3, "mean_similarity": 0.28554159843374893},
+    "SINGLE_USER_TURN": {"tasks": 73, "successes": 3, "mean_similarity": 0.11888663955866227},
+    "MULTIPLE_TOOL_CALL": {"tasks": 82, "successes": 0, "mean_similarity": 0.05593619086432257},
+    "MULTIPLE_USER_TURN": {"tasks": 28, "successes": 0, "mean_similarity": 0.047619047619047616},
+    "CANONICALIZATION": {"tasks": 59, "successes": 0, "mean_similarity": 0.053672316384180796},
+    "STATE_DEPENDENCY": {"tasks": 24, "successes": 0, "mean_similarity": 0.03139309656421318}
+  },
+  "checkpoint": {
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "parameters": 10524544
+  },
+  "runner": {
+    "path": "scripts/run_toolsandbox_native.py",
+    "sha256": "ccfa3fa48147dd982148b29d4954533760250d24a5498e67d1d670612f39af25"
+  },
+  "full_report": {
+    "path": "/private/tmp/m300-toolsandbox-current-base.json",
+    "sha256": "785cb7da59bfbd122a0240a0f0b6fbed3da4f8af0f1714d9395b476ef4d0f2d8"
+  },
+  "claim_boundary": "Current-checkpoint native ToolSandbox simulator/verifier replay over every pinned base/no-distraction scenario. This is not the official split, model-based user-simulator score, 1,032-variant augmented matrix, MCPMark score, or real external-account/email/Notion side-effect evidence. Multi-tool and multi-user-turn scenarios are truncated by the scripted-user protocol; the publication gate therefore remains blocked."
+}

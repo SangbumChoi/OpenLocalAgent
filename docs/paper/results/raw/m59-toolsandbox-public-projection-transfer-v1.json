@@ -1,0 +1,87 @@
+{
+  "kind": "localagent_toolsandbox_public_projection_transfer",
+  "schema_version": 1,
+  "dataset": {
+    "name": "apple/ToolSandbox",
+    "source_url": "https://github.com/apple/ToolSandbox",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "license": "Apple Software License; see upstream LICENSE and ACKNOWLEDGEMENTS",
+    "manifest_sha256": "a17b2fc3c6ce544ab92e877d3cc3e527a166f15554d9cde5943325daf6035852",
+    "train_rows": 107,
+    "eval_rows": 20,
+    "candidate_tools": 32,
+    "train_jsonl_sha256": "bbdeead59db232b8a73058400f4d916fe9b25708d15189476fb5cc02ca13f100",
+    "eval_jsonl_sha256": "723be0be3173c58d14f250f99e771d3e9a1c5c98fcdd0b44b02a2bd2836bab1c",
+    "categories": {
+      "CANONICALIZATION": 59,
+      "STATE_DEPENDENCY": 24
+    }
+  },
+  "projection_policy": {
+    "ast_only": true,
+    "scenario_prompts_retained": true,
+    "verifiers_read": false,
+    "tools_executed": false,
+    "user_simulator_executed": false,
+    "external_api_called": false,
+    "claim_boundary": "Canonical public-source projection only; not an official ToolSandbox score."
+  },
+  "continuation": {
+    "parent_checkpoint_sha256": "3263678aadae50106f32bc557d5bd99d8aa3e2fc96ce055a36c28260b21f6062",
+    "child_checkpoint_sha256": "e1d442b1511cab57c77b0368c33ec3beefdd4f44ae0de32ef498018677c63d9d",
+    "steps": 32,
+    "batch_size": 4,
+    "learning_rate": 0.00001,
+    "before": {
+      "eval_mean_loss": 2.7657637527684846,
+      "eval_token_accuracy": 0.65311004784689,
+      "eval_sequence_accuracy": 0.0
+    },
+    "after": {
+      "eval_mean_loss": 2.139274724932949,
+      "eval_token_accuracy": 0.715311004784689,
+      "eval_sequence_accuracy": 0.0
+    },
+    "backbone_weight_movement": {
+      "attention_or_mixer_relative_delta_l2": 0.001955857806453809,
+      "embedding_relative_delta_l2": 0.004761368193828262,
+      "ffn_relative_delta_l2": 0.002433408019892814,
+      "normalization_relative_delta_l2": 0.00009721083865387263
+    },
+    "compatibility": {
+      "shared_tensor_count": 51,
+      "config_mismatches": {},
+      "shape_mismatches": {},
+      "tokenizer_sha256_equal": true
+    }
+  },
+  "selector_probe": {
+    "steps": 128,
+    "batch_size": 32,
+    "learning_rate": 0.005,
+    "seed": 2029,
+    "candidate_list_scoring": true,
+    "arms": {
+      "inherited_pretrained_selector": {
+        "top1": 0.45,
+        "top3": 0.95,
+        "candidate_coverage": 1.0
+      },
+      "retrained_pretrained_backbone": {
+        "top1": 0.75,
+        "top3": 0.95,
+        "candidate_coverage": 1.0,
+        "selector_query_tower_relative_delta_l2": 1.320749044418335,
+        "selector_tool_tower_relative_delta_l2": 1.0346392393112183
+      },
+      "retrained_matched_random_backbone": {
+        "top1": 0.75,
+        "top3": 0.90,
+        "candidate_coverage": 1.0
+      }
+    },
+    "adoption": "do_not_adopt_as_representation_evidence",
+    "reason": "Retraining improves the inherited selector, but the matched random backbone reaches the same held-out top-1 on this small projection."
+  },
+  "claim_boundary": "This receipt binds public-source parsing, a text-first continuation, and candidate-list selector diagnostics. It does not claim ToolSandbox simulator completion, native WebGPU capability, external side effects, or a public model upload."
+}

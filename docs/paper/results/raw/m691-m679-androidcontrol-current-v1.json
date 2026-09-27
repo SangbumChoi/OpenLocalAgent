@@ -1,0 +1,273 @@
+{
+  "arms": {
+    "random": {
+      "after": {
+        "assistant_loss_tokens": 6525,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.8268199233716476,
+        "mean_loss": 1.2291974256961282,
+        "rows": 256
+      },
+      "before": {
+        "assistant_loss_tokens": 6525,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.8151724137931035,
+        "mean_loss": 1.3696298977789751,
+        "rows": 256
+      },
+      "child": {
+        "bytes": 52206887,
+        "path": "/private/tmp/m691-m679-androidcontrol/random-child.pt",
+        "sha256": "9ebe7139bb7e6fa1229ed1bc3ab8821a95455943d8afeb73593e6d7bbfb9cadb"
+      },
+      "heads": {
+        "after": {
+          "route_accuracy": 0.0,
+          "rows": 256,
+          "selector_top1_accuracy": 0.0,
+          "tool_rows": 0
+        },
+        "before": {
+          "route_accuracy": 0.00390625,
+          "rows": 256,
+          "selector_top1_accuracy": 0.0,
+          "tool_rows": 0
+        }
+      },
+      "parent": {
+        "bytes": 52206773,
+        "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+        "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+      },
+      "weight_transfer": {
+        "compatibility": {
+          "added_tensors": [],
+          "config_mismatches": {},
+          "removed_tensors": [],
+          "shape_mismatches": {},
+          "shared_tensor_count": 51,
+          "tokenizer_sha256_equal": true
+        },
+        "groups": {
+          "action_heads": {
+            "base_l2": 91.77234792175153,
+            "delta_l2": 27.09914085566708,
+            "parameters": 2519736,
+            "relative_delta_l2": 0.2952865592887827,
+            "target_l2": 87.72169577645614
+          },
+          "attention_or_mixer": {
+            "base_l2": 51.70583183858278,
+            "delta_l2": 0.07744501955819623,
+            "parameters": 1871872,
+            "relative_delta_l2": 0.0014978004763556848,
+            "target_l2": 51.706896917509965
+          },
+          "embedding": {
+            "base_l2": 78.5827108674603,
+            "delta_l2": 0.3241914763596808,
+            "parameters": 6291456,
+            "relative_delta_l2": 0.004125480945884786,
+            "target_l2": 78.67113121261008
+          },
+          "ffn": {
+            "base_l2": 50.615098537061556,
+            "delta_l2": 0.09868923722034353,
+            "parameters": 2360832,
+            "relative_delta_l2": 0.001949798381763121,
+            "target_l2": 50.61591621101394
+          },
+          "normalization": {
+            "base_l2": 21.464259287065175,
+            "delta_l2": 0.003042843486492278,
+            "parameters": 384,
+            "relative_delta_l2": 0.00014176326542635276,
+            "target_l2": 21.467286911549493
+          }
+        },
+        "recommendation": {
+          "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+          "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+          "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+          "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+        }
+      }
+    },
+    "warm": {
+      "after": {
+        "assistant_loss_tokens": 6525,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.8268199233716476,
+        "mean_loss": 1.2291974256961282,
+        "rows": 256
+      },
+      "before": {
+        "assistant_loss_tokens": 6525,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.8151724137931035,
+        "mean_loss": 1.3696298977789751,
+        "rows": 256
+      },
+      "child": {
+        "bytes": 52206773,
+        "path": "/private/tmp/m691-m679-androidcontrol/warm-child.pt",
+        "sha256": "498533589f925d75a2696962a9defbba4a0ba0220988b045d74277d2f3373d81"
+      },
+      "heads": {
+        "after": {
+          "route_accuracy": 0.0,
+          "rows": 256,
+          "selector_top1_accuracy": 0.0,
+          "tool_rows": 0
+        },
+        "before": {
+          "route_accuracy": 0.0,
+          "rows": 256,
+          "selector_top1_accuracy": 0.0,
+          "tool_rows": 0
+        }
+      },
+      "parent": {
+        "bytes": 52206773,
+        "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+        "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+      },
+      "weight_transfer": {
+        "compatibility": {
+          "added_tensors": [],
+          "config_mismatches": {},
+          "removed_tensors": [],
+          "shape_mismatches": {},
+          "shared_tensor_count": 51,
+          "tokenizer_sha256_equal": true
+        },
+        "groups": {
+          "action_heads": {
+            "base_l2": 91.77234792175153,
+            "delta_l2": 0.0,
+            "parameters": 2519736,
+            "relative_delta_l2": 0.0,
+            "target_l2": 91.77234792175153
+          },
+          "attention_or_mixer": {
+            "base_l2": 51.70583183858278,
+            "delta_l2": 0.07744501955819623,
+            "parameters": 1871872,
+            "relative_delta_l2": 0.0014978004763556848,
+            "target_l2": 51.706896917509965
+          },
+          "embedding": {
+            "base_l2": 78.5827108674603,
+            "delta_l2": 0.3241914763596808,
+            "parameters": 6291456,
+            "relative_delta_l2": 0.004125480945884786,
+            "target_l2": 78.67113121261008
+          },
+          "ffn": {
+            "base_l2": 50.615098537061556,
+            "delta_l2": 0.09868923722034353,
+            "parameters": 2360832,
+            "relative_delta_l2": 0.001949798381763121,
+            "target_l2": 50.61591621101394
+          },
+          "normalization": {
+            "base_l2": 21.464259287065175,
+            "delta_l2": 0.003042843486492278,
+            "parameters": 384,
+            "relative_delta_l2": 0.00014176326542635276,
+            "target_l2": 21.467286911549493
+          }
+        },
+        "recommendation": {
+          "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+          "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+          "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+          "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+        }
+      }
+    }
+  },
+  "benchmark_id": "androidcontrol_text_projection",
+  "claim_boundary": "Current m679 public AndroidControl mirror continuation with teacher-forced text/action metrics. Screenshots were omitted and no emulator was launched; this is not visual mobile control, AndroidWorld or MobileGym success, or external-account behavior.",
+  "comparison": {
+    "exact_sequence_accuracy": {
+      "random": 0.0,
+      "warm": 0.0
+    },
+    "random_after_eval_token_accuracy": 0.8268199233716476,
+    "random_before_eval_token_accuracy": 0.8151724137931035,
+    "random_gain_pp": 1.1647509578544102,
+    "warm_after_eval_token_accuracy": 0.8268199233716476,
+    "warm_before_eval_token_accuracy": 0.8151724137931035,
+    "warm_gain_pp": 1.1647509578544102,
+    "warm_minus_random_after_pp": 0.0,
+    "warm_start_better_after": false
+  },
+  "environment_executed": false,
+  "kind": "localagent_m691_m679_androidcontrol_current",
+  "official_split_verified": false,
+  "parent_checkpoint": {
+    "bytes": 52206773,
+    "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "protocol": {
+    "batch_size": 4,
+    "eval_rows": 256,
+    "learning_rate": 1e-05,
+    "max_seq_len": 512,
+    "official_native_score": false,
+    "split_policy": "pinned public train/eval mirror; no eval rows used for SFT",
+    "steps": 32,
+    "train_rows": 512
+  },
+  "raw_reports": {
+    "random": {
+      "bytes": 11606,
+      "path": "/private/tmp/m691-m679-androidcontrol/random-report.json",
+      "sha256": "e4851ba03d692121d7c405fa990cb5247fd167fe354118538ccd268cb9bd1e42"
+    },
+    "warm": {
+      "bytes": 11566,
+      "path": "/private/tmp/m691-m679-androidcontrol/warm-report.json",
+      "sha256": "c1c03abfc4e192abf5176dd556f050002c7d4b2c340bd15fc5a6e2f1a4944c33"
+    }
+  },
+  "receipt_self_sha256": "b684c5da62abc9e5f2fb4c3187bc801ee0c5cb0708c81d00ec6c8407800464c1",
+  "schema_version": 1,
+  "source": {
+    "dataset": "OfficerChul/Android-Control-84k",
+    "eval_rows": [
+      {
+        "bytes": 838022,
+        "path": "/private/tmp/localagent-public-data/androidcontrol-eval-256.jsonl",
+        "sha256": "5168c544664cd4f7c0723387280a423b1ba3e518da2ba381305522f0dea270bc"
+      }
+    ],
+    "original_project": "https://github.com/google-research/google-research/tree/master/android_control",
+    "revision": "0248027f747c9d57bd09c14e8f044f9a8103dddd",
+    "screenshots": "omitted_from_projection",
+    "train_manifest": {
+      "bytes": 1484,
+      "path": "/private/tmp/localagent-public-data/androidcontrol-train-512.manifest.json",
+      "sha256": "eaa85fb327cee4843664b4a277778894bf68708c1c2e8f6e37cf1319c1d52523"
+    },
+    "train_rows": [
+      {
+        "bytes": 1680018,
+        "path": "/private/tmp/localagent-public-data/androidcontrol-train-512.jsonl",
+        "sha256": "34c68424d9bc660a5c594a6f21c946b822f87c8ed0ad0cede43a11cc585f6c29"
+      }
+    ],
+    "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+  },
+  "weight_adoption": {
+    "config_compatible": true,
+    "random_action_head_relative_delta": 0.2952865592887827,
+    "random_body_relative_delta_max": 0.004125480945884786,
+    "recommendation": "retain the m679 backbone for mobile text continuation, but add visual grounding and native emulator validation before promotion",
+    "tokenizer_compatible": true,
+    "warm_action_heads_frozen": true,
+    "warm_body_relative_delta_max": 0.004125480945884786
+  }
+}

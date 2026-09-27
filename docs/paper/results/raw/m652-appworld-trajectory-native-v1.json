@@ -1,0 +1,106 @@
+{
+  "benchmark": {
+    "data_version": "0.2.0",
+    "dataset": "AppWorld",
+    "max_steps": 8,
+    "native_split": "public dev subset",
+    "native_tasks": 6,
+    "protected_test_used": false,
+    "retrieve_k": 100,
+    "source_url": "https://github.com/StonyBrookNLP/appworld"
+  },
+  "claim_boundary": "Native AppWorld resettable free-running trajectory probe with strict one-call schema translation, redacted observations, and matched warm/random checkpoints. This is not an official leaderboard score, complete AppWorld task result, external-account side effect, or WebGPU email/Notion deployment claim.",
+  "decision": {
+    "promote_to_native_appworld_success": false,
+    "reason": "The matched free-running adapter executes 3 warm and 15 random API actions across six resettable public dev tasks, but both arms score 0/6 native task success. The warm child repeats show_song_queue or fails required-argument grounding; teacher-forced trajectory gains do not transfer to a stateful free-run policy."
+  },
+  "inputs": {
+    "random_native": {
+      "bytes": 18159,
+      "path": "/private/tmp/m651-appworld/native-random.json",
+      "sha256": "7848066f66762e2a1f6f0458622f2a659f49585978b8982a3a49a41833cc9d09"
+    },
+    "random_training": {
+      "bytes": 5519,
+      "path": "/private/tmp/m651-appworld/random/report.json",
+      "sha256": "e5997fbd57b2959723c2448a2925869b67e64f92998b4ef7411c74b986e0e7e0"
+    },
+    "warm_native": {
+      "bytes": 10515,
+      "path": "/private/tmp/m651-appworld/native-warm.json",
+      "sha256": "655f407e1a1ecc51faf563704db99f82c58ec6dd7b7c41698ad61a05304809bd"
+    },
+    "warm_training": {
+      "bytes": 5550,
+      "path": "/private/tmp/m651-appworld/warm/report.json",
+      "sha256": "9cb700dffa5387f1b069fd9e1464ff8209923eebe75fbad675a7e023afd5958b"
+    }
+  },
+  "kind": "localagent_m652_appworld_trajectory_native_receipt",
+  "native_replay": {
+    "paired_task_ids": [
+      "50e1ac9_1",
+      "50e1ac9_2",
+      "50e1ac9_3",
+      "fac291d_1",
+      "fac291d_2",
+      "fac291d_3"
+    ],
+    "random": {
+      "checkpoint": {
+        "bytes": 52203288,
+        "path": "/private/tmp/m651-appworld/random/child.pt",
+        "sha256": "082a0304708abe74af6a40d8cf12131db9f7a328d4e7314fa3702821496213ea"
+      },
+      "report": {
+        "bytes": 18159,
+        "path": "/private/tmp/m651-appworld/native-random.json",
+        "sha256": "7848066f66762e2a1f6f0458622f2a659f49585978b8982a3a49a41833cc9d09"
+      },
+      "summary": {
+        "action_replayed": 15,
+        "native_api_calls": 60,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "steps_attempted": 21,
+        "tasks": 6
+      }
+    },
+    "warm": {
+      "checkpoint": {
+        "bytes": 52203288,
+        "path": "/private/tmp/m651-appworld/warm/child.pt",
+        "sha256": "fbfaae3b84146a298c4732637c8893fbb71037f0347c77017615b97bd93cec34"
+      },
+      "report": {
+        "bytes": 10515,
+        "path": "/private/tmp/m651-appworld/native-warm.json",
+        "sha256": "655f407e1a1ecc51faf563704db99f82c58ec6dd7b7c41698ad61a05304809bd"
+      },
+      "summary": {
+        "action_replayed": 3,
+        "native_api_calls": 12,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "steps_attempted": 9,
+        "tasks": 6
+      }
+    }
+  },
+  "receipt_self_sha256": "ab08e8322ebb03fd9088242050cd0292e3f2a85df2addda13036d625bcdf4bc8",
+  "schema_version": 1,
+  "teacher_forced_context": {
+    "random_eval_token_accuracy": 0.37124759019553843,
+    "random_report": {
+      "bytes": 5519,
+      "path": "/private/tmp/m651-appworld/random/report.json",
+      "sha256": "e5997fbd57b2959723c2448a2925869b67e64f92998b4ef7411c74b986e0e7e0"
+    },
+    "warm_eval_token_accuracy": 0.6450013770311209,
+    "warm_report": {
+      "bytes": 5550,
+      "path": "/private/tmp/m651-appworld/warm/report.json",
+      "sha256": "9cb700dffa5387f1b069fd9e1464ff8209923eebe75fbad675a7e023afd5958b"
+    }
+  }
+}

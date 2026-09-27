@@ -1,0 +1,49 @@
+{
+  "kind": "localagent_toolsandbox_text_projection_current_checkpoint",
+  "schema_version": 1,
+  "source": {
+    "dataset": "apple/ToolSandbox",
+    "url": "https://github.com/apple/ToolSandbox",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "license": "Apple Software License; see upstream LICENSE and ACKNOWLEDGEMENTS",
+    "projection_path": "/private/tmp/toolsandbox-localagent-projection-v1/toolsandbox-eval.jsonl",
+    "projection_sha256": "723be0be3173c58d14f250f99e771d3e9a1c5c98fcdd0b44b02a2bd2836bab1c",
+    "rows": 20,
+    "candidate_tools": 20,
+    "official_split_verified": false,
+    "simulator_executed": false,
+    "verifiers_executed": false,
+    "external_api_called": false
+  },
+  "checkpoint": {
+    "path": "/private/tmp/m111-deployment-repair-warm.pt",
+    "sha256": "35fedcefdafece153912b3bf6629fb23c0ad48f269126d2f8021ef04e0e384ae",
+    "parameters": 10524544
+  },
+  "row_retriever": {
+    "route_rate": 1.0,
+    "tool_exact_rate": 0.3,
+    "arguments_exact_rate": 0.3,
+    "schema_valid_rate": 1.0,
+    "by_category": {
+      "CANONICALIZATION": {"rows": 14, "tool_exact_rate": 0.21428571428571427},
+      "STATE_DEPENDENCY": {"rows": 4, "tool_exact_rate": 0.0},
+      "UNCATEGORIZED": {"rows": 4, "tool_exact_rate": 0.75}
+    },
+    "prediction_sha256": "0b19b581f4cd3e3210ca76fb54aad400ee52241f419fa8e5789607d3da60cfc2",
+    "report_sha256": "3c776a9cc4480763a8d9ee4061e3578f08ac6b964afc230eadc33244bb4acd6b"
+  },
+  "global_selector_control": {
+    "route_rate": 1.0,
+    "tool_exact_rate": 0.0,
+    "arguments_exact_rate": 0.0,
+    "schema_valid_rate": 0.05,
+    "report_sha256": "052daa4ac3fd06ea582f327743c51bcd5a782dbf09f74d597d3e596d0c97cfe8"
+  },
+  "evaluator": {
+    "script": "scripts/evaluate_toolsandbox_text.py",
+    "script_sha256": "862327b2d654b0e799b80f956023a189b967fe1561c214660a9bf96ae0518487",
+    "candidate_mode": "row_retriever_then_global_selector_control"
+  },
+  "claim_boundary": "Current-checkpoint ToolSandbox static projection only. Row-local candidate retrieval reaches 30% exact tool and 100% schema-valid calls, while the global selector reaches 0% exact tool and 5% schema-valid calls. ToolSandbox simulator, model-based user, milestone verifiers, official split, and external services were not executed; this is not an official ToolSandbox, MCPMark, or native WebGPU score."
+}

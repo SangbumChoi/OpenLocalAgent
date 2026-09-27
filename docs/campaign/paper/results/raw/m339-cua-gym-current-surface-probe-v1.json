@@ -1,0 +1,92 @@
+{
+  "arms": {
+    "random": {
+      "backbone_frozen": true,
+      "backbone_relative_l2": 0.0,
+      "checkpoint_sha256": "95ea7ead7967a881a7db7100ad037ccd1ae23777f5a436498daa8f917bb7c059",
+      "checkpoint_stage": "sft_cross_surface_public_continuation",
+      "eval": {
+        "accuracy": 0.7786624431610107,
+        "balanced_accuracy": 0.7849685943253194,
+        "rows": 628
+      },
+      "probe_head_sha256": "a31ba399636ad86bb5cb623d42bdb098544fe258ec5f3a7c78ffc5d29af7e320",
+      "probe_head_relative_l2": {
+        "fc.bias": 1.7219893061091507,
+        "fc.weight": 3.5225535175864278
+      },
+      "train": {
+        "accuracy": 0.8489692807197571,
+        "balanced_accuracy": 0.8615701324018858,
+        "rows": 2377
+      }
+    },
+    "warm": {
+      "backbone_frozen": true,
+      "backbone_relative_l2": 0.0,
+      "checkpoint_sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+      "checkpoint_stage": "sft_browser_context",
+      "eval": {
+        "accuracy": 0.7754777073860168,
+        "balanced_accuracy": 0.7736379388426172,
+        "rows": 628
+      },
+      "probe_head_sha256": "9027dc6ade5773141cb6b772d794e21778f49d97b6caab09e7e8485fcd9c91e9",
+      "probe_head_relative_l2": {
+        "fc.bias": 0.8657699862726336,
+        "fc.weight": 3.5707859300083062
+      },
+      "train": {
+        "accuracy": 0.8679007291793823,
+        "balanced_accuracy": 0.8740221650228692,
+        "rows": 2377
+      }
+    }
+  },
+  "claim_boundary": "This is a metadata-derived desktop/web/cross-app surface probe over a deterministic task-ID holdout. It reads no CUA-Gym setup or reward artifacts, screenshots, or action traces; it is not CUA-Gym task success, RLVR, native desktop/browser control, email/Notion/MCP execution, or evidence for adopting warm weights.",
+  "comparison": {
+    "eval_accuracy_delta_warm_minus_random": -0.0031847357749938965,
+    "eval_balanced_accuracy_delta_warm_minus_random": -0.011330655482702179
+  },
+  "dataset": "xlangai/CUA-Gym",
+  "decision": "reject_transfer_for_deployment",
+  "generated_at": "2026-08-05",
+  "hyperparameters": {
+    "backbone_frozen": true,
+    "head_batch_size": 128,
+    "head_lr": 0.005,
+    "head_seed": 2029,
+    "head_steps": 300
+  },
+  "kind": "localagent_cua_gym_current_surface_probe",
+  "license": "CC-BY-4.0",
+  "receipt_self_sha256": "c00ba292146f343e9ad758129a794d1b38782b72a4558e9b129b1e79ea0c7e14",
+  "schema_version": 1,
+  "selection": {
+    "all_metadata_rows": 10910,
+    "eval_counts": {
+      "cross_app": 95,
+      "desktop": 324,
+      "web": 209
+    },
+    "selected_counts": {
+      "cross_app": 430,
+      "desktop": 1500,
+      "web": 1075
+    },
+    "selected_rows": 3005,
+    "split_seed": 2027,
+    "task_id_disjoint": true,
+    "train_counts": {
+      "cross_app": 335,
+      "desktop": 1176,
+      "web": 866
+    }
+  },
+  "source": {
+    "bytes": 9745937,
+    "sha256": "2ac0cc21fa2f50783e4e88152c7c3255df0b574054c9df6825e45d41f7068635",
+    "url": "https://huggingface.co/datasets/xlangai/CUA-Gym",
+    "revision": "3c021d0"
+  }
+}

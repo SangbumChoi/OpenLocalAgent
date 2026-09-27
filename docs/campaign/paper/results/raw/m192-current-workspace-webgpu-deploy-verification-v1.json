@@ -1,0 +1,23 @@
+{
+  "kind": "localagent_webgpu_demo_deploy_verification",
+  "schema_version": 1,
+  "bundle_dir": "spaces/localagent-webgpu",
+  "demo_dir": "spaces/localagent-webgpu",
+  "deployment_bundle_present": true,
+  "verified": true,
+  "static_files": ["index.html", "app.js", "style.css", "tokenizer.js"],
+  "bundle_artifacts": {
+    "count": 8,
+    "manifest_sha256": "db4aad83ad26f726e456abe98aa7c2aad964ac468a30dd92a06288233ec51738",
+    "bundle_identity_sha256": "c750c254140c47824b5cb82063b99ea0c22c1112606ee725bed23ae911251791",
+    "parity_gate_passed": true,
+    "all_hashes_and_byte_counts_match": true
+  },
+  "model": {
+    "parameters": 10524544,
+    "checkpoint_sha256": "9bba544ae37190fdc24ea51ac9f3f8d80350cd905c01e13186156c19f7e0f9ee",
+    "checkpoint_stage": "sft_realistic_mobile_dispatch_pilot"
+  },
+  "claim_boundary": "Local static-bundle verification only: every generated model/head/tokenizer artifact is present and matches its manifest. This does not prove physical WebGPU placement, browser throughput on other devices, learned task quality, native benchmark success, or public Hugging Face/Spaces publication.",
+  "receipt_self_sha256": "a544396f6fb85d6028141cc96a01372415d70270b5cc073522c9b9d9a7bd455d"
+}

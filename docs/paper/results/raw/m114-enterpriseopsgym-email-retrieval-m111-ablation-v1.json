@@ -1,0 +1,49 @@
+{
+  "kind": "localagent_enterpriseopsgym_email_retrieval_transfer_ablation",
+  "schema_version": 1,
+  "dataset": {
+    "name": "ServiceNow-AI/EnterpriseOps-Gym",
+    "url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym",
+    "code_url": "https://github.com/ServiceNow/EnterpriseOps-Gym",
+    "revision": "c8e538eae8a6205294f0a86675fefdc1fac408f6",
+    "domain": "email",
+    "oracle_rows": 67,
+    "oracle_sha256": "b5290259d09bc02e605b8cf5ffa3b20d22c65219eb05196a69fd340712f286fe",
+    "distractor_rows": 67,
+    "distractor_sha256": "7db6e7c2ce574d74161ad72d10a8de54ad4128bb87fb9caa86c6eb05affc3f39",
+    "candidate_mode": "plus_15_tools",
+    "tool_description_policy": "generated_name_only_v1",
+    "official_split_verified": false,
+    "verifiers_dropped": true,
+    "server_configuration_dropped": true,
+    "execution": "frozen_localagent_dense_selector_no_tool_execution"
+  },
+  "warm": {
+    "checkpoint_sha256": "35fedcefdafece153912b3bf6629fb23c0ad48f269126d2f8021ef04e0e384ae",
+    "report_sha256": "b4a46c1fd037569e6bb21e2f9fc72f899171655c47e2903079687515c3f2886c",
+    "hit_at_1": 0.208955223880597,
+    "hit_at_3": 0.5970149253731343,
+    "hit_at_5": 0.8656716417910447
+  },
+  "random_control": {
+    "checkpoint_sha256": "f52549e366cf60a529ba3b197bd64fedd8b34d07fb137c0bcf625d56a4bacb9f",
+    "report_sha256": "0f8ae2c296d0032325d3bdd6102aed28e03c6fab3a9972b87ce64724da10eb11",
+    "hit_at_1": 0.13432835820895522,
+    "hit_at_3": 0.47761194029850745,
+    "hit_at_5": 0.7611940298507462
+  },
+  "previous_public_diagnostic": {
+    "receipt": "docs/paper/results/raw/m14-enterpriseopsgym-email-retrieval-v10.json",
+    "receipt_sha256": "b4fc14edc5e87f6bec14db52b21f90eee0ab8beb34ab4e6f215444c68429d669",
+    "checkpoint_sha256": "0646bf9469565a721fc02850b87026e33b4a1ce9e8a10edf237c3833a88c0294",
+    "hit_at_1": 0.26865671641791045,
+    "hit_at_3": 0.5671641791044776,
+    "hit_at_5": 0.7910447761194029
+  },
+  "evaluator": {
+    "script": "scripts/evaluate_enterpriseopsgym_tool_retrieval.py",
+    "script_sha256": "a56f8ccbf4441330404a706f4126a21989441327521b008c7a95671a91d37f3f",
+    "adapter": "enterpriseopsgym-name-only-retrieval-v1"
+  },
+  "claim_boundary": "Out-of-domain public email-tool retrieval only. Warm transfer beats the matched random control on hit@1/3/5, but trails the older m14 diagnostic at hit@1 and does not establish EnterpriseOps-Gym task success, database-verifier success, MCP execution, or native WebGPU capability."
+}

@@ -1,0 +1,353 @@
+{
+  "checkpoint": {
+    "parameters": 10524544,
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+  },
+  "claim_boundary": "Local-only paired HF model and static Space preparation from the exact current checkpoint. No Hub upload, public URL, anonymous re-fetch, hardware adapter, benchmark score, or external side effect is implied.",
+  "generated_at": "2026-08-05",
+  "kind": "localagent_hf_paired_release_local_current",
+  "measurement": "m364_hf_paired_release_local_current_rebuild",
+  "model": {
+    "files": {
+      "README.md": {
+        "bytes": 3538,
+        "sha256": "e146facc48b11298756b2f71e4df7cd5fc6da141fdb943f052fcae1493af3d7f"
+      },
+      "agent_heads.bin": {
+        "bytes": 10116038,
+        "sha256": "f2af8f83698276b63d9def1f89c990ee9343c8360a30f6411267c0902fe0a128"
+      },
+      "config.json": {
+        "bytes": 38446,
+        "sha256": "29ac9528d9af3b329fe4628966cf4fa0347f54060cceb18b74664fa6c8e0ab56"
+      },
+      "model.safetensors": {
+        "bytes": 42101904,
+        "sha256": "c95406240d299e6846b79f347add8aede5707c761fc545184aa2c2149c504404"
+      },
+      "tokenizer.json": {
+        "bytes": 1134224,
+        "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+      }
+    },
+    "path": "/private/tmp/m364-hf-model",
+    "repo": "SangbumChoi/localagent-webgpu-10m",
+    "tool_pool_count": 63,
+    "tool_pool_sha256": "fd3c5d30a3c7fcb2c010c04e79e1b47cd88e3897712e98f5a144d09699f25694"
+  },
+  "publication": {
+    "authenticated": false,
+    "published": false,
+    "reason": "hf auth whoami reports Not logged in",
+    "uploaded": false
+  },
+  "receipt_self_sha256": "83088aaaa77b4969ab5b72490054a6c4a795f093417f70eea8867218b9d4d288",
+  "schema_version": 1,
+  "source": {
+    "app_sha256": "2496c9fa5210b561ce96af7cd9b4b907333293d81f72dad97dc6901955127e64",
+    "checkpoint_sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "demo_source": "spaces/localagent-webgpu",
+    "script": "scripts/publish_hf_release.py"
+  },
+  "space": {
+    "app_sha256": "2496c9fa5210b561ce96af7cd9b4b907333293d81f72dad97dc6901955127e64",
+    "bundle_identity_sha256": "e0e19a8ad529a23e6bd703ed310eabe95f0a7b6b8ca7ad984c2d0c5ec8a296ed",
+    "path": "/private/tmp/m364-hf-space",
+    "repo": "SangbumChoi/localagent-webgpu",
+    "verified": true
+  },
+  "webgpu": {
+    "artifacts": {
+      "action_model.fp16.onnx": {
+        "bytes": 21430301,
+        "file": "action_model.fp16.onnx",
+        "sha256": "8856dcaeca1ad2125b0ba34d0fa47da8f0271d3078195a9288862cd1603a1434"
+      },
+      "action_model.onnx": {
+        "bytes": 42700043,
+        "file": "action_model.onnx",
+        "sha256": "57751f41902a66a24fd9336de120c58b566018043c4131a10d10d003bf9df5f6"
+      },
+      "dispatch_heads.json": {
+        "bytes": 1359146,
+        "file": "dispatch_heads.json",
+        "sha256": "8e89b3e2bdc372139b89c2b7b40a75ba6c520f25a01ae70ea2548e3e07cffad6"
+      },
+      "heads.json": {
+        "bytes": 3337015,
+        "file": "heads.json",
+        "sha256": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486"
+      },
+      "meta.json": {
+        "bytes": 14728,
+        "file": "meta.json",
+        "sha256": "d26f68ed2201f9db7d97898001b5dadfef484a39e497405975cf5e859693a8ce"
+      },
+      "model.fp16.onnx": {
+        "bytes": 34026169,
+        "file": "model.fp16.onnx",
+        "sha256": "d10584a5c41e281af13e4d6d45d4bc06bc5646434705b052b66cb75047ada1e0"
+      },
+      "model.onnx": {
+        "bytes": 67877334,
+        "file": "model.onnx",
+        "sha256": "74e4be16cc3090606c09ebb09c068fba7e9cb5ba096d05e1ce158279c8032fc2"
+      },
+      "tokenizer.json": {
+        "bytes": 1134224,
+        "file": "tokenizer.json",
+        "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+      }
+    },
+    "bundle_identity_sha256": "e0e19a8ad529a23e6bd703ed310eabe95f0a7b6b8ca7ad984c2d0c5ec8a296ed",
+    "parity_gate": {
+      "fixture_contract": "ids[i]=(131*i+17+977*fixture_index) mod vocab_size",
+      "hard_gate": true,
+      "passed": true,
+      "reference": "the exact LocalAgentLM checkpoint loaded for this export",
+      "results": {
+        "action_model.fp16.onnx": {
+          "artifact": {
+            "bytes": 21430301,
+            "sha256": "8856dcaeca1ad2125b0ba34d0fa47da8f0271d3078195a9288862cd1603a1434"
+          },
+          "expected_outputs": [
+            "hidden"
+          ],
+          "max_abs_diff_by_output": {
+            "hidden": 0.004587888717651367
+          },
+          "minimum_logits_argmax_agreement": null,
+          "passed": true,
+          "per_fixture": [
+            {
+              "input_ids_sha256": "35e3a6176b50da27fcb868bf840f0e76290bd9bf55c40545e67bac66353d0674",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 0.0026397705078125
+                }
+              },
+              "sequence_length": 1
+            },
+            {
+              "input_ids_sha256": "5645e6fd5c57f9809304ba0ff87291710f781b698fc1fe7904f0e2326db48ae0",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 0.004587888717651367
+                }
+              },
+              "sequence_length": 8
+            },
+            {
+              "input_ids_sha256": "9c7dbd4f5db9c6001808980721fa0113d8cbf9694cb2d9407f93669a8fb79d56",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 0.004026174545288086
+                }
+              },
+              "sequence_length": 16
+            }
+          ],
+          "precision": "fp16",
+          "provider": "CPUExecutionProvider",
+          "threshold_max_abs_diff": 0.05,
+          "threshold_max_abs_diff_by_output": {
+            "hidden": 0.05
+          }
+        },
+        "action_model.onnx": {
+          "artifact": {
+            "bytes": 42700043,
+            "sha256": "57751f41902a66a24fd9336de120c58b566018043c4131a10d10d003bf9df5f6"
+          },
+          "expected_outputs": [
+            "hidden"
+          ],
+          "max_abs_diff_by_output": {
+            "hidden": 4.351139068603516e-06
+          },
+          "minimum_logits_argmax_agreement": null,
+          "passed": true,
+          "per_fixture": [
+            {
+              "input_ids_sha256": "35e3a6176b50da27fcb868bf840f0e76290bd9bf55c40545e67bac66353d0674",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 3.9637088775634766e-06
+                }
+              },
+              "sequence_length": 1
+            },
+            {
+              "input_ids_sha256": "5645e6fd5c57f9809304ba0ff87291710f781b698fc1fe7904f0e2326db48ae0",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 4.291534423828125e-06
+                }
+              },
+              "sequence_length": 8
+            },
+            {
+              "input_ids_sha256": "9c7dbd4f5db9c6001808980721fa0113d8cbf9694cb2d9407f93669a8fb79d56",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 4.351139068603516e-06
+                }
+              },
+              "sequence_length": 16
+            }
+          ],
+          "precision": "fp32",
+          "provider": "CPUExecutionProvider",
+          "threshold_max_abs_diff": 0.001,
+          "threshold_max_abs_diff_by_output": {
+            "hidden": 0.001
+          }
+        },
+        "model.fp16.onnx": {
+          "artifact": {
+            "bytes": 34026169,
+            "sha256": "d10584a5c41e281af13e4d6d45d4bc06bc5646434705b052b66cb75047ada1e0"
+          },
+          "expected_outputs": [
+            "logits",
+            "hidden"
+          ],
+          "max_abs_diff_by_output": {
+            "hidden": 0.004587888717651367,
+            "logits": 0.006051778793334961
+          },
+          "minimum_logits_argmax_agreement": 1.0,
+          "passed": true,
+          "per_fixture": [
+            {
+              "input_ids_sha256": "35e3a6176b50da27fcb868bf840f0e76290bd9bf55c40545e67bac66353d0674",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 0.0026397705078125
+                },
+                "logits": {
+                  "argmax_agreement": 1.0,
+                  "max_abs_diff": 0.0026667118072509766
+                }
+              },
+              "sequence_length": 1
+            },
+            {
+              "input_ids_sha256": "5645e6fd5c57f9809304ba0ff87291710f781b698fc1fe7904f0e2326db48ae0",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 0.004587888717651367
+                },
+                "logits": {
+                  "argmax_agreement": 1.0,
+                  "max_abs_diff": 0.006051778793334961
+                }
+              },
+              "sequence_length": 8
+            },
+            {
+              "input_ids_sha256": "9c7dbd4f5db9c6001808980721fa0113d8cbf9694cb2d9407f93669a8fb79d56",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 0.004026174545288086
+                },
+                "logits": {
+                  "argmax_agreement": 1.0,
+                  "max_abs_diff": 0.005214214324951172
+                }
+              },
+              "sequence_length": 16
+            }
+          ],
+          "precision": "fp16",
+          "provider": "CPUExecutionProvider",
+          "threshold_max_abs_diff": 0.1,
+          "threshold_max_abs_diff_by_output": {
+            "hidden": 0.05,
+            "logits": 0.1
+          }
+        },
+        "model.onnx": {
+          "artifact": {
+            "bytes": 67877334,
+            "sha256": "74e4be16cc3090606c09ebb09c068fba7e9cb5ba096d05e1ce158279c8032fc2"
+          },
+          "expected_outputs": [
+            "logits",
+            "hidden"
+          ],
+          "max_abs_diff_by_output": {
+            "hidden": 4.351139068603516e-06,
+            "logits": 7.152557373046875e-06
+          },
+          "minimum_logits_argmax_agreement": 1.0,
+          "passed": true,
+          "per_fixture": [
+            {
+              "input_ids_sha256": "35e3a6176b50da27fcb868bf840f0e76290bd9bf55c40545e67bac66353d0674",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 3.9637088775634766e-06
+                },
+                "logits": {
+                  "argmax_agreement": 1.0,
+                  "max_abs_diff": 4.5299530029296875e-06
+                }
+              },
+              "sequence_length": 1
+            },
+            {
+              "input_ids_sha256": "5645e6fd5c57f9809304ba0ff87291710f781b698fc1fe7904f0e2326db48ae0",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 4.291534423828125e-06
+                },
+                "logits": {
+                  "argmax_agreement": 1.0,
+                  "max_abs_diff": 7.152557373046875e-06
+                }
+              },
+              "sequence_length": 8
+            },
+            {
+              "input_ids_sha256": "9c7dbd4f5db9c6001808980721fa0113d8cbf9694cb2d9407f93669a8fb79d56",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 4.351139068603516e-06
+                },
+                "logits": {
+                  "argmax_agreement": 1.0,
+                  "max_abs_diff": 5.9604644775390625e-06
+                }
+              },
+              "sequence_length": 16
+            }
+          ],
+          "precision": "fp32",
+          "provider": "CPUExecutionProvider",
+          "threshold_max_abs_diff": 0.001,
+          "threshold_max_abs_diff_by_output": {
+            "hidden": 0.001,
+            "logits": 0.001
+          }
+        }
+      },
+      "schema_version": 1,
+      "thresholds": {
+        "fp16": {
+          "hidden_max_abs_diff": 0.05,
+          "logits_max_abs_diff": 0.1
+        },
+        "fp32": {
+          "hidden_max_abs_diff": 0.001,
+          "logits_max_abs_diff": 0.001
+        }
+      }
+    },
+    "path": "/private/tmp/m364-hf-web",
+    "tool_pool_count": 63,
+    "tool_pool_sha256": "fd3c5d30a3c7fcb2c010c04e79e1b47cd88e3897712e98f5a144d09699f25694"
+  }
+}

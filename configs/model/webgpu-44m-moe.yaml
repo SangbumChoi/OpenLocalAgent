@@ -1,0 +1,27 @@
+# Sparse routed-FFN research candidate for small-model diversity.
+#
+# Total stored parameters: 43,862,464 (87.7 MB at FP16).
+# Nominal per-token active parameters: 17,320,384 (34.6 MB at FP16), counting every dense/shared
+# weight, the complete 8-way router in each block, and the selected two experts in each block.
+# These are architecture counts, not measured WebGPU throughput or peak-memory claims. The current
+# ONNX exporter has no sparse-dispatch lowering, so benchmark the pure-PyTorch path until an export
+# runtime demonstrates that it executes only selected experts.
+name: webgpu-44m-moe
+vocab_size: 16384
+d_model: 320
+n_layers: 9
+n_loops: 1
+n_heads: 5
+n_kv_heads: 1
+ffn_hidden: 512
+max_seq_len: 2048
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types: [conv, conv, attn, conv, conv, attn, conv, conv, attn]
+ffn_num_experts: 8
+ffn_top_k: 2
+router_aux_loss_coef: 0.01

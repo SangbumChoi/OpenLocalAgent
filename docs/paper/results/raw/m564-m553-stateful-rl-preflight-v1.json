@@ -1,0 +1,52 @@
+{
+  "kind": "localagent_one_update_training_preflight",
+  "schema_version": 1,
+  "status": "passed",
+  "parent_checkpoint": {
+    "sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+    "parameters": 10524544,
+    "stage": "sft_public_agent_continuation"
+  },
+  "lineage": {
+    "stage": "rl",
+    "version": 1,
+    "parent_checkpoint_sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+    "data_sha256": "6184f3b598053e5bbf6a0556f4f7d2b6595fa2161d51f33ecb6adbaf9efc25cd"
+  },
+  "protocol": {
+    "steps": 2,
+    "prompts_per_step": 4,
+    "group_size": 4,
+    "max_new_tokens": 64,
+    "device": "cpu",
+    "environment": "stateful_productivity",
+    "production_output_untouched": true
+  },
+  "measurement": {
+    "realized_optimizer_updates": 2,
+    "first_nonzero_learning_rate_step": 1,
+    "actual_learning_rates": [0.0, 2e-05],
+    "changed_model_parameter_count": 40,
+    "informative_groups": 5,
+    "exact_success_rollouts": 0,
+    "heldout_pre_mean_reward": 0.0,
+    "heldout_post_mean_reward": 0.037500000000000006,
+    "heldout_post_tool_format_valid_rate": 0.06666666666666667
+  },
+  "metrics": {
+    "lineage": {
+      "stage": "rl",
+      "version": 1,
+      "parent_checkpoint_sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+      "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+      "data_sha256": "6184f3b598053e5bbf6a0556f4f7d2b6595fa2161d51f33ecb6adbaf9efc25cd"
+    }
+  },
+  "raw_receipt": {
+    "path": "/private/tmp/m554-m553-rl-preflight.json",
+    "sha256": "c348a6f0f3b90b3b6ae6879076a9f2a8272d7b673bffad2d6a611f6f45510569"
+  },
+  "claim_boundary": "Strict one-update RL simulation over deterministic local email/Notion/browser conversations. It proves lineage, optimizer transition, and isolated execution only; it is not a native API, real-account, or public benchmark score.",
+  "receipt_self_sha256": "6a342a505363d63cea53bf98f83c5a74fe8569afd76503f6d33dce2aec211125"
+}

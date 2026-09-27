@@ -1,0 +1,82 @@
+{
+  "model": "sft-dc-qwen3-06b-all",
+  "kind": "catalog",
+  "location": "runs/sft-dc-qwen3-06b-all/latest.pt",
+  "parameters": 10524544,
+  "rows_per_suite": 200,
+  "max_new_tokens": 64,
+  "suites": {
+    "androidcontrol": {
+      "rows": 200,
+      "parse_rate": 1.0,
+      "type_match": 0.565,
+      "step_success_rate": 0.14,
+      "seconds_per_row": 0.039824542999267576,
+      "grounding_accuracy": 0.05084745762711865
+    },
+    "mind2web": {
+      "rows": 200,
+      "parse_rate": 1.0,
+      "type_match": 0.78,
+      "step_success_rate": 0.02,
+      "seconds_per_row": 0.03547913193702698
+    },
+    "toolace": {
+      "rows": 200,
+      "parse_rate": 0.945,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.06163027763366699
+    },
+    "xlam": {
+      "rows": 200,
+      "parse_rate": 0.95,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.06434513211250305
+    },
+    "agentnet": {
+      "rows": 200,
+      "parse_rate": 0.97,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.0846495521068573
+    },
+    "toolbench": {
+      "rows": 200,
+      "parse_rate": 0.955,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.10411285638809203
+    },
+    "bfcl": {
+      "rows": 200,
+      "parse_rate": 0.94,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.05414618015289307,
+      "grounding_accuracy": 0.0
+    },
+    "toolsandbox": {
+      "rows": 17,
+      "parse_rate": 0.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.004680465249454274
+    },
+    "mcpatlas": {
+      "rows": 200,
+      "parse_rate": 0.85,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.05825572848320007
+    },
+    "mobileactions": {
+      "rows": 200,
+      "parse_rate": 1.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.08096516013145447
+    }
+  }
+}

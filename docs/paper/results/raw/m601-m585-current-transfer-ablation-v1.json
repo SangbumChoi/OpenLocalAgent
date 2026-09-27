@@ -1,0 +1,70 @@
+{
+  "kind": "localagent_cross_surface_public_transfer_receipt",
+  "schema_version": 1,
+  "parent_checkpoint": {
+    "path": "/private/tmp/m585-public-multisurface-warm.pt",
+    "bytes": 52211696,
+    "sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff"
+  },
+  "children": {
+    "warm_start": {"path": "/private/tmp/m599-m585-warm-transfer.pt", "sha256": "3cb7526a34dbb2f3667e3afe4cc4c7437edd5051bae3ef161a8f9b4170beb27d"},
+    "random_backbone": {"path": "/private/tmp/m600-m585-random-transfer.pt", "sha256": "3e8936e3481fca0e096bd98e57f25ba299c1b6e22a2d308a71d39f78dfdaf6c2"}
+  },
+  "rows": {"train": 202, "eval": 53},
+  "sources": {
+    "train": {
+      "androidcontrol": {"rows": 64, "sha256": "34c68424d9bc660a5c594a6f21c946b822f87c8ed0ad0cede43a11cc585f6c29", "dataset": "OfficerChul/Android-Control-84k"},
+      "agentnet": {"rows": 64, "sha256": "fb17df74512f3f9a7c15c030ffbf82701f728803b987539e7c872e025967edf8", "dataset": "xlangai/AgentNet"},
+      "mind2web": {"rows": 64, "sha256": "b6cc595007bb91aa37f4d89e15e477b5b223bb9a66913856273c7cf995abf866", "dataset": "osunlp/Mind2Web"},
+      "mcpmark": {"rows": 10, "sha256": "21322d7218dd1f5906c4ae22162f1ef3e9ecb988d5633ca6a8f6d2943b8314d6", "dataset": "Jakumetsu/mcpmark-trajectory-log"}
+    },
+    "eval": {
+      "androidcontrol": {"rows": 16, "sha256": "5168c544664cd4f7c0723387280a423b1ba3e518da2ba381305522f0dea270bc", "dataset": "OfficerChul/Android-Control-84k"},
+      "agentnet": {"rows": 16, "sha256": "7f0f080e33c4a069c532f3efcc0ec72e73d456f606cd4e5608df6f4dd949ac43", "dataset": "xlangai/AgentNet"},
+      "mind2web": {"rows": 16, "sha256": "2b3e502978496dd75151a244477ad8efebfec0ebdd912bf97f0910c14f0d7ed9", "dataset": "osunlp/Mind2Web"},
+      "mcpmark": {"rows": 5, "sha256": "34c8e24ec58994f97372d9702fca54709a62140a2fef4a4d5e3099f6f4dcca89", "dataset": "Jakumetsu/mcpmark-trajectory-log"}
+    }
+  },
+  "hyperparameters": {"steps": 64, "batch_size": 4, "learning_rate": 1e-05, "max_seq_len": 192, "seed": 2027, "random_backbone_seed": 2039, "device": "cpu"},
+  "comparison": {
+    "arm_contract": {"warm_backbone_init": "parent", "random_backbone_init": "random", "random_backbone_seed": 2039},
+    "aggregate": {"warm_after_token_accuracy": 0.6964944649446494, "random_after_token_accuracy": 0.25338253382533826, "warm_minus_random_after_pp": 44.31119311193111, "warm_start_better_after": true},
+    "surfaces": {
+      "androidcontrol": {"warm_after": 0.8018433179723502, "random_after": 0.3433179723502304, "warm_minus_random_after_pp": 45.85253456221198, "warm_start_better_after": true},
+      "agentnet": {"warm_after": 0.7761467889908257, "random_after": 0.22201834862385322, "warm_minus_random_after_pp": 55.41284403669724, "warm_start_better_after": true},
+      "mind2web": {"warm_after": 0.8630872483221477, "random_after": 0.3268456375838926, "warm_minus_random_after_pp": 53.624161073825505, "warm_start_better_after": true},
+      "mcpmark": {"warm_after": 0.2656449553001277, "random_after": 0.08556832694763729, "warm_minus_random_after_pp": 18.007662835249043, "warm_start_better_after": true}
+    },
+    "decision": "warm_start_dominates_matched_random_on_all_surfaces"
+  },
+  "weight_transfer_analysis": {
+    "warm": {
+      "compatibility": {"config_mismatches": {}, "shape_mismatches": {}, "tokenizer_sha256_equal": true},
+      "groups": {
+        "embedding": {"relative_delta_l2": 0.008227192514706464},
+        "attention_or_mixer": {"relative_delta_l2": 0.0023274230488584055},
+        "ffn": {"relative_delta_l2": 0.003007676178277748},
+        "normalization": {"relative_delta_l2": 0.0002637045515147405},
+        "action_heads": {"relative_delta_l2": 0.0}
+      }
+    },
+    "random": {
+      "compatibility": {"config_mismatches": {}, "shape_mismatches": {}, "tokenizer_sha256_equal": true},
+      "groups": {
+        "embedding": {"relative_delta_l2": 1.1924765785133478},
+        "attention_or_mixer": {"relative_delta_l2": 0.7783863982526337},
+        "ffn": {"relative_delta_l2": 0.8778401697470297},
+        "normalization": {"relative_delta_l2": 0.08619279849766735},
+        "action_heads": {"relative_delta_l2": 0.0}
+      }
+    }
+  },
+  "raw_reports": {
+    "warm_sha256": "b9e764ce218a087b1afd0ae670a9de7d1666212bce84a148682b9cc64a4d7019",
+    "random_sha256": "0b56f6888549e21325b114b0afddc53a0c871b8091362d02e5afd1ae44d143de",
+    "comparison_sha256": "be8038349750c4e5f28ed750e8c059f7bd5d13e97cad7259e16f0c46467a68b5",
+    "assembled_sha256": "f49a57db0577338f3b9386d5e3886c472222829a90e9cb9873d84278b23d4094"
+  },
+  "claim_boundary": "Current m585-bound public-train-only source-local transfer ablation. Warm/random held-out token accuracy and weight movement are measured across AndroidControl, AgentNet, Mind2Web, and MCPMark projections; no official benchmark, screenshot grounding, native runtime, or real-account side effect is claimed.",
+  "receipt_self_sha256": "089b5364d8230612d060bfdf10b721a6df22c70fde8d019d5891165234ea66b8"
+}

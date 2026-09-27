@@ -1,0 +1,100 @@
+{
+  "claim_boundary": "Strict one-update RL simulation over a deterministic local email/Notion/browser state machine. It proves current-checkpoint lineage, isolated execution, optimizer transition, and measured reward only; it is not native API control, a public benchmark score, real-account execution, or a production RL checkpoint.",
+  "current_checkpoint": {
+    "bytes": 52203615,
+    "exists": true,
+    "kind": "file",
+    "path": "/private/tmp/m626-androidcontrol/warm.pt",
+    "sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c"
+  },
+  "kind": "localagent_one_update_training_preflight",
+  "lineage": {
+    "config_sha256": "5f03d8de61637feeb4cc0c83ec620af7861923682ab32eb86d120855278ad84d",
+    "data_sha256": "26bcfc3533ead3fb1ac3d527ecd03a498aa04e5b7fb6ff28cf02dc25e70c3153",
+    "git": {
+      "commit": "91e08ad12e8a5acec5f9bae191d88490decda983",
+      "dirty": true,
+      "repository_sha256": "4f3f386c8a99593d11431d8772a6bc3b3f67365462192b3068675ebbdee038bf",
+      "worktree_sha256": "3b2b59e85eda5a053066a2efc2bd309dbe7b08da46c0624b519e0acd57c51db3"
+    },
+    "model_config_sha256": "893fdd2f896c6c246ceed64031b9fbd4b5b770ce2fb72cd3de5fc02703161393",
+    "parent_checkpoint_sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c",
+    "stage": "rl",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+    "version": 1
+  },
+  "measurement": {
+    "attempted_rollouts": 32,
+    "changed_model_parameter_count": 40,
+    "exact_success_rollouts": 0,
+    "heldout_post_exact_match": 0.0,
+    "heldout_post_mean_reward": 0.10000000000000002,
+    "heldout_post_tool_format_valid_rate": 0.0,
+    "heldout_pre_mean_reward": 0.0,
+    "informative_groups": 6,
+    "learning_rate_history": [
+      0.0,
+      2e-05
+    ],
+    "realized_optimizer_updates": 2,
+    "reward_distribution": [
+      {
+        "count": 26,
+        "reward": 0.0,
+        "reward_hex": "0x0.0p+0"
+      },
+      {
+        "count": 6,
+        "reward": 0.1,
+        "reward_hex": "0x1.999999999999ap-4"
+      }
+    ]
+  },
+  "metrics": {
+    "lineage": {
+      "config_sha256": "5f03d8de61637feeb4cc0c83ec620af7861923682ab32eb86d120855278ad84d",
+      "data_sha256": "26bcfc3533ead3fb1ac3d527ecd03a498aa04e5b7fb6ff28cf02dc25e70c3153",
+      "git": {
+        "commit": "91e08ad12e8a5acec5f9bae191d88490decda983",
+        "dirty": true,
+        "repository_sha256": "4f3f386c8a99593d11431d8772a6bc3b3f67365462192b3068675ebbdee038bf",
+        "worktree_sha256": "3b2b59e85eda5a053066a2efc2bd309dbe7b08da46c0624b519e0acd57c51db3"
+      },
+      "model_config_sha256": "893fdd2f896c6c246ceed64031b9fbd4b5b770ce2fb72cd3de5fc02703161393",
+      "parent_checkpoint_sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c",
+      "stage": "rl",
+      "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+      "version": 1
+    }
+  },
+  "protocol": {
+    "device": "cpu",
+    "environment": {
+      "learned_judge": false,
+      "name": "stateful_productivity"
+    },
+    "group_size": 4,
+    "max_new_tokens": 64,
+    "production_output_untouched": true,
+    "prompts_per_step": 4,
+    "source_artifacts_untouched": true,
+    "steps": 2,
+    "train_eval_row_overlap": 0
+  },
+  "raw_report": {
+    "bytes": 17361,
+    "path": "/private/tmp/m633-m626-rl-preflight/receipt.json",
+    "sha256": "23dbb49b703038d612da62141bf353ad76405639a7a39d460184becef94d52da"
+  },
+  "receipt_self_sha256": "8abcea7a318be8da21a722d2e5c9bc0966a6d4d160e3f47a6c5544ce4a89b745",
+  "schema_version": 1,
+  "status": "passed",
+  "weight_transition": {
+    "all_named_policy_tensors_changed": true,
+    "by_component": {},
+    "changed_model_parameter_count": 40,
+    "contract": "exact_named_policy_parameter_comparison_v1",
+    "interpretation": "The isolated preflight proves optimizer and checkpoint transition only; it does not establish task success or a production RL checkpoint.",
+    "overall_relative_l2": null
+  }
+}

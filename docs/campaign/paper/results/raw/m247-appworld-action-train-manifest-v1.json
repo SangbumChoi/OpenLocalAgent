@@ -1,0 +1,699 @@
+{
+  "claim_boundary": "Public AppWorld train/dev first non-bootstrap API actions normalized as run_python supervision. No protected test split or raw solution code is committed; this is an action-step adapter, not a complete AppWorld trajectory or leaderboard score.",
+  "kind": "localagent_appworld_action_step_export",
+  "manifest_self_sha256": "22a91abe3baf73c8b156cc81a3ccd73f3d33c8fcb8ae9cb63f1b2000743aa753",
+  "output": {
+    "bytes": 28425,
+    "path": "/private/tmp/appworld-action-train24.jsonl",
+    "sha256": "d250f1b5628203a5de542f96ad710820df705a61ea5e6e2755fd84fb5089ca09"
+  },
+  "rows": 24,
+  "schema_version": 1,
+  "source": {
+    "data_version": "0.2.0",
+    "dataset": "appworld",
+    "package_version": "0.2.0.dev0",
+    "purpose": "train",
+    "root": "/private/tmp/appworld-data",
+    "split": "train",
+    "split_file": {
+      "bytes": 899,
+      "path": "/private/tmp/appworld-data/data/datasets/train.txt",
+      "sha256": "93d9fe71e7a2e3b7529803d4a20b604f4ebf5ae806f321081140238068189d37"
+    }
+  },
+  "tasks": [
+    {
+      "first_action": {
+        "api": "show_playlist_library",
+        "app": "spotify",
+        "arguments": {
+          "bytes": 17,
+          "sha256": "94fa2efbeb94d297d6f2f92fcafc017fe2cac5a28042e2871a4f2814e7053553"
+        },
+        "code": {
+          "bytes": 48,
+          "sha256": "f270b2dda1ecc7cff7fd703e776098cb5959e09b1fdc23ffbc6620990c2447d8"
+        }
+      },
+      "instruction": {
+        "bytes": 65,
+        "sha256": "fb9639d74e977307def33baf52c45d663380e7a9dd3b64559f4b5ddc328aa528"
+      },
+      "solution": {
+        "bytes": 1769,
+        "sha256": "b8f54ca60d1157ff9692de70dfecbab01ea50974b82dacf944104b061898a11d"
+      },
+      "spec": {
+        "bytes": 401,
+        "path": "/private/tmp/appworld-data/data/tasks/82e2fac_1/specs.json",
+        "sha256": "2d50e834f09533ea9d9a534eed309e40cf7a5dbbf52dc0c1052f49f2f4e0df74"
+      },
+      "task_id": "82e2fac_1"
+    },
+    {
+      "first_action": {
+        "api": "show_song_library",
+        "app": "spotify",
+        "arguments": {
+          "bytes": 17,
+          "sha256": "94fa2efbeb94d297d6f2f92fcafc017fe2cac5a28042e2871a4f2814e7053553"
+        },
+        "code": {
+          "bytes": 44,
+          "sha256": "b02806a0366a21a81e105b101a727c2dcca0f9373fc7a452368474e6f274acaa"
+        }
+      },
+      "instruction": {
+        "bytes": 70,
+        "sha256": "fb5ca320c00c3bb1d8faee9376adf1f8558d8429170dbb8651d80605c0ff839d"
+      },
+      "solution": {
+        "bytes": 1695,
+        "sha256": "65c46fd3e7a774dbc0f3ad80f28e3355c6134074a4eadd8da4f08e15903dade6"
+      },
+      "spec": {
+        "bytes": 408,
+        "path": "/private/tmp/appworld-data/data/tasks/82e2fac_2/specs.json",
+        "sha256": "bd5f8527e7bbb78d07bd8389047c36e55a99f26e11f03d9db41f3bf11ba6f6e1"
+      },
+      "task_id": "82e2fac_2"
+    },
+    {
+      "first_action": {
+        "api": "show_album_library",
+        "app": "spotify",
+        "arguments": {
+          "bytes": 17,
+          "sha256": "94fa2efbeb94d297d6f2f92fcafc017fe2cac5a28042e2871a4f2814e7053553"
+        },
+        "code": {
+          "bytes": 45,
+          "sha256": "af982ef98a22ade8ab2118f223c375abe3c126278ca4284571282410eeaadebf"
+        }
+      },
+      "instruction": {
+        "bytes": 70,
+        "sha256": "ad068ce11efb2e8a6244e03a8240282793aae80d68a86d639e009478f93bba59"
+      },
+      "solution": {
+        "bytes": 1748,
+        "sha256": "f91421d3cc990c49a2b7aeec503b8262924eaf3ce67373f35e6caa799a20387b"
+      },
+      "spec": {
+        "bytes": 404,
+        "path": "/private/tmp/appworld-data/data/tasks/82e2fac_3/specs.json",
+        "sha256": "ff908ae86398fcfc068d4d3df98e2a4d9c2898f2b38755bb53cae50df23346de"
+      },
+      "task_id": "82e2fac_3"
+    },
+    {
+      "first_action": {
+        "api": "show_playlist_library",
+        "app": "spotify",
+        "arguments": {
+          "bytes": 17,
+          "sha256": "94fa2efbeb94d297d6f2f92fcafc017fe2cac5a28042e2871a4f2814e7053553"
+        },
+        "code": {
+          "bytes": 48,
+          "sha256": "f270b2dda1ecc7cff7fd703e776098cb5959e09b1fdc23ffbc6620990c2447d8"
+        }
+      },
+      "instruction": {
+        "bytes": 129,
+        "sha256": "a950a91993090db7f485be0426584f1860ec42f296285eec93e92d53eb7bc1cf"
+      },
+      "solution": {
+        "bytes": 2926,
+        "sha256": "7884f99dffe34c1bcbe6af0bacad93fe2f7c2457b4341e2e19dab341d5568344"
+      },
+      "spec": {
+        "bytes": 463,
+        "path": "/private/tmp/appworld-data/data/tasks/692c77d_1/specs.json",
+        "sha256": "868003a30edf38f774e63a3011456f26022bd9c6e98bf0b9db15bf6ba7f80763"
+      },
+      "task_id": "692c77d_1"
+    },
+    {
+      "first_action": {
+        "api": "show_song_library",
+        "app": "spotify",
+        "arguments": {
+          "bytes": 17,
+          "sha256": "94fa2efbeb94d297d6f2f92fcafc017fe2cac5a28042e2871a4f2814e7053553"
+        },
+        "code": {
+          "bytes": 44,
+          "sha256": "b02806a0366a21a81e105b101a727c2dcca0f9373fc7a452368474e6f274acaa"
+        }
+      },
+      "instruction": {
+        "bytes": 137,
+        "sha256": "f29b27874a9221a075066fa4f42146e5c1f3c0793ee38982a38582743f17aafe"
+      },
+      "solution": {
+        "bytes": 2857,
+        "sha256": "54002cf931fa6866207ea5b25e480d3a9d406d1bc639702d9a40f1e9e6dcd5ba"
+      },
+      "spec": {
+        "bytes": 474,
+        "path": "/private/tmp/appworld-data/data/tasks/692c77d_2/specs.json",
+        "sha256": "a72a708a313a4693663af35aa226eb40e611741bb297e29a1bb5ab76f0c1b427"
+      },
+      "task_id": "692c77d_2"
+    },
+    {
+      "first_action": {
+        "api": "show_album_library",
+        "app": "spotify",
+        "arguments": {
+          "bytes": 17,
+          "sha256": "94fa2efbeb94d297d6f2f92fcafc017fe2cac5a28042e2871a4f2814e7053553"
+        },
+        "code": {
+          "bytes": 45,
+          "sha256": "af982ef98a22ade8ab2118f223c375abe3c126278ca4284571282410eeaadebf"
+        }
+      },
+      "instruction": {
+        "bytes": 133,
+        "sha256": "4be4dd1bfb71a797b2ecab3ed2377ab3c91ce55a0b372495f571c65fcd08e1e7"
+      },
+      "solution": {
+        "bytes": 2905,
+        "sha256": "6adc732c33e327dff3afaec4a1bdccb1fe701d44484845a0e824f00783a906f8"
+      },
+      "spec": {
+        "bytes": 469,
+        "path": "/private/tmp/appworld-data/data/tasks/692c77d_3/specs.json",
+        "sha256": "b46002add00086aea30eae49bf1e6472668ab6cd66b7bcbd9b6f5b0c5b3b885c"
+      },
+      "task_id": "692c77d_3"
+    },
+    {
+      "first_action": {
+        "api": "search_contacts",
+        "app": "phone",
+        "arguments": {
+          "bytes": 66,
+          "sha256": "c9a19cb299ab44473832428ac7782cd68175f93b59e7617c2eb68756b8fdf301"
+        },
+        "code": {
+          "bytes": 83,
+          "sha256": "7e4a5c0cc613d44fdedb727b3ac1aa041e504bb3a728f84d62f57e1314c3a8e8"
+        }
+      },
+      "instruction": {
+        "bytes": 97,
+        "sha256": "8171d51f01bd488de4138feca6b3ffb19c89efb3b854da8f3e2729b19e156ca2"
+      },
+      "solution": {
+        "bytes": 3131,
+        "sha256": "e31c6095738003ff67059a3e89e0998978325bfb095801d03d82cfdd0a3added"
+      },
+      "spec": {
+        "bytes": 435,
+        "path": "/private/tmp/appworld-data/data/tasks/2a163ab_1/specs.json",
+        "sha256": "1bcdb368753f6a03bf76df5db83d79428a22bc3eb8525dbc1bd51136541a4c9c"
+      },
+      "task_id": "2a163ab_1"
+    },
+    {
+      "first_action": {
+        "api": "search_contacts",
+        "app": "phone",
+        "arguments": {
+          "bytes": 64,
+          "sha256": "f1f523bc8bce3286698c9cd2dfa6a611bfd357508638d3958d3f58b2adad9612"
+        },
+        "code": {
+          "bytes": 81,
+          "sha256": "a332c60a712a0c284e7f9d28967a09d2aef557b7a423f2929fde9ab57ef028e4"
+        }
+      },
+      "instruction": {
+        "bytes": 100,
+        "sha256": "5dbdbc2c371b7ec857f26747c047fd70a9f20ecc58991f451b7213ccaa798bdf"
+      },
+      "solution": {
+        "bytes": 3170,
+        "sha256": "8f14971e1e5dd9956e03faf4a98bb6d88643ed946bebf3c1e50bf3c2e66e065d"
+      },
+      "spec": {
+        "bytes": 435,
+        "path": "/private/tmp/appworld-data/data/tasks/2a163ab_2/specs.json",
+        "sha256": "962a0559930a3cda533f764f5639eab86528734d617bad119b507eb196122ed1"
+      },
+      "task_id": "2a163ab_2"
+    },
+    {
+      "first_action": {
+        "api": "search_contacts",
+        "app": "phone",
+        "arguments": {
+          "bytes": 66,
+          "sha256": "0db95b966fa28d73ef38738be438ff123ff7ecb82e64c0987a6dbea297bce238"
+        },
+        "code": {
+          "bytes": 83,
+          "sha256": "1aeb060ef3414a86480f6906a1cd00635410c3de2016b5bd1a9a43d5744b360b"
+        }
+      },
+      "instruction": {
+        "bytes": 110,
+        "sha256": "9387799ebe8fbb3ab266f1e2d013785a82488cfd6921894884043a8f104aef74"
+      },
+      "solution": {
+        "bytes": 3152,
+        "sha256": "011aebd8fac47bf4fe56e19e10365673f3a81fb128241b235d694c05d642a9ae"
+      },
+      "spec": {
+        "bytes": 447,
+        "path": "/private/tmp/appworld-data/data/tasks/2a163ab_3/specs.json",
+        "sha256": "4cb0d36a3c2bc3c6ab4ec8320b684c0a80171671d89854deef08c6396dbb5a39"
+      },
+      "task_id": "2a163ab_3"
+    },
+    {
+      "first_action": {
+        "api": "show_song_library",
+        "app": "spotify",
+        "arguments": {
+          "bytes": 17,
+          "sha256": "94fa2efbeb94d297d6f2f92fcafc017fe2cac5a28042e2871a4f2814e7053553"
+        },
+        "code": {
+          "bytes": 44,
+          "sha256": "b02806a0366a21a81e105b101a727c2dcca0f9373fc7a452368474e6f274acaa"
+        }
+      },
+      "instruction": {
+        "bytes": 303,
+        "sha256": "e244fbc4b4b620cd4dbcdea9189ff16a502ca071de39ab185ba334aea2c61b66"
+      },
+      "solution": {
+        "bytes": 3894,
+        "sha256": "a0f8189360002dd32ea2473194278eb6855a4bde0e05543944894a77951d16e2"
+      },
+      "spec": {
+        "bytes": 644,
+        "path": "/private/tmp/appworld-data/data/tasks/6104387_1/specs.json",
+        "sha256": "45859c09dbef131fcc10d13325f281e485c8a38c2adc7e75e3d26c8e3307ee29"
+      },
+      "task_id": "6104387_1"
+    },
+    {
+      "first_action": {
+        "api": "show_song_library",
+        "app": "spotify",
+        "arguments": {
+          "bytes": 17,
+          "sha256": "94fa2efbeb94d297d6f2f92fcafc017fe2cac5a28042e2871a4f2814e7053553"
+        },
+        "code": {
+          "bytes": 44,
+          "sha256": "b02806a0366a21a81e105b101a727c2dcca0f9373fc7a452368474e6f274acaa"
+        }
+      },
+      "instruction": {
+        "bytes": 311,
+        "sha256": "f78481c045442e8cd52abe64fbbdd72f2c7feae46eaa6da8a6efc0cf78dc9faf"
+      },
+      "solution": {
+        "bytes": 3910,
+        "sha256": "d6a5ab1b8df9119980a2da35537c1513b943cf82573ef8da24753fc1f378fd3f"
+      },
+      "spec": {
+        "bytes": 655,
+        "path": "/private/tmp/appworld-data/data/tasks/6104387_2/specs.json",
+        "sha256": "0f34ffaf095fee99e8671e8eaea171b82ba6d237a04daa230092f070e81fb39e"
+      },
+      "task_id": "6104387_2"
+    },
+    {
+      "first_action": {
+        "api": "show_song_library",
+        "app": "spotify",
+        "arguments": {
+          "bytes": 17,
+          "sha256": "94fa2efbeb94d297d6f2f92fcafc017fe2cac5a28042e2871a4f2814e7053553"
+        },
+        "code": {
+          "bytes": 44,
+          "sha256": "b02806a0366a21a81e105b101a727c2dcca0f9373fc7a452368474e6f274acaa"
+        }
+      },
+      "instruction": {
+        "bytes": 309,
+        "sha256": "ccdc82611348b2de2284e5f7f8c143e34d9affdf66d5c2d188a28188c6bfd2a6"
+      },
+      "solution": {
+        "bytes": 3906,
+        "sha256": "1aad1cbd9d0a4be3d2c8811b4aeab5097c39fe9f5a1d6ca0a5ac3d5d06c13b4a"
+      },
+      "spec": {
+        "bytes": 660,
+        "path": "/private/tmp/appworld-data/data/tasks/6104387_3/specs.json",
+        "sha256": "3e23b1b1cf99ef0c1289d4b606a298248143ac3042cbd35a16ea9137b063f724"
+      },
+      "task_id": "6104387_3"
+    },
+    {
+      "first_action": {
+        "api": "search_contacts",
+        "app": "phone",
+        "arguments": {
+          "bytes": 41,
+          "sha256": "6b13e29da90237b1d9aadb81c8a7fde24f43af8e5c4cc2f6c1a79c39be8bf83f"
+        },
+        "code": {
+          "bytes": 61,
+          "sha256": "a2733948024322303d2599c31d0d5bbd3294f1ac75782def5c35e77bcfb62b63"
+        }
+      },
+      "instruction": {
+        "bytes": 182,
+        "sha256": "751317f84e615a01c02314329fde773dfcf5246f07ce0fafe26d3fe12341fc71"
+      },
+      "solution": {
+        "bytes": 4287,
+        "sha256": "d6f0e7c8e43b87b0cbb2417581474bed396b006718528dd02cc32936298b7cfe"
+      },
+      "spec": {
+        "bytes": 518,
+        "path": "/private/tmp/appworld-data/data/tasks/29caf6f_1/specs.json",
+        "sha256": "18ba99e3a795f0fddb3b55d5dbc04fd32f0782dd267984895fe890349bf354ca"
+      },
+      "task_id": "29caf6f_1"
+    },
+    {
+      "first_action": {
+        "api": "search_contacts",
+        "app": "phone",
+        "arguments": {
+          "bytes": 35,
+          "sha256": "4a57ef80b798049e9711420de62a3cf5d62b30f204f85bf2ebb7183413142ffa"
+        },
+        "code": {
+          "bytes": 55,
+          "sha256": "4f76cea9b3bc8c4e8d28438a6bfea5e14e1c392628517924643013bacaf22814"
+        }
+      },
+      "instruction": {
+        "bytes": 176,
+        "sha256": "0efafd47046ce7559b1eb147429c2e3925431453d9fd3a64ea853dcc33bbee54"
+      },
+      "solution": {
+        "bytes": 4269,
+        "sha256": "5190ea0968c0995009d62ca82937c9885a947e0a6437aaf60d70ada90f999f24"
+      },
+      "spec": {
+        "bytes": 508,
+        "path": "/private/tmp/appworld-data/data/tasks/29caf6f_2/specs.json",
+        "sha256": "830e0f73d820642a9ea25776a7744b272473417335cb143cc54e4640b6305dd5"
+      },
+      "task_id": "29caf6f_2"
+    },
+    {
+      "first_action": {
+        "api": "search_contacts",
+        "app": "phone",
+        "arguments": {
+          "bytes": 36,
+          "sha256": "8a127a364c1be86a011a066d159343d4fac01a13c73cb8664a4f6438e88d235b"
+        },
+        "code": {
+          "bytes": 56,
+          "sha256": "9aceb6cb442999416a81d55e39a7dae61093af49a504bbab4d12bf38396bfe9f"
+        }
+      },
+      "instruction": {
+        "bytes": 177,
+        "sha256": "47c525e5ce54d0d1e5dec16f58f5289fd3f60724749511adf9735d57fb66f421"
+      },
+      "solution": {
+        "bytes": 4272,
+        "sha256": "c4917bc6329900abd60977b79eecd288a7806fa6a49afd2268f80069be32e8cd"
+      },
+      "spec": {
+        "bytes": 515,
+        "path": "/private/tmp/appworld-data/data/tasks/29caf6f_3/specs.json",
+        "sha256": "538c3c6f07f3774a84a5c75e7b7facdb834daf791050c5bba9134e4b27ba875d"
+      },
+      "task_id": "29caf6f_3"
+    },
+    {
+      "first_action": {
+        "api": "search_contacts",
+        "app": "phone",
+        "arguments": {
+          "bytes": 66,
+          "sha256": "0db95b966fa28d73ef38738be438ff123ff7ecb82e64c0987a6dbea297bce238"
+        },
+        "code": {
+          "bytes": 83,
+          "sha256": "1aeb060ef3414a86480f6906a1cd00635410c3de2016b5bd1a9a43d5744b360b"
+        }
+      },
+      "instruction": {
+        "bytes": 146,
+        "sha256": "2b1127911151dd1e34ed76e403c1109b09a26be2a41769650c880141d85e2166"
+      },
+      "solution": {
+        "bytes": 2943,
+        "sha256": "3a92321a54b32109df536948a0d8140812e1c76c70aea176491eb29662d1c363"
+      },
+      "spec": {
+        "bytes": 485,
+        "path": "/private/tmp/appworld-data/data/tasks/afc0fce_1/specs.json",
+        "sha256": "38695334c722a78e7f85b0feb1e886bbea001a20bc65191f410fd5a9db8a4b38"
+      },
+      "task_id": "afc0fce_1"
+    },
+    {
+      "first_action": {
+        "api": "search_contacts",
+        "app": "phone",
+        "arguments": {
+          "bytes": 62,
+          "sha256": "d80cc138361397a482302a4d33bee4aac416fbb48d3bb11862582e9fef68a76e"
+        },
+        "code": {
+          "bytes": 79,
+          "sha256": "0e3ed4d994a82a6fca84f102fffd438e3ce99a7e16d6bd4961bda62a542975c5"
+        }
+      },
+      "instruction": {
+        "bytes": 141,
+        "sha256": "d99b46f9a29841708d0d9194851b835a4b6551e6e10fe19a64fc1033416621fb"
+      },
+      "solution": {
+        "bytes": 2931,
+        "sha256": "0c39d693f3701dadec0dc2d4dbff4110ac9b6058301102d59b5ff61c46fa3776"
+      },
+      "spec": {
+        "bytes": 486,
+        "path": "/private/tmp/appworld-data/data/tasks/afc0fce_2/specs.json",
+        "sha256": "f874a080953c3a04db0b62a75bbaed26d507a7d5d7776f1e0e6a7207a571f911"
+      },
+      "task_id": "afc0fce_2"
+    },
+    {
+      "first_action": {
+        "api": "search_contacts",
+        "app": "phone",
+        "arguments": {
+          "bytes": 66,
+          "sha256": "c9a19cb299ab44473832428ac7782cd68175f93b59e7617c2eb68756b8fdf301"
+        },
+        "code": {
+          "bytes": 83,
+          "sha256": "7e4a5c0cc613d44fdedb727b3ac1aa041e504bb3a728f84d62f57e1314c3a8e8"
+        }
+      },
+      "instruction": {
+        "bytes": 155,
+        "sha256": "d6d370f6b670228688ef5ab5ae727db0e93e1fc9abba619c6213db01406e8023"
+      },
+      "solution": {
+        "bytes": 2961,
+        "sha256": "d11a57ceac610f29bdc2516e37206556404bbc06d02d407639ad34756fa820d6"
+      },
+      "spec": {
+        "bytes": 493,
+        "path": "/private/tmp/appworld-data/data/tasks/afc0fce_3/specs.json",
+        "sha256": "611aa48573e99ffc2ad5380376b7ecef103810734f1597b35367a016e60026fe"
+      },
+      "task_id": "afc0fce_3"
+    },
+    {
+      "first_action": {
+        "api": "show_recommendations",
+        "app": "spotify",
+        "arguments": {
+          "bytes": 17,
+          "sha256": "94fa2efbeb94d297d6f2f92fcafc017fe2cac5a28042e2871a4f2814e7053553"
+        },
+        "code": {
+          "bytes": 47,
+          "sha256": "32478fba1d6ecf0472ff03c20f584cf4aadd4234a0e89fbb0be1269c2bb7d00b"
+        }
+      },
+      "instruction": {
+        "bytes": 50,
+        "sha256": "a84cb557a7220d028d9e4edaa2faeaa4ee6a51b63c51fee662caa13c73a68544"
+      },
+      "solution": {
+        "bytes": 1878,
+        "sha256": "509979a612d74a13ad66435f7ff873bcdd0496d8ab78019d58cfebc9dfc419af"
+      },
+      "spec": {
+        "bytes": 382,
+        "path": "/private/tmp/appworld-data/data/tasks/287e338_1/specs.json",
+        "sha256": "54fc2c9e2e67ab192aa374487c083987935cf010789297b46159ef794d9bfe0e"
+      },
+      "task_id": "287e338_1"
+    },
+    {
+      "first_action": {
+        "api": "show_recommendations",
+        "app": "spotify",
+        "arguments": {
+          "bytes": 17,
+          "sha256": "94fa2efbeb94d297d6f2f92fcafc017fe2cac5a28042e2871a4f2814e7053553"
+        },
+        "code": {
+          "bytes": 47,
+          "sha256": "32478fba1d6ecf0472ff03c20f584cf4aadd4234a0e89fbb0be1269c2bb7d00b"
+        }
+      },
+      "instruction": {
+        "bytes": 51,
+        "sha256": "109c3abe5ecef8a3c601d09dec59c38f481de8136617bb9c869ba1b37e58ab32"
+      },
+      "solution": {
+        "bytes": 1880,
+        "sha256": "86f0225c445523a600051ca5cec9bca2e32e5fb19cc502c488e72cd523ede8be"
+      },
+      "spec": {
+        "bytes": 390,
+        "path": "/private/tmp/appworld-data/data/tasks/287e338_2/specs.json",
+        "sha256": "b7499cec984c53703d416af2c7081f85a057a71a3e9fa079763aa91452759f4d"
+      },
+      "task_id": "287e338_2"
+    },
+    {
+      "first_action": {
+        "api": "show_recommendations",
+        "app": "spotify",
+        "arguments": {
+          "bytes": 17,
+          "sha256": "94fa2efbeb94d297d6f2f92fcafc017fe2cac5a28042e2871a4f2814e7053553"
+        },
+        "code": {
+          "bytes": 47,
+          "sha256": "32478fba1d6ecf0472ff03c20f584cf4aadd4234a0e89fbb0be1269c2bb7d00b"
+        }
+      },
+      "instruction": {
+        "bytes": 50,
+        "sha256": "a84cb557a7220d028d9e4edaa2faeaa4ee6a51b63c51fee662caa13c73a68544"
+      },
+      "solution": {
+        "bytes": 1878,
+        "sha256": "509979a612d74a13ad66435f7ff873bcdd0496d8ab78019d58cfebc9dfc419af"
+      },
+      "spec": {
+        "bytes": 382,
+        "path": "/private/tmp/appworld-data/data/tasks/287e338_3/specs.json",
+        "sha256": "c84da8acd2a0ff1b1affc4d149aa759765172ca08430394e850a5b696bb69397"
+      },
+      "task_id": "287e338_3"
+    },
+    {
+      "first_action": {
+        "api": "show_song_library",
+        "app": "spotify",
+        "arguments": {
+          "bytes": 17,
+          "sha256": "94fa2efbeb94d297d6f2f92fcafc017fe2cac5a28042e2871a4f2814e7053553"
+        },
+        "code": {
+          "bytes": 44,
+          "sha256": "b02806a0366a21a81e105b101a727c2dcca0f9373fc7a452368474e6f274acaa"
+        }
+      },
+      "instruction": {
+        "bytes": 118,
+        "sha256": "6e8c456b0e67a3127946699562d34ae3cc465591c8dec47ad8780c3fff9a6078"
+      },
+      "solution": {
+        "bytes": 3206,
+        "sha256": "768b0f0e8bf293856919c717116ba373d2064e6e4d741dd0a7a1e428faf75d05"
+      },
+      "spec": {
+        "bytes": 456,
+        "path": "/private/tmp/appworld-data/data/tasks/27e1026_1/specs.json",
+        "sha256": "b421fd3ada72ebbdf867996f5f6d88f255594ff7967e9663964abd8502673c96"
+      },
+      "task_id": "27e1026_1"
+    },
+    {
+      "first_action": {
+        "api": "show_song_library",
+        "app": "spotify",
+        "arguments": {
+          "bytes": 17,
+          "sha256": "94fa2efbeb94d297d6f2f92fcafc017fe2cac5a28042e2871a4f2814e7053553"
+        },
+        "code": {
+          "bytes": 44,
+          "sha256": "b02806a0366a21a81e105b101a727c2dcca0f9373fc7a452368474e6f274acaa"
+        }
+      },
+      "instruction": {
+        "bytes": 118,
+        "sha256": "f35a9d61b5ce82de8cf0876a08d7e6954c68538fc63e05134accf8aa20780009"
+      },
+      "solution": {
+        "bytes": 3206,
+        "sha256": "8d6186e4493bba73fbc24b56f745c985540acd997f56467a42a3455d2f942539"
+      },
+      "spec": {
+        "bytes": 454,
+        "path": "/private/tmp/appworld-data/data/tasks/27e1026_2/specs.json",
+        "sha256": "bc9abb614312524fadc6dbe137851e84a9b3445991db36d96cf56bc41d36dc0e"
+      },
+      "task_id": "27e1026_2"
+    },
+    {
+      "first_action": {
+        "api": "show_song_library",
+        "app": "spotify",
+        "arguments": {
+          "bytes": 17,
+          "sha256": "94fa2efbeb94d297d6f2f92fcafc017fe2cac5a28042e2871a4f2814e7053553"
+        },
+        "code": {
+          "bytes": 44,
+          "sha256": "b02806a0366a21a81e105b101a727c2dcca0f9373fc7a452368474e6f274acaa"
+        }
+      },
+      "instruction": {
+        "bytes": 118,
+        "sha256": "6e8c456b0e67a3127946699562d34ae3cc465591c8dec47ad8780c3fff9a6078"
+      },
+      "solution": {
+        "bytes": 3206,
+        "sha256": "768b0f0e8bf293856919c717116ba373d2064e6e4d741dd0a7a1e428faf75d05"
+      },
+      "spec": {
+        "bytes": 451,
+        "path": "/private/tmp/appworld-data/data/tasks/27e1026_3/specs.json",
+        "sha256": "2dab3cc3407b49ca5e989060dd4a60d0c88c3efee87f0d1bf3f68fb215b21786"
+      },
+      "task_id": "27e1026_3"
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "claim_boundary": "This is a matched offline AgentNet text-observation/action projection and selector weight-reuse diagnostic. It is not AgentNetBench, native desktop, screenshot-grounded, OSWorld, or WebGPU visual evidence; the adapted selector is not promoted.",
+  "evaluation": {
+    "evaluator": "scripts/evaluate_agentnet_text.py",
+    "evaluator_sha256": "44054e2bba8de228a193f549166f7bf1dfaa24fca0321b5b67f11cc5c4915c5e",
+    "max_parents": 8,
+    "projected_actions": 257,
+    "random": {
+      "completeness_verified": true,
+      "metrics": {
+        "by_action": {
+          "click": {
+            "mean_score": 1.1649804532932208e-05,
+            "tasks_with_action": 8
+          },
+          "doubleclick": {
+            "mean_score": 0.0,
+            "tasks_with_action": 3
+          },
+          "dragto": {
+            "mean_score": 0.0,
+            "tasks_with_action": 2
+          },
+          "hotkey": {
+            "mean_score": 0.0,
+            "tasks_with_action": 2
+          },
+          "moveto": {
+            "mean_score": 0.0,
+            "tasks_with_action": 1
+          },
+          "press": {
+            "mean_score": 0.0,
+            "tasks_with_action": 1
+          },
+          "rightclick": {
+            "mean_score": 0.0,
+            "tasks_with_action": 3
+          },
+          "scroll": {
+            "mean_score": 0.0,
+            "tasks_with_action": 2
+          },
+          "write": {
+            "mean_score": 0.0,
+            "tasks_with_action": 6
+          }
+        },
+        "exact_trajectory_rate": 0.0,
+        "first_action_type_rate": 1.0,
+        "mean_action_count_penalty": 0.946969696969697,
+        "mean_ground_truth_actions": 14.5,
+        "mean_predicted_actions": 14.375,
+        "mean_total": 2.912451133233052e-06,
+        "success_rate": 0.0,
+        "tasks": 8
+      },
+      "report": {
+        "bytes": 5051,
+        "path": "/private/tmp/m709-agentnet-random8-eval.json",
+        "sha256": "36e5443166f8a6037900852dd1802a3fce98e9e3d2b70d83b93f455d63754e72"
+      }
+    },
+    "warm": {
+      "completeness_verified": true,
+      "metrics": {
+        "by_action": {
+          "click": {
+            "mean_score": 1.1649804532932208e-05,
+            "tasks_with_action": 8
+          },
+          "doubleclick": {
+            "mean_score": 0.0,
+            "tasks_with_action": 3
+          },
+          "dragto": {
+            "mean_score": 0.0,
+            "tasks_with_action": 2
+          },
+          "hotkey": {
+            "mean_score": 0.0,
+            "tasks_with_action": 2
+          },
+          "moveto": {
+            "mean_score": 0.0,
+            "tasks_with_action": 1
+          },
+          "press": {
+            "mean_score": 0.0,
+            "tasks_with_action": 1
+          },
+          "rightclick": {
+            "mean_score": 0.0,
+            "tasks_with_action": 3
+          },
+          "scroll": {
+            "mean_score": 0.0,
+            "tasks_with_action": 2
+          },
+          "write": {
+            "mean_score": 0.0023148148148148143,
+            "tasks_with_action": 6
+          }
+        },
+        "exact_trajectory_rate": 0.0,
+        "first_action_type_rate": 1.0,
+        "mean_action_count_penalty": 0.946969696969697,
+        "mean_ground_truth_actions": 14.5,
+        "mean_predicted_actions": 14.375,
+        "mean_total": 0.0005816161548369366,
+        "success_rate": 0.0,
+        "tasks": 8
+      },
+      "report": {
+        "bytes": 5081,
+        "path": "/private/tmp/m709-agentnet-warm8-eval.json",
+        "sha256": "5e9d08cb493a9c171e24b094592513dcbb43b4be6c1db2ea4b7a0c4e48733cf5"
+      }
+    }
+  },
+  "kind": "localagent_m709_m679_agentnet_selector_transfer",
+  "parent": {
+    "bytes": 52206773,
+    "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "xlangai/AgentNet",
+    "desktop_runtime_executed": false,
+    "eval_projection": {
+      "bytes": 483445,
+      "path": "/private/tmp/localagent-public-data/agentnet-eval-64.jsonl",
+      "sha256": "7f0f080e33c4a069c532f3efcc0ec72e73d456f606cd4e5608df6f4dd949ac43"
+    },
+    "official_split_verified": false,
+    "original_repository": "https://github.com/xlang-ai/OpenCUA",
+    "revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+    "screenshots_consumed": false,
+    "train_projection": {
+      "bytes": 1512718,
+      "path": "/private/tmp/localagent-public-data/agentnet-train-64.jsonl",
+      "sha256": "fb17df74512f3f9a7c15c030ffbf82701f728803b987539e7c872e025967edf8"
+    },
+    "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+  },
+  "training": {
+    "backbone_frozen": true,
+    "batch_size": 128,
+    "eval_rows": 257,
+    "learning_rate": 0.005,
+    "random": {
+      "eval_top1": 0.6342412233352661,
+      "relative_l2": 2.3972481152742473,
+      "train_top1": 0.7320261597633362
+    },
+    "random_checkpoint": {
+      "bytes": 61329224,
+      "path": "/private/tmp/m709-m679-agentnet-random.pt",
+      "sha256": "267abe01f79997829c74a39453a78302fd8b1b2c68f3ad19840ff25d1a33d3cc"
+    },
+    "seed": 2042,
+    "steps": 400,
+    "tool_surface": 14,
+    "train_rows": 765,
+    "trainer": "scripts/train_agentnet_selector_repair.py",
+    "trainer_sha256": "d74046175aeca4f72d2f6ee58a3b4f21aecd63ed9693cd4fc457b1a456aa05a2",
+    "training_report": {
+      "bytes": 1524,
+      "path": "/private/tmp/m709-m679-agentnet-report.json",
+      "sha256": "76411140d2b25ba258aca59f38b4302d467ed87159d73c3b2beaea17de43b31a"
+    },
+    "warm": {
+      "eval_top1": 0.6342412233352661,
+      "relative_l2": 3.7659256348692356,
+      "train_top1": 0.743790864944458
+    },
+    "warm_checkpoint": {
+      "bytes": 61329102,
+      "path": "/private/tmp/m709-m679-agentnet-warm.pt",
+      "sha256": "3dfc9318b2117496fe1cf1d58260ba2220f09a01680cd8bc1240c22b4418793e"
+    }
+  },
+  "weight_analysis": {
+    "adoption_decision": "reject_agentnet_selector_for_webgpu",
+    "random_selector_relative_l2": 2.3972481152742473,
+    "reason": "Warm and random controls have identical first-action and zero success/exact-trajectory rates; warm moves the selector farther while its bounded text score is worse than random. No visual input was consumed.",
+    "warm_minus_random_eval_mean_total": 0.0005787037037037036,
+    "warm_selector_relative_l2": 3.7659256348692356
+  }
+}

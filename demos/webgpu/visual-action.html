@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LocalAgent — Screenshot Action Probe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>🖼️ LocalAgent <span class="sub">screenshot-conditioned action probe</span></h1>
+      <p class="tagline">
+        Experimental AndroidControl visual sidecar: a screenshot and task text are processed locally
+        in an ONNX Runtime Web session. This page is a runtime/parity probe, not an Android emulator
+        or official benchmark score.
+      </p>
+    </header>
+
+    <section id="visual-status" class="status loading">
+      <span class="dot"></span>
+      <span id="visual-status-text">Loading visual sidecar…</span>
+      <span id="visual-backend-badge" class="badge" hidden></span>
+    </section>
+
+    <section class="io">
+      <label for="visual-task">Task text</label>
+      <textarea id="visual-task" rows="3">Open the Settings app.</textarea>
+      <label for="visual-image">Screenshot PNG/JPEG</label>
+      <input id="visual-image" type="file" accept="image/png,image/jpeg,image/webp" />
+      <div class="row">
+        <label for="visual-backend">Execution provider</label>
+        <select id="visual-backend">
+          <option value="webgpu" selected>WebGPU</option>
+          <option value="wasm">WASM control</option>
+        </select>
+        <button id="visual-run" disabled>Predict action</button>
+      </div>
+      <p class="safety-copy">
+        Predictions are displayed only. No device, browser, email, or Notion side effect is executed.
+        The graph is a separately pinned visual sidecar and is not part of the text-only release
+        manifest until it is retrained and validated on the target runtime.
+      </p>
+    </section>
+
+    <section id="visual-result" class="result" hidden>
+      <pre id="visual-output"></pre>
+    </section>
+
+    <footer><p>Inputs: raw UTF-8 task bytes, normalized RGB 96×96 image, and context length. Outputs: seven action logits and normalized pointer coordinates.</p></footer>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.27.0/dist/ort.webgpu.min.js"></script>
+  <script src="visual-action.js?v=m718"></script>
+</body>
+</html>

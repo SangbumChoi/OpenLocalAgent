@@ -1,0 +1,209 @@
+{
+  "benchmark": {
+    "data_version": "0.2.0",
+    "dataset": "AppWorld",
+    "eval_rows": 6,
+    "includes_supervisor_completion": true,
+    "max_actions_per_row": 4,
+    "native_max_steps": 5,
+    "native_tasks": 6,
+    "protected_test_used": false,
+    "retrieve_k": 100,
+    "source_url": "https://github.com/StonyBrookNLP/appworld",
+    "train_rows": 6
+  },
+  "claim_boundary": "Public AppWorld train/dev short-task continuation with supervisor completion retained, paired warm/random weight movement, and resettable native replay. This is not an official leaderboard score, complete task success, external-account side effect, or WebGPU email/Notion promotion.",
+  "decision": {
+    "promote_to_native_success": false,
+    "reason": "The six-row held-out continuation raises warm teacher-forced token accuracy from 55.35% to 66.06% (random reaches 43.51%), but exact sequence accuracy and resettable native success remain 0/6. The strict completion candidate therefore exposes an action-selection/state-planning gap rather than a publishable agent success claim.",
+    "retain_short_completion_probe": true
+  },
+  "inputs": {
+    "eval_manifest": {
+      "bytes": 4871,
+      "path": "/private/tmp/m662-short/dev.manifest.json",
+      "sha256": "e997b5a1751b0db185a64c8b48001dbc4c2761960ea25f093704f4e4a2136fd9"
+    },
+    "random_native": {
+      "bytes": 23546,
+      "path": "/private/tmp/m662-short/native-random.json",
+      "sha256": "f91159769b08f8d8d99d21f140e394684d231279eabf16b094291e1788d41d85"
+    },
+    "random_report": {
+      "bytes": 8656,
+      "path": "/private/tmp/m662-short/random-report.json",
+      "sha256": "b08821cbc1f10f55ad356349ca4a3add84e76634e80873f66eb13fd837759a06"
+    },
+    "random_weight": {
+      "bytes": 19652,
+      "path": "/private/tmp/m662-short/random-weight.json",
+      "sha256": "7772b707bae955fa14071139c30bbcad5f721bef0a408a323c9caa89438ad413"
+    },
+    "train_manifest": {
+      "bytes": 5032,
+      "path": "/private/tmp/m662-short/train.manifest.json",
+      "sha256": "91b18ff3e659d913ba3b7584d283494a9bc08e952547dfeb9d4a0b6a94f0b7c8"
+    },
+    "warm_native": {
+      "bytes": 25091,
+      "path": "/private/tmp/m662-short/native-child.json",
+      "sha256": "d87f10d5a884708b7f5148ff1b690654b8889e6450bede59425b7a99a30f2bc7"
+    },
+    "warm_report": {
+      "bytes": 8714,
+      "path": "/private/tmp/m662-short/report.json",
+      "sha256": "6a0dd3b03f90551d0a04a29514d5d8b104d25ea92def9ae5ef3449dff42b9d54"
+    },
+    "warm_weight": {
+      "bytes": 19630,
+      "path": "/private/tmp/m662-short/warm-weight.json",
+      "sha256": "043e05d53742452615115149f4468176efa44a56d55998d8d4b496c3ea4e1779"
+    }
+  },
+  "kind": "localagent_m662_appworld_short_completion_receipt",
+  "metrics": {
+    "random_after": {
+      "assistant_loss_tokens": 878,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.43507972665148065,
+      "mean_loss": 7.790581357777797,
+      "rows": 6
+    },
+    "random_before": {
+      "assistant_loss_tokens": 878,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.3359908883826879,
+      "mean_loss": 8.455769532362257,
+      "rows": 6
+    },
+    "random_delta_pp": 9.908883826879272,
+    "random_exact_sequence_accuracy": 0.0,
+    "warm_after": {
+      "assistant_loss_tokens": 878,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.6605922551252847,
+      "mean_loss": 2.5479452354761354,
+      "rows": 6
+    },
+    "warm_after_minus_random_after_pp": 22.55125284738041,
+    "warm_before": {
+      "assistant_loss_tokens": 878,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.5535307517084282,
+      "mean_loss": 2.939587464908261,
+      "rows": 6
+    },
+    "warm_delta_pp": 10.70615034168565,
+    "warm_exact_sequence_accuracy": 0.0
+  },
+  "native_replay": {
+    "random": {
+      "report": {
+        "bytes": 23546,
+        "path": "/private/tmp/m662-short/native-random.json",
+        "sha256": "f91159769b08f8d8d99d21f140e394684d231279eabf16b094291e1788d41d85"
+      },
+      "summary": {
+        "action_replayed": 12,
+        "native_api_calls": 30,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "steps_attempted": 18,
+        "tasks": 6
+      }
+    },
+    "warm": {
+      "report": {
+        "bytes": 25091,
+        "path": "/private/tmp/m662-short/native-child.json",
+        "sha256": "d87f10d5a884708b7f5148ff1b690654b8889e6450bede59425b7a99a30f2bc7"
+      },
+      "summary": {
+        "action_replayed": 11,
+        "native_api_calls": 44,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "steps_attempted": 17,
+        "tasks": 6
+      }
+    }
+  },
+  "receipt_self_sha256": "4fd573a2865f9a57d58c13fd905c8e247cb01b8a14277fc590f323fe474e35ce",
+  "schema_version": 1,
+  "weight_movement": {
+    "random": {
+      "action_heads": {
+        "base_l2": 91.53287681571555,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.53287681571555
+      },
+      "attention_or_mixer": {
+        "base_l2": 50.41319278959981,
+        "delta_l2": 0.21037027753708695,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.004172921132273259,
+        "target_l2": 50.41519337106876
+      },
+      "embedding": {
+        "base_l2": 50.184502750936375,
+        "delta_l2": 0.5325897078426556,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.01061263295734694,
+        "target_l2": 50.18660197565889
+      },
+      "ffn": {
+        "base_l2": 49.7983940976635,
+        "delta_l2": 0.2528660715705609,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0050777957031033095,
+        "target_l2": 49.802969910599316
+      },
+      "normalization": {
+        "base_l2": 19.600807133673225,
+        "delta_l2": 0.004423375382261362,
+        "parameters": 384,
+        "relative_delta_l2": 0.0002256731241777396,
+        "target_l2": 19.604736548991898
+      }
+    },
+    "warm": {
+      "action_heads": {
+        "base_l2": 91.77234792175153,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.77234792175153
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.69873779490864,
+        "delta_l2": 0.2046747697137392,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.003958989686086608,
+        "target_l2": 51.70148251029478
+      },
+      "embedding": {
+        "base_l2": 77.7475153918363,
+        "delta_l2": 0.5360992102932334,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.006895387043449175,
+        "target_l2": 77.92898630879773
+      },
+      "ffn": {
+        "base_l2": 50.61025928761937,
+        "delta_l2": 0.23673822618402737,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.004677672659976668,
+        "target_l2": 50.611474602810546
+      },
+      "normalization": {
+        "base_l2": 21.452501677208907,
+        "delta_l2": 0.0038679635376891912,
+        "parameters": 384,
+        "relative_delta_l2": 0.00018030361194650355,
+        "target_l2": 21.45578370630324
+      }
+    }
+  }
+}

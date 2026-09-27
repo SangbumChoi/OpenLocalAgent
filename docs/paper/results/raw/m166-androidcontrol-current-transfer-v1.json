@@ -1,0 +1,98 @@
+{
+  "kind": "localagent_androidcontrol_current_child_transfer_receipt",
+  "schema_version": 1,
+  "measurement": "m166_androidcontrol_current_child_lowrate_continuation",
+  "generated_at": "2026-08-03",
+  "source": {
+    "dataset": "OfficerChul/Android-Control-84k",
+    "dataset_url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k",
+    "original_dataset_url": "https://github.com/google-research/google-research/tree/master/android_control",
+    "license": "Apache-2.0 (reformatted mirror; verify upstream terms before redistribution)",
+    "train": {
+      "split": "train",
+      "rows": 4096,
+      "bytes": 12435496,
+      "sha256": "6971d5fe81fe3c6e8ee12e0072481ec653f98bdb5699af54e8f63649358743fd",
+      "manifest_sha256": "22487912e1d852a3cd2cf2b3aa13be3d5221b3301fc708c56da7d0603cf6d579",
+      "visual_input_omitted": true
+    },
+    "eval": {
+      "split": "test",
+      "rows": 904,
+      "bytes": 2735008,
+      "sha256": "2d798115fe0feb14ac6d65f86a4b51b4463b593a35281eedce4de8751356bc95",
+      "manifest_sha256": "e40860a721f6937b229c2a1def2b0fbf075e99a965a3a1dcdd34d730b7998a5c",
+      "visual_input_omitted": true
+    },
+    "split_policy": "The public test projection was held out from optimization; screenshots were not loaded."
+  },
+  "parent": {
+    "path": "/private/tmp/m161-stateful-lowrate-current.pt",
+    "bytes": 52219184,
+    "sha256": "67ea2e43ed5f066f432ebcff149aa1305e9d9a9bc9fcae0d350b55842bf0ea51",
+    "stage": "stateful_productivity_lowrate_probe",
+    "step": 319,
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "child": {
+    "path": "/private/tmp/m166-androidcontrol-current-child.pt",
+    "bytes": 52223636,
+    "sha256": "f19d0cd48d86913fbb5d2915cc515622cc0839f1597c46f6ca20de0c6ac068eb",
+    "stage": "sft_realistic_mobile_pilot",
+    "step": 383,
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "training": {
+    "steps": 64,
+    "batch_size": 1,
+    "learning_rate": 0.00001,
+    "device": "cpu",
+    "input_tokens": 255445,
+    "loss_tokens": 103116,
+    "sampling": "iid_with_replacement_v1",
+    "before_train": {
+      "assistant_token_accuracy": 0.6041351488,
+      "mean_loss": 2.7170028576
+    },
+    "after_train": {
+      "assistant_token_accuracy": 0.7077078242,
+      "mean_loss": 1.9212000017
+    },
+    "before_eval": {
+      "assistant_token_accuracy": 0.5937729730,
+      "mean_loss": 2.8488126118,
+      "rows": 904
+    },
+    "after_eval": {
+      "assistant_token_accuracy": 0.6966918919,
+      "mean_loss": 2.0405180991,
+      "rows": 904
+    },
+    "sequence_accuracy": {
+      "before": 0.0,
+      "after": 0.0
+    }
+  },
+  "weight_transfer": {
+    "report_path": "/private/tmp/m166-androidcontrol-weight-transfer.json",
+    "report_bytes": 19684,
+    "report_sha256": "39c0717605f82a2679afdd35f424318a2a0279e8530ba4b408372e196175b561",
+    "compatibility": {
+      "config_mismatches": {},
+      "shape_mismatches": {},
+      "shared_tensor_count": 51,
+      "tokenizer_sha256_equal": true
+    },
+    "relative_delta_l2": {
+      "embedding": 0.0095152298,
+      "attention_or_mixer": 0.0030287779,
+      "ffn": 0.0039379584,
+      "normalization": 0.0001807833,
+      "action_heads": 0.0
+    },
+    "recommendation": "Reuse the compatible BPE backbone with a smaller transferred-backbone learning rate; keep visual grounding and action-head adaptation separate, and require a matched no-transfer arm before promotion."
+  },
+  "decision": "diagnostic_only",
+  "claim_boundary": "Public AndroidControl/AITW text-and-accessibility projection transfer on a source-pinned train/test split. Screenshots were omitted, so this is not visual grounding, Android emulator reward, AndroidWorld, MobileGym full success, email/Notion control, WebGPU quality, or an official AndroidControl leaderboard score.",
+  "receipt_self_sha256": "1e690315bcf2de8b3e589b7a05c3468b353844a6350291e909175cda9d641ad9"
+}

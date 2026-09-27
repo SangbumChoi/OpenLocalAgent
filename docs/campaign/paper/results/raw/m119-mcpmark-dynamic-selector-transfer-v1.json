@@ -1,0 +1,257 @@
+{
+  "arms": {
+    "random_backbone": {
+      "eval": {
+        "assistant_decisions": 20,
+        "tool_decisions": 19,
+        "top1": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "total": 19
+        },
+        "top10": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "total": 19
+        },
+        "top1_by_family": {
+          "playwright": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 19
+          }
+        },
+        "top3": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "total": 19
+        },
+        "top5": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "total": 19
+        }
+      },
+      "model_state_sha256": "f44a0fe50784d7a9d619afb4a3fc2afb4605c3eefedfc69b7ed976732fc58a0a",
+      "selector_delta_relative_l2": 3.129948300131067,
+      "selector_state_sha256": "1518be9e6a71e5ab3b503d1d48a3d7c77f503af008a47cab7be20d59a297066d",
+      "train": {
+        "assistant_decisions": 51,
+        "tool_decisions": 48,
+        "top1": {
+          "accuracy": 0.9791666666666666,
+          "correct": 47,
+          "total": 48
+        },
+        "top10": {
+          "accuracy": 1.0,
+          "correct": 48,
+          "total": 48
+        },
+        "top1_by_family": {
+          "filesystem": {
+            "accuracy": 0.9523809523809523,
+            "correct": 20,
+            "total": 21
+          },
+          "notion": {
+            "accuracy": 1.0,
+            "correct": 27,
+            "total": 27
+          }
+        },
+        "top3": {
+          "accuracy": 1.0,
+          "correct": 48,
+          "total": 48
+        },
+        "top5": {
+          "accuracy": 1.0,
+          "correct": 48,
+          "total": 48
+        }
+      }
+    },
+    "warm": {
+      "eval": {
+        "assistant_decisions": 20,
+        "tool_decisions": 19,
+        "top1": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "total": 19
+        },
+        "top10": {
+          "accuracy": 0.8421052631578947,
+          "correct": 16,
+          "total": 19
+        },
+        "top1_by_family": {
+          "playwright": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 19
+          }
+        },
+        "top3": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "total": 19
+        },
+        "top5": {
+          "accuracy": 0.10526315789473684,
+          "correct": 2,
+          "total": 19
+        }
+      },
+      "model_state_sha256": "6cd9c71eb8757524e19dc46e01f495b9517cbd7407c144ea0f6c00f34f751822",
+      "selector_delta_relative_l2": 3.3067984456262547,
+      "selector_state_sha256": "82886aaa3782fd2bf9c75323a0172bacb8ffd23a253aae5f8a9a2f4770880bad",
+      "train": {
+        "assistant_decisions": 51,
+        "tool_decisions": 48,
+        "top1": {
+          "accuracy": 0.9583333333333334,
+          "correct": 46,
+          "total": 48
+        },
+        "top10": {
+          "accuracy": 1.0,
+          "correct": 48,
+          "total": 48
+        },
+        "top1_by_family": {
+          "filesystem": {
+            "accuracy": 0.9523809523809523,
+            "correct": 20,
+            "total": 21
+          },
+          "notion": {
+            "accuracy": 0.9629629629629629,
+            "correct": 26,
+            "total": 27
+          }
+        },
+        "top3": {
+          "accuracy": 1.0,
+          "correct": 48,
+          "total": 48
+        },
+        "top5": {
+          "accuracy": 1.0,
+          "correct": 48,
+          "total": 48
+        }
+      }
+    }
+  },
+  "checkpoint": {
+    "bytes": 52283646,
+    "path": "/private/tmp/m111-deployment-repair-warm.pt",
+    "sha256": "35fedcefdafece153912b3bf6629fb23c0ad48f269126d2f8021ef04e0e384ae"
+  },
+  "claim_boundary": "Public redacted MCPMark trajectory routing diagnostic over filesystem/Notion training rows and a held-out Playwright row. The global catalog contains tool schemas from both splits; no MCP server, browser, verifier, official split score, or external side effect was run. This is not an official MCPMark result.",
+  "evaluator": {
+    "bytes": 12889,
+    "path": "/Users/sangbumchoi/Documents/LocalAgent/scripts/evaluate_mcpmark_dynamic_selector.py",
+    "sha256": "79582c835482e573888c36dec80ef86906ae19a54fc9c26304baf407c42749e8"
+  },
+  "hyperparameters": {
+    "batch_size": 64,
+    "device": "cpu",
+    "frozen_backbone": true,
+    "model_seed": 2028,
+    "proj": 256,
+    "selector_seed": 2027,
+    "steps": 500
+  },
+  "kind": "localagent_mcpmark_dynamic_selector_transfer",
+  "model_contract": {
+    "config": {
+      "conv_kernel": 3,
+      "d_model": 384,
+      "dropout": 0.0,
+      "embed_dim": 384,
+      "ffn_hidden": 512,
+      "layer_types": [
+        "conv",
+        "attn",
+        "conv",
+        "attn"
+      ],
+      "max_seq_len": 2048,
+      "n_heads": 6,
+      "n_kv_heads": 1,
+      "n_layers": 4,
+      "n_loops": 1,
+      "name": "webgpu-10m-hybrid",
+      "norm_eps": 1e-05,
+      "qk_norm": true,
+      "rope_theta": 10000.0,
+      "tie_embeddings": true,
+      "vocab_size": 16384
+    },
+    "config_sha256": "06f1e4707906d6bf0eda65764e76f8561a723d46fb829542e4554946680bf454",
+    "parameter_count": 10524544,
+    "tokenizer": {
+      "kind": "bpe",
+      "path": "data/tokenizer-webgpu-proxy-16k.json",
+      "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+    }
+  },
+  "schema_version": 1,
+  "source": {
+    "assistant_free_text_redacted": true,
+    "dataset": "Jakumetsu/mcpmark-trajectory-log",
+    "eval_decisions": 20,
+    "eval_inputs": [
+      {
+        "bytes": 9825,
+        "path": "/private/tmp/m118-eval.jsonl",
+        "sha256": "2057c93c3985bb6fa2ea6a29e71fcb5b28adddf0e5942be02002d834527a76ec"
+      }
+    ],
+    "eval_rows": 1,
+    "license": "MIT",
+    "revision": "e50578f0ab904d8e6a7c576c387c1e76ae482c89",
+    "tool_catalog": [
+      "API-delete-a-block",
+      "API-get-block-children",
+      "API-get-users",
+      "API-patch-block-children",
+      "API-post-database-query",
+      "API-post-page",
+      "API-post-search",
+      "API-retrieve-a-block",
+      "API-retrieve-a-page",
+      "API-retrieve-a-page-property",
+      "browser_click",
+      "browser_evaluate",
+      "browser_fill_form",
+      "browser_navigate",
+      "browser_snapshot",
+      "browser_type",
+      "list_allowed_directories",
+      "list_directory",
+      "move_file",
+      "read_multiple_files",
+      "read_text_file"
+    ],
+    "tool_outputs_redacted": true,
+    "train_decisions": 51,
+    "train_inputs": [
+      {
+        "bytes": 24527,
+        "path": "/private/tmp/m118-train.jsonl",
+        "sha256": "6fc70975da8b7fe0539cae97591bb2065904390590a64217b74f468c3c4dcabb"
+      }
+    ],
+    "train_rows": 2,
+    "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log"
+  },
+  "weight_analysis": {
+    "interpretation": "The selector is trained on frozen model features. A warm-vs-random top-k gap is therefore representation-transfer evidence, while equal or poor top-1 does not establish native MCP execution.",
+    "warm_random_backbone_relative_delta_l2": 1.020556834348178,
+    "warm_random_backbone_state_exact": false
+  }
+}

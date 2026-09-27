@@ -1,0 +1,302 @@
+{
+  "benchmark_id": "mcpmark",
+  "checkpoint": {
+    "parameters": 10524544,
+    "parent": {
+      "bytes": 52246937,
+      "path": "/Users/sangbumchoi/Documents/LocalAgent/runs/sft-mind2web-public-continuation-20260805/latest.pt",
+      "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+    },
+    "random_child": {
+      "bytes": 52250473,
+      "path": "/private/tmp/m440-mcpmark-playwright-random.pt",
+      "sha256": "256f9298ff6b326d172ba1dc595997377517fe3bc1ccec1cc1d79434a90f0230"
+    },
+    "warm_child": {
+      "bytes": 52250359,
+      "path": "/private/tmp/m440-mcpmark-playwright-warm.pt",
+      "sha256": "7b3438d9ee512007cbce17b66f8215762a16a9d5fdf9dd85c905be2cda053425"
+    }
+  },
+  "checkpoint_sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+  "claim_boundary": "The current 10.52M child was run against four pinned MCPMark Playwright standard fixtures using a real @playwright/mcp stdio server and independent verifiers: 0/4 passes with zero runtime errors. A redacted public-trajectory continuation gives a source-disjoint teacher-forced warm-vs-random diagnostic, not an official MCPMark score, live-account/browser competence, screenshot grounding result, or WebGPU promotion. The official split and user simulator were not executed.",
+  "validity": {
+    "status": "superseded",
+    "superseded_by": "m445-mcpmark-playwright-schema-corrected-abi-guard-v1",
+    "reason": "The temporary native runner read inputSchema only, while the MCP Python SDK exposed input_schema; its native tool arguments were therefore not a valid capability measurement. The redacted teacher-forced transfer remains diagnostic.",
+    "native_claim_usable": false,
+    "trajectory_transfer_usable": true
+  },
+  "dataset": {
+    "name": "MCPMark",
+    "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "service": "playwright",
+    "suite": "standard",
+    "tasks_requested": 4,
+    "url": "https://github.com/eval-sys/mcpmark"
+  },
+  "environment_executed": true,
+  "kind": "localagent_mcpmark_native_playwright_current_checkpoint_and_transfer",
+  "native_playwright": {
+    "external_api_called": true,
+    "full_receipt_sha256": "17004fd3583483cf451f97858b5a50295e618edadf357c09bad6c4997b77fa23",
+    "headless": true,
+    "mcp_server_executed": true,
+    "official_split_verified": false,
+    "runtime_errors": 0,
+    "server": "@playwright/mcp@0.0.68",
+    "tasks": [
+      {
+        "messages_sha256": "c37ace5efb2ded343822f0c1e238a39d866bcf0d2e96098b8865dc17c4db6738",
+        "runtime_error": null,
+        "task": "playwright/standard/eval_web/extraction_table",
+        "tool_count": 22,
+        "turns": [
+          {
+            "arguments": {},
+            "result_is_error": false,
+            "tool": "browser_type",
+            "turn": 1
+          },
+          {
+            "arguments": {},
+            "result_is_error": null,
+            "tool": "browser_type",
+            "turn": 2
+          }
+        ],
+        "verifier_exit_code": 1
+      },
+      {
+        "messages_sha256": "c37ace5efb2ded343822f0c1e238a39d866bcf0d2e96098b8865dc17c4db6738",
+        "runtime_error": null,
+        "task": "playwright/standard/eval_web/cloudflare_turnstile_challenge",
+        "tool_count": 22,
+        "turns": [
+          {
+            "arguments": {},
+            "result_is_error": false,
+            "tool": "browser_type",
+            "turn": 1
+          },
+          {
+            "arguments": {},
+            "result_is_error": null,
+            "tool": "browser_type",
+            "turn": 2
+          }
+        ],
+        "verifier_exit_code": 1
+      },
+      {
+        "messages_sha256": "c37ace5efb2ded343822f0c1e238a39d866bcf0d2e96098b8865dc17c4db6738",
+        "runtime_error": null,
+        "task": "playwright/standard/web_search/birth_of_arvinxu",
+        "tool_count": 22,
+        "turns": [
+          {
+            "arguments": {},
+            "result_is_error": false,
+            "tool": "browser_type",
+            "turn": 1
+          },
+          {
+            "arguments": {},
+            "result_is_error": null,
+            "tool": "browser_type",
+            "turn": 2
+          }
+        ],
+        "verifier_exit_code": 1
+      },
+      {
+        "messages_sha256": "c37ace5efb2ded343822f0c1e238a39d866bcf0d2e96098b8865dc17c4db6738",
+        "runtime_error": null,
+        "task": "playwright/standard/web_search/r1_arxiv",
+        "tool_count": 22,
+        "turns": [
+          {
+            "arguments": {},
+            "result_is_error": false,
+            "tool": "browser_type",
+            "turn": 1
+          },
+          {
+            "arguments": {},
+            "result_is_error": null,
+            "tool": "browser_type",
+            "turn": 2
+          }
+        ],
+        "verifier_exit_code": 1
+      }
+    ],
+    "user_simulator_executed": false,
+    "verifier_failures": 4,
+    "verifier_passes": 0
+  },
+  "official_split_verified": false,
+  "receipt_self_sha256": "b77cc89485b4ab9154eeeba15b4012a60e89393f710d8013a83b973ce898d45b",
+  "schema_version": 1,
+  "source_artifacts": {
+    "native_report": {
+      "bytes": 7764,
+      "path": "/private/tmp/m440-mcpmark-playwright.json",
+      "sha256": "17004fd3583483cf451f97858b5a50295e618edadf357c09bad6c4997b77fa23"
+    },
+    "random_report": {
+      "bytes": 9313,
+      "path": "/private/tmp/m440-mcpmark-playwright-random.json",
+      "sha256": "024afc9d675689d8b796f8087c98bf9758b128275ceac74da8a2a369280f031a"
+    },
+    "warm_report": {
+      "bytes": 9374,
+      "path": "/private/tmp/m440-mcpmark-playwright-warm.json",
+      "sha256": "74528c10f9e78a616bde22c80f73f07ea33499a576ae58998cfad4ce4030eaf9"
+    }
+  },
+  "success_rate": 0.0,
+  "task_count": 4,
+  "trajectory_transfer": {
+    "dataset": "Jakumetsu/mcpmark-trajectory-log",
+    "dataset_url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log",
+    "eval_input_sha256": [
+      "c32b05b4a20499463fcde9089b705fac056fab50194a0931b813319fc227f688",
+      "def538660d893e49809db1a1488bd9679d7aa04c1873e3e0a64ddf9dd29a836c"
+    ],
+    "random": {
+      "after": {
+        "mean_loss": 9.688384509477459,
+        "sequence_accuracy": 0.0,
+        "token_accuracy": 0.007285974499089253
+      },
+      "backbone_init": "random",
+      "before": {
+        "mean_loss": 9.788409012480077,
+        "sequence_accuracy": 0.0,
+        "token_accuracy": 0.007285974499089253
+      },
+      "child": {
+        "bytes": 52250473,
+        "path": "/private/tmp/m440-mcpmark-playwright-random.pt",
+        "sha256": "256f9298ff6b326d172ba1dc595997377517fe3bc1ccec1cc1d79434a90f0230"
+      },
+      "delta": {
+        "mean_loss": -0.10002450300261856,
+        "token_accuracy_points": 0.0
+      },
+      "eval_rows": 2,
+      "learning_rate": 2e-05,
+      "max_seq_len": 512,
+      "report_sha256": "024afc9d675689d8b796f8087c98bf9758b128275ceac74da8a2a369280f031a",
+      "steps": 8,
+      "weight_transfer": {
+        "action_heads": {
+          "base_l2": 87.12721149777144,
+          "delta_l2": 0.0,
+          "parameters": 2518968,
+          "relative_delta_l2": 0.0,
+          "target_l2": 87.12721149777144
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.686243041747026,
+          "delta_l2": 40.25516408907167,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.7788371086781745,
+          "target_l2": 50.41082436370032
+        },
+        "embedding": {
+          "base_l2": 76.26811513665427,
+          "delta_l2": 91.29768223055814,
+          "parameters": 6291456,
+          "relative_delta_l2": 1.197062259464187,
+          "target_l2": 50.1892311772249
+        },
+        "ffn": {
+          "base_l2": 50.599417154543154,
+          "delta_l2": 44.422601872602044,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.8779271456215476,
+          "target_l2": 49.79218907495966
+        },
+        "normalization": {
+          "base_l2": 21.431829234008912,
+          "delta_l2": 1.8370627141631217,
+          "parameters": 384,
+          "relative_delta_l2": 0.08571656175983311,
+          "target_l2": 19.595776216445866
+        }
+      }
+    },
+    "redaction_policy": "tool outputs and assistant free text fixed-marker redaction; absolute paths suffix-redacted",
+    "revision": "e50578f0ab904d8e6a7c576c387c1e76ae482c89",
+    "source_disjoint_eval_rows": 2,
+    "train_input_sha256": "f5c46e510df4d4d43321a799146df908b5d7867f84a6afcf6d5988061a8b7abf",
+    "train_rows": 1,
+    "warm": {
+      "after": {
+        "mean_loss": 5.0015792429772885,
+        "sequence_accuracy": 0.0,
+        "token_accuracy": 0.331511839708561
+      },
+      "backbone_init": "parent",
+      "before": {
+        "mean_loss": 5.161177060208902,
+        "sequence_accuracy": 0.0,
+        "token_accuracy": 0.31876138433515483
+      },
+      "child": {
+        "bytes": 52250359,
+        "path": "/private/tmp/m440-mcpmark-playwright-warm.pt",
+        "sha256": "7b3438d9ee512007cbce17b66f8215762a16a9d5fdf9dd85c905be2cda053425"
+      },
+      "delta": {
+        "mean_loss": -0.1595978172316137,
+        "token_accuracy_points": 1.2750455373406189
+      },
+      "eval_rows": 2,
+      "learning_rate": 2e-05,
+      "max_seq_len": 512,
+      "report_sha256": "74528c10f9e78a616bde22c80f73f07ea33499a576ae58998cfad4ce4030eaf9",
+      "steps": 8,
+      "weight_transfer": {
+        "action_heads": {
+          "base_l2": 87.12721149777144,
+          "delta_l2": 0.0,
+          "parameters": 2518968,
+          "relative_delta_l2": 0.0,
+          "target_l2": 87.12721149777144
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.686243041747026,
+          "delta_l2": 0.09572852228567948,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0018521083493795334,
+          "target_l2": 51.686644587718725
+        },
+        "embedding": {
+          "base_l2": 76.26811513665427,
+          "delta_l2": 0.18914375740007602,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.002479984683785295,
+          "target_l2": 76.31533144874744
+        },
+        "ffn": {
+          "base_l2": 50.599417154543154,
+          "delta_l2": 0.10862236239267001,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.002146711731103748,
+          "target_l2": 50.599194569913095
+        },
+        "normalization": {
+          "base_l2": 21.431829234008912,
+          "delta_l2": 0.0014356665163682736,
+          "parameters": 384,
+          "relative_delta_l2": 6.698758657940866e-05,
+          "target_l2": 21.431500356786213
+        }
+      }
+    },
+    "warm_advantage_after_points": 32.42258652094718
+  }
+}

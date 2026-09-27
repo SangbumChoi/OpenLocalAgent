@@ -1,0 +1,143 @@
+{
+  "arms": {
+    "random": {
+      "checkpoint": {
+        "bytes": 52206887,
+        "parameters": 10524544,
+        "sha256": "2722ea455de75fb1f99d29eb40ea88dedc59248e11ef1672c22582e7a79fa946",
+        "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+      },
+      "protocol": {
+        "candidate_mode": "plus_15_tools",
+        "execution": "frozen_localagent_dense_selector_no_tool_execution",
+        "oracle_mode": "oracle",
+        "records": 67,
+        "server_configuration_dropped": true,
+        "tool_description_policy": "generated_name_only_v1",
+        "verifiers_dropped": true
+      },
+      "source_files": {
+        "distractors": {
+          "bytes": 333635,
+          "sha256": "3dc74c726c935e0a26d4b8f4c8dc77a07f6c3f00c7c474e3bec0ea8eaae36df9"
+        },
+        "oracle": {
+          "bytes": 316743,
+          "sha256": "cf03fc450963cd3cce92850cc822135b156332cdd4702b84094f531f8258c048"
+        }
+      },
+      "summary": {
+        "by_domain": {
+          "email": {
+            "hit_at_1": 0.22388059701492538,
+            "hit_at_3": 0.7014925373134329,
+            "hit_at_5": 0.8955223880597015,
+            "records": 67
+          }
+        },
+        "hit_at_1": 0.22388059701492538,
+        "hit_at_3": 0.7014925373134329,
+        "hit_at_5": 0.8955223880597015,
+        "mean_candidate_tool_count": 20.0,
+        "mean_oracle_tool_count": 5.686567164179104,
+        "records": 67
+      }
+    },
+    "warm": {
+      "checkpoint": {
+        "bytes": 52206773,
+        "parameters": 10524544,
+        "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533",
+        "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+      },
+      "protocol": {
+        "candidate_mode": "plus_15_tools",
+        "execution": "frozen_localagent_dense_selector_no_tool_execution",
+        "oracle_mode": "oracle",
+        "records": 67,
+        "server_configuration_dropped": true,
+        "tool_description_policy": "generated_name_only_v1",
+        "verifiers_dropped": true
+      },
+      "source_files": {
+        "distractors": {
+          "bytes": 333635,
+          "sha256": "3dc74c726c935e0a26d4b8f4c8dc77a07f6c3f00c7c474e3bec0ea8eaae36df9"
+        },
+        "oracle": {
+          "bytes": 316743,
+          "sha256": "cf03fc450963cd3cce92850cc822135b156332cdd4702b84094f531f8258c048"
+        }
+      },
+      "summary": {
+        "by_domain": {
+          "email": {
+            "hit_at_1": 0.13432835820895522,
+            "hit_at_3": 0.40298507462686567,
+            "hit_at_5": 0.6268656716417911,
+            "records": 67
+          }
+        },
+        "hit_at_1": 0.13432835820895522,
+        "hit_at_3": 0.40298507462686567,
+        "hit_at_5": 0.6268656716417911,
+        "mean_candidate_tool_count": 20.0,
+        "mean_oracle_tool_count": 5.686567164179104,
+        "records": 67
+      }
+    }
+  },
+  "claim_boundary": "Public EnterpriseOps-Gym email tool-retrieval diagnostic with generated name-only tool descriptions. Server configuration and verifiers are dropped and no tool executes. This is not official EnterpriseOps-Gym stateful task success, leaderboard performance, or evidence of real email side effects.",
+  "comparison": {
+    "random_hit_at_1": 0.22388059701492538,
+    "random_hit_at_3": 0.7014925373134329,
+    "random_hit_at_5": 0.8955223880597015,
+    "records": 67,
+    "warm_hit_at_1": 0.13432835820895522,
+    "warm_hit_at_3": 0.40298507462686567,
+    "warm_hit_at_5": 0.6268656716417911,
+    "warm_minus_random_hit_at_1_pp": -8.955223880597016,
+    "warm_minus_random_hit_at_3_pp": -29.85074626865672,
+    "warm_minus_random_hit_at_5_pp": -26.865671641791046,
+    "warm_start_better_at_1": false,
+    "warm_start_better_at_3": false,
+    "warm_start_better_at_5": false
+  },
+  "kind": "localagent_m680_m679_enterpriseopsgym_email_control",
+  "protocol": {
+    "candidate_tools": 20,
+    "execution": "frozen_localagent_dense_selector_no_tool_execution",
+    "official_native_score": false,
+    "oracle_tools_mean": 5.686567164179104,
+    "random_lineage": "matched m679 random child control",
+    "records": 67,
+    "warm_lineage": "m679 AndroidControl+MCPMark child"
+  },
+  "raw_reports": {
+    "random": {
+      "bytes": 37728,
+      "path": "/private/tmp/m680-m679-enterprise-email-random.json",
+      "sha256": "37a82c6e1e82282fe2ee2b6dee63adea63afab8a3c53bd0d3d88e88a396b5f08"
+    },
+    "warm": {
+      "bytes": 35869,
+      "path": "/private/tmp/m680-m679-enterprise-email.json",
+      "sha256": "d08123888542898ca0208909470d6e25a17c26b1670bc88dbd0ee1fe959ff959"
+    }
+  },
+  "receipt_self_sha256": "103ed60d1b43b87b50291e1a7f0a08758cca83c856e71aa86d00da25933009e1",
+  "schema_version": 1,
+  "source": {
+    "dataset": "ServiceNow-AI/EnterpriseOps-Gym",
+    "original_code": "https://github.com/ServiceNow/EnterpriseOps-Gym",
+    "revision": "c8e538eae8a6205294f0a86675fefdc1fac408f6",
+    "slice": "oracle/email vs plus_15_tools/email",
+    "url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym"
+  },
+  "weight_adoption": {
+    "compatible_parameter_count": true,
+    "compatible_tokenizer": true,
+    "recommendation": "do not promote m679 warm transfer for this email retrieval slice; investigate task-family interference",
+    "reuse_warm_backbone_for_email": false
+  }
+}

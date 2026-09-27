@@ -1,0 +1,152 @@
+{
+  "after": {
+    "eval": {
+      "assistant_loss_tokens": 12737,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.21598492580670486,
+      "mean_loss": 5.820789165546243,
+      "rows": 12
+    },
+    "train": {
+      "assistant_loss_tokens": 24905,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.22465368399919694,
+      "mean_loss": 5.785055241166432,
+      "rows": 24
+    }
+  },
+  "before": {
+    "eval": {
+      "assistant_loss_tokens": 12737,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.21598492580670486,
+      "mean_loss": 5.820789165546243,
+      "rows": 12
+    },
+    "train": {
+      "assistant_loss_tokens": 24905,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.22465368399919694,
+      "mean_loss": 5.785055241166432,
+      "rows": 24
+    }
+  },
+  "child": {
+    "bytes": 52236437,
+    "path": "/private/tmp/appworld-sft-runpython-head-standard-child.pt",
+    "sha256": "654ab13dbd6731fff97baeb91b63fab464b6ed8669893016792105afb72d2ced"
+  },
+  "claim_boundary": "Held-out public appworld source continuation with text-first teacher-forced metrics; this is not an official benchmark score and makes no native browser/emulator/MCP/external-account claim.",
+  "eval_inputs": [
+    {
+      "bytes": 48715,
+      "path": "/private/tmp/appworld-dev12.jsonl",
+      "sha256": "8a4fc56d4ffa1dc129467c4d9d59e754e490f84ae2afbea380430bd4deafa509"
+    }
+  ],
+  "heads": {
+    "after": {
+      "route_accuracy": 1.0,
+      "rows": 12,
+      "selector_top1_accuracy": 1.0,
+      "tool_rows": 12
+    },
+    "before": {
+      "route_accuracy": 0.0,
+      "rows": 12,
+      "selector_top1_accuracy": 0.0,
+      "tool_rows": 12
+    }
+  },
+  "hyperparameters": {
+    "batch_size": 2,
+    "device": "cpu",
+    "head_init": "parent",
+    "head_steps": 256,
+    "learning_rate": 1e-06,
+    "max_seq_len": 2048,
+    "seed": 2027,
+    "selector_pool": "standard",
+    "steps": 1
+  },
+  "kind": "localagent_public_agent_continuation_report",
+  "loss_history": [
+    5.717419147491455
+  ],
+  "parent": {
+    "bytes": 52235575,
+    "path": "/private/tmp/appworld-sft-runpython-child.pt",
+    "sha256": "651350ac8806515b94b3d5ef3ec9a232cc86226ebc590be62eb38ce77cc6091d"
+  },
+  "rows": {
+    "eval": 12,
+    "train": 24
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "appworld",
+    "manifest": {
+      "bytes": 13686,
+      "path": "/private/tmp/appworld-train24.manifest.json",
+      "sha256": "1f0f832a0c03001a266c6ac3ff26a19ccfe45688cb7ec56b73fb7e39eccfa8e7"
+    },
+    "revision": "0.2.0"
+  },
+  "token_accounting": {
+    "dataset_token_accounting": {
+      "decay": null,
+      "main": {
+        "input_tokens": 25762,
+        "loss_tokens": 24905,
+        "sources": {
+          "multi_turn": {
+            "input_tokens": 25762,
+            "loss_tokens": 24905,
+            "rows": 24
+          }
+        }
+      }
+    },
+    "fixed_horizon_progress": {
+      "completed_optimizer_updates": 1,
+      "partial": false,
+      "planned_optimizer_updates": 1
+    },
+    "lm_sampling": {
+      "mode": "iid_with_replacement_v1"
+    },
+    "loss_components": {
+      "lm_loss": [
+        5.717419147491455
+      ],
+      "optimization": [
+        5.717419147491455
+      ],
+      "router_aux": [
+        0.0
+      ],
+      "router_weighted": [
+        0.0
+      ]
+    },
+    "token_accounting": {
+      "input_tokens": 2581,
+      "loss_tokens": 2501,
+      "sources": {
+        "multi_turn": {
+          "input_tokens": 2581,
+          "loss_tokens": 2501,
+          "rows": 2
+        }
+      }
+    },
+    "token_accounting_scope": "language_model_microbatches"
+  },
+  "train_inputs": [
+    {
+      "bytes": 97409,
+      "path": "/private/tmp/appworld-train24.jsonl",
+      "sha256": "b93145a72d16c5d854171b81dd12f9688448cf23c4529ffa09306db83348a6e5"
+    }
+  ]
+}

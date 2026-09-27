@@ -1,0 +1,137 @@
+{
+  "kind": "localagent_cross_surface_xlam_derivative_transfer",
+  "schema_version": 1,
+  "parent": {
+    "path": "/private/tmp/m129-mobile-notes-state-warm.pt",
+    "sha256": "9bba544ae37190fdc24ea51ac9f3f8d80350cd905c01e13186156c19f7e0f9ee"
+  },
+  "sources": {
+    "android": {
+      "dataset": "OfficerChul/Android-Control-84k",
+      "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k",
+      "train_rows": 4096,
+      "eval_rows": 904,
+      "train_sha256": "6971d5fe81fe3c6e8ee12e0072481ec653f98bdb5699af54e8f63649358743fd",
+      "eval_sha256": "2d798115fe0feb14ac6d65f86a4b51b4463b593a35281eedce4de8751356bc95"
+    },
+    "desktop": {
+      "dataset": "xlangai/AgentNet",
+      "url": "https://huggingface.co/datasets/xlangai/AgentNet",
+      "train_rows": 513,
+      "eval_rows": 133,
+      "train_sha256": "44fad4c6e98fb6f5afd3cc45b89e1c1987d5d273293922521ef67677ace79db8",
+      "eval_sha256": "2cadf65145b07734eb13988dc305396d027f6e98d1a5a7cf7de9a5fd31c3dc7c"
+    },
+    "browser": {
+      "dataset": "osunlp/Mind2Web",
+      "url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+      "train_rows": 20,
+      "eval_rows": 4,
+      "train_sha256": "812d25f03b82733032911a57141cbefa29984592b1d2e255bce6e6fbb11cddda",
+      "eval_sha256": "99591dc2f765a5dc8c43f6e785aa023eeb65999451a14fe749622ee0b60ee51a"
+    },
+    "tools": {
+      "dataset": "product-science/xlam-function-calling-60k-raw",
+      "url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw",
+      "revision": "dfbd3c669354c27f2727870d39a4d86c32381448",
+      "license": "apache-2.0",
+      "train_parquet_sha256": [
+        "7feda86e6c083775fcfe62f85431db952d783c3197aac7e2ba43bf29b0fe784",
+        "ec0c2ca04435f781e5ec4bd13016256458f1bcaa2b9f4dbe48762c46b262532b",
+        "d305143cc8da8ee2108c379121dc4f176e138b76411e60c28678e93ce5d51114",
+        "0c7ec86003e7938085a5294a795f6f8ed2828335394fec3006c28ee0f6ca633e"
+      ],
+      "train_rows_valid": 3911,
+      "train_rows_rejected": 89,
+      "train_jsonl_sha256": "0e66edaeef3fed8403939f6f7df97ac135f5e2002c8230f55aeb86c39a2ce429",
+      "held_out_parquet_sha256": "83da335d43dafe27b2e368920dcd2141579d468d983835d6aa243c4908e63fb9",
+      "held_out_rows_valid": 982,
+      "held_out_rows_rejected": 18,
+      "held_out_jsonl_sha256": "e9089d092d3136f1703a85bbd3d8b7bf1e55feb89ff3bf11476dbb155331999a",
+      "slot_disjoint_rows": 500,
+      "slot_overlap_rows_removed": 482,
+      "slot_disjoint_jsonl_sha256": "661b5b58f133958b076ffec24dd2d3b538ebc814d465e0d039f9d171c0680688",
+      "official_salesforce_split_verified": false
+    }
+  },
+  "training": {
+    "train_rows": 8540,
+    "eval_rows": 1541,
+    "steps": 32,
+    "batch_size": 4,
+    "learning_rate": 1e-05,
+    "max_seq_len": 2048,
+    "seed": 2027,
+    "device": "cpu",
+    "split_policy": "Source-record-disjoint and globally slot-disjoint after removing 482 derivative xLAM eval rows with overlapping declared argument values."
+  },
+  "arms": {
+    "warm_parent_backbone": {
+      "child_sha256": "8be2d56288645b77b3d8629ef5b85ac4bee7e328307edde70c94d9297263f395",
+      "report_sha256": "67e7d5228f728c98d786cc3e3a4d3b1f2c3b93fa04675158d1c546debb60562b",
+      "before_aggregate_token_accuracy": 0.57650278142834,
+      "after_aggregate_token_accuracy": 0.5881145696437251,
+      "after_by_source_token_accuracy": {
+        "android": 0.6720432432432433,
+        "browser": 0.6424242424242425,
+        "desktop": 0.4894704559394807,
+        "tools": 0.5344953592048527
+      },
+      "weight_relative_delta_l2": {
+        "embedding": 0.004786651756320665,
+        "attention_or_mixer": 0.0014855589640197697,
+        "ffn": 0.001800934589693922,
+        "normalization": 0.00006746411642221846,
+        "action_heads": 0.0
+      }
+    },
+    "random_backbone_control": {
+      "child_sha256": "1fe1530a984043175b3f8fb1eae6b638cb28f06b7a7a89240ee6868ee2a08c1a",
+      "report_sha256": "5c4588ebf6b0dbe3bd6ac67d0837e8d8623f66053fe2ece152d1ffb807d448e8",
+      "before_aggregate_token_accuracy": 0.00028804435883126,
+      "after_aggregate_token_accuracy": 0.11222928330962968,
+      "after_by_source_token_accuracy": {
+        "android": 0.19887567567567568,
+        "browser": 0.0,
+        "desktop": 0.03782457575138009,
+        "tools": 0.05298545640575897
+      },
+      "weight_relative_delta_l2": {
+        "embedding": 1.2356902918838533,
+        "attention_or_mixer": 0.7788010377258904,
+        "ffn": 0.878065491087797,
+        "normalization": 0.0790378277434723,
+        "action_heads": 0.0
+      }
+    }
+  },
+  "xlam_first_call_probe": {
+    "source_jsonl_sha256": "43db9250b50f44d96d2be31983690e101bd083eefea2a4a327e13a3ed8caeee1",
+    "rows": 128,
+    "official_original_split_verified": false,
+    "parent": {
+      "row_retriever_first_tool_exact": 0.5078125,
+      "row_retriever_argument_exact": 0.0,
+      "row_retriever_schema_valid": 1.0,
+      "global_selector_first_tool_exact": 0.0,
+      "global_selector_schema_valid": 0.0078125,
+      "report_sha256": "681ab7e6c85bd86507646f84dbc6a777c076661e4265067a2b81f82cafbf05ef"
+    },
+    "warm_child": {
+      "row_retriever_first_tool_exact": 0.4921875,
+      "row_retriever_argument_exact": 0.0,
+      "row_retriever_schema_valid": 1.0,
+      "global_selector_first_tool_exact": 0.0,
+      "global_selector_schema_valid": 0.0078125,
+      "report_sha256": "69b43bccada2b5282c22140c3e16905a6730b4fdc1210ded862f8b1a7b90ccf1"
+    }
+  },
+  "decision": {
+    "pretrained_backbone_supported": true,
+    "evidence": "Warm transfer is 58.81% aggregate held-out token accuracy versus 11.22% for the matched random-backbone control, while warm backbone movement stays below 0.5% per major group.",
+    "production_checkpoint_promoted": false,
+    "reason": "The warm child has zero first-call argument exactness and slightly lower row-retriever tool exactness than its parent on the 128-row derivative xLAM probe; this is representation/lineage evidence, not a production tool-use win."
+  },
+  "claim_boundary": "Public-train continuation and matched weight-transfer ablation only; no official Salesforce xLAM score, native mobile/browser/desktop/MCP execution, screenshot grounding, live API side effect, or WebGPU hardware throughput claim.",
+  "receipt_self_sha256": "37822a1567d7229cf734055ffab10fe45e5bba8876fae11d0f1aef9cab8feb22"
+}

@@ -1,0 +1,34 @@
+# Colab T4/L4 starting run for the browser-tier model. The notebook rewrites out_dir and
+# mirror_dir to the ephemeral VM and Google Drive respectively, then can override total_steps.
+stage: pretrain
+model_config: configs/model/webgpu-35m-hybrid.yaml
+data:
+  shards_dir: data/shards/colab
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-16k.json
+optim:
+  name: adamw
+  lr: 3.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 100
+  total_steps: 6000
+  decay_frac: 0.2
+batch:
+  # 2 * 512 * 16 = 16,384 non-padding tokens/update at full rows; 6K steps is approximately
+  # 98M optimizer-consumed tokens. Increase steps across resumed sessions toward 680M tokens.
+  micro_batch_size: 2
+  grad_accum_steps: 16
+runtime:
+  device: auto
+  dtype: auto
+  seed: 42
+  resume: true
+log:
+  out_dir: runs/pretrain-colab
+  ckpt_every: 250
+  eval_every: 250
+  eval_batches: 8

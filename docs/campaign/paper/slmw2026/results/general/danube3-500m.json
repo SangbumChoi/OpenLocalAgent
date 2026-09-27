@@ -1,0 +1,43 @@
+{
+  "model": "data/baselines/h2o-danube3-500m-chat",
+  "adapter": "runs/lora/danube3-500m",
+  "tag": "danube3-500m",
+  "rows_requested": 300,
+  "rows": {
+    "arc-easy": 300,
+    "arc-challenge": 300,
+    "hellaswag": 300,
+    "openbookqa": 300,
+    "winogrande": 300,
+    "mmlu": 300
+  },
+  "scores": {
+    "base": {
+      "arc-easy": 61.3,
+      "arc-challenge": 33.7,
+      "hellaswag": 52.3,
+      "openbookqa": 41.3,
+      "winogrande": 62.3,
+      "mmlu": 29.0,
+      "seconds": 66.6
+    },
+    "finetuned": {
+      "arc-easy": 61.3,
+      "arc-challenge": 33.7,
+      "hellaswag": 52.3,
+      "openbookqa": 41.0,
+      "winogrande": 63.0,
+      "mmlu": 32.0,
+      "seconds": 119.0
+    }
+  },
+  "delta": {
+    "arc-easy": 0.0,
+    "arc-challenge": 0.0,
+    "hellaswag": 0.0,
+    "openbookqa": -0.3,
+    "winogrande": 0.7,
+    "mmlu": 3.0
+  },
+  "mean_delta": 0.57
+}

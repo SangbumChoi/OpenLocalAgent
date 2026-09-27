@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "kind": "public_realistic_agent_source_audit",
+  "measurement": "m178_mobile_safety_personalization_source_audit",
+  "generated_at": "2026-08-03",
+  "claim_boundary": "This receipt hash-pins public source metadata for MobileSafetyBench and iOSWorld. It is a provenance and protocol audit only: no benchmark task text, screenshots, seeded profiles, APKs, simulator state, native runner, or official score was admitted to SFT or executed locally.",
+  "sources": [
+    {
+      "id": "mobile_safety_bench",
+      "name": "MobileSafetyBench",
+      "repository_url": "https://github.com/jylee425/mobilesafetybench",
+      "paper_url": "https://arxiv.org/abs/2410.17520",
+      "repository_revision": {
+        "branch": "main",
+        "commit": "bc5e0579626a280c4f551261abcb721442ff92ea",
+        "commit_url": "https://github.com/jylee425/mobilesafetybench/commit/bc5e0579626a280c4f551261abcb721442ff92ea"
+      },
+      "source_files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/jylee425/mobilesafetybench/bc5e0579626a280c4f551261abcb721442ff92ea/README.md",
+          "bytes": 8077,
+          "sha256": "e733115d9b2fbe910cb3891162f04a89af8cbda25255c8f0bf60f78101e4309a"
+        }
+      ],
+      "benchmark_contract": {
+        "tasks": 100,
+        "helpfulness_tasks": 50,
+        "safety_tasks": 42,
+        "indirect_prompt_injection_tasks": 8,
+        "operational_areas": [
+          "text_messaging",
+          "web_navigation",
+          "social_media",
+          "finance",
+          "device_data_management",
+          "utility"
+        ],
+        "observations": ["image", "text"],
+        "action_tools": ["Appium", "ADB"],
+        "evaluation": [
+          "action_history",
+          "device_state",
+          "rule_based_task_verifier",
+          "safety_score_minus_100_to_100",
+          "helpfulness_score_zero_to_100"
+        ]
+      },
+      "runtime": {
+        "android_emulator": true,
+        "third_party_apks": true,
+        "appium_server": true,
+        "adb": true,
+        "local_task_runner_executed": false
+      },
+      "license": {
+        "code": "review_required; no LICENSE file was present at the pinned revision",
+        "benchmark_assets_and_apks": "review_required"
+      },
+      "local_status": "source_metadata_only; emulator, APKs, task payloads, and verifier were not acquired"
+    },
+    {
+      "id": "iosworld",
+      "name": "iOSWorld",
+      "repository_url": "https://github.com/ljang0/iOSWorld",
+      "paper_url": "https://arxiv.org/abs/2606.09764",
+      "repository_revision": {
+        "branch": "main",
+        "commit": "e91f4cb2ef4c9dd48fef83a894477b41fd5e209d",
+        "commit_url": "https://github.com/ljang0/iOSWorld/commit/e91f4cb2ef4c9dd48fef83a894477b41fd5e209d"
+      },
+      "source_files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/ljang0/iOSWorld/e91f4cb2ef4c9dd48fef83a894477b41fd5e209d/README.md",
+          "bytes": 9431,
+          "sha256": "a624714a87e42dcb8aa11a5ee571cded1687601a06e470b77e54245341d6f788"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/ljang0/iOSWorld/e91f4cb2ef4c9dd48fef83a894477b41fd5e209d/LICENSE",
+          "bytes": 11307,
+          "sha256": "fa9fe1e31ed8da21d0b51621d3a3669ced4f0e42353aaf4bd8be1615d200eaac"
+        }
+      ],
+      "benchmark_contract": {
+        "apps": 26,
+        "tasks": 133,
+        "single_app_tasks": 27,
+        "multi_app_tasks": 60,
+        "memory_personalization_tasks": 46,
+        "persistent_seeded_identity": true,
+        "cross_app_state": true,
+        "observations": ["screenshot", "optional_accessibility_xml"],
+        "evaluation": ["task_rubrics", "trajectory_artifacts", "final_state"],
+        "optional_mcp_mode": true
+      },
+      "runtime": {
+        "macos": true,
+        "xcode": true,
+        "ios_simulator": true,
+        "appium_server": true,
+        "local_task_runner_executed": false
+      },
+      "license": {
+        "code": "Apache-2.0",
+        "benchmark_apps_tasks_profiles": "review_required"
+      },
+      "local_status": "source_metadata_only; simulator, seeded profile, apps, task payloads, and rubric runner were not acquired"
+    }
+  ],
+  "localagent_adaptation": {
+    "training_rows_added": 0,
+    "native_runs": 0,
+    "webgpu_runs": 0,
+    "official_scores_added": 0,
+    "reason": "The current text-first WebGPU model cannot claim screenshot-grounded mobile control, persistent iOS identity, or safety behavior without the release-matched Android/iOS runtimes and evaluators."
+  },
+  "next_gate": "Acquire release-approved task manifests and runtimes in isolated evaluation workspaces; run safety refusal/confirmation and cross-app personalization gates with frozen model/tokenizer hashes before any deployment claim.",
+  "receipt_self_sha256": "19bcd3bc3ac1e2c7a5dd5f20f051c24c59941c15e04bf74603e5ebf40d4281fa"
+}

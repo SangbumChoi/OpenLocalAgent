@@ -1,0 +1,42 @@
+[
+  {
+    "prompt": "Weather in Kyoto please.",
+    "expected": "{\"arguments\":{\"city\":\"Kyoto\"},\"name\":\"get_weather\"}",
+    "grounded_out": "<tool_call>{\"arguments\":{\"message\":\"lease\"},\"name\":\"slack_send\"}</tool_call>"
+  },
+  {
+    "prompt": "What is 38 - 36 * 31?",
+    "expected": "{\"arguments\":{\"expression\":\"38-36*31\"},\"name\":\"calculator\"}",
+    "grounded_out": "<tool_call>{\"arguments\":{\"expression\":\"38-36*31\"},\"name\":\"calculator\"}</tool_call>"
+  },
+  {
+    "prompt": "Search for rules of chess.",
+    "expected": "{\"arguments\":{\"query\":\"rules of chess\"},\"name\":\"web_search\"}",
+    "grounded_out": "<tool_call>{\"arguments\":{\"message\":\"hes\"},\"name\":\"slack_send\"}</tool_call>"
+  },
+  {
+    "prompt": "What's the currency of Slovakia?",
+    "expected": "{\"arguments\":{\"query\":\"Slovakia\"},\"name\":\"web_search\"}",
+    "grounded_out": "<tool_call>{\"arguments\":{\"query\":\"Slovakia\"},\"name\":\"web_search\"}</tool_call>"
+  },
+  {
+    "prompt": "My goal is to host a dinner party.",
+    "expected": "{\"arguments\":{\"goal\":\"host a dinner party\"},\"name\":\"planner\"}",
+    "grounded_out": "<tool_call>{\"arguments\":{\"goal\":\"host a dinner party\"},\"name\":\"planner\"}</tool_call>"
+  },
+  {
+    "prompt": "Can you define syntax?",
+    "expected": "{\"arguments\":{\"term\":\"syntax\"},\"name\":\"define\"}",
+    "grounded_out": "<tool_call>{\"arguments\":{\"query\":\"synta\"},\"name\":\"web_search\"}</tool_call>"
+  },
+  {
+    "prompt": "Put on Karma Police.",
+    "expected": "{\"arguments\":{\"song\":\"Karma Police\"},\"name\":\"play_music\"}",
+    "grounded_out": "<tool_call>{\"arguments\":{\"key\":\"Delete\"},\"name\":\"key_press\"}</tool_call>"
+  },
+  {
+    "prompt": "Show the news about gene editing.",
+    "expected": "{\"arguments\":{\"topic\":\"gene editing\"},\"name\":\"get_news\"}",
+    "grounded_out": "<tool_call>{\"arguments\":{\"query\":\"gene editing\"},\"name\":\"web_search\"}</tool_call>"
+  }
+]

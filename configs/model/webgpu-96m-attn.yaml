@@ -1,0 +1,25 @@
+# Parameter-matched all-attention control for webgpu-96m-hybrid.yaml.
+#
+# Vocabulary, width, depth, 64-wide head geometry, MQA, 4K context, and QK-Norm are identical.
+# Only the mixer schedule and compensating FFN width differ. Its 95,298,944 parameters are within
+# 21,504 parameters (0.023%) of the hybrid candidate, so latency/cache comparisons do not hide a
+# meaningful capacity change. This is an untrained control architecture; no 4K throughput is
+# claimed.
+name: webgpu-96m-attn
+vocab_size: 16384
+d_model: 640
+n_layers: 18
+n_loops: 1
+n_heads: 10
+n_kv_heads: 1
+ffn_hidden: 1984
+max_seq_len: 4096
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types:
+  [attn, attn, attn, attn, attn, attn, attn, attn, attn,
+   attn, attn, attn, attn, attn, attn, attn, attn, attn]

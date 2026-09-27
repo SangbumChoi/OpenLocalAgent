@@ -1,0 +1,68 @@
+{
+  "kind": "localagent_mcpmark_filesystem_transfer_native_holdout",
+  "schema_version": 1,
+  "benchmark_id": "mcpmark",
+  "dataset": {
+    "name": "MCPMark",
+    "url": "https://github.com/eval-sys/mcpmark",
+    "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "suite": "easy",
+    "service": "filesystem",
+    "oracle_projection": "10 source-disjoint task rows with two assistant decisions each",
+    "train_rows": 8,
+    "eval_rows": 10,
+    "train_task_families": ["file_context", "file_property"],
+    "eval_task_families": ["folder_structure", "legal_document", "papers", "student_database"]
+  },
+  "checkpoint": {
+    "parent_sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+    "child_sha256": "0ff337f10fa049c0c38d271650b1895804d58fd4f4f244d8798d395c66be9a77",
+    "parameters": 10524544
+  },
+  "training": {
+    "steps": 24,
+    "batch_size": 2,
+    "learning_rate": 0.00002,
+    "max_sequence_length": 1024,
+    "device": "cpu",
+    "warm_start": true,
+    "source_disjoint": true,
+    "train_rows_sha256": "e824a803cb852fae5ab387dc669afb1488c7a7c01d178a8f579d7f46480430f4",
+    "eval_rows_sha256": "275dee91549d64e79752c314ec860dfa27e998e0a0f47374e97eff51ce4fd47e8",
+    "report_sha256": "b48b3ffd2cb48be88919c2a314b85a392be6aed6d0b1af9901f0c9760165eb32"
+  },
+  "teacher_forced_transfer": {
+    "held_out_rows": 10,
+    "token_accuracy_before": 0.3817829457364341,
+    "token_accuracy_after": 0.5251937984496124,
+    "token_accuracy_delta": 0.1434108527131783,
+    "sequence_accuracy_before": 0.0,
+    "sequence_accuracy_after": 0.0
+  },
+  "weight_movement": {
+    "embedding_relative_delta_l2": 0.006960650218710826,
+    "attention_or_mixer_relative_delta_l2": 0.003753038139129445,
+    "ffn_relative_delta_l2": 0.004468804766008223,
+    "normalization_relative_delta_l2": 0.0001501823889194123,
+    "action_heads_relative_delta_l2": 0.0,
+    "interpretation": "Small transferred-body movement with no action-head movement; this establishes lineage, not optimality or capability."
+  },
+  "native_holdout": {
+    "receipt_sha256": "a4f82cc8aaaa0437603e4732d4749327a516b322ab193e5451561be475f151c0",
+    "mcp_server_executed": true,
+    "task_verifiers_executed": true,
+    "tasks": 5,
+    "verifier_passes": 0,
+    "verifier_failures": 5,
+    "runtime_errors": 0,
+    "changed_workspaces": 0,
+    "official_split_verified": false,
+    "user_simulator_executed": false
+  },
+  "matched_random_control": {
+    "status": "not_available",
+    "reason": "overlapping CPU random-control attempts were stopped before producing a valid report; no matched-random claim is made"
+  },
+  "claim_boundary": "Warm source-disjoint MCPMark filesystem rows improve teacher-forced held-out token accuracy, but the warm child still fails every native verifier holdout (0/5) and changes no workspace. The oracle rows are a training diagnostic, not an official MCPMark split, and the child is rejected for promotion until a clean matched-random control and native recovery gain are demonstrated.",
+  "receipt_self_sha256": "cea7889469043db5894569eb0f322aad893af3dcaf01278d7dfb1ba9242fd153"
+}

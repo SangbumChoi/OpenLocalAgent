@@ -1,0 +1,86 @@
+{
+  "benchmark": {
+    "browsergym": {
+      "revision": "9e779f087de9a65668b6974d11f9ce9816026e96",
+      "version": "0.14.3"
+    },
+    "chromium_revision": "1117",
+    "id": "browsergym_miniwob",
+    "max_steps": 10,
+    "miniwob_revision": "7fd85d71a4b60325c6585396ec4f48377d049838",
+    "playwright_version": "1.44.0"
+  },
+  "checkpoint": {
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+  },
+  "claim_boundary": "Twenty pinned BrowserGym/MiniWoB test episodes are a current-checkpoint native canary, not the complete 240-episode official plan. The coordinate arm is a non-official diagnostic and is not a visual-agent or real-account result.",
+  "coordinate_fallback": {
+    "episodes": 20,
+    "grounded_steps": 30,
+    "grounded_rate": 0.16666666666666666,
+    "model_tools": {
+      "<none>": 60,
+      "drag": 10,
+      "move_cursor": 20,
+      "open_app": 80,
+      "type_text": 10
+    },
+    "steps": 180,
+    "success_rate": 0.2,
+    "task_families": {
+      "miniwob.ascending-numbers": {"episodes": 4, "reward": 4.0, "steps": 20, "successes": 4},
+      "miniwob.bisect-angle": {"episodes": 4, "reward": 0.0, "steps": 40, "successes": 0},
+      "miniwob.choose-list": {"episodes": 4, "reward": 0.0, "steps": 40, "successes": 0},
+      "miniwob.click-button": {"episodes": 4, "reward": 0.0, "steps": 40, "successes": 0},
+      "miniwob.click-button-sequence": {"episodes": 4, "reward": 0.0, "steps": 40, "successes": 0}
+    },
+    "total_reward": 4.0
+  },
+  "environment": {
+    "coordinate_fallback_arm": "non-official DOM geometry sidecar",
+    "episodes_per_arm": 20,
+    "external_accounts": false,
+    "native_runtime_executed": true,
+    "official_split_verified": false,
+    "screenshots": false
+  },
+  "finding": "The current checkpoint has no native success in the accessibility-only arm; a DOM-coordinate sidecar recovers only the ascending-numbers family (4/20). The remaining four task families stay at 0/16, so the limiting failure is action-policy/tool selection as well as grounding.",
+  "generated_at": "2026-08-04",
+  "kind": "localagent_browsergym_current_checkpoint_canary_comparison",
+  "schema_version": 1,
+  "source_receipts": {
+    "coordinate": {
+      "bytes": 76256,
+      "path": "/private/tmp/m282-browsergym-current-checkpoint-coordinate20.json",
+      "sha256": "37b17c2cccb9a4706f8435f4edbc669efa10327e89a57eeac4bebd6ead06919e"
+    },
+    "standard": {
+      "bytes": 85024,
+      "path": "/private/tmp/m282-browsergym-current-checkpoint-canary20.json",
+      "sha256": "9644f2f23bd29a8154406ad0f599b96255b5ab6619a67075b82e307b71449fa9"
+    }
+  },
+  "standard_accessibility": {
+    "episodes": 20,
+    "grounded_steps": 10,
+    "grounded_rate": 0.05,
+    "model_tools": {
+      "<none>": 60,
+      "drag": 10,
+      "move_cursor": 40,
+      "open_app": 80,
+      "type_text": 10
+    },
+    "steps": 200,
+    "success_rate": 0.0,
+    "task_families": {
+      "miniwob.ascending-numbers": {"episodes": 4, "reward": 0.0, "steps": 40, "successes": 0},
+      "miniwob.bisect-angle": {"episodes": 4, "reward": 0.0, "steps": 40, "successes": 0},
+      "miniwob.choose-list": {"episodes": 4, "reward": 0.0, "steps": 40, "successes": 0},
+      "miniwob.click-button": {"episodes": 4, "reward": 0.0, "steps": 40, "successes": 0},
+      "miniwob.click-button-sequence": {"episodes": 4, "reward": 0.0, "steps": 40, "successes": 0}
+    },
+    "total_reward": 0.0
+  }
+}

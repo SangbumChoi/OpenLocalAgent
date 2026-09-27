@@ -1,0 +1,52 @@
+{
+  "kind": "localagent_workshop_publication_gate",
+  "schema_version": 1,
+  "measurement": "m263_workshop_gate_current_mobilegym",
+  "generated_at": "2026-08-04",
+  "inputs": {
+    "catalog": "configs/data/realistic-agent-eval.catalog.yaml",
+    "native_receipts": {
+      "mobilegym": "docs/paper/results/raw/m262-mobilegym-native-current-browser-context-v1.json"
+    },
+    "webgpu_receipt": "docs/paper/results/raw/m261-webgpu-export-current-browser-context-v1.json",
+    "weight_report": "docs/paper/results/raw/m25-weight-transfer-ablation-v1.json",
+    "public_artifact_manifest": "docs/paper/results/raw/public-model-demo-manifest-v1.json"
+  },
+  "report": {
+    "path": "/private/tmp/m263-workshop-gate-current-mobilegym.json",
+    "bytes": 6640,
+    "sha256": "f1b83472778c78b7f85047c3815e80579d338bf807f37daa286ee708ea7e33e1"
+  },
+  "ready": false,
+  "passing_requirements": [
+    "catalog:realistic_family_coverage",
+    "catalog:no_pending_train_adapter",
+    "native:mobilegym",
+    "weights:transfer_and_no_transfer_ablation",
+    "artifacts:public_model_demo_manifest"
+  ],
+  "blocked_requirements": [
+    {"requirement": "native:androidworld", "blockers": ["receipt_not_supplied"]},
+    {"requirement": "native:mobile_safety_bench", "blockers": ["receipt_not_supplied"]},
+    {"requirement": "native:iosworld", "blockers": ["receipt_not_supplied"]},
+    {"requirement": "native:browsergym_miniwob", "blockers": ["receipt_not_supplied"]},
+    {"requirement": "native:osworld", "blockers": ["receipt_not_supplied"]},
+    {"requirement": "native:osworld_v2", "blockers": ["receipt_not_supplied"]},
+    {"requirement": "native:agentnet", "blockers": ["receipt_not_supplied"]},
+    {"requirement": "native:toolsandbox", "blockers": ["receipt_not_supplied"]},
+    {"requirement": "native:mcpmark", "blockers": ["receipt_not_supplied"]},
+    {"requirement": "native:enterpriseopsgym", "blockers": ["receipt_not_supplied"]},
+    {
+      "requirement": "webgpu:native_capability_and_latency",
+      "blockers": [
+        "backend_not_explicit_webgpu",
+        "environment_not_executed",
+        "hardware_adapter_not_verified",
+        "missing_capability_metrics",
+        "missing_performance_metrics"
+      ]
+    }
+  ],
+  "claim_boundary": "ready is false unless native benchmark receipts, native WebGPU performance and capability evidence, transfer ablations, and public model/demo artifacts are all explicitly supplied; protocol bridges and synthetic receipts do not satisfy these checks",
+  "receipt_self_sha256": "2c9a2c7ba5ce6ea1f6d58c199b9600460715e7abd94b87d65f9d400b5d8916fe"
+}

@@ -1,0 +1,59 @@
+{
+  "kind": "localagent_agentnet_m585_warm_parent_control_receipt",
+  "schema_version": 1,
+  "dataset": "xlangai/AgentNet",
+  "source_url": "https://huggingface.co/datasets/xlangai/AgentNet",
+  "source_revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+  "source": {
+    "original_bytes": 282313437,
+    "original_sha256": "8e24c5a5a1ef5a5113755b33ed12164fc37ce8fbbd35d1c7dba81bf950d53d00",
+    "normalized_eval_bytes": 483445,
+    "normalized_eval_sha256": "7f0f080e33c4a069c532f3efcc0ec72e73d456f606cd4e5608df6f4dd949ac43",
+    "normalized_eval_parent_records": 16,
+    "normalized_eval_rows": 257,
+    "normalized_train_parent_records": 48,
+    "split_policy": "source-parent-disjoint public text projection; screenshots dropped; evaluation-only native benchmark remains separate",
+    "projection": "task_plus_text_observation_to_existing_computer_tool_v1",
+    "seed": 2027
+  },
+  "parent": {
+    "checkpoint_sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+    "raw_report_sha256": "6a49443c11a8bfccc2ab657c4267f6fa418f8978ccb9825b63ec2bd63fda8c6f",
+    "prediction_sha256": "9a9437425e499af10504854f68500be110dc82940683395cfcdc98c46d34041e",
+    "ground_truth_sha256": "fde54ca0dd51b5a0ddeddc5325d41ff1e8cc9934d59f02b790d9e68f2f3d20d5"
+  },
+  "warm_child": {
+    "checkpoint_sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff",
+    "raw_report_sha256": "4d98753f63eefbcf3a613b4a561a9734abc2c65ec4ca92b94bc6b33a66960434",
+    "prediction_sha256": "9a9437425e499af10504854f68500be110dc82940683395cfcdc98c46d34041e",
+    "ground_truth_sha256": "fde54ca0dd51b5a0ddeddc5325d41ff1e8cc9934d59f02b790d9e68f2f3d20d5"
+  },
+  "evaluation": {
+    "tasks": 16,
+    "projected_actions": 257,
+    "completeness_verified": true,
+    "parent": {
+      "exact_trajectory_rate": 0.0,
+      "first_action_type_rate": 0.75,
+      "mean_total": 0.023256095797206947,
+      "success_rate": 0.0,
+      "mean_predicted_actions": 16.0
+    },
+    "warm_child": {
+      "exact_trajectory_rate": 0.0,
+      "first_action_type_rate": 0.75,
+      "mean_total": 0.023256095797206947,
+      "success_rate": 0.0,
+      "mean_predicted_actions": 16.0
+    },
+    "warm_minus_parent": {
+      "exact_trajectory_pp": 0.0,
+      "first_action_type_pp": 0.0,
+      "mean_total_delta": 0.0,
+      "prediction_bytes_identical": true,
+      "interpretation": "The warm public continuation produces byte-identical projected actions to the m553 parent on this 16-task text-only AgentNet holdout; no desktop trajectory transfer is observed."
+    }
+  },
+  "claim_boundary": "Offline text-only AgentNet trajectory continuation. Screenshots, desktop state, OS side effects, and the upstream AgentNetBench runtime were not used; this is not AgentNetBench, OSWorld, visual grounding, native desktop success, or a WebGPU deployment score.",
+  "receipt_self_sha256": "39e2f150b558000dbbd346fea39451a1420823ad46ef24344c36fcea9f55e40a"
+}

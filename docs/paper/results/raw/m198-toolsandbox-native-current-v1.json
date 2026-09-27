@@ -1,0 +1,72 @@
+{
+  "benchmark_id": "toolsandbox",
+  "checkpoint": {
+    "bytes": 52276521,
+    "path": "/private/tmp/m194-m180-dispatch-repair-warm.pt",
+    "sha256": "3b3fd817c6f52e8b922f84c9bb36e7d55e0e243a0f8ee6d0f20c85962a4eeba7"
+  },
+  "claim_boundary": "Native pinned ToolSandbox simulator and milestone verifier smoke only. The scripted user terminates after the first agent response, so multi-tool and multi-user-turn scenarios are intentionally truncated; a deterministic post-tool response template matches the fixture confirmation text. The official split, model-based user simulator, full scenario matrix, and optional RapidAPI tools were not executed. This is not an official ToolSandbox leaderboard score or publication-gate result.",
+  "dataset": "apple/ToolSandbox",
+  "decision": "diagnostic_only",
+  "environment_executed": true,
+  "external_api_called": false,
+  "kind": "localagent_toolsandbox_native_smoke_receipt",
+  "license": "Apple Software License; see upstream LICENSE and ACKNOWLEDGEMENTS",
+  "official_split_verified": false,
+  "protocol": {
+    "max_agent_turns": 8,
+    "post_tool_response_policy": "deterministic_function_name_and_argument_template",
+    "scripted_user_policy": "terminate_after_first_agent_response",
+    "task_selection": "three pinned single-tool, single-turn base scenarios"
+  },
+  "results": {
+    "minefield_similarity_mean": 0.0,
+    "milestone_similarity_mean": 1.0,
+    "success_count": 3,
+    "success_rate": 1.0,
+    "task_count": 3,
+    "tasks": [
+      "cellular_off",
+      "wifi_off",
+      "send_message_with_phone_number_and_content"
+    ]
+  },
+  "runner": {
+    "path": "scripts/run_toolsandbox_native.py",
+    "sha256": "9744f98b610b672f38707709233eb05d47e396dc748cce6cb35f54e7d4581524"
+  },
+  "source_files": [
+    {
+      "name": "README.md",
+      "bytes": 48824,
+      "sha256": "0e5cfb9077769e2dcbe74dbfc8b8fac8314d8a213ab34364ab6b2ecaf47d8fe8"
+    },
+    {
+      "name": "LICENSE",
+      "bytes": 2668,
+      "sha256": "2283d5566b38210fbfb9fcb06619f1d0a8101bff9df974ea8afc3393508e9015"
+    },
+    {
+      "name": "tool_sandbox/common/evaluation.py",
+      "bytes": 56027,
+      "sha256": "0425cff032bd1ca2ebe8cc1c875cdf2ea86463af24b2940734007d938e516ab3"
+    },
+    {
+      "name": "tool_sandbox/common/execution_context.py",
+      "bytes": 35461,
+      "sha256": "a18f54e157b92fa011e84780bc33941ea0635ad70ab4b38e7408beedc6221437"
+    },
+    {
+      "name": "tool_sandbox/scenarios/__init__.py",
+      "bytes": 5572,
+      "sha256": "113cc01d10bb1630a93e09785893235ae4a3863d3a61542839eeb2791914724a"
+    }
+  ],
+  "source_revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+  "source_url": "https://github.com/apple/ToolSandbox",
+  "success_rate": 1.0,
+  "task_count": 3,
+  "user_simulator_executed": false,
+  "verifier_executed": true,
+  "receipt_self_sha256": "93da48949650ad965a0123d28bff24dc47b669f8a674dd88cdac75c845615e33"
+}

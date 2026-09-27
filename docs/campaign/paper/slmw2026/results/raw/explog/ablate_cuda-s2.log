@@ -1,0 +1,21 @@
+model ultra-tiny-1m: 0.977M params on cuda seed=2 sft_scale=1.0
+  [pretrain] step    0/200  loss 5.545  loss_tokens 8,192
+  [pretrain] step   25/200  loss 3.479  loss_tokens 212,992
+  [pretrain] step   50/200  loss 3.426  loss_tokens 417,792
+  [pretrain] step   75/200  loss 3.437  loss_tokens 622,592
+  [pretrain] step  100/200  loss 3.235  loss_tokens 827,392
+  [pretrain] step  125/200  loss 3.039  loss_tokens 1,032,192
+  [pretrain] step  150/200  loss 2.839  loss_tokens 1,236,992
+  [pretrain] step  175/200  loss 2.642  loss_tokens 1,441,792
+  [pretrain] step  199/200  loss 2.628  loss_tokens 1,638,400
+=== Round 1: overall=21.6%  browser=43% code=26% computer_use=12% define=27% music=0% news=0% parallel=0% planner=0% productivity=27% text=0% tool_call=32% web_search=53%
+    multi-turn: step_acc=25% episode_acc=10% (81 steps)
+=== Round 2: overall=29.8%  browser=67% code=34% computer_use=23% define=37% music=3% news=10% parallel=7% planner=57% productivity=36% text=0% tool_call=38% web_search=30%
+    multi-turn: step_acc=20% episode_acc=3% (76 steps)
+=== Round 3: overall=39.5%  browser=97% code=45% computer_use=32% define=37% music=13% news=7% parallel=7% planner=43% productivity=43% text=5% tool_call=54% web_search=50%
+    multi-turn: step_acc=29% episode_acc=17% (72 steps)
+=== Round 4: overall=41.4%  browser=100% code=47% computer_use=30% define=30% music=27% news=10% parallel=10% planner=77% productivity=42% text=12% tool_call=57% web_search=47%
+    multi-turn: step_acc=35% episode_acc=10% (79 steps)
+=== Round 5: overall=46.9%  browser=100% code=57% computer_use=33% define=33% music=23% news=3% parallel=7% planner=60% productivity=52% text=12% tool_call=57% web_search=57%
+    multi-turn: step_acc=31% episode_acc=17% (84 steps)
+ABLATION_DONE runs/ablate/cuda-s2

@@ -1,0 +1,241 @@
+{
+  "claim_boundary": "Public MIT-licensed MCPMark trajectory-log rows with tool outputs and assistant free text redacted, source-disjoint teacher-forced continuation on the current m142 parent. This is not an official MCPMark score, live MCP/server/verifier execution, native browser or desktop success, screenshot grounding, or a real Notion/email side effect.",
+  "comparison": {
+    "random_after_sequence_accuracy": 0.0,
+    "random_after_token_accuracy": 0.031226199543031227,
+    "warm_after_sequence_accuracy": 0.0,
+    "warm_after_token_accuracy": 0.43183549124143183,
+    "warm_minus_random_after_pp": 40.06092916984006,
+    "warm_start_better_after": true
+  },
+  "dataset": "Jakumetsu/mcpmark-trajectory-log",
+  "decision": "diagnostic_only",
+  "inputs": {
+    "eval": {
+      "bytes": 14123,
+      "path": "/private/tmp/m120-eval.jsonl",
+      "sha256": "12f8d6bec22a5c21e3d77055eced3360648286c11362e81ce60cdeb26a7e232d"
+    },
+    "train": {
+      "bytes": 83877,
+      "path": "/private/tmp/m120-train.jsonl",
+      "sha256": "80aedf60607e2e113f21e0bdcb4794411ea616eed30b870f384dd24a4c336735"
+    }
+  },
+  "kind": "localagent_mcpmark_current_parent_transfer_receipt",
+  "license": "MIT (public trajectory-log source; verify upstream terms before redistribution)",
+  "receipt_self_sha256": "b187be72788e3494d9b266456ac9bae9937ae666b2373747f489bb192797920a",
+  "schema_version": 1,
+  "source_revision": "e50578f0ab904d8e6a7c576c387c1e76ae482c89",
+  "source_url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log",
+  "split_audit": {
+    "assistant_text_redacted": true,
+    "eval_parent_records": 2,
+    "eval_parent_records_sha256": "6e6bcc738e8e7332e8afc6951cb3009447574bf2d76a556afa7e0abe7f63e6d2",
+    "eval_rows": 2,
+    "parent_record_disjoint": true,
+    "tool_outputs_redacted": true,
+    "train_parent_records": 8,
+    "train_parent_records_sha256": "8edf3a7d93a628a5e3a95a69b922edc550fa9f290341a428acaba088f4c174f6",
+    "train_rows": 8,
+    "visual_input_omitted": true
+  },
+  "training": {
+    "random": {
+      "after_eval": {
+        "assistant_loss_tokens": 1313,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.031226199543031227,
+        "mean_loss": 9.337616826774324,
+        "rows": 2
+      },
+      "before_eval": {
+        "assistant_loss_tokens": 1313,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.006854531607006854,
+        "mean_loss": 9.829225957075876,
+        "rows": 2
+      },
+      "child": {
+        "bytes": 52236058,
+        "path": "/private/tmp/m159-mcp-current-random.pt",
+        "sha256": "c7b3b500e7d9be7444e97d29817702d4fc869aeee3bbeca80e27357b845d0f72"
+      },
+      "hyperparameters": {
+        "backbone_init": "random",
+        "batch_size": 1,
+        "device": "cpu",
+        "learning_rate": 1e-05,
+        "max_seq_len": 2048,
+        "random_backbone_seed": 2028,
+        "seed": 2027,
+        "steps": 32
+      },
+      "parent": {
+        "bytes": 52240681,
+        "path": "/private/tmp/m142-five-surface-public-child.pt",
+        "sha256": "8cc3ee42ed38b830b9b04935e156f80d166abeece2dd0c37184ee4d692de7eb1"
+      },
+      "report": {
+        "bytes": 10177,
+        "path": "/private/tmp/m159-mcp-current-random.json",
+        "sha256": "56afecc4b11df3f76f641d914292da22fe029219b630100cfc1707782967ded4"
+      },
+      "rows": {
+        "eval": 2,
+        "train": 8
+      },
+      "weight_transfer": {
+        "compatibility": {
+          "added_tensors": [],
+          "config_mismatches": {},
+          "removed_tensors": [],
+          "shape_mismatches": {},
+          "shared_tensor_count": 51,
+          "tokenizer_sha256_equal": true
+        },
+        "groups": {
+          "action_heads": {
+            "base_l2": 94.09067543933597,
+            "delta_l2": 0.0,
+            "parameters": 2518968,
+            "relative_delta_l2": 0.0,
+            "target_l2": 94.09067543933597
+          },
+          "attention_or_mixer": {
+            "base_l2": 51.61133395911824,
+            "delta_l2": 40.19450062269067,
+            "parameters": 1871872,
+            "relative_delta_l2": 0.7787921283826739,
+            "target_l2": 50.41053504719155
+          },
+          "embedding": {
+            "base_l2": 69.24045846519778,
+            "delta_l2": 85.50231570647942,
+            "parameters": 6291456,
+            "relative_delta_l2": 1.234860623423736,
+            "target_l2": 50.18671685806504
+          },
+          "ffn": {
+            "base_l2": 50.52476794746291,
+            "delta_l2": 44.36389905752813,
+            "parameters": 2360832,
+            "relative_delta_l2": 0.8780624010714699,
+            "target_l2": 49.792269637306305
+          },
+          "normalization": {
+            "base_l2": 21.27917815497167,
+            "delta_l2": 1.6846245445583394,
+            "parameters": 384,
+            "relative_delta_l2": 0.0791677447451016,
+            "target_l2": 19.595685694122125
+          }
+        },
+        "recommendation": {
+          "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+          "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+          "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+          "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+        }
+      }
+    },
+    "warm": {
+      "after_eval": {
+        "assistant_loss_tokens": 1313,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.43183549124143183,
+        "mean_loss": 4.274981089793174,
+        "rows": 2
+      },
+      "before_eval": {
+        "assistant_loss_tokens": 1313,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.39375476009139376,
+        "mean_loss": 4.5168526759151275,
+        "rows": 2
+      },
+      "child": {
+        "bytes": 52235880,
+        "path": "/private/tmp/m159-mcp-current-warm.pt",
+        "sha256": "b313b14b80df7d2e15077facc76d5b3d328fdc5b2468a2acf67ebec1a09ed2db"
+      },
+      "hyperparameters": {
+        "backbone_init": "parent",
+        "batch_size": 1,
+        "device": "cpu",
+        "learning_rate": 1e-05,
+        "max_seq_len": 2048,
+        "random_backbone_seed": 2028,
+        "seed": 2027,
+        "steps": 32
+      },
+      "parent": {
+        "bytes": 52240681,
+        "path": "/private/tmp/m142-five-surface-public-child.pt",
+        "sha256": "8cc3ee42ed38b830b9b04935e156f80d166abeece2dd0c37184ee4d692de7eb1"
+      },
+      "report": {
+        "bytes": 10192,
+        "path": "/private/tmp/m159-mcp-current-warm.json",
+        "sha256": "285192af43ee05d76e39bfe1a20d98828251f91f6a2230289e965073ad59479c"
+      },
+      "rows": {
+        "eval": 2,
+        "train": 8
+      },
+      "weight_transfer": {
+        "compatibility": {
+          "added_tensors": [],
+          "config_mismatches": {},
+          "removed_tensors": [],
+          "shape_mismatches": {},
+          "shared_tensor_count": 51,
+          "tokenizer_sha256_equal": true
+        },
+        "groups": {
+          "action_heads": {
+            "base_l2": 94.09067543933597,
+            "delta_l2": 0.0,
+            "parameters": 2518968,
+            "relative_delta_l2": 0.0,
+            "target_l2": 94.09067543933597
+          },
+          "attention_or_mixer": {
+            "base_l2": 51.61133395911824,
+            "delta_l2": 0.09191547293470381,
+            "parameters": 1871872,
+            "relative_delta_l2": 0.0017809164360586148,
+            "target_l2": 51.61102987286086
+          },
+          "embedding": {
+            "base_l2": 69.24045846519778,
+            "delta_l2": 0.3209832139905597,
+            "parameters": 6291456,
+            "relative_delta_l2": 0.004635775399319387,
+            "target_l2": 69.35009117697943
+          },
+          "ffn": {
+            "base_l2": 50.52476794746291,
+            "delta_l2": 0.10532658792370679,
+            "parameters": 2360832,
+            "relative_delta_l2": 0.0020846525813483867,
+            "target_l2": 50.52484963323205
+          },
+          "normalization": {
+            "base_l2": 21.27917815497167,
+            "delta_l2": 0.0016764354707438098,
+            "parameters": 384,
+            "relative_delta_l2": 7.878290498508407e-05,
+            "target_l2": 21.278308642706165
+          }
+        },
+        "recommendation": {
+          "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+          "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+          "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+          "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+        }
+      }
+    }
+  }
+}

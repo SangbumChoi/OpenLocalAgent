@@ -1,0 +1,57 @@
+{
+  "kind": "localagent_m718_visual_webgpu_probe",
+  "schema_version": 1,
+  "source": {
+    "pilot_receipt": "docs/paper/results/raw/m716-structured-visual-onnx-parity-v1.json",
+    "graph_file": "visual_action_model.fp16.onnx",
+    "graph_bytes": 44255651,
+    "graph_sha256": "60d0d7696b78205f8517698cf757ca7ff6299567d29981bfa3fefeb33e9ae75d",
+    "screenshot_file": "/private/tmp/BrowserGym-0a785fb/tests/core/data/screenshot.png",
+    "screenshot_bytes": 26054,
+    "screenshot_sha256": "402a4ea0b8ddf7e96226865e813d39cf334170d7843b041f154cebab1bdde500"
+  },
+  "runtime": {
+    "page": "spaces/localagent-webgpu/visual-action.html",
+    "onnxruntime_web": "1.27.0",
+    "webgpu": {
+      "requested_provider": "webgpu",
+      "session_ready": true,
+      "warm_inference_ms": [14.5, 18.69999998807907, 18.80000001192093],
+      "warm_inference_p50_ms": 18.69999998807907,
+      "first_inference_ms": 636.0
+    },
+    "wasm_control": {
+      "requested_provider": "wasm",
+      "session_ready": true,
+      "inference_ms": 41.099999994039536
+    }
+  },
+  "input_contract": {
+    "task": "Open the Settings app.",
+    "raw_utf8_bytes": 37,
+    "image": [1, 3, 96, 96],
+    "image_range": "float32 RGB [0,1]",
+    "context_lengths": [1]
+  },
+  "outputs": {
+    "action_names": ["click", "input_text", "long_press", "navigate_back", "open_app", "scroll", "wait"],
+    "action": "click",
+    "action_index": 0,
+    "pointer_xy": [0.6110314726829529, 0.2634003162384033],
+    "webgpu_logits": [2.041743516921997, -0.6357556581497192, -1.0265631675720215, -0.14336314797401428, 0.36073940992355347, -0.11251744627952576, -0.3421759009361267],
+    "wasm_logits": [2.041743755340576, -0.6357556581497192, -1.0265635251998901, -0.14336299896240234, 0.36073949933052063, -0.11251756548881531, -0.34217584133148193],
+    "max_abs_logit_difference_webgpu_wasm": 3.5762786865234375e-07,
+    "max_abs_pointer_difference_webgpu_wasm": 8.940696716308594e-08
+  },
+  "verification": {
+    "graph_identity_checked_in_browser": true,
+    "webgpu_session_created": true,
+    "wasm_control_session_created": true,
+    "output_shape_checked": true,
+    "cross_provider_output_agreement_observed": true,
+    "native_android_emulator": false,
+    "official_androidcontrol_score": false,
+    "per_node_gpu_placement": "unknown"
+  },
+  "claim_boundary": "This receipt proves that the pinned trained visual sidecar loads in onnxruntime-web with an explicit WebGPU session request and produces the declared image/action ABI in a browser. It does not prove physical per-node GPU placement, Android emulator control, official AndroidControl performance, multi-step completion, or a deployable current text-release checkpoint."
+}

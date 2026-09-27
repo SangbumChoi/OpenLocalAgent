@@ -1,0 +1,38 @@
+# CPU-only continuation smoke; proves packed text + canonical agent rows can share one run.
+stage: midtrain
+model_config: configs/model/ultra-tiny-1m.yaml
+init_from: runs/pretrain-smoke/latest.pt
+data:
+  mixture:
+    unit: loss_tokens
+  tokenizer:
+    kind: byte
+  sources:
+    - name: general
+      type: shards
+      path: data/shards/sample
+      split: train
+      weight: 0.8
+      end_weight: 0.5
+    - name: rule_audited_agent
+      type: conversations
+      path: data/synth/agent_sft.jsonl
+      weight: 0.2
+      end_weight: 0.5
+optim:
+  lr: 3.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 1
+  total_steps: 5
+  decay_frac: 0.4
+batch:
+  micro_batch_size: 2
+  grad_accum_steps: 1
+runtime:
+  device: auto
+  seed: 42
+log:
+  out_dir: runs/midtrain-smoke

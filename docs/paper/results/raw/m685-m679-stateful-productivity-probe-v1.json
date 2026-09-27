@@ -1,0 +1,67 @@
+{
+  "arms": {
+    "matched_random_backbone": {
+      "closed_loop_success_rate": 0.6875,
+      "exact_action_rate": 0.75,
+      "mean_shaped_reward": 0.665625,
+      "recovery_task_complete_rate": 0.0,
+      "route_accuracy": 0.8125,
+      "schema_valid_rate": 1.0,
+      "selector_top1": 0.4666666666666667,
+      "selector_top3": 0.7333333333333333,
+      "task_complete_rate": 0.4
+    },
+    "pretrained_frozen_backbone": {
+      "by_family": {
+        "abstention": {"closed_loop_success_rate": 1.0, "task_complete": 1},
+        "browser": {"closed_loop_success_rate": 0.75, "task_complete": 0},
+        "email": {"closed_loop_success_rate": 1.0, "task_complete": 1},
+        "notion": {"closed_loop_success_rate": 0.5, "task_complete": 0},
+        "recovery": {"closed_loop_success_rate": 0.0, "task_complete": 0}
+      },
+      "closed_loop_success_rate": 0.6875,
+      "exact_action_rate": 0.75,
+      "mean_shaped_reward": 0.665625,
+      "recovery_task_complete_rate": 0.0,
+      "route_accuracy": 0.9375,
+      "schema_valid_rate": 1.0,
+      "selector_top1": 0.4666666666666667,
+      "selector_top3": 0.6666666666666666,
+      "task_complete_rate": 0.4
+    }
+  },
+  "child_checkpoint": {
+    "bytes": 52232565,
+    "path": "/private/tmp/m685-m679-stateful/warm-child.pt",
+    "sha256": "295a34c10cbe7af3ce2f34d59a93f0dc0631eb15a8e4b34138cfebeb50ea4f40"
+  },
+  "claim_boundary": "Current-checkpoint local deterministic state-machine probe only; it exercises email, Notion, browser, recovery, and abstention action contracts without public benchmark text, emulator/browser/MCP execution, external accounts, or side effects. It is training/evaluation evidence, not a public benchmark score or deployment claim.",
+  "comparison": {
+    "decision": "retain_pretrained_backbone_for_continuation_but_do_not_promote_native",
+    "warm_minus_random_closed_loop_success_rate": 0.0,
+    "warm_minus_random_route_accuracy": 0.125,
+    "warm_minus_random_selector_top1": 0.0,
+    "warm_minus_random_selector_top3": -0.06666666666666665,
+    "warm_minus_random_task_complete_rate": 0.0
+  },
+  "configuration": {
+    "device": "cpu",
+    "eval_steps": 16,
+    "eval_tasks": 5,
+    "external_accounts_used": false,
+    "families": ["email", "notion", "browser", "recovery", "abstention"],
+    "native_runtime_executed": false,
+    "public_benchmark_text_used": false,
+    "seed": 2029,
+    "steps": 64,
+    "suite": "stateful_productivity_v1"
+  },
+  "kind": "localagent_m685_m679_stateful_productivity_probe",
+  "parent_checkpoint": {
+    "bytes": 52206773,
+    "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "receipt_self_sha256": "63fd2df878c40451f8269f1a61528dff2809d0b03547bed6b17c87b7401de115",
+  "schema_version": 1
+}

@@ -1,0 +1,254 @@
+{
+  "bootstrap": {
+    "confidence": 0.95,
+    "difference": "attention_minus_hybrid",
+    "method": "nonparametric_resampling_with_replacement",
+    "pairing": "document_identity_sha256+document_content_sha256",
+    "random_generator": "numpy.PCG64",
+    "resamples": 10000,
+    "seed": 2026,
+    "unit": "document",
+    "win_fraction": "fraction of bootstrap replicates favoring attention; lower is better for CE/BPB and higher is better for accuracy"
+  },
+  "comparison_sha256": "9bbf14fe395e196d0c78e10e820a401fa3d1572e91ea65091490424534986bc4",
+  "evaluation": {
+    "batch_size": 1,
+    "boundary_policy": "predict source tokens only; prepend EOS once at document start; use non-overlapping target chunks with exact source-token coverage; later chunks reset model state but overlap the preceding source token as their first input; exclude closing EOS from CE and BPB",
+    "chunk_length": 2048,
+    "device": "cpu",
+    "dtype": "float32"
+  },
+  "groups": {
+    "code": {
+      "attention": {
+        "bits_per_byte": 2.2268774917584238,
+        "correct_tokens": 9266,
+        "cross_entropy_nats_per_token": 5.410835762778502,
+        "documents": 24,
+        "nll_nats": 265060.61151123047,
+        "tokens": 48987,
+        "top1_accuracy": 0.18915222405944435,
+        "utf8_bytes": 171721
+      },
+      "difference_attention_minus_hybrid": {
+        "bits_per_byte": {
+          "attention_win_fraction": 0.0,
+          "estimate": 0.1025188254535319,
+          "hybrid_win_fraction": 1.0,
+          "percentile_ci": {
+            "confidence": 0.95,
+            "lower": 0.09516904489947095,
+            "upper": 0.1166304355429558
+          },
+          "tie_fraction": 0.0
+        },
+        "cross_entropy_nats_per_token": {
+          "attention_win_fraction": 0.0,
+          "estimate": 0.24909880726487385,
+          "hybrid_win_fraction": 1.0,
+          "percentile_ci": {
+            "confidence": 0.95,
+            "lower": 0.23618644018846233,
+            "upper": 0.27255878887174206
+          },
+          "tie_fraction": 0.0
+        },
+        "top1_accuracy": {
+          "attention_win_fraction": 0.0,
+          "estimate": -0.031191948884397903,
+          "hybrid_win_fraction": 1.0,
+          "percentile_ci": {
+            "confidence": 0.95,
+            "lower": -0.04176192796332896,
+            "upper": -0.02472252863628819
+          },
+          "tie_fraction": 0.0
+        }
+      },
+      "documents": 24,
+      "hybrid": {
+        "bits_per_byte": 2.124358666304892,
+        "correct_tokens": 10794,
+        "cross_entropy_nats_per_token": 5.161736955513628,
+        "documents": 24,
+        "nll_nats": 252858.0082397461,
+        "tokens": 48987,
+        "top1_accuracy": 0.22034417294384223,
+        "utf8_bytes": 171721
+      },
+      "tokens": 48987,
+      "utf8_bytes": 171721
+    },
+    "general": {
+      "attention": {
+        "bits_per_byte": 2.082269812117247,
+        "correct_tokens": 34063,
+        "cross_entropy_nats_per_token": 6.201359906094204,
+        "documents": 216,
+        "nll_nats": 1479818.1116714478,
+        "tokens": 238628,
+        "top1_accuracy": 0.14274519335534808,
+        "utf8_bytes": 1025288
+      },
+      "difference_attention_minus_hybrid": {
+        "bits_per_byte": {
+          "attention_win_fraction": 0.0,
+          "estimate": 0.0655294366066048,
+          "hybrid_win_fraction": 1.0,
+          "percentile_ci": {
+            "confidence": 0.95,
+            "lower": 0.06290683653999342,
+            "upper": 0.06833965469005712
+          },
+          "tie_fraction": 0.0
+        },
+        "cross_entropy_nats_per_token": {
+          "attention_win_fraction": 0.0,
+          "estimate": 0.19515800424919152,
+          "hybrid_win_fraction": 1.0,
+          "percentile_ci": {
+            "confidence": 0.95,
+            "lower": 0.18591157639386724,
+            "upper": 0.20531556938592263
+          },
+          "tie_fraction": 0.0
+        },
+        "top1_accuracy": {
+          "attention_win_fraction": 0.0,
+          "estimate": -0.018945806862564325,
+          "hybrid_win_fraction": 1.0,
+          "percentile_ci": {
+            "confidence": 0.95,
+            "lower": -0.02079162156461442,
+            "upper": -0.017175565938768646
+          },
+          "tie_fraction": 0.0
+        }
+      },
+      "documents": 216,
+      "hybrid": {
+        "bits_per_byte": 2.016740375510642,
+        "correct_tokens": 38584,
+        "cross_entropy_nats_per_token": 6.006201901845013,
+        "documents": 216,
+        "nll_nats": 1433247.9474334717,
+        "tokens": 238628,
+        "top1_accuracy": 0.1616910002179124,
+        "utf8_bytes": 1025288
+      },
+      "tokens": 238628,
+      "utf8_bytes": 1025288
+    }
+  },
+  "inputs": {
+    "attention": {
+      "checkpoint_sha256": "2b8ec35b0684c4386983e835e22ada2dfb2288f1a2944b7014f196fa33fcb3eb",
+      "model_config_sha256": "99a32acaec2fca6f597b4a9f40bb41228048bd0148734369a47df5827036dbca",
+      "pretrain_config_sha256": "e773507d9ecc510e923b294cf0121232fa24897334f68a62c90bba1aed5540fe",
+      "sidecar": {
+        "bytes": 88586,
+        "documents": 240,
+        "kind": "localagent_pretrain_document_metrics",
+        "path": "docs/paper/results/raw/pretrain-proxy-seeds2027-2029/seed2027-attn.documents.jsonl",
+        "schema_version": 1,
+        "sha256": "3af971e327ba7828fc82416af7061a075a1bf8f85ec366efd6aa6442a18c5f5b"
+      },
+      "token_accounting": {
+        "input_tokens": 10549844,
+        "loss_tokens": 10549838,
+        "source": "checkpoint.token_accounting"
+      },
+      "training_seed": 2027
+    },
+    "hybrid": {
+      "checkpoint_sha256": "1952ad7f956e02352a395ee9b34d37e893b210f9943935c0bfc3af3c4057bd2b",
+      "model_config_sha256": "06f1e4707906d6bf0eda65764e76f8561a723d46fb829542e4554946680bf454",
+      "pretrain_config_sha256": "40e4c5a78f83468af2f9aa3ba934be5530a9dad1971cfb9e02c73b1f1e0b35b3",
+      "sidecar": {
+        "bytes": 88608,
+        "documents": 240,
+        "kind": "localagent_pretrain_document_metrics",
+        "path": "docs/paper/results/raw/pretrain-proxy-seeds2027-2029/seed2027-hybrid.documents.jsonl",
+        "schema_version": 1,
+        "sha256": "3bbb014d543b5c8260dd8617301e8ece9d93bf4fb1c4fc01164353f56b04cc32"
+      },
+      "token_accounting": {
+        "input_tokens": 10549844,
+        "loss_tokens": 10549838,
+        "source": "checkpoint.token_accounting"
+      },
+      "training_seed": 2027
+    }
+  },
+  "kind": "localagent_paired_pretrain_comparison",
+  "matched_bindings": {
+    "manifest_canonical_sha256": "0959bc556ceb47259f8e52aafb2c06e8629e49183eb5365022b8827a30b17002",
+    "manifest_sha256": "6a10cc606902a648258dc58ddb3ba19aa68c5b5ed6d812fcb2f06cbedfcaa9fd",
+    "split_assignment_sha256": "1135168824cea6f6ed6ec2d983933a303023794fd0064d8e0041b4afaf7b904b",
+    "staging_database_sha256": "b207f7a08cf868c280427a34c8043363fbe8f42b2e6a23b9af34fd936bf1c930",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+    "validation_document_content_sha256": "c32a0bf500b2283c6e77822b421eb1bf1dd044a2737872922b66024e72dc6808",
+    "validation_document_set_sha256": "29f7302550af5e15fe7a3c9cda305bf8ca56c084cd0d20f38a7a26db1274b0a6"
+  },
+  "overall": {
+    "attention": {
+      "bits_per_byte": 2.103014998958501,
+      "correct_tokens": 43329,
+      "cross_entropy_nats_per_token": 6.066716698303907,
+      "documents": 240,
+      "nll_nats": 1744878.7231826782,
+      "tokens": 287615,
+      "top1_accuracy": 0.15064930549519323,
+      "utf8_bytes": 1197009
+    },
+    "difference_attention_minus_hybrid": {
+      "bits_per_byte": {
+        "attention_win_fraction": 0.0,
+        "estimate": 0.07083587527346794,
+        "hybrid_win_fraction": 1.0,
+        "percentile_ci": {
+          "confidence": 0.95,
+          "lower": 0.06722231162705555,
+          "upper": 0.07483361694431187
+        },
+        "tie_fraction": 0.0
+      },
+      "cross_entropy_nats_per_token": {
+        "attention_win_fraction": 0.0,
+        "estimate": 0.20434527931248525,
+        "hybrid_win_fraction": 1.0,
+        "percentile_ci": {
+          "confidence": 0.95,
+          "lower": 0.1946704127661112,
+          "upper": 0.21453532333643738
+        },
+        "tie_fraction": 0.0
+      },
+      "top1_accuracy": {
+        "attention_win_fraction": 0.0,
+        "estimate": -0.021031587365053978,
+        "hybrid_win_fraction": 1.0,
+        "percentile_ci": {
+          "confidence": 0.95,
+          "lower": -0.023279874247819972,
+          "upper": -0.018963660669609087
+        },
+        "tie_fraction": 0.0
+      }
+    },
+    "documents": 240,
+    "hybrid": {
+      "bits_per_byte": 2.032179123685033,
+      "correct_tokens": 49378,
+      "cross_entropy_nats_per_token": 5.862371418991422,
+      "documents": 240,
+      "nll_nats": 1686105.9556732178,
+      "tokens": 287615,
+      "top1_accuracy": 0.1716808928602472,
+      "utf8_bytes": 1197009
+    },
+    "tokens": 287615,
+    "utf8_bytes": 1197009
+  },
+  "schema_version": 1
+}

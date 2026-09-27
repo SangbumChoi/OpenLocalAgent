@@ -1,0 +1,37 @@
+# Full 20-tokens/parameter paper arm for the 34.199M hybrid. Proxy arms should override
+# total_steps to approximately 5 or 10 tokens/parameter while preserving data order and seed.
+stage: pretrain
+model_config: configs/model/webgpu-35m-hybrid.yaml
+data:
+  shards_dir: data/shards/paper-all
+  min_train_tokens: 171409408
+  corpus_freeze:
+    spec: configs/data/pretrain-paper-freeze.yaml
+    path: data/shards/paper-all/freeze.json
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-paper-16k.json
+optim:
+  name: adamw
+  lr: 3.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 400
+  # 20,921 * (2 * 8 * 2,048) = 685,539,328 scheduled tokens: >=20 TPP for both arms.
+  total_steps: 20921
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 2
+  grad_accum_steps: 8
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+  resume: true
+log:
+  out_dir: runs/pretrain-paper-hybrid
+  ckpt_every: 250
+  eval_every: 250
+  eval_batches: 16

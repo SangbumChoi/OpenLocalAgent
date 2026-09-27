@@ -1,0 +1,81 @@
+{
+  "blocked_requirements": {
+    "artifacts:public_model_demo_manifest": "current_checkpoint_not_bound",
+    "native:agentnet": "visual_runtime_and_native_verifier_missing; text_projection_success_zero",
+    "native:androidworld": "receipt_not_supplied",
+    "native:appworld": "native_completion_zero",
+    "native:enterpriseopsgym": "no_server_or_verifier_execution",
+    "native:iosworld": "receipt_not_supplied",
+    "native:mcpmark": "native_verifier_zero",
+    "native:mcpmark_playwright": "browser_sft_native_verifier_zero",
+    "native:mobile_safety_bench": "receipt_not_supplied",
+    "native:osworld": "receipt_not_supplied",
+    "native:osworld_v2": "receipt_not_supplied",
+    "native:toolsandbox": "official_split_not_verified"
+  },
+  "claim_boundary": "Fail-closed gate after pinned AgentNet visual provenance and matched selector transfer. AgentNet screenshots remain unconsumed, native desktop verification is absent, and the text projection has zero task success; no visual, native, or public-artifact promotion is authorized.",
+  "current_checkpoint": {
+    "bytes": 52206773,
+    "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "evidence": {
+    "agentnet_selector_transfer": {
+      "bytes": 6398,
+      "path": "docs/paper/results/raw/m709-m679-agentnet-selector-transfer-v1.json",
+      "sha256": "487c7f7c116a46728dcda6e36f8162abc53f0b388d73a6eeb8914b0297bc1eef"
+    },
+    "agentnet_visual_source": {
+      "bytes": 10470,
+      "path": "docs/paper/results/raw/m708-agentnet-visual-source-audit-v1.json",
+      "sha256": "bdcec4ef8281c26c04853f10c222e0c42533ad7fd2a13943ad87263d32dfdaac"
+    },
+    "appworld_free": "docs/paper/results/raw/m694-m679-appworld-free-v1.json",
+    "appworld_native": "docs/paper/results/raw/m693-m679-appworld-native-v1.json",
+    "appworld_sft_native": "docs/paper/results/raw/m696-m679-appworld-sft-native-v1.json",
+    "browsergym_miniwob": "docs/paper/results/raw/m684-m679-browsergym-native-v1.json",
+    "mcpmark_browser_transfer_native": {
+      "bytes": 13424,
+      "path": "docs/paper/results/raw/m705-m679-browser-transfer-native-v1.json",
+      "sha256": "1ac379ea0aa7eb29e3bcaa447a2f6356b93e9cb9e18796ece8b77bfc2430958b"
+    },
+    "mcpmark_native_filesystem_standard": {
+      "bytes": 98001,
+      "path": "docs/paper/results/raw/m697-m679-mcpmark-filesystem-standard-v1.json",
+      "sha256": "80caf8daa655d94cd77f34a4c7d109ed322a986d851d9f8b2448b1d35c62c38f"
+    },
+    "mcpmark_playwright": {
+      "bytes": 11252,
+      "path": "docs/paper/results/raw/m702-m679-mcpmark-playwright-standard-v1.json",
+      "sha256": "9cba1e9cf82bce6584335fe789b3c31cae59ad72ca29a3aeb7b9dc0ef3b09580"
+    },
+    "mcpmark_trajectory_continuation_native": {
+      "bytes": 104086,
+      "path": "docs/paper/results/raw/m698-m679-mcpmark-continuation-native-v1.json",
+      "sha256": "80761c271881dfc89fe84954b1b95be292ac6a38b439a4bab06db028596b4591"
+    },
+    "mobilegym": "docs/paper/results/raw/m683-m679-mobilegym-native-v1.json",
+    "rl_preflight": "docs/paper/results/raw/m686-m679-rl-preflight-v1.json",
+    "toolsandbox": "docs/paper/results/raw/m688-m679-toolsandbox-native-v1.json",
+    "webgpu": "/private/tmp/m682-m679-webgpu-capability-current.json",
+    "weight_transfer": "docs/paper/results/raw/m687-m679-current-weight-transfer-v1.json"
+  },
+  "kind": "localagent_m710_workshop_gate_current_m679",
+  "passed_requirements": [
+    "catalog:no_pending_train_adapter",
+    "catalog:realistic_family_coverage",
+    "native:browsergym_miniwob",
+    "native:mobilegym",
+    "training:rl_preflight",
+    "webgpu:native_capability_and_latency",
+    "weights:transfer_and_no_transfer_ablation"
+  ],
+  "ready": false,
+  "receipt_self_sha256": "a56fe11dfbd7de76642ca20c01c2418bd534a5ed064c1dc749611f811615734f",
+  "schema_version": 1,
+  "source_gate": {
+    "bytes": 3555,
+    "path": "docs/paper/results/raw/m706-workshop-gate-current-m679-v1.json",
+    "sha256": "a8de214517a54b9879669a8fb4b5707c68e7d7c5d7cad9fb57121c71953d404b"
+  }
+}

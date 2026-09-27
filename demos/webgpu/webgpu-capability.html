@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LocalAgent — Native WebGPU Capability Receipt</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // This page is a fail-closed evidence harness, not the public demo UI.  The shared app
+    // loader therefore requires the content-addressed bundle manifest and exact WebGPU provider.
+    window.__localAgentBenchmarkGrade = true;
+    window.__localAgentRequestedBackend = "webgpu";
+    window.__localAgentCapabilityStart = performance.now();
+  </script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>🧪 LocalAgent <span class="sub">native WebGPU capability receipt</span></h1>
+      <p class="tagline">
+        Runs the verified 10,524,544-parameter action graph in the browser, records the exposed
+        adapter identity, and dispatches three bounded tool calls covering email, browser
+        navigation, and Notion writing. No external action is executed.
+      </p>
+    </header>
+
+    <!-- The shared app loader requires these UI nodes even though this harness is automated. -->
+    <section id="status" class="status loading">
+      <span class="dot"></span>
+      <span id="status-text">Loading the verified action graph…</span>
+      <span id="backend-badge" class="badge" hidden></span>
+    </section>
+    <section class="io" hidden>
+      <textarea id="prompt"></textarea>
+      <input id="plan-mode" type="checkbox" />
+      <button id="run" disabled>Run</button>
+      <div id="result"></div>
+    </section>
+
+    <section class="benchmark-panel">
+      <div class="benchmark-disclaimer">
+        <strong id="capability-status">Waiting for the model and adapter probe…</strong>
+        <span>Adapter identity and action dispatch are reported separately from external side effects.</span>
+      </div>
+      <pre id="capability-output">{}</pre>
+      <script id="capability-result-json" type="application/json"></script>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.27.0/dist/ort.webgpu.min.js"></script>
+  <script src="tokenizer.js"></script>
+  <script src="app.js"></script>
+  <script src="webgpu-capability.js"></script>
+</body>
+</html>

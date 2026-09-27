@@ -1,0 +1,32 @@
+# Frozen evaluation companion to agent_synth.yaml.
+# Keep the generator/coverage contract aligned with training. Output, seed, and split differ; the
+# training-only exact-prompt exclusions live in agent_synth.yaml because these rows are themselves
+# evaluation data.
+out: data/synth/agent_eval.jsonl
+n_samples: 5000
+seed: 4242
+level: 5
+split: eval
+generator:
+  backend: deterministic_templates
+complexity:
+  multi_turn: 0.20
+irrelevance_fraction: 0.15
+coverage:
+  # "verified_error_recovery" is a compatibility quota name for a rule-audited scripted trace.
+  # The deterministic generator does not execute the stated tool outcomes.
+  minimum_conversations:
+    parallel_calls: 100
+    integer_arguments: 25
+    enum_arguments: 25
+    tool_response_grounded_followups: 100
+    verified_error_recovery: 40
+  plan_length_minimums:
+    0: 20
+    1: 20
+    2: 20
+    3: 20
+    4: 20
+verification:
+  rule_based: true
+  model_based: false

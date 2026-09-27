@@ -1,0 +1,85 @@
+{
+  "kind": "localagent_webgpu_export_receipt",
+  "schema_version": 1,
+  "measurement": "m261_webgpu_export_current_browser_context",
+  "generated_at": "2026-08-04",
+  "checkpoint": {
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "parameters": 10524544,
+    "model_config": "webgpu-10m-hybrid",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "bundle": {
+    "path": "/private/tmp/m260-webgpu",
+    "manifest_schema_version": 3,
+    "manifest_sha256": "a7c290c4d250afb227f89104b6621ea34dbb3171829a975c1e9d38dc09ea73bc",
+    "artifact_count": 9,
+    "artifacts": {
+      "action_model.fp16.onnx": {
+        "bytes": 21430301,
+        "sha256": "8856dcaeca1ad2125b0ba34d0fa47da8f0271d3078195a9288862cd1603a1434"
+      },
+      "action_model.onnx": {
+        "bytes": 42700043,
+        "sha256": "57751f41902a66a24fd9336de120c58b566018043c4131a10d10d003bf9df5f6"
+      },
+      "dispatch_heads.json": {
+        "bytes": 1300522,
+        "sha256": "b8c9b486a7d26ccfe3e6e9a49e3ee216c0b3f181d4a631bbe3c46e6b988139fa"
+      },
+      "heads.json": {
+        "bytes": 3337015,
+        "sha256": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486"
+      },
+      "meta.json": {
+        "bytes": 11548,
+        "sha256": "6d6a79b331ce3f60c097f2bd3662a2178345aef68a7ded61e67737ff8e8cb89e"
+      },
+      "model.fp16.onnx": {
+        "bytes": 34026169,
+        "sha256": "d10584a5c41e281af13e4d6d45d4bc06bc5646434705b052b66cb75047ada1e0"
+      },
+      "model.onnx": {
+        "bytes": 67877334,
+        "sha256": "74e4be16cc3090606c09ebb09c068fba7e9cb5ba096d05e1ce158279c8032fc2"
+      },
+      "tokenizer.json": {
+        "bytes": 1134224,
+        "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+      },
+      "bundle-manifest.json": {
+        "bytes": 9310,
+        "sha256": "a7c290c4d250afb227f89104b6621ea34dbb3171829a975c1e9d38dc09ea73bc"
+      }
+    },
+    "parity_gate": {
+      "hard_gate": true,
+      "passed": true,
+      "model_onnx": {
+        "fp32_logits_max_abs_diff": 7.152557373046875e-06,
+        "fp32_hidden_max_abs_diff": 4.351139068603516e-06,
+        "minimum_logits_argmax_agreement": 1.0
+      },
+      "model_fp16_onnx": {
+        "fp16_logits_max_abs_diff": 0.006051778793334961,
+        "fp16_hidden_max_abs_diff": 0.004587888717651367,
+        "minimum_logits_argmax_agreement": 1.0
+      },
+      "action_model_onnx": {
+        "fp32_hidden_max_abs_diff": 4.351139068603516e-06
+      },
+      "action_model_fp16_onnx": {
+        "fp16_hidden_max_abs_diff": 0.004587888717651367
+      }
+    }
+  },
+  "deployment": {
+    "static_bundle_ready": true,
+    "native_webgpu_provider_verified": false,
+    "public_space_uploaded": false,
+    "reason": "export and CPU parity are verified locally; no current-checkpoint Space upload or browser-hardware receipt exists"
+  },
+  "claim_boundary": "This receipt proves an exporter-produced, parity-gated WebGPU bundle for the current 10.52M checkpoint. It does not prove browser hardware execution, throughput, tool quality, a public Hub/Space URL, or external side effects.",
+  "receipt_self_sha256": "00c458d49d9d68c2278ab1b0834a51a2a7ec8476b71e2c58cad597d70ee41917"
+}

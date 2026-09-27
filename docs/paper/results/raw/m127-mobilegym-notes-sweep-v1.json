@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "kind": "localagent_mobilegym_notes_sweep",
+  "benchmark_id": "mobilegym_notes_model_sweep",
+  "native_benchmark_id": "mobilegym",
+  "native_receipt_eligible": false,
+  "environment_executed": true,
+  "official_split": "test",
+  "official_split_verified": true,
+  "task_count": 5,
+  "success_rate": 0.0,
+  "checkpoint_sha256": "bbb49e1681c789237c68c6123789a67c19e831ea8d14cb30717c56a7057a612c",
+  "source_revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+  "observation_mode": "text_projection",
+  "vision_used": false,
+  "max_steps": 2,
+  "tasks": [
+    {
+      "task_id": "notes.CreateFolderAndMoveNote",
+      "success_rate": 0.0,
+      "model_calls": 2,
+      "tools": ["mobile_submit_answer"],
+      "judge": {
+        "passed": false,
+        "progress": 0.0,
+        "issue_count": 2,
+        "issue_fields": ["folders.folder_created", "notes.note_folder"]
+      },
+      "receipt_sha256": "34cbca6fb5f6c31303c8d95493f22ab1fced2822137043159329061d801140c0"
+    },
+    {
+      "task_id": "notes.CreateNoteWithReminder",
+      "success_rate": 0.0,
+      "model_calls": 2,
+      "tools": ["mobile_submit_answer"],
+      "judge": {
+        "passed": false,
+        "progress": 0.0,
+        "issue_count": 4,
+        "issue_fields": [
+          "answer.reminder_time",
+          "notes.note_content",
+          "notes.note_created",
+          "notes.note_reminder"
+        ]
+      },
+      "receipt_sha256": "97806e57cc5ca9ff3108ff1fb1e1197e02f5655f5aaf7d278ebc425a92134706"
+    },
+    {
+      "task_id": "notes.DeleteAllCompletedTodos",
+      "success_rate": 0.0,
+      "model_calls": 2,
+      "tools": ["mobile_submit_answer"],
+      "judge": {
+        "passed": false,
+        "progress": 0.5,
+        "issue_count": 2,
+        "issue_fields": ["todos.completed_all_deleted", "todos.incomplete_preserved"]
+      },
+      "receipt_sha256": "a7e179edcbd9febc0411ffb1842952d342224c1da8c68c33664ac53d3aeb4448"
+    },
+    {
+      "task_id": "notes.DeleteTodo",
+      "success_rate": 0.0,
+      "model_calls": 2,
+      "tools": ["mobile_submit_answer"],
+      "judge": {
+        "passed": false,
+        "progress": 0.5,
+        "issue_count": 2,
+        "issue_fields": ["todos.other_todos_preserved", "todos.todo_deleted"]
+      },
+      "receipt_sha256": "c72ef179cb413c00ecf8f8400b730430162c7e8280987aed365b945372266769"
+    },
+    {
+      "task_id": "notes.ReadTodoText",
+      "success_rate": 0.0,
+      "model_calls": 2,
+      "tools": ["mobile_submit_answer"],
+      "judge": {
+        "passed": false,
+        "progress": 0.0,
+        "issue_count": 3,
+        "issue_fields": ["answer.todo_1", "answer.todo_2", "answer.todo_3"]
+      },
+      "receipt_sha256": "52de4788a292889c4565dd46faeb919df21ab1d2cdfcbca2189f5a02cc81dc53"
+    }
+  ],
+  "conclusion": {
+    "routing_failure": "all five official Notes tasks selected mobile_submit_answer, including create/delete tasks that require navigation and state transitions",
+    "partial_progress": "delete tasks reached judge progress 0.5 but did not satisfy terminal state",
+    "claim_boundary": "bounded two-step native test-split sweep; not the full MobileGym benchmark score and not a publication gate pass"
+  },
+  "receipt_self_sha256": "1f0a8d7d0c80f83d6be50d83694820ec22db1665268dc8416935b367873339a5"
+}

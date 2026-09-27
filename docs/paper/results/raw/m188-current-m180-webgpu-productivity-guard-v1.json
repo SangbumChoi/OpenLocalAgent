@@ -1,0 +1,70 @@
+{
+  "kind": "localagent_current_m180_webgpu_productivity_guard_receipt",
+  "schema_version": 1,
+  "measurement": "m188_current_m180_webgpu_guarded_productivity_smoke",
+  "generated_at": "2026-08-03",
+  "runtime": {
+    "url": "http://127.0.0.1:5176/",
+    "browser_surface": "Codex in-app Browser",
+    "static_server": "python3 -m http.server 5176 --directory /private/tmp/m188-demo",
+    "requested_provider": "auto",
+    "reported_provider": "webgpu",
+    "model_ready": true,
+    "runtime_errors": 0,
+    "provider_warning_count": 2,
+    "provider_warning_summary": "ONNX Runtime reported shape-related nodes outside the preferred provider; the page still reported WEBGPU and completed all calls.",
+    "bundle_identity_sha256": "76d0bb563031d1a4f4ea271e31e3da8edb9db8b60aeae9d2abf2c8fbdf5c1246",
+    "bundle_manifest_sha256": "b29196afb860b3a073a042d50d90effda5ce87e8891916b454bd248a702c7683",
+    "app_js_sha256": "ac3396fac8de57b551820bacd5961015d1649c30a4173a8bd20fa548ec3e007f"
+  },
+  "checkpoint": {
+    "path": "/private/tmp/m180-mixed-mobile-computer-child.pt",
+    "sha256": "10827649f07182a08f8c11104d4713e76b8acaddc73020c5a4c77950de7b23a0",
+    "parameters": 10524544,
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "cases": [
+    {
+      "request": "Email Dana the quarterly report",
+      "tool": "send_email",
+      "route": "app_action",
+      "arguments": {"recipient": "Dana"},
+      "latency_ms": 35,
+      "intent_guard_passed": true,
+      "schema_valid": true,
+      "external_side_effect": false,
+      "selection_policy": "productivity_email_intent_guard"
+    },
+    {
+      "request": "Save the search result to Notion.",
+      "tool": "notion_write",
+      "route": "app_action",
+      "arguments": {"content": "search result"},
+      "latency_ms": 10,
+      "intent_guard_passed": true,
+      "schema_valid": true,
+      "external_side_effect": false,
+      "selection_policy": "productivity_notion_intent_guard"
+    },
+    {
+      "request": "What does ephemeral mean?",
+      "tool": "web_search",
+      "route": "web_search",
+      "arguments": {"url": "<|user|>What"},
+      "latency_ms": 14,
+      "intent_guard_passed": false,
+      "schema_valid": false,
+      "external_side_effect": false,
+      "selection_policy": "dense_selector",
+      "failure": "model should abstain and answer directly; instead it selected web_search with malformed URL-shaped arguments"
+    }
+  ],
+  "security": {
+    "external_accounts_used": false,
+    "external_side_effects": false,
+    "real_email_or_notion_access": false
+  },
+  "decision": "guarded_productivity_routing_passes_but_learned_quality_gate_fails",
+  "claim_boundary": "This receipt proves a current m180 browser bundle can execute WebGPU inference and a narrow, explicit email/Notion intent guard with schema-valid local actions. It does not claim learned email/Notion competence, real account access, external side effects, native benchmark success, complete multi-step workflows, or 100–300 tokens/s.",
+  "receipt_self_sha256": "c2c517fa0ad6b4167c864a98c5081e1c5beeebab77bfefd5d74d28886443dddd"
+}

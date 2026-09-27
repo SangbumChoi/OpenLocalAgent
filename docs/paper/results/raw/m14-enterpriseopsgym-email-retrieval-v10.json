@@ -1,0 +1,77 @@
+{
+  "kind": "localagent_enterpriseopsgym_tool_retrieval_receipt",
+  "schema_version": 1,
+  "adapter": "enterpriseopsgym-name-only-retrieval-v1",
+  "dataset": "ServiceNow-AI/EnterpriseOps-Gym",
+  "dataset_revision": "c8e538eae8a6205294f0a86675fefdc1fac408f6",
+  "source": {
+    "hf_url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym",
+    "official_code_url": "https://github.com/ServiceNow/EnterpriseOps-Gym",
+    "license_evidence": "Apache-2.0 dataset card/API",
+    "slice": "matched email task IDs present in oracle and plus_15_tools configs"
+  },
+  "source_files": {
+    "oracle_email_rows": {
+      "rows": 67,
+      "bytes": 496997,
+      "sha256": "b5290259d09bc02e605b8cf5ffa3b20d22c65219eb05196a69fd340712f286fe"
+    },
+    "plus_15_email_rows": {
+      "rows": 67,
+      "bytes": 513881,
+      "sha256": "7db6e7c2ce574d74161ad72d10a8de54ad4128bb87fb9caa86c6eb05affc3f39"
+    }
+  },
+  "checkpoint": {
+    "parameters": 10524544,
+    "bytes": 52260025,
+    "sha256": "0646bf9469565a721fc02850b87026e33b4a1ce9e8a10edf237c3833a88c0294",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "protocol": {
+    "oracle_mode": "oracle",
+    "candidate_mode": "plus_15_tools",
+    "records": 67,
+    "domain": "email",
+    "tool_description_policy": "generated_name_only_v1",
+    "candidate_tool_count_mean": 20.0,
+    "oracle_tool_count_mean": 5.686567164179104,
+    "execution": "frozen_localagent_dense_selector_no_tool_execution",
+    "verifiers_dropped": true,
+    "server_configuration_dropped": true,
+    "duplicate_selected_tools": "deduplicated in memory; raw source hashes remain bound"
+  },
+  "summary": {
+    "records": 67,
+    "hit_at_1": 0.26865671641791045,
+    "hit_at_3": 0.5671641791044776,
+    "hit_at_5": 0.7910447761194029,
+    "by_domain": {
+      "email": {
+        "records": 67,
+        "hit_at_1": 0.26865671641791045,
+        "hit_at_3": 0.5671641791044776,
+        "hit_at_5": 0.7910447761194029
+      }
+    }
+  },
+  "failure_analysis": {
+    "top1_prediction_counts": {
+      "update_label": 21,
+      "get_user_profile": 17,
+      "update_vacation_settings": 10,
+      "send_message": 5,
+      "list_messages": 3,
+      "create_cse_identity": 3
+    },
+    "top1_false_positive_counts": {
+      "update_label": 21,
+      "get_user_profile": 12,
+      "send_message": 5,
+      "create_cse_identity": 3,
+      "list_messages": 2
+    },
+    "interpretation": "Name-only descriptions produce a strong generic-tool prior; tool schemas and execution-state feedback are required before this can represent enterprise task success."
+  },
+  "claim_boundary": "This is an out-of-domain public-slice name-only retrieval diagnostic. It is not an official EnterpriseOps-Gym task-success score, state-verifier result, MCP execution result, training artifact, or leaderboard submission."
+}

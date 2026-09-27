@@ -1,0 +1,59 @@
+{
+  "kind": "localagent_mcpmark_task_router_proxy_receipt",
+  "schema_version": 1,
+  "dataset": {
+    "name": "MCPMark",
+    "url": "https://github.com/eval-sys/mcpmark",
+    "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "suites": ["standard", "easy"]
+  },
+  "checkpoint": {
+    "parameters": 10524544,
+    "sha256": "0d0ae0bb4a4f35b40bb9ba5d2e234e3ec389e12758b6dd2527e072e9b7589251",
+    "tool_pool": 62,
+    "frozen_backbone": true
+  },
+  "source": {
+    "standard_rows": 169,
+    "standard_metadata_and_description_bytes": 1272143,
+    "standard_task_manifest_sha256": "b35b92adfb8a846eb32dc36c411c17aa5ecf757e5b63aeaa1671755f475686d5",
+    "easy_rows": 70,
+    "easy_metadata_and_description_bytes": 385446,
+    "easy_task_manifest_sha256": "f8eea15c843ee222c3899849d724ddbe6cd89f0f709ff7a84659d9cafef52f06",
+    "task_text_retained": false,
+    "mcp_servers_executed": false,
+    "verifiers_executed": false
+  },
+  "tool_family_contract": {
+    "filesystem": ["find_files", "grep_search", "list_dir", "make_dir", "read_file", "unzip", "write_file"],
+    "github": ["apply_patch", "git_commit", "git_diff", "git_status", "http_request", "read_file", "run_command", "write_file"],
+    "notion": ["notion_create_page", "notion_write"],
+    "playwright": ["click", "double_click", "drag", "key_press", "move_cursor", "open_url", "screenshot", "scroll", "type_text", "wait"],
+    "postgres": ["sql_query"]
+  },
+  "results": {
+    "standard": {
+      "rows": 169,
+      "route_accuracy": 0.14792899408284024,
+      "selector_top1": 0.0,
+      "selector_top3": 0.005917159763313609
+    },
+    "easy": {
+      "rows": 70,
+      "route_accuracy": 0.18571428571428572,
+      "selector_top1": 0.0,
+      "selector_top3": 0.0
+    },
+    "combined": {
+      "rows": 239,
+      "route_accuracy": 0.1589958158995816,
+      "selector_top1": 0.0,
+      "selector_top3": 0.0041841004184100415
+    }
+  },
+  "interpretation": {
+    "finding": "The mobile-adapted frozen dispatch child does not transfer to MCPMark service descriptions: exact service-family routing is 15.90% and no task reaches a supported tool in selector top-1.",
+    "next_step": "Use MCP-specific descriptions and multi-tool trajectories for a separate adapter; do not mix this proxy with live MCP success metrics.",
+    "claim_boundary": "Public MCPMark task-description service-routing proxy only; not live MCP execution, verifier success, pass@k, or official leaderboard evaluation."
+  }
+}

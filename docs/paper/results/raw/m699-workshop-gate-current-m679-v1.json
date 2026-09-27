@@ -1,0 +1,60 @@
+{
+  "blocked_requirements": {
+    "artifacts:public_model_demo_manifest": "current_checkpoint_not_bound",
+    "native:agentnet": "receipt_not_supplied",
+    "native:androidworld": "receipt_not_supplied",
+    "native:appworld": "native_completion_zero",
+    "native:enterpriseopsgym": "no_server_or_verifier_execution",
+    "native:iosworld": "receipt_not_supplied",
+    "native:mcpmark": "native_verifier_zero",
+    "native:mobile_safety_bench": "receipt_not_supplied",
+    "native:osworld": "receipt_not_supplied",
+    "native:osworld_v2": "receipt_not_supplied",
+    "native:toolsandbox": "official_split_not_verified"
+  },
+  "claim_boundary": "Fail-closed workshop/publication gate after current native MCPMark and AppWorld execution. WebGPU capability, MobileGym/BrowserGym diagnostics, RL preflight, and weight lineage are evidenced, but native filesystem/AppWorld completion is zero, visual inputs and real accounts are absent, and the public HF/Space artifacts are not bound to this checkpoint.",
+  "current_checkpoint": {
+    "bytes": 52206773,
+    "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "evidence": {
+    "appworld_free": "docs/paper/results/raw/m694-m679-appworld-free-v1.json",
+    "appworld_native": "docs/paper/results/raw/m693-m679-appworld-native-v1.json",
+    "appworld_sft_native": "docs/paper/results/raw/m696-m679-appworld-sft-native-v1.json",
+    "browsergym_miniwob": "docs/paper/results/raw/m684-m679-browsergym-native-v1.json",
+    "mcpmark_native_filesystem_standard": {
+      "bytes": 98001,
+      "path": "docs/paper/results/raw/m697-m679-mcpmark-filesystem-standard-v1.json",
+      "sha256": "80caf8daa655d94cd77f34a4c7d109ed322a986d851d9f8b2448b1d35c62c38f"
+    },
+    "mcpmark_trajectory_continuation_native": {
+      "bytes": 104086,
+      "path": "docs/paper/results/raw/m698-m679-mcpmark-continuation-native-v1.json",
+      "sha256": "80761c271881dfc89fe84954b1b95be292ac6a38b439a4bab06db028596b4591"
+    },
+    "mobilegym": "docs/paper/results/raw/m683-m679-mobilegym-native-v1.json",
+    "rl_preflight": "docs/paper/results/raw/m686-m679-rl-preflight-v1.json",
+    "toolsandbox": "docs/paper/results/raw/m688-m679-toolsandbox-native-v1.json",
+    "webgpu": "/private/tmp/m682-m679-webgpu-capability-current.json",
+    "weight_transfer": "docs/paper/results/raw/m687-m679-current-weight-transfer-v1.json"
+  },
+  "kind": "localagent_m699_workshop_gate_current_m679",
+  "passed_requirements": [
+    "catalog:no_pending_train_adapter",
+    "catalog:realistic_family_coverage",
+    "native:browsergym_miniwob",
+    "native:mobilegym",
+    "training:rl_preflight",
+    "webgpu:native_capability_and_latency",
+    "weights:transfer_and_no_transfer_ablation"
+  ],
+  "ready": false,
+  "receipt_self_sha256": "f95267224a232a7b3ddce3a2f1838012cd54f2039344839259b5635fe5e2bae4",
+  "schema_version": 1,
+  "source_gate": {
+    "bytes": 2094,
+    "path": "docs/paper/results/raw/m688-workshop-gate-current-m679-v1.json",
+    "sha256": "af04243e611b54521776ee845c9e4df58327b3a57dea0e308180bea665941a54"
+  }
+}

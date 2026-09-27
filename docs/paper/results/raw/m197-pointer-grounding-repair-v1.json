@@ -1,0 +1,60 @@
+{
+  "kind": "localagent_pointer_grounding_repair",
+  "schema_version": 1,
+  "generated_at": "2026-08-03",
+  "parent": {
+    "sha256": "3b3fd817c6f52e8b922f84c9bb36e7d55e0e243a0f8ee6d0f20c85962a4eeba7",
+    "parameters": 10524544,
+    "stage": "sft_deployment_dispatch_repair"
+  },
+  "public_inputs": {
+    "source": "https://osu-nlp-group.github.io/Mind2Web/",
+    "train": {
+      "sha256": "78f7e647c3728106901c51ecc772c834467ef6a019c1c083af6849700b361621",
+      "conversations": 36,
+      "span_rows": 219
+    },
+    "eval": {
+      "sha256": "46305cb512f7368ed31817c79b798f5469e8658db12aed5d6880ea81b4e6fcbe",
+      "conversations": 12,
+      "span_rows": 63
+    },
+    "record_disjoint": true,
+    "screenshots_loaded": false,
+    "pointer_args": [
+      "city", "query", "goal", "term", "song", "topic", "path", "pattern", "command",
+      "message", "task", "duration", "title", "recipient", "url", "content", "summary",
+      "to", "subject", "body", "app_name", "text", "target", "target_id", "value"
+    ]
+  },
+  "training": {
+    "backbone_frozen": true,
+    "steps": 400,
+    "batch_size": 64,
+    "learning_rate": 0.01,
+    "seed": 2045
+  },
+  "warm": {
+    "child_sha256": "cf5fb9846b3cba0630199f4ec305edc708f14225756768a05e1469cbbe200208",
+    "train_exact": 0.6301369863013698,
+    "eval_exact": 0.047619047619047616,
+    "eval_correct": 3,
+    "eval_total": 63,
+    "shared_pointer_relative_l2": 0.31422714092748877
+  },
+  "matched_random": {
+    "child_sha256": "e55c38ab08182d0a5bbf2ea6c56020db6bb5e01f20abbad522f88139cc04d300",
+    "train_exact": 0.7214611872146118,
+    "eval_exact": 0.07936507936507936,
+    "eval_correct": 5,
+    "eval_total": 63,
+    "shared_pointer_relative_l2": 1.3405963859902796
+  },
+  "decision": {
+    "adopt_warm": false,
+    "webgpu_export_requested": false,
+    "reason": "Warm pointer transfer moves less but loses held-out span exactness to the matched random head; both arms overfit public DOM spans and do not establish transferable grounding."
+  },
+  "claim_boundary": "Frozen-feature pointer-head probe on public Mind2Web DOM/action projections. This is not an official Mind2Web test score, visual grounding, native browser execution, or public deployment claim.",
+  "receipt_self_sha256": "677dd6835e70619a6fa4d0b1d79de600dd34f01564badf01d5f6ae8160c4fbf9"
+}

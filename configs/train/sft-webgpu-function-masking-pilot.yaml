@@ -1,0 +1,49 @@
+# Bounded training pilot for schema-preserving ToolSandbox-style function-name masking.
+# This is diagnostic evidence: it keeps the current BPE parent and disables structured heads so
+# opaque aliases cannot be mislabelled as canonical tool classes.
+stage: sft
+model_config: configs/model/webgpu-10m-hybrid.yaml
+init_from: runs/sft-webgpu-browser-context-adapter-20260802/latest.pt
+continuation:
+  mode: fresh_optimizer_sft_child_v1
+data:
+  strict_conversation_artifacts: true
+  conversations:
+    - path: data/synth/agent_sft.jsonl
+      artifact:
+        generator_config: configs/data/agent_synth.yaml
+        manifest: data/synth/agent_sft.jsonl.manifest.v1.json
+        expected_split: train
+        expected_rule_verified: true
+        environment_policy: forbid
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-webgpu-proxy-16k.json
+  seq_len: 2048
+  function_masking:
+    mask_fraction: 1.0
+    variants: 1
+    name_prefix: opaque
+  shuffle: true
+heads:
+  joint_tool_pointer: false
+  train_route_head: false
+  train_dense_selector: false
+optim:
+  name: adamw
+  lr: 1.0e-5
+  weight_decay: 0.0
+  grad_clip: 1.0
+schedule:
+  warmup_steps: 1
+  total_steps: 4
+batch:
+  micro_batch_size: 1
+  grad_accum_steps: 1
+runtime:
+  device: cpu
+  dtype: float32
+  seed: 2026
+log:
+  out_dir: /private/tmp/localagent-function-masking-pilot
+  ckpt_every: 0

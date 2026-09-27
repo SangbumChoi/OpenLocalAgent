@@ -1,0 +1,22 @@
+# Untrained 4K-window variant of the historical webgpu-10m-hybrid.yaml architecture.
+#
+# The original 2K config and its checkpoints remain immutable evidence. This variant changes only
+# the name and maximum RoPE/cache window: vocabulary, width, depth, head geometry, FFN, QK-Norm,
+# and [conv, attn, conv, attn] mixer schedule are identical. The 4K window fits the maximum frozen
+# proxy prompt plus a 96-token decode allowance. No 4K WebGPU throughput is claimed.
+name: webgpu-10m-hybrid-4k
+vocab_size: 16384
+d_model: 384
+n_layers: 4
+n_loops: 1
+n_heads: 6
+n_kv_heads: 1
+ffn_hidden: 512
+max_seq_len: 4096
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types: [conv, attn, conv, attn]

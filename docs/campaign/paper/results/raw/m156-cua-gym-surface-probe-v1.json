@@ -1,0 +1,190 @@
+{
+  "arms": {
+    "random": {
+      "backbone_relative_l2": 0.0,
+      "backbone_updated": false,
+      "checkpoint": {
+        "bytes": 52240681,
+        "path": "/private/tmp/m142-five-surface-random-child.pt",
+        "sha256": "95ea7ead7967a881a7db7100ad037ccd1ae23777f5a436498daa8f917bb7c059"
+      },
+      "checkpoint_stage": "sft_cross_surface_public_continuation",
+      "eval": {
+        "accuracy": 0.7786624431610107,
+        "balanced_accuracy": 0.7849685943253194,
+        "per_label": {
+          "cross_app": {
+            "accuracy": 0.8,
+            "correct": 76,
+            "rows": 95
+          },
+          "desktop": {
+            "accuracy": 0.7654320987654321,
+            "correct": 248,
+            "rows": 324
+          },
+          "web": {
+            "accuracy": 0.7894736842105263,
+            "correct": 165,
+            "rows": 209
+          }
+        },
+        "rows": 628
+      },
+      "optimization": {
+        "final_loss": 0.33334675431251526,
+        "initial_loss": 1.1122264862060547
+      },
+      "probe_head": {
+        "bytes": 7069,
+        "path": "/private/tmp/cua-gym-random-surface-head-v2.pt",
+        "sha256": "0ef66c879fa94f829cdbb2f5023f4822df198a25be7d418e31c553e017ef86c8"
+      },
+      "probe_head_relative_l2": {
+        "fc.bias": 1.7219893061091507,
+        "fc.weight": 3.5225535175864278
+      },
+      "train": {
+        "accuracy": 0.8489692807197571,
+        "balanced_accuracy": 0.8615701324018858,
+        "per_label": {
+          "cross_app": {
+            "accuracy": 0.9014925373134328,
+            "correct": 302,
+            "rows": 335
+          },
+          "desktop": {
+            "accuracy": 0.8333333333333334,
+            "correct": 980,
+            "rows": 1176
+          },
+          "web": {
+            "accuracy": 0.8498845265588915,
+            "correct": 736,
+            "rows": 866
+          }
+        },
+        "rows": 2377
+      }
+    },
+    "warm": {
+      "backbone_relative_l2": 0.0,
+      "backbone_updated": false,
+      "checkpoint": {
+        "bytes": 52240681,
+        "path": "/private/tmp/m142-five-surface-public-child.pt",
+        "sha256": "8cc3ee42ed38b830b9b04935e156f80d166abeece2dd0c37184ee4d692de7eb1"
+      },
+      "checkpoint_stage": "sft_cross_surface_public_continuation",
+      "eval": {
+        "accuracy": 0.8136942386627197,
+        "balanced_accuracy": 0.8066857660424912,
+        "per_label": {
+          "cross_app": {
+            "accuracy": 0.8105263157894737,
+            "correct": 77,
+            "rows": 95
+          },
+          "desktop": {
+            "accuracy": 0.8487654320987654,
+            "correct": 275,
+            "rows": 324
+          },
+          "web": {
+            "accuracy": 0.7607655502392344,
+            "correct": 159,
+            "rows": 209
+          }
+        },
+        "rows": 628
+      },
+      "optimization": {
+        "final_loss": 0.2988665699958801,
+        "initial_loss": 1.249342679977417
+      },
+      "probe_head": {
+        "bytes": 7053,
+        "path": "/private/tmp/cua-gym-warm-surface-head-v2.pt",
+        "sha256": "8c46dc04e6687042e10e79445b8ddcc5f75404f579bbe44f8c6f12d3545ddcf5"
+      },
+      "probe_head_relative_l2": {
+        "fc.bias": 0.9065305346333837,
+        "fc.weight": 3.508075179454005
+      },
+      "train": {
+        "accuracy": 0.8691627979278564,
+        "balanced_accuracy": 0.8764024256652668,
+        "per_label": {
+          "cross_app": {
+            "accuracy": 0.9223880597014925,
+            "correct": 309,
+            "rows": 335
+          },
+          "desktop": {
+            "accuracy": 0.8996598639455783,
+            "correct": 1058,
+            "rows": 1176
+          },
+          "web": {
+            "accuracy": 0.8071593533487298,
+            "correct": 699,
+            "rows": 866
+          }
+        },
+        "rows": 2377
+      }
+    }
+  },
+  "claim_boundary": "Metadata-derived platform classification over a deterministic task-id holdout. The probe uses CUA-Gym instructions but no setup/reward artifacts, screenshots, or action traces. It is not CUA-Gym task success, RLVR, native desktop/browser control, email/Notion/MCP side effects, or evidence that warm weights improve downstream agent success.",
+  "comparison": {
+    "eval_accuracy_delta_warm_minus_random": 0.035031795501708984,
+    "eval_balanced_accuracy_delta_warm_minus_random": 0.0217171717171718
+  },
+  "dataset": "xlangai/CUA-Gym",
+  "decision": "diagnostic_only",
+  "hyperparameters": {
+    "backbone_frozen": true,
+    "head_batch_size": 128,
+    "head_lr": 0.005,
+    "head_seed": 2029,
+    "head_steps": 300
+  },
+  "kind": "localagent_cua_gym_surface_probe",
+  "license": "CC-BY-4.0",
+  "receipt_self_sha256": "5d5f66514a9624a9db43f124b1e4123cf147e302ccdf80933e916b7589419f47",
+  "schema_version": 1,
+  "selection": {
+    "all_metadata_rows": 10910,
+    "eval_counts": {
+      "cross_app": 95,
+      "desktop": 324,
+      "web": 209
+    },
+    "labels": [
+      "desktop",
+      "web",
+      "cross_app"
+    ],
+    "max_per_label": 1500,
+    "selected_counts": {
+      "cross_app": 430,
+      "desktop": 1500,
+      "web": 1075
+    },
+    "selected_rows": 3005,
+    "split_seed": 2027,
+    "task_id_disjoint": true,
+    "train_counts": {
+      "cross_app": 335,
+      "desktop": 1176,
+      "web": 866
+    }
+  },
+  "source": {
+    "bytes": 9745937,
+    "path": "/private/tmp/cua-gym-rows-all.json",
+    "sha256": "2ac0cc21fa2f50783e4e88152c7c3255df0b574054c9df6825e45d41f7068635"
+  },
+  "source_revision": "3c021d0",
+  "source_url": "https://huggingface.co/datasets/xlangai/CUA-Gym"
+}

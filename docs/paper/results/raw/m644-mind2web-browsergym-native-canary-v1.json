@@ -1,0 +1,69 @@
+{
+  "baseline": {
+    "checkpoint": {
+      "path": "/private/tmp/m626-androidcontrol/warm.pt",
+      "sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c"
+    },
+    "report": {
+      "bytes": 50225,
+      "path": "/private/tmp/m644-browsergym-m626-realistic/report.json",
+      "sha256": "ff56df97a6894a2e1dddd814a615e2543355717aa86222bfba9fbbb2ed4c1fd6"
+    },
+    "success_count": 4,
+    "success_rate": 0.25
+  },
+  "benchmark": {
+    "browsergym_revision": "9e779f087de9a65668b6974d11f9ce9816026e96",
+    "episodes": 16,
+    "fixed_seed_plan": true,
+    "id": "browsergym_miniwob",
+    "miniwob_revision": "7fd85d71a4b60325c6585396ec4f48377d049838",
+    "official_split_verified": false,
+    "tool_pool": "realistic_browser"
+  },
+  "claim_boundary": "Native pinned BrowserGym/MiniWoB checkpoint-in-the-loop canary using the realistic_browser vocabulary. It is a bounded non-official diagnostic: Mind2Web backend IDs are not live MiniWoB IDs, screenshots were not used, and no real website/account side effect ran.",
+  "kind": "localagent_m644_mind2web_browsergym_native_canary_receipt",
+  "mind2web_child": {
+    "checkpoint": {
+      "path": "/private/tmp/m643-mind2web-warm/child.pt",
+      "sha256": "3b1737e93fbfbdc6c412d8b9385a885098b280494fb07c0e2bdb8839749f0076"
+    },
+    "report": {
+      "bytes": 50222,
+      "path": "/private/tmp/m644-browsergym-m643-realistic/report.json",
+      "sha256": "9cdafd120c1d0dbf2370bd7f0494290bf6a7a3517d62ec9193fa2e051cd881a1"
+    },
+    "success_count": 4,
+    "success_rate": 0.25
+  },
+  "paired_comparison": {
+    "identical_step_traces": 16,
+    "same_episode_order": true,
+    "success_delta": 0.0,
+    "successful_tasks_baseline": [
+      "miniwob.click-button",
+      "miniwob.click-button",
+      "miniwob.click-button",
+      "miniwob.click-button"
+    ],
+    "successful_tasks_child": [
+      "miniwob.click-button",
+      "miniwob.click-button",
+      "miniwob.click-button",
+      "miniwob.click-button"
+    ]
+  },
+  "receipt_self_sha256": "537c11d972ec496707dd5ce8d6ba8ade439228ccbf98b5c2a1cf3d71c0459827",
+  "runtime": {
+    "browser_executable": "/Users/sangbumchoi/Library/Caches/ms-playwright/chromium-1117/chrome-mac/Chromium.app/Contents/MacOS/Chromium",
+    "browser_executable_sha256": "c6cf40504b92a677552e51dfaf1addfc95dc60c8b57ce5f6b41c9ee0575cf230",
+    "chromium_revision": "1117",
+    "chromium_version": "125.0.6422.26",
+    "headless": true,
+    "max_steps": 10,
+    "miniwob_revision": "7fd85d71a4b60325c6585396ec4f48377d049838",
+    "playwright_pinned_version": "1.44.0",
+    "playwright_version": "1.44.0"
+  },
+  "schema_version": 1
+}

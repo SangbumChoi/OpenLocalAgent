@@ -1,0 +1,682 @@
+{
+  "children": {
+    "random": {
+      "bytes": 52205848,
+      "path": "/private/tmp/m642-mixed-random/child.pt",
+      "sha256": "a89b036a41aef741b8d25194c10425e5885ee5d473c5b54a8224dee9671ed5bb"
+    },
+    "warm": {
+      "bytes": 52205848,
+      "path": "/private/tmp/m642-mixed-warm/child.pt",
+      "sha256": "bd0d220652b8a850367af00eb1a713e98475af517e325c025011de29e0c75a49"
+    }
+  },
+  "claim_boundary": "Public-train-only mixed continuation over AndroidControl, AgentNet, and redacted MCPMark text projections. Rows are source-local bounded selections with parent/slot checks. This is not an official benchmark score, native mobile/browser/desktop/MCP execution, visual grounding, or real email/Notion side effects.",
+  "comparison": {
+    "aggregate": {
+      "random_after_token_accuracy": 0.0053085600530856005,
+      "warm_after_token_accuracy": 0.6011944260119443,
+      "warm_minus_random_after_pp": 59.58858659588587,
+      "warm_start_better_after": true
+    },
+    "arm_contract": {
+      "random_backbone_init": "random",
+      "random_backbone_seed": 2028,
+      "warm_backbone_init": "parent"
+    },
+    "claim_boundary": "Matched public-train-only text/accessibility continuation comparison; this is not an official benchmark score, native environment success, screenshot-grounding result, or evidence of real email/Notion/MCP side effects.",
+    "decision": "warm_start_dominates_matched_random_on_all_surfaces",
+    "eval_sources": [
+      {
+        "datasets": [],
+        "input": {
+          "bytes": 838022,
+          "path": "/private/tmp/localagent-public-data/androidcontrol-eval-256.jsonl",
+          "sha256": "5168c544664cd4f7c0723387280a423b1ba3e518da2ba381305522f0dea270bc"
+        },
+        "label": "android",
+        "public_reference": {
+          "dataset": "OfficerChul/Android-Control-84k",
+          "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+        },
+        "revisions": [
+          "hf:OfficerChul/Android-Control-84k@0248027f747c9d57bd09c14e8f044f9a8103dddd"
+        ],
+        "rows": 64,
+        "source_families": [
+          "androidcontrol_json_mirror"
+        ],
+        "source_urls": [],
+        "splits": [
+          "test"
+        ],
+        "unique_parent_records": 0,
+        "visual_input_omitted_rows": 64
+      },
+      {
+        "datasets": [
+          "xlangai/AgentNet"
+        ],
+        "input": {
+          "bytes": 483445,
+          "path": "/private/tmp/localagent-public-data/agentnet-eval-64.jsonl",
+          "sha256": "7f0f080e33c4a069c532f3efcc0ec72e73d456f606cd4e5608df6f4dd949ac43"
+        },
+        "label": "agentnet",
+        "public_reference": {
+          "dataset": "xlangai/AgentNet",
+          "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+        },
+        "revisions": [
+          "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+        ],
+        "rows": 64,
+        "source_families": [
+          "xlangai/AgentNet"
+        ],
+        "source_urls": [],
+        "splits": [
+          "ubuntu_jsonl_bounded_prefix"
+        ],
+        "unique_parent_records": 5,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "Jakumetsu/mcpmark-trajectory-log"
+        ],
+        "input": {
+          "bytes": 79133,
+          "path": "/private/tmp/localagent-public-data/mcpmark-traj/mcpmark-eval.jsonl",
+          "sha256": "34c8e24ec58994f97372d9702fca54709a62140a2fef4a4d5e3099f6f4dcca89"
+        },
+        "label": "mcp",
+        "public_reference": {
+          "dataset": "Jakumetsu/mcpmark-trajectory-log",
+          "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log"
+        },
+        "revisions": [
+          "e50578f0ab904d8e6a7c576c387c1e76ae482c89"
+        ],
+        "rows": 5,
+        "source_families": [
+          "Jakumetsu/mcpmark-trajectory-log"
+        ],
+        "source_urls": [],
+        "splits": [],
+        "unique_parent_records": 5,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "hyperparameters": {
+      "backbone_init": "parent",
+      "batch_size": 4,
+      "device": "cpu",
+      "learning_rate": 1e-05,
+      "max_eval_rows_per_source": 64,
+      "max_seq_len": 512,
+      "max_train_rows_per_source": 64,
+      "random_backbone_seed": 2028,
+      "seed": 2027,
+      "steps": 16
+    },
+    "kind": "localagent_cross_surface_transfer_ablation_report",
+    "parent": {
+      "bytes": 52203615,
+      "path": "/private/tmp/m626-androidcontrol/warm.pt",
+      "sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c"
+    },
+    "random_backbone_receipt": {
+      "bytes": 52205848,
+      "path": "/private/tmp/m642-mixed-random/child.pt",
+      "sha256": "a89b036a41aef741b8d25194c10425e5885ee5d473c5b54a8224dee9671ed5bb"
+    },
+    "random_weight_groups": {
+      "action_heads": {
+        "base_l2": 91.45685930938616,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.45685930938616
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.69880319159533,
+        "delta_l2": 40.263901457933954,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.7788168965675332,
+        "target_l2": 50.41063375555174
+      },
+      "embedding": {
+        "base_l2": 77.55555240216619,
+        "delta_l2": 92.37189499022307,
+        "parameters": 6291456,
+        "relative_delta_l2": 1.1910416743758898,
+        "target_l2": 50.187969240560655
+      },
+      "ffn": {
+        "base_l2": 50.609413534253534,
+        "delta_l2": 44.429120145636425,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.8778825329711802,
+        "target_l2": 49.79216353714532
+      },
+      "normalization": {
+        "base_l2": 21.451040319317258,
+        "delta_l2": 1.856203629673946,
+        "parameters": 384,
+        "relative_delta_l2": 0.0865321029676301,
+        "target_l2": 19.595856865426722
+      }
+    },
+    "rows": {
+      "eval": 133,
+      "train": 138
+    },
+    "schema_version": 1,
+    "surfaces": {
+      "agentnet": {
+        "random_backbone": {
+          "after_token_accuracy": 0.00044444444444444447,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.00044444444444444447
+        },
+        "rows": 64,
+        "warm_minus_random_after_pp": 74.88888888888889,
+        "warm_start": {
+          "after_token_accuracy": 0.7493333333333333,
+          "before_token_accuracy": 0.74,
+          "delta_token_accuracy": 0.009333333333333305
+        },
+        "warm_start_better_after": true
+      },
+      "android": {
+        "random_backbone": {
+          "after_token_accuracy": 0.019230769230769232,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.019230769230769232
+        },
+        "rows": 64,
+        "warm_minus_random_after_pp": 80.89330024813896,
+        "warm_start": {
+          "after_token_accuracy": 0.8281637717121588,
+          "before_token_accuracy": 0.8337468982630273,
+          "delta_token_accuracy": -0.005583126550868456
+        },
+        "warm_start_better_after": true
+      },
+      "mcp": {
+        "random_backbone": {
+          "after_token_accuracy": 0.0,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.0
+        },
+        "rows": 5,
+        "warm_minus_random_after_pp": 27.839335180055404,
+        "warm_start": {
+          "after_token_accuracy": 0.278393351800554,
+          "before_token_accuracy": 0.27331486611265005,
+          "delta_token_accuracy": 0.0050784856879039775
+        },
+        "warm_start_better_after": true
+      }
+    },
+    "train_sources": [
+      {
+        "datasets": [],
+        "input": {
+          "bytes": 1680018,
+          "path": "/private/tmp/localagent-public-data/androidcontrol-train-512.jsonl",
+          "sha256": "34c68424d9bc660a5c594a6f21c946b822f87c8ed0ad0cede43a11cc585f6c29"
+        },
+        "label": "android",
+        "public_reference": {
+          "dataset": "OfficerChul/Android-Control-84k",
+          "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+        },
+        "revisions": [
+          "hf:OfficerChul/Android-Control-84k@0248027f747c9d57bd09c14e8f044f9a8103dddd"
+        ],
+        "rows": 64,
+        "source_families": [
+          "androidcontrol_json_mirror"
+        ],
+        "source_urls": [],
+        "splits": [
+          "train"
+        ],
+        "unique_parent_records": 0,
+        "visual_input_omitted_rows": 64
+      },
+      {
+        "datasets": [
+          "xlangai/AgentNet"
+        ],
+        "input": {
+          "bytes": 1512718,
+          "path": "/private/tmp/localagent-public-data/agentnet-train-64.jsonl",
+          "sha256": "fb17df74512f3f9a7c15c030ffbf82701f728803b987539e7c872e025967edf8"
+        },
+        "label": "agentnet",
+        "public_reference": {
+          "dataset": "xlangai/AgentNet",
+          "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+        },
+        "revisions": [
+          "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+        ],
+        "rows": 64,
+        "source_families": [
+          "xlangai/AgentNet"
+        ],
+        "source_urls": [],
+        "splits": [
+          "ubuntu_jsonl_bounded_prefix"
+        ],
+        "unique_parent_records": 7,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "Jakumetsu/mcpmark-trajectory-log"
+        ],
+        "input": {
+          "bytes": 133877,
+          "path": "/private/tmp/localagent-public-data/mcpmark-traj/mcpmark-train.jsonl",
+          "sha256": "21322d7218dd1f5906c4ae22162f1ef3e9ecb988d5633ca6a8f6d2943b8314d6"
+        },
+        "label": "mcp",
+        "public_reference": {
+          "dataset": "Jakumetsu/mcpmark-trajectory-log",
+          "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log"
+        },
+        "revisions": [
+          "e50578f0ab904d8e6a7c576c387c1e76ae482c89"
+        ],
+        "rows": 10,
+        "source_families": [
+          "Jakumetsu/mcpmark-trajectory-log"
+        ],
+        "source_urls": [],
+        "splits": [],
+        "unique_parent_records": 10,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "warm_start_receipt": {
+      "bytes": 52205848,
+      "path": "/private/tmp/m642-mixed-warm/child.pt",
+      "sha256": "bd0d220652b8a850367af00eb1a713e98475af517e325c025011de29e0c75a49"
+    },
+    "warm_weight_groups": {
+      "action_heads": {
+        "base_l2": 91.45685930938616,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.45685930938616
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.69880319159533,
+        "delta_l2": 0.04918675706174039,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0009514099751875238,
+        "target_l2": 51.69924142308946
+      },
+      "embedding": {
+        "base_l2": 77.55555240216619,
+        "delta_l2": 0.15726371053618116,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.002027755662427448,
+        "target_l2": 77.60610262985
+      },
+      "ffn": {
+        "base_l2": 50.609413534253534,
+        "delta_l2": 0.057523501598647664,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.001136616640691055,
+        "target_l2": 50.60982632534173
+      },
+      "normalization": {
+        "base_l2": 21.451040319317258,
+        "delta_l2": 0.0013205555767263602,
+        "parameters": 384,
+        "relative_delta_l2": 6.156137684087811e-05,
+        "target_l2": 21.45234064662787
+      }
+    }
+  },
+  "decision": {
+    "export_to_webgpu_as_native_agent": false,
+    "reason": "Warm initialization dominates the matched random arm on AndroidControl, AgentNet, and redacted MCP trajectories, but exact sequence accuracy remains zero and no native emulator/desktop/MCP environment was executed.",
+    "retain_current_warm_initialization": true,
+    "surface_specific_adapters_still_required": true
+  },
+  "input_reports": {
+    "random": {
+      "bytes": 12838,
+      "path": "/private/tmp/m642-mixed-random/report.json",
+      "sha256": "9a19ffef11a743f1e3c0a170e5520bdbdd0d41d94ef856828971d3cc65029de5"
+    },
+    "warm": {
+      "bytes": 12950,
+      "path": "/private/tmp/m642-mixed-warm/report.json",
+      "sha256": "59086aae0e557173b8acef2a9e392930673f9355eb7e5bc734d50e5e5a26a616"
+    }
+  },
+  "kind": "localagent_m642_mixed_cross_surface_warm_random_receipt",
+  "parent_checkpoint": {
+    "bytes": 52203615,
+    "path": "/private/tmp/m626-androidcontrol/warm.pt",
+    "sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c"
+  },
+  "public_sources": {
+    "agentnet": {
+      "dataset": "xlangai/AgentNet",
+      "eval_input": {
+        "bytes": 483445,
+        "path": "/private/tmp/localagent-public-data/agentnet-eval-64.jsonl",
+        "sha256": "7f0f080e33c4a069c532f3efcc0ec72e73d456f606cd4e5608df6f4dd949ac43"
+      },
+      "eval_rows_selected": 64,
+      "train_input": {
+        "bytes": 1512718,
+        "path": "/private/tmp/localagent-public-data/agentnet-train-64.jsonl",
+        "sha256": "fb17df74512f3f9a7c15c030ffbf82701f728803b987539e7c872e025967edf8"
+      },
+      "train_rows_selected": 64,
+      "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+    },
+    "android": {
+      "dataset": "OfficerChul/Android-Control-84k",
+      "eval_input": {
+        "bytes": 838022,
+        "path": "/private/tmp/localagent-public-data/androidcontrol-eval-256.jsonl",
+        "sha256": "5168c544664cd4f7c0723387280a423b1ba3e518da2ba381305522f0dea270bc"
+      },
+      "eval_rows_selected": 64,
+      "train_input": {
+        "bytes": 1680018,
+        "path": "/private/tmp/localagent-public-data/androidcontrol-train-512.jsonl",
+        "sha256": "34c68424d9bc660a5c594a6f21c946b822f87c8ed0ad0cede43a11cc585f6c29"
+      },
+      "train_rows_selected": 64,
+      "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+    },
+    "mcp": {
+      "dataset": "Jakumetsu/mcpmark-trajectory-log",
+      "eval_input": {
+        "bytes": 79133,
+        "path": "/private/tmp/localagent-public-data/mcpmark-traj/mcpmark-eval.jsonl",
+        "sha256": "34c8e24ec58994f97372d9702fca54709a62140a2fef4a4d5e3099f6f4dcca89"
+      },
+      "eval_rows_selected": 5,
+      "train_input": {
+        "bytes": 133877,
+        "path": "/private/tmp/localagent-public-data/mcpmark-traj/mcpmark-train.jsonl",
+        "sha256": "21322d7218dd1f5906c4ae22162f1ef3e9ecb988d5633ca6a8f6d2943b8314d6"
+      },
+      "train_rows_selected": 10,
+      "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log"
+    }
+  },
+  "receipt_self_sha256": "c84b99de4e595659f163e8f5a286e974a861b171d63c51724bb7fb810735bf47",
+  "rows": {
+    "eval_selected": 133,
+    "train_selected": 138
+  },
+  "schema_version": 1,
+  "split_contract": {
+    "cross_source_slot_reuse_allowed": true,
+    "mode": "source_local_parent_and_slot_disjoint",
+    "validated_by_training_runner": true,
+    "visual_input_omitted_rows": {
+      "agentnet": 0,
+      "android": 64,
+      "mcp": 0
+    }
+  },
+  "training": {
+    "hyperparameters": {
+      "backbone_init": "parent",
+      "batch_size": 4,
+      "device": "cpu",
+      "learning_rate": 1e-05,
+      "max_eval_rows_per_source": 64,
+      "max_seq_len": 512,
+      "max_train_rows_per_source": 64,
+      "random_backbone_seed": 2028,
+      "seed": 2027,
+      "steps": 16
+    },
+    "random_after": {
+      "eval": {
+        "assistant_loss_tokens": 6028,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.0053085600530856005,
+        "mean_loss": 9.417145646164254,
+        "rows": 133
+      },
+      "eval_by_source": {
+        "agentnet": {
+          "assistant_loss_tokens": 2250,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.00044444444444444447,
+          "mean_loss": 9.279560519748264,
+          "rows": 64
+        },
+        "android": {
+          "assistant_loss_tokens": 1612,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.019230769230769232,
+          "mean_loss": 9.202955563074307,
+          "rows": 64
+        },
+        "mcp": {
+          "assistant_loss_tokens": 2166,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.0,
+          "mean_loss": 9.71947295381752,
+          "rows": 5
+        }
+      },
+      "train": {
+        "assistant_loss_tokens": 8262,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.0039941902687000725,
+        "mean_loss": 9.46373490772418,
+        "rows": 138
+      }
+    },
+    "random_before": {
+      "eval": {
+        "assistant_loss_tokens": 6028,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.0,
+        "mean_loss": 9.763811532914756,
+        "rows": 133
+      },
+      "eval_by_source": {
+        "agentnet": {
+          "assistant_loss_tokens": 2250,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.0,
+          "mean_loss": 9.79137242296007,
+          "rows": 64
+        },
+        "android": {
+          "assistant_loss_tokens": 1612,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.0,
+          "mean_loss": 9.650561159952698,
+          "rows": 64
+        },
+        "mcp": {
+          "assistant_loss_tokens": 2166,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.0,
+          "mean_loss": 9.81946601057537,
+          "rows": 5
+        }
+      },
+      "train": {
+        "assistant_loss_tokens": 8262,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.0,
+        "mean_loss": 9.763102065792559,
+        "rows": 138
+      }
+    },
+    "random_weight_groups": {
+      "action_heads": {
+        "base_l2": 91.45685930938616,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.45685930938616
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.69880319159533,
+        "delta_l2": 40.263901457933954,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.7788168965675332,
+        "target_l2": 50.41063375555174
+      },
+      "embedding": {
+        "base_l2": 77.55555240216619,
+        "delta_l2": 92.37189499022307,
+        "parameters": 6291456,
+        "relative_delta_l2": 1.1910416743758898,
+        "target_l2": 50.187969240560655
+      },
+      "ffn": {
+        "base_l2": 50.609413534253534,
+        "delta_l2": 44.429120145636425,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.8778825329711802,
+        "target_l2": 49.79216353714532
+      },
+      "normalization": {
+        "base_l2": 21.451040319317258,
+        "delta_l2": 1.856203629673946,
+        "parameters": 384,
+        "relative_delta_l2": 0.0865321029676301,
+        "target_l2": 19.595856865426722
+      }
+    },
+    "warm_after": {
+      "eval": {
+        "assistant_loss_tokens": 6028,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.6011944260119443,
+        "mean_loss": 2.9356419930967497,
+        "rows": 133
+      },
+      "eval_by_source": {
+        "agentnet": {
+          "assistant_loss_tokens": 2250,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.7493333333333333,
+          "mean_loss": 1.6630834757486979,
+          "rows": 64
+        },
+        "android": {
+          "assistant_loss_tokens": 1612,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.8281637717121588,
+          "mean_loss": 1.2671640883604292,
+          "rows": 64
+        },
+        "mcp": {
+          "assistant_loss_tokens": 2166,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.278393351800554,
+          "mean_loss": 5.499281442066309,
+          "rows": 5
+        }
+      },
+      "train": {
+        "assistant_loss_tokens": 8262,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.5190026627935125,
+        "mean_loss": 3.505929864252257,
+        "rows": 138
+      }
+    },
+    "warm_before": {
+      "eval": {
+        "assistant_loss_tokens": 6028,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.597378898473789,
+        "mean_loss": 2.988776951810739,
+        "rows": 133
+      },
+      "eval_by_source": {
+        "agentnet": {
+          "assistant_loss_tokens": 2250,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.74,
+          "mean_loss": 1.7923046400282119,
+          "rows": 64
+        },
+        "android": {
+          "assistant_loss_tokens": 1612,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.8337468982630273,
+          "mean_loss": 1.2687633362952295,
+          "rows": 64
+        },
+        "mcp": {
+          "assistant_loss_tokens": 2166,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.27331486611265005,
+          "mean_loss": 5.511733853805978,
+          "rows": 5
+        }
+      },
+      "train": {
+        "assistant_loss_tokens": 8262,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.5146453643185669,
+        "mean_loss": 3.5618802174272908,
+        "rows": 138
+      }
+    },
+    "warm_weight_groups": {
+      "action_heads": {
+        "base_l2": 91.45685930938616,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.45685930938616
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.69880319159533,
+        "delta_l2": 0.04918675706174039,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0009514099751875238,
+        "target_l2": 51.69924142308946
+      },
+      "embedding": {
+        "base_l2": 77.55555240216619,
+        "delta_l2": 0.15726371053618116,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.002027755662427448,
+        "target_l2": 77.60610262985
+      },
+      "ffn": {
+        "base_l2": 50.609413534253534,
+        "delta_l2": 0.057523501598647664,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.001136616640691055,
+        "target_l2": 50.60982632534173
+      },
+      "normalization": {
+        "base_l2": 21.451040319317258,
+        "delta_l2": 0.0013205555767263602,
+        "parameters": 384,
+        "relative_delta_l2": 6.156137684087811e-05,
+        "target_l2": 21.45234064662787
+      }
+    }
+  }
+}

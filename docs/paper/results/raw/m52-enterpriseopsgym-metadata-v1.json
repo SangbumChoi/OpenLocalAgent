@@ -1,0 +1,255 @@
+{
+  "api_url": "https://huggingface.co/api/datasets/ServiceNow-AI/EnterpriseOps-Gym/revision/c8e538eae8a6205294f0a86675fefdc1fac408f6",
+  "card_inventory": {
+    "about_task_count": 1150,
+    "average_steps": 9.15,
+    "count_discrepancy": true,
+    "domain_count": 8,
+    "domain_table_task_count": 1115,
+    "domains": {
+      "calendar": {
+        "average_steps": 7.05,
+        "max_steps": 17,
+        "tasks": 100,
+        "tools": 37
+      },
+      "csm": {
+        "average_steps": 12.1,
+        "max_steps": 27,
+        "tasks": 186,
+        "tools": 89
+      },
+      "drive": {
+        "average_steps": 8.68,
+        "max_steps": 29,
+        "tasks": 105,
+        "tools": 55
+      },
+      "email": {
+        "average_steps": 6.25,
+        "max_steps": 22,
+        "tasks": 104,
+        "tools": 79
+      },
+      "hr": {
+        "average_steps": 10.54,
+        "max_steps": 34,
+        "tasks": 184,
+        "tools": 89
+      },
+      "hybrid": {
+        "average_steps": 7.79,
+        "max_steps": 19,
+        "tasks": 155,
+        "tools": "Multi-domain"
+      },
+      "itsm": {
+        "average_steps": 9.0,
+        "max_steps": 31,
+        "tasks": 181,
+        "tools": 93
+      },
+      "teams": {
+        "average_steps": 9.41,
+        "max_steps": 18,
+        "tasks": 100,
+        "tools": 70
+      }
+    },
+    "max_steps": 34,
+    "tool_count": 512
+  },
+  "card_url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym/resolve/c8e538eae8a6205294f0a86675fefdc1fac408f6/README.md",
+  "claim_boundary": "Public API and dataset-card inventory only; no parquet task text, verifier, server configuration, Docker/MCP execution, state transition, official task-success score, leaderboard result, or training artifact is claimed. The card's About count (1,150) and domain-table total (1,115) are preserved as separate source claims.",
+  "code_url": "https://github.com/ServiceNow/EnterpriseOps-Gym",
+  "config_inventory": {
+    "oracle": {
+      "dataset_size": 8376979,
+      "download_size": 991194,
+      "splits": {
+        "calendar": {
+          "bytes": 287514,
+          "examples": 61
+        },
+        "csm": {
+          "bytes": 1463009,
+          "examples": 103
+        },
+        "drive": {
+          "bytes": 469510,
+          "examples": 64
+        },
+        "email": {
+          "bytes": 466399,
+          "examples": 67
+        },
+        "hr": {
+          "bytes": 1691979,
+          "examples": 102
+        },
+        "hybrid": {
+          "bytes": 1270996,
+          "examples": 88
+        },
+        "itsm": {
+          "bytes": 1422432,
+          "examples": 103
+        },
+        "teams": {
+          "bytes": 1305140,
+          "examples": 61
+        }
+      },
+      "total_examples": 649
+    },
+    "plus_10_tools": {
+      "dataset_size": 8313508,
+      "download_size": 982687,
+      "splits": {
+        "calendar": {
+          "bytes": 291906,
+          "examples": 59
+        },
+        "csm": {
+          "bytes": 1465984,
+          "examples": 102
+        },
+        "drive": {
+          "bytes": 481171,
+          "examples": 64
+        },
+        "email": {
+          "bytes": 478847,
+          "examples": 67
+        },
+        "hr": {
+          "bytes": 1714711,
+          "examples": 102
+        },
+        "hybrid": {
+          "bytes": 1287591,
+          "examples": 88
+        },
+        "itsm": {
+          "bytes": 1447378,
+          "examples": 103
+        },
+        "teams": {
+          "bytes": 1145920,
+          "examples": 52
+        }
+      },
+      "total_examples": 637
+    },
+    "plus_15_tools": {
+      "dataset_size": 8374612,
+      "download_size": 989853,
+      "splits": {
+        "calendar": {
+          "bytes": 296762,
+          "examples": 59
+        },
+        "csm": {
+          "bytes": 1473824,
+          "examples": 102
+        },
+        "drive": {
+          "bytes": 486100,
+          "examples": 64
+        },
+        "email": {
+          "bytes": 484265,
+          "examples": 67
+        },
+        "hr": {
+          "bytes": 1726316,
+          "examples": 102
+        },
+        "hybrid": {
+          "bytes": 1295972,
+          "examples": 88
+        },
+        "itsm": {
+          "bytes": 1460550,
+          "examples": 103
+        },
+        "teams": {
+          "bytes": 1150823,
+          "examples": 52
+        }
+      },
+      "total_examples": 637
+    },
+    "plus_5_tools": {
+      "dataset_size": 8242993,
+      "download_size": 981152,
+      "splits": {
+        "calendar": {
+          "bytes": 286286,
+          "examples": 59
+        },
+        "csm": {
+          "bytes": 1450583,
+          "examples": 102
+        },
+        "drive": {
+          "bytes": 475636,
+          "examples": 64
+        },
+        "email": {
+          "bytes": 473047,
+          "examples": 67
+        },
+        "hr": {
+          "bytes": 1703152,
+          "examples": 102
+        },
+        "hybrid": {
+          "bytes": 1279121,
+          "examples": 88
+        },
+        "itsm": {
+          "bytes": 1434621,
+          "examples": 103
+        },
+        "teams": {
+          "bytes": 1140547,
+          "examples": 52
+        }
+      },
+      "total_examples": 637
+    }
+  },
+  "dataset": "ServiceNow-AI/EnterpriseOps-Gym",
+  "kind": "localagent_enterpriseopsgym_metadata_receipt",
+  "license": "Apache-2.0",
+  "receipt_self_sha256": "e7d6880768b50136a8f8bebc6bd059b33ee833e49709039622ffac2652c82218",
+  "revision": "c8e538eae8a6205294f0a86675fefdc1fac408f6",
+  "runtime_requirements": {
+    "containerized_mcp_servers": true,
+    "docker": true,
+    "reset_between_runs": true,
+    "sql_state_verifiers": true
+  },
+  "schema_version": 1,
+  "source": {
+    "api_bytes": 8884,
+    "api_path": "enterpriseopsgym-hf-api.json",
+    "api_sha256": "36d9928ed7186b02cf3f2022198278f58f0b327f5f6ee2bc16cfad9e0244e9ce",
+    "card_bytes": 11927,
+    "card_path": "enterpriseopsgym-README.md",
+    "card_sha256": "cf559d619ad720c652c038d1b5fa9c541c45f83bac93a5d535c7fb3e7a091820",
+    "docker_invoked": false,
+    "metadata_only": true,
+    "parquet_rows_downloaded": false,
+    "servers_started": false,
+    "verifiers_read": false
+  },
+  "source_url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym",
+  "toolset_modes": {
+    "oracle": "exact task-required tools",
+    "plus_10_tools": "oracle plus ten distractors",
+    "plus_15_tools": "oracle plus fifteen distractors",
+    "plus_5_tools": "oracle plus five distractors"
+  }
+}

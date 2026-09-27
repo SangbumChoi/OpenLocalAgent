@@ -1,0 +1,47 @@
+{
+  "benchmark_id": "mobilegym",
+  "candidate_checkpoint": {
+    "sha256": "2663f3fc76bad1b8f20afacfbde157e305f9decd369c3586ea1b51a6bcbc80a6",
+    "stage": "sft_public_agent_continuation",
+    "parameters": 10524544
+  },
+  "checkpoint_sha256": "2663f3fc76bad1b8f20afacfbde157e305f9decd369c3586ea1b51a6bcbc80a6",
+  "source": {
+    "repository": "https://github.com/Purewhiter/mobilegym",
+    "revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "test_split_sha256": "a3d485015d480f4f1ebbd12dbbf02c25c0aa667d1afcf5f6fa35f0263a82c567",
+    "train_split_sha256": "0ecef460fecfd8aa91dcbb2cd4cca17b033f620f85a50d7f0b598ed19a27c0eb",
+    "test_ids_sha256": "cf61a0b2e71721864a1b526a531c433f852e128d2ffa8b81504fc3d74b9830bf"
+  },
+  "environment": {
+    "official_split": "test",
+    "official_split_verified": true,
+    "task_count": 256,
+    "train_task_count": 160,
+    "errors": [],
+    "seed": 0,
+    "max_steps": 2,
+    "elapsed_seconds": 599.422
+  },
+  "environment_executed": true,
+  "result": {
+    "passed_tasks": 1,
+    "failed_tasks": 255,
+    "success_rate": 0.00390625,
+    "observation_mode": "text_projection",
+    "vision_used": false,
+    "tool_counts": {
+      "mobile_input_text": 255,
+      "mobile_navigate_home": 6,
+      "mobile_open_app": 1
+    },
+    "upstream_receipt_sha256": "54579b8b862e860f9b892f8ee37b0c646553a5d80e24f43047606d356fc264bc"
+  },
+  "claim_boundary": "Complete official MobileGym test split with the upstream simulator and state-diff judge, but using a bounded textual DOM projection. This is not a visual Android score, ADB/emulator result, or screenshot-grounding claim.",
+  "decision": {
+    "adoption": "retain_as_native_negative_control",
+    "reason": "The environment and official split are valid and error-free, but the m546 policy passes only 1/256 tasks and emits almost exclusively mobile_input_text; native mobile promotion is rejected."
+  },
+  "receipt_self_sha256": "ab9e206ff4e6652f71b21dcfa741f7e3e0a45d7810cb806b6780b2ffcd51f2ba",
+  "schema_version": 1
+}

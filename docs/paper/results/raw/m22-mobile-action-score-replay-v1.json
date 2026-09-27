@@ -1,0 +1,59 @@
+{
+  "kind": "localagent_mobile_action_score_replay_receipt",
+  "schema_version": 1,
+  "sources": [
+    {
+      "dataset": "AndroidControl",
+      "dataset_url": "https://github.com/google-research/google-research/tree/master/android_control",
+      "license": "Apache-2.0",
+      "source_revision": "generation=1717537205165914",
+      "source_subset": "android_control-00000-of-00020",
+      "source_split": "train",
+      "normalized_path": "androidcontrol_conversations_v2.train.jsonl",
+      "normalized_rows": 16,
+      "normalized_tool_calls": 80,
+      "normalized_bytes": 1512235,
+      "normalized_sha256": "705bf99465b5feb2b24f03e5c81cc2c1560ac8f28200eb83ed8c921626c995fa"
+    },
+    {
+      "dataset": "Android in the Wild",
+      "dataset_url": "https://github.com/google-research/google-research/tree/master/android_in_the_wild",
+      "license": "CC-BY-4.0",
+      "source_revision": "generation=1686095863743117",
+      "source_subset": "general/general-00001-of-00321",
+      "source_split": "train",
+      "normalized_path": "aitw_conversations_v2.train.jsonl",
+      "normalized_rows": 10,
+      "normalized_tool_calls": 50,
+      "normalized_bytes": 252386,
+      "normalized_sha256": "1f0a08fac5684f21d62a10855fc05171b4d7bda699f8aae51f062d01f7b52031"
+    }
+  ],
+  "normalization": {
+    "interchange": "localagent_v1",
+    "mobile_adapter": "localagent.data.realistic_adapters.normalize_mobile_row",
+    "scorer": "localagent.eval.mobile.score_mobile_row",
+    "prediction_contract": ["name+arguments", "tool+args"],
+    "official_environment_invoked": false
+  },
+  "replay": {
+    "records": 26,
+    "tool_calls": 130,
+    "androidcontrol": {
+      "records": 16,
+      "tool_calls": 80,
+      "tool_accuracy": 1.0,
+      "action_exact_accuracy": 1.0,
+      "trajectory_exact": 1.0
+    },
+    "android_in_the_wild": {
+      "records": 10,
+      "tool_calls": 50,
+      "tool_accuracy": 1.0,
+      "action_exact_accuracy": 1.0,
+      "trajectory_exact": 1.0
+    },
+    "prediction": "ground-truth tool-call replay"
+  },
+  "claim_boundary": "Ground-truth replay sanity check only. This is not AndroidControl/AITW model accuracy, AndroidWorld emulator reward, screenshot grounding, trusted OS control, or WebGPU capability."
+}

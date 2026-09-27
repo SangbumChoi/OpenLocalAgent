@@ -1,0 +1,345 @@
+{
+  "claim_boundary": "This is an actual pure-PyTorch GRPO update over canonical local stateful email, Notion, browser, recovery, and abstention conversations. It is an RL simulation: the reward is opt-in schema/tool/argument/expected-transition shaping and the serialized tool responses are local fixtures. It is not public benchmark training, native Android/browser/MCP execution, real-account side effects, or evidence of WebGPU throughput.",
+  "configuration": {
+    "config_bytes": 944,
+    "config_sha256": "5c9b03094bfb4e3f5ecb8a2ded2ef52b56519d97f2cdeb4a1bdbaedad6a61b57",
+    "group_size": 2,
+    "max_new_tokens": 96,
+    "model_config": "configs/model/webgpu-10m-hybrid.yaml",
+    "prompts_per_step": 4,
+    "reward_environment": "stateful_productivity",
+    "seed": 2030,
+    "sft": {
+      "batch_size": 4,
+      "lr": 0.0001,
+      "metrics": {
+        "dataset_token_accounting": {
+          "decay": null,
+          "main": {
+            "input_tokens": 2330,
+            "loss_tokens": 436,
+            "sources": {
+              "single_turn": {
+                "input_tokens": 2330,
+                "loss_tokens": 436,
+                "rows": 16
+              }
+            }
+          }
+        },
+        "fixed_horizon_progress": {
+          "completed_optimizer_updates": 32,
+          "partial": false,
+          "planned_optimizer_updates": 32
+        },
+        "lm_sampling": {
+          "mode": "iid_with_replacement_v1"
+        },
+        "loss_components": {
+          "lm_loss": [
+            1.8874351978302002,
+            2.6695306301116943,
+            2.2006096839904785,
+            2.1972405910491943,
+            2.125810146331787,
+            2.2956981658935547,
+            2.563260316848755,
+            2.252004384994507,
+            1.6862010955810547,
+            2.259000778198242,
+            2.3778626918792725,
+            2.251948833465576,
+            2.0824992656707764,
+            2.27253794670105,
+            1.7818082571029663,
+            1.3859184980392456,
+            1.2954062223434448,
+            1.4496209621429443,
+            1.0522191524505615,
+            1.3256627321243286,
+            1.4022308588027954,
+            1.3612638711929321,
+            1.2677515745162964,
+            1.1609894037246704,
+            1.9085581302642822,
+            1.221108317375183,
+            1.848610281944275,
+            1.8149051666259766,
+            0.9879425764083862,
+            1.1843897104263306,
+            1.4729597568511963,
+            1.1472713947296143
+          ],
+          "optimization": [
+            1.8874351978302002,
+            2.6695306301116943,
+            2.2006096839904785,
+            2.1972405910491943,
+            2.125810146331787,
+            2.2956981658935547,
+            2.563260316848755,
+            2.252004384994507,
+            1.6862010955810547,
+            2.259000778198242,
+            2.3778626918792725,
+            2.251948833465576,
+            2.0824992656707764,
+            2.27253794670105,
+            1.7818082571029663,
+            1.3859184980392456,
+            1.2954062223434448,
+            1.4496209621429443,
+            1.0522191524505615,
+            1.3256627321243286,
+            1.4022308588027954,
+            1.3612638711929321,
+            1.2677515745162964,
+            1.1609894037246704,
+            1.9085581302642822,
+            1.221108317375183,
+            1.848610281944275,
+            1.8149051666259766,
+            0.9879425764083862,
+            1.1843897104263306,
+            1.4729597568511963,
+            1.1472713947296143
+          ],
+          "router_aux": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "router_weighted": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "token_accounting": {
+          "input_tokens": 18407,
+          "loss_tokens": 3399,
+          "sources": {
+            "single_turn": {
+              "input_tokens": 18407,
+              "loss_tokens": 3399,
+              "rows": 128
+            }
+          }
+        },
+        "token_accounting_scope": "language_model_microbatches"
+      },
+      "seed": 2030,
+      "steps": 32
+    },
+    "steps": 4
+  },
+  "kind": "localagent_stateful_productivity_grpo_simulation",
+  "output": {
+    "checkpoint": {
+      "bytes": 168482187,
+      "path": "/private/tmp/stateful-productivity-grpo-v8/rl/latest.pt",
+      "sha256": "00350726378115b32f6dffce50f9efcb42b8d8c5ab2ae723a387659f57312f78"
+    },
+    "metrics": {
+      "bytes": 12077,
+      "path": "/private/tmp/stateful-productivity-grpo-v8/rl/metrics.json",
+      "sha256": "af228be335838f33a991f816be15ca3d6fedb7f0db033aa0f3562f9cc9f10fdc"
+    }
+  },
+  "parent": {
+    "original": {
+      "bytes": 52233212,
+      "path": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/latest.pt",
+      "sha256": "79387105de75d332413262e8d8ddb847b6cc13bc03f5e4df3c81663d9897aef1"
+    },
+    "sft": {
+      "bytes": 52232437,
+      "path": "/private/tmp/stateful-productivity-grpo-v8/sft-parent.pt",
+      "sha256": "0791ad8c79368830831bc0048307e24103b3c295cd99ead07dec1921e126795a"
+    }
+  },
+  "receipt_self_sha256": "df56ca29dc6b020327657d08c0eeaf10126492a362daa7907859f9d84ffd118c",
+  "schema_version": 1,
+  "source": {
+    "eval": {
+      "bytes": 24903,
+      "path": "/private/tmp/stateful-productivity-grpo-v8/data/stateful-productivity-eval.jsonl",
+      "sha256": "5a65cf13a7149652e9e490409fa70a30d8b7fc317adf02a4b8eae0334677bedb",
+      "task_hash": "07471a921a097485936c37b646be03b99e4071f5ac4644cecd130194154b072c",
+      "tasks": [
+        "eval-email-send",
+        "eval-notion-create",
+        "eval-browser-search",
+        "eval-browser-recovery",
+        "eval-abstain"
+      ]
+    },
+    "external_accounts_used": false,
+    "kind": "local_deterministic_state_machine",
+    "native_runtime_executed": false,
+    "public_benchmark_text_used": false,
+    "tool_side_effects": "in_memory_only",
+    "train": {
+      "bytes": 24860,
+      "path": "/private/tmp/stateful-productivity-grpo-v8/data/stateful-productivity-train.jsonl",
+      "sha256": "c6bec8bca28abed879211fe195a61c8745a6ee0fbf9b232b5557bd64baacd32e",
+      "task_hash": "5cd64016dc92e6d0d118ea57b6e5b5be6bdd188445022ad5d385173415e194e4",
+      "tasks": [
+        "train-email-send",
+        "train-notion-create",
+        "train-browser-search",
+        "train-browser-recovery",
+        "train-abstain"
+      ]
+    }
+  },
+  "suite": "localagent-stateful-productivity-v1",
+  "training": {
+    "exact_match_accuracy_post": 0.0,
+    "exact_match_accuracy_pre": 0.0,
+    "mean_reward_last": 0.012500000186264515,
+    "mean_reward_post": 0.018750000000000003,
+    "mean_reward_pre": 0.0,
+    "reward_steps": 4,
+    "rl_accounting": {
+      "attempted_groups": 16,
+      "attempted_rollout_steps": 4,
+      "attempted_rollouts": 32,
+      "fixed_horizon_progress": {
+        "bounded_prefix": false,
+        "completed_rollout_steps": 4,
+        "execution_rollout_step_limit": 4,
+        "planned_rollout_steps": 4
+      },
+      "generated_eos_tokens": 32,
+      "generated_tokens": 858,
+      "informative_groups": 5,
+      "informative_scoring_input_slots": 1466,
+      "learning_rate_history": [
+        0.0,
+        2e-05,
+        1.55e-05,
+        6.500000000000003e-06
+      ],
+      "model_forward_token_slots": {
+        "phases": {
+          "current_policy_optimization": 1466,
+          "old_policy_scoring": 1466,
+          "reference_policy_scoring": 1466,
+          "rollout_cached_decode": 826,
+          "rollout_prefill": 3768
+        },
+        "total": 8992
+      },
+      "policy_epochs_per_informative_batch": 1,
+      "realized_optimizer_updates": 4,
+      "rollout_observability": {
+        "parsing": {
+          "complete_parser_format_valid_rollouts": 9,
+          "parser_format_valid_rollouts": 9,
+          "parser_tool_syntax_rollouts": 30,
+          "strict_tool_format_valid_rollouts": 0,
+          "text_reward_rollouts": 2,
+          "tool_reward_rollouts": 30
+        },
+        "reward": {
+          "distribution": [
+            {
+              "count": 25,
+              "reward": 0.0,
+              "reward_hex": "0x0.0p+0"
+            },
+            {
+              "count": 7,
+              "reward": 0.1,
+              "reward_hex": "0x1.999999999999ap-4"
+            }
+          ],
+          "exact_success_rollouts": 0,
+          "unique_values": 2
+        },
+        "tokens": {
+          "generated_eos_tokens": 32,
+          "generated_tokens": 858,
+          "model_forward_token_slots": {
+            "phases": {
+              "current_policy_optimization": 1466,
+              "old_policy_scoring": 1466,
+              "reference_policy_scoring": 1466,
+              "rollout_cached_decode": 826,
+              "rollout_prefill": 3768
+            },
+            "total": 8992
+          },
+          "rollout_prompt_tokens": 3768,
+          "selected_prompt_tokens": 1884
+        },
+        "truncation": {
+          "truncated_rollouts": 0
+        }
+      },
+      "truncated_rollouts": 0,
+      "zero_signal_steps": 0
+    },
+    "tool_exact_match_accuracy_post": 0.0,
+    "tool_exact_match_accuracy_pre": 0.0
+  }
+}

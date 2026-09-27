@@ -1,0 +1,35 @@
+{
+  "model": "smollm2-135m",
+  "kind": "lora",
+  "location": "data/baselines/SmolLM2-135M-Instruct|runs/lora/smollm2-135m",
+  "constrained_decode": null,
+  "parameters": 134515008,
+  "rows_per_suite": 999999,
+  "max_new_tokens": 64,
+  "suites": {
+    "xlam": {
+      "rows": 2941,
+      "parse_rate": 1.0,
+      "type_match": 0.7874872492349541,
+      "step_success_rate": 0.3094185651139068,
+      "seconds_per_row": 0.047885628388634104,
+      "grounding_accuracy": 0.3333333333333333
+    },
+    "xlam_opaque": {
+      "rows": 2941,
+      "parse_rate": 1.0,
+      "type_match": 0.5929955797347841,
+      "step_success_rate": 0.19245154709282558,
+      "seconds_per_row": 0.04283091374215363,
+      "grounding_accuracy": 0.3333333333333333
+    },
+    "xlam_shuffled": {
+      "rows": 2941,
+      "parse_rate": 1.0,
+      "type_match": 0.45290717443046585,
+      "step_success_rate": 0.16865011900714044,
+      "seconds_per_row": 0.0424282795634654,
+      "grounding_accuracy": 0.3333333333333333
+    }
+  }
+}

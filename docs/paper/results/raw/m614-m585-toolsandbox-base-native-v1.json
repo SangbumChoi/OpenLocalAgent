@@ -1,0 +1,1851 @@
+{
+  "analysis": {
+    "by_category": {
+      "CANONICALIZATION": {
+        "exact_rate": 0.0,
+        "mean_similarity": 0.01694915254237288,
+        "rows": 59
+      },
+      "INSUFFICIENT_INFORMATION": {
+        "exact_rate": 0.9285714285714286,
+        "mean_similarity": 0.9285714285714286,
+        "rows": 28
+      },
+      "MULTIPLE_TOOL_CALL": {
+        "exact_rate": 0.0,
+        "mean_similarity": 0.015096609111125675,
+        "rows": 82
+      },
+      "MULTIPLE_USER_TURN": {
+        "exact_rate": 0.0,
+        "mean_similarity": 0.008928571428571428,
+        "rows": 28
+      },
+      "NO_DISTRACTION_TOOLS": {
+        "exact_rate": 0.23255813953488372,
+        "mean_similarity": 0.2576583096675372,
+        "rows": 129
+      },
+      "SINGLE_TOOL_CALL": {
+        "exact_rate": 0.21052631578947367,
+        "mean_similarity": 0.3157894736842105,
+        "rows": 19
+      },
+      "SINGLE_USER_TURN": {
+        "exact_rate": 0.0547945205479452,
+        "mean_similarity": 0.09572495817962062,
+        "rows": 73
+      },
+      "STATE_DEPENDENCY": {
+        "exact_rate": 0.0,
+        "mean_similarity": 0.00991341446301272,
+        "rows": 24
+      }
+    },
+    "exact_sequence_rate": 0.23255813953488372,
+    "interpretation": "single-step native simulator/verifier diagnostic; multi-tool and multi-user-turn categories are truncated by the scripted user",
+    "mean_similarity": 0.2576583096675372
+  },
+  "benchmark_id": "toolsandbox",
+  "checkpoint": {
+    "bytes": 52211696,
+    "path": "/private/tmp/m585-public-multisurface-warm.pt",
+    "sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff"
+  },
+  "claim_boundary": "Native pinned ToolSandbox simulator and milestone verifier smoke only. The runner uses a scripted user that terminates after the first agent response, so multi-tool and multi-user-turn scenarios are intentionally truncated; a deterministic post-tool response template matches the fixture's expected confirmation text. The official split, model-based user simulator, full scenario matrix, and optional RapidAPI tools were not executed. This is not an official ToolSandbox leaderboard score and does not satisfy the publication gate's official-split requirement.",
+  "environment_executed": true,
+  "external_api_called": false,
+  "kind": "localagent_m614_toolsandbox_current_base_native",
+  "max_agent_turns": 1,
+  "official_split_verified": false,
+  "output_dir": "/private/tmp/m614-toolsandbox-base-current",
+  "post_tool_response_policy": "deterministic_function_name_and_argument_template",
+  "protocol": "single_step_smoke",
+  "protocol_audit": {
+    "path": "docs/paper/results/raw/m613-toolsandbox-protocol-audit-v1.json",
+    "sha256": "05bf8a96dcd2246e41d21721ce16eae84d9f3572494bf3b90ceec1a3bf5f54fd"
+  },
+  "receipt_self_sha256": "abc0be06b39f88849e1d900a7e0f391e057e31fa2be5c90becde0f0c1dc2740a",
+  "runner": {
+    "bytes": 18130,
+    "path": "/Users/sangbumchoi/Documents/LocalAgent/scripts/run_toolsandbox_native.py",
+    "sha256": "ccfa3fa48147dd982148b29d4954533760250d24a5498e67d1d670612f39af25"
+  },
+  "scenarios": [
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "cellular_off",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.5,
+      "minefield_similarity": 0.0,
+      "scenario": "get_cellular",
+      "similarity": 0.5,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "wifi_off",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.5,
+      "minefield_similarity": 0.0,
+      "scenario": "get_wifi",
+      "similarity": 0.5,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_phone_number_with_name",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_name_with_relationship",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_relationship_with_phone_number",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.5,
+      "minefield_similarity": 0.0,
+      "scenario": "add_contact_with_name_and_phone_number",
+      "similarity": 0.5,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.5,
+      "minefield_similarity": 0.0,
+      "scenario": "remove_contact_with_id",
+      "similarity": 0.5,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "update_contact_with_id_and_phone_number",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_sender_phone_number_with_content",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "send_message_with_phone_number_and_content",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_thanksgiving_timestamp",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_address_with_lat_lon",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_phone_number_with_location_name",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_temperature",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_stock_symbol_with_company_name",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "convert_currency",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "convert_currency_canonicalize",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_message_with_recency_latest",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_message_with_recency_latest_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_message_with_recency_oldest",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_message_with_recency_oldest_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "modify_contact_with_message_recency",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "modify_contact_with_message_recency_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "remove_contact_by_phone",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "remove_contact_by_phone_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "remove_contact_by_phone_ambiguous",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "remove_contact_by_phone_ambiguous_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.2379219471123053,
+      "minefield_similarity": 0.0,
+      "scenario": "turn_on_wifi_low_battery_mode",
+      "similarity": 0.2379219471123053,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "turn_on_wifi_low_battery_mode_implicit",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "turn_on_cellular_low_battery_mode",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "turn_on_cellular_low_battery_mode_implicit",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "turn_on_location_low_battery_mode",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "turn_on_location_low_battery_mode_implicit",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "send_message_with_contact_content_cellular_off",
+      "similarity": 0.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "send_message_with_contact_content_cellular_off_alt",
+      "similarity": 0.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "update_contact_relationship_with_relationship",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "update_contact_relationship_with_relationship_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.25,
+      "minefield_similarity": 0.0,
+      "scenario": "find_days_till_holiday",
+      "similarity": 0.25,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_days_till_holiday_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_days_till_holiday_wifi_off",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_days_till_holiday_wifi_off_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_temperature_f_with_location",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_temperature_f_with_location_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_temperature_f_with_location_wifi_off",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_temperature_f_with_location_wifi_off_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_temperature_low_battery_mode",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_temperature_low_battery_mode_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_stock_symbol_with_company_name_low_battery_mode",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_stock_symbol_with_company_name_low_battery_mode_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_current_city_low_battery_mode",
+      "similarity": 0.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_current_city_low_battery_mode_alt",
+      "similarity": 0.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_distance_with_location_name",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_distance_with_location_name_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_reminder_with_recency_upcoming",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_reminder_with_recency_upcoming_implicit",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_reminder_with_recency_yesterday",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_reminder_with_recency_yesterday_implicit",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_reminder_with_creation_recency_yesterday",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_reminder_with_creation_recency_yesterday_implicit",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.5,
+      "minefield_similarity": 0.0,
+      "scenario": "add_reminder_content_and_date_and_time",
+      "similarity": 0.5,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "add_reminder_content_and_date_and_time_alt",
+      "similarity": 0.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "add_reminder_content_and_week_delta_and_time",
+      "similarity": 0.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "add_reminder_content_and_week_delta_and_time_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "add_reminder_content_and_weekday_delta_and_time",
+      "similarity": 0.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "add_reminder_content_and_weekday_delta_and_time_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "add_reminder_content_and_week_delta_and_time_and_location",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "add_reminder_content_and_week_delta_and_time_and_location_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "modify_reminder_with_recency_latest",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "modify_reminder_with_recency_latest_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "remove_reminder_with_recency_latest",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "remove_reminder_with_recency_latest_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_message_with_recency_latest_multiple_user_turn",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_message_with_recency_latest_multiple_user_turn_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_message_with_recency_oldest_multiple_user_turn",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_message_with_recency_oldest_multiple_user_turn_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "modify_contact_with_message_recency_multiple_user_turn",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "modify_contact_with_message_recency_multiple_user_turn_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "remove_contact_by_phone_multiple_user_turn",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "remove_contact_by_phone_multiple_user_turn_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "send_message_with_contact_content_cellular_off_multiple_user_turn",
+      "similarity": 0.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "send_message_with_contact_content_cellular_off_multiple_user_turn_alt",
+      "similarity": 0.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "update_contact_relationship_with_relationship_multiple_user_turn",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "update_contact_relationship_with_relationship_twice_multiple_user_turn",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.25,
+      "minefield_similarity": 0.0,
+      "scenario": "find_days_till_holiday_multiple_user_turn",
+      "similarity": 0.25,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_days_till_holiday_wifi_off_multiple_user_turn",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_temperature_f_with_location_and_time_diff_multiple_user_turn",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_temperature_f_with_location_and_time_diff_wifi_off_multiple_user_turn",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_temperature_f_with_location_and_time_diff_low_battery_mode_multiple_user_turn",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_distance_with_location_name_multiple_user_turn",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS",
+        "STATE_DEPENDENCY"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_distance_with_location_name_low_battery_mode_multiple_user_turn",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "add_reminder_content_and_date_and_time_multiple_user_turn",
+      "similarity": 0.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "add_reminder_content_and_date_and_time_multiple_user_turn_alt",
+      "similarity": 0.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "add_reminder_content_and_week_delta_and_time_multiple_user_turn",
+      "similarity": 0.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "add_reminder_content_and_week_delta_and_time_multiple_user_turn_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "add_reminder_content_and_weekday_delta_and_time_multiple_user_turn",
+      "similarity": 0.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "add_reminder_content_and_weekday_delta_and_time_multiple_user_turn_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "add_reminder_content_and_week_delta_and_time_and_location_multiple_user_turn",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "add_reminder_content_and_week_delta_and_time_and_location_multiple_user_turn_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "add_reminder_content_and_week_delta_and_time_and_location_low_battery_mode_multiple_user_turn_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_current_city_insufficient_information",
+      "similarity": 1.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_current_location_insufficient_information",
+      "similarity": 1.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_current_city_low_battery_mode_insufficient_information",
+      "similarity": 1.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_current_location_low_battery_mode_insufficient_information",
+      "similarity": 1.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_min_temperature_weekday_insufficient_information",
+      "similarity": 1.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_min_temperature_weekday_insufficient_information_alt",
+      "similarity": 1.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_days_till_holiday_insufficient_information",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_days_till_holiday_insufficient_information_alt",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_temperature_f_with_location_insufficient_information",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_temperature_f_with_location_insufficient_information_alt",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "modify_contact_with_message_recency_insufficient_information",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "modify_contact_with_message_recency_insufficient_information_alt",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "remove_contact_by_phone_no_remove_contact_insufficient_information",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 0.0,
+      "minefield_similarity": 0.0,
+      "scenario": "remove_contact_by_phone_no_remove_contact_insufficient_information_alt",
+      "similarity": 0.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "remove_contact_by_phone_no_search_contacts_insufficient_information",
+      "similarity": 1.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "remove_contact_by_phone_no_search_contacts_insufficient_information_alt",
+      "similarity": 1.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "send_message_with_contact_content_cellular_off_insufficient_information",
+      "similarity": 1.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "send_message_with_contact_content_cellular_off_insufficient_information_alt",
+      "similarity": 1.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_distance_with_location_name_insufficient_information",
+      "similarity": 1.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "find_distance_with_location_name_insufficient_information_alt",
+      "similarity": 1.0,
+      "turn_count": 1
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_reminder_with_recency_upcoming_insufficient_information",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_reminder_with_recency_upcoming_insufficient_information_implicit",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_reminder_with_recency_yesterday_insufficient_information",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_reminder_with_recency_yesterday_insufficient_information_implicit",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_reminder_with_creation_recency_yesterday_insufficient_information",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "search_reminder_with_creation_recency_yesterday_insufficient_information_implicit",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "modify_reminder_with_recency_latest_insufficient_information",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "remove_reminder_with_recency_latest_insufficient_information",
+      "similarity": 1.0,
+      "turn_count": 3
+    }
+  ],
+  "schema_version": 1,
+  "scripted_user_policy": "terminate_after_first_agent_response; multi-tool and multi-user-turn scenarios are intentionally truncated",
+  "selection": {
+    "augmentation_variants_excluded": true,
+    "base_scenario_count": 129,
+    "official_scenario_universe_count": 1032,
+    "scenario_universe": "base_scenarios_only",
+    "selection_policy": "names_without_tool_or_argument_augmentation_suffixes"
+  },
+  "source_files": [
+    {
+      "bytes": 48824,
+      "path": "/private/tmp/toolsandbox-audit/README.md",
+      "sha256": "0e5cfb9077769e2dcbe74dbfc8b8fac8314d8a213ab34364ab6b2ecaf47d8fe8"
+    },
+    {
+      "bytes": 2668,
+      "path": "/private/tmp/toolsandbox-audit/LICENSE",
+      "sha256": "2283d5566b38210fbfb9fcb06619f1d0a8101bff9df974ea8afc3393508e9015"
+    },
+    {
+      "bytes": 56027,
+      "path": "/private/tmp/toolsandbox-audit/tool_sandbox/common/evaluation.py",
+      "sha256": "0425cff032bd1ca2ebe8cc1c875cdf2ea86463af24b2940734007d938e516ab3"
+    },
+    {
+      "bytes": 35461,
+      "path": "/private/tmp/toolsandbox-audit/tool_sandbox/common/execution_context.py",
+      "sha256": "a18f54e157b92fa011e84780bc33941ea0635ad70ab4b38e7408beedc6221437"
+    },
+    {
+      "bytes": 5572,
+      "path": "/private/tmp/toolsandbox-audit/tool_sandbox/scenarios/__init__.py",
+      "sha256": "113cc01d10bb1630a93e09785893235ae4a3863d3a61542839eeb2791914724a"
+    }
+  ],
+  "source_revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+  "source_url": "https://github.com/apple/ToolSandbox",
+  "success_count": 30,
+  "success_rate": 0.23255813953488372,
+  "task_count": 129,
+  "user_simulator_executed": false,
+  "verifier_executed": true
+}

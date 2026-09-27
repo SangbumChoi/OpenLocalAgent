@@ -1,0 +1,302 @@
+{
+  "child": {
+    "bytes": 52321316,
+    "path": "/private/tmp/sft-androidcontrol84k-mcp-service-probe-random-v2.pt",
+    "sha256": "c5d1d9b90b6238256bfce25c54edfe3adb3bb9cdc14d17ad27ce14798aba721f"
+  },
+  "claim_boundary": "Matched random-backbone control for a synthetic service/tool-contract probe; MCPMark values are task-description routing proxy metrics only, not live MCP execution, verifier success, pass@k, or an official leaderboard score.",
+  "comparison": {
+    "random_backbone": {
+      "route_accuracy": 0.4728033472803347,
+      "selector_top1": 0.23430962343096234,
+      "selector_top3": 0.6443514644351465
+    },
+    "random_minus_transfer": {
+      "route_accuracy": 0.004184100418409997,
+      "selector_top1": -0.13807531380753135,
+      "selector_top3": -0.05439330543933052
+    },
+    "rows": 239,
+    "transfer_pretrained_frozen": {
+      "route_accuracy": 0.4686192468619247,
+      "selector_top1": 0.3723849372384937,
+      "selector_top3": 0.698744769874477
+    }
+  },
+  "head_metrics": {
+    "route_accuracy": 1.0,
+    "rows": 28,
+    "selector_top1": 1.0,
+    "selector_top3": 1.0,
+    "tool_rows": 28
+  },
+  "kind": "localagent_mcp_service_contract_no_transfer_probe",
+  "mcpmark": {
+    "easy": {
+      "by_difficulty": {
+        "L1": {
+          "route_accuracy": 0.2714285714285714,
+          "route_correct": 19,
+          "rows": 70,
+          "selector_top1": 0.22857142857142856,
+          "selector_top3": 0.6428571428571429
+        }
+      },
+      "by_service": {
+        "filesystem": {
+          "route_accuracy": 0.6,
+          "route_correct": 6,
+          "rows": 10,
+          "selector_top1": 0.0,
+          "selector_top3": 0.5
+        },
+        "github": {
+          "route_accuracy": 0.7,
+          "route_correct": 7,
+          "rows": 10,
+          "selector_top1": 0.0,
+          "selector_top3": 0.9
+        },
+        "notion": {
+          "route_accuracy": 0.2,
+          "route_correct": 2,
+          "rows": 10,
+          "selector_top1": 0.7,
+          "selector_top3": 1.0
+        },
+        "playwright": {
+          "route_accuracy": 0.1,
+          "route_correct": 1,
+          "rows": 10,
+          "selector_top1": 0.0,
+          "selector_top3": 0.0
+        },
+        "postgres": {
+          "route_accuracy": 0.1,
+          "route_correct": 3,
+          "rows": 30,
+          "selector_top1": 0.3,
+          "selector_top3": 0.7
+        }
+      },
+      "checkpoint": {
+        "bytes": 52321316,
+        "path": "/private/tmp/sft-androidcontrol84k-mcp-service-probe-random-v2.pt",
+        "sha256": "c5d1d9b90b6238256bfce25c54edfe3adb3bb9cdc14d17ad27ce14798aba721f"
+      },
+      "claim_boundary": "Public MCPMark task-description service-routing proxy only; not live MCP execution, verifier success, pass@k, or official leaderboard evaluation.",
+      "dataset": {
+        "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+        "suite": "easy",
+        "url": "https://github.com/eval-sys/mcpmark"
+      },
+      "kind": "localagent_mcpmark_task_router_proxy",
+      "overall": {
+        "route_accuracy": 0.2714285714285714,
+        "route_correct": 19,
+        "rows": 70,
+        "selector_top1": 0.22857142857142856,
+        "selector_top3": 0.6428571428571429
+      },
+      "schema_version": 1,
+      "source": {
+        "checkout": "/private/tmp/mcpmark",
+        "mcp_servers_executed": false,
+        "metadata_and_description_bytes": 385446,
+        "task_manifest_sha256": "f8eea15c843ee222c3899849d724ddbe6cd89f0f709ff7a84659d9cafef52f06",
+        "task_rows": 70,
+        "task_text_retained": false,
+        "verifiers_executed": false
+      },
+      "tool_family_contract": {
+        "filesystem": [
+          "find_files",
+          "grep_search",
+          "list_dir",
+          "make_dir",
+          "read_file",
+          "unzip",
+          "write_file"
+        ],
+        "github": [
+          "apply_patch",
+          "git_commit",
+          "git_diff",
+          "git_status",
+          "http_request",
+          "read_file",
+          "run_command",
+          "write_file"
+        ],
+        "notion": [
+          "notion_create_page",
+          "notion_write"
+        ],
+        "playwright": [
+          "click",
+          "double_click",
+          "drag",
+          "key_press",
+          "move_cursor",
+          "open_url",
+          "screenshot",
+          "scroll",
+          "type_text",
+          "wait"
+        ],
+        "postgres": [
+          "sql_query"
+        ]
+      }
+    },
+    "standard": {
+      "by_difficulty": {
+        "L3": {
+          "route_accuracy": 0.5562130177514792,
+          "route_correct": 94,
+          "rows": 169,
+          "selector_top1": 0.23668639053254437,
+          "selector_top3": 0.6449704142011834
+        }
+      },
+      "by_service": {
+        "filesystem": {
+          "route_accuracy": 0.7333333333333333,
+          "route_correct": 22,
+          "rows": 30,
+          "selector_top1": 0.03333333333333333,
+          "selector_top3": 0.4666666666666667
+        },
+        "github": {
+          "route_accuracy": 0.782608695652174,
+          "route_correct": 18,
+          "rows": 23,
+          "selector_top1": 0.0,
+          "selector_top3": 0.43478260869565216
+        },
+        "notion": {
+          "route_accuracy": 0.10714285714285714,
+          "route_correct": 3,
+          "rows": 28,
+          "selector_top1": 0.5714285714285714,
+          "selector_top3": 0.9642857142857143
+        },
+        "playwright": {
+          "route_accuracy": 0.84,
+          "route_correct": 21,
+          "rows": 25,
+          "selector_top1": 0.08,
+          "selector_top3": 0.28
+        },
+        "postgres": {
+          "route_accuracy": 0.47619047619047616,
+          "route_correct": 30,
+          "rows": 63,
+          "selector_top1": 0.3333333333333333,
+          "selector_top3": 0.8095238095238095
+        }
+      },
+      "checkpoint": {
+        "bytes": 52321316,
+        "path": "/private/tmp/sft-androidcontrol84k-mcp-service-probe-random-v2.pt",
+        "sha256": "c5d1d9b90b6238256bfce25c54edfe3adb3bb9cdc14d17ad27ce14798aba721f"
+      },
+      "claim_boundary": "Public MCPMark task-description service-routing proxy only; not live MCP execution, verifier success, pass@k, or official leaderboard evaluation.",
+      "dataset": {
+        "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+        "suite": "standard",
+        "url": "https://github.com/eval-sys/mcpmark"
+      },
+      "kind": "localagent_mcpmark_task_router_proxy",
+      "overall": {
+        "route_accuracy": 0.5562130177514792,
+        "route_correct": 94,
+        "rows": 169,
+        "selector_top1": 0.23668639053254437,
+        "selector_top3": 0.6449704142011834
+      },
+      "schema_version": 1,
+      "source": {
+        "checkout": "/private/tmp/mcpmark",
+        "mcp_servers_executed": false,
+        "metadata_and_description_bytes": 1272143,
+        "task_manifest_sha256": "b35b92adfb8a846eb32dc36c411c17aa5ecf757e5b63aeaa1671755f475686d5",
+        "task_rows": 169,
+        "task_text_retained": false,
+        "verifiers_executed": false
+      },
+      "tool_family_contract": {
+        "filesystem": [
+          "find_files",
+          "grep_search",
+          "list_dir",
+          "make_dir",
+          "read_file",
+          "unzip",
+          "write_file"
+        ],
+        "github": [
+          "apply_patch",
+          "git_commit",
+          "git_diff",
+          "git_status",
+          "http_request",
+          "read_file",
+          "run_command",
+          "write_file"
+        ],
+        "notion": [
+          "notion_create_page",
+          "notion_write"
+        ],
+        "playwright": [
+          "click",
+          "double_click",
+          "drag",
+          "key_press",
+          "move_cursor",
+          "open_url",
+          "screenshot",
+          "scroll",
+          "type_text",
+          "wait"
+        ],
+        "postgres": [
+          "sql_query"
+        ]
+      }
+    }
+  },
+  "parent": {
+    "bytes": 52320006,
+    "path": "/private/tmp/sft-androidcontrol84k-4096-dispatch.pt",
+    "sha256": "0d0ae0bb4a4f35b40bb9ba5d2e234e3ec389e12758b6dd2527e072e9b7589251"
+  },
+  "receipt_self_sha256": "e8c0c98dfd4569ee53bf3738f9080a6580b10203ed4233ce9ef1ea2b38c6eca5",
+  "schema_version": 1,
+  "training": {
+    "backbone_initialization": "deterministic_random",
+    "decisions": 28,
+    "mcpmark_task_text_used": false,
+    "random_seed": 2028,
+    "route_steps": 800,
+    "rows": 28,
+    "selector_steps": 800,
+    "services": [
+      "filesystem",
+      "github",
+      "notion",
+      "playwright",
+      "postgres"
+    ],
+    "source_text": "generated service/tool contracts only"
+  },
+  "transfer_reference": {
+    "backbone_initialization": "pretrained_frozen",
+    "combined_route_accuracy": 0.4686192468619247,
+    "combined_selector_top1": 0.3723849372384937,
+    "combined_selector_top3": 0.698744769874477,
+    "receipt": "docs/paper/results/raw/m38-mcp-service-contract-probe-v1.json",
+    "receipt_sha256": "b2758593f5520eb25e505bbfac0361b4f4845852863268a156f0cfcd27cfc1cb"
+  }
+}

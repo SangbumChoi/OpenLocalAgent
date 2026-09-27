@@ -1,0 +1,967 @@
+{
+  "benchmark_id": "cross_surface_all_public_train_candidates_transfer",
+  "claim_boundary": "Diagnostic only: this is a matched six-source public-train text/accessibility continuation and weight-lineage control. It is not an official score for AndroidControl, AITW, AgentNet, Mind2Web, ToolACE, or xLAM; it is not native mobile, browser, desktop, MCP, email, or Notion success; and it does not establish screenshot grounding or external side effects.",
+  "comparison": {
+    "aggregate": {
+      "random_after_token_accuracy": 0.0,
+      "warm_after_token_accuracy": 0.5372460496613995,
+      "warm_minus_random_after_pp": 53.72460496613996,
+      "warm_start_better_after": true
+    },
+    "arm_contract": {
+      "random_backbone_init": "random",
+      "random_backbone_seed": 2028,
+      "warm_backbone_init": "parent"
+    },
+    "claim_boundary": "Matched public-train-only text/accessibility continuation comparison; this is not an official benchmark score, native environment success, screenshot-grounding result, or evidence of real email/Notion/MCP side effects.",
+    "decision": "warm_start_dominates_matched_random_on_all_surfaces",
+    "eval_sources": [
+      {
+        "datasets": [],
+        "input": {
+          "bytes": 2735008,
+          "path": "/private/tmp/androidcontrol84k-conversations.test.jsonl",
+          "sha256": "2d798115fe0feb14ac6d65f86a4b51b4463b593a35281eedce4de8751356bc95"
+        },
+        "label": "androidcontrol",
+        "public_reference": {
+          "dataset": "OfficerChul/Android-Control-84k",
+          "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+        },
+        "revisions": [
+          "hf:OfficerChul/Android-Control-84k"
+        ],
+        "rows": 4,
+        "source_families": [
+          "androidcontrol_json_mirror"
+        ],
+        "source_urls": [],
+        "splits": [
+          "test"
+        ],
+        "unique_parent_records": 0,
+        "visual_input_omitted_rows": 4
+      },
+      {
+        "datasets": [
+          "google/android-in-the-wild"
+        ],
+        "input": {
+          "bytes": 55277,
+          "path": "/private/tmp/m361-aitw-local-holdout/eval.jsonl",
+          "sha256": "465aaba414e2ef8964b48a65660457dc5c7dbdaab2a9997c9df7b9510dcb9943"
+        },
+        "label": "aitw",
+        "public_reference": {
+          "dataset": "google/android-in-the-wild",
+          "url": "https://github.com/google-research/google-research/tree/master/android_in_the_wild"
+        },
+        "revisions": [
+          "generation=1686095863743117; normalization=1"
+        ],
+        "rows": 4,
+        "source_families": [],
+        "source_urls": [
+          "https://github.com/google-research/google-research/tree/master/android_in_the_wild"
+        ],
+        "splits": [
+          "general/general-00001-of-00321",
+          "train"
+        ],
+        "unique_parent_records": 2,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "xlangai/AgentNet"
+        ],
+        "input": {
+          "bytes": 239724,
+          "path": "/private/tmp/agentnet_text_v4.eval.jsonl",
+          "sha256": "2cadf65145b07734eb13988dc305396d027f6e98d1a5a7cf7de9a5fd31c3dc7c"
+        },
+        "label": "agentnet",
+        "public_reference": {
+          "dataset": "xlangai/AgentNet",
+          "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+        },
+        "revisions": [
+          "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+        ],
+        "rows": 4,
+        "source_families": [
+          "xlangai/AgentNet"
+        ],
+        "source_urls": [],
+        "splits": [
+          "ubuntu_jsonl_bounded_prefix"
+        ],
+        "unique_parent_records": 1,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "osunlp/Mind2Web"
+        ],
+        "input": {
+          "bytes": 81803,
+          "path": "/private/tmp/mind2web-grounded-offset8-eval-disjoint.jsonl",
+          "sha256": "46305cb512f7368ed31817c79b798f5469e8658db12aed5d6880ea81b4e6fcbe"
+        },
+        "label": "mind2web",
+        "public_reference": {
+          "dataset": "osunlp/Mind2Web",
+          "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+        },
+        "revisions": [
+          "17ece8eb89862368edc0cc806acee6fca5163474"
+        ],
+        "rows": 4,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/osunlp/Mind2Web"
+        ],
+        "splits": [
+          "train"
+        ],
+        "unique_parent_records": 1,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "Team-ACE/ToolACE"
+        ],
+        "input": {
+          "bytes": 3673279,
+          "path": "/private/tmp/toolace-action-eval.jsonl",
+          "sha256": "472dc36be441bf929c03f33b5591eff267db0975df5b60f240d1931566de7c7d"
+        },
+        "label": "toolace",
+        "public_reference": {
+          "dataset": "Team-ACE/ToolACE",
+          "url": "https://huggingface.co/datasets/Team-ACE/ToolACE"
+        },
+        "revisions": [
+          "6bda777c88d21e5a204703c1ee45597a8fa4f734"
+        ],
+        "rows": 4,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/Team-ACE/ToolACE"
+        ],
+        "splits": [
+          "eval",
+          "source_record_disjoint_eval"
+        ],
+        "unique_parent_records": 4,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "product-science/xlam-function-calling-60k-raw"
+        ],
+        "input": {
+          "bytes": 2731545,
+          "path": "/private/tmp/xlam-derivative-eval.jsonl",
+          "sha256": "e9089d092d3136f1703a85bbd3d8b7bf1e55feb89ff3bf11476dbb155331999a"
+        },
+        "label": "xlam",
+        "public_reference": {
+          "dataset": "Salesforce/xlam-function-calling-60k",
+          "url": "https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k"
+        },
+        "revisions": [
+          "dfbd3c669354c27f2727870d39a4d86c32381448"
+        ],
+        "rows": 4,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+        ],
+        "splits": [
+          "eval"
+        ],
+        "unique_parent_records": 4,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "hyperparameters": {
+      "backbone_init": "parent",
+      "batch_size": 4,
+      "device": "cpu",
+      "learning_rate": 1e-05,
+      "max_eval_rows_per_source": 4,
+      "max_seq_len": 1024,
+      "max_train_rows_per_source": 4,
+      "random_backbone_seed": 2028,
+      "seed": 2027,
+      "steps": 8
+    },
+    "kind": "localagent_cross_surface_transfer_ablation_report",
+    "parent": {
+      "bytes": 52242001,
+      "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+      "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+    },
+    "random_backbone_receipt": {
+      "bytes": 52253750,
+      "path": "/private/tmp/m361-unified-random.pt",
+      "sha256": "ce50de484ba19288489bac5f20114c07f411ea2e917f44fbe0dfe83042bc3ca1"
+    },
+    "random_weight_groups": {
+      "action_heads": {
+        "base_l2": 99.96533739276437,
+        "delta_l2": 0.0,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.0,
+        "target_l2": 99.96533739276437
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.68591919503937,
+        "delta_l2": 40.2546989417312,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.7788329891131104,
+        "target_l2": 50.410469073433134
+      },
+      "embedding": {
+        "base_l2": 76.22106199454595,
+        "delta_l2": 91.2534754059535,
+        "parameters": 6291456,
+        "relative_delta_l2": 1.1972212537852491,
+        "target_l2": 50.19012253186461
+      },
+      "ffn": {
+        "base_l2": 50.59914708877707,
+        "delta_l2": 44.42214889270827,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.8779228791103701,
+        "target_l2": 49.791965927307864
+      },
+      "normalization": {
+        "base_l2": 21.432378276078357,
+        "delta_l2": 1.8375605305217593,
+        "parameters": 384,
+        "relative_delta_l2": 0.08573759322700754,
+        "target_l2": 19.59583219078174
+      }
+    },
+    "rows": {
+      "eval": 24,
+      "train": 24
+    },
+    "schema_version": 1,
+    "surfaces": {
+      "agentnet": {
+        "random_backbone": {
+          "after_token_accuracy": 0.0,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.0
+        },
+        "rows": 4,
+        "warm_minus_random_after_pp": 50.34013605442177,
+        "warm_start": {
+          "after_token_accuracy": 0.5034013605442177,
+          "before_token_accuracy": 0.48299319727891155,
+          "delta_token_accuracy": 0.020408163265306145
+        },
+        "warm_start_better_after": true
+      },
+      "aitw": {
+        "random_backbone": {
+          "after_token_accuracy": 0.0,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.0
+        },
+        "rows": 4,
+        "warm_minus_random_after_pp": 11.11111111111111,
+        "warm_start": {
+          "after_token_accuracy": 0.1111111111111111,
+          "before_token_accuracy": 0.1111111111111111,
+          "delta_token_accuracy": 0.0
+        },
+        "warm_start_better_after": true
+      },
+      "androidcontrol": {
+        "random_backbone": {
+          "after_token_accuracy": 0.0,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.0
+        },
+        "rows": 4,
+        "warm_minus_random_after_pp": 71.69811320754717,
+        "warm_start": {
+          "after_token_accuracy": 0.7169811320754716,
+          "before_token_accuracy": 0.6792452830188679,
+          "delta_token_accuracy": 0.037735849056603765
+        },
+        "warm_start_better_after": true
+      },
+      "mind2web": {
+        "random_backbone": {
+          "after_token_accuracy": 0.0,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.0
+        },
+        "rows": 4,
+        "warm_minus_random_after_pp": 67.2,
+        "warm_start": {
+          "after_token_accuracy": 0.672,
+          "before_token_accuracy": 0.648,
+          "delta_token_accuracy": 0.02400000000000002
+        },
+        "warm_start_better_after": true
+      },
+      "toolace": {
+        "random_backbone": {
+          "after_token_accuracy": 0.0,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.0
+        },
+        "rows": 4,
+        "warm_minus_random_after_pp": 45.3757225433526,
+        "warm_start": {
+          "after_token_accuracy": 0.45375722543352603,
+          "before_token_accuracy": 0.4508670520231214,
+          "delta_token_accuracy": 0.0028901734104046506
+        },
+        "warm_start_better_after": true
+      },
+      "xlam": {
+        "random_backbone": {
+          "after_token_accuracy": 0.0,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.0
+        },
+        "rows": 4,
+        "warm_minus_random_after_pp": 47.33542319749217,
+        "warm_start": {
+          "after_token_accuracy": 0.47335423197492166,
+          "before_token_accuracy": 0.43573667711598746,
+          "delta_token_accuracy": 0.0376175548589342
+        },
+        "warm_start_better_after": true
+      }
+    },
+    "train_sources": [
+      {
+        "datasets": [],
+        "input": {
+          "bytes": 12435496,
+          "path": "/private/tmp/androidcontrol84k-conversations.train4096.jsonl",
+          "sha256": "6971d5fe81fe3c6e8ee12e0072481ec653f98bdb5699af54e8f63649358743fd"
+        },
+        "label": "androidcontrol",
+        "public_reference": {
+          "dataset": "OfficerChul/Android-Control-84k",
+          "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+        },
+        "revisions": [
+          "hf:OfficerChul/Android-Control-84k@train4096"
+        ],
+        "rows": 4,
+        "source_families": [
+          "androidcontrol_json_mirror"
+        ],
+        "source_urls": [],
+        "splits": [
+          "train"
+        ],
+        "unique_parent_records": 0,
+        "visual_input_omitted_rows": 4
+      },
+      {
+        "datasets": [
+          "google/android-in-the-wild"
+        ],
+        "input": {
+          "bytes": 196509,
+          "path": "/private/tmp/m361-aitw-local-holdout/train.jsonl",
+          "sha256": "ce8525da615f6c1cfdd80cc70217e28bbd2f3e469527cc5a4c772b75b2828370"
+        },
+        "label": "aitw",
+        "public_reference": {
+          "dataset": "google/android-in-the-wild",
+          "url": "https://github.com/google-research/google-research/tree/master/android_in_the_wild"
+        },
+        "revisions": [
+          "generation=1686095863743117; normalization=1"
+        ],
+        "rows": 4,
+        "source_families": [],
+        "source_urls": [
+          "https://github.com/google-research/google-research/tree/master/android_in_the_wild"
+        ],
+        "splits": [
+          "general/general-00001-of-00321",
+          "train"
+        ],
+        "unique_parent_records": 2,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "xlangai/AgentNet"
+        ],
+        "input": {
+          "bytes": 911095,
+          "path": "/private/tmp/agentnet_text_v4.train.jsonl",
+          "sha256": "44fad4c6e98fb6f5afd3cc45b89e1c1987d5d273293922521ef67677ace79db8"
+        },
+        "label": "agentnet",
+        "public_reference": {
+          "dataset": "xlangai/AgentNet",
+          "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+        },
+        "revisions": [
+          "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+        ],
+        "rows": 4,
+        "source_families": [
+          "xlangai/AgentNet"
+        ],
+        "source_urls": [],
+        "splits": [
+          "ubuntu_jsonl_bounded_prefix"
+        ],
+        "unique_parent_records": 1,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "osunlp/Mind2Web"
+        ],
+        "input": {
+          "bytes": 282261,
+          "path": "/private/tmp/mind2web-grounded-offset8-train-disjoint.jsonl",
+          "sha256": "78f7e647c3728106901c51ecc772c834467ef6a019c1c083af6849700b361621"
+        },
+        "label": "mind2web",
+        "public_reference": {
+          "dataset": "osunlp/Mind2Web",
+          "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+        },
+        "revisions": [
+          "17ece8eb89862368edc0cc806acee6fca5163474"
+        ],
+        "rows": 4,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/osunlp/Mind2Web"
+        ],
+        "splits": [
+          "train"
+        ],
+        "unique_parent_records": 1,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "Team-ACE/ToolACE"
+        ],
+        "input": {
+          "bytes": 30732018,
+          "path": "/private/tmp/toolace-action-train.jsonl",
+          "sha256": "77e75db2caec61b39d08c784544390e2242b49db1d6833424c2dacf6940e8881"
+        },
+        "label": "toolace",
+        "public_reference": {
+          "dataset": "Team-ACE/ToolACE",
+          "url": "https://huggingface.co/datasets/Team-ACE/ToolACE"
+        },
+        "revisions": [
+          "6bda777c88d21e5a204703c1ee45597a8fa4f734"
+        ],
+        "rows": 4,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/Team-ACE/ToolACE"
+        ],
+        "splits": [
+          "source_record_disjoint_train",
+          "train"
+        ],
+        "unique_parent_records": 4,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "product-science/xlam-function-calling-60k-raw"
+        ],
+        "input": {
+          "bytes": 10724230,
+          "path": "/private/tmp/xlam-derivative-train.jsonl",
+          "sha256": "0e66edaeef3fed8403939f6f7df97ac135f5e2002c8230f55aeb86c39a2ce429"
+        },
+        "label": "xlam",
+        "public_reference": {
+          "dataset": "Salesforce/xlam-function-calling-60k",
+          "url": "https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k"
+        },
+        "revisions": [
+          "dfbd3c669354c27f2727870d39a4d86c32381448"
+        ],
+        "rows": 4,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+        ],
+        "splits": [
+          "train"
+        ],
+        "unique_parent_records": 4,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "warm_start_receipt": {
+      "bytes": 52253636,
+      "path": "/private/tmp/m361-unified-warm.pt",
+      "sha256": "c40624bd720d8937aa46117ad72ad015b62e6c29a161abd064ab75018ce739c2"
+    },
+    "warm_weight_groups": {
+      "action_heads": {
+        "base_l2": 99.96533739276437,
+        "delta_l2": 0.0,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.0,
+        "target_l2": 99.96533739276437
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.68591919503937,
+        "delta_l2": 0.034839311969093456,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0006740580899340416,
+        "target_l2": 51.68595166120564
+      },
+      "embedding": {
+        "base_l2": 76.22106199454595,
+        "delta_l2": 0.0716907112959237,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.0009405630073883461,
+        "target_l2": 76.24860051666285
+      },
+      "ffn": {
+        "base_l2": 50.59914708877707,
+        "delta_l2": 0.0403349287603718,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0007971464161165301,
+        "target_l2": 50.599280644698695
+      },
+      "normalization": {
+        "base_l2": 21.432378276078357,
+        "delta_l2": 0.0005243934942676906,
+        "parameters": 384,
+        "relative_delta_l2": 2.446734970392856e-05,
+        "target_l2": 21.432110129508533
+      }
+    }
+  },
+  "dataset_provenance": {
+    "native_execution": false,
+    "official_split_verified": false,
+    "projection_boundaries": {
+      "agentnet": "Bounded text/terminal-prefix projection; no native Ubuntu VM or external computer side effect ran.",
+      "aitw": "Local four-row holdout derived from the public AITW train file by whole parent IDs; it is not the official AITW test split and no visual/native replay ran.",
+      "androidcontrol": "Public text/accessibility action mirror; all selected rows omit screenshots and no Android emulator ran.",
+      "mind2web": "Grounded DOM/accessibility action projection with source-disjoint parent IDs; no BrowserGym or live website replay ran.",
+      "toolace": "Source-record-disjoint function-call/action projection; no tool server, MCP verifier, or external account ran.",
+      "xlam": "Derivative function-call projection from the public xLAM raw source; no external tool or account side effect ran."
+    },
+    "public_candidate_count": 6,
+    "source_manifest": {
+      "agentnet": {
+        "eval": {
+          "bytes": 239724,
+          "datasets": [
+            "xlangai/AgentNet"
+          ],
+          "path": "/private/tmp/agentnet_text_v4.eval.jsonl",
+          "revisions": [
+            "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+          ],
+          "rows": 4,
+          "sha256": "2cadf65145b07734eb13988dc305396d027f6e98d1a5a7cf7de9a5fd31c3dc7c",
+          "splits": [
+            "ubuntu_jsonl_bounded_prefix"
+          ],
+          "unique_parent_records": 1,
+          "visual_input_omitted_rows": 0
+        },
+        "public_reference": {
+          "dataset": "xlangai/AgentNet",
+          "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+        },
+        "train": {
+          "bytes": 911095,
+          "datasets": [
+            "xlangai/AgentNet"
+          ],
+          "path": "/private/tmp/agentnet_text_v4.train.jsonl",
+          "revisions": [
+            "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+          ],
+          "rows": 4,
+          "sha256": "44fad4c6e98fb6f5afd3cc45b89e1c1987d5d273293922521ef67677ace79db8",
+          "splits": [
+            "ubuntu_jsonl_bounded_prefix"
+          ],
+          "unique_parent_records": 1,
+          "visual_input_omitted_rows": 0
+        }
+      },
+      "aitw": {
+        "eval": {
+          "bytes": 55277,
+          "datasets": [
+            "google/android-in-the-wild"
+          ],
+          "path": "/private/tmp/m361-aitw-local-holdout/eval.jsonl",
+          "revisions": [
+            "generation=1686095863743117; normalization=1"
+          ],
+          "rows": 4,
+          "sha256": "465aaba414e2ef8964b48a65660457dc5c7dbdaab2a9997c9df7b9510dcb9943",
+          "splits": [
+            "general/general-00001-of-00321",
+            "train"
+          ],
+          "unique_parent_records": 2,
+          "visual_input_omitted_rows": 0
+        },
+        "public_reference": {
+          "dataset": "google/android-in-the-wild",
+          "url": "https://github.com/google-research/google-research/tree/master/android_in_the_wild"
+        },
+        "train": {
+          "bytes": 196509,
+          "datasets": [
+            "google/android-in-the-wild"
+          ],
+          "path": "/private/tmp/m361-aitw-local-holdout/train.jsonl",
+          "revisions": [
+            "generation=1686095863743117; normalization=1"
+          ],
+          "rows": 4,
+          "sha256": "ce8525da615f6c1cfdd80cc70217e28bbd2f3e469527cc5a4c772b75b2828370",
+          "splits": [
+            "general/general-00001-of-00321",
+            "train"
+          ],
+          "unique_parent_records": 2,
+          "visual_input_omitted_rows": 0
+        }
+      },
+      "androidcontrol": {
+        "eval": {
+          "bytes": 2735008,
+          "datasets": [],
+          "path": "/private/tmp/androidcontrol84k-conversations.test.jsonl",
+          "revisions": [
+            "hf:OfficerChul/Android-Control-84k"
+          ],
+          "rows": 4,
+          "sha256": "2d798115fe0feb14ac6d65f86a4b51b4463b593a35281eedce4de8751356bc95",
+          "splits": [
+            "test"
+          ],
+          "unique_parent_records": 0,
+          "visual_input_omitted_rows": 4
+        },
+        "public_reference": {
+          "dataset": "OfficerChul/Android-Control-84k",
+          "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+        },
+        "train": {
+          "bytes": 12435496,
+          "datasets": [],
+          "path": "/private/tmp/androidcontrol84k-conversations.train4096.jsonl",
+          "revisions": [
+            "hf:OfficerChul/Android-Control-84k@train4096"
+          ],
+          "rows": 4,
+          "sha256": "6971d5fe81fe3c6e8ee12e0072481ec653f98bdb5699af54e8f63649358743fd",
+          "splits": [
+            "train"
+          ],
+          "unique_parent_records": 0,
+          "visual_input_omitted_rows": 4
+        }
+      },
+      "mind2web": {
+        "eval": {
+          "bytes": 81803,
+          "datasets": [
+            "osunlp/Mind2Web"
+          ],
+          "path": "/private/tmp/mind2web-grounded-offset8-eval-disjoint.jsonl",
+          "revisions": [
+            "17ece8eb89862368edc0cc806acee6fca5163474"
+          ],
+          "rows": 4,
+          "sha256": "46305cb512f7368ed31817c79b798f5469e8658db12aed5d6880ea81b4e6fcbe",
+          "splits": [
+            "train"
+          ],
+          "unique_parent_records": 1,
+          "visual_input_omitted_rows": 0
+        },
+        "public_reference": {
+          "dataset": "osunlp/Mind2Web",
+          "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+        },
+        "train": {
+          "bytes": 282261,
+          "datasets": [
+            "osunlp/Mind2Web"
+          ],
+          "path": "/private/tmp/mind2web-grounded-offset8-train-disjoint.jsonl",
+          "revisions": [
+            "17ece8eb89862368edc0cc806acee6fca5163474"
+          ],
+          "rows": 4,
+          "sha256": "78f7e647c3728106901c51ecc772c834467ef6a019c1c083af6849700b361621",
+          "splits": [
+            "train"
+          ],
+          "unique_parent_records": 1,
+          "visual_input_omitted_rows": 0
+        }
+      },
+      "toolace": {
+        "eval": {
+          "bytes": 3673279,
+          "datasets": [
+            "Team-ACE/ToolACE"
+          ],
+          "path": "/private/tmp/toolace-action-eval.jsonl",
+          "revisions": [
+            "6bda777c88d21e5a204703c1ee45597a8fa4f734"
+          ],
+          "rows": 4,
+          "sha256": "472dc36be441bf929c03f33b5591eff267db0975df5b60f240d1931566de7c7d",
+          "splits": [
+            "eval",
+            "source_record_disjoint_eval"
+          ],
+          "unique_parent_records": 4,
+          "visual_input_omitted_rows": 0
+        },
+        "public_reference": {
+          "dataset": "Team-ACE/ToolACE",
+          "url": "https://huggingface.co/datasets/Team-ACE/ToolACE"
+        },
+        "train": {
+          "bytes": 30732018,
+          "datasets": [
+            "Team-ACE/ToolACE"
+          ],
+          "path": "/private/tmp/toolace-action-train.jsonl",
+          "revisions": [
+            "6bda777c88d21e5a204703c1ee45597a8fa4f734"
+          ],
+          "rows": 4,
+          "sha256": "77e75db2caec61b39d08c784544390e2242b49db1d6833424c2dacf6940e8881",
+          "splits": [
+            "source_record_disjoint_train",
+            "train"
+          ],
+          "unique_parent_records": 4,
+          "visual_input_omitted_rows": 0
+        }
+      },
+      "xlam": {
+        "eval": {
+          "bytes": 2731545,
+          "datasets": [
+            "product-science/xlam-function-calling-60k-raw"
+          ],
+          "path": "/private/tmp/xlam-derivative-eval.jsonl",
+          "revisions": [
+            "dfbd3c669354c27f2727870d39a4d86c32381448"
+          ],
+          "rows": 4,
+          "sha256": "e9089d092d3136f1703a85bbd3d8b7bf1e55feb89ff3bf11476dbb155331999a",
+          "splits": [
+            "eval"
+          ],
+          "unique_parent_records": 4,
+          "visual_input_omitted_rows": 0
+        },
+        "public_reference": {
+          "dataset": "Salesforce/xlam-function-calling-60k",
+          "url": "https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k"
+        },
+        "train": {
+          "bytes": 10724230,
+          "datasets": [
+            "product-science/xlam-function-calling-60k-raw"
+          ],
+          "path": "/private/tmp/xlam-derivative-train.jsonl",
+          "revisions": [
+            "dfbd3c669354c27f2727870d39a4d86c32381448"
+          ],
+          "rows": 4,
+          "sha256": "0e66edaeef3fed8403939f6f7df97ac135f5e2002c8230f55aeb86c39a2ce429",
+          "splits": [
+            "train"
+          ],
+          "unique_parent_records": 4,
+          "visual_input_omitted_rows": 0
+        }
+      }
+    }
+  },
+  "decision": {
+    "adopt_parent_as_initialization_candidate": true,
+    "export_child_to_webgpu": false,
+    "native_promotion": false,
+    "overall": "diagnostic_only_keep_native_and_official_split_gates_open"
+  },
+  "input_reports": {
+    "random": {
+      "bytes": 17986,
+      "path": "/private/tmp/m361-unified-random.json",
+      "sha256": "54857cb1afa85e25a4fd056dece425b34a592a784ae2735b93b016849089f46e"
+    },
+    "warm": {
+      "bytes": 18249,
+      "path": "/private/tmp/m361-unified-warm.json",
+      "sha256": "e2051d4a1d57c4d8d5c254b1b873308baedbb92f78ea2e7c7f43518e3a1d677a"
+    }
+  },
+  "parent_checkpoint": {
+    "bytes": 52242001,
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+  },
+  "protocol": {
+    "backbone_initializations": {
+      "random": "deterministic_random",
+      "warm": "parent"
+    },
+    "batch_size": 4,
+    "device": "cpu",
+    "learning_rate": 1e-05,
+    "max_eval_rows_per_source": 4,
+    "max_seq_len": 1024,
+    "max_train_rows_per_source": 4,
+    "random_backbone_seed": 2028,
+    "rows_per_source": {
+      "eval": 4,
+      "train": 4
+    },
+    "seed": 2027,
+    "source_count": 6,
+    "steps": 8
+  },
+  "receipt_self_sha256": "7954a2c2cad65c5b1f625dcaa1981e3c7fd5cb5fa25acbfb9b81a791e4862fb9",
+  "schema_version": 1,
+  "weight_transfer_analysis": {
+    "interpretation": "The parent-initialized arm changes shared embedding, mixer, and FFN tensors by less than 0.1% relative L2 while the deterministic-random arm moves those groups by roughly 0.78-1.20x. Both arms leave the action heads unchanged in this continuation. This supports parent geometry as a compatible initialization candidate, not an optimality or promotion claim.",
+    "random": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 99.96533739276437,
+          "delta_l2": 0.0,
+          "parameters": 2518968,
+          "relative_delta_l2": 0.0,
+          "target_l2": 99.96533739276437
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.68591919503937,
+          "delta_l2": 40.2546989417312,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.7788329891131104,
+          "target_l2": 50.410469073433134
+        },
+        "embedding": {
+          "base_l2": 76.22106199454595,
+          "delta_l2": 91.2534754059535,
+          "parameters": 6291456,
+          "relative_delta_l2": 1.1972212537852491,
+          "target_l2": 50.19012253186461
+        },
+        "ffn": {
+          "base_l2": 50.59914708877707,
+          "delta_l2": 44.42214889270827,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.8779228791103701,
+          "target_l2": 49.791965927307864
+        },
+        "normalization": {
+          "base_l2": 21.432378276078357,
+          "delta_l2": 1.8375605305217593,
+          "parameters": 384,
+          "relative_delta_l2": 0.08573759322700754,
+          "target_l2": 19.59583219078174
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    },
+    "warm": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 99.96533739276437,
+          "delta_l2": 0.0,
+          "parameters": 2518968,
+          "relative_delta_l2": 0.0,
+          "target_l2": 99.96533739276437
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.68591919503937,
+          "delta_l2": 0.034839311969093456,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0006740580899340416,
+          "target_l2": 51.68595166120564
+        },
+        "embedding": {
+          "base_l2": 76.22106199454595,
+          "delta_l2": 0.0716907112959237,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.0009405630073883461,
+          "target_l2": 76.24860051666285
+        },
+        "ffn": {
+          "base_l2": 50.59914708877707,
+          "delta_l2": 0.0403349287603718,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.0007971464161165301,
+          "target_l2": 50.599280644698695
+        },
+        "normalization": {
+          "base_l2": 21.432378276078357,
+          "delta_l2": 0.0005243934942676906,
+          "parameters": 384,
+          "relative_delta_l2": 2.446734970392856e-05,
+          "target_l2": 21.432110129508533
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "checkpoint": {
+    "parameters": 10524544,
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+  },
+  "claim_boundary": "The publisher built and verified local model and static Space artifacts from the exact current checkpoint with one consistent 63-tool model/WebGPU dispatch pool. No Hub upload, public URL, anonymous Hub audit, native WebGPU hardware claim, benchmark score, or external side effect is implied.",
+  "generated_at": "2026-08-05",
+  "kind": "localagent_hf_paired_release_local_current",
+  "measurement": "m336_hf_paired_release_local_current_63_tool_pool",
+  "model": {
+    "files": {
+      "README.md": {"bytes": 3502, "sha256": "c5146d726ab75824c82047494f04c20e897d741307c03eee82d2b1ebe900e0c8"},
+      "agent_heads.bin": {"bytes": 10116038, "sha256": "f2af8f83698276b63d9def1f89c990ee9343c8360a30f6411267c0902fe0a128"},
+      "config.json": {"bytes": 38446, "sha256": "29ac9528d9af3b329fe4628966cf4fa0347f54060cceb18b74664fa6c8e0ab56"},
+      "model.safetensors": {"bytes": 42101904, "sha256": "c95406240d299e6846b79f347add8aede5707c761fc545184aa2c2149c504404"},
+      "tokenizer.json": {"bytes": 1134224, "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"}
+    },
+    "path": "/private/tmp/m336-hf-model",
+    "repo": "local/test-model-m336",
+    "tool_pool_count": 63,
+    "tool_pool_sha256": "fd3c5d30a3c7fcb2c010c04e79e1b47cd88e3897712e98f5a144d09699f25694"
+  },
+  "publication": {
+    "authenticated": false,
+    "published": false,
+    "reason": "local-only preparation; HF authentication was not configured",
+    "uploaded": false
+  },
+  "receipt_self_sha256": "47acbe374a2c237bd0e5504e05616f339750a670981997b120274296e1087e26",
+  "schema_version": 1,
+  "source": {
+    "app_sha256": "a2d8fed113f3a6716798a0d2ac656c47d17e759dc45b2899b50f65bc03160ca6",
+    "command": "python scripts/publish_hf_release.py --checkpoint runs/sft-webgpu-browser-context-adapter-20260802/latest.pt --model-repo <user>/localagent-webgpu-10m --space-repo <user>/localagent-webgpu --model-out <model-out> --web-out <web-out> --space-out <space-out>",
+    "demo_source": "spaces/localagent-webgpu",
+    "script": "scripts/publish_hf_release.py",
+    "tool_pool_source": "checkpoint 51-class fixed head with standard/mobile/productivity pool inference"
+  },
+  "space": {
+    "app_sha256": "a2d8fed113f3a6716798a0d2ac656c47d17e759dc45b2899b50f65bc03160ca6",
+    "bundle_identity_sha256": "e0e19a8ad529a23e6bd703ed310eabe95f0a7b6b8ca7ad984c2d0c5ec8a296ed",
+    "path": "/private/tmp/m336-space",
+    "repo": "local/test-space-m336",
+    "verified": true
+  },
+  "webgpu": {
+    "artifacts": {
+      "action_model.fp16.onnx": {"bytes": 21430301, "sha256": "8856dcaeca1ad2125b0ba34d0fa47da8f0271d3078195a9288862cd1603a1434"},
+      "action_model.onnx": {"bytes": 42700043, "sha256": "57751f41902a66a24fd9336de120c58b566018043c4131a10d10d003bf9df5f6"},
+      "bundle-manifest.json": {"bytes": 9310, "sha256": "f0c28409d75a03570c10aa4fa281e51ac1bc7b0c48608af1a7de3ea803ed94d7"},
+      "dispatch_heads.json": {"bytes": 1359146, "sha256": "8e89b3e2bdc372139b89c2b7b40a75ba6c520f25a01ae70ea2548e3e07cffad6"},
+      "heads.json": {"bytes": 3337015, "sha256": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486"},
+      "meta.json": {"bytes": 14728, "sha256": "d26f68ed2201f9db7d97898001b5dadfef484a39e497405975cf5e859693a8ce"},
+      "model.fp16.onnx": {"bytes": 34026169, "sha256": "d10584a5c41e281af13e4d6d45d4bc06bc5646434705b052b66cb75047ada1e0"},
+      "model.onnx": {"bytes": 67877334, "sha256": "74e4be16cc3090606c09ebb09c068fba7e9cb5ba096d05e1ce158279c8032fc2"},
+      "tokenizer.json": {"bytes": 1134224, "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"}
+    },
+    "bundle_identity_sha256": "e0e19a8ad529a23e6bd703ed310eabe95f0a7b6b8ca7ad984c2d0c5ec8a296ed",
+    "parity_gate": true,
+    "path": "/private/tmp/m336-web",
+    "tool_pool_count": 63,
+    "tool_pool_sha256": "fd3c5d30a3c7fcb2c010c04e79e1b47cd88e3897712e98f5a144d09699f25694"
+  }
+}

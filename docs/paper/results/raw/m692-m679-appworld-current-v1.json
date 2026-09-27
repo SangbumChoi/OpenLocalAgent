@@ -1,0 +1,256 @@
+{
+  "arms": {
+    "random": {
+      "after": {
+        "assistant_loss_tokens": 878,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.7403189066059226,
+        "mean_loss": 2.100799282482382,
+        "rows": 6
+      },
+      "before": {
+        "assistant_loss_tokens": 878,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.6389521640091116,
+        "mean_loss": 2.501932131130766,
+        "rows": 6
+      },
+      "child": {
+        "bytes": 52206759,
+        "path": "/private/tmp/m692-m679-appworld/random-child.pt",
+        "sha256": "0873136c164ab2ea3ebe9c6137bcecfae329ac84176f083b3d83fae9d67f135f"
+      },
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "heads": {
+        "after": {
+          "route_accuracy": 0.9047619047619048,
+          "rows": 21,
+          "selector_top1_accuracy": 0.0,
+          "tool_rows": 21
+        },
+        "before": {
+          "route_accuracy": 0.19047619047619047,
+          "rows": 21,
+          "selector_top1_accuracy": 0.0,
+          "tool_rows": 21
+        }
+      },
+      "parent": {
+        "bytes": 52206773,
+        "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+        "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+      },
+      "report": {
+        "bytes": 11437,
+        "path": "/private/tmp/m692-m679-appworld/random-report.json",
+        "sha256": "13d07372c602df9e54d5e333d60dcafc56a1c0ebc0d57d86c5b956b454521c50"
+      },
+      "weight_groups": {
+        "action_heads": {
+          "base_l2": 91.77234792175153,
+          "delta_l2": 27.09914085566708,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.2952865592887827,
+          "target_l2": 87.72169577645614
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.70583183858278,
+          "delta_l2": 0.10879908932525997,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0021041937718923676,
+          "target_l2": 51.70739098707486
+        },
+        "embedding": {
+          "base_l2": 78.5827108674603,
+          "delta_l2": 0.34877297067614393,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.004438291410745472,
+          "target_l2": 78.7093256259427
+        },
+        "ffn": {
+          "base_l2": 50.615098537061556,
+          "delta_l2": 0.12973439979453016,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.0025631561242449347,
+          "target_l2": 50.616210059481276
+        },
+        "normalization": {
+          "base_l2": 21.464259287065175,
+          "delta_l2": 0.003075990222375052,
+          "parameters": 384,
+          "relative_delta_l2": 0.0001433075412124149,
+          "target_l2": 21.46730976646944
+        }
+      }
+    },
+    "warm": {
+      "after": {
+        "assistant_loss_tokens": 878,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.7403189066059226,
+        "mean_loss": 2.100799282482382,
+        "rows": 6
+      },
+      "before": {
+        "assistant_loss_tokens": 878,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.6389521640091116,
+        "mean_loss": 2.501932131130766,
+        "rows": 6
+      },
+      "child": {
+        "bytes": 52206645,
+        "path": "/private/tmp/m692-m679-appworld/warm-child.pt",
+        "sha256": "d39a92aaf5144274ce23e8992d9e78ad3f138b2af347ffc8dce8156539b7a1cb"
+      },
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "heads": {
+        "after": {
+          "route_accuracy": 1.0,
+          "rows": 21,
+          "selector_top1_accuracy": 1.0,
+          "tool_rows": 21
+        },
+        "before": {
+          "route_accuracy": 1.0,
+          "rows": 21,
+          "selector_top1_accuracy": 1.0,
+          "tool_rows": 21
+        }
+      },
+      "parent": {
+        "bytes": 52206773,
+        "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+        "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+      },
+      "report": {
+        "bytes": 11373,
+        "path": "/private/tmp/m692-m679-appworld/warm-report.json",
+        "sha256": "f2b8ea37965700357d4014aab1695d158fcd3d0f28c983be6be3bae38f402c0e"
+      },
+      "weight_groups": {
+        "action_heads": {
+          "base_l2": 91.77234792175153,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.77234792175153
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.70583183858278,
+          "delta_l2": 0.10879908932525997,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0021041937718923676,
+          "target_l2": 51.70739098707486
+        },
+        "embedding": {
+          "base_l2": 78.5827108674603,
+          "delta_l2": 0.34877297067614393,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.004438291410745472,
+          "target_l2": 78.7093256259427
+        },
+        "ffn": {
+          "base_l2": 50.615098537061556,
+          "delta_l2": 0.12973439979453016,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.0025631561242449347,
+          "target_l2": 50.616210059481276
+        },
+        "normalization": {
+          "base_l2": 21.464259287065175,
+          "delta_l2": 0.003075990222375052,
+          "parameters": 384,
+          "relative_delta_l2": 0.0001433075412124149,
+          "target_l2": 21.46730976646944
+        }
+      }
+    }
+  },
+  "benchmark_id": "appworld_text_trajectory_projection",
+  "claim_boundary": "Public AppWorld train/dev ground-truth API trajectory continuation with redacted, bounded observations. No AppWorld environment, email service, Notion service, emulator, browser, or external account executed; this is not an official AppWorld score.",
+  "comparison": {
+    "exact_sequence_accuracy": {
+      "random": 0.0,
+      "warm": 0.0
+    },
+    "random_after_eval_token_accuracy": 0.7403189066059226,
+    "random_before_eval_token_accuracy": 0.6389521640091116,
+    "random_gain_pp": 10.1366742596811,
+    "warm_after_eval_token_accuracy": 0.7403189066059226,
+    "warm_before_eval_token_accuracy": 0.6389521640091116,
+    "warm_gain_pp": 10.1366742596811,
+    "warm_minus_random_after_pp": 0.0,
+    "warm_start_better_after": false
+  },
+  "environment_executed": false,
+  "kind": "localagent_m692_m679_appworld_current",
+  "official_split_verified": false,
+  "parent_checkpoint": {
+    "bytes": 52206773,
+    "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "protocol": {
+    "batch_size": 2,
+    "learning_rate": 1e-05,
+    "max_seq_len": 2048,
+    "observation_policy": "bounded redacted API summaries; no credentials or task databases",
+    "official_native_score": false,
+    "split_policy": "public train tasks only; separate public dev tasks for evaluation",
+    "steps": 32
+  },
+  "receipt_self_sha256": "22fff0d94b1e0ca02173cc499f4a450bcf99fefa7f21e8d83099ff6152817d2b",
+  "schema_version": 1,
+  "source": {
+    "bootstrap_credentials_removed": true,
+    "data_version": "0.2.0",
+    "dataset": "AppWorld",
+    "dev_tasks": 6,
+    "eval_input": [
+      {
+        "bytes": 15131,
+        "path": "/private/tmp/m663-grounding/dev.jsonl",
+        "sha256": "36fd92084d8aaac602e193b5b7db26a5fa783b9629a6f06a0087390d37527d07"
+      }
+    ],
+    "max_actions": 64,
+    "rich_observations": true,
+    "train_input": [
+      {
+        "bytes": 1674296,
+        "path": "/private/tmp/m665-appworld-full/max64/train.jsonl",
+        "sha256": "4484056c9df0c1c31eb3178fd4f6245fd2b743c718e3a234b23149995f48b6bd"
+      }
+    ],
+    "train_manifest": {
+      "bytes": 153405,
+      "path": "/private/tmp/m665-appworld-full/max64/train.manifest.json",
+      "sha256": "76d98aac052741f6ea11d8703a44aea0c482e14966d41c5d2f872a0b86c70efb"
+    },
+    "train_tasks": 90,
+    "url": "https://github.com/StonyBrookNLP/appworld"
+  },
+  "weight_adoption": {
+    "config_compatible": true,
+    "random_action_head_relative_delta": 0.2952865592887827,
+    "recommendation": "retain m679 backbone and train API heads separately; require native AppWorld and real email/Notion service validation before promotion",
+    "tokenizer_compatible": true,
+    "warm_action_heads_frozen": true,
+    "warm_body_relative_delta_max": 0.004438291410745472
+  }
+}

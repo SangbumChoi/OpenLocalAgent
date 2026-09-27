@@ -1,0 +1,16 @@
+# ~28M-param BYTE-level tier — a bigger selection head to test the 22-way tool-selection limit.
+# (The standard tiny-30m.yaml uses a 32k BPE vocab; this pipeline is byte-level, so this config
+#  spends its parameter budget on depth/width instead of a 32k embedding table.)
+name: tiny-30m-byte
+vocab_size: 256          # byte-level
+d_model: 512
+n_layers: 10
+n_loops: 1
+n_heads: 8
+n_kv_heads: 2            # GQA
+ffn_hidden: 1408         # SwiGLU
+max_seq_len: 1024
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0

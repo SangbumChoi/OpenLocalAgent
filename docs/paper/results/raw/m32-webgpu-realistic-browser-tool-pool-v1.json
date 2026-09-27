@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "kind": "webgpu_realistic_browser_tool_pool",
+  "status": "passed_export_and_structured_parity",
+  "checkpoint": {
+    "path": "/private/tmp/mind2web-train10-continuation-heads.pt",
+    "sha256": "d698225de6bfefd7ec6fe2534bf1a796e70d96fe4c22c968a39e1dc3a5045781",
+    "stage": "sft_public_agent_continuation",
+    "step": 319,
+    "model_name": "webgpu-10m-hybrid",
+    "parameters": 10524544
+  },
+  "tool_pool": {
+    "name": "REALISTIC_BROWSER_TOOLS",
+    "count": 53,
+    "names": [
+      "get_weather", "calculator", "web_search", "planner", "define", "play_music",
+      "get_news", "read_file", "write_file", "grep_search", "run_command", "git_commit",
+      "run_tests", "set_reminder", "set_timer", "calendar_event", "send_email", "open_url",
+      "notion_write", "slack_send", "jira_issue", "screenshot", "click", "double_click",
+      "type_text", "key_press", "scroll", "drag", "wait", "move_cursor", "open_app",
+      "run_python", "edit_file", "apply_patch", "http_request", "sql_query", "list_dir",
+      "find_files", "git_diff", "git_status", "install_package", "kill_process",
+      "read_clipboard", "write_clipboard", "download_file", "unzip", "env_get", "make_dir",
+      "list_processes", "docker_run", "web_click", "web_type", "web_select"
+    ],
+    "route_mapping": {
+      "web_click": "computer_use",
+      "web_type": "computer_use",
+      "web_select": "computer_use"
+    }
+  },
+  "export": {
+    "output": "temporary_local_bundle",
+    "bundle_manifest_sha256": "30d212c8ee8c5e94a4e40fe5f776a4bd2e83187ed4d8a979cca273c4bed730ae",
+    "artifacts": {
+      "model.onnx": {"bytes": 67877334, "sha256": "a2787d9cb7f0cbc89c80bb4364b047bcaed148a90a88406a9187ca7096d06288"},
+      "model.fp16.onnx": {"bytes": 34026169, "sha256": "9729e185af8f6dda18f0973e8c381b6f54c49a66f75c50ca8487eedf831d8113"},
+      "action_model.onnx": {"bytes": 42700043, "sha256": "2995f804bd1b2df4c32ed36b83b19fdb37bd06b34e273828bf39dc2ff90f38b8"},
+      "action_model.fp16.onnx": {"bytes": 21430301, "sha256": "d27239e7122216df5e8d3eebc2ab547101bd6dd23c90e60b0fbed29f0dd6f637"},
+      "tokenizer.json": {"bytes": 1134224, "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"},
+      "heads.json": {"bytes": 3337015, "sha256": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486"},
+      "dispatch_heads.json": {"bytes": 1315441, "sha256": "15bdc2012922d83e19f0bc65178635734752b2e2e9593dbabf9bd410d4018422"},
+      "meta.json": {"bytes": 12427, "sha256": "3e55e2f867206289e245b509e41e9c5c6bbb8df07ecd887ab7cc31bd19459648"}
+    },
+    "hard_parity": {
+      "passed": true,
+      "fp32_hidden_max_abs_diff": 0.000005155801773071289,
+      "fp32_logits_max_abs_diff": 0.000008106231689453125,
+      "fp16_hidden_max_abs_diff": 0.005291461944580078,
+      "fp16_logits_max_abs_diff": 0.0055103302001953125,
+      "fp16_logits_argmax_agreement": 1.0
+    }
+  },
+  "structured_action_parity": {
+    "passed": true,
+    "suite": "spaces/localagent-webgpu/benchmark-cases.json",
+    "configured_cases": 20,
+    "target_input_tokens": 128,
+    "native_vs_onnx_fp32": {
+      "route_exact": 20,
+      "selected_tool_exact": 20,
+      "grounded_args_exact": 20,
+      "final_normalized_action_exact": 20,
+      "schema_valid": 20,
+      "route_logits_max_abs_diff": 0.000011444091796875,
+      "selector_scores_max_abs_diff": 0.0000012839036426237627
+    },
+    "native_vs_onnx_fp16": {
+      "route_exact": 20,
+      "selected_tool_exact": 20,
+      "grounded_args_exact": 20,
+      "final_normalized_action_exact": 20,
+      "route_logits_max_abs_diff": 0.0043718814849853516,
+      "selector_scores_max_abs_diff": 0.0004069303812270775
+    },
+    "diagnostic_model_quality": {
+      "route_accuracy": 0.5,
+      "tool_required_selected_tool_accuracy": 0.0,
+      "tool_required_exact_action_accuracy": 0.0,
+      "note": "The 20-case suite is reused for export parity; these are not an independent capability score."
+    }
+  },
+  "claim_boundary": {
+    "supports": [
+      "The trained 10.5M checkpoint exports with a 53-tool metadata and dispatch surface.",
+      "Native PyTorch, fp32 ONNX, fp16 ONNX, serialized heads, and JavaScript grounding agree on the reused suite."
+    ],
+    "does_not_support": [
+      "Hardware WebGPU capability or tokens-per-second latency.",
+      "Official Mind2Web, BrowserGym, AndroidWorld, OSWorld, MCPMark, or real-account success.",
+      "Independent browser-agent capability; the parity suite is reused and the diagnostic model score is weak."
+    ]
+  },
+  "summary_sha256": "e6f63d657d5fe1683ac0da35937990675cbf079ccdcf9e00951d8c3ca132b12f"
+}

@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "artifact_type": "matched_random_backbone_latency_summary",
+  "collection_started_at": "2026-07-27T17:26:42.162Z",
+  "collection_ended_at": "2026-07-27T17:38:17.777Z",
+  "latency_only": true,
+  "trained": false,
+  "capability_artifact": false,
+  "quality_claims": [],
+  "raw_artifacts": [
+    {
+      "run": 1,
+      "created_at": "2026-07-27T17:26:42.162Z",
+      "workspace_path": "runs/webgpu/results/m5-chrome150-ort127-webgpu-matched-random-backbones-20260728.json",
+      "tracked_path": "docs/paper/results/raw/m5-webgpu-backbone-run1.json",
+      "bytes": 240814,
+      "sha256": "b414a805d6d57f64ac76956daa862a31a988e48696a92d2f3d03f5289237b5af",
+      "status": "complete",
+      "completed": 240,
+      "failed": 0
+    },
+    {
+      "run": 2,
+      "created_at": "2026-07-27T17:36:00.850Z",
+      "workspace_path": "runs/webgpu/results/m5-chrome150-ort127-webgpu-matched-random-backbones-20260728-run2.json",
+      "tracked_path": "docs/paper/results/raw/m5-webgpu-backbone-run2.json",
+      "bytes": 240735,
+      "sha256": "cdf83f0fbf9aa496ec2a9b5885cb4e6d0226f9923a50fc040873a02e2e834cac",
+      "status": "complete",
+      "completed": 240,
+      "failed": 0
+    },
+    {
+      "run": 3,
+      "created_at": "2026-07-27T17:38:17.777Z",
+      "workspace_path": "runs/webgpu/results/m5-chrome150-ort127-webgpu-matched-random-backbones-20260728-run3.json",
+      "tracked_path": "docs/paper/results/raw/m5-webgpu-backbone-run3.json",
+      "bytes": 240837,
+      "sha256": "bf234a694916a583989f5dd7585683c7677453baecdb337a916bf718c4c3ec7f",
+      "status": "complete",
+      "completed": 240,
+      "failed": 0
+    }
+  ],
+  "aggregate": {
+    "runs": 3,
+    "attempted": 720,
+    "completed": 720,
+    "failed": 0,
+    "reported_point_estimate": "median of the three within-run percentiles",
+    "reported_range": "minimum and maximum of the three within-run percentiles"
+  },
+  "device": {
+    "machine": "MacBook Air Mac17,3",
+    "soc": "Apple M5",
+    "gpu": "integrated 10-core Apple GPU",
+    "memory_gb": 32,
+    "os": "macOS 26.5.2 (25F84)",
+    "power_source_reported": "AC Power",
+    "battery_state": "discharging",
+    "battery_percent_before_collection": 62,
+    "battery_percent_after_collection": 56,
+    "thermal_status": "unavailable: pmset could not read thermal/performance warning levels",
+    "browser_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+  },
+  "runtime": {
+    "onnxruntime_web_pin": "1.27.0",
+    "onnxruntime_web_reported": "1.27.0",
+    "execution_provider_request": [
+      "webgpu"
+    ],
+    "whole_session_provider_retry": false,
+    "ort_webgpu_device_available": true,
+    "adapter_introspection_available": false,
+    "session_provider_verified": null,
+    "per_node_placement_verified": false,
+    "per_node_fallback_status": "unknown",
+    "cross_origin_isolated": false,
+    "tab_visibility_required": true,
+    "concurrency": 1
+  },
+  "protocol": {
+    "manifest_sha256": "25f582a69e062a463f11d80ab700334022242a1325977e590ac6c25a36915e8f",
+    "hybrid_graph_sha256": "2ce49c913a3001fe11e4cc93608d6e56fdcf12d09b8c1b2dea48976087256318",
+    "attention_graph_sha256": "304e919ba77e75da3034d3517d7fb9f1fab964adfb8273f516d1fa0e9022ea30",
+    "hybrid_parameters": 34199488,
+    "attention_parameters": 34275776,
+    "relative_parameter_delta": 0.002230676669779384,
+    "precision": "fp16_internal_fp32_output",
+    "output": "full [1, sequence, 448] hidden tensor at ONNX Runtime default CPU location",
+    "timing_boundary": "performance.now immediately before session.run through resolved hidden tensor output",
+    "warmups_per_condition": 3,
+    "measured_repetitions_per_condition": 30,
+    "condition_order": "seeded and balanced within each repetition",
+    "input_contract": "ids[i]=(131*i+17) mod 16384"
+  },
+  "conditions": [
+    {
+      "input_tokens": 128,
+      "attention_p50_median_ms": 74.5,
+      "attention_p50_range_ms": [41.25, 78.35],
+      "attention_p95_median_ms": 83.38,
+      "attention_p95_range_ms": [57.505, 85.32],
+      "hybrid_p50_median_ms": 43.9,
+      "hybrid_p50_range_ms": [24.9, 44.65],
+      "hybrid_p95_median_ms": 48.605,
+      "hybrid_p95_range_ms": [33.71, 52.955],
+      "attention_over_hybrid_p50_median_of_run_ratios": 1.697,
+      "attention_over_hybrid_p95_median_of_run_ratios": 1.7059
+    },
+    {
+      "input_tokens": 512,
+      "attention_p50_median_ms": 115.65,
+      "attention_p50_range_ms": [93.05, 119.65],
+      "attention_p95_median_ms": 130.71,
+      "attention_p95_range_ms": [114.825, 132.79],
+      "hybrid_p50_median_ms": 66.25,
+      "hybrid_p50_range_ms": [59.5, 72.1],
+      "hybrid_p95_median_ms": 82.745,
+      "hybrid_p95_range_ms": [70.455, 93.025],
+      "attention_over_hybrid_p50_median_of_run_ratios": 1.6595,
+      "attention_over_hybrid_p95_median_of_run_ratios": 1.5797
+    },
+    {
+      "input_tokens": 1024,
+      "attention_p50_median_ms": 304.5,
+      "attention_p50_range_ms": [253.1, 311.5],
+      "attention_p95_median_ms": 321.41,
+      "attention_p95_range_ms": [284.9, 335.205],
+      "hybrid_p50_median_ms": 154.7,
+      "hybrid_p50_range_ms": [134.05, 156.9],
+      "hybrid_p95_median_ms": 174.545,
+      "hybrid_p95_range_ms": [151.565, 178.905],
+      "attention_over_hybrid_p50_median_of_run_ratios": 1.9683,
+      "attention_over_hybrid_p95_median_of_run_ratios": 1.8736
+    },
+    {
+      "input_tokens": 1536,
+      "attention_p50_median_ms": 593.05,
+      "attention_p50_range_ms": [496.5, 609.4],
+      "attention_p95_median_ms": 621.675,
+      "attention_p95_range_ms": [529.565, 627.25],
+      "hybrid_p50_median_ms": 288.65,
+      "hybrid_p50_range_ms": [248.8, 294.1],
+      "hybrid_p95_median_ms": 300.305,
+      "hybrid_p95_range_ms": [266.275, 313.425],
+      "attention_over_hybrid_p50_median_of_run_ratios": 2.0546,
+      "attention_over_hybrid_p95_median_of_run_ratios": 2.0013
+    }
+  ],
+  "limitations": [
+    "The graphs use deterministic random weights and support latency comparison only.",
+    "These are three sequential browser runs on one device; no confidence interval across devices is implied.",
+    "Absolute latency changed materially between the first run and the two later runs, so both the median-of-runs and full run range are reported.",
+    "The failed WASM attempt occurred between WebGPU runs one and two, so runs two and three are not clean independent repeats of the first system state.",
+    "macOS reported AC Power while the battery discharged from 62% to 56%, and thermal/performance warning status was unavailable.",
+    "ONNX Runtime exposed a WebGPU device but not adapter identity or per-node execution placement.",
+    "The latency includes full hidden-state readback to the default CPU output location.",
+    "The separate single-thread WASM run loaded both sessions but the browser target closed during inference, so it produced no valid latency payload."
+  ]
+}

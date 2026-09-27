@@ -1,0 +1,422 @@
+{
+  "claim_boundary": "Current-checkpoint workshop/publication decision with m666 AppWorld diagnostics. The schema-planner control cannot satisfy native learned-policy or public-artifact gates.",
+  "current_checkpoint": {
+    "bytes": 52206645,
+    "path": "/private/tmp/m665-appworld-full/max64/warm-child.pt",
+    "sha256": "8c3a4ed31d468a8556faf9f1442a3d7cfb7cfcc19788055bb1c501217c65d850"
+  },
+  "decision": {
+    "promote_to_public_workshop": false,
+    "ready": false,
+    "reason": "The m666 warm child improves public AppWorld teacher-forced continuation, but its fully free-running native result remains 0/6. The 6/6 schema-planner control is explicitly not a model score. Existing native MobileGym/BrowserGym/RL receipts are bound to older checkpoints, the movement reports are not a canonical ablation pair, and the public manifest is not bound to this child; the fail-closed gate remains blocked."
+  },
+  "gate": {
+    "blocking_requirements": [
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:androidworld"
+      },
+      {
+        "blockers": [
+          "current_checkpoint_sha256_mismatch"
+        ],
+        "requirement": "native:mobilegym"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:mobile_safety_bench"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:iosworld"
+      },
+      {
+        "blockers": [
+          "current_checkpoint_sha256_mismatch"
+        ],
+        "requirement": "native:browsergym_miniwob"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:osworld"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:osworld_v2"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:agentnet"
+      },
+      {
+        "blockers": [
+          "current_checkpoint_sha256_mismatch",
+          "official_split_not_verified"
+        ],
+        "requirement": "native:toolsandbox"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:mcpmark"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:enterpriseopsgym"
+      },
+      {
+        "blockers": [
+          "missing_ablation_label:/private/tmp/m665-appworld-full/max64/random-weight.json",
+          "missing_ablation_label:/private/tmp/m665-appworld-full/max64/warm-weight.json",
+          "missing_held_out_metrics:/private/tmp/m665-appworld-full/max64/random-weight.json",
+          "missing_held_out_metrics:/private/tmp/m665-appworld-full/max64/warm-weight.json"
+        ],
+        "requirement": "weights:transfer_and_no_transfer_ablation"
+      },
+      {
+        "blockers": [
+          "current_checkpoint_sha256_mismatch"
+        ],
+        "requirement": "training:rl_preflight"
+      },
+      {
+        "blockers": [
+          "current_checkpoint_not_bound"
+        ],
+        "requirement": "artifacts:public_model_demo_manifest"
+      }
+    ],
+    "catalog": {
+      "blocked_ids": [
+        "androidworld",
+        "iosworld",
+        "mobile_safety_bench",
+        "aitw_control_eval",
+        "browsergym_miniwob",
+        "mind2web_eval",
+        "webarena",
+        "osworld",
+        "agentnet",
+        "appworld",
+        "tau_bench",
+        "toolsandbox",
+        "toolathlon",
+        "mcpmark",
+        "enterpriseopsgym",
+        "mcp_persona",
+        "tua_bench",
+        "osworld_human",
+        "mobilegym",
+        "mobileworld",
+        "memgui_bench",
+        "workarena",
+        "weblinx",
+        "osworld_v2",
+        "toolathlon_gym",
+        "phoneworld",
+        "gui_odyssey",
+        "mobile_agent_bench",
+        "agentbench_fc",
+        "visualwebarena",
+        "omni_act",
+        "worldgui",
+        "macosworld",
+        "assistgui",
+        "androiddaily",
+        "windows_agent_arena",
+        "webchorearena",
+        "timewarp"
+      ],
+      "entries": 42,
+      "path": "configs/data/realistic-agent-eval.catalog.yaml",
+      "runnable_ids": [
+        "androidcontrol",
+        "android_in_the_wild",
+        "xlam_function_calling",
+        "mind2web_train"
+      ],
+      "sha256": "dac55d7f025ebf6e523ef81869dd615b381e2d6e0ee7d7051a0ab3c8627137f6"
+    },
+    "checks": [
+      {
+        "blockers": [],
+        "evidence": [
+          "configs/data/realistic-agent-eval.catalog.yaml",
+          "dac55d7f025ebf6e523ef81869dd615b381e2d6e0ee7d7051a0ab3c8627137f6"
+        ],
+        "requirement": "catalog:realistic_family_coverage",
+        "status": "pass"
+      },
+      {
+        "blockers": [],
+        "evidence": [
+          "configs/data/realistic-agent-eval.catalog.yaml"
+        ],
+        "requirement": "catalog:no_pending_train_adapter",
+        "status": "pass"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:androidworld",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "current_checkpoint_sha256_mismatch"
+        ],
+        "evidence": [
+          "/Users/sangbumchoi/Documents/LocalAgent/docs/paper/results/raw/m629-androidcontrol-child-mobilegym-native-v1.json",
+          "93b1759ea2816a48f0acc6b61ed19712a93cf3a9af458825b334eb0f457d3447"
+        ],
+        "requirement": "native:mobilegym",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:mobile_safety_bench",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:iosworld",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "current_checkpoint_sha256_mismatch"
+        ],
+        "evidence": [
+          "/Users/sangbumchoi/Documents/LocalAgent/docs/paper/results/raw/m632-m626-browsergym-native-full-v1.json",
+          "621d2728537d7bb2b70ee7f3fa183eaf1172006b67daacbdbd6d201d73227a49"
+        ],
+        "requirement": "native:browsergym_miniwob",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:osworld",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:osworld_v2",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:agentnet",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "current_checkpoint_sha256_mismatch",
+          "official_split_not_verified"
+        ],
+        "evidence": [
+          "/Users/sangbumchoi/Documents/LocalAgent/docs/paper/results/raw/m635-m626-toolsandbox-native-base-v1.json",
+          "8e5e6f044c6cd2879f59b7a563d7e6d5a9058ea61de7ca9e9b8fc4332e02b1c6"
+        ],
+        "requirement": "native:toolsandbox",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:mcpmark",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:enterpriseopsgym",
+        "status": "blocked"
+      },
+      {
+        "blockers": [],
+        "evidence": [
+          "/private/tmp/m628-webgpu-m626-native.json",
+          "6ba1fe0762779c9a9ef4249a197189e9a342601953eeb3892a250808cd2ee5b8"
+        ],
+        "requirement": "webgpu:native_capability_and_latency",
+        "status": "pass"
+      },
+      {
+        "blockers": [
+          "missing_ablation_label:/private/tmp/m665-appworld-full/max64/random-weight.json",
+          "missing_ablation_label:/private/tmp/m665-appworld-full/max64/warm-weight.json",
+          "missing_held_out_metrics:/private/tmp/m665-appworld-full/max64/random-weight.json",
+          "missing_held_out_metrics:/private/tmp/m665-appworld-full/max64/warm-weight.json"
+        ],
+        "evidence": [
+          "/private/tmp/m665-appworld-full/max64/random-weight.json:6cd152663a0321e0b85043677f756cbb154a19c09b7fb38ec6881f3c3cbe7f36",
+          "/private/tmp/m665-appworld-full/max64/warm-weight.json:1c69894ee9d86f673ab1cf8d81d6ddac934c753932a15a396845ba96c45c6413"
+        ],
+        "requirement": "weights:transfer_and_no_transfer_ablation",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "current_checkpoint_sha256_mismatch"
+        ],
+        "evidence": [
+          "/Users/sangbumchoi/Documents/LocalAgent/docs/paper/results/raw/m633-m626-stateful-rl-preflight-v1.json",
+          "d9703baea89210350e1ee35f5be6862267e25015f9eb8a4d884b7449f5bfe0e3"
+        ],
+        "requirement": "training:rl_preflight",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "current_checkpoint_not_bound"
+        ],
+        "evidence": [
+          "/Users/sangbumchoi/Documents/LocalAgent/docs/paper/results/raw/public-model-demo-manifest-v1.json",
+          "46b329ded3893188aedef41d638bffd43e08cda9bbcea48294bdac8e04aa7dd0"
+        ],
+        "requirement": "artifacts:public_model_demo_manifest",
+        "status": "blocked"
+      }
+    ],
+    "claim_boundary": "ready is false unless native benchmark receipts, native WebGPU performance and capability evidence, transfer ablations, a successful current-checkpoint RL preflight, and public model/demo artifacts are all explicitly supplied; protocol bridges and synthetic receipts do not satisfy these checks",
+    "current_checkpoint": {
+      "path": "/private/tmp/m665-appworld-full/max64/warm-child.pt",
+      "sha256": "8c3a4ed31d468a8556faf9f1442a3d7cfb7cfcc19788055bb1c501217c65d850"
+    },
+    "kind": "localagent_workshop_publication_gate",
+    "ready": false,
+    "schema_version": 1
+  },
+  "inputs": {
+    "browsergym": {
+      "bytes": 10812,
+      "path": "docs/paper/results/raw/m632-m626-browsergym-native-full-v1.json",
+      "sha256": "621d2728537d7bb2b70ee7f3fa183eaf1172006b67daacbdbd6d201d73227a49"
+    },
+    "manifest": {
+      "bytes": 2046,
+      "path": "docs/paper/results/raw/public-model-demo-manifest-v1.json",
+      "sha256": "46b329ded3893188aedef41d638bffd43e08cda9bbcea48294bdac8e04aa7dd0"
+    },
+    "mobilegym": {
+      "bytes": 5026,
+      "path": "docs/paper/results/raw/m629-androidcontrol-child-mobilegym-native-v1.json",
+      "sha256": "93b1759ea2816a48f0acc6b61ed19712a93cf3a9af458825b334eb0f457d3447"
+    },
+    "random_weight": {
+      "bytes": 19655,
+      "path": "/private/tmp/m665-appworld-full/max64/random-weight.json",
+      "sha256": "6cd152663a0321e0b85043677f756cbb154a19c09b7fb38ec6881f3c3cbe7f36"
+    },
+    "rl_receipt": {
+      "bytes": 4013,
+      "path": "docs/paper/results/raw/m633-m626-stateful-rl-preflight-v1.json",
+      "sha256": "d9703baea89210350e1ee35f5be6862267e25015f9eb8a4d884b7449f5bfe0e3"
+    },
+    "toolsandbox": {
+      "bytes": 49327,
+      "path": "docs/paper/results/raw/m635-m626-toolsandbox-native-base-v1.json",
+      "sha256": "8e5e6f044c6cd2879f59b7a563d7e6d5a9058ea61de7ca9e9b8fc4332e02b1c6"
+    },
+    "warm_weight": {
+      "bytes": 19660,
+      "path": "/private/tmp/m665-appworld-full/max64/warm-weight.json",
+      "sha256": "1c69894ee9d86f673ab1cf8d81d6ddac934c753932a15a396845ba96c45c6413"
+    },
+    "webgpu": {
+      "bytes": 11410,
+      "path": "/private/tmp/m628-webgpu-m626-native.json",
+      "sha256": "6ba1fe0762779c9a9ef4249a197189e9a342601953eeb3892a250808cd2ee5b8"
+    }
+  },
+  "kind": "localagent_m667_workshop_gate_m666_receipt",
+  "m666_appworld": {
+    "claim_boundary": "Public AppWorld train/dev continuation and paired resettable native diagnostics. The 6/6 structured-planner result is an environment-side schema policy control, not a model score, official AppWorld leaderboard result, external-account side effect, or WebGPU email/Notion promotion.",
+    "decision": {
+      "promote_to_native_success": false,
+      "reason": "Using all 90 public train tasks adds held-out API coverage and raises warm token accuracy from 65.15% to 73.12% versus 50.34% for the random control. Fully free-running model ranking remains 0/6 for both arms. The explicit schema-planner control reaches 6/6 for both arms, proving the persisted executor, argument extraction, and completion verifier are live while isolating the remaining learned action-selection gap.",
+      "retain_warm_initialization": true,
+      "structured_planner_is_model_score": false
+    },
+    "metrics": {
+      "random_after": {
+        "assistant_loss_tokens": 878,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.5034168564920274,
+        "mean_loss": 7.296145984415041,
+        "rows": 6
+      },
+      "random_before": {
+        "assistant_loss_tokens": 878,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.37699316628701596,
+        "mean_loss": 8.098466251868594,
+        "rows": 6
+      },
+      "random_delta_pp": 12.642369020501143,
+      "random_free_running_success_rate": 0.0,
+      "random_structured_planner_success_rate": 1.0,
+      "warm_after": {
+        "assistant_loss_tokens": 878,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.7312072892938497,
+        "mean_loss": 2.166900061257608,
+        "rows": 6
+      },
+      "warm_after_minus_random_after_pp": 22.779043280182233,
+      "warm_before": {
+        "assistant_loss_tokens": 878,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.6514806378132119,
+        "mean_loss": 2.6717467079944655,
+        "rows": 6
+      },
+      "warm_delta_pp": 7.9726651480637845,
+      "warm_free_running_success_rate": 0.0,
+      "warm_structured_planner_success_rate": 1.0
+    },
+    "receipt": {
+      "bytes": 9605,
+      "path": "docs/paper/results/raw/m666-appworld-public-full-v3.json",
+      "sha256": "74c46123555252f901dc3bc3b62117510a61487eba01483682744813365d1ec4"
+    }
+  },
+  "receipt_self_sha256": "df594d2ca7d4f4a0c4ba7a2e106bec2b80b359cf90ef0ef4494eaf15da63c0c5",
+  "schema_version": 1
+}

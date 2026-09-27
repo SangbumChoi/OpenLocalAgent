@@ -1,0 +1,55 @@
+{
+  "kind": "localagent_weight_transfer_analysis",
+  "schema_version": 1,
+  "base": {
+    "sha256": "b19828908594463385870607d89c084afc1bb237cc5fb51752ac6860a204a041",
+    "stage": "sft_public_agent_continuation"
+  },
+  "target": {
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "stage": "sft_browser_context"
+  },
+  "compatibility": {
+    "config_mismatches": {},
+    "shared_tensor_count": 51,
+    "shape_mismatches": {},
+    "tokenizer_sha256_equal": true
+  },
+  "groups": {
+    "action_heads": {
+      "base_l2": 93.99105982187166,
+      "target_l2": 99.96533739276437,
+      "delta_l2": 67.15421946422846,
+      "parameters": 2518968,
+      "relative_delta_l2": 0.7144745424883667
+    },
+    "attention_or_mixer": {
+      "base_l2": 51.61212741977001,
+      "target_l2": 51.68591919503937,
+      "delta_l2": 1.6519740501909916,
+      "parameters": 1871872,
+      "relative_delta_l2": 0.03200747833460171
+    },
+    "embedding": {
+      "base_l2": 69.20596774372395,
+      "target_l2": 76.22106199454595,
+      "delta_l2": 16.637576926860067,
+      "parameters": 6291456,
+      "relative_delta_l2": 0.24040667978909772
+    },
+    "ffn": {
+      "base_l2": 50.52425180748712,
+      "target_l2": 50.59914708877707,
+      "delta_l2": 2.2768717777966,
+      "parameters": 2360832,
+      "relative_delta_l2": 0.045064928155139815
+    },
+    "normalization": {
+      "base_l2": 21.2794818606334,
+      "target_l2": 21.432378276078357,
+      "delta_l2": 0.15294521988310322,
+      "parameters": 384,
+      "relative_delta_l2": 0.00718745037519211
+    }
+  }
+}

@@ -1,0 +1,2088 @@
+{
+  "schema_version": 2,
+  "benchmark": "localagent-single-step-dom-microtasks",
+  "created_at": "2026-08-01T16:12:55.398Z",
+  "metadata": {
+    "benchmark_version": "rtab-dom-0.4",
+    "backend": "webgpu",
+    "requested_backend": "webgpu",
+    "backend_requirement": "explicit-webgpu-no-whole-session-retry",
+    "execution_provider_request": {
+      "requested": "webgpu",
+      "session_provider_count": 1,
+      "whole_session_retry": false,
+      "single_provider_session_creation_succeeded": true,
+      "per_node_placement": "unknown",
+      "per_node_fallback_status": "unknown",
+      "note": "ORT Web does not expose per-node placement; this proves the requested session provider and does not claim every node executed on the GPU."
+    },
+    "benchmark_grade": true,
+    "bundle_manifest_required": true,
+    "model_url": "action_model.onnx",
+    "precision": "unknown-or-fp32",
+    "git_commit": null,
+    "model_hash": "3d25bc1b887b70ca5368aca3468b21027d6e8ffe5d0438678b4c1b1341179fba",
+    "checkpoint_hash": "268cd21d8f6a49e4e63c001ef73a26c67820d33407e5bb611a03382966700d1f",
+    "tokenizer_hash": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+    "heads_hash": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486",
+    "dispatch_heads_hash": "a48082e12c31065617867dce838be209fdc56fb15791ba913364cd8a22f36a6c",
+    "meta_file_hash": "d8f770474d4cc6d6a733aff9a630584adef9c89658991bc7789edb8bb9887939",
+    "runtime_asset_evidence": {
+      "heads_json": {
+        "file": "heads.json",
+        "bytes": 3337015,
+        "sha256": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486",
+        "manifest_bytes": 3337015,
+        "manifest_sha256": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486",
+        "manifest_verified": true,
+        "fetch_contract": "browser_fetch_arraybuffer_sha256_before_parse_or_session",
+        "verification_scope": "exact_fetched_response_body_bytes"
+      },
+      "meta_json": {
+        "file": "meta.json",
+        "bytes": 11538,
+        "sha256": "d8f770474d4cc6d6a733aff9a630584adef9c89658991bc7789edb8bb9887939",
+        "manifest_bytes": 11538,
+        "manifest_sha256": "d8f770474d4cc6d6a733aff9a630584adef9c89658991bc7789edb8bb9887939",
+        "manifest_verified": true,
+        "fetch_contract": "browser_fetch_arraybuffer_sha256_before_parse_or_session",
+        "verification_scope": "exact_fetched_response_body_bytes"
+      },
+      "dispatch_heads_json": {
+        "file": "dispatch_heads.json",
+        "bytes": 1178053,
+        "sha256": "a48082e12c31065617867dce838be209fdc56fb15791ba913364cd8a22f36a6c",
+        "manifest_bytes": 1178053,
+        "manifest_sha256": "a48082e12c31065617867dce838be209fdc56fb15791ba913364cd8a22f36a6c",
+        "manifest_verified": true,
+        "fetch_contract": "browser_fetch_arraybuffer_sha256_before_parse_or_session",
+        "verification_scope": "exact_fetched_response_body_bytes"
+      },
+      "tokenizer": {
+        "file": "tokenizer.json",
+        "bytes": 1134224,
+        "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+        "manifest_bytes": 1134224,
+        "manifest_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+        "manifest_verified": true,
+        "fetch_contract": "browser_fetch_arraybuffer_sha256_before_parse_or_session",
+        "verification_scope": "exact_fetched_response_body_bytes"
+      }
+    },
+    "graph_hash": "3d25bc1b887b70ca5368aca3468b21027d6e8ffe5d0438678b4c1b1341179fba",
+    "model_bytes": 42700043,
+    "model_byte_evidence": {
+      "file": "action_model.onnx",
+      "bytes": 42700043,
+      "sha256": "3d25bc1b887b70ca5368aca3468b21027d6e8ffe5d0438678b4c1b1341179fba",
+      "manifest_bytes": 42700043,
+      "manifest_sha256": "3d25bc1b887b70ca5368aca3468b21027d6e8ffe5d0438678b4c1b1341179fba",
+      "manifest_verified": true,
+      "fetch_contract": "browser_fetch_arraybuffer_sha256_before_parse_or_session",
+      "verification_scope": "exact_fetched_response_body_bytes",
+      "session_source": "in_memory_verified_bytes"
+    },
+    "manifest_graph_hash": "3d25bc1b887b70ca5368aca3468b21027d6e8ffe5d0438678b4c1b1341179fba",
+    "manifest_model_bytes": 42700043,
+    "manifest_tokenizer_hash": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+    "artifact_hash_contract": "model, heads, metadata, dispatch, and tokenizer assets are fetched as bytes, SHA-256 and size checked in-browser against bundle-manifest.json before parsing or ORT session creation; ORT receives the verified in-memory model bytes",
+    "model_meta_canonical_sha256": "940b79ca6237173c1aefcb3c2ea605e2cfb12efce3ff22c612e1fa4d6e070035",
+    "bundle_manifest": {
+      "artifacts": {
+        "action_model.onnx": {
+          "bytes": 42700043,
+          "file": "action_model.onnx",
+          "sha256": "3d25bc1b887b70ca5368aca3468b21027d6e8ffe5d0438678b4c1b1341179fba"
+        },
+        "dispatch_heads.json": {
+          "bytes": 1178053,
+          "file": "dispatch_heads.json",
+          "sha256": "a48082e12c31065617867dce838be209fdc56fb15791ba913364cd8a22f36a6c"
+        },
+        "heads.json": {
+          "bytes": 3337015,
+          "file": "heads.json",
+          "sha256": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486"
+        },
+        "meta.json": {
+          "bytes": 11538,
+          "file": "meta.json",
+          "sha256": "d8f770474d4cc6d6a733aff9a630584adef9c89658991bc7789edb8bb9887939"
+        },
+        "model.onnx": {
+          "bytes": 67877334,
+          "file": "model.onnx",
+          "sha256": "ed8e2d75df2c21c1691061a4f15a65363dfd685b6dfbee0cb80cd7dc4add3a48"
+        },
+        "tokenizer.json": {
+          "bytes": 1134224,
+          "file": "tokenizer.json",
+          "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+        }
+      },
+      "checkpoint_sha256": "268cd21d8f6a49e4e63c001ef73a26c67820d33407e5bb611a03382966700d1f",
+      "checkpoint_stage": "sft_realistic_mobile_pilot",
+      "checkpoint_step": 327,
+      "config_name": "webgpu-10m-hybrid",
+      "model_config_sha256": "06f1e4707906d6bf0eda65764e76f8561a723d46fb829542e4554946680bf454",
+      "model_parameters": 10524544,
+      "parity_gate": {
+        "fixture_contract": "ids[i]=(131*i+17+977*fixture_index) mod vocab_size",
+        "hard_gate": true,
+        "passed": true,
+        "reference": "the exact LocalAgentLM checkpoint loaded for this export",
+        "results": {
+          "action_model.onnx": {
+            "artifact": {
+              "bytes": 42700043,
+              "sha256": "3d25bc1b887b70ca5368aca3468b21027d6e8ffe5d0438678b4c1b1341179fba"
+            },
+            "expected_outputs": [
+              "hidden"
+            ],
+            "max_abs_diff_by_output": {
+              "hidden": 0.000004887580871582031
+            },
+            "minimum_logits_argmax_agreement": null,
+            "passed": true,
+            "per_fixture": [
+              {
+                "input_ids_sha256": "35e3a6176b50da27fcb868bf840f0e76290bd9bf55c40545e67bac66353d0674",
+                "outputs": {
+                  "hidden": {
+                    "max_abs_diff": 0.0000026226043701171875
+                  }
+                },
+                "sequence_length": 1
+              },
+              {
+                "input_ids_sha256": "5645e6fd5c57f9809304ba0ff87291710f781b698fc1fe7904f0e2326db48ae0",
+                "outputs": {
+                  "hidden": {
+                    "max_abs_diff": 0.000004887580871582031
+                  }
+                },
+                "sequence_length": 8
+              },
+              {
+                "input_ids_sha256": "9c7dbd4f5db9c6001808980721fa0113d8cbf9694cb2d9407f93669a8fb79d56",
+                "outputs": {
+                  "hidden": {
+                    "max_abs_diff": 0.0000045299530029296875
+                  }
+                },
+                "sequence_length": 16
+              }
+            ],
+            "precision": "fp32",
+            "provider": "CPUExecutionProvider",
+            "threshold_max_abs_diff": 0.001,
+            "threshold_max_abs_diff_by_output": {
+              "hidden": 0.001
+            }
+          },
+          "model.onnx": {
+            "artifact": {
+              "bytes": 67877334,
+              "sha256": "ed8e2d75df2c21c1691061a4f15a65363dfd685b6dfbee0cb80cd7dc4add3a48"
+            },
+            "expected_outputs": [
+              "logits",
+              "hidden"
+            ],
+            "max_abs_diff_by_output": {
+              "hidden": 0.000004887580871582031,
+              "logits": 0.000007152557373046875
+            },
+            "minimum_logits_argmax_agreement": 1,
+            "passed": true,
+            "per_fixture": [
+              {
+                "input_ids_sha256": "35e3a6176b50da27fcb868bf840f0e76290bd9bf55c40545e67bac66353d0674",
+                "outputs": {
+                  "hidden": {
+                    "max_abs_diff": 0.0000026226043701171875
+                  },
+                  "logits": {
+                    "argmax_agreement": 1,
+                    "max_abs_diff": 0.0000040531158447265625
+                  }
+                },
+                "sequence_length": 1
+              },
+              {
+                "input_ids_sha256": "5645e6fd5c57f9809304ba0ff87291710f781b698fc1fe7904f0e2326db48ae0",
+                "outputs": {
+                  "hidden": {
+                    "max_abs_diff": 0.000004887580871582031
+                  },
+                  "logits": {
+                    "argmax_agreement": 1,
+                    "max_abs_diff": 0.000007152557373046875
+                  }
+                },
+                "sequence_length": 8
+              },
+              {
+                "input_ids_sha256": "9c7dbd4f5db9c6001808980721fa0113d8cbf9694cb2d9407f93669a8fb79d56",
+                "outputs": {
+                  "hidden": {
+                    "max_abs_diff": 0.0000045299530029296875
+                  },
+                  "logits": {
+                    "argmax_agreement": 1,
+                    "max_abs_diff": 0.000005245208740234375
+                  }
+                },
+                "sequence_length": 16
+              }
+            ],
+            "precision": "fp32",
+            "provider": "CPUExecutionProvider",
+            "threshold_max_abs_diff": 0.001,
+            "threshold_max_abs_diff_by_output": {
+              "hidden": 0.001,
+              "logits": 0.001
+            }
+          }
+        },
+        "schema_version": 1,
+        "thresholds": {
+          "fp16": {
+            "hidden_max_abs_diff": 0.05,
+            "logits_max_abs_diff": 0.1
+          },
+          "fp32": {
+            "hidden_max_abs_diff": 0.001,
+            "logits_max_abs_diff": 0.001
+          }
+        }
+      },
+      "schema_version": 3
+    },
+    "bundle_manifest_byte_evidence": {
+      "file": "bundle-manifest.json",
+      "bytes": 5428,
+      "sha256": "57cedfe061174fddf44cdae1d280bf1da9baef286f82655fdf17a78f5cbf139c",
+      "manifest_bytes": null,
+      "manifest_sha256": null,
+      "manifest_verified": false,
+      "fetch_contract": "browser_fetch_arraybuffer_sha256_before_parse_or_session",
+      "verification_scope": "exact_fetched_response_body_bytes",
+      "role": "parsed_bundle_manifest_trust_anchor",
+      "external_expected_identity": null,
+      "external_verification_status": "not_available_self_describing_manifest"
+    },
+    "bundle_manifest_canonical_sha256": "390648fdad70a91da2d6c6b901155342e010f53be004845053d1727266182e3c",
+    "model_vocab_size": 16384,
+    "model_d_model": 384,
+    "model_layers": null,
+    "model_parameters": 10524544,
+    "model_encoding": "bytelevel-bpe",
+    "model_tool_count": 50,
+    "ort_web_version": "1.27.0",
+    "onnxruntime_version": "1.27.0",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+    "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+    "os": null,
+    "language": "en-US",
+    "power_mode": null,
+    "hardware_concurrency": 10,
+    "device_memory_gb": 8,
+    "webgpu_adapter": {
+      "vendor": "google",
+      "architecture": "swiftshader",
+      "device": null,
+      "description": null,
+      "is_fallback_adapter": false
+    },
+    "gpu_adapter": {
+      "vendor": "google",
+      "architecture": "swiftshader",
+      "device": null,
+      "description": null,
+      "is_fallback_adapter": false
+    },
+    "webgpu_adapter_note": "separate navigator.gpu query; onnxruntime-web does not expose its selected adapter",
+    "page_to_model_ready_ms": 1856,
+    "bundle_load_timing_ms": {
+      "metadata_ms": 48.799999952316284,
+      "tokenizer_ms": 28.600000023841858,
+      "session_create_ms": 1729.1999999284744,
+      "total_ms": 1806.7999999523163
+    },
+    "model_resource": {
+      "duration_ms": 20.600000023841858,
+      "transfer_bytes": 42700343,
+      "encoded_bytes": 42700043,
+      "decoded_bytes": 42700043,
+      "cache_or_transfer_interpretation": "network-transfer-reported"
+    },
+    "suite_schema_version": 1,
+    "suite_sha256": "4c46b5b347257b81e716ec0a20a6c6116df716466e1ba8e8a74a117bb5708971",
+    "suite_bytes": 6285,
+    "suite_byte_evidence": {
+      "file": "browser-task-cases.json",
+      "bytes": 6285,
+      "sha256": "4c46b5b347257b81e716ec0a20a6c6116df716466e1ba8e8a74a117bb5708971",
+      "expected_bytes": 6285,
+      "expected_sha256": "4c46b5b347257b81e716ec0a20a6c6116df716466e1ba8e8a74a117bb5708971",
+      "identity_source": "configs/data/pretrain-paper.yaml:evaluation_decontamination/local-browser-tasks",
+      "identity_verified": true,
+      "verification_scope": "exact_fetched_response_body_bytes_before_parse"
+    },
+    "suite_expected_actions_schema_validated": true,
+    "fixture_contract": {
+      "name": "localagent-dom-fixtures",
+      "version": 1
+    },
+    "case_order_seed": "dom-loop-v2-trailing",
+    "recorded_case_order": [
+      {
+        "repetition": 0,
+        "order_index": 0,
+        "case_id": "dom-drag-bell"
+      },
+      {
+        "repetition": 0,
+        "order_index": 1,
+        "case_id": "dom-type-feedback"
+      },
+      {
+        "repetition": 0,
+        "order_index": 2,
+        "case_id": "dom-scroll-down"
+      },
+      {
+        "repetition": 0,
+        "order_index": 3,
+        "case_id": "dom-double-click-back"
+      },
+      {
+        "repetition": 0,
+        "order_index": 4,
+        "case_id": "dom-move-bookmark"
+      },
+      {
+        "repetition": 0,
+        "order_index": 5,
+        "case_id": "dom-key-escape"
+      },
+      {
+        "repetition": 0,
+        "order_index": 6,
+        "case_id": "dom-local-navigation"
+      },
+      {
+        "repetition": 0,
+        "order_index": 7,
+        "case_id": "dom-click-confirm"
+      }
+    ],
+    "target_input_tokens": null,
+    "context_condition": "natural",
+    "context_padding": "none",
+    "decision_feature_contract": "hidden[natural_input_tokens - 1]; pointer scan bounded to natural_input_tokens",
+    "context_audit": {
+      "requested_input_tokens": null,
+      "verified_records": 8,
+      "missing_records": 0,
+      "mismatched_records": 0
+    },
+    "warmups": 0,
+    "repetitions": 1,
+    "cases": 8,
+    "measured_records": 8,
+    "concurrency": 1,
+    "latency_clock": "harness_ttfa_ms",
+    "timeout_ms": 10000,
+    "action_timeout_ms": 10000,
+    "watchdog_scope": "every warmup and measured policy call",
+    "timeout_contract": "a timeout aborts the entire page collection; ORT session.run is not cancellable, so no subsequent policy call starts while timed-out inference may still be live",
+    "timer": "performance.now",
+    "paint_barrier": "two consecutive requestAnimationFrame callbacks",
+    "latency_boundaries": {
+      "harness_ttfa": "prompt tokenization through independent schema validation; observation readiness excluded",
+      "runtime_ttfa": "runtime prompt tokenization through runtime schema validation",
+      "ttfa_ms": "backward-compatible exact alias of harness_ttfa_ms; not an additional clock",
+      "tool": "synchronous local semantic event dispatch",
+      "closed_loop": "immediately before policy call through post-paint DOM inspection"
+    },
+    "schema_source": "loaded META.tools[].schema",
+    "schema_validator": "independent browser-tasks.js JSON Schema subset v2; app validator is diagnostic only",
+    "raw_action_evidence_contract": "each row stores normalized predicted_action, full expected_action, parse_evidence, and independent_schema including errors and the exact selected tool schema",
+    "dispatch_contract": {
+      "input_modality": "text-only prompt",
+      "actions_per_case": 1,
+      "target_resolution": "local data-semantic-target labels",
+      "event_trust": "synthetic; Event.isTrusted is false",
+      "physical_cursor_control": false,
+      "visual_grounding": false,
+      "multi_step_planning": false,
+      "browser_wide_control": false,
+      "external_navigation": false,
+      "local_navigation": "fragment route in a disposable same-origin iframe"
+    }
+  },
+  "summary": {
+    "records": 8,
+    "exact_tool_rate": 0.75,
+    "exact_args_rate": 0.75,
+    "exact_action_rate": 0.75,
+    "schema_valid_rate": 1,
+    "final_dom_rate": 0.75,
+    "state_transition_rate": 0.75,
+    "closed_loop_success_rate": 0.75,
+    "latency_ms": {
+      "harness_ttfa_ms": {
+        "count": 8,
+        "min": 123.69999992847443,
+        "mean": 1462.6499999910593,
+        "p50": 157.5999999642372,
+        "p90": 4265.630000030993,
+        "p95": 6111.9150000393365,
+        "p99": 7588.943000046013,
+        "max": 7958.200000047684
+      },
+      "runtime_ttfa_ms": {
+        "count": 8,
+        "min": 123.69999992847443,
+        "mean": 1462.6249999850988,
+        "p50": 157.5999999642372,
+        "p90": 4265.600000023841,
+        "p95": 6111.850000023839,
+        "p99": 7588.850000023841,
+        "max": 7958.100000023842
+      },
+      "independent_validate_ms": {
+        "count": 8,
+        "min": 0,
+        "mean": 0.025000005960464478,
+        "p50": 0,
+        "p90": 0.10000002384185791,
+        "p95": 0.10000002384185791,
+        "p99": 0.10000002384185791,
+        "max": 0.10000002384185791
+      },
+      "model_wall_ms": {
+        "count": 8,
+        "min": 123.69999992847443,
+        "mean": 1462.6874999850988,
+        "p50": 157.5999999642372,
+        "p90": 4265.690000009536,
+        "p95": 6112.044999992845,
+        "p99": 7589.128999979494,
+        "max": 7958.399999976158
+      },
+      "tool_ms": {
+        "count": 8,
+        "min": 0,
+        "mean": 0.32499997317790985,
+        "p50": 0.34999996423721313,
+        "p90": 0.5299999713897705,
+        "p95": 0.5649999380111694,
+        "p99": 0.5929999113082886,
+        "max": 0.5999999046325684
+      },
+      "paint_wait_ms": {
+        "count": 8,
+        "min": 5.600000023841858,
+        "mean": 12.162500008940697,
+        "p50": 8.900000035762787,
+        "p90": 19.989999973773955,
+        "p95": 22.544999998807903,
+        "p99": 24.589000018835065,
+        "max": 25.100000023841858
+      },
+      "closed_loop_ms": {
+        "count": 8,
+        "min": 131.29999995231628,
+        "mean": 1475.2499999850988,
+        "p50": 165.55000001192093,
+        "p90": 4283.0699999928465,
+        "p95": 6129.9849999845,
+        "p99": 7607.516999977825,
+        "max": 7976.899999976158
+      }
+    },
+    "deadline_attainment_ms": {
+      "100": {
+        "opportunities": 8,
+        "on_time": 0,
+        "on_time_rate": 0,
+        "useful": 0,
+        "success_at_deadline": 0,
+        "useful_actions_per_minute": 0
+      },
+      "250": {
+        "opportunities": 8,
+        "on_time": 5,
+        "on_time_rate": 0.625,
+        "useful": 3,
+        "success_at_deadline": 0.375,
+        "useful_actions_per_minute": 15.38303763725945
+      },
+      "500": {
+        "opportunities": 8,
+        "on_time": 6,
+        "on_time_rate": 0.75,
+        "useful": 4,
+        "success_at_deadline": 0.5,
+        "useful_actions_per_minute": 20.51071684967927
+      },
+      "1000": {
+        "opportunities": 8,
+        "on_time": 6,
+        "on_time_rate": 0.75,
+        "useful": 4,
+        "success_at_deadline": 0.5,
+        "useful_actions_per_minute": 20.51071684967927
+      },
+      "2000": {
+        "opportunities": 8,
+        "on_time": 6,
+        "on_time_rate": 0.75,
+        "useful": 4,
+        "success_at_deadline": 0.5,
+        "useful_actions_per_minute": 20.51071684967927
+      }
+    },
+    "by_action": {
+      "click": {
+        "count": 1,
+        "exact_action_rate": 1,
+        "schema_valid_rate": 1,
+        "final_dom_rate": 1,
+        "closed_loop_success_rate": 1,
+        "closed_loop_ms": {
+          "count": 1,
+          "min": 147.89999997615814,
+          "mean": 147.89999997615814,
+          "p50": 147.89999997615814,
+          "p90": 147.89999997615814,
+          "p95": 147.89999997615814,
+          "p99": 147.89999997615814,
+          "max": 147.89999997615814
+        }
+      },
+      "double_click": {
+        "count": 1,
+        "exact_action_rate": 1,
+        "schema_valid_rate": 1,
+        "final_dom_rate": 1,
+        "closed_loop_success_rate": 1,
+        "closed_loop_ms": {
+          "count": 1,
+          "min": 146,
+          "mean": 146,
+          "p50": 146,
+          "p90": 146,
+          "p95": 146,
+          "p99": 146,
+          "max": 146
+        }
+      },
+      "type_text": {
+        "count": 1,
+        "exact_action_rate": 1,
+        "schema_valid_rate": 1,
+        "final_dom_rate": 1,
+        "closed_loop_success_rate": 1,
+        "closed_loop_ms": {
+          "count": 1,
+          "min": 383.39999997615814,
+          "mean": 383.39999997615814,
+          "p50": 383.39999997615814,
+          "p90": 383.39999997615814,
+          "p95": 383.39999997615814,
+          "p99": 383.39999997615814,
+          "max": 383.39999997615814
+        }
+      },
+      "key_press": {
+        "count": 1,
+        "exact_action_rate": 0,
+        "schema_valid_rate": 1,
+        "final_dom_rate": 0,
+        "closed_loop_success_rate": 0,
+        "closed_loop_ms": {
+          "count": 1,
+          "min": 131.29999995231628,
+          "mean": 131.29999995231628,
+          "p50": 131.29999995231628,
+          "p90": 131.29999995231628,
+          "p95": 131.29999995231628,
+          "p99": 131.29999995231628,
+          "max": 131.29999995231628
+        }
+      },
+      "scroll": {
+        "count": 1,
+        "exact_action_rate": 1,
+        "schema_valid_rate": 1,
+        "final_dom_rate": 1,
+        "closed_loop_success_rate": 1,
+        "closed_loop_ms": {
+          "count": 1,
+          "min": 2700,
+          "mean": 2700,
+          "p50": 2700,
+          "p90": 2700,
+          "p95": 2700,
+          "p99": 2700,
+          "max": 2700
+        }
+      },
+      "drag": {
+        "count": 1,
+        "exact_action_rate": 1,
+        "schema_valid_rate": 1,
+        "final_dom_rate": 1,
+        "closed_loop_success_rate": 1,
+        "closed_loop_ms": {
+          "count": 1,
+          "min": 7976.899999976158,
+          "mean": 7976.899999976158,
+          "p50": 7976.899999976158,
+          "p90": 7976.899999976158,
+          "p95": 7976.899999976158,
+          "p99": 7976.899999976158,
+          "max": 7976.899999976158
+        }
+      },
+      "move_cursor": {
+        "count": 1,
+        "exact_action_rate": 1,
+        "schema_valid_rate": 1,
+        "final_dom_rate": 1,
+        "closed_loop_success_rate": 1,
+        "closed_loop_ms": {
+          "count": 1,
+          "min": 133.29999995231628,
+          "mean": 133.29999995231628,
+          "p50": 133.29999995231628,
+          "p90": 133.29999995231628,
+          "p95": 133.29999995231628,
+          "p99": 133.29999995231628,
+          "max": 133.29999995231628
+        }
+      },
+      "open_url": {
+        "count": 1,
+        "exact_action_rate": 0,
+        "schema_valid_rate": 1,
+        "final_dom_rate": 0,
+        "closed_loop_success_rate": 0,
+        "closed_loop_ms": {
+          "count": 1,
+          "min": 183.20000004768372,
+          "mean": 183.20000004768372,
+          "p50": 183.20000004768372,
+          "p90": 183.20000004768372,
+          "p95": 183.20000004768372,
+          "p99": 183.20000004768372,
+          "max": 183.20000004768372
+        }
+      }
+    }
+  },
+  "warmup_records": [],
+  "records": [
+    {
+      "case_id": "dom-drag-bell",
+      "family": "drag",
+      "fixture": {
+        "id": "notification-drag",
+        "version": 1
+      },
+      "query": "Drag 'the notification bell' onto 'the Done button'.",
+      "expected": {
+        "tool": "drag",
+        "args": {
+          "dest": "the Done button",
+          "source": "the notification bell"
+        }
+      },
+      "expected_action": {
+        "tool": "drag",
+        "args": {
+          "dest": "the Done button",
+          "source": "the notification bell"
+        }
+      },
+      "repetition": 0,
+      "order_index": 0,
+      "measured": true,
+      "action_timeout_ms": 10000,
+      "watchdog_outcome": "completed_before_timeout",
+      "started_at_epoch_ms": 1785600763349,
+      "backend": "webgpu",
+      "input_tokens": 17,
+      "input_bytes": 73,
+      "natural_input_tokens": 17,
+      "context_padding_tokens": 0,
+      "context_padding_placement": "none",
+      "decision_input_tokens": 17,
+      "decision_feature_index": 16,
+      "output_tokens": 0,
+      "predicted_action": {
+        "tool": "drag",
+        "args": {
+          "source": "the notification bell",
+          "dest": "the Done button"
+        }
+      },
+      "predicted_tool": "drag",
+      "predicted_route": "computer_use",
+      "route_confidence": 0.9713677085309749,
+      "expected_tool": "drag",
+      "parse_evidence": {
+        "policy": "structured_one_forward",
+        "inference_passes": 1,
+        "parse_kind": "structured_heads",
+        "parse_failure": false,
+        "parse_error": null,
+        "runtime_validation_failure": false,
+        "runtime_validation_error": null,
+        "runtime_error": null
+      },
+      "parse_failure": false,
+      "validation_failure": false,
+      "success": true,
+      "schema_valid": true,
+      "harness_ttfa_ms": 7958.200000047684,
+      "runtime_ttfa_ms": 7958.100000023842,
+      "ttfa_ms": 7958.200000047684,
+      "tokenize_ms": 1.100000023841858,
+      "inference_ms": 7954.5,
+      "decode_control_ms": 0,
+      "dispatch_ms": 2.399999976158142,
+      "parse_validate_ms": 0.10000002384185791,
+      "independent_validate_ms": 0.10000002384185791,
+      "ttft_ms": null,
+      "tpot_ms": null,
+      "model_error": null,
+      "independent_schema": {
+        "validator": "browser-task-json-schema-subset-v2",
+        "valid": true,
+        "errors": [],
+        "schema_tool": "drag",
+        "tool_schema": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "string",
+              "format": "quoted"
+            },
+            "dest": {
+              "type": "string",
+              "format": "quoted"
+            }
+          },
+          "required": [
+            "source",
+            "dest"
+          ]
+        }
+      },
+      "execution": {
+        "ok": true,
+        "synthetic_events": true,
+        "source": "the notification bell",
+        "destination": "the Done button",
+        "events": [
+          "dragstart",
+          "dragenter",
+          "dragover",
+          "drop",
+          "dragend"
+        ]
+      },
+      "tool_error": null,
+      "dom_before": {
+        "passed": false,
+        "assertions": [
+          {
+            "document": "main",
+            "selector": "#fixture-bell",
+            "kind": "parent",
+            "equals": "#fixture-done",
+            "found": true,
+            "actual": "#fixture-inbox",
+            "passed": false
+          },
+          {
+            "document": "main",
+            "selector": "#fixture-done",
+            "kind": "attribute",
+            "name": "data-drop-seen",
+            "equals": "true",
+            "found": true,
+            "actual": null,
+            "passed": false
+          }
+        ]
+      },
+      "dom_after": {
+        "passed": true,
+        "assertions": [
+          {
+            "document": "main",
+            "selector": "#fixture-bell",
+            "kind": "parent",
+            "equals": "#fixture-done",
+            "found": true,
+            "actual": "#fixture-done",
+            "passed": true
+          },
+          {
+            "document": "main",
+            "selector": "#fixture-done",
+            "kind": "attribute",
+            "name": "data-drop-seen",
+            "equals": "true",
+            "found": true,
+            "actual": "true",
+            "passed": true
+          }
+        ]
+      },
+      "score": {
+        "exact_tool": true,
+        "exact_args": true,
+        "exact_action": true,
+        "schema_valid": true,
+        "app_schema_valid_diagnostic": true,
+        "schema_validator_agreement": true,
+        "fixture_clean": true,
+        "execution_ok": true,
+        "final_dom_valid": true,
+        "state_transition": true,
+        "closed_loop_success": true
+      },
+      "latency_ms": {
+        "harness_ttfa_ms": 7958.200000047684,
+        "runtime_ttfa_ms": 7958.100000023842,
+        "independent_validate_ms": 0.10000002384185791,
+        "model_wall_ms": 7958.399999976158,
+        "tokenize_ms": 1.100000023841858,
+        "inference_ms": 7954.5,
+        "decode_control_ms": 0,
+        "model_dispatch_ms": 2.399999976158142,
+        "parse_validate_ms": 0.10000002384185791,
+        "ttft_ms": null,
+        "tpot_ms": null,
+        "tool_ms": 0.5,
+        "paint_wait_ms": 17.799999952316284,
+        "closed_loop_ms": 7976.899999976158
+      }
+    },
+    {
+      "case_id": "dom-type-feedback",
+      "family": "type_text",
+      "fixture": {
+        "id": "feedback-field",
+        "version": 1
+      },
+      "query": "Fill in 'customer feedback'.",
+      "expected": {
+        "tool": "type_text",
+        "args": {
+          "text": "customer feedback"
+        }
+      },
+      "expected_action": {
+        "tool": "type_text",
+        "args": {
+          "text": "customer feedback"
+        }
+      },
+      "repetition": 0,
+      "order_index": 1,
+      "measured": true,
+      "action_timeout_ms": 10000,
+      "watchdog_outcome": "completed_before_timeout",
+      "started_at_epoch_ms": 1785600771359,
+      "backend": "webgpu",
+      "input_tokens": 10,
+      "input_bytes": 49,
+      "natural_input_tokens": 10,
+      "context_padding_tokens": 0,
+      "context_padding_placement": "none",
+      "decision_input_tokens": 10,
+      "decision_feature_index": 9,
+      "output_tokens": 0,
+      "predicted_action": {
+        "tool": "type_text",
+        "args": {
+          "text": "customer feedback"
+        }
+      },
+      "predicted_tool": "type_text",
+      "predicted_route": "computer_use",
+      "route_confidence": 0.9180225182373187,
+      "expected_tool": "type_text",
+      "parse_evidence": {
+        "policy": "structured_one_forward",
+        "inference_passes": 1,
+        "parse_kind": "structured_heads",
+        "parse_failure": false,
+        "parse_error": null,
+        "runtime_validation_failure": false,
+        "runtime_validation_error": null,
+        "runtime_error": null
+      },
+      "parse_failure": false,
+      "validation_failure": false,
+      "success": true,
+      "schema_valid": true,
+      "harness_ttfa_ms": 357.89999997615814,
+      "runtime_ttfa_ms": 357.89999997615814,
+      "ttfa_ms": 357.89999997615814,
+      "tokenize_ms": 0.09999990463256836,
+      "inference_ms": 357.40000009536743,
+      "decode_control_ms": 0,
+      "dispatch_ms": 0.3999999761581421,
+      "parse_validate_ms": 0,
+      "independent_validate_ms": 0,
+      "ttft_ms": null,
+      "tpot_ms": null,
+      "model_error": null,
+      "independent_schema": {
+        "validator": "browser-task-json-schema-subset-v2",
+        "valid": true,
+        "errors": [],
+        "schema_tool": "type_text",
+        "tool_schema": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "format": "quoted"
+            }
+          },
+          "required": [
+            "text"
+          ]
+        }
+      },
+      "execution": {
+        "ok": true,
+        "synthetic_events": true,
+        "target": "#fixture-feedback",
+        "events": [
+          "beforeinput",
+          "input"
+        ],
+        "characters": 17
+      },
+      "tool_error": null,
+      "dom_before": {
+        "passed": false,
+        "assertions": [
+          {
+            "document": "main",
+            "selector": "#fixture-feedback",
+            "kind": "property",
+            "name": "value",
+            "equals": "customer feedback",
+            "found": true,
+            "actual": "",
+            "passed": false
+          },
+          {
+            "document": "main",
+            "selector": "#fixture-feedback",
+            "kind": "attribute",
+            "name": "data-input-seen",
+            "equals": "true",
+            "found": true,
+            "actual": "false",
+            "passed": false
+          }
+        ]
+      },
+      "dom_after": {
+        "passed": true,
+        "assertions": [
+          {
+            "document": "main",
+            "selector": "#fixture-feedback",
+            "kind": "property",
+            "name": "value",
+            "equals": "customer feedback",
+            "found": true,
+            "actual": "customer feedback",
+            "passed": true
+          },
+          {
+            "document": "main",
+            "selector": "#fixture-feedback",
+            "kind": "attribute",
+            "name": "data-input-seen",
+            "equals": "true",
+            "found": true,
+            "actual": "true",
+            "passed": true
+          }
+        ]
+      },
+      "score": {
+        "exact_tool": true,
+        "exact_args": true,
+        "exact_action": true,
+        "schema_valid": true,
+        "app_schema_valid_diagnostic": true,
+        "schema_validator_agreement": true,
+        "fixture_clean": true,
+        "execution_ok": true,
+        "final_dom_valid": true,
+        "state_transition": true,
+        "closed_loop_success": true
+      },
+      "latency_ms": {
+        "harness_ttfa_ms": 357.89999997615814,
+        "runtime_ttfa_ms": 357.89999997615814,
+        "independent_validate_ms": 0,
+        "model_wall_ms": 358,
+        "tokenize_ms": 0.09999990463256836,
+        "inference_ms": 357.40000009536743,
+        "decode_control_ms": 0,
+        "model_dispatch_ms": 0.3999999761581421,
+        "parse_validate_ms": 0,
+        "ttft_ms": null,
+        "tpot_ms": null,
+        "tool_ms": 0.2999999523162842,
+        "paint_wait_ms": 25.100000023841858,
+        "closed_loop_ms": 383.39999997615814
+      }
+    },
+    {
+      "case_id": "dom-scroll-down",
+      "family": "scroll",
+      "fixture": {
+        "id": "scroll-pane",
+        "version": 1
+      },
+      "query": "Please scroll down.",
+      "expected": {
+        "tool": "scroll",
+        "args": {
+          "direction": "down"
+        }
+      },
+      "expected_action": {
+        "tool": "scroll",
+        "args": {
+          "direction": "down"
+        }
+      },
+      "repetition": 0,
+      "order_index": 2,
+      "measured": true,
+      "action_timeout_ms": 10000,
+      "watchdog_outcome": "completed_before_timeout",
+      "started_at_epoch_ms": 1785600771776,
+      "backend": "webgpu",
+      "input_tokens": 7,
+      "input_bytes": 40,
+      "natural_input_tokens": 7,
+      "context_padding_tokens": 0,
+      "context_padding_placement": "none",
+      "decision_input_tokens": 7,
+      "decision_feature_index": 6,
+      "output_tokens": 0,
+      "predicted_action": {
+        "tool": "scroll",
+        "args": {
+          "direction": "down"
+        }
+      },
+      "predicted_tool": "scroll",
+      "predicted_route": "computer_use",
+      "route_confidence": 0.9413648665008567,
+      "expected_tool": "scroll",
+      "parse_evidence": {
+        "policy": "structured_one_forward",
+        "inference_passes": 1,
+        "parse_kind": "structured_heads",
+        "parse_failure": false,
+        "parse_error": null,
+        "runtime_validation_failure": false,
+        "runtime_validation_error": null,
+        "runtime_error": null
+      },
+      "parse_failure": false,
+      "validation_failure": false,
+      "success": true,
+      "schema_valid": true,
+      "harness_ttfa_ms": 2683.100000023842,
+      "runtime_ttfa_ms": 2683.100000023842,
+      "ttfa_ms": 2683.100000023842,
+      "tokenize_ms": 0.10000002384185791,
+      "inference_ms": 2682.2000000476837,
+      "decode_control_ms": 0,
+      "dispatch_ms": 0.7999999523162842,
+      "parse_validate_ms": 0,
+      "independent_validate_ms": 0,
+      "ttft_ms": null,
+      "tpot_ms": null,
+      "model_error": null,
+      "independent_schema": {
+        "validator": "browser-task-json-schema-subset-v2",
+        "valid": true,
+        "errors": [],
+        "schema_tool": "scroll",
+        "tool_schema": {
+          "type": "object",
+          "properties": {
+            "direction": {
+              "type": "string",
+              "enum": [
+                "up",
+                "down",
+                "left",
+                "right"
+              ]
+            }
+          },
+          "required": [
+            "direction"
+          ]
+        }
+      },
+      "execution": {
+        "ok": true,
+        "synthetic_events": true,
+        "target": "#fixture-scroll",
+        "events": [
+          "scroll"
+        ],
+        "direction": "down",
+        "scroll_top": 93,
+        "scroll_left": 0
+      },
+      "tool_error": null,
+      "dom_before": {
+        "passed": false,
+        "assertions": [
+          {
+            "document": "main",
+            "selector": "#fixture-scroll",
+            "kind": "property",
+            "name": "scrollTop",
+            "greater_than": 0,
+            "found": true,
+            "actual": 0,
+            "passed": false
+          },
+          {
+            "document": "main",
+            "selector": "#fixture-scroll",
+            "kind": "attribute",
+            "name": "data-scroll-direction",
+            "equals": "down",
+            "found": true,
+            "actual": null,
+            "passed": false
+          }
+        ]
+      },
+      "dom_after": {
+        "passed": true,
+        "assertions": [
+          {
+            "document": "main",
+            "selector": "#fixture-scroll",
+            "kind": "property",
+            "name": "scrollTop",
+            "greater_than": 0,
+            "found": true,
+            "actual": 93,
+            "passed": true
+          },
+          {
+            "document": "main",
+            "selector": "#fixture-scroll",
+            "kind": "attribute",
+            "name": "data-scroll-direction",
+            "equals": "down",
+            "found": true,
+            "actual": "down",
+            "passed": true
+          }
+        ]
+      },
+      "score": {
+        "exact_tool": true,
+        "exact_args": true,
+        "exact_action": true,
+        "schema_valid": true,
+        "app_schema_valid_diagnostic": true,
+        "schema_validator_agreement": true,
+        "fixture_clean": true,
+        "execution_ok": true,
+        "final_dom_valid": true,
+        "state_transition": true,
+        "closed_loop_success": true
+      },
+      "latency_ms": {
+        "harness_ttfa_ms": 2683.100000023842,
+        "runtime_ttfa_ms": 2683.100000023842,
+        "independent_validate_ms": 0,
+        "model_wall_ms": 2683.100000023842,
+        "tokenize_ms": 0.10000002384185791,
+        "inference_ms": 2682.2000000476837,
+        "decode_control_ms": 0,
+        "model_dispatch_ms": 0.7999999523162842,
+        "parse_validate_ms": 0,
+        "ttft_ms": null,
+        "tpot_ms": null,
+        "tool_ms": 0.10000002384185791,
+        "paint_wait_ms": 16.699999928474426,
+        "closed_loop_ms": 2700
+      }
+    },
+    {
+      "case_id": "dom-double-click-back",
+      "family": "double_click",
+      "fixture": {
+        "id": "back-arrow",
+        "version": 1
+      },
+      "query": "Open 'the Back arrow' by double-clicking.",
+      "expected": {
+        "tool": "double_click",
+        "args": {
+          "target": "the Back arrow"
+        }
+      },
+      "expected_action": {
+        "tool": "double_click",
+        "args": {
+          "target": "the Back arrow"
+        }
+      },
+      "repetition": 0,
+      "order_index": 3,
+      "measured": true,
+      "action_timeout_ms": 10000,
+      "watchdog_outcome": "completed_before_timeout",
+      "started_at_epoch_ms": 1785600774511,
+      "backend": "webgpu",
+      "input_tokens": 15,
+      "input_bytes": 62,
+      "natural_input_tokens": 15,
+      "context_padding_tokens": 0,
+      "context_padding_placement": "none",
+      "decision_input_tokens": 15,
+      "decision_feature_index": 14,
+      "output_tokens": 0,
+      "predicted_action": {
+        "tool": "double_click",
+        "args": {
+          "target": "the Back arrow"
+        }
+      },
+      "predicted_tool": "double_click",
+      "predicted_route": "computer_use",
+      "route_confidence": 0.903015620279968,
+      "expected_tool": "double_click",
+      "parse_evidence": {
+        "policy": "structured_one_forward",
+        "inference_passes": 1,
+        "parse_kind": "structured_heads",
+        "parse_failure": false,
+        "parse_error": null,
+        "runtime_validation_failure": false,
+        "runtime_validation_error": null,
+        "runtime_error": null
+      },
+      "parse_failure": false,
+      "validation_failure": false,
+      "success": true,
+      "schema_valid": true,
+      "harness_ttfa_ms": 138,
+      "runtime_ttfa_ms": 138,
+      "ttfa_ms": 138,
+      "tokenize_ms": 0.09999990463256836,
+      "inference_ms": 136.70000004768372,
+      "decode_control_ms": 0,
+      "dispatch_ms": 1.2000000476837158,
+      "parse_validate_ms": 0,
+      "independent_validate_ms": 0,
+      "ttft_ms": null,
+      "tpot_ms": null,
+      "model_error": null,
+      "independent_schema": {
+        "validator": "browser-task-json-schema-subset-v2",
+        "valid": true,
+        "errors": [],
+        "schema_tool": "double_click",
+        "tool_schema": {
+          "type": "object",
+          "properties": {
+            "target": {
+              "type": "string",
+              "format": "quoted"
+            }
+          },
+          "required": [
+            "target"
+          ]
+        }
+      },
+      "execution": {
+        "ok": true,
+        "synthetic_events": true,
+        "target": "the Back arrow",
+        "events": [
+          "click",
+          "click",
+          "dblclick"
+        ]
+      },
+      "tool_error": null,
+      "dom_before": {
+        "passed": false,
+        "assertions": [
+          {
+            "document": "main",
+            "selector": "#fixture-back",
+            "kind": "attribute",
+            "name": "aria-expanded",
+            "equals": "true",
+            "found": true,
+            "actual": "false",
+            "passed": false
+          }
+        ]
+      },
+      "dom_after": {
+        "passed": true,
+        "assertions": [
+          {
+            "document": "main",
+            "selector": "#fixture-back",
+            "kind": "attribute",
+            "name": "aria-expanded",
+            "equals": "true",
+            "found": true,
+            "actual": "true",
+            "passed": true
+          }
+        ]
+      },
+      "score": {
+        "exact_tool": true,
+        "exact_args": true,
+        "exact_action": true,
+        "schema_valid": true,
+        "app_schema_valid_diagnostic": true,
+        "schema_validator_agreement": true,
+        "fixture_clean": true,
+        "execution_ok": true,
+        "final_dom_valid": true,
+        "state_transition": true,
+        "closed_loop_success": true
+      },
+      "latency_ms": {
+        "harness_ttfa_ms": 138,
+        "runtime_ttfa_ms": 138,
+        "independent_validate_ms": 0,
+        "model_wall_ms": 138.10000002384186,
+        "tokenize_ms": 0.09999990463256836,
+        "inference_ms": 136.70000004768372,
+        "decode_control_ms": 0,
+        "model_dispatch_ms": 1.2000000476837158,
+        "parse_validate_ms": 0,
+        "ttft_ms": null,
+        "tpot_ms": null,
+        "tool_ms": 0.5999999046325684,
+        "paint_wait_ms": 7.300000071525574,
+        "closed_loop_ms": 146
+      }
+    },
+    {
+      "case_id": "dom-move-bookmark",
+      "family": "move_cursor",
+      "fixture": {
+        "id": "bookmark-hover",
+        "version": 1
+      },
+      "query": "Bring the cursor to 'the Bookmark star'.",
+      "expected": {
+        "tool": "move_cursor",
+        "args": {
+          "target": "the Bookmark star"
+        }
+      },
+      "expected_action": {
+        "tool": "move_cursor",
+        "args": {
+          "target": "the Bookmark star"
+        }
+      },
+      "repetition": 0,
+      "order_index": 4,
+      "measured": true,
+      "action_timeout_ms": 10000,
+      "watchdog_outcome": "completed_before_timeout",
+      "started_at_epoch_ms": 1785600774692,
+      "backend": "webgpu",
+      "input_tokens": 13,
+      "input_bytes": 61,
+      "natural_input_tokens": 13,
+      "context_padding_tokens": 0,
+      "context_padding_placement": "none",
+      "decision_input_tokens": 13,
+      "decision_feature_index": 12,
+      "output_tokens": 0,
+      "predicted_action": {
+        "tool": "move_cursor",
+        "args": {
+          "target": "the Bookmark star"
+        }
+      },
+      "predicted_tool": "move_cursor",
+      "predicted_route": "computer_use",
+      "route_confidence": 0.9616726917068302,
+      "expected_tool": "move_cursor",
+      "parse_evidence": {
+        "policy": "structured_one_forward",
+        "inference_passes": 1,
+        "parse_kind": "structured_heads",
+        "parse_failure": false,
+        "parse_error": null,
+        "runtime_validation_failure": false,
+        "runtime_validation_error": null,
+        "runtime_error": null
+      },
+      "parse_failure": false,
+      "validation_failure": false,
+      "success": true,
+      "schema_valid": true,
+      "harness_ttfa_ms": 125.10000002384186,
+      "runtime_ttfa_ms": 125,
+      "ttfa_ms": 125.10000002384186,
+      "tokenize_ms": 0.20000004768371582,
+      "inference_ms": 124.5,
+      "decode_control_ms": 0,
+      "dispatch_ms": 0.2999999523162842,
+      "parse_validate_ms": 0,
+      "independent_validate_ms": 0.10000002384185791,
+      "ttft_ms": null,
+      "tpot_ms": null,
+      "model_error": null,
+      "independent_schema": {
+        "validator": "browser-task-json-schema-subset-v2",
+        "valid": true,
+        "errors": [],
+        "schema_tool": "move_cursor",
+        "tool_schema": {
+          "type": "object",
+          "properties": {
+            "target": {
+              "type": "string",
+              "format": "quoted"
+            }
+          },
+          "required": [
+            "target"
+          ]
+        }
+      },
+      "execution": {
+        "ok": true,
+        "synthetic_events": true,
+        "physical_cursor_moved": false,
+        "target": "the Bookmark star",
+        "events": [
+          "pointermove",
+          "mousemove"
+        ]
+      },
+      "tool_error": null,
+      "dom_before": {
+        "passed": false,
+        "assertions": [
+          {
+            "document": "main",
+            "selector": "#fixture-bookmark",
+            "kind": "attribute",
+            "name": "data-pointer-seen",
+            "equals": "true",
+            "found": true,
+            "actual": null,
+            "passed": false
+          }
+        ]
+      },
+      "dom_after": {
+        "passed": true,
+        "assertions": [
+          {
+            "document": "main",
+            "selector": "#fixture-bookmark",
+            "kind": "attribute",
+            "name": "data-pointer-seen",
+            "equals": "true",
+            "found": true,
+            "actual": "true",
+            "passed": true
+          }
+        ]
+      },
+      "score": {
+        "exact_tool": true,
+        "exact_args": true,
+        "exact_action": true,
+        "schema_valid": true,
+        "app_schema_valid_diagnostic": true,
+        "schema_validator_agreement": true,
+        "fixture_clean": true,
+        "execution_ok": true,
+        "final_dom_valid": true,
+        "state_transition": true,
+        "closed_loop_success": true
+      },
+      "latency_ms": {
+        "harness_ttfa_ms": 125.10000002384186,
+        "runtime_ttfa_ms": 125,
+        "independent_validate_ms": 0.10000002384185791,
+        "model_wall_ms": 125,
+        "tokenize_ms": 0.20000004768371582,
+        "inference_ms": 124.5,
+        "decode_control_ms": 0,
+        "model_dispatch_ms": 0.2999999523162842,
+        "parse_validate_ms": 0,
+        "ttft_ms": null,
+        "tpot_ms": null,
+        "tool_ms": 0.19999992847442627,
+        "paint_wait_ms": 8,
+        "closed_loop_ms": 133.29999995231628
+      }
+    },
+    {
+      "case_id": "dom-key-escape",
+      "family": "key_press",
+      "fixture": {
+        "id": "escape-dialog",
+        "version": 1
+      },
+      "query": "Send an Escape keypress.",
+      "expected": {
+        "tool": "key_press",
+        "args": {
+          "key": "Escape"
+        }
+      },
+      "expected_action": {
+        "tool": "key_press",
+        "args": {
+          "key": "Escape"
+        }
+      },
+      "repetition": 0,
+      "order_index": 5,
+      "measured": true,
+      "action_timeout_ms": 10000,
+      "watchdog_outcome": "completed_before_timeout",
+      "started_at_epoch_ms": 1785600774861,
+      "backend": "webgpu",
+      "input_tokens": 10,
+      "input_bytes": 45,
+      "natural_input_tokens": 10,
+      "context_padding_tokens": 0,
+      "context_padding_placement": "none",
+      "decision_input_tokens": 10,
+      "decision_feature_index": 9,
+      "output_tokens": 0,
+      "predicted_action": {
+        "tool": "send_email",
+        "args": {
+          "recipient": "Escape keypress"
+        }
+      },
+      "predicted_tool": "send_email",
+      "predicted_route": "code",
+      "route_confidence": 0.7140686715740345,
+      "expected_tool": "key_press",
+      "parse_evidence": {
+        "policy": "structured_one_forward",
+        "inference_passes": 1,
+        "parse_kind": "structured_heads",
+        "parse_failure": false,
+        "parse_error": null,
+        "runtime_validation_failure": false,
+        "runtime_validation_error": null,
+        "runtime_error": null
+      },
+      "parse_failure": false,
+      "validation_failure": false,
+      "success": false,
+      "schema_valid": true,
+      "harness_ttfa_ms": 123.69999992847443,
+      "runtime_ttfa_ms": 123.69999992847443,
+      "ttfa_ms": 123.69999992847443,
+      "tokenize_ms": 0.19999992847442627,
+      "inference_ms": 121.10000002384186,
+      "decode_control_ms": 0,
+      "dispatch_ms": 2.399999976158142,
+      "parse_validate_ms": 0,
+      "independent_validate_ms": 0,
+      "ttft_ms": null,
+      "tpot_ms": null,
+      "model_error": null,
+      "independent_schema": {
+        "validator": "browser-task-json-schema-subset-v2",
+        "valid": true,
+        "errors": [],
+        "schema_tool": "send_email",
+        "tool_schema": {
+          "type": "object",
+          "properties": {
+            "recipient": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "recipient"
+          ]
+        }
+      },
+      "execution": {
+        "ok": false,
+        "synthetic_events": true,
+        "events": [],
+        "error": {
+          "name": "Error",
+          "message": "Tool \"send_email\" is outside this local DOM harness."
+        }
+      },
+      "tool_error": {
+        "name": "Error",
+        "message": "Tool \"send_email\" is outside this local DOM harness."
+      },
+      "dom_before": {
+        "passed": false,
+        "assertions": [
+          {
+            "document": "main",
+            "selector": "#fixture-dialog",
+            "kind": "property",
+            "name": "hidden",
+            "equals": true,
+            "found": true,
+            "actual": false,
+            "passed": false
+          },
+          {
+            "document": "main",
+            "selector": "#fixture-key-target",
+            "kind": "attribute",
+            "name": "data-last-key",
+            "equals": "Escape",
+            "found": true,
+            "actual": null,
+            "passed": false
+          }
+        ]
+      },
+      "dom_after": {
+        "passed": false,
+        "assertions": [
+          {
+            "document": "main",
+            "selector": "#fixture-dialog",
+            "kind": "property",
+            "name": "hidden",
+            "equals": true,
+            "found": true,
+            "actual": false,
+            "passed": false
+          },
+          {
+            "document": "main",
+            "selector": "#fixture-key-target",
+            "kind": "attribute",
+            "name": "data-last-key",
+            "equals": "Escape",
+            "found": true,
+            "actual": null,
+            "passed": false
+          }
+        ]
+      },
+      "score": {
+        "exact_tool": false,
+        "exact_args": false,
+        "exact_action": false,
+        "schema_valid": true,
+        "app_schema_valid_diagnostic": true,
+        "schema_validator_agreement": true,
+        "fixture_clean": true,
+        "execution_ok": false,
+        "final_dom_valid": false,
+        "state_transition": false,
+        "closed_loop_success": false
+      },
+      "latency_ms": {
+        "harness_ttfa_ms": 123.69999992847443,
+        "runtime_ttfa_ms": 123.69999992847443,
+        "independent_validate_ms": 0,
+        "model_wall_ms": 123.69999992847443,
+        "tokenize_ms": 0.19999992847442627,
+        "inference_ms": 121.10000002384186,
+        "decode_control_ms": 0,
+        "model_dispatch_ms": 2.399999976158142,
+        "parse_validate_ms": 0,
+        "ttft_ms": null,
+        "tpot_ms": null,
+        "tool_ms": 0.5,
+        "paint_wait_ms": 7,
+        "closed_loop_ms": 131.29999995231628
+      }
+    },
+    {
+      "case_id": "dom-local-navigation",
+      "family": "open_url",
+      "fixture": {
+        "id": "local-navigation",
+        "version": 1
+      },
+      "query": "Navigate to fixture.local/details in the browser.",
+      "expected": {
+        "tool": "open_url",
+        "args": {
+          "url": "fixture.local/details"
+        }
+      },
+      "expected_action": {
+        "tool": "open_url",
+        "args": {
+          "url": "fixture.local/details"
+        }
+      },
+      "repetition": 0,
+      "order_index": 6,
+      "measured": true,
+      "action_timeout_ms": 10000,
+      "watchdog_outcome": "completed_before_timeout",
+      "started_at_epoch_ms": 1785600775026,
+      "backend": "webgpu",
+      "input_tokens": 17,
+      "input_bytes": 70,
+      "natural_input_tokens": 17,
+      "context_padding_tokens": 0,
+      "context_padding_placement": "none",
+      "decision_input_tokens": 17,
+      "decision_feature_index": 16,
+      "output_tokens": 0,
+      "predicted_action": {
+        "tool": "write_file",
+        "args": {
+          "path": "ture.local"
+        }
+      },
+      "predicted_tool": "write_file",
+      "predicted_route": "code",
+      "route_confidence": 0.8819883263572861,
+      "expected_tool": "open_url",
+      "parse_evidence": {
+        "policy": "structured_one_forward",
+        "inference_passes": 1,
+        "parse_kind": "structured_heads",
+        "parse_failure": false,
+        "parse_error": null,
+        "runtime_validation_failure": false,
+        "runtime_validation_error": null,
+        "runtime_error": null
+      },
+      "parse_failure": false,
+      "validation_failure": false,
+      "success": false,
+      "schema_valid": true,
+      "harness_ttfa_ms": 173.29999995231628,
+      "runtime_ttfa_ms": 173.29999995231628,
+      "ttfa_ms": 173.29999995231628,
+      "tokenize_ms": 0.10000002384185791,
+      "inference_ms": 172.19999992847443,
+      "decode_control_ms": 0,
+      "dispatch_ms": 1,
+      "parse_validate_ms": 0,
+      "independent_validate_ms": 0,
+      "ttft_ms": null,
+      "tpot_ms": null,
+      "model_error": null,
+      "independent_schema": {
+        "validator": "browser-task-json-schema-subset-v2",
+        "valid": true,
+        "errors": [],
+        "schema_tool": "write_file",
+        "tool_schema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "format": "path"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      "execution": {
+        "ok": false,
+        "synthetic_events": true,
+        "events": [],
+        "error": {
+          "name": "Error",
+          "message": "Tool \"write_file\" is outside this local DOM harness."
+        }
+      },
+      "tool_error": {
+        "name": "Error",
+        "message": "Tool \"write_file\" is outside this local DOM harness."
+      },
+      "dom_before": {
+        "passed": false,
+        "assertions": [
+          {
+            "document": "frame:#fixture-navigation-frame",
+            "kind": "location_hash",
+            "equals": "#details",
+            "found": true,
+            "actual": "",
+            "passed": false
+          },
+          {
+            "document": "frame:#fixture-navigation-frame",
+            "selector": "#details-page",
+            "kind": "attribute",
+            "name": "data-active",
+            "equals": "true",
+            "found": true,
+            "actual": "false",
+            "passed": false
+          }
+        ]
+      },
+      "dom_after": {
+        "passed": false,
+        "assertions": [
+          {
+            "document": "frame:#fixture-navigation-frame",
+            "kind": "location_hash",
+            "equals": "#details",
+            "found": true,
+            "actual": "",
+            "passed": false
+          },
+          {
+            "document": "frame:#fixture-navigation-frame",
+            "selector": "#details-page",
+            "kind": "attribute",
+            "name": "data-active",
+            "equals": "true",
+            "found": true,
+            "actual": "false",
+            "passed": false
+          }
+        ]
+      },
+      "score": {
+        "exact_tool": false,
+        "exact_args": false,
+        "exact_action": false,
+        "schema_valid": true,
+        "app_schema_valid_diagnostic": true,
+        "schema_validator_agreement": true,
+        "fixture_clean": true,
+        "execution_ok": false,
+        "final_dom_valid": false,
+        "state_transition": false,
+        "closed_loop_success": false
+      },
+      "latency_ms": {
+        "harness_ttfa_ms": 173.29999995231628,
+        "runtime_ttfa_ms": 173.29999995231628,
+        "independent_validate_ms": 0,
+        "model_wall_ms": 173.29999995231628,
+        "tokenize_ms": 0.10000002384185791,
+        "inference_ms": 172.19999992847443,
+        "decode_control_ms": 0,
+        "model_dispatch_ms": 1,
+        "parse_validate_ms": 0,
+        "ttft_ms": null,
+        "tpot_ms": null,
+        "tool_ms": 0,
+        "paint_wait_ms": 9.800000071525574,
+        "closed_loop_ms": 183.20000004768372
+      }
+    },
+    {
+      "case_id": "dom-click-confirm",
+      "family": "click",
+      "fixture": {
+        "id": "confirm-button",
+        "version": 1
+      },
+      "query": "Select 'the Confirm button'.",
+      "expected": {
+        "tool": "click",
+        "args": {
+          "target": "the Confirm button"
+        }
+      },
+      "expected_action": {
+        "tool": "click",
+        "args": {
+          "target": "the Confirm button"
+        }
+      },
+      "repetition": 0,
+      "order_index": 7,
+      "measured": true,
+      "action_timeout_ms": 10000,
+      "watchdog_outcome": "completed_before_timeout",
+      "started_at_epoch_ms": 1785600775242,
+      "backend": "webgpu",
+      "input_tokens": 9,
+      "input_bytes": 49,
+      "natural_input_tokens": 9,
+      "context_padding_tokens": 0,
+      "context_padding_placement": "none",
+      "decision_input_tokens": 9,
+      "decision_feature_index": 8,
+      "output_tokens": 0,
+      "predicted_action": {
+        "tool": "click",
+        "args": {
+          "target": "the Confirm button"
+        }
+      },
+      "predicted_tool": "click",
+      "predicted_route": "computer_use",
+      "route_confidence": 0.9714364197847593,
+      "expected_tool": "click",
+      "parse_evidence": {
+        "policy": "structured_one_forward",
+        "inference_passes": 1,
+        "parse_kind": "structured_heads",
+        "parse_failure": false,
+        "parse_error": null,
+        "runtime_validation_failure": false,
+        "runtime_validation_error": null,
+        "runtime_error": null
+      },
+      "parse_failure": false,
+      "validation_failure": false,
+      "success": true,
+      "schema_valid": true,
+      "harness_ttfa_ms": 141.89999997615814,
+      "runtime_ttfa_ms": 141.89999997615814,
+      "ttfa_ms": 141.89999997615814,
+      "tokenize_ms": 0.10000002384185791,
+      "inference_ms": 141.60000002384186,
+      "decode_control_ms": 0,
+      "dispatch_ms": 0.19999992847442627,
+      "parse_validate_ms": 0,
+      "independent_validate_ms": 0,
+      "ttft_ms": null,
+      "tpot_ms": null,
+      "model_error": null,
+      "independent_schema": {
+        "validator": "browser-task-json-schema-subset-v2",
+        "valid": true,
+        "errors": [],
+        "schema_tool": "click",
+        "tool_schema": {
+          "type": "object",
+          "properties": {
+            "target": {
+              "type": "string",
+              "format": "quoted"
+            }
+          },
+          "required": [
+            "target"
+          ]
+        }
+      },
+      "execution": {
+        "ok": true,
+        "synthetic_events": true,
+        "target": "the Confirm button",
+        "events": [
+          "pointerdown",
+          "mousedown",
+          "pointerup",
+          "mouseup",
+          "click"
+        ]
+      },
+      "tool_error": null,
+      "dom_before": {
+        "passed": false,
+        "assertions": [
+          {
+            "document": "main",
+            "selector": "#fixture-confirm",
+            "kind": "attribute",
+            "name": "data-state",
+            "equals": "confirmed",
+            "found": true,
+            "actual": "idle",
+            "passed": false
+          }
+        ]
+      },
+      "dom_after": {
+        "passed": true,
+        "assertions": [
+          {
+            "document": "main",
+            "selector": "#fixture-confirm",
+            "kind": "attribute",
+            "name": "data-state",
+            "equals": "confirmed",
+            "found": true,
+            "actual": "confirmed",
+            "passed": true
+          }
+        ]
+      },
+      "score": {
+        "exact_tool": true,
+        "exact_args": true,
+        "exact_action": true,
+        "schema_valid": true,
+        "app_schema_valid_diagnostic": true,
+        "schema_validator_agreement": true,
+        "fixture_clean": true,
+        "execution_ok": true,
+        "final_dom_valid": true,
+        "state_transition": true,
+        "closed_loop_success": true
+      },
+      "latency_ms": {
+        "harness_ttfa_ms": 141.89999997615814,
+        "runtime_ttfa_ms": 141.89999997615814,
+        "independent_validate_ms": 0,
+        "model_wall_ms": 141.89999997615814,
+        "tokenize_ms": 0.10000002384185791,
+        "inference_ms": 141.60000002384186,
+        "decode_control_ms": 0,
+        "model_dispatch_ms": 0.19999992847442627,
+        "parse_validate_ms": 0,
+        "ttft_ms": null,
+        "tpot_ms": null,
+        "tool_ms": 0.3999999761581421,
+        "paint_wait_ms": 5.600000023841858,
+        "closed_loop_ms": 147.89999997615814
+      }
+    }
+  ]
+}

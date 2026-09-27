@@ -1,0 +1,46 @@
+# Current source addendum for enterprise API state-diff evaluation.
+# The 179-row train split is available for future isolated experiments; the 45-row test split is
+# always eval-only and is never silently mixed into WebGPU training.
+kind: localagent_realistic_agent_catalog
+schema_version: 1
+purpose: agentdiff_enterprise_state_diff_addendum
+entries:
+  - id: agentdiff
+    family: tool_api
+    name: Agent-Diff Bench
+    source_url: https://huggingface.co/datasets/hubertmarek/agent-diff-bench
+    paper_url: https://arxiv.org/abs/2602.11224
+    code_url: https://github.com/agent-diff-bench/agent-diff
+    source_revision: 4a96ea93a8d074daba93ded109f340da7fae2f70
+    access_status: public_download
+    license:
+      name: MIT
+      url: https://opensource.org/license/mit
+      evidence: https://github.com/agent-diff-bench/agent-diff
+    scale:
+      kind: dataset
+      train_tasks: 179
+      test_tasks: 45
+      total_tasks: 224
+      services: 4
+      endpoints: 108
+    observation:
+      modalities: [text, tool_schema, sandbox_state]
+      formats: [JSONL, JSON, REST, GraphQL]
+    action:
+      modalities: [tool_call, code_execution]
+      formats: [Python, REST, GraphQL, Web_API]
+    domains: [slack, linear, box, google_calendar, enterprise_productivity]
+    train_policy: eval_only
+    integration:
+      status: text_projection_available
+      target_adapter: scripts.normalize_agentdiff
+      source_split_policy: train_rows_may_be_used_only_in_separate_experiments;test_rows_eval_only
+    webgpu_projection:
+      status: bridge_only
+      recommended_observation: task_prompt_plus_state_diff_assertion_target
+      screenshot_policy: none
+    contamination:
+      split: official_80_20_train_test
+      rule: keep test assertions and task IDs out of training; sandbox state-diff execution requires the upstream isolated service replicas
+    notes: Enterprise API benchmark with deterministic state-diff contracts. The LocalAgent projection evaluates assertion text only and never contacts Slack, Linear, Box, or Google Calendar.

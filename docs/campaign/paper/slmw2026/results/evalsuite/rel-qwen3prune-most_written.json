@@ -1,0 +1,82 @@
+{
+  "model": "qwen3-most_written",
+  "kind": "hf",
+  "location": "runs/pruned/qwen3-most_written",
+  "parameters": 312892928,
+  "rows_per_suite": 200,
+  "max_new_tokens": 64,
+  "suites": {
+    "androidcontrol": {
+      "rows": 200,
+      "parse_rate": 0.65,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.37016855835914614,
+      "grounding_accuracy": 0.0
+    },
+    "mind2web": {
+      "rows": 200,
+      "parse_rate": 0.24,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.3726918876171112
+    },
+    "toolace": {
+      "rows": 200,
+      "parse_rate": 0.155,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.4714830493927002
+    },
+    "xlam": {
+      "rows": 200,
+      "parse_rate": 0.21,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.3699680852890015
+    },
+    "bfcl": {
+      "rows": 200,
+      "parse_rate": 0.145,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.3609208369255066
+    },
+    "agentnet": {
+      "rows": 200,
+      "parse_rate": 0.07,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.3780999505519867,
+      "grounding_accuracy": 0.0
+    },
+    "toolbench": {
+      "rows": 200,
+      "parse_rate": 0.12,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.3491311049461365
+    },
+    "toolsandbox": {
+      "rows": 17,
+      "parse_rate": 0.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.35648880285375256
+    },
+    "mcpatlas": {
+      "rows": 200,
+      "parse_rate": 0.095,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.3530153322219849
+    },
+    "mobileactions": {
+      "rows": 200,
+      "parse_rate": 0.175,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.34577596068382266
+    }
+  }
+}

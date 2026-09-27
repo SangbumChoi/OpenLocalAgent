@@ -1,0 +1,147 @@
+{
+  "benchmark_id": "realistic_agent_cross_surface_warm_random_2step",
+  "kind": "localagent_cross_surface_public_continuation_comparison",
+  "schema_version": 1,
+  "environment_executed": false,
+  "official_split_verified": false,
+  "parent": {
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+    "parameters": 10524544
+  },
+  "parent_checkpoint": {
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "sources": [
+    {
+      "label": "androidcontrol",
+      "dataset": "AndroidControl",
+      "url": "https://github.com/google-research/google-research/tree/master/android_control",
+      "train_rows": 2,
+      "eval_rows": 1
+    },
+    {
+      "label": "agentnet",
+      "dataset": "OpenCUA-AgentNet",
+      "url": "https://huggingface.co/datasets/xlangai/AgentNet",
+      "train_rows": 2,
+      "eval_rows": 1
+    },
+    {
+      "label": "mind2web",
+      "dataset": "Mind2Web-train",
+      "url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+      "train_rows": 2,
+      "eval_rows": 1
+    },
+    {
+      "label": "mcpmark_fs",
+      "dataset": "MCPMark",
+      "url": "https://github.com/eval-sys/mcpmark",
+      "train_rows": 2,
+      "eval_rows": 1
+    }
+  ],
+  "split_contract": {
+    "mode": "source_local_parent_and_slot_disjoint",
+    "train_rows": 8,
+    "eval_rows": 4,
+    "cross_source_slot_reuse_allowed": true,
+    "max_seq_len": 32,
+    "steps": 2,
+    "batch_size": 1,
+    "learning_rate": 1e-05,
+    "seed": 2027,
+    "random_backbone_seed": 2028
+  },
+  "arms": {
+    "warm": {
+      "backbone_init": "parent",
+      "report": "m522-realistic-cross-surface-warm-2step-v1.json",
+      "child_sha256": "4259da721ffed72979d8a83eb28d87b4e153ff6bd234a0bdc5e0ef99c8011e71",
+      "before": {
+        "assistant_token_accuracy": 0.391304347826087,
+        "assistant_sequence_accuracy": 0.0,
+        "mean_loss": 4.600161137788192
+      },
+      "after": {
+        "assistant_token_accuracy": 0.40217391304347827,
+        "assistant_sequence_accuracy": 0.0,
+        "mean_loss": 4.564689200857411
+      },
+      "weight_movement_relative_l2": {
+        "embedding": 0.00022784822334104185,
+        "attention_or_mixer": 0.0001885079939490006,
+        "ffn": 0.0002155491653452412,
+        "normalization": 0.000006504076265407835,
+        "action_heads": 0.0
+      }
+    },
+    "random": {
+      "backbone_init": "random",
+      "report": "m522-realistic-cross-surface-random-2step-v1.json",
+      "child_sha256": "7964b0b5a2e52775cb034066c60511012e35d1f0087f87b4a7d2c50d190e14a9",
+      "before": {
+        "assistant_token_accuracy": 0.0,
+        "assistant_sequence_accuracy": 0.0,
+        "mean_loss": 9.883474847544795
+      },
+      "after": {
+        "assistant_token_accuracy": 0.0,
+        "assistant_sequence_accuracy": 0.0,
+        "mean_loss": 9.867328477942426
+      },
+      "weight_movement_relative_l2": {
+        "embedding": 1.1969599337739774,
+        "attention_or_mixer": 0.778832408088384,
+        "ffn": 0.8779219467878152,
+        "normalization": 0.08571107548219134,
+        "action_heads": 0.0
+      }
+    }
+  },
+  "weight_transfer_analysis": {
+    "warm": {
+      "compatibility": {
+        "config_mismatches": {},
+        "shape_mismatches": {},
+        "tokenizer_sha256_equal": true,
+        "shared_tensor_count": 51
+      },
+      "groups": {
+        "embedding": {"relative_delta_l2": 0.00022784822334104185},
+        "attention_or_mixer": {"relative_delta_l2": 0.0001885079939490006},
+        "ffn": {"relative_delta_l2": 0.0002155491653452412},
+        "normalization": {"relative_delta_l2": 0.000006504076265407835},
+        "action_heads": {"relative_delta_l2": 0.0}
+      }
+    },
+    "random": {
+      "compatibility": {
+        "config_mismatches": {},
+        "shape_mismatches": {},
+        "tokenizer_sha256_equal": true,
+        "shared_tensor_count": 51
+      },
+      "groups": {
+        "embedding": {"relative_delta_l2": 1.1969599337739774},
+        "attention_or_mixer": {"relative_delta_l2": 0.778832408088384},
+        "ffn": {"relative_delta_l2": 0.8779219467878152},
+        "normalization": {"relative_delta_l2": 0.08571107548219134},
+        "action_heads": {"relative_delta_l2": 0.0}
+      }
+    }
+  },
+  "comparison": {
+    "arm_contract": {
+      "warm_backbone_init": "parent",
+      "random_backbone_init": "random"
+    }
+  },
+  "interpretation": {
+    "warm_minus_random_after_token_accuracy": 0.40217391304347827,
+    "warm_minus_random_after_mean_loss": -5.302639277085015,
+    "claim": "The warm checkpoint preserves a strong representation and improves this tiny held-out public projection relative to a matched random backbone while moving the shared body by less than 0.03% relative L2.",
+    "not_claimed": "This is not an official AndroidControl, AgentNet, Mind2Web, MCPMark, BrowserGym, emulator, live-browser, MCP, email, Notion, screenshot-grounding, or exact-trajectory score. The sample is intentionally bounded to 8 train and 4 eval rows."
+  }
+}

@@ -1,0 +1,30 @@
+# Filter for `hf sync . hf://buckets/<ns>/<bucket> --filter-from hf-sync.filter`.
+# One rule per line, "-" excludes, "+" includes, first match wins; patterns are globs and a
+# directory is matched by its contents, so write "dir/**", not "dir/".
+# What the bucket is for: source, configs, docs and receipts, the things git tracks or would.
+# Rebuildable or machine-local trees stay out: the venv is 1.2 GB, results/runs holds checkpoints
+# that live on the box, the demo bundle and the HF export are published on the Hub already.
+- .git/**
+- .venv/**
+- venv/**
+- **/__pycache__/**
+- **/*.pyc
+- .ruff_cache/**
+- .pytest_cache/**
+- **/.DS_Store
+- **/._*
+- explog/**
+- runs/**
+- data/**
+- results/runs/**
+- results/demo-bundle/**
+- results/hf-export/**
+- demos/webgpu/*.onnx
+- demos/webgpu/cached/**
+- demos/webgpu/tokenizer.json
+- demos/webgpu/meta.json
+- demos/webgpu/bundle-manifest.json
+- tools/**
+- **/*.tgz
+- **/*.pt
+- **/*.safetensors

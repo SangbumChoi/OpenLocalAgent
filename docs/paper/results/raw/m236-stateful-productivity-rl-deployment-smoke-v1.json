@@ -1,0 +1,139 @@
+{
+  "cases": [
+    {
+      "category": "text",
+      "exact_tool": true,
+      "expected_tool": null,
+      "id": "text_answer",
+      "predicted_tool": null,
+      "prompt": "What is the color of a monkey?",
+      "raw_output": "I am LocalAgent."
+    },
+    {
+      "category": "browser",
+      "exact_tool": false,
+      "expected_tool": "web_search",
+      "id": "browser_search",
+      "predicted_tool": null,
+      "prompt": "Look up who invented the telephone.",
+      "raw_output": "I am LocalAgent."
+    },
+    {
+      "category": "browser",
+      "exact_tool": false,
+      "expected_tool": "open_url",
+      "id": "browser_open",
+      "predicted_tool": "web_search",
+      "prompt": "Open https://github.com/pytorch/pytorch in the browser",
+      "raw_output": "[web_search({'query': 'github.com/pytorch/pytorch in the browser'}) -> {'ok': 'web_search', 'args': {'query': 'github.com/pytorch/pytorch in the browser'}}]"
+    },
+    {
+      "category": "computer",
+      "exact_tool": false,
+      "expected_tool": "list_dir",
+      "id": "filesystem_list",
+      "predicted_tool": null,
+      "prompt": "List the files in the src directory",
+      "raw_output": "I am LocalAgent."
+    },
+    {
+      "category": "computer",
+      "exact_tool": false,
+      "expected_tool": "grep_search",
+      "id": "code_search",
+      "predicted_tool": null,
+      "prompt": "Search the codebase for the function train_step",
+      "raw_output": "I am LocalAgent."
+    },
+    {
+      "category": "computer",
+      "exact_tool": false,
+      "expected_tool": "make_dir",
+      "id": "filesystem_make_dir",
+      "predicted_tool": "planner",
+      "prompt": "Make a directory called build",
+      "raw_output": "[planner({'goal': '<|assistant|>'}) -> {'ok': 'planner', 'args': {'goal': '<|assistant|>'}}]"
+    },
+    {
+      "category": "computer",
+      "exact_tool": false,
+      "expected_tool": "run_tests",
+      "id": "run_tests",
+      "predicted_tool": null,
+      "prompt": "Run the test suite",
+      "raw_output": "I am LocalAgent."
+    },
+    {
+      "category": "tool_api",
+      "exact_tool": false,
+      "expected_tool": "calculator",
+      "id": "calculator",
+      "predicted_tool": "jira_issue",
+      "prompt": "What is 18 * 24?",
+      "raw_output": "[jira_issue({'summary': 'is 18 * 24'}) -> {'ok': 'jira_issue', 'args': {'summary': 'is 18 * 24'}}]"
+    },
+    {
+      "category": "productivity",
+      "exact_tool": false,
+      "expected_tool": "send_email",
+      "id": "email_send",
+      "predicted_tool": null,
+      "prompt": "Email Dana the quarterly report",
+      "raw_output": "I am LocalAgent."
+    },
+    {
+      "category": "browser",
+      "exact_tool": false,
+      "expected_tool": "download_file",
+      "id": "download",
+      "predicted_tool": "drag",
+      "prompt": "Download the dataset from https://example.com/data.zip",
+      "raw_output": "[drag({'dest': 'the dataset from https://example.com/data.zip', 'source': 'the dataset from https://example.com/data.zip'}) -> {'ok': 'drag', 'args': {'dest': 'the dataset from https://example.com/data.zip', 'source': 'the dataset from https://example.com/data.zip'}}]"
+    }
+  ],
+  "checkpoint": {
+    "path": "/private/tmp/localagent-m234-rl/rl/latest.pt",
+    "sha256": "238b2dbcee18494b80ff1cbb2ab3c31c9424e7c868fc658786ac2ec296fc1c92"
+  },
+  "claim_boundary": "Local checkpoint dispatch smoke only. ToolRegistry handlers echo calls; this is not a browser, Android, desktop VM, email, Notion, MCP, or official benchmark result.",
+  "environment": {
+    "environment_executed": false,
+    "external_accounts": false,
+    "name": "local_tool_registry_echo_stub",
+    "screenshots": false
+  },
+  "kind": "localagent_local_deployment_smoke",
+  "schema_version": 1,
+  "summary": {
+    "by_category": {
+      "browser": {
+        "cases": 3,
+        "exact_tool": 0,
+        "tool_accuracy": 0.0
+      },
+      "computer": {
+        "cases": 4,
+        "exact_tool": 0,
+        "tool_accuracy": 0.0
+      },
+      "productivity": {
+        "cases": 1,
+        "exact_tool": 0,
+        "tool_accuracy": 0.0
+      },
+      "text": {
+        "cases": 1,
+        "exact_tool": 1,
+        "tool_accuracy": 1.0
+      },
+      "tool_api": {
+        "cases": 1,
+        "exact_tool": 0,
+        "tool_accuracy": 0.0
+      }
+    },
+    "cases": 10,
+    "exact_tool": 1,
+    "tool_accuracy": 0.1
+  }
+}

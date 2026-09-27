@@ -1,0 +1,52 @@
+{
+  "cap_per_public_source": 6000,
+  "dropped_oversize_rows": {
+    "androidcontrol": 0,
+    "mind2web": 0,
+    "synthetic": 0,
+    "toolace": 10
+  },
+  "eval": {
+    "bytes": 6937384,
+    "path": "data/merged-v2/eval.jsonl",
+    "rows": 2028,
+    "sha256": "3c924d079e72e11befc5aa7085672eba3749dace74b9c36a430a87d6d4a6fd68"
+  },
+  "kind": "localagent_merged_agent_corpus",
+  "max_seq_len": 2048,
+  "note": "Every row carries a tool catalog so the trained model reads its action space from the prompt instead of memorising it in the weights.",
+  "prompt_contract": "openai_full_catalog_v1",
+  "schema_version": 2,
+  "seed": 2026,
+  "sources": [
+    {
+      "eval": 194,
+      "source": "synthetic",
+      "train": 1606
+    },
+    {
+      "available": 8044,
+      "eval": 750,
+      "source": "toolace",
+      "train": 6000
+    },
+    {
+      "available": 3028,
+      "eval": 334,
+      "source": "mind2web",
+      "train": 2694
+    },
+    {
+      "available": 82944,
+      "eval": 750,
+      "source": "androidcontrol",
+      "train": 6000
+    }
+  ],
+  "train": {
+    "bytes": 56068455,
+    "path": "data/merged-v2/train.jsonl",
+    "rows": 16300,
+    "sha256": "30dc3a9b686bb8b8358122a21d95d08f18263ddc7ac1cd4af1d596a6c7a46346"
+  }
+}

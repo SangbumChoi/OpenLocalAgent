@@ -1,0 +1,73 @@
+{
+  "kind": "localagent_webgpu_browser_fresh_action_eval",
+  "schema_version": 1,
+  "benchmark_id": "localagent_webgpu_fresh_realistic_actions",
+  "source": {
+    "type": "local_synthetic_prompt_set",
+    "single_step_prompts": 12,
+    "planner_prompts": 2,
+    "public_benchmark_rows_used": 0,
+    "bundle_label": "current_workspace_webgpu_export",
+    "claim": "Fresh realistic smoke only over the current workspace WebGPU export; this is not an official benchmark split."
+  },
+  "bundle": {
+    "path": "spaces/localagent-webgpu",
+    "app_sha256": "bd89f15b59e7122d60a333903413b64a2f7d4ccc10d76a209f36ac69f9517e65",
+    "bundle_manifest_sha256": "db4aad83ad26f726e456abe98aa7c2aad964ac468a30dd92a06288233ec51738b",
+    "meta_sha256": "d26f68ed2201f9db7d97898001b5dadfef484a39e497405975cf5e859693a8ce",
+    "model_parameters": 10524544,
+    "checkpoint_sha256": "9bba544ae37190fdc24ea51ac9f3f8d80350cd905c01e13186156c19f7e0f9ee",
+    "parity_gate_passed": true
+  },
+  "browser": {
+    "url": "http://127.0.0.1:5180/",
+    "model_ready": true,
+    "backend_badge": "WEBGPU",
+    "external_side_effects": false,
+    "onnx_runtime_placement_warnings": 2
+  },
+  "single_step": {
+    "rows": [
+      {"prompt": "Save the search result to Notion.", "expected_tool": "notion_create_page", "predicted_tool": "notion_create_page", "route": "app_action", "exact_tool": true, "latency_ms": 12},
+      {"prompt": "What does ephemeral mean?", "expected_tool": "define", "predicted_tool": "git_diff", "route": "web_search", "exact_tool": false, "latency_ms": 10},
+      {"prompt": "Open https://github.com/pytorch/pytorch", "expected_tool": "open_url", "predicted_tool": "open_url", "route": "web_search", "exact_tool": true, "latency_ms": 10},
+      {"prompt": "List the files in the src directory", "expected_tool": "list_dir", "predicted_tool": "write_clipboard", "route": "code", "exact_tool": false, "latency_ms": 10},
+      {"prompt": "Set a timer for 10 minutes", "expected_tool": "set_timer", "predicted_tool": "mobile_swipe", "route": "app_action", "exact_tool": false, "latency_ms": 9},
+      {"prompt": "Search the web for AI news.", "expected_tool": "web_search", "predicted_tool": "play_music", "route": "web_search", "exact_tool": false, "latency_ms": 9},
+      {"prompt": "Read config.yaml and run the tests.", "expected_tool": null, "predicted_tool": "mobile_navigate_home", "route": "code", "exact_tool": null, "latency_ms": 12},
+      {"prompt": "Add a note to Notion: quarterly review", "expected_tool": "notion_create_page", "predicted_tool": "notion_create_page", "route": "app_action", "exact_tool": true, "latency_ms": 12},
+      {"prompt": "Send an email to Alex with subject Project update", "expected_tool": "email_send", "predicted_tool": "email_send", "route": "app_action", "exact_tool": true, "latency_ms": 12},
+      {"prompt": "What is the capital of France?", "expected_tool": null, "predicted_tool": "calculator", "route": "web_search", "exact_tool": null, "latency_ms": 12},
+      {"prompt": "Click the submit button", "expected_tool": "click", "predicted_tool": "mobile_press_enter", "route": "computer_use", "exact_tool": false, "latency_ms": 11},
+      {"prompt": "Delete my calendar event", "expected_tool": null, "predicted_tool": "slack_send", "route": "app_action", "exact_tool": null, "latency_ms": 11}
+    ],
+    "unambiguous_rows": 9,
+    "exact_tool_count": 4,
+    "exact_tool_rate": 0.4444444444444444,
+    "median_latency_ms": 11
+  },
+  "planner": {
+    "rows": [
+      {
+        "prompt": "Search the web for AI news, then save it to Notion.",
+        "expected_tools": ["web_search", "notion_create_page"],
+        "predicted_tools": ["web_search", "notion_create_page", "web_search", "notion_create_page"],
+        "exact_trajectory": false,
+        "steps": 4,
+        "elapsed_ms": 52
+      },
+      {
+        "prompt": "Read config.yaml, run the tests, then commit.",
+        "expected_tools": ["read_file", "run_tests", "git_commit"],
+        "predicted_tools": ["mobile_swipe", "open_url", "mobile_navigate_home", "mobile_navigate_home"],
+        "exact_trajectory": false,
+        "steps": 4,
+        "elapsed_ms": 36
+      }
+    ],
+    "exact_trajectory_count": 0,
+    "trajectory_count": 2
+  },
+  "claim_boundary": "A fresh local browser smoke over synthetic realistic prompts using the current workspace WebGPU export (checkpoint 9bba544ae37190fdc24ea51ac9f3f8d80350cd905c01e13186156c19f7e0f9ee). The page reported WEBGPU and model-ready status, but this does not establish learned quality on MobileGym, BrowserGym, OSWorld, MCPMark, email, Notion, or any external account. The email/Notion successes are local runtime routing with no side effects; planner and non-productivity failures remain model-quality evidence.",
+  "receipt_self_sha256": "2d8a3dc8fcb886485bfb6518b69251516c7d5c64885c5dbde74893c177284fe0"
+}

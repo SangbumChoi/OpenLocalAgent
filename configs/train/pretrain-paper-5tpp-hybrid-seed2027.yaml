@@ -1,0 +1,36 @@
+# Second locally prespecified matched-quality replicate; see the seed-2026 hybrid config for the
+# exact token-budget rationale. Only the seed and output directory differ across replicates.
+stage: pretrain
+model_config: configs/model/webgpu-35m-hybrid.yaml
+data:
+  shards_dir: data/shards/paper-all
+  min_train_tokens: 171409408
+  corpus_freeze:
+    spec: configs/data/pretrain-paper-freeze.yaml
+    path: data/shards/paper-all/freeze.json
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-paper-16k.json
+optim:
+  name: adamw
+  lr: 3.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 100
+  total_steps: 5231
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 2
+  grad_accum_steps: 8
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2027
+  resume: true
+log:
+  out_dir: runs/pretrain-paper-5tpp-hybrid-seed2027
+  ckpt_every: 250
+  eval_every: 250
+  eval_batches: 16

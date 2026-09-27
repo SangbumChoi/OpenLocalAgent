@@ -1,0 +1,22 @@
+# Untrained 4K-window all-attention control for webgpu-10m-hybrid-4k.yaml.
+#
+# The original 2K config and its checkpoints remain immutable evidence. Relative to
+# webgpu-10m-attn.yaml, this changes only the name and maximum RoPE/cache window. It retains the
+# existing control's 10.547M parameters and strict matching contract with the hybrid arm.
+# No 4K WebGPU throughput is claimed.
+name: webgpu-10m-attn-4k
+vocab_size: 16384
+d_model: 384
+n_layers: 4
+n_loops: 1
+n_heads: 6
+n_kv_heads: 1
+ffn_hidden: 624
+max_seq_len: 4096
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types: [attn, attn, attn, attn]

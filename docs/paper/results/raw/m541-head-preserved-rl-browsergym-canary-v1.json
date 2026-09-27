@@ -1,0 +1,27 @@
+{
+  "benchmark_id": "browsergym_miniwob",
+  "candidate_checkpoint_sha256": "1f0feee786d2dd9291b8af59c537a9941f40485b99d1317a800246f7bead9d69",
+  "claim_boundary": "Pinned BrowserGym/MiniWoW checkpoint-in-the-loop canary over 16 of the 240 planned episodes. This is a text/accessibility-tree result, not a complete official split, visual-agent score, WebArena result, or real-account email/Notion execution.",
+  "environment": {
+    "browsergym_revision": "9e779f087de9a65668b6974d11f9ce9816026e96",
+    "browsergym_version": "0.14.3",
+    "miniwob_revision": "7fd85d71a4b60325c6585396ec4f48377d049838",
+    "chromium_revision": "1117",
+    "chromium_version": "125.0.6422.26",
+    "playwright_version": "1.44.0",
+    "coordinate_fallback": false,
+    "semantic_fallback": false
+  },
+  "kind": "localagent_head_preserved_rl_browsergym_canary",
+  "receipt_self_sha256": "5849e707a078b5a4e48aa175627608315dba3ab6ea7b9dc2ef7a74769e7f6cce",
+  "schema_version": 1,
+  "result": {
+    "episodes": 16,
+    "planned_episodes": 240,
+    "successful_episodes": 0,
+    "success_rate": 0.0,
+    "official_split_verified": false,
+    "first_tasks": ["miniwob.ascending-numbers", "miniwob.bisect-angle", "miniwob.choose-list", "miniwob.click-button"]
+  },
+  "decision": "diagnostic_only; do_not_promote_as_official_browsergym_score"
+}

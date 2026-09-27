@@ -1,0 +1,77 @@
+{
+  "claim_boundary": "Black-box observations of the currently public Hugging Face Space only. The tests used no credentials and caused no external side effects. They do not prove the current local bundle is published, official benchmark performance, multi-step completion, email delivery, Notion writes, or browser/OS control.",
+  "deployment": {
+    "space_url": "https://huggingface.co/spaces/danelcsb/localagent-webgpu",
+    "http_status": 200,
+    "runtime_status": "Running",
+    "ready_label": "Model ready — runs locally in your browser.",
+    "backend_label": "WEBGPU",
+    "source_file": "app.js",
+    "source_bytes": 10986,
+    "source_sha256": "99682fb27a1f89bd5ac36e3b14badea666f69d53b716a07ecf028db435f600a1",
+    "bundle_manifest_present": false,
+    "bundle_manifest_probe": "Entry not found",
+    "comparison_to_current_local_bundle": "public Space is an older 28M byte-level artifact; the current local verified bundle is a 10,524,544-parameter BPE artifact and is not claimed as publicly uploaded"
+  },
+  "cases": [
+    {
+      "id": "open_url",
+      "prompt": "Open https://github.com/pytorch/pytorch",
+      "expected_tool": "open_url",
+      "observed_route": "web_search",
+      "observed_tool": "open_url",
+      "observed_arguments": {
+        "url": "https://github.com/pytorch/pytorch"
+      },
+      "confidence": 0.95,
+      "latency_ms": 47,
+      "outcome": "tool_schema_correct; no navigation side effect executed"
+    },
+    {
+      "id": "email_send",
+      "prompt": "Email Dana the quarterly report",
+      "expected_tool": "send_email",
+      "acceptable_aliases": ["email_send"],
+      "observed_route": "app_action",
+      "observed_tool": "set_reminder",
+      "observed_arguments": {
+        "task": "Dana the quarterly report"
+      },
+      "confidence": 0.94,
+      "latency_ms": 37,
+      "outcome": "wrong_tool; no email side effect executed"
+    },
+    {
+      "id": "search_then_notion",
+      "prompt": "Search the web for AI news, then save it to Notion.",
+      "expected_sequence": ["web_search", "notion_write"],
+      "observed_route": "web_search",
+      "observed_tool": "notion_write",
+      "observed_arguments": {
+        "content": "the web for AI news, then save it"
+      },
+      "confidence": 0.87,
+      "latency_ms": 39,
+      "outcome": "single_step_proxy_only; search result and Notion write were not executed or verified as a closed loop"
+    }
+  ],
+  "decision": {
+    "publication_ready": false,
+    "keep_public_space_as": "legacy_demo_and_black_box_regression_target",
+    "required_before_claiming_current_bundle_publication": [
+      "authenticate to Hugging Face with a write-capable token",
+      "upload the hash-bound current model bundle and static Space files",
+      "re-fetch the public revision and verify bundle manifest, hashes, and live behavior",
+      "rerun realistic email, browser, Notion, abstention, and compound-action cases"
+    ],
+    "promotion_rule": "Do not promote the public Space as realistic productivity-agent evidence until the email wrong-tool failure and compound-action closed-loop gap are resolved and reverified."
+  },
+  "evaluator": {
+    "method": "in-app-browser black-box DOM inspection",
+    "side_effects": false,
+    "source_app_hash_bound": true,
+    "official_benchmark": false
+  },
+  "schema_version": 1,
+  "receipt_self_sha256": "11e29490b0a49edd85a58813728a52afa0165501ad761dffc7feed4ad60d89f7"
+}

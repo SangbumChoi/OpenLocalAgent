@@ -1,0 +1,110 @@
+{
+  "checkpoint": {
+    "bytes": 52206773,
+    "parameters": 10524544,
+    "path": "/private/tmp/m671-mcp-current-v2/warm-child.pt",
+    "sha256": "b5576dc8bd422d65c62bc500d0754235adb122c805e254e586c980b50bee8861",
+    "stage": "sft_public_agent_continuation",
+    "step": 128
+  },
+  "claim_boundary": "Local-only release preparation with checkpoint-bound model artifacts, static Space staging, and ONNX/PyTorch parity. No public Hub URL, native service success, or Gmail/Notion side effect is implied until authenticated upload and anonymous audit.",
+  "intended_repositories": {
+    "model": "SangbumChoi/localagent-webgpu-10m-m671",
+    "space": "SangbumChoi/localagent-webgpu-m671"
+  },
+  "kind": "localagent_m673_m671_hf_space_preparation",
+  "model_bundle": {
+    "artifacts": {
+      "README.md": {
+        "bytes": 3553,
+        "path": "/private/tmp/m673-m671-release.B62BuF/model/README.md",
+        "sha256": "e0593d98674fc3239e10bc548de0988f7ba1c5a22c2252ad454b3824582d8c93"
+      },
+      "agent_heads.bin": {
+        "bytes": 10085126,
+        "path": "/private/tmp/m673-m671-release.B62BuF/model/agent_heads.bin",
+        "sha256": "a962dbca1635e7dbab9e522464088994c34705f785c415067aa762d4e2a9f7c0"
+      },
+      "config.json": {
+        "bytes": 2824,
+        "path": "/private/tmp/m673-m671-release.B62BuF/model/config.json",
+        "sha256": "eb7534b2be7c6102089018c0f2482515d5b8ffe468d1485ec80994966746e211"
+      },
+      "model.safetensors": {
+        "bytes": 42101904,
+        "path": "/private/tmp/m673-m671-release.B62BuF/model/model.safetensors",
+        "sha256": "b8dcc8779eee2f2b26a1a1eb4f01377a476c65297540d2d855ff49d3e184c14c"
+      },
+      "tokenizer.json": {
+        "bytes": 1134224,
+        "path": "/private/tmp/m673-m671-release.B62BuF/model/tokenizer.json",
+        "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+      }
+    },
+    "path": "/private/tmp/m673-m671-release.B62BuF/model"
+  },
+  "prepared": true,
+  "publication_blocker": "HF authentication is absent; no Hub model or Space upload was attempted.",
+  "published": false,
+  "receipt_self_sha256": "a0ab64eb9226e10e53c7b110e971545fc2215564ac12a7d88fea394b1a639c8a",
+  "schema_version": 1,
+  "space_staging": {
+    "bundle_artifact_count": 8,
+    "bundle_manifest_checkpoint_match": true,
+    "path": "/private/tmp/m673-m671-release.B62BuF/space",
+    "static_files_copied": true
+  },
+  "webgpu_bundle": {
+    "artifacts": {
+      "action_model.fp16.onnx": {
+        "bytes": 21430301,
+        "path": "/private/tmp/m673-m671-release.B62BuF/web/action_model.fp16.onnx",
+        "sha256": "d78906f8038ab0bdbf3a156e22dc994ce2fe389e10df0e517dc84bf7d247dde8"
+      },
+      "action_model.onnx": {
+        "bytes": 42700043,
+        "path": "/private/tmp/m673-m671-release.B62BuF/web/action_model.onnx",
+        "sha256": "96eb75eff7c6d681f20f6c655a250fe4eec0d85174e55425d04823ed569cfd3e"
+      },
+      "dispatch_heads.json": {
+        "bytes": 1321165,
+        "path": "/private/tmp/m673-m671-release.B62BuF/web/dispatch_heads.json",
+        "sha256": "c603f1477997088d535c2814faf323c015c2a9995fc23fc9bf4d4c389c32c7ba"
+      },
+      "heads.json": {
+        "bytes": 3345191,
+        "path": "/private/tmp/m673-m671-release.B62BuF/web/heads.json",
+        "sha256": "a9e13570607597866156bd489931691ef1c81c3f543b37ff27f4748987ee3cd8"
+      },
+      "meta.json": {
+        "bytes": 14728,
+        "path": "/private/tmp/m673-m671-release.B62BuF/web/meta.json",
+        "sha256": "d26f68ed2201f9db7d97898001b5dadfef484a39e497405975cf5e859693a8ce"
+      },
+      "model.fp16.onnx": {
+        "bytes": 34026169,
+        "path": "/private/tmp/m673-m671-release.B62BuF/web/model.fp16.onnx",
+        "sha256": "1f38bbe9d676242ba4983c0865c1ed360c623c0a5bca5309c1ec546d38674a67"
+      },
+      "model.onnx": {
+        "bytes": 67877334,
+        "path": "/private/tmp/m673-m671-release.B62BuF/web/model.onnx",
+        "sha256": "d4c1f15d87c3473f2ca72cabc1013378cb608bd00c010b38800eecfa5238d0ce"
+      },
+      "tokenizer.json": {
+        "bytes": 1134224,
+        "path": "/private/tmp/m673-m671-release.B62BuF/web/tokenizer.json",
+        "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+      }
+    },
+    "bundle_identity_sha256": "27c357ac705ad10ef1a4ec59d7f8bb72ca4d38623e40760f568646f1441c98dd",
+    "bundle_manifest": {
+      "bytes": 9326,
+      "path": "/private/tmp/m673-m671-release.B62BuF/web/bundle-manifest.json",
+      "sha256": "0061e1a2080a8a834817832478d439d2ff33db6141b539833ba52a0e46133100"
+    },
+    "parity_passed": true,
+    "path": "/private/tmp/m673-m671-release.B62BuF/web",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  }
+}

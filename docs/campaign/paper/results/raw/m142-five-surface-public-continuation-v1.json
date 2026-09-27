@@ -1,0 +1,114 @@
+{
+  "claim_boundary": "Source-disjoint text/accessibility continuation over public AndroidControl, AgentNet, Mind2Web, ToolSandbox, and redacted MCPMark projections. This is not an official benchmark score, native emulator/browser/desktop/MCP execution, screenshot grounding, or external-account result.",
+  "decision": {
+    "checkpoint_promoted": false,
+    "reason": "The warm continuation beats the matched random control on aggregate held-out token accuracy, but both arms have zero exact assistant sequences and the warm arm has a slight MCPMark regression; retain as a diagnostic child only."
+  },
+  "child": {
+    "bytes": 52240681,
+    "path": "/private/tmp/m142-five-surface-public-child.pt",
+    "sha256": "8cc3ee42ed38b830b9b04935e156f80d166abeece2dd0c37184ee4d692de7eb1"
+  },
+  "hyperparameters": {
+    "backbone_init": "parent",
+    "batch_size": 4,
+    "device": "cpu",
+    "learning_rate": 0.00001,
+    "max_seq_len": 512,
+    "seed": 2027,
+    "steps": 48
+  },
+  "kind": "localagent_five_surface_public_continuation",
+  "metrics": {
+    "overall": {
+      "before": {"assistant_token_accuracy": 0.6114871657395617, "mean_loss": 2.4681965953406855, "rows": 1064},
+      "after": {"assistant_token_accuracy": 0.6864821392668051, "mean_loss": 2.1566561362785084, "rows": 1064},
+      "delta": {"assistant_token_accuracy": 0.0749949735272434, "mean_loss": -0.3115404590621771}
+    },
+    "by_source": {
+      "android": {"rows": 904, "before_token_accuracy": 0.6545297297297298, "after_token_accuracy": 0.7496216216216216, "before_loss": 2.103517548762141, "after_loss": 1.7814302866342906},
+      "agentnet": {"rows": 133, "before_token_accuracy": 0.4909016561030464, "after_token_accuracy": 0.4988754855857698, "before_loss": 3.442030734115036, "after_loss": 3.0665671598738236},
+      "mind2web": {"rows": 4, "before_token_accuracy": 0.6727272727272727, "after_token_accuracy": 0.6787878787878788, "before_loss": 1.8931960597182764, "after_loss": 1.8967795632102273},
+      "toolsandbox": {"rows": 20, "before_token_accuracy": 0.6483253588516746, "after_token_accuracy": 0.6507177033492823, "before_loss": 2.4497075423099206, "after_loss": 2.4465435338362553},
+      "mcpmark": {"rows": 3, "before_token_accuracy": 0.26468222043443285, "after_token_accuracy": 0.26307320997586486, "before_loss": 5.503421111348552, "after_loss": 5.494089950598351}
+    },
+    "exact_sequence_accuracy": 0.0
+  },
+  "parent": {
+    "bytes": 52238733,
+    "path": "/private/tmp/m100-cross-surface-public-child-v2.pt",
+    "sha256": "df46e3ad04b52e535dc34fd759542b6ad9dbc8fffb082b37e7616023820afd2e"
+  },
+  "random_control": {
+    "same_schedule": true,
+    "backbone_init": "random",
+    "report": {"bytes": 19650, "path": "/private/tmp/m142-five-surface-random-continuation-v1.json", "sha256": "2a7c778bdce2e2d9623ea00e781da154e56f14202e5d22f2b71341e49400b7d7"},
+    "child": {"bytes": 52240681, "path": "/private/tmp/m142-five-surface-random-child.pt", "sha256": "95ea7ead7967a881a7db7100ad037ccd1ae23777f5a436498daa8f917bb7c059"},
+    "after": {"assistant_token_accuracy": 0.39682326921788086, "mean_loss": 8.274810300149145, "rows": 1064},
+    "after_by_source": {"android": 0.49686486486486486, "agentnet": 0.05970149253731343, "mind2web": 0.1696969696969697, "toolsandbox": 0.0430622009569378, "mcpmark": 0.011263073209975865},
+    "warm_minus_random_token_accuracy": 0.2896588700489242,
+    "exact_sequence_accuracy": 0.0
+  },
+  "rows": {"train": 4746, "eval": 1064, "source_disjoint": true},
+  "schema_version": 1,
+  "sources": [
+    {
+      "label": "android",
+      "dataset": "OfficerChul/Android-Control-84k",
+      "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k",
+      "revision": "hf:OfficerChul/Android-Control-84k",
+      "train": {"rows": 4096, "bytes": 12435496, "sha256": "6971d5fe81fe3c6e8ee12e0072481ec653f98bdb5699af54e8f63649358743fd", "split": "train", "visual_input_omitted": true},
+      "eval": {"rows": 904, "bytes": 2735008, "sha256": "2d798115fe0feb14ac6d65f86a4b51b4463b593a35281eedce4de8751356bc95", "split": "test", "visual_input_omitted": true}
+    },
+    {
+      "label": "agentnet",
+      "dataset": "xlangai/AgentNet",
+      "url": "https://huggingface.co/datasets/xlangai/AgentNet",
+      "revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+      "train": {"rows": 513, "bytes": 911095, "sha256": "44fad4c6e98fb6f5afd3cc45b89e1c1987d5d273293922521ef67677ace79db8", "split": "ubuntu_jsonl_bounded_prefix", "images_dropped": true},
+      "eval": {"rows": 133, "bytes": 239724, "sha256": "2cadf65145b07734eb13988dc305396d027f6e98d1a5a7cf7de9a5fd31c3dc7c", "split": "ubuntu_jsonl_bounded_prefix", "images_dropped": true}
+    },
+    {
+      "label": "mind2web",
+      "dataset": "osunlp/Mind2Web",
+      "url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+      "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+      "train": {"rows": 20, "bytes": 78419, "sha256": "8a9b0b97661623f540ee2346a911a6727a8ede8d1dbd39d32137c3d57c7b78aa", "split": "train"},
+      "eval": {"rows": 4, "bytes": 10526, "sha256": "557d615d3930988809b873d097b58c5b40cfff026d90963a27eb3ebb56d06041", "split": "train"}
+    },
+    {
+      "label": "toolsandbox",
+      "dataset": "apple/ToolSandbox",
+      "url": "https://github.com/apple/ToolSandbox",
+      "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+      "train": {"rows": 107, "bytes": 199476, "sha256": "bbdeead59db232b8a73058400f4d916fe9b25708d15189476fb5cc02ca13f100", "split": "train", "projection": "static_ast_source_only"},
+      "eval": {"rows": 20, "bytes": 37151, "sha256": "723be0be3173c58d14f250f99e771d3e9a1c5c98fcdd0b44b02a2bd2836bab1c", "split": "eval", "projection": "static_ast_source_only"}
+    },
+    {
+      "label": "mcpmark",
+      "dataset": "Jakumetsu/mcpmark-trajectory-log",
+      "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log",
+      "revision": "e50578f0ab904d8e6a7c576c387c1e76ae482c89",
+      "train": {"rows": 10, "bytes": 98000, "sha256": "9232ab918515f146c7b1e4ea33072c6b7201d68aae19bee6aae0df550c3cae9d", "split": "redacted_train", "tool_outputs_redacted": true},
+      "eval": {"rows": 3, "bytes": 34352, "sha256": "38b0fb5698cfd1146652fe84898d2194787c755de0e8d5123493d6123880a450", "split": "redacted_eval", "tool_outputs_redacted": true}
+    }
+  ],
+  "weight_transfer": {
+    "compatibility": {"shared_tensor_count": 51, "config_mismatches": {}, "shape_mismatches": {}, "tokenizer_sha256_equal": true},
+    "relative_delta_l2": {"attention_or_mixer": 0.002554394039447935, "ffn": 0.0032495918440748964, "embedding": 0.007417501652193129, "normalization": 0.00016113063367031072, "action_heads": 0.0},
+    "interpretation": "The child reuses the compatible BPE parent and updates the shared backbone at low rate; movement is largest in embeddings, while action heads remain unchanged. These statistics establish lineage, not transfer optimality."
+  },
+  "xlam_diagnostic": {
+    "rows": 128,
+    "source": "product-science/xlam-function-calling-60k-raw",
+    "source_url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw",
+    "source_sha256": "43db9250b50f44d96d2be31983690e101bd083eefea2a4a327e13a3ed8caeee1",
+    "official_original_split_verified": false,
+    "runtime_retriever_selector": {"first_tool_exact_rate": 0.0703125, "schema_valid_rate": 0.125, "first_arguments_exact_rate": 0.0},
+    "global_retriever": {"first_tool_exact_rate": 0.0703125, "schema_valid_rate": 0.1171875, "first_arguments_exact_rate": 0.0},
+    "global_selector": {"first_tool_exact_rate": 0.0078125, "schema_valid_rate": 0.015625, "first_arguments_exact_rate": 0.0},
+    "row_retriever_upper_bound": {"first_tool_exact_rate": 0.5078125, "schema_valid_rate": 1.0, "first_arguments_exact_rate": 0.0},
+    "claim_boundary": "First-call evaluation on a public derivative only; no official Salesforce split, multi-call exactness, live API, or external side effect was used."
+  },
+  "receipt_self_sha256": "b5008a3c44b203d10120b181ba1aabe31aae35c7b187d0abe02549fbdc29a37e"
+}

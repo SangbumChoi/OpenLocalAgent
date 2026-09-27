@@ -1,0 +1,74 @@
+{
+  "claim_boundary": "Source/protocol audit only. No Gmail, Calendar, Docs, Drive, Slack service, credentials, Docker environment, verifier, or external side effect was executed; no ClawsBench score is claimed.",
+  "evaluation_boundary": {
+    "official_static_train_test_split": false,
+    "public_environment_and_verifiers": false,
+    "public_task_metadata": true,
+    "public_trajectory_traces": true,
+    "reason": "The public release exposes task metadata and traces/results, while the Dockerized mock services, verifier state, and reproducible task runner are not included in this snapshot. The task metadata therefore cannot support a LocalAgent teacher-forced gold-action target or native score.",
+    "train_policy": "eval_only"
+  },
+  "experiments": {
+    "01-pilot-40tasks": {
+      "environment": "daytona",
+      "git_hash": "ba7d9c0",
+      "repeats": 30,
+      "tasks": 40
+    },
+    "02-main-44tasks": {
+      "environment": "daytona",
+      "git_hash": "83b1ac6",
+      "repeats": 5,
+      "tasks": 44
+    }
+  },
+  "kind": "localagent_clawsbench_source_audit",
+  "receipt_self_sha256": "f90f147461b186493c0841119f8461017fec7981d39d63e7d48ed36169838971",
+  "schema_version": 1,
+  "source": {
+    "dataset": "benchflow/ClawsBench",
+    "dataset_url": "https://huggingface.co/datasets/benchflow/ClawsBench",
+    "files": {
+      "experiments": {
+        "bytes": 4375,
+        "path": "/private/tmp/m620-clawsbench/experiments.json",
+        "sha256": "fd2543bb6464972af6ac3a2c48eae90429bbce0b6c5bd457aa08f72fb69deb3d"
+      },
+      "results": {
+        "bytes": 1102964,
+        "path": "/private/tmp/m620-clawsbench/02+03_master.csv",
+        "sha256": "86ce78fb561c3a4780dd7b88f7953d4ac52ed1ee3a807c218dd01ec228523574"
+      },
+      "tasks": {
+        "bytes": 23029,
+        "path": "/private/tmp/m620-clawsbench/tasks.json",
+        "sha256": "63d33f7fbd7acba483cebf30643bc2f28d182e4f37f234d2b18bcd023f97db63"
+      }
+    },
+    "license": "CC-BY-NC-SA-4.0",
+    "revision": "e7c45cc9ff486502176267c1294ac5809cf0700a",
+    "source_url": "https://github.com/benchflow-ai/ClawsBench"
+  },
+  "task_metadata": {
+    "categories": {
+      "email": 8,
+      "gcal": 3,
+      "gdoc": 10,
+      "gdrive": 3,
+      "multi": 12,
+      "slack": 8
+    },
+    "multi_service_tasks": 14,
+    "non_safety_tasks": 20,
+    "safety_tasks": 24,
+    "services": {
+      "gcal": 8,
+      "gdoc": 16,
+      "gdrive": 12,
+      "gmail": 14,
+      "slack": 16
+    },
+    "single_service_tasks": 30,
+    "tasks": 44
+  }
+}

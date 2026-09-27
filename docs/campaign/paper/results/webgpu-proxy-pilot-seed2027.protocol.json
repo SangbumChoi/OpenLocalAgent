@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "protocol_id": "webgpu-proxy-pilot-hybrid-seed2027-v1",
+  "frozen_before_training": true,
+  "frozen_date": "2026-07-28",
+  "scope": {
+    "purpose": "bounded directional capability pilot after the clean 10M architecture proxy",
+    "architecture": "webgpu-10m-hybrid",
+    "training_seed": 2027,
+    "claim_limit": "single-seed pilot; not final 35M or at-least-5-TPP architecture evidence"
+  },
+  "parent_checkpoint": {
+    "path": "runs/pretrain-webgpu-proxy-1tpp-hybrid-seed2027/latest.pt",
+    "sha256": "1952ad7f956e02352a395ee9b34d37e893b210f9943935c0bfc3af3c4057bd2b"
+  },
+  "frozen_artifacts": {
+    "model_config": {
+      "path": "configs/model/webgpu-10m-hybrid.yaml",
+      "sha256": "8609bca200f40e2f67c154f73a1641c905509f4d69a1ec7f80273b0cc6f12a98"
+    },
+    "tokenizer": {
+      "path": "data/tokenizer-webgpu-proxy-16k.json",
+      "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+    },
+    "agent_training_conversations": {
+      "path": "data/synth/agent_sft.jsonl",
+      "rows": 5000,
+      "sha256": "161c4b8baab4adb75fe7f968f2bfc15b3e1828c5e376a16b494ee61072179a00"
+    },
+    "agent_evaluation_subset": {
+      "path": "data/synth/agent_eval_pilot65.jsonl",
+      "rows": 65,
+      "single_turn_rows": 53,
+      "multi_turn_rows": 12,
+      "bytes": 659063,
+      "sha256": "a46aaba70b0135cdb10abba760de23f17ddc61ad9515d277b1b6d21f1b4ee179"
+    }
+  },
+  "stage_configs": {
+    "midtrain": {
+      "path": "configs/train/midtrain-webgpu-proxy-pilot-hybrid.yaml",
+      "source_sha256": "5277f9a55abe0bc03f5f154ef608301bedeb52adfa058bc4be20e48f2448d08d",
+      "canonical_lineage_sha256": "f72225ad0ef364bac0a664d34acbf5e315820c19b964c82c8c85deadf887c496",
+      "optimizer_steps": 64,
+      "maximum_input_tokens": 1048576
+    },
+    "sft": {
+      "path": "configs/train/sft-webgpu-proxy-pilot-hybrid.yaml",
+      "source_sha256": "9c5ce72b3228e34008bfc68bf5ce78153f67a3214f359460b90b93bab8c61b80",
+      "canonical_lineage_sha256": "990cf69db5a91bfaba93776ef5aeee49d916d98aea0eb2f866115241f1eac006",
+      "optimizer_steps": 320,
+      "maximum_input_tokens": 10485760
+    },
+    "rl": {
+      "path": "configs/train/rl-webgpu-proxy-pilot-hybrid.yaml",
+      "source_sha256": "2e8aea6e2a756e656fbdc2347d9512afcaa2c34a16d6204f2c6e7adb9f57a5dd",
+      "canonical_lineage_sha256": "78cb54cc78824c4a95b3f095b1e879045c3dd9486b03501aa7d988c9e43ea313",
+      "attempted_steps": 32,
+      "maximum_sampled_completion_tokens": 16384
+    }
+  },
+  "interpretation": {
+    "mechanical_validity": [
+      "all recorded values must be finite",
+      "checkpoint SHA-256 and parent lineage must form the declared chain",
+      "midtrain and SFT must realize nonzero supervised token accounting",
+      "train/evaluation overlap audits must remain zero",
+      "actual execution device and dtype must be recorded"
+    ],
+    "midtrain_and_sft": "Report held-out pre, post, and delta values without a significance claim. Lower held-out loss and higher token or exact-sequence accuracy are directional evidence only.",
+    "rl": "realized_optimizer_updates greater than zero is required to call the RL stage informative. Zero updates is classified as zero_signal. Report held-out exact-match, format-validity, and reward deltas even when they are zero or negative.",
+    "deployment_checkpoint": "Use the SFT checkpoint for structured-action export because autoregressive RL invalidates the structured heads unless they are retrained afterward."
+  },
+  "browser_protocol": {
+    "checkpoint_stage": "sft",
+    "provider": "webgpu",
+    "onnxruntime_web_version": "1.27.0",
+    "policy": "structured_one_forward",
+    "target_input_tokens": 512,
+    "warmups": 3,
+    "repetitions_per_case": 30,
+    "case_order_seed": "slmw2026-v1",
+    "holdout_suite": {
+      "path": "spaces/localagent-webgpu/benchmark-cases.json",
+      "cases": 20,
+      "bytes": 4596,
+      "sha256": "f6e479c10b420edcd1630e99c43df3206a40431f1256d919d5ea1a57bc88142c"
+    },
+    "primary_reporting_deadline_ms": 1000,
+    "secondary_reporting_deadlines_ms": [
+      100,
+      250,
+      500,
+      2000
+    ],
+    "report": [
+      "exact-action accuracy",
+      "schema-validity rate",
+      "TTFA p50, p95, and p99",
+      "Success@0.5s, Success@1s, and Success@2s",
+      "all parse, validation, provider, and byte-verification failures"
+    ]
+  },
+  "limitations": [
+    "one training seed",
+    "10M model trained at approximately one loss token per parameter before the pilot",
+    "synthetic rule-audited supervision",
+    "offline canonical exact-reward RL rather than BrowserGym or live-web RL",
+    "exact-prompt holdout does not claim template-family or primitive-value disjointness",
+    "single Apple M5 browser/runtime deployment condition"
+  ]
+}

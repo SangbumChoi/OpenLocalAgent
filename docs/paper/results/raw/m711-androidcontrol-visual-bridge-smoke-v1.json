@@ -1,0 +1,58 @@
+{
+  "claim_boundary": "This receipt proves that one bounded public AndroidControl PNG can be decoded and condition a budget-compliant visual prefix with a nonzero frozen-backbone update. It does not claim visual action accuracy, Android emulator success, AndroidWorld/MobileGym performance, WebGPU export, or a trained visual checkpoint.",
+  "kind": "localagent_m711_androidcontrol_visual_bridge_smoke",
+  "model": {
+    "config": "configs/model/webgpu-10m-vision.yaml",
+    "image_tensor_shape": [
+      1,
+      3,
+      2400,
+      1080
+    ],
+    "logit_shape": [
+      1,
+      54,
+      16384
+    ],
+    "parameters": 10612224,
+    "pixel_max": 1.0,
+    "pixel_min": 0.04313725605607033,
+    "vision_tokens": 36,
+    "visual_token_shape": [
+      1,
+      36,
+      384
+    ]
+  },
+  "pipeline_boundary": {
+    "native_emulator_executed": false,
+    "quality_training_admitted": false,
+    "screenshot_bytes_consumed": true,
+    "vision_bridge_forward": true,
+    "vision_bridge_update": true,
+    "webgpu_exported": false
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "AndroidControl",
+    "object_url": "https://storage.googleapis.com/gresearch/android_control/android_control-00000-of-00020",
+    "range_bytes": 10485760,
+    "range_sha256": "c23b8865d8deed6d6145c8f9d2877dd2130600975c689f6cde429b62e86d32c3",
+    "range_start": 0,
+    "record": {
+      "bytes": 772635,
+      "sha256": "6881efdfbcc5c843418e521eb724356fd8c2300e72cea40ae7ef0bb9274018f1"
+    },
+    "screenshot": {
+      "bytes": 507173,
+      "sha256": "f32c653b876e5890e8b0b2f4b3bd0ef363ebf7b694d09e2bc7450462ea26d22e"
+    }
+  },
+  "training": {
+    "backbone_frozen": true,
+    "one_update_loss": 8.691405296325684,
+    "target_tokens": 54,
+    "vision_grad_norm": 10.90961742401123,
+    "vision_parameter_update_l2": 0.2961025834083557
+  }
+}

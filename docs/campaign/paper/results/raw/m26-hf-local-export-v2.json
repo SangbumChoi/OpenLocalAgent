@@ -1,0 +1,46 @@
+{
+  "kind": "localagent_hf_local_export_receipt",
+  "schema_version": 1,
+  "publication": {
+    "published": false,
+    "hub_url": null,
+    "reason": "HF authentication was not configured; this receipt binds a local bundle only."
+  },
+  "checkpoint": {
+    "path": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/latest.pt",
+    "sha256": "79387105de75d332413262e8d8ddb847b6cc13bc03f5e4df3c81663d9897aef1"
+  },
+  "bundle": {
+    "model_type": "localagent",
+    "parameters": 10524544,
+    "tokenizer": {
+      "kind": "bpe",
+      "filename": "tokenizer.json",
+      "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+    },
+    "files": {
+      "README.md": {
+        "bytes": 3471,
+        "sha256": "d8d02fcb79585deb3f83df504d460d2f4efacd99f645d15fa355b2ec3ffae422"
+      },
+      "agent_heads.bin": {
+        "bytes": 10080518,
+        "sha256": "0abe054e418ae90acb5b52de6c7b8804d6a07664258406550a66100a41193eae"
+      },
+      "config.json": {
+        "bytes": 785,
+        "sha256": "3ad5651f2c7e55f2ad6ed1fd45b50c566697df2d52777f74d937a078847fd23c"
+      },
+      "model.safetensors": {
+        "bytes": 42101904,
+        "sha256": "656371bba4657e49313cc7ede8449a624616ba85dc3270144d676febae5e2d33"
+      },
+      "tokenizer.json": {
+        "bytes": 1134224,
+        "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+      }
+    },
+    "head_keys": ["dense_selector", "ptr_head", "route_head", "selector_proj", "tool_head"]
+  },
+  "claim_boundary": "Local HF-format export and round-trip manifest only; no Hub upload, public URL, WebGPU runtime score, or benchmark capability claim."
+}

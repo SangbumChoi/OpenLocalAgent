@@ -1,0 +1,64 @@
+{
+  "kind": "localagent_agentnet_text_projection_eval",
+  "schema_version": 1,
+  "dataset": {
+    "name": "xlangai/AgentNet",
+    "source_url": "https://huggingface.co/datasets/xlangai/AgentNet",
+    "revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+    "license": "MIT",
+    "source_prefix_bytes": 8388608,
+    "source_prefix_sha256": "1773bed942fb1bb3f329a9463e2fba5ac0fc8a9f9c8d490550e75212fc614da9",
+    "source_parent_records": 40,
+    "text_projection_parent_records": 8,
+    "text_projection_action_rows": 133,
+    "text_projection_eval_sha256": "2cadf65145b07734eb13988dc305396d027f6e98d1a5a7cf7de9a5fd31c3dc7c",
+    "official_split_verified": false,
+    "images_consumed": false,
+    "desktop_runtime_executed": false
+  },
+  "evaluator": {
+    "local_script": "scripts/evaluate_agentnet_text.py",
+    "local_script_sha256": "0490ca86264792614bfd4d471878252784591300bb36b3394920efbc7844d730",
+    "scorer": "localagent.eval.agentnet_results.aggregate_agentnet_results",
+    "scorer_module_sha256": "20240932d81b419023fa8afc5176d89f78a4f45d17acb45714475acae013a7a1",
+    "upstream_reference": "https://github.com/xlang-ai/OpenCUA/tree/dfc91ba89f700d10f26ec50362d308571482ab8b/evaluation/agentnetbench",
+    "upstream_revision": "dfc91ba89f700d10f26ec50362d308571482ab8b"
+  },
+  "transfer_arms": {
+    "pretrained_sft": {
+      "checkpoint_sha256": "4126c54313b0f72aefc07363b8942f88ab7a19cbfab2da2d52323769a080e08a",
+      "mean_total": 5.74905055712272e-15,
+      "success_rate": 0.0,
+      "exact_trajectory_rate": 0.0,
+      "first_action_type_rate": 0.75,
+      "mean_ground_truth_actions": 16.375,
+      "mean_predicted_actions": 15.125,
+      "mean_action_count_penalty": 0.9886363636363636
+    },
+    "matched_random_backbone": {
+      "checkpoint_sha256": "b645c220828e5ba5ad0c9a64d2c96f56d197275c0d104a84dcbae4b754fa763a",
+      "mean_total": 0.0,
+      "success_rate": 0.0,
+      "exact_trajectory_rate": 0.0,
+      "first_action_type_rate": 0.0,
+      "mean_ground_truth_actions": 16.375,
+      "mean_predicted_actions": 1.875,
+      "mean_action_count_penalty": 1.0
+    }
+  },
+  "failure_profile": {
+    "pretrained_action_families": {
+      "click": 1.1498101248043326e-14,
+      "doubleclick": 0.0,
+      "dragto": 0.0,
+      "hotkey": 0.0,
+      "moveto": 0.0,
+      "rightclick": 0.0,
+      "scroll": 0.0,
+      "wait": 0.0,
+      "write": 0.0
+    },
+    "interpretation": "Text routing transfers partially, but coordinate grounding, typed text, keyboard fidelity, and long-horizon action alignment fail without visual state."
+  },
+  "claim_boundary": "Bounded offline AgentNet text-observation/action projection only. Dropped termination/triple-click source actions are outside this score; this is not an official AgentNetBench leaderboard result, screenshot-grounding result, native desktop result, or OSWorld score."
+}

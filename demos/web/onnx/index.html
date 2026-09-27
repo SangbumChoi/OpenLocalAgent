@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LocalAgent — in-browser (ONNX Runtime Web / WebGPU)</title>
+<style>
+  body{font:15px/1.5 system-ui,sans-serif;max-width:820px;margin:24px auto;padding:0 16px;color:#1a1a1a}
+  h1{font-size:20px} h2{font-size:15px;margin-top:24px;color:#444}
+  .card{border:1px solid #e3e3e3;border-radius:10px;padding:14px 16px;margin:12px 0}
+  input[type=text]{width:100%;padding:9px 11px;border:1px solid #ccc;border-radius:8px;font:inherit}
+  button{padding:8px 14px;border:0;border-radius:8px;background:#3070c0;color:#fff;font:inherit;cursor:pointer}
+  .out{white-space:pre-wrap;background:#f7f8fa;border-radius:8px;padding:10px 12px;margin-top:10px;font-family:ui-monospace,monospace;font-size:13px}
+  .muted{color:#888;font-size:13px} .ex{color:#3070c0;cursor:pointer;margin-right:10px}
+  #status{font-size:13px}
+</style>
+</head>
+<body>
+<h1>LocalAgent — byte-level tool-calling agent, in your browser</h1>
+<p class="muted">A &lt;1M-param model running client-side via <b>ONNX Runtime Web</b> (WebGPU → WASM
+fallback). Tool selection is by an in-page char-n-gram <b>retriever</b> over the catalog (new tools
+need no retraining); arguments are grounded from your text. Nothing leaves your machine.</p>
+<p id="status">⏳ loading…</p>
+
+<div class="card">
+  <h2>🔧 Agent — retrieve a tool → ground its argument → call it</h2>
+  <input id="q" type="text" placeholder="Move the file src/old.py to the archive."/>
+  <div style="margin-top:8px"><button onclick="runAgent()">Run</button>
+    <span class="muted" id="backend"></span></div>
+  <div class="muted" style="margin-top:8px">try:
+    <span class="ex" onclick="ex(this)">Google the best pizza in town.</span>
+    <span class="ex" onclick="ex(this)">Click through to figma.com.</span>
+    <span class="ex" onclick="ex(this)">Summarize 'the quarterly report'.</span>
+    <span class="ex" onclick="ex(this)">Email Greta.</span></div>
+  <div class="out" id="agentOut"></div>
+</div>
+
+<div class="card">
+  <h2>🧠 Model — generate bytes with the ONNX model (proves it runs on WebGPU)</h2>
+  <input id="p" type="text" placeholder="&lt;|user|&gt;hello"/>
+  <div style="margin-top:8px"><button onclick="runModel()">Generate 48 bytes</button></div>
+  <div class="out" id="modelOut"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

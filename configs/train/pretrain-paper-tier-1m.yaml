@@ -1,0 +1,39 @@
+# Shared-corpus production pilot for the factorized/recurrent 4K 1M BPE router.
+#
+# 599 * 2 * 8 * 2,048 = 19,628,032 scheduled tokens, or 20.019 tokens per
+# 980,480-parameter LM. Realized loss-token accounting remains authoritative when
+# a sampled packed row contains padding.
+stage: pretrain
+model_config: configs/model/webgpu-1m-bpe-router.yaml
+data:
+  shards_dir: data/shards/paper-all
+  min_train_tokens: 19628032
+  corpus_freeze:
+    spec: configs/data/pretrain-paper-tier-freeze.yaml
+    path: data/shards/paper-all/tier-freeze.json
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-paper-16k.json
+optim:
+  name: adamw
+  lr: 1.0e-3
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 12
+  total_steps: 599
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 2
+  grad_accum_steps: 8
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+  resume: true
+log:
+  out_dir: runs/pretrain-paper-tier-1m-seed2026
+  ckpt_every: 50
+  eval_every: 50
+  eval_batches: 16

@@ -1,0 +1,55 @@
+kind: localagent_hf_campaign_sources
+schema_version: 1
+description: >-
+  Public or explicitly gated, training-approved Hugging Face sources for the LocalAgent campaign. Evaluation-only
+  suites are intentionally absent; their prompts/verifiers must never be downloaded into SFT/RL.
+sources:
+  - id: xlam_function_calling
+    repo_id: Salesforce/xlam-function-calling-60k
+    repo_type: dataset
+    revision: main
+    policy: train
+    access: gated
+    license: CC-BY-4.0
+    allow_patterns: ["*.json", "*.jsonl", "*.parquet"]
+    purpose: tool schemas and canonical function-call arguments
+  - id: mind2web_train
+    repo_id: osunlp/Mind2Web
+    repo_type: dataset
+    revision: main
+    policy: train
+    license: CC-BY-4.0
+    allow_patterns: ["data/train/**", "README*", "*.json"]
+    purpose: grounded browser DOM/action supervision from the official train split
+  - id: agentnet
+    repo_id: xlangai/AgentNet
+    repo_type: dataset
+    revision: main
+    policy: train
+    license: MIT
+    allow_patterns: ["*.json", "*.jsonl", "*.parquet"]
+    purpose: desktop action trajectories; image archives remain optional and are not required by the text adapter
+  - id: toolace
+    repo_id: Team-ACE/ToolACE
+    repo_type: dataset
+    revision: main
+    policy: train
+    license: Apache-2.0
+    allow_patterns: ["*.json", "*.jsonl", "*.parquet"]
+    purpose: multi-turn tool schemas and argument grounding
+  - id: android_control_public_mirror
+    repo_id: OfficerChul/Android-Control-84k
+    repo_type: dataset
+    revision: main
+    policy: train
+    license: Apache-2.0
+    allow_patterns: ["*.json", "*.jsonl", "*.parquet", "README*", "*.tfrecord*", "*.gz"]
+    purpose: public AndroidControl-derived train-side records; original Google Research source remains authoritative
+  - id: localagent_tiny_model
+    repo_id: danelcsb/openlocalagent-tiny-30m-byte
+    repo_type: model
+    revision: main
+    policy: model_reference
+    license: MIT
+    allow_patterns: ["config.json", "*.safetensors", "*.bin", "tokenizer*", "*.json", "*.txt", "README*", "*.md"]
+    purpose: public baseline model reference; never silently substitutes for a current checkpoint

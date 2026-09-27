@@ -1,0 +1,56 @@
+{
+  "claim_boundary": "This is a cross-surface weight-adoption decision over offline projections and resettable local diagnostics. It is not evidence of native mobile, browser, desktop, email, Notion, MCP, or WebGPU task success, and it does not authorize exporting any child checkpoint.",
+  "current_checkpoint": {
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "parameters": 10524544,
+    "stage": "sft_browser_context"
+  },
+  "decision": {
+    "backbone": "retain_as_initialization_candidate_only",
+    "backbone_update_policy": "low_rate_only_after_frozen_and_matched_random_controls",
+    "action_heads": "retrain_or_adapt_per_surface_with_independent_seed",
+    "native_promotion": false,
+    "webgpu_export_of_child": false,
+    "overall": "do_not_promote_from_current_evidence"
+  },
+  "evidence": [
+    {
+      "receipt": "docs/paper/results/raw/m25-weight-transfer-ablation-v1.json",
+      "finding": "pretrain/midtrain/SFT tensors are config/tokenizer compatible, but parent-head and random held-out selector scores are identical"
+    },
+    {
+      "receipt": "docs/paper/results/raw/m326-current-stateful-lowrate-transfer-v1.json",
+      "finding": "low-rate local reward rises, but productive completion remains 0/4 and total completion is 1/5"
+    },
+    {
+      "receipt": "docs/paper/results/raw/m329-current-mind2web-pointer-transfer-v1.json",
+      "finding": "DOM pointer span exactness improves 0/63 to 6/63, but native BrowserGym replay remains required"
+    },
+    {
+      "receipt": "docs/paper/results/raw/m313-current-toolace-selector-64-transfer-v1.json",
+      "finding": "selector and argument metrics improve, but free-run episode exactness is only 3.12%; reject full-policy promotion"
+    },
+    {
+      "receipt": "docs/paper/results/raw/m316-current-toolace-pointer-free-run-transfer-v1.json",
+      "finding": "pointer diagnostic improves while free-run argument and episode exactness do not; reject pointer promotion"
+    },
+    {
+      "receipt": "docs/paper/results/raw/m339-cua-gym-current-surface-probe-v1.json",
+      "finding": "current warm held-out surface accuracy 77.55% is below matched random 77.87%"
+    },
+    {
+      "receipt": "docs/paper/results/raw/m340-agentnet-current-text-projection-v1.json",
+      "finding": "current checkpoint scores 0% first-action type, 0% action score, and 0/8 exact trajectories"
+    }
+  ],
+  "acceptance_contract": {
+    "required_comparators": ["frozen_warm", "low_rate_warm", "matched_random"],
+    "required_metrics": ["held_out_exactness", "closed_loop_completion", "abstention_rate", "native_verifier_result"],
+    "required_lineage": ["same_config", "same_tokenizer_sha256", "parent_checkpoint_sha256", "disjoint_task_ids"],
+    "promotion_rule": "A child may be exported only when it improves pre-registered held-out and closed-loop metrics without regressions versus frozen and matched-random controls, then passes the release-matched native verifier."
+  },
+  "generated_at": "2026-08-05",
+  "kind": "localagent_cross_surface_weight_adoption_decision",
+  "receipt_self_sha256": "dd28ed059b3b5ba72f566cbb92f9bc1a3d6864d46f2edd6bc4d27838173edb05",
+  "schema_version": 1
+}

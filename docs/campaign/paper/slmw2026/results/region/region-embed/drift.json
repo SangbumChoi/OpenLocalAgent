@@ -1,0 +1,121 @@
+{
+  "checkpoint": "runs/region/region-embed/model.pt",
+  "shared_tensors": 92,
+  "parameters": 28322304,
+  "by_region": {
+    "embedding": {
+      "parameters": 131072,
+      "donor_l2": 30.093700408935547,
+      "delta_l2": 6.857515811920166,
+      "relative_delta_l2": 0.22787213325500488,
+      "cosine": 0.9761247634887695,
+      "parameter_share": 0.004627872082723214
+    },
+    "attention": {
+      "parameters": 6553600,
+      "donor_l2": 104.73768615722656,
+      "delta_l2": 119.31090545654297,
+      "relative_delta_l2": 1.1391401290893555,
+      "cosine": -1.7390164430253208e-05,
+      "parameter_share": 0.23139360413616067
+    },
+    "ffn": {
+      "parameters": 21626880,
+      "donor_l2": 175.0997772216797,
+      "delta_l2": 201.9779052734375,
+      "relative_delta_l2": 1.1535017490386963,
+      "cosine": 0.001049972022883594,
+      "parameter_share": 0.7635988936493302
+    },
+    "norms": {
+      "parameters": 10752,
+      "donor_l2": 98.67318725585938,
+      "delta_l2": 8.967011451721191,
+      "relative_delta_l2": 0.09087586402893066,
+      "cosine": 0.9968982934951782,
+      "parameter_share": 0.0003796301317858886
+    }
+  },
+  "by_layer": {
+    "0": {
+      "parameters": 2819072,
+      "donor_l2": 68.4996337890625,
+      "delta_l2": 72.78450012207031,
+      "relative_delta_l2": 1.0625531673431396,
+      "cosine": 0.2799011468887329,
+      "parameter_share": 0.09953540502919536
+    },
+    "1": {
+      "parameters": 2819072,
+      "donor_l2": 64.47660064697266,
+      "delta_l2": 68.25407409667969,
+      "relative_delta_l2": 1.0585867166519165,
+      "cosine": 0.2942604422569275,
+      "parameter_share": 0.09953540502919536
+    },
+    "2": {
+      "parameters": 2819072,
+      "donor_l2": 65.8880844116211,
+      "delta_l2": 69.5330810546875,
+      "relative_delta_l2": 1.0553209781646729,
+      "cosine": 0.2892894148826599,
+      "parameter_share": 0.09953540502919536
+    },
+    "3": {
+      "parameters": 2819072,
+      "donor_l2": 66.60836029052734,
+      "delta_l2": 70.1361312866211,
+      "relative_delta_l2": 1.0529628992080688,
+      "cosine": 0.28625380992889404,
+      "parameter_share": 0.09953540502919536
+    },
+    "4": {
+      "parameters": 2819072,
+      "donor_l2": 68.38228607177734,
+      "delta_l2": 71.61449432373047,
+      "relative_delta_l2": 1.0472667217254639,
+      "cosine": 0.28307831287384033,
+      "parameter_share": 0.09953540502919536
+    },
+    "5": {
+      "parameters": 2819072,
+      "donor_l2": 68.86587524414062,
+      "delta_l2": 71.94374084472656,
+      "relative_delta_l2": 1.0446935892105103,
+      "cosine": 0.28321439027786255,
+      "parameter_share": 0.09953540502919536
+    },
+    "6": {
+      "parameters": 2819072,
+      "donor_l2": 71.19020080566406,
+      "delta_l2": 74.10078430175781,
+      "relative_delta_l2": 1.0408846139907837,
+      "cosine": 0.27767640352249146,
+      "parameter_share": 0.09953540502919536
+    },
+    "7": {
+      "parameters": 2819072,
+      "donor_l2": 74.83872985839844,
+      "delta_l2": 77.21453857421875,
+      "relative_delta_l2": 1.0317456722259521,
+      "cosine": 0.27163270115852356,
+      "parameter_share": 0.09953540502919536
+    },
+    "8": {
+      "parameters": 2819072,
+      "donor_l2": 78.12146759033203,
+      "delta_l2": 80.4068603515625,
+      "relative_delta_l2": 1.0292543172836304,
+      "cosine": 0.2660389542579651,
+      "parameter_share": 0.09953540502919536
+    },
+    "9": {
+      "parameters": 2819072,
+      "donor_l2": 83.69776916503906,
+      "delta_l2": 85.15672302246094,
+      "relative_delta_l2": 1.0174312591552734,
+      "cosine": 0.258770227432251,
+      "parameter_share": 0.09953540502919536
+    }
+  }
+}

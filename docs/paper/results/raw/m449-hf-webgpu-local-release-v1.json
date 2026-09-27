@@ -1,0 +1,60 @@
+{
+  "checkpoint": {
+    "bytes": 52246937,
+    "parameters": 10524544,
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "claim_boundary": "The exact current checkpoint has a locally verified HF-format model bundle and static WebGPU bundle with ONNX parity. No Hugging Face upload, anonymous re-fetch, public URL, hardware WebGPU task score, browser account, email, or Notion claim is made.",
+  "kind": "localagent_hf_webgpu_local_release_receipt",
+  "model_bundle": {
+    "config": {
+      "bytes": 38446,
+      "path": "/private/tmp/m449-hf-model/config.json",
+      "sha256": "51255c4d8d89ba18a24177c0c7b1792a0d1bc9a78ea062d66e228df29f8b4f6b"
+    },
+    "files": [
+      "README.md",
+      "agent_heads.bin",
+      "config.json",
+      "model.safetensors",
+      "tokenizer.json"
+    ],
+    "path": "/private/tmp/m449-hf-model"
+  },
+  "publication": {
+    "blocker": "HF_TOKEN_or_hf_auth_login_required",
+    "hf_authenticated": false,
+    "model_url": null,
+    "published": false,
+    "space_url": null
+  },
+  "receipt_self_sha256": "6e119aa308dbdadd0b76376501dfe1324d7753cbf83d044e95afcbafb0da39ba",
+  "schema_version": 1,
+  "source_verification": {
+    "bytes": 4152,
+    "path": "/private/tmp/m449-verify.json",
+    "sha256": "3ccd05a72b7ba161938aaa68b9bb8d7d8103a3a140075dd4cab0d7b4bb712927"
+  },
+  "webgpu_bundle": {
+    "bundle_identity_sha256": "ff0259b3f86c08de56533a32bd3db61783a8077e8090cb84e2bca6393258fc00",
+    "files": [
+      "action_model.fp16.onnx",
+      "action_model.onnx",
+      "bundle-manifest.json",
+      "dispatch_heads.json",
+      "heads.json",
+      "meta.json",
+      "model.fp16.onnx",
+      "model.onnx",
+      "tokenizer.json"
+    ],
+    "manifest": {
+      "bytes": 9308,
+      "path": "/private/tmp/m449-web/bundle-manifest.json",
+      "sha256": "a7895541f802b4836d76dc2b9f5bc203168d80c534a2339126fc7b00a31dadca"
+    },
+    "parity_gate_passed": true,
+    "path": "/private/tmp/m449-web"
+  }
+}

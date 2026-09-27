@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "kind": "localagent_mobilegym_pointer_adaptation",
+  "benchmark_id": "mobilegym_pointer_adaptation_probe",
+  "native_benchmark_id": "mobilegym",
+  "native_receipt_eligible": false,
+  "environment_executed": true,
+  "official_split": "test",
+  "official_split_verified": true,
+  "task_id": "notes.ReadTodoText",
+  "task_count": 1,
+  "observation_mode": "text_projection",
+  "vision_used": false,
+  "max_steps": 2,
+  "data": {
+    "source": "AndroidControl/AITW public train/eval projections",
+    "train_rows": 4096,
+    "eval_rows": 904,
+    "train_sha256": "6971d5fe81fe3c6e8ee12e0072481ec653f98bdb5699af54e8f63649358743fd",
+    "eval_sha256": "2d798115fe0feb14ac6d65f86a4b51b4463b593a35281eedce4de8751356bc95",
+    "synthetic_mobile_rows": 94,
+    "synthetic_answer_rows": 8,
+    "state_conditioned_trajectory_rows": 23,
+    "pointer_train_rows": 4225,
+    "split_policy": "external_eval_files; pointer spans use train-side literals only; no MobileGym task text or state entered SFT"
+  },
+  "training": {
+    "dispatch_steps": 300,
+    "pointer_steps": 300,
+    "focus_tool": "mobile_submit_answer",
+    "focus_repeat": 24,
+    "parent_checkpoint_sha256": "0d0ae0bb4a4f35b40bb9ba5d2e234e3ec389e12758b6dd2527e072e9b7589251",
+    "tool_pool_size": 63,
+    "arms": {
+      "warm": {
+        "initialization": "parent_heads_and_pointer",
+        "checkpoint_sha256": "bbb49e1681c789237c68c6123789a67c19e831ea8d14cb30717c56a7057a612c",
+        "held_out_selector_top1": 0.42920353982300885,
+        "held_out_route_accuracy": 1.0,
+        "held_out_pointer_exact": 0.25,
+        "held_out_pointer_rows": 4,
+        "productivity_selector_top1": 0.5,
+        "productivity_route_accuracy": 0.75,
+        "native_success_rate": 0.0,
+        "native_model_calls": 2,
+        "native_judge_passed": false,
+        "native_judge_issue_count": 3,
+        "native_judge_issue_fields": [
+          "answer.todo_1",
+          "answer.todo_2",
+          "answer.todo_3"
+        ],
+        "native_arguments_nonempty": true,
+        "native_receipt_sha256": "52de4788a292889c4565dd46faeb919df21ab1d2cdfcbca2189f5a02cc81dc53",
+        "weight_report": {
+          "shared_tensors": 51,
+          "config_compatible": true,
+          "tokenizer_compatible": true,
+          "backbone_relative_delta_l2": 0.0,
+          "action_heads_relative_delta_l2": 0.6484223015960026
+        }
+      },
+      "random": {
+        "initialization": "random_heads_and_pointer",
+        "checkpoint_sha256": "0a79af95cff37a3572deda1df84265c525f758111cf4267efdb1bb2b39a1526b",
+        "held_out_selector_top1": 0.4745575221238938,
+        "held_out_route_accuracy": 1.0,
+        "held_out_pointer_exact": 0.25,
+        "held_out_pointer_rows": 4,
+        "productivity_selector_top1": 0.25,
+        "productivity_route_accuracy": 0.75,
+        "native_success_rate": 0.0,
+        "native_model_calls": 2,
+        "native_judge_passed": false,
+        "native_judge_issue_count": 3,
+        "native_judge_issue_fields": [
+          "answer.todo_1",
+          "answer.todo_2",
+          "answer.todo_3"
+        ],
+        "native_arguments_nonempty": true,
+        "native_receipt_sha256": "515530ec63d14578ca485f80a01a4b6ceef34698efcef3cc049424cf2ca1d120",
+        "weight_report": {
+          "shared_tensors": 51,
+          "config_compatible": true,
+          "tokenizer_compatible": true,
+          "backbone_relative_delta_l2": 0.0,
+          "action_heads_relative_delta_l2": 1.0477470633278165
+        }
+      }
+    }
+  },
+  "conclusion": {
+    "pointer_effect": "both arms reach 25% held-out literal-span exactness and produce non-empty answer arguments, but neither solves the three-field native task",
+    "transfer_decision": "retain the compatible pretrained backbone; pointer supervision removes the empty-span symptom but is insufficient for multi-answer state grounding",
+    "claim_boundary": "bounded pointer adaptation and weight-movement diagnostic; not a MobileGym score, not a screenshot-grounded result, and not a publication gate pass"
+  },
+  "receipt_self_sha256": "07ceb05af8fe4d9013cb760eb9b4951684c6752a8789d52c228725ccaad25fd9"
+}

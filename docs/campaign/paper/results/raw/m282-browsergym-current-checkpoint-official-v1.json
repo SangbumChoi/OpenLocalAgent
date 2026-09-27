@@ -1,0 +1,68 @@
+{
+  "actions": {
+    "click('15')": 10,
+    "fill('11', 'Submit')": 10,
+    "fill('12', 'Submit')": 40,
+    "fill('13', '4')": 10,
+    "fill('13', 'Tab #3')": 80,
+    "fill('8', 'Okay')": 10,
+    "fill('9', 'Submit')": 120,
+    "noop(0)": 2080,
+    "press('13', 'Tab')": 20,
+    "press('9', 'Tab')": 20
+  },
+  "benchmark": {
+    "browsergym": {
+      "revision": "9e779f087de9a65668b6974d11f9ce9816026e96",
+      "version": "0.14.3"
+    },
+    "chromium_revision": "1117",
+    "chromium_version": "125.0.6422.26",
+    "id": "browsergym_miniwob",
+    "max_steps": 10,
+    "mini_wob_revision": "7fd85d71a4b60325c6585396ec4f48377d049838",
+    "playwright_version": "1.44.0"
+  },
+  "benchmark_id": "browsergym_miniwob",
+  "checkpoint": {
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+  },
+  "claim_boundary": "Complete 240-episode pinned BrowserGym/MiniWoB test-plan execution for this checkpoint, with text/accessibility-tree actions and independent task rewards. It is an official-split native negative result, not visual-agent success, WebArena success, or real-account email/Notion access.",
+  "environment_executed": true,
+  "episodes": 240,
+  "finding": "All 60 pinned task families remain at 0/4 success and the aggregate is 0/240 with zero reward. The model produces 2080 noop actions from unsupported or absent tool calls across 2400 steps; native browser-control policy and tool-vocabulary grounding are not deployment-ready.",
+  "generated_at": "2026-08-04",
+  "grounded_rate": 0.13333333333333333,
+  "grounded_steps": 320,
+  "kind": "localagent_browsergym_current_checkpoint_official_receipt",
+  "model_tools": {
+    "<none>": 1110,
+    "click": 10,
+    "drag": 10,
+    "key_press": 40,
+    "move_cursor": 130,
+    "open_app": 450,
+    "type_text": 270,
+    "wait": 380
+  },
+  "official_split_verified": true,
+  "runtime": {
+    "browser_executable_sha256": "c6cf40504b92a677552e51dfaf1addfc95dc60c8b57ce5f6b41c9ee0575cf230",
+    "external_accounts": false,
+    "headless": true,
+    "screenshots": false
+  },
+  "schema_version": 1,
+  "source_receipt": {
+    "path": "/private/tmp/m282-browsergym-current-checkpoint-official240.json",
+    "bytes": 920140,
+    "sha256": "cb608f1b1b5421472c13ab22d8087bf37d878e953da2412ea9045f6631baf240"
+  },
+  "steps": 2400,
+  "task_count": 240,
+  "success_rate": 0.0,
+  "task_family_count": 60,
+  "successful_task_families": 0,
+  "total_reward": 0.0
+}

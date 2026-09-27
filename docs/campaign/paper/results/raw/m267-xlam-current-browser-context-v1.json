@@ -1,0 +1,81 @@
+{
+  "kind": "localagent_xlam_derived_function_calling_eval",
+  "schema_version": 1,
+  "measurement": "m267_xlam_current_browser_context",
+  "generated_at": "2026-08-04",
+  "source": {
+    "derived_dataset": "product-science/xlam-function-calling-60k-raw",
+    "derived_url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw",
+    "original_dataset": "Salesforce/xlam-function-calling-60k",
+    "original_url": "https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k",
+    "original_access": "gated_and_not_authenticated_in_this_environment",
+    "split": "derived_public_test_shard_0",
+    "rows_available_in_shard": 1000,
+    "rows_evaluated": 128,
+    "official_original_split_verified": false,
+    "training_used": false,
+    "derived_license": "Apache-2.0",
+    "source_file": {
+      "path": "/private/tmp/xlam-public-test-shard0.jsonl",
+      "bytes": 1600869,
+      "sha256": "43db9250b50f44d96d2be31983690e101bd083eefea2a4a327e13a3ed8caeee1"
+    }
+  },
+  "checkpoint": {
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "bytes": 52242001,
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "parameters": 10524544,
+    "stage": "sft_browser_context",
+    "step": 319
+  },
+  "evaluator": {
+    "script": "scripts/evaluate_xlam_public.py",
+    "sha256": "41bcfe6fe7b27226eb79e62ced0381a41a45fa2bdef8468879429867465757f9",
+    "device": "cpu",
+    "candidate_modes": [
+      "row_retriever",
+      "global_retriever",
+      "runtime_retriever_selector",
+      "global_selector"
+    ],
+    "first_call_only": true
+  },
+  "raw_report": {
+    "path": "/private/tmp/m267-xlam-current-browser-context-v1.json",
+    "bytes": 231993,
+    "sha256": "209690d71222ec6244af7a10a03718bc4a1db37653867d0c4b7f2585e29bee33"
+  },
+  "modes": {
+    "row_retriever": {
+      "rows": 128,
+      "route_rate": 1.0,
+      "first_tool_exact_rate": 0.5078125,
+      "first_arguments_exact_rate": 0.015625,
+      "schema_valid_rate": 1.0
+    },
+    "global_retriever": {
+      "rows": 128,
+      "route_rate": 1.0,
+      "first_tool_exact_rate": 0.078125,
+      "first_arguments_exact_rate": 0.0078125,
+      "schema_valid_rate": 0.1171875
+    },
+    "runtime_retriever_selector": {
+      "rows": 128,
+      "route_rate": 1.0,
+      "first_tool_exact_rate": 0.1171875,
+      "first_arguments_exact_rate": 0.0078125,
+      "schema_valid_rate": 0.140625
+    },
+    "global_selector": {
+      "rows": 128,
+      "route_rate": 1.0,
+      "first_tool_exact_rate": 0.0078125,
+      "first_arguments_exact_rate": 0.0,
+      "schema_valid_rate": 0.0078125
+    }
+  },
+  "claim_boundary": "Bounded first-call evaluation on a public xLAM-derived test shard, not the gated Salesforce source or its official split. The current 10.52M decoder is evaluated without training updates; xLAM multi-call exactness, live APIs, external side effects, native mobile/browser/desktop environments, and official xLAM leaderboard claims are not established.",
+  "receipt_self_sha256": "d4f56577f9540225b8e091aa8345a08c1f93bf92a9074a3a8c67d2a7ecb04d0e"
+}

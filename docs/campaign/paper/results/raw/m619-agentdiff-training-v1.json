@@ -1,0 +1,187 @@
+{
+  "arms": {
+    "random": {
+      "after_test": {
+        "assistant_loss_tokens": 13074,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.2026158788435062,
+        "mean_loss": 8.22069907279596,
+        "rows": 45
+      },
+      "after_train": {
+        "assistant_loss_tokens": 45882,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.2106926463536899,
+        "mean_loss": 8.196985455514621,
+        "rows": 179
+      },
+      "before_test": {
+        "assistant_loss_tokens": 13074,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.17813981948906227,
+        "mean_loss": 8.813287976285233,
+        "rows": 45
+      },
+      "checkpoint": {
+        "bytes": 52206737,
+        "path": "/private/tmp/m619-agentdiff-train/random.pt",
+        "sha256": "277ecba8c7c9945f29d1273dfb5fca6735d9698af91dbdcf877098e1f9abcc7d"
+      },
+      "report": {
+        "bytes": 7218,
+        "path": "/private/tmp/m619-agentdiff-train/random.json",
+        "sha256": "6df7d3bccaf6428dd266e5d90c037efb56188584a07220fcf840ad3b220ac0a7"
+      },
+      "weight_movement": {
+        "groups": {
+          "action_heads": {
+            "base_l2": 91.45685930938616,
+            "delta_l2": 0.0,
+            "parameters": 2519736,
+            "relative_delta_l2": 0.0,
+            "target_l2": 91.45685930938616
+          },
+          "attention_or_mixer": {
+            "base_l2": 50.41310905266498,
+            "delta_l2": 0.11986111766790103,
+            "parameters": 1871872,
+            "relative_delta_l2": 0.002377578370393421,
+            "target_l2": 50.4132192817716
+          },
+          "embedding": {
+            "base_l2": 50.17828539770647,
+            "delta_l2": 0.34959607814632143,
+            "parameters": 6291456,
+            "relative_delta_l2": 0.0069670789939406865,
+            "target_l2": 50.182127250315936
+          },
+          "ffn": {
+            "base_l2": 49.80351112905876,
+            "delta_l2": 0.1519524026659101,
+            "parameters": 2360832,
+            "relative_delta_l2": 0.003051037953371338,
+            "target_l2": 49.8042977725669
+          },
+          "normalization": {
+            "base_l2": 19.6031321130882,
+            "delta_l2": 0.002701446232795591,
+            "parameters": 384,
+            "relative_delta_l2": 0.00013780686765825278,
+            "target_l2": 19.605002631899954
+          }
+        },
+        "report": {
+          "bytes": 19639,
+          "path": "/private/tmp/m619-agentdiff-train/random-weight.json",
+          "sha256": "a6790a41d7bacd0a7577d78828a92f872461b4e06a2db59b67ad6f552bb48a53"
+        }
+      }
+    },
+    "warm": {
+      "after_test": {
+        "assistant_loss_tokens": 13074,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.35421447147009333,
+        "mean_loss": 4.694447391784864,
+        "rows": 45
+      },
+      "after_train": {
+        "assistant_loss_tokens": 45882,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.3609258532757944,
+        "mean_loss": 4.698372645124739,
+        "rows": 179
+      },
+      "before_test": {
+        "assistant_loss_tokens": 13074,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.25493345571363013,
+        "mean_loss": 5.833003302789051,
+        "rows": 45
+      },
+      "checkpoint": {
+        "bytes": 52206623,
+        "path": "/private/tmp/m619-agentdiff-train/warm.pt",
+        "sha256": "d9c8d42820cfa71c739136011c23ba722aef2f6808d65102dfcee19bb2df7be2"
+      },
+      "report": {
+        "bytes": 7203,
+        "path": "/private/tmp/m619-agentdiff-train/warm.json",
+        "sha256": "439e02da643d7f26fca386e79c63332c2df91bfda4b01b9f5f7f382b0c74988b"
+      },
+      "weight_movement": {
+        "groups": {
+          "action_heads": {
+            "base_l2": 91.45685930938616,
+            "delta_l2": 0.0,
+            "parameters": 2519736,
+            "relative_delta_l2": 0.0,
+            "target_l2": 91.45685930938616
+          },
+          "attention_or_mixer": {
+            "base_l2": 51.695321046570925,
+            "delta_l2": 0.11768535329904746,
+            "parameters": 1871872,
+            "relative_delta_l2": 0.0022765184723976834,
+            "target_l2": 51.69553158965745
+          },
+          "embedding": {
+            "base_l2": 77.12846650545255,
+            "delta_l2": 0.33585673866981,
+            "parameters": 6291456,
+            "relative_delta_l2": 0.004354510777756314,
+            "target_l2": 77.239183309837
+          },
+          "ffn": {
+            "base_l2": 50.607539495945986,
+            "delta_l2": 0.14209724400658805,
+            "parameters": 2360832,
+            "relative_delta_l2": 0.0028078275573538013,
+            "target_l2": 50.6073957968562
+          },
+          "normalization": {
+            "base_l2": 21.44468864636463,
+            "delta_l2": 0.002356395196957264,
+            "parameters": 384,
+            "relative_delta_l2": 0.00010988246254424997,
+            "target_l2": 21.44285729383441
+          }
+        },
+        "report": {
+          "bytes": 19620,
+          "path": "/private/tmp/m619-agentdiff-train/warm-weight.json",
+          "sha256": "ca06daa2865f8e8d0b08d96b73768eb87f48a37ff08b28126c2f49924b2253b7"
+        }
+      }
+    }
+  },
+  "claim_boundary": "Matched 32-step SFT continuation on the public Agent-Diff train split with the 45-row test split held out. This is assertion-text teacher-forcing and weight movement, not sandbox state-diff success, native API execution, an official leaderboard score, or a WebGPU export recommendation.",
+  "comparison": {
+    "after_test_warm_minus_random_pp": 15.159859262658712,
+    "before_test_warm_minus_random_pp": 7.679363622456786,
+    "random_test_gain_pp": 2.447605935444394,
+    "warm_beats_random_after": true,
+    "warm_test_gain_pp": 9.92810157564632
+  },
+  "dataset": {
+    "name": "hubertmarek/agent-diff-bench",
+    "revision": "4a96ea93a8d074daba93ded109f340da7fae2f70",
+    "test_policy": "eval_only",
+    "test_rows": 45,
+    "train_manifest": {
+      "bytes": 1280,
+      "path": "/private/tmp/m618-agentdiff/normalized/train.manifest.json",
+      "sha256": "64cf26e745e05dad002bfcabc722d5a3d655259bc1fbf9ac2cdc5d5e4d72617d"
+    },
+    "train_rows": 179
+  },
+  "decision": {
+    "admit_test_rows_to_training": false,
+    "export_to_webgpu": false,
+    "native_promotion": false,
+    "reuse_warm_initialization": true
+  },
+  "kind": "localagent_m619_agentdiff_train_transfer",
+  "receipt_self_sha256": "2ead63fd52944e7349251e97d121317ac0afff6f5ce2c6e417acc0cbdff23bad",
+  "schema_version": 1
+}

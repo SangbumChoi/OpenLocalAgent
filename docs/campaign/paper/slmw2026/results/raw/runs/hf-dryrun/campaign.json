@@ -1,0 +1,492 @@
+{
+  "campaign_config": {
+    "bytes": 2031,
+    "path": "/home/jovyan/sbchoi/localagent/configs/experiments/webgpu-realistic-campaign.v1.yaml",
+    "sha256": "aa62d13270fcffc82f65eaf348d0287b91c18126f91c6924dbb5e9e596a380f3"
+  },
+  "claim_boundary": "This receipt joins portable architecture/transfer measurements and source-linked matrix validation. It is not a training-quality, native-mobile, desktop, WebGPU-browser, or external-account score unless a separate bound receipt is supplied.",
+  "comparisons": [
+    {
+      "architecture": "attention_vs_hybrid",
+      "control": "same_data_seed_steps_and_tokenizer"
+    },
+    {
+      "architecture": "10m_vs_16m_vs_35m_vs_96m",
+      "control": "same_protocol_and_target_context"
+    },
+    {
+      "architecture": "vision_sidecar",
+      "control": "matched_warm_vs_random_backbone_and_native_visual_verifier"
+    },
+    {
+      "architecture": "weight_transfer",
+      "control": "matched_no_transfer_ablation"
+    },
+    {
+      "architecture": "kv_cache",
+      "control": "cached_vs_uncached_decode"
+    }
+  ],
+  "evaluation_policy": {
+    "eval_rows": "never_copy_task_prompts_or_verifiers_into_training",
+    "external_side_effects": "disabled_by_default",
+    "native_rows": "require_pinned_runtime_and_independent_verifier",
+    "train_rows": "use_only_explicit_train_policy_rows"
+  },
+  "finished_at_unix": 1786459308.9315565,
+  "hf_acquisition": {
+    "claim_boundary": "Approved Hugging Face source acquisition only for explicitly approved training/model rows. Evaluation task prompts, verifiers, credentials, and runtime images are not acquired. A downloaded source is not evidence of model quality or benchmark success.",
+    "config": {
+      "bytes": 2153,
+      "path": "/home/jovyan/sbchoi/localagent/configs/experiments/hf-sources.v1.yaml",
+      "sha256": "a6661b505023b0cf698195e73c9c22d5ec6be5fe9d8d3c9c5f99626ee74bfbb8"
+    },
+    "dry_run": true,
+    "kind": "localagent_hf_source_acquisition",
+    "output_dir": "/home/jovyan/sbchoi/localagent/data/hf-campaign",
+    "receipt_self_sha256": "e6588bea67d2c1a96b246339181b39f3d6a62e36ee44ee016bf98b6920899b3a",
+    "runtime": {
+      "python": "3.12.3"
+    },
+    "schema_version": 1,
+    "sources": [
+      {
+        "access": "public",
+        "allow_patterns": [
+          "*.json",
+          "*.jsonl",
+          "*.parquet"
+        ],
+        "hub": {
+          "gated": false,
+          "id": "xlangai/AgentNet",
+          "private": false,
+          "sha": "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+        },
+        "id": "agentnet",
+        "license": "MIT",
+        "policy": "train",
+        "purpose": "desktop action trajectories; image archives remain optional and are not required by the text adapter",
+        "repo_id": "xlangai/AgentNet",
+        "repo_type": "dataset",
+        "requested_revision": "main",
+        "resolved_revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+        "status": "planned"
+      },
+      {
+        "access": "public",
+        "allow_patterns": [
+          "*.json",
+          "*.jsonl",
+          "*.parquet",
+          "README*",
+          "*.tfrecord*",
+          "*.gz"
+        ],
+        "hub": {
+          "gated": false,
+          "id": "OfficerChul/Android-Control-84k",
+          "private": false,
+          "sha": "0248027f747c9d57bd09c14e8f044f9a8103dddd"
+        },
+        "id": "android_control_public_mirror",
+        "license": "Apache-2.0",
+        "policy": "train",
+        "purpose": "public AndroidControl-derived train-side records; original Google Research source remains authoritative",
+        "repo_id": "OfficerChul/Android-Control-84k",
+        "repo_type": "dataset",
+        "requested_revision": "main",
+        "resolved_revision": "0248027f747c9d57bd09c14e8f044f9a8103dddd",
+        "status": "planned"
+      },
+      {
+        "access": "public",
+        "allow_patterns": [
+          "config.json",
+          "*.safetensors",
+          "*.bin",
+          "tokenizer*",
+          "*.json",
+          "*.txt",
+          "README*",
+          "*.md"
+        ],
+        "hub": {
+          "gated": false,
+          "id": "danelcsb/localagent-tiny-30m-byte",
+          "private": false,
+          "sha": "d15db7c46d32a3987169a1a6e8cd43a525ad2a4c"
+        },
+        "id": "localagent_tiny_model",
+        "license": "MIT",
+        "policy": "model_reference",
+        "purpose": "public baseline model reference; never silently substitutes for a current checkpoint",
+        "repo_id": "danelcsb/localagent-tiny-30m-byte",
+        "repo_type": "model",
+        "requested_revision": "main",
+        "resolved_revision": "d15db7c46d32a3987169a1a6e8cd43a525ad2a4c",
+        "status": "planned"
+      },
+      {
+        "access": "public",
+        "allow_patterns": [
+          "data/train/**",
+          "README*",
+          "*.json"
+        ],
+        "hub": {
+          "gated": false,
+          "id": "osunlp/Mind2Web",
+          "private": false,
+          "sha": "17ece8eb89862368edc0cc806acee6fca5163474"
+        },
+        "id": "mind2web_train",
+        "license": "CC-BY-4.0",
+        "policy": "train",
+        "purpose": "grounded browser DOM/action supervision from the official train split",
+        "repo_id": "osunlp/Mind2Web",
+        "repo_type": "dataset",
+        "requested_revision": "main",
+        "resolved_revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+        "status": "planned"
+      },
+      {
+        "access": "public",
+        "allow_patterns": [
+          "*.json",
+          "*.jsonl",
+          "*.parquet"
+        ],
+        "hub": {
+          "gated": false,
+          "id": "Team-ACE/ToolACE",
+          "private": false,
+          "sha": "6bda777c88d21e5a204703c1ee45597a8fa4f734"
+        },
+        "id": "toolace",
+        "license": "Apache-2.0",
+        "policy": "train",
+        "purpose": "multi-turn tool schemas and argument grounding",
+        "repo_id": "Team-ACE/ToolACE",
+        "repo_type": "dataset",
+        "requested_revision": "main",
+        "resolved_revision": "6bda777c88d21e5a204703c1ee45597a8fa4f734",
+        "status": "planned"
+      },
+      {
+        "access": "gated",
+        "allow_patterns": [
+          "*.json",
+          "*.jsonl",
+          "*.parquet"
+        ],
+        "hub": {
+          "gated": true,
+          "id": "Salesforce/xlam-function-calling-60k",
+          "private": false,
+          "sha": "26d14ebfe18b1f7b524bd39b404b50af5dc97866"
+        },
+        "id": "xlam_function_calling",
+        "license": "CC-BY-4.0",
+        "policy": "train",
+        "purpose": "tool schemas and canonical function-call arguments",
+        "repo_id": "Salesforce/xlam-function-calling-60k",
+        "repo_type": "dataset",
+        "requested_revision": "main",
+        "resolved_revision": "26d14ebfe18b1f7b524bd39b404b50af5dc97866",
+        "status": "planned"
+      }
+    ]
+  },
+  "kind": "localagent_gpu_realistic_campaign",
+  "model_inventory": [
+    {
+      "active_parameters": 10547072,
+      "block_types": [
+        "attn",
+        "attn",
+        "attn",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 680,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-10m-attn.yaml",
+        "sha256": "51fbc78ccfa0968512ad24845d5eedb1ce0b6cac125971aaefa705e067f3c133"
+      },
+      "effective_depth": 4,
+      "name": "webgpu-10m-attn",
+      "parameters": 10547072,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 10524544,
+      "block_types": [
+        "conv",
+        "attn",
+        "conv",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 749,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-10m-hybrid.yaml",
+        "sha256": "8609bca200f40e2f67c154f73a1641c905509f4d69a1ec7f80273b0cc6f12a98"
+      },
+      "effective_depth": 4,
+      "name": "webgpu-10m-hybrid",
+      "parameters": 10524544,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 10612224,
+      "block_types": [
+        "conv",
+        "attn",
+        "conv",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 609,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-10m-vision.yaml",
+        "sha256": "eef9923eecb125b1df34713808eeab445b604861ff66ce05d149fe33914c8da3"
+      },
+      "effective_depth": 4,
+      "name": "webgpu-10m-vision",
+      "parameters": 10612224,
+      "sparse_ffn": false,
+      "vision_enabled": true
+    },
+    {
+      "active_parameters": 15618112,
+      "block_types": [
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 702,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-16m-attn.yaml",
+        "sha256": "9be3c6de10c701c5bf004f76541ee47ee0c2582cfffeb49530852068592acdfc"
+      },
+      "effective_depth": 9,
+      "name": "webgpu-16m-attn",
+      "parameters": 15618112,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 15638464,
+      "block_types": [
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 679,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-16m-hybrid.yaml",
+        "sha256": "074e95103d9c22d83d6b01733c04ba521e78b351a4df2f42d82034cae89d90f4"
+      },
+      "effective_depth": 9,
+      "name": "webgpu-16m-hybrid",
+      "parameters": 15638464,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 34275776,
+      "block_types": [
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 655,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-35m-attn.yaml",
+        "sha256": "903561dfbbc13734cd8c0ab85df10c14af6a1618067efb736831f6edb13d53be"
+      },
+      "effective_depth": 12,
+      "name": "webgpu-35m-attn",
+      "parameters": 34275776,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 34199488,
+      "block_types": [
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 889,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-35m-hybrid.yaml",
+        "sha256": "b1ad26e9f94353948f6f6461ea797dbb64d0d854269b615681c8cb12f3111156"
+      },
+      "effective_depth": 12,
+      "name": "webgpu-35m-hybrid",
+      "parameters": 34199488,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 95298944,
+      "block_types": [
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 831,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-96m-attn.yaml",
+        "sha256": "c6426e11350a53f96849ee1c4839e6222c08aa7dc1dab916bbba10c49d2cc3bd"
+      },
+      "effective_depth": 18,
+      "name": "webgpu-96m-attn",
+      "parameters": 95298944,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 95320448,
+      "block_types": [
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 1137,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-96m-hybrid.yaml",
+        "sha256": "dc3b8e19aad13a35cf6ec2d5d9ce6841bc13f6ad353d79aacdc380677695f2cf"
+      },
+      "effective_depth": 18,
+      "name": "webgpu-96m-hybrid",
+      "parameters": 95320448,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    }
+  ],
+  "preflight": {
+    "adb": null,
+    "claim_boundary": "Runtime inventory only; no device or external service was mutated.",
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "cuda_devices": [
+      "NVIDIA H100 NVL"
+    ],
+    "docker": null,
+    "emulator": null,
+    "git": "/usr/bin/git",
+    "hf_cli": "/usr/local/bin/hf",
+    "huggingface_hub_importable": true,
+    "mps_available": false,
+    "platform": "Linux-5.14.0-570.23.1.el9_6.x86_64-x86_64-with-glibc2.39",
+    "python_version": "3.12.3",
+    "requested_device": "auto",
+    "requested_dtype": "auto",
+    "resolved_device": "cuda",
+    "torch_version": "2.10.0",
+    "wandb_importable": true
+  },
+  "receipt_self_sha256": "40141d1a18f8de32cbb2d65d1ff398f406c46e4efb146e148c6e65fae0abe22b",
+  "schema_version": 1,
+  "started_at_unix": 1786459306.7829163,
+  "training_plan": {
+    "midtrain": [
+      "configs/train/midtrain-paper-tier-10m-attn.yaml",
+      "configs/train/midtrain-paper-tier-10m-hybrid.yaml",
+      "configs/train/midtrain-paper-tier-96m-attn.yaml",
+      "configs/train/midtrain-paper-tier-96m-hybrid.yaml"
+    ],
+    "pretrain": [
+      "configs/train/pretrain-paper-tier-10m-attn.yaml",
+      "configs/train/pretrain-paper-tier-10m-hybrid.yaml",
+      "configs/train/pretrain-paper-tier-96m-attn.yaml",
+      "configs/train/pretrain-paper-tier-96m-hybrid.yaml"
+    ],
+    "rl": [
+      "configs/train/rl-paper-tier-10m-attn.yaml",
+      "configs/train/rl-paper-tier-10m-hybrid.yaml",
+      "configs/train/rl-paper-tier-96m-attn.yaml",
+      "configs/train/rl-paper-tier-96m-hybrid.yaml"
+    ],
+    "sft": [
+      "configs/train/sft-paper-tier-10m-attn.yaml",
+      "configs/train/sft-paper-tier-10m-hybrid.yaml",
+      "configs/train/sft-paper-tier-96m-attn.yaml",
+      "configs/train/sft-paper-tier-96m-hybrid.yaml"
+    ]
+  },
+  "wandb": {
+    "enabled": false
+  }
+}

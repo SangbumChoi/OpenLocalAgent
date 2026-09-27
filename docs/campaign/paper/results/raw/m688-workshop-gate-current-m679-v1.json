@@ -1,0 +1,30 @@
+{
+  "blocked_requirements": {
+    "artifacts:public_model_demo_manifest": "current_checkpoint_not_bound",
+    "native:agentnet": "receipt_not_supplied",
+    "native:androidworld": "receipt_not_supplied",
+    "native:enterpriseopsgym": "receipt_not_supplied",
+    "native:iosworld": "receipt_not_supplied",
+    "native:mcpmark": "receipt_not_supplied",
+    "native:mobile_safety_bench": "receipt_not_supplied",
+    "native:osworld": "receipt_not_supplied",
+    "native:osworld_v2": "receipt_not_supplied",
+    "native:toolsandbox": "official_split_not_verified"
+  },
+  "claim_boundary": "Fail-closed current-checkpoint workshop/publication gate. ToolSandbox native execution is now evidenced, but its upstream protocol has no verified official split; native suites and checkpoint-bound public artifacts remain incomplete.",
+  "current_checkpoint": {"path": "/private/tmp/m679-m675-mcp/warm-child.pt", "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"},
+  "evidence": {
+    "browsergym_miniwob": "docs/paper/results/raw/m684-m679-browsergym-native-v1.json",
+    "mobilegym": "docs/paper/results/raw/m683-m679-mobilegym-native-v1.json",
+    "rl_preflight": "docs/paper/results/raw/m686-m679-rl-preflight-v1.json",
+    "toolsandbox": "docs/paper/results/raw/m688-m679-toolsandbox-native-v1.json",
+    "weight_transfer": "docs/paper/results/raw/m687-m679-current-weight-transfer-v1.json",
+    "webgpu": "/private/tmp/m682-m679-webgpu-capability-current.json"
+  },
+  "kind": "localagent_m688_workshop_gate_current_m679",
+  "passed_requirements": ["catalog:realistic_family_coverage", "catalog:no_pending_train_adapter", "native:mobilegym", "native:browsergym_miniwob", "webgpu:native_capability_and_latency", "weights:transfer_and_no_transfer_ablation", "training:rl_preflight"],
+  "ready": false,
+  "receipt_self_sha256": "0eb2df244eb1cd372474b6491ff2821acf959725ac67a740745411bca8bb972f",
+  "schema_version": 1,
+  "source_gate": {"path": "/private/tmp/m688-workshop-gate-current-m679.json", "sha256": "f2b54240658c390bdc740dc9151631f19362787ed38297f2d98a5e50158aa944"}
+}

@@ -1,0 +1,63 @@
+{
+  "candidate": {
+    "checkpoint": {
+      "bytes": 52251900,
+      "path": "/private/tmp/localagent-public-data/m530-warm.pt",
+      "sha256": "3b6325676bb1812ea34ddf55326a1a9cdaa62970d38309350451eea520930a1b"
+    },
+    "parameters": 10524544,
+    "training_parent_sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+    "training_receipt": "docs/paper/results/raw/m530-realistic-cross-surface-warm-64step-v1.json",
+    "training_rows": {"train": 58, "held_out": 29},
+    "held_out_assistant_token_accuracy": 0.550303848750844
+  },
+  "rl_preflight": {
+    "receipt": "docs/paper/results/raw/m539-warm-realistic-candidate-rl-preflight-v1.json",
+    "receipt_self_sha256": "15b56a07a0dc161699285a2174ac1c01e0a63755c92c59b157d5818efb5b2bce",
+    "status": "passed",
+    "realized_optimizer_updates": 2,
+    "mean_reward_before": 0.0,
+    "mean_reward_after": 0.10625000000000001,
+    "exact_match_after": 0.0,
+    "changed_model_parameter_count": 40,
+    "truncated_rollouts": 0
+  },
+  "claim_boundary": "Warm-start realistic-source continuation candidate only. The candidate was trained on source-disjoint AndroidControl, AgentNet, Mind2Web, and redacted MCPMark projections, then checked with local WebGPU and a bounded pinned ToolSandbox smoke. No official leaderboard split, screenshot/desktop/mobile VM score, live email/Notion side effect, or public Hugging Face URL is implied.",
+  "kind": "localagent_warm_realistic_candidate_webgpu_toolsandbox",
+  "receipt_self_sha256": "77635cccc93c57c621335a1eb31810925d845837f10d4131005af11940b54faf",
+  "schema_version": 1,
+  "trajectory": {
+    "receipt_self_sha256": "c479a131ecd6791dfde62a977c264c995bead7f6406553055579818c61563703",
+    "suite": "localagent-mobile-productivity-trajectory-v1",
+    "backend": "webgpu",
+    "trajectories": 3,
+    "steps": 13,
+    "exact_action_rate": 1.0,
+    "state_transition_rate": 1.0,
+    "closed_loop_success_rate": 1.0,
+    "pass_at_1": 1.0,
+    "bundle_checkpoint_sha256": "3b6325676bb1812ea34ddf55326a1a9cdaa62970d38309350451eea520930a1b"
+  },
+  "toolsandbox": {
+    "official_split_verified": false,
+    "success_count": 3,
+    "task_count": 3,
+    "success_rate": 1.0,
+    "source_revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "receipt": "docs/paper/results/raw/m538-toolsandbox-warm-native-v1.json",
+    "receipt_self_sha256": "651147010a8cf8ba515a6a208764bfa4fef044ba60ca253753515d51373a0183"
+  },
+  "webgpu": {
+    "backend": "webgpu",
+    "environment_executed": true,
+    "hardware_adapter": "vendor=apple; architecture=metal-3",
+    "evaluated_cases": 3,
+    "exact_actions": 3,
+    "closed_loop_success": 0,
+    "tokens_per_second_p50": 1311.4754111175414,
+    "latency_ms_p50": 7.5,
+    "peak_memory_mb": 20.458142280578613,
+    "bundle_identity_sha256": "56fc1fb50329746ff4e0570241c1afd9365620ed223060341b2959a15e11f806",
+    "receipt_self_sha256": "ffbed0a00b72f04e7e723368fc283151f29cfdd76087708a065de1540d61a8f0"
+  }
+}

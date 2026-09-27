@@ -1,0 +1,31 @@
+{
+  "claim_boundary": "Current warm realistic candidate RL preflight only. This is a deterministic local email/Notion/browser simulator with no emulator, MCP server, external account, public benchmark payload, or production RL promotion.",
+  "candidate_checkpoint_sha256": "3b6325676bb1812ea34ddf55326a1a9cdaa62970d38309350451eea520930a1b",
+  "data": {
+    "train_sha256": "def9ad382ba4f8a206e6efac3ad92f1bd5bd4b5a47dfabe8dc86c239bc87f17a",
+    "eval_sha256": "7406306874f4379168b94182875249546891b9130897f4985a486b991a1376b0",
+    "prompt_overlap": 0,
+    "row_overlap": 0
+  },
+  "heldout": {
+    "rows": 16,
+    "mean_reward_before": 0.0,
+    "mean_reward_after": 0.10625000000000001,
+    "exact_match_after": 0.0,
+    "tool_format_valid_after": 0.0
+  },
+  "kind": "localagent_warm_realistic_candidate_rl_preflight",
+  "model": {"parameters": 10524544, "config": "webgpu-10m-hybrid"},
+  "policy_transition": {
+    "status": "passed",
+    "realized_optimizer_updates": 2,
+    "learning_rates": [0.0, 0.00002],
+    "changed_model_parameter_count": 40,
+    "nonzero_learning_rate_executed": true,
+    "truncated_rollouts": 0,
+    "unique_reward_values": 2
+  },
+  "receipt_self_sha256": "15b56a07a0dc161699285a2174ac1c01e0a63755c92c59b157d5818efb5b2bce",
+  "schema_version": 1,
+  "source_receipt": "/private/tmp/m539-warm-rl-preflight.json"
+}

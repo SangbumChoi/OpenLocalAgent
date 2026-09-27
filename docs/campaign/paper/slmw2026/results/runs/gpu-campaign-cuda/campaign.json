@@ -1,0 +1,768 @@
+{
+  "architecture_benchmark": {
+    "claim_boundary": "Random-weight architecture/device/cache benchmark only. It does not establish model quality, tool-call accuracy, native browser/mobile success, or WebGPU browser parity.",
+    "device": "cuda",
+    "dtype": "bfloat16",
+    "host": {
+      "platform": "Linux-5.14.0-570.23.1.el9_6.x86_64-x86_64-with-glibc2.39",
+      "torch": "2.10.0"
+    },
+    "kind": "localagent_model_config_benchmark",
+    "protocol": {
+      "decode_tokens": 128,
+      "prompt_len": 512,
+      "random_weights": true,
+      "repeats": 5,
+      "uncached_control": true
+    },
+    "results": [
+      {
+        "active_parameters": 10547072,
+        "cache_speedup": 1.0133406746704186,
+        "cached_decode_seconds": [
+          4.888041913509369,
+          0.217638636007905,
+          0.209589758887887,
+          0.21912935934960842,
+          0.21486280485987663
+        ],
+        "cached_decode_tok_s": 610.7168626901723,
+        "config": {
+          "bytes": 680,
+          "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-10m-attn.yaml",
+          "sha256": "51fbc78ccfa0968512ad24845d5eedb1ce0b6cac125971aaefa705e067f3c133"
+        },
+        "cuda_peak_allocated_bytes": 97359872,
+        "cuda_peak_reserved_bytes": 159383552,
+        "decode_tokens": 128,
+        "dtype": "bfloat16",
+        "kv_cache_bytes_estimate": 524288,
+        "model": "webgpu-10m-attn",
+        "parameters": 10547072,
+        "prefill_seconds": [
+          0.001987569034099579,
+          0.0035287905484437943,
+          0.0025762859731912613,
+          0.001803569495677948,
+          0.0018320120871067047
+        ],
+        "prefill_tok_s": 283881.4923555486,
+        "prompt_len": 512,
+        "repeats": 5,
+        "uncached_decode_seconds": [
+          5.103640254586935,
+          0.22243525087833405,
+          0.21885482408106327,
+          0.21238582767546177,
+          0.22207685559988022
+        ],
+        "uncached_decode_tok_s": 602.6767482602071,
+        "weight_bytes_estimate": 21094144
+      },
+      {
+        "active_parameters": 10524544,
+        "cache_speedup": 1.0370618881010556,
+        "cached_decode_seconds": [
+          0.181400703266263,
+          0.1620381996035576,
+          0.1631190050393343,
+          0.16190813668072224,
+          0.16365561448037624
+        ],
+        "cached_decode_tok_s": 790.5717564547851,
+        "config": {
+          "bytes": 749,
+          "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-10m-hybrid.yaml",
+          "sha256": "8609bca200f40e2f67c154f73a1641c905509f4d69a1ec7f80273b0cc6f12a98"
+        },
+        "cuda_peak_allocated_bytes": 97313792,
+        "cuda_peak_reserved_bytes": 159383552,
+        "decode_tokens": 128,
+        "dtype": "bfloat16",
+        "kv_cache_bytes_estimate": 265216,
+        "model": "webgpu-10m-hybrid",
+        "parameters": 10524544,
+        "prefill_seconds": [
+          0.001697741448879242,
+          0.0031835176050662994,
+          0.0031403042376041412,
+          0.0029301103204488754,
+          0.0015069879591464996
+        ],
+        "prefill_tok_s": 339750.55798719,
+        "prompt_len": 512,
+        "repeats": 5,
+        "uncached_decode_seconds": [
+          0.23427824676036835,
+          0.1802156325429678,
+          0.16790875792503357,
+          0.19862496852874756,
+          0.18597532622516155
+        ],
+        "uncached_decode_tok_s": 762.3187830211234,
+        "weight_bytes_estimate": 21049088
+      },
+      {
+        "active_parameters": 10612224,
+        "cache_speedup": 1.0663508946215368,
+        "cached_decode_seconds": [
+          0.16853047348558903,
+          0.16431604325771332,
+          0.16120601631700993,
+          0.16293182782828808,
+          0.16171556897461414
+        ],
+        "cached_decode_tok_s": 794.0150307311692,
+        "config": {
+          "bytes": 609,
+          "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-10m-vision.yaml",
+          "sha256": "eef9923eecb125b1df34713808eeab445b604861ff66ce05d149fe33914c8da3"
+        },
+        "cuda_peak_allocated_bytes": 97489920,
+        "cuda_peak_reserved_bytes": 159383552,
+        "decode_tokens": 128,
+        "dtype": "bfloat16",
+        "kv_cache_bytes_estimate": 265216,
+        "model": "webgpu-10m-vision",
+        "parameters": 10612224,
+        "prefill_seconds": [
+          0.00365554541349411,
+          0.0031839124858379364,
+          0.0031918808817863464,
+          0.00318831205368042,
+          0.003166571259498596
+        ],
+        "prefill_tok_s": 161689.08198865908,
+        "prompt_len": 512,
+        "repeats": 5,
+        "uncached_decode_seconds": [
+          0.18052112311124802,
+          0.1766036506742239,
+          0.17406241223216057,
+          0.1736429501324892,
+          0.17190217971801758
+        ],
+        "uncached_decode_tok_s": 744.6095227528051,
+        "weight_bytes_estimate": 21224448
+      },
+      {
+        "active_parameters": 15618112,
+        "cache_speedup": 1.0017100140819093,
+        "cached_decode_seconds": [
+          4.90613591298461,
+          0.47082647681236267,
+          0.46421998739242554,
+          0.4746428318321705,
+          0.4642185438424349
+        ],
+        "cached_decode_tok_s": 275.7321991933303,
+        "config": {
+          "bytes": 702,
+          "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-16m-attn.yaml",
+          "sha256": "9be3c6de10c701c5bf004f76541ee47ee0c2582cfffeb49530852068592acdfc"
+        },
+        "cuda_peak_allocated_bytes": 107428864,
+        "cuda_peak_reserved_bytes": 171966464,
+        "decode_tokens": 128,
+        "dtype": "bfloat16",
+        "kv_cache_bytes_estimate": 1179648,
+        "model": "webgpu-16m-attn",
+        "parameters": 15618112,
+        "prefill_seconds": [
+          0.006020676344633102,
+          0.004270220175385475,
+          0.004272965714335442,
+          0.004273006692528725,
+          0.004228871315717697
+        ],
+        "prefill_tok_s": 121072.49470964492,
+        "prompt_len": 512,
+        "repeats": 5,
+        "uncached_decode_seconds": [
+          5.180523719638586,
+          0.4657229445874691,
+          0.4660999123007059,
+          0.465012364089489,
+          0.48057945631444454
+        ],
+        "uncached_decode_tok_s": 275.2614981552773,
+        "weight_bytes_estimate": 31236224
+      },
+      {
+        "active_parameters": 15638464,
+        "cache_speedup": 1.0433146887445992,
+        "cached_decode_seconds": [
+          0.3254170771688223,
+          0.31268428824841976,
+          0.31214871630072594,
+          0.31357552111148834,
+          0.32107167318463326
+        ],
+        "cached_decode_tok_s": 410.0609527308901,
+        "config": {
+          "bytes": 679,
+          "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-16m-hybrid.yaml",
+          "sha256": "074e95103d9c22d83d6b01733c04ba521e78b351a4df2f42d82034cae89d90f4"
+        },
+        "cuda_peak_allocated_bytes": 107465728,
+        "cuda_peak_reserved_bytes": 171966464,
+        "decode_tokens": 128,
+        "dtype": "bfloat16",
+        "kv_cache_bytes_estimate": 400896,
+        "model": "webgpu-16m-hybrid",
+        "parameters": 15638464,
+        "prefill_seconds": [
+          0.004848085343837738,
+          0.0036752913147211075,
+          0.002859467640519142,
+          0.0026351958513259888,
+          0.003097372129559517
+        ],
+        "prefill_tok_s": 194292.95919025136,
+        "prompt_len": 512,
+        "repeats": 5,
+        "uncached_decode_seconds": [
+          0.3782748803496361,
+          0.33067106269299984,
+          0.33089500293135643,
+          0.3256693407893181,
+          0.3331637568771839
+        ],
+        "uncached_decode_tok_s": 393.036690803528,
+        "weight_bytes_estimate": 31276928
+      },
+      {
+        "active_parameters": 34275776,
+        "cache_speedup": 1.0394790942777312,
+        "cached_decode_seconds": [
+          4.867142746224999,
+          0.6489362400025129,
+          0.6176288966089487,
+          0.6208171471953392,
+          0.6350193154066801
+        ],
+        "cached_decode_tok_s": 207.24418935508956,
+        "config": {
+          "bytes": 655,
+          "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-35m-attn.yaml",
+          "sha256": "903561dfbbc13734cd8c0ab85df10c14af6a1618067efb736831f6edb13d53be"
+        },
+        "cuda_peak_allocated_bytes": 147523584,
+        "cuda_peak_reserved_bytes": 171966464,
+        "decode_tokens": 128,
+        "dtype": "bfloat16",
+        "kv_cache_bytes_estimate": 1572864,
+        "model": "webgpu-35m-attn",
+        "parameters": 34275776,
+        "prefill_seconds": [
+          0.009142322465777397,
+          0.009063716977834702,
+          0.009061889722943306,
+          0.00873471423983574,
+          0.0052699316293001175
+        ],
+        "prefill_tok_s": 97154.96063617757,
+        "prompt_len": 512,
+        "repeats": 5,
+        "uncached_decode_seconds": [
+          5.443385588005185,
+          0.6420123260468245,
+          0.6532241124659777,
+          0.6506345272064209,
+          0.6591319553554058
+        ],
+        "uncached_decode_tok_s": 199.37311918628873,
+        "weight_bytes_estimate": 68551552
+      },
+      {
+        "active_parameters": 34199488,
+        "cache_speedup": 1.0741250538292642,
+        "cached_decode_seconds": [
+          0.41537243127822876,
+          0.4167956057935953,
+          0.41899761371314526,
+          0.418403260409832,
+          0.41672757267951965
+        ],
+        "cached_decode_tok_s": 308.1571870480297,
+        "config": {
+          "bytes": 889,
+          "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-35m-hybrid.yaml",
+          "sha256": "b1ad26e9f94353948f6f6461ea797dbb64d0d854269b615681c8cb12f3111156"
+        },
+        "cuda_peak_allocated_bytes": 145643520,
+        "cuda_peak_reserved_bytes": 195035136,
+        "decode_tokens": 128,
+        "dtype": "bfloat16",
+        "kv_cache_bytes_estimate": 538624,
+        "model": "webgpu-35m-hybrid",
+        "parameters": 34199488,
+        "prefill_seconds": [
+          0.004518924281001091,
+          0.004159986972808838,
+          0.007201856002211571,
+          0.0041474830359220505,
+          0.005697999149560928
+        ],
+        "prefill_tok_s": 123448.36508443352,
+        "prompt_len": 512,
+        "repeats": 5,
+        "uncached_decode_seconds": [
+          0.46751032397150993,
+          0.4511164762079716,
+          0.44616193510591984,
+          0.45012310706079006,
+          0.45200080797076225
+        ],
+        "uncached_decode_tok_s": 286.8913502663837,
+        "weight_bytes_estimate": 68398976
+      },
+      {
+        "active_parameters": 95298944,
+        "cache_speedup": 1.015211635749183,
+        "cached_decode_seconds": [
+          5.423216417431831,
+          0.93585654348135,
+          0.9153491947799921,
+          0.9140362609177828,
+          0.9199357368052006
+        ],
+        "cached_decode_tok_s": 140.03820797161302,
+        "config": {
+          "bytes": 831,
+          "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-96m-attn.yaml",
+          "sha256": "c6426e11350a53f96849ee1c4839e6222c08aa7dc1dab916bbba10c49d2cc3bd"
+        },
+        "cuda_peak_allocated_bytes": 269436928,
+        "cuda_peak_reserved_bytes": 354418688,
+        "decode_tokens": 128,
+        "dtype": "bfloat16",
+        "kv_cache_bytes_estimate": 2359296,
+        "model": "webgpu-96m-attn",
+        "parameters": 95298944,
+        "prefill_seconds": [
+          0.010281981900334358,
+          0.010260781273245811,
+          0.010261867195367813,
+          0.010270146653056145,
+          0.010265856981277466
+        ],
+        "prefill_tok_s": 49898.73444968563,
+        "prompt_len": 512,
+        "repeats": 5,
+        "uncached_decode_seconds": [
+          5.947772378101945,
+          0.927940247580409,
+          0.9620716813951731,
+          0.9408070500940084,
+          0.9282911233603954
+        ],
+        "uncached_decode_tok_s": 137.9399162109394,
+        "weight_bytes_estimate": 190597888
+      },
+      {
+        "active_parameters": 95320448,
+        "cache_speedup": 1.0184541020374345,
+        "cached_decode_seconds": [
+          0.6347046680748463,
+          0.6128005068749189,
+          0.614455807954073,
+          0.6155325770378113,
+          0.621504096314311
+        ],
+        "cached_decode_tok_s": 208.8771118234838,
+        "config": {
+          "bytes": 1137,
+          "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-96m-hybrid.yaml",
+          "sha256": "dc3b8e19aad13a35cf6ec2d5d9ce6841bc13f6ad353d79aacdc380677695f2cf"
+        },
+        "cuda_peak_allocated_bytes": 274454528,
+        "cuda_peak_reserved_bytes": 354418688,
+        "decode_tokens": 128,
+        "dtype": "bfloat16",
+        "kv_cache_bytes_estimate": 817152,
+        "model": "webgpu-96m-hybrid",
+        "parameters": 95320448,
+        "prefill_seconds": [
+          0.0071451179683208466,
+          0.007585925981402397,
+          0.005870969966053963,
+          0.005275338888168335,
+          0.0061683375388383865
+        ],
+        "prefill_tok_s": 97055.37612916711,
+        "prompt_len": 512,
+        "repeats": 5,
+        "uncached_decode_seconds": [
+          0.6985998675227165,
+          0.6241091899573803,
+          0.6334098037332296,
+          0.6367598623037338,
+          0.6383071411401033
+        ],
+        "uncached_decode_tok_s": 205.0923172734261,
+        "weight_bytes_estimate": 190640896
+      }
+    ],
+    "schema_version": 1
+  },
+  "campaign_config": {
+    "bytes": 2031,
+    "path": "/home/jovyan/sbchoi/localagent/configs/experiments/webgpu-realistic-campaign.v1.yaml",
+    "sha256": "aa62d13270fcffc82f65eaf348d0287b91c18126f91c6924dbb5e9e596a380f3"
+  },
+  "claim_boundary": "This receipt joins portable architecture/transfer measurements and source-linked matrix validation. It is not a training-quality, native-mobile, desktop, WebGPU-browser, or external-account score unless a separate bound receipt is supplied.",
+  "comparisons": [
+    {
+      "architecture": "attention_vs_hybrid",
+      "control": "same_data_seed_steps_and_tokenizer"
+    },
+    {
+      "architecture": "10m_vs_16m_vs_35m_vs_96m",
+      "control": "same_protocol_and_target_context"
+    },
+    {
+      "architecture": "vision_sidecar",
+      "control": "matched_warm_vs_random_backbone_and_native_visual_verifier"
+    },
+    {
+      "architecture": "weight_transfer",
+      "control": "matched_no_transfer_ablation"
+    },
+    {
+      "architecture": "kv_cache",
+      "control": "cached_vs_uncached_decode"
+    }
+  ],
+  "evaluation_policy": {
+    "eval_rows": "never_copy_task_prompts_or_verifiers_into_training",
+    "external_side_effects": "disabled_by_default",
+    "native_rows": "require_pinned_runtime_and_independent_verifier",
+    "train_rows": "use_only_explicit_train_policy_rows"
+  },
+  "finished_at_unix": 1786458905.703716,
+  "kind": "localagent_gpu_realistic_campaign",
+  "model_inventory": [
+    {
+      "active_parameters": 10547072,
+      "block_types": [
+        "attn",
+        "attn",
+        "attn",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 680,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-10m-attn.yaml",
+        "sha256": "51fbc78ccfa0968512ad24845d5eedb1ce0b6cac125971aaefa705e067f3c133"
+      },
+      "effective_depth": 4,
+      "name": "webgpu-10m-attn",
+      "parameters": 10547072,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 10524544,
+      "block_types": [
+        "conv",
+        "attn",
+        "conv",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 749,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-10m-hybrid.yaml",
+        "sha256": "8609bca200f40e2f67c154f73a1641c905509f4d69a1ec7f80273b0cc6f12a98"
+      },
+      "effective_depth": 4,
+      "name": "webgpu-10m-hybrid",
+      "parameters": 10524544,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 10612224,
+      "block_types": [
+        "conv",
+        "attn",
+        "conv",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 609,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-10m-vision.yaml",
+        "sha256": "eef9923eecb125b1df34713808eeab445b604861ff66ce05d149fe33914c8da3"
+      },
+      "effective_depth": 4,
+      "name": "webgpu-10m-vision",
+      "parameters": 10612224,
+      "sparse_ffn": false,
+      "vision_enabled": true
+    },
+    {
+      "active_parameters": 15618112,
+      "block_types": [
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 702,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-16m-attn.yaml",
+        "sha256": "9be3c6de10c701c5bf004f76541ee47ee0c2582cfffeb49530852068592acdfc"
+      },
+      "effective_depth": 9,
+      "name": "webgpu-16m-attn",
+      "parameters": 15618112,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 15638464,
+      "block_types": [
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 679,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-16m-hybrid.yaml",
+        "sha256": "074e95103d9c22d83d6b01733c04ba521e78b351a4df2f42d82034cae89d90f4"
+      },
+      "effective_depth": 9,
+      "name": "webgpu-16m-hybrid",
+      "parameters": 15638464,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 34275776,
+      "block_types": [
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 655,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-35m-attn.yaml",
+        "sha256": "903561dfbbc13734cd8c0ab85df10c14af6a1618067efb736831f6edb13d53be"
+      },
+      "effective_depth": 12,
+      "name": "webgpu-35m-attn",
+      "parameters": 34275776,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 34199488,
+      "block_types": [
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 889,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-35m-hybrid.yaml",
+        "sha256": "b1ad26e9f94353948f6f6461ea797dbb64d0d854269b615681c8cb12f3111156"
+      },
+      "effective_depth": 12,
+      "name": "webgpu-35m-hybrid",
+      "parameters": 34199488,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 95298944,
+      "block_types": [
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 831,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-96m-attn.yaml",
+        "sha256": "c6426e11350a53f96849ee1c4839e6222c08aa7dc1dab916bbba10c49d2cc3bd"
+      },
+      "effective_depth": 18,
+      "name": "webgpu-96m-attn",
+      "parameters": 95298944,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    },
+    {
+      "active_parameters": 95320448,
+      "block_types": [
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn",
+        "conv",
+        "conv",
+        "attn"
+      ],
+      "budget_pass": true,
+      "config": {
+        "bytes": 1137,
+        "path": "/home/jovyan/sbchoi/localagent/configs/model/webgpu-96m-hybrid.yaml",
+        "sha256": "dc3b8e19aad13a35cf6ec2d5d9ce6841bc13f6ad353d79aacdc380677695f2cf"
+      },
+      "effective_depth": 18,
+      "name": "webgpu-96m-hybrid",
+      "parameters": 95320448,
+      "sparse_ffn": false,
+      "vision_enabled": false
+    }
+  ],
+  "preflight": {
+    "adb": null,
+    "claim_boundary": "Runtime inventory only; no device or external service was mutated.",
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "cuda_devices": [
+      "NVIDIA H100 NVL"
+    ],
+    "docker": null,
+    "emulator": null,
+    "git": "/usr/bin/git",
+    "hf_cli": "/usr/local/bin/hf",
+    "huggingface_hub_importable": true,
+    "mps_available": false,
+    "platform": "Linux-5.14.0-570.23.1.el9_6.x86_64-x86_64-with-glibc2.39",
+    "python_version": "3.12.3",
+    "requested_device": "cuda",
+    "requested_dtype": "auto",
+    "resolved_device": "cuda",
+    "torch_version": "2.10.0",
+    "wandb_importable": true
+  },
+  "public_matrix": {
+    "entries": 28,
+    "families": [
+      "browser",
+      "computer",
+      "mobile",
+      "terminal",
+      "tool_api"
+    ],
+    "local_status": {
+      "adapter_ready": 3,
+      "manifest_audited_native_pending": 2,
+      "measured": 4,
+      "measured_official_text_projection": 1,
+      "metadata_only": 10,
+      "native_mock_diagnostic": 1,
+      "not_started": 6,
+      "runtime_pending": 1
+    },
+    "source": {
+      "bytes": 30388,
+      "path": "/home/jovyan/sbchoi/localagent/configs/data/realistic-agent-public-eval-matrix.v1.json",
+      "sha256": "09eb5c51d329d4752aff79534217974048f88a934d83570456759f3cc8aab13e"
+    },
+    "train_rows": [
+      "androidcontrol",
+      "android_in_the_wild",
+      "mind2web",
+      "agentnet",
+      "xlam_function_calling",
+      "toolace"
+    ]
+  },
+  "receipt_self_sha256": "949c04d55dc11df68a85634a644ec141d0c2374eb2bcb9e6e9006a8fac99cf3a",
+  "schema_version": 1,
+  "started_at_unix": 1786458824.2739732,
+  "training_plan": {
+    "midtrain": [
+      "configs/train/midtrain-paper-tier-10m-attn.yaml",
+      "configs/train/midtrain-paper-tier-10m-hybrid.yaml",
+      "configs/train/midtrain-paper-tier-96m-attn.yaml",
+      "configs/train/midtrain-paper-tier-96m-hybrid.yaml"
+    ],
+    "pretrain": [
+      "configs/train/pretrain-paper-tier-10m-attn.yaml",
+      "configs/train/pretrain-paper-tier-10m-hybrid.yaml",
+      "configs/train/pretrain-paper-tier-96m-attn.yaml",
+      "configs/train/pretrain-paper-tier-96m-hybrid.yaml"
+    ],
+    "rl": [
+      "configs/train/rl-paper-tier-10m-attn.yaml",
+      "configs/train/rl-paper-tier-10m-hybrid.yaml",
+      "configs/train/rl-paper-tier-96m-attn.yaml",
+      "configs/train/rl-paper-tier-96m-hybrid.yaml"
+    ],
+    "sft": [
+      "configs/train/sft-paper-tier-10m-attn.yaml",
+      "configs/train/sft-paper-tier-10m-hybrid.yaml",
+      "configs/train/sft-paper-tier-96m-attn.yaml",
+      "configs/train/sft-paper-tier-96m-hybrid.yaml"
+    ]
+  },
+  "wandb": {
+    "enabled": false
+  }
+}

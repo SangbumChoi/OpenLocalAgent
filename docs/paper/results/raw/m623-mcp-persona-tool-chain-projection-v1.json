@@ -1,0 +1,322 @@
+{
+  "arms": {
+    "random": {
+      "checkpoint": {
+        "bytes": 52212186,
+        "path": "/private/tmp/m607-m585-policy-random.pt",
+        "sha256": "fb64816a837412d2d88906ede50621b7f4ba90fc6b6ffca7f0931287e90e28c0"
+      },
+      "metrics": {
+        "by_first_server": {
+          "amap-mcp-server": {
+            "assistant_loss_tokens": 4268,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.617720685277794,
+            "rows": 39
+          },
+          "baidu-map": {
+            "assistant_loss_tokens": 1343,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.6146542910578,
+            "rows": 13
+          },
+          "context7": {
+            "assistant_loss_tokens": 154,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.630511395342939,
+            "rows": 2
+          },
+          "deep-research": {
+            "assistant_loss_tokens": 96,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.529773712158203,
+            "rows": 2
+          },
+          "deepseek": {
+            "assistant_loss_tokens": 123,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.677930878429878,
+            "rows": 1
+          },
+          "instagram": {
+            "assistant_loss_tokens": 212,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.552424016988502,
+            "rows": 3
+          },
+          "lark_mcp": {
+            "assistant_loss_tokens": 1533,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.584848979992254,
+            "rows": 17
+          },
+          "mcpollinations": {
+            "assistant_loss_tokens": 855,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.62709075749269,
+            "rows": 6
+          },
+          "medical-mcp": {
+            "assistant_loss_tokens": 598,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.65155417145694,
+            "rows": 7
+          },
+          "monitor": {
+            "assistant_loss_tokens": 775,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.625258474042338,
+            "rows": 9
+          },
+          "notion": {
+            "assistant_loss_tokens": 557,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.585156425325405,
+            "rows": 10
+          },
+          "obsidian": {
+            "assistant_loss_tokens": 571,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.630324275188814,
+            "rows": 10
+          },
+          "reddit": {
+            "assistant_loss_tokens": 162,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.659183455102237,
+            "rows": 3
+          },
+          "slack": {
+            "assistant_loss_tokens": 1022,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.629955672471258,
+            "rows": 11
+          },
+          "tushare_mcp": {
+            "assistant_loss_tokens": 692,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.60568007981846,
+            "rows": 7
+          },
+          "universal_email": {
+            "assistant_loss_tokens": 531,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.564747840895716,
+            "rows": 6
+          },
+          "wecome": {
+            "assistant_loss_tokens": 191,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.57341666496237,
+            "rows": 3
+          },
+          "xiaohongshu": {
+            "assistant_loss_tokens": 1655,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.0,
+            "mean_loss": 9.622435490818543,
+            "rows": 24
+          }
+        },
+        "overall": {
+          "assistant_loss_tokens": 15338,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.0,
+          "mean_loss": 9.613666768707622,
+          "rows": 173
+        }
+      }
+    },
+    "warm": {
+      "checkpoint": {
+        "bytes": 52212008,
+        "path": "/private/tmp/m607-m585-policy-warm.pt",
+        "sha256": "a2cba579c5e16a7e3115af64b3424bd384c55f3b863e1200676444a6b22b1ecf"
+      },
+      "metrics": {
+        "by_first_server": {
+          "amap-mcp-server": {
+            "assistant_loss_tokens": 4268,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.14737582005623243,
+            "mean_loss": 6.356219390897742,
+            "rows": 39
+          },
+          "baidu-map": {
+            "assistant_loss_tokens": 1343,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.1518987341772152,
+            "mean_loss": 6.405541574076229,
+            "rows": 13
+          },
+          "context7": {
+            "assistant_loss_tokens": 154,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.14285714285714285,
+            "mean_loss": 6.63093309278612,
+            "rows": 2
+          },
+          "deep-research": {
+            "assistant_loss_tokens": 96,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.125,
+            "mean_loss": 6.20340092976888,
+            "rows": 2
+          },
+          "deepseek": {
+            "assistant_loss_tokens": 123,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.12195121951219512,
+            "mean_loss": 6.583235081618394,
+            "rows": 1
+          },
+          "instagram": {
+            "assistant_loss_tokens": 212,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.16981132075471697,
+            "mean_loss": 6.329055498231132,
+            "rows": 3
+          },
+          "lark_mcp": {
+            "assistant_loss_tokens": 1533,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.15394651011089366,
+            "mean_loss": 6.191402507465957,
+            "rows": 17
+          },
+          "mcpollinations": {
+            "assistant_loss_tokens": 855,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.14269005847953217,
+            "mean_loss": 6.419536104258041,
+            "rows": 6
+          },
+          "medical-mcp": {
+            "assistant_loss_tokens": 598,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.14046822742474915,
+            "mean_loss": 6.384310412965092,
+            "rows": 7
+          },
+          "monitor": {
+            "assistant_loss_tokens": 775,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.1625806451612903,
+            "mean_loss": 6.392213804183468,
+            "rows": 9
+          },
+          "notion": {
+            "assistant_loss_tokens": 557,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.2333931777378815,
+            "mean_loss": 6.292004569856654,
+            "rows": 10
+          },
+          "obsidian": {
+            "assistant_loss_tokens": 571,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.1190893169877408,
+            "mean_loss": 6.785590550945436,
+            "rows": 10
+          },
+          "reddit": {
+            "assistant_loss_tokens": 162,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.1111111111111111,
+            "mean_loss": 6.450646671248071,
+            "rows": 3
+          },
+          "slack": {
+            "assistant_loss_tokens": 1022,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.22602739726027396,
+            "mean_loss": 5.809775992615582,
+            "rows": 11
+          },
+          "tushare_mcp": {
+            "assistant_loss_tokens": 692,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.1676300578034682,
+            "mean_loss": 6.256568688188674,
+            "rows": 7
+          },
+          "universal_email": {
+            "assistant_loss_tokens": 531,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.16760828625235405,
+            "mean_loss": 6.223128898893597,
+            "rows": 6
+          },
+          "wecome": {
+            "assistant_loss_tokens": 191,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.17801047120418848,
+            "mean_loss": 6.482578457338024,
+            "rows": 3
+          },
+          "xiaohongshu": {
+            "assistant_loss_tokens": 1655,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.14924471299093656,
+            "mean_loss": 6.57258960919798,
+            "rows": 24
+          }
+        },
+        "overall": {
+          "assistant_loss_tokens": 15338,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.15771286999608813,
+          "mean_loss": 6.347811360793811,
+          "rows": 173
+        }
+      }
+    }
+  },
+  "claim_boundary": "Teacher-forced tool-chain text projection only; no MCP simulator, persona state, ground-truth checkpoint judge, tool execution, or external side effect was run.",
+  "comparison": {
+    "warm_beats_random": true,
+    "warm_minus_random_assistant_token_accuracy": 0.15771286999608813
+  },
+  "dataset": {
+    "data": {
+      "bytes": 251448,
+      "path": "/private/tmp/m623-mcp-persona/eval.jsonl",
+      "sha256": "78e258067a90808b13825c7f66592347a4ec9c822b4d5c2259502b4311195800"
+    },
+    "manifest": {
+      "bytes": 1817,
+      "path": "/private/tmp/m623-mcp-persona/manifest.json",
+      "sha256": "391f2bc810d9ac7d23a138eebec269d50b8165a668a4cab2a57ec8e4255c75a6"
+    },
+    "manifest_sha256": "ac172b103875f950c5903e13e55898f6a3b93a2c95d5a5111814a2b7d22a54dc",
+    "rows": 173,
+    "split": "test",
+    "train_policy": "eval_only"
+  },
+  "kind": "localagent_mcp_persona_tool_chain_projection_eval",
+  "protocol": {
+    "batch_size": 4,
+    "context_and_tools_excluded": true,
+    "max_seq_len": 512,
+    "target": "canonical_compact_json_tool_chain"
+  },
+  "receipt_self_sha256": "744aca06b6c785fadcc93118cb3799f1bdf29e13eb0482e1a90caaede21414c5",
+  "schema_version": 1
+}

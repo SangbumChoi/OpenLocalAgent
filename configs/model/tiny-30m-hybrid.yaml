@@ -1,0 +1,26 @@
+# ~29M-param BYTE-level HYBRID tier — the gated short-conv + GQA + QK-Norm backbone
+# (co-#1 lever in docs/ARCHITECTURE_DEBATE.md, axes 2 & 8; LFM2/Nemotron-H + Qwen3-style QK-Norm).
+#
+# Budget-matched to tiny-30m-byte.yaml (same vocab=256, d_model, depth, heads, max_seq_len) so
+# the A/B is fair: the only changes are the per-layer block schedule and QK-Norm. The mixer
+# schedule is ~3:1 conv:attn (7 depthwise short-conv blocks + 3 GQA layers); the GQA layers are
+# kept for verbatim tool-argument copying (the one thing a tool agent cannot get wrong), placed
+# at an early, a middle, and a late position. ffn_hidden trimmed (1408->1280) because a conv
+# mixer (~4*d^2) is a touch larger than a GQA mixer, keeping params ~= the all-attention baseline.
+name: tiny-30m-hybrid
+vocab_size: 256          # byte-level
+d_model: 512
+n_layers: 10
+n_loops: 1
+n_heads: 8
+n_kv_heads: 2            # GQA
+ffn_hidden: 1280         # SwiGLU (trimmed from 1408 to budget-match the all-attention baseline)
+max_seq_len: 1024
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+# --- hybrid backbone ---
+qk_norm: true            # RMSNorm on Q/K per-head (cheap stability, matters at byte scale)
+conv_kernel: 3           # depthwise causal short-conv (LFM2 LIV, k=3)
+layer_types: [conv, conv, attn, conv, conv, conv, attn, conv, conv, attn]

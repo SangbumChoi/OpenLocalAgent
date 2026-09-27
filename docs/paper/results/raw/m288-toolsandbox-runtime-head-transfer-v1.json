@@ -1,0 +1,60 @@
+{
+  "claim_boundary": "Public ToolSandbox scenario-source projection only. Frozen-backbone route and row-local candidate-selector transfer; no official split score, simulator, user simulator, external API, verifier, screenshot grounding, or native WebGPU claim.",
+  "checkpoint": {
+    "parameters": 10524544,
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+  },
+  "generated_at": "2026-08-04",
+  "kind": "localagent_toolsandbox_runtime_head_transfer_receipt",
+  "protocol": {
+    "backbone_frozen": true,
+    "batch_size": 32,
+    "learning_rate": 0.005,
+    "optimizer_steps": 500,
+    "seed": 2047,
+    "heads": ["route_head", "dense_selector"],
+    "train_rows": 107,
+    "eval_rows": 20,
+    "source_disjoint_by_family_modulo": 5
+  },
+  "source": {
+    "dataset": "apple/ToolSandbox",
+    "url": "https://github.com/apple/ToolSandbox",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "license": "Apple Software License; see upstream LICENSE and ACKNOWLEDGEMENTS",
+    "manifest_sha256": "85f977aed04a40c959c41a5f80e5c3c2c75653aa44c4c789e8234e3aae8ff356",
+    "train_sha256": "773b44877677e7b2be72295bc9eb26d158c5932d6665aac15bcae9592d46609d",
+    "eval_sha256": "925ce977082ffb980e46bce5b25ea81fdd335d25e5996feefd503015ba3ff46d",
+    "ast_only": true,
+    "tools_executed": false,
+    "user_simulator_executed": false,
+    "verifiers_read": false
+  },
+  "arms": {
+    "warm_parent": {
+      "child_sha256": "b68daac3a64b7a3b195ba811f1f0c5e9b416e60fe711eb06e9bba07ef2384db4",
+      "report_sha256": "0d08981c52e44a277132344d358fb7a9395ed464bc681f3d33243347b1a45b45",
+      "before": {"route_app_action": 0.0, "selector_top1": 0.45, "selector_top3": 0.90},
+      "after": {"route_app_action": 1.0, "selector_top1": 0.80, "selector_top3": 0.95},
+      "selector_relative_delta_l2": {"query_tower": 1.4271376133, "tool_tower": 1.3095496893},
+      "route_relative_delta_l2": 1.3773280382
+    },
+    "matched_random": {
+      "child_sha256": "a2fd6f0704a29b9ca83fe3c9af046ebe84b8b4cc9313b1904ed2796b016c77f7",
+      "report_sha256": "f4bb9e1a068d091502277b60eb13f13298f50410fdee2b8315b132bd1f939522",
+      "before": {"route_app_action": 0.45, "selector_top1": 0.35, "selector_top3": 0.95},
+      "after": {"route_app_action": 1.0, "selector_top1": 0.80, "selector_top3": 0.95},
+      "selector_relative_delta_l2": {"query_tower": 1.3818763493, "tool_tower": 1.2712682486},
+      "route_relative_delta_l2": 1.4858851433
+    }
+  },
+  "decision": {
+    "adopt_backbone": false,
+    "promote_child_to_deployment": false,
+    "keep_as_schema_adapter_diagnostic": true,
+    "reason": "Both frozen-head arms reach 80% selector top-1 and 100% route accuracy after 500 updates, so this tiny row-local proxy is head capacity evidence rather than pretrained-backbone evidence. The adapter is not native or stateful and cannot support an official ToolSandbox claim.",
+    "native_gate_status": "unchanged_blocked"
+  },
+  "schema_version": 1
+}

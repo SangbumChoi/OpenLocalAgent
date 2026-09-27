@@ -1,0 +1,39 @@
+{
+  "kind": "localagent_hf_release_local_prepare_receipt",
+  "schema_version": 1,
+  "checkpoint": {
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+    "model_parameters": 10524544
+  },
+  "prepared": true,
+  "published": false,
+  "model": {
+    "staging_path": "/private/tmp/m516-release/model",
+    "config_sha256": "51255c4d8d89ba18a24177c0c7b1792a0d1bc9a78ea062d66e228df29f8b4f6b",
+    "model_safetensors_bytes": 42101904,
+    "model_safetensors_sha256": "57f797c1a71c12e1dafbf9cc7fd1cab9cfce370d21087ec4771b3a4d5f06f62d",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "web": {
+    "staging_path": "/private/tmp/m516-release/web",
+    "bundle_identity_sha256": "3353497d5376b26a1895d081ecfa7d03859159c11d80193a6583663bddcf8c76",
+    "parity_gate_passed": true,
+    "artifacts": {
+      "model.onnx": {"bytes": 67877334, "sha256": "ed25b8121d705fc3796a3e3438ae036f755a7720111fcb6104ac4496dd61cb46"},
+      "model.fp16.onnx": {"bytes": 34026169, "sha256": "53acd2a15cb6c5465767afd8b6e177b78e1160d3b6931cab4ff3f6c16fd68529"},
+      "action_model.onnx": {"bytes": 42700043, "sha256": "b66357fb0d3514e7819ff96136b8715b4e179f7f3b7089b65c27915df161d7d9"},
+      "action_model.fp16.onnx": {"bytes": 21430301, "sha256": "3839daa6b798d00b950091902e1a839bf4daf13b1c94a33757932f7d57ce3762"},
+      "tokenizer.json": {"bytes": 1134224, "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"},
+      "meta.json": {"bytes": 14728, "sha256": "d26f68ed2201f9db7d97898001b5dadfef484a39e497405975cf5e859693a8ce"},
+      "heads.json": {"bytes": 3337015, "sha256": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486"},
+      "dispatch_heads.json": {"bytes": 1358636, "sha256": "b2d3cf176670d4fa4876690670a5bb9896c75526d34d4b45b17f53cb7f7f6aae"}
+    }
+  },
+  "space": {
+    "staging_path": "/private/tmp/m516-release/space",
+    "verified": true,
+    "tool_count": 63
+  },
+  "claim_boundary": "Local-only HF-compatible model and static Space preparation from the exact current checkpoint. No Hugging Face repositories were created or uploaded; no public URL is claimed until authenticated upload and anonymous checkpoint-binding audit succeed."
+}

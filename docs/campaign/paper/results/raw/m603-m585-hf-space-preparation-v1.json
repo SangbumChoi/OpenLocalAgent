@@ -1,0 +1,39 @@
+{
+  "kind": "localagent_current_hf_space_preparation",
+  "schema_version": 1,
+  "checkpoint": {
+    "path": "/private/tmp/m585-public-multisurface-warm.pt",
+    "sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff",
+    "parameters": 10524544,
+    "stage": "sft_cross_surface_public_continuation"
+  },
+  "intended_repositories": {
+    "model": "danelcsb/localagent-webgpu-10m-m585",
+    "space": "danelcsb/localagent-webgpu-m585"
+  },
+  "prepared": true,
+  "published": false,
+  "publication_blocker": "HF_TOKEN is absent and hf auth reports Not logged in; no Hub upload was attempted.",
+  "model_bundle": {
+    "path": "/private/tmp/m603-m585-model",
+    "config_sha256": "47499401a2d18bb89bed5bbceec666c2efd9f61c1a4878e07feab36ca8fa9dea",
+    "model_safetensors_sha256": "d5b8d277789b264f95d32651dd986354a2baea39760ce698c642782629be24d1",
+    "agent_heads_sha256": "2b098a6ee5bfe6f46312b0ba8a743b72dfb9ea76c2a0544e722f5f2a5c3c11dd",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "webgpu_bundle": {
+    "path": "/private/tmp/m603-m585-web",
+    "bundle_manifest_sha256": "264973ce02766f5346fbff18463c02d5a8404273b89691a1c75da05e28c16a86",
+    "bundle_identity_sha256": "25e547ae08f92ad1cf975ad503e715e25b259cc21aceebed7a445d90b19333ae",
+    "parity_passed": true,
+    "graphs": ["model.onnx", "model.fp16.onnx", "action_model.onnx", "action_model.fp16.onnx"],
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "space_staging": {
+    "path": "/private/tmp/m603-m585-space",
+    "bundle_manifest_checkpoint_match": true,
+    "static_files_copied": true
+  },
+  "claim_boundary": "Local-only release preparation and ONNX parity evidence. No public Hub model or Space URL exists for this m585 candidate until an authenticated upload and anonymous checkpoint-binding audit succeed.",
+  "receipt_self_sha256": "5b887707bd0d5f44a41c4afc5a4bf669305dedf158f75f6d3e0ea477f599b21e"
+}

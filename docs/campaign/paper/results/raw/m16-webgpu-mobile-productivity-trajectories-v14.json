@@ -1,0 +1,139 @@
+{
+  "kind": "localagent_webgpu_mobile_productivity_trajectory_receipt",
+  "schema_version": 2,
+  "suite": "localagent-mobile-productivity-trajectory-v1",
+  "harness_revision": {
+    "action_projection": "compare only {tool,args}; ignore runtime route/confidence/timing metadata",
+    "stateful_prompt_scope": "lexical dispatch, retrieval compaction, grounding pools, and free-text fallback use Next required action only",
+    "schema_source": "bundle meta.json",
+    "transition_policy": "exact expected action plus declared precondition before applying synthetic state transition"
+  },
+  "source_boundary": {
+    "catalog_rows": 36,
+    "catalog_sha256": "5357b1d73d4bd14f0a96b6e19fe48bd7cfdce08509e332583923a63ff77253cb",
+    "androidcontrol_train_rows": {
+      "rows": 16,
+      "bytes": 1512235,
+      "sha256": "705bf99465b5feb2b24f03e5c81cc2c1560ac8f28200eb83ed8c921626c995fa"
+    },
+    "aitw_train_rows": {
+      "rows": 10,
+      "bytes": 252386,
+      "sha256": "1f0a08fac5684f21d62a10855fc05171b4d7bda699f8aae51f062d01f7b52031"
+    },
+    "task_source": "local synthetic state transitions; public AndroidControl/AITW rows are training provenance only",
+    "official_environment_execution": false,
+    "external_accounts": false,
+    "trusted_os_input": false,
+    "screenshots": false
+  },
+  "training": {
+    "parent_checkpoint_sha256": "4cccca1139699776c555876bb282783276f6e84b1a5e7e949dd83d5a2e8140ed",
+    "child_checkpoint_sha256": "79a84d666a5e1525256ffd19a4a6f1d6620bd43e434e1809da7d50bb4ffd8812",
+    "child_checkpoint_bytes": 52267577,
+    "parameters": 10524544,
+    "steps": 3000,
+    "probe_initialization": "parent_heads",
+    "state_conditioned_trajectory_rows": 23,
+    "train": {
+      "rows": 116,
+      "route_accuracy": 1.0,
+      "selector_top1": 0.896551724137931
+    },
+    "held_out_mobile": {
+      "rows": 10,
+      "route_accuracy": 1.0,
+      "selector_top1": 0.6
+    },
+    "held_out_productivity": {
+      "rows": 4,
+      "route_accuracy": 1.0,
+      "selector_top1": 0.75
+    },
+    "weight_audit_from_parent": {
+      "backbone_shared_tensors": 40,
+      "backbone_relative_l2": 0.0,
+      "route_head_relative_l2": 0.2548253751153975,
+      "dense_selector_relative_l2": 0.25800952046451525,
+      "interpretation": "frozen 10.5M backbone; only route and dense dispatch probes moved"
+    }
+  },
+  "bundle": {
+    "config_name": "webgpu-10m-hybrid",
+    "manifest_sha256": "9d5a1005330198432e7e6760aea41484f882adc467d3f52187104d71dac86f32",
+    "model_parameters": 10524544,
+    "tool_count": 62,
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+    "artifacts": {
+      "model.onnx": {"bytes": 67877334, "sha256": "9bc6dd8a0ad8ec3e106cb1756eaf50afd8f3d4a291698ebfbb5e5b2ce40d2a2a"},
+      "model.fp16.onnx": {"bytes": 34026169, "sha256": "290f57cc004b2684b3283eaf519c0a64c111e969719ec34e9421e42d21fb0330"},
+      "action_model.onnx": {"bytes": 42700043, "sha256": "eae02cb662579ccb53fd4216d39ae0db7dd4aa43237ec164d59b1dd8976574cc"},
+      "action_model.fp16.onnx": {"bytes": 21430301, "sha256": "fdccd5936157a6ff3effd1fd97ce7dff477b4b686fec96f1729eaec320211e1d"},
+      "dispatch_heads.json": {"bytes": 1326659, "sha256": "84f5d907b44e0acee35405fe9715d54c62275bb32982655c2514f61d127d3535"},
+      "meta.json": {"bytes": 14503, "sha256": "1b55355badfb2eec6b7f5eeb4d77d31672f11f07ca6bea97d6e420d3709419af"}
+    },
+    "parity": {
+      "fp32_logits_max_abs_diff": 8.58306884765625e-06,
+      "fp32_hidden_max_abs_diff": 6.139278411865234e-06,
+      "fp16_logits_max_abs_diff": 0.007607460021972656,
+      "fp16_hidden_max_abs_diff": 0.0047164857387542725,
+      "fp16_logits_argmax_agreement": 1.0
+    }
+  },
+  "environment": {
+    "surface": "codex_in_app_browser",
+    "provider_requested": "webgpu",
+    "observed_backend": "WEBGPU",
+    "network": "local_http_only",
+    "hardware_throughput_collected": false
+  },
+  "protocol": {
+    "trajectories": 3,
+    "steps": 13,
+    "families": ["email", "notion", "browser"],
+    "conditions": ["guarded_dense", "no_guard_dense", "no_guard_retrieval"],
+    "complete_trajectory_pass_at_1": "three fixed local workflows; no retries"
+  },
+  "conditions": {
+    "guarded_dense": {
+      "query": "backend=webgpu",
+      "exact_action_rate": 0.3076923076923077,
+      "schema_valid_rate": 0.9230769230769231,
+      "state_transition_rate": 0.23076923076923078,
+      "closed_loop_success_rate": 0.23076923076923078,
+      "pass_at_1": 0.0,
+      "first_failures": {
+        "gmail_compose_send": {"step_id": "fill_recipient", "observed_tool": "mobile_navigate_home"},
+        "notion_capture": {"step_id": "create_notion_page", "observed_tool": "notion_write"},
+        "browser_search_open": {"step_id": "open_mail_page", "observed_tool": "click"}
+      }
+    },
+    "no_guard_dense": {
+      "query": "backend=webgpu&mobile_guard=0&selector=dense",
+      "exact_action_rate": 0.07692307692307693,
+      "schema_valid_rate": 0.8461538461538461,
+      "state_transition_rate": 0.07692307692307693,
+      "closed_loop_success_rate": 0.07692307692307693,
+      "pass_at_1": 0.0,
+      "first_failures": {
+        "gmail_compose_send": {"step_id": "tap_compose", "observed_tool": "mobile_open_app"},
+        "notion_capture": {"step_id": "open_notion", "observed_tool": "key_press"},
+        "browser_search_open": {"step_id": "open_mail_page", "observed_tool": "click"}
+      }
+    },
+    "no_guard_retrieval": {
+      "query": "backend=webgpu&mobile_guard=0&selector=retrieval",
+      "exact_action_rate": 0.15384615384615385,
+      "schema_valid_rate": 0.6153846153846154,
+      "state_transition_rate": 0.07692307692307693,
+      "closed_loop_success_rate": 0.07692307692307693,
+      "pass_at_1": 0.0,
+      "first_failures": {
+        "gmail_compose_send": {"step_id": "open_gmail", "observed_tool": "email_send"},
+        "notion_capture": {"step_id": "open_notion", "observed_tool": "notion_create_page"},
+        "browser_search_open": {"step_id": "focus_search", "observed_tool": "open_url"}
+      }
+    }
+  },
+  "claim_boundary": "This is a local synthetic stateful WebGPU compatibility and failure diagnostic. It is not AndroidWorld, AndroidControl, AITW, AgentNetBench, BrowserGym, OSWorld, AppWorld, MCPMark, EnterpriseOps-Gym task success, real email/Notion access, screenshot grounding, trusted computer control, or a hardware throughput claim."
+}

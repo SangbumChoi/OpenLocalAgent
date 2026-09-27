@@ -1,0 +1,68 @@
+{
+  "kind": "localagent_m194_grounded_mind2web_vocab_fix",
+  "schema_version": 1,
+  "generated_at": "2026-08-03",
+  "parent": {
+    "sha256": "3b3fd817c6f52e8b922f84c9bb36e7d55e0e243a0f8ee6d0f20c85962a4eeba7",
+    "parameters": 10524544,
+    "stage": "sft_deployment_dispatch_repair"
+  },
+  "public_inputs": {
+    "source": "https://osu-nlp-group.github.io/Mind2Web/",
+    "train": {
+      "path": "/private/tmp/mind2web-grounded-offset8-train-disjoint.jsonl",
+      "bytes": 282261,
+      "sha256": "78f7e647c3728106901c51ecc772c834467ef6a019c1c083af6849700b361621",
+      "conversations": 36,
+      "decisions": 219
+    },
+    "eval": {
+      "path": "/private/tmp/mind2web-grounded-offset8-eval-disjoint.jsonl",
+      "bytes": 81803,
+      "sha256": "46305cb512f7368ed31817c79b798f5469e8658db12aed5d6880ea81b4e6fcbe",
+      "conversations": 12,
+      "decisions": 63
+    },
+    "record_disjoint": true,
+    "slot_disjoint": true,
+    "screenshots_loaded": false
+  },
+  "compatibility_fix": {
+    "old_assumption": "legacy 17-row pointer vocabulary",
+    "parent_rows": 23,
+    "child_rows": 25,
+    "migration": "copy pointer rows by declared argument name and append target_id/value"
+  },
+  "training": {
+    "steps": 32,
+    "batch_size": 4,
+    "learning_rate": 0.00002,
+    "device": "cpu",
+    "child_sha256": "6afb706115697f3fc4afcaa0fc52e0e689e40bbe8ec978aa930f030ea2019607"
+  },
+  "evaluation": {
+    "pointer_span_exact_before": 0.0,
+    "pointer_span_exact_after": 0.0,
+    "pointer_span_rows": 63
+  },
+  "weight_movement": {
+    "embedding_relative_l2": 0.002740253525578289,
+    "attention_or_mixer_relative_l2": 0.004216126987778304,
+    "ffn_relative_l2": 0.005067427476348571,
+    "normalization_relative_l2": 0.00018147624869517228,
+    "action_heads_relative_l2": 0.000843838156435776,
+    "pointer_start_relative_l2": 0.0021555284449550445,
+    "pointer_end_relative_l2": 0.0014995000267729141,
+    "tool_head_weight_relative_l2": 0.009561808778786004,
+    "tool_head_bias_relative_l2": 0.011684677630604922,
+    "dense_selector_relative_l2": 0.0,
+    "backbone_reused": true
+  },
+  "decision": {
+    "adopt_for_webgpu": false,
+    "browser_export_requested": false,
+    "reason": "Public DOM grounding continuation leaves held-out pointer exactness at zero; argument span supervision and observation/action alignment require redesign before deployment promotion."
+  },
+  "claim_boundary": "Public Mind2Web train-record-disjoint DOM-enriched continuation and pointer-vocabulary migration test. This is not an official Mind2Web test score, visual grounding result, native browser/mobile/desktop execution, or public deployment claim.",
+  "receipt_self_sha256": "bab8e02be35cc467754d370d2a11b6b65901ae2e191e39d89313775e21f34e73"
+}

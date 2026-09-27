@@ -1,0 +1,91 @@
+{
+  "kind": "localagent_webgpu_browser_smoke_receipt",
+  "schema_version": 1,
+  "measurement": "m165_static_space_browser_smoke",
+  "generated_at": "2026-08-03",
+  "environment": {
+    "browser": "Codex In-app Browser",
+    "surface": "local_static_http_server",
+    "url": "http://127.0.0.1:62173/spaces/localagent-webgpu/browser-tasks.html?backend=webgpu",
+    "benchmark_version": "rtab-dom-0.4",
+    "backend": "webgpu",
+    "requested_backend": "webgpu",
+    "execution_provider_request": {
+      "requested": "webgpu",
+      "session_provider_count": 1,
+      "single_provider_session_creation_succeeded": true,
+      "whole_session_retry": false,
+      "per_node_placement": "unknown",
+      "per_node_fallback_status": "unknown",
+      "note": "ORT Web does not expose per-node placement; this proves the requested session provider only."
+    }
+  },
+  "bundle": {
+    "directory": "spaces/localagent-webgpu",
+    "bundle_manifest_sha256": "db4aad83ad26f726e456abe98aa7c2aad964ac468a30dd92a06288233ec51738",
+    "checkpoint_sha256": "9bba544ae37190fdc24ea51ac9f3f8d80350cd905c01e13186156c19f7e0f9ee",
+    "checkpoint_stage": "sft_realistic_mobile_dispatch_pilot",
+    "checkpoint_step": 351,
+    "model_parameters": 10524544,
+    "action_graph": {
+      "file": "action_model.fp16.onnx",
+      "bytes": 21430301,
+      "sha256": "9f0cc76426611b061994f6efc27a1539082156327dfbbd5a2984e681e74c143a"
+    },
+    "tokenizer": {
+      "file": "tokenizer.json",
+      "bytes": 1134224,
+      "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+    },
+    "heads": {
+      "file": "heads.json",
+      "bytes": 3337938,
+      "sha256": "c4160783cb9ebd03057dbc82ec8d86b8798fa7f7a4621dc27fd0f7b5fc578c40"
+    },
+    "dispatch_heads": {
+      "file": "dispatch_heads.json",
+      "bytes": 1332640,
+      "sha256": "98ab584385b00321a653fa13d06f8b5f5467719f0bee617da5d2844399e42663"
+    },
+    "parity_gate_passed": true
+  },
+  "run": {
+    "case_order_seed": "dom-loop-v2-trailing",
+    "compute_input": "natural_prompt",
+    "warmup_actions": 0,
+    "repetitions_per_case": 1,
+    "records": 8,
+    "actions": [
+      "click",
+      "double_click",
+      "type_text",
+      "key_press",
+      "scroll",
+      "drag",
+      "move_cursor",
+      "open_url"
+    ],
+    "closed_loop_success_rate": 0.25,
+    "exact_action_rate": 0.25,
+    "exact_args_rate": 0.25,
+    "exact_tool_rate": 0.25,
+    "schema_valid_rate": 0.875,
+    "final_dom_rate": 0.25,
+    "state_transition_rate": 0.25,
+    "latency_ms": {
+      "model_wall_p50": 10.25,
+      "harness_ttfa_p50": 10.25,
+      "closed_loop_p50": 33.3000000715,
+      "closed_loop_p95": 54.8500000179,
+      "closed_loop_max": 66.3999999762
+    }
+  },
+  "claim_boundary": "A local, synthetic, text-only DOM smoke run against the hash-pinned static bundle. It is not an official BrowserGym/MiniWob score, visual grounding result, trusted OS/browser control result, external email or Notion side effect, public Hugging Face upload, or evidence for the newer m164 current-child checkpoint.",
+  "decision": "diagnostic_only",
+  "publication": {
+    "public_hub_url": null,
+    "uploaded": false,
+    "reason": "Hugging Face authentication is not configured."
+  },
+  "receipt_self_sha256": "ed549a4e8d9b8f5ea9098ac142bf5b856e1dc3a28784ab30dc34175549999f19"
+}

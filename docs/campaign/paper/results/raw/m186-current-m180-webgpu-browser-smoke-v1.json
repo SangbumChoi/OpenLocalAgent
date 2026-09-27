@@ -1,0 +1,58 @@
+{
+  "kind": "localagent_current_m180_webgpu_browser_smoke_receipt",
+  "schema_version": 1,
+  "measurement": "m186_current_m180_webgpu_browser_inference_smoke",
+  "generated_at": "2026-08-03",
+  "runtime": {
+    "url": "http://127.0.0.1:5174/",
+    "browser_surface": "Codex in-app Browser",
+    "static_server": "python3 -m http.server 5174 --directory spaces/localagent-webgpu",
+    "bundle_identity_sha256": "76d0bb563031d1a4f4ea271e31e3da8edb9db8b60aeae9d2abf2c8fbdf5c1246",
+    "bundle_manifest_sha256": "b29196afb860b3a073a042d50d90effda5ce87e8891916b454bd248a702c7683",
+    "requested_provider": "auto",
+    "reported_provider": "webgpu",
+    "model_ready": true,
+    "runtime_errors": 0,
+    "provider_warning_count": 2,
+    "provider_warning_summary": "ONNX Runtime reported that some shape-related nodes were assigned away from the preferred provider; the page still reported WEBGPU and completed inference."
+  },
+  "checkpoint": {
+    "path": "/private/tmp/m180-mixed-mobile-computer-child.pt",
+    "sha256": "10827649f07182a08f8c11104d4713e76b8acaddc73020c5a4c77950de7b23a0",
+    "parameters": 10524544,
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "cases": [
+    {
+      "request": "What does ephemeral mean?",
+      "reported_route_confidence": 0.97,
+      "reported_tool": "web_search",
+      "secondary_candidate": "git_diff",
+      "arguments": "{}",
+      "latency_ms": 41,
+      "expected_behavior": "answer_without_a_tool",
+      "success": false,
+      "failure": "over-eager and incorrect web_search dispatch"
+    },
+    {
+      "request": "Email Dana the quarterly report",
+      "reported_route_confidence": 0.97,
+      "reported_tool": "app_action",
+      "secondary_candidate": "set_timer",
+      "arguments": "{ \\\"duration\\\": \\\"ly report<|assistant|>\\\" }",
+      "latency_ms": 14,
+      "expected_behavior": "email compose/send intent with grounded recipient and subject/body",
+      "success": false,
+      "failure": "wrong tool family and malformed pointer argument; no external side effect occurred"
+    }
+  ],
+  "security": {
+    "external_accounts_used": false,
+    "external_side_effects": false,
+    "network_destination": "localhost only for the demo; model assets were served locally",
+    "real_email_or_notion_access": false
+  },
+  "decision": "browser_execution_verified_quality_gate_failed",
+  "claim_boundary": "This receipt proves that the current local bundle loads in a browser, reports the WebGPU provider, and completes two client-side inference calls. It also records two realistic-task failures. It is not proof of 100–300 tokens/s, native GPU placement for every node, email or Notion access, external side effects, BrowserGym/MobileGym/MCPMark success, or a public deployment.",
+  "receipt_self_sha256": "ae9375f48e68187f320fe33598c2c4a4a56a3d05db6347d4fcc346835fc9c945"
+}

@@ -1,0 +1,112 @@
+{
+  "audited_at": "2026-08-08",
+  "claim_boundary": "Source-integrity and protocol audit only. It does not report model scores, native execution, account side effects, or permission to redistribute evaluation payloads.",
+  "kind": "localagent_official_realistic_source_integrity_audit",
+  "method": "official README/release/dataset-card pages checked on 2026-08-08; revisions are recorded where the public source exposes a stable release or the catalog already pins one.",
+  "receipt_self_sha256": "baf696fc7dcd5bd28786cdae5ad79b280db942d7ce2b0201223e447158644737",
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "androidworld",
+      "observed_contract": {
+        "apps": 20,
+        "reward": "durable task reward",
+        "runtime": "live Android emulator",
+        "tasks": 116
+      },
+      "revision": "3e50888527ef9f29b9157ecd537e408008bb1c85",
+      "url": "https://github.com/google-research/android_world",
+      "webgpu_boundary": "accessibility/text projection only; emulator and screenshot claims require native runtime"
+    },
+    {
+      "id": "browsergym",
+      "observed_contract": {
+        "benchmarks": [
+          "MiniWoB",
+          "WebArena",
+          "WebArenaVerified",
+          "VisualWebArena",
+          "WorkArena",
+          "AssistantBench",
+          "WebLINX",
+          "OpenApps",
+          "TimeWarp"
+        ],
+        "release": "v0.14.3",
+        "runtime": "Playwright/Gymnasium"
+      },
+      "revision": "0a785fb",
+      "url": "https://github.com/ServiceNow/BrowserGym/releases/tag/v0.14.3",
+      "webgpu_boundary": "DOM/accessibility canary is not visual or live-account browser success"
+    },
+    {
+      "id": "mcpmark",
+      "observed_contract": {
+        "easy_tasks": 50,
+        "services": [
+          "Notion",
+          "GitHub",
+          "Filesystem",
+          "Postgres",
+          "Playwright"
+        ],
+        "standard_tasks": 127,
+        "verification": "strict task verifiers and pass@k aggregation"
+      },
+      "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+      "url": "https://github.com/eval-sys/mcpmark",
+      "webgpu_boundary": "redacted trajectory projection is not native MCP execution"
+    },
+    {
+      "id": "osworld",
+      "observed_contract": {
+        "evaluation": "execution-based evaluator",
+        "observations": [
+          "screenshot",
+          "desktop state"
+        ],
+        "runtime": "real desktop VM"
+      },
+      "revision": "release-dependent",
+      "url": "https://github.com/xlang-ai/OSWorld",
+      "webgpu_boundary": "text/accessibility traces cannot establish desktop VM success"
+    },
+    {
+      "id": "osworld_v2",
+      "observed_contract": {
+        "release_lock": [
+          "code",
+          "Python tasks",
+          "gated assets",
+          "mocked websites"
+        ],
+        "runtime": "release-matched desktop environment"
+      },
+      "revision": "v2026.06.24",
+      "url": "https://github.com/xlang-ai/OSWorld-V2",
+      "webgpu_boundary": "no score until the matching gated release and VM are available"
+    },
+    {
+      "id": "toolsandbox",
+      "observed_contract": {
+        "evaluation": "stateful conversational milestone DAGs",
+        "external_keys": "some search tools require RapidAPI",
+        "state": "settings/contact/messaging/reminder databases"
+      },
+      "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+      "url": "https://github.com/apple/ToolSandbox",
+      "webgpu_boundary": "local state-machine probes do not equal official simulator/user-simulator score"
+    },
+    {
+      "id": "enterpriseopsgym",
+      "observed_contract": {
+        "format": "parquet/text",
+        "license": "Apache-2.0",
+        "role": "enterprise tool and SQL-verifier workflows"
+      },
+      "revision": "c8e538eae8a6205294f0a86675fefdc1fac408f6",
+      "url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym",
+      "webgpu_boundary": "task card is public; benchmark tasks/verifiers remain evaluation-only"
+    }
+  ]
+}

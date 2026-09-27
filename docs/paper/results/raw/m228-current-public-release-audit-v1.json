@@ -1,0 +1,113 @@
+{
+  "claim_boundary": "Authoritative web-source audit only. No benchmark task payloads, screenshots, seeded profiles, credentials, emulator images, live services, or evaluator outputs were downloaded, executed, retained, or admitted to training.",
+  "generated_at": "2026-08-04",
+  "kind": "localagent_current_public_release_audit",
+  "measurement": "m228_current_public_release_audit",
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "bfcl_v4_agentic",
+      "name": "Berkeley Function Calling Leaderboard V4",
+      "repository_url": "https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-calling-leaderboard",
+      "leaderboard_url": "https://gorilla.cs.berkeley.edu/leaderboard",
+      "source_revision": "release-required-before-score",
+      "access_status": "public_code_and_leaderboard",
+      "evaluation_contract": {
+        "categories": [
+          "single_turn_ast",
+          "multi_turn_and_multi_step",
+          "agentic_web_search",
+          "agentic_memory",
+          "format_sensitivity"
+        ],
+        "method": "AST/executable call checking with live or stateful categories where required",
+        "official_artifact": "upstream BFCL generator and checker"
+      },
+      "webgpu_boundary": "Use only as a held-out structured-call and abstention diagnostic; live search, memory stores, and external APIs remain evaluation-only runtime dependencies.",
+      "training_rows_admitted": 0,
+      "runtime_executed": false
+    },
+    {
+      "id": "iosworld",
+      "name": "iOSWorld",
+      "project_url": "https://iosworld.io/",
+      "repository_url": "https://github.com/ljang0/iOSWorld",
+      "paper_url": "https://arxiv.org/abs/2606.09764",
+      "source_revision": "e91f4cb2ef4c9dd48fef83a894477b41fd5e209d",
+      "access_status": "open_source_with_runtime_requirements",
+      "evaluation_contract": {
+        "apps": 26,
+        "tasks": 133,
+        "categories": ["single_app", "multi_app", "memory_and_personalization"],
+        "tool_use_mode": "optional_MCP_server",
+        "runtime_options": ["native_iOS_simulator", "AWS_runner"]
+      },
+      "webgpu_boundary": "Persistent identity, cross-app state, and MCP-schema behavior can be represented as text/state probes; screenshot-grounded iOS control requires the native simulator and a visual encoder.",
+      "training_rows_admitted": 0,
+      "runtime_executed": false
+    },
+    {
+      "id": "mobile_safety_bench",
+      "name": "MobileSafetyBench",
+      "project_url": "https://mobilesafetybench.github.io/",
+      "repository_url": "https://github.com/jylee425/mobilesafetybench",
+      "paper_url": "https://arxiv.org/abs/2410.17520",
+      "source_revision": "bc5e0579626a280c4f551261abcb721442ff92ea",
+      "access_status": "public_source_with_asset_terms_review",
+      "published_contracts": {
+        "project_page_total_tasks": 250,
+        "project_page_daily_scenarios": 200,
+        "project_page_injection_scenarios": 50,
+        "pinned_paper_repository_suite": 100,
+        "pinned_paper_helpfulness_tasks": 50,
+        "pinned_paper_safety_tasks": 42,
+        "pinned_paper_injection_tasks": 8
+      },
+      "reconciliation": "The public project page and the pinned paper/repository describe different release scopes. They must not be combined or substituted for one another; select and pin one upstream release before scoring.",
+      "webgpu_boundary": "Confirmation, refusal, harmful-action, and indirect-prompt-injection policy probes are appropriate local projections; Android emulator, Appium/ADB, APKs, and official harm/helpfulness scoring remain native-only.",
+      "training_rows_admitted": 0,
+      "runtime_executed": false
+    },
+    {
+      "id": "osworld_v2",
+      "name": "OSWorld 2.0",
+      "repository_url": "https://github.com/xlang-ai/OSWorld-V2",
+      "release": "osworld-v2-2026.06.24",
+      "code_revision": "v2026.06.24",
+      "task_source": "https://huggingface.co/datasets/xlangai/osworld_v2_tasks",
+      "asset_source": "https://huggingface.co/datasets/xlangai/osworld_v2_assets_gated",
+      "access_status": "public_code_gated_tasks_and_assets",
+      "evaluation_contract": {
+        "release_lock": "code, task classes, assets, mocked websites, and provider image must come from one release",
+        "providers": ["Docker", "AWS"],
+        "runtime": "desktop_environment_with_release_matched_verifier"
+      },
+      "webgpu_boundary": "Text/action protocol replay is diagnostic only; native long-horizon computer-use success requires the release-matched desktop provider and gated task/assets.",
+      "training_rows_admitted": 0,
+      "runtime_executed": false
+    },
+    {
+      "id": "mobile_bench",
+      "name": "Mobile-Bench",
+      "repository_url": "https://github.com/XiaoMi/MobileBench",
+      "paper_url": "https://arxiv.org/abs/2407.00993",
+      "source_revision": "release-required-before-score",
+      "access_status": "public_runtime_with_CC_BY_NC_SA_data",
+      "license_boundary": "The repository states that its dataset is CC-BY-NC-SA-4.0; commercial redistribution requires separate permission.",
+      "evaluation_contract": {
+        "runtime": "Appium_and_Android_device_or_emulator",
+        "domains": ["mobile_ui", "multi_app_collaboration"],
+        "action_interface": ["tap", "swipe", "text", "ADB_or_Appium"]
+      },
+      "webgpu_boundary": "Use only as an evaluation runtime unless the exact data release and non-commercial terms are explicitly accepted; no screenshot-free score is interchangeable with the native benchmark.",
+      "training_rows_admitted": 0,
+      "runtime_executed": false
+    }
+  ],
+  "localagent_adaptation": {
+    "recommended_training_sources": ["androidcontrol", "android_in_the_wild", "mind2web", "agentnet", "toolace"],
+    "evaluation_only_sources": ["bfcl_v4_agentic", "iosworld", "mobile_safety_bench", "osworld_v2", "mobile_bench"],
+    "reason": "Train only from rows with an audited license and official train split. Keep all stateful, safety, live-service, and native-runtime benchmark artifacts outside SFT/RL until a release-matched runner and hash-bound receipt exist."
+  },
+  "receipt_self_sha256": "28dff34a4d73191e0c0c41540fef9ce6ae37cb392df5418a23c82f5537970f52"
+}

@@ -1,0 +1,47 @@
+# la-93m on the per-source mixture instead of a single merged corpus.
+#
+# The point is not a different corpus - it is that every batch knows which dataset it came from,
+# so curve.jsonl carries one loss per source and the mixture can be reweighted without repacking.
+# pt-big could not do this: packed merged, its manifest names exactly one source, `file:.jsonl`.
+#
+# sqrt_tokens weighting, not equal and not raw: equal weighting has already been measured to hurt
+# here (a ~30x oversample of the smallest axis cost xlam 14.5 points), while raw token weighting
+# would let FineWeb's 2.8B tokens drown the other four corpora entirely.
+stage: pretrain
+model_config: configs/model/la-93m.yaml
+data:
+  weighting: sqrt_tokens
+  sources:
+    - {name: fineweb, path: data/shards/src/fineweb}
+    - {name: c4, path: data/shards/src/c4}
+    - {name: wikipedia, path: data/shards/src/wikipedia}
+    - {name: cosmopedia, path: data/shards/src/cosmopedia}
+    - {name: finemath, path: data/shards/src/finemath}
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-h100-16k.json
+optim:
+  name: adamw
+  lr: 3.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 320
+  total_steps: 16000
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 8
+  grad_accum_steps: 8
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+  resume: true
+log:
+  out_dir: results/runs/pretrain-la-93m-matrix
+  ckpt_every: 2000
+  eval_every: 2000
+  eval_batches: 32
+  snapshot_every: 4000
+  snapshot_keep: 2

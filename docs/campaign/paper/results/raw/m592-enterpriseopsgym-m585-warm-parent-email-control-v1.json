@@ -1,0 +1,57 @@
+{
+  "kind": "localagent_enterpriseopsgym_m585_warm_parent_email_control_receipt",
+  "schema_version": 1,
+  "dataset": "ServiceNow-AI/EnterpriseOps-Gym",
+  "dataset_url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym",
+  "code_url": "https://github.com/ServiceNow/EnterpriseOps-Gym",
+  "dataset_revision": "c8e538eae8a6205294f0a86675fefdc1fac408f6",
+  "domain": "email",
+  "source": {
+    "oracle_parquet": {
+      "path": "oracle/email-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym/resolve/c8e538eae8a6205294f0a86675fefdc1fac408f6/oracle/email-00000-of-00001.parquet",
+      "bytes": 74050,
+      "sha256": "c4b891c2e52e92e2b568323d07bfaebd583974bd3f9d7e124b2e485506512c8b"
+    },
+    "plus_15_tools_parquet": {
+      "path": "plus_15_tools/email-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym/resolve/c8e538eae8a6205294f0a86675fefdc1fac408f6/plus_15_tools/email-00000-of-00001.parquet",
+      "bytes": 71512,
+      "sha256": "2cc5b4d04ec47c205b93fb31bddd3ff6b19862e121fad9c25b64839d874fc9f7"
+    },
+    "rows": 67,
+    "candidate_mode": "plus_15_tools",
+    "mean_candidate_tool_count": 20.0,
+    "mean_oracle_tool_count": 5.686567164179104,
+    "verifiers_dropped": true,
+    "server_configuration_dropped": true
+  },
+  "parent": {
+    "checkpoint_sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+    "report_sha256": "9f671b53f1d201132ee17cbe665e5b4c0187a37fdefb23dfe02f4913729accbf",
+    "hit_at_1": 0.43283582089552236,
+    "hit_at_3": 0.7611940298507462,
+    "hit_at_5": 0.9104477611940298
+  },
+  "warm_child": {
+    "checkpoint_sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff",
+    "report_sha256": "244b22724e8b07061f84a66a6e99c4aafb4b04cf27afe1d64776625e757b2188",
+    "hit_at_1": 0.5671641791044776,
+    "hit_at_3": 0.7611940298507462,
+    "hit_at_5": 0.9104477611940298
+  },
+  "transfer_delta": {
+    "hit_at_1_pp": 13.432835820895525,
+    "hit_at_3_pp": 0.0,
+    "hit_at_5_pp": 0.0,
+    "interpretation": "Warm continuation improves top-1 retrieval of an oracle email tool among 20 candidates by 13.43 percentage points, while top-3 and top-5 coverage are unchanged. This supports a narrow selector-ranking gain, not stateful email task success."
+  },
+  "protocol": {
+    "adapter": "enterpriseopsgym-name-only-retrieval-v1",
+    "tool_description_policy": "generated_name_only_v1",
+    "execution": "frozen_localagent_dense_selector_no_tool_execution",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "claim_boundary": "Out-of-domain name-only EnterpriseOps-Gym email retrieval diagnostic. No MCP server, SQL verifier, stateful enterprise environment, email account, external side effect, official leaderboard score, or training artifact was used.",
+  "receipt_self_sha256": "a5e91665a3fe4a28a2c651c2d3e403d309398690b34d8d665ad3852cbc17366d"
+}

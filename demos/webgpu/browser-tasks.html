@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LocalAgent — Single-step DOM closed-loop benchmark</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    window.__localAgentBrowserTasksStart = performance.now();
+    window.__localAgentRequestedBackend =
+      new URLSearchParams(window.location.search).get("backend") || "webgpu";
+  </script>
+</head>
+<body>
+  <main class="browser-task-main">
+    <header>
+      <h1>🧭 LocalAgent <span class="sub">single-step DOM loop</span></h1>
+      <p class="tagline">
+        Runs one text-grounded model action against a fresh, versioned local fixture, waits for a
+        paint, and checks the resulting DOM. Return to the
+        <a href="index.html">interactive demo</a> or the
+        <a href="benchmark.html">complete-action benchmark</a>.
+      </p>
+    </header>
+
+    <section id="status" class="status loading">
+      <span class="dot"></span>
+      <span id="status-text">Loading the WebGPU model…</span>
+      <span id="backend-badge" class="badge" hidden></span>
+    </section>
+
+    <section class="benchmark-panel browser-task-panel">
+      <div class="benchmark-settings">
+        <label>
+          Warm-up actions
+          <input id="browser-task-warmups" type="number" min="0" max="20" value="3" />
+        </label>
+        <label>
+          Repetitions per case
+          <input id="browser-task-repetitions" type="number" min="1" max="100" value="30" />
+        </label>
+        <label>
+          Compute input
+          <select id="browser-task-context-tokens">
+            <option value="">Natural prompt</option>
+            <option value="128">128 tokens</option>
+            <option value="512" selected>512 tokens</option>
+            <option value="1024">1,024 tokens</option>
+            <option value="1536">1,536 tokens</option>
+          </select>
+        </label>
+        <label>
+          Case-order seed
+          <input id="browser-task-seed" type="text" value="dom-loop-v2-trailing" />
+        </label>
+      </div>
+      <p class="browser-task-scope">
+        Scope: concurrency 1, one text-only action per case, semantic DOM targets, synthetic
+        untrusted events, and local fixture navigation only. This does not test vision,
+        multi-step planning, trusted OS input, or browser-wide control. Fixed-compute modes append
+        filler after the natural assistant marker and dispatch from that marker's hidden state.
+      </p>
+      <div class="row browser-task-controls">
+        <span id="browser-task-progress" class="timing">Waiting for the model bundle…</span>
+        <div class="button-row">
+          <button id="download-browser-tasks" class="secondary-button" disabled>
+            Download raw JSON
+          </button>
+          <button id="start-browser-tasks" class="primary-button" disabled>
+            Run DOM tasks
+          </button>
+        </div>
+      </div>
+      <div id="browser-task-output"></div>
+    </section>
+
+    <section class="browser-task-fixture-shell" aria-labelledby="browser-task-fixture-title">
+      <div class="browser-task-fixture-heading">
+        <div>
+          <h2 id="browser-task-fixture-title">Local fixture</h2>
+          <p id="browser-task-current-prompt">A fresh fixture appears here for each action.</p>
+        </div>
+        <span id="browser-task-fixture-badge" class="badge">fixture v1</span>
+      </div>
+      <div id="browser-task-stage" class="browser-task-stage">
+        <p class="browser-task-placeholder">No fixture is active.</p>
+      </div>
+    </section>
+
+    <!-- app.js uses these production UI hooks during shared initialization. -->
+    <section class="io" hidden>
+      <textarea id="prompt"></textarea>
+      <input id="plan-mode" type="checkbox" />
+      <button id="run" disabled>Run</button>
+    </section>
+    <section id="result" hidden></section>
+
+    <footer>
+      <p>
+        The downloadable artifact keeps every raw prediction, schema diagnostic, dispatched event
+        description, pre/post DOM assertion, latency component, randomized order, and environment
+        field used by the summary.
+      </p>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.27.0/dist/ort.webgpu.min.js"></script>
+  <script src="tokenizer.js"></script>
+  <script src="app.js"></script>
+  <script src="browser-tasks.js?v=m718"></script>
+</body>
+</html>

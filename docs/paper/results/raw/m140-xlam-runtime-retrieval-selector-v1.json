@@ -1,0 +1,65 @@
+{
+  "candidate_policy": {
+    "retrieve_k": 10,
+    "runtime_path": "Agent.chat retrieval followed by selector over retrieved candidates",
+    "selector_candidate_restriction": "BoundSelector.rank allowed_names"
+  },
+  "checkpoint": {
+    "bytes": 52330935,
+    "sha256": "9bba544ae37190fdc24ea51ac9f3f8d80350cd905c01e13186156c19f7e0f9ee"
+  },
+  "claim_boundary": "Deployment-shaped first-call evaluation on a public xLAM-derived shard. Retrieval bounds the candidate set to 10 before selector scoring, improving global first-tool exactness from 0% to 9.375% and schema validity from 0.78125% to 14.84375%, but this remains far below row-local retrieval (50.78125%) and does not establish official xLAM, argument exactness, native APIs, or external side effects.",
+  "decision": {
+    "checkpoint_promoted": false,
+    "retrieval_path_enabled": true,
+    "workshop_gate_eligible": false
+  },
+  "implementation": {
+    "constrained_sha256": "2a9fe7af2be0545feb907865fd552e719bed05eef2a94a5c17398f39972569e7",
+    "dense_selector_sha256": "86ac6ef30e46d469e5c75de24dfdfef4ff5d6e4114419fc4dbf3a6542fdf7628",
+    "evaluator_sha256": "41bcfe6fe7b27226eb79e62ced0381a41a45fa2bdef8468879429867465757f9",
+    "runtime_sha256": "e7694c881c89742a3764219c3eb69ee18c6d40d4439d1112cdf908883201ded6"
+  },
+  "kind": "localagent_xlam_runtime_retrieval_selector_eval",
+  "modes": {
+    "global_retriever": {
+      "first_arguments_exact_rate": 0.0,
+      "first_tool_exact_rate": 0.0625,
+      "route_rate": 1.0,
+      "schema_valid_rate": 0.1171875
+    },
+    "global_selector": {
+      "first_arguments_exact_rate": 0.0,
+      "first_tool_exact_rate": 0.0,
+      "route_rate": 1.0,
+      "schema_valid_rate": 0.0078125
+    },
+    "row_retriever": {
+      "first_arguments_exact_rate": 0.0,
+      "first_tool_exact_rate": 0.5078125,
+      "route_rate": 1.0,
+      "schema_valid_rate": 1.0
+    },
+    "runtime_retriever_selector": {
+      "first_arguments_exact_rate": 0.0,
+      "first_tool_exact_rate": 0.09375,
+      "route_rate": 1.0,
+      "schema_valid_rate": 0.1484375
+    }
+  },
+  "receipt_self_sha256": "b718ecad911105a30a2cfa597550b2bb644669c0d813671fb36204cc79c9ca52",
+  "schema_version": 1,
+  "source": {
+    "derived_dataset": "product-science/xlam-function-calling-60k-raw",
+    "derived_license": "Apache-2.0",
+    "derived_url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw",
+    "official_original_split_verified": false,
+    "original_access": "gated_and_not_authenticated_in_this_environment",
+    "original_dataset": "Salesforce/xlam-function-calling-60k",
+    "original_url": "https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k",
+    "rows_evaluated": 128,
+    "source_jsonl_sha256": "43db9250b50f44d96d2be31983690e101bd083eefea2a4a327e13a3ed8caeee1",
+    "split": "derived_public_test_shard_0",
+    "training_used": false
+  }
+}

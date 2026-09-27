@@ -1,0 +1,66 @@
+{
+  "kind": "localagent_xlam_derived_warm_random_transfer_receipt",
+  "schema_version": 1,
+  "source": {
+    "original_dataset": "Salesforce/xlam-function-calling-60k",
+    "original_url": "https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k",
+    "original_access": "gated_in_current_environment",
+    "derivative_dataset": "product-science/xlam-function-calling-60k-raw",
+    "derivative_url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw",
+    "derivative_revision": "dfbd3c669354c27f2727870d39a4d86c32381448",
+    "derivative_license": "apache-2.0",
+    "source_shards": {
+      "train_shard_0": {"bytes": 544958, "sha256": "7feda86e6c083775fcfe62f85431db952d783c3197aac7e2ba43bf29b0fe7846"},
+      "test_shard_0": {"bytes": 527269, "sha256": "83da335d43dafe27b2e368920dcd2141579d468d983835d6aa243c4908e63fb9"}
+    },
+    "normalization": {
+      "adapter": "scripts/normalize_xlam_parquet.py",
+      "train_records": 256,
+      "eval_records": 128,
+      "train_invalid_rows": 3,
+      "eval_invalid_rows": 1,
+      "invalid_policy": "skip_and_record_first_10",
+      "normalized_train": {"bytes": 694892, "sha256": "cbbeac51ec9e0f3cc6871c1ef6f30c153373335341e35ab053d9c301b47b1f1a"},
+      "normalized_eval": {"bytes": 350040, "sha256": "0e42db60b81539586274b2ff2d1dcfd792e5f1d1d42fed5b1b1255b9c0954a73"},
+      "selection": {"train_rows": 96, "eval_rows": 64, "train_sha256": "6b1129be48ac04a2a27ba3741c6687d49fb82c87385843410b690178bafaf720", "eval_sha256": "b428890e8d705f7e6ab62653a6a4141849d9ea2015839997e624b3f9aee17e58", "selection_sha256": "7b8c91cb6d66314ee67fdea7e9b644b50b5ced1c59e23ed5e99192422d67c8a6"}
+    }
+  },
+  "parent_checkpoint": {"sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c", "parameters": 10524544},
+  "children": {
+    "warm": {"sha256": "69d915f60dbd523c10899919b49bf8376744d52691a3a48721807793ee3c4252", "bytes": 52208090},
+    "random": {"sha256": "1e8a64b37abb9e7406f5275331dd278ed9fa172270f43364998c0fc5aef18406", "bytes": 52208204}
+  },
+  "protocol": {"steps": 64, "batch_size": 2, "learning_rate": 0.00001, "max_seq_len": 512, "device": "cpu", "random_backbone_seed": 2028, "slot_disjoint": true},
+  "metrics": {
+    "warm_eval_token_accuracy_before": 0.5218358831710709,
+    "warm_eval_token_accuracy_after": 0.5435326842837274,
+    "random_eval_token_accuracy_before": 0.0002781641168289291,
+    "random_eval_token_accuracy_after": 0.23031988873435327,
+    "warm_minus_random_after_pp": 31.32127955493741,
+    "sequence_exact_warm": 0.0,
+    "sequence_exact_random": 0.0,
+    "warm_start_better_after": true
+  },
+  "weight_transfer": {
+    "tokenizer_sha256_equal": true,
+    "warm_relative_delta_l2": {"embedding": 0.008005849376897679, "attention_or_mixer": 0.002224845837216936, "ffn": 0.0028495796970897025, "normalization": 0.00011215388173677675, "action_heads": 0.0},
+    "random_relative_delta_l2": {"embedding": 1.1948018815062809, "attention_or_mixer": 0.7788292622310419, "ffn": 0.8779241529046392, "normalization": 0.08577191590728334, "action_heads": 0.0}
+  },
+  "comparison": {
+    "arm_contract": {"warm_backbone_init": "parent", "random_backbone_init": "random", "random_backbone_seed": 2028},
+    "aggregate": {"warm_after_token_accuracy": 0.5435326842837274, "random_after_token_accuracy": 0.23031988873435327, "warm_minus_random_after_pp": 31.32127955493741, "warm_start_better_after": true},
+    "decision": "warm_start_dominates_matched_random_on_all_surfaces"
+  },
+  "weight_transfer_analysis": {
+    "warm": {"compatibility": {"config_mismatches": {}, "shape_mismatches": {}, "tokenizer_sha256_equal": true}, "groups": {"embedding": {"relative_delta_l2": 0.008005849376897679}, "attention_or_mixer": {"relative_delta_l2": 0.002224845837216936}, "ffn": {"relative_delta_l2": 0.0028495796970897025}, "normalization": {"relative_delta_l2": 0.00011215388173677675}, "action_heads": {"relative_delta_l2": 0.0}}},
+    "random": {"compatibility": {"config_mismatches": {}, "shape_mismatches": {}, "tokenizer_sha256_equal": true}, "groups": {"embedding": {"relative_delta_l2": 1.1948018815062809}, "attention_or_mixer": {"relative_delta_l2": 0.7788292622310419}, "ffn": {"relative_delta_l2": 0.8779241529046392}, "normalization": {"relative_delta_l2": 0.08577191590728334}, "action_heads": {"relative_delta_l2": 0.0}}}
+  },
+  "raw_reports": {
+    "warm": {"path": "/private/tmp/m574-xlam-warm-transfer.json", "sha256": "85a31bc6e519d2511c04fa2efdc53ba19a9b0ab81eaa156aa164653b851df865"},
+    "random": {"path": "/private/tmp/m574-xlam-random-transfer.json", "sha256": "51eff9fc2fccce0a212daf7e1647fe5db9ea52707ca5a4b44fa15ee0f8c1abd5"},
+    "comparison": {"path": "/private/tmp/m574-xlam-comparison.json", "sha256": "18ec6ce5411a78b7c3bc1c2a6f5af314b18584f88c3a1c93afafa033da12b39f"},
+    "assembled": {"path": "/private/tmp/m574-xlam-transfer-receipt.json", "sha256": "c9adba055b4837bcad981eabd8d2892b78f3930609e4a91a4a945f405cfe40aa"}
+  },
+  "claim_boundary": "Public derivative xLAM source continuation only. Warm initialization wins the matched random control by 31.32 percentage points in teacher-forced token accuracy, but sequence exactness is zero and this is not an official Salesforce xLAM, BFCL, native browser, MCP, email, or Notion score.",
+  "receipt_self_sha256": "717421c1d5d9850fc5892b7c777be3d8f28b70063c582275bd86f3f8c3fb9490"
+}

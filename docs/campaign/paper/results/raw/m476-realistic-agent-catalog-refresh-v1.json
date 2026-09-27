@@ -1,0 +1,119 @@
+{
+  "captured_at": "2026-08-06",
+  "catalog": {
+    "entries": 42,
+    "evaluation_entries": [
+      "androidworld",
+      "iosworld",
+      "mobile_safety_bench",
+      "aitw_control_eval",
+      "browsergym_miniwob",
+      "mind2web_eval",
+      "webarena",
+      "osworld",
+      "agentnet",
+      "appworld",
+      "tau_bench",
+      "toolsandbox",
+      "toolathlon",
+      "mcpmark",
+      "enterpriseopsgym",
+      "mcp_persona",
+      "tua_bench",
+      "osworld_human",
+      "mobilegym",
+      "mobileworld",
+      "memgui_bench",
+      "workarena",
+      "weblinx",
+      "osworld_v2",
+      "toolathlon_gym",
+      "phoneworld",
+      "gui_odyssey",
+      "mobile_agent_bench",
+      "agentbench_fc",
+      "visualwebarena",
+      "omni_act",
+      "worldgui",
+      "macosworld",
+      "assistgui",
+      "androiddaily",
+      "windows_agent_arena",
+      "webchorearena",
+      "timewarp"
+    ],
+    "path": "configs/data/realistic-agent-eval.catalog.yaml",
+    "sha256": "dac55d7f025ebf6e523ef81869dd615b381e2d6e0ee7d7051a0ab3c8627137f6",
+    "train_entries": [
+      "androidcontrol",
+      "android_in_the_wild",
+      "xlam_function_calling",
+      "mind2web_train"
+    ]
+  },
+  "claim_boundary": "Source and protocol inventory only. This receipt does not claim an iOSWorld or MobileSafetyBench score, native emulator execution, or visual grounding result.",
+  "decision": {
+    "catalog_admission": true,
+    "reason": "Both sources directly cover deployment-critical mobile behavior, but their task prompts, seeded state, screenshots, APKs, rubrics, and safety labels are held out. Use them for native evaluation and text-only safety/protocol diagnostics only; do not place either benchmark row in SFT or tokenizer training.",
+    "training_admission": false
+  },
+  "kind": "localagent_realistic_agent_catalog_refresh_receipt",
+  "new_entries": [
+    {
+      "code": "https://github.com/ljang0/iosworld",
+      "contract": {
+        "apps": 26,
+        "categories": {
+          "memory": 46,
+          "multi_app": 60,
+          "single_app": 27
+        },
+        "native_requirements": [
+          "macOS",
+          "Xcode 26+",
+          "iOS 26 simulator",
+          "Appium"
+        ],
+        "observation_modes": [
+          "vision_only",
+          "vision_plus_xml"
+        ],
+        "optional_tool_mode": "MCP",
+        "tasks": 133
+      },
+      "id": "iosworld",
+      "official_project": "https://iosworld.io/",
+      "paper": "https://arxiv.org/abs/2606.09764",
+      "source_revision": "e91f4cb2ef4c9dd48fef83a894477b41fd5e209d",
+      "training_policy": "eval_only"
+    },
+    {
+      "code": "https://github.com/jylee425/mobilesafetybench/tree/release/ver.3",
+      "contract": {
+        "applications": [
+          "messaging",
+          "web_navigation",
+          "social_media",
+          "calendar",
+          "finance"
+        ],
+        "daily_scenario_tasks": 200,
+        "native_requirements": [
+          "Android emulator",
+          "ADB",
+          "Appium",
+          "versioned APK assets"
+        ],
+        "prompt_injection_tasks": 50,
+        "tasks": 250
+      },
+      "id": "mobile_safety_bench",
+      "official_project": "https://mobilesafetybench.github.io/",
+      "paper": "https://arxiv.org/abs/2410.17520",
+      "source_revision": "release/ver.3",
+      "training_policy": "eval_only"
+    }
+  ],
+  "receipt_self_sha256": "11783378119b25d9b96cae0e5d68005a1123125c8183251aae70ab268d7730e1",
+  "schema_version": 1
+}

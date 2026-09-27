@@ -1,0 +1,77 @@
+{
+  "claim_boundary": "Official AndroidControl screenshot/action scaling diagnostic with a complete-record holdout and matched warm/random frozen text backbones. It is not an official leaderboard score, Android emulator result, or WebGPU task-completion claim.",
+  "kind": "localagent_m720_androidcontrol_structured_visual_scaling",
+  "model": {
+    "action_names": [
+      "click",
+      "input_text",
+      "long_press",
+      "navigate_back",
+      "open_app",
+      "scroll",
+      "wait"
+    ],
+    "backbone_frozen": true,
+    "config": "configs/model/webgpu-10m-vision.yaml",
+    "parameters": 10612224,
+    "steps": 256,
+    "trainable": ["vision", "structured_action_head"]
+  },
+  "random": {
+    "after": {
+      "action_accuracy": 0.525,
+      "action_loss": 1.4463045597076416,
+      "coordinate_mae": 0.27531726587386357,
+      "coordinate_rows": 21,
+      "samples": 40
+    },
+    "before": {
+      "action_accuracy": 0.1,
+      "action_loss": 1.9876859188079834,
+      "coordinate_mae": 0.25404939977895646,
+      "coordinate_rows": 21,
+      "samples": 40
+    },
+    "seed": 721,
+    "training": {"mean_loss": 1.498544844915159, "steps": 256},
+    "warm": false
+  },
+  "schema_version": 1,
+  "source": {
+    "complete_episodes": 57,
+    "dataset": "AndroidControl",
+    "heldout_episodes": 8,
+    "heldout_rows": 40,
+    "object_url": "https://storage.googleapis.com/gresearch/android_control/android_control-00000-of-00020",
+    "range_bytes": 209715200,
+    "range_sha256": "031ab4dc3d74498ee9363c0d6a5c216616cf2f3289a0c08351428f5eae80acb2",
+    "split": "complete-record disjoint; final heldout episodes",
+    "train_episodes": 49,
+    "train_rows": 276
+  },
+  "warm": {
+    "after": {
+      "action_accuracy": 0.525,
+      "action_loss": 1.3744759559631348,
+      "coordinate_mae": 0.2892573419071379,
+      "coordinate_rows": 21,
+      "samples": 40
+    },
+    "before": {
+      "action_accuracy": 0.075,
+      "action_loss": 1.9116926193237305,
+      "coordinate_mae": 0.25960087066604975,
+      "coordinate_rows": 21,
+      "samples": 40
+    },
+    "seed": 720,
+    "training": {"mean_loss": 1.451768814935349, "steps": 256},
+    "warm": true
+  },
+  "weight_transfer": {
+    "action_accuracy_delta_warm_minus_random": 0.0,
+    "comparison": "warm frozen text backbone versus random frozen text backbone",
+    "coordinate_mae_delta_warm_minus_random": 0.013940076033274351,
+    "warm_parent_sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  }
+}

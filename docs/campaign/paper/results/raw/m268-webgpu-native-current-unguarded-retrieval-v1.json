@@ -1,0 +1,89 @@
+{
+  "kind": "localagent_webgpu_native_learned_selector_control_receipt",
+  "schema_version": 1,
+  "measurement": "m268_webgpu_native_current_unguarded_retrieval",
+  "generated_at": "2026-08-04",
+  "environment_executed": true,
+  "backend": "webgpu",
+  "hardware_adapter": "vendor=apple; architecture=metal-3",
+  "checkpoint": {
+    "source": "bundle-manifest.json",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "stage": "sft_browser_context",
+    "step": 319,
+    "config_name": "webgpu-10m-hybrid",
+    "parameters": 10524544
+  },
+  "protocol": {
+    "page": "spaces/localagent-webgpu/webgpu-capability.html",
+    "requested_provider": ["webgpu"],
+    "session_provider_retry": false,
+    "warmups_per_case": 3,
+    "measured_repetitions_per_case": 30,
+    "selector": "retrieval",
+    "mobile_guard": false,
+    "url_guard": false,
+    "chromium_launch_flags": ["--use-angle=metal", "--enable-unsafe-webgpu"],
+    "ort_version": "1.27.0",
+    "action_graph_sha256": "8856dcaeca1ad2125b0ba34d0fa47da8f0271d3078195a9288862cd1603a1434",
+    "bundle_manifest_sha256": "a7c290c4d250afb227f89104b6621ea34dbb3171829a975c1e9d38dc09ea73bc"
+  },
+  "cases": [
+    {
+      "prompt": "Email Dana the quarterly report",
+      "expected_tool": "send_email",
+      "expected_argument": "recipient",
+      "observed_tool": "type_text",
+      "observed_arguments": {"text": "Dana the quarterly report"},
+      "selection_policy": "retrieval_selector",
+      "schema_valid": true,
+      "exact_actions": 0,
+      "measured_repetitions": 30,
+      "wall_latency_ms_p50": 9.25,
+      "model_inference_ms_p50": 8.700000047683716
+    },
+    {
+      "prompt": "Open https://example.com",
+      "expected_tool": "open_url",
+      "expected_argument": "url",
+      "observed_tool": "open_url",
+      "observed_arguments": {"url": "https://example.com"},
+      "selection_policy": "retrieval_selector",
+      "schema_valid": true,
+      "exact_actions": 30,
+      "measured_repetitions": 30,
+      "wall_latency_ms_p50": 6.400000035762787,
+      "model_inference_ms_p50": 5.800000011920929
+    },
+    {
+      "prompt": "Write 'WebGPU state loop passed' to Notion",
+      "expected_tool": "notion_write",
+      "expected_argument": "content",
+      "observed_tool": "notion_write",
+      "observed_arguments": {"content": "'WebGPU state loop passed'"},
+      "selection_policy": "retrieval_selector",
+      "schema_valid": true,
+      "exact_actions": 30,
+      "measured_repetitions": 30,
+      "wall_latency_ms_p50": 7.5,
+      "model_inference_ms_p50": 6.900000095367432
+    }
+  ],
+  "summary": {
+    "evaluated_cases": 3,
+    "exact_actions": 2,
+    "exact_action_rate": 0.6666666666666666,
+    "closed_loop_success": 0,
+    "external_side_effects_executed": false,
+    "tokens_per_second_p50": 1379.3103419926447,
+    "latency_ms_p50": 7.5,
+    "peak_memory_mb": 20.458142280578613
+  },
+  "raw_receipt": {
+    "path": "/private/tmp/m268-webgpu-native-current-unguarded-retrieval-v2.json",
+    "bytes": 11522,
+    "sha256": "68f6a8b4f44924e5b29aae1bf16df2c8837967716b56909111f1a0fc3299f85b"
+  },
+  "claim_boundary": "Native WebGPU learned-selector control with the email/productivity and URL lexical guards disabled. The current checkpoint routes URL and Notion exactly but routes the email request to type_text with a text argument; this is a local structured prediction control, not external side effects, closed-loop completion, or an official mobile/browser/desktop benchmark score.",
+  "receipt_self_sha256": "d53ed69bc1cbc70b7360cd5abd4f91933e79cf612842845abc7d0b55101c34f4"
+}

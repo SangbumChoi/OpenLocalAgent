@@ -1,0 +1,87 @@
+{
+  "baseline_m71": {
+    "model_accepted_steps_m69": 0,
+    "model_accepted_steps_m70": 0,
+    "model_task_complete_rate_m69": 0.0,
+    "model_task_complete_rate_m70": 0.0,
+    "receipt": "m71-public-adaptation-stateful-runtime-comparison-v1.json"
+  },
+  "claim_boundary": "This is a reproducible local resettable email/Notion/browser/recovery/abstention result. It adopts state-conditioned training, grounded extractors, selector-first top-5 candidate search, and exact rejected-output memory for the next native probe. It is not an official AndroidWorld, BrowserGym, OSWorld, AgentNet, ToolSandbox, MCPMark, EnterpriseOps-Gym, real email, real Notion, or native WebGPU benchmark result.",
+  "comparison": {
+    "accepted_steps_delta_vs_m71_m70": 16,
+    "all_steps_accepted": true,
+    "task_complete_rate_delta_vs_m71_m70": 1.0,
+    "workflow_passed": true
+  },
+  "kind": "localagent_public_to_stateful_closed_loop_adoption",
+  "parent_public_adaptation": {
+    "checkpoint_path": "/private/tmp/m70-mixed-public-agent-random-head-child.pt",
+    "checkpoint_sha256": "0d6721455b89d4d3a569edeed8bae57ef8b3a3b000b6e7d92890ded1cdd00a61",
+    "source_receipt": "m70-mixed-public-agent-random-head-control-v1.json"
+  },
+  "receipt_self_sha256": "948f73d44595eba558b5ca07dd407d39ffb9dc285b2af03211331ef8fc855fde",
+  "runtime": {
+    "model_accepted_steps": 16,
+    "model_attempts": 20,
+    "model_expected_steps": 16,
+    "model_mean_shaped_reward": 0.8345833333333333,
+    "model_task_complete_rate": 1.0,
+    "oracle_task_complete_rate": 1.0,
+    "policy": {
+      "device": "cpu",
+      "max_attempts_per_step": 3,
+      "rejection_memory": "exact_decoder_output_per_episode",
+      "reward_spec": {
+        "exact_args": 0.25,
+        "exact_tool": 0.25,
+        "schema_valid": 0.1,
+        "state_transition": 0.25,
+        "terminal": 0.15
+      },
+      "selector_first": true,
+      "tool_pool_sha256": "4bdc35dc13c05a688df5717edd6fb81d74e1c095e22c3ae49358623ff5efbe8f",
+      "tool_pool_size": 62,
+      "top_m": 5
+    },
+    "receipt": {
+      "bytes": 7323,
+      "path": "docs/paper/results/raw/m89-stateful-runtime-public-adaptation-v2.json",
+      "sha256": "ea3153efbb933067ad7b75c185a3e1587799c55b43b833eec73459f8d9c0c164"
+    },
+    "receipt_self_sha256": "913625f5016a868c07c377e599f433f37e79a7b70d038d2bfdb72b9b0a62d242"
+  },
+  "schema_version": 1,
+  "source": {
+    "external_accounts_used": false,
+    "native_runtime_executed": false,
+    "public_benchmark_text_used_in_stateful_stage": false,
+    "public_parent_datasets": [
+      "xlangai/AgentNet",
+      "osunlp/Mind2Web"
+    ],
+    "stateful_adaptation_dataset": "localagent canonical disjoint train/eval state machine",
+    "tool_side_effects": "in_memory_only"
+  },
+  "suite": "localagent-stateful-productivity-v1",
+  "training": {
+    "adoption_decision_from_ablation": "retain_pretrained_backbone_for_next_native_probe",
+    "backbone_lr": 1e-05,
+    "backbone_movement": {
+      "backbone": 0.004221672831813739,
+      "embedding": 0.0013261414529056235,
+      "ffn": 0.009362956171782703,
+      "mixer": 0.008842138023778716,
+      "normalization": 0.0001966595467779794
+    },
+    "clean_route_features": 16,
+    "error_recovery_features": 16,
+    "head_lr": 0.005,
+    "receipt": {
+      "bytes": 20096,
+      "path": "docs/paper/results/raw/m89-stateful-error-recovery-transfer-v1.json",
+      "sha256": "4ae519df903728bad6a5f1137f019b6464c1ed70f04a896e52c67c378cc7176d"
+    },
+    "receipt_self_sha256": "8c797fd052fd13ab2d79b94daecb2eecef137c00e9437bb5d8a7a5c8b96a779e",
+    "steps": 512
+  }
+}

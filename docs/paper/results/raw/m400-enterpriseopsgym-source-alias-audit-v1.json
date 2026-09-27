@@ -1,0 +1,32 @@
+{
+  "kind": "localagent_enterpriseopsgym_source_alias_audit",
+  "schema_version": 1,
+  "observed_at": "2026-08-05",
+  "canonical_source": {
+    "dataset": "ServiceNow-AI/EnterpriseOps-Gym",
+    "url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym",
+    "code_url": "https://github.com/ServiceNow/EnterpriseOps-Gym",
+    "revision": "c8e538eae8a6205294f0a86675fefdc1fac408f6",
+    "policy": "pinned_existing_local_evaluation_source"
+  },
+  "separate_public_mirror": {
+    "dataset": "EnterpriseAgents/EnterpriseOpsGym",
+    "url": "https://huggingface.co/datasets/EnterpriseAgents/EnterpriseOpsGym",
+    "observed_revision": "10836f6f170669b112b21826ca9263cfe8121cc3",
+    "observed_last_modified": "2026-03-31T03:11:28.000Z",
+    "license_tag": "mit",
+    "rows": 649,
+    "domains": 8,
+    "email_rows": 67,
+    "files": 8,
+    "metadata_response_sha256": "a5036dd6861aade8465286fd5fb8ba17a0dd376a30b52f16c939b934818576f3"
+  },
+  "decision": {
+    "same_source_assumed": false,
+    "use_in_current_receipt": false,
+    "training_policy": "evaluation_only",
+    "reason": "The mirror has a different namespace, revision, and license tag; equivalence to the pinned ServiceNow-AI release is not established."
+  },
+  "claim_boundary": "Public metadata reconciliation only. No mirror task payload, server configuration, verifier, credential, MCP service, or external side effect was used; the current m400 retrieval receipt remains bound to the canonical ServiceNow-AI source.",
+  "receipt_self_sha256": "d9472d3abdd3a7eaeb5e2398ba832cb692319ac46617886f41e8e67fb683758e"
+}

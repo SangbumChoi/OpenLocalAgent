@@ -1,0 +1,60 @@
+{
+  "kind": "localagent_hf_local_export_receipt",
+  "schema_version": 1,
+  "measurement": "m260_hf_local_export_current_browser_context",
+  "generated_at": "2026-08-04",
+  "checkpoint": {
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "parameters": 10524544,
+    "model_config": "webgpu-10m-hybrid",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "bundle": {
+    "path": "/private/tmp/hf-export-m260",
+    "export_verified_locally": true,
+    "roundtrip_state_dict": {
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "tensor_count": 40
+    },
+    "files": {
+      "README.md": {
+        "bytes": 3472,
+        "sha256": "750b1ccd45e76a74e9f6d18683a6c69b772bf7c8e851a8df2d3a4adf12cb1834"
+      },
+      "agent_heads.bin": {
+        "bytes": 10116038,
+        "sha256": "f2af8f83698276b63d9def1f89c990ee9343c8360a30f6411267c0902fe0a128"
+      },
+      "config.json": {
+        "bytes": 38446,
+        "sha256": "29ac9528d9af3b329fe4628966cf4fa0347f54060cceb18b74664fa6c8e0ab56"
+      },
+      "model.safetensors": {
+        "bytes": 42101904,
+        "sha256": "c95406240d299e6846b79f347add8aede5707c761fc545184aa2c2149c504404"
+      },
+      "tokenizer.json": {
+        "bytes": 1134224,
+        "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+      }
+    }
+  },
+  "dispatch_metadata": {
+    "tool_count": 63,
+    "pointer_argument_count": 0,
+    "heads_included": true,
+    "surface_selectors_included": false,
+    "provenance": "inferred_standard_tool_pool_from_51_class_tool_head"
+  },
+  "publication": {
+    "published": false,
+    "hub_url": null,
+    "authenticated": false,
+    "uploaded": false,
+    "reason": "hf auth whoami reports no login; upload requires a user-provided Hugging Face token and repository"
+  },
+  "claim_boundary": "This is a self-contained local Hugging Face-format bundle for the current 10.52M BPE browser-context child. It is not a public Hub repository, download URL, hosted inference deployment, or native benchmark score; pointer-argument metadata is empty in this checkpoint and no external side effect was executed.",
+  "receipt_self_sha256": "ae8982def058383abf2be2cba5a5d86f6cf2585986418b7b2ac7306f58c8266d"
+}

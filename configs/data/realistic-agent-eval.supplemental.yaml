@@ -1,0 +1,452 @@
+# Supplemental public-source registry for realistic computer-use and stateful-tool evaluation.
+# The canonical 40-row catalog remains the gate input.  These rows are deliberately separate:
+# they were audited after the catalog freeze and must not silently change train/eval eligibility.
+kind: localagent_realistic_agent_supplemental_catalog
+schema_version: 1
+purpose: public_source_discovery_without_implicit_training_or_benchmark_claims
+default_policy: catalog_only_until_revision_license_and_split_are_frozen
+entries:
+  - id: computer_agent_arena
+    family: computer
+    name: Computer Agent Arena
+    source_url: https://huggingface.co/datasets/xlangai/computer-agent-arena
+    license: CC-BY-4.0
+    source_revision: 897b9f45287c516a44f9e79879b14bc3c1bc5b0a
+    scale: 4641_trajectories_and_99765_steps; metadata_jsonl_50609777_bytes; image_archives_30527486683_bytes
+    modalities: [instruction, pyautogui_code, textual_thought, screenshot]
+    split_policy: evaluation_only_until_task_and_model_identity_deduplication_is_verified
+    runtime: controlled_ubuntu_desktop
+    webgpu_projection: text-only action-vocabulary diagnostic; screenshots require a visual encoder
+    metric: human_evaluation_correctness_plus_action_and_trajectory_diagnostics
+    notes: Main JSONL is 50,609,777 bytes; the repository reports 30,527,486,683 bytes across duplicate and split image archives. Do not train on evaluation battles without a frozen task/model holdout.
+
+  - id: cua_lite_agentnet
+    family: computer
+    name: CUA-Lite AgentNet
+    source_url: https://huggingface.co/datasets/cua-lite/AgentNet
+    license: source_dataset_license_requires_audit
+    source_revision: pin_before_use
+    scale: 4900_train_and_92_validation_desktop_trajectories
+    modalities: [instruction, screenshot, normalized_coordinate_action]
+    split_policy: validation_and_test_are_never_training_inputs
+    runtime: Ubuntu_desktop_trajectories_with_embedded_images
+    webgpu_projection: accessibility/text projection only; no claim of visual grounding
+    metric: action_accuracy_and_trajectory_completion_after_image_capability_is_available
+    notes: The repository reports a roughly 74 GB image store; use metadata-only profiling or a bounded shard before downloading.
+
+  - id: osworld2_trajectory
+    family: computer
+    name: OSWorld 2.0 trajectories
+    source_url: https://huggingface.co/datasets/xlangai/osworld2.0-trajectory
+    license: Apache-2.0_task_card_with_gated_assets
+    source_revision: osworld-v2-2026.06.24;benchmark-release-osworld-v2-2026.06.24
+    scale: 108_long_horizon_tasks
+    modalities: [instruction, screenshot, desktop_action, trajectory]
+    split_policy: test_only_and_gated; never train on benchmark trajectories
+    runtime: OSWorld-V2_real_desktop_environment
+    webgpu_projection: text-only replay/protocol audit; native desktop VM required for score
+    metric: execution_success_and_long_horizon_task_completion
+    notes: The official release requires the v2026.06.24 code tag and the osworld-v2-2026.06.24 benchmark release. Public assets are incomplete; the gated asset snapshot must be downloaded locally and hashed before any run.
+
+  - id: enterpriseopsgym
+    family: tool_api
+    name: EnterpriseOps-Gym
+    source_url: https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym
+    code_url: https://github.com/ServiceNow/EnterpriseOps-Gym
+    license: Apache-2.0
+    source_revision: c8e538eae8a6205294f0a86675fefdc1fac408f6
+    scale: about_1150_tasks;_domain_table_1115_tasks;_512_tools_8_enterprise_domains
+    modalities: [system_prompt, user_prompt, tool_set, sql_verifier, mcp_server_state]
+    split_policy: evaluation_only; verifiers and server configuration stay out of training
+    runtime: resettable_containerized_MCP_servers
+    webgpu_projection: name/schema retrieval and local state-machine rehearsal only
+    metric: final_state_SQL_verifier_success_and_long_horizon_tool_use
+    notes: The pinned card says about 1,150 tasks while its domain table totals 1,115; the API exposes 649 oracle rows and 637 rows in each distractor mode. Email, calendar, drive, HR, ITSM, CSM, Teams, and hybrid workflows are stateful; name-only retrieval is not task success.
+
+  - id: mcpmark
+    family: tool_api
+    name: MCPMark
+    source_url: https://github.com/eval-sys/mcpmark
+    license: Apache-2.0
+    source_revision: cd45b7f57923b9b3985467f5139927575f83141c
+    scale: 177_verified_tasks_(127_standard,_50_easy)_across_5_MCP_services
+    modalities: [task_prompt, tool_schema, service_state, verifier]
+    split_policy: evaluation_only; task text and verifiers are not SFT inputs
+    runtime: isolated_Notion_GitHub_Filesystem_Postgres_Playwright_services
+    webgpu_projection: tool routing, schema validation, abstention, and local service-contract probes
+    metric: pass_at_k_pass_power_k_and_verifier_success
+    notes: Current MCPMark Verified source at the pinned revision reports 127 standard and 50 easy tasks across five MCP services. The tree also contains a playwright_webarena task-root variant; historical 239-row metadata profiles (169 standard, 70 easy) refer to an older tree and are not current. Credentials, task descriptions, state assets, and real accounts are never supplied to this project.
+
+  - id: toolsandbox
+    family: tool_api
+    name: Apple ToolSandbox
+    source_url: https://github.com/apple/ToolSandbox
+    license: source_repository_license_requires_audit
+    source_revision: 165848b9a78cead7ca7fe7c89c688b58e6501219
+    scale: 129_base_scenarios_and_1032_source_level_augmented_variants
+    modalities: [multi_turn_dialogue, tool_schema, simulator_state, milestone_verifier]
+    split_policy: evaluation_only; no static scenario labels in SFT
+    runtime: ToolSandbox_simulator_and_user_simulator
+    webgpu_projection: state-dependency and canonicalization rehearsal without external services
+    metric: intermediate_and_final_milestone_success
+    notes: AST metadata profile at the pinned commit reports 129 base scenarios across four families and 1032 source-level variants; prompts, verifiers, tools, and user simulation remain evaluation-only and the Apple Software License plus ACKNOWLEDGEMENTS require review before redistribution.
+
+  - id: androidworld
+    family: mobile
+    name: AndroidWorld
+    source_url: https://github.com/google-research/android_world
+    license: Apache-2.0
+    source_revision: 3e50888527ef9f29b9157ecd537e408008bb1c85
+    scale: 116_tasks_20_apps_with_dynamic_variations
+    modalities: [goal, accessibility_tree, screenshot, emulator_state]
+    split_policy: evaluation_only; task templates and generated goals are runtime inputs
+    runtime: Android_emulator_with_adb
+    webgpu_projection: accessibility-tree text probe only; no visual or emulator reward claim
+    metric: environment_reward_and_task_success
+    notes: Pinned public task_metadata.json is profiled in m51; the current machine has no adb or Android emulator, so no native receipt is asserted.
+
+  - id: browsergym_miniwob
+    family: browser
+    name: BrowserGym MiniWoB++
+    source_url: https://github.com/ServiceNow/BrowserGym
+    license: MIT_and_Apache-2.0
+    source_revision: BrowserGym_0.14.3_plus_pinned_MiniWoB_revision
+    scale: 125_browser_tasks
+    modalities: [goal, DOM, accessibility_tree, screenshot, browser_state]
+    split_policy: evaluation_only; official task/seed split is hash-bound in native receipts
+    runtime: Playwright_and_Chromium
+    webgpu_projection: text/accessibility-tree action dispatch with explicit DOM grounding adapter
+    metric: episode_success_reward_and_action_error
+    notes: Existing native receipts cover the pinned 240-episode MiniWoB plan, not visual WebArena or real accounts.
+
+  - id: online_mind2web
+    family: browser
+    name: Online-Mind2Web
+    source_url: https://github.com/OSU-NLP-Group/Online-Mind2Web
+    license: source_and_live_site_terms_require_audit
+    source_revision: pin-before-use;v2-submission-schema-2026-05-23
+    scale: release_dependent_live_web_tasks;_36_tasks_were_revised_for_site_drift
+    modalities: [goal, live_web, DOM, accessibility_tree, browser_action, human_or_judge_feedback]
+    split_policy: evaluation_only;_live_tasks_credentials_site_state_and_submission_traces_never_training
+    runtime: release_matched_live_browser_or_vendor_hosted_evaluator
+    webgpu_projection: DOM/action safety and online-submission protocol only; no live-account side effects
+    metric: task_success, action_validity, and human_or_judge_rubric_score
+    notes: The official repository documents a 2026 v2 submission schema and site-drift corrections. Freeze the task revision and evaluator endpoint before scoring; this is not a static Mind2Web training split.
+
+  - id: osworld_human_efficiency
+    family: computer
+    name: OSWorld-Human
+    source_url: https://github.com/WukLab/osworld-human
+    license: MIT_code;_OSWorld_assets_and_trajectory_terms_require_audit
+    source_revision: pin-before-use
+    scale: human_reference_trajectories_for_OSWorld_tasks;_release_dependent
+    modalities: [instruction, human_action_trajectory, step_count, desktop_state]
+    split_policy: evaluation_only;_upstream_warns_not_to_use_the_repository_for_training
+    runtime: OSWorld_desktop_VM_and_release_matched_result_directory
+    webgpu_projection: action-efficiency and excess-step analysis only; native desktop completion requires OSWorld
+    metric: steps_to_success, weighted_efficiency_score, and task_success
+    notes: This benchmark measures temporal efficiency against human reference trajectories. It must not be mixed into SFT or RL, and its result scorer is not a substitute for OSWorld task execution.
+
+  - id: iosworld
+    family: mobile
+    name: iOSWorld
+    source_url: https://github.com/ljang0/iOSWorld
+    project_url: https://iosworld.io/
+    paper_url: https://arxiv.org/abs/2606.09764
+    license: Apache-2.0
+    source_revision: e91f4cb2ef4c9dd48fef83a894477b41fd5e209d
+    scale: 133_tasks_across_26_interconnected_ios_apps
+    modalities: [goal, screenshot, accessibility_xml, persistent_user_state, MCP_tools]
+    split_policy: evaluation_only_until_release_seed_and_task_split_are_frozen
+    runtime: native_ios_simulator_or_aws_runner
+    webgpu_projection: compact state and MCP-schema rehearsal; visual phone control requires an image encoder
+    metric: strict_task_pass_and_rubric_score_by_single_multi_app_and_memory_categories
+    notes: The benchmark is explicitly personalized and cross-app; seeded user data, tasks, rubrics, and tool server must be version-pinned before any claim.
+
+  - id: mobile_safety_bench
+    family: mobile
+    name: MobileSafetyBench
+    source_url: https://mobilesafetybench.github.io/
+    paper_url: https://arxiv.org/abs/2410.17520
+    license: source-license-review-required
+    source_revision: bc5e0579626a280c4f551261abcb721442ff92ea
+    scale: safety_and_prompt_injection_tasks_on_android_emulators
+    modalities: [goal, screenshot, mobile_action, app_state, safety_policy]
+    split_policy: evaluation_only; safety prompts, emulator snapshots, and attack variants stay out of training
+    runtime: Android_emulator_with_messaging_and_banking_apps
+    webgpu_projection: refusal, confirmation, and side-effect policy probes over synthetic local state
+    metric: harmful-action_rate, safe-completion_rate, and indirect-prompt-injection_robustness
+    notes: This is a safety gate, not a productivity score; it should be run before exposing email, messaging, or settings tools.
+
+  - id: androidcontrol_curated
+    family: mobile
+    name: AndroidControl-Curated
+    source_url: https://github.com/batechworks/AndroidControl_Curated
+    paper_url: https://arxiv.org/abs/2510.18488
+    license: source-license-review-required
+    source_revision: release-required-before-score
+    scale: curated_androidcontrol_tasks_with_benchmark_purification
+    modalities: [instruction, screenshot, accessibility_tree, gesture]
+    split_policy: official_curated_train_test_split_required; never mix benchmark test rows into SFT
+    runtime: Android_emulator_or_device
+    webgpu_projection: accessibility/text action bridge; coordinate grounding requires a visual encoder
+    metric: task_success_and_action_accuracy_on_curated_splits
+    notes: The release is a benchmark-cleaning intervention; compare against original AndroidControl only with matched task identities and seeds.
+
+  - id: osworld_mcp
+    family: computer
+    name: OSWorld-MCP
+    source_url: https://github.com/X-PLUG/OSWorld-MCP
+    paper_url: https://arxiv.org/abs/2510.24563
+    license: release-license-review-required
+    source_revision: release-required-before-score
+    scale: 158_verified_tools_across_7_desktop_applications
+    modalities: [instruction, screenshot, desktop_action, MCP_tool_schema, app_state]
+    split_policy: evaluation_only until the matching environment, tools, and task release are pinned
+    runtime: OSWorld_desktop_environment_with_MCP_tools
+    webgpu_projection: tool-schema routing and GUI-vs-MCP ablations without native side effects
+    metric: task_success, tool_invocation_rate, GUI_action_success, and decision_quality
+    notes: This directly tests the hybrid interface the WebGPU agent targets; tool invocation must be reported separately from GUI completion.
+
+  - id: webbench
+    family: browser
+    name: WebBench
+    source_url: https://github.com/Halluminate/WebBench
+    project_url: https://webbench.ai/
+    license: MIT
+    source_revision: pin-before-use
+    scale: 2454_tasks_across_452_live_websites
+    modalities: [goal, live_web, browser_action, read_write_effect]
+    split_policy: evaluation_only; live-site tasks and credentials must never enter training or public model bundles
+    runtime: live_web_or_release_matched_browser_infrastructure
+    webgpu_projection: DOM/accessibility action protocol only; no live-site side effects from the small model
+    metric: task_success_by_read_create_update_delete_and_file_manipulation_categories
+    notes: The public README describes authentication, form filling, downloads, and destructive WRITE tasks; use a resettable or vendor-approved environment and record the exact release before scoring.
+
+  - id: bu_bench_v1
+    family: browser
+    name: Browser Use BU Bench V1
+    source_url: https://github.com/browser-use/benchmark
+    license: mixed_source_terms; MIT_for_WebBench_Mind2Web2_BrowseComp; GAIA_policy_restricted
+    source_revision: pin-before-use
+    scale: 100_hand_selected_browser_tasks_across_5_sources
+    modalities: [goal, live_web, browser_action, judge_or_ground_truth]
+    split_policy: evaluation_only; encrypted_task_file must remain out of training and plaintext publication
+    runtime: browser-use_provider_or_local_headful_headless_browser
+    webgpu_projection: tool routing and DOM/action safety canary only; no task decryption or live account access
+    metric: verified_task_success_and_category_breakdown
+    notes: The upstream repository keeps BU_Bench_V1 encrypted to reduce contamination and warns that decrypted task text and traces must not be published or used as model-training data.
+
+  - id: cua_gym
+    family: computer
+    name: CUA-Gym
+    source_url: https://huggingface.co/datasets/xlangai/CUA-Gym
+    paper_url: https://arxiv.org/abs/2605.25624
+    license: CC-BY-4.0
+    source_revision: 3c021d0
+    scale: 10910_public_task_metadata_rows;_327_app_types;_110_environments_reported_by_project
+    modalities: [instruction, setup_artifact, reward_function, desktop_state, web_state]
+    split_policy: metadata_train_table_only_until_task_identity_holdout_and_artifact_license_review
+    runtime: disposable_desktop_or_mock_web_environment;_self_hosted_CUA-Gym-Hub_endpoints
+    webgpu_projection: instruction/app-family metadata inventory; executable rewards and GUI state require a sandboxed runtime
+    metric: RLVR_reward_and_final_state_success_after_release-matched_setup
+    notes: The public table is CC-BY-4.0 and exposes 10910 metadata rows, but the single train split has no official evaluation partition; the artifact archive contains untrusted Python/shell/application setup and reward code and is not executed or copied into the model bundle.
+
+  - id: osworld_verified_trajectories
+    family: computer
+    name: OSWorld Verified Trajectories
+    source_url: https://huggingface.co/datasets/xlangai/ubuntu_osworld_verified_trajs
+    license: MIT
+    source_revision: 8413d635f654c1f95a17f8813f52f2b1b450c566
+    scale: 46_large_trajectory_archives;_about_260GB_listed_bytes
+    modalities: [instruction, screenshot, desktop_action, verifier_result]
+    split_policy: evaluation_only_until_verified_task_identity_deduplication_and_train_holdout_are_frozen
+    runtime: OSWorld_desktop_VM_and_release-matched_verifier
+    webgpu_projection: text/action-history diagnostics only; screenshot grounding and native desktop score require the VM
+    metric: execution_success_and_verified_task_completion
+    notes: The public Hub repository is MIT-tagged but is a collection of model-run packages rather than a declared train split; no archive or screenshot is admitted to SFT by this audit.
+
+  - id: androidlab
+    family: mobile
+    name: AndroidLab
+    source_url: https://github.com/MadeAgents/mobile-use/tree/main/benchmark/android_lab
+    project_url: https://github.com/MadeAgents/mobile-use
+    license: MIT_for_MobileUse; AndroidLab_submodule_terms_require_audit
+    source_revision: pin-before-use
+    scale: dynamic_android_device_tasks; exact_task_count_release_dependent
+    modalities: [goal, screenshot, accessibility_tree, emulator_state, adb_action]
+    split_policy: evaluation_only_until_androidlab_submodule_revision_and_task_split_are_frozen
+    runtime: Android_emulator_or_Docker_AVD_with_ADB
+    webgpu_projection: accessibility/text action bridge only; screenshot grounding requires a visual encoder
+    metric: task_success_and_step_efficiency_on_dynamic_android_scenarios
+    notes: MobileUse documents AndroidLab as a separate benchmark with a fetched submodule, patched Clock/Settings tasks, and a Docker/Linux x86_64 recommendation; no task data or emulator result is admitted here until the submodule license and release manifest are pinned.
+
+  - id: knowu_bench
+    family: mobile
+    name: KnowU-Bench
+    source_url: https://github.com/ZJU-REAL/KnowU-Bench
+    paper_url: https://arxiv.org/abs/2604.08455
+    license: Apache-2.0_code; benchmark_assets_and_app_terms_require_audit
+    source_revision: c03a825991ede13add6631f2ed19b90755930dc6
+    scale: 192_registered_tasks;_23_apps;_42_general_86_personalized_64_proactive;_94_agent_user_interaction
+    modalities: [goal, screenshot, behavioral_history, hidden_profile, mobile_action, user_simulator]
+    split_policy: evaluation_only; hidden_profiles_logs_user_simulator_and_task_definitions_never_training
+    runtime: Dockerized_Android_emulator_with_KVM_and_online_user_simulator
+    webgpu_projection: preference_inference_clarification_consent_and_abstention_over_compact_text_state
+    metric: preference_acquisition, proactive_intervention_calibration, consent_respect, and task_success
+    notes: The pinned checkout reports 192 tasks over 23 apps, with hidden profiles and exposed timestamped logs; native evaluation requires Docker/KVM and API-backed agent and user-simulator endpoints. The current Python registry references 17 app identifiers, so benchmark assets and the container image still require a release-matched pin before scoring.
+
+  - id: appagent_benchmark
+    family: mobile
+    name: AppAgent smartphone evaluation benchmark
+    source_url: https://github.com/TencentQQGYLab/AppAgent
+    paper_url: https://arxiv.org/abs/2312.13771
+    license: MIT_code; benchmark_assets_and_app_apks_require_audit
+    source_revision: 2c1900422caf6f9e94e96d5dd984b530e5a5fbf8
+    scale: 45_tasks_across_9_android_apps
+    modalities: [goal, screenshot, app_documentation, gesture, emulator_state]
+    split_policy: evaluation_only; benchmark_tasks_and_app_artifacts_never_training
+    runtime: Android_Studio_emulator_or_physical_android_device
+    webgpu_projection: action_vocabulary_and_documentation_retrieval_only; visual_grounding_requires_an_image_encoder
+    metric: smartphone_task_success, action_accuracy, and multi_step_completion
+    notes: The pinned public test manifest contains 45 tasks across nine Android apps; the project supports tap/swipe-style actions plus exploration- or demonstration-derived app documentation. Record the exact benchmark release, APK hashes, and device image before any score.
+
+  - id: groundcua
+    family: computer
+    name: GroundCUA desktop grounding dataset
+    source_url: https://github.com/ServiceNow/GroundCUA
+    paper_url: https://arxiv.org/abs/2511.07332
+    license: Apache-2.0_code_from_pyproject; dataset_terms_and_research_use_restrictions_require_audit
+    source_revision: 94cba61693d6258c7100f7016a299b84b1bb7732
+    scale: 56000_screenshots;_3560000_plus_human_verified_element_annotations;_10000_plus_tasks;_87_apps
+    modalities: [instruction, screenshot, desktop_element_box, ui_category, application_context]
+    split_policy: evaluation_only_until_dataset_terms_and_train_test_manifest_are_frozen
+    runtime: offline_image_grounding_or_release_matched_desktop_benchmark
+    webgpu_projection: text-only element-category and candidate-ranking probe; screenshots require a visual encoder
+    metric: element_grounding_accuracy, small_target_accuracy, and cross_platform_generalization
+    notes: The official project describes 56K annotated screenshots and 3.56M+ annotations across 87 desktop applications, with 700K training datapoints and five grounding benchmarks. The code repository declares Apache-2.0 in pyproject metadata, but dataset terms and research-use restrictions must be separately reviewed; no screenshots or annotations enter the text-first WebGPU bundle.
+
+  - id: ui_tars_action_contract
+    family: computer
+    name: UI-TARS GUI action contract and benchmark protocol
+    source_url: https://github.com/bytedance/UI-TARS
+    paper_url: https://arxiv.org/abs/2501.12326
+    license: Apache-2.0
+    source_revision: 582f3a7ea5d285ee8ed9e2e84048d1ab01453c49
+    scale: release_dependent_gui_benchmarks_and_action_templates
+    modalities: [instruction, screenshot, action_trace, coordinate, keyboard, mobile_navigation]
+    split_policy: evaluation_only; upstream benchmark tasks_and_model_traces_never_training
+    runtime: release_matched_OSWorld_BrowserGym_Android_or_desktop_runtime
+    webgpu_projection: schema and action-vocabulary compatibility probe; coordinate/screenshot grounding requires a visual encoder
+    metric: action_validity, grounding_accuracy, episode_success, and latency
+    notes: The official prompt contract separates computer-use, mobile-use, and grounding modes and includes long_press, open_app, press_home, and press_back. This row records the protocol source rather than claiming that UI-TARS benchmark payloads are available or that a text-only WebGPU model has visual GUI capability.
+
+  - id: toolace
+    family: tool_api
+    name: ToolACE function-calling dataset
+    source_url: https://huggingface.co/datasets/Team-ACE/ToolACE
+    paper_url: https://arxiv.org/abs/2409.00920
+    license: Apache-2.0
+    source_revision: 6bda777c88d21e5a204703c1ee45597a8fa4f734
+    scale: 11300_raw_rows;_8993_strict_action_rows;_8044_train_parent_records;_949_eval_parent_records
+    modalities: [instruction, tool_schema, assistant_action, tool_response, conversation]
+    split_policy: public_parent_disjoint_train_eval;_benchmark_function_calling_rows_are_not_native_environment_tasks
+    runtime: offline_conversation_projection;_no_external_tool_server_or_account
+    webgpu_projection: strict_tool_call_text_with_schema_and_action_history;_no_external_side_effects
+    metric: held_out_token_accuracy, first_action_exact, sequence_exact, schema_validity, and argument_exactness
+    notes: The pinned public snapshot rejects 2308 rows without a strict first action or valid schema projection; train/eval parent overlap is zero. Existing m171, m172, and m173 receipts bind first-action, multi-turn, and action-history transfers, but remain diagnostic rather than official ToolACE/BFCL or native MCP scores.
+
+  - id: vpi_bench
+    family: computer
+    name: VPI-Bench visual prompt injection benchmark
+    source_url: https://github.com/cua-framework/agents
+    paper_url: https://arxiv.org/abs/2506.02456
+    data_access_url: https://huggingface.co/datasets/VPI-Bench/vpi-bench
+    license: dataset_terms_require_audit
+    source_revision: 801aa472c145c2f672aded3d4eef401265afbd0d
+    scale: 306_test_cases_across_Amazon_Booking_BBC_Messenger_Email
+    modalities: [benign_goal, rendered_web_page, visual_injection, browser_or_desktop_trace]
+    split_policy: evaluation_only; malicious_page_variants_attack_prompts_and_traces_never_training
+    runtime: Dockerized_computer_use_or_local_browser_with_resettable_web_platforms
+    webgpu_projection: text-only refusal_and_confirmation_policy_probe; visual attack content requires a vision-capable runner
+    metric: attempted_rate, attack_success_rate, attack_recognition, and safe_completion
+    notes: The paper reports 306 cases across five platforms and separates attempted from successful malicious actions. Email and Messenger delivery channels are especially relevant to productivity agents; no attack pages, credentials, or traces enter the WebGPU SFT bundle.
+
+  - id: agentcibench
+    family: computer
+    name: AgentCIBench contextual-integrity benchmark
+    source_url: https://github.com/UKPLab/arxiv2026-agentcibench
+    paper_url: https://arxiv.org/abs/2606.23189
+    data_access_url: https://huggingface.co/datasets/UKPLab/agentcibench
+    license: release_terms_require_audit
+    source_revision: 7b3fad424d0c5a450ac3bc3dc4050c38094c6dc6
+    scale: 28_seed_scenarios_plus_generated_mutations_and_50_visual_end_to_end_cases
+    modalities: [workspace_state, user_prompt, recipient, must_share, must_not_share, visible_agent_output]
+    split_policy: evaluation_only; generated_scenario_pool_and_openapps_tasks_never_training
+    runtime: BrowserGym_OpenApps_workspace_with_deterministic_matcher_and_LLM_judge
+    webgpu_projection: text-only contextual-integrity refusal, consent, and disclosure probe; native UI execution remains pending
+    metric: utility, raw_leakage, refusal, engagement_conditioned_leakage, and end_to_end_task_success
+    notes: Each scenario explicitly distinguishes information that must be shared from information that must not be shared. The release is a generation pipeline plus a curated pool rather than a fixed annotation-only dataset; freeze the release and judge configuration before scoring.
+
+  - id: markov_computer_use
+    family: computer
+    name: Computer Use Trajectories (OSWorld successful runs)
+    source_url: https://huggingface.co/datasets/markov-ai/computer-use
+    project_url: https://github.com/ComputerRL/ComputerRL
+    license: dataset_card_does_not_declare_a_redistribution_license
+    source_revision: pin-before-use
+    scale: 160_successful_trajectories;_1378_steps;_10_OSWorld_domains
+    modalities: [instruction, screenshot, accessibility_tree, pyautogui_action, execution_status, recording]
+    split_policy: evaluation_only_until_license_source_task_identity_and_OSWorld_holdout_are_frozen
+    runtime: OSWorld_virtual_machine_and_release_matched_verifier
+    webgpu_projection: accessibility-tree/action-history analysis only; screenshots and pyautogui coordinates require a visual desktop bridge
+    metric: trajectory_success, action_validity, excess_steps, and domain_breakdown
+    notes: The public card filters to score-1.0 trajectories and includes Chrome, Thunderbird email, LibreOffice, VS Code, and multi-app workflows. Treat successful-only trajectories as selection-biased demonstrations; do not train or report a native OSWorld score without the original task split and VM release.
+
+  - id: agentworldbench
+    family: tool_api
+    name: Qwen AgentWorldBench
+    source_url: https://huggingface.co/datasets/Qwen/AgentWorldBench
+    paper_url: https://arxiv.org/abs/2606.24597
+    license: dataset_card_license_and_upstream_trajectory_terms_require_audit
+    source_revision: pin-before-use
+    scale: 2170_turn_records;_286_MCP;_200_Android;_200_Web;_200_OS;_354_terminal;_472_SWE;_458_search
+    modalities: [multi_turn_prompt_history, tool_response, MCP_state, Android_UI_state, browser_DOM, desktop_state, terminal_state]
+    split_policy: evaluation_only;_ground_truth_observations_and_frontier_trajectory_prompts_never_training
+    runtime: reference-grounded world-model evaluator plus domain-specific source environments
+    webgpu_projection: compact next-observation prediction and state-consistency probe; not a tool-call completion score
+    metric: format, factuality, consistency, realism, and quality across 7 domains
+    notes: Each record evaluates an observation at a turn in a multi-turn trajectory and is not an action-label dataset. Its MCP and browser/Android/OS coverage is valuable for state modeling, but the 257 MB release remains a holdout until terms and contamination policy are frozen.
+
+  - id: scalecua_data
+    family: computer
+    name: ScaleCUA-Data
+    source_url: https://huggingface.co/datasets/OpenGVLab/ScaleCUA-Data
+    code_url: https://github.com/OpenGVLab/ScaleCUA
+    paper_url: https://arxiv.org/abs/2509.15221
+    license: dataset_terms_and_1_07TB_image_archive_require_review
+    source_revision: pin-before-use
+    scale: 6_platforms;_screenshots_and_actions;_1_07TB_HF_release
+    modalities: [instruction, screenshot, temporal_context, mouse_keyboard_action, mobile_action, web_action]
+    split_policy: evaluation_only_until_annotation_license_platform_split_and_image_manifest_are_frozen
+    runtime: release-matched desktop_mobile_web_or_iOS_environment_for_closed_loop_scoring
+    webgpu_projection: annotation/action-schema audit only; the text-only model cannot claim screenshot grounding
+    metric: GUI grounding, action validity, trajectory completion, and cross-platform transfer
+    notes: The card describes Linux, macOS, Windows, Android, iOS, and Web data, with human-collected trajectories and model-assisted annotations. The archive is too large for the current WebGPU text-first bundle; use metadata-only profiling or a separately licensed, hashed shard.
+
+  - id: gui_world
+    family: computer
+    name: GUI-World
+    source_url: https://gui-world.github.io/
+    code_url: https://github.com/Dongping-Chen/GUI-World
+    data_url: https://huggingface.co/datasets/ONE-Lab/GUI-World
+    paper_url: https://arxiv.org/abs/2406.10819
+    license: dataset_release_terms_require_review;_project_website_CC-BY-SA-4.0
+    source_revision: pin-before-use
+    scale: 12379_GUI_videos;_about_100000_queries;_desktop_mobile_web_XR
+    modalities: [video, keyframes, operation_description, GUI_question_answering, sequential_context]
+    split_policy: evaluation_or_vision_pretraining_only_until_video_license_and_task_split_are_frozen
+    runtime: offline_video_or_release_matched_GUI_understanding_evaluator
+    webgpu_projection: temporal operation-history and QA probe only; no visual GUI-agent capability claim
+    metric: GUI understanding, temporal consistency, sequential instruction following, and cross-app reasoning
+    notes: The project reports videos spanning desktop, mobile, websites, software, and XR. It is useful for a future vision/temporal encoder, but it is not a text-only tool-call corpus and should not be mixed into the current 10M WebGPU SFT without a modality-specific adapter.

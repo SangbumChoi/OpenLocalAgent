@@ -1,0 +1,65 @@
+# Frozen teacher-forced retention sweep for every immutable parent-anchor pulse archive.
+#
+# The parent baseline is an exact deterministic count: 11,686/18,460 assistant tokens correct.
+# Eligibility is deliberately strict and fixed before training. Greedy agent-call evaluation is
+# permitted only after a checkpoint passes every non-inferiority gate here.
+kind: localagent_sft_checkpoint_sweep_config
+schema_version: 2
+training_config: configs/train/sft-paper-tier-1m-parent-anchor-pulse-pilot.yaml
+expected_parent_checkpoint_sha256: 1913123ea0982f675f0add7c5b23154faf6adda99424a0a2009130104c32021f
+
+checkpoints:
+  paths:
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000012.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000024.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000036.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000048.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000060.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000072.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000084.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000096.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000108.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000120.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000132.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000144.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000156.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000168.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000180.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000192.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000204.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000216.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000228.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000240.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000252.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000264.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000276.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000288.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000300.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000312.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000324.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000336.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000348.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000360.pt
+    - runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000372.pt
+
+expected_eval:
+  conversations: 512
+  assistant_decisions: 820
+  assistant_loss_tokens: 18460
+
+expected_baseline:
+  metrics:
+    rows: 820
+    assistant_loss_tokens: 18460
+    mean_loss: 2.637802802651055
+    assistant_token_accuracy: 0.6330444203683641
+    assistant_sequence_accuracy: 0.0
+  absolute_tolerances:
+    mean_loss: 1.0e-6
+    assistant_token_accuracy: 0.0
+    assistant_sequence_accuracy: 0.0
+
+thresholds:
+  max_mean_loss_increase: 1.0e-4
+  max_assistant_token_accuracy_drop: 0.0
+  max_assistant_sequence_accuracy_drop: 0.0

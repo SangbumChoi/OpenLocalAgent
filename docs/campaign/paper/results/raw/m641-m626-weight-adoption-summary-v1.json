@@ -1,0 +1,156 @@
+{
+  "adoption_decision": {
+    "export_to_webgpu_as_native_agent": false,
+    "freeze_or_low_lr_shared_body": true,
+    "initialize_new_heads_from_controlled_seed": true,
+    "reason": "Warm initialization wins on four source-linked text/tool projections, while shared-body movement stays small and action heads remain fixed. Native MobileGym and BrowserGym success remain low, so this supports initialization policy—not native deployment readiness.",
+    "reuse_current_warm_backbone": true,
+    "use_larger_head_lr_than_transferred_body": true
+  },
+  "claim_boundary": "Cross-dataset weight-adoption analysis bound to the current m626 checkpoint. It combines source-linked projection ablations with native MobileGym/BrowserGym guardrails; it does not combine unlike metrics into a leaderboard score and does not establish AndroidWorld, AgentNetBench, OSWorld, MCPMark, EnterpriseOps-Gym server, or real-account success.",
+  "current_checkpoint": {
+    "parameters": 10524544,
+    "sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c"
+  },
+  "inputs": {
+    "agentnet": {
+      "bytes": 5591,
+      "path": "docs/paper/results/raw/m640-m626-agentnet-current-text-control-v1.json",
+      "sha256": "6188590083b1c0df1f365fb1b473d827f40cc52faa29f07a4d38833b6e58170a"
+    },
+    "androidcontrol": {
+      "bytes": 29342,
+      "path": "docs/paper/results/raw/m626-androidcontrol-warm-random-transfer-v1.json",
+      "sha256": "0f7b55231ca30a195d86f93e48a8d58ccaf77a219ee0f5728801125f181d89d5"
+    },
+    "browsergym": {
+      "bytes": 10812,
+      "path": "docs/paper/results/raw/m632-m626-browsergym-native-full-v1.json",
+      "sha256": "621d2728537d7bb2b70ee7f3fa183eaf1172006b67daacbdbd6d201d73227a49"
+    },
+    "enterpriseopsgym": {
+      "bytes": 3440,
+      "path": "docs/paper/results/raw/m638-m626-enterpriseopsgym-warm-random-transfer-v1.json",
+      "sha256": "67de67c6c88c217f1123819176994a3ebc613733e0e3b9a6b8a0fd070671b525"
+    },
+    "mcpmark": {
+      "bytes": 27861,
+      "path": "docs/paper/results/raw/m631-m626-mcp-warm-random-transfer-v1.json",
+      "sha256": "8824bb1a79ed4550e59bddb07fa19ff04aef712a9f724799a96a08777aec658c"
+    },
+    "mobilegym": {
+      "bytes": 5026,
+      "path": "docs/paper/results/raw/m629-androidcontrol-child-mobilegym-native-v1.json",
+      "sha256": "93b1759ea2816a48f0acc6b61ed19712a93cf3a9af458825b334eb0f457d3447"
+    }
+  },
+  "kind": "localagent_m641_current_weight_adoption_summary",
+  "native_guardrails": {
+    "browsergym_miniwob": {
+      "episodes": 240,
+      "grounded_steps": 211,
+      "noop_or_ungrounded_steps": 2040,
+      "success_rate": 0.020833333333333332
+    },
+    "mobilegym": {
+      "state_grounding_transfer": false,
+      "success_rate": 0.00390625,
+      "tasks": 256
+    }
+  },
+  "public_transfer_evidence": {
+    "agentnet_text_projection": {
+      "dataset_url": "https://huggingface.co/datasets/xlangai/AgentNet",
+      "full_warm_exact_trajectory_rate": 0.0,
+      "matched_parent_count": 4,
+      "warm_minus_random_first_action_type": 0.75,
+      "warm_minus_random_mean_total": 0.014985734280792425
+    },
+    "androidcontrol": {
+      "dataset_url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k",
+      "original_url": "https://github.com/google-research/google-research/tree/master/android_control",
+      "random_eval_token_accuracy": 0.631264367816092,
+      "warm_eval_token_accuracy": 0.8240613026819923,
+      "warm_minus_random_after_pp": 19.279693486590034
+    },
+    "enterpriseopsgym_email": {
+      "dataset_url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym",
+      "random_top1": 0.3880597014925373,
+      "warm_minus_random_top1_pp": 20.895522388059696,
+      "warm_top1": 0.5970149253731343
+    },
+    "mcp_trajectory": {
+      "dataset_url": "https://huggingface.co/datasets/obaydata/mcp-agent-trajectory-benchmark",
+      "random_eval_token_accuracy": 0.10907067334446299,
+      "warm_eval_token_accuracy": 0.5609348914858097,
+      "warm_minus_random_after_pp": 45.18642181413467
+    }
+  },
+  "receipt_self_sha256": "6322d31c9cbf0e26d74a4a541b1335301f47be7b64c0b25067cfeebfba4722be",
+  "schema_version": 1,
+  "shared_body_movement_relative_l2": {
+    "action_heads": "0.0 in both transfer reports; action heads were held fixed",
+    "by_surface": {
+      "androidcontrol": {
+        "action_heads": {
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0
+        },
+        "attention_or_mixer": {
+          "delta_l2": 0.1684298495492191,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0032580469325247884
+        },
+        "embedding": {
+          "delta_l2": 0.6665525265560651,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.008616297766607951
+        },
+        "ffn": {
+          "delta_l2": 0.21338695220739326,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.004216465443821991
+        },
+        "normalization": {
+          "delta_l2": 0.005796519057517799,
+          "parameters": 384,
+          "relative_delta_l2": 0.000270291339164642
+        }
+      },
+      "mcpmark": {
+        "action_heads": {
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0
+        },
+        "attention_or_mixer": {
+          "delta_l2": 0.10563726270497048,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0020433212411799877
+        },
+        "embedding": {
+          "delta_l2": 0.3424414932650861,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.00441543490644419
+        },
+        "ffn": {
+          "delta_l2": 0.13083769653348698,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.002585244273675158
+        },
+        "normalization": {
+          "delta_l2": 0.002112900479392618,
+          "parameters": 384,
+          "relative_delta_l2": 9.849874168992599e-05
+        }
+      }
+    },
+    "mean_android_mcp": {
+      "attention_or_mixer": 0.002650684086852388,
+      "embedding": 0.00651586633652607,
+      "ffn": 0.003400854858748575,
+      "normalization": 0.00018439504042728398
+    }
+  }
+}

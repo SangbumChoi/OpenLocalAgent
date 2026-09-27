@@ -1,0 +1,80 @@
+{
+  "kind": "localagent_mobile_action_focus_canary",
+  "schema_version": 1,
+  "benchmark_id": "mobilegym",
+  "source": {
+    "training_data": "AndroidControl/AITW public train projection",
+    "training_data_sha256": "6971d5fe81fe3c6e8ee12e0072481ec653f98bdb5699af54e8f63649358743fd",
+    "held_out_data_sha256": "2d798115fe0feb14ac6d65f86a4b51b4463b593a35281eedce4de8751356bc95",
+    "mobilegym_revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "mobilegym_test_split_sha256": "a3d485015d480f4f1ebbd12dbbf02c25c0aa667d1afcf5f6fa35f0263a82c567"
+  },
+  "parent_checkpoint_sha256": "9bba544ae37190fdc24ea51ac9f3f8d80350cd905c01e13186156c19f7e0f9ee",
+  "child_checkpoint_sha256": "ef6e0dc300cb390442104a2e4b0f70cad4dd101fea3b0db6639d61a6bb0462f2",
+  "training": {
+    "rows": 4096,
+    "external_eval_rows": 904,
+    "state_conditioned_trajectory_rows": 31,
+    "synthetic_mobile_rows": 105,
+    "focus_tools": [
+      "mobile_click",
+      "mobile_input_text",
+      "mobile_navigate_back",
+      "mobile_open_app",
+      "mobile_press_enter",
+      "mobile_scroll",
+      "mobile_wait"
+    ],
+    "focus_repeat": 32,
+    "dispatch_steps": 400,
+    "pointer_steps": 500,
+    "split_policy": "External public eval file held out; synthetic state rows contain no MobileGym task text or state values."
+  },
+  "offline": {
+    "route_accuracy": 1.0,
+    "selector_top1": 0.5,
+    "pointer_exact_rate": 0.25,
+    "productivity_selector_top1": 0.5,
+    "selector_top1_by_tool": {
+      "mobile_click": 0.64,
+      "mobile_input_text": 0.568,
+      "mobile_long_press": 0.16,
+      "mobile_navigate_back": 0.904,
+      "mobile_navigate_home": 0.0,
+      "mobile_open_app": 0.632,
+      "mobile_scroll": 0.416,
+      "mobile_wait": 0.296
+    },
+    "comparison": "The parent state-routing arm reported 0.4712389381 held-out selector top-1; the focused arm reaches 0.5 but this small offline gain did not transfer to the native canary."
+  },
+  "native_canary": {
+    "environment_executed": true,
+    "official_split_verified": true,
+    "official_test_task_count": 256,
+    "selected_task_count": 20,
+    "selected_range": "official test IDs [0,20)",
+    "max_steps": 5,
+    "selector_top_m": 1,
+    "observation_mode": "text_projection",
+    "vision_used": false,
+    "passed_tasks": 1,
+    "success_rate": 0.05,
+    "tool_counts": {
+      "mobile_submit_answer": 14
+    },
+    "suite_summary": {
+      "account": {"tasks": 5, "passed": 0, "success_rate": 0.0},
+      "alipay": {"tasks": 9, "passed": 1, "success_rate": 0.1111111111111111},
+      "bilibili": {"tasks": 6, "passed": 0, "success_rate": 0.0}
+    },
+    "elapsed_seconds": 57.196,
+    "parent_same_range_success_rate": 0.05,
+    "parent_same_range_passed_tasks": 1,
+    "claim_boundary": "This is a bounded native simulator canary, not a full MobileGym score, visual/mobile screenshot result, or publication gate receipt."
+  },
+  "promotion_decision": {
+    "promoted": false,
+    "reason": "The focused arm matches the parent on the same 20-task native canary (1/20) and still collapses to mobile_submit_answer; the offline selector increase is insufficient evidence for a production checkpoint."
+  },
+  "receipt_self_sha256": "3fd98097c13562654bc50c5f25957422b1f331444f6730d373f0da0cd1353b43"
+}

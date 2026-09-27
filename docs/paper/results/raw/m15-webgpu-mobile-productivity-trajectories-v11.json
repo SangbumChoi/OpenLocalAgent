@@ -1,0 +1,129 @@
+{
+  "kind": "localagent_webgpu_mobile_productivity_trajectory_receipt",
+  "schema_version": 1,
+  "suite": "localagent-mobile-productivity-trajectory-v1",
+  "source_boundary": {
+    "androidcontrol_train_rows": {
+      "rows": 16,
+      "bytes": 1512235,
+      "sha256": "705bf99465b5feb2b24f03e5c81cc2c1560ac8f28200eb83ed8c921626c995fa"
+    },
+    "aitw_train_rows": {
+      "rows": 10,
+      "bytes": 252386,
+      "sha256": "1f0a08fac5684f21d62a10855fc05171b4d7bda699f8aae51f062d01f7b52031"
+    },
+    "task_source": "local synthetic state transitions; public AndroidControl/AITW rows are training provenance only",
+    "official_environment_execution": false,
+    "external_accounts": false,
+    "trusted_os_input": false,
+    "screenshots": false
+  },
+  "training": {
+    "parent_checkpoint_sha256": "0646bf9469565a721fc02850b87026e33a4b1ce9e8a10edf237c3833a88c0294",
+    "child_checkpoint_sha256": "4cccca1139699776c555876bb282783276f6e84b1a5e7e949dd83d5a2e8140ed",
+    "child_checkpoint_bytes": 52263033,
+    "parameters": 10524544,
+    "steps": 3000,
+    "probe_initialization": "parent_heads",
+    "state_conditioned_trajectory_rows": 11,
+    "train": {
+      "rows": 116,
+      "route_accuracy": 1.0,
+      "selector_top1": 0.8620689655172413
+    },
+    "held_out_mobile": {
+      "rows": 10,
+      "route_accuracy": 1.0,
+      "selector_top1": 0.6
+    },
+    "held_out_productivity": {
+      "rows": 4,
+      "route_accuracy": 1.0,
+      "selector_top1": 0.75
+    }
+  },
+  "bundle": {
+    "config_name": "webgpu-10m-hybrid",
+    "manifest_sha256": "5cfb6c2f0a06b352f944883579c4997eefe925fb53ba123cea72edc613ce6950",
+    "model_parameters": 10524544,
+    "tool_count": 62,
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+    "artifacts": {
+      "model.onnx": {"bytes": 67877334, "sha256": "9bc6dd8a0ad8ec3e106cb1756eaf50afd8f3d4a291698ebfbb5e5b2ce40d2a2a"},
+      "model.fp16.onnx": {"bytes": 34026169, "sha256": "290f57cc004b2684b3283eaf519c0a64c111e969719ec34e9421e42d21fb0330"},
+      "action_model.onnx": {"bytes": 42700043, "sha256": "eae02cb662579ccb53fd4216d39ae0db7dd4aa43237ec164d59b1dd8976574cc"},
+      "action_model.fp16.onnx": {"bytes": 21430301, "sha256": "fdccd5936157a6ff3effd1fd97ce7dff477b4b686fec96f1729eaec320211e1d"},
+      "dispatch_heads.json": {"bytes": 1321930, "sha256": "251256514d4e3c80ec2193ef826e93840f92b8739a5089311545da6da8d6674c"},
+      "meta.json": {"bytes": 14503, "sha256": "1b55355badfb2eec6b7f5eeb4d77d31672f11f07ca6bea97d6e420d3709419af"}
+    },
+    "parity": {
+      "fp32_logits_max_abs_diff": 8.58306884765625e-06,
+      "fp32_hidden_max_abs_diff": 6.139278411865234e-06,
+      "fp16_logits_max_abs_diff": 0.007607460021972656,
+      "fp16_hidden_max_abs_diff": 0.0047164857387542725,
+      "fp16_logits_argmax_agreement": 1.0
+    }
+  },
+  "environment": {
+    "surface": "codex_in_app_browser",
+    "provider_requested": "webgpu",
+    "observed_backend": "WEBGPU",
+    "url": "http://127.0.0.1:8800/mobile-trajectories.html?backend=webgpu&v=11-first-actions",
+    "network": "local_http_only",
+    "hardware_throughput_collected": false
+  },
+  "protocol": {
+    "trajectories": 3,
+    "steps": 13,
+    "families": ["email", "notion", "browser"],
+    "validator": "bundle meta.json JSON Schema plus exact expected state transition",
+    "pass_at_1": "complete trajectory success over three fixed local workflows"
+  },
+  "summary": {
+    "exact_action_rate": 0.0,
+    "schema_valid_rate": 1.0,
+    "state_transition_rate": 0.0,
+    "closed_loop_success_rate": 0.0,
+    "pass_at_1": 0.0,
+    "by_trajectory": {
+      "gmail_compose_send": {
+        "steps": 6,
+        "first_failure": {
+          "step_index": 0,
+          "step_id": "open_gmail",
+          "expected_tool": "mobile_open_app",
+          "observed_tool": "mobile_input_text",
+          "observed_args": {"text": "app"},
+          "schema_error": null,
+          "transition_error": "wrong_action"
+        }
+      },
+      "notion_capture": {
+        "steps": 2,
+        "first_failure": {
+          "step_index": 0,
+          "step_id": "open_notion",
+          "expected_tool": "mobile_open_app",
+          "observed_tool": "mobile_open_app",
+          "observed_args": {"app_name": "app"},
+          "schema_error": null,
+          "transition_error": "wrong_action"
+        }
+      },
+      "browser_search_open": {
+        "steps": 5,
+        "first_failure": {
+          "step_index": 0,
+          "step_id": "open_mail_page",
+          "expected_tool": "open_url",
+          "observed_tool": "mobile_open_app",
+          "observed_args": {"app_name": "app"},
+          "schema_error": null,
+          "transition_error": "wrong_action"
+        }
+      }
+    }
+  },
+  "claim_boundary": "This is a local synthetic stateful WebGPU compatibility and failure diagnostic. It is not AndroidWorld, AndroidControl, AITW, BrowserGym, OSWorld, AppWorld, MCPMark, EnterpriseOps-Gym task success, real email/Notion access, screenshot grounding, trusted computer control, or a hardware throughput claim."
+}

@@ -1,0 +1,40 @@
+{
+  "claim_boundary": "Current public MCPMark source/revision inventory only; task descriptions, service state, verifier code, credentials, MCP servers, and benchmark scores were not downloaded, executed, or admitted to training. Historical 239-row receipts refer to an older tree and are not current.",
+  "generated_at": "2026-08-05",
+  "kind": "localagent_mcpmark_current_source_audit",
+  "measurement": "m335_mcpmark_current_source_audit",
+  "receipt_self_sha256": "c7e3b66a00567770b1bddee34f2faa6c1c79afe20d702e0937c22a6c96c95bac",
+  "runtime": {
+    "executed": false,
+    "official_score": null,
+    "training_rows_admitted": 0
+  },
+  "schema_version": 1,
+  "source": {
+    "license": "Apache-2.0",
+    "metadata_description_files": 354,
+    "mcp_services": [
+      "filesystem",
+      "github",
+      "notion",
+      "postgres",
+      "playwright"
+    ],
+    "readme_url": "https://github.com/eval-sys/mcpmark/blob/cd45b7f57923b9b3985467f5139927575f83141c/README.md",
+    "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "revision_checked_at": "2026-08-05",
+    "service_task_roots": {
+      "filesystem": 40,
+      "github": 33,
+      "notion": 38,
+      "playwright": 4,
+      "playwright_webarena": 31,
+      "postgres": 31
+    },
+    "standard_tasks": 127,
+    "task_count": 177,
+    "task_payload_retained": false,
+    "tree_url": "https://github.com/eval-sys/mcpmark/tree/cd45b7f57923b9b3985467f5139927575f83141c/tasks",
+    "easy_tasks": 50
+  }
+}

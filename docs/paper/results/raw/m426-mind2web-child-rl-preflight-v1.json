@@ -1,0 +1,53 @@
+{
+  "accessed_utc": "2026-08-05",
+  "kind": "localagent_child_stateful_productivity_rl_preflight",
+  "schema_version": 1,
+  "status": "failed",
+  "stage": "rl",
+  "checkpoint": {
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "bytes": 52246937,
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "data": {
+    "train_path": "/private/tmp/m321-stateful-current-preflight/data/stateful-productivity-train.jsonl",
+    "eval_path": "/private/tmp/m321-stateful-current-preflight/data/stateful-productivity-eval.jsonl",
+    "train_sha256": "def9ad382ba4f8a206e6efac3ad92f1bd5bd4b5a47dfabe8dc86c239bc87f17a",
+    "eval_sha256": "7406306874f4379168b94182875249546891b9130897f4985a486b991a1376b0",
+    "prompt_overlap": 0,
+    "row_overlap": 0
+  },
+  "protocol": {
+    "execution_rollout_step_limit": 2,
+    "production_schedule_total_steps": 32,
+    "prompts_per_step": 4,
+    "group_size": 2,
+    "max_new_tokens": 96,
+    "learning_rate_history": [0.0, 0.000004],
+    "device": "cpu",
+    "torch_version": "2.13.0"
+  },
+  "rollout_observability": {
+    "attempted_rollouts": 16,
+    "informative_groups": 2,
+    "realized_optimizer_updates": 1,
+    "generated_tokens": 411,
+    "parser_format_valid_rollouts": 3,
+    "tool_reward_rollouts": 16,
+    "reward_distribution": {"zero_reward_rollouts": 14, "point_one_reward_rollouts": 2, "unique_values": 2},
+    "exact_success_rollouts": 0,
+    "truncated_rollouts": 0,
+    "zero_signal_steps": 1
+  },
+  "policy_transition": {
+    "nonzero_learning_rate_executed": true,
+    "at_least_one_policy_tensor_changed": false,
+    "changed_model_parameter_count": 0,
+    "compared_model_parameter_count": 40,
+    "initial_model_state_sha256": "dcd2119c348be58ece970e30cd435f65af40c4097fe1ce752feceb583dbfd13d",
+    "final_model_state_sha256": "dcd2119c348be58ece970e30cd435f65af40c4097fe1ce752feceb583dbfd13d"
+  },
+  "error": "isolated RL nonzero-LR prefix changed no policy model tensor",
+  "claim_boundary": "Child-bound stateful productivity RL preflight only. The resettable email/Notion/browser simulator produced sparse shaped rewards but no realized policy-tensor movement, so this is a failed RL readiness diagnostic, not native benchmark, real-account, or deployment evidence.",
+  "receipt_self_sha256": "df0a46188388b0363f2e28f90837c3911a676e47191a7239096abbdc8b6e8116"
+}

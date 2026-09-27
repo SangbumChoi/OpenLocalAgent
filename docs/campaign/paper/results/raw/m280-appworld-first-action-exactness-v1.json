@@ -1,0 +1,181 @@
+{
+  "claim_boundary": "Hashes compare the strict one-step translated API code against the public AppWorld dev projection. This is first-action exactness only; it is not a complete AppWorld trajectory, leaderboard score, or external-account result.",
+  "kind": "localagent_appworld_first_action_exactness_probe",
+  "metrics": {
+    "exact_code": 0,
+    "exact_code_rate": 0.0,
+    "predicted_code_available": 12,
+    "rows": 12
+  },
+  "native_receipt": {
+    "bytes": 20561,
+    "path": "/private/tmp/m280-appworld-long-heads-native.json",
+    "sha256": "8f39089f2774ec0ab18667a68112bb4d3ef5fa878d520be17cd278f5176a3e6e"
+  },
+  "receipt_self_sha256": "97a6d7e3e7276fcabe70f0150c47eea279fe6aa734f8137f3dfc46fc9e9a2a3e",
+  "schema_version": 1,
+  "source": {
+    "data_revision": "appworld-0.2.0-data-0.2.0",
+    "dataset": "appworld",
+    "input": {
+      "bytes": 14083,
+      "path": "/private/tmp/appworld-action-dev12.jsonl",
+      "sha256": "d64c5f8cde624e380e81071fd808cccd05a94a3bf4d81ae416a013f6d7a1f6e5"
+    },
+    "manifest": {
+      "bytes": 11880,
+      "path": "/private/tmp/appworld-action-dev12.manifest.json",
+      "sha256": "61b58818e11e8f26e0d75765563d26f104a437db82bf80a8a3e122ff82526531"
+    },
+    "purpose": "evaluation",
+    "rows": 12,
+    "split": "dev",
+    "training_used": false
+  },
+  "tasks": [
+    {
+      "exact": false,
+      "expected_code": {
+        "bytes": 44,
+        "sha256": "b02806a0366a21a81e105b101a727c2dcca0f9373fc7a452368474e6f274acaa"
+      },
+      "predicted_code": {
+        "bytes": 47,
+        "sha256": "32478fba1d6ecf0472ff03c20f584cf4aadd4234a0e89fbb0be1269c2bb7d00b"
+      },
+      "task_id": "50e1ac9_1"
+    },
+    {
+      "exact": false,
+      "expected_code": {
+        "bytes": 44,
+        "sha256": "b02806a0366a21a81e105b101a727c2dcca0f9373fc7a452368474e6f274acaa"
+      },
+      "predicted_code": {
+        "bytes": 47,
+        "sha256": "32478fba1d6ecf0472ff03c20f584cf4aadd4234a0e89fbb0be1269c2bb7d00b"
+      },
+      "task_id": "50e1ac9_2"
+    },
+    {
+      "exact": false,
+      "expected_code": {
+        "bytes": 44,
+        "sha256": "b02806a0366a21a81e105b101a727c2dcca0f9373fc7a452368474e6f274acaa"
+      },
+      "predicted_code": {
+        "bytes": 47,
+        "sha256": "32478fba1d6ecf0472ff03c20f584cf4aadd4234a0e89fbb0be1269c2bb7d00b"
+      },
+      "task_id": "50e1ac9_3"
+    },
+    {
+      "exact": false,
+      "expected_code": {
+        "bytes": 44,
+        "sha256": "b02806a0366a21a81e105b101a727c2dcca0f9373fc7a452368474e6f274acaa"
+      },
+      "predicted_code": {
+        "bytes": 47,
+        "sha256": "32478fba1d6ecf0472ff03c20f584cf4aadd4234a0e89fbb0be1269c2bb7d00b"
+      },
+      "task_id": "fac291d_1"
+    },
+    {
+      "exact": false,
+      "expected_code": {
+        "bytes": 44,
+        "sha256": "b02806a0366a21a81e105b101a727c2dcca0f9373fc7a452368474e6f274acaa"
+      },
+      "predicted_code": {
+        "bytes": 47,
+        "sha256": "32478fba1d6ecf0472ff03c20f584cf4aadd4234a0e89fbb0be1269c2bb7d00b"
+      },
+      "task_id": "fac291d_2"
+    },
+    {
+      "exact": false,
+      "expected_code": {
+        "bytes": 44,
+        "sha256": "b02806a0366a21a81e105b101a727c2dcca0f9373fc7a452368474e6f274acaa"
+      },
+      "predicted_code": {
+        "bytes": 47,
+        "sha256": "32478fba1d6ecf0472ff03c20f584cf4aadd4234a0e89fbb0be1269c2bb7d00b"
+      },
+      "task_id": "fac291d_3"
+    },
+    {
+      "exact": false,
+      "expected_code": {
+        "bytes": 57,
+        "sha256": "9e4abbe4d628af1d4cf553d762bf60593b2d91167385516f68c502b20a919bfd"
+      },
+      "predicted_code": {
+        "bytes": 33,
+        "sha256": "7ad38d7b243820605f73ec9bf1fd4122089befa574dbaeabc5683b56337ede55"
+      },
+      "task_id": "530b157_1"
+    },
+    {
+      "exact": false,
+      "expected_code": {
+        "bytes": 56,
+        "sha256": "63208229aa209fda4a93b30839ff02f060311a193bbf08827ee4b2b1567a56c5"
+      },
+      "predicted_code": {
+        "bytes": 33,
+        "sha256": "7ad38d7b243820605f73ec9bf1fd4122089befa574dbaeabc5683b56337ede55"
+      },
+      "task_id": "530b157_2"
+    },
+    {
+      "exact": false,
+      "expected_code": {
+        "bytes": 56,
+        "sha256": "a8041881ec055641c27495e50ecb43f7b74adf833ea2daa90b34ee6839a3c306"
+      },
+      "predicted_code": {
+        "bytes": 33,
+        "sha256": "7ad38d7b243820605f73ec9bf1fd4122089befa574dbaeabc5683b56337ede55"
+      },
+      "task_id": "530b157_3"
+    },
+    {
+      "exact": false,
+      "expected_code": {
+        "bytes": 44,
+        "sha256": "b02806a0366a21a81e105b101a727c2dcca0f9373fc7a452368474e6f274acaa"
+      },
+      "predicted_code": {
+        "bytes": 47,
+        "sha256": "32478fba1d6ecf0472ff03c20f584cf4aadd4234a0e89fbb0be1269c2bb7d00b"
+      },
+      "task_id": "4ec8de5_1"
+    },
+    {
+      "exact": false,
+      "expected_code": {
+        "bytes": 44,
+        "sha256": "b02806a0366a21a81e105b101a727c2dcca0f9373fc7a452368474e6f274acaa"
+      },
+      "predicted_code": {
+        "bytes": 47,
+        "sha256": "32478fba1d6ecf0472ff03c20f584cf4aadd4234a0e89fbb0be1269c2bb7d00b"
+      },
+      "task_id": "4ec8de5_2"
+    },
+    {
+      "exact": false,
+      "expected_code": {
+        "bytes": 44,
+        "sha256": "b02806a0366a21a81e105b101a727c2dcca0f9373fc7a452368474e6f274acaa"
+      },
+      "predicted_code": {
+        "bytes": 47,
+        "sha256": "32478fba1d6ecf0472ff03c20f584cf4aadd4234a0e89fbb0be1269c2bb7d00b"
+      },
+      "task_id": "4ec8de5_3"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "kind": "localagent_hf_local_export_receipt",
+  "schema_version": 1,
+  "measurement": "m183_hf_local_export_current_m180_child",
+  "generated_at": "2026-08-03",
+  "checkpoint": {
+    "path": "/private/tmp/m180-mixed-mobile-computer-child.pt",
+    "bytes": 52225051,
+    "sha256": "10827649f07182a08f8c11104d4713e76b8acaddc73020c5a4c77950de7b23a0",
+    "parameters": 10524544,
+    "model_config": "webgpu-10m-hybrid",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "bundle": {
+    "path": "/private/tmp/m183-hf-local-export-current",
+    "export_verified_locally": true,
+    "files": {
+      "README.md": {
+        "bytes": 3472,
+        "sha256": "750b1ccd45e76a74e9f6d18683a6c69b772bf7c8e851a8df2d3a4adf12cb1834"
+      },
+      "agent_heads.bin": {
+        "bytes": 10097350,
+        "sha256": "f21bb03f3cebc017d6297494b637fd440611b577d910ec1b0398a684d7073894"
+      },
+      "config.json": {
+        "bytes": 9476,
+        "sha256": "5843e3c56886638df3330f1779158666448e44b1b440a8a1ec952f25f7123d98"
+      },
+      "model.safetensors": {
+        "bytes": 42101904,
+        "sha256": "f9c4a6d0aa39d55b43a4cf58d5ba05900dfe474fa440890cce6c773684b68bf0"
+      },
+      "tokenizer.json": {
+        "bytes": 1134224,
+        "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+      }
+    }
+  },
+  "dispatch_metadata": {
+    "tool_count": 63,
+    "pointer_argument_count": 23,
+    "provenance": "inferred_standard_tool_pool_from_51_class_tool_head",
+    "model_card_reports_tools": 63,
+    "heads_included": true,
+    "surface_selectors_included": false
+  },
+  "publication": {
+    "published": false,
+    "hub_url": null,
+    "authenticated": false,
+    "uploaded": false,
+    "reason": "hf auth whoami reports no login; upload requires a user-provided Hugging Face token and repository"
+  },
+  "claim_boundary": "This is a self-contained local Hugging Face-format bundle for the current 10.52M BPE m180 child. It is not a public Hub repository, download URL, hosted inference deployment, or native benchmark score. The generic agent heads contain the current deployment catalog; AgentNet surface-specific selectors were not included in this export.",
+  "receipt_self_sha256": "d8596e7d229dffa5324fe1e0310945ef82fd6aec08fc524575ccbc867d0cb9cc"
+}

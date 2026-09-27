@@ -1,0 +1,106 @@
+{
+  "claim_boundary": "Public-train-only text/accessibility continuation over source-disjoint AndroidControl and AgentNet projections. This is transfer and teacher-forced evidence, not an official AndroidControl, AgentNetBench, OSWorld, native WebGPU, screenshot-grounding, emulator, desktop, MCP, or external-account result.",
+  "checkpoint": {
+    "parameters": 10524544,
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+  },
+  "generated_at": "2026-08-04",
+  "kind": "localagent_cross_surface_public_weight_transfer_receipt",
+  "protocol": {
+    "batch_size": 2,
+    "device": "cpu",
+    "learning_rate": 1e-05,
+    "max_seq_len": 512,
+    "optimizer_updates": 32,
+    "seed": 2027,
+    "train_rows": 1024,
+    "eval_rows": 64,
+    "rows_per_source": {
+      "train": 512,
+      "eval": 32
+    },
+    "source_disjoint": true
+  },
+  "sources": {
+    "androidcontrol": {
+      "dataset": "OfficerChul/Android-Control-84k",
+      "original_url": "https://github.com/google-research/google-research/tree/master/android_control",
+      "mirror_url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k",
+      "train_split": "train4096",
+      "train_sha256": "6971d5fe81fe3c6e8ee12e0072481ec653f98bdb5699af54e8f63649358743fd",
+      "eval_split": "test",
+      "eval_sha256": "2d798115fe0feb14ac6d65f86a4b51b4463b593a35281eedce4de8751356bc95",
+      "visual_input_omitted": true
+    },
+    "agentnet": {
+      "dataset": "xlangai/AgentNet",
+      "original_url": "https://github.com/xlang-ai/OpenCUA",
+      "dataset_url": "https://huggingface.co/datasets/xlangai/AgentNet",
+      "revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+      "train_split": "ubuntu_jsonl_bounded_prefix",
+      "train_sha256": "666e7b29bd67e6b46c8a96c0fa9248a1d79498e4c6da2baf04bb906d8778bc60",
+      "eval_split": "ubuntu_jsonl_bounded_prefix",
+      "eval_sha256": "b9473550b24cea2f87b4d90ad29e6a669a179fdcee9e5d5a753011236f45af7d",
+      "visual_input_omitted": false
+    }
+  },
+  "arms": {
+    "warm_parent": {
+      "child_sha256": "6df1ca4f329703aca33083d38dae66ab36449dd579b4b7b21821aafc26dcdf01",
+      "report_sha256": "6024b0789bd949313504caffd5eecfca4bc23d99081a43cc55f1e51a8dc80885",
+      "before": {
+        "token_accuracy": 0.5181422351233672,
+        "mean_loss": 3.771652398849952,
+        "android_token_accuracy": 0.6090686274509803,
+        "agentnet_token_accuracy": 0.45883293365307753
+      },
+      "after": {
+        "token_accuracy": 0.5703918722786647,
+        "mean_loss": 2.715836102799857,
+        "android_token_accuracy": 0.6666666666666666,
+        "agentnet_token_accuracy": 0.5075939248601119
+      },
+      "backbone_relative_delta_l2": {
+        "attention_or_mixer": 0.0019432863925162081,
+        "embedding": 0.0037422167686625932,
+        "ffn": 0.0024072796161158667,
+        "normalization": 8.016169421091199e-05,
+        "action_heads": 0.0
+      }
+    },
+    "matched_random": {
+      "random_seed": 2028,
+      "child_sha256": "340fbcb46229ab928d47506024ec45292b30217308bea5233eb5dfc77ecf17d9",
+      "report_sha256": "e43973e87a83b371457385e522a58fe0a2c49b5b7f73faaae60c5d767410a8e3",
+      "before": {
+        "token_accuracy": 0.0,
+        "mean_loss": 9.732025500824905,
+        "android_token_accuracy": 0.0,
+        "agentnet_token_accuracy": 0.0
+      },
+      "after": {
+        "token_accuracy": 0.08708272859216255,
+        "mean_loss": 8.872781828283745,
+        "android_token_accuracy": 0.1213235294117647,
+        "agentnet_token_accuracy": 0.06474820143884892
+      },
+      "backbone_relative_delta_l2": {
+        "attention_or_mixer": 0.7788387464497915,
+        "embedding": 1.1972053436127355,
+        "ffn": 0.8779331181245144,
+        "normalization": 0.08571991900968415,
+        "action_heads": 0.0
+      }
+    }
+  },
+  "decision": {
+    "adopt_compatible_parent_backbone": true,
+    "keep_smaller_backbone_learning_rate": true,
+    "keep_matched_random_control": true,
+    "promote_child_to_deployment": false,
+    "reason": "The warm arm improves both held-out source slices while moving the shared backbone by 0.008%–0.374% per group; the matched random arm moves 7.8%–119.7% and remains far below warm token accuracy. This supports initialization/learning-rate policy, not native task capability.",
+    "native_gate_status": "unchanged_blocked"
+  },
+  "schema_version": 1
+}

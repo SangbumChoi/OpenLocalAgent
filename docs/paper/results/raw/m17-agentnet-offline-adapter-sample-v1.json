@@ -1,0 +1,38 @@
+{
+  "kind": "localagent_agentnet_offline_adapter_receipt",
+  "schema_version": 1,
+  "source": {
+    "dataset": "AgentNet",
+    "dataset_url": "https://huggingface.co/datasets/xlangai/AgentNet",
+    "code_url": "https://github.com/xlang-ai/OpenCUA",
+    "code_revision": "dfc91ba89f700d10f26ec50362d308571482ab8b",
+    "sample_path": "evaluation/agentnetbench/sample_data/s_5473959e0f6e21f7.json",
+    "sample_sha256": "487faa91847663f79713b49bfc5822e0aedfef988484609241910efb479c4da7",
+    "license": "MIT",
+    "scope": "one official AgentNetBench sample; not the full 22.6K-task dataset"
+  },
+  "adapter": {
+    "module": "localagent.data.agentnet",
+    "version": 1,
+    "accepted_shapes": [
+      "steps + ground_truth_actions",
+      "traj + value.observation + value.code/action"
+    ],
+    "action_parser": "literal Python AST; pyautogui/computer calls only",
+    "observation_policy": "text observation required; screenshot bytes are not consumed",
+    "coordinate_policy": "preserve normalized low-level actions as agentnet_* tools",
+    "training_policy": "evaluation_only"
+  },
+  "sample": {
+    "records": 1,
+    "task_id": "s_5473959e0f6e21f7",
+    "steps": 10,
+    "ground_truth_actions": 12,
+    "text_observations": 10,
+    "normalized_jsonl_bytes": 13206,
+    "normalized_jsonl_sha256": "8851bd6a685f76e74089043626325c0dbde548010fe75cc41a2e235384c49b86",
+    "normalized_action_count": 12,
+    "public_agent_builder_eval_rows": 1
+  },
+  "claim_boundary": "Adapter and provenance integration only. This receipt is not AgentNetBench accuracy, OSWorld success, screenshot grounding, WebGPU capability, or a training result."
+}

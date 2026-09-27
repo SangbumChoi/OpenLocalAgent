@@ -1,0 +1,89 @@
+{
+  "claim_boundary": "Runtime ToolSpec and row-local candidate alignment followed by a five-scenario native ToolSandbox simulator/verifier replay. This is not an official ToolSandbox split, leaderboard, WebGPU, mobile, browser, email, Notion, or screenshot-grounding score; no model-based user simulator or external API was used.",
+  "kind": "localagent_toolsandbox_runtime_heads_native_bridge",
+  "schema_version": 1,
+  "source": {
+    "dataset": "apple/ToolSandbox",
+    "url": "https://github.com/apple/ToolSandbox",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "runtime_catalog": "ExecutionContext.get_available_tools(scrambling_allowed=False)",
+    "scenario_count": 1032,
+    "runtime_tool_catalog_size": 34,
+    "train": {
+      "rows": 105,
+      "sha256": "054014d716b02ae3d89157b3490a0f53d5dabc13373fbc0649fdcb8a40423758",
+      "dropped_static_rows": 2
+    },
+    "eval": {
+      "rows": 20,
+      "sha256": "89248c5c83aca59161752e4e8c6eb96af415e57dde1e522f141a9c6eac202cc9"
+    },
+    "train_manifest_sha256": "b164d506e9cbbda6b43b52e6ed5daa42146781aacc8fd4c63c0523f3004f82e3",
+    "state_history_available": false,
+    "simulator_executed_for_projection": false,
+    "verifier_executed_for_projection": false
+  },
+  "parent": {
+    "path": "/private/tmp/m194-m180-dispatch-repair-warm.pt",
+    "bytes": 52276521,
+    "sha256": "3b3fd817c6f52e8b922f84c9bb36e7d55e0e243a0f8ee6d0f20c85962a4eeba7"
+  },
+  "training": {
+    "steps": 500,
+    "batch_size": 32,
+    "learning_rate": 0.005,
+    "seed": 2047,
+    "backbone_frozen": true,
+    "heads": ["route_head", "dense_selector"],
+    "warm": {
+      "child_sha256": "ebf39b09787bc9beb543cea7527e82aa505666f1ed235dd6130c51c2bb7b0e79",
+      "before_eval": {"rows": 20, "selector_top1": 0.05, "selector_top3": 0.45, "route_app_action": 0.05},
+      "after_eval": {"rows": 20, "selector_top1": 0.7, "selector_top3": 1.0, "route_app_action": 1.0},
+      "selector_movement_relative_l2": {"query_tower": 1.3350775241851807, "tool_tower": 0.7621279358863831},
+      "route_movement_relative_l2": 0.45991185307502747
+    },
+    "random": {
+      "child_sha256": "31b58fd1cac8ef6d3a634f25066e59a288c387373f65987028e1bcbe3c28f1b6",
+      "before_eval": {"rows": 20, "selector_top1": 0.25, "selector_top3": 0.6, "route_app_action": 0.45},
+      "after_eval": {"rows": 20, "selector_top1": 0.8, "selector_top3": 1.0, "route_app_action": 1.0},
+      "selector_movement_relative_l2": {"query_tower": 1.283416986465454, "tool_tower": 1.1056904792785645},
+      "route_movement_relative_l2": 1.0942953824996948
+    }
+  },
+  "native_toolsandbox_interactive": {
+    "runner_sha256": "ccfa3fa48147dd982148b29d4954533760250d24a5498e67d1d670612f39af25",
+    "official_split_verified": false,
+    "user_simulator_executed": false,
+    "verifier_executed": true,
+    "scenario_count": 5,
+    "scenarios": [
+      "send_message_with_contact_content_cellular_off",
+      "turn_on_wifi_low_battery_mode",
+      "find_current_city_insufficient_information",
+      "remove_contact_by_phone_ambiguous",
+      "search_message_with_recency_latest_multiple_user_turn"
+    ],
+    "warm": {
+      "report_sha256": "e29a7a62ee787faf184a7d9d5a6ef19be720887f4f45bbcd775510b2a8a932df",
+      "checkpoint_sha256": "ebf39b09787bc9beb543cea7527e82aa505666f1ed235dd6130c51c2bb7b0e79",
+      "success_count": 1,
+      "success_rate": 0.2,
+      "per_scenario_similarity": [0.25, 0.0, 1.0, 0.0, 0.0]
+    },
+    "random": {
+      "report_sha256": "f7f9b80e3ffa0a0b19e931ca383f8becb6a221c3b08affbf812bdbad85b84b12",
+      "checkpoint_sha256": "31b58fd1cac8ef6d3a634f25066e59a288c387373f65987028e1bcbe3c28f1b6",
+      "success_count": 1,
+      "success_rate": 0.2,
+      "per_scenario_similarity": [0.0, 0.3333333333333333, 1.0, 0.0, 0.0]
+    },
+    "warm_minus_random_success_rate_pp": 0.0,
+    "native_success_parity": true
+  },
+  "decision": {
+    "export_child": false,
+    "adopt_warm_child": false,
+    "reason": "Runtime candidate alignment makes the offline selector jump from 5% to 70% and route accuracy reach 100%, but the matched random arm reaches 80% selector top-1 and the warm/random native simulator success rate remains tied at 1/5. State/action-history and argument heads are still unresolved; retain both children as diagnostics and do not publish either as a WebGPU agent release."
+  },
+  "receipt_self_sha256": "af1f4a315dc15dc59ecc201a9fecbacaee89125b613548ccbf277c0a40850562"
+}

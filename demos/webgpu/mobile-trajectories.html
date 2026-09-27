@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LocalAgent — stateful mobile and productivity trajectories</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    window.__localAgentRequestedBackend =
+      new URLSearchParams(window.location.search).get("backend") || "webgpu";
+  </script>
+</head>
+<body>
+  <main class="browser-task-main">
+    <header>
+      <h1>📱 LocalAgent <span class="sub">stateful trajectories</span></h1>
+      <p class="tagline">
+        A text-first, local-only trajectory gate for ordered browser, email, and Notion-style
+        actions. Each step receives the previous state and is checked with an independent schema
+        validator and final-state transition. It is not a real account or OS benchmark.
+      </p>
+    </header>
+    <section id="status" class="status loading">
+      <span class="dot"></span>
+      <span id="status-text">Loading the WebGPU model…</span>
+      <span id="backend-badge" class="badge" hidden></span>
+    </section>
+    <section class="benchmark-panel browser-task-panel">
+      <p class="browser-task-scope">
+        Suite: three trajectories, thirteen ordered steps, state-conditioned prompts, exact action
+        matching, schema validity, precondition checks, and pass@1 over complete trajectories.
+        Events remain synthetic and no external service is contacted.
+      </p>
+      <div class="row browser-task-controls">
+        <span id="mobile-trajectory-progress" class="timing">Waiting for the model bundle…</span>
+      </div>
+      <pre id="mobile-trajectory-output" class="browser-task-stage">No run yet.</pre>
+    </section>
+    <section class="io" hidden>
+      <textarea id="prompt"></textarea>
+      <input id="plan-mode" type="checkbox" />
+      <button id="run" disabled>Run</button>
+    </section>
+    <section id="result" hidden></section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.27.0/dist/ort.webgpu.min.js"></script>
+  <script src="tokenizer.js"></script>
+  <script src="app.js"></script>
+  <script src="mobile-trajectories.js"></script>
+  <script>
+    window.__localAgentReady.then(async () => {
+      // The trajectory validator must use the exact tool schemas shipped with this bundle.
+      const response = await fetch("meta.json");
+      window.META_FOR_MOBILE_TASKS = (await response.json()).tools || [];
+      return window.__localAgentRunMobileTrajectoryPilot();
+    }).catch((error) => {
+      document.querySelector("#mobile-trajectory-progress").textContent = `error: ${error.message}`;
+    });
+  </script>
+</body>
+</html>

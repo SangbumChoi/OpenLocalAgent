@@ -1,0 +1,37 @@
+# Promotion gate for the trained 1M SFT policy.
+#
+# This consumes existing sealed evidence only. It does not generate or train. Relative paths are
+# repository-root relative, so invoke scripts/summarize_rl_readiness.py from the repository root.
+kind: localagent_rl_readiness_config
+schema_version: 1
+evidence:
+  scorecard:
+    path: runs/eval/webgpu-1m-sft-scorecard.json
+    expected_self_sha256: 3398a384a4a7c6631e3129d21eb8d691e5b0ee065efa30948d67588697efae72
+  rl_preflight:
+    path: data/provenance/paper/preflights/rl-paper-tier-1m-mps-v2.json
+    expected_self_sha256: 4bc81151ce010973a576c0052026b234d137669322d1292cd4b807576c903ac9
+
+# Positive floors deliberately prevent a config from promoting an all-zero sparse-reward policy.
+# The scorecard floors establish stable greedy output support; the sampled preflight floors prove
+# within-group reward variance and a realized optimizer boundary.
+thresholds:
+  scorecard:
+    min_assistant_decisions: 512
+    min_generation_completion_rate: 0.90
+    max_generation_truncation_rate: 0.10
+    min_complete_format_rate: 0.05
+    min_schema_valid_attempt_rate: 0.05
+    min_action_exact_successes: 1
+  rl_preflight:
+    min_attempted_groups: 8
+    min_attempted_rollouts: 32
+    min_tool_syntax_rate: 0.10
+    min_complete_parser_valid_rate: 0.05
+    min_schema_valid_tool_rate: 0.05
+    min_exact_successes: 1
+    min_reward_unique_values: 2
+    min_informative_groups: 1
+    min_informative_group_rate: 0.125
+    min_realized_optimizer_updates: 1
+    max_truncation_rate: 0.05

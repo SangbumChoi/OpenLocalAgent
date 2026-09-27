@@ -1,0 +1,21 @@
+# Parameter-matched all-attention control for webgpu-35m-hybrid.yaml.
+#
+# Keep tokenizer, width, depth, heads, context, normalization, and parameter budget fixed. The
+# slightly wider FFN compensates for the hybrid model's more parameter-heavy gated-convolution
+# mixers: this control is 34.276M parameters versus 34.199M (+0.22%).
+name: webgpu-35m-attn
+vocab_size: 16384
+d_model: 448
+n_layers: 12
+n_loops: 1
+n_heads: 7
+n_kv_heads: 1
+ffn_hidden: 1328
+max_seq_len: 2048
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types: [attn, attn, attn, attn, attn, attn, attn, attn, attn, attn, attn, attn]

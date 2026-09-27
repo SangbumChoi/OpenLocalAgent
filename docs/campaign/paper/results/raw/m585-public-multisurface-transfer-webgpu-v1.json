@@ -1,0 +1,112 @@
+{
+  "kind": "localagent_public_multisurface_transfer_webgpu_receipt",
+  "schema_version": 1,
+  "parent_checkpoint": {
+    "path": "/private/tmp/m553-multisurface-lineage-child.pt",
+    "sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c"
+  },
+  "warm_child": {
+    "path": "/private/tmp/m585-public-multisurface-warm.pt",
+    "sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff",
+    "parameters": 10524544,
+    "stage": "sft_cross_surface_public_continuation"
+  },
+  "matched_random_child": {
+    "path": "/private/tmp/m585-public-multisurface-random.pt",
+    "sha256": "23b15e2bf8eb4c7f3429866ae62cb613bade70c2ae8918a1ecc5e83baf7cf6a6",
+    "parameters": 10524544,
+    "seed": 2028
+  },
+  "public_sources": {
+    "train": [
+      "AndroidControl@hf:OfficerChul/Android-Control-84k#0248027f747c9d57bd09c14e8f044f9a8103dddd",
+      "AgentNet@d76ee50a63fad81cfdbe576416757d7c2091ed50",
+      "Mind2Web@17ece8eb89862368edc0cc806acee6fca5163474",
+      "MCPMark trajectory log@e50578f0ab904d8e6a7c576c387c1e76ae482c89"
+    ],
+    "eval": [
+      "source-local held-out AndroidControl rows",
+      "source-local held-out AgentNet rows",
+      "source-local held-out Mind2Web rows",
+      "source-local held-out MCPMark rows"
+    ],
+    "train_rows": 202,
+    "eval_rows": 53,
+    "split_contract": "source-local parent/slot disjoint; held-out rows are not official benchmark test splits",
+    "visual_policy": "screenshots omitted from AndroidControl; AgentNet text projection retains no visual encoder",
+    "references": {
+      "androidcontrol": "https://github.com/google-research/google-research/tree/master/android_control",
+      "agentnet": "https://huggingface.co/datasets/xlangai/AgentNet",
+      "mind2web": "https://huggingface.co/datasets/osunlp/Mind2Web",
+      "mcpmark": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log"
+    }
+  },
+  "transfer_metrics": {
+    "warm_eval_token_accuracy": 0.6838868388683886,
+    "random_eval_token_accuracy": 0.46740467404674046,
+    "warm_minus_random_eval_pp": 21.64821648216481,
+    "warm_sequence_exact": 0.0,
+    "random_sequence_exact": 0.0,
+    "by_source_warm_minus_random_pp": {
+      "androidcontrol": 26.49769585253456,
+      "agentnet": 21.10091743119266,
+      "mcpmark": 11.49425287356322,
+      "mind2web": 25.77181208053692
+    }
+  },
+  "weight_transfer": {
+    "compatibility": {
+      "shared_tensor_count": 51,
+      "config_mismatches": {},
+      "shape_mismatches": {},
+      "tokenizer_sha256_equal": true
+    },
+    "warm_relative_delta_l2": {
+      "embedding": 0.016988271628358698,
+      "attention_or_mixer": 0.005213759197462306,
+      "ffn": 0.006629056097486713,
+      "normalization": 0.0005027916903019124,
+      "action_heads": 0.0
+    },
+    "random_relative_delta_l2": {
+      "embedding": 1.1943942761416244,
+      "attention_or_mixer": 0.77886654398761,
+      "ffn": 0.8780530651507286,
+      "normalization": 0.0854727799123361,
+      "action_heads": 0.0
+    },
+    "interpretation": "Warm transfer changes shared representation tensors modestly while preserving the action heads; random training moves the shared backbone by roughly 78–119% relative L2. This supports reuse plus small-rate adaptation, not a claim that transfer is universally optimal."
+  },
+  "webgpu": {
+    "capability_report": "/private/tmp/m585-warm-webgpu-capability.json",
+    "capability_report_sha256": "afc5e06b2702ee7244b4f3e272ecd11e0f8d3538c0bc1fbd4c74cc8735b945fd",
+    "backend": "webgpu",
+    "adapter": "vendor=apple; architecture=metal-3",
+    "exact_cases": 3,
+    "exact_actions": 3,
+    "tokens_per_second_p50": 1367.5213689147115,
+    "latency_ms_p50": 7.4000000059604645,
+    "peak_memory_mb": 20.458142280578613,
+    "external_side_effects": false
+  },
+  "local_stateful_bridge": {
+    "trajectory_report": "/private/tmp/m585-warm-webgpu-trajectory.json",
+    "trajectory_report_sha256": "4b778dae10b03d22c60545d5cb36f29200b9f2208c92687727e29d82e98762dd",
+    "suite": "localagent-mobile-productivity-trajectory-v1",
+    "trajectories": 3,
+    "steps": 13,
+    "pass_at_1": 1.0,
+    "exact_action_rate": 1.0,
+    "state_transition_rate": 1.0,
+    "families": ["email", "notion", "browser"],
+    "external_side_effects": false
+  },
+  "source_reports": {
+    "warm": "/private/tmp/m585-public-multisurface-warm.json",
+    "warm_sha256": "626a10711d1a4b869f38837b0941df1aa4ae411dfe98cc81b43f32374b5fc4d6",
+    "random": "/private/tmp/m585-public-multisurface-random.json",
+    "random_sha256": "bc2e93f06c40e7f54331a7d8db7066457aaa04995c06def13ef003c9f950d6cc"
+  },
+  "claim_boundary": "Public-train-only text/accessibility transfer and local WebGPU/in-memory state-machine evidence. This is not an official AndroidControl, AgentNetBench, Mind2Web, MCPMark, BrowserGym, AndroidWorld, or real-account score; screenshots, native environments, and external side effects were not used.",
+  "receipt_self_sha256": "14eb30c70a47ba298a0febda42d61de1690dddd8dfaab48b50779c65ecd446ed"
+}

@@ -1,0 +1,176 @@
+{
+  "schema_version": 2,
+  "protocol_id": "webgpu-proxy-pilot-seed2027-corrected-feature-contract-v2",
+  "frozen_before_corrected_browser_run": true,
+  "frozen_date": "2026-07-28",
+  "local_freeze": {
+    "revision": 2,
+    "scope": "local working-tree freeze only; not an independently timestamped preregistration",
+    "external_timestamp_status": "required_before_browser_collection",
+    "refreeze_reason": "independent pre-run audit added rescorable raw actions, a fail-stop watchdog, exact v2 case-order defaults, and full-stack 512-token structured export parity"
+  },
+  "status": "superseded_before_external_timestamp_and_browser_runs",
+  "supersession": {
+    "date": "2026-07-29",
+    "reason": "The live browser runner was intentionally upgraded to a cache-bearing autoregressive prefill/decode ABI before this local-only protocol received an external timestamp or collected any corrected-condition runs.",
+    "frozen_hashes_relabelled": false,
+    "corrected_condition_results_collected": false,
+    "replacement_protocol_status": "must be frozen from the final trained bundle and current runner before any new latency or capability collection"
+  },
+  "purpose": "Measure natural-context structured-action quality with a fixed 512-token graph compute load after correcting the SFT-to-browser decision-feature contract.",
+  "prior_failed_condition": {
+    "treatment": "real unmasked single-token spaces inserted before the assistant marker; structured heads consumed hidden[input_tokens - 1]",
+    "action_summary": {
+      "path": "docs/paper/results/m5-webgpu-sft-action-pilot-seed2027.summary.json",
+      "summary_sha256": "ff5fea54d567bcb4cc86cff98efb5a02623129a816b2e2b70ae3a1943c2ca2cc"
+    },
+    "dom_summary": {
+      "path": "docs/paper/results/m5-webgpu-sft-dom-pilot-seed2027.summary.json",
+      "summary_sha256": "ccaad44a2bd1399ee0a48222d53615e8fab90e2d6883e7fa84f7580a6bb48531"
+    },
+    "interpretation": "Preserve as a pre-assistant-padding stress result. Do not reinterpret it as the corrected fixed-compute condition."
+  },
+  "frozen_model_artifacts": {
+    "checkpoint": {
+      "path": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/latest.pt",
+      "sha256": "79387105de75d332413262e8d8ddb847b6cc13bc03f5e4df3c81663d9897aef1"
+    },
+    "bundle_manifest": {
+      "path": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/web/bundle-manifest.json",
+      "sha256": "86bbee00d783ca69af02843a4cf935ff978612b81b6a2fedd47fd943e611bee4"
+    },
+    "action_graph": {
+      "file": "action_model.fp16.onnx",
+      "bytes": 21430301,
+      "sha256": "b91e7f84077155640a5e288a7c58c2245c298859ddd86bd7268e71039e65c49a"
+    },
+    "tokenizer": {
+      "file": "tokenizer.json",
+      "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+    },
+    "dispatch_heads": {
+      "file": "dispatch_heads.json",
+      "sha256": "175a22b30290c9b09758fbd3d0d2182f479cd83a9ec76b93b52eded0ad69a7e5"
+    },
+    "pointer_heads": {
+      "file": "heads.json",
+      "sha256": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486"
+    }
+  },
+  "frozen_runner_sources": {
+    "app_js": {
+      "path": "spaces/localagent-webgpu/app.js",
+      "sha256": "1f4fcbe9cb3a519b30a553b5b6b54c539b6ca95a725a4b5d0eea428828599caf"
+    },
+    "action_js": {
+      "path": "spaces/localagent-webgpu/benchmark.js",
+      "sha256": "0ece65fe99315dfc1f861931800f34920624e81c315ceedcea4c263dc563d0e4"
+    },
+    "action_html": {
+      "path": "spaces/localagent-webgpu/benchmark.html",
+      "sha256": "1358b624163448c3b521a7210543fe1cfc32535cfe67b5b43b6065eb9c1f6459"
+    },
+    "dom_js": {
+      "path": "spaces/localagent-webgpu/browser-tasks.js",
+      "sha256": "fc075ba08d6c2be1bda42c5af9d7a256a88441195f2feca6932779096d3ea99c"
+    },
+    "dom_html": {
+      "path": "spaces/localagent-webgpu/browser-tasks.html",
+      "sha256": "b4e543c971db3bf91ed4014372c6ee75c3d8c8ac1247d00900c7c10a941596ce"
+    }
+  },
+  "feature_contract": {
+    "policy": "structured_one_forward",
+    "materialization": "append single-token spaces after the complete natural prompt until input_tokens equals 512",
+    "decision_feature": "hidden[natural_input_tokens - 1]",
+    "pointer_domain": "token and hidden positions [0, natural_input_tokens)",
+    "claim": "natural-context quality with 512-token graph compute",
+    "not_claimed": "quality after conditioning on 512 meaningful context tokens"
+  },
+  "offline_packaging_invariance_audit": {
+    "path": "docs/paper/results/sft-structured-context-robustness-seed2027.summary.json",
+    "file_sha256": "0d73dc6def5dea4cae95eb16a86dd9045a723295b4c7cfc36b3582c09e0fc25b",
+    "summary_sha256": "c969735734d399686f1a8f4c943312b41b0899810d87d97ef55347f7131e990c",
+    "required_observation": "natural and fixed_trailing_compute_512 preserve route and selector counts on both frozen evaluation sets"
+  },
+  "full_stack_structured_export_parity": {
+    "path": "docs/paper/results/sft-structured-export-parity-seed2027.summary.json",
+    "file_sha256": "dbe6d28baeae6fb59ee5dbfbf8121eef34b836c30eef2b6e5a7c08a7758ca38f",
+    "summary_sha256": "9067da5bc37b6069a48708f9b470467806e118d489be5261cfdda5fc4295a583",
+    "status": "passed",
+    "suite_role": "diagnostic_reuse",
+    "contract": "fixed_compute_512_natural_decision_feature",
+    "required_observation": "native PyTorch, ONNX fp32, and ONNX fp16 agree exactly on route, selected tool, learned pointer spans, grounded typed arguments, and normalized action for all 20 reused action cases"
+  },
+  "browser_conditions": {
+    "provider": "webgpu",
+    "onnxruntime_web_version": "1.27.0",
+    "precision": "fp16",
+    "target_input_tokens": 512,
+    "warmups_per_run": 3,
+    "repetitions_per_case": 30,
+    "fresh_page_session_runs": 3,
+    "concurrency": 1,
+    "action_timeout_ms": 10000,
+    "watchdog_scope": "every warmup and measured policy call",
+    "timeout_contract": "a timeout aborts the entire page collection and preserves an incomplete downloadable payload; ONNX Runtime Web inference is not cancellable, so no subsequent policy call starts",
+    "action": {
+      "runner_version": "rtab-0.4",
+      "case_order_seed": "slmw2026-v2-trailing",
+      "suite": {
+        "path": "spaces/localagent-webgpu/benchmark-cases.json",
+        "cases": 20,
+        "sha256": "f6e479c10b420edcd1630e99c43df3206a40431f1256d919d5ea1a57bc88142c"
+      }
+    },
+    "dom": {
+      "runner_version": "rtab-dom-0.4",
+      "case_order_seed": "dom-loop-v2-trailing",
+      "suite": {
+        "path": "spaces/localagent-webgpu/browser-task-cases.json",
+        "cases": 8,
+        "sha256": "4c46b5b347257b81e716ec0a20a6c6116df716466e1ba8e8a74a117bb5708971"
+      }
+    }
+  },
+  "required_record_checks": [
+    "input_tokens equals 512",
+    "context_padding_placement equals after_natural_assistant_marker",
+    "decision_input_tokens equals natural_input_tokens",
+    "decision_feature_index equals natural_input_tokens minus one",
+    "policy equals structured_one_forward",
+    "inference_passes equals one",
+    "action_timeout_ms equals 10000 and timeout metadata states fail-stop whole-collection semantics",
+    "each row preserves normalized predicted_action, full expected_action, parse_evidence, and independent_schema including validator errors and the selected tool schema",
+    "offline aggregation recomputes exact tool, arguments, action, and schema validity and rejects any stored alias that disagrees",
+    "graph, checkpoint, tokenizer, dispatch-head, pointer-head, suite, and runner identities match this protocol"
+  ],
+  "report": {
+    "action": [
+      "exact-action accuracy",
+      "tool-required exact accuracy separated from abstention",
+      "schema-validity rate",
+      "TTFA p50, p95, and p99",
+      "Success@100ms, @250ms, @500ms, @1s, and @2s",
+      "route, selected tool, normalized arguments/action, parse evidence, and independent validation for every case"
+    ],
+    "dom": [
+      "exact-action accuracy",
+      "schema-validity rate",
+      "final-DOM rate",
+      "state-transition rate",
+      "closed-loop success rate",
+      "TTFA and closed-loop p50, p95, and p99"
+    ],
+    "aggregation": "preserve all raw rows; lead capability with unique-case denominators; treat the 30 repetitions as timing precision rather than independent capability trials; report pooled descriptive latency and median/range of the three within-run percentiles"
+  },
+  "limitations": [
+    "single SFT training seed; 10,524,544 backbone parameters plus 2,499,333 active learned structured heads",
+    "single Apple Metal-3 Chrome/WebGPU environment; per-node ORT placement remains unknown",
+    "the 20-case action suite, 8-case DOM suite, and 65-row eval set were inspected during diagnosis, so corrected runs are deployment-parity re-evaluations rather than untouched capability confirmation",
+    "only one action-suite case expects abstention, so abstention generalization is effectively unmeasured",
+    "text and semantic-DOM grounding rather than vision, trusted OS input, or BrowserGym",
+    "corrected condition measures fixed compute, not 512 tokens of meaningful conditioning context",
+    "local freeze has no independent pre-outcome timestamp until the required external timestamp is created"
+  ]
+}

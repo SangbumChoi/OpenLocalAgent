@@ -1,0 +1,138 @@
+{
+  "benchmark": {
+    "browsergym_revision": "9e779f087de9a65668b6974d11f9ce9816026e96",
+    "episodes": 16,
+    "fixed_seed_plan": true,
+    "id": "browsergym_miniwob",
+    "miniwob_revision": "7fd85d71a4b60325c6585396ec4f48377d049838",
+    "official_split_verified": false,
+    "tool_pool": "realistic_browser"
+  },
+  "claim_boundary": "Bounded, non-official native BrowserGym/MiniWoB checkpoint-in-the-loop diagnostics over the same 16 fixed-seed episodes. Semantic fallback reads only the accessibility tree and did not improve success (both checkpoints 4/16); coordinate fallback reads live DOM clickable geometry and raises both checkpoints to 8/16, showing an environment-grounding bridge rather than a Mind2Web policy-transfer gain. The realistic_browser vocabulary is not an official Mind2Web or BrowserGym score, no screenshots or real accounts were used, and no email/Notion side effect ran.",
+  "coordinate_fallback": {
+    "baseline": {
+      "checkpoint": {
+        "path": "/private/tmp/m626-androidcontrol/warm.pt",
+        "sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c"
+      },
+      "grounded_step_count": 24,
+      "report": {
+        "bytes": 41681,
+        "path": "/private/tmp/m645-browsergym-m626-coordinate/report.json",
+        "sha256": "a8f4650d58b424462cfe4255718e3e6beaad1b1292196750901ae33b015ed697"
+      },
+      "step_count": 104,
+      "success_count": 8,
+      "success_rate": 0.5,
+      "successful_tasks": [
+        "miniwob.ascending-numbers",
+        "miniwob.ascending-numbers",
+        "miniwob.ascending-numbers",
+        "miniwob.ascending-numbers",
+        "miniwob.click-button",
+        "miniwob.click-button",
+        "miniwob.click-button",
+        "miniwob.click-button"
+      ]
+    },
+    "mind2web_child": {
+      "checkpoint": {
+        "path": "/private/tmp/m643-mind2web-warm/child.pt",
+        "sha256": "3b1737e93fbfbdc6c412d8b9385a885098b280494fb07c0e2bdb8839749f0076"
+      },
+      "grounded_step_count": 24,
+      "report": {
+        "bytes": 41679,
+        "path": "/private/tmp/m645-browsergym-m643-coordinate/report.json",
+        "sha256": "7955b9b59d84d3048e708cb02a3fd029874f1d30428c269402abd425576094dc"
+      },
+      "step_count": 104,
+      "success_count": 8,
+      "success_rate": 0.5,
+      "successful_tasks": [
+        "miniwob.ascending-numbers",
+        "miniwob.ascending-numbers",
+        "miniwob.ascending-numbers",
+        "miniwob.ascending-numbers",
+        "miniwob.click-button",
+        "miniwob.click-button",
+        "miniwob.click-button",
+        "miniwob.click-button"
+      ]
+    },
+    "paired_comparison": {
+      "grounded_step_delta": 0,
+      "identical_step_traces_excluding_wall_ms": 16,
+      "same_episode_order": true,
+      "success_delta": 0.0
+    }
+  },
+  "kind": "localagent_m645_mind2web_browsergym_grounding_canary_receipt",
+  "paired_checkpoint_identity": {
+    "baseline_sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c",
+    "mind2web_child_sha256": "3b1737e93fbfbdc6c412d8b9385a885098b280494fb07c0e2bdb8839749f0076"
+  },
+  "receipt_self_sha256": "8304a2459e745793a06f751dbe8405af6ad8841031d3f285180facefe2ce1678",
+  "runtime": {
+    "browser_executable": "/Users/sangbumchoi/Library/Caches/ms-playwright/chromium-1117/chrome-mac/Chromium.app/Contents/MacOS/Chromium",
+    "browser_executable_sha256": "c6cf40504b92a677552e51dfaf1addfc95dc60c8b57ce5f6b41c9ee0575cf230",
+    "chromium_revision": "1117",
+    "chromium_version": "125.0.6422.26",
+    "headless": true,
+    "max_steps": 10,
+    "miniwob_revision": "7fd85d71a4b60325c6585396ec4f48377d049838",
+    "playwright_pinned_version": "1.44.0",
+    "playwright_version": "1.44.0"
+  },
+  "schema_version": 1,
+  "semantic_fallback": {
+    "baseline": {
+      "checkpoint": {
+        "path": "/private/tmp/m626-androidcontrol/warm.pt",
+        "sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c"
+      },
+      "grounded_step_count": 4,
+      "report": {
+        "bytes": 50323,
+        "path": "/private/tmp/m645-browsergym-m626-semantic/report.json",
+        "sha256": "59653393db743d63973780d0a699ba56fba3699b9a43faf91db63c966d0b5e04"
+      },
+      "step_count": 124,
+      "success_count": 4,
+      "success_rate": 0.25,
+      "successful_tasks": [
+        "miniwob.click-button",
+        "miniwob.click-button",
+        "miniwob.click-button",
+        "miniwob.click-button"
+      ]
+    },
+    "mind2web_child": {
+      "checkpoint": {
+        "path": "/private/tmp/m643-mind2web-warm/child.pt",
+        "sha256": "3b1737e93fbfbdc6c412d8b9385a885098b280494fb07c0e2bdb8839749f0076"
+      },
+      "grounded_step_count": 4,
+      "report": {
+        "bytes": 50324,
+        "path": "/private/tmp/m645-browsergym-m643-semantic/report.json",
+        "sha256": "61d668814b32e60f620d23d3fad819cf18c1271fccee9bacc5bd9523b2d87987"
+      },
+      "step_count": 124,
+      "success_count": 4,
+      "success_rate": 0.25,
+      "successful_tasks": [
+        "miniwob.click-button",
+        "miniwob.click-button",
+        "miniwob.click-button",
+        "miniwob.click-button"
+      ]
+    },
+    "paired_comparison": {
+      "grounded_step_delta": 0,
+      "identical_step_traces_excluding_wall_ms": 16,
+      "same_episode_order": true,
+      "success_delta": 0.0
+    }
+  }
+}

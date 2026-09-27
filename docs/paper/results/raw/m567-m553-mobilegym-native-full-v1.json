@@ -1,0 +1,35 @@
+{
+  "benchmark_id": "mobilegym",
+  "kind": "localagent_mobilegym_native_text_eval",
+  "schema_version": 1,
+  "checkpoint_sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+  "candidate_checkpoint": {"sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c", "parameters": 10524544},
+  "source": {
+    "repository": "https://github.com/Purewhiter/mobilegym",
+    "revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "test_split_sha256": "a3d485015d480f4f1ebbd12dbbf02c25c0aa667d1afcf5f6fa35f0263a82c567",
+    "train_split_sha256": "0ecef460fecfd8aa91dcbb2cd4cca17b033f620f85a50d7f0b598ed19a27c0eb",
+    "test_ids_sha256": "cf61a0b2e71721864a1b526a531c433f852e128d2ffa8b81504fc3d74b9830bf"
+  },
+  "environment": {
+    "environment_executed": true,
+    "official_split": "test",
+    "official_split_verified": true,
+    "task_count": 256,
+    "errors": [],
+    "max_steps": 2,
+    "elapsed_seconds": 596.425
+  },
+  "result": {
+    "passed_tasks": 1,
+    "failed_tasks": 255,
+    "success_rate": 0.00390625,
+    "observation_mode": "text_projection",
+    "vision_used": false,
+    "tool_counts": {"mobile_input_text": 255, "mobile_navigate_home": 6, "mobile_open_app": 1}
+  },
+  "raw_receipt": {"path": "/private/tmp/m561-m553-mobilegym-full.json", "sha256": "91ea64bf5ebd6d6a073fadfbfedf648c6f125f8c29f8fb575798b6d59b9c3107"},
+  "claim_boundary": "Complete official MobileGym test split with the upstream simulator and state-diff judge using bounded text/DOM observations. This is not a visual Android or screenshot-grounding score.",
+  "decision": "retain_as_native_negative_control",
+  "receipt_self_sha256": "416a1b5a2e276a4b841bf1f8db0c4ea451b6e07a4ad83d2e1c21f865ed2cdce3"
+}

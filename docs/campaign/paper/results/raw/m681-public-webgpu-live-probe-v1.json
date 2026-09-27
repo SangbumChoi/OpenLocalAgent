@@ -1,0 +1,54 @@
+{
+  "kind": "localagent_m681_public_webgpu_live_probe",
+  "schema_version": 1,
+  "public_release": {
+    "model_repo": "danelcsb/localagent-tiny-30m-byte",
+    "model_url": "https://huggingface.co/danelcsb/localagent-tiny-30m-byte",
+    "model_revision": "d15db7c46d32a3987169a1a6e8cd43a525ad2a4c",
+    "space_repo": "danelcsb/localagent-webgpu",
+    "space_url": "https://huggingface.co/spaces/danelcsb/localagent-webgpu",
+    "space_revision": "3c07f7db500ac5ab23222e8d1e2fc5033fa5aeb0",
+    "space_runtime": "RUNNING",
+    "model_config": {
+      "name": "tiny-30m-byte",
+      "parameters_label": "28M (public model card)",
+      "vocab_size": 256,
+      "max_seq_len": 1024
+    },
+    "artifacts": {
+      "model_safetensors_bytes": 113297968,
+      "model_safetensors_sha256": "a0043408fe287de4171bc63d83d3e1fa76d638241893e72bc7f034e287c1d0c2",
+      "space_model_fp16_onnx_bytes": 57468760,
+      "space_model_fp16_onnx_lfs_sha256": "59f06336320d05c3ea796492da5d342f67be028cd01e7600d5a659c125d3d34c"
+    },
+    "current_checkpoint_sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533",
+    "current_checkpoint_match": false,
+    "legacy_public_release": true
+  },
+  "browser_probe": {
+    "browser": "Codex In-app Browser",
+    "page_title": "LocalAgent Tool Calling (WebGPU) - a Hugging Face Space by danelcsb",
+    "model_ready": true,
+    "provider": "WEBGPU",
+    "request": "What does ephemeral mean?",
+    "observed_route": "web_search",
+    "observed_args": {
+      "term": "ephemeral"
+    },
+    "expected_route": "define",
+    "tool_route_correct": false,
+    "latency_ms": 818,
+    "external_write_performed": false,
+    "console_provider_warning": true
+  },
+  "hub_audit": {
+    "method": "scripts/audit_public_hf_release.py with anonymous Hub API/resolver downloads",
+    "model_http_status": 200,
+    "space_http_status": 200,
+    "current_checkpoint_sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533",
+    "current_checkpoint_match": false,
+    "audit_receipt_sha256": "82984a9f36d7bd59bcecfcb575bda787e08d075f3703dc901d7a26e29705536f"
+  },
+  "claim_boundary": "Anonymous public Space reachability and one read-only browser probe are verified. The model is ready in WebGPU, but the probe misroutes a definition request to web_search. The public artifacts are legacy and do not expose the current m679 checkpoint hash. This is not evidence of email, Notion, browser, mobile, desktop, MCP, or other real-service task success; no credentials or external writes were used.",
+  "receipt_self_sha256": "8065d045ee57672509c4f317aa3ab8607bc09369dd7ed91ca48ed753f54f15f8"
+}

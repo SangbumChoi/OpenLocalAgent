@@ -1,0 +1,358 @@
+{
+  "checkpoint": {
+    "bytes": 52231121,
+    "path": "runs/sft-mind2web-trajectory-continuation-20260802-m46/latest.pt",
+    "sha256": "b19828908594463385870607d89c084afc1bb237cc5fb51752ac6860a204a041"
+  },
+  "claim_boundary": "Native resettable tau2-bench domain diagnostic with one LocalAgent turn per task and an oracle contract replay. This is not a complete domain split, user-simulator run, leaderboard score, external-service result, or WebGPU deployment claim. Task text, tool outputs, and checkpoint internals are hash-only.",
+  "configuration": {
+    "domain": "airline",
+    "max_agent_turns": 1,
+    "retrieve_k": 1,
+    "selector_first": false,
+    "selector_mode": "retriever",
+    "split": "base",
+    "tasks": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "user_simulator": false
+  },
+  "contract_verification": {
+    "environment_reward": 1.0,
+    "gold_trajectory_replayed": true,
+    "passed": true,
+    "task_id": "0"
+  },
+  "environment": {
+    "external_accounts": false,
+    "external_services": false,
+    "native_runtime_executed": true,
+    "reset_per_task": true,
+    "screenshots": false
+  },
+  "kind": "localagent_tau2_domain_checkpoint_native_probe",
+  "receipt_self_sha256": "1422f72f335d2fb0f90fcbacf9e8ae0a4aec569e557aa84b672759d2b81565a9",
+  "runner": {
+    "package": "tau2",
+    "root": "/private/tmp/tau2-bench",
+    "source_revision": "363133ada1936491fb5bcec33cd62c3518a99f65",
+    "version": "1.0.1"
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "tau2-bench",
+    "domain": "airline",
+    "files": {
+      "LICENSE": {
+        "bytes": 1072,
+        "path": "/private/tmp/tau2-bench/LICENSE",
+        "sha256": "e67c5aa0074dfcaefd3c3a1aedb94cb539234aecd15d5a972574e3200e6252fe"
+      },
+      "README.md": {
+        "bytes": 10443,
+        "path": "/private/tmp/tau2-bench/README.md",
+        "sha256": "ed39688aa5d40bd73007355df65f4e41a6c250960642e56764c3ad44da1df8d2"
+      },
+      "data/tau2/domains/airline/audio_difficulty.json": {
+        "bytes": 1263575,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/airline/audio_difficulty.json",
+        "sha256": "d06ed804877e25a8eaa379596f8ec78946145e2648cddf706c59dce5a85a3908"
+      },
+      "data/tau2/domains/airline/db.json": {
+        "bytes": 7042725,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/airline/db.json",
+        "sha256": "1af9fea6e03ca7ca15a22bb3fcaf3e351393e3fc9070b6777947da8996f7531b"
+      },
+      "data/tau2/domains/airline/policy.md": {
+        "bytes": 7676,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/airline/policy.md",
+        "sha256": "10dc0525421521208be39cee235bba84a16e2bcba9899eb93d92cd81d2f62fc4"
+      },
+      "data/tau2/domains/airline/split_tasks.json": {
+        "bytes": 1443,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/airline/split_tasks.json",
+        "sha256": "b22ced4d9a9850ac9aea31c53bdcb6d6009058140bd9acc7db37c1d36222ba8b"
+      },
+      "data/tau2/domains/airline/tasks.json": {
+        "bytes": 155528,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/airline/tasks.json",
+        "sha256": "ccd8ba737b4cc371415af70151187788f728d6108d0916e73bb4317b40542052"
+      },
+      "data/tau2/domains/airline/tasks_voice.json": {
+        "bytes": 1354490,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/airline/tasks_voice.json",
+        "sha256": "e1360a2a1ecbdb97270838b428d6f51bcf8a121afa5bcbd132f30158589d5a6e"
+      },
+      "pyproject.toml": {
+        "bytes": 2417,
+        "path": "/private/tmp/tau2-bench/pyproject.toml",
+        "sha256": "23d59670b4ad7bbc0f57420fd9643a8d9188c24abe4f29c9c965544d8cc4cb8d"
+      }
+    },
+    "license": "MIT",
+    "revision": "363133ada1936491fb5bcec33cd62c3518a99f65",
+    "source_url": "https://github.com/sierra-research/tau2-bench",
+    "split": "base",
+    "task_count": 50,
+    "task_ids": [
+      "0",
+      "1",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "2",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "3",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "4",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45",
+      "46",
+      "47",
+      "48",
+      "49",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ]
+  },
+  "summary": {
+    "bounded_native_success_rate": 0.0,
+    "bounded_native_successes": 0,
+    "first_action_exact": 0,
+    "model_tool_calls": 8,
+    "tasks": 8
+  },
+  "tasks": [
+    {
+      "action_reward": 1.0,
+      "bounded_native_success": false,
+      "environment_reward": 1.0,
+      "expected_actions": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 508,
+        "sha256": "52485bec9ea7384d77af18034210d1649b4b9040f21215d29fe5c01733506818"
+      },
+      "model_output": {
+        "bytes": 103,
+        "sha256": "d6496c58e5cacb1f5a50780c65f3afef4bfafdfbb5100d7fcb1f3b67aaae3e6d"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "babc7cc4d87a595792542823dac65ce2e2817b9f726b167b5b0474a913d0f926"
+      },
+      "task_id": "0"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 1.0,
+      "expected_actions": {
+        "count": 2,
+        "sha256": "c4d8bff03b05623ab1ad06f95d3494a049560ab4bd80dcb678d0c7d28ebc1705"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 558,
+        "sha256": "140824b255cc03128dbb126f307b26d48e930fc233a5f2613104d8bcd50be72c"
+      },
+      "model_output": {
+        "bytes": 109,
+        "sha256": "6a5865fce162ec08f58954f89380711469cde45525e69424c41eecbc01fe1535"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "b421f6df3b7f24806a048f3a964afc180b7569cf8b9ea07f24d465c15b55d9ca"
+      },
+      "task_id": "1"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 1.0,
+      "expected_actions": {
+        "count": 3,
+        "sha256": "5644e51d5b6f07c1ac94aa323ee96281ac1cb324548dd4486ea36cb65279bfce"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 1180,
+        "sha256": "73f5dac4d08d3a006575295e5e158b046103d3597bb369466aa5535795f38346"
+      },
+      "model_output": {
+        "bytes": 1372,
+        "sha256": "172a3e921ca4e55b6740f738e354dbdc01d91ebf198fecb710c54a808a79178f"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "62c9cf5db83e4e105e260bcb9897c5984748be5fd07361eedc7c824521b346d4"
+      },
+      "task_id": "2"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 1.0,
+      "expected_actions": {
+        "count": 2,
+        "sha256": "eec8ccd6962b368d73300be234b3eb3471fcd7db90f476f165c528802b3f6106"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 760,
+        "sha256": "b23ed4df9c984033f781e8bf345b344b31e76c181f77396c3284c420f1db23ce"
+      },
+      "model_output": {
+        "bytes": 941,
+        "sha256": "5d16509ff31c738e916720b5e01a7edbb75b0658d5124010c55d9f740da7afd8"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "3f3253460fa99631256dd30afc4face0776948867d48915ec6f2e03a5a0aa599"
+      },
+      "task_id": "3"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 1.0,
+      "expected_actions": {
+        "count": 6,
+        "sha256": "7e067e3d38d4022606da70bdfef9200a4bc0962f269ba8c1a8ddd0222747828a"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 509,
+        "sha256": "c273f6820a578fb319955b8d5ad28d6cdd03087124b8e1cce059a7dd2c1e0e18"
+      },
+      "model_output": {
+        "bytes": 111,
+        "sha256": "def18d1fc82f240dad58410867a0c62be7f574d892f110a36bc3072073b740b2"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "b5160d02f8c22c91281f1edd8a2b1551a1aea774edd08ab7ad3d30ddc4910b5c"
+      },
+      "task_id": "4"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 1.0,
+      "expected_actions": {
+        "count": 1,
+        "sha256": "9a2e2dd8480ef2b215919f86ae53014629524c791a786c749fc09fedbcc9e02c"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 755,
+        "sha256": "da9b83d78f1aca1d2532b382a2745a0f6b357761e0bfdf9c3b7630a10e244b43"
+      },
+      "model_output": {
+        "bytes": 336,
+        "sha256": "a6f43b46a5030a0e1c60c427e5f2562053810463bc73fa5fe4855822c2cc85b5"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "5ce61246cace7a3d0b33b302cfea682d085e81d5d4276a9f9237cdf1c9367de3"
+      },
+      "task_id": "5"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 1.0,
+      "expected_actions": {
+        "count": 1,
+        "sha256": "3e3503a96aeec7e85d7d3ed92cee4d8cae114875cedeb1276cddda5d620623d1"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 461,
+        "sha256": "4410fe8d0eea59c7a84681d223f8974162cf17833cc5545019fa363847f44db5"
+      },
+      "model_output": {
+        "bytes": 639,
+        "sha256": "4a1f26f455cfeec2e8d6d1b1b25a449f21357c74ecc2815fa78662cf0dcb1675"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "5ed2beb7e18d03a62e5c967a9212dee0dc927ace168df051d80cd66e9316b161"
+      },
+      "task_id": "6"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 5,
+        "sha256": "deccdfc29d6a68cdb69cafdd3b77b11b81fd668d851cbe15c64da9dbba23e2b4"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 594,
+        "sha256": "993040743493a45dd95b378bd02437c03cc654ea86a9f49c5b5106fe44f92330"
+      },
+      "model_output": {
+        "bytes": 772,
+        "sha256": "9881e2f20663d411501c0c0ef23d56f84eccf78bb680fff493c6ce148e1be2ad"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "dce2363d631d8c665db94197ba11ee6e2247281474761471fadb3818ea439ab8"
+      },
+      "task_id": "7"
+    }
+  ]
+}

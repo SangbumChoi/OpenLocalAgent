@@ -1,0 +1,32 @@
+{
+  "model": "region-no_embed",
+  "kind": "localagent",
+  "location": "runs/region/region-no_embed/model.pt",
+  "parameters": 28322304,
+  "rows_per_suite": 200,
+  "max_new_tokens": 64,
+  "suites": {
+    "androidcontrol": {
+      "rows": 200,
+      "parse_rate": 0.97,
+      "type_match": 0.12,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 1.1869980680942536,
+      "grounding_accuracy": 0.0
+    },
+    "toolace": {
+      "rows": 200,
+      "parse_rate": 0.93,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 1.217165733575821
+    },
+    "agentnet": {
+      "rows": 200,
+      "parse_rate": 0.94,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 1.4888154339790345
+    }
+  }
+}

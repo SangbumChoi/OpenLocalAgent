@@ -1,0 +1,42 @@
+{
+  "blocked_requirements": {
+    "artifacts:public_model_demo_manifest": "current_checkpoint_not_bound",
+    "native:agentnet": "receipt_not_supplied",
+    "native:androidworld": "receipt_not_supplied",
+    "native:enterpriseopsgym": "receipt_not_supplied",
+    "native:iosworld": "receipt_not_supplied",
+    "native:mcpmark": "receipt_not_supplied",
+    "native:mobile_safety_bench": "receipt_not_supplied",
+    "native:osworld": "receipt_not_supplied",
+    "native:osworld_v2": "receipt_not_supplied",
+    "native:toolsandbox": "receipt_not_supplied",
+    "training:rl_preflight": "current_checkpoint_sha256_mismatch",
+    "weights:transfer_and_no_transfer_ablation": "unified_current_checkpoint_sha256_mismatch"
+  },
+  "claim_boundary": "Fail-closed current-checkpoint workshop/publication gate. Ready is false; protocol bridges, synthetic receipts, stale transfer/RL lineage, and legacy public artifacts do not count as publication approval.",
+  "current_checkpoint": {
+    "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "evidence": {
+    "browsergym_miniwob": "docs/paper/results/raw/m684-m679-browsergym-native-v1.json",
+    "browsergym_miniwob_sha256": "8a4721b6ae9d33ee4340f7008d9e709fe498746ef323c77ce2469232275910a5",
+    "mobilegym": "docs/paper/results/raw/m683-m679-mobilegym-native-v1.json",
+    "webgpu": "/private/tmp/m682-m679-webgpu-capability-current.json"
+  },
+  "kind": "localagent_m685_workshop_gate_current_m679",
+  "passed_requirements": [
+    "catalog:realistic_family_coverage",
+    "catalog:no_pending_train_adapter",
+    "native:mobilegym",
+    "native:browsergym_miniwob",
+    "webgpu:native_capability_and_latency"
+  ],
+  "ready": false,
+  "receipt_self_sha256": "52f8a9b44e8d718ffa0e03120a98b25764d4c48a55311b4f818597d32fd3eacd",
+  "schema_version": 1,
+  "source_gate": {
+    "path": "/private/tmp/m685-workshop-gate-current-m679.json",
+    "sha256": "47ba82cbebcc7c2f2941c99ca230eccf880c69536699fac9c4cf706a6553904b"
+  }
+}

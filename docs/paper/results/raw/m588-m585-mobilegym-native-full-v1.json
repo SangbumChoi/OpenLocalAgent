@@ -1,0 +1,83 @@
+{
+  "kind": "localagent_mobilegym_m585_warm_full_receipt",
+  "schema_version": 1,
+  "benchmark_id": "mobilegym",
+  "environment_executed": true,
+  "official_split": "test",
+  "official_split_verified": true,
+  "native_receipt_eligible": true,
+  "task_count": 256,
+  "success_rate": 0.00390625,
+  "checkpoint_sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff",
+  "checkpoint": {
+    "path": "/private/tmp/m585-public-multisurface-warm.pt",
+    "sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff",
+    "parameters": 10524544
+  },
+  "source": {
+    "repository": "https://github.com/Purewhiter/mobilegym",
+    "revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "test_split_sha256": "a3d485015d480f4f1ebbd12dbbf02c25c0aa667d1afcf5f6fa35f0263a82c567",
+    "train_split_sha256": "0ecef460fecfd8aa91dcbb2cd4cca17b033f620f85a50d7f0b598ed19a27c0eb",
+    "test_ids_sha256": "cf61a0b2e71721864a1b526a531c433f852e128d2ffa8b81504fc3d74b9830bf"
+  },
+  "run": {
+    "seed": 0,
+    "max_steps": 2,
+    "selector_top_m": 1,
+    "selector_first": false,
+    "full_official_test_split": true,
+    "elapsed_seconds": 597.35
+  },
+  "result": {
+    "passed_tasks": 1,
+    "failed_tasks": 255,
+    "successful_task_ids": ["crossapp_life.RestaurantRatingInviteCalendar"],
+    "tool_counts": {
+      "mobile_input_text": 255,
+      "mobile_navigate_home": 6,
+      "mobile_open_app": 1
+    },
+    "suite_summary": {
+      "account": [5, 0],
+      "alipay": [9, 0],
+      "bilibili": [9, 0],
+      "calendar": [12, 0],
+      "clock": [9, 0],
+      "crossapp_commerce": [14, 0],
+      "crossapp_content": [23, 0],
+      "crossapp_life": [29, 1],
+      "crossapp_work": [21, 0],
+      "ebay": [5, 0],
+      "file_manager": [3, 0],
+      "launcher": [2, 0],
+      "map": [17, 0],
+      "notes": [5, 0],
+      "railway12306": [12, 0],
+      "redbook": [6, 0],
+      "reddit": [6, 0],
+      "sms": [3, 0],
+      "spotify": [17, 0],
+      "tencent_meeting": [9, 0],
+      "weather": [9, 0],
+      "wechat": [11, 0],
+      "wechat_reading": [13, 0],
+      "x": [7, 0]
+    }
+  },
+  "comparison": {
+    "parent_receipt": "docs/paper/results/raw/m567-m553-mobilegym-native-full-v1.json",
+    "parent_receipt_sha256": "228eae4aa344544805ede0765c16c81245a7436847190978ce5bb1501d18d4bd",
+    "parent_success_rate": 0.00390625,
+    "warm_minus_parent_success_pp": 0.0,
+    "interpretation": "The warm public continuation matches the parent on the complete text-first MobileGym split; no closed-loop mobile improvement is demonstrated."
+  },
+  "raw_report": {
+    "path": "/private/tmp/m588-m585-mobilegym-full.json",
+    "sha256": "46c5c02f387181f71450d50f5a651206c8120a7086e5f31b92700193f611fe4e"
+  },
+  "observation_mode": "text_projection",
+  "vision_used": false,
+  "claim_boundary": "Native MobileGym simulator and official state-diff judge over the complete 256-task public test split using a bounded DOM/text projection. This is not a visual mobile-agent score, Android emulator result, or screenshot-grounding claim; no external accounts or side effects were used.",
+  "receipt_self_sha256": "9e2afc92e49116835b70c9f40d907aa9871d5bc965cc3619d5640e0e0e39fab0"
+}

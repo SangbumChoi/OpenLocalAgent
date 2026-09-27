@@ -1,0 +1,107 @@
+{
+  "kind": "localagent_mcpmark_current_service_routing_receipt",
+  "schema_version": 1,
+  "measurement": "m274_mcpmark_current_service_routing",
+  "generated_at": "2026-08-04",
+  "dataset": {
+    "name": "MCPMark",
+    "url": "https://github.com/eval-sys/mcpmark",
+    "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "checkout": "/private/tmp/mcpmark",
+    "task_manifest_sha256": "b35b92adfb8a846eb32dc36c411c17aa5ecf757e5b63aeaa1671755f475686d5",
+    "standard_rows": 169,
+    "easy_rows": 70,
+    "metadata_and_description_bytes": {
+      "standard": 1272143,
+      "easy": 385446
+    },
+    "task_text_retained": false,
+    "mcp_servers_executed": false,
+    "verifiers_executed": false,
+    "external_side_effects": false
+  },
+  "evaluator": {
+    "script": {
+      "path": "scripts/eval_mcpmark_task_router.py",
+      "bytes": 1216,
+      "sha256": "699e7c0edf81ad37e381139baf0c5dc5530dba8e6a9c3eb932e46c2b3554fe93"
+    },
+    "implementation": {
+      "path": "src/localagent/eval/mcpmark_router.py",
+      "bytes": 11820,
+      "sha256": "3209b3e474ea5f956f266307e3dce9603083b107925073a68cc53520d5fbebd3"
+    },
+    "device": "cpu",
+    "metric": "tool-family route accuracy and selector top-k over public task descriptions"
+  },
+  "checkpoints": {
+    "current_parent": {
+      "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+      "bytes": 52242001,
+      "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+    },
+    "m273_warm_child": {
+      "path": "/private/tmp/m273-cross-surface-warm.pt",
+      "bytes": 52249114,
+      "sha256": "86460f8398ebed7c48181885c5be5514d71a1c51d35e9765ff00600d6194d7cb"
+    },
+    "m273_random_child": {
+      "path": "/private/tmp/m273-cross-surface-random.pt",
+      "bytes": 52249228,
+      "sha256": "b0d88293c184e5a1f331a2bceeb8ca83b6090285a81eac249e416fcddd2ee326"
+    }
+  },
+  "standard_suite": {
+    "current_parent": {
+      "report_bytes": 2853,
+      "report_sha256": "007da91a9610f13534660a11a1fa9e2f1967b96601e2c13ae0714959f1108db0",
+      "rows": 169,
+      "route_correct": 25,
+      "route_accuracy": 0.14792899408284024,
+      "selector_top1": 0.14792899408284024,
+      "selector_top3": 0.14792899408284024,
+      "by_service": {
+        "filesystem": {"rows": 30, "route_correct": 0},
+        "github": {"rows": 23, "route_correct": 0},
+        "notion": {"rows": 28, "route_correct": 0},
+        "playwright": {"rows": 25, "route_correct": 25},
+        "postgres": {"rows": 63, "route_correct": 0}
+      }
+    },
+    "m273_warm_child": {
+      "report_bytes": 2793,
+      "report_sha256": "9e8ea41edc3f5f8cb3e72704b8445d0a1ee18ce1decacc6f0dd67c444a566aed",
+      "rows": 169,
+      "route_correct": 25,
+      "route_accuracy": 0.14792899408284024,
+      "selector_top1": 0.1301775147928994,
+      "selector_top3": 0.14792899408284024,
+      "notion_route_correct": 0,
+      "playwright_route_correct": 25
+    },
+    "m273_random_child": {
+      "report_bytes": 2809,
+      "report_sha256": "1ae3c44922729f59d77e2cd8311937467b63e1691b587d42c8b854cfd0e8de05",
+      "rows": 169,
+      "route_correct": 10,
+      "route_accuracy": 0.05917159763313609,
+      "selector_top1": 0.0650887573964497,
+      "selector_top3": 0.1242603550295858,
+      "notion_route_correct": 0,
+      "playwright_route_correct": 10
+    }
+  },
+  "easy_suite_current_parent": {
+    "report_bytes": 2845,
+    "report_sha256": "939c7b3c86f7fc733083e482d6e26ae21731a948a3cc74ca2e3fa99aac501be0",
+    "rows": 70,
+    "route_correct": 10,
+    "route_accuracy": 0.14285714285714285,
+    "selector_top1": 0.12857142857142856,
+    "selector_top3": 0.14285714285714285,
+    "notion_route_correct": 0,
+    "playwright_route_correct": 10
+  },
+  "claim_boundary": "Public MCPMark task-description service-routing proxy only. The checkpoint was not run against MCP servers, isolated service state, user simulation, verifiers, pass@k, external accounts, or real Notion/GitHub/filesystem/Postgres/Playwright operations. This is not an official MCPMark score, native WebGPU capability, or external-side-effect result.",
+  "receipt_self_sha256": "55effd390e304587a0cf2b186ef22a9514be905bd5c24d99e124f402ebc52eb0"
+}

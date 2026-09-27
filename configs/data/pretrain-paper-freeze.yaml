@@ -1,0 +1,30 @@
+# Content-addressed readiness contract for the matched 34M 5-TPP screen and promoted 20-TPP run.
+#
+# `scripts/freeze_corpus.py` fails closed until every referenced artifact exists and passes the
+# corpus/tokenizer/split/decontamination checks. The freeze itself contains no timestamp or
+# absolute path: identical artifacts produce identical JSON.
+kind: localagent_packed_corpus_freeze_spec
+schema_version: 1
+
+corpus_config: configs/data/pretrain-paper.yaml
+shards_dir: data/shards/paper-all
+freeze_path: data/shards/paper-all/freeze.json
+tokenizer:
+  kind: bpe
+  path: data/tokenizer-paper-16k.json
+  vocab_size: 16384
+
+expected:
+  seq_len: 2048
+  min_train_tokens: 171409408
+  tokenizer_training_split: train
+
+training_configs:
+  - configs/train/pretrain-paper-5tpp-hybrid-seed2026.yaml
+  - configs/train/pretrain-paper-5tpp-attn-seed2026.yaml
+  - configs/train/pretrain-paper-5tpp-hybrid-seed2027.yaml
+  - configs/train/pretrain-paper-5tpp-attn-seed2027.yaml
+  - configs/train/pretrain-paper-5tpp-hybrid-seed2028.yaml
+  - configs/train/pretrain-paper-5tpp-attn-seed2028.yaml
+  - configs/train/pretrain-paper-hybrid.yaml
+  - configs/train/pretrain-paper-attn.yaml

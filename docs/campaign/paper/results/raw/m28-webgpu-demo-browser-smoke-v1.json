@@ -1,0 +1,38 @@
+{
+  "bundle": {
+    "action_model_file": "action_model.fp16.onnx",
+    "bundle_identity_sha256": "14a883bdc6c781ad1ad771a03d820bab1db59554bb502b39142bbc2aefda3f5f",
+    "manifest_sha256": "86bbee00d783ca69af02843a4cf935ff978612b81b6a2fedd47fd943e611bee4",
+    "model_parameters": 10524544,
+    "parity_gate_passed": true,
+    "source": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/web"
+  },
+  "cases": [
+    {
+      "args": {
+        "recipient": "Dana the quarterly"
+      },
+      "backend_label": "webgpu",
+      "confidence": 0.87,
+      "latency_ms": 19,
+      "predicted_route": "app_action",
+      "predicted_tool": "send_email",
+      "prompt": "Email Dana the quarterly report"
+    }
+  ],
+  "claim_boundary": "This proves that the current static demo and verified bundle load together and produce one in-browser dispatch. It does not establish native WebGPU adapter capability, benchmark accuracy, or execution against a real email account.",
+  "deployment": {
+    "browser_surface": "Codex in-app Browser",
+    "demo_source": "spaces/localagent-webgpu",
+    "external_accounts": false,
+    "external_action_executed": false,
+    "model_ready": true,
+    "native_adapter_verified": false,
+    "served_url": "http://127.0.0.1:8812/index.html?backend=webgpu",
+    "target": "temporary clean staging copy",
+    "webgpu_badge_observed": true
+  },
+  "kind": "localagent_webgpu_demo_browser_smoke",
+  "schema_version": 1,
+  "verified": true
+}

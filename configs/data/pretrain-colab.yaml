@@ -1,0 +1,53 @@
+# A practical, auditable Colab pretraining mixture for the 34M WebGPU model.
+#
+# This is intentionally a bounded stream, not a bulk mirror of the upstream corpora. The exact
+# accepted documents/licenses are written to download_manifest.json and mixture.jsonl. The
+# 120M-character default is roughly 25–40M BPE tokens depending on the sampled text/code mix.
+version: 1
+seed: 42
+target_chars: 120000000
+min_document_chars: 200
+max_document_chars: 1000000
+
+sources:
+  # Near-deduplicated educational web text from the ODC-By SmolLM corpus.
+  - name: fineweb_edu_dedup
+    dataset: HuggingFaceTB/smollm-corpus
+    revision: 3ba9d605774198c5868892d7a8deda78031a781f
+    subset: fineweb-edu-dedup
+    split: train
+    text_field: text
+    license: ODC-By-1.0
+    weight: 0.65
+    shuffle_buffer: 10000
+    source_fields: [id]
+
+  # Synthetic textbook-style explanations improve sample efficiency at tiny scale.
+  - name: cosmopedia_v2
+    dataset: HuggingFaceTB/smollm-corpus
+    revision: 3ba9d605774198c5868892d7a8deda78031a781f
+    subset: cosmopedia-v2
+    split: train
+    text_field: text
+    license: ODC-By-1.0
+    weight: 0.15
+    shuffle_buffer: 10000
+    source_fields: [id]
+
+  # Deduplicated Python. Restrict the older CodeParrot snapshot to straightforward permissive
+  # per-file licenses; provenance retains repository/path for attribution and removal.
+  - name: python_code
+    dataset: codeparrot/codeparrot-clean
+    revision: 35a59fb025bc0a102f7d96eac09d145b896d487b
+    split: train
+    text_field: content
+    license_field: license
+    allowed_licenses:
+      - apache-2.0
+      - bsd-2-clause
+      - bsd-3-clause
+      - isc
+      - mit
+    weight: 0.20
+    shuffle_buffer: 10000
+    source_fields: [repo_name, path]

@@ -1,0 +1,577 @@
+{
+  "checkpoint": {
+    "bytes": 52236437,
+    "path": "/private/tmp/appworld-sft-runpython-head-standard-child.pt",
+    "sha256": "654ab13dbd6731fff97baeb91b63fab464b6ed8669893016792105afb72d2ced"
+  },
+  "claim_boundary": "Native AppWorld reset/evaluation of the current LocalAgent checkpoint only. When replay is enabled, only a model-emitted run_python code string is executed in the isolated AppWorld environment; this is an adapter diagnostic, not an AppWorld leaderboard result, AppWorld-UL result, or evidence of email/SMS/Spotify task success.",
+  "configuration": {
+    "action_translation": "appworld_run_python",
+    "experiment_name": "localagent_appworld_sft_runpython_native_dev",
+    "max_interactions": 1,
+    "replay_run_python": true,
+    "retrieve_k": 51,
+    "selector_first": true,
+    "tasks": [
+      "50e1ac9_1",
+      "50e1ac9_2",
+      "50e1ac9_3",
+      "fac291d_1",
+      "fac291d_2",
+      "fac291d_3",
+      "530b157_1",
+      "530b157_2",
+      "530b157_3",
+      "4ec8de5_1",
+      "4ec8de5_2",
+      "4ec8de5_3"
+    ]
+  },
+  "environment": {
+    "environment_reset_per_task": true,
+    "external_accounts": false,
+    "native_runtime_executed": true,
+    "screenshots": false,
+    "state_side_effects": "isolated AppWorld task databases only"
+  },
+  "kind": "localagent_appworld_checkpoint_native_probe",
+  "receipt_self_sha256": "f12f52ecb63d22c033d9962ceed5479d1d8c3385dc21421acf8afe742f7de0f6",
+  "runner": {
+    "contract_verification": {
+      "passed": 1,
+      "result": {
+        "difficulty": 2,
+        "failed": 0,
+        "failure_labels": [],
+        "num_tests": 2,
+        "pass_labels": [
+          "no_op_fail",
+          "no_op_pass"
+        ],
+        "passed": 2,
+        "success": true,
+        "task_id": "50e1ac9_1"
+      },
+      "tasks": 1
+    },
+    "data_version": "0.2.0",
+    "package": "appworld",
+    "root": "/private/tmp/appworld-data",
+    "split_policy": "caller-selected train/dev tasks with full public ground-truth verifiers",
+    "version": "0.2.0.dev0"
+  },
+  "schema_version": 1,
+  "summary": {
+    "action_replayed": 12,
+    "native_api_calls": 0,
+    "native_success_rate": 0.0,
+    "native_successes": 0,
+    "tasks": 12
+  },
+  "tasks": [
+    {
+      "action_replayed": true,
+      "evaluation": {
+        "difficulty": 2,
+        "failed": 1,
+        "failure_labels": [
+          "no_op_fail"
+        ],
+        "num_tests": 2,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 126,
+        "sha256": "48940cac5af02a921d596148a45a92c7dce56da60d1d0111c57d065d672fb1cf"
+      },
+      "model_output": {
+        "bytes": 254,
+        "sha256": "8bbfde65c2ee7bc1ee585ad8759bc68e7d1be1d9ee78e58c112100070e1753bc"
+      },
+      "native_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 102,
+        "sha256": "1b86dec64e26706949e305af97c11886ef1bf3528225f17adb17d54e3afc9d93"
+      },
+      "predicted_tool": "run_python",
+      "replay_response": {
+        "bytes": 166,
+        "sha256": "39fd120d78f46729f9f30b77a4b6b3cbce321aee586a0fcadaf4faf61914ad61"
+      },
+      "task_id": "50e1ac9_1",
+      "task_spec": {
+        "bytes": 464,
+        "path": "/private/tmp/appworld-data/data/tasks/50e1ac9_1/specs.json",
+        "sha256": "d1e04d2e674fdd635e29655f82e80e506e8f2faa095f7f959a123985df6a90b4"
+      }
+    },
+    {
+      "action_replayed": true,
+      "evaluation": {
+        "difficulty": 2,
+        "failed": 1,
+        "failure_labels": [
+          "no_op_fail"
+        ],
+        "num_tests": 2,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 126,
+        "sha256": "de5ef39de524e38ef7ebd9ea57d40351242c7ba13fe5675fb728cbfe39bb236c"
+      },
+      "model_output": {
+        "bytes": 254,
+        "sha256": "7031abcdcd5861bd71b9f4e7bf64de2c5f7c7fbd09b271fddb7ac8dae85a6e99"
+      },
+      "native_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 102,
+        "sha256": "ab18a8af8d2b189b4bd3aa178069fec8fbd05b20b88244a31b444365237fd321"
+      },
+      "predicted_tool": "run_python",
+      "replay_response": {
+        "bytes": 166,
+        "sha256": "a0378bc3fe3354c999ab8305ac43f9a8b2481d2cf9926547b8cb9f13ffcd0965"
+      },
+      "task_id": "50e1ac9_2",
+      "task_spec": {
+        "bytes": 464,
+        "path": "/private/tmp/appworld-data/data/tasks/50e1ac9_2/specs.json",
+        "sha256": "2023f602a5d4a054304bdc5ebac3390e1b7ea7c7c8321a167e732d1b7dfb0758"
+      }
+    },
+    {
+      "action_replayed": true,
+      "evaluation": {
+        "difficulty": 2,
+        "failed": 1,
+        "failure_labels": [
+          "no_op_fail"
+        ],
+        "num_tests": 2,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 128,
+        "sha256": "29e764f25b119c475255c8252047be2496e29108315a86dcb84898a81127a111"
+      },
+      "model_output": {
+        "bytes": 258,
+        "sha256": "a767c7a45e947cd1477f4b377838312cccfcb285f54360c047239385ffa219f1"
+      },
+      "native_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 104,
+        "sha256": "3d9260332cccbb0ce59c5a3731b834dc3cfc463f2a71d701eb710bf2d2557001"
+      },
+      "predicted_tool": "run_python",
+      "replay_response": {
+        "bytes": 168,
+        "sha256": "dc89572c1d0847b3a072cbb8461f707fce3e1eb10d6e167741579d6147fccb8b"
+      },
+      "task_id": "50e1ac9_3",
+      "task_spec": {
+        "bytes": 463,
+        "path": "/private/tmp/appworld-data/data/tasks/50e1ac9_3/specs.json",
+        "sha256": "67eccd0da583cfc9e8005954e5493432e4e5e2ef88cb72d7a8da8bd5cfca2d4e"
+      }
+    },
+    {
+      "action_replayed": true,
+      "evaluation": {
+        "difficulty": 2,
+        "failed": 1,
+        "failure_labels": [
+          "no_op_fail"
+        ],
+        "num_tests": 2,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 97,
+        "sha256": "027fa6fa6f1b718d3df30a9efd13cad8f1e8f4f57bf521dd8b73f28683786d39"
+      },
+      "model_output": {
+        "bytes": 86,
+        "sha256": "6493f97b09342af5ff8d8d393666b005215150b7ada823eb399f6fbad858031b"
+      },
+      "native_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 18,
+        "sha256": "34816eabce328aba1d2790b810744e8ff4e2c01bc000d695c1662edafdb3142d"
+      },
+      "predicted_tool": "run_python",
+      "replay_response": {
+        "bytes": 126,
+        "sha256": "865b5de960cff7c6ad610e973b3b5c09ceb87919abc7bc4c3b76e9091c4bea29"
+      },
+      "task_id": "fac291d_1",
+      "task_spec": {
+        "bytes": 430,
+        "path": "/private/tmp/appworld-data/data/tasks/fac291d_1/specs.json",
+        "sha256": "a768552ee9194958bec0f399e399efadf613a9e09ff126f115b4cc47999494bd"
+      }
+    },
+    {
+      "action_replayed": true,
+      "evaluation": {
+        "difficulty": 2,
+        "failed": 1,
+        "failure_labels": [
+          "no_op_fail"
+        ],
+        "num_tests": 2,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 97,
+        "sha256": "027fa6fa6f1b718d3df30a9efd13cad8f1e8f4f57bf521dd8b73f28683786d39"
+      },
+      "model_output": {
+        "bytes": 86,
+        "sha256": "6493f97b09342af5ff8d8d393666b005215150b7ada823eb399f6fbad858031b"
+      },
+      "native_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 18,
+        "sha256": "34816eabce328aba1d2790b810744e8ff4e2c01bc000d695c1662edafdb3142d"
+      },
+      "predicted_tool": "run_python",
+      "replay_response": {
+        "bytes": 126,
+        "sha256": "865b5de960cff7c6ad610e973b3b5c09ceb87919abc7bc4c3b76e9091c4bea29"
+      },
+      "task_id": "fac291d_2",
+      "task_spec": {
+        "bytes": 438,
+        "path": "/private/tmp/appworld-data/data/tasks/fac291d_2/specs.json",
+        "sha256": "835d0be299df2208a0ec83e3bbd3605eb5a24444ffbcd1f2b7f9f03f67b62793"
+      }
+    },
+    {
+      "action_replayed": true,
+      "evaluation": {
+        "difficulty": 2,
+        "failed": 1,
+        "failure_labels": [
+          "no_op_fail"
+        ],
+        "num_tests": 2,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 97,
+        "sha256": "027fa6fa6f1b718d3df30a9efd13cad8f1e8f4f57bf521dd8b73f28683786d39"
+      },
+      "model_output": {
+        "bytes": 86,
+        "sha256": "6493f97b09342af5ff8d8d393666b005215150b7ada823eb399f6fbad858031b"
+      },
+      "native_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 18,
+        "sha256": "34816eabce328aba1d2790b810744e8ff4e2c01bc000d695c1662edafdb3142d"
+      },
+      "predicted_tool": "run_python",
+      "replay_response": {
+        "bytes": 126,
+        "sha256": "865b5de960cff7c6ad610e973b3b5c09ceb87919abc7bc4c3b76e9091c4bea29"
+      },
+      "task_id": "fac291d_3",
+      "task_spec": {
+        "bytes": 439,
+        "path": "/private/tmp/appworld-data/data/tasks/fac291d_3/specs.json",
+        "sha256": "7117f9e4481de69b06d02bd1e2eb9c8f5b1e3d526c537ef4fcb63b3805d117aa"
+      }
+    },
+    {
+      "action_replayed": true,
+      "evaluation": {
+        "difficulty": 3,
+        "failed": 9,
+        "failure_labels": [
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail"
+        ],
+        "num_tests": 10,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 238,
+        "sha256": "6fb7d0e97698da2270d7ccdd2260ae4115245421adfeae60424223a422bbff19"
+      },
+      "model_output": {
+        "bytes": 90,
+        "sha256": "d18c1ec5e337b13534357924a525826a9f412c24ae8fbf5b347dd0ea4d29493f"
+      },
+      "native_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 20,
+        "sha256": "406e0d9fcd5c0a61825cb6cc171f1b21c68ddc4ca43bc61fc0e89f8a38f2bb44"
+      },
+      "predicted_tool": "run_python",
+      "replay_response": {
+        "bytes": 130,
+        "sha256": "c00eafe84df63661d859e16e16a2057bf2e5d1b1f1f01da96329e94fc2c6f9dc"
+      },
+      "task_id": "530b157_1",
+      "task_spec": {
+        "bytes": 585,
+        "path": "/private/tmp/appworld-data/data/tasks/530b157_1/specs.json",
+        "sha256": "484163be105a8423ac5c6b6172874746c2f2910b0d4713c6ecb765567c2e04fc"
+      }
+    },
+    {
+      "action_replayed": true,
+      "evaluation": {
+        "difficulty": 3,
+        "failed": 9,
+        "failure_labels": [
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail"
+        ],
+        "num_tests": 10,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 234,
+        "sha256": "29a24eb73ae70603811d0e90fb08b4ca6dfefc71c77c50e3efc84decf0b8bc71"
+      },
+      "model_output": {
+        "bytes": 96,
+        "sha256": "f29d22ef137d11f108e1bb857aa04cfe49021bb75970691c1be73ed75d0190dc"
+      },
+      "native_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 23,
+        "sha256": "825651173b72588c7f79aa733a80525017d9edfabf12c0f1c36ec0cc815afa4c"
+      },
+      "predicted_tool": "run_python",
+      "replay_response": {
+        "bytes": 87,
+        "sha256": "8305e441da50130ec0d9d282232cd46cb622c00320c9fcf51381134dc2f046f2"
+      },
+      "task_id": "530b157_2",
+      "task_spec": {
+        "bytes": 580,
+        "path": "/private/tmp/appworld-data/data/tasks/530b157_2/specs.json",
+        "sha256": "dde1a25f1d8adf32fc33b87eacd8715bbd482bd15985f7d9157a585550346843"
+      }
+    },
+    {
+      "action_replayed": true,
+      "evaluation": {
+        "difficulty": 3,
+        "failed": 9,
+        "failure_labels": [
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail"
+        ],
+        "num_tests": 10,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 255,
+        "sha256": "0442311f80099ce6023bd75887538661dedfa798ec11c3f058083908a92ee299"
+      },
+      "model_output": {
+        "bytes": 122,
+        "sha256": "328378993e6e49a9181f6707aaf6f21766682cb9b2e1a25033b9bfcc4c402f66"
+      },
+      "native_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 36,
+        "sha256": "1eba4e93fbaa23da10f101f2631dbe36f0a97f2ae67d7d673307bceafab1df4a"
+      },
+      "predicted_tool": "run_python",
+      "replay_response": {
+        "bytes": 100,
+        "sha256": "5290c9d1c9fe79dc8143bbd5987f1241886536190603529e3daf8fcdc25e4798"
+      },
+      "task_id": "530b157_3",
+      "task_spec": {
+        "bytes": 598,
+        "path": "/private/tmp/appworld-data/data/tasks/530b157_3/specs.json",
+        "sha256": "8e6a596843b8153cd47952bd72e43fabfb1c7541d6f4a056bf0bea22b0f4e8b7"
+      }
+    },
+    {
+      "action_replayed": true,
+      "evaluation": {
+        "difficulty": 1,
+        "failed": 1,
+        "failure_labels": [
+          "no_op_fail"
+        ],
+        "num_tests": 2,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 98,
+        "sha256": "2df257490aeb122f0f9d9b18d40e48b8d79a801330f74a5111eaa3b8bacc3163"
+      },
+      "model_output": {
+        "bytes": 106,
+        "sha256": "be32ddc3c35baaece0d1bbe8c311dfec09f34ea1970baa0dfb67b72bcdc7a460"
+      },
+      "native_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 28,
+        "sha256": "4d7239e3abf3cc1262aafbbce0a51a49787bb7108522f4a856553fc3c6df423f"
+      },
+      "predicted_tool": "run_python",
+      "replay_response": {
+        "bytes": 92,
+        "sha256": "454806ee516ab6aca23eb801ba861cb7899a5f659efb94f396530e6f1dfc6678"
+      },
+      "task_id": "4ec8de5_1",
+      "task_spec": {
+        "bytes": 435,
+        "path": "/private/tmp/appworld-data/data/tasks/4ec8de5_1/specs.json",
+        "sha256": "24fad846908b271549c264e75d60f3ddddb510eda428c2e390718e73d0d23981"
+      }
+    },
+    {
+      "action_replayed": true,
+      "evaluation": {
+        "difficulty": 1,
+        "failed": 1,
+        "failure_labels": [
+          "no_op_fail"
+        ],
+        "num_tests": 2,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 90,
+        "sha256": "6f0ba91d135433c54094480db4b68a6296131d511ccbd838ae73860ef4423946"
+      },
+      "model_output": {
+        "bytes": 90,
+        "sha256": "fa218ed8f9cf2212e9452645450b87276fe59d542ea1a69ed6d6da924d1eec23"
+      },
+      "native_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 20,
+        "sha256": "16b47d74e9c8d27f7e81b37058d62a72025029e30c5b5460cc0d9dd0fefdb8f3"
+      },
+      "predicted_tool": "run_python",
+      "replay_response": {
+        "bytes": 84,
+        "sha256": "19fa60b64414fc143b52c0fd7da7dd4a96b83f7f20de937fdf71dc9e32d739ed"
+      },
+      "task_id": "4ec8de5_2",
+      "task_spec": {
+        "bytes": 428,
+        "path": "/private/tmp/appworld-data/data/tasks/4ec8de5_2/specs.json",
+        "sha256": "5bb5c1c07e10b46c7cfa6c465204e0823648183886e5437286be6be8b7fcee02"
+      }
+    },
+    {
+      "action_replayed": true,
+      "evaluation": {
+        "difficulty": 1,
+        "failed": 1,
+        "failure_labels": [
+          "no_op_fail"
+        ],
+        "num_tests": 2,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 94,
+        "sha256": "559fce2c5e80289432d1bfcf539f47870f59f14445a35c7a7af7d3c49ad7a421"
+      },
+      "model_output": {
+        "bytes": 250,
+        "sha256": "36be68ddbf3622c19ba95584177cbb9249f1d7214d7a18814eaf2deaca4844d2"
+      },
+      "native_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 100,
+        "sha256": "7e829219bcfd24af3076ef89748d6ffce2f4d9affe8cad61dcb5685d4610633d"
+      },
+      "predicted_tool": "run_python",
+      "replay_response": {
+        "bytes": 164,
+        "sha256": "620fc013134ef37d2b08ef28b744c44e3e44f164f5b7c54e4b09490cf92d7a82"
+      },
+      "task_id": "4ec8de5_3",
+      "task_spec": {
+        "bytes": 425,
+        "path": "/private/tmp/appworld-data/data/tasks/4ec8de5_3/specs.json",
+        "sha256": "a17fba48c1bc42f656dd1a580fe2d8778d16c478e04fb28e40d16474f9a13f65"
+      }
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "archive": {
+    "bytes": 567745122,
+    "encryption": "zipcrypto",
+    "members": 15,
+    "sha256": "8f5fbe72afab942fe97cdf7fb397e179885d89b5c16862288e9a14bc6d41ca89",
+    "total_uncompressed_bytes": 6107912752
+  },
+  "canary_checks": {
+    "paper_pretraining_corpus_scan": "pending_until_corpus_freeze",
+    "protected_plaintext_files_with_bigbench_canary": 0,
+    "protected_plaintext_files_with_mind2web_canary": 0
+  },
+  "claim_scope": "Protected archive acquisition, production label-blind prompt export, and raw-chain prompt-only decontamination freeze reproducibility; not benchmark-score or chronological-freshness evidence. No protected prompt strings, HTML, labels, actions, or source IDs are published.",
+  "code_revision": "33bd95caeee7bba22dd08ecc935845e15c5e5dc7",
+  "dataset_revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+  "evidence": {
+    "access_terms": {
+      "bytes": 17760,
+      "sha256": "157dbd840264ea29f958c0b7383d63783845c573b3e19a1f39b773be22e0b32d"
+    },
+    "code_license": {
+      "bytes": 1088,
+      "sha256": "953ff47dbbc0c0563d1ec2d245b06d1206f2f38c4ed2f0da728e027ae2e5a973"
+    },
+    "dataset_card": {
+      "bytes": 4308,
+      "sha256": "d2da20abbf17ac82f874d78ced28ceaaf3b15466011d3674deaa2c4597862a4a"
+    }
+  },
+  "historical_v1_adapter_attempt": {
+    "adapter": "mind2web-private-prompt-rows-v1",
+    "audit_published": false,
+    "failure": "rendered_prompt_exceeds_max_prompt_bytes",
+    "max_output_bytes": 134217728,
+    "max_prompt_bytes": 524288,
+    "observed_prompt_bytes": 858832,
+    "prompt_output_published": false
+  },
+  "kind": "localagent_mind2web_protected_archive_reproducibility",
+  "limitations": [
+    "The v1 full-DOM adapter failure at 858832 bytes is retained only as historical evidence; the production v2 ranker keeps prompts within the frozen 1771-byte cap.",
+    "The v2 export and v3 freeze are prompt-only decontamination artifacts and do not support benchmark-score or chronological-freshness claims.",
+    "The label-blind ranker's recall ceiling was not measured.",
+    "The benchmark canaries still must be checked against the final pretraining corpus; absence from protected members is not that corpus-level check."
+  ],
+  "members": [
+    {
+      "bytes": 421367779,
+      "compressed_bytes": 45423244,
+      "crc32": "1636e877",
+      "member": "test_domain/test_domain_0.json",
+      "sha256": "610446e6ff5ce686fc97de1029a9681db4ea79bbf27b1d2be701f85d38ecb204",
+      "split": "cross_domain"
+    },
+    {
+      "bytes": 376739829,
+      "compressed_bytes": 35839162,
+      "crc32": "938a5c34",
+      "member": "test_domain/test_domain_1.json",
+      "sha256": "41ef87e6cb1265a84e0b3515232fa1ab1966ec67f1a298cf09646435bae15b3f",
+      "split": "cross_domain"
+    },
+    {
+      "bytes": 424422239,
+      "compressed_bytes": 37163683,
+      "crc32": "eae1ec1b",
+      "member": "test_domain/test_domain_2.json",
+      "sha256": "c6ad472a529227641d39e81387c4d1163e7de206353a845c443f4cec1035dd27",
+      "split": "cross_domain"
+    },
+    {
+      "bytes": 447969365,
+      "compressed_bytes": 41888778,
+      "crc32": "5b3ef9fe",
+      "member": "test_domain/test_domain_3.json",
+      "sha256": "085cdc6880048fededb6b430380eb7cc3a79b3cc5ac996a33effc5428cf66d06",
+      "split": "cross_domain"
+    },
+    {
+      "bytes": 377258950,
+      "compressed_bytes": 39816382,
+      "crc32": "08f3b22f",
+      "member": "test_domain/test_domain_4.json",
+      "sha256": "e0c71696e9fc436834a183a08ae3eaafd9a07318a39f500bfbdac272dbedd9c4",
+      "split": "cross_domain"
+    },
+    {
+      "bytes": 304303179,
+      "compressed_bytes": 32318105,
+      "crc32": "d6c5c029",
+      "member": "test_domain/test_domain_5.json",
+      "sha256": "ef97ebbba9c73632d1d765ce2eeb4de6f40d678ba9423aee09decb6502e30b99",
+      "split": "cross_domain"
+    },
+    {
+      "bytes": 329330828,
+      "compressed_bytes": 34068235,
+      "crc32": "17f5d662",
+      "member": "test_domain/test_domain_6.json",
+      "sha256": "0ba956fcc984667d8d0aee95a113139f5c3e0e8283f32539ca7798a34606b842",
+      "split": "cross_domain"
+    },
+    {
+      "bytes": 343741559,
+      "compressed_bytes": 37576265,
+      "crc32": "860afaaf",
+      "member": "test_domain/test_domain_7.json",
+      "sha256": "92df7ede74753484456b729660ce2aed17c405e133b790a9ec518206f7063386",
+      "split": "cross_domain"
+    },
+    {
+      "bytes": 339701444,
+      "compressed_bytes": 31904427,
+      "crc32": "366ea935",
+      "member": "test_domain/test_domain_8.json",
+      "sha256": "a07a700dc95134818ca8203e185a8937e8afa576cd603dcf516d314661afe424",
+      "split": "cross_domain"
+    },
+    {
+      "bytes": 41885853,
+      "compressed_bytes": 3636322,
+      "crc32": "56c8d9bc",
+      "member": "test_domain/test_domain_9.json",
+      "sha256": "d917a144f3a6196da321828482c4550d29cbc200d0035081cd8a8e23712fe5f2",
+      "split": "cross_domain"
+    },
+    {
+      "bytes": 770875063,
+      "compressed_bytes": 64308671,
+      "crc32": "125c82c4",
+      "member": "test_task/test_task_0.json",
+      "sha256": "917d979ab9e55cec4ad797fdbc85ef02552ed8c88dcda412791ce80dc09410df",
+      "split": "cross_task"
+    },
+    {
+      "bytes": 628052373,
+      "compressed_bytes": 52486725,
+      "crc32": "c8667b06",
+      "member": "test_task/test_task_1.json",
+      "sha256": "dc42b3ccf9eb5ba080ed85cb7d9e119fb2b6ac05093edbf84d9780f7ebb266de",
+      "split": "cross_task"
+    },
+    {
+      "bytes": 309484105,
+      "compressed_bytes": 26771340,
+      "crc32": "3c89b18b",
+      "member": "test_task/test_task_2.json",
+      "sha256": "33711bf515b739e595c4e872ec849f71c988201be11ef09bff54a35e78c4e23b",
+      "split": "cross_task"
+    },
+    {
+      "bytes": 564229351,
+      "compressed_bytes": 48380165,
+      "crc32": "ea51f1e1",
+      "member": "test_website/test_website_0.json",
+      "sha256": "76e6ba0e55e5957b0204e532be613bbbc595ea771c0ccaa86f5dafebe3e3a525",
+      "split": "cross_website"
+    },
+    {
+      "bytes": 428550835,
+      "compressed_bytes": 36160552,
+      "crc32": "f873a2a3",
+      "member": "test_website/test_website_1.json",
+      "sha256": "429d0c5375f36eb7381e997a6305bcaa317b571623af9b029bd1f3da56dea5dd",
+      "split": "cross_website"
+    }
+  ],
+  "plaintext_member_identities_sha256": "aac613c15140d08cd1760c0935fa7d3fc3f6a87065ca6b2d62b0c024796555c8",
+  "production_v2_prompt_export": {
+    "adapter": "mind2web-private-prompt-rows-v2",
+    "adapter_audit": {
+      "audit_self_sha256": "0700ed62ca7fbd1e1e24b5e65c0da01b46367ff0981257eb0fe09136e44cedf0",
+      "bytes": 17278,
+      "file_sha256": "1c0a0399b2f463b354a477e3f27cd470615c8e7474a74358e3a106358424d51b",
+      "schema_version": 3
+    },
+    "adapter_implementation": {
+      "bytes": 73241,
+      "sha256": "9083ad20cc10f95cdd03ddbaa034faea668e7227c19eda7f5de219c75e22267d"
+    },
+    "label_isolation": {
+      "current_action_emitted": false,
+      "expected_calls_emitted": false,
+      "negative_candidates_emitted": false,
+      "positive_candidates_emitted": false,
+      "prior_action_representations_emitted": false,
+      "scores_emitted": false
+    },
+    "max_prompt_bytes": 1771,
+    "mode": "production",
+    "prompt_export": {
+      "bytes": 18424572,
+      "rows": 9378,
+      "sha256": "4d754431f42eb3a5dbf5cc9dd33783d2a2b8da38a104ac1d08ec0b3bb7a71e2d"
+    },
+    "ranker": {
+      "config": {
+        "bytes": 2273,
+        "config_self_sha256": "ea258f0eee464f69f18baa97e0631a259c06051d2a9b2ae8454ce34b3244b8f3",
+        "sha256": "cf9c6e75c465827a97121601b937e77ce992cda25316620dbae73b32b90a3f46"
+      },
+      "implementation": {
+        "bytes": 33592,
+        "sha256": "7b6ed35015e8829481c083ce8634277517991e570bbb9485e0ec9b4354b0ddc8"
+      },
+      "recall_ceiling_measured": false,
+      "scores_emitted": false,
+      "version": "mind2web-dom-lexical-v1"
+    },
+    "split": "cross_domain+cross_task+cross_website",
+    "tasks": 1341
+  },
+  "raw_chain_v3_freeze": {
+    "benchmark_plan": {
+      "bytes": 10113,
+      "sha256": "09584d59c133345eb3fe4507b65a1b7514f04378d6f9b7cae1372afda4a108db"
+    },
+    "deduplication": {
+      "input_rows": 9378,
+      "normalized_prompt_duplicates_removed": 0,
+      "unique_normalized_prompts": 9378
+    },
+    "denylist": {
+      "bytes": 18330792,
+      "records": 9378,
+      "sha256": "759a19c0135ecd5da3d657c2ca43d2c047148bbba243e34d389070756a113f27"
+    },
+    "freeze_contract": {
+      "bytes": 2505,
+      "sha256": "298837f37991646d322844d9d20ccb062ff064974cf6f68394793b8ac5db0cc6"
+    },
+    "independent_replay": {
+      "denylist_byte_identical": true,
+      "provenance_byte_identical": true,
+      "public_verifier_passed": true,
+      "raw_prompt_reexport_byte_identical": true
+    },
+    "isolation": {
+      "benchmark_score_evidence": false,
+      "contains_labels_or_expected_outputs": false,
+      "fresh_labeled_evaluation_evidence": false,
+      "prompt_only": true,
+      "purpose": "pretraining_corpus_decontamination_only"
+    },
+    "provenance": {
+      "bytes": 4175,
+      "file_sha256": "8024bb59e77c36b01b874e46fe62e764bbbec1896cf2cc37fb5542da418c8cef",
+      "manifest_self_sha256": "1c9d5e91feaee6a10b1567ae1a76a62f1f9518b350288121fa0675a6f236e6df"
+    }
+  },
+  "report_self_sha256": "954c7f509b4aa0aeb709efecea42402170ca109373ecc6ed025f7cd5c4d4dddd",
+  "schema_version": 1,
+  "status": "verified_archive_members_v2_prompt_export_and_v3_raw_chain_freeze"
+}

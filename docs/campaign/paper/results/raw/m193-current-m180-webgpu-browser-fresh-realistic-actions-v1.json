@@ -1,0 +1,75 @@
+{
+  "kind": "localagent_m180_webgpu_browser_fresh_action_eval",
+  "schema_version": 1,
+  "benchmark_id": "localagent_webgpu_fresh_realistic_actions",
+  "source": {
+    "type": "local_synthetic_prompt_set",
+    "single_step_prompts": 12,
+    "planner_prompts": 2,
+    "public_benchmark_rows_used": 0,
+    "claim": "Fresh realistic smoke only over the hash-bound m180 child export; this is not an official benchmark split."
+  },
+  "checkpoint": {
+    "sha256": "10827649f07182a08f8c11104d4713e76b8acaddc73020c5a4c77950de7b23a0",
+    "stage": "sft_public_agent_continuation",
+    "parameters": 10524544
+  },
+  "bundle": {
+    "path": "/private/tmp/m183-demo",
+    "app_sha256": "eb1db3ddd72b12f669a977cdcc0ac0464ef64194e5f58294f6c37ce64efb5036",
+    "bundle_manifest_sha256": "b29196afb860b3a073a042d50d90effda5ce87e8891916b454bd248a702c7683",
+    "meta_sha256": "6d6a79b331ce3f60c097f2bd3662a2178345aef68a7ded61e67737ff8e8cb89e",
+    "bundle_identity_sha256": "76d0bb563031d1a4f4ea271e31e3da8edb9db8b60aeae9d2abf2c8fbdf5c1246",
+    "parity_gate_passed": true
+  },
+  "browser": {
+    "url": "http://127.0.0.1:5181/",
+    "model_ready": true,
+    "backend_badge": "WEBGPU",
+    "external_side_effects": false,
+    "onnx_runtime_placement_warnings": 2
+  },
+  "single_step": {
+    "rows": [
+      {"prompt": "Save the search result to Notion.", "expected_tool": "notion_create_page", "predicted_tool": "open_url", "route": "app_action", "exact_tool": false, "latency_ms": 37},
+      {"prompt": "What does ephemeral mean?", "expected_tool": "define", "predicted_tool": "open_url", "route": "web_search", "exact_tool": false, "latency_ms": 12},
+      {"prompt": "Open https://github.com/pytorch/pytorch", "expected_tool": "open_url", "predicted_tool": "open_url", "route": "web_search", "exact_tool": true, "latency_ms": 13},
+      {"prompt": "List the files in the src directory", "expected_tool": "list_dir", "predicted_tool": "open_url", "route": "web_search", "exact_tool": false, "latency_ms": 12},
+      {"prompt": "Set a timer for 10 minutes", "expected_tool": "set_timer", "predicted_tool": "click", "route": "app_action", "exact_tool": false, "latency_ms": 10},
+      {"prompt": "Search the web for AI news.", "expected_tool": "web_search", "predicted_tool": "open_url", "route": "web_search", "exact_tool": false, "latency_ms": 10},
+      {"prompt": "Read config.yaml and run the tests.", "expected_tool": null, "predicted_tool": null, "route": "text", "exact_tool": null, "latency_ms": 11},
+      {"prompt": "Add a note to Notion: quarterly review", "expected_tool": "notion_create_page", "predicted_tool": "open_url", "route": "app_action", "exact_tool": false, "latency_ms": 10},
+      {"prompt": "Send an email to Alex with subject Project update", "expected_tool": "email_send", "predicted_tool": "open_url", "route": "app_action", "exact_tool": false, "latency_ms": 10},
+      {"prompt": "What is the capital of France?", "expected_tool": null, "predicted_tool": "open_url", "route": "web_search", "exact_tool": null, "latency_ms": 10},
+      {"prompt": "Click the submit button", "expected_tool": "click", "predicted_tool": "open_url", "route": "web_search", "exact_tool": false, "latency_ms": 11},
+      {"prompt": "Delete my calendar event", "expected_tool": null, "predicted_tool": "open_url", "route": "app_action", "exact_tool": null, "latency_ms": 9}
+    ],
+    "unambiguous_rows": 9,
+    "exact_tool_count": 1,
+    "exact_tool_rate": 0.1111111111111111
+  },
+  "planner": {
+    "rows": [
+      {
+        "prompt": "Search the web for AI news, then save it to Notion.",
+        "expected_tools": ["web_search", "notion_create_page"],
+        "predicted_tools": ["web_search", "open_url", "web_search", "open_url"],
+        "exact_trajectory": false,
+        "steps": 4,
+        "elapsed_ms": 44
+      },
+      {
+        "prompt": "Read config.yaml, run the tests, then commit.",
+        "expected_tools": ["read_file", "run_tests", "git_commit"],
+        "predicted_tools": [],
+        "exact_trajectory": false,
+        "steps": 0,
+        "elapsed_ms": 12
+      }
+    ],
+    "exact_trajectory_count": 0,
+    "trajectory_count": 2
+  },
+  "claim_boundary": "A fresh local browser smoke over synthetic realistic prompts using the hash-bound m180 child export. The page reported WEBGPU and model-ready status, but this does not establish learned quality on MobileGym, BrowserGym, OSWorld, MCPMark, email, Notion, or any external account. The run had no external side effects and remains diagnostic rather than an official benchmark score.",
+  "receipt_self_sha256": "a62ac5cd59085c679db394a091b7b3e0cf35cf848a736d2388e3976a57539c56"
+}

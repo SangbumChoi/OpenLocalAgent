@@ -1,0 +1,63 @@
+{
+  "kind": "localagent_mcpmark_state_summary_transfer",
+  "schema_version": 1,
+  "claim_boundary": "Public MIT MCPMark trajectory continuation with execution-state summaries reduced to status, coarse shape, counts, and digests. This is not an official MCPMark score, live MCP execution, verifier success, browser grounding, or external-account side effect.",
+  "dataset": {
+    "name": "Jakumetsu/mcpmark-trajectory-log",
+    "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log",
+    "revision": "e50578f0ab904d8e6a7c576c387c1e76ae482c89",
+    "license": "MIT",
+    "train": {
+      "rows": 8,
+      "tool_calls": 107,
+      "state_counts": {"error": 56, "ok": 51},
+      "jsonl_sha256": "b45da5bcdb207f7304906d016580cf9d17324aed3b59f45f08e92759fe342d1e",
+      "metadata_sha256": "b85b2b7ad27f72ffc7cbbd4a9e73b08c2bff06805bfc7655cf4d34cedb9b02ba"
+    },
+    "eval": {
+      "rows": 2,
+      "tool_calls": 24,
+      "state_counts": {"error": 11, "ok": 13},
+      "jsonl_sha256": "38d5dfa36d2d89194d5e2b0e6f20b34e762d096735c34ac08ae69a47e36b5fde",
+      "metadata_sha256": "8b93f8a86bde24373cfeefc1c38b6cfa3c964ac2dbd20df03e34b8f43de6333d"
+    },
+    "split_policy": "whole trajectory parent records are disjoint; filesystem/Notion/GitHub/Postgres train services are held out from Playwright eval services",
+    "state_policy": "status_shape_digest_only; tool result text, URLs, document content, identifiers, and assistant free text are not retained"
+  },
+  "parent": {
+    "path": "/private/tmp/m194-m180-dispatch-repair-warm.pt",
+    "bytes": 52276521,
+    "sha256": "3b3fd817c6f52e8b922f84c9bb36e7d55e0e243a0f8ee6d0f20c85962a4eeba7"
+  },
+  "training": {
+    "steps": 64,
+    "batch_size": 1,
+    "learning_rate": 0.00001,
+    "max_seq_len": 2048,
+    "warm": {
+      "child_sha256": "1046a1a99d0c557b824432e585f2da327fd3595ab1bb918390e04ec23b347f35",
+      "report_sha256": "ad562530b47e2a5c9d616db4017f92626c023eb06e78fe43b85394db17890c0a",
+      "eval": {"before_token_accuracy": 0.3801324503311258, "after_token_accuracy": 0.41456953642384103, "after_sequence_accuracy": 0.0, "loss_tokens": 755},
+      "weight_movement_relative_l2": {"embedding": 0.008869821671706732, "attention_or_mixer": 0.0031887962496557083, "ffn": 0.003735656346127153, "normalization": 0.00012906392219475403, "action_heads": 0.0}
+    },
+    "random": {
+      "child_sha256": "89114ead50539da06882689b70083952460089cf9b20f26a994c9a8f0ecaf053",
+      "report_sha256": "e10917029c3c7be61f0bc2610ad00c84c81793d2c5a24bc4a023c37b5f4a81c5",
+      "eval": {"before_token_accuracy": 0.007947019867549669, "after_token_accuracy": 0.1562913907284768, "after_sequence_accuracy": 0.0, "loss_tokens": 755},
+      "weight_movement_relative_l2": {"embedding": 1.2345925973943306, "attention_or_mixer": 0.7787964318643756, "ffn": 0.8780848331546951, "normalization": 0.07908487245020333, "action_heads": 0.0}
+    }
+  },
+  "selector_probe": {
+    "report_sha256": "f0492c9418860df716043f9d026271b586fb9caf042a0bf2d062928022bddd0b",
+    "frozen_backbone": true,
+    "warm_eval": {"tool_decisions": 24, "top1": 0.0, "top3": 0.0, "top5": 0.0, "top10": 0.041666666666666664},
+    "random_eval": {"tool_decisions": 24, "top1": 0.0, "top3": 0.0, "top5": 0.0, "top10": 0.16666666666666666},
+    "interpretation": "Cross-service Playwright generalization fails for both arms; the state summary does not establish a usable unseen-service selector."
+  },
+  "decision": {
+    "export_child": false,
+    "adopt_warm_child": false,
+    "reason": "Warm transfer improves held-out teacher-forced token accuracy by 3.44 points over its own baseline and is much more stable than the matched random body, but exact sequence accuracy remains zero and selector top-1 is zero on the unseen Playwright service. Preserve the state-summary normalizer as a training diagnostic; do not promote the checkpoint for WebGPU MCP control."
+  },
+  "receipt_self_sha256": "a8d0aa97efa2e78b5ad39b14235205f1690783860b048d961aabcca9ff13fc3e"
+}

@@ -1,0 +1,204 @@
+{
+  "benchmark_id": "mobilegym",
+  "claim_boundary": "Matched native MobileGym limit-4 diagnostic over pinned public test IDs using a bounded DOM/text observation projection. It is not the complete 256-task score, visual mobile agent result, Android emulator result, or real-account execution.",
+  "comparison": {
+    "parent_progress_sum": 0.0,
+    "parent_success_rate": 0.0,
+    "parent_tool_counts": {
+      "mobile_input_text": 4
+    },
+    "warm_minus_parent_success_rate": 0.0,
+    "warm_progress_sum": 0.0,
+    "warm_success_rate": 0.0,
+    "warm_tool_counts": {
+      "mobile_input_text": 4
+    }
+  },
+  "decision": {
+    "adoption": "retain_as_offline_initialization_candidate_but_not_native_mobile_promotion",
+    "native_replay_required": true,
+    "reason": "The AgentNet warm child executes cleanly on all four pinned MobileGym canary tasks, but matches the current parent at 0/4 success, 0.0 aggregate progress, and only mobile_input_text actions. Its desktop text-projection gain does not transfer to native mobile state completion.",
+    "webgpu_export_allowed": false
+  },
+  "kind": "localagent_mobilegym_agentnet_warm_parent_canary",
+  "parent": {
+    "checkpoint_sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+    "result": {
+      "model_invocations": 8,
+      "progress_sum": 0.0,
+      "success_rate": 0.0,
+      "successful_tasks": 0,
+      "task_count": 4,
+      "tasks": [
+        {
+          "judge_issue_fields": [
+            "password.changed"
+          ],
+          "passed": false,
+          "progress": 0.0,
+          "steps": 2,
+          "suite": "account",
+          "task_id": "account.Railway12306ChangePassword",
+          "tool_names": [
+            "mobile_input_text"
+          ]
+        },
+        {
+          "judge_issue_fields": [
+            "code_verified",
+            "logged_with_new_password",
+            "password_updated"
+          ],
+          "passed": false,
+          "progress": 0.0,
+          "steps": 2,
+          "suite": "account",
+          "task_id": "account.Railway12306ForgotPasswordReset",
+          "tool_names": [
+            "mobile_input_text"
+          ]
+        },
+        {
+          "judge_issue_fields": [
+            "login.success",
+            "notes.content.filtered"
+          ],
+          "passed": false,
+          "progress": 0.0,
+          "steps": 2,
+          "suite": "account",
+          "task_id": "account.Railway12306LoginWithAccount",
+          "tool_names": [
+            "mobile_input_text"
+          ]
+        },
+        {
+          "judge_issue_fields": [
+            "registration"
+          ],
+          "passed": false,
+          "progress": 0.0,
+          "steps": 2,
+          "suite": "account",
+          "task_id": "account.Railway12306RegisterThenLogin",
+          "tool_names": [
+            "mobile_input_text"
+          ]
+        }
+      ],
+      "tool_counts": {
+        "mobile_input_text": 4
+      }
+    }
+  },
+  "protocol": {
+    "limit": 4,
+    "max_steps": 2,
+    "native_receipt_eligible": false,
+    "observations": "bounded_DOM_text_projection",
+    "official_split": "test",
+    "official_split_verified": true,
+    "selector_first": false,
+    "selector_top_m": 1,
+    "start": 0,
+    "task_count": 4,
+    "vision_used": false
+  },
+  "receipt_self_sha256": "dc7ba62bc82775d5a180acea9ae040bbb97dddb6f5c5c37e2f9ad83f617613a7",
+  "schema_version": 1,
+  "source": {
+    "official_test_task_count": 256,
+    "repository": "https://github.com/Purewhiter/mobilegym",
+    "revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "test_ids_sha256": "cf61a0b2e71721864a1b526a531c433f852e128d2ffa8b81504fc3d74b9830bf",
+    "test_split_sha256": "a3d485015d480f4f1ebbd12dbbf02c25c0aa667d1afcf5f6fa35f0263a82c567",
+    "train_split_sha256": "0ecef460fecfd8aa91dcbb2cd4cca17b033f620f85a50d7f0b598ed19a27c0eb"
+  },
+  "source_artifacts": {
+    "parent_report": {
+      "bytes": 4647,
+      "path": "/private/tmp/m466-mobilegym-current-parent-canary.json",
+      "sha256": "9ac229da4f6bc1f3250ec0a55bb94ca359852931ae811dcb2b98040b0aabdc2b"
+    },
+    "runner": {
+      "bytes": 13491,
+      "path": "scripts/run_mobilegym_full_eval.py",
+      "sha256": "7bdb9cc4beef21088cf149b377af3dac08f8515184c6ebc65dacfa90aabfd38d"
+    },
+    "warm_report": {
+      "bytes": 4652,
+      "path": "/private/tmp/m468-mobilegym-agentnet-warm.json",
+      "sha256": "4ce7418e50e04157775cf6e4187d767048ca74e78891778918f0caee4d9b5adb"
+    }
+  },
+  "warm": {
+    "checkpoint_sha256": "3f2653236a4a3c77ac2a2bb1a05d5b8a5d3ae69afdc5f8d6d65d77ed18c4f3fa",
+    "result": {
+      "model_invocations": 8,
+      "progress_sum": 0.0,
+      "success_rate": 0.0,
+      "successful_tasks": 0,
+      "task_count": 4,
+      "tasks": [
+        {
+          "judge_issue_fields": [
+            "password.changed"
+          ],
+          "passed": false,
+          "progress": 0.0,
+          "steps": 2,
+          "suite": "account",
+          "task_id": "account.Railway12306ChangePassword",
+          "tool_names": [
+            "mobile_input_text"
+          ]
+        },
+        {
+          "judge_issue_fields": [
+            "code_verified",
+            "logged_with_new_password",
+            "password_updated"
+          ],
+          "passed": false,
+          "progress": 0.0,
+          "steps": 2,
+          "suite": "account",
+          "task_id": "account.Railway12306ForgotPasswordReset",
+          "tool_names": [
+            "mobile_input_text"
+          ]
+        },
+        {
+          "judge_issue_fields": [
+            "login.success",
+            "notes.content.filtered"
+          ],
+          "passed": false,
+          "progress": 0.0,
+          "steps": 2,
+          "suite": "account",
+          "task_id": "account.Railway12306LoginWithAccount",
+          "tool_names": [
+            "mobile_input_text"
+          ]
+        },
+        {
+          "judge_issue_fields": [
+            "registration"
+          ],
+          "passed": false,
+          "progress": 0.0,
+          "steps": 2,
+          "suite": "account",
+          "task_id": "account.Railway12306RegisterThenLogin",
+          "tool_names": [
+            "mobile_input_text"
+          ]
+        }
+      ],
+      "tool_counts": {
+        "mobile_input_text": 4
+      }
+    }
+  }
+}

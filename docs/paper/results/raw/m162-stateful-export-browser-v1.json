@@ -1,0 +1,396 @@
+{
+  "browser": {
+    "browser_output": {
+      "bytes": 1989,
+      "path": "/private/tmp/m161-browser-trajectory.json",
+      "sha256": "597e29225a24b6caa5e1eeef2902a1ac51156a8a6001a80a66959a927643f0f6"
+    },
+    "external_accounts": false,
+    "network": "local_http_only",
+    "observed_backend": "WEBGPU",
+    "provider_requested": "webgpu",
+    "summary": {
+      "by_trajectory": {
+        "browser_search_open": {
+          "closed_loop_success_rate": 0,
+          "exact_action_rate": 0,
+          "family": "browser",
+          "first_failure": {
+            "expected_tool": "open_url",
+            "observed_args": {},
+            "observed_tool": "mobile_wait",
+            "schema_error": null,
+            "step_id": "open_mail_page",
+            "step_index": 0,
+            "transition_error": "wrong_action"
+          },
+          "schema_valid_rate": 1,
+          "state_transition_rate": 0,
+          "steps": 5,
+          "trajectory_success": false
+        },
+        "gmail_compose_send": {
+          "closed_loop_success_rate": 0.6666666666666666,
+          "exact_action_rate": 0.6666666666666666,
+          "family": "email",
+          "first_failure": {
+            "expected_tool": "mobile_input_text",
+            "observed_args": null,
+            "observed_tool": "mobile_click",
+            "schema_error": "args_not_object",
+            "step_id": "fill_body",
+            "step_index": 4,
+            "transition_error": "wrong_action"
+          },
+          "schema_valid_rate": 0.8333333333333334,
+          "state_transition_rate": 0.6666666666666666,
+          "steps": 6,
+          "trajectory_success": false
+        },
+        "notion_capture": {
+          "closed_loop_success_rate": 0.5,
+          "exact_action_rate": 0.5,
+          "family": "notion",
+          "first_failure": {
+            "expected_tool": "notion_create_page",
+            "observed_args": {},
+            "observed_tool": "mobile_wait",
+            "schema_error": null,
+            "step_id": "create_notion_page",
+            "step_index": 1,
+            "transition_error": "wrong_action"
+          },
+          "schema_valid_rate": 1,
+          "state_transition_rate": 0.5,
+          "steps": 2,
+          "trajectory_success": false
+        }
+      },
+      "closed_loop_success_rate": 0.38461538461538464,
+      "exact_action_rate": 0.38461538461538464,
+      "pass_at_1": 0,
+      "schema_valid_rate": 0.9230769230769231,
+      "state_transition_rate": 0.38461538461538464,
+      "steps": 13,
+      "suite": "localagent-mobile-productivity-trajectory-v1",
+      "trajectories": 3
+    },
+    "surface": "codex_in_app_browser",
+    "trusted_os_input": false
+  },
+  "bundle": {
+    "artifacts": {
+      "action_model.fp16.onnx": {
+        "bytes": 21430322,
+        "path": "/private/tmp/m161-webgpu/action_model.fp16.onnx",
+        "sha256": "ef048e7922cb8c31bd4c2feca18a5f3d964b719e731ff00e9e127687e61bf7de"
+      },
+      "action_model.onnx": {
+        "bytes": 42700043,
+        "path": "/private/tmp/m161-webgpu/action_model.onnx",
+        "sha256": "744e72d563284738c620a7bac525cc2054880fb818cb78e19feccefd7f9ac9af"
+      },
+      "dispatch_heads.json": {
+        "bytes": 1265339,
+        "path": "/private/tmp/m161-webgpu/dispatch_heads.json",
+        "sha256": "16bf176b705ba89e40199aedf2f8953b5dd272efa4e298d4c5c8f07284c1ab44"
+      },
+      "heads.json": {
+        "bytes": 3361821,
+        "path": "/private/tmp/m161-webgpu/heads.json",
+        "sha256": "bde4232e35997c158815c6141a8cced94b6f1caadd0b4e8add8a4d4c5e3211bf"
+      },
+      "meta.json": {
+        "bytes": 11548,
+        "path": "/private/tmp/m161-webgpu/meta.json",
+        "sha256": "6d6a79b331ce3f60c097f2bd3662a2178345aef68a7ded61e67737ff8e8cb89e"
+      },
+      "model.fp16.onnx": {
+        "bytes": 34026190,
+        "path": "/private/tmp/m161-webgpu/model.fp16.onnx",
+        "sha256": "410b43d20653f97b77d25949793f83025467f04637bcb162b31e896ad0e03268"
+      },
+      "model.onnx": {
+        "bytes": 67877334,
+        "path": "/private/tmp/m161-webgpu/model.onnx",
+        "sha256": "2ff0a3254e577f585f01cddad2f11ef6e541403f52daf01591c7074f91c5279e"
+      },
+      "tokenizer.json": {
+        "bytes": 1134224,
+        "path": "/private/tmp/m161-webgpu/tokenizer.json",
+        "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+      }
+    },
+    "checkpoint_sha256": "67ea2e43ed5f066f432ebcff149aa1305e9d9a9bc9fcae0d350b55842bf0ea51",
+    "directory": "/private/tmp/m161-webgpu",
+    "manifest": {
+      "bytes": 9319,
+      "path": "/private/tmp/m161-webgpu/bundle-manifest.json",
+      "sha256": "dbbbff72e9b258996daf8730a2c6f667dcea6ed08786e550474da4a2e5ebc472"
+    },
+    "manifest_sha256": "dbbbff72e9b258996daf8730a2c6f667dcea6ed08786e550474da4a2e5ebc472",
+    "model_parameters": 10524544,
+    "parity_gate": {
+      "fixture_contract": "ids[i]=(131*i+17+977*fixture_index) mod vocab_size",
+      "hard_gate": true,
+      "passed": true,
+      "reference": "the exact LocalAgentLM checkpoint loaded for this export",
+      "results": {
+        "action_model.fp16.onnx": {
+          "artifact": {
+            "bytes": 21430322,
+            "sha256": "ef048e7922cb8c31bd4c2feca18a5f3d964b719e731ff00e9e127687e61bf7de"
+          },
+          "expected_outputs": [
+            "hidden"
+          ],
+          "max_abs_diff_by_output": {
+            "hidden": 0.00414121150970459
+          },
+          "minimum_logits_argmax_agreement": null,
+          "passed": true,
+          "per_fixture": [
+            {
+              "input_ids_sha256": "35e3a6176b50da27fcb868bf840f0e76290bd9bf55c40545e67bac66353d0674",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 0.0019405484199523926
+                }
+              },
+              "sequence_length": 1
+            },
+            {
+              "input_ids_sha256": "5645e6fd5c57f9809304ba0ff87291710f781b698fc1fe7904f0e2326db48ae0",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 0.004140518605709076
+                }
+              },
+              "sequence_length": 8
+            },
+            {
+              "input_ids_sha256": "9c7dbd4f5db9c6001808980721fa0113d8cbf9694cb2d9407f93669a8fb79d56",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 0.00414121150970459
+                }
+              },
+              "sequence_length": 16
+            }
+          ],
+          "precision": "fp16",
+          "provider": "CPUExecutionProvider",
+          "threshold_max_abs_diff": 0.05,
+          "threshold_max_abs_diff_by_output": {
+            "hidden": 0.05
+          }
+        },
+        "action_model.onnx": {
+          "artifact": {
+            "bytes": 42700043,
+            "sha256": "744e72d563284738c620a7bac525cc2054880fb818cb78e19feccefd7f9ac9af"
+          },
+          "expected_outputs": [
+            "hidden"
+          ],
+          "max_abs_diff_by_output": {
+            "hidden": 6.079673767089844e-06
+          },
+          "minimum_logits_argmax_agreement": null,
+          "passed": true,
+          "per_fixture": [
+            {
+              "input_ids_sha256": "35e3a6176b50da27fcb868bf840f0e76290bd9bf55c40545e67bac66353d0674",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 3.2186508178710938e-06
+                }
+              },
+              "sequence_length": 1
+            },
+            {
+              "input_ids_sha256": "5645e6fd5c57f9809304ba0ff87291710f781b698fc1fe7904f0e2326db48ae0",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 5.453824996948242e-06
+                }
+              },
+              "sequence_length": 8
+            },
+            {
+              "input_ids_sha256": "9c7dbd4f5db9c6001808980721fa0113d8cbf9694cb2d9407f93669a8fb79d56",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 6.079673767089844e-06
+                }
+              },
+              "sequence_length": 16
+            }
+          ],
+          "precision": "fp32",
+          "provider": "CPUExecutionProvider",
+          "threshold_max_abs_diff": 0.001,
+          "threshold_max_abs_diff_by_output": {
+            "hidden": 0.001
+          }
+        },
+        "model.fp16.onnx": {
+          "artifact": {
+            "bytes": 34026190,
+            "sha256": "410b43d20653f97b77d25949793f83025467f04637bcb162b31e896ad0e03268"
+          },
+          "expected_outputs": [
+            "logits",
+            "hidden"
+          ],
+          "max_abs_diff_by_output": {
+            "hidden": 0.00414121150970459,
+            "logits": 0.005190178751945496
+          },
+          "minimum_logits_argmax_agreement": 1.0,
+          "passed": true,
+          "per_fixture": [
+            {
+              "input_ids_sha256": "35e3a6176b50da27fcb868bf840f0e76290bd9bf55c40545e67bac66353d0674",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 0.0019405484199523926
+                },
+                "logits": {
+                  "argmax_agreement": 1.0,
+                  "max_abs_diff": 0.0017442703247070312
+                }
+              },
+              "sequence_length": 1
+            },
+            {
+              "input_ids_sha256": "5645e6fd5c57f9809304ba0ff87291710f781b698fc1fe7904f0e2326db48ae0",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 0.004140518605709076
+                },
+                "logits": {
+                  "argmax_agreement": 1.0,
+                  "max_abs_diff": 0.005190178751945496
+                }
+              },
+              "sequence_length": 8
+            },
+            {
+              "input_ids_sha256": "9c7dbd4f5db9c6001808980721fa0113d8cbf9694cb2d9407f93669a8fb79d56",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 0.00414121150970459
+                },
+                "logits": {
+                  "argmax_agreement": 1.0,
+                  "max_abs_diff": 0.004472017288208008
+                }
+              },
+              "sequence_length": 16
+            }
+          ],
+          "precision": "fp16",
+          "provider": "CPUExecutionProvider",
+          "threshold_max_abs_diff": 0.1,
+          "threshold_max_abs_diff_by_output": {
+            "hidden": 0.05,
+            "logits": 0.1
+          }
+        },
+        "model.onnx": {
+          "artifact": {
+            "bytes": 67877334,
+            "sha256": "2ff0a3254e577f585f01cddad2f11ef6e541403f52daf01591c7074f91c5279e"
+          },
+          "expected_outputs": [
+            "logits",
+            "hidden"
+          ],
+          "max_abs_diff_by_output": {
+            "hidden": 6.079673767089844e-06,
+            "logits": 7.62939453125e-06
+          },
+          "minimum_logits_argmax_agreement": 1.0,
+          "passed": true,
+          "per_fixture": [
+            {
+              "input_ids_sha256": "35e3a6176b50da27fcb868bf840f0e76290bd9bf55c40545e67bac66353d0674",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 3.2186508178710938e-06
+                },
+                "logits": {
+                  "argmax_agreement": 1.0,
+                  "max_abs_diff": 3.5762786865234375e-06
+                }
+              },
+              "sequence_length": 1
+            },
+            {
+              "input_ids_sha256": "5645e6fd5c57f9809304ba0ff87291710f781b698fc1fe7904f0e2326db48ae0",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 5.453824996948242e-06
+                },
+                "logits": {
+                  "argmax_agreement": 1.0,
+                  "max_abs_diff": 7.62939453125e-06
+                }
+              },
+              "sequence_length": 8
+            },
+            {
+              "input_ids_sha256": "9c7dbd4f5db9c6001808980721fa0113d8cbf9694cb2d9407f93669a8fb79d56",
+              "outputs": {
+                "hidden": {
+                  "max_abs_diff": 6.079673767089844e-06
+                },
+                "logits": {
+                  "argmax_agreement": 1.0,
+                  "max_abs_diff": 6.198883056640625e-06
+                }
+              },
+              "sequence_length": 16
+            }
+          ],
+          "precision": "fp32",
+          "provider": "CPUExecutionProvider",
+          "threshold_max_abs_diff": 0.001,
+          "threshold_max_abs_diff_by_output": {
+            "hidden": 0.001,
+            "logits": 0.001
+          }
+        }
+      },
+      "schema_version": 1,
+      "thresholds": {
+        "fp16": {
+          "hidden_max_abs_diff": 0.05,
+          "logits_max_abs_diff": 0.1
+        },
+        "fp32": {
+          "hidden_max_abs_diff": 0.001,
+          "logits_max_abs_diff": 0.001
+        }
+      }
+    }
+  },
+  "checkpoint": {
+    "bytes": 52219184,
+    "path": "/private/tmp/m161-stateful-lowrate-current.pt",
+    "sha256": "67ea2e43ed5f066f432ebcff149aa1305e9d9a9bc9fcae0d350b55842bf0ea51"
+  },
+  "claim_boundary": "Current-checkpoint ONNX/WebGPU export and an in-app WebGPU replay of three local synthetic email, Notion, and browser workflows. It is not AndroidWorld, BrowserGym, OSWorld, MCPMark, EnterpriseOps-Gym, real email or Notion access, screenshot grounding, trusted computer control, native device reward, or a public Hugging Face deployment.",
+  "decision": "diagnostic_only",
+  "kind": "localagent_webgpu_stateful_current_export_trajectory_receipt",
+  "receipt_self_sha256": "c36766152527f0c65885918717c0522b8124b0dae354425a9ebd853ab2fe57c0",
+  "schema_version": 1,
+  "structured_action_parity": {
+    "claim_boundary": "This is not a quality failure of the browser trajectory suite, and it is not a reason to relax the hard parity threshold without an explicit review.",
+    "failure": "fp16 pointer-score numerical gate exceeded 1.0 (maximum 1.1609694053373119); all fp16 route/tool/grounded-action exact gates still matched",
+    "passed": false,
+    "scope": "offline CPU full-stack diagnostic on the reused 20-case suite"
+  },
+  "suite": "localagent-mobile-productivity-trajectory-v1"
+}

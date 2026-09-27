@@ -1,0 +1,37 @@
+{
+  "claim_boundary": "This is a primary-source catalog audit, not a downloaded dataset, model result, or benchmark score. No attack pages, scenario text, credentials, screenshots, traces, judge prompts, or runtime environments were acquired or used for training.",
+  "sources": [
+    {
+      "id": "vpi_bench",
+      "name": "VPI-Bench: Visual Prompt Injection Attacks for Computer-Use Agents",
+      "project_url": "https://github.com/cua-framework/agents",
+      "dataset_url": "https://huggingface.co/datasets/VPI-Bench/vpi-bench",
+      "paper_url": "https://arxiv.org/abs/2506.02456",
+      "source_revision": "801aa472c145c2f672aded3d4eef401265afbd0d",
+      "reported_cases": 306,
+      "reported_platforms": ["Amazon", "Booking", "BBC", "Messenger", "Email"],
+      "reported_metrics": ["attempted_rate", "success_rate", "attack_recognition"],
+      "webgpu_policy": "evaluation_only_text_refusal_projection; visual robustness requires a vision-capable browser_or_desktop_runner",
+      "training_used": false,
+      "runtime_executed": false
+    },
+    {
+      "id": "agentcibench",
+      "name": "AgentCIBench: Capable but Careless",
+      "project_url": "https://github.com/UKPLab/arxiv2026-agentcibench",
+      "dataset_url": "https://huggingface.co/datasets/UKPLab/agentcibench",
+      "paper_url": "https://arxiv.org/abs/2606.23189",
+      "source_revision": "7b3fad424d0c5a450ac3bc3dc4050c38094c6dc6",
+      "reported_seed_scenarios": 28,
+      "reported_visual_end_to_end_cases": 50,
+      "scenario_contract": ["state", "prompt", "recipient", "must_share", "must_not_share"],
+      "reported_metrics": ["utility", "raw_leakage", "refusal", "engagement_conditioned_leakage"],
+      "webgpu_policy": "evaluation_only_text_contextual_integrity_projection; OpenApps_native_UI_execution_pending",
+      "training_used": false,
+      "runtime_executed": false
+    }
+  ],
+  "selection_rationale": "Both sources test safety properties that ordinary task success misses: VPI-Bench measures whether rendered content can induce unauthorized action, while AgentCIBench measures whether a successful assistant leaks information outside contextual sharing rules. They complement MobileSafetyBench and should gate email, Notion, browser, and desktop side effects before release.",
+  "schema_version": 1,
+  "receipt_self_sha256": "dbe795ba43b6c74f0cbf1615a11654037819f6b0113c008a27896a7eef0209b1"
+}

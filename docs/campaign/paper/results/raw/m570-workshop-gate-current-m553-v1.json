@@ -1,0 +1,52 @@
+{
+  "kind": "localagent_workshop_gate_receipt",
+  "schema_version": 1,
+  "status": "blocked",
+  "ready": false,
+  "current_checkpoint": {
+    "path": "/private/tmp/m553-multisurface-lineage-child.pt",
+    "sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+    "parameters": 10524544
+  },
+  "checks": {
+    "catalog_realistic_family_coverage": "pass",
+    "catalog_no_pending_train_adapter": "pass",
+    "native_mobilegym": "pass",
+    "native_browsergym_miniwob": "pass",
+    "webgpu_native_capability_and_latency": "pass",
+    "weights_transfer_and_no_transfer_ablation": "pass",
+    "training_rl_preflight": "pass",
+    "native_androidworld": "blocked",
+    "native_mobile_safety_bench": "blocked",
+    "native_iosworld": "blocked",
+    "native_osworld": "blocked",
+    "native_osworld_v2": "blocked",
+    "native_agentnet": "blocked",
+    "native_toolsandbox": "blocked",
+    "native_mcpmark": "blocked",
+    "native_enterpriseopsgym": "blocked",
+    "artifacts_public_model_demo_manifest": "blocked"
+  },
+  "blocking_requirements": [
+    "native:androidworld",
+    "native:mobile_safety_bench",
+    "native:iosworld",
+    "native:osworld",
+    "native:osworld_v2",
+    "native:agentnet",
+    "native:toolsandbox",
+    "native:mcpmark",
+    "native:enterpriseopsgym",
+    "artifacts:public_model_demo_manifest"
+  ],
+  "evidence": {
+    "gate_output_sha256": "633f84550af5d67dea5a94b527dbc4d4573a8ca54454a40da3cd6e694ea20b94",
+    "native_mobilegym": "docs/paper/results/raw/m567-m553-mobilegym-native-full-v1.json",
+    "native_browsergym_miniwob": "docs/paper/results/raw/m568-m553-browsergym-native-full-v1.json",
+    "webgpu": "docs/paper/results/raw/m566-m553-webgpu-capability-v1.json",
+    "weights": "docs/paper/results/raw/m565-m553-transfer-ablation-v1.json",
+    "rl_preflight": "docs/paper/results/raw/m564-m553-stateful-rl-preflight-v1.json"
+  },
+  "claim_boundary": "Current m553 passes the catalog, native MobileGym/MiniWoB, WebGPU capability, transfer ablation, and strict RL preflight checks. Publication remains blocked until the nine additional native benchmark receipts and a public Hugging Face model/demo manifest are supplied; no leaderboard or public URL claim is made.",
+  "receipt_self_sha256": "8535e497c6248679cf1398dc85371034c65c6b0d38da91190e0209dba133f885"
+}

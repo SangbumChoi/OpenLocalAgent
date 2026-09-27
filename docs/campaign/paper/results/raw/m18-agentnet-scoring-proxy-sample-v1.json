@@ -1,0 +1,47 @@
+{
+  "kind": "localagent_agentnet_scoring_proxy_receipt",
+  "schema_version": 1,
+  "source": {
+    "dataset": "AgentNet",
+    "dataset_url": "https://huggingface.co/datasets/xlangai/AgentNet",
+    "code_url": "https://github.com/xlang-ai/OpenCUA",
+    "code_revision": "dfc91ba89f700d10f26ec50362d308571482ab8b",
+    "sample_path": "evaluation/agentnetbench/sample_data/s_5473959e0f6e21f7.json",
+    "sample_sha256": "487faa91847663f79713b49bfc5822e0aedfef988484609241910efb479c4da7",
+    "license": "MIT"
+  },
+  "scorer": {
+    "module": "localagent.eval.agentnet",
+    "implementation": "dependency_free_agentnetbench_compatible_proxy_v1",
+    "rules": [
+      "coordinate smooth score",
+      "casefolded normalized edit score for write",
+      "ordered press/hotkey matching",
+      "scroll direction and amount",
+      "write+Enter merge",
+      "action-count penalty",
+      "termination status"
+    ],
+    "official_harness_invoked": false,
+    "official_evaluator_reference_invoked": true
+  },
+  "replay": {
+    "records": 1,
+    "steps": 10,
+    "ground_truth_actions": 12,
+    "predicted_actions": 12,
+    "total": 1.0,
+    "action_count_penalty": 1.0,
+    "per_action_type": {
+      "click": 1.0,
+      "dragto": 1.0,
+      "hotkey": 1.0,
+      "moveto": 1.0,
+      "press": 1.0,
+      "write": 1.0
+    },
+    "official_reference_total": 1.0,
+    "proxy_matches_official_reference": true
+  },
+  "claim_boundary": "Ground-truth replay sanity check only. This is not AgentNetBench model accuracy, screenshot grounding, OSWorld success, or WebGPU capability."
+}

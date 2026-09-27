@@ -1,0 +1,193 @@
+{
+  "arms": {
+    "random": {
+      "deployment": {
+        "cases": 10,
+        "environment_executed": false,
+        "exact_tool": 2,
+        "external_accounts": false,
+        "tool_accuracy": 0.2
+      },
+      "parent": {
+        "original": {
+          "bytes": 52235312,
+          "path": "/private/tmp/localagent-m237-random-parent.pt",
+          "sha256": "e2f1a2ad4a3a1b1570a4ad0ad4d73cc08ade1587b8e80f3d26b9121058ccb1e9"
+        },
+        "sft": {
+          "bytes": 52233333,
+          "path": "/private/tmp/localagent-m237-random-rl3/sft-parent.pt",
+          "sha256": "fee474ebccc325faca098e7a1df411490630b594bb56d05887bbdbab3c6219e9"
+        }
+      },
+      "receipt": {
+        "bytes": 10162,
+        "path": "docs/paper/results/raw/m237-stateful-productivity-grpo-random-control-v1.json",
+        "sha256": "37b3159f1d26ed52554076de8c5b4fc0ea261ea5deb0a4b28a84162f1ca95774"
+      },
+      "training": {
+        "exact_match_accuracy_post": 0.0,
+        "exact_match_accuracy_pre": 0.0,
+        "informative_groups": 0,
+        "mean_reward_post": -0.05000000000000001,
+        "mean_reward_pre": -0.05000000000000001,
+        "realized_optimizer_updates": 0,
+        "tool_exact_match_accuracy_post": 0.0,
+        "tool_exact_match_accuracy_pre": 0.0,
+        "truncated_rollouts": 32
+      },
+      "weight_groups": {
+        "action_heads": {
+          "delta_l2": 0.0,
+          "parameters": 2518968,
+          "relative_delta_l2": 0.0
+        },
+        "attention_or_mixer": {
+          "delta_l2": 0.9972327813020359,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.019788602614941114
+        },
+        "embedding": {
+          "delta_l2": 3.0562922353222453,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.0609208533990023
+        },
+        "ffn": {
+          "delta_l2": 1.2336564407272683,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.024774134969338297
+        },
+        "normalization": {
+          "delta_l2": 0.02401551983239229,
+          "parameters": 384,
+          "relative_delta_l2": 0.001225536864521894
+        }
+      },
+      "weight_report": {
+        "bytes": 19557,
+        "path": "docs/paper/results/raw/m238-stateful-productivity-grpo-random-weight-transfer-v1.json",
+        "sha256": "7337b9ae4d02e93311d793aed8610f2f52e283c8baa16a4a1d6cdfaf276d6993"
+      }
+    },
+    "warm": {
+      "deployment": {
+        "cases": 10,
+        "environment_executed": false,
+        "exact_tool": 1,
+        "external_accounts": false,
+        "tool_accuracy": 0.1
+      },
+      "parent": {
+        "original": {
+          "bytes": 52231121,
+          "path": "runs/sft-mind2web-trajectory-continuation-20260802/latest.pt",
+          "sha256": "26ae0d2597c8207e110aeceab483005c94eb98aaf83a58147f3e933f2c739782"
+        },
+        "sft": {
+          "bytes": 52233653,
+          "path": "/private/tmp/localagent-m234-rl/sft-parent.pt",
+          "sha256": "9ac0e8a2dbfbe2bf88aa0d379725e4776c00a374eede28c0261db0f93da4bebc"
+        }
+      },
+      "receipt": {
+        "bytes": 10305,
+        "path": "docs/paper/results/raw/m234-stateful-productivity-grpo-head-preserved-v1.json",
+        "sha256": "5cee28a73e5d9fc2a59a160fab411f7b4b14091d6839095b6341f0efb30fae0c"
+      },
+      "training": {
+        "exact_match_accuracy_post": 0.0,
+        "exact_match_accuracy_pre": 0.0,
+        "informative_groups": 6,
+        "mean_reward_post": 0.11250000000000002,
+        "mean_reward_pre": 0.0375,
+        "realized_optimizer_updates": 4,
+        "tool_exact_match_accuracy_post": 0.0,
+        "tool_exact_match_accuracy_pre": 0.0,
+        "truncated_rollouts": 0
+      },
+      "weight_groups": {
+        "action_heads": {
+          "delta_l2": 0.0,
+          "parameters": 2518968,
+          "relative_delta_l2": 0.0
+        },
+        "attention_or_mixer": {
+          "delta_l2": 0.7209104292064679,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.013968139974834561
+        },
+        "embedding": {
+          "delta_l2": 3.240972806977432,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.046899806707655665
+        },
+        "ffn": {
+          "delta_l2": 0.8780792107525601,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.017379525575410226
+        },
+        "normalization": {
+          "delta_l2": 0.021503785290378337,
+          "parameters": 384,
+          "relative_delta_l2": 0.0010106437064026082
+        }
+      },
+      "weight_report": {
+        "bytes": 19630,
+        "path": "docs/paper/results/raw/m235-stateful-productivity-rl-weight-transfer-v1.json",
+        "sha256": "6c0d22c01aaf92608cf6640ab8fcafc48ba016f2c7859765bab31a37cd1a428e"
+      }
+    }
+  },
+  "claim_boundary": "Matched pure-PyTorch local stateful-productivity GRPO simulation only. Warm and random arms share task hashes, rollout protocol, seed, and frozen deployment-head contract; the random arm uses shape-matched random backbone and heads. This is not public benchmark training, native Android/browser/MCP execution, real-account side effects, or WebGPU capability evidence.",
+  "comparison": {
+    "random_informative_groups": 0,
+    "random_realized_optimizer_updates": 0,
+    "warm_informative_groups": 6,
+    "warm_minus_random_deployment_tool_accuracy": -0.1,
+    "warm_minus_random_exact_match_post": 0.0,
+    "warm_minus_random_mean_reward_post": 0.16250000000000003,
+    "warm_realized_optimizer_updates": 4
+  },
+  "decision": "warm_reward_signal_advantage_but_no_deployment_adoption",
+  "kind": "localagent_stateful_productivity_grpo_matched_ablation",
+  "protocol": {
+    "deployment_heads": [
+      "dense_selector",
+      "ptr_head",
+      "route_head",
+      "selector_proj",
+      "tool_head"
+    ],
+    "deployment_heads_trainable": false,
+    "eval_task_hash": "07471a921a097485936c37b646be03b99e4071f5ac4644cecd130194154b072c",
+    "eval_tasks": [
+      "eval-email-send",
+      "eval-notion-create",
+      "eval-browser-search",
+      "eval-browser-recovery",
+      "eval-abstain"
+    ],
+    "group_size": 2,
+    "max_new_tokens": 96,
+    "model_config": "configs/model/webgpu-10m-hybrid.yaml",
+    "prompts_per_step": 4,
+    "reward_environment": "stateful_productivity",
+    "seed": 2032,
+    "sft_batch_size": 4,
+    "sft_lr": 0.0001,
+    "sft_steps": 32,
+    "steps": 4,
+    "suite": "localagent-stateful-productivity-v1",
+    "train_task_hash": "5cd64016dc92e6d0d118ea57b6e5b5be6bdd188445022ad5d385173415e194e4",
+    "train_tasks": [
+      "train-email-send",
+      "train-notion-create",
+      "train-browser-search",
+      "train-browser-recovery",
+      "train-abstain"
+    ]
+  },
+  "receipt_self_sha256": "e4089c22cb12d29fcb4cc029dadcd09cdb8c29faa171c10e6941f0fe2add8364",
+  "schema_version": 1
+}

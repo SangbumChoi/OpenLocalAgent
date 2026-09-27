@@ -1,0 +1,67 @@
+{
+  "kind": "localagent_mind2web_grounded_dom_webgpu_candidate_safety_receipt",
+  "schema_version": 1,
+  "status": "measured_candidate_safety_improvement_not_publish_ready",
+  "source": {
+    "dataset": "osunlp/Mind2Web",
+    "subset": "train",
+    "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+    "suite": "mind2web_train10_grounded_dom_heldout_v1",
+    "suite_bytes": 2946,
+    "suite_sha256": "467d2c287a6f72968b88241deda99a505db3a52e7a8068276a5db40c4efbe247",
+    "license": "cc-by-4.0",
+    "official_test_split": false
+  },
+  "model": {
+    "checkpoint_stage": "sft_grounded_mind2web",
+    "checkpoint_sha256": "aa5b9809a0b9f7b57d8d30fb9921c7d2d653b09b278d43609f18b7a1568ee756",
+    "model_parameters": 10524544,
+    "bundle_manifest_sha256": "291469ace8e3f103352e849dd4abde83c64f8bf0c2db45115d27b9df0b64562e",
+    "action_model_fp16_sha256": "4d98521f503490117b041708aee7780d851c0364509267ea3cebb02011f0ecde",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "adapter": {
+    "source": "spaces/localagent-webgpu/app.js",
+    "source_sha256": "45b677766700aea81112dea8c70e6f3b5070d46eafee825216894fa9c2c36b29",
+    "version": "browser_dom_candidate_safety_v1",
+    "policy": "rank observed candidate attributes by task-token overlap; use learned pointer only when no observed candidate fits",
+    "gold_independent": true,
+    "label_access": "none"
+  },
+  "runtime": {
+    "backend": "webgpu",
+    "hardware_adapter": {
+      "vendor": "apple",
+      "architecture": "metal-3",
+      "is_fallback_adapter": false
+    },
+    "policy": "structured_one_forward",
+    "target_input_tokens": 512,
+    "warmups": 1,
+    "repetitions": 1,
+    "cases": 4,
+    "exact_action_accuracy": 1.0,
+    "schema_valid_rate": 1.0,
+    "parse_failure_rate": 0.0,
+    "validation_failure_rate": 0.0,
+    "latency_ms": {
+      "harness_ttfa_p50": 37.199999928474426,
+      "harness_ttfa_p95": 38.650000053644185,
+      "inference_p50": 34.44999998807907,
+      "all_cases_under_100ms": true
+    },
+    "candidate_safety_cases": {
+      "candidate_ranked": 3,
+      "learned_pointer_fallback": 1,
+      "gold_target_id_exact": 3,
+      "abstention_exact": 1
+    }
+  },
+  "comparison": {
+    "prior_receipt": "m33-mind2web-grounded-dom-webgpu-v1.json",
+    "prior_exact_actions": "1/4",
+    "current_exact_actions": "4/4",
+    "interpretation": "The improvement is attributable to the explicit gold-independent DOM candidate safety adapter; it is not evidence that the pointer head alone learned candidate ranking."
+  },
+  "claim_boundary": "This is a four-case public-train held-out WebGPU runtime check with a gold-independent candidate adapter. It is not the official Mind2Web test score, does not establish browser task completion or external-account safety, and does not satisfy the workshop gate's native benchmark, peak-memory, or public-artifact requirements."
+}

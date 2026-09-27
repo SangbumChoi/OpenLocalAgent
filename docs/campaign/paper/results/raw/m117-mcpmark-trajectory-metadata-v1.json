@@ -1,0 +1,60 @@
+{
+  "kind": "localagent_mcpmark_trajectory_metadata_receipt",
+  "schema_version": 1,
+  "dataset": {
+    "name": "Jakumetsu/mcpmark-trajectory-log",
+    "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log",
+    "revision": "e50578f0ab904d8e6a7c576c387c1e76ae482c89",
+    "license": "MIT",
+    "split": "test",
+    "source_file_url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log/resolve/e50578f0ab904d8e6a7c576c387c1e76ae482c89/mcpmark-v1-0905/gpt-4-1-mini__filesystem/run-4/papers__find_math_paper/messages.json"
+  },
+  "source": {
+    "file": {
+      "path": "/private/tmp/mcpmark-trajectory-messages.json",
+      "bytes": 338193,
+      "sha256": "a3cd6b3cc41635f8084229d05959476a1e86476e2fa71fea836e0db2ba8797bb"
+    },
+    "event_rows": 45,
+    "event_types": {
+      "function_call": 21,
+      "function_call_output": 21,
+      "message": 3
+    },
+    "roles": {
+      "assistant": 2,
+      "user": 1
+    },
+    "tool_calls": 21,
+    "paired_tool_outputs": 21,
+    "unique_tools": [
+      "list_allowed_directories",
+      "list_directory",
+      "move_file",
+      "read_multiple_files",
+      "read_text_file"
+    ],
+    "tool_call_counts": {
+      "list_allowed_directories": 1,
+      "list_directory": 2,
+      "move_file": 1,
+      "read_multiple_files": 1,
+      "read_text_file": 16
+    },
+    "user_content_chars": 590,
+    "assistant_content_chars": 894,
+    "tool_output_chars": 304000,
+    "metadata_only": true,
+    "raw_text_retained": false,
+    "training_used": false,
+    "model_replayed": false,
+    "tools_replayed": false
+  },
+  "profiler": {
+    "script": "scripts/profile_mcpmark_trajectory.py",
+    "script_sha256": "4a01e2ba1ba08124e1746701002eed0a2c3cbedc2b984b01bec014aa08664e03",
+    "metadata_report_bytes": 2048,
+    "metadata_report_sha256": "100ea0a74512bb9da8fdc9d56cc081318e1bfd68a9fae95a21d6c2542b2cc791"
+  },
+  "claim_boundary": "Metadata-only profiling of one public MCPMark trajectory file. Tool call names and event counts are retained, but prompts, assistant text, arguments, and tool outputs are not copied into the receipt. No model score, verifier result, live MCP execution, or training use is claimed. A separate content audit is required before normalization."
+}

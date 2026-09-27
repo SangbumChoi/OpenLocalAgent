@@ -1,0 +1,79 @@
+{
+  "baseline_checkpoint": {
+    "bytes": 52240681,
+    "path": "/private/tmp/m142-five-surface-public-child.pt",
+    "sha256": "8cc3ee42ed38b830b9b04935e156f80d166abeece2dd0c37184ee4d692de7eb1"
+  },
+  "claim_boundary": "Native pinned ToolSandbox simulator/verifier comparison over the 129 public base/no-distraction scenario names used by m143. The one-step scripted user intentionally truncates multi-tool and multi-user-turn scenarios; no model-based user simulator, official split declaration, full augmented matrix, RapidAPI tool, or external account was executed. This is not an official ToolSandbox leaderboard score or real email/Notion/MCP side-effect evidence.",
+  "comparison": {
+    "mean_similarity_delta": 0.0,
+    "same_scenario_count": 129,
+    "warm_wins": 0,
+    "warm_losses": 0,
+    "warm_minus_baseline_success_rate_pp": 0.0
+  },
+  "dataset": "apple/ToolSandbox",
+  "decision": {
+    "checkpoint_promoted": false,
+    "reason": "The current m194 dispatch-repair child exactly matches the m143 warm baseline on all 129 bounded scenarios (28/129); route-head repair did not change native tool behavior under this protocol."
+  },
+  "kind": "localagent_toolsandbox_native_current_base_comparison",
+  "metrics": {
+    "baseline_mean_similarity": 0.29211886304909557,
+    "baseline_success_count": 28,
+    "baseline_success_rate": 0.21705426356589147,
+    "current_mean_milestone_similarity": 0.30762273901808784,
+    "current_mean_similarity": 0.29211886304909557,
+    "current_success_count": 28,
+    "current_success_rate": 0.21705426356589147,
+    "task_count": 129,
+    "exceptions": 0
+  },
+  "official_split_verified": false,
+  "protocol": {
+    "max_agent_turns": 8,
+    "name": "single_step_smoke",
+    "scenario_selection": "all 129 upstream base/no-distraction scenarios; sorted names inherited from m143",
+    "user_simulator_executed": false,
+    "verifier_executed": true
+  },
+  "runner": {
+    "path": "scripts/run_toolsandbox_native.py",
+    "sha256": "9744f98b610b672f38707709233eb05d47e396dc748cce6cb35f54e7d4581524"
+  },
+  "source_revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+  "source_url": "https://github.com/apple/ToolSandbox",
+  "source_files": [
+    {
+      "name": "README.md",
+      "bytes": 48824,
+      "sha256": "0e5cfb9077769e2dcbe74dbfc8b8fac8314d8a213ab34364ab6b2ecaf47d8fe8"
+    },
+    {
+      "name": "LICENSE",
+      "bytes": 2668,
+      "sha256": "2283d5566b38210fbfb9fcb06619f1d0a8101bff9df974ea8afc3393508e9015"
+    },
+    {
+      "name": "tool_sandbox/common/evaluation.py",
+      "bytes": 56027,
+      "sha256": "0425cff032bd1ca2ebe8cc1c875cdf2ea86463af24b2940734007d938e516ab3"
+    },
+    {
+      "name": "tool_sandbox/common/execution_context.py",
+      "bytes": 35461,
+      "sha256": "a18f54e157b92fa011e84780bc33941ea0635ad70ab4b38e7408beedc6221437"
+    },
+    {
+      "name": "tool_sandbox/scenarios/__init__.py",
+      "bytes": 5572,
+      "sha256": "113cc01d10bb1630a93e09785893235ae4a3863d3a61542839eeb2791914724a"
+    }
+  ],
+  "warm_checkpoint": {
+    "bytes": 52276521,
+    "path": "/private/tmp/m194-m180-dispatch-repair-warm.pt",
+    "sha256": "3b3fd817c6f52e8b922f84c9bb36e7d55e0e243a0f8ee6d0f20c85962a4eeba7"
+  },
+  "receipt_self_sha256": "96adb44a488bd278bddf99a965b01fbffd06701e0f96584933607fa819dbd657"
+}

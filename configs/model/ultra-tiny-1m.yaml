@@ -1,0 +1,21 @@
+# ~1M-param "tool router" tier. NOT a chatbot — a tiny controller that decides which tool to
+# call and abstains otherwise (free-form text is offloaded to a bigger tier or to tools).
+#
+# Three structural levers make 1M feasible (see docs/ARCHITECTURE_IDEAS.md):
+#   - byte-level vocab (256)  -> removes the embedding tax; spend params on compute, not vocab
+#   - factorized embeddings   -> embed_dim=64 up-projected to d_model=192
+#   - depth-recurrence        -> 2 unique blocks looped 6x = effective depth 12 at 2 blocks' cost
+name: ultra-tiny-1m
+vocab_size: 256          # byte-level
+d_model: 192
+embed_dim: 64            # factorized embeddings
+n_layers: 2              # unique parameter blocks
+n_loops: 6               # shared-weight passes -> effective depth 12
+n_heads: 6
+n_kv_heads: 2            # GQA
+ffn_hidden: 640          # SwiGLU
+max_seq_len: 1024
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0

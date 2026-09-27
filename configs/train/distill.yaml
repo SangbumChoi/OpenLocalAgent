@@ -1,0 +1,31 @@
+# Phase 6 — distillation. mode: off_policy (seq-KD, default) | on_policy (reverse-KL, MiniLLM/OPD).
+stage: distill
+mode: off_policy
+model_config: configs/model/tiny-30m.yaml
+init_from: runs/sft/latest.pt
+teacher:
+  backend: openai_compatible   # openai_compatible | local_checkpoint
+  endpoint: http://localhost:8000/v1
+  model: teacher-instruct
+  first_thought_prefix: true   # 2505.17612
+loss:
+  kd_type: reverse_kl          # reverse_kl (on-policy) | forward_kl | seq_kd
+  temperature: 1.0
+  kd_weight: 1.0
+  ce_weight: 0.0               # >0 to mix in ground-truth CE
+data:
+  prompts: data/synth/distill_prompts.jsonl
+  trajectory_level: true       # distill full tool-use rollouts, not just final answer
+optim:
+  name: adamw
+  lr: 5.0e-5
+  grad_clip: 1.0
+schedule:
+  warmup_steps: 50
+  total_steps: 2000
+runtime:
+  device: auto
+  dtype: auto
+log:
+  out_dir: runs/distill
+  ckpt_every: 500

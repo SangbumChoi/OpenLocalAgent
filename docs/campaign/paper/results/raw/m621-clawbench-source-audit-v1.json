@@ -1,0 +1,132 @@
+{
+  "claim_boundary": "Source/protocol audit only. No live website, account, browser harness, intercepted request, LLM judge, or irreversible side effect was executed; no ClawBench score is claimed.",
+  "corpora": {
+    "v1": {
+      "extra_info_tasks": 32,
+      "interception_placeholder_tasks": 71,
+      "metaclasses": {
+        "academia-research": 5,
+        "automation-workflows": 3,
+        "automotive-vehicle-services": 4,
+        "beauty-personal-care": 9,
+        "creation-init": 13,
+        "daily-life": 21,
+        "deletion-revocation": 1,
+        "dev-tech": 2,
+        "education-learning": 9,
+        "entertainment-hobbies": 15,
+        "finance-investment": 4,
+        "government-civic": 1,
+        "home-services-maintenance": 4,
+        "job-search-hr": 8,
+        "nonprofit-charity": 6,
+        "office-secretary-tasks": 9,
+        "personal-management": 6,
+        "pet-animal-care": 8,
+        "rating-voting": 10,
+        "shopping-commerce": 6,
+        "travel": 9
+      },
+      "methods": {
+        "PATCH": 2,
+        "POST": 147,
+        "PUT": 4
+      },
+      "platforms": 144,
+      "task_id_max": 886,
+      "task_id_min": 1,
+      "tasks": 153,
+      "unique_task_ids": 153
+    },
+    "v2": {
+      "extra_info_tasks": 15,
+      "interception_placeholder_tasks": 0,
+      "metaclasses": {
+        "academia-research": 4,
+        "automotive-vehicle-services": 1,
+        "beauty-personal-care": 4,
+        "charity": 5,
+        "civic-engagement": 2,
+        "creation-init": 6,
+        "daily-life": 12,
+        "dev-tech": 2,
+        "education": 7,
+        "education-learning": 7,
+        "entertainment": 9,
+        "entertainment-hobbies": 3,
+        "events": 2,
+        "fitness": 3,
+        "food-cooking": 2,
+        "health-fitness": 2,
+        "hobbies-crafts": 3,
+        "hobbies-gaming": 4,
+        "home-services": 2,
+        "home-services-maintenance": 2,
+        "job-search-hr": 4,
+        "jobs": 4,
+        "nonprofit-charity": 4,
+        "office-secretary-tasks": 7,
+        "personal-management": 2,
+        "pet-animal-care": 4,
+        "rating-voting": 10,
+        "shopping": 6,
+        "travel": 3,
+        "web_task": 4
+      },
+      "methods": {
+        "GET": 10,
+        "POST": 119,
+        "PUT": 1
+      },
+      "platforms": 63,
+      "task_id_max": 1202,
+      "task_id_min": 47,
+      "tasks": 130,
+      "unique_task_ids": 130
+    }
+  },
+  "cross_corpus": {
+    "v1_v2_task_id_disjoint": false,
+    "v1_v2_task_id_overlap": 51
+  },
+  "evaluation_boundary": {
+    "native_live_websites_and_credentials": false,
+    "public_live_trace_companions": true,
+    "public_static_train_test_split": false,
+    "public_task_metadata": true,
+    "reason": "The Hub release registers both corpora as test splits and publishes task metadata. Scoring requires a live browser harness, request interception, and (for reward) a judge; no static training split or reproducible local website environment is bundled.",
+    "train_policy": "eval_only"
+  },
+  "kind": "localagent_clawbench_source_audit",
+  "receipt_self_sha256": "3c847d99562467d0dc4930558cfd7f2e218ad4f48a99ccf5a1010257a5e4e956",
+  "schema_version": 1,
+  "source": {
+    "dataset": "TIGER-Lab/ClawBench",
+    "dataset_url": "https://huggingface.co/datasets/TIGER-Lab/ClawBench",
+    "files": {
+      "eval_yaml": {
+        "bytes": 1323,
+        "path": "/private/tmp/m621-clawbench/eval.yaml",
+        "sha256": "acfe301d449a7f8dcf016c814acdacad1ca6f3b08da9710cecd81ee7df4a1b69"
+      },
+      "shared_profile": {
+        "bytes": 12618,
+        "path": "/private/tmp/m621-clawbench/shared_alex_green_personal_info.json",
+        "sha256": "8ad16f311804630a81117e29c99f0a980436fab1168e9415982f559a615b23d6"
+      },
+      "v1_tasks": {
+        "bytes": 31443,
+        "path": "/private/tmp/m621-clawbench/data_train-00000-of-00001.parquet",
+        "sha256": "eb5856b30167a46e6fa793114e3a81e8200d71fb1503f297b80cdee0f89479bb"
+      },
+      "v2_tasks": {
+        "bytes": 23520,
+        "path": "/private/tmp/m621-clawbench/data_v2-00000-of-00001.parquet",
+        "sha256": "f6660a95672210d950dd84356987c3e1c7c54b6e9a43837177d4784fe8eee4f6"
+      }
+    },
+    "license": "Apache-2.0",
+    "revision": "cc146e2128724f47f2a7246f1a3057c643b22f70",
+    "source_url": "https://github.com/TIGER-AI-Lab/ClawBench"
+  }
+}

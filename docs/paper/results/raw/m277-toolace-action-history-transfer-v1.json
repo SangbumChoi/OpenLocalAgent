@@ -1,0 +1,201 @@
+{
+  "aggregate": {
+    "random_after_token_accuracy": 0.001718213058419244,
+    "warm_after_token_accuracy": 0.4729995090819833,
+    "warm_minus_random_after_pp": 47.1281296023564,
+    "warm_start_better_after": true
+  },
+  "arm_contract": {
+    "random_backbone_init": "random",
+    "random_backbone_seed": 2028,
+    "warm_backbone_init": "parent"
+  },
+  "claim_boundary": "Matched public-train-only text/accessibility continuation comparison; this is not an official benchmark score, native environment success, screenshot-grounding result, or evidence of real email/Notion/MCP side effects.",
+  "decision": "warm_start_dominates_matched_random_on_all_surfaces",
+  "eval_sources": [
+    {
+      "datasets": [
+        "Team-ACE/ToolACE"
+      ],
+      "input": {
+        "bytes": 344723,
+        "path": "/private/tmp/toolace-action-eval-64.jsonl",
+        "sha256": "fa4926b1be45e4471bac104fa31e480de6ab3e195317c900a695069c403b4230"
+      },
+      "label": "toolace",
+      "public_reference": {
+        "dataset": "Team-ACE/ToolACE",
+        "url": "https://huggingface.co/datasets/Team-ACE/ToolACE"
+      },
+      "revisions": [
+        "6bda777c88d21e5a204703c1ee45597a8fa4f734"
+      ],
+      "rows": 64,
+      "source_families": [],
+      "source_urls": [
+        "https://huggingface.co/datasets/Team-ACE/ToolACE"
+      ],
+      "splits": [
+        "eval",
+        "source_record_disjoint_eval"
+      ],
+      "unique_parent_records": 64,
+      "visual_input_omitted_rows": 0
+    }
+  ],
+  "hyperparameters": {
+    "backbone_init": "parent",
+    "batch_size": 2,
+    "device": "cpu",
+    "learning_rate": 1e-05,
+    "max_eval_rows_per_source": 64,
+    "max_seq_len": 1024,
+    "max_train_rows_per_source": 256,
+    "random_backbone_seed": 2028,
+    "seed": 2027,
+    "steps": 16
+  },
+  "kind": "localagent_cross_surface_transfer_ablation_report",
+  "parent": {
+    "bytes": 52242001,
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+  },
+  "random_backbone_receipt": {
+    "bytes": 52248325,
+    "path": "/private/tmp/m277-toolace-action-random.pt",
+    "sha256": "0066d88c6ef3cf147cbfbbd1f8f2b6308e9f2f3e38463d1f1758b6c61e62a47e"
+  },
+  "random_weight_groups": {
+    "action_heads": {
+      "base_l2": 99.96533739276437,
+      "delta_l2": 0.0,
+      "parameters": 2518968,
+      "relative_delta_l2": 0.0,
+      "target_l2": 99.96533739276437
+    },
+    "attention_or_mixer": {
+      "base_l2": 51.68591919503937,
+      "delta_l2": 40.254678395092064,
+      "parameters": 1871872,
+      "relative_delta_l2": 0.7788325915843549,
+      "target_l2": 50.410405525450685
+    },
+    "embedding": {
+      "base_l2": 76.22106199454595,
+      "delta_l2": 91.2519470281673,
+      "parameters": 6291456,
+      "relative_delta_l2": 1.1972012018764169,
+      "target_l2": 50.1887349451363
+    },
+    "ffn": {
+      "base_l2": 50.59914708877707,
+      "delta_l2": 44.42230032259819,
+      "parameters": 2360832,
+      "relative_delta_l2": 0.877925871846387,
+      "target_l2": 49.7921391048035
+    },
+    "normalization": {
+      "base_l2": 21.432378276078357,
+      "delta_l2": 1.837577707393548,
+      "parameters": 384,
+      "relative_delta_l2": 0.08573839467197868,
+      "target_l2": 19.59581423575313
+    }
+  },
+  "rows": {
+    "eval": 64,
+    "train": 256
+  },
+  "schema_version": 1,
+  "surfaces": {
+    "toolace": {
+      "random_backbone": {
+        "after_token_accuracy": 0.001718213058419244,
+        "before_token_accuracy": 0.0,
+        "delta_token_accuracy": 0.001718213058419244
+      },
+      "rows": 61,
+      "warm_minus_random_after_pp": 47.1281296023564,
+      "warm_start": {
+        "after_token_accuracy": 0.4729995090819833,
+        "before_token_accuracy": 0.47619047619047616,
+        "delta_token_accuracy": -0.0031909671084928704
+      },
+      "warm_start_better_after": true
+    }
+  },
+  "train_sources": [
+    {
+      "datasets": [
+        "Team-ACE/ToolACE"
+      ],
+      "input": {
+        "bytes": 1346014,
+        "path": "/private/tmp/toolace-action-train-256.jsonl",
+        "sha256": "7ddd58ba5352492290dad0e68d7e7a3f06ad428ffcd595f4c2e014a314c793ac"
+      },
+      "label": "toolace",
+      "public_reference": {
+        "dataset": "Team-ACE/ToolACE",
+        "url": "https://huggingface.co/datasets/Team-ACE/ToolACE"
+      },
+      "revisions": [
+        "6bda777c88d21e5a204703c1ee45597a8fa4f734"
+      ],
+      "rows": 256,
+      "source_families": [],
+      "source_urls": [
+        "https://huggingface.co/datasets/Team-ACE/ToolACE"
+      ],
+      "splits": [
+        "source_record_disjoint_train",
+        "train"
+      ],
+      "unique_parent_records": 256,
+      "visual_input_omitted_rows": 0
+    }
+  ],
+  "warm_start_receipt": {
+    "bytes": 52248211,
+    "path": "/private/tmp/m277-toolace-action-warm.pt",
+    "sha256": "cfef9ad3833201194d4e7e7926a17171ecf7de3523c9a48362b371e9e173d605"
+  },
+  "warm_weight_groups": {
+    "action_heads": {
+      "base_l2": 99.96533739276437,
+      "delta_l2": 0.0,
+      "parameters": 2518968,
+      "relative_delta_l2": 0.0,
+      "target_l2": 99.96533739276437
+    },
+    "attention_or_mixer": {
+      "base_l2": 51.68591919503937,
+      "delta_l2": 0.052520600499701836,
+      "parameters": 1871872,
+      "relative_delta_l2": 0.0010161491043917156,
+      "target_l2": 51.686107364331555
+    },
+    "embedding": {
+      "base_l2": 76.22106199454595,
+      "delta_l2": 0.14186059617584845,
+      "parameters": 6291456,
+      "relative_delta_l2": 0.0018611731779071693,
+      "target_l2": 76.27510961367295
+    },
+    "ffn": {
+      "base_l2": 50.59914708877707,
+      "delta_l2": 0.06246315252385822,
+      "parameters": 2360832,
+      "relative_delta_l2": 0.0012344704627978323,
+      "target_l2": 50.59940317899933
+    },
+    "normalization": {
+      "base_l2": 21.432378276078357,
+      "delta_l2": 0.0011203725435017906,
+      "parameters": 384,
+      "relative_delta_l2": 5.227476526729135e-05,
+      "target_l2": 21.43139046030568
+    }
+  }
+}

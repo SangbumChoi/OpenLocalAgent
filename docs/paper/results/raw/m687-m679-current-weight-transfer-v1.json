@@ -1,0 +1,46 @@
+{
+  "children": {
+    "random": {"bytes": 52207527, "path": "/private/tmp/m687-m679-transfer/random-child.pt", "sha256": "a889be2f40d2f7d45bbd7c01f99c799bd254cee8870ce51e4701aa211c1d66ca"},
+    "warm": {"bytes": 52207285, "path": "/private/tmp/m687-m679-transfer/warm-child.pt", "sha256": "b248fbd13bf09419885682c4078e89c7468b901724536d8d2a5142e639611095"}
+  },
+  "claim_boundary": "Current m679 parent-bound warm/random weight movement audit. The warm arm freezes shared backbone tensors while adapting action heads; the random control reinitializes the shared body. Compatibility and movement support initialization strategy, not task-quality optimality, official MCPMark success, live MCP execution, or external side effects.",
+  "comparison": {
+    "arm_contract": {"head_training_steps": 32, "random_backbone_init": "random", "random_seed": 2028, "same_training_rows": 28, "same_training_steps": 32, "warm_backbone_init": "parent"},
+    "decision": "reuse parent backbone; keep synthetic service probe as diagnostic only",
+    "random_head_metrics": {"route_accuracy": 1.0, "selector_top1": 0.9642857142857143, "selector_top3": 1.0},
+    "warm_head_metrics": {"route_accuracy": 1.0, "selector_top1": 0.6071428571428571, "selector_top3": 0.8928571428571429}
+  },
+  "kind": "localagent_m687_m679_current_weight_transfer_ablation",
+  "parent_checkpoint": {"bytes": 52206773, "path": "/private/tmp/m679-m675-mcp/warm-child.pt", "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"},
+  "receipt_self_sha256": "ecfbb9a0c123c860b5106c546bed721a943632820382001501edd92fc21c9e1f",
+  "reports": {
+    "random_probe_sha256": "5431d844ce4c6659660b8f9f933b3fa5444dd8bad9778a6831a999cab2ed2951",
+    "random_weight_sha256": "13fda47d7533aa9bbfc4a5878c5a74ce3f0c7be0cef484c3afc40d27e1a38a65",
+    "warm_probe_sha256": "94d79e6171f6a19fa8f57a930b4fdc4131185218671796f530b0b5685ec92d89",
+    "warm_weight_sha256": "4c84642b3b36daa6cc0f622a9fcddfda04492e4b729bc7e9341ec3e8daabb93b"
+  },
+  "schema_version": 1,
+  "source": {"external_accounts_used": false, "kind": "generated_service_tool_contract_probe", "mcpmark_task_text_used": false, "native_runtime_executed": false, "public_benchmark_text_used": false, "services": ["filesystem", "github", "notion", "playwright", "postgres"]},
+  "weight_transfer_analysis": {
+    "random": {
+      "compatibility": {"added_tensors": [], "config_mismatches": {}, "removed_tensors": [], "shape_mismatches": {}, "shared_tensor_count": 51, "tokenizer_sha256_equal": true},
+      "groups": {
+        "action_heads": {"base_l2": 91.77234792175153, "delta_l2": 43.53427404885782, "parameters": 2519736, "relative_delta_l2": 0.47437245569849357, "target_l2": 92.37603723782267},
+        "attention_or_mixer": {"base_l2": 51.70583183858278, "delta_l2": 40.26909703706976, "parameters": 1871872, "relative_delta_l2": 0.778811511296895, "target_l2": 50.41041198209772},
+        "embedding": {"base_l2": 78.5827108674603, "delta_l2": 93.2323813068983, "parameters": 6291456, "relative_delta_l2": 1.1864235819523523, "target_l2": 50.192188468904504},
+        "ffn": {"base_l2": 50.615098537061556, "delta_l2": 44.432701372869396, "parameters": 2360832, "relative_delta_l2": 0.877854684809805, "target_l2": 49.791972392812234},
+        "normalization": {"base_l2": 21.464259287065175, "delta_l2": 1.8693920157430428, "parameters": 384, "relative_delta_l2": 0.08709324606740931, "target_l2": 19.595917942265423}
+      }
+    },
+    "warm": {
+      "compatibility": {"added_tensors": [], "config_mismatches": {}, "removed_tensors": [], "shape_mismatches": {}, "shared_tensor_count": 51, "tokenizer_sha256_equal": true},
+      "groups": {
+        "action_heads": {"base_l2": 91.77234792175153, "delta_l2": 44.069913117639445, "parameters": 2519736, "relative_delta_l2": 0.4802090620500967, "target_l2": 92.38303584176509},
+        "attention_or_mixer": {"base_l2": 51.70583183858278, "delta_l2": 0.0, "parameters": 1871872, "relative_delta_l2": 0.0, "target_l2": 51.70583183858278},
+        "embedding": {"base_l2": 78.5827108674603, "delta_l2": 0.0, "parameters": 6291456, "relative_delta_l2": 0.0, "target_l2": 78.5827108674603},
+        "ffn": {"base_l2": 50.615098537061556, "delta_l2": 0.0, "parameters": 2360832, "relative_delta_l2": 0.0, "target_l2": 50.615098537061556},
+        "normalization": {"base_l2": 21.464259287065175, "delta_l2": 0.0, "parameters": 384, "relative_delta_l2": 0.0, "target_l2": 21.464259287065175}
+      }
+    }
+  }
+}

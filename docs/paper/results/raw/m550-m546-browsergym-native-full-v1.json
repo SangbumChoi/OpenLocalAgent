@@ -1,0 +1,56 @@
+{
+  "benchmark_id": "browsergym_miniwob",
+  "candidate_checkpoint": {
+    "sha256": "2663f3fc76bad1b8f20afacfbde157e305f9decd369c3586ea1b51a6bcbc80a6",
+    "stage": "sft_public_agent_continuation",
+    "parameters": 10524544
+  },
+  "checkpoint_sha256": "2663f3fc76bad1b8f20afacfbde157e305f9decd369c3586ea1b51a6bcbc80a6",
+  "source": {
+    "browsergym_repository": "https://github.com/ServiceNow/BrowserGym",
+    "browsergym_revision": "9e779f087de9a65668b6974d11f9ce9816026e96",
+    "browsergym_version": "0.14.3",
+    "miniwob_repository": "https://github.com/Farama-Foundation/miniwob-plusplus",
+    "miniwob_revision": "7fd85d71a4b60325c6585396ec4f48377d049838",
+    "chromium_revision": "1117",
+    "chromium_version": "125.0.6422.26",
+    "playwright_version": "1.44.0",
+    "fixed_seeds": [11, 17, 23, 29],
+    "task_plan_sha256": "16046662f7cb4ef1e264c3cb506de75b3da714817dfea465483639a8f281a848"
+  },
+  "environment": {
+    "official_split": "miniwob",
+    "official_split_verified": true,
+    "task_count": 240,
+    "expected_task_variants": 60,
+    "expected_similarity_groups": 41,
+    "max_steps": 10,
+    "headless": true,
+    "coordinate_fallback": false,
+    "semantic_fallback": false,
+    "errors": []
+  },
+  "environment_executed": true,
+  "result": {
+    "passed_tasks": 5,
+    "failed_tasks": 235,
+    "success_rate": 0.020833333333333332,
+    "grounded_actions": 211,
+    "total_model_steps": 2251,
+    "action_errors": 0,
+    "successful_task_families": {
+      "miniwob.click-button": 4,
+      "miniwob.sign-agreement": 1
+    },
+    "observation_mode": "accessibility_tree_text",
+    "vision_used": false,
+    "upstream_receipt_sha256": "69639b51f3ecdf5c167fac61a8e10771e6d4e63f24c70fe10216c9d6b0202765"
+  },
+  "claim_boundary": "Complete pinned BrowserGym/MiniWoB checkpoint-in-the-loop split with text/accessibility-tree observations. This is not a visual-agent, WebArena, OSWorld, or real-account email/Notion result; realistic_browser vocabulary does not provide live cross-site DOM grounding.",
+  "decision": {
+    "adoption": "retain_as_native_negative_control",
+    "reason": "The official 240-episode environment ran without errors, but m546 reaches only 5/240 tasks (2.08%) and 211 grounded actions, limited to click-button and sign-agreement; native browser promotion is rejected."
+  },
+  "receipt_self_sha256": "e8cc8703c7029420974591f8fc7af04e802a4b1a5bd37bf215e633f5709c3d00",
+  "schema_version": 1
+}

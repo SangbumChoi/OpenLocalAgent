@@ -1,0 +1,74 @@
+{
+  "benchmark_id": "mind2web_grounded_dom_browsergym",
+  "candidate_checkpoint": {
+    "path": "/private/tmp/m544-grounded-child.pt",
+    "sha256": "8fba9dc6c39dcc3eec56be736d95c50db1010530c9523ef0f85f6541f0b1c212"
+  },
+  "claim_boundary": "Public Mind2Web train-record-disjoint DOM-enriched continuation plus a pinned 16/240 BrowserGym/MiniWoB diagnostic. This is not an official Mind2Web test score, complete BrowserGym split, visual-agent result, or real-account email/Notion execution.",
+  "mind2web": {
+    "source": "osunlp/Mind2Web",
+    "url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+    "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+    "train_conversations": 96,
+    "eval_conversations": 32,
+    "train_decisions": 586,
+    "eval_decisions": 186,
+    "dom_adapter": "scripts/export_mind2web_grounded_rows.py",
+    "candidate_cap": 12,
+    "before_exact_span": 0.0,
+    "after_exact_span": 0.06989247311827956,
+    "after_exact_span_rows": 186,
+    "train_jsonl_sha256": "f7acd30b226fb3f9dce64faa5ac27f91e2ec066f047e66a529a9679e1aded077",
+    "eval_jsonl_sha256": "a4ce3c08a6cf1dce4ef5314a0d0847c67c2b3aae99c12b1b2d022ba2c0d51076"
+  },
+  "webgpu": {
+    "export_script": "scripts/publish_hf_release.py",
+    "parity_gate": true,
+    "model_parameters": 10524544,
+    "bundle_manifest_sha256": "92c5213be8b5161a832a58ca061b63075a89221c4a7f076886f8b772e61f71d8",
+    "model_onnx_sha256": "2bf27c91fe8b20ddc42b6bc617620dbfcfc606ce4512be342012881c3b6c4e9d",
+    "model_fp16_onnx_sha256": "07578048f0a8cbe6d9658f6e8455618e2efa4b290c9d9eaa9475449b5fe1d5aa"
+  },
+  "weight_transfer": {
+    "base_checkpoint_sha256": "1f0feee786d2dd9291b8af59c537a9941f40485b99d1317a800246f7bead9d69",
+    "config_mismatches": {},
+    "tokenizer_equal": true,
+    "shared_tensor_count": 50,
+    "shape_mismatches": {
+      "ptr_head.arg_emb.weight": {"base": [17, 384], "target": [19, 384]}
+    },
+    "relative_delta_l2": {
+      "action_heads": 0.0017600089944056043,
+      "attention_or_mixer": 0.002154005229321604,
+      "embedding": 0.0013336421944301277,
+      "ffn": 0.0025921421680684628,
+      "normalization": 0.00009165200393326162
+    },
+    "interpretation": "Backbone reuse is compatible but the pointer vocabulary expands 17->19; movement is lineage evidence, not proof that transfer is optimal."
+  },
+  "browsergym": {
+    "browsergym_revision": "9e779f087de9a65668b6974d11f9ce9816026e96",
+    "browsergym_version": "0.14.3",
+    "miniwob_revision": "7fd85d71a4b60325c6585396ec4f48377d049838",
+    "chromium_revision": "1117",
+    "chromium_version": "125.0.6422.26",
+    "playwright_version": "1.44.0",
+    "tool_pool": "realistic_browser",
+    "coordinate_fallback": false,
+    "semantic_fallback": false,
+    "episodes": 16,
+    "planned_episodes": 240,
+    "successful_episodes": 4,
+    "success_rate": 0.25,
+    "grounded_steps": 4,
+    "grounded_rate": 0.03225806451612903,
+    "official_split_verified": false,
+    "successful_task_group": "miniwob.click-button"
+  },
+  "decision": {
+    "adoption": "reject_for_promotion",
+    "reason": "DOM enrichment materially improves teacher-forced pointer spans and the child exports with exact ONNX parity, but native BrowserGym remains 4/16 and only click-button succeeds; continue grounding/multi-step training before public promotion."
+  },
+  "receipt_self_sha256": "acc2fab596c640986714d30ef6af6acee16d27ced627bf761da1eae38b83e3b6",
+  "schema_version": 1
+}

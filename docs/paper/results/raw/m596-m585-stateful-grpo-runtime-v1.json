@@ -1,0 +1,62 @@
+{
+  "kind": "localagent_current_warm_child_grpo_runtime_evidence",
+  "schema_version": 1,
+  "status": "measured",
+  "checkpoint": {
+    "sha256": "a8311802d528bd0e090aa2dbda7d71b7d11b2a142373fb5c2b2c075d70326e30",
+    "stage": "rl",
+    "parameters": 10524544,
+    "parent_warm_sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff",
+    "sft_parent_sha256": "42e647948987fab51c3787f3508ad421712c2791078e1eef97c9ebda5ec774ca"
+  },
+  "training": {
+    "sft_updates": 32,
+    "rl_updates": 8,
+    "attempted_rollouts": 128,
+    "informative_groups": 27,
+    "mean_reward_pre": 0.034375,
+    "mean_reward_post": 0.1625,
+    "exact_match_pre": 0.0,
+    "exact_match_post": 0.0,
+    "strict_tool_format_valid_rollouts": 15,
+    "exact_success_rollouts": 0,
+    "deployment_heads_trainable": false,
+    "deployment_heads_preserved": ["tool_head", "ptr_head", "route_head", "dense_selector", "selector_proj"]
+  },
+  "runtime": {
+    "kind": "local_resettable_state_machine",
+    "oracle_task_complete_rate": 1.0,
+    "model_task_complete_rate": 0.2,
+    "model_attempt_success_rate": 0.19444444444444445,
+    "model_accepted_steps": 7,
+    "model_expected_steps": 16,
+    "by_family": {
+      "email": {"task_complete_rate": 1.0, "accepted_steps": 6, "expected_steps": 6},
+      "notion": {"task_complete_rate": 0.0, "accepted_steps": 1, "expected_steps": 2},
+      "browser": {"task_complete_rate": 0.0, "accepted_steps": 0, "expected_steps": 4},
+      "recovery": {"task_complete_rate": 0.0, "accepted_steps": 0, "expected_steps": 3},
+      "abstention": {"task_complete_rate": 0.0, "accepted_steps": 0, "expected_steps": 1}
+    },
+    "external_accounts_used": false,
+    "public_benchmark": false,
+    "tool_side_effects": "in_memory_only"
+  },
+  "weight_transition": {
+    "comparison": "m585 warm parent -> m596 RL child",
+    "overall_relative_l2": 0.028189965814432796,
+    "by_component": {
+      "embedding": {"relative_l2": 0.037158631013665754, "abs_l2": 2.86598833249706},
+      "attention": {"relative_l2": 0.019119532145142136, "abs_l2": 0.6423152729342457},
+      "ffn": {"relative_l2": 0.024608621806701085, "abs_l2": 0.7901570051731622},
+      "norm": {"relative_l2": 0.0005193990477982996, "abs_l2": 0.03087614081598738}
+    },
+    "action_head_relative_l2": 0.0,
+    "interpretation": "The 32-step SFT prelude accounts for almost all backbone movement; the subsequent 8-step RL phase is a small continuation update. FFN and attention move substantially more than normalization, while deployment heads remain frozen. The local runtime result improves email completion but does not solve browser/recovery grounding."
+  },
+  "raw_receipts": {
+    "training": {"path": "/private/tmp/m596-m585-stateful-rl-train.json", "sha256": "3ece7d550e341e610bfa5ed0d35141b90ef4e8e340b07352bba75058934cb715"},
+    "runtime": {"path": "/private/tmp/m596-stateful-runtime-final.json", "sha256": "950e2596a12cc88e17b95d8060d7062ca0bf9d8cb4d08ea3108a47c00845644a"}
+  },
+  "claim_boundary": "Measured pure-PyTorch SFT+GRPO continuation and local resettable runtime only. It is not public benchmark training, native Android/browser/MCP execution, real-account email or Notion control, WebGPU throughput evidence, or workshop readiness.",
+  "receipt_self_sha256": "9f8fa20e31b4927c3b8fe21b6d6e7cb63fb564a57aa771646c94ca13952d3a7e"
+}

@@ -1,0 +1,73 @@
+{
+  "kind": "localagent_weight_transfer_ablation_receipt",
+  "schema_version": 1,
+  "protocol": {
+    "analyzer": "scripts/analyze_weight_transfer.py",
+    "parent_ablation_receipt": "docs/paper/results/raw/m13-mobile-dispatch-transfer-ablation.json",
+    "parent_ablation_receipt_sha256": "46d926dacf56e1cc5655c8eb9bf8efc4c4ad8a180b52b1bdce761da1d654540c",
+    "claim_boundary": "Compatibility and matched probe ablation evidence; no claim that transfer is optimal or improves native task success."
+  },
+  "checkpoints": {
+    "pretrain": {
+      "stage": "pretrain",
+      "step": 321,
+      "sha256": "1952ad7f956e02352a395ee9b34d37e893b210f9943935c0bfc3af3c4057bd2b"
+    },
+    "midtrain": {
+      "stage": "midtrain",
+      "step": 63,
+      "sha256": "65bbd67ddbab22d07795686ea41627a4453945ef112d30b40025a0cf156aef9a"
+    },
+    "sft": {
+      "stage": "sft",
+      "step": 319,
+      "sha256": "79387105de75d332413262e8d8ddb847b6cc13bc03f5e4df3c81663d9897aef1"
+    },
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "compatibility": {
+    "config_mismatches": {},
+    "shape_mismatches": {},
+    "tokenizer_sha256_equal": true,
+    "shared_tensor_count": 40,
+    "transitions": ["pretrain_to_midtrain", "midtrain_to_sft"]
+  },
+  "transfer_measurements": {
+    "pretrain_to_midtrain": {
+      "attention_or_mixer_relative_delta_l2": 0.026577998002063393,
+      "embedding_relative_delta_l2": 0.061484168831797296,
+      "ffn_relative_delta_l2": 0.033745368823136376,
+      "normalization_relative_delta_l2": 0.004051704018085852
+    },
+    "midtrain_to_sft": {
+      "attention_or_mixer_relative_delta_l2": 0.03455157274898544,
+      "embedding_relative_delta_l2": 0.40535735817000257,
+      "ffn_relative_delta_l2": 0.04306936494764155,
+      "normalization_relative_delta_l2": 0.00953102972456677,
+      "new_action_head_tensors": 11
+    }
+  },
+  "ablation": {
+    "arms": ["parent_heads", "random"],
+    "backbone_frozen": true,
+    "steps": 3000,
+    "seed": 2027,
+    "held_out_selector_delta_parent_heads_minus_random": {
+      "mobile": 0.0,
+      "productivity": 0.0
+    }
+  },
+  "held_out": {
+    "parent_heads": {
+      "mobile_selector_top1": 0.6,
+      "productivity_selector_top1": 0.75,
+      "route_accuracy": 1.0
+    },
+    "random": {
+      "mobile_selector_top1": 0.6,
+      "productivity_selector_top1": 0.75,
+      "route_accuracy": 1.0
+    }
+  },
+  "interpretation": "The verified BPE/config lineage supports reusing the backbone; matched parent-head and random-probe arms had identical small held-out selector scores, so transfer is not established as a quality gain."
+}

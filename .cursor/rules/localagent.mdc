@@ -1,0 +1,20 @@
+---
+description: LocalAgent project rules (pure-PyTorch <100M tool-calling agent)
+globs:
+alwaysApply: true
+---
+Read `AGENTS.md` at the repo root — it is the source of truth for setup, build/test commands, and
+conventions (shared with Claude Code and Codex). Key rules:
+
+- Pure PyTorch only. Do NOT add `transformers`, `trl`, `deepspeed`, or other training frameworks.
+- Three model tiers under `configs/model/` (ultra-tiny ~1M byte-level, tiny ~30M, small ~90M).
+  Every config must pass `ModelConfig.assert_within_budget()` (<100M). Never bypass it.
+- One data interchange format: `localagent.data.schema.Conversation`. Don't invent ad-hoc dicts.
+- Synthetic data targets are canonical (sorted-key compact JSON); train/eval slot pools are
+  disjoint. Preserve both.
+- Honest stubs: unimplemented code raises `NotImplementedError("TODO(phase-N): …")`. Report real
+  eval numbers; never fake 100%.
+- Before finishing: `pytest -q` green, `ruff check src tests` clean. Don't commit `runs/`,
+  checkpoints, or `*.png`.
+
+Quick signal: `python scripts/flywheel.py --quick`. Perf: `python scripts/benchmark.py`.

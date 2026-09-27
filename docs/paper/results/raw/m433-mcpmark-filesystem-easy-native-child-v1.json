@@ -1,0 +1,55 @@
+{
+  "kind": "localagent_mcpmark_native_filesystem_easy_current_checkpoint",
+  "schema_version": 1,
+  "benchmark_id": "mcpmark",
+  "dataset": {
+    "name": "MCPMark",
+    "url": "https://github.com/eval-sys/mcpmark",
+    "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "suite": "easy",
+    "service": "filesystem",
+    "task_count": 10
+  },
+  "checkpoint": {
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+    "parameters": 10524544
+  },
+  "environment": {
+    "mcp_server_executed": true,
+    "server": "@modelcontextprotocol/server-filesystem@2025.12.18",
+    "server_js_sha256": "c2f3126214742c10f6cb25297e3b89465f894b62a4df8dd042ea3d0e2d033652",
+    "official_split_verified": false,
+    "user_simulator_executed": false,
+    "external_api_called": false,
+    "task_verifiers_executed": true,
+    "state_archives": {
+      "file_context.zip": "d133c03da0ea824a41dbae4ae9af38cf3c4086a0145174aad0ea5666249bbcd8",
+      "file_property.zip": "99d5449cef45bfcda6e5260f6ef4cd356bdbae59818d37ffa840054cdee19ec4",
+      "folder_structure.zip": "231f9d42040216bb64d4148154b89040f00ac830271dc8f338ac2df719424137",
+      "legal_document.zip": "225e469124d2159a2ba5b77b2d39805ac2cce8099870a7482fb37a630dd74c09",
+      "papers.zip": "927da33d642186fbf23eb551bb52171cc0b8902813c238de1a41fb258e7bf28d",
+      "student_database.zip": "b070246c99332f817a65fd4ad50b6a60db3ad635718915afae7a12d463358633"
+    }
+  },
+  "results": [
+    {"task": "file_context/file_splitting", "verifier_exit_code": 1, "changed": false, "tools": ["create_directory", "create_directory", "create_directory", "create_directory"]},
+    {"task": "file_context/pattern_matching", "verifier_exit_code": 1, "changed": false, "tools": ["create_directory", "create_directory", "create_directory", "create_directory"]},
+    {"task": "file_context/uppercase", "verifier_exit_code": 1, "changed": false, "tools": ["write_file"]},
+    {"task": "file_property/largest_rename", "verifier_exit_code": 1, "changed": false, "tools": ["create_directory", "create_directory", null]},
+    {"task": "file_property/txt_merging", "verifier_exit_code": 1, "changed": false, "tools": ["create_directory", "create_directory", null]},
+    {"task": "folder_structure/structure_analysis", "verifier_exit_code": 1, "changed": false, "tools": ["create_directory", "create_directory", "create_directory", "create_directory"]},
+    {"task": "legal_document/file_reorganize", "verifier_exit_code": 1, "changed": false, "tools": ["create_directory", null]},
+    {"task": "papers/papers_counting", "verifier_exit_code": 1, "changed": false, "tools": ["create_directory", "create_directory", "create_directory", "create_directory"]},
+    {"task": "student_database/duplicate_name", "verifier_exit_code": 1, "changed": false, "tools": ["get_file_info", "create_directory", null]},
+    {"task": "student_database/recommender_name", "verifier_exit_code": 1, "changed": false, "tools": ["get_file_info", "create_directory", "create_directory", "create_directory"]}
+  ],
+  "summary": {
+    "tasks": 10,
+    "verifier_passes": 0,
+    "verifier_failures": 10,
+    "runtime_errors": 0,
+    "changed_workspaces": 0
+  },
+  "claim_boundary": "Ten MCPMark filesystem easy fixtures were run with the exact current checkpoint, real MCP stdio filesystem servers, and pinned task verifiers. This is a native service diagnostic, not an official MCPMark split or leaderboard score: the MCPMark user simulator, standard/verified split, and non-filesystem services were not executed.",
+  "receipt_self_sha256": "6a8a9bfa2cbd43cc09d241a6959778159c3715a342e6fd48abf8f1be650a20e6"
+}

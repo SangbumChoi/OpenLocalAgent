@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "kind": "public_realistic_agent_manifest_audit",
+  "measurement": "m179_mobile_evaluation_manifest_audit",
+  "generated_at": "2026-08-03",
+  "claim_boundary": "This receipt records byte and aggregate audits of public evaluation manifests fetched into a temporary directory. Task text, seeded identities, screenshots, APKs, simulator state, and verifier traces were not retained in the repository or admitted to SFT/RL; no native evaluator or official score was executed.",
+  "sources": [
+    {
+      "id": "iosworld",
+      "name": "iOSWorld",
+      "repository_url": "https://github.com/ljang0/iOSWorld",
+      "paper_url": "https://arxiv.org/abs/2606.09764",
+      "repository_revision": {
+        "branch": "main",
+        "commit": "e91f4cb2ef4c9dd48fef83a894477b41fd5e209d",
+        "commit_url": "https://github.com/ljang0/iOSWorld/commit/e91f4cb2ef4c9dd48fef83a894477b41fd5e209d"
+      },
+      "evaluation_manifests": [
+        {
+          "path": "tasks.json",
+          "url": "https://raw.githubusercontent.com/ljang0/iOSWorld/e91f4cb2ef4c9dd48fef83a894477b41fd5e209d/tasks.json",
+          "bytes": 192020,
+          "sha256": "42c0b5558fde0e71193b79fa3222e59d6f8f9be72e8151e260ddb0d6f99a76bb",
+          "rows": 133,
+          "category_counts": {
+            "single_app": 27,
+            "multi_app": 60,
+            "memory": 46
+          },
+          "app_count": 26,
+          "task_text_retained": false
+        }
+      ],
+      "acquisition": {
+        "temporary_audit_only": true,
+        "repository_payload_retained": false,
+        "training_rows_admitted": 0,
+        "native_runner_executed": false
+      }
+    },
+    {
+      "id": "mobile_safety_bench",
+      "name": "MobileSafetyBench",
+      "repository_url": "https://github.com/jylee425/mobilesafetybench",
+      "paper_url": "https://arxiv.org/abs/2410.17520",
+      "repository_revision": {
+        "branch": "main",
+        "commit": "bc5e0579626a280c4f551261abcb721442ff92ea",
+        "commit_url": "https://github.com/jylee425/mobilesafetybench/commit/bc5e0579626a280c4f551261abcb721442ff92ea"
+      },
+      "evaluation_manifests": [
+        {
+          "path": "mobile_safety/tasks/tasks.json",
+          "url": "https://raw.githubusercontent.com/jylee425/mobilesafetybench/bc5e0579626a280c4f551261abcb721442ff92ea/mobile_safety/tasks/tasks.json",
+          "bytes": 69821,
+          "sha256": "a44664bc7a575e69f6ac65c7bd07f1620dd177c49bf15a8ac029de5fa25540a4",
+          "rows": 90,
+          "category_counts": {
+            "Text Messaging": 22,
+            "Web Navigation": 16,
+            "Social Media": 16,
+            "Device/Data Management": 12,
+            "Utility": 12,
+            "Finance": 12
+          },
+          "task_text_retained": false
+        },
+        {
+          "path": "experiment/analysis/qa_tasks.json",
+          "url": "https://raw.githubusercontent.com/jylee425/mobilesafetybench/bc5e0579626a280c4f551261abcb721442ff92ea/experiment/analysis/qa_tasks.json",
+          "bytes": 1778,
+          "sha256": "de9fde3d2cc0d1573e4aa4844b0a1cbc900e3f5941eeafa4f3f42c8d60befe3e",
+          "rows": 3,
+          "task_text_retained": false
+        }
+      ],
+      "manifest_reconciliation": {
+        "paper_suite_tasks": 100,
+        "source_task_table_rows": 90,
+        "qa_analysis_rows": 3,
+        "interpretation": "The public task table and QA analysis file are recorded as separate artifacts; their row counts must not be summed or substituted for the paper's 100-task suite without the upstream runner's task assembly rules."
+      },
+      "acquisition": {
+        "temporary_audit_only": true,
+        "repository_payload_retained": false,
+        "training_rows_admitted": 0,
+        "native_runner_executed": false
+      }
+    }
+  ],
+  "localagent_adaptation": {
+    "training_rows_added": 0,
+    "native_runs": 0,
+    "official_scores_added": 0,
+    "reason": "These manifests define evaluation-only mobile safety and personalization tasks. The text-first WebGPU model may use only a separately approved compact protocol projection after split and license review; this audit does not convert benchmark prompts into training data."
+  },
+  "next_gate": "Acquire the release-matched Android emulator/iOS Simulator, app images, seeded state, and upstream evaluators; then run the frozen manifest with model/tokenizer hashes and publish task-level uncertainty without exposing task text.",
+  "receipt_self_sha256": "0203d15d8e736ca2c320ac79b0748384e64d9f8bcf44e98a38e8c2a0c9d05610"
+}

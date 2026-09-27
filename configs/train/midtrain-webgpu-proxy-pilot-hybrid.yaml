@@ -1,0 +1,54 @@
+# Bounded capability pilot continuing the completed seed-2027 one-token-per-parameter hybrid.
+# Agent supervision ramps from 25% to 50%; the frozen 65-row subset is evaluation-only.
+stage: midtrain
+model_config: configs/model/webgpu-10m-hybrid.yaml
+init_from: runs/pretrain-webgpu-proxy-1tpp-hybrid-seed2027/latest.pt
+data:
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-webgpu-proxy-16k.json
+  sources:
+    - name: general_replay
+      type: shards
+      path: data/shards/webgpu-proxy-120m
+      split: train
+      weight: 0.75
+      end_weight: 0.50
+    - name: rule_audited_agent
+      type: conversations
+      path: data/synth/agent_sft.jsonl
+      weight: 0.25
+      end_weight: 0.50
+  eval_sources:
+    - name: general_holdout
+      type: shards
+      path: data/shards/webgpu-proxy-120m
+      split: val
+    - name: agent_pilot_holdout
+      type: conversations
+      path: data/synth/agent_eval_pilot65.jsonl
+optim:
+  name: adamw
+  lr: 1.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 4
+  total_steps: 64
+  decay_frac: 0.25
+batch:
+  micro_batch_size: 2
+  grad_accum_steps: 4
+evaluation:
+  batches_per_source: 8
+  batch_size: 2
+  seed: 12027
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2027
+  resume: true
+log:
+  out_dir: runs/midtrain-webgpu-proxy-pilot-hybrid-seed2027
+  ckpt_every: 16

@@ -1,0 +1,61 @@
+{
+  "accessed_utc": "2026-08-05",
+  "benchmark_id": "toolsandbox",
+  "checkpoint": {
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "bytes": 52246937,
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "source": {
+    "url": "https://github.com/apple/ToolSandbox",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "checkout": "/private/tmp/toolsandbox-165848",
+    "files": [
+      {"path": "README.md", "bytes": 48824, "sha256": "0e5cfb9077769e2dcbe74dbfc8b8fac8314d8a213ab34364ab6b2ecaf47d8fe8"},
+      {"path": "LICENSE", "bytes": 2668, "sha256": "2283d5566b38210fbfb9fcb06619f1d0a8101bff9df974ea8afc3393508e9015"},
+      {"path": "tool_sandbox/common/evaluation.py", "bytes": 56027, "sha256": "0425cff032bd1ca2ebe8cc1c875cdf2ea86463af24b2940734007d938e516ab3"},
+      {"path": "tool_sandbox/common/execution_context.py", "bytes": 35461, "sha256": "a18f54e157b92fa011e84780bc33941ea0635ad70ab4b38e7408beedc6221437"},
+      {"path": "tool_sandbox/scenarios/__init__.py", "bytes": 5572, "sha256": "113cc01d10bb1630a93e09785893235ae4a3863d3a61542839eeb2791914724a"}
+    ]
+  },
+  "runner": {
+    "path": "scripts/run_toolsandbox_native.py",
+    "bytes": 18130,
+    "sha256": "ccfa3fa48147dd982148b29d4954533760250d24a5498e67d1d670612f39af25"
+  },
+  "runtime_compatibility": {
+    "python": "3.12.2",
+    "polars": "0.20.31",
+    "pydantic": "2.7.4",
+    "ccy": "1.4.0",
+    "source_dependency_note": "ToolSandbox declares ccy==1.3.1, unavailable for Python 3.12; the isolated run used the compatible ccy 1.4.0 substitution."
+  },
+  "environment_executed": true,
+  "verifier_executed": true,
+  "external_api_called": false,
+  "external_side_effects": false,
+  "official_split_verified": false,
+  "user_simulator_executed": false,
+  "protocol": "single_step_smoke",
+  "task_count": 3,
+  "success_count": 3,
+  "success_rate": 1.0,
+  "scenarios": [
+    {"scenario": "cellular_off", "similarity": 1.0, "milestone_similarity": 1.0, "turn_count": 3},
+    {"scenario": "wifi_off", "similarity": 1.0, "milestone_similarity": 1.0, "turn_count": 3},
+    {"scenario": "send_message_with_phone_number_and_content", "similarity": 1.0, "milestone_similarity": 1.0, "turn_count": 3}
+  ],
+  "interactive_stress": {
+    "protocol": "bounded_multi_step_scripted_user",
+    "task_count": 1,
+    "success_count": 0,
+    "success_rate": 0.0,
+    "scenario": "send_message_with_contact_content_cellular_off_multiple_user_turn",
+    "similarity": 0.0,
+    "milestone_similarity": 0.0,
+    "turn_count": 1,
+    "raw_receipt_sha256": "b2426781e82e39d6590c1391fd587f28236be24ba09b92028e109c23fac03a8b"
+  },
+  "claim_boundary": "Current-child native ToolSandbox simulator and milestone-verifier evidence only. The smoke set uses a scripted user and deterministic post-tool confirmation; the interactive arm uses a bounded scripted user without a model-based user simulator. The official split, full 1,032-scenario matrix, model-based user simulator, and RapidAPI tools were not executed, so this is not an official ToolSandbox leaderboard score and does not satisfy the publication gate's official-split requirement.",
+  "receipt_self_sha256": "b58444e6cad5c3ca68578b859fcdc106f57ba184418366c3a9646ff3f37e9b7e"
+}

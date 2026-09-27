@@ -1,0 +1,49 @@
+{
+  "accessed_utc": "2026-08-05",
+  "kind": "localagent_mcpmark_native_filesystem_child",
+  "schema_version": 1,
+  "benchmark_id": "mcpmark",
+  "environment_executed": true,
+  "official_split_verified": false,
+  "task_count": 1,
+  "success_count": 0,
+  "success_rate": 0.0,
+  "checkpoint": {
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "bytes": 52246937,
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "dataset": {
+    "name": "MCPMark",
+    "url": "https://github.com/eval-sys/mcpmark",
+    "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "suite": "easy",
+    "task": "filesystem/easy/folder_structure/structure_analysis"
+  },
+  "mcp_runtime": {
+    "server": "@modelcontextprotocol/server-filesystem@2025.12.18",
+    "package_json_sha256": "309d09bb97b2aa0c67b506d6bad0ddcb0297bfaf55e5cd81045feaeae53f3718",
+    "state_archive": {
+      "path": "/private/tmp/mcpmark-fs-state/folder_structure.zip",
+      "bytes": 143355,
+      "sha256": "231f9d42040216bb64d4148154b89040f00ac830271dc8f338ac2df719424137"
+    },
+    "mcp_server_executed": true,
+    "user_simulator_executed": false,
+    "external_api_called": false
+  },
+  "task_source": {
+    "description_sha256": "ed194bda852f4c0b8cef11d3a4c7c62741393e09e1aaa3f94e9289e606a0c1ae",
+    "meta_sha256": "210a33ed2242bd90e1fefc82ae26623864f9a3d382c35bd5afc3800904ef0f72",
+    "verifier_sha256": "c96c2c19305afc0fc572936fbb0002801e5bcbfcc2b3f1d5d3b25dd724446a73"
+  },
+  "rollout": {
+    "turns": 3,
+    "tools": ["create_directory", "create_directory", "create_directory"],
+    "model_completed_task": false,
+    "verifier_exit_code": 1,
+    "raw_receipt_sha256": "2f6f38bd60397488e6c5cb6268e86d61c238dd556f39f016d83f0b5203c55a8c"
+  },
+  "claim_boundary": "One native MCPMark filesystem task was executed against a real MCP stdio server and the pinned task verifier with the current m420 child. The model failed the task, and no official MCPMark split, user simulator, other MCP service, or leaderboard score is claimed.",
+  "receipt_self_sha256": "d95bc8ad2022d8b330883a80e2d3f171bf0da5e35307fc9fb2058ec2e0bc6183"
+}

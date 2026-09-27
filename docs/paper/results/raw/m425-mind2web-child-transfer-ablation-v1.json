@@ -1,0 +1,70 @@
+{
+  "accessed_utc": "2026-08-05",
+  "kind": "localagent_child_mind2web_transfer_ablation",
+  "schema_version": 1,
+  "parent_checkpoint": {
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "bytes": 52246937,
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "children": {
+    "warm_start": {"path": "/private/tmp/m425-mind2web-child-warm.pt", "bytes": 52249363, "sha256": "244da0643553850f663c7fa836f6d03598a23de7cd89b943f3655d5488b9f2a8"},
+    "random_backbone": {"path": "/private/tmp/m425-mind2web-child-random.pt", "bytes": 52249477, "sha256": "0646afdcc49c76a011e8277053ef5acb614df3f2a5a5267f87795c8ec3c17fd0"}
+  },
+  "dataset": {
+    "name": "osunlp/Mind2Web",
+    "url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+    "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+    "train_path": "data/private/mind2web/normalized/m420/train.jsonl",
+    "train_sha256": "b6cc595007bb91aa37f4d89e15e477b5b223bb9a66913856273c7cf995abf866",
+    "train_rows": 96,
+    "eval_path": "data/private/mind2web/normalized/m420/eval.jsonl",
+    "eval_sha256": "2b3e502978496dd75151a244477ad8efebfec0ebdd912bf97f0910c14f0d7ed9",
+    "eval_rows": 32,
+    "parent_overlap": 0,
+    "typed_slot_overlap": 0
+  },
+  "protocol": {
+    "steps": 8,
+    "batch_size": 1,
+    "learning_rate": 0.00002,
+    "max_seq_len": 128,
+    "device": "cpu",
+    "seed": 2027,
+    "random_backbone_seed": 2028,
+    "warm_init": "parent",
+    "random_init": "random"
+  },
+  "comparison": {
+    "arm_contract": {"warm_backbone_init": "parent", "random_backbone_init": "random", "random_backbone_seed": 2028},
+    "aggregate": {"warm_after_token_accuracy": 0.7623456790123457, "random_after_token_accuracy": 0.01646090534979424, "warm_minus_random_after_pp": 74.58847736625515, "warm_start_better_after": true},
+    "surface": "mind2web",
+    "warm": {"before_token_accuracy": 0.6965020576131687, "after_token_accuracy": 0.7623456790123457, "delta_token_accuracy": 0.06584362139917699, "sequence_accuracy": 0.0},
+    "random": {"before_token_accuracy": 0.0, "after_token_accuracy": 0.01646090534979424, "delta_token_accuracy": 0.01646090534979424, "sequence_accuracy": 0.0},
+    "decision": "warm_start_dominates_matched_random_on_mind2web"
+  },
+  "weight_transfer_analysis": {
+    "warm": {
+      "compatibility": {"config_mismatches": {}, "shape_mismatches": {}, "tokenizer_sha256_equal": true, "shared_tensor_count": 51},
+      "groups": {
+        "embedding": {"relative_delta_l2": 0.0018284628985381713, "parameters": 6291456},
+        "attention_or_mixer": {"relative_delta_l2": 0.0012152512537720063, "parameters": 1871872},
+        "ffn": {"relative_delta_l2": 0.0013851039159424167, "parameters": 2360832},
+        "normalization": {"relative_delta_l2": 0.00004465620510395303, "parameters": 384},
+        "action_heads": {"relative_delta_l2": 0.0, "parameters": 2518968}
+      }
+    },
+    "random": {
+      "compatibility": {"config_mismatches": {}, "shape_mismatches": {}, "tokenizer_sha256_equal": true, "shared_tensor_count": 51},
+      "groups": {
+        "embedding": {"relative_delta_l2": 1.196889177264749, "parameters": 6291456},
+        "attention_or_mixer": {"relative_delta_l2": 0.7788348064239373, "parameters": 1871872},
+        "ffn": {"relative_delta_l2": 0.877925479006743, "parameters": 2360832},
+        "normalization": {"relative_delta_l2": 0.08571332858555636, "parameters": 384},
+        "action_heads": {"relative_delta_l2": 0.0, "parameters": 2518968}
+      }
+    }
+  },
+  "claim_boundary": "Matched public-train-only Mind2Web continuation from the exact m420 child. This is a teacher-forced transfer/weight diagnostic, not official Mind2Web test, BrowserGym, visual grounding, native browser, MCP, or real-account success.",
+  "receipt_self_sha256": "62af7afbc5757218939d5d42b34a90c83033532e6b8d73930d4c8f2d05d725fb"
+}

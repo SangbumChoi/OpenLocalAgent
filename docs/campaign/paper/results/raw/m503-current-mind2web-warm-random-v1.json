@@ -1,0 +1,71 @@
+{
+  "claim_boundary": "Four-update public-train-only Mind2Web continuation on a source-disjoint normalized slice. Metrics are teacher-forced text/accessibility diagnostics, not official Mind2Web, BrowserGym, native browser, screenshot-grounding, MCP, email, or Notion success.",
+  "comparison": {
+    "warm_after_token_accuracy": 0.7774849397590361,
+    "random_after_token_accuracy": 0.0,
+    "warm_before_token_accuracy": 0.7232680722891566,
+    "random_before_token_accuracy": 0.0,
+    "warm_minus_random_after_percentage_points": 77.74849397590361,
+    "warm_delta_percentage_points": 5.42168674698795,
+    "random_delta_percentage_points": 0.0,
+    "decision": "warm_start_dominates_matched_random_on_this_public_mind2web_slice"
+  },
+  "dataset": {
+    "name": "osunlp/Mind2Web",
+    "url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+    "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+    "train_path": "data/private/mind2web/normalized/m420/train.jsonl",
+    "train_sha256": "b6cc595007bb91aa37f4d89e15e477b5b223bb9a66913856273c7cf995abf866",
+    "eval_path": "data/private/mind2web/normalized/m420/eval.jsonl",
+    "eval_sha256": "2b3e502978496dd75151a244477ad8efebfec0ebdd912bf97f0910c14f0d7ed9",
+    "train_rows_used": 16,
+    "eval_rows_used": 16,
+    "parent_record_overlap": 0,
+    "slot_overlap": 0
+  },
+  "kind": "localagent_current_checkpoint_public_continuation_ablation",
+  "parent_checkpoint": {
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "protocol": {
+    "steps": 4,
+    "batch_size": 4,
+    "learning_rate": 0.00001,
+    "max_seq_len": 512,
+    "device": "cpu",
+    "seed": 2027,
+    "random_backbone_seed": 2028,
+    "heads": "inherited unchanged from parent"
+  },
+  "warm": {
+    "child": {"path": "/private/tmp/m503-mind2web-warm.pt", "sha256": "7429ab32275452ccecee758344c64cc19974aa140a3aeeecb4d1d8ef3ae487e4"},
+    "eval": {"before_token_accuracy": 0.7232680722891566, "after_token_accuracy": 0.7774849397590361, "before_mean_loss": 1.8571924876017742, "after_mean_loss": 1.6065868699407002},
+    "loss_history": [1.770967960357666, 1.78619384765625, 1.6842807531356812, 1.5351704359054565],
+    "weight_groups": {
+      "embedding": {"relative_delta_l2": 0.0005646224894005831, "parameters": 6291456},
+      "attention_or_mixer": {"relative_delta_l2": 0.0004702994358471309, "parameters": 1871872},
+      "ffn": {"relative_delta_l2": 0.0005420728740730572, "parameters": 2360832},
+      "normalization": {"relative_delta_l2": 0.00001667386070327689, "parameters": 384},
+      "action_heads": {"relative_delta_l2": 0.0, "parameters": 2518968}
+    }
+  },
+  "random": {
+    "child": {"path": "/private/tmp/m503-mind2web-random.pt", "sha256": "63e0d23d380228579e833058a993ae8e04665fa18eabb8e04ccd5043becd23e1"},
+    "eval": {"before_token_accuracy": 0.0, "after_token_accuracy": 0.0, "before_mean_loss": 9.746899524366999, "after_mean_loss": 9.54221592179264},
+    "loss_history": [9.799919128417969, 9.732473373413086, 9.681142807006836, 9.643232345581055],
+    "weight_groups": {
+      "embedding": {"relative_delta_l2": 1.1969598719564567, "parameters": 6291456},
+      "attention_or_mixer": {"relative_delta_l2": 0.7788327419745508, "parameters": 1871872},
+      "ffn": {"relative_delta_l2": 0.8779224854003175, "parameters": 2360832},
+      "normalization": {"relative_delta_l2": 0.08571133457865679, "parameters": 384},
+      "action_heads": {"relative_delta_l2": 0.0, "parameters": 2518968}
+    }
+  },
+  "recommendation": {
+    "backbone": "reuse same-shape parent tensors only after config and tokenizer checks",
+    "optimization": "use a lower learning rate for transferred backbone tensors and a higher rate for newly trained action heads",
+    "next_control": "repeat on held-out browser, mobile, and tool-API projections before promotion"
+  },
+  "schema_version": 1
+}

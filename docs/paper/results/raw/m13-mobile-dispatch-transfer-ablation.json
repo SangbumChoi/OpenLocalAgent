@@ -1,0 +1,69 @@
+{
+  "kind": "localagent_mobile_dispatch_transfer_ablation",
+  "schema_version": 1,
+  "protocol": {
+    "runner": "scripts/train_mobile_dispatch_pilot.py",
+    "steps": 3000,
+    "seed": 2027,
+    "device": "cpu",
+    "data_rows": 114,
+    "synthetic_mobile_rows": 86,
+    "synthetic_mobile_repeats": 4,
+    "held_out_mobile_rows": 10,
+    "held_out_productivity_rows": 4,
+    "backbone": "same v9r checkpoint for both arms; only route/selector probe initialization differs",
+    "claim_boundary": "Offline selector ablation only; no Android emulator, browser runtime, or WebGPU score is implied."
+  },
+  "source_data": [
+    {
+      "path": "androidcontrol_conversations_v2.train.jsonl",
+      "bytes": 1512235,
+      "sha256": "705bf99465b5feb2b24f03e5c81cc2c1560ac8f28200eb83ed8c921626c995fa"
+    },
+    {
+      "path": "aitw_conversations_v2.train.jsonl",
+      "bytes": 252386,
+      "sha256": "1f0a08fac5684f21d62a10855fc05171b4d7ba699f8aae51f062d01f7b52031"
+    }
+  ],
+  "parent": {
+    "path": "sft-realistic-mobile-dispatch-productivity-v9r.pt",
+    "sha256": "523946f03fd8439e0c085ad9cbcab3bc43bcf3d28ef9385d9c42666a6f9eb0ec"
+  },
+  "arms": {
+    "parent_heads": {
+      "child_sha256": "bf023d512c5bc6468b0595d62d8b38de5a11ace77c5e33e061555952fc3366f0",
+      "report_sha256": "f5a478baff18ac902b9e02e6c60c91d61471a784a576bee77fc2ed535b6da5a4",
+      "transfer_report_sha256": "14b1637e3c7e11c54d6eb87b939a0df71a7d4778587c2ebb448cc64e8978cf01",
+      "train_route_accuracy": 1.0,
+      "train_selector_top1": 0.8620689655172413,
+      "held_out_mobile_route_accuracy": 1.0,
+      "held_out_mobile_selector_top1": 0.6,
+      "held_out_productivity_route_accuracy": 1.0,
+      "held_out_productivity_selector_top1": 0.75,
+      "action_heads_relative_delta_l2": 0.4426154493966282,
+      "backbone_relative_delta_l2": 0.0
+    },
+    "random": {
+      "child_sha256": "86abdd6ef2c325cca85e785edb2096af353e60baceb40f65ff2c0b43a172a95f",
+      "report_sha256": "c051c6919518d6354bd4c4cb23bd3755bb959a13d06541ea36bf38daf5057ec5",
+      "transfer_report_sha256": "8587e2b8a047abc7e2dfa48282e40859b76d6a9015a35213b1382c9c20ce4a9f",
+      "train_route_accuracy": 1.0,
+      "train_selector_top1": 0.7586206896551724,
+      "held_out_mobile_route_accuracy": 1.0,
+      "held_out_mobile_selector_top1": 0.6,
+      "held_out_productivity_route_accuracy": 1.0,
+      "held_out_productivity_selector_top1": 0.75,
+      "action_heads_relative_delta_l2": 1.0752970609546673,
+      "backbone_relative_delta_l2": 0.0
+    }
+  },
+  "interpretation": {
+    "held_out_selector_delta_parent_heads_minus_random": {
+      "mobile": 0.0,
+      "productivity": 0.0
+    },
+    "train_selector_delta_parent_heads_minus_random": 0.10344827586206894,
+    "result": "Parent-head reuse reduced probe movement and improved training-fit selector accuracy, but this small held-out set shows no transfer benefit. A larger disjoint evaluation and repeated seeds are required before choosing warm-start as a quality intervention."
+  }
+}

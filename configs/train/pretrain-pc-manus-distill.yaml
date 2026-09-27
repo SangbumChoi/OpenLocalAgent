@@ -1,0 +1,32 @@
+# Size-ladder backbone: same corpus, tokenizer, schedule and token budget as the 10M pair, so the
+# warm-start and catalog-conditioning studies can be read across scales.
+stage: pretrain
+model_config: configs/model/webgpu-96m-hybrid.yaml
+data:
+  shards_dir: data/shards/pt-manus-distill
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-h100-16k.json
+optim:
+  name: adamw
+  lr: 3.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 32
+  total_steps: 1600
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 8
+  grad_accum_steps: 8
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+  resume: false
+log:
+  out_dir: runs/pretrain-pc-manus-distill
+  ckpt_every: 400
+  eval_every: 400
+  eval_batches: 32

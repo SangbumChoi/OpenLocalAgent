@@ -1,0 +1,76 @@
+{
+  "blocking_requirements": [
+    "native:androidworld",
+    "native:mobile_safety_bench",
+    "native:iosworld",
+    "native:osworld",
+    "native:osworld_v2",
+    "native:agentnet",
+    "native:toolsandbox",
+    "native:mcpmark",
+    "native:enterpriseopsgym"
+  ],
+  "catalog": {
+    "entries": 40,
+    "path": "configs/data/realistic-agent-eval.catalog.yaml",
+    "sha256": "bed7062e6e8965fb4df6b8f72953a112dab83de5709040a8ea7444598987cf79"
+  },
+  "claim_boundary": "This is a fail-closed workshop/publication re-audit. A false ready flag is never inferred from a protocol bridge, a synthetic receipt, an older public artifact, or a host that cannot expose a WebGPU adapter identity.",
+  "evidence": {
+    "browsergym_miniwob": {
+      "environment_executed": true,
+      "official_split_verified": true,
+      "path": "docs/paper/results/raw/m282-browsergym-current-checkpoint-official-v1.json",
+      "sha256": "153830c0b6674ebe39ebfb7de2167b7d98041d55c851fd4cc44e65921ce42a65",
+      "success_rate": 0.0,
+      "task_count": 240
+    },
+    "checkpoint": {
+      "parameters": 10524544,
+      "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+    },
+    "mobilegym": {
+      "environment_executed": true,
+      "official_split_verified": true,
+      "path": "docs/paper/results/raw/m262-mobilegym-native-current-browser-context-v1.json",
+      "sha256": "d2397d30a32bdacafd442b335e7f62eb7a052141248894fcbb83befc2ab6b697",
+      "success_rate": 0.00390625,
+      "task_count": 256
+    },
+    "native_webgpu": {
+      "backend": "webgpu",
+      "closed_loop_success": 0,
+      "evaluated_cases": 3,
+      "hardware_adapter": "vendor=apple; architecture=metal-3",
+      "path": "docs/paper/results/raw/m265-webgpu-native-current-browser-context-v1.json",
+      "peak_memory_mb": 20.458142280578613,
+      "sha256": "9e7679d8ad587588f66799b8044012882539656ecbba51434ecb273e71a8437b",
+      "tokens_per_second_p50": 1391.3043334037911
+    },
+    "transfer_ablation": {
+      "path": "docs/paper/results/raw/m25-weight-transfer-ablation-v1.json",
+      "sha256": "770a792b2545222ea2db89af584daebc5985d2089d117f68eba157718271ab1f"
+    },
+    "current_export": {
+      "path": "docs/paper/results/raw/m283-current-export-deployment-audit-v1.json",
+      "sha256": "be170e408d9e042188b75be195537657bc82018830c19bc19574a6cbb1eb7a6d",
+      "hf_published": false,
+      "static_demo_verified": true,
+      "webgpu_graph_parity_gate_passed": true,
+      "fresh_native_webgpu_reproduced": false
+    },
+    "public_artifacts": {
+      "manifest_path": "docs/paper/results/raw/public-model-demo-manifest-v1.json",
+      "manifest_sha256": "46b329ded3893188aedef41d638bffd43e08cda9bbcea48294bdac8e04aa7dd0",
+      "manifest_is_public": true,
+      "manifest_model": "danelcsb/localagent-tiny-30m-byte",
+      "manifest_demo": "danelcsb/localagent-webgpu",
+      "current_checkpoint_is_published": false,
+      "note": "The public manifest covers the older 28,322,304-parameter byte model, not the current 10,524,544-parameter BPE checkpoint."
+    }
+  },
+  "generated_at": "2026-08-04",
+  "kind": "localagent_workshop_publication_gate",
+  "ready": false,
+  "schema_version": 1
+}

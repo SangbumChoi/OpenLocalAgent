@@ -1,0 +1,329 @@
+{
+  "androidcontrol": {
+    "rows": 904,
+    "distinct_gold_tools": 8,
+    "majority_tool": "mobile_click",
+    "floors": {
+      "rows": 904,
+      "majority_type_match": 0.1383,
+      "constant_step_success": 0.0,
+      "no_argument_share": 0.3086,
+      "argument_derivability": 0.2891,
+      "reachable_step_success": 0.9779,
+      "fully_derivable_share": 0.5885
+    },
+    "arguments_per_call": 0.97,
+    "persona_share": 0.0033,
+    "catalog_mean": 11.0,
+    "catalog_max": 11,
+    "observation_chars_mean": 181,
+    "duplicate_groups": 61,
+    "rows_in_duplicates": 224,
+    "ambiguous_groups": 19,
+    "rows_ambiguous": 47,
+    "spec_audit": [
+      "text-only: the screenshot is omitted, so this is below the published multimodal number and is not comparable to it"
+    ],
+    "train_overlap": {
+      "exact": 0,
+      "prefix60": 904,
+      "gold_pair_in_train": 648,
+      "leaked": 0
+    }
+  },
+  "mind2web": {
+    "rows": 252,
+    "distinct_gold_tools": 3,
+    "majority_tool": "web_click",
+    "floors": {
+      "rows": 252,
+      "majority_type_match": 0.8016,
+      "constant_step_success": 0.0,
+      "no_argument_share": 0.0,
+      "argument_derivability": 0.1556,
+      "reachable_step_success": 1.0,
+      "fully_derivable_share": 0.004
+    },
+    "arguments_per_call": 1.2,
+    "persona_share": 0.0675,
+    "catalog_mean": 3.0,
+    "catalog_max": 3,
+    "observation_chars_mean": 109,
+    "duplicate_groups": 0,
+    "rows_in_duplicates": 0,
+    "ambiguous_groups": 0,
+    "rows_ambiguous": 0,
+    "spec_audit": [
+      "label-leaked: all 252 eval golds (web_click target_id such as '107') are verbatim among 4,508 posttrain golds, while the id is in the observation once and the observation is the task sentence alone (109 chars, no DOM). Exact prompt overlap is 0 and the 38 rows outside the 60-char task-prefix overlap score the same as the rest (57.9 vs 58.7 on la-300m-matrix), so the leak is the label space, not shared tasks. No clean subset exists; the number is memorised label structure. Constant web_click floor: type_match 80%."
+    ],
+    "train_overlap": {
+      "exact": 0,
+      "prefix60": 214,
+      "gold_pair_in_train": 252,
+      "leaked": 252
+    }
+  },
+  "toolace": {
+    "rows": 949,
+    "distinct_gold_tools": 929,
+    "majority_tool": "Get Cryptocurrency Overview",
+    "floors": {
+      "rows": 949,
+      "majority_type_match": 0.0021,
+      "constant_step_success": 0.0,
+      "no_argument_share": 0.0685,
+      "argument_derivability": 0.6557,
+      "reachable_step_success": 1.0,
+      "fully_derivable_share": 0.5848
+    },
+    "arguments_per_call": 1.76,
+    "persona_share": 0.0327,
+    "catalog_mean": 3.4,
+    "catalog_max": 9,
+    "observation_chars_mean": 290,
+    "duplicate_groups": 5,
+    "rows_in_duplicates": 10,
+    "ambiguous_groups": 0,
+    "rows_ambiguous": 0,
+    "spec_audit": [],
+    "train_overlap": {
+      "exact": 0,
+      "prefix60": 153,
+      "gold_pair_in_train": 46,
+      "leaked": 0
+    }
+  },
+  "xlam": {
+    "rows": 2941,
+    "distinct_gold_tools": 1313,
+    "majority_tool": "search",
+    "floors": {
+      "rows": 2941,
+      "majority_type_match": 0.0167,
+      "constant_step_success": 0.0,
+      "no_argument_share": 0.0119,
+      "argument_derivability": 0.7807,
+      "reachable_step_success": 0.9997,
+      "fully_derivable_share": 0.7236
+    },
+    "arguments_per_call": 1.77,
+    "persona_share": 0.0014,
+    "catalog_mean": 2.8,
+    "catalog_max": 8,
+    "observation_chars_mean": 112,
+    "duplicate_groups": 16,
+    "rows_in_duplicates": 35,
+    "ambiguous_groups": 1,
+    "rows_ambiguous": 2,
+    "spec_audit": [
+      "90 of 2,941 eval observations (3.1%) are verbatim in the posttrain split (scripts/analyze_harness.py --train-overlap, 2026-09-02); the only exact leak measured, in the suite the headline rests on"
+    ],
+    "train_overlap": {
+      "exact": 90,
+      "prefix60": 233,
+      "gold_pair_in_train": 1118,
+      "leaked": 74
+    }
+  },
+  "bfcl": {
+    "rows": 204,
+    "distinct_gold_tools": 152,
+    "majority_tool": "todo",
+    "floors": {
+      "rows": 204,
+      "majority_type_match": 0.0392,
+      "constant_step_success": 0.0,
+      "no_argument_share": 0.0245,
+      "argument_derivability": 0.7827,
+      "reachable_step_success": 0.9951,
+      "fully_derivable_share": 0.6618
+    },
+    "arguments_per_call": 2.32,
+    "persona_share": 0.0,
+    "catalog_mean": 2.1,
+    "catalog_max": 5,
+    "observation_chars_mean": 92,
+    "duplicate_groups": 4,
+    "rows_in_duplicates": 8,
+    "ambiguous_groups": 1,
+    "rows_ambiguous": 2,
+    "spec_audit": [
+      "appears in no training stage: pure transfer"
+    ],
+    "train_overlap": null
+  },
+  "agentnet": {
+    "rows": 12482,
+    "distinct_gold_tools": 8,
+    "majority_tool": "click",
+    "floors": {
+      "rows": 12482,
+      "majority_type_match": 0.729,
+      "constant_step_success": 0.0,
+      "no_argument_share": 0.0,
+      "argument_derivability": 0.0842,
+      "reachable_step_success": 1.0,
+      "fully_derivable_share": 0.0875
+    },
+    "arguments_per_call": 1.04,
+    "persona_share": 0.0106,
+    "catalog_mean": 8.0,
+    "catalog_max": 8,
+    "observation_chars_mean": 1237,
+    "duplicate_groups": 0,
+    "rows_in_duplicates": 0,
+    "ambiguous_groups": 0,
+    "rows_ambiguous": 0,
+    "spec_audit": [
+      "eval split keeps its empty upstream catalog; only the train split was catalog-repaired, so this is not inflated against open baselines. type_match is the constant floor: always-click scores 73%, la-93m-matrix 74%. step_success is a click coordinate inferred from a text screen description (8% argument derivability) - a grounding task without the image, not a tool-calling one. 12,482 rows, so it dominates nothing at equal suite weight but is the largest file"
+    ],
+    "train_overlap": null
+  },
+  "toolbench": {
+    "rows": 687,
+    "distinct_gold_tools": 197,
+    "majority_tool": "v1_historicalevents_for_historical_events_by_api_ninjas",
+    "floors": {
+      "rows": 687,
+      "majority_type_match": 0.0189,
+      "constant_step_success": 0.0102,
+      "no_argument_share": 0.4745,
+      "argument_derivability": 0.5461,
+      "reachable_step_success": 1.0,
+      "fully_derivable_share": 0.7293
+    },
+    "arguments_per_call": 0.82,
+    "persona_share": 0.0,
+    "catalog_mean": 5.9,
+    "catalog_max": 14,
+    "observation_chars_mean": 283,
+    "duplicate_groups": 137,
+    "rows_in_duplicates": 553,
+    "ambiguous_groups": 0,
+    "rows_ambiguous": 0,
+    "spec_audit": [
+      "553 of 687 rows are exact-duplicate observations (137 groups, all with consistent golds; 0 overlap with the train split), so the suite is ~271 unique prompts counted with repetition. 47% of golds take no arguments: mostly a selection test among ~200 RapidAPI names"
+    ],
+    "train_overlap": {
+      "exact": 0,
+      "prefix60": 82,
+      "gold_pair_in_train": 292,
+      "leaked": 0
+    }
+  },
+  "toolsandbox": {
+    "rows": 17,
+    "distinct_gold_tools": 14,
+    "majority_tool": "search_contacts",
+    "floors": {
+      "rows": 17,
+      "majority_type_match": 0.1765,
+      "constant_step_success": 0.1765,
+      "no_argument_share": 1.0,
+      "argument_derivability": null,
+      "reachable_step_success": 1.0,
+      "fully_derivable_share": 1.0
+    },
+    "arguments_per_call": 0.0,
+    "persona_share": 0.0,
+    "catalog_mean": 33.0,
+    "catalog_max": 33,
+    "observation_chars_mean": 37,
+    "duplicate_groups": 0,
+    "rows_in_duplicates": 0,
+    "ambiguous_groups": 0,
+    "rows_ambiguous": 0,
+    "spec_audit": [
+      "17 rows is below 100: one row moves the ten-suite mean by 0.59 points",
+      "single-turn projection of a stateful benchmark; 17 rows, so one row is 0.59 points of the ten-suite mean - wider than differences we have called results"
+    ],
+    "train_overlap": null
+  },
+  "mcpatlas": {
+    "rows": 495,
+    "distinct_gold_tools": 43,
+    "majority_tool": "exa_web_search_exa",
+    "floors": {
+      "rows": 495,
+      "majority_type_match": 0.0848,
+      "constant_step_success": 0.0,
+      "no_argument_share": 0.2828,
+      "argument_derivability": 0.3063,
+      "reachable_step_success": 1.0,
+      "fully_derivable_share": 0.4949
+    },
+    "arguments_per_call": 0.9,
+    "persona_share": 0.0,
+    "catalog_mean": 15.2,
+    "catalog_max": 37,
+    "observation_chars_mean": 298,
+    "duplicate_groups": 0,
+    "rows_in_duplicates": 0,
+    "ambiguous_groups": 0,
+    "rows_ambiguous": 0,
+    "spec_audit": [
+      "appears in no training stage: pure transfer. In practice a wall, not a gradient: parse_rate 96-99% but type_match 3-4% and step 0.4-1.4% at every tier from 10M to 300M. 43 MCP tool names the model has never seen in 15-tool catalogs; it emits well-formed calls to the wrong one"
+    ],
+    "train_overlap": null
+  },
+  "mobileactions": {
+    "rows": 961,
+    "distinct_gold_tools": 7,
+    "majority_tool": "create_calendar_event",
+    "floors": {
+      "rows": 961,
+      "majority_type_match": 0.2227,
+      "constant_step_success": 0.0,
+      "no_argument_share": 0.2945,
+      "argument_derivability": 0.848,
+      "reachable_step_success": 1.0,
+      "fully_derivable_share": 0.7388
+    },
+    "arguments_per_call": 1.75,
+    "persona_share": 0.0073,
+    "catalog_mean": 7.0,
+    "catalog_max": 7,
+    "observation_chars_mean": 332,
+    "duplicate_groups": 0,
+    "rows_in_duplicates": 0,
+    "ambiguous_groups": 0,
+    "rows_ambiguous": 0,
+    "spec_audit": [
+      "the one suite where parse_rate is the bottleneck (70-83%): 332-char observations with a date/time preamble and 1.75 multi-field arguments that are 85% copyable from the text. Failures are format, not selection"
+    ],
+    "train_overlap": {
+      "exact": 0,
+      "prefix60": 961,
+      "gold_pair_in_train": 327,
+      "leaked": 0
+    }
+  },
+  "tau2": {
+    "rows": 402,
+    "distinct_gold_tools": 22,
+    "majority_tool": "refuel_data",
+    "floors": {
+      "rows": 402,
+      "majority_type_match": 0.2388,
+      "constant_step_success": 0.0,
+      "no_argument_share": 0.005,
+      "argument_derivability": 0.4883,
+      "reachable_step_success": 0.8731,
+      "fully_derivable_share": 0.2388
+    },
+    "arguments_per_call": 3.63,
+    "persona_share": 0.99,
+    "catalog_mean": 15.6,
+    "catalog_max": 20,
+    "observation_chars_mean": 1535,
+    "duplicate_groups": 5,
+    "rows_in_duplicates": 150,
+    "ambiguous_groups": 3,
+    "rows_ambiguous": 128,
+    "spec_audit": [
+      "BLOCKED: measured, not assumed: 401/402 observations are the user-simulator persona brief rather than a request to the agent, and 62 of 83 opaque-id gold arguments never appear in the observation because the agent is meant to obtain them by asking. Per-argument derivability is 48.8% against xlam's 78.7%, capping a perfect model near 15%. All six tiers scored 0.0% with parse_rate ~60%, which is a harness fault, not a capability limit. Needs Interaction.DIALOGUE - an environment and a user simulator - before any number from it means anything.",
+      "score is conditional on a model this repository does not train"
+    ],
+    "train_overlap": null
+  }
+}

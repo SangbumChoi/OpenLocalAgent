@@ -1,0 +1,115 @@
+{
+  "claim_boundary": "Matched public-train-only continuation across mobile, desktop trajectory, browser DOM, and ToolSandbox AST projections, followed by a five-scenario native ToolSandbox simulator/verifier replay. Held-out language metrics and weight movement are not official AndroidControl, AgentNetBench, Mind2Web, ToolSandbox, WebGPU, emulator, desktop, MCP, email, or Notion scores.",
+  "kind": "localagent_multisurface_continuation_native_bridge",
+  "schema_version": 1,
+  "datasets": {
+    "androidcontrol": {
+      "name": "google-research/AndroidControl",
+      "url": "https://github.com/google-research/google-research/tree/master/android_control",
+      "train": {"rows": 4096, "sha256": "6971d5fe81fe3c6e8ee12e0072481ec653f98bdb5699af54e8f63649358743fd"},
+      "eval": {"rows": 904, "sha256": "2d798115fe0feb14ac6d65f86a4b51b4463b593a35281eedce4de8751356bc95"},
+      "visual_input_omitted": true
+    },
+    "agentnet": {
+      "name": "xlangai/AgentNet",
+      "url": "https://huggingface.co/datasets/xlangai/AgentNet",
+      "revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+      "train": {"rows": 513, "sha256": "44fad4c6e98fb6f5afd3cc45b89e1c1987d5d273293922521ef67677ace79db8"},
+      "eval": {"rows": 133, "sha256": "2cadf65145b07734eb13988dc305396d027f6e98d1a5a7cf7de9a5fd31c3dc7c"},
+      "screenshots_omitted": true
+    },
+    "mind2web": {
+      "name": "osunlp/Mind2Web",
+      "url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+      "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+      "train": {"rows": 36, "sha256": "78f7e647c3728106901c51ecc772c834467ef6a019c1c083af6849700b361621"},
+      "eval": {"rows": 12, "sha256": "46305cb512f7368ed31817c79b798f5469e8658db12aed5d6880ea81b4e6fcbe"},
+      "parent_disjoint": true,
+      "typed_slot_disjoint": true
+    },
+    "toolsandbox": {
+      "name": "apple/ToolSandbox",
+      "url": "https://github.com/apple/ToolSandbox",
+      "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+      "train": {"rows": 107, "sha256": "773b44877677e7b2be72295bc9eb26d158c5932d6665aac15bcae9592d46609d"},
+      "eval": {"rows": 20, "sha256": "925ce977082ffb980e46bce5b25ea81fdd335d25e5996feefd503015ba3ff46d"},
+      "projection": "static AST only; simulator and verifier excluded from training rows"
+    }
+  },
+  "parent": {
+    "bytes": 52276521,
+    "path": "/private/tmp/m194-m180-dispatch-repair-warm.pt",
+    "sha256": "3b3fd817c6f52e8b922f84c9bb36e7d55e0e243a0f8ee6d0f20c85962a4eeba7"
+  },
+  "training": {
+    "steps": 64,
+    "batch_size": 4,
+    "learning_rate": 1e-05,
+    "max_seq_len": 2048,
+    "warm": {
+      "child_sha256": "504fcfa6cb1f5b2b806c00f5df0190693be4fff7365fa575c0311b9360662fd4",
+      "report_sha256": "4d4f4596f9ce28619922cb847f06d2f1d32e0c83837d9456b943bc15e3e3f69b",
+      "rows": {"train": 4752, "eval": 1069},
+      "aggregate_eval_token_accuracy": {"before": 0.6430925981420438, "after": 0.7230379915426365},
+      "eval_sequence_accuracy_after": 0.0,
+      "eval_by_source_after": {
+        "androidcontrol": 0.7572324324324324,
+        "agentnet": 0.5872009813943979,
+        "mind2web": 0.6616635397123202,
+        "toolsandbox": 0.6555023923444976
+      },
+      "weight_movement_relative_l2": {
+        "embedding": 0.009689380334295037,
+        "attention_or_mixer": 0.0029236500679224444,
+        "ffn": 0.003801286542179926,
+        "normalization": 0.0002336379079102396,
+        "action_heads": 0.0
+      }
+    },
+    "random": {
+      "child_sha256": "6ddc9df0daa0f51d78bce8ecd85e24c4548a9b3af1a5640b104d8904b9be8a2f",
+      "report_sha256": "f44b3ecdc8df5afd643b43bddee8ef27717486d12b0adf71fc0d15fd0613459f",
+      "rows": {"train": 4752, "eval": 1069},
+      "aggregate_eval_token_accuracy": {"before": 0.000033296706955682086, "after": 0.4654879632404355},
+      "eval_sequence_accuracy_after": 0.0,
+      "weight_movement_relative_l2": {
+        "embedding": 1.234776625741272,
+        "attention_or_mixer": 0.778822437516855,
+        "ffn": 0.8778249250205071,
+        "normalization": 0.07898447466695097,
+        "action_heads": 0.0
+      }
+    }
+  },
+  "native_toolsandbox_interactive": {
+    "official_split_verified": false,
+    "scenario_count": 5,
+    "scenarios": [
+      "send_message_with_contact_content_cellular_off",
+      "turn_on_wifi_low_battery_mode",
+      "find_current_city_insufficient_information",
+      "remove_contact_by_phone_ambiguous",
+      "search_message_with_recency_latest_multiple_user_turn"
+    ],
+    "warm": {
+      "report_sha256": "47811d347bc04a8eebff48b6af631325be405307029d2431dd5e07b406684549",
+      "success_count": 1,
+      "success_rate": 0.2,
+      "per_scenario_similarity": [0.25, 0.3333333333333333, 1.0, 0.0, 0.5]
+    },
+    "random": {
+      "report_sha256": "247f338d5cc1ef431ff205ca2982bca39236b7be5110614c341a9c6d33fd0a8b",
+      "success_count": 1,
+      "success_rate": 0.2,
+      "per_scenario_similarity": [0.25, 0.3333333333333333, 1.0, 0.3333333333333333, 0.5]
+    },
+    "warm_minus_random_success_rate_pp": 0.0,
+    "native_success_parity": true
+  },
+  "decision": {
+    "export_child": false,
+    "adopt_warm_backbone": false,
+    "reason": "Warm transfer gives a 7.99-point aggregate held-out token-accuracy gain over its own baseline and remains far more stable than random, but exact sequence accuracy is 0%, action heads do not move, ToolSandbox held-out accuracy slightly decreases, and native success remains 1/5 for both children. Retain the warm child as a compatibility diagnostic; do not promote it for WebGPU action control."
+  },
+  "receipt_self_sha256": "b29a72cdfa3b27023ceeca0cca9d0dcb862301a34d964e9016cba498d8c8bab5"
+}

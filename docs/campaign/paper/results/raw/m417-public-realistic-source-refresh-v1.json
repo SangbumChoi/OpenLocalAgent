@@ -1,0 +1,153 @@
+{
+  "accessed_utc": "2026-08-05",
+  "claim_boundary": "Public-source and host-capability refresh only. No external benchmark payload, credential, account, emulator, desktop VM, MCP service, official evaluator, or task row was executed or admitted to training. Counts are release metadata from the linked upstream source and must not be reported as LocalAgent scores.",
+  "kind": "localagent_public_realistic_source_refresh",
+  "schema_version": 1,
+  "policy": {
+    "benchmark_task_text_is_eval_only": true,
+    "native_runner_required_for_task_success": true,
+    "text_projection_may_measure_routing_only": true,
+    "source_revision_must_be_pinned_before_training": true,
+    "visual_grounding_not_claimed_without_screenshots": true
+  },
+  "sources": [
+    {
+      "id": "androidworld",
+      "family": "mobile",
+      "source_url": "https://github.com/google-research/android_world",
+      "evidence": "official_repository",
+      "release_contract": {
+        "tasks": 116,
+        "apps": 20,
+        "dynamic_variations": true,
+        "runtime": "Android emulator with task setup and reward verifier"
+      },
+      "localagent_policy": "evaluation_only; accessibility/text probe is not native AndroidWorld"
+    },
+    {
+      "id": "browsergym",
+      "family": "browser",
+      "source_url": "https://github.com/servicenow/browsergym",
+      "evidence": "official_repository",
+      "release_contract": {
+        "benchmark_families": [
+          "MiniWoB",
+          "WebArena",
+          "WebArenaVerified",
+          "VisualWebArena",
+          "WorkArena",
+          "AssistantBench",
+          "WebLINX",
+          "OpenApps",
+          "TimeWarp"
+        ],
+        "runtime": "BrowserGym environment with matching Playwright/Chromium and live DOM state"
+      },
+      "localagent_policy": "evaluation_only; local static browser fixtures cannot satisfy an official BrowserGym score"
+    },
+    {
+      "id": "mobileworld",
+      "family": "mobile",
+      "source_url": "https://github.com/Tongyi-MAI/MobileWorld",
+      "evidence": "official_repository",
+      "release_contract": {
+        "tasks": 201,
+        "apps": 20,
+        "agent_user_workflows": true,
+        "mcp_augmented_workflows": true,
+        "runtime": "Docker/Android emulator backend with deterministic state verification"
+      },
+      "localagent_policy": "evaluation_only; no emulator, Docker, MCP credential, or user account is available locally"
+    },
+    {
+      "id": "iosworld",
+      "family": "mobile",
+      "source_url": "https://github.com/ljang0/iOSWorld",
+      "project_url": "https://iosworld.io/",
+      "evidence": "official_project_and_repository",
+      "release_contract": {
+        "tasks": 133,
+        "apps": 26,
+        "persistent_identity": true,
+        "mcp_option": true,
+        "runtime": "iOS simulator or release-matched hosted runner"
+      },
+      "localagent_policy": "evaluation_only; no iOS simulator task release was executed"
+    },
+    {
+      "id": "agentnet",
+      "family": "computer",
+      "source_url": "https://huggingface.co/datasets/xlangai/AgentNet",
+      "evidence": "official_huggingface_dataset_card",
+      "release_contract": {
+        "human_annotated_tasks": 22600,
+        "platforms": ["Windows", "macOS", "Ubuntu"],
+        "action_interface": "PyAutoGUI-style desktop actions",
+        "domains": ["Work", "Professional", "Daily", "System"],
+        "visual_observations": true
+      },
+      "localagent_policy": "text projection may train only after a pinned raw archive and official split audit; coordinate/visual success is not claimed"
+    },
+    {
+      "id": "cua_lite_agentnet",
+      "family": "computer",
+      "source_url": "https://huggingface.co/datasets/cua-lite/AgentNet",
+      "evidence": "official_huggingface_dataset_card",
+      "release_contract": {
+        "train_trajectories": 4900,
+        "validation_trajectories": 92,
+        "images": 82171,
+        "image_store_gb": 73.74,
+        "coordinate_contract": "normalized 0..1000"
+      },
+      "localagent_policy": "metadata/text-only profiling until license, revision, and image split are pinned; validation is never training input"
+    },
+    {
+      "id": "mcpmark",
+      "family": "tool_api",
+      "source_url": "https://github.com/eval-sys/mcpmark",
+      "evidence": "official_repository",
+      "release_contract": {
+        "standard_tasks": 127,
+        "easy_tasks": 50,
+        "total_tasks": 177,
+        "mcp_services": ["filesystem", "github", "notion", "postgres", "playwright"],
+        "runtime": "isolated MCP services, state, and verifier"
+      },
+      "localagent_policy": "evaluation_only; task descriptions, verifiers, credentials, and service state are not SFT data"
+    },
+    {
+      "id": "toolsandbox",
+      "family": "tool_api",
+      "source_url": "https://github.com/apple/ToolSandbox",
+      "evidence": "official_repository_plus_local_ast_profile",
+      "release_contract": {
+        "base_scenarios": 129,
+        "source_level_variants": 1032,
+        "runtime": "stateful simulator, user simulator, and milestone verifier"
+      },
+      "localagent_policy": "state-machine rehearsal only; no official split or external service execution"
+    }
+  ],
+  "host_preflight": {
+    "adb": false,
+    "docker": false,
+    "qemu_system_aarch64": false,
+    "xcrun": true,
+    "node": true,
+    "playwright_python": true,
+    "onnxruntime_python": true,
+    "checkpoint_training_rows_admitted": 0
+  },
+  "training_admission": {
+    "currently_eligible_public_train_adapters": [
+      "androidcontrol",
+      "android_in_the_wild",
+      "xlam_function_calling",
+      "mind2web_train"
+    ],
+    "new_source_rows_admitted": 0,
+    "reason": "The refreshed computer-use and benchmark sources are held out until revision, license, official split, and visual/native runtime checks are complete."
+  },
+  "receipt_self_sha256": "1c0a181c32a1890d24bb988de417710a4e92ceb5d6da206983363527ccf241ec"
+}

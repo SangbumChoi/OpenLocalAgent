@@ -1,0 +1,109 @@
+{
+  "claim_boundary": "Offline text-observation/action projection only. The public AgentNet screenshots, desktop state, OS side effects, and upstream AgentNetBench runtime were not used; dropped termination and triple-click actions are outside this score. This is not an official AgentNetBench leaderboard result, native desktop success, visual grounding, or WebGPU quality claim.",
+  "decision": {
+    "adopt_pretrained_backbone": false,
+    "reason": "The warm checkpoint preserves action-type routing over the matched random control (+87.5 percentage points first-action type), but both arms have 0.0 exact trajectory rate and effectively zero coordinate/text action score. Retain the backbone only as a research initialization candidate; require visual grounding and a native desktop/AgentNetBench evaluation before promotion.",
+    "retain_as_diagnostic": true
+  },
+  "kind": "localagent_agentnet_current_text_action_evaluation",
+  "matched_control": {
+    "checkpoint": {
+      "bytes": 52319842,
+      "path": "/private/tmp/agentnet-random-backbone-parent.pt",
+      "sha256": "a322e3100ddec6a733ec474dfc5f3c545a15fa23232f914a8b5994af7b8e7527"
+    },
+    "report": {
+      "bytes": 4919,
+      "path": "/private/tmp/m220-agentnet-random-text.report.json",
+      "sha256": "77e5e5688bb721f196139dcad46c9895c1cd9155b0751d93724a36efc019a6ed"
+    },
+    "overall": {
+      "exact_trajectory_rate": 0.0,
+      "first_action_type_rate": 0.125,
+      "mean_action_count_penalty": 0.9886363636363636,
+      "mean_ground_truth_actions": 16.375,
+      "mean_predicted_actions": 16.5,
+      "mean_total": 0.0,
+      "success_rate": 0.0,
+      "tasks": 8
+    }
+  },
+  "measurement": "m220_agentnet_current_checkpoint_text_action_projection_matched_random",
+  "projection": {
+    "action_rows": 133,
+    "eval_parent_records": 8,
+    "eval_fraction": 0.2,
+    "images_consumed": false,
+    "source_split": "ubuntu_jsonl_bounded_prefix",
+    "source_projection": {
+      "bytes": 239724,
+      "path": "/private/tmp/agentnet_text_v4.eval.jsonl",
+      "sha256": "2cadf65145b07734eb13988dc305396d027f6e98d1a5a7cf7de9a5fd31c3dc7c"
+    },
+    "source_revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "xlangai/AgentNet",
+    "license": "MIT",
+    "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+  },
+  "warm_checkpoint": {
+    "checkpoint": {
+      "bytes": 52225051,
+      "path": "/private/tmp/m180-mixed-mobile-computer-child.pt",
+      "sha256": "10827649f07182a08f8c11104d4713e76b8acaddc73020c5a4c77950de7b23a0"
+    },
+    "report": {
+      "bytes": 5005,
+      "path": "/private/tmp/m220-agentnet-current-text-full.report.json",
+      "sha256": "e6a1501b8e91d69308628b0874c97d09f560755d4fff8e9a019c62299eb67e82"
+    },
+    "overall": {
+      "exact_trajectory_rate": 0.0,
+      "first_action_type_rate": 1.0,
+      "mean_action_count_penalty": 0.9886363636363636,
+      "mean_ground_truth_actions": 16.375,
+      "mean_predicted_actions": 14.875,
+      "mean_total": 5.749050557208484e-15,
+      "success_rate": 0.0,
+      "tasks": 8
+    }
+  },
+  "weight_transfer": {
+    "warm_report": {
+      "bytes": 19665,
+      "path": "/private/tmp/m180-mixed-mobile-computer-weight.json",
+      "sha256": "3cb422cded01047ca91491f5d8dd557802a67fe26274be1b1b849257a3e9e705"
+    },
+    "random_report": {
+      "bytes": 19786,
+      "path": "/private/tmp/m180-mixed-mobile-computer-random-weight.json",
+      "sha256": "549056a067b49914e6432700eacaf03061caa63b9febba3fe60d3076b9716796"
+    },
+    "compatibility": {
+      "config_mismatches": {},
+      "shape_mismatches": {},
+      "shared_tensor_count": 51,
+      "tokenizer_sha256_equal": true
+    },
+    "relative_delta_l2": {
+      "warm": {
+        "embedding": 0.004490350105064425,
+        "attention_or_mixer": 0.002226679448159172,
+        "ffn": 0.0027335217515166363,
+        "normalization": 9.005231351657393e-05,
+        "action_heads": 0.0
+      },
+      "random": {
+        "embedding": 0.005540084029198012,
+        "attention_or_mixer": 0.0021030336402727717,
+        "ffn": 0.0027783324703175333,
+        "normalization": 0.00010320617836712158,
+        "action_heads": 0.0
+      }
+    },
+    "recommendation": "Reuse compatible pretrained backbone tensors only behind a matched no-transfer ablation; use a smaller backbone learning rate and a larger action-head rate, but do not promote this text-only result to native computer-use capability."
+  },
+  "receipt_self_sha256": "91d5c298ab694f5eb25e28fb65a4097f0aeba82fa0b9b99aeb216eb527cac93a"
+}

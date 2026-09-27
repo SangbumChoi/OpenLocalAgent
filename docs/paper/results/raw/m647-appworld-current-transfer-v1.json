@@ -1,0 +1,220 @@
+{
+  "benchmark": {
+    "data_version": "0.2.0",
+    "dataset": "AppWorld",
+    "eval_rows": 18,
+    "official_split": "public train / public dev",
+    "protected_test_used": false,
+    "source_revision": "a072b7a86e7c1d5b1d7175659d750ebb9b79f10a-data-0.2.0",
+    "source_url": "https://github.com/StonyBrookNLP/appworld",
+    "train_rows": 64
+  },
+  "children": {
+    "random": {
+      "bytes": 52203288,
+      "path": "/private/tmp/m647-appworld/random/child.pt",
+      "sha256": "64329be82c3f8e963159b022c215985c12ba989759ae58e25f90b23367afdef9"
+    },
+    "warm": {
+      "bytes": 52203288,
+      "path": "/private/tmp/m647-appworld/warm/child.pt",
+      "sha256": "039386d75721a12bfe9da636347302a51245c8e1571245711b66d4e13e1fe4a0"
+    }
+  },
+  "claim_boundary": "Public AppWorld 0.2.0 train/dev first non-bootstrap API-action projection with source-local disjoint rows and matched warm/random continuation from the current m626 checkpoints. This is teacher-forced token evidence only: no protected test split, complete AppWorld task success, external account, email side effect, or WebGPU/native promotion is claimed.",
+  "decision": {
+    "adapt_action_heads_separately": true,
+    "freeze_or_low_rate_backbone": true,
+    "promote_to_native_appworld_or_webgpu_success": false,
+    "reason": "Warm transfer remains ahead after matched continuation, while sequence exactness and route/selector accuracy remain zero; the next bottleneck is free-run schema/action grounding rather than shared-body initialization.",
+    "retain_warm_initialization": true
+  },
+  "inputs": {
+    "eval": [
+      {
+        "bytes": 20723,
+        "path": "/private/tmp/m647-appworld/eval.jsonl",
+        "sha256": "fa90ba75b363230d74667edb8055e535a360b439af6cc725fe868792a9f901c6"
+      }
+    ],
+    "eval_manifest": {
+      "bytes": 17289,
+      "path": "/private/tmp/m647-appworld/eval-manifest.json",
+      "sha256": "f6fb1044a137b79fe52090d78bfac640f6a21331ff296ec91621dd3df8ce47c2"
+    },
+    "random_report": {
+      "bytes": 7134,
+      "path": "/private/tmp/m647-appworld/random/report.json",
+      "sha256": "fd726d3556ace6d3e28d70ed48b9f5c234179a02a699988952843ba83a6f36d9"
+    },
+    "random_weight": {
+      "bytes": 19654,
+      "path": "/private/tmp/m647-appworld/random/weight.json",
+      "sha256": "381442f336e6ff04e38fd7951121964a7a5c286f5487ae724436b48cfb388689"
+    },
+    "train": [
+      {
+        "bytes": 77252,
+        "path": "/private/tmp/m647-appworld/train.jsonl",
+        "sha256": "7f1ebdd6f786c1bb6b421caa94953de146eef35866f54ecc353eb68542780905"
+      }
+    ],
+    "train_manifest": {
+      "bytes": 58910,
+      "path": "/private/tmp/m647-appworld/train-manifest.json",
+      "sha256": "4194f82a325fa1b511fb9e53cfa3ee1605b9358f9b0b430f162d22cc9480c149"
+    },
+    "warm_report": {
+      "bytes": 7167,
+      "path": "/private/tmp/m647-appworld/warm/report.json",
+      "sha256": "5108c23013c3efa7f99441f55a1b979083dc8b2e00e24a660e84a4269715ee32"
+    },
+    "warm_weight": {
+      "bytes": 19637,
+      "path": "/private/tmp/m647-appworld/warm/weight.json",
+      "sha256": "cb55b841e8e2fcd3ac8a44050c1cb0ee036479744119528f1eaf6e4869847b00"
+    }
+  },
+  "kind": "localagent_m647_appworld_current_transfer_receipt",
+  "metrics": {
+    "random_after": {
+      "assistant_loss_tokens": 755,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.2728476821192053,
+      "mean_loss": 8.601777780292839,
+      "rows": 18
+    },
+    "random_before": {
+      "assistant_loss_tokens": 755,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.04105960264900662,
+      "mean_loss": 9.376004452736963,
+      "rows": 18
+    },
+    "random_continuation_delta_pp": 23.178807947019866,
+    "warm_after": {
+      "assistant_loss_tokens": 755,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.5841059602649007,
+      "mean_loss": 2.647015097914942,
+      "rows": 18
+    },
+    "warm_after_minus_random_after_token_accuracy_pp": 31.12582781456954,
+    "warm_before": {
+      "assistant_loss_tokens": 755,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.45165562913907287,
+      "mean_loss": 3.613528745537562,
+      "rows": 18
+    },
+    "warm_continuation_delta_pp": 13.245033112582782
+  },
+  "parent_checkpoints": {
+    "random": {
+      "bytes": 52203729,
+      "path": "/private/tmp/m626-androidcontrol/random.pt",
+      "sha256": "390f1414260e118cd621af735fe6e87b01e8641b1cff650d594585e39b212e45"
+    },
+    "warm": {
+      "bytes": 52203615,
+      "path": "/private/tmp/m626-androidcontrol/warm.pt",
+      "sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c"
+    }
+  },
+  "receipt_self_sha256": "13faa8628c948afec4c208e53361571b1740fc89952f552c743955d7ffcb9ef2",
+  "schema_version": 1,
+  "weight_movement": {
+    "compatibility": {
+      "random": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "warm": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      }
+    },
+    "random": {
+      "action_heads": {
+        "base_l2": 91.45685930938616,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.45685930938616
+      },
+      "attention_or_mixer": {
+        "base_l2": 50.41264745538235,
+        "delta_l2": 0.10419636634921252,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.002066869557712306,
+        "target_l2": 50.41283477352483
+      },
+      "embedding": {
+        "base_l2": 50.18980321909165,
+        "delta_l2": 0.26082588978977383,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.005196790444688544,
+        "target_l2": 50.18570788808166
+      },
+      "ffn": {
+        "base_l2": 49.79575699706091,
+        "delta_l2": 0.12903127869042533,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.002591210305288483,
+        "target_l2": 49.79714460836108
+      },
+      "normalization": {
+        "base_l2": 19.59893200139525,
+        "delta_l2": 0.0021144464645816113,
+        "parameters": 384,
+        "relative_delta_l2": 0.00010788580032988959,
+        "target_l2": 19.59987856482613
+      }
+    },
+    "warm": {
+      "action_heads": {
+        "base_l2": 91.45685930938616,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.45685930938616
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.69880319159533,
+        "delta_l2": 0.11573375469667709,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0022386157425689094,
+        "target_l2": 51.698350633444605
+      },
+      "embedding": {
+        "base_l2": 77.55555240216619,
+        "delta_l2": 0.33610002458781046,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.004333668115017165,
+        "target_l2": 77.68753053023842
+      },
+      "ffn": {
+        "base_l2": 50.609413534253534,
+        "delta_l2": 0.13910187505190633,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0027485375810126548,
+        "target_l2": 50.60973789349284
+      },
+      "normalization": {
+        "base_l2": 21.451040319317258,
+        "delta_l2": 0.0020824501281590815,
+        "parameters": 384,
+        "relative_delta_l2": 9.70792137425511e-05,
+        "target_l2": 21.451560121678863
+      }
+    }
+  }
+}

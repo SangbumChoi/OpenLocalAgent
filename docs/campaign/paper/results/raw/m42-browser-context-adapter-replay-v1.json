@@ -1,0 +1,208 @@
+{
+  "after": {
+    "argument_accuracy": 0.6,
+    "records": [
+      {
+        "arguments_exact": false,
+        "gold_tool": "wait",
+        "predicted_tool": "wait",
+        "route_correct": true,
+        "tool_exact": true
+      },
+      {
+        "arguments_exact": true,
+        "gold_tool": "double_click",
+        "predicted_tool": "double_click",
+        "route_correct": true,
+        "tool_exact": true
+      },
+      {
+        "arguments_exact": true,
+        "gold_tool": "screenshot",
+        "predicted_tool": "screenshot",
+        "route_correct": true,
+        "tool_exact": true
+      },
+      {
+        "arguments_exact": true,
+        "gold_tool": "open_app",
+        "predicted_tool": "open_app",
+        "route_correct": true,
+        "tool_exact": true
+      },
+      {
+        "arguments_exact": true,
+        "gold_tool": "click",
+        "predicted_tool": "click",
+        "route_correct": true,
+        "tool_exact": true
+      },
+      {
+        "arguments_exact": false,
+        "gold_tool": "key_press",
+        "predicted_tool": "key_press",
+        "route_correct": true,
+        "tool_exact": true
+      },
+      {
+        "arguments_exact": false,
+        "gold_tool": "scroll",
+        "predicted_tool": "scroll",
+        "route_correct": true,
+        "tool_exact": true
+      },
+      {
+        "arguments_exact": true,
+        "gold_tool": "move_cursor",
+        "predicted_tool": "move_cursor",
+        "route_correct": true,
+        "tool_exact": true
+      },
+      {
+        "arguments_exact": true,
+        "gold_tool": "type_text",
+        "predicted_tool": "type_text",
+        "route_correct": true,
+        "tool_exact": true
+      },
+      {
+        "arguments_exact": false,
+        "gold_tool": "drag",
+        "predicted_tool": "drag",
+        "route_correct": true,
+        "tool_exact": true
+      }
+    ],
+    "route_accuracy": 1.0,
+    "rows": 10,
+    "tool_accuracy": 1.0
+  },
+  "before": {
+    "argument_accuracy": 0.2,
+    "records": [
+      {
+        "arguments_exact": true,
+        "gold_tool": "wait",
+        "predicted_tool": "wait",
+        "route_correct": false,
+        "tool_exact": true
+      },
+      {
+        "arguments_exact": false,
+        "gold_tool": "double_click",
+        "predicted_tool": "click",
+        "route_correct": true,
+        "tool_exact": false
+      },
+      {
+        "arguments_exact": false,
+        "gold_tool": "screenshot",
+        "predicted_tool": null,
+        "route_correct": false,
+        "tool_exact": false
+      },
+      {
+        "arguments_exact": false,
+        "gold_tool": "open_app",
+        "predicted_tool": null,
+        "route_correct": false,
+        "tool_exact": false
+      },
+      {
+        "arguments_exact": true,
+        "gold_tool": "click",
+        "predicted_tool": "click",
+        "route_correct": true,
+        "tool_exact": true
+      },
+      {
+        "arguments_exact": false,
+        "gold_tool": "key_press",
+        "predicted_tool": null,
+        "route_correct": false,
+        "tool_exact": false
+      },
+      {
+        "arguments_exact": false,
+        "gold_tool": "scroll",
+        "predicted_tool": null,
+        "route_correct": false,
+        "tool_exact": false
+      },
+      {
+        "arguments_exact": false,
+        "gold_tool": "move_cursor",
+        "predicted_tool": "click",
+        "route_correct": true,
+        "tool_exact": false
+      },
+      {
+        "arguments_exact": false,
+        "gold_tool": "type_text",
+        "predicted_tool": "jira_issue",
+        "route_correct": false,
+        "tool_exact": false
+      },
+      {
+        "arguments_exact": false,
+        "gold_tool": "drag",
+        "predicted_tool": "drag",
+        "route_correct": true,
+        "tool_exact": true
+      }
+    ],
+    "route_accuracy": 0.4,
+    "rows": 10,
+    "tool_accuracy": 0.3
+  },
+  "checkpoint": {
+    "path": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/latest.pt",
+    "sha256": "79387105de75d332413262e8d8ddb847b6cc13bc03f5e4df3c81663d9897aef1"
+  },
+  "claim_boundary": "Train-only synthetic observation-contract adaptation; not a BrowserGym score and not training on BrowserGym task prompts or labels.",
+  "eval": {
+    "path": "data/synth/agent_eval_pilot65.jsonl",
+    "rows": 10,
+    "sha256": "a46aaba70b0135cdb10abba760de23f17ddc61ad9515d277b1b6d21f1b4ee179",
+    "tools": {
+      "click": 1,
+      "double_click": 1,
+      "drag": 1,
+      "key_press": 1,
+      "move_cursor": 1,
+      "open_app": 1,
+      "screenshot": 1,
+      "scroll": 1,
+      "type_text": 1,
+      "wait": 1
+    }
+  },
+  "kind": "localagent_browser_context_adapter_report",
+  "matmul_precision": "highest",
+  "output": {
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+  },
+  "schema_version": 1,
+  "tokenizer": {
+    "path": "data/tokenizer-webgpu-proxy-16k.json",
+    "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "train": {
+    "path": "data/synth/agent_sft.jsonl",
+    "rows": 589,
+    "sha256": "161c4b8baab4adb75fe7f968f2bfc15b3e1828c5e376a16b494ee61072179a00",
+    "tools": {
+      "click": 79,
+      "double_click": 75,
+      "drag": 103,
+      "key_press": 48,
+      "move_cursor": 75,
+      "open_app": 73,
+      "screenshot": 5,
+      "scroll": 19,
+      "type_text": 62,
+      "wait": 50
+    }
+  }
+}

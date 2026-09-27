@@ -1,0 +1,51 @@
+{
+  "claim_boundary": "Offline AgentNet text-observation/action projection only. Screenshots, OS state, and the upstream desktop runtime were not used; dropped source actions and termination markers are outside this score. This is not an official AgentNetBench leaderboard result, visual grounding result, or native desktop success.",
+  "comparison_to_previous": {
+    "previous_receipt": "docs/paper/results/raw/m220-agentnet-current-text-action-evaluation-v1.json",
+    "previous_warm_first_action_type_rate": 1.0,
+    "previous_warm_exact_trajectory_rate": 0.0,
+    "current_first_action_type_rate": 0.0,
+    "current_exact_trajectory_rate": 0.0,
+    "interpretation": "The older mixed-surface child is not interchangeable with the current deployment checkpoint; retain the current result as a regression signal and do not promote either arm to native desktop capability."
+  },
+  "dataset": "xlangai/AgentNet",
+  "decision": "retain_diagnostic_only",
+  "generated_at": "2026-08-05",
+  "kind": "localagent_agentnet_current_text_projection",
+  "metrics": {
+    "exact_trajectory_rate": 0.0,
+    "first_action_type_rate": 0.0,
+    "mean_action_count_penalty": 0.9886363636363636,
+    "mean_ground_truth_actions": 16.375,
+    "mean_predicted_actions": 16.25,
+    "mean_total": 0.0,
+    "success_rate": 0.0,
+    "tasks": 8
+  },
+  "projection": {
+    "action_rows": 133,
+    "eval_parent_records": 8,
+    "images_consumed": false,
+    "source_revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+    "source_split": "ubuntu_jsonl_bounded_prefix",
+    "source_sha256": "2cadf65145b07734eb13988dc305396d027f6e98d1a5a7cf7de9a5fd31c3dc7c",
+    "source_bytes": 239724
+  },
+  "receipt_self_sha256": "ef2657513a3580394895433ca7193ec81ec3a0201a08d0abfd963d197016d62a",
+  "schema_version": 1,
+  "source": {
+    "license": "MIT",
+    "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+  },
+  "artifacts": {
+    "predictions_sha256": "edd8e0b2c1872ddff69759d410a8ebc0cbfa136c9eba0eb0a97d3b2d7e08012c",
+    "predictions_bytes": 110065,
+    "report_sha256": "8bd243bcf001edd03fd794a67e365b68412f321b52bee2dd69709eadacc7cec1",
+    "report_bytes": 4980
+  },
+  "checkpoint": {
+    "parameters": 10524544,
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "stage": "sft_browser_context"
+  }
+}

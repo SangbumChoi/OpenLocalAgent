@@ -1,0 +1,31 @@
+{
+  "claim_boundary": "Local-only HF model export and static Space staging verification. No Hugging Face repository was created or uploaded, and no public URL is claimed.",
+  "checkpoint": {
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "kind": "localagent_local_hf_space_stage_receipt",
+  "model": {
+    "parameter_count": 10524544,
+    "repo_id_requested": "danelcsb/localagent-webgpu-10m-current",
+    "staging_dir": "/private/tmp/m502-release/model",
+    "artifacts": {
+      "config.json": {"bytes": 38446, "sha256": "73cc4655bdfd3345dd5fe13511a619f23e9d5ef6f9bf8c50292dc31e45bc1265"},
+      "tokenizer.json": {"bytes": 1134224, "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"},
+      "agent_heads.bin": {"bytes": 10116038, "sha256": "4cf15dd4f4cc2e7cdd418a18f14dfb31830785eca4c668e4963fd9d67350d7d5"},
+      "pytorch_model.bin": {"bytes": 42113215, "sha256": "da7b9398d0f6b32e5abb1a4cf1af3e664a065e367ab33bfd4200f4614efc0664"},
+      "README.md": {"bytes": 3571, "sha256": "1402db85a6d088d398ad15477d900f0981c29778e82b1fb8bceacf3f7f3d8f1f"}
+    }
+  },
+  "schema_version": 1,
+  "space": {
+    "repo_id_requested": "danelcsb/localagent-webgpu-current",
+    "staging_dir": "/private/tmp/m502-release/space",
+    "webgpu_bundle_dir": "/private/tmp/m502-release/web",
+    "bundle_manifest_sha256": "2e0fbec774f2d89226e9dace831f21e9aac9eda96a2116b20900fa38e6c5676a",
+    "bundle_identity_sha256": "3353497d5376b26a1895d081ecfa7d03859159c11d80193a6583663bddcf8c76",
+    "webgpu_verified": true,
+    "parity_gate_passed": true
+  },
+  "upload": {"published": false, "reason": "HF authentication not available"}
+}

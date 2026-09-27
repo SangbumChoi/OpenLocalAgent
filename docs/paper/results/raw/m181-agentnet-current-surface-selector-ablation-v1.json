@@ -1,0 +1,163 @@
+{
+  "kind": "localagent_agentnet_current_surface_selector_ablation",
+  "schema_version": 1,
+  "measurement": "m181_agentnet_current_child_surface_selector_multiseed",
+  "generated_at": "2026-08-03",
+  "claim_boundary": "This is an offline text/accessibility projection of public AgentNet rows with a surface-specific 14-action selector. It is not the official AgentNetBench split or score, screenshot grounding, native desktop control, OS side effects, WebGPU quality, or a claim that the inherited representation improves selector quality. The final eight-parent replay has complete IDs but zero exact trajectories.",
+  "source": {
+    "dataset": "xlangai/AgentNet",
+    "url": "https://huggingface.co/datasets/xlangai/AgentNet",
+    "revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+    "license": "MIT",
+    "train": {
+      "path": "/private/tmp/agentnet_text_v4.train.jsonl",
+      "bytes": 911095,
+      "sha256": "44fad4c6e98fb6f5afd3cc45b89e1c1987d5d273293922521ef67677ace79db8",
+      "rows": 513
+    },
+    "eval": {
+      "path": "/private/tmp/agentnet_text_v4.eval.jsonl",
+      "bytes": 239724,
+      "sha256": "2cadf65145b07734eb13988dc305396d027f6e98d1a5a7cf7de9a5fd31c3dc7c",
+      "rows": 133
+    },
+    "official_split_verified": false,
+    "images_consumed": false,
+    "desktop_runtime_executed": false
+  },
+  "parent": {
+    "path": "/private/tmp/m180-mixed-mobile-computer-child.pt",
+    "bytes": 52225051,
+    "sha256": "10827649f07182a08f8c11104d4713e76b8acaddc73020c5a4c77950de7b23a0",
+    "stage": "sft_public_agent_continuation"
+  },
+  "selector": {
+    "surface": "agentnet",
+    "tool_count": 14,
+    "tool_names": [
+      "agentnet_click",
+      "agentnet_double_click",
+      "agentnet_right_click",
+      "agentnet_middle_click",
+      "agentnet_move_cursor",
+      "agentnet_drag",
+      "agentnet_scroll",
+      "agentnet_hscroll",
+      "agentnet_type_text",
+      "agentnet_key_press",
+      "agentnet_hotkey",
+      "agentnet_triple_click",
+      "agentnet_wait",
+      "agentnet_terminate"
+    ],
+    "backbone_frozen": true,
+    "steps": 400,
+    "batch_size": 128,
+    "learning_rate": 0.005,
+    "implementation": {
+      "trainer": "scripts/train_agentnet_selector_repair.py",
+      "trainer_sha256": "d74046175aeca4f72d2f6ee58a3b4f21aecd63ed9693cd4fc457b1a456aa05a2",
+      "runtime": "src/localagent/agent/runtime.py",
+      "runtime_sha256": "e7694c881c89742a3764219c3eb69ee18c6d40d4439d1112cdf908883201ded6"
+    }
+  },
+  "multiseed": {
+    "seeds": [2042, 2043, 2044],
+    "reports": [
+      {
+        "seed": 2042,
+        "path": "/private/tmp/m181-agentnet-selector-report.json",
+        "bytes": 1502,
+        "sha256": "8b435e12895a885ffde2f325349743129342bf37eb91f2d10fbc61bf070a23d1",
+        "warm": {
+          "train_top1": 0.7368420958518982,
+          "eval_top1": 0.6992481350898743,
+          "relative_selector_l2": 1.7485258947260136
+        },
+        "random": {
+          "train_top1": 0.680311918258667,
+          "eval_top1": 0.7067669034004211,
+          "relative_selector_l2": 1.571298730525977
+        },
+        "warm_checkpoint_sha256": "ee0fbcde89952c94e61a1d3cbf3d8aaa526934d77b0943c4e4047cac8fb45e61",
+        "random_checkpoint_sha256": "53e6417b3f02c9985049cd0ce2b6945d4bc6467af3e1b459c64aeea12614451d"
+      },
+      {
+        "seed": 2043,
+        "path": "/private/tmp/m181-agentnet-selector-report-2043.json",
+        "bytes": 1513,
+        "sha256": "8a4b75fc70c9782f2d17ce79fdb0722915d9c72817dfd5b53ab697e949a27e14",
+        "warm": {
+          "train_top1": 0.7563352584838867,
+          "eval_top1": 0.6842105388641357,
+          "relative_selector_l2": 1.777623193136561
+        },
+        "random": {
+          "train_top1": 0.7173489332199097,
+          "eval_top1": 0.7067669034004211,
+          "relative_selector_l2": 1.5006811475458786
+        },
+        "warm_checkpoint_sha256": "e6c49036904611b6371bb529bf290a6a42df5b138f464dd315faddfc272a198e",
+        "random_checkpoint_sha256": "231615c7d2395aed5b02f99ce926c5fcd54498e5adba577a9d476528771755ed"
+      },
+      {
+        "seed": 2044,
+        "path": "/private/tmp/m181-agentnet-selector-report-2044.json",
+        "bytes": 1512,
+        "sha256": "36ee8e62be38004ad0ddf8a9da5ea2a3fc6d5439740fea404249bbd8eba669b1",
+        "warm": {
+          "train_top1": 0.7173489332199097,
+          "eval_top1": 0.7067669034004211,
+          "relative_selector_l2": 1.8218911337638708
+        },
+        "random": {
+          "train_top1": 0.7212475538253784,
+          "eval_top1": 0.7067669034004211,
+          "relative_selector_l2": 1.55815320636375
+        },
+        "warm_checkpoint_sha256": "1b582a001babe9cbbf20fe2fa0405ab51e7d24fe13ac7b6f38170ec4204f6635",
+        "random_checkpoint_sha256": "ec87dab9ea16347519860650df2628568c8e4956dc4f3fb76c34177dbae8cb48"
+      }
+    ],
+    "aggregate": {
+      "warm_eval_top1_mean": 0.6967418591181437,
+      "random_eval_top1_mean": 0.7067669034004211,
+      "warm_minus_random_eval_top1_mean": -0.010025044282277462,
+      "warm_better_seed_count": 0,
+      "warm_equal_seed_count": 1,
+      "warm_worse_seed_count": 2
+    }
+  },
+  "end_to_end_replay": {
+    "checkpoint": {
+      "path": "/private/tmp/m181-agentnet-warm-selector-2044.pt",
+      "bytes": 61253043,
+      "sha256": "1b582a001babe9cbbf20fe2fa0405ab51e7d24fe13ac7b6f38170ec4204f6635"
+    },
+    "report": {
+      "path": "/private/tmp/m181-agentnet-text-eval.json",
+      "bytes": 4969,
+      "sha256": "7c8538fd5f4ef91afef5ed6877e820b4c72b01608f7508a170963a48a41e8"
+    },
+    "prediction": {
+      "path": "/private/tmp/m181-agentnet-predictions.jsonl",
+      "bytes": 8609,
+      "sha256": "a18af4bff6fa51f012c408125439ff2e5f6d5424270f62fabd42dd992dff147c"
+    },
+    "ground_truth": {
+      "path": "/private/tmp/m181-agentnet-predictions.ground_truth.jsonl",
+      "bytes": 9667,
+      "sha256": "abbb6d0cf6be2d7f240097ddbcda6bbd323973a73d4089549435495f1b7b96be"
+    },
+    "parents": 8,
+    "completeness_verified": true,
+    "first_action_type_rate": 1.0,
+    "success_rate": 0.0,
+    "exact_trajectory_rate": 0.0,
+    "mean_action_count_penalty": 0.9886363636363636
+  },
+  "decision": "do_not_adopt_surface_selector_as_transfer_evidence",
+  "interpretation": "The current child supports a dedicated AgentNet selector interface, but the three-seed matched control shows no positive warm-start advantage and the complete text replay still has zero exact trajectories. Keep the surface-specific catalog plumbing; do not claim that the pretrained backbone improves desktop action selection until screenshot grounding and native AgentNet/OSWorld evaluation are run.",
+  "next_gate": "Acquire the official AgentNetBench split and a release-pinned Ubuntu desktop runner, then repeat this selector arm with screenshot/coordinate features and native state verification.",
+  "receipt_self_sha256": "01bd9afec0dfdfe5ebcf1ca87a75e64ac557a0e8e36979dd9fcd6f6137b3d88c"
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "localagent_webgpu_native_capability_receipt",
+  "schema_version": 1,
+  "backend": "webgpu",
+  "environment_executed": true,
+  "hardware_adapter": "vendor=apple; architecture=metal-3",
+  "checkpoint": {
+    "sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+    "parameters": 10524544,
+    "stage": "sft_public_agent_continuation"
+  },
+  "capability": {
+    "evaluated_cases": 3,
+    "exact_actions": 3,
+    "closed_loop_success": 0,
+    "external_side_effects_executed": false,
+    "cases": [
+      {"tool": "send_email", "exact_action_rate": 1.0, "repetitions": 30},
+      {"tool": "open_url", "exact_action_rate": 1.0, "repetitions": 30},
+      {"tool": "notion_write", "exact_action_rate": 1.0, "repetitions": 30}
+    ]
+  },
+  "performance": {
+    "tokens_per_second_p50": 1311.4754111175414,
+    "latency_ms_p50": 7.4000000059604645,
+    "peak_memory_mb": 20.458142280578613,
+    "provider": "webgpu"
+  },
+  "bundle": {
+    "identity": "91ac74b37cf93cddc20d6da1050171d1eb98dda0c9b6763dc076bef9c5929b82",
+    "manifest_sha256": "6e469cb182b24adf8d968c8d6112c23d955aef8d26c55942cc2fbe6ad9870714",
+    "action_graph_sha256": "1894c9ef2e5450a0bdc3181f75308d57124e529f10b9a050a0bfc46eda205d99"
+  },
+  "raw_receipt": {"path": "/private/tmp/m560-m553-webgpu-capability.json", "sha256": "51053bfcade37678ce50310ea9496aab6426eb54e3a04b0a52182da7096c4874"},
+  "claim_boundary": "Real Chromium WebGPU hardware capability and local structured action dispatch. No real email, navigation, or Notion side effect ran; closed_loop_success is zero.",
+  "receipt_self_sha256": "a06b7880ce188c1d8668353330cdd512f20782515463ecc3fd2610a27084c542"
+}

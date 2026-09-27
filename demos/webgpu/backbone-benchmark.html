@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LocalAgent — Matched Backbone Latency Benchmark</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    window.__localAgentBackboneBenchmarkStart = performance.now();
+    window.__localAgentBackboneRequestedProvider =
+      new URLSearchParams(window.location.search).get("backend") || "webgpu";
+    window.__localAgentBackboneManifestUrl =
+      new URLSearchParams(window.location.search).get("manifest") ||
+      "../../runs/webgpu/random-backbone-latency-seed-20260728/matched-backbones.json";
+    window.__localAgentBackboneBenchmarkResult = null;
+  </script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>⏱️ LocalAgent <span class="sub">matched backbone latency</span></h1>
+      <p class="tagline">
+        A latency-only comparison of two untrained-random-weight, hidden-only ONNX graphs at
+        exact input-tensor lengths using deterministic pre-tokenized IDs. It makes no language,
+        tool-use, or agent-quality claim and loads no tokenizer asset.
+        The default is an explicit single-provider WebGPU session request; use
+        <a href="?backend=wasm">?backend=wasm</a> for the separate explicit WASM arm.
+      </p>
+    </header>
+
+    <section id="status" class="status loading">
+      <span class="dot"></span>
+      <span id="status-text">Verifying two hidden-only graph bundles…</span>
+      <span id="backend-badge" class="badge" hidden></span>
+    </section>
+
+    <section class="benchmark-panel">
+      <div class="benchmark-disclaimer">
+        <strong>Latency only · untrained random weights</strong>
+        <span>
+          The runner rejects logits-bearing graphs and records no predictions, accuracy, success,
+          or other quality metric.
+        </span>
+      </div>
+      <div class="benchmark-settings">
+        <label>
+          Warmups per graph × length
+          <input id="backbone-warmups" type="number" min="3" max="20" value="3" />
+        </label>
+        <label>
+          Measured repetitions per graph × length
+          <input id="backbone-repetitions" type="number" min="30" max="100" value="30" />
+        </label>
+        <label>
+          Randomization seed
+          <input id="backbone-seed" type="text" value="slmw2026-backbone-v1" />
+        </label>
+      </div>
+      <div class="row">
+        <span id="backbone-progress" class="timing">
+          Loading and hashing both graph bundles; no inference has run.
+        </span>
+        <div class="button-row">
+          <button id="download-backbone-benchmark" class="secondary-button" disabled>
+            Download raw JSON
+          </button>
+          <button id="start-backbone-benchmark" class="primary-button" disabled>
+            Run once
+          </button>
+        </div>
+      </div>
+      <div id="backbone-output"></div>
+      <script id="backbone-result-json" type="application/json"></script>
+    </section>
+
+    <footer>
+      <p>
+        Conditions are the Cartesian product of two manifest-pinned hidden-only graphs and
+        128, 512, 1,024, and 1,536 deterministic pre-tokenized IDs. The ID contract is
+        <code>ids[i]=(131*i+17) mod vocab_size</code>, shared exactly across both graphs.
+        Session creation is separate from the first <code>session.run</code> for each graph and
+        length condition; the earliest condition for each graph is additionally labeled.
+        Three warmups per graph and length are retained but excluded from the thirty-run warm
+        summary. Condition order is seeded and randomized within every repetition. The page
+        requests exactly one session provider and never performs a whole-session retry with
+        another provider. ONNX Runtime does not expose per-node placement here, so the payload
+        labels per-node fallback status as unknown. Reload the page before another run so
+        “first inference” remains literal.
+      </p>
+      <p>
+        The downloadable payload is also exposed as
+        <code>window.__localAgentBackboneBenchmarkResult</code> for controlled-browser collection.
+        It includes verified graph/config hashes, exact token IDs, bundle/session timings,
+        first-inference records, warmup records, every measured record, and error details.
+      </p>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.27.0/dist/ort.webgpu.min.js"></script>
+  <script src="backbone-benchmark.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "kind": "localagent_current_checkpoint_visual_action_browser_probe",
+  "schema_version": 1,
+  "checkpoint_sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+  "artifact": {
+    "file": "visual_action_model.current.fp16.onnx",
+    "bytes": 44255651,
+    "sha256": "5f87d6cb0380600433a21f97f98baa9e12467bcbaa4d285570c2f2d827ccbdd5"
+  },
+  "artifact_identity_source": "docs/paper/results/raw/m722-current-checkpoint-structured-visual-v1.json",
+  "inputs": {"input_ids": "int64 raw UTF-8 task bytes", "images": [1, 3, 96, 96], "context_lengths": [1]},
+  "outputs": {"action_logits": [1, 7], "pointer_xy": [1, 2]},
+  "action_names": ["click", "input_text", "long_press", "navigate_back", "open_app", "scroll", "wait"],
+  "deployment_boundary": {
+    "pytorch_reference": true,
+    "onnx_cpu_parity": true,
+    "browser_webgpu_runtime": "probe_only",
+    "native_mobile_verifier": false,
+    "hf_release_bound": false
+  }
+}

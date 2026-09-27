@@ -1,0 +1,396 @@
+{
+  "adoption_receipt": {
+    "bytes": 4256,
+    "path": "docs/paper/results/raw/m625-mcp-trajectory-webgpu-adoption-v1.json",
+    "sha256": "44fa454ac46ad1b2ee1e6055227a0e587a884da08a4e76e729063a8e7fc77041"
+  },
+  "androidcontrol_transfer_receipt": {
+    "bytes": 29342,
+    "path": "docs/paper/results/raw/m626-androidcontrol-warm-random-transfer-v1.json",
+    "sha256": "0f7b55231ca30a195d86f93e48a8d58ccaf77a219ee0f5728801125f181d89d5"
+  },
+  "claim_boundary": "This is a current-checkpoint fail-closed publication gate. The m624 WebGPU capability and m626 transfer ablation pass, but missing native mobile/browser/desktop/tool suites, RL preflight, and authenticated public model/demo artifacts prevent workshop approval.",
+  "current_checkpoint": {
+    "path": "/private/tmp/m624-mcp-traj/warm.pt",
+    "sha256": "984152a802357e18387a6a28c93c9d30f43c5b0c9e9fede48caa24157716b43b"
+  },
+  "decision": {
+    "blocking_requirements": [
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:androidworld"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:mobilegym"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:mobile_safety_bench"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:iosworld"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:browsergym_miniwob"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:osworld"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:osworld_v2"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:agentnet"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:toolsandbox"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:mcpmark"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:enterpriseopsgym"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "training:rl_preflight"
+      },
+      {
+        "blockers": [
+          "manifest_not_supplied"
+        ],
+        "requirement": "artifacts:public_model_demo_manifest"
+      }
+    ],
+    "passed_checks": [
+      "catalog:no_pending_train_adapter",
+      "catalog:realistic_family_coverage",
+      "webgpu:native_capability_and_latency",
+      "weights:transfer_and_no_transfer_ablation"
+    ],
+    "ready": false,
+    "webgpu_and_weight_evidence_current": true
+  },
+  "gate": {
+    "blocking_requirements": [
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:androidworld"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:mobilegym"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:mobile_safety_bench"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:iosworld"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:browsergym_miniwob"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:osworld"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:osworld_v2"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:agentnet"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:toolsandbox"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:mcpmark"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:enterpriseopsgym"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "training:rl_preflight"
+      },
+      {
+        "blockers": [
+          "manifest_not_supplied"
+        ],
+        "requirement": "artifacts:public_model_demo_manifest"
+      }
+    ],
+    "catalog": {
+      "blocked_ids": [
+        "androidworld",
+        "iosworld",
+        "mobile_safety_bench",
+        "aitw_control_eval",
+        "browsergym_miniwob",
+        "mind2web_eval",
+        "webarena",
+        "osworld",
+        "agentnet",
+        "appworld",
+        "tau_bench",
+        "toolsandbox",
+        "toolathlon",
+        "mcpmark",
+        "enterpriseopsgym",
+        "mcp_persona",
+        "tua_bench",
+        "osworld_human",
+        "mobilegym",
+        "mobileworld",
+        "memgui_bench",
+        "workarena",
+        "weblinx",
+        "osworld_v2",
+        "toolathlon_gym",
+        "phoneworld",
+        "gui_odyssey",
+        "mobile_agent_bench",
+        "agentbench_fc",
+        "visualwebarena",
+        "omni_act",
+        "worldgui",
+        "macosworld",
+        "assistgui",
+        "androiddaily",
+        "windows_agent_arena",
+        "webchorearena",
+        "timewarp"
+      ],
+      "entries": 42,
+      "path": "configs/data/realistic-agent-eval.catalog.yaml",
+      "runnable_ids": [
+        "androidcontrol",
+        "android_in_the_wild",
+        "xlam_function_calling",
+        "mind2web_train"
+      ],
+      "sha256": "dac55d7f025ebf6e523ef81869dd615b381e2d6e0ee7d7051a0ab3c8627137f6"
+    },
+    "checks": [
+      {
+        "blockers": [],
+        "evidence": [
+          "configs/data/realistic-agent-eval.catalog.yaml",
+          "dac55d7f025ebf6e523ef81869dd615b381e2d6e0ee7d7051a0ab3c8627137f6"
+        ],
+        "requirement": "catalog:realistic_family_coverage",
+        "status": "pass"
+      },
+      {
+        "blockers": [],
+        "evidence": [
+          "configs/data/realistic-agent-eval.catalog.yaml"
+        ],
+        "requirement": "catalog:no_pending_train_adapter",
+        "status": "pass"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:androidworld",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:mobilegym",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:mobile_safety_bench",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:iosworld",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:browsergym_miniwob",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:osworld",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:osworld_v2",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:agentnet",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:toolsandbox",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:mcpmark",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:enterpriseopsgym",
+        "status": "blocked"
+      },
+      {
+        "blockers": [],
+        "evidence": [
+          "/private/tmp/m625-webgpu-m624-native-correct.json",
+          "edeceb5609dbea79c29049115ff469e62d6681b0631b59b93330ec57acf935e4"
+        ],
+        "requirement": "webgpu:native_capability_and_latency",
+        "status": "pass"
+      },
+      {
+        "blockers": [],
+        "evidence": [
+          "/Users/sangbumchoi/Documents/LocalAgent/docs/paper/results/raw/m626-androidcontrol-warm-random-transfer-v1.json:0f7b55231ca30a195d86f93e48a8d58ccaf77a219ee0f5728801125f181d89d5"
+        ],
+        "requirement": "weights:transfer_and_no_transfer_ablation",
+        "status": "pass"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "training:rl_preflight",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "manifest_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "artifacts:public_model_demo_manifest",
+        "status": "blocked"
+      }
+    ],
+    "claim_boundary": "ready is false unless native benchmark receipts, native WebGPU performance and capability evidence, transfer ablations, a successful current-checkpoint RL preflight, and public model/demo artifacts are all explicitly supplied; protocol bridges and synthetic receipts do not satisfy these checks",
+    "current_checkpoint": {
+      "path": "/private/tmp/m624-mcp-traj/warm.pt",
+      "sha256": "984152a802357e18387a6a28c93c9d30f43c5b0c9e9fede48caa24157716b43b"
+    },
+    "kind": "localagent_workshop_publication_gate",
+    "ready": false,
+    "schema_version": 1
+  },
+  "gate_input": {
+    "bytes": 6561,
+    "path": "/private/tmp/m627-workshop-gate-current-m624.json",
+    "sha256": "3993b5b97e086101716d2e0975340abac1c144e47758b23c1a9292cd94f79d6c"
+  },
+  "kind": "localagent_m627_workshop_gate_current_m624",
+  "receipt_self_sha256": "21544f243a2fa60f12fa28e869c2480424736b50ceb3cd1ee459ad6c5f9db393",
+  "schema_version": 1
+}

@@ -1,0 +1,34 @@
+{
+  "acquisition_manifest_sha256": "14b897092a9ba10d66f418b9c291c880a1ab6f59b4fe4992ffa7fbb3b4cf648c",
+  "claim_boundary": "This proves deterministic acquisition and normalization bytes only; it is not an MCPMark score or native MCP execution.",
+  "dataset": "Jakumetsu/mcpmark-trajectory-log",
+  "kind": "localagent_mcpmark_acquisition_normalization_reproducibility_receipt",
+  "normalized_outputs": {
+    "eval": {
+      "bytes": 79133,
+      "rows": 5,
+      "sha256": "34c8e24ec58994f97372d9702fca54709a62140a2fef4a4d5e3099f6f4dcca89"
+    },
+    "train": {
+      "bytes": 133877,
+      "rows": 10,
+      "sha256": "21322d7218dd1f5906c4ae22162f1ef3e9ecb988d5633ca6a8f6d2943b8314d6"
+    }
+  },
+  "receipt_self_sha256": "4e963a0c3060ec4fdfae530c0d892423da962f06305ccb5b392b8a545b6dce02",
+  "redaction_policy": "normalize_mcpmark_trajectory.py replaces tool outputs and assistant free text with fixed markers and redacts absolute paths",
+  "revision": "e50578f0ab904d8e6a7c576c387c1e76ae482c89",
+  "schema_version": 1,
+  "selection": {
+    "eval_per_surface": 1,
+    "policy": "sorted source paths; train prefix then held-out suffix per surface",
+    "surfaces": [
+      "filesystem",
+      "notion",
+      "github",
+      "playwright",
+      "postgres"
+    ],
+    "train_per_surface": 2
+  }
+}

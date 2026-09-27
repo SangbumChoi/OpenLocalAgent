@@ -1,0 +1,901 @@
+{
+  "backend": "webgpu",
+  "bundle": {
+    "action_model.onnx": {
+      "bytes": 42700043,
+      "sha256": "b248a5208acd75d5315a8c6f4088d171b0d4bb7844eb704afc6ea165dd2f3528"
+    },
+    "bundle-manifest.json": {
+      "bytes": 5435,
+      "sha256": "e6d56e433f7f6f9bcc712db241a21cf0cfbc1a3a36c388d2415182cfc721e427"
+    },
+    "dispatch_heads.json": {
+      "bytes": 1204943,
+      "sha256": "cee05b1782c709d54576d7a30645f611d41e2e864a9a377070d110560bfc39c8"
+    },
+    "heads.json": {
+      "bytes": 3337015,
+      "sha256": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486"
+    },
+    "meta.json": {
+      "bytes": 13825,
+      "sha256": "c1f01799d56b48beb33561fa7c0e4c57093143ad74eba1e84c36174d2fc16954"
+    },
+    "model.onnx": {
+      "bytes": 67877334,
+      "sha256": "a5c0849626530fcd04116b5ee3fbcd6fcf7973ea39fa9799231cda15ddb31839"
+    },
+    "tokenizer.json": {
+      "bytes": 1134224,
+      "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+    }
+  },
+  "evaluation_contract": {
+    "adapter": "Chrome SwiftShader (software WebGPU)",
+    "external_accounts": false,
+    "learned_productivity_selector": "dense_selector",
+    "observation": "text_first_compact_local_state",
+    "provider": "explicit_webgpu",
+    "screenshots": false,
+    "selection_guard": "mobile_lexical_guard",
+    "trusted_os_input": false
+  },
+  "model_ready_ms": 1734.3999999761581,
+  "records": [
+    {
+      "closed_loop_success": true,
+      "exact_action": true,
+      "exact_args": true,
+      "exact_tool": true,
+      "expected": {
+        "args": {
+          "app_name": "Gmail"
+        },
+        "tool": "mobile_open_app"
+      },
+      "family": "mobile",
+      "id": "open_gmail",
+      "latency_ms": {
+        "closed_loop_ms": 7424.899999976158,
+        "model_wall_ms": 7424.899999976158
+      },
+      "model_error": null,
+      "observed": {
+        "args": {
+          "app_name": "Gmail"
+        },
+        "conf": 1,
+        "context_padding_placement": "none",
+        "context_padding_tokens": 0,
+        "decision_feature_index": 14,
+        "decision_input_tokens": 15,
+        "decode_cache": null,
+        "decode_steps": 0,
+        "decode_strategy": "one_forward_structured_heads",
+        "generated_text": null,
+        "inference_passes": 1,
+        "input_bytes": 64,
+        "input_tokens": 15,
+        "ms": 7424.5,
+        "natural_input_tokens": 15,
+        "output_tokens": 0,
+        "parse_error": null,
+        "parse_failure": false,
+        "parse_kind": "structured_heads",
+        "policy": "structured_one_forward",
+        "route": "computer_use",
+        "schema_valid": true,
+        "selection_policy": "mobile_lexical_guard",
+        "stop_reason": "one_forward",
+        "timing": {
+          "decode_control_ms": 0,
+          "dispatch_ms": 0.7000000476837158,
+          "inference_ms": 7422.299999952316,
+          "parse_validate_ms": 0,
+          "tokenize_ms": 1.5,
+          "tpot_ms": null,
+          "ttfa_ms": 7424.5,
+          "ttft_ms": null
+        },
+        "tool": "mobile_open_app",
+        "validation_error": null,
+        "validation_failure": false
+      },
+      "prompt": "On the Android phone, open the 'Gmail' app.",
+      "schema_error": null,
+      "schema_valid": true,
+      "selection_policy": "mobile_lexical_guard",
+      "state_after": {
+        "app": "Gmail",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": null,
+          "to": null
+        },
+        "focus": null,
+        "notion": null,
+        "screen": "inbox",
+        "scroll": 0
+      },
+      "state_before": {
+        "app": "home",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": null,
+          "to": null
+        },
+        "focus": null,
+        "notion": null,
+        "screen": "home",
+        "scroll": 0
+      },
+      "state_transition": true
+    },
+    {
+      "closed_loop_success": true,
+      "exact_action": true,
+      "exact_args": true,
+      "exact_tool": true,
+      "expected": {
+        "args": {
+          "x": 120,
+          "y": 220
+        },
+        "tool": "mobile_click"
+      },
+      "family": "mobile",
+      "id": "tap_compose",
+      "latency_ms": {
+        "closed_loop_ms": 3461,
+        "model_wall_ms": 3461
+      },
+      "model_error": null,
+      "observed": {
+        "args": {
+          "x": 120,
+          "y": 220
+        },
+        "conf": 1,
+        "context_padding_placement": "none",
+        "context_padding_tokens": 0,
+        "decision_feature_index": 19,
+        "decision_input_tokens": 20,
+        "decode_cache": null,
+        "decode_steps": 0,
+        "decode_strategy": "one_forward_structured_heads",
+        "generated_text": null,
+        "inference_passes": 1,
+        "input_bytes": 77,
+        "input_tokens": 20,
+        "ms": 3461,
+        "natural_input_tokens": 20,
+        "output_tokens": 0,
+        "parse_error": null,
+        "parse_failure": false,
+        "parse_kind": "structured_heads",
+        "policy": "structured_one_forward",
+        "route": "computer_use",
+        "schema_valid": true,
+        "selection_policy": "mobile_lexical_guard",
+        "stop_reason": "one_forward",
+        "timing": {
+          "decode_control_ms": 0,
+          "dispatch_ms": 0.3999999761581421,
+          "inference_ms": 3460.399999976158,
+          "parse_validate_ms": 0,
+          "tokenize_ms": 0.20000004768371582,
+          "tpot_ms": null,
+          "ttfa_ms": 3461,
+          "ttft_ms": null
+        },
+        "tool": "mobile_click",
+        "validation_error": null,
+        "validation_failure": false
+      },
+      "prompt": "On the Android phone screen, tap Compose at x=120 y=220.",
+      "schema_error": null,
+      "schema_valid": true,
+      "selection_policy": "mobile_lexical_guard",
+      "state_after": {
+        "app": "Gmail",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": null,
+          "to": null
+        },
+        "focus": "to",
+        "notion": null,
+        "screen": "compose",
+        "scroll": 0
+      },
+      "state_before": {
+        "app": "Gmail",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": null,
+          "to": null
+        },
+        "focus": null,
+        "notion": null,
+        "screen": "inbox",
+        "scroll": 0
+      },
+      "state_transition": true
+    },
+    {
+      "closed_loop_success": true,
+      "exact_action": true,
+      "exact_args": true,
+      "exact_tool": true,
+      "expected": {
+        "args": {
+          "text": "alice@example.com"
+        },
+        "tool": "mobile_input_text"
+      },
+      "family": "mobile",
+      "id": "fill_recipient",
+      "latency_ms": {
+        "closed_loop_ms": 120.10000002384186,
+        "model_wall_ms": 120.10000002384186
+      },
+      "model_error": null,
+      "observed": {
+        "args": {
+          "text": "alice@example.com"
+        },
+        "conf": 1,
+        "context_padding_placement": "none",
+        "context_padding_tokens": 0,
+        "decision_feature_index": 22,
+        "decision_input_tokens": 23,
+        "decode_cache": null,
+        "decode_steps": 0,
+        "decode_strategy": "one_forward_structured_heads",
+        "generated_text": null,
+        "inference_passes": 1,
+        "input_bytes": 101,
+        "input_tokens": 23,
+        "ms": 120,
+        "natural_input_tokens": 23,
+        "output_tokens": 0,
+        "parse_error": null,
+        "parse_failure": false,
+        "parse_kind": "structured_heads",
+        "policy": "structured_one_forward",
+        "route": "computer_use",
+        "schema_valid": true,
+        "selection_policy": "mobile_lexical_guard",
+        "stop_reason": "one_forward",
+        "timing": {
+          "decode_control_ms": 0,
+          "dispatch_ms": 0.19999992847442627,
+          "inference_ms": 119.5,
+          "parse_validate_ms": 0,
+          "tokenize_ms": 0.30000007152557373,
+          "tpot_ms": null,
+          "ttfa_ms": 120,
+          "ttft_ms": null
+        },
+        "tool": "mobile_input_text",
+        "validation_error": null,
+        "validation_failure": false
+      },
+      "prompt": "On the mobile screen, type 'alice@example.com' into the focused recipient field.",
+      "schema_error": null,
+      "schema_valid": true,
+      "selection_policy": "mobile_lexical_guard",
+      "state_after": {
+        "app": "Gmail",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": null,
+          "to": "alice@example.com"
+        },
+        "focus": "subject",
+        "notion": null,
+        "screen": "compose",
+        "scroll": 0
+      },
+      "state_before": {
+        "app": "Gmail",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": null,
+          "to": null
+        },
+        "focus": "to",
+        "notion": null,
+        "screen": "compose",
+        "scroll": 0
+      },
+      "state_transition": true
+    },
+    {
+      "closed_loop_success": true,
+      "exact_action": true,
+      "exact_args": true,
+      "exact_tool": true,
+      "expected": {
+        "args": {
+          "text": "Mobile pilot"
+        },
+        "tool": "mobile_input_text"
+      },
+      "family": "mobile",
+      "id": "fill_subject",
+      "latency_ms": {
+        "closed_loop_ms": 147.20000004768372,
+        "model_wall_ms": 147.20000004768372
+      },
+      "model_error": null,
+      "observed": {
+        "args": {
+          "text": "Mobile pilot"
+        },
+        "conf": 1,
+        "context_padding_placement": "none",
+        "context_padding_tokens": 0,
+        "decision_feature_index": 19,
+        "decision_input_tokens": 20,
+        "decode_cache": null,
+        "decode_steps": 0,
+        "decode_strategy": "one_forward_structured_heads",
+        "generated_text": null,
+        "inference_passes": 1,
+        "input_bytes": 101,
+        "input_tokens": 20,
+        "ms": 147,
+        "natural_input_tokens": 20,
+        "output_tokens": 0,
+        "parse_error": null,
+        "parse_failure": false,
+        "parse_kind": "structured_heads",
+        "policy": "structured_one_forward",
+        "route": "computer_use",
+        "schema_valid": true,
+        "selection_policy": "mobile_lexical_guard",
+        "stop_reason": "one_forward",
+        "timing": {
+          "decode_control_ms": 0,
+          "dispatch_ms": 0,
+          "inference_ms": 146.69999992847443,
+          "parse_validate_ms": 0,
+          "tokenize_ms": 0.30000007152557373,
+          "tpot_ms": null,
+          "ttfa_ms": 147,
+          "ttft_ms": null
+        },
+        "tool": "mobile_input_text",
+        "validation_error": null,
+        "validation_failure": false
+      },
+      "prompt": "On the Android phone screen, type 'Mobile pilot' into the focused subject field.",
+      "schema_error": null,
+      "schema_valid": true,
+      "selection_policy": "mobile_lexical_guard",
+      "state_after": {
+        "app": "Gmail",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": "Mobile pilot",
+          "to": "alice@example.com"
+        },
+        "focus": "body",
+        "notion": null,
+        "screen": "compose",
+        "scroll": 0
+      },
+      "state_before": {
+        "app": "Gmail",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": null,
+          "to": "alice@example.com"
+        },
+        "focus": "subject",
+        "notion": null,
+        "screen": "compose",
+        "scroll": 0
+      },
+      "state_transition": true
+    },
+    {
+      "closed_loop_success": true,
+      "exact_action": true,
+      "exact_args": true,
+      "exact_tool": true,
+      "expected": {
+        "args": {
+          "direction": "down"
+        },
+        "tool": "mobile_scroll"
+      },
+      "family": "mobile",
+      "id": "scroll_inbox",
+      "latency_ms": {
+        "closed_loop_ms": 129,
+        "model_wall_ms": 129
+      },
+      "model_error": null,
+      "observed": {
+        "args": {
+          "direction": "down"
+        },
+        "conf": 1,
+        "context_padding_placement": "none",
+        "context_padding_tokens": 0,
+        "decision_feature_index": 14,
+        "decision_input_tokens": 15,
+        "decode_cache": null,
+        "decode_steps": 0,
+        "decode_strategy": "one_forward_structured_heads",
+        "generated_text": null,
+        "inference_passes": 1,
+        "input_bytes": 80,
+        "input_tokens": 15,
+        "ms": 128.89999997615814,
+        "natural_input_tokens": 15,
+        "output_tokens": 0,
+        "parse_error": null,
+        "parse_failure": false,
+        "parse_kind": "structured_heads",
+        "policy": "structured_one_forward",
+        "route": "computer_use",
+        "schema_valid": true,
+        "selection_policy": "mobile_lexical_guard",
+        "stop_reason": "one_forward",
+        "timing": {
+          "decode_control_ms": 0,
+          "dispatch_ms": 0.19999992847442627,
+          "inference_ms": 128.5,
+          "parse_validate_ms": 0.10000002384185791,
+          "tokenize_ms": 0.10000002384185791,
+          "tpot_ms": null,
+          "ttfa_ms": 128.89999997615814,
+          "ttft_ms": null
+        },
+        "tool": "mobile_scroll",
+        "validation_error": null,
+        "validation_failure": false
+      },
+      "prompt": "On the Android phone screen, scroll down to older messages.",
+      "schema_error": null,
+      "schema_valid": true,
+      "selection_policy": "mobile_lexical_guard",
+      "state_after": {
+        "app": "Gmail",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": "Mobile pilot",
+          "to": "alice@example.com"
+        },
+        "focus": "body",
+        "notion": null,
+        "screen": "compose",
+        "scroll": 1
+      },
+      "state_before": {
+        "app": "Gmail",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": "Mobile pilot",
+          "to": "alice@example.com"
+        },
+        "focus": "body",
+        "notion": null,
+        "screen": "compose",
+        "scroll": 0
+      },
+      "state_transition": true
+    },
+    {
+      "closed_loop_success": true,
+      "exact_action": true,
+      "exact_args": true,
+      "exact_tool": true,
+      "expected": {
+        "args": {
+          "end_x": 100,
+          "end_y": 300,
+          "start_x": 100,
+          "start_y": 700
+        },
+        "tool": "mobile_swipe"
+      },
+      "family": "mobile",
+      "id": "swipe_messages",
+      "latency_ms": {
+        "closed_loop_ms": 137.19999992847443,
+        "model_wall_ms": 137.19999992847443
+      },
+      "model_error": null,
+      "observed": {
+        "args": {
+          "end_x": 100,
+          "end_y": 300,
+          "start_x": 100,
+          "start_y": 700
+        },
+        "conf": 1,
+        "context_padding_placement": "none",
+        "context_padding_tokens": 0,
+        "decision_feature_index": 24,
+        "decision_input_tokens": 25,
+        "decode_cache": null,
+        "decode_steps": 0,
+        "decode_strategy": "one_forward_structured_heads",
+        "generated_text": null,
+        "inference_passes": 1,
+        "input_bytes": 81,
+        "input_tokens": 25,
+        "ms": 137.10000002384186,
+        "natural_input_tokens": 25,
+        "output_tokens": 0,
+        "parse_error": null,
+        "parse_failure": false,
+        "parse_kind": "structured_heads",
+        "policy": "structured_one_forward",
+        "route": "computer_use",
+        "schema_valid": true,
+        "selection_policy": "mobile_lexical_guard",
+        "stop_reason": "one_forward",
+        "timing": {
+          "decode_control_ms": 0,
+          "dispatch_ms": 0.10000002384185791,
+          "inference_ms": 136.80000007152557,
+          "parse_validate_ms": 0,
+          "tokenize_ms": 0.19999992847442627,
+          "tpot_ms": null,
+          "ttfa_ms": 137.10000002384186,
+          "ttft_ms": null
+        },
+        "tool": "mobile_swipe",
+        "validation_error": null,
+        "validation_failure": false
+      },
+      "prompt": "On the mobile screen, swipe from x=100 y=700 to x=100 y=300.",
+      "schema_error": null,
+      "schema_valid": true,
+      "selection_policy": "mobile_lexical_guard",
+      "state_after": {
+        "app": "Gmail",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": "Mobile pilot",
+          "to": "alice@example.com"
+        },
+        "focus": "body",
+        "notion": null,
+        "screen": "compose",
+        "scroll": 2
+      },
+      "state_before": {
+        "app": "Gmail",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": "Mobile pilot",
+          "to": "alice@example.com"
+        },
+        "focus": "body",
+        "notion": null,
+        "screen": "compose",
+        "scroll": 1
+      },
+      "state_transition": true
+    },
+    {
+      "closed_loop_success": false,
+      "exact_action": false,
+      "exact_args": false,
+      "exact_tool": false,
+      "expected": {
+        "args": {
+          "content": "WebGPU state loop passed",
+          "title": "Mobile pilot"
+        },
+        "tool": "notion_write"
+      },
+      "family": "productivity",
+      "id": "write_notion",
+      "latency_ms": {
+        "closed_loop_ms": 142.30000007152557,
+        "model_wall_ms": 142.30000007152557
+      },
+      "model_error": null,
+      "observed": {
+        "args": {
+          "city": "<|assistant|>"
+        },
+        "conf": 0.7458727391930581,
+        "context_padding_placement": "none",
+        "context_padding_tokens": 0,
+        "decision_feature_index": 22,
+        "decision_input_tokens": 23,
+        "decode_cache": null,
+        "decode_steps": 0,
+        "decode_strategy": "one_forward_structured_heads",
+        "generated_text": null,
+        "inference_passes": 1,
+        "input_bytes": 104,
+        "input_tokens": 23,
+        "ms": 142.30000007152557,
+        "natural_input_tokens": 23,
+        "output_tokens": 0,
+        "parse_error": null,
+        "parse_failure": false,
+        "parse_kind": "structured_heads",
+        "policy": "structured_one_forward",
+        "route": "computer_use",
+        "schema_valid": true,
+        "selection_policy": "dense_selector",
+        "stop_reason": "one_forward",
+        "timing": {
+          "decode_control_ms": 0,
+          "dispatch_ms": 6.100000023841858,
+          "inference_ms": 136.10000002384186,
+          "parse_validate_ms": 0,
+          "tokenize_ms": 0.10000002384185791,
+          "tpot_ms": null,
+          "ttfa_ms": 142.30000007152557,
+          "ttft_ms": null
+        },
+        "tool": "get_weather",
+        "validation_error": null,
+        "validation_failure": false
+      },
+      "prompt": "Create a Notion note titled 'Mobile pilot' with content 'WebGPU state loop passed'.",
+      "schema_error": null,
+      "schema_valid": true,
+      "selection_policy": "dense_selector",
+      "state_after": {
+        "app": "Gmail",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": "Mobile pilot",
+          "to": "alice@example.com"
+        },
+        "focus": "body",
+        "notion": null,
+        "screen": "compose",
+        "scroll": 2
+      },
+      "state_before": {
+        "app": "Gmail",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": "Mobile pilot",
+          "to": "alice@example.com"
+        },
+        "focus": "body",
+        "notion": null,
+        "screen": "compose",
+        "scroll": 2
+      },
+      "state_transition": false
+    },
+    {
+      "closed_loop_success": false,
+      "exact_action": false,
+      "exact_args": false,
+      "exact_tool": false,
+      "expected": {
+        "args": {
+          "body": "The WebGPU state loop passed",
+          "subject": "Mobile pilot",
+          "to": "alice@example.com"
+        },
+        "tool": "send_email"
+      },
+      "family": "productivity",
+      "id": "send_email",
+      "latency_ms": {
+        "closed_loop_ms": 3151.7999999523163,
+        "model_wall_ms": 3151.7999999523163
+      },
+      "model_error": null,
+      "observed": {
+        "args": {},
+        "conf": 0.7668888394691312,
+        "context_padding_placement": "none",
+        "context_padding_tokens": 0,
+        "decision_feature_index": 32,
+        "decision_input_tokens": 33,
+        "decode_cache": null,
+        "decode_steps": 0,
+        "decode_strategy": "one_forward_structured_heads",
+        "generated_text": null,
+        "inference_passes": 1,
+        "input_bytes": 126,
+        "input_tokens": 33,
+        "ms": 3151.7999999523163,
+        "natural_input_tokens": 33,
+        "output_tokens": 0,
+        "parse_error": null,
+        "parse_failure": false,
+        "parse_kind": "structured_heads",
+        "policy": "structured_one_forward",
+        "route": "web_search",
+        "schema_valid": true,
+        "selection_policy": "dense_selector",
+        "stop_reason": "one_forward",
+        "timing": {
+          "decode_control_ms": 0,
+          "dispatch_ms": 0.7000000476837158,
+          "inference_ms": 3150.899999976158,
+          "parse_validate_ms": 0,
+          "tokenize_ms": 0.19999992847442627,
+          "tpot_ms": null,
+          "ttfa_ms": 3151.7999999523163,
+          "ttft_ms": null
+        },
+        "tool": "run_tests",
+        "validation_error": null,
+        "validation_failure": false
+      },
+      "prompt": "Send an email to 'alice@example.com' with subject 'Mobile pilot' and body 'The WebGPU state loop passed'.",
+      "schema_error": null,
+      "schema_valid": true,
+      "selection_policy": "dense_selector",
+      "state_after": {
+        "app": "Gmail",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": "Mobile pilot",
+          "to": "alice@example.com"
+        },
+        "focus": "body",
+        "notion": null,
+        "screen": "compose",
+        "scroll": 2
+      },
+      "state_before": {
+        "app": "Gmail",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": "Mobile pilot",
+          "to": "alice@example.com"
+        },
+        "focus": "body",
+        "notion": null,
+        "screen": "compose",
+        "scroll": 2
+      },
+      "state_transition": false
+    },
+    {
+      "closed_loop_success": true,
+      "exact_action": true,
+      "exact_args": true,
+      "exact_tool": true,
+      "expected": {
+        "args": {},
+        "tool": "mobile_navigate_back"
+      },
+      "family": "mobile",
+      "id": "go_back",
+      "latency_ms": {
+        "closed_loop_ms": 118.89999997615814,
+        "model_wall_ms": 118.89999997615814
+      },
+      "model_error": null,
+      "observed": {
+        "args": {},
+        "conf": 1,
+        "context_padding_placement": "none",
+        "context_padding_tokens": 0,
+        "decision_feature_index": 15,
+        "decision_input_tokens": 16,
+        "decode_cache": null,
+        "decode_steps": 0,
+        "decode_strategy": "one_forward_structured_heads",
+        "generated_text": null,
+        "inference_passes": 1,
+        "input_bytes": 88,
+        "input_tokens": 16,
+        "ms": 118.79999995231628,
+        "natural_input_tokens": 16,
+        "output_tokens": 0,
+        "parse_error": null,
+        "parse_failure": false,
+        "parse_kind": "structured_heads",
+        "policy": "structured_one_forward",
+        "route": "computer_use",
+        "schema_valid": true,
+        "selection_policy": "mobile_lexical_guard",
+        "stop_reason": "one_forward",
+        "timing": {
+          "decode_control_ms": 0,
+          "dispatch_ms": 0.09999990463256836,
+          "inference_ms": 118.5,
+          "parse_validate_ms": 0,
+          "tokenize_ms": 0.20000004768371582,
+          "tpot_ms": null,
+          "ttfa_ms": 118.79999995231628,
+          "ttft_ms": null
+        },
+        "tool": "mobile_navigate_back",
+        "validation_error": null,
+        "validation_failure": false
+      },
+      "prompt": "On the Android phone screen, navigate back from the compose window.",
+      "schema_error": null,
+      "schema_valid": true,
+      "selection_policy": "mobile_lexical_guard",
+      "state_after": {
+        "app": "Gmail",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": "Mobile pilot",
+          "to": "alice@example.com"
+        },
+        "focus": null,
+        "notion": null,
+        "screen": "inbox",
+        "scroll": 2
+      },
+      "state_before": {
+        "app": "Gmail",
+        "email": {
+          "body": null,
+          "sent": false,
+          "subject": "Mobile pilot",
+          "to": "alice@example.com"
+        },
+        "focus": "body",
+        "notion": null,
+        "screen": "compose",
+        "scroll": 2
+      },
+      "state_transition": true
+    }
+  ],
+  "run_ms": 14832.600000023842,
+  "suite": "localagent-mobile-productivity-v1",
+  "summary": {
+    "by_family": {
+      "mobile": {
+        "closed_loop_success_rate": 1,
+        "exact_action_rate": 1,
+        "records": 7,
+        "schema_valid_rate": 1
+      },
+      "productivity": {
+        "closed_loop_success_rate": 0,
+        "exact_action_rate": 0,
+        "records": 2,
+        "schema_valid_rate": 1
+      }
+    },
+    "closed_loop_success_rate": 0.7777777777777778,
+    "exact_action_rate": 0.7777777777777778,
+    "exact_args_rate": 0.7777777777777778,
+    "exact_tool_rate": 0.7777777777777778,
+    "records": 9,
+    "schema_valid_rate": 1,
+    "selection_policy_counts": {
+      "dense_selector": 2,
+      "mobile_lexical_guard": 7
+    },
+    "state_transition_rate": 0.7777777777777778,
+    "suite": "localagent-mobile-productivity-v1"
+  },
+  "tool_pool_size": 60
+}

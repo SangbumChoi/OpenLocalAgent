@@ -1,0 +1,1855 @@
+{
+  "benchmark_id": "mcpmark",
+  "child": {
+    "bytes": 52207571,
+    "path": "/private/tmp/m698-m679-mcp-warm-child.pt",
+    "sha256": "bed5bb019e4104e1f7a6505df2c05490ebb5df9d61d113ddfabe5375f64af09b"
+  },
+  "comparison": {
+    "held_out_sequence_accuracy_after": 0.0,
+    "held_out_token_accuracy_gain_pp": 5.657352267521759,
+    "native_child_verifier_passes": 0,
+    "native_parent_verifier_passes": 0,
+    "text_gain_transferred_to_native_state": false
+  },
+  "decision": {
+    "claim_boundary": "Public trajectory SFT improves held-out token imitation, but the exact child still passes zero of 30 independent MCPMark filesystem/standard verifiers. This is not a complete cross-service MCPMark score and makes no Notion, email, browser, user-simulator, or external-account claim.",
+    "promotion": "blocked_native_stateful_execution_zero",
+    "reuse_warm_backbone": true
+  },
+  "kind": "localagent_m698_m679_mcpmark_continuation_native",
+  "native": {
+    "receipt": {
+      "bytes": 99101,
+      "path": "/private/tmp/m698-m679-mcpmark-warm-native.json",
+      "sha256": "1fcb67cdea78aca05981d704b6f0ae96ed0686f2e9f96fb4540362ae16d9474a"
+    },
+    "results": [
+      {
+        "category": "desktop",
+        "server_error": null,
+        "task": "filesystem/standard/desktop/music_report",
+        "task_id": "music_report",
+        "turns": [
+          {
+            "arguments_sha256": "b977e3da417e32d3ebc0bde74ff811176caee641e87edaef9e0282dcd0889062",
+            "output_sha256": "1d42f841b1d1e1d3f233c7f805fc543937469311df7f6240f0bd602d9109ede7",
+            "result_is_error": true,
+            "result_sha256": "bfaffe54791f40f356002c53b973af7ebeb9b96bfd5c1f63916fcc027778abdd",
+            "tool": "read_file",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "6fad4cfa1458a396dd4c9a2bd0d8b1877d4f564cab3e1e84bd535a38381d5ea5",
+            "output_sha256": "87ead6079c058e5d4c953716b7511ff4c3b1e2a7ed9d442d517931c1e1f3f43e",
+            "result_is_error": true,
+            "result_sha256": "02fbf382ac0865185aefb6cc1be28b6d4cebed55bb3d2bb69ae8301500a555eb",
+            "tool": "write_file",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "ee2cd5be3562fc8de10fe177986fc51cf9bbded0f5d1437c27fc3f3684a11e23",
+            "output_sha256": "28a0240cf95df2494347d28c751e84febeea04e9e503471cee495920b9a19c6a",
+            "result_is_error": true,
+            "result_sha256": "02fbf382ac0865185aefb6cc1be28b6d4cebed55bb3d2bb69ae8301500a555eb",
+            "tool": "read_file",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "6fad4cfa1458a396dd4c9a2bd0d8b1877d4f564cab3e1e84bd535a38381d5ea5",
+            "output_sha256": "87ead6079c058e5d4c953716b7511ff4c3b1e2a7ed9d442d517931c1e1f3f43e",
+            "result_is_error": true,
+            "result_sha256": "02fbf382ac0865185aefb6cc1be28b6d4cebed55bb3d2bb69ae8301500a555eb",
+            "tool": "write_file",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "ee2cd5be3562fc8de10fe177986fc51cf9bbded0f5d1437c27fc3f3684a11e23",
+            "output_sha256": "28a0240cf95df2494347d28c751e84febeea04e9e503471cee495920b9a19c6a",
+            "result_is_error": true,
+            "result_sha256": "02fbf382ac0865185aefb6cc1be28b6d4cebed55bb3d2bb69ae8301500a555eb",
+            "tool": "read_file",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "6fad4cfa1458a396dd4c9a2bd0d8b1877d4f564cab3e1e84bd535a38381d5ea5",
+            "output_sha256": "87ead6079c058e5d4c953716b7511ff4c3b1e2a7ed9d442d517931c1e1f3f43e",
+            "result_is_error": true,
+            "result_sha256": "02fbf382ac0865185aefb6cc1be28b6d4cebed55bb3d2bb69ae8301500a555eb",
+            "tool": "write_file",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "60814a2fabf67e936556b412b115955e3aab77ca3eee21ee537110bf270f2131",
+        "verifier_stdout_tail": "sic/music_analysis_report.txt'\n\n--- Top 5 Songs ---\n\u274c Error checking top 5 songs: [Errno 2] No such file or directory: '<isolated-workspace>/desktop/music/music_analysis_report.txt'\n\n--- No Extra Content ---\n\u274c Error checking for extra content: [Errno 2] No such file or directory: '<isolated-workspace>/desktop/music/music_analysis_report.txt'\n\n==================================================\n\u274c Task verification: FAIL\n"
+      },
+      {
+        "category": "desktop",
+        "server_error": null,
+        "task": "filesystem/standard/desktop/project_management",
+        "task_id": "project_management",
+        "turns": [
+          {
+            "arguments_sha256": "520e2e4edac0f6b298a7be98e102c8d767df018d9d904252af7f1e5b1694beb5",
+            "output_sha256": "14b73320b35a68dd54881fe0fbe997be0d033b2db322ffd98655541b24b75144",
+            "result_is_error": false,
+            "result_sha256": "b91819cc232e3b0a4a14587627316b2c80294c09135f32ba28f7b6345f5a15df",
+            "tool": "create_directory",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "53645333a0bc78a5345986e9ad82f0c362faaa13d73b0007569930ce7a1aa7a1",
+            "output_sha256": "a87943f5e4f428bfbc9db845b0aa48c2d9788834e8a2eb2660e8cac422844f64",
+            "result_is_error": false,
+            "result_sha256": "ef7efefe394d99b2c41545fa57b1ad6afdfb367ff5f331208e928aa98fe01592",
+            "tool": "create_directory",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "53645333a0bc78a5345986e9ad82f0c362faaa13d73b0007569930ce7a1aa7a1",
+            "output_sha256": "a87943f5e4f428bfbc9db845b0aa48c2d9788834e8a2eb2660e8cac422844f64",
+            "result_is_error": false,
+            "result_sha256": "ef7efefe394d99b2c41545fa57b1ad6afdfb367ff5f331208e928aa98fe01592",
+            "tool": "create_directory",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "53645333a0bc78a5345986e9ad82f0c362faaa13d73b0007569930ce7a1aa7a1",
+            "output_sha256": "a87943f5e4f428bfbc9db845b0aa48c2d9788834e8a2eb2660e8cac422844f64",
+            "result_is_error": false,
+            "result_sha256": "ef7efefe394d99b2c41545fa57b1ad6afdfb367ff5f331208e928aa98fe01592",
+            "tool": "create_directory",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "53645333a0bc78a5345986e9ad82f0c362faaa13d73b0007569930ce7a1aa7a1",
+            "output_sha256": "a87943f5e4f428bfbc9db845b0aa48c2d9788834e8a2eb2660e8cac422844f64",
+            "result_is_error": false,
+            "result_sha256": "ef7efefe394d99b2c41545fa57b1ad6afdfb367ff5f331208e928aa98fe01592",
+            "tool": "create_directory",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "53645333a0bc78a5345986e9ad82f0c362faaa13d73b0007569930ce7a1aa7a1",
+            "output_sha256": "a87943f5e4f428bfbc9db845b0aa48c2d9788834e8a2eb2660e8cac422844f64",
+            "result_is_error": false,
+            "result_sha256": "ef7efefe394d99b2c41545fa57b1ad6afdfb367ff5f331208e928aa98fe01592",
+            "tool": "create_directory",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "ee555c23a5561b5c8f679362ca2108b34dc20562fe255956efe9194856f951ee",
+        "verifier_stderr_tail": "/project_management/verify.py\", line 197, in verify_progress_tracking_empty\n    files_in_progress = list(progress_dir.iterdir())\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/anaconda3/lib/python3.12/pathlib.py\", line 1056, in iterdir\n    for name in os.listdir(self):\n                ^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '<isolated-workspace>/desktop/organized_projects/learning/progress_tracking'\n",
+        "verifier_stdout_sha256": "c206c45ba806fe9d9d42a9ad1372a8c84eca734f05fa540a2a369f07e0a7c22d",
+        "verifier_stdout_tail": "esources: ['learning_roadmap.md', 'research_topics.md', 'experiment_summary.md', 'exp_record.md', 'README.md', 'analysis_report.md', 'learning_goals.md']\n\n--- Entertainment Markdown Files in Entertainment ---\n\u274c Missing entertainment markdown files in entertainment: ['gaming_schedule.md', 'entertainment_planner.md', 'travel_bucket_list.md']\n\n--- Music Collection Files in Collections ---\n\u274c Missing music collection markdown files in collections: music_collection.md\n\n--- Progress Tracking Empty ---\n"
+      },
+      {
+        "category": "desktop",
+        "server_error": null,
+        "task": "filesystem/standard/desktop/timeline_extraction",
+        "task_id": "timeline_extraction",
+        "turns": [
+          {
+            "arguments_sha256": "628e7139f8262ca5528f2f467763d61cd371b8df9c5cbef7d8c523c29c66363e",
+            "output_sha256": "771a27f5196222894675b9ddebd3c91a77a44acca5d8d2efb23b911aa712ab3f",
+            "result_is_error": false,
+            "result_sha256": "8a0cb5c4f1bb336f785dd5afcd73d4f78b4468b2f5eac34aefeee577d547e76e",
+            "tool": "write_file",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "62aba4192facc944644c94112c8309e9598fe293a9bbcfa01403766c4435e519",
+            "output_sha256": "6dff68e799808f3f1c07c8e93dfc25d9fb3abe33be2bc465ae3c524a1d3b0e20",
+            "result_is_error": true,
+            "result_sha256": "110ade1e2b6c2f4867e0bf7b9f84549cc67299bbe7d2316e1070fd8908a6968c",
+            "tool": "write_file",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "62aba4192facc944644c94112c8309e9598fe293a9bbcfa01403766c4435e519",
+            "output_sha256": "6dff68e799808f3f1c07c8e93dfc25d9fb3abe33be2bc465ae3c524a1d3b0e20",
+            "result_is_error": true,
+            "result_sha256": "110ade1e2b6c2f4867e0bf7b9f84549cc67299bbe7d2316e1070fd8908a6968c",
+            "tool": "write_file",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "62aba4192facc944644c94112c8309e9598fe293a9bbcfa01403766c4435e519",
+            "output_sha256": "6dff68e799808f3f1c07c8e93dfc25d9fb3abe33be2bc465ae3c524a1d3b0e20",
+            "result_is_error": true,
+            "result_sha256": "110ade1e2b6c2f4867e0bf7b9f84549cc67299bbe7d2316e1070fd8908a6968c",
+            "tool": "write_file",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "62aba4192facc944644c94112c8309e9598fe293a9bbcfa01403766c4435e519",
+            "output_sha256": "6dff68e799808f3f1c07c8e93dfc25d9fb3abe33be2bc465ae3c524a1d3b0e20",
+            "result_is_error": true,
+            "result_sha256": "110ade1e2b6c2f4867e0bf7b9f84549cc67299bbe7d2316e1070fd8908a6968c",
+            "tool": "write_file",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "62aba4192facc944644c94112c8309e9598fe293a9bbcfa01403766c4435e519",
+            "output_sha256": "6dff68e799808f3f1c07c8e93dfc25d9fb3abe33be2bc465ae3c524a1d3b0e20",
+            "result_is_error": true,
+            "result_sha256": "110ade1e2b6c2f4867e0bf7b9f84549cc67299bbe7d2316e1070fd8908a6968c",
+            "tool": "write_file",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "46a7874070e01711754f39e59e6c4d0a015cd40a7bfb2764e62edf4760366f55",
+        "verifier_stdout_tail": "Use the' (no date found)\"]...\n\n--- Chronological Order ---\n\u2705 All dates are in chronological order\n\n--- Expected Entries ---\n\u274c Missing 43 expected entries\n   Examples: ['learning/2024/learning_progress.csv:2024-04-01', 'learning/2024/learning_progress.csv:2024-05-01', 'exp_logs/results_record.csv:2024-08-04']\n\n--- No Duplicates ---\n\u2705 No duplicate entries found\n\n--- File Paths Exist ---\n\u2705 All referenced file paths exist\n\n==================================================\n\u274c Task verification: FAIL\n"
+      },
+      {
+        "category": "desktop_template",
+        "server_error": null,
+        "task": "filesystem/standard/desktop_template/budget_computation",
+        "task_id": "budget_computation",
+        "turns": [
+          {
+            "arguments_sha256": "5fc36693b2e832118fc9b25aa6b08c1b57a0e687d6ee74ef6c44bb8a02233e84",
+            "output_sha256": "24ce8e0e26435e3b36d803c5a2859e624cc3d202f3ee6eeb3f0e4f3a52154a23",
+            "result_is_error": false,
+            "result_sha256": "6bf444ebb44697c36514d9023ad51eeb30805ccfd7da7fa579e46e7bd5599b71",
+            "tool": "list_directory",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "e982dbadf0539c70ecb242c80b4919b97d4c0db2955e465087c41a710981cceb",
+            "output_sha256": "cff12a9b9470782a5ae3aeb8f4ab7107d87d3d715fa5479d5deb872b0315156a",
+            "result_is_error": true,
+            "result_sha256": "277feb0f225588d7544ed766005ce9ae2da24985c6c04087c14837bf02eaa213",
+            "tool": "list_directory",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "e982dbadf0539c70ecb242c80b4919b97d4c0db2955e465087c41a710981cceb",
+            "output_sha256": "cff12a9b9470782a5ae3aeb8f4ab7107d87d3d715fa5479d5deb872b0315156a",
+            "result_is_error": true,
+            "result_sha256": "277feb0f225588d7544ed766005ce9ae2da24985c6c04087c14837bf02eaa213",
+            "tool": "list_directory",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "output_sha256": "c0e36d44171fc246855bf634bedf56fea34f1aca9778ac1b7a3854203b0a3e24",
+            "result_is_error": false,
+            "result_sha256": "b85b9255c0726582bbedca155e949ba32d18273cdd97cee2c100784dbce47019",
+            "tool": "list_allowed_directories",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "output_sha256": "c0e36d44171fc246855bf634bedf56fea34f1aca9778ac1b7a3854203b0a3e24",
+            "result_is_error": false,
+            "result_sha256": "b85b9255c0726582bbedca155e949ba32d18273cdd97cee2c100784dbce47019",
+            "tool": "list_allowed_directories",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "output_sha256": "c0e36d44171fc246855bf634bedf56fea34f1aca9778ac1b7a3854203b0a3e24",
+            "result_is_error": false,
+            "result_sha256": "b85b9255c0726582bbedca155e949ba32d18273cdd97cee2c100784dbce47019",
+            "tool": "list_allowed_directories",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "19d34effeef7009a124ebd165c0a4bd5a6f22201457c2883d03220b7f7a925ae",
+        "verifier_stdout_tail": "or directory: '<isolated-workspace>/desktop_template/total_budget.txt'\n\n--- Total Calculation ---\n\u274c Error verifying total calculation: [Errno 2] No such file or directory: '<isolated-workspace>/desktop_template/total_budget.txt'\n\n==================================================\n\u274c Budget computation task verification: FAIL\nPlease check the errors above and ensure all requirements are met\n"
+      },
+      {
+        "category": "desktop_template",
+        "server_error": null,
+        "task": "filesystem/standard/desktop_template/contact_information",
+        "task_id": "contact_information",
+        "turns": [
+          {
+            "arguments_sha256": "4bd9eda1083907e65dfe2df13d97a8e828efef9e982a29d3308f8f3ee1c51c0c",
+            "output_sha256": "d59b3955825905050acdcf458fbf47d8fb5adb4faec74e43d6ec95d878f3eb08",
+            "result_is_error": true,
+            "result_sha256": "fea7461cd3743cddbc15c01b53be95a7c8d08a03eb844c7c6703560a10b890a9",
+            "tool": "write_file",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "02c14b2ada8c80c548c8f38a5c70cbc65833f2b6045d6938b49316eedf32f5d6",
+            "output_sha256": "17ae6fb673370e3a2af613a3a44a1b5f4a705147165b97d525607c92aeb87ae9",
+            "result_is_error": false,
+            "result_sha256": "f9220241b2115de36be8a9e5ae210201c18c78c95da966ceb17ae6b202f9ef01",
+            "tool": "write_file",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "02c14b2ada8c80c548c8f38a5c70cbc65833f2b6045d6938b49316eedf32f5d6",
+            "output_sha256": "17ae6fb673370e3a2af613a3a44a1b5f4a705147165b97d525607c92aeb87ae9",
+            "result_is_error": false,
+            "result_sha256": "f9220241b2115de36be8a9e5ae210201c18c78c95da966ceb17ae6b202f9ef01",
+            "tool": "write_file",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "02c14b2ada8c80c548c8f38a5c70cbc65833f2b6045d6938b49316eedf32f5d6",
+            "output_sha256": "17ae6fb673370e3a2af613a3a44a1b5f4a705147165b97d525607c92aeb87ae9",
+            "result_is_error": false,
+            "result_sha256": "f9220241b2115de36be8a9e5ae210201c18c78c95da966ceb17ae6b202f9ef01",
+            "tool": "write_file",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "02c14b2ada8c80c548c8f38a5c70cbc65833f2b6045d6938b49316eedf32f5d6",
+            "output_sha256": "17ae6fb673370e3a2af613a3a44a1b5f4a705147165b97d525607c92aeb87ae9",
+            "result_is_error": false,
+            "result_sha256": "f9220241b2115de36be8a9e5ae210201c18c78c95da966ceb17ae6b202f9ef01",
+            "tool": "write_file",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "02c14b2ada8c80c548c8f38a5c70cbc65833f2b6045d6938b49316eedf32f5d6",
+            "output_sha256": "17ae6fb673370e3a2af613a3a44a1b5f4a705147165b97d525607c92aeb87ae9",
+            "result_is_error": false,
+            "result_sha256": "f9220241b2115de36be8a9e5ae210201c18c78c95da966ceb17ae6b202f9ef01",
+            "tool": "write_file",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "8fee7b15b2cd97b5f370235d7161f23f60dcdb017baf021f39b5cae0bbf47174",
+        "verifier_stdout_tail": "ch file or directory: '<isolated-workspace>/desktop_template/contact_info.csv'\n\n--- CSV Data Completeness ---\n\u274c Error checking data completeness: [Errno 2] No such file or directory: '<isolated-workspace>/desktop_template/contact_info.csv'\n\n--- Answer Content ---\n\u274c Answer does not contain 'dentist'. Found: ':'\n\n==================================================\n\u274c Task verification: FAIL\n"
+      },
+      {
+        "category": "desktop_template",
+        "server_error": null,
+        "task": "filesystem/standard/desktop_template/file_arrangement",
+        "task_id": "file_arrangement",
+        "turns": [
+          {
+            "arguments_sha256": "df2c2992e3586105e0980b002f7c70f42950b2aab2ffd458456e0ce1ead32a68",
+            "output_sha256": "1dc4aca5ac0f39a4e4761b8fef57f2eb2810c9502b445712ca6d72113a7417f4",
+            "result_is_error": true,
+            "result_sha256": "bfaffe54791f40f356002c53b973af7ebeb9b96bfd5c1f63916fcc027778abdd",
+            "tool": "read_file",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": null,
+            "output_sha256": "f05f9d7fd66b5797ac3b9d113e1d21b8406313702f3494c7e9f233545340a847",
+            "tool": null,
+            "turn": 2
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "9503fc9c6c59ef77407cdff955af50d8d3b08bfd7f3d593170f7d3ba4f6129d8",
+        "verifier_stdout_tail": "mark_export.txt', 'life/emergency_contacts.txt', 'archives/backup_contacts.csv', 'archives/tax_documents_2022.csv', 'archives/correspondence_2023.txt', 'archives/tax_info_2023.csv', 'temp/test_data.csv', 'temp/draft_letter.txt']\n\n--- No Duplicate Required Files ---\n\u2705 No duplicate required files found\n\n==================================================\n\u274c Desktop file organization task verification: FAIL\nPlease check the errors above and ensure all 18 required files are in their correct locations\n"
+      },
+      {
+        "category": "file_context",
+        "server_error": null,
+        "task": "filesystem/standard/file_context/duplicates_searching",
+        "task_id": "duplicates_searching",
+        "turns": [
+          {
+            "arguments_sha256": "007b2a946e7474edf4b594b1f8c80bcc5c58eac8fcf24986c6be43813a0f7f49",
+            "output_sha256": "1bca7c8234123999be21fc9233c3265fe796ba4d96f88cf428f9e308b0d64031",
+            "result_is_error": false,
+            "result_sha256": "08802cfc72e6766dd9fe91cabe5f0e636dec21e46c06106ae59ec8584dd0ff7c",
+            "tool": "directory_tree",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": null,
+            "output_sha256": "f05f9d7fd66b5797ac3b9d113e1d21b8406313702f3494c7e9f233545340a847",
+            "tool": null,
+            "turn": 2
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "6deb73cabdb28f9054a0da756b8de1ce2622f6bf0a4b9aac56d7c7186c2901ff",
+        "verifier_stderr_tail": "ching/verify.py\", line 170, in verify_total_file_count\n    duplicate_files = [f for f in duplicates_dir.iterdir() if f.is_file()]\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/anaconda3/lib/python3.12/pathlib.py\", line 1056, in iterdir\n    for name in os.listdir(self):\n                ^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '<isolated-workspace>/file_context/duplicates'\n",
+        "verifier_stdout_sha256": "2f0059c53fd4eb0daa3e792e20ecdbbb512d6942aac7a303e1f22881f65241b6",
+        "verifier_stdout_tail": ".txt', 'file_08.txt', 'file_10.txt', 'file_11.txt', 'file_13.txt', 'file_14.txt', 'file_15.txt', 'file_16.txt', 'file_18.txt', 'file_19.txt']\n\n--- Unique Files Remain ---\n\u274c Missing unique files in original location: ['file_05.txt', 'file_06.txt', 'file_09.txt', 'file_12.txt', 'file_17.txt', 'file_20.txt']\n\n--- No Duplicates in Original ---\n\u2705 No duplicate files remain in the original location\n\n--- Content Integrity ---\n\u274c First file of group group1 not found: file_01.txt\n\n--- Duplicates Count ---\n"
+      },
+      {
+        "category": "file_context",
+        "server_error": null,
+        "task": "filesystem/standard/file_context/file_merging",
+        "task_id": "file_merging",
+        "turns": [
+          {
+            "arguments_sha256": "a1110af0d82bdd1f29ed877e126670532da737adf41c915a291320447c24809e",
+            "output_sha256": "c561ffdd9ac88a468b3fc7f9d6688404fc4dee0170140d161920d174f2f61b80",
+            "result_is_error": false,
+            "result_sha256": "08802cfc72e6766dd9fe91cabe5f0e636dec21e46c06106ae59ec8584dd0ff7c",
+            "tool": "directory_tree",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "c9c4575064caaa18022dc80a32ca626668bf23ce1768aea112344b249f52b76b",
+            "output_sha256": "d1ae3d22ff5ca7ede10d8087622d75fdc3e74e1d5d3b44443ff4cacca48cf9f4",
+            "result_is_error": false,
+            "result_sha256": "e03e6203d586796f3307dd2060157c34f4cdc0430925aeef84d776b8c41dc859",
+            "tool": "read_multiple_files",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "606f9b3ebf3d3df26f67466949aeac0cffb58cbd0939333d67febbe11c35183b",
+            "output_sha256": "9d3952406c1bb3d741755147e87d31daedb3f154cd2cee6abd43e1bc5e173236",
+            "result_is_error": false,
+            "result_sha256": "c7ef1115865a46d81223282b9a30613f727be9dcc773104490c60a952c460aea",
+            "tool": "write_file",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "606f9b3ebf3d3df26f67466949aeac0cffb58cbd0939333d67febbe11c35183b",
+            "output_sha256": "9d3952406c1bb3d741755147e87d31daedb3f154cd2cee6abd43e1bc5e173236",
+            "result_is_error": false,
+            "result_sha256": "c7ef1115865a46d81223282b9a30613f727be9dcc773104490c60a952c460aea",
+            "tool": "write_file",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "606f9b3ebf3d3df26f67466949aeac0cffb58cbd0939333d67febbe11c35183b",
+            "output_sha256": "9d3952406c1bb3d741755147e87d31daedb3f154cd2cee6abd43e1bc5e173236",
+            "result_is_error": false,
+            "result_sha256": "c7ef1115865a46d81223282b9a30613f727be9dcc773104490c60a952c460aea",
+            "tool": "write_file",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "606f9b3ebf3d3df26f67466949aeac0cffb58cbd0939333d67febbe11c35183b",
+            "output_sha256": "9d3952406c1bb3d741755147e87d31daedb3f154cd2cee6abd43e1bc5e173236",
+            "result_is_error": false,
+            "result_sha256": "c7ef1115865a46d81223282b9a30613f727be9dcc773104490c60a952c460aea",
+            "tool": "write_file",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "5db1c7046d9e4b6d624c749966176e52ea084a323f66d5bfceb37f34bab9ab11",
+        "verifier_stdout_tail": "ile_10.txt', 'file_11.txt', 'file_13.txt', 'file_14.txt', 'file_15.txt', 'file_16.txt', 'file_17.txt', 'file_18.txt', 'file_19.txt', 'file_20.txt']\n   Found: []\n\n--- Filename Headers ---\n\u274c Filename header 'file_10.txt' not found\n\n--- Content Integrity ---\n\u274c Error verifying content integrity: [Errno 2] No such file or directory: '<isolated-workspace>/file_context/file_10.txt'\n\n==================================================\n\u274c Task verification: FAIL\n"
+      },
+      {
+        "category": "file_context",
+        "server_error": null,
+        "task": "filesystem/standard/file_context/file_splitting",
+        "task_id": "file_splitting",
+        "turns": [
+          {
+            "arguments_sha256": "f898922c099fc312fe6176804b39d17c4117b4909c1bc0ca61f7cc80d437cd29",
+            "output_sha256": "ba8606842df68f35e278e3eee3f49a4da7ecea49952548862faf59578d1c9601",
+            "result_is_error": false,
+            "result_sha256": "6332390f1e23527bc7607ab3d5e0115fe02654fe3fb46f82de5b36c182a58b78",
+            "tool": "create_directory",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "7f7dffde68b2e03d115eade185692d90af0459ff068127ebd1c51e678a90201a",
+            "output_sha256": "0b286edc38a4c3eaf9dc482a9cae48df80737162ee9668926da1cfaf4aea3171",
+            "result_is_error": true,
+            "result_sha256": "9afa0cda9c75d5db41e7a0fcce1bba11dd90345d5a9efb868567033ecfa3bead",
+            "tool": "read_file",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "f9d002b870f4c280729a6a2e2f360bb9e56b447e6ffd4fdb032f002be3ebd5fd",
+            "output_sha256": "06ae7974d6bf10492ee61948e4f36208c67491ec4daeafb34223ee79723225a0",
+            "result_is_error": false,
+            "result_sha256": "60558917f2a4dbb42e35a78f57546be21acab9c33ab52c7e8923cd8f65584e77",
+            "tool": "write_file",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "ed4fb4a7f54677ba39db7998d199b9ecb4f5e01a2e6916f6b97cc1cecc22c989",
+            "output_sha256": "0075c1c902acf8da9f2eb59e008710a10e7229059b95ef15449fe266ef9d0d08",
+            "result_is_error": false,
+            "result_sha256": "7e24b4f3514d238bae428d5dc3ce7610121e7c2a4e456e7e20d029d1a2ff4136",
+            "tool": "write_file",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "ed4fb4a7f54677ba39db7998d199b9ecb4f5e01a2e6916f6b97cc1cecc22c989",
+            "output_sha256": "0075c1c902acf8da9f2eb59e008710a10e7229059b95ef15449fe266ef9d0d08",
+            "result_is_error": false,
+            "result_sha256": "7e24b4f3514d238bae428d5dc3ce7610121e7c2a4e456e7e20d029d1a2ff4136",
+            "tool": "write_file",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "ed4fb4a7f54677ba39db7998d199b9ecb4f5e01a2e6916f6b97cc1cecc22c989",
+            "output_sha256": "0075c1c902acf8da9f2eb59e008710a10e7229059b95ef15449fe266ef9d0d08",
+            "result_is_error": false,
+            "result_sha256": "7e24b4f3514d238bae428d5dc3ce7610121e7c2a4e456e7e20d029d1a2ff4136",
+            "tool": "write_file",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "206da91146e5283b08c8e770bd5d8ddb7c2c0bbf71fe96cebb8c1351f7090fbb",
+        "verifier_stdout_tail": "-\n\u274c Error reading split_03.txt: [Errno 2] No such file or directory: '<isolated-workspace>/file_context/split/split_03.txt'\n\n--- Content Integrity ---\n\u274c Error reading original file: [Errno 2] No such file or directory: '<isolated-workspace>/file_context/large_file.txt'\n\n--- No Extra Files ---\n\u2705 No extra files in split directory\n\n==================================================\n\u274c Task verification: FAIL\n"
+      },
+      {
+        "category": "file_context",
+        "server_error": null,
+        "task": "filesystem/standard/file_context/pattern_matching",
+        "task_id": "pattern_matching",
+        "turns": [
+          {
+            "arguments_sha256": "4ed161f894e74c0f50e0821f904045c0d18849e457d99a50462124f76dca5564",
+            "output_sha256": "f2c6b5e5a97b4d823dcf357cc76f4b2ab051701b11020c57eff483823159000c",
+            "result_is_error": false,
+            "result_sha256": "08802cfc72e6766dd9fe91cabe5f0e636dec21e46c06106ae59ec8584dd0ff7c",
+            "tool": "directory_tree",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "2237383e8743e5217e2c512a9750e02ec0de5d312acbb748cf125bac43412f09",
+            "output_sha256": "856873dfd573e8ae59efebd9a25a25d2e1839dfb738e05485990ca9c8f2e9711",
+            "result_is_error": false,
+            "result_sha256": "c38fcea3785a229462d0e367783b0d8da428188cf620ab6420830feb621c2a00",
+            "tool": "read_multiple_files",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "63f28ed89d3abfc069f8a69deb16fbd76b82b7f60591bae2e2ae13f43bd808c0",
+            "output_sha256": "9f1f1b9dc9e1362d2e42ff9e233d877e7b82dd8924324989b43557f99b2873ec",
+            "result_is_error": false,
+            "result_sha256": "d7adb30c5138c14b0cdcdaff0d7dd2e3d5c57590d00d5c53097563eb75cbe567",
+            "tool": "write_file",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "63f28ed89d3abfc069f8a69deb16fbd76b82b7f60591bae2e2ae13f43bd808c0",
+            "output_sha256": "9f1f1b9dc9e1362d2e42ff9e233d877e7b82dd8924324989b43557f99b2873ec",
+            "result_is_error": false,
+            "result_sha256": "d7adb30c5138c14b0cdcdaff0d7dd2e3d5c57590d00d5c53097563eb75cbe567",
+            "tool": "write_file",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "63f28ed89d3abfc069f8a69deb16fbd76b82b7f60591bae2e2ae13f43bd808c0",
+            "output_sha256": "9f1f1b9dc9e1362d2e42ff9e233d877e7b82dd8924324989b43557f99b2873ec",
+            "result_is_error": false,
+            "result_sha256": "d7adb30c5138c14b0cdcdaff0d7dd2e3d5c57590d00d5c53097563eb75cbe567",
+            "tool": "write_file",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "63f28ed89d3abfc069f8a69deb16fbd76b82b7f60591bae2e2ae13f43bd808c0",
+            "output_sha256": "9f1f1b9dc9e1362d2e42ff9e233d877e7b82dd8924324989b43557f99b2873ec",
+            "result_is_error": false,
+            "result_sha256": "d7adb30c5138c14b0cdcdaff0d7dd2e3d5c57590d00d5c53097563eb75cbe567",
+            "tool": "write_file",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "e455bf44d3da5de7ac454c0719c67481f5d3334ed0a55ee91f2b850b14b38edd",
+        "verifier_stdout_tail": "cted format: filename.txt,start_position\n\n--- Files Exist ---\n\u274c File mentioned in answer does not exist: ._file_context\n\n--- Match Length is 30+ ---\n\u274c Error verifying match lengths: [Errno 2] No such file or directory: '<isolated-workspace>/file_context/large_file.txt'\n\n--- Matches are Correct ---\n\u274c Error verifying matches: not enough values to unpack (expected 2, got 1)\n\n==================================================\n\u274c Task verification: FAIL\n"
+      },
+      {
+        "category": "file_context",
+        "server_error": null,
+        "task": "filesystem/standard/file_context/uppercase",
+        "task_id": "uppercase",
+        "turns": [
+          {
+            "arguments_sha256": "133359340d0a2c1519fe0c7237a8d40bdf2808fc72560879a04cb2af50be3218",
+            "output_sha256": "a75adce4791cb3adda6e6bac8143cb53985a85f4cf9769553d1002dc81a9c384",
+            "result_is_error": false,
+            "result_sha256": "f89d7eeb50015a2237d620206925d315d7e822d5826a7298e5c7c779d1e9b5d8",
+            "tool": "create_directory",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "084bc480dd5d808f82dc142eda275a6d732f7dcd60fe740490e7d3caa9f0275a",
+            "output_sha256": "6249562858387ecb5913749ad66a9d76f5bcdf053b32097130a6db752ebf2ac5",
+            "result_is_error": true,
+            "result_sha256": "fb4d3d78465a550c1c59164f0590d645b9532d6acd6f07a506b1fdb1462d6c59",
+            "tool": "search_files",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "20e4325bbde8b755b41923b3e92fd254567820e71fea3064339e73b4a0fc934e",
+            "output_sha256": "88236806068bac505c7d0b2af729a17435439310835eca14c828555e951cc482",
+            "result_is_error": false,
+            "result_sha256": "6dacc850dd87249f8ad234ba0872a9626530f2d59c073849949a263be2ab4555",
+            "tool": "read_multiple_files",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "055e2e14c965791f6ac09a7eb564797377b1f183fa6c74a80d852f9ebeffa21b",
+            "output_sha256": "2a746331187c2e481f3281e89c729a5f793dc67700b1370b055936a076de7ca2",
+            "result_is_error": false,
+            "result_sha256": "7c911f56996ea8426c46a2c6662ed3b73759ee1e6ceb3186394ef41e9a9cc2b5",
+            "tool": "write_file",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "055e2e14c965791f6ac09a7eb564797377b1f183fa6c74a80d852f9ebeffa21b",
+            "output_sha256": "2a746331187c2e481f3281e89c729a5f793dc67700b1370b055936a076de7ca2",
+            "result_is_error": false,
+            "result_sha256": "7c911f56996ea8426c46a2c6662ed3b73759ee1e6ceb3186394ef41e9a9cc2b5",
+            "tool": "write_file",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "055e2e14c965791f6ac09a7eb564797377b1f183fa6c74a80d852f9ebeffa21b",
+            "output_sha256": "2a746331187c2e481f3281e89c729a5f793dc67700b1370b055936a076de7ca2",
+            "result_is_error": false,
+            "result_sha256": "7c911f56996ea8426c46a2c6662ed3b73759ee1e6ceb3186394ef41e9a9cc2b5",
+            "tool": "write_file",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "7db457bbab8a71ccac14292d09ef5aa421e527f9c94a2e3cd0dc9f71e0b8d53f",
+        "verifier_stdout_tail": "file_08.txt', 'file_03.txt', 'file_09.txt', 'file_05.txt'}\n| \u274c Extra files in answer: {'/PRIVATE/TMP/MCPMARK-STANDARD-FILE_CONTEXT-UPPERCASE-UJ7MEHLI/FILE_CONTEXT/FILE_01.TXT'}\n|\n| Checking Word counts are correct...\n| \u274c Invalid entry: /PRIVATE/TMP/MCPMARK-STANDARD-FILE_CONTEXT-UPPERCASE-UJ7MEHLI/FILE_CONTEXT/FILE_01.TXT: ERROR - ENOENT: NO SUCH FILE OR DIRECTORY, OPEN '/PRIVATE/TMP/MCPMARK-STANDARD-FILE_CONTEXT-UPPERCASE-UJ7MEHLI/FILE_CONTEXT/FILE_01.TXT'\n|\n| \u274c Some verification checks failed!\n"
+      },
+      {
+        "category": "file_property",
+        "server_error": null,
+        "task": "filesystem/standard/file_property/size_classification",
+        "task_id": "size_classification",
+        "turns": [
+          {
+            "arguments_sha256": "7c51fad79151df33d0a73691839bc6fe6d97868942d0a7237e51c16876c81819",
+            "output_sha256": "ca9fe6a51a97abaf3785168263aece8b18a54211c4136ace5f26190245c3c4d0",
+            "result_is_error": false,
+            "result_sha256": "7a3e3ec2c003a6755952a7a3aa9deeb15c108aa2b9f5927fad42c94d6bd29df1",
+            "tool": "move_file",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "7c51fad79151df33d0a73691839bc6fe6d97868942d0a7237e51c16876c81819",
+            "output_sha256": "ca9fe6a51a97abaf3785168263aece8b18a54211c4136ace5f26190245c3c4d0",
+            "result_is_error": false,
+            "result_sha256": "7a3e3ec2c003a6755952a7a3aa9deeb15c108aa2b9f5927fad42c94d6bd29df1",
+            "tool": "move_file",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "7c51fad79151df33d0a73691839bc6fe6d97868942d0a7237e51c16876c81819",
+            "output_sha256": "ca9fe6a51a97abaf3785168263aece8b18a54211c4136ace5f26190245c3c4d0",
+            "result_is_error": false,
+            "result_sha256": "7a3e3ec2c003a6755952a7a3aa9deeb15c108aa2b9f5927fad42c94d6bd29df1",
+            "tool": "move_file",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "7c51fad79151df33d0a73691839bc6fe6d97868942d0a7237e51c16876c81819",
+            "output_sha256": "ca9fe6a51a97abaf3785168263aece8b18a54211c4136ace5f26190245c3c4d0",
+            "result_is_error": false,
+            "result_sha256": "7a3e3ec2c003a6755952a7a3aa9deeb15c108aa2b9f5927fad42c94d6bd29df1",
+            "tool": "move_file",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "7c51fad79151df33d0a73691839bc6fe6d97868942d0a7237e51c16876c81819",
+            "output_sha256": "ca9fe6a51a97abaf3785168263aece8b18a54211c4136ace5f26190245c3c4d0",
+            "result_is_error": false,
+            "result_sha256": "7a3e3ec2c003a6755952a7a3aa9deeb15c108aa2b9f5927fad42c94d6bd29df1",
+            "tool": "move_file",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "7c51fad79151df33d0a73691839bc6fe6d97868942d0a7237e51c16876c81819",
+            "output_sha256": "ca9fe6a51a97abaf3785168263aece8b18a54211c4136ace5f26190245c3c4d0",
+            "result_is_error": false,
+            "result_sha256": "7a3e3ec2c003a6755952a7a3aa9deeb15c108aa2b9f5927fad42c94d6bd29df1",
+            "tool": "move_file",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "b0f986ab3cae2a47cfec1e41d33affd83d1a56d846d0fa47fdbc95920872cd57",
+        "verifier_stdout_tail": "perty-size_classification-0vyyjcfe/file_property\n\n\ud83d\udccb Checking: Directory existence\n\u274c Directory 'small_files' not found\n\n\ud83d\udccb Checking: File classification\n\u274c Missing files in 'small_files': ['random_file_1.txt', 'random_file_3.txt']\n\n\ud83d\udccb Checking: No files in root\n\u2705 No files remain in root directory\n\n\ud83d\udccb Checking: File size validation\n\u274c Verification failed with error: [Errno 2] No such file or directory: '<isolated-workspace>/file_property/small_files'\n"
+      },
+      {
+        "category": "file_property",
+        "server_error": null,
+        "task": "filesystem/standard/file_property/time_classification",
+        "task_id": "time_classification",
+        "turns": [
+          {
+            "arguments_sha256": "a1185ea2ca5aa73273679b593bc00f5fb4b24bd57949146b4faf37fb280df7c8",
+            "output_sha256": "e1b01ee170d0b3eb84259bd1e90c2e2d023f3c58683d73372cdf1fb9530ffeb7",
+            "result_is_error": false,
+            "result_sha256": "fc7052cedf7b4489aeca7ea377ad8121b5db7febb529ca70ff98e743ab1a9344",
+            "tool": "create_directory",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "8c6a9b8b6b8c0dd0e06192cc14eeb6f07ae4018bd7baddafbfc9738f9b1286c2",
+            "output_sha256": "d4ae8e84f7b09dbad8bcf4fe2a4acc9a6da72f2e5680f036424d3d217e81b1d0",
+            "result_is_error": false,
+            "result_sha256": "3456aff919dea65fae84ad9442965781f290b778c557f1987d2474c61da0298b",
+            "tool": "read_multiple_files",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "e46b23e7b2d29fbda4ce9066247fc5fd7a91721408eb423480ff92a77dac764d",
+            "output_sha256": "ea749832acb5550f5693140b362bd1f0dd283928af0cf539ef83245f9e5a0195",
+            "result_is_error": true,
+            "result_sha256": "a55941e19d9f44c07841ee8143759d45dab0d427f7a2db59ec787126964841b2",
+            "tool": "write_file",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "83a6413ab152d039701605434c6efcd53b8bc85998bbb8f2115a70453754de9c",
+            "output_sha256": "27657976c58d001b7499f253a50eb3d2933e8d23582a2890dd56090a06df3d06",
+            "result_is_error": true,
+            "result_sha256": "a55941e19d9f44c07841ee8143759d45dab0d427f7a2db59ec787126964841b2",
+            "tool": "create_directory",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "8c6a9b8b6b8c0dd0e06192cc14eeb6f07ae4018bd7baddafbfc9738f9b1286c2",
+            "output_sha256": "d4ae8e84f7b09dbad8bcf4fe2a4acc9a6da72f2e5680f036424d3d217e81b1d0",
+            "result_is_error": false,
+            "result_sha256": "3456aff919dea65fae84ad9442965781f290b778c557f1987d2474c61da0298b",
+            "tool": "read_multiple_files",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "e46b23e7b2d29fbda4ce9066247fc5fd7a91721408eb423480ff92a77dac764d",
+            "output_sha256": "ea749832acb5550f5693140b362bd1f0dd283928af0cf539ef83245f9e5a0195",
+            "result_is_error": true,
+            "result_sha256": "a55941e19d9f44c07841ee8143759d45dab0d427f7a2db59ec787126964841b2",
+            "tool": "write_file",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "68cfdb259431123139cd737fd3be04eca9c9897b316f6d41b5efa51633bab005",
+        "verifier_stdout_tail": "-standard-file_property-time_classification-0czzwbcl/file_property\n\n\ud83d\udccb Checking: Directory structure\n\u274c Month directory not found. Expected one of: ['07', '7', 'jul', 'Jul', 'JUL']\n\n\ud83d\udccb Checking: Files in directories\n\u2705 All files are in correct directories\n\n\ud83d\udccb Checking: Metadata analysis files\n\u2705 All metadata_analyse.txt files are correct\n\n\ud83d\udccb Checking: No files in root\n\u2705 No files remain in root directory\n\n\ud83d\udccb Checking: Total file count\n\u274c Expected 8 files total, found 0\n\n\u274c Some verification checks failed!\n"
+      },
+      {
+        "category": "folder_structure",
+        "server_error": null,
+        "task": "filesystem/standard/folder_structure/structure_analysis",
+        "task_id": "structure_analysis",
+        "turns": [
+          {
+            "arguments_sha256": "19ccb12c8b0055ad3075bd5502cb1dbfe19c44fe97c395828e5fba1791263504",
+            "output_sha256": "c1be56e86cfe58555541892362dadffe9e3362d4b67a534bafaa8cfb9352a8ea",
+            "result_is_error": true,
+            "result_sha256": "b99e9b3347bb37533e8a1d1f62833adf8a095b7a0e0d1f55ab97fc350bffbbd8",
+            "tool": "directory_tree",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "907cf7f2b0aae5bd0a35db2e91310d27b48af0ecfafd41ebace1da1e0e773be3",
+            "output_sha256": "e6d487042fd32617b1906d1a2e62634245668932214fcad8e63bca514618f362",
+            "result_is_error": true,
+            "result_sha256": "1852365ae7d09dade7fc9e0bf3073269e680c482d69b2e83f18bf1fb7bd3e693",
+            "tool": "write_file",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "907cf7f2b0aae5bd0a35db2e91310d27b48af0ecfafd41ebace1da1e0e773be3",
+            "output_sha256": "e6d487042fd32617b1906d1a2e62634245668932214fcad8e63bca514618f362",
+            "result_is_error": true,
+            "result_sha256": "1852365ae7d09dade7fc9e0bf3073269e680c482d69b2e83f18bf1fb7bd3e693",
+            "tool": "write_file",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "907cf7f2b0aae5bd0a35db2e91310d27b48af0ecfafd41ebace1da1e0e773be3",
+            "output_sha256": "e6d487042fd32617b1906d1a2e62634245668932214fcad8e63bca514618f362",
+            "result_is_error": true,
+            "result_sha256": "1852365ae7d09dade7fc9e0bf3073269e680c482d69b2e83f18bf1fb7bd3e693",
+            "tool": "write_file",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "907cf7f2b0aae5bd0a35db2e91310d27b48af0ecfafd41ebace1da1e0e773be3",
+            "output_sha256": "e6d487042fd32617b1906d1a2e62634245668932214fcad8e63bca514618f362",
+            "result_is_error": true,
+            "result_sha256": "1852365ae7d09dade7fc9e0bf3073269e680c482d69b2e83f18bf1fb7bd3e693",
+            "tool": "write_file",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "907cf7f2b0aae5bd0a35db2e91310d27b48af0ecfafd41ebace1da1e0e773be3",
+            "output_sha256": "e6d487042fd32617b1906d1a2e62634245668932214fcad8e63bca514618f362",
+            "result_is_error": true,
+            "result_sha256": "1852365ae7d09dade7fc9e0bf3073269e680c482d69b2e83f18bf1fb7bd3e693",
+            "tool": "write_file",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "87d302973c26f7796de3389b9d244928e7e9a74baf3fd3b5452801ceec5dc5ab",
+        "verifier_stdout_tail": " ---\n\u274c Error verifying file type classification: [Errno 2] No such file or directory: '<isolated-workspace>/folder_structure/structure_analysis.txt'\n\n--- File Format ---\n\u274c Error checking file format: [Errno 2] No such file or directory: '<isolated-workspace>/folder_structure/structure_analysis.txt'\n\n==================================================\n\u274c Structure Analysis verification: FAIL\n"
+      },
+      {
+        "category": "folder_structure",
+        "server_error": null,
+        "task": "filesystem/standard/folder_structure/structure_mirror",
+        "task_id": "structure_mirror",
+        "turns": [
+          {
+            "arguments_sha256": "6c9351ff186f1aaadec8aaa609ae780d8778536188a1fcde712467b4fe7d4409",
+            "output_sha256": "724cdf5721939aa41a957fa8bcfad7c498d8d7725c0f96a651aabf49a5fec05a",
+            "result_is_error": false,
+            "result_sha256": "36141ee6535e9690e598365c1cccd3466cfdf2ca952cccfd7e2a5b93fb52a9b4",
+            "tool": "create_directory",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "7a7326b2caed94e0eb442f31a152c25ea13952bcfdedd6ad3388374b56d80995",
+            "output_sha256": "5df825a451189ec88d3ba5a8b474fa4b22c839dbc22117f3829a986f47324ab2",
+            "result_is_error": true,
+            "result_sha256": "223be0ae49fe3e2533b92ca6badfc2770b03876179cf96d5a9e2028bdd6ec165",
+            "tool": "search_files",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "cdad53aaffeb44ce3e51e53d6c4344a1b7ac3cac7d43ef6f4227310f36fddb57",
+            "output_sha256": "478e701304a12b268657b22df9694841f9ed34c16ba6d9a21d959461c31a9ebd",
+            "result_is_error": true,
+            "result_sha256": "223be0ae49fe3e2533b92ca6badfc2770b03876179cf96d5a9e2028bdd6ec165",
+            "tool": "directory_tree",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "cdad53aaffeb44ce3e51e53d6c4344a1b7ac3cac7d43ef6f4227310f36fddb57",
+            "output_sha256": "478e701304a12b268657b22df9694841f9ed34c16ba6d9a21d959461c31a9ebd",
+            "result_is_error": true,
+            "result_sha256": "223be0ae49fe3e2533b92ca6badfc2770b03876179cf96d5a9e2028bdd6ec165",
+            "tool": "directory_tree",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "cdad53aaffeb44ce3e51e53d6c4344a1b7ac3cac7d43ef6f4227310f36fddb57",
+            "output_sha256": "478e701304a12b268657b22df9694841f9ed34c16ba6d9a21d959461c31a9ebd",
+            "result_is_error": true,
+            "result_sha256": "223be0ae49fe3e2533b92ca6badfc2770b03876179cf96d5a9e2028bdd6ec165",
+            "tool": "directory_tree",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "cdad53aaffeb44ce3e51e53d6c4344a1b7ac3cac7d43ef6f4227310f36fddb57",
+            "output_sha256": "478e701304a12b268657b22df9694841f9ed34c16ba6d9a21d959461c31a9ebd",
+            "result_is_error": true,
+            "result_sha256": "223be0ae49fe3e2533b92ca6badfc2770b03876179cf96d5a9e2028bdd6ec165",
+            "tool": "directory_tree",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "b160b265312c04e4d1b4e0f0da118c87ca60fe3cf38d848aafbfc827437dd6df",
+        "verifier_stdout_tail": "\ud83d\udd0d Verifying Directory Structure Mirroring with Smart Placeholders in: <isolated-workspace>/folder_structure\n\n\ud83d\udccb Checking: No files copied\n\u274c Mirror directory 'complex_structure_mirror' not found\n\n\ud83d\udccb Checking: Mirror structure completeness\n\u274c Mirror directory 'complex_structure_mirror' not found\n\n==================================================\n\u274c Structure Mirror verification: FAIL\n"
+      },
+      {
+        "category": "legal_document",
+        "server_error": null,
+        "task": "filesystem/standard/legal_document/dispute_review",
+        "task_id": "dispute_review",
+        "turns": [
+          {
+            "arguments_sha256": "d55e289b9f5d7a55f039b960c059c534fc199e67cb499ebd093a938026cc9176",
+            "output_sha256": "4cd187469209714dd1e2f8a8d86c617a8464bb89645b57df58b27d899bf8b5b9",
+            "result_is_error": false,
+            "result_sha256": "0514082bbf49955e1e1a9ad62c3faa905b9c5fefa92ee16c9272dc4b8e04e6e0",
+            "tool": "directory_tree",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "e11e983be158309cb1b255a75950c61207238d1aa7469a441a22b6881f0b0bbc",
+            "output_sha256": "f58f9ca79778e22d6466686d5b085df701765b8948d0a6a67bff37ee462dbea9",
+            "result_is_error": true,
+            "result_sha256": "a60b7c008db9f44f2cdc90ae46856e8d57d8dec58358279f17b5afa6570c6d94",
+            "tool": "directory_tree",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "e11e983be158309cb1b255a75950c61207238d1aa7469a441a22b6881f0b0bbc",
+            "output_sha256": "f58f9ca79778e22d6466686d5b085df701765b8948d0a6a67bff37ee462dbea9",
+            "result_is_error": true,
+            "result_sha256": "a60b7c008db9f44f2cdc90ae46856e8d57d8dec58358279f17b5afa6570c6d94",
+            "tool": "directory_tree",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "e11e983be158309cb1b255a75950c61207238d1aa7469a441a22b6881f0b0bbc",
+            "output_sha256": "f58f9ca79778e22d6466686d5b085df701765b8948d0a6a67bff37ee462dbea9",
+            "result_is_error": true,
+            "result_sha256": "a60b7c008db9f44f2cdc90ae46856e8d57d8dec58358279f17b5afa6570c6d94",
+            "tool": "directory_tree",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "e11e983be158309cb1b255a75950c61207238d1aa7469a441a22b6881f0b0bbc",
+            "output_sha256": "f58f9ca79778e22d6466686d5b085df701765b8948d0a6a67bff37ee462dbea9",
+            "result_is_error": true,
+            "result_sha256": "a60b7c008db9f44f2cdc90ae46856e8d57d8dec58358279f17b5afa6570c6d94",
+            "tool": "directory_tree",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "e11e983be158309cb1b255a75950c61207238d1aa7469a441a22b6881f0b0bbc",
+            "output_sha256": "f58f9ca79778e22d6466686d5b085df701765b8948d0a6a67bff37ee462dbea9",
+            "result_is_error": true,
+            "result_sha256": "a60b7c008db9f44f2cdc90ae46856e8d57d8dec58358279f17b5afa6570c6d94",
+            "tool": "directory_tree",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "d4ba71cb126d49a47d6dbe26651957b17e39471c7bb52de101ef02abf1ad2d6f",
+        "verifier_stdout_tail": "ectory: '<isolated-workspace>/legal_document/dispute_review.txt'\n\n--- Expected Entries ---\n\u274c Error verifying entries: [Errno 2] No such file or directory: '<isolated-workspace>/legal_document/dispute_review.txt'\n\n--- Comment Count Accuracy ---\n\u2705 Comment count accuracy check skipped - relying on expected entries verification\n\n==================================================\n\u274c Task verification: FAIL\n"
+      },
+      {
+        "category": "legal_document",
+        "server_error": null,
+        "task": "filesystem/standard/legal_document/individual_comments",
+        "task_id": "individual_comments",
+        "turns": [
+          {
+            "arguments_sha256": "f95baf0fb95e7735247be5b8d488f58e9d05f3c0ab000454c2438dcb8e095a6f",
+            "output_sha256": "9e4c1bf677c95420c9877410a05e34bec47e2f48f10dc57965d6f8e286ae479e",
+            "result_is_error": true,
+            "result_sha256": "56dfcbc3f61f5a83baab680442fff617ae7705eb1d32f219cb5850f9bda22a2b",
+            "tool": "write_file",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "da29fba986ef52f41d02a2f674983a1df71af53523510d9ac8c700da9ede96a7",
+            "output_sha256": "07687aa8dcf7adc6e686a5536d9b5091fdf363da6bed51f929af1ace067436f8",
+            "result_is_error": true,
+            "result_sha256": "28f5ff37526eeacb3d3a22abaca8a8144ea7034292fca9d0659e11e73aa7530b",
+            "tool": "write_file",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "da29fba986ef52f41d02a2f674983a1df71af53523510d9ac8c700da9ede96a7",
+            "output_sha256": "07687aa8dcf7adc6e686a5536d9b5091fdf363da6bed51f929af1ace067436f8",
+            "result_is_error": true,
+            "result_sha256": "28f5ff37526eeacb3d3a22abaca8a8144ea7034292fca9d0659e11e73aa7530b",
+            "tool": "write_file",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "da29fba986ef52f41d02a2f674983a1df71af53523510d9ac8c700da9ede96a7",
+            "output_sha256": "07687aa8dcf7adc6e686a5536d9b5091fdf363da6bed51f929af1ace067436f8",
+            "result_is_error": true,
+            "result_sha256": "28f5ff37526eeacb3d3a22abaca8a8144ea7034292fca9d0659e11e73aa7530b",
+            "tool": "write_file",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "da29fba986ef52f41d02a2f674983a1df71af53523510d9ac8c700da9ede96a7",
+            "output_sha256": "07687aa8dcf7adc6e686a5536d9b5091fdf363da6bed51f929af1ace067436f8",
+            "result_is_error": true,
+            "result_sha256": "28f5ff37526eeacb3d3a22abaca8a8144ea7034292fca9d0659e11e73aa7530b",
+            "tool": "write_file",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "da29fba986ef52f41d02a2f674983a1df71af53523510d9ac8c700da9ede96a7",
+            "output_sha256": "07687aa8dcf7adc6e686a5536d9b5091fdf363da6bed51f929af1ace067436f8",
+            "result_is_error": true,
+            "result_sha256": "28f5ff37526eeacb3d3a22abaca8a8144ea7034292fca9d0659e11e73aa7530b",
+            "tool": "write_file",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "9f64885188feaf94ecf2fd255aff0b9554a60fc66326f5bbc23587295b5c4502",
+        "verifier_stdout_tail": "ent: [Errno 2] No such file or directory: '<isolated-workspace>/legal_document/individual_comment.csv'\n\n--- Data Accuracy ---\n\u274c Error verifying data accuracy: [Errno 2] No such file or directory: '<isolated-workspace>/legal_document/individual_comment.csv'\n\n--- File Location ---\n\u274c File is not in the main directory\n\n==================================================\n\u274c Task verification: FAIL\n"
+      },
+      {
+        "category": "legal_document",
+        "server_error": null,
+        "task": "filesystem/standard/legal_document/solution_tracing",
+        "task_id": "solution_tracing",
+        "turns": [
+          {
+            "arguments_sha256": "d96f1a9f137b004dc455ee4a0281cd41cb07ede9c29c8b842e94bb8dc19b9da0",
+            "output_sha256": "b877afc5ad4da46790947dc8a78cafc65179699bd2b52910b4d67e4166995ce2",
+            "result_is_error": true,
+            "result_sha256": "7ff0bc1c596613cbf06348e651dc2d70073c15849c6b541bcae7a74657c23c21",
+            "tool": "write_file",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "62b87996de405e30902aa230ac84ec53c4b72a36c093f91c0ab422a5781919f9",
+            "output_sha256": "20394a17461bfeb87d373e2cfd22a3273f47dd559ad38af48a296f688898f82d",
+            "result_is_error": true,
+            "result_sha256": "c37eb793ed10240fc6929f4689ba9a67b032be8bbda4d01b94f48486313cd2e8",
+            "tool": "write_file",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "62b87996de405e30902aa230ac84ec53c4b72a36c093f91c0ab422a5781919f9",
+            "output_sha256": "20394a17461bfeb87d373e2cfd22a3273f47dd559ad38af48a296f688898f82d",
+            "result_is_error": true,
+            "result_sha256": "c37eb793ed10240fc6929f4689ba9a67b032be8bbda4d01b94f48486313cd2e8",
+            "tool": "write_file",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "62b87996de405e30902aa230ac84ec53c4b72a36c093f91c0ab422a5781919f9",
+            "output_sha256": "20394a17461bfeb87d373e2cfd22a3273f47dd559ad38af48a296f688898f82d",
+            "result_is_error": true,
+            "result_sha256": "c37eb793ed10240fc6929f4689ba9a67b032be8bbda4d01b94f48486313cd2e8",
+            "tool": "write_file",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "62b87996de405e30902aa230ac84ec53c4b72a36c093f91c0ab422a5781919f9",
+            "output_sha256": "20394a17461bfeb87d373e2cfd22a3273f47dd559ad38af48a296f688898f82d",
+            "result_is_error": true,
+            "result_sha256": "c37eb793ed10240fc6929f4689ba9a67b032be8bbda4d01b94f48486313cd2e8",
+            "tool": "write_file",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "62b87996de405e30902aa230ac84ec53c4b72a36c093f91c0ab422a5781919f9",
+            "output_sha256": "20394a17461bfeb87d373e2cfd22a3273f47dd559ad38af48a296f688898f82d",
+            "result_is_error": true,
+            "result_sha256": "c37eb793ed10240fc6929f4689ba9a67b032be8bbda4d01b94f48486313cd2e8",
+            "tool": "write_file",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "6e342009f8e5e892a615c7d564cb011f79b90711b2674ff0175968d04f992249",
+        "verifier_stdout_tail": "-\n\u274c Error verifying CSV content: [Errno 2] No such file or directory: '<isolated-workspace>/legal_document/tracing.csv'\n\n--- Data Accuracy ---\n\u274c Error verifying data accuracy: [Errno 2] No such file or directory: '<isolated-workspace>/legal_document/tracing.csv'\n\n--- File Location ---\n\u274c File is not in the main directory\n\n==================================================\n\u274c Task verification: FAIL\n"
+      },
+      {
+        "category": "papers",
+        "server_error": null,
+        "task": "filesystem/standard/papers/author_folders",
+        "task_id": "author_folders",
+        "turns": [
+          {
+            "arguments_sha256": "fdfbd541cf126c9ece39eaeab6f70f9386d990ef264224bebd29631edfd01906",
+            "output_sha256": "0c6d07ebe15a820b1e517622602b9fe8f0b70cfc55f0f8fc707686c9d3bdfa64",
+            "result_is_error": true,
+            "result_sha256": "eb3affede9ba59009a0add2997b2f5146564322beb1ac350d09125d72982412c",
+            "tool": "directory_tree",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "721641108d888875faf949568fde4e07eb74f85ead95049be97025a6a448d311",
+            "output_sha256": "ceba4f38abd92dbe37d381b27d1c5b40cc3213ab413df8f7fd23aa70b446ed4e",
+            "result_is_error": true,
+            "result_sha256": "92ee529b5f279bfb922ac84090bf74be62dc9c7a32c33eb020748eb6668ffe40",
+            "tool": "directory_tree",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "721641108d888875faf949568fde4e07eb74f85ead95049be97025a6a448d311",
+            "output_sha256": "ceba4f38abd92dbe37d381b27d1c5b40cc3213ab413df8f7fd23aa70b446ed4e",
+            "result_is_error": true,
+            "result_sha256": "92ee529b5f279bfb922ac84090bf74be62dc9c7a32c33eb020748eb6668ffe40",
+            "tool": "directory_tree",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "721641108d888875faf949568fde4e07eb74f85ead95049be97025a6a448d311",
+            "output_sha256": "ceba4f38abd92dbe37d381b27d1c5b40cc3213ab413df8f7fd23aa70b446ed4e",
+            "result_is_error": true,
+            "result_sha256": "92ee529b5f279bfb922ac84090bf74be62dc9c7a32c33eb020748eb6668ffe40",
+            "tool": "directory_tree",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "721641108d888875faf949568fde4e07eb74f85ead95049be97025a6a448d311",
+            "output_sha256": "ceba4f38abd92dbe37d381b27d1c5b40cc3213ab413df8f7fd23aa70b446ed4e",
+            "result_is_error": true,
+            "result_sha256": "92ee529b5f279bfb922ac84090bf74be62dc9c7a32c33eb020748eb6668ffe40",
+            "tool": "directory_tree",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "721641108d888875faf949568fde4e07eb74f85ead95049be97025a6a448d311",
+            "output_sha256": "ceba4f38abd92dbe37d381b27d1c5b40cc3213ab413df8f7fd23aa70b446ed4e",
+            "result_is_error": true,
+            "result_sha256": "92ee529b5f279bfb922ac84090bf74be62dc9c7a32c33eb020748eb6668ffe40",
+            "tool": "directory_tree",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "397d1556891e022b9f9cbb60dcdbe5526d48345db987f8617b6d1a13c0c60b8f",
+        "verifier_stdout_tail": "xistence\n\u274c 'frequent_authors' directory not found\n\n\ud83d\udccb Checking: Original files intact\n\u274c No original HTML files found in root directory\n\n\ud83d\udccb Checking: Frequent authors organization\n\u26a0\ufe0f  No authors found with 4 or more papers\n\n\ud83d\udccb Checking: 2025 authors organization\n\u26a0\ufe0f  No authors found with 3 or more papers in 2025\n\n\ud83d\udccb Checking: Naming conventions\n\u274c Verification failed with error: [Errno 2] No such file or directory: '<isolated-workspace>/papers/frequent_authors'\n"
+      },
+      {
+        "category": "papers",
+        "server_error": null,
+        "task": "filesystem/standard/papers/find_math_paper",
+        "task_id": "find_math_paper",
+        "turns": [
+          {
+            "arguments_sha256": "d878752a6f0fe89a45759f15410187973c5dedbe0ab882ccaffee4334b0278d3",
+            "output_sha256": "0cb60f16ad3d30bc215a028ec8b233255d4ce294c59f48ea159dfb88b989b768",
+            "result_is_error": false,
+            "result_sha256": "37723e6abec9b46b68dc30179bcb4626347fa0e5465498b714a283de2aa07b89",
+            "tool": "directory_tree",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "7582f98443d3991c744a77cfec654c3d26347aac8baf9e725899025059534bda",
+            "output_sha256": "25f80e937796f75914fd88616ea1803ee47ed21ebe2980a018413520e66c7cc0",
+            "result_is_error": true,
+            "result_sha256": "ab962d213b37e152729109819b43e55dc9d9f9fd914f19b1acab9557c282cf10",
+            "tool": "directory_tree",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "7582f98443d3991c744a77cfec654c3d26347aac8baf9e725899025059534bda",
+            "output_sha256": "25f80e937796f75914fd88616ea1803ee47ed21ebe2980a018413520e66c7cc0",
+            "result_is_error": true,
+            "result_sha256": "ab962d213b37e152729109819b43e55dc9d9f9fd914f19b1acab9557c282cf10",
+            "tool": "directory_tree",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "7582f98443d3991c744a77cfec654c3d26347aac8baf9e725899025059534bda",
+            "output_sha256": "25f80e937796f75914fd88616ea1803ee47ed21ebe2980a018413520e66c7cc0",
+            "result_is_error": true,
+            "result_sha256": "ab962d213b37e152729109819b43e55dc9d9f9fd914f19b1acab9557c282cf10",
+            "tool": "directory_tree",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "7582f98443d3991c744a77cfec654c3d26347aac8baf9e725899025059534bda",
+            "output_sha256": "25f80e937796f75914fd88616ea1803ee47ed21ebe2980a018413520e66c7cc0",
+            "result_is_error": true,
+            "result_sha256": "ab962d213b37e152729109819b43e55dc9d9f9fd914f19b1acab9557c282cf10",
+            "tool": "directory_tree",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "7582f98443d3991c744a77cfec654c3d26347aac8baf9e725899025059534bda",
+            "output_sha256": "25f80e937796f75914fd88616ea1803ee47ed21ebe2980a018413520e66c7cc0",
+            "result_is_error": true,
+            "result_sha256": "ab962d213b37e152729109819b43e55dc9d9f9fd914f19b1acab9557c282cf10",
+            "tool": "directory_tree",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "5ed3925c0d8f19d9fd7d08e9972148b3488cb41adfd5b9338b868bc14300cf98",
+        "verifier_stdout_tail": "\ud83d\udd0d Verifying Find Math Paper Task...\n\n--- Answer File Exists ---\n\u274c File 'answer.html' not found\n\n--- Original File Renamed ---\n\u2705 Original file has been renamed\n\n==================================================\n\u274c Task verification: FAIL\n"
+      },
+      {
+        "category": "papers",
+        "server_error": null,
+        "task": "filesystem/standard/papers/organize_legacy_papers",
+        "task_id": "organize_legacy_papers",
+        "turns": [
+          {
+            "arguments_sha256": "770333d6bb50bc86e75715c0c173daa3481262d7ddbba9d08d20ef874d70357c",
+            "output_sha256": "80552eb7f74e4259e98fe48ff89b82e2eb063f5d1c2e3e9456054a71693daa0d",
+            "result_is_error": false,
+            "result_sha256": "3aaeec0f4bf49ff87163aecd43fa46f7e00302539faaa76cae2f3978d631501d",
+            "tool": "create_directory",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": null,
+            "output_sha256": "f9deed2df14bb9f72f07b096b3e0d00ba3343ec1fb39b065d820d61e437ac02a",
+            "tool": null,
+            "turn": 2
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "791615134ccd3440dd56b323c337e32236348641c36337e15b4d1cfbcc3873b1",
+        "verifier_stdout_tail": "--\n\u274c Year directory 2017 doesn't exist\n\n--- Index Files Format ---\n\u274c INDEX.md missing in 2017/\n\n--- Author Extraction ---\n\u274c Cannot verify author extraction - sample file missing\n\n--- Summary File ---\n\u274c SUMMARY.md not found\n\n--- Sorting Verification ---\n\u274c Error in Sorting Verification: [Errno 2] No such file or directory: '<isolated-workspace>/papers/organized/SUMMARY.md'\n\n==================================================\n\u274c Task verification: FAIL\n"
+      },
+      {
+        "category": "student_database",
+        "server_error": null,
+        "task": "filesystem/standard/student_database/duplicate_name",
+        "task_id": "duplicate_name",
+        "turns": [
+          {
+            "arguments_sha256": "0d21faabe439b60cf3bd089d7704fd6a0012ac652a43dab1b64afa0d869f4357",
+            "output_sha256": "cf175293aabfa302c34cf0962823ef43002f11f6bbc87f92bf1d7067dda65053",
+            "result_is_error": false,
+            "result_sha256": "e10069025c33da27eb9e656647d8aa0ec5848b4a302c12b27d8f2d48176521e9",
+            "tool": "directory_tree",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "fa48c60f533f11d6db08c4ac4ce58f796464fe67d999ed1774d8f2fc159f1b91",
+            "output_sha256": "42db7db283beb22e8aa0689eb0e2efaaaa52aabec9911213b9986841580c52da",
+            "result_is_error": false,
+            "result_sha256": "58ad0a0d10b0ca22d09427c1d37444ad8848dd9eb6d8159f70e70fafdda5bc51",
+            "tool": "write_file",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "356092d856a7347a05d4663c3dd59bb7dc842fa6964018fba75f0ed65df37e96",
+            "output_sha256": "597daac533b00ce396fca7d1125e0061777da13152f60a3c5613588494645743",
+            "result_is_error": false,
+            "result_sha256": "58ad0a0d10b0ca22d09427c1d37444ad8848dd9eb6d8159f70e70fafdda5bc51",
+            "tool": "write_file",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "356092d856a7347a05d4663c3dd59bb7dc842fa6964018fba75f0ed65df37e96",
+            "output_sha256": "597daac533b00ce396fca7d1125e0061777da13152f60a3c5613588494645743",
+            "result_is_error": false,
+            "result_sha256": "58ad0a0d10b0ca22d09427c1d37444ad8848dd9eb6d8159f70e70fafdda5bc51",
+            "tool": "write_file",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "356092d856a7347a05d4663c3dd59bb7dc842fa6964018fba75f0ed65df37e96",
+            "output_sha256": "597daac533b00ce396fca7d1125e0061777da13152f60a3c5613588494645743",
+            "result_is_error": false,
+            "result_sha256": "58ad0a0d10b0ca22d09427c1d37444ad8848dd9eb6d8159f70e70fafdda5bc51",
+            "tool": "write_file",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "356092d856a7347a05d4663c3dd59bb7dc842fa6964018fba75f0ed65df37e96",
+            "output_sha256": "597daac533b00ce396fca7d1125e0061777da13152f60a3c5613588494645743",
+            "result_is_error": false,
+            "result_sha256": "58ad0a0d10b0ca22d09427c1d37444ad8848dd9eb6d8159f70e70fafdda5bc51",
+            "tool": "write_file",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "46757400deee1fb48c780c137eaee1546e400d7530bb224f7891ef6dcf1bdf6e",
+        "verifier_stdout_tail": "\ud83d\udd0d Verifying Student Database Task: Find Duplicate Names...\n\n--- File Existence Check ---\n\u2705 Namesake file found\n\n--- Content Verification ---\n\u274c Incomplete group at line 1\n\u274c Failed to parse namesake file\n"
+      },
+      {
+        "category": "student_database",
+        "server_error": null,
+        "task": "filesystem/standard/student_database/english_talent",
+        "task_id": "english_talent",
+        "turns": [
+          {
+            "arguments_sha256": "2b9975b9d4a478d8ef4866e61913537883a758aac0932eb44e14dca6bdfbd78e",
+            "output_sha256": "345cb14b29fedaa230a79ec16ff972eefd9646f4acd120ef4c73b8e03c155693",
+            "result_is_error": false,
+            "result_sha256": "7d604e9e588c6e980974a1cec0a9990c890676f6fca99de4f4688267e4f14a9a",
+            "tool": "list_directory",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "6defcbfe1d3585b12acbc96cb989bc75e0b86c77cabc36e39fb52f114f65da8f",
+            "output_sha256": "5e7cff7d5348d92cc899bd2e929143220d93bf1f07953046c7fac5e2a43f7836",
+            "result_is_error": true,
+            "result_sha256": "269734cfec684dac7feb44f4d77cf74dc52c69fc6d62915f9bddd310e480e20c",
+            "tool": "list_directory",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "6defcbfe1d3585b12acbc96cb989bc75e0b86c77cabc36e39fb52f114f65da8f",
+            "output_sha256": "5e7cff7d5348d92cc899bd2e929143220d93bf1f07953046c7fac5e2a43f7836",
+            "result_is_error": true,
+            "result_sha256": "269734cfec684dac7feb44f4d77cf74dc52c69fc6d62915f9bddd310e480e20c",
+            "tool": "list_directory",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "6defcbfe1d3585b12acbc96cb989bc75e0b86c77cabc36e39fb52f114f65da8f",
+            "output_sha256": "5e7cff7d5348d92cc899bd2e929143220d93bf1f07953046c7fac5e2a43f7836",
+            "result_is_error": true,
+            "result_sha256": "269734cfec684dac7feb44f4d77cf74dc52c69fc6d62915f9bddd310e480e20c",
+            "tool": "list_directory",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "6defcbfe1d3585b12acbc96cb989bc75e0b86c77cabc36e39fb52f114f65da8f",
+            "output_sha256": "5e7cff7d5348d92cc899bd2e929143220d93bf1f07953046c7fac5e2a43f7836",
+            "result_is_error": true,
+            "result_sha256": "269734cfec684dac7feb44f4d77cf74dc52c69fc6d62915f9bddd310e480e20c",
+            "tool": "list_directory",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "6defcbfe1d3585b12acbc96cb989bc75e0b86c77cabc36e39fb52f114f65da8f",
+            "output_sha256": "5e7cff7d5348d92cc899bd2e929143220d93bf1f07953046c7fac5e2a43f7836",
+            "result_is_error": true,
+            "result_sha256": "269734cfec684dac7feb44f4d77cf74dc52c69fc6d62915f9bddd310e480e20c",
+            "tool": "list_directory",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "4ae5d3176c8eb707b7a312d800aefe314e278c304f935530f943041ffc36d47c",
+        "verifier_stdout_tail": "\ud83d\udd0d Verifying Student Database Task: English Talent Recruitment...\n\n--- Qualified Students File Exists ---\n\u274c File 'qualified_students.txt' not found\n\n\u274c Basic verification failed, cannot proceed with content verification\n"
+      },
+      {
+        "category": "student_database",
+        "server_error": null,
+        "task": "filesystem/standard/student_database/gradebased_score",
+        "task_id": "gradebased_score",
+        "turns": [
+          {
+            "arguments_sha256": "fa7f8db5ba19db82dda998eab8302cd92dd90048416d6d36ea83796a59690ac8",
+            "output_sha256": "f6aaf89607d1c3d4a2ea4f04bfa864c179dd3c02157d0e5c8071b8227b7633de",
+            "result_is_error": true,
+            "result_sha256": "bfaffe54791f40f356002c53b973af7ebeb9b96bfd5c1f63916fcc027778abdd",
+            "tool": "read_file",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "a908a05c80d2de62c80aa79d97605612c1202f7c82d0708eb9a6e724ea83b1bd",
+            "output_sha256": "dd11459f1e693a5a1cb059de1e49c4ac524077e1c99275f600a49c0de6956d83",
+            "result_is_error": false,
+            "result_sha256": "37742297e305e89b644571a11f670361b7d61eef422020d02ffd491d96caff3b",
+            "tool": "write_file",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "f934e12872094400243a57f7f4a1b89a033c5be095da43a09badcb5f355b4cd7",
+            "output_sha256": "d709f06c6c958c0d16250199f72fa94b9cbf524d676cd234919eceb277117d81",
+            "result_is_error": false,
+            "result_sha256": "1f89bcfe21c34e1ff258c0b271cf4358c3f1b3014c274e28cd46ad188ce2b13c",
+            "tool": "read_file",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "a908a05c80d2de62c80aa79d97605612c1202f7c82d0708eb9a6e724ea83b1bd",
+            "output_sha256": "dd11459f1e693a5a1cb059de1e49c4ac524077e1c99275f600a49c0de6956d83",
+            "result_is_error": false,
+            "result_sha256": "37742297e305e89b644571a11f670361b7d61eef422020d02ffd491d96caff3b",
+            "tool": "write_file",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "f934e12872094400243a57f7f4a1b89a033c5be095da43a09badcb5f355b4cd7",
+            "output_sha256": "d709f06c6c958c0d16250199f72fa94b9cbf524d676cd234919eceb277117d81",
+            "result_is_error": false,
+            "result_sha256": "1f89bcfe21c34e1ff258c0b271cf4358c3f1b3014c274e28cd46ad188ce2b13c",
+            "tool": "read_file",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "a908a05c80d2de62c80aa79d97605612c1202f7c82d0708eb9a6e724ea83b1bd",
+            "output_sha256": "dd11459f1e693a5a1cb059de1e49c4ac524077e1c99275f600a49c0de6956d83",
+            "result_is_error": false,
+            "result_sha256": "37742297e305e89b644571a11f670361b7d61eef422020d02ffd491d96caff3b",
+            "tool": "write_file",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "1e08ac36cf8f8f0d514547de693ab08901abb0c56c34b0e96686e6b7ab9bdafc",
+        "verifier_stdout_tail": "n: <isolated-workspace>/student_database\n\n--- Grade Summary File Exists ---\n\u2705 grade_summary.txt file found\n\n--- File is Readable ---\n\u2705 grade_summary.txt file is readable\n\n--- Three Subjects Present ---\n\u274c Missing subjects in grade_summary.txt: ['chinese', 'math', 'english']\n\n--- Grade Statistics Content ---\n\u274c No numbers found in grade_summary.txt\n\n==================================================\n\u274c Grade-Based Score Analysis verification: FAIL\n"
+      },
+      {
+        "category": "threestudio",
+        "server_error": null,
+        "task": "filesystem/standard/threestudio/code_locating",
+        "task_id": "code_locating",
+        "turns": [
+          {
+            "arguments_sha256": "c0a0ea06645dffbc624a0e0ec454228f8244d406d4190ecebd0bb1e3c57355ae",
+            "output_sha256": "37e879b2fbf396d7aaf5546ae54f27f4bd76e82ce51bbb1e42b762ebb5c87a3e",
+            "result_is_error": false,
+            "result_sha256": "8ef25c01d9d83a119ea56667a6239e8070b1cacc8a48588ca5c1ce8ee8dabd08",
+            "tool": "directory_tree",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "198c494783d79a0f967f4eaf8457a0ee2377985248f50f0ab66d866c9362c4f3",
+            "output_sha256": "049aa49778ab78640f2dc239d7e4121a183e2c90832afb519922e7a1bafd2df4",
+            "result_is_error": true,
+            "result_sha256": "74d13e94f21597fbb34241694cae085542be9a64d213686f36e51cc642f82811",
+            "tool": "directory_tree",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "198c494783d79a0f967f4eaf8457a0ee2377985248f50f0ab66d866c9362c4f3",
+            "output_sha256": "049aa49778ab78640f2dc239d7e4121a183e2c90832afb519922e7a1bafd2df4",
+            "result_is_error": true,
+            "result_sha256": "74d13e94f21597fbb34241694cae085542be9a64d213686f36e51cc642f82811",
+            "tool": "directory_tree",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "198c494783d79a0f967f4eaf8457a0ee2377985248f50f0ab66d866c9362c4f3",
+            "output_sha256": "049aa49778ab78640f2dc239d7e4121a183e2c90832afb519922e7a1bafd2df4",
+            "result_is_error": true,
+            "result_sha256": "74d13e94f21597fbb34241694cae085542be9a64d213686f36e51cc642f82811",
+            "tool": "directory_tree",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "198c494783d79a0f967f4eaf8457a0ee2377985248f50f0ab66d866c9362c4f3",
+            "output_sha256": "049aa49778ab78640f2dc239d7e4121a183e2c90832afb519922e7a1bafd2df4",
+            "result_is_error": true,
+            "result_sha256": "74d13e94f21597fbb34241694cae085542be9a64d213686f36e51cc642f82811",
+            "tool": "directory_tree",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "198c494783d79a0f967f4eaf8457a0ee2377985248f50f0ab66d866c9362c4f3",
+            "output_sha256": "049aa49778ab78640f2dc239d7e4121a183e2c90832afb519922e7a1bafd2df4",
+            "result_is_error": true,
+            "result_sha256": "74d13e94f21597fbb34241694cae085542be9a64d213686f36e51cc642f82811",
+            "tool": "directory_tree",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "2447a2f15a51b7a0eba998d63b20b7e68cba4a6f02c13a952e0896ea387eb258",
+        "verifier_stdout_tail": "de_locating-rcskyrla/threestudio/answer.txt'\n\n--- File Exists ---\n\u274c Error verifying file existence: [Errno 2] No such file or directory: '<isolated-workspace>/threestudio/answer.txt'\n\n--- Zero123 Guidance Content ---\n\u274c Error verifying file content: [Errno 2] No such file or directory: '<isolated-workspace>/threestudio/answer.txt'\n\n==================================================\n\u274c Task 1 verification: FAIL\n"
+      },
+      {
+        "category": "threestudio",
+        "server_error": null,
+        "task": "filesystem/standard/threestudio/output_analysis",
+        "task_id": "output_analysis",
+        "turns": [
+          {
+            "arguments_sha256": "fe0d09b789c9ab73d40d8660a6b770fa3245588a0da49762905a6e0c794bf75a",
+            "output_sha256": "cd4d75b74d1108684da379c3f9748aaef7647531c8aebee9aab600b211904d8f",
+            "result_is_error": true,
+            "result_sha256": "966789a81f75a8d354698a9a934a66ed325de8371f0a2c04a8305bbe6ef5966d",
+            "tool": "write_file",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "e84289350cfc4f4cdb022213256b8943b89869c8a68eadd8f9cd10c21dc51e33",
+            "output_sha256": "d9c60bf29703e827a206883ade766a7b1ad8c707e184825e0a8a4f598ca34cff",
+            "result_is_error": false,
+            "result_sha256": "76ef57ba78b247bbe2188f0b2a9ea88291885cb8e16966d3c42f9db9017e31b1",
+            "tool": "write_file",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "e84289350cfc4f4cdb022213256b8943b89869c8a68eadd8f9cd10c21dc51e33",
+            "output_sha256": "d9c60bf29703e827a206883ade766a7b1ad8c707e184825e0a8a4f598ca34cff",
+            "result_is_error": false,
+            "result_sha256": "76ef57ba78b247bbe2188f0b2a9ea88291885cb8e16966d3c42f9db9017e31b1",
+            "tool": "write_file",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "e84289350cfc4f4cdb022213256b8943b89869c8a68eadd8f9cd10c21dc51e33",
+            "output_sha256": "d9c60bf29703e827a206883ade766a7b1ad8c707e184825e0a8a4f598ca34cff",
+            "result_is_error": false,
+            "result_sha256": "76ef57ba78b247bbe2188f0b2a9ea88291885cb8e16966d3c42f9db9017e31b1",
+            "tool": "write_file",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "e84289350cfc4f4cdb022213256b8943b89869c8a68eadd8f9cd10c21dc51e33",
+            "output_sha256": "d9c60bf29703e827a206883ade766a7b1ad8c707e184825e0a8a4f598ca34cff",
+            "result_is_error": false,
+            "result_sha256": "76ef57ba78b247bbe2188f0b2a9ea88291885cb8e16966d3c42f9db9017e31b1",
+            "tool": "write_file",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "e84289350cfc4f4cdb022213256b8943b89869c8a68eadd8f9cd10c21dc51e33",
+            "output_sha256": "d9c60bf29703e827a206883ade766a7b1ad8c707e184825e0a8a4f598ca34cff",
+            "result_is_error": false,
+            "result_sha256": "76ef57ba78b247bbe2188f0b2a9ea88291885cb8e16966d3c42f9db9017e31b1",
+            "tool": "write_file",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "4bdf8390dab001bc07221021a02d01a5d9e907e8647371750fd472390a24e268",
+        "verifier_stdout_tail": "\ud83d\udd0d Verifying ThreeStudio Task 2: Analyze Zero123 Guidance Output Structure...\n\n--- Answer File Exists ---\n\u2705 Answer file found\n\n--- Required Strings ---\n\u274c Missing required strings: ['loss_sds', 'grad_norm', 'min_step', 'max_step']\n\n--- Line Numbers Range ---\n\u274c Missing first line number (323 or 324)\n\n--- File Path Components ---\n\u274c Missing expected file path: threestudio/models/guidance/zero123_guidance.py\n\n==================================================\n\u274c Task 2 verification: FAIL\n"
+      },
+      {
+        "category": "threestudio",
+        "server_error": null,
+        "task": "filesystem/standard/threestudio/requirements_completion",
+        "task_id": "requirements_completion",
+        "turns": [
+          {
+            "arguments_sha256": "dd55a1ceead67535467179e31cf07ca8f4cf612a160d74980ceffd0180dd10fc",
+            "output_sha256": "74e84ff5e754804e3a08dfb1dc208e5df84bbbd8324e3ad7c910040b1b223203",
+            "result_is_error": false,
+            "result_sha256": "8ef25c01d9d83a119ea56667a6239e8070b1cacc8a48588ca5c1ce8ee8dabd08",
+            "tool": "directory_tree",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "f37d7b1e29be7c08b2fac8ab5a5bd1acef29d2e7d8a1a25f6335eaff814b045f",
+            "output_sha256": "46fe8bdc2b9ba96ef5ef290dc4be34e1aee15754eb80c0267e0f968a73175e84",
+            "result_is_error": true,
+            "result_sha256": "dfd7bb8e9e86f5454d3760541f5e18a3a844ac2af17de6a08cf39868bc0094e1",
+            "tool": "directory_tree",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "f37d7b1e29be7c08b2fac8ab5a5bd1acef29d2e7d8a1a25f6335eaff814b045f",
+            "output_sha256": "46fe8bdc2b9ba96ef5ef290dc4be34e1aee15754eb80c0267e0f968a73175e84",
+            "result_is_error": true,
+            "result_sha256": "dfd7bb8e9e86f5454d3760541f5e18a3a844ac2af17de6a08cf39868bc0094e1",
+            "tool": "directory_tree",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "f37d7b1e29be7c08b2fac8ab5a5bd1acef29d2e7d8a1a25f6335eaff814b045f",
+            "output_sha256": "46fe8bdc2b9ba96ef5ef290dc4be34e1aee15754eb80c0267e0f968a73175e84",
+            "result_is_error": true,
+            "result_sha256": "dfd7bb8e9e86f5454d3760541f5e18a3a844ac2af17de6a08cf39868bc0094e1",
+            "tool": "directory_tree",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "f37d7b1e29be7c08b2fac8ab5a5bd1acef29d2e7d8a1a25f6335eaff814b045f",
+            "output_sha256": "46fe8bdc2b9ba96ef5ef290dc4be34e1aee15754eb80c0267e0f968a73175e84",
+            "result_is_error": true,
+            "result_sha256": "dfd7bb8e9e86f5454d3760541f5e18a3a844ac2af17de6a08cf39868bc0094e1",
+            "tool": "directory_tree",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "f37d7b1e29be7c08b2fac8ab5a5bd1acef29d2e7d8a1a25f6335eaff814b045f",
+            "output_sha256": "46fe8bdc2b9ba96ef5ef290dc4be34e1aee15754eb80c0267e0f968a73175e84",
+            "result_is_error": true,
+            "result_sha256": "dfd7bb8e9e86f5454d3760541f5e18a3a844ac2af17de6a08cf39868bc0094e1",
+            "tool": "directory_tree",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "420a027653e1050126471bc21984daf014a3d0b3dbd5cc722bfc9cc98eb79197",
+        "verifier_stdout_tail": "6pcc1g/threestudio/requirements.txt'\n\n--- File Format ---\n\u274c Error checking file format: [Errno 2] No such file or directory: '<isolated-workspace>/threestudio/requirements.txt'\n\n--- File Validity ---\n\u274c Error checking file: [Errno 2] No such file or directory: '<isolated-workspace>/threestudio/requirements.txt'\n\n==================================================\n\u274c Task 3 verification: FAIL\n"
+      },
+      {
+        "category": "votenet",
+        "server_error": null,
+        "task": "filesystem/standard/votenet/dataset_comparison",
+        "task_id": "dataset_comparison",
+        "turns": [
+          {
+            "arguments_sha256": "d8249ac8ebc5e476706cf26643ff43fbba6fc89259cc965e9d06861afb44e3d8",
+            "output_sha256": "96ae14f001aecc8940e9d821105636db1bf42498de08b5dcf27203a4064b3116",
+            "result_is_error": false,
+            "result_sha256": "2e7058d9e7e45d232d70e97ad34a2dda7803a4fc41807dfc424acb08c9d11c91",
+            "tool": "list_directory",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "78c2a8cdf488de8e63b6d13e5373ed00b1c91af4fedb21c12953beffb2525b1f",
+            "output_sha256": "66dbf46505a1da85670880d71949e054354fc33ee98d3033da5b4f43558a142b",
+            "result_is_error": true,
+            "result_sha256": "56c526c05385ee732c9f5a019076b12aa75f344d9e4aa087d82ec943d934ebe7",
+            "tool": "list_directory",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "78c2a8cdf488de8e63b6d13e5373ed00b1c91af4fedb21c12953beffb2525b1f",
+            "output_sha256": "66dbf46505a1da85670880d71949e054354fc33ee98d3033da5b4f43558a142b",
+            "result_is_error": true,
+            "result_sha256": "56c526c05385ee732c9f5a019076b12aa75f344d9e4aa087d82ec943d934ebe7",
+            "tool": "list_directory",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "78c2a8cdf488de8e63b6d13e5373ed00b1c91af4fedb21c12953beffb2525b1f",
+            "output_sha256": "66dbf46505a1da85670880d71949e054354fc33ee98d3033da5b4f43558a142b",
+            "result_is_error": true,
+            "result_sha256": "56c526c05385ee732c9f5a019076b12aa75f344d9e4aa087d82ec943d934ebe7",
+            "tool": "list_directory",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "78c2a8cdf488de8e63b6d13e5373ed00b1c91af4fedb21c12953beffb2525b1f",
+            "output_sha256": "66dbf46505a1da85670880d71949e054354fc33ee98d3033da5b4f43558a142b",
+            "result_is_error": true,
+            "result_sha256": "56c526c05385ee732c9f5a019076b12aa75f344d9e4aa087d82ec943d934ebe7",
+            "tool": "list_directory",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "78c2a8cdf488de8e63b6d13e5373ed00b1c91af4fedb21c12953beffb2525b1f",
+            "output_sha256": "66dbf46505a1da85670880d71949e054354fc33ee98d3033da5b4f43558a142b",
+            "result_is_error": true,
+            "result_sha256": "56c526c05385ee732c9f5a019076b12aa75f344d9e4aa087d82ec943d934ebe7",
+            "tool": "list_directory",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "bc0facdee6efc3a67993c5db32a118449b00a0207db5b313be22a67b6a4e347d",
+        "verifier_stdout_tail": "comparison-zizn28yd/votenet/analysis.txt'\n\n--- Required Categories ---\n\u274c Error verifying required categories: [Errno 2] No such file or directory: '<isolated-workspace>/votenet/analysis.txt'\n\n--- Category Counts ---\n\u274c Error verifying category counts: [Errno 2] No such file or directory: '<isolated-workspace>/votenet/analysis.txt'\n\n==================================================\n\u274c Task verification: FAIL\n"
+      },
+      {
+        "category": "votenet",
+        "server_error": null,
+        "task": "filesystem/standard/votenet/debugging",
+        "task_id": "debugging",
+        "turns": [
+          {
+            "arguments_sha256": "470d473421990dfd1753c9a0efd3722af17dc0b9523ff782698f9929b2c318b2",
+            "output_sha256": "fea73f72818354c9006e80810392796ea9d59c9aca192077d1cacbd54fd50a8e",
+            "result_is_error": false,
+            "result_sha256": "44706ba2825c81fefddc79f793f64e0ecb880bfe1e34bf9b46d32bf617f078fb",
+            "tool": "directory_tree",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "a52a763f4e888c8fd6fb6d09b0adf473e78e872b5dfcfc890671cb9a75657db6",
+            "output_sha256": "907deb5296b700dad12962469e6599aa38000a397f073b63f6899357c772bedc",
+            "result_is_error": true,
+            "result_sha256": "69e5e5d0693b59ae9c5b1482e0f78e2c4b535154cfedab2948e06b074d03bb90",
+            "tool": "directory_tree",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "a52a763f4e888c8fd6fb6d09b0adf473e78e872b5dfcfc890671cb9a75657db6",
+            "output_sha256": "907deb5296b700dad12962469e6599aa38000a397f073b63f6899357c772bedc",
+            "result_is_error": true,
+            "result_sha256": "69e5e5d0693b59ae9c5b1482e0f78e2c4b535154cfedab2948e06b074d03bb90",
+            "tool": "directory_tree",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "a52a763f4e888c8fd6fb6d09b0adf473e78e872b5dfcfc890671cb9a75657db6",
+            "output_sha256": "907deb5296b700dad12962469e6599aa38000a397f073b63f6899357c772bedc",
+            "result_is_error": true,
+            "result_sha256": "69e5e5d0693b59ae9c5b1482e0f78e2c4b535154cfedab2948e06b074d03bb90",
+            "tool": "directory_tree",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "a52a763f4e888c8fd6fb6d09b0adf473e78e872b5dfcfc890671cb9a75657db6",
+            "output_sha256": "907deb5296b700dad12962469e6599aa38000a397f073b63f6899357c772bedc",
+            "result_is_error": true,
+            "result_sha256": "69e5e5d0693b59ae9c5b1482e0f78e2c4b535154cfedab2948e06b074d03bb90",
+            "tool": "directory_tree",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "a52a763f4e888c8fd6fb6d09b0adf473e78e872b5dfcfc890671cb9a75657db6",
+            "output_sha256": "907deb5296b700dad12962469e6599aa38000a397f073b63f6899357c772bedc",
+            "result_is_error": true,
+            "result_sha256": "69e5e5d0693b59ae9c5b1482e0f78e2c4b535154cfedab2948e06b074d03bb90",
+            "tool": "directory_tree",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "ce25af5af5d7c6ac6af946150ccd4ffe7c529c17cbbf01bff7ac85ec4d1dd028",
+        "verifier_stdout_tail": "ctory: '<isolated-workspace>/votenet/answer.txt'\n\n--- File Exists ---\n\u274c Error verifying file existence: [Errno 2] No such file or directory: '<isolated-workspace>/votenet/answer.txt'\n\n--- Bug Fix Applied ---\n\u274c Error verifying bug fix: [Errno 2] No such file or directory: '<isolated-workspace>/votenet/answer.txt'\n\n==================================================\n\u274c Task verification: FAIL\n"
+      },
+      {
+        "category": "votenet",
+        "server_error": null,
+        "task": "filesystem/standard/votenet/requirements_writing",
+        "task_id": "requirements_writing",
+        "turns": [
+          {
+            "arguments_sha256": "6d8db1954e022ddb1c03e4797599e735d6b62bd80f4bc6cde322940c1d41c717",
+            "output_sha256": "e6acce5e6ef1c33985968fbca6d8ddec1ccc344bd9b70a51ec9d0ff97a7459ad",
+            "result_is_error": true,
+            "result_sha256": "d36ed98a68ed7afbd50d5b27d8eec60cb2c0d01a3cf684cf6d59cb321018222d",
+            "tool": "write_file",
+            "turn": 1
+          },
+          {
+            "arguments_sha256": "06acc7e1c9e0a93f0a99730984bc19f5b01a4ffc355c063eaeb577a00fb8c353",
+            "output_sha256": "b8f32497091a16d10e5bdf6d046595ea06ad09e47ea08b9d2527bbfba04dd215",
+            "result_is_error": true,
+            "result_sha256": "7bd95459ee1662b67f2363209cd6620001f665234ed080a7d86f1bc5cc1f781e",
+            "tool": "write_file",
+            "turn": 2
+          },
+          {
+            "arguments_sha256": "06acc7e1c9e0a93f0a99730984bc19f5b01a4ffc355c063eaeb577a00fb8c353",
+            "output_sha256": "b8f32497091a16d10e5bdf6d046595ea06ad09e47ea08b9d2527bbfba04dd215",
+            "result_is_error": true,
+            "result_sha256": "7bd95459ee1662b67f2363209cd6620001f665234ed080a7d86f1bc5cc1f781e",
+            "tool": "write_file",
+            "turn": 3
+          },
+          {
+            "arguments_sha256": "06acc7e1c9e0a93f0a99730984bc19f5b01a4ffc355c063eaeb577a00fb8c353",
+            "output_sha256": "b8f32497091a16d10e5bdf6d046595ea06ad09e47ea08b9d2527bbfba04dd215",
+            "result_is_error": true,
+            "result_sha256": "7bd95459ee1662b67f2363209cd6620001f665234ed080a7d86f1bc5cc1f781e",
+            "tool": "write_file",
+            "turn": 4
+          },
+          {
+            "arguments_sha256": "06acc7e1c9e0a93f0a99730984bc19f5b01a4ffc355c063eaeb577a00fb8c353",
+            "output_sha256": "b8f32497091a16d10e5bdf6d046595ea06ad09e47ea08b9d2527bbfba04dd215",
+            "result_is_error": true,
+            "result_sha256": "7bd95459ee1662b67f2363209cd6620001f665234ed080a7d86f1bc5cc1f781e",
+            "tool": "write_file",
+            "turn": 5
+          },
+          {
+            "arguments_sha256": "06acc7e1c9e0a93f0a99730984bc19f5b01a4ffc355c063eaeb577a00fb8c353",
+            "output_sha256": "b8f32497091a16d10e5bdf6d046595ea06ad09e47ea08b9d2527bbfba04dd215",
+            "result_is_error": true,
+            "result_sha256": "7bd95459ee1662b67f2363209cd6620001f665234ed080a7d86f1bc5cc1f781e",
+            "tool": "write_file",
+            "turn": 6
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "cc248fc92ca054ba7ee3746964d261fba8d7eda7d76a0d5639e2d0f7fd11239b",
+        "verifier_stdout_tail": "_writing-lq3r1to5/votenet/requirements.txt'\n\n--- File Format ---\n\u274c Error checking file format: [Errno 2] No such file or directory: '<isolated-workspace>/votenet/requirements.txt'\n\n--- No Duplicate Entries ---\n\u274c Error checking for duplicates: [Errno 2] No such file or directory: '<isolated-workspace>/votenet/requirements.txt'\n\n==================================================\n\u274c Task verification: FAIL\n"
+      }
+    ],
+    "runtime_errors": 0,
+    "suite": "filesystem/standard",
+    "task_count": 30,
+    "task_revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "verifier_failures": 30,
+    "verifier_passes": 0
+  },
+  "parent": {
+    "bytes": 52206773,
+    "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "receipt_self_sha256": "917880fb01628d8816a759687ca04255247974fb5346a23ca42373c66bfe9759",
+  "schema_version": 1,
+  "training": {
+    "after_eval": {
+      "assistant_loss_tokens": 4366,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.35730645900137425,
+      "mean_loss": 4.7704346709659875,
+      "rows": 5
+    },
+    "batch_size": 2,
+    "before_eval": {
+      "assistant_loss_tokens": 4366,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.30073293632615666,
+      "mean_loss": 5.281866223015919,
+      "rows": 5
+    },
+    "dataset": "Jakumetsu/mcpmark-trajectory-log",
+    "eval_rows": 5,
+    "learning_rate": 1e-05,
+    "max_seq_len": 1024,
+    "original_benchmark": "https://github.com/eval-sys/mcpmark",
+    "report": {
+      "bytes": 20433,
+      "path": "/private/tmp/m698-m679-mcp-warm-report.json",
+      "sha256": "6ab15d47e104e59542e9079350930d0b12f11674f3080106480e170cd1346d26"
+    },
+    "revision": "e50578f0ab904d8e6a7c576c387c1e76ae482c89",
+    "steps": 128,
+    "train_rows": 10,
+    "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log",
+    "weight_transfer": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 91.77234792175153,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.77234792175153
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.70583183858278,
+          "delta_l2": 0.39268870278521545,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.007594669475797737,
+          "target_l2": 51.71069943015737
+        },
+        "embedding": {
+          "base_l2": 78.5827108674603,
+          "delta_l2": 1.3572187076901383,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.01727121262053761,
+          "target_l2": 79.00256430013754
+        },
+        "ffn": {
+          "base_l2": 50.615098537061556,
+          "delta_l2": 0.46144076987825144,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.009116662482448272,
+          "target_l2": 50.62134967122899
+        },
+        "normalization": {
+          "base_l2": 21.464259287065175,
+          "delta_l2": 0.011269055614231098,
+          "parameters": 384,
+          "relative_delta_l2": 0.0005250148846749198,
+          "target_l2": 21.475201333634082
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    }
+  }
+}

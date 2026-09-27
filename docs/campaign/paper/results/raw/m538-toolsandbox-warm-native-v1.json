@@ -1,0 +1,31 @@
+{
+  "benchmark_id": "toolsandbox",
+  "checkpoint": {
+    "bytes": 52251900,
+    "path": "/private/tmp/localagent-public-data/m530-warm.pt",
+    "sha256": "3b6325676bb1812ea34ddf55326a1a9cdaa62970d38309350451eea520930a1b"
+  },
+  "claim_boundary": "Native pinned ToolSandbox simulator and milestone-verifier smoke only. The scripted user terminates after the first agent response; the official split, model-based user simulator, full scenario matrix, and optional RapidAPI tools were not executed. This is not an official ToolSandbox leaderboard score or live messaging completion.",
+  "environment_executed": true,
+  "external_api_called": false,
+  "kind": "localagent_toolsandbox_native_smoke",
+  "official_split_verified": false,
+  "receipt_self_sha256": "651147010a8cf8ba515a6a208764bfa4fef044ba60ca253753515d51373a0183",
+  "runner": {
+    "bytes": 18130,
+    "path": "/Users/sangbumchoi/Documents/LocalAgent/scripts/run_toolsandbox_native.py",
+    "sha256": "ccfa3fa48147dd982148b29d4954533760250d24a5498e67d1d670612f39af25"
+  },
+  "scenarios": {
+    "cellular_off": {"milestone_similarity": 1.0, "similarity": 1.0},
+    "wifi_off": {"milestone_similarity": 1.0, "similarity": 1.0},
+    "send_message_with_phone_number_and_content": {"milestone_similarity": 1.0, "similarity": 1.0}
+  },
+  "schema_version": 1,
+  "source_revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+  "source_url": "https://github.com/apple/ToolSandbox",
+  "success_count": 3,
+  "success_rate": 1.0,
+  "task_count": 3,
+  "verifier_executed": true
+}

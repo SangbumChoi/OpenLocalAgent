@@ -1,0 +1,36 @@
+{
+  "browser": {
+    "console_expected": [
+      "No available adapters.",
+      "WebGPU unavailable, falling back to WASM"
+    ],
+    "console_unexpected": [],
+    "page_errors": 0,
+    "request_failures": 0,
+    "status": 200,
+    "title": "LocalAgent — Tool Calling (WebGPU)",
+    "url": "http://127.0.0.1:8789/index.html",
+    "visible_banner_bpe": true,
+    "visible_banner_tool_count": 63,
+    "webgpu_adapter_available": false,
+    "wasm_fallback_observed": true
+  },
+  "bundle": {
+    "bundle_identity_sha256": "e0e19a8ad529a23e6bd703ed310eabe95f0a7b6b8ca7ad984c2d0c5ec8a296ed",
+    "bundle_manifest_sha256": "f0c28409d75a03570c10aa4fa281e51ac1bc7b0c48608af1a7de3ea803ed94d7",
+    "checkpoint_sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "meta_sha256": "d26f68ed2201f9db7d97898001b5dadfef484a39e497405975cf5e859693a8ce",
+    "parity_gate_passed": true,
+    "tool_count": 63
+  },
+  "claim_boundary": "This is a static browser boot and artifact-load smoke on a headless host with no GPU adapter. The observed WASM fallback is not hardware WebGPU capability evidence; the native WebGPU/Apple Metal receipt remains the authoritative provider/latency result. No external side effect or benchmark task was executed.",
+  "generated_at": "2026-08-05",
+  "kind": "localagent_webgpu_static_browser_smoke",
+  "receipt_self_sha256": "288ab5663fa7e1f2ecdb4079f050f089494b5ce107aaf4b8c51568a33635879a",
+  "schema_version": 1,
+  "static_sources": {
+    "app_js_sha256": "2496c9fa5210b561ce96af7cd9b4b907333293d81f72dad97dc6901955127e64",
+    "index_html_sha256": "82b4a5e15a090c7bb82924ab3f0b2e6f0a13c7ea0c41094c665f9be13f8b1fe5",
+    "tool_banner_fix": "50-tool byte-level banner replaced by 63-tool BPE release banner"
+  }
+}

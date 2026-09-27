@@ -1,0 +1,36 @@
+{
+  "kind": "localagent_workshop_publication_gate",
+  "schema_version": 1,
+  "ready": false,
+  "current_checkpoint": {
+    "path": "/private/tmp/m585-public-multisurface-warm.pt",
+    "sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff"
+  },
+  "passed_requirements": [
+    "catalog:realistic_family_coverage",
+    "catalog:no_pending_train_adapter",
+    "native:mobilegym",
+    "native:browsergym_miniwob",
+    "webgpu:native_capability_and_latency",
+    "weights:transfer_and_no_transfer_ablation",
+    "training:rl_preflight"
+  ],
+  "blocked_requirements": {
+    "native:androidworld": ["receipt_not_supplied"],
+    "native:mobile_safety_bench": ["receipt_not_supplied"],
+    "native:iosworld": ["receipt_not_supplied"],
+    "native:osworld": ["receipt_not_supplied"],
+    "native:osworld_v2": ["receipt_not_supplied"],
+    "native:agentnet": ["receipt_not_supplied"],
+    "native:toolsandbox": ["official_split_not_verified"],
+    "native:mcpmark": ["receipt_not_supplied"],
+    "native:enterpriseopsgym": ["receipt_not_supplied"],
+    "artifacts:public_model_demo_manifest": ["current_checkpoint_not_bound"]
+  },
+  "source_gate": {
+    "path": "/private/tmp/m602-workshop-gate-tracked.json",
+    "sha256": "72de8dc691143140a202c83b0de296e695ff4e17171acaf96137fdb64701f0e9"
+  },
+  "claim_boundary": "Fail-closed current m585 gate after adding the matched warm/random transfer ablation. Seven checks pass; native benchmark receipts, official ToolSandbox, and a current public model/demo manifest remain required.",
+  "receipt_self_sha256": "bc30e186bca190fb7d9c0ca38c030226f7e73e62b6dc80ad837d5f8c586d602f"
+}

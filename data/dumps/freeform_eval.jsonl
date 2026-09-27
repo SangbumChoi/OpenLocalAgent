@@ -1,0 +1,45 @@
+{"prompt": "What is the color of a monkey?", "tool": "web_search"}
+{"prompt": "Look up who invented the telephone.", "tool": "web_search"}
+{"prompt": "Google the tallest mountain in Africa.", "tool": "web_search"}
+{"prompt": "Find out when the Eiffel Tower was built.", "tool": "web_search"}
+{"prompt": "Can you search for the best ramen in Tokyo?", "tool": "web_search"}
+{"prompt": "What does the word ephemeral mean?", "tool": "define"}
+{"prompt": "Define photosynthesis for me.", "tool": "define"}
+{"prompt": "Give me the definition of entropy.", "tool": "define"}
+{"prompt": "Open https://github.com/pytorch/pytorch in the browser.", "tool": "open_url"}
+{"prompt": "Go to example.com and load the homepage.", "tool": "open_url"}
+{"prompt": "Fetch the JSON from https://api.github.com/repos/torvalds/linux.", "tool": "http_request"}
+{"prompt": "Make a GET request to https://httpbin.org/get.", "tool": "http_request"}
+{"prompt": "Download the dataset from https://example.com/data.zip.", "tool": "download_file"}
+{"prompt": "Grab the file at https://example.com/report.pdf and save it.", "tool": "download_file"}
+{"prompt": "Any recent news about electric vehicles?", "tool": "get_news"}
+{"prompt": "What's the latest headlines on climate policy?", "tool": "get_news"}
+{"prompt": "List the files in the src directory.", "tool": "list_dir"}
+{"prompt": "Show me what's inside the build folder.", "tool": "list_dir"}
+{"prompt": "ls the current directory.", "tool": "list_dir"}
+{"prompt": "Find all python files under tests.", "tool": "find_files"}
+{"prompt": "Search the codebase for the function train_step.", "tool": "grep_search"}
+{"prompt": "Grep for TODO comments in the repo.", "tool": "grep_search"}
+{"prompt": "Where is the string 'eos_id' used?", "tool": "grep_search"}
+{"prompt": "Make a directory called build.", "tool": "make_dir"}
+{"prompt": "Create a new folder named output.", "tool": "make_dir"}
+{"prompt": "mkdir logs please.", "tool": "make_dir"}
+{"prompt": "Run the test suite.", "tool": "run_tests"}
+{"prompt": "Execute the unit tests.", "tool": "run_tests"}
+{"prompt": "Run python train.py.", "tool": "run_command"}
+{"prompt": "Run this Python: print(2 ** 16).", "tool": "run_python"}
+{"prompt": "Run the command echo hello in the shell.", "tool": "run_command"}
+{"prompt": "Read the file data/loader.py.", "tool": "read_file"}
+{"prompt": "Open and show me the contents of README.md.", "tool": "read_file"}
+{"prompt": "Write a config to settings.yaml.", "tool": "write_file"}
+{"prompt": "What's the git status of the repo?", "tool": "git_status"}
+{"prompt": "Show me the git diff.", "tool": "git_diff"}
+{"prompt": "Commit the staged changes with message fix bug.", "tool": "git_commit"}
+{"prompt": "Email Dana the quarterly report.", "tool": "send_email"}
+{"prompt": "Send a slack message to the team channel saying deploy done.", "tool": "slack_send"}
+{"prompt": "Add a calendar event for the standup at 9am.", "tool": "calendar_event"}
+{"prompt": "Remind me to water the plants.", "tool": "set_reminder"}
+{"prompt": "What is 18 * 24?", "tool": "calculator"}
+{"prompt": "Compute 144 divided by 12.", "tool": "calculator"}
+{"prompt": "What's the weather like in Oslo?", "tool": "get_weather"}
+{"prompt": "Play Bohemian Rhapsody.", "tool": "play_music"}

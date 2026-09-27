@@ -1,0 +1,181 @@
+{
+  "benchmark_id": "mobilegym",
+  "checkpoint": {
+    "bytes": 52206773,
+    "path": "/private/tmp/m675-m671-androidcontrol/warm-child.pt",
+    "sha256": "91eb969628d77099d6b834cf3c1a6bd0a1fa37adefffe80f2d57605e1b775dcc"
+  },
+  "claim_boundary": "Complete pinned MobileGym native simulator/state-diff evaluation over the official 256-task test split using a bounded DOM/text projection. This is not visual Android control, AndroidWorld success, or real-account side effects.",
+  "decision": {
+    "native_mobile_promotion": false,
+    "next_training_need": "accessibility/screenshot-grounded multi-step mobile state actions",
+    "retain_as_current_negative_control": true
+  },
+  "environment_executed": true,
+  "kind": "localagent_m676_m675_mobilegym_native_receipt",
+  "official_split_verified": true,
+  "protocol": {
+    "observation_mode": "text_projection",
+    "official_split": "test",
+    "run": {
+      "elapsed_seconds": 508.245,
+      "full_official_test_split": true,
+      "limit": null,
+      "max_steps": 2,
+      "seed": 0,
+      "selector_first": false,
+      "selector_top_m": 1,
+      "start": 0
+    },
+    "vision_used": false
+  },
+  "receipt_self_sha256": "e0a67dad44516de54bbbaee89306f0856d0d5e87eea5e578bec52e3b07211401",
+  "result": {
+    "failed_tasks": 255,
+    "passed_tasks": 1,
+    "success_rate": 0.00390625,
+    "suite_summary": {
+      "account": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 5
+      },
+      "alipay": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 9
+      },
+      "bilibili": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 9
+      },
+      "calendar": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 12
+      },
+      "clock": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 9
+      },
+      "crossapp_commerce": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 14
+      },
+      "crossapp_content": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 23
+      },
+      "crossapp_life": {
+        "passed": 1,
+        "success_rate": 0.034482758620689655,
+        "tasks": 29
+      },
+      "crossapp_work": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 21
+      },
+      "ebay": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 5
+      },
+      "file_manager": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 3
+      },
+      "launcher": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 2
+      },
+      "map": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 17
+      },
+      "notes": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 5
+      },
+      "railway12306": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 12
+      },
+      "redbook": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 6
+      },
+      "reddit": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 6
+      },
+      "sms": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 3
+      },
+      "spotify": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 17
+      },
+      "tencent_meeting": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 9
+      },
+      "weather": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 9
+      },
+      "wechat": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 11
+      },
+      "wechat_reading": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 13
+      },
+      "x": {
+        "passed": 0,
+        "success_rate": 0.0,
+        "tasks": 7
+      }
+    },
+    "tool_counts": {
+      "mobile_navigate_back": 255,
+      "mobile_navigate_home": 6,
+      "mobile_open_app": 1
+    }
+  },
+  "schema_version": 1,
+  "source": {
+    "raw_report": {
+      "bytes": 191022,
+      "path": "/private/tmp/m676-m675-mobilegym-full.json",
+      "sha256": "f1a0a6cacaf15e243c96d268c1062e5155e9b392dea58d28f796ff6dd4b634d1"
+    },
+    "repository": "https://github.com/Purewhiter/mobilegym",
+    "revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "source_root": "MobileGym-m546",
+    "test_ids_sha256": "cf61a0b2e71721864a1b526a531c433f852e128d2ffa8b81504fc3d74b9830bf",
+    "test_split_sha256": "a3d485015d480f4f1ebbd12dbbf02c25c0aa667d1afcf5f6fa35f0263a82c567",
+    "train_split_sha256": "0ecef460fecfd8aa91dcbb2cd4cca17b033f620f85a50d7f0b598ed19a27c0eb"
+  },
+  "success_rate": 0.00390625,
+  "task_count": 256
+}

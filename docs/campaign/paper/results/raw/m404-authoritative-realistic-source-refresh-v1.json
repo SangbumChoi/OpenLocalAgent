@@ -1,0 +1,91 @@
+{
+  "accessed_utc": "2026-08-05",
+  "claim_boundary": "This receipt records authoritative source-page contracts and availability observations. It is not a LocalAgent benchmark score, training result, native runtime result, or evidence that any external account or service was executed.",
+  "kind": "localagent_authoritative_realistic_source_refresh",
+  "policy": {
+    "original_source_required": true,
+    "native_runner_required_for_task_success": true,
+    "live_viewer_not_sufficient_for_reproducibility": true,
+    "screenshot_or_xml_access_must_be_reported": true
+  },
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "androidworld",
+      "source_url": "https://github.com/google-research/android_world",
+      "official_site": "https://google-research.github.io/android_world/",
+      "contract": {
+        "tasks": 116,
+        "apps": 20,
+        "dynamic_parameterization": true,
+        "native_requirement": "Android emulator plus task setup/reward verifier; Docker is experimental"
+      }
+    },
+    {
+      "id": "browsergym",
+      "source_url": "https://github.com/ServiceNow/BrowserGym",
+      "contract": {
+        "ecosystem": ["MiniWoB++", "WebArena", "VisualWebArena", "WorkArena", "WebLINX"],
+        "native_requirement": "BrowserGym environment, matching Playwright/Chromium, and live DOM/accessibility observations"
+      }
+    },
+    {
+      "id": "iosworld",
+      "source_url": "https://iosworld.io/",
+      "code_url": "https://github.com/ljang0/iOSWorld",
+      "contract": {
+        "tasks": 133,
+        "apps": 26,
+        "persistent_identity": true,
+        "mcp_option": true,
+        "license": "Apache-2.0",
+        "native_requirement": "macOS/iOS simulator runner or the released AWS runner, plus rubric verification"
+      }
+    },
+    {
+      "id": "mobileworld",
+      "source_url": "https://tongyi-mai.github.io/MobileWorld/",
+      "code_url": "https://github.com/Tongyi-MAI/MobileWorld",
+      "contract": {
+        "tasks": 201,
+        "apps": 20,
+        "agent_user_workflows": true,
+        "mcp_augmented_workflows": true,
+        "native_requirement": "Android emulator/device runner and release-matched task verifier"
+      }
+    },
+    {
+      "id": "osworld2",
+      "source_url": "https://arxiv.org/abs/2606.29537",
+      "code_url": "https://github.com/xlang-ai/OSWorld-V2",
+      "contract": {
+        "workflows": 108,
+        "long_horizon": true,
+        "release_match_required": true,
+        "native_requirement": "release-matched desktop VM, seeded artifacts, action log, and evaluator"
+      }
+    },
+    {
+      "id": "mcpmark",
+      "source_url": "https://github.com/eval-sys/mcpmark",
+      "docs_url": "https://mcpmark.ai/docs/introduction",
+      "contract": {
+        "services": ["Notion", "GitHub", "Filesystem", "Postgres", "Playwright"],
+        "pinned_server_versions": true,
+        "native_requirement": "version-pinned MCP servers, isolated state, user simulator, and verifier"
+      }
+    },
+    {
+      "id": "agentnet",
+      "source_url": "https://huggingface.co/datasets/xlangai/AgentNet",
+      "revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+      "contract": {
+        "license": "MIT",
+        "split": "train",
+        "viewer_status": "DatasetGenerationCastError caused by inconsistent columns across merged JSONL files",
+        "reproducibility_policy": "Use a pinned raw archive/JSONL projection and record schema normalization; do not infer row completeness from the live viewer"
+      }
+    }
+  ],
+  "receipt_self_sha256": "813ec88cf65fb35f15cd86e96e1946993909a27296d276b0dc0c57ab8fcbc7f4"
+}

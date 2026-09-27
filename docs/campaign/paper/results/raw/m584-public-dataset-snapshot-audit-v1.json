@@ -1,0 +1,102 @@
+{
+  "kind": "localagent_public_dataset_snapshot_audit",
+  "schema_version": 1,
+  "registry_policy": "metadata_only;no_payload_download;train_eval_policy_is_explicit",
+  "run": {
+    "script": "scripts/audit_public_dataset_snapshots.py",
+    "sample_files": 4,
+    "source_audit_sha256": "8e089d15f28ef3c24408f8f507c40fe28c7acc3c21a12332093084a928333a32"
+  },
+  "datasets": [
+    {
+      "id": "androidcontrol_mirror",
+      "dataset": "OfficerChul/Android-Control-84k",
+      "hub_url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k",
+      "original_url": "https://github.com/google-research/google-research/tree/master/android_control",
+      "policy": "train_only_official_train_projection",
+      "revision": "0248027f747c9d57bd09c14e8f044f9a8103dddd",
+      "last_modified": "2025-10-12T07:51:27+00:00",
+      "license": "apache-2.0",
+      "file_count": 6
+    },
+    {
+      "id": "agentnet",
+      "dataset": "xlangai/AgentNet",
+      "hub_url": "https://huggingface.co/datasets/xlangai/AgentNet",
+      "original_url": "https://github.com/xlang-ai/OpenCUA",
+      "policy": "train_only_official_train_projection;images_dropped_for_text_first_model",
+      "revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+      "last_modified": "2026-01-09T03:23:13+00:00",
+      "license": "mit",
+      "file_count": 44
+    },
+    {
+      "id": "mind2web",
+      "dataset": "osunlp/Mind2Web",
+      "hub_url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+      "original_url": "https://github.com/OSU-NLP-Group/Mind2Web",
+      "policy": "train_only_train_split;test_archives_never_training_inputs",
+      "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+      "last_modified": "2025-10-19T19:15:03+00:00",
+      "license": "cc-by-4.0",
+      "file_count": 15
+    },
+    {
+      "id": "xlam_function_calling",
+      "dataset": "Salesforce/xlam-function-calling-60k",
+      "hub_url": "https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k",
+      "original_url": "https://github.com/SalesforceAIResearch/xlam",
+      "policy": "train_only_official_train_projection;denylist_eval_prompts",
+      "revision": "26d14ebfe18b1f7b524bd39b404b50af5dc97866",
+      "last_modified": "2025-01-24T19:25:58+00:00",
+      "license": "cc-by-4.0",
+      "file_count": 6
+    },
+    {
+      "id": "computer_agent_arena",
+      "dataset": "xlangai/computer-agent-arena",
+      "hub_url": "https://huggingface.co/datasets/xlangai/computer-agent-arena",
+      "original_url": "https://huggingface.co/datasets/xlangai/computer-agent-arena",
+      "policy": "evaluation_only_until_task_and_model_identity_deduplication",
+      "revision": "897b9f45287c516a44f9e79879b14bc3c1bc5b0a",
+      "last_modified": "2025-09-03T08:25:25+00:00",
+      "license": "cc-by-4.0",
+      "file_count": 15
+    },
+    {
+      "id": "osworld2_trajectory",
+      "dataset": "xlangai/osworld2.0-trajectory",
+      "hub_url": "https://huggingface.co/datasets/xlangai/osworld2.0-trajectory",
+      "original_url": "https://github.com/xlang-ai/OSWorld",
+      "policy": "evaluation_only;release_matched_vm_required",
+      "revision": "f94fa61bfeaf7b49da9816ddee83c80494cc4a31",
+      "last_modified": "2026-07-22T15:18:48+00:00",
+      "license": null,
+      "file_count": 99146
+    },
+    {
+      "id": "osworld_verified_trajectories",
+      "dataset": "xlangai/ubuntu_osworld_verified_trajs",
+      "hub_url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_verified_trajs",
+      "original_url": "https://github.com/xlang-ai/OSWorld",
+      "policy": "evaluation_and_provenance_only;task_identity_leakage_audit_required",
+      "revision": "5473c39e42a538a187a9b2c2b499db59d560fd8c",
+      "last_modified": "2026-08-07T14:04:34+00:00",
+      "license": "mit",
+      "file_count": 104
+    },
+    {
+      "id": "enterpriseopsgym",
+      "dataset": "ServiceNow-AI/EnterpriseOps-Gym",
+      "hub_url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym",
+      "original_url": "https://github.com/ServiceNow/EnterpriseOps-Gym",
+      "policy": "evaluation_only;verifier_and_server_state_never_training_inputs",
+      "revision": "c8e538eae8a6205294f0a86675fefdc1fac408f6",
+      "last_modified": "2026-04-30T15:27:14+00:00",
+      "license": "apache-2.0",
+      "file_count": 36
+    }
+  ],
+  "claim_boundary": "Metadata-only Hub audit. No dataset payloads were downloaded by this run, no evaluation-only rows were admitted to training, and no native benchmark score is claimed.",
+  "receipt_self_sha256": "3c1bec11335b051b6763ca3ce6927b3e7b3944df4476d884348d2e1509e0a962"
+}

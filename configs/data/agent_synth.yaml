@@ -1,0 +1,48 @@
+# Phase 3 — synthetic agent-data generation (ToolACE + APIGen + Hammer).
+out: data/synth/agent_sft.jsonl
+n_samples: 5000
+seed: 42
+level: 5
+split: train
+generator:
+  backend: deterministic_templates         # reproducible baseline; external teachers need adapters
+complexity:
+  # This fraction is enforced exactly.
+  multi_turn: 0.20
+irrelevance_fraction: 0.15                  # Hammer "no tool needed" negatives
+coverage:
+  # Deterministic reserved batches guarantee these minima; the registry fill may add more.
+  # Counts are conversations, not tool calls. "verified_error_recovery" is a compatibility quota
+  # name for a rule-audited scripted trace: a FAILED tool response is followed by remediation and
+  # a later "All tests passed" response. The template generator does not execute those outcomes.
+  minimum_conversations:
+    parallel_calls: 100
+    integer_arguments: 25
+    enum_arguments: 25
+    tool_response_grounded_followups: 100
+    verified_error_recovery: 40
+  # Planner metadata and the actual ordered tool-call sequence are rule-checked before export.
+  plan_length_minimums:
+    0: 20
+    1: 20
+    2: 20
+    3: 20
+    4: 20
+verification:
+  rule_based: true                          # canonical rows + tool-name/argument-schema validation
+  model_based: false                        # set true only after configuring a verifier adapter
+
+# Canonically equal query strings from the tracked action/DOM evaluation suites are forbidden in
+# every user message of the training export. Canonicalization is Unicode NFKC, Unicode-whitespace
+# collapse, and case folding. Hashes freeze the suite versions. This remains a prompt-equality
+# contract only: named *_TRAIN/*_EVAL slot pools are disjoint, but shared schema enums,
+# no-argument intents, and template vocabulary are not claimed to be value-disjoint.
+exact_prompt_holdouts:
+  - name: local-realtime-actions
+    path: ../../demos/webgpu/benchmark-cases.json
+    bytes: 4596
+    sha256: f6e479c10b420edcd1630e99c43df3206a40431f1256d919d5ea1a57bc88142c
+  - name: local-browser-tasks
+    path: ../../demos/webgpu/browser-task-cases.json
+    bytes: 6285
+    sha256: 4c46b5b347257b81e716ec0a20a6c6116df716466e1ba8e8a74a117bb5708971

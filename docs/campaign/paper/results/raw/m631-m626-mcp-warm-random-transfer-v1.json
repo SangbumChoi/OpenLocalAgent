@@ -1,0 +1,825 @@
+{
+  "claim_boundary": "Fresh m626-parent MCP trajectory continuation and matched random-body ablation. This is an internal structural holdout, not an official MCP benchmark score, live server run, or evidence of external email/Notion side effects.",
+  "comparison": {
+    "aggregate": {
+      "random_after_token_accuracy": 0.10907067334446299,
+      "warm_after_token_accuracy": 0.5609348914858097,
+      "warm_minus_random_after_pp": 45.18642181413467,
+      "warm_start_better_after": true
+    },
+    "arm_contract": {
+      "random_backbone_init": "random",
+      "random_backbone_seed": 2028,
+      "warm_backbone_init": "parent"
+    },
+    "claim_boundary": "Matched public-train-only text/accessibility continuation comparison; this is not an official benchmark score, native environment success, screenshot-grounding result, or evidence of real email/Notion/MCP side effects.",
+    "decision": "warm_start_dominates_matched_random_on_all_surfaces",
+    "eval_sources": [
+      {
+        "datasets": [],
+        "input": {
+          "bytes": 23093,
+          "path": "/private/tmp/m624-mcp-traj/eval.normalized.jsonl",
+          "sha256": "e573aa4735b836a5e4496a1ccd5e2019e7f3e285389fade98ce673fe5f412360"
+        },
+        "label": "mcp",
+        "public_reference": {
+          "dataset": "obaydata/mcp-agent-trajectory-benchmark",
+          "url": "https://huggingface.co/datasets/obaydata/mcp-agent-trajectory-benchmark"
+        },
+        "revisions": [
+          "f4f449d65271abc1e4ccd5157d121a59a1dd38c4"
+        ],
+        "rows": 21,
+        "source_families": [
+          "mcp_trajectory"
+        ],
+        "source_urls": [],
+        "splits": [
+          "internal_eval",
+          "train"
+        ],
+        "unique_parent_records": 8,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "hyperparameters": {
+      "backbone_init": "parent",
+      "batch_size": 4,
+      "device": "cpu",
+      "learning_rate": 1e-05,
+      "max_eval_rows_per_source": 0,
+      "max_seq_len": 512,
+      "max_train_rows_per_source": 0,
+      "random_backbone_seed": 2028,
+      "seed": 2027,
+      "steps": 32
+    },
+    "kind": "localagent_cross_surface_transfer_ablation_report",
+    "parent": {
+      "bytes": 52203615,
+      "path": "/private/tmp/m626-androidcontrol/warm.pt",
+      "sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c"
+    },
+    "random_backbone_receipt": {
+      "bytes": 52203665,
+      "path": "/private/tmp/m631-m626-mcp/random.pt",
+      "sha256": "46e7c950c558af729bc8ef2b852d7b03501d3769a956514363568770d2cb9075"
+    },
+    "random_weight_groups": {
+      "action_heads": {
+        "base_l2": 91.45685930938616,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.45685930938616
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.69880319159533,
+        "delta_l2": 40.26422199813393,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.7788230967149289,
+        "target_l2": 50.41083978961659
+      },
+      "embedding": {
+        "base_l2": 77.55555240216619,
+        "delta_l2": 92.37810813045813,
+        "parameters": 6291456,
+        "relative_delta_l2": 1.1911217865025219,
+        "target_l2": 50.18602122195714
+      },
+      "ffn": {
+        "base_l2": 50.609413534253534,
+        "delta_l2": 44.429399576437284,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.8778880542918466,
+        "target_l2": 49.79262421603175
+      },
+      "normalization": {
+        "base_l2": 21.451040319317258,
+        "delta_l2": 1.8561236359210145,
+        "parameters": 384,
+        "relative_delta_l2": 0.08652837383600102,
+        "target_l2": 19.595934026925537
+      }
+    },
+    "rows": {
+      "eval": 21,
+      "train": 86
+    },
+    "schema_version": 1,
+    "surfaces": {
+      "mcp": {
+        "random_backbone": {
+          "after_token_accuracy": 0.10907067334446299,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.10907067334446299
+        },
+        "rows": 21,
+        "warm_minus_random_after_pp": 45.18642181413467,
+        "warm_start": {
+          "after_token_accuracy": 0.5609348914858097,
+          "before_token_accuracy": 0.49304396215915414,
+          "delta_token_accuracy": 0.06789092932665552
+        },
+        "warm_start_better_after": true
+      }
+    },
+    "train_sources": [
+      {
+        "datasets": [],
+        "input": {
+          "bytes": 89818,
+          "path": "/private/tmp/m624-mcp-traj/train.normalized.jsonl",
+          "sha256": "c73577b40a55d3b2d5544f5668f32eaae991d79ab8c6611dac468005eb7f4f6a"
+        },
+        "label": "mcp",
+        "public_reference": {
+          "dataset": "obaydata/mcp-agent-trajectory-benchmark",
+          "url": "https://huggingface.co/datasets/obaydata/mcp-agent-trajectory-benchmark"
+        },
+        "revisions": [
+          "f4f449d65271abc1e4ccd5157d121a59a1dd38c4"
+        ],
+        "rows": 86,
+        "source_families": [
+          "mcp_trajectory"
+        ],
+        "source_urls": [],
+        "splits": [
+          "internal_train",
+          "train"
+        ],
+        "unique_parent_records": 30,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "warm_start_receipt": {
+      "bytes": 52203551,
+      "path": "/private/tmp/m631-m626-mcp/warm.pt",
+      "sha256": "6ab3df27afe328ddb9bba87f793c792384a3436183b2955ff1b87608534f9e02"
+    },
+    "warm_weight_groups": {
+      "action_heads": {
+        "base_l2": 91.45685930938616,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.45685930938616
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.69880319159533,
+        "delta_l2": 0.10563726270497048,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0020433212411799877,
+        "target_l2": 51.69964285025641
+      },
+      "embedding": {
+        "base_l2": 77.55555240216619,
+        "delta_l2": 0.3424414932650861,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.00441543490644419,
+        "target_l2": 77.6862480309902
+      },
+      "ffn": {
+        "base_l2": 50.609413534253534,
+        "delta_l2": 0.13083769653348698,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.002585244273675158,
+        "target_l2": 50.60985786698839
+      },
+      "normalization": {
+        "base_l2": 21.451040319317258,
+        "delta_l2": 0.002112900479392618,
+        "parameters": 384,
+        "relative_delta_l2": 9.849874168992599e-05,
+        "target_l2": 21.45131193970399
+      }
+    }
+  },
+  "decision": {
+    "current_checkpoint_weight_gate": true,
+    "native_promotion": false,
+    "warm_minus_random_after_pp": 45.18642181413467,
+    "warm_start_better_after": true
+  },
+  "inputs": {
+    "eval": [
+      {
+        "datasets": [],
+        "input": {
+          "bytes": 23093,
+          "path": "/private/tmp/m624-mcp-traj/eval.normalized.jsonl",
+          "sha256": "e573aa4735b836a5e4496a1ccd5e2019e7f3e285389fade98ce673fe5f412360"
+        },
+        "label": "mcp",
+        "public_reference": {
+          "dataset": "obaydata/mcp-agent-trajectory-benchmark",
+          "url": "https://huggingface.co/datasets/obaydata/mcp-agent-trajectory-benchmark"
+        },
+        "revisions": [
+          "f4f449d65271abc1e4ccd5157d121a59a1dd38c4"
+        ],
+        "rows": 21,
+        "source_families": [
+          "mcp_trajectory"
+        ],
+        "source_urls": [],
+        "splits": [
+          "internal_eval",
+          "train"
+        ],
+        "unique_parent_records": 8,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "random_report": {
+      "bytes": 10357,
+      "path": "/private/tmp/m631-m626-mcp/random.json",
+      "sha256": "b025d332886e3caee574d83103971381d07110d1a334d471e21ad4b79bc57225"
+    },
+    "train": [
+      {
+        "datasets": [],
+        "input": {
+          "bytes": 89818,
+          "path": "/private/tmp/m624-mcp-traj/train.normalized.jsonl",
+          "sha256": "c73577b40a55d3b2d5544f5668f32eaae991d79ab8c6611dac468005eb7f4f6a"
+        },
+        "label": "mcp",
+        "public_reference": {
+          "dataset": "obaydata/mcp-agent-trajectory-benchmark",
+          "url": "https://huggingface.co/datasets/obaydata/mcp-agent-trajectory-benchmark"
+        },
+        "revisions": [
+          "f4f449d65271abc1e4ccd5157d121a59a1dd38c4"
+        ],
+        "rows": 86,
+        "source_families": [
+          "mcp_trajectory"
+        ],
+        "source_urls": [],
+        "splits": [
+          "internal_train",
+          "train"
+        ],
+        "unique_parent_records": 30,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "warm_report": {
+      "bytes": 10473,
+      "path": "/private/tmp/m631-m626-mcp/warm.json",
+      "sha256": "64eaed57dd95c7e72200da7b06333dcfd1a6b0e9075947ede9f86c3d23c8adb6"
+    }
+  },
+  "kind": "localagent_m631_m626_mcp_warm_random_transfer",
+  "parent_checkpoint": {
+    "bytes": 52203615,
+    "path": "/private/tmp/m626-androidcontrol/warm.pt",
+    "sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c"
+  },
+  "protocol": {
+    "batch_size": 4,
+    "eval_rows": 21,
+    "learning_rate": 1e-05,
+    "max_seq_len": 512,
+    "official_test_split": false,
+    "split_policy": "public train trajectories with deterministic agent-disjoint internal holdout",
+    "steps": 32,
+    "train_rows": 86
+  },
+  "random": {
+    "after": {
+      "eval": {
+        "assistant_loss_tokens": 1797,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.10907067334446299,
+        "mean_loss": 9.125307111787876,
+        "rows": 21
+      },
+      "eval_by_source": {
+        "mcp": {
+          "assistant_loss_tokens": 1797,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.10907067334446299,
+          "mean_loss": 9.125307111787876,
+          "rows": 21
+        }
+      },
+      "train": {
+        "assistant_loss_tokens": 5247,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.09796073947017343,
+        "mean_loss": 9.062433183545359,
+        "rows": 86
+      }
+    },
+    "before": {
+      "eval": {
+        "assistant_loss_tokens": 1797,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.0,
+        "mean_loss": 9.84714297048901,
+        "rows": 21
+      },
+      "eval_by_source": {
+        "mcp": {
+          "assistant_loss_tokens": 1797,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.0,
+          "mean_loss": 9.84714297048901,
+          "rows": 21
+        }
+      },
+      "train": {
+        "assistant_loss_tokens": 5247,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.0,
+        "mean_loss": 9.830837906258934,
+        "rows": 86
+      }
+    },
+    "child": {
+      "bytes": 52203665,
+      "path": "/private/tmp/m631-m626-mcp/random.pt",
+      "sha256": "46e7c950c558af729bc8ef2b852d7b03501d3769a956514363568770d2cb9075"
+    },
+    "weight_transfer": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 91.45685930938616,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.45685930938616
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.69880319159533,
+          "delta_l2": 40.26422199813393,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.7788230967149289,
+          "target_l2": 50.41083978961659
+        },
+        "embedding": {
+          "base_l2": 77.55555240216619,
+          "delta_l2": 92.37810813045813,
+          "parameters": 6291456,
+          "relative_delta_l2": 1.1911217865025219,
+          "target_l2": 50.18602122195714
+        },
+        "ffn": {
+          "base_l2": 50.609413534253534,
+          "delta_l2": 44.429399576437284,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.8778880542918466,
+          "target_l2": 49.79262421603175
+        },
+        "normalization": {
+          "base_l2": 21.451040319317258,
+          "delta_l2": 1.8561236359210145,
+          "parameters": 384,
+          "relative_delta_l2": 0.08652837383600102,
+          "target_l2": 19.595934026925537
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    }
+  },
+  "receipt_self_sha256": "1af788f9f81d78af2778d0acfe3249561a57e15edce28752a6c0dc855bbecd98",
+  "schema_version": 1,
+  "source": {
+    "dataset": "obaydata/mcp-agent-trajectory-benchmark",
+    "license": "Apache-2.0",
+    "revision": "f4f449d65271abc1e4ccd5157d121a59a1dd38c4",
+    "url": "https://huggingface.co/datasets/obaydata/mcp-agent-trajectory-benchmark"
+  },
+  "warm": {
+    "after": {
+      "eval": {
+        "assistant_loss_tokens": 1797,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.5609348914858097,
+        "mean_loss": 3.3811240474847404,
+        "rows": 21
+      },
+      "eval_by_source": {
+        "mcp": {
+          "assistant_loss_tokens": 1797,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.5609348914858097,
+          "mean_loss": 3.3811240474847404,
+          "rows": 21
+        }
+      },
+      "train": {
+        "assistant_loss_tokens": 5247,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.5546026300743282,
+        "mean_loss": 3.3460137272917114,
+        "rows": 86
+      }
+    },
+    "before": {
+      "eval": {
+        "assistant_loss_tokens": 1797,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.49304396215915414,
+        "mean_loss": 3.8286355538174517,
+        "rows": 21
+      },
+      "eval_by_source": {
+        "mcp": {
+          "assistant_loss_tokens": 1797,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.49304396215915414,
+          "mean_loss": 3.8286355538174517,
+          "rows": 21
+        }
+      },
+      "train": {
+        "assistant_loss_tokens": 5247,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.4602630074328187,
+        "mean_loss": 3.9727118237486154,
+        "rows": 86
+      }
+    },
+    "child": {
+      "bytes": 52203551,
+      "path": "/private/tmp/m631-m626-mcp/warm.pt",
+      "sha256": "6ab3df27afe328ddb9bba87f793c792384a3436183b2955ff1b87608534f9e02"
+    },
+    "weight_transfer": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 91.45685930938616,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.45685930938616
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.69880319159533,
+          "delta_l2": 0.10563726270497048,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0020433212411799877,
+          "target_l2": 51.69964285025641
+        },
+        "embedding": {
+          "base_l2": 77.55555240216619,
+          "delta_l2": 0.3424414932650861,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.00441543490644419,
+          "target_l2": 77.6862480309902
+        },
+        "ffn": {
+          "base_l2": 50.609413534253534,
+          "delta_l2": 0.13083769653348698,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.002585244273675158,
+          "target_l2": 50.60985786698839
+        },
+        "normalization": {
+          "base_l2": 21.451040319317258,
+          "delta_l2": 0.002112900479392618,
+          "parameters": 384,
+          "relative_delta_l2": 9.849874168992599e-05,
+          "target_l2": 21.45131193970399
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    }
+  },
+  "weight_transfer_analysis": {
+    "comparison": {
+      "aggregate": {
+        "random_after_token_accuracy": 0.10907067334446299,
+        "warm_after_token_accuracy": 0.5609348914858097,
+        "warm_minus_random_after_pp": 45.18642181413467,
+        "warm_start_better_after": true
+      },
+      "arm_contract": {
+        "random_backbone_init": "random",
+        "random_backbone_seed": 2028,
+        "warm_backbone_init": "parent"
+      },
+      "claim_boundary": "Matched public-train-only text/accessibility continuation comparison; this is not an official benchmark score, native environment success, screenshot-grounding result, or evidence of real email/Notion/MCP side effects.",
+      "decision": "warm_start_dominates_matched_random_on_all_surfaces",
+      "eval_sources": [
+        {
+          "datasets": [],
+          "input": {
+            "bytes": 23093,
+            "path": "/private/tmp/m624-mcp-traj/eval.normalized.jsonl",
+            "sha256": "e573aa4735b836a5e4496a1ccd5e2019e7f3e285389fade98ce673fe5f412360"
+          },
+          "label": "mcp",
+          "public_reference": {
+            "dataset": "obaydata/mcp-agent-trajectory-benchmark",
+            "url": "https://huggingface.co/datasets/obaydata/mcp-agent-trajectory-benchmark"
+          },
+          "revisions": [
+            "f4f449d65271abc1e4ccd5157d121a59a1dd38c4"
+          ],
+          "rows": 21,
+          "source_families": [
+            "mcp_trajectory"
+          ],
+          "source_urls": [],
+          "splits": [
+            "internal_eval",
+            "train"
+          ],
+          "unique_parent_records": 8,
+          "visual_input_omitted_rows": 0
+        }
+      ],
+      "hyperparameters": {
+        "backbone_init": "parent",
+        "batch_size": 4,
+        "device": "cpu",
+        "learning_rate": 1e-05,
+        "max_eval_rows_per_source": 0,
+        "max_seq_len": 512,
+        "max_train_rows_per_source": 0,
+        "random_backbone_seed": 2028,
+        "seed": 2027,
+        "steps": 32
+      },
+      "kind": "localagent_cross_surface_transfer_ablation_report",
+      "parent": {
+        "bytes": 52203615,
+        "path": "/private/tmp/m626-androidcontrol/warm.pt",
+        "sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c"
+      },
+      "random_backbone_receipt": {
+        "bytes": 52203665,
+        "path": "/private/tmp/m631-m626-mcp/random.pt",
+        "sha256": "46e7c950c558af729bc8ef2b852d7b03501d3769a956514363568770d2cb9075"
+      },
+      "random_weight_groups": {
+        "action_heads": {
+          "base_l2": 91.45685930938616,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.45685930938616
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.69880319159533,
+          "delta_l2": 40.26422199813393,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.7788230967149289,
+          "target_l2": 50.41083978961659
+        },
+        "embedding": {
+          "base_l2": 77.55555240216619,
+          "delta_l2": 92.37810813045813,
+          "parameters": 6291456,
+          "relative_delta_l2": 1.1911217865025219,
+          "target_l2": 50.18602122195714
+        },
+        "ffn": {
+          "base_l2": 50.609413534253534,
+          "delta_l2": 44.429399576437284,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.8778880542918466,
+          "target_l2": 49.79262421603175
+        },
+        "normalization": {
+          "base_l2": 21.451040319317258,
+          "delta_l2": 1.8561236359210145,
+          "parameters": 384,
+          "relative_delta_l2": 0.08652837383600102,
+          "target_l2": 19.595934026925537
+        }
+      },
+      "rows": {
+        "eval": 21,
+        "train": 86
+      },
+      "schema_version": 1,
+      "surfaces": {
+        "mcp": {
+          "random_backbone": {
+            "after_token_accuracy": 0.10907067334446299,
+            "before_token_accuracy": 0.0,
+            "delta_token_accuracy": 0.10907067334446299
+          },
+          "rows": 21,
+          "warm_minus_random_after_pp": 45.18642181413467,
+          "warm_start": {
+            "after_token_accuracy": 0.5609348914858097,
+            "before_token_accuracy": 0.49304396215915414,
+            "delta_token_accuracy": 0.06789092932665552
+          },
+          "warm_start_better_after": true
+        }
+      },
+      "train_sources": [
+        {
+          "datasets": [],
+          "input": {
+            "bytes": 89818,
+            "path": "/private/tmp/m624-mcp-traj/train.normalized.jsonl",
+            "sha256": "c73577b40a55d3b2d5544f5668f32eaae991d79ab8c6611dac468005eb7f4f6a"
+          },
+          "label": "mcp",
+          "public_reference": {
+            "dataset": "obaydata/mcp-agent-trajectory-benchmark",
+            "url": "https://huggingface.co/datasets/obaydata/mcp-agent-trajectory-benchmark"
+          },
+          "revisions": [
+            "f4f449d65271abc1e4ccd5157d121a59a1dd38c4"
+          ],
+          "rows": 86,
+          "source_families": [
+            "mcp_trajectory"
+          ],
+          "source_urls": [],
+          "splits": [
+            "internal_train",
+            "train"
+          ],
+          "unique_parent_records": 30,
+          "visual_input_omitted_rows": 0
+        }
+      ],
+      "warm_start_receipt": {
+        "bytes": 52203551,
+        "path": "/private/tmp/m631-m626-mcp/warm.pt",
+        "sha256": "6ab3df27afe328ddb9bba87f793c792384a3436183b2955ff1b87608534f9e02"
+      },
+      "warm_weight_groups": {
+        "action_heads": {
+          "base_l2": 91.45685930938616,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.45685930938616
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.69880319159533,
+          "delta_l2": 0.10563726270497048,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0020433212411799877,
+          "target_l2": 51.69964285025641
+        },
+        "embedding": {
+          "base_l2": 77.55555240216619,
+          "delta_l2": 0.3424414932650861,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.00441543490644419,
+          "target_l2": 77.6862480309902
+        },
+        "ffn": {
+          "base_l2": 50.609413534253534,
+          "delta_l2": 0.13083769653348698,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.002585244273675158,
+          "target_l2": 50.60985786698839
+        },
+        "normalization": {
+          "base_l2": 21.451040319317258,
+          "delta_l2": 0.002112900479392618,
+          "parameters": 384,
+          "relative_delta_l2": 9.849874168992599e-05,
+          "target_l2": 21.45131193970399
+        }
+      }
+    },
+    "random": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 91.45685930938616,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.45685930938616
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.69880319159533,
+          "delta_l2": 40.26422199813393,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.7788230967149289,
+          "target_l2": 50.41083978961659
+        },
+        "embedding": {
+          "base_l2": 77.55555240216619,
+          "delta_l2": 92.37810813045813,
+          "parameters": 6291456,
+          "relative_delta_l2": 1.1911217865025219,
+          "target_l2": 50.18602122195714
+        },
+        "ffn": {
+          "base_l2": 50.609413534253534,
+          "delta_l2": 44.429399576437284,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.8778880542918466,
+          "target_l2": 49.79262421603175
+        },
+        "normalization": {
+          "base_l2": 21.451040319317258,
+          "delta_l2": 1.8561236359210145,
+          "parameters": 384,
+          "relative_delta_l2": 0.08652837383600102,
+          "target_l2": 19.595934026925537
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    },
+    "warm": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 91.45685930938616,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.45685930938616
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.69880319159533,
+          "delta_l2": 0.10563726270497048,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0020433212411799877,
+          "target_l2": 51.69964285025641
+        },
+        "embedding": {
+          "base_l2": 77.55555240216619,
+          "delta_l2": 0.3424414932650861,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.00441543490644419,
+          "target_l2": 77.6862480309902
+        },
+        "ffn": {
+          "base_l2": 50.609413534253534,
+          "delta_l2": 0.13083769653348698,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.002585244273675158,
+          "target_l2": 50.60985786698839
+        },
+        "normalization": {
+          "base_l2": 21.451040319317258,
+          "delta_l2": 0.002112900479392618,
+          "parameters": 384,
+          "relative_delta_l2": 9.849874168992599e-05,
+          "target_l2": 21.45131193970399
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    }
+  }
+}

@@ -1,0 +1,606 @@
+{
+  "checkpoint": {
+    "bytes": 52340194,
+    "path": "/private/tmp/m177-toolace-pointer-warm-child.pt",
+    "sha256": "d576732a978c320d73104f38cba32a080c4d76bcd70778f26954ad20e843e3c8"
+  },
+  "claim_boundary": "Bounded free-run ToolACE action-history probe with catalog-constrained generation; no tool dispatch, no external side effects, and no official ToolACE or BFCL score.",
+  "kind": "localagent_toolace_action_history_free_run_probe",
+  "metrics": {
+    "argument_exact_rate": 0.03333333333333333,
+    "by_turn": {
+      "1": {
+        "step_exact_rate": 0.0625,
+        "steps": 16
+      },
+      "2": {
+        "step_exact_rate": 0.0,
+        "steps": 12
+      },
+      "3": {
+        "step_exact_rate": 0.0,
+        "steps": 2
+      }
+    },
+    "episode_exact_rate": 0.0,
+    "episodes": 16,
+    "schema_valid_rate": 0.6666666666666666,
+    "step_exact_rate": 0.03333333333333333,
+    "steps": 30,
+    "tool_exact_rate": 0.13333333333333333
+  },
+  "predictions": [
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "video_url": "my desktop"
+        },
+        "name": "S_YTD"
+      },
+      "row": 0,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "output_path": "desktop",
+          "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        },
+        "name": "S_YTD"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 0,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "srcPath": "/documents/my_notes.md",
+          "storage": "Google Drive"
+        },
+        "name": "GetMarkdownInStorageToPdf"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {},
+        "name": "getAllTech"
+      },
+      "row": 1,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "currency": "USD",
+          "location": "Venice"
+        },
+        "name": "Rental Property Ratings"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 1,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "url": "https://news.xx/venice-archi-2026"
+        },
+        "name": "Article Extraction API"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 8,
+      "prediction": {
+        "arguments": {},
+        "name": "getAllTech"
+      },
+      "row": 1,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "url": "www.instagram.com/reel/venicecarnival2026"
+        },
+        "name": "Instagram Reel Downloader"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {},
+        "name": "Races"
+      },
+      "row": 2,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "Get F1 Drivers and Personalities"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {},
+        "name": "Races"
+      },
+      "row": 2,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "tour": "PGA"
+        },
+        "name": "Get Golf Leaderboard Data"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": null,
+      "row": 3,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "country": "US",
+          "keyword": "vegan skincare"
+        },
+        "name": "Keyword Research API"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 3,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "country": "US",
+          "latency": 100,
+          "ssl": true,
+          "type": "HTTPS"
+        },
+        "name": "Tier1 Proxies"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "city": "C1A",
+          "region": " postcode EC",
+          "type": "A"
+        },
+        "name": "Facilities Lookup"
+      },
+      "row": 4,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "postcode": "EC1A 1BB"
+        },
+        "name": "Get Addresses by Postcode"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {
+          "city": "A 1BB\"}]}}]</tool_response><|user|>Is",
+          "limit": 1.0,
+          "region": " \"EC1A 1BB\"}, {\"address_line_1\": \"15 St John Street\", \"address_line_2\": null, \"town\": \"London\", \"postcode\": \"EC1A 1BB\"}]}}]</tool_response><|user|>Isn't it fascinating how a simple postcode can unlock so much detail? Just like magic, but without the wand! Planning trips becomes a piece of cake with such precise address info at hand.<|user|>Can you find me a list of hospitals located in the Greater Accra",
+          "type": "A"
+        },
+        "name": "Facilities Lookup"
+      },
+      "row": 4,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "region": "Greater Accra",
+          "type": "hospital"
+        },
+        "name": "Facilities Lookup"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "searchtopic": "perform a background check on the domain \"example.com\" before I consider purchasing it. Could you help me with that"
+        },
+        "name": "Pirate Bay Torrent Search"
+      },
+      "row": 5,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "domain": "example.com"
+        },
+        "name": "Domain Whois Lookup"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 5,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "domain": "example.com"
+        },
+        "name": "Chinese Firewall Test"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": true,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "pair_ID": 45.0
+        },
+        "name": "Get Cryptocurrency Overview"
+      },
+      "row": 6,
+      "schema_valid": true,
+      "step_exact": true,
+      "target": {
+        "arguments": {
+          "pair_ID": 45.0
+        },
+        "name": "Get Cryptocurrency Overview"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {
+          "pair_ID": 45.0
+        },
+        "name": "Get Cryptocurrency Overview"
+      },
+      "row": 6,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "string_range": "today"
+        },
+        "name": "Top Collections Today"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "keyword": " song with the keyword"
+        },
+        "name": "Search Music"
+      },
+      "row": 7,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "keyword": "love"
+        },
+        "name": "Search Music"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {
+          "keyword": "Ellie Goulding\", \"duration\": 259, \"url\": \"https://www.kwai.com/music/love-me-like-you-do\"}, {\"title\": \"Love Yourself\", \"artist\": \"Justin Bieber\", \"duration\": 233, \"url\": \"https://www.kwai.com/music/love-yourself\"}], \"total_results",
+          "language": "\""
+        },
+        "name": "Search Music"
+      },
+      "row": 7,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "url": "https://www.instagram.com/p/B1xLwiZnRb9/"
+        },
+        "name": "Download Story - Post - Highlight"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "tconst": "the US that cover technology and are in English"
+        },
+        "name": "Get Title Seasons"
+      },
+      "row": 8,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "category": "technology",
+          "country": "us",
+          "language": "en"
+        },
+        "name": "News Sources API"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 8,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "last_n_hours": 24.0,
+          "subject": "TechCrunch"
+        },
+        "name": "Latest Crypto News Articles"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {},
+        "name": "getGasPrice"
+      },
+      "row": 9,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "Powerball Recent Draw"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "term": "the date of June 1, 2026"
+        },
+        "name": "Search for Albums"
+      },
+      "row": 10,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "range": "1-10",
+          "string": "2026-06-01"
+        },
+        "name": "Croatia Songs API"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 10,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "fmt": "mp3",
+          "url": "https://www.youtube.com/watch?v=s98Zxz7Ee"
+        },
+        "name": "Song Download and Conversion"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 8,
+      "prediction": null,
+      "row": 10,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "term": "Simulated Artist A"
+        },
+        "name": "Search for Albums"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "vat_number": "come up with a name for my new business venture. Could you assist by generating a few unique and catchy options for me"
+        },
+        "name": "Valistring VAT"
+      },
+      "row": 11,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "Business Name Generator"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "query": "B"
+        },
+        "name": "Suggest"
+      },
+      "row": 12,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "season": 2019
+        },
+        "name": "topAssistsBySeason"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {
+          "query": " 684}, {\"playerName\": \"Trae Young\", \"totalAssists\": 560}, {\"playerName\": \"Ricky Rubio\", \"totalAssists\": 507}, {\"playerName\": \"Luka Doncic\", \"totalAssists\": 470}, {\"playerName\": \"Ben Simmons\", \"totalAssists\": 455}, {\"playerName\": \"Devonte' Graham\", \"totalAssists\": 449}, {\"playerName\": \"James Harden\", \"totalAssists\": 450}, {\"playerName\": \"Damian Lillard\", \"totalAssists\": 431}, {\"playerName\": \"Russell Westbrook\", \"totalAssists\": 423}, {\"playerName\": \"Ja Morant\", \"totalAssists\": 409}, {\"playerName\": \"Spencer Dinwiddie\", \"totalAssists\": 402}, {\"playerName\": \"Kyle Lowry\", \"totalAssists\": 399}, {\"playerName\": \"Luka Doncic\", \"totalAssists\": 397}, {\"playerName\": \"Malcolm Brogdon\", \"totalAssists\": 386}, {\"playerName\": \"Bradley Beal\", \"totalAssists\": 374}, {\"playerName\": \"Kemba Walker\", \"totalAssists\": 361}, {\"playerName\": \"De'Aaron"
+        },
+        "name": "Suggest"
+      },
+      "row": 12,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "string": "2021-01-20"
+        },
+        "name": "Get Baseball Schedule"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": null,
+      "row": 13,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "url": "www.example.com"
+        },
+        "name": "QR Code Image Generation"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "airport_code": "Tesla (TSLA) over the past three months",
+          "end_string": "Tesla (TSLA) over the past three months",
+          "start_string": "Tesla (TSLA) over the past three months"
+        },
+        "name": "Italy Scheduled Flights Growth API"
+      },
+      "row": 14,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "ticker": "TSLA"
+        },
+        "name": "Historical Stock Prices"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 6,
+      "prediction": null,
+      "row": 14,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "airport_code": "MXP",
+          "end_string": "2024-08-31",
+          "start_string": "2024-06-01"
+        },
+        "name": "Italy Scheduled Flights Growth API"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "coord": "send a parcel to my friend living in the district of Coimbatore in Tamil Nadu, India. I want to ensure that it reaches the correct place without any hitches. Can you help me find out the pincode of this district"
+        },
+        "name": "address_reverse_geocoding"
+      },
+      "row": 15,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "district": "Coimbatore"
+        },
+        "name": "findpincodebydistrict"
+      },
+      "tool_exact": false
+    }
+  ],
+  "receipt_self_sha256": "0fcb40ea470bb0c68e500b54f8f7b8f2a484a4c2475f39187815550b1406a770",
+  "rows_evaluated": 16,
+  "rows_requested": 16,
+  "schema_version": 1,
+  "source": {
+    "dataset": "Team-ACE/ToolACE",
+    "input": {
+      "bytes": 344723,
+      "path": "/private/tmp/toolace-action-eval-64.jsonl",
+      "sha256": "fa4926b1be45e4471bac104fa31e480de6ab3e195317c900a695069c403b4230"
+    },
+    "revision": "6bda777c88d21e5a204703c1ee45597a8fa4f734",
+    "training_used": false,
+    "url": "https://huggingface.co/datasets/Team-ACE/ToolACE"
+  }
+}

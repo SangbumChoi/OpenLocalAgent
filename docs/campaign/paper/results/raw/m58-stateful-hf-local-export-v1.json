@@ -1,0 +1,37 @@
+{
+  "kind": "localagent_stateful_lowrate_huggingface_export",
+  "schema_version": 1,
+  "checkpoint_sha256": "3263678aadae50106f32bc557d5bd99d8aa3e2fc96ce055a36c28260b21f6062",
+  "parameter_count": 10524544,
+  "config": "webgpu-10m-hybrid",
+  "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+  "bundle": {
+    "README.md": {
+      "bytes": 3471,
+      "sha256": "d8d02fcb79585deb3f83df504d460d2f4efacd99f645d15fa355b2ec3ffae422"
+    },
+    "agent_heads.bin": {
+      "bytes": 10089734,
+      "sha256": "401593fc7fbd8532310250d5000c1248cbb2f9bd919344e15c73d9067e186f17"
+    },
+    "config.json": {
+      "bytes": 785,
+      "sha256": "e845e84584f52a9e9dd3593f82f16f6e87d707dbd40cd568d19ca226806bcf31"
+    },
+    "model.safetensors": {
+      "bytes": 42101904,
+      "sha256": "5dc5613880ab962eed33607b113971f4546b047005b76b1e32815375f10a5e8a"
+    },
+    "tokenizer.json": {
+      "bytes": 1134224,
+      "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+    }
+  },
+  "export_verified_locally": true,
+  "hub": {
+    "authenticated": false,
+    "uploaded": false,
+    "reason": "hf auth whoami reports no login; upload requires a user-provided Hugging Face token and repository"
+  },
+  "claim_boundary": "The bundle is HF-format and locally hash-verified. No public repository, download URL, or hosted inference claim is made until an authenticated upload is completed."
+}

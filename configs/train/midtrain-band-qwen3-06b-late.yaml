@@ -1,0 +1,57 @@
+# Midtrain: fold the merged agent corpus into the pretraining stream under the full-catalog prompt
+# contract, so the model meets tool catalogs before SFT sharpens the decision.
+stage: midtrain
+model_config: configs/model/webgpu-96m-hybrid.yaml
+init_from: runs/donor-init/band-qwen3-06b-late/latest.pt
+data:
+  conversation_prompt_contract: openai_full_catalog_v1
+  strict_conversation_artifacts: false
+  mixture:
+    unit: input_tokens
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-h100-16k.json
+  sources:
+    - name: general_replay
+      type: shards
+      path: data/shards/h100-mix
+      split: train
+      weight: 0.55
+      end_weight: 0.30
+    - name: merged_agent
+      type: conversations
+      path: data/merged-v2/train.jsonl
+      weight: 0.45
+      end_weight: 0.70
+  eval_sources:
+    - name: general_holdout
+      type: shards
+      path: data/shards/h100-mix
+      split: val
+    - name: agent_holdout
+      type: conversations
+      path: data/merged-v2/eval.jsonl
+optim:
+  name: adamw
+  lr: 1.5e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 32
+  total_steps: 700
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 8
+  grad_accum_steps: 4
+evaluation:
+  batches_per_source: 16
+  batch_size: 4
+  seed: 12026
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+log:
+  out_dir: runs/midtrain-band-qwen3-06b-late
+  ckpt_every: 200

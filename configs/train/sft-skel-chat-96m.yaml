@@ -1,0 +1,45 @@
+# Catalog-conditioned SFT: the tool catalog is rendered into the prompt, so the model reads its
+# action space at inference instead of memorising it in a fixed head. Warm-started from the
+# size-ladder backbone pretrained on the same corpus and tokenizer.
+stage: sft
+model_config: configs/model/webgpu-96m-hybrid.yaml
+init_from: runs/mid-skel-chat-96m/latest.pt
+data:
+  conversation_prompt_contract: openai_full_catalog_v1
+  strict_conversation_artifacts: false
+  conversations:
+    - path: data/distill2/train-clean.jsonl
+  eval_conversations:
+    - path: data/merged-v2/eval.jsonl
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-h100-16k.json
+  seq_len: 2048
+  function_masking: false
+  shuffle: true
+optim:
+  name: adamw
+  lr: 2.0e-4
+  weight_decay: 0.0
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 32
+  total_steps: 900
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 8
+  grad_accum_steps: 4
+evaluation:
+  batch_size: 8
+heads:
+  joint_tool_pointer: false
+  train_route_head: false
+  train_dense_selector: false
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+log:
+  out_dir: runs/sft-skel-chat-96m
+  ckpt_every: 300

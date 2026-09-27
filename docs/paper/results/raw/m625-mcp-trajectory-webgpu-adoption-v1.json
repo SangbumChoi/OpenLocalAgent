@@ -1,0 +1,104 @@
+{
+  "adoption": {
+    "export_parity_verified": true,
+    "local_webgpu_adopted": true,
+    "native_capability_verified": true,
+    "public_model_published": false,
+    "public_space_published": false,
+    "publication_blockers": [
+      "authenticated Hugging Face model and Space upload has not been authorized or executed",
+      "native Android/iOS/desktop and service-backed email/Notion benchmark gates remain open"
+    ]
+  },
+  "checkpoint": {
+    "bytes": 52203551,
+    "config_name": "webgpu-10m-hybrid",
+    "parameters": 10524544,
+    "path": "/private/tmp/m624-mcp-traj/warm.pt",
+    "sha256": "984152a802357e18387a6a28c93c9d30f43c5b0c9e9fede48caa24157716b43b",
+    "stage": "sft_cross_surface_public_continuation",
+    "step": 128
+  },
+  "claim_boundary": "This is a local WebGPU adoption candidate, not a public release or end-to-end agent score. The m624 warm child is bound to a parity-verified bundle and a native Chromium Apple Metal-3 WebGPU capability receipt. The three actions are local structured predictions only: no real email, browser navigation, Notion account, MCP server, or external side effect was executed.",
+  "kind": "localagent_m625_mcp_trajectory_webgpu_adoption",
+  "model_bundle": {
+    "config": {
+      "bytes": 2824,
+      "path": "/private/tmp/m624-release-model/config.json",
+      "sha256": "f0a474d9a74b7040f6d8f48445e5269dc1291b81aeaee5ae26191e1bc2ddf229"
+    },
+    "parameters": 10524544,
+    "path": "/private/tmp/m624-release-model",
+    "weights": {
+      "bytes": 42101904,
+      "path": "/private/tmp/m624-release-model/model.safetensors",
+      "sha256": "1553be268f4917b6aaf69f973baf334fc8ee5466fb32e67f9d1295843474b265"
+    }
+  },
+  "native_webgpu": {
+    "backend": "webgpu",
+    "closed_loop_success": 0,
+    "environment_executed": true,
+    "evaluated_cases": 3,
+    "exact_actions": 3,
+    "external_side_effects_executed": false,
+    "hardware_adapter": "vendor=apple; architecture=metal-3",
+    "latency_ms_p50": 7.749999985098839,
+    "peak_memory_mb": 20.458142280578613,
+    "receipt": {
+      "bytes": 11349,
+      "path": "/private/tmp/m625-webgpu-m624-native-correct.json",
+      "sha256": "edeceb5609dbea79c29049115ff469e62d6681b0631b59b93330ec57acf935e4"
+    },
+    "requested_provider": [
+      "webgpu"
+    ],
+    "session_provider_retry": false,
+    "tokens_per_second_p50": 1290.3225831261038
+  },
+  "receipt_self_sha256": "e689fd7386ed976dcdf6207d3933a59cb417948c9cc973620a1855f7e55e35a1",
+  "schema_version": 1,
+  "source": {
+    "dataset": "obaydata/mcp-agent-trajectory-benchmark",
+    "license": "Apache-2.0",
+    "manifest_sha256": "d5ce6dded1e2b27ac1e898d03f0fcac5bf2ba09fce75af0a1b68e6f23c2854ca",
+    "normalization_manifest": {
+      "bytes": 3500,
+      "path": "/private/tmp/m624-mcp-traj/manifest.json",
+      "sha256": "6b4803d3c80b5dca5545da781c75cac083e85602fab0d833c8c5924aafe319b8"
+    },
+    "revision": "f4f449d65271abc1e4ccd5157d121a59a1dd38c4",
+    "transfer_receipt": {
+      "bytes": 7953,
+      "path": "docs/paper/results/raw/m624-mcp-trajectory-transfer-v1.json",
+      "sha256": "259abe9f09bdadb4da36b951179b3d4f8d77d0ef14c7c8dc704e3e5394b3f5d5"
+    },
+    "url": "https://huggingface.co/datasets/obaydata/mcp-agent-trajectory-benchmark"
+  },
+  "training": {
+    "action_heads_frozen": true,
+    "transfer_receipt_kind": "localagent_mcp_trajectory_transfer_v1",
+    "warm_checkpoint": {
+      "bytes": 52203551,
+      "path": "/private/tmp/m624-mcp-traj/warm.pt",
+      "sha256": "984152a802357e18387a6a28c93c9d30f43c5b0c9e9fede48caa24157716b43b"
+    },
+    "warm_eval_gain": 0.16138007790762376,
+    "warm_eval_token_accuracy_after": 0.5470228158041179,
+    "warm_eval_token_accuracy_before": 0.38564273789649417,
+    "warm_minus_random_after": 0.43795214245965497
+  },
+  "webgpu_bundle": {
+    "artifact_count": 8,
+    "bundle_identity_sha256": "18596e766c46f2d5f67c9907383f09abd52ebe7249f501923381358b3f1d32b8",
+    "deployment_verified": true,
+    "manifest": {
+      "bytes": 9321,
+      "path": "/private/tmp/m624-release-space/bundle-manifest.json",
+      "sha256": "26fe6451e393530474beba6ae135283170a0e44ca096dd142060f0160b6c8fac"
+    },
+    "parity_gate_passed": true,
+    "path": "/private/tmp/m624-release-space",
+    "tool_count": 63
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "localagent_agentnet_acquisition_receipt",
+  "schema_version": 1,
+  "dataset": "xlangai/AgentNet",
+  "source_url": "https://huggingface.co/datasets/xlangai/AgentNet",
+  "source_file_url": "https://huggingface.co/datasets/xlangai/AgentNet/resolve/d76ee50a63fad81cfdbe576416757d7c2091ed50/agentnet_ubuntu_5k.jsonl",
+  "revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+  "license": "MIT",
+  "source_file": {
+    "name": "agentnet_ubuntu_5k.jsonl",
+    "remote_bytes": 282313437,
+    "remote_resolver_etag": "8e24c5a5a1ef5a5113755b33ed12164fc37ce8fbbd35d1c7dba81bf950d53d00",
+    "requested_range": {
+      "start_inclusive": 0,
+      "end_inclusive": 8388607
+    },
+    "local_bytes": 8388608,
+    "local_sha256": "1773bed942fb1bb3f329a9463e2fba5ac0fc8a9f9c8d490550e75212fc614da9",
+    "complete_parent_records": 40,
+    "incomplete_trailing_lines": 1
+  },
+  "projection": {
+    "script": "scripts/ingest_agentnet_text.py",
+    "version": "agentnet_text_projection_v1",
+    "source_split": "ubuntu_jsonl_bounded_prefix",
+    "max_records": 40,
+    "max_observation_chars": 800,
+    "images_dropped": true,
+    "train_parent_records": 32,
+    "eval_parent_records": 8,
+    "train_rows": 513,
+    "eval_rows": 133,
+    "train_sha256": "666e7b29bd67e6b46c8a96c0fa9248a1d79498e4c6da2baf04bb906d8778bc60",
+    "eval_sha256": "b9473550b24cea2f87b4d90ad29e6a669a179fdcee9e5d5a753011236f45af7d",
+    "action_counts": {
+      "click": 469,
+      "double_click": 23,
+      "drag": 29,
+      "key_press": 37,
+      "move_cursor": 15,
+      "scroll": 12,
+      "type_text": 57,
+      "wait": 4
+    },
+    "dropped_action_counts": {
+      "computer.terminate": 40,
+      "computer.tripleClick": 6
+    }
+  },
+  "claim_boundary": "Bounded public AgentNet desktop trajectory acquisition and text-only projection. The prefix is not an official AgentNet validation split; screenshots are excluded, and no AgentNetBench, OSWorld, or native desktop score is claimed."
+}

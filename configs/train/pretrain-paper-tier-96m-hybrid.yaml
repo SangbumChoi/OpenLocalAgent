@@ -1,0 +1,40 @@
+# One-TPP real-paper feasibility pilot for the 4K near-budget 95.3M hybrid.
+#
+# Both 96M arms use the same 2,909 optimizer updates and 46,544 packed-row draws:
+# 2,909 * 1 * 16 * 2,048 = 95,322,112 scheduled tokens. One TPP is a systems
+# and loss-direction gate, not a capability-saturating training claim. Micro-batch
+# one is the conservative MPS preflight; increase it only after a measured memory gate.
+stage: pretrain
+model_config: configs/model/webgpu-96m-hybrid.yaml
+data:
+  shards_dir: data/shards/paper-all
+  min_train_tokens: 19628032
+  corpus_freeze:
+    spec: configs/data/pretrain-paper-tier-freeze.yaml
+    path: data/shards/paper-all/tier-freeze.json
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-paper-16k.json
+optim:
+  name: adamw
+  lr: 2.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 58
+  total_steps: 2909
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 1
+  grad_accum_steps: 16
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+  resume: true
+log:
+  out_dir: runs/pretrain-paper-tier-96m-hybrid-seed2026
+  ckpt_every: 100
+  eval_every: 100
+  eval_batches: 16

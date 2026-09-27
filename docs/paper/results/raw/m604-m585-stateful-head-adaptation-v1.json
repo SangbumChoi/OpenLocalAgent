@@ -1,0 +1,63 @@
+{
+  "kind": "localagent_current_stateful_head_adaptation",
+  "schema_version": 1,
+  "status": "measured",
+  "parent_checkpoint": {
+    "sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff",
+    "stage": "sft_cross_surface_public_continuation",
+    "parameters": 10524544
+  },
+  "protocol": {
+    "suite": "localagent-stateful-productivity-v1",
+    "train_tasks": 5,
+    "eval_tasks": 5,
+    "eval_steps": 16,
+    "head_updates": 320,
+    "device": "cpu",
+    "backbone_frozen": true,
+    "external_accounts_used": false,
+    "native_runtime_executed": false
+  },
+  "warm_arm": {
+    "closed_loop_success_rate": 0.6875,
+    "task_complete_rate": 0.4,
+    "exact_tool_rate": 0.75,
+    "exact_args_rate": 0.75,
+    "schema_valid_rate": 1.0,
+    "state_transition_rate": 0.6875,
+    "mean_shaped_reward": 0.665625,
+    "selector_top1": 0.6666666666666666,
+    "selector_top3": 1.0,
+    "route_accuracy": 0.875,
+    "by_family": {
+      "email": {"closed_loop_success_rate": 1.0, "task_complete": 1},
+      "notion": {"closed_loop_success_rate": 0.5, "task_complete": 0},
+      "browser": {"closed_loop_success_rate": 0.75, "task_complete": 0},
+      "recovery": {"closed_loop_success_rate": 0.0, "task_complete": 0},
+      "abstention": {"closed_loop_success_rate": 1.0, "task_complete": 1}
+    }
+  },
+  "matched_random_arm": {
+    "closed_loop_success_rate": 0.6875,
+    "task_complete_rate": 0.4,
+    "selector_top1": 0.5333333333333333,
+    "selector_top3": 1.0,
+    "route_accuracy": 0.875
+  },
+  "head_transition": {
+    "backbone_relative_l2": 0.0,
+    "route_head_relative_l2": 2.8987545467413582,
+    "dense_selector_relative_l2": 2.960960260043906,
+    "pointer_head_relative_l2_common_args": 0.6615711968533284,
+    "pointer_common_argument_count": 17,
+    "action_head_policy": "backbone frozen; route, selector, and pointer heads trained",
+    "interpretation": "Head adaptation raises selector top-1 over the matched random control but does not raise end-to-end completion: email and abstention pass, browser reaches 3/4 steps, Notion 1/2, and recovery 0/3. The remaining failure is stateful grounding/recovery rather than backbone compatibility alone."
+  },
+  "output": {
+    "checkpoint_sha256": "ff7f50ad29f12f8a8469a2fd2863f6c5de4810d244d1ec326a83f9302a97a583",
+    "raw_receipt_sha256": "2190bd21d1da00194c8719fa82302c3240a4bf6b85631d6ae20538f5b95b4590",
+    "raw_receipt_path": "/private/tmp/m604-m585-stateful-probe.json"
+  },
+  "claim_boundary": "Local deterministic state-machine head adaptation only. It is not public benchmark success, native browser/email/Notion control, external-account execution, or WebGPU deployment evidence.",
+  "receipt_self_sha256": "4b3ece4269faff89e31e2142468bca5740215edf2d9a4e6557293b46308ac0bd"
+}

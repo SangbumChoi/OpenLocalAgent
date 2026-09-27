@@ -1,0 +1,69 @@
+{
+  "kind": "localagent_one_update_training_preflight",
+  "schema_version": 1,
+  "status": "passed",
+  "current_checkpoint": {
+    "sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff",
+    "stage": "sft_public_multisurface_warm",
+    "parameters": 10524544
+  },
+  "protocol": {
+    "environment": "stateful_productivity",
+    "surfaces": ["email", "notion", "browser"],
+    "train_rows": 16,
+    "eval_rows": 16,
+    "train_eval_row_overlap": 0,
+    "steps": 2,
+    "prompts_per_step": 4,
+    "group_size": 4,
+    "max_new_tokens": 64,
+    "device": "cpu",
+    "production_output_untouched": true,
+    "source_artifacts_untouched": true
+  },
+  "lineage": {
+    "stage": "rl",
+    "version": 1,
+    "parent_checkpoint_sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+    "data_sha256": "3dbb38f80eee58a5c8dfa503c0b48d1c9a13488deca4ac77aaa9765e50f41f53",
+    "model_config_sha256": "893fdd2f896c6c246ceed64031b9fbd4b5b770ce2fb72cd3de5fc02703161393"
+  },
+  "measurement": {
+    "realized_optimizer_updates": 2,
+    "learning_rate_history": [0.0, 2e-05],
+    "changed_model_parameter_count": 40,
+    "informative_groups": 6,
+    "attempted_rollouts": 32,
+    "exact_success_rollouts": 0,
+    "reward_distribution": {"0.0": 23, "0.1": 9},
+    "heldout_pre_mean_reward": 0.0,
+    "heldout_post_mean_reward": 0.08125,
+    "heldout_post_exact_match": 0.0,
+    "heldout_post_tool_format_valid_rate": 0.0
+  },
+  "metrics": {
+    "lineage": {
+      "parent_checkpoint_sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff"
+    }
+  },
+  "weight_transition": {
+    "comparison": "m585 warm parent -> isolated RL post-checkpoint",
+    "contract": "exact_named_policy_parameter_comparison_v1",
+    "all_named_policy_tensors_changed": true,
+    "overall_relative_l2": 0.00038152336555766323,
+    "by_component": {
+      "embedding": {"tensors": 1, "relative_l2": 0.00037158267544237854, "abs_l2": 0.028659602986564378},
+      "attention": {"tensors": 18, "relative_l2": 0.0005828688680959402, "abs_l2": 0.01958131471282063},
+      "ffn": {"tensors": 12, "relative_l2": 0.000688779487031061, "abs_l2": 0.02211598605448798},
+      "norm": {"tensors": 9, "relative_l2": 1.4300445232831105e-05, "abs_l2": 0.000850102753580085}
+    },
+    "interpretation": "Warm-start RL moved every policy tensor; relative movement concentrates in FFN and attention, while normalization stays nearly frozen. This supports retaining the pretrained backbone and using small continuation updates, but does not establish task success or a production RL checkpoint."
+  },
+  "raw_receipt": {
+    "path": "/private/tmp/m594-m585-stateful-rl-preflight.json",
+    "sha256": "ddb704b7239beceba0f4305c6a6270e2e86f61ed7f1e34d6d80fda9a96256740"
+  },
+  "claim_boundary": "Strict one-update RL simulation over deterministic local email/Notion/browser conversations. It proves current-checkpoint lineage, isolated execution, optimizer transition, and measured weight movement only; it is not native API control, real-account execution, a public benchmark score, or evidence of workshop readiness.",
+  "receipt_self_sha256": "35231bdd50a8157889dcc6fa9766aa9ee4ca226edf63cbac145ebfc9808388f1"
+}

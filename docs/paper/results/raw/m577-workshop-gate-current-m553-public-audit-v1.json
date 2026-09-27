@@ -1,0 +1,37 @@
+{
+  "kind": "localagent_workshop_gate_receipt",
+  "schema_version": 1,
+  "status": "blocked",
+  "ready": false,
+  "current_checkpoint_sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+  "checks": {
+    "catalog_realistic_family_coverage": "pass",
+    "native_mobilegym": "pass",
+    "native_browsergym_miniwob": "pass",
+    "webgpu_native_capability_and_latency": "pass",
+    "weights_transfer_and_no_transfer_ablation": "pass",
+    "training_rl_preflight": "pass",
+    "artifacts_public_model_demo_manifest": "blocked",
+    "public_artifact_blocker": "current_checkpoint_not_bound"
+  },
+  "blocking_requirements": [
+    "native:androidworld",
+    "native:mobile_safety_bench",
+    "native:iosworld",
+    "native:osworld",
+    "native:osworld_v2",
+    "native:agentnet",
+    "native:toolsandbox",
+    "native:mcpmark",
+    "native:enterpriseopsgym",
+    "artifacts:public_model_demo_manifest"
+  ],
+  "public_manifest": "docs/paper/results/raw/m576-public-release-audit-v1.json",
+  "evidence": {
+    "gate_output_sha256": "f8dbe08e3065b29ba7a345432135c924b8201cac2da3f6e7f5a21580484a0da0",
+    "local_candidate_checkpoint_match": true,
+    "existing_public_release_checkpoint_match": false
+  },
+  "claim_boundary": "The gate now distinguishes a reachable legacy public HF model/Space from the current locally verified candidate. Publication remains fail-closed until the current checkpoint is uploaded and anonymously re-audited, and the nine native benchmark receipts are supplied.",
+  "receipt_self_sha256": "5e899b138c8a4129b8a1de116536dc24ec12418d18f790a8e47d77d9a3405904"
+}

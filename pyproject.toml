@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openlocalagent"
+version = "0.0.1"
+description = "A <100M-parameter LLM, pretrained from scratch, that works as a local tool-calling agent. Minimal pure-PyTorch pipeline."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "LocalAgent contributors" }]
+keywords = ["llm", "agent", "tool-calling", "tiny", "on-device", "distillation", "pytorch"]
+
+# Deliberately minimal — pure PyTorch + a BPE tokenizer + yaml configs. No training framework.
+dependencies = [
+    "torch>=2.2",
+    "numpy>=1.24",
+    "pyyaml>=6.0",
+    "tokenizers>=0.15",   # BPE tokenizer training only (not transformers)
+    "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+data = ["datasets>=2.18", "requests>=2.31"]          # corpus + teacher data fetching
+demo = ["gradio>=4.0", "matplotlib>=3.7"]              # web demo + flywheel/benchmark viz
+# ONNX path (GGUF/ExecuTorch use their own toolchains).
+export = ["onnx>=1.16", "onnxruntime>=1.18", "onnxscript>=0.5"]
+hub = ["huggingface_hub>=0.23", "safetensors>=0.4"]    # push trained weights to the HF Hub
+# transformers is needed only to VERIFY an exported bundle loads through Auto*; the training
+# path never imports it, and the bundle carries its own vendored modeling code.
+hf-verify = ["transformers>=4.40"]
+tracking = ["wandb>=0.17"]                             # optional online/offline experiment logging
+dev = ["pytest>=8.0", "ruff>=0.4"]
+
+[project.scripts]
+openlocalagent = "openlocalagent.cli:main"
+openlocalagent-eval-suite = "openlocalagent.eval.suite:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+# Keep the repository's documented lint contract stable across Ruff releases.
+# Ruff 0.16 broadened its implicit defaults; these are Ruff's historical defaults
+# and the rules this codebase has treated as required.
+select = ["E4", "E7", "E9", "F"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

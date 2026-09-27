@@ -1,0 +1,572 @@
+{
+  "aggregate": {
+    "exact_actions": 90,
+    "opportunities": 1800,
+    "outcome_breakdown": {
+      "exact_expected_abstentions": 90,
+      "exact_expected_tools": 0,
+      "exact_rate_expected_abstentions": 1.0,
+      "exact_rate_expected_tools": 0.0,
+      "expected_abstention_opportunities": 90,
+      "expected_tool_opportunities": 1710,
+      "non_null_predicted_tool": 0,
+      "null_predicted_tool": 1800
+    },
+    "parse_failures": 0,
+    "pooled_measurement_unit": "measured action opportunity",
+    "pooled_metrics": {
+      "deadline_attainment_ms": {
+        "100": {
+          "on_time": 1800,
+          "on_time_rate": 1.0,
+          "opportunities": 1800,
+          "success_at_deadline": 0.05,
+          "useful": 90,
+          "useful_actions_per_minute": 116.8785631722301,
+          "useful_rate": 0.05
+        },
+        "1000": {
+          "on_time": 1800,
+          "on_time_rate": 1.0,
+          "opportunities": 1800,
+          "success_at_deadline": 0.05,
+          "useful": 90,
+          "useful_actions_per_minute": 116.8785631722301,
+          "useful_rate": 0.05
+        },
+        "2000": {
+          "on_time": 1800,
+          "on_time_rate": 1.0,
+          "opportunities": 1800,
+          "success_at_deadline": 0.05,
+          "useful": 90,
+          "useful_actions_per_minute": 116.8785631722301,
+          "useful_rate": 0.05
+        },
+        "250": {
+          "on_time": 1800,
+          "on_time_rate": 1.0,
+          "opportunities": 1800,
+          "success_at_deadline": 0.05,
+          "useful": 90,
+          "useful_actions_per_minute": 116.8785631722301,
+          "useful_rate": 0.05
+        },
+        "500": {
+          "on_time": 1800,
+          "on_time_rate": 1.0,
+          "opportunities": 1800,
+          "success_at_deadline": 0.05,
+          "useful": 90,
+          "useful_actions_per_minute": 116.8785631722301,
+          "useful_rate": 0.05
+        }
+      },
+      "exact_action_accuracy": 0.05,
+      "latency_ms": {
+        "decode_control_ms": {
+          "count": 1800,
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "p50": 0.0,
+          "p90": 0.0,
+          "p95": 0.0,
+          "p99": 0.0
+        },
+        "dispatch_ms": {
+          "count": 1800,
+          "max": 0.20000004768371582,
+          "mean": 0.017777777844005162,
+          "min": 0.0,
+          "p50": 0.0,
+          "p90": 0.10000002384185791,
+          "p95": 0.10000002384185791,
+          "p99": 0.10000002384185791
+        },
+        "harness_ttfa_ms": {
+          "count": 1800,
+          "max": 53.5,
+          "mean": 25.667666666805744,
+          "min": 15.0,
+          "p50": 24.80000001192093,
+          "p90": 32.0,
+          "p95": 34.39999997615814,
+          "p99": 38.90099997639656
+        },
+        "independent_validate_ms": {
+          "count": 1800,
+          "max": 0.10000002384185791,
+          "mean": 0.0015000000927183363,
+          "min": 0.0,
+          "p50": 0.0,
+          "p90": 0.0,
+          "p95": 0.0,
+          "p99": 0.10000002384185791
+        },
+        "inference_ms": {
+          "count": 1800,
+          "max": 52.90000003576279,
+          "mean": 25.375833333002195,
+          "min": 14.699999988079071,
+          "p50": 24.5,
+          "p90": 31.69999998807907,
+          "p95": 34.0,
+          "p99": 38.30200001180172
+        },
+        "parse_validate_ms": {
+          "count": 1800,
+          "max": 0.10000002384185791,
+          "mean": 0.0013333333532015482,
+          "min": 0.0,
+          "p50": 0.0,
+          "p90": 0.0,
+          "p95": 0.0,
+          "p99": 0.09999996423721313
+        },
+        "runtime_ttfa_ms": {
+          "count": 1800,
+          "max": 53.5,
+          "mean": 25.666166666713025,
+          "min": 15.0,
+          "p50": 24.80000001192093,
+          "p90": 32.0,
+          "p95": 34.39999997615814,
+          "p99": 38.90099997639656
+        },
+        "tokenize_ms": {
+          "count": 1800,
+          "max": 1.199999988079071,
+          "mean": 0.2712222225136227,
+          "min": 0.09999996423721313,
+          "p50": 0.2999999523162842,
+          "p90": 0.40000003576278687,
+          "p95": 0.5,
+          "p99": 0.6000000238418579
+        },
+        "tpot_ms": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "p99": null
+        },
+        "ttfa_ms": {
+          "count": 1800,
+          "max": 53.5,
+          "mean": 25.667666666805744,
+          "min": 15.0,
+          "p50": 24.80000001192093,
+          "p90": 32.0,
+          "p95": 34.39999997615814,
+          "p99": 38.90099997639656
+        },
+        "ttft_ms": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "min": null,
+          "p50": null,
+          "p90": null,
+          "p95": null,
+          "p99": null
+        }
+      },
+      "parse_failure_rate": 0.0,
+      "schema_valid_rate": 1.0,
+      "total_output_tokens": 0,
+      "validation_failure_rate": 0.0
+    },
+    "run_count": 3,
+    "run_level_ttfa_ms": {
+      "p50": {
+        "by_run": [
+          24.750000029802322,
+          24.549999982118607,
+          25.19999998807907
+        ],
+        "median": 24.750000029802322,
+        "range": [
+          24.549999982118607,
+          25.19999998807907
+        ]
+      },
+      "p95": {
+        "by_run": [
+          34.40499997735023,
+          34.30000001192093,
+          34.80000001192093
+        ],
+        "median": 34.40499997735023,
+        "range": [
+          34.30000001192093,
+          34.80000001192093
+        ]
+      },
+      "p99": {
+        "by_run": [
+          38.60400002360343,
+          37.19999998807907,
+          41.50400000035762
+        ],
+        "median": 38.60400002360343,
+        "range": [
+          37.19999998807907,
+          41.50400000035762
+        ]
+      },
+      "reported_point_estimate": "median of the three within-run percentiles",
+      "reported_range": "minimum and maximum of the three within-run percentiles",
+      "unit_of_replication": "independent browser page/session run"
+    },
+    "schema_valid_actions": 1800,
+    "validation_failures": 0
+  },
+  "identity": {
+    "bundle_manifest": {
+      "canonical_sha256": "5fee08dfaf4dab4a4d58f506c3fe55ba38c7168ea929f316f307351db7be3fd5",
+      "raw_bytes": 9294,
+      "raw_sha256": "86bbee00d783ca69af02843a4cf935ff978612b81b6a2fedd47fd943e611bee4",
+      "schema_version": 3
+    },
+    "checkpoint": {
+      "sha256": "79387105de75d332413262e8d8ddb847b6cc13bc03f5e4df3c81663d9897aef1",
+      "stage": "sft",
+      "step": 319
+    },
+    "dispatch_heads": {
+      "bytes": 1178050,
+      "file": "dispatch_heads.json",
+      "sha256": "175a22b30290c9b09758fbd3d0d2182f479cd83a9ec76b93b52eded0ad69a7e5"
+    },
+    "graph": {
+      "bytes": 21430301,
+      "file": "action_model.fp16.onnx",
+      "sha256": "b91e7f84077155640a5e288a7c58c2245c298859ddd86bd7268e71039e65c49a"
+    },
+    "heads": {
+      "bytes": 3337015,
+      "file": "heads.json",
+      "sha256": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486"
+    },
+    "held_out_suite": {
+      "bytes": 4596,
+      "schema_version": 1,
+      "sha256": "f6e479c10b420edcd1630e99c43df3206a40431f1256d919d5ea1a57bc88142c"
+    },
+    "model_config": {
+      "canonical_sha256": "06f1e4707906d6bf0eda65764e76f8561a723d46fb829542e4554946680bf454",
+      "name": "webgpu-10m-hybrid",
+      "parameters": 10524544
+    },
+    "model_metadata": {
+      "bytes": 11548,
+      "canonical_sha256": "2399c9d2b857517862529812f1a9fcc35a2474c7dd3e54b079e21eea64ec9a4c",
+      "file": "meta.json",
+      "sha256": "6d6a79b331ce3f60c097f2bd3662a2178345aef68a7ded61e67737ff8e8cb89e"
+    },
+    "tokenizer": {
+      "bytes": 1134224,
+      "file": "tokenizer.json",
+      "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+    }
+  },
+  "kind": "localagent_webgpu_structured_action_pilot_summary",
+  "protocol": {
+    "backend": "webgpu",
+    "backend_requirement": "explicit-webgpu-no-whole-session-retry",
+    "benchmark": "localagent-held-out-action-latency",
+    "benchmark_version": "rtab-0.2",
+    "browser_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+    "case_order_seed": "slmw2026-v1",
+    "cases": 20,
+    "concurrency": 1,
+    "deadlines_ms": [
+      100,
+      250,
+      500,
+      1000,
+      2000
+    ],
+    "decode_strategy": "one_forward_structured_heads",
+    "execution_provider_request": {
+      "note": "ORT Web does not expose per-node placement; this proves the requested session provider and does not claim every node executed on the GPU.",
+      "per_node_fallback_status": "unknown",
+      "per_node_placement": "unknown",
+      "requested": "webgpu",
+      "session_provider_count": 1,
+      "single_provider_session_creation_succeeded": true,
+      "whole_session_retry": false
+    },
+    "gpu_adapter": {
+      "architecture": "metal-3",
+      "description": null,
+      "device": null,
+      "is_fallback_adapter": false,
+      "vendor": "apple"
+    },
+    "latency_boundaries": {
+      "exact_action_scoring": "excluded from TTFA",
+      "harness_ttfa": "immediately before prompt tokenization through independent schema validation",
+      "runtime_ttfa": "runtime prompt tokenization through runtime parse/schema validation",
+      "ttfa_ms": "backward-compatible exact alias of harness_ttfa_ms; not an additional clock",
+      "ttft": "runtime inference submission through first sampled token"
+    },
+    "latency_clock": "harness_ttfa_ms",
+    "onnxruntime_web_version": "1.27.0",
+    "opportunities_per_run": 600,
+    "policy": "structured_one_forward",
+    "precision": "fp16",
+    "raw_schema_version": 3,
+    "record_outcome_evidence": {
+      "exact_action": "historical rtab-0.2 rows omit predicted args and full expected actions, so exact action outcomes are browser-reported and cannot be independently recomputed",
+      "mode": "browser_reported_non_recomputable",
+      "schema_validity": "historical rtab-0.2 rows omit validator errors and selected tool schemas, so schema validity is browser-reported and cannot be independently recomputed"
+    },
+    "repetitions_per_case": 30,
+    "target_input_tokens": 512,
+    "warmups_per_run": 3
+  },
+  "runs": [
+    {
+      "created_at": "2026-07-28T04:02:54.455Z",
+      "exact_action_accuracy": 0.05,
+      "exact_actions": 30,
+      "opportunities": 600,
+      "parse_failure_rate": 0.0,
+      "raw_artifact": {
+        "bytes": 776941,
+        "sha256": "95d2cf9648b4b34338a3b03a57d6f716103c5c55a43f68c6151682a55e562356",
+        "tracked_path": "docs/paper/results/raw/m5-webgpu-sft-action-pilot-seed2027-run1.json"
+      },
+      "run": 1,
+      "schema_valid_actions": 600,
+      "schema_valid_rate": 1.0,
+      "success_at_deadline_ms": {
+        "100": {
+          "on_time": 600,
+          "on_time_rate": 1.0,
+          "opportunities": 600,
+          "success_at_deadline": 0.05,
+          "useful": 30,
+          "useful_actions_per_minute": 116.77847123499993,
+          "useful_rate": 0.05
+        },
+        "1000": {
+          "on_time": 600,
+          "on_time_rate": 1.0,
+          "opportunities": 600,
+          "success_at_deadline": 0.05,
+          "useful": 30,
+          "useful_actions_per_minute": 116.77847123499993,
+          "useful_rate": 0.05
+        },
+        "2000": {
+          "on_time": 600,
+          "on_time_rate": 1.0,
+          "opportunities": 600,
+          "success_at_deadline": 0.05,
+          "useful": 30,
+          "useful_actions_per_minute": 116.77847123499993,
+          "useful_rate": 0.05
+        },
+        "250": {
+          "on_time": 600,
+          "on_time_rate": 1.0,
+          "opportunities": 600,
+          "success_at_deadline": 0.05,
+          "useful": 30,
+          "useful_actions_per_minute": 116.77847123499993,
+          "useful_rate": 0.05
+        },
+        "500": {
+          "on_time": 600,
+          "on_time_rate": 1.0,
+          "opportunities": 600,
+          "success_at_deadline": 0.05,
+          "useful": 30,
+          "useful_actions_per_minute": 116.77847123499993,
+          "useful_rate": 0.05
+        }
+      },
+      "ttfa_ms": {
+        "count": 600,
+        "max": 43.5,
+        "mean": 25.689666667779285,
+        "min": 17.0,
+        "p50": 24.750000029802322,
+        "p90": 32.40000003576279,
+        "p95": 34.40499997735023,
+        "p99": 38.60400002360343
+      },
+      "validation_failure_rate": 0.0
+    },
+    {
+      "created_at": "2026-07-28T04:06:12.816Z",
+      "exact_action_accuracy": 0.05,
+      "exact_actions": 30,
+      "opportunities": 600,
+      "parse_failure_rate": 0.0,
+      "raw_artifact": {
+        "bytes": 776822,
+        "sha256": "053f0997d8bcf7e04aad809010711170f6d3aeaaf0da11844c648734da41ca27",
+        "tracked_path": "docs/paper/results/raw/m5-webgpu-sft-action-pilot-seed2027-run2.json"
+      },
+      "run": 2,
+      "schema_valid_actions": 600,
+      "schema_valid_rate": 1.0,
+      "success_at_deadline_ms": {
+        "100": {
+          "on_time": 600,
+          "on_time_rate": 1.0,
+          "opportunities": 600,
+          "success_at_deadline": 0.05,
+          "useful": 30,
+          "useful_actions_per_minute": 117.51955395102249,
+          "useful_rate": 0.05
+        },
+        "1000": {
+          "on_time": 600,
+          "on_time_rate": 1.0,
+          "opportunities": 600,
+          "success_at_deadline": 0.05,
+          "useful": 30,
+          "useful_actions_per_minute": 117.51955395102249,
+          "useful_rate": 0.05
+        },
+        "2000": {
+          "on_time": 600,
+          "on_time_rate": 1.0,
+          "opportunities": 600,
+          "success_at_deadline": 0.05,
+          "useful": 30,
+          "useful_actions_per_minute": 117.51955395102249,
+          "useful_rate": 0.05
+        },
+        "250": {
+          "on_time": 600,
+          "on_time_rate": 1.0,
+          "opportunities": 600,
+          "success_at_deadline": 0.05,
+          "useful": 30,
+          "useful_actions_per_minute": 117.51955395102249,
+          "useful_rate": 0.05
+        },
+        "500": {
+          "on_time": 600,
+          "on_time_rate": 1.0,
+          "opportunities": 600,
+          "success_at_deadline": 0.05,
+          "useful": 30,
+          "useful_actions_per_minute": 117.51955395102249,
+          "useful_rate": 0.05
+        }
+      },
+      "ttfa_ms": {
+        "count": 600,
+        "max": 49.39999997615814,
+        "mean": 25.527666666011015,
+        "min": 15.0,
+        "p50": 24.549999982118607,
+        "p90": 31.899999976158142,
+        "p95": 34.30000001192093,
+        "p99": 37.19999998807907
+      },
+      "validation_failure_rate": 0.0
+    },
+    {
+      "created_at": "2026-07-28T04:07:08.804Z",
+      "exact_action_accuracy": 0.05,
+      "exact_actions": 30,
+      "opportunities": 600,
+      "parse_failure_rate": 0.0,
+      "raw_artifact": {
+        "bytes": 776494,
+        "sha256": "f3ddb777090e1278d1e56cbe112fcda88a6b287d27bd5135a7617e7fe76feff9",
+        "tracked_path": "docs/paper/results/raw/m5-webgpu-sft-action-pilot-seed2027-run3.json"
+      },
+      "run": 3,
+      "schema_valid_actions": 600,
+      "schema_valid_rate": 1.0,
+      "success_at_deadline_ms": {
+        "100": {
+          "on_time": 600,
+          "on_time_rate": 1.0,
+          "opportunities": 600,
+          "success_at_deadline": 0.05,
+          "useful": 30,
+          "useful_actions_per_minute": 116.34370515937624,
+          "useful_rate": 0.05
+        },
+        "1000": {
+          "on_time": 600,
+          "on_time_rate": 1.0,
+          "opportunities": 600,
+          "success_at_deadline": 0.05,
+          "useful": 30,
+          "useful_actions_per_minute": 116.34370515937624,
+          "useful_rate": 0.05
+        },
+        "2000": {
+          "on_time": 600,
+          "on_time_rate": 1.0,
+          "opportunities": 600,
+          "success_at_deadline": 0.05,
+          "useful": 30,
+          "useful_actions_per_minute": 116.34370515937624,
+          "useful_rate": 0.05
+        },
+        "250": {
+          "on_time": 600,
+          "on_time_rate": 1.0,
+          "opportunities": 600,
+          "success_at_deadline": 0.05,
+          "useful": 30,
+          "useful_actions_per_minute": 116.34370515937624,
+          "useful_rate": 0.05
+        },
+        "500": {
+          "on_time": 600,
+          "on_time_rate": 1.0,
+          "opportunities": 600,
+          "success_at_deadline": 0.05,
+          "useful": 30,
+          "useful_actions_per_minute": 116.34370515937624,
+          "useful_rate": 0.05
+        }
+      },
+      "ttfa_ms": {
+        "count": 600,
+        "max": 53.5,
+        "mean": 25.78566666662693,
+        "min": 15.400000035762787,
+        "p50": 25.19999998807907,
+        "p90": 31.710000038146973,
+        "p95": 34.80000001192093,
+        "p99": 41.50400000035762
+      },
+      "validation_failure_rate": 0.0
+    }
+  ],
+  "schema_version": 1,
+  "summary_sha256": "ff5fea54d567bcb4cc86cff98efb5a02623129a816b2e2b70ae3a1943c2ca2cc",
+  "validation": {
+    "checks": {
+      "checkpoint_graph_and_manifest_identity_consistent": true,
+      "embedded_summaries_reproduced": true,
+      "exact_opportunity_accounting": true,
+      "export_parity_gate_passed": true,
+      "finite_non_negative_ttfa": true,
+      "held_out_suite_identity_verified": true,
+      "measured_opportunity_order_consistent": true,
+      "protocol_and_runtime_identity_consistent": true,
+      "record_outcome_evidence_scope_labeled": true,
+      "runtime_assets_manifest_verified": true,
+      "three_distinct_chronological_runs": true
+    },
+    "status": "mechanically_valid"
+  }
+}

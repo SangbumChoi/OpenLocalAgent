@@ -1,0 +1,121 @@
+{
+  "api_head": {
+    "classes": [
+      "file_system.compress_directory",
+      "file_system.move_file",
+      "file_system.show_directory",
+      "file_system.show_file",
+      "phone.search_contacts",
+      "phone.search_text_messages",
+      "simple_note.search_notes",
+      "spotify.like_song",
+      "spotify.search_artists",
+      "spotify.show_album_library",
+      "spotify.show_current_song",
+      "spotify.show_playlist_library",
+      "spotify.show_recommendations",
+      "spotify.show_song_library",
+      "spotify.show_song_queue",
+      "venmo.create_transaction",
+      "venmo.show_sent_payment_requests"
+    ],
+    "metrics": {
+      "eval": {
+        "accuracy": 0.4285714328289032,
+        "exact": 18,
+        "rows": 42,
+        "unseen_labels": [
+          "spotify.next_song",
+          "spotify.previous_song",
+          "spotify.show_liked_songs"
+        ]
+      },
+      "train": {
+        "accuracy": 1.0,
+        "exact": 192,
+        "rows": 192,
+        "unseen_labels": []
+      }
+    },
+    "report": {
+      "bytes": 2353,
+      "path": "/private/tmp/m660-appworld/report-b.json",
+      "sha256": "840042bfe666522ba0a57e2f89037245a11eddf38588f7041c307708408d5ad5"
+    }
+  },
+  "benchmark": {
+    "api_head_eval_examples": 54,
+    "api_head_train_examples": 192,
+    "data_version": "0.2.0",
+    "dataset": "AppWorld",
+    "native_tasks": 6,
+    "protected_test_used": false,
+    "source_url": "https://github.com/StonyBrookNLP/appworld"
+  },
+  "claim_boundary": "AppWorld compact-trajectory API-head adaptation and paired resettable native replay. This is not an official leaderboard score, complete AppWorld task success, external-account side effect, or WebGPU email/Notion promotion.",
+  "decision": {
+    "promote_to_native_success": false,
+    "reason": "The frozen trajectory API head reaches 42.86% on seen-label public dev prefixes and raises replayed actions from 5 to 8, but native verifier success remains 0/6; wrong first-API choices and repeated candidates still dominate.",
+    "retain_head_as_diagnostic": true
+  },
+  "inputs": {
+    "head_report": {
+      "bytes": 2353,
+      "path": "/private/tmp/m660-appworld/report-b.json",
+      "sha256": "840042bfe666522ba0a57e2f89037245a11eddf38588f7041c307708408d5ad5"
+    },
+    "native_baseline": {
+      "bytes": 15278,
+      "path": "/private/tmp/m658-appworld/native-warm.json",
+      "sha256": "bb17859202f9e5cfeec4144e42f1b970918774360ca4ddccf8fb6885a17e07bd"
+    },
+    "native_head": {
+      "bytes": 20058,
+      "path": "/private/tmp/m660-appworld/native-head.json",
+      "sha256": "a8e6ceaafed5839e67c4bae33ba317f2e456a698d8c06e037075612b2f27be30"
+    }
+  },
+  "kind": "localagent_m661_appworld_api_head_native_receipt",
+  "native_replay": {
+    "api_head": {
+      "report": {
+        "bytes": 20058,
+        "path": "/private/tmp/m660-appworld/native-head.json",
+        "sha256": "a8e6ceaafed5839e67c4bae33ba317f2e456a698d8c06e037075612b2f27be30"
+      },
+      "summary": {
+        "action_replayed": 8,
+        "native_api_calls": 32,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "steps_attempted": 14,
+        "tasks": 6
+      }
+    },
+    "baseline": {
+      "report": {
+        "bytes": 15278,
+        "path": "/private/tmp/m658-appworld/native-warm.json",
+        "sha256": "bb17859202f9e5cfeec4144e42f1b970918774360ca4ddccf8fb6885a17e07bd"
+      },
+      "summary": {
+        "action_replayed": 5,
+        "native_api_calls": 20,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "steps_attempted": 11,
+        "tasks": 6
+      }
+    },
+    "paired_tasks": [
+      "50e1ac9_1",
+      "50e1ac9_2",
+      "50e1ac9_3",
+      "fac291d_1",
+      "fac291d_2",
+      "fac291d_3"
+    ]
+  },
+  "receipt_self_sha256": "ccba5210cec731d3a41a65cef891f35b7bd92cbb60f7db44f129d00ee3525dd7",
+  "schema_version": 1
+}

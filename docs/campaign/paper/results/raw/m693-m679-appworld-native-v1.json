@@ -1,0 +1,438 @@
+{
+  "arms": {
+    "m679_random": {
+      "action_replayed": 0,
+      "checkpoint": {
+        "bytes": 52206887,
+        "path": "/private/tmp/m679-m675-mcp/random-child.pt",
+        "sha256": "2722ea455de75fb1f99d29eb40ea88dedc59248e11ef1672c22582e7a79fa946"
+      },
+      "native_action_api_calls": 0,
+      "native_api_calls": 0,
+      "native_bootstrap_api_calls": 0,
+      "native_success_rate": 0.0,
+      "native_successes": 0,
+      "predicted_tools": [
+        "calendar_event",
+        "calendar_event",
+        "calendar_event",
+        "calendar_event",
+        null,
+        "calendar_event"
+      ],
+      "report": {
+        "bytes": 9902,
+        "path": "/private/tmp/m693-m679-appworld-native/random.json",
+        "sha256": "2a139be055bc8673164c3462c2ba135845fb040393f32fd3d8714a727f2d376a"
+      },
+      "summary": {
+        "action_replayed": 0,
+        "native_action_api_calls": 0,
+        "native_api_calls": 0,
+        "native_bootstrap_api_calls": 0,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "tasks": 6
+      },
+      "task_results": [
+        {
+          "action_replayed": false,
+          "failed": 1,
+          "passed": 1,
+          "predicted_tool": "calendar_event",
+          "schema_translation_applied": false,
+          "success": false,
+          "task_id": "6bdbc26_1"
+        },
+        {
+          "action_replayed": false,
+          "failed": 1,
+          "passed": 1,
+          "predicted_tool": "calendar_event",
+          "schema_translation_applied": false,
+          "success": false,
+          "task_id": "6bdbc26_2"
+        },
+        {
+          "action_replayed": false,
+          "failed": 1,
+          "passed": 1,
+          "predicted_tool": "calendar_event",
+          "schema_translation_applied": false,
+          "success": false,
+          "task_id": "6bdbc26_3"
+        },
+        {
+          "action_replayed": false,
+          "failed": 6,
+          "passed": 0,
+          "predicted_tool": "calendar_event",
+          "schema_translation_applied": false,
+          "success": false,
+          "task_id": "396c5a2_1"
+        },
+        {
+          "action_replayed": false,
+          "failed": 6,
+          "passed": 0,
+          "predicted_tool": null,
+          "schema_translation_applied": false,
+          "success": false,
+          "task_id": "396c5a2_2"
+        },
+        {
+          "action_replayed": false,
+          "failed": 6,
+          "passed": 0,
+          "predicted_tool": "calendar_event",
+          "schema_translation_applied": false,
+          "success": false,
+          "task_id": "396c5a2_3"
+        }
+      ]
+    },
+    "m679_warm": {
+      "action_replayed": 6,
+      "checkpoint": {
+        "bytes": 52206773,
+        "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+        "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+      },
+      "native_action_api_calls": 6,
+      "native_api_calls": 24,
+      "native_bootstrap_api_calls": 18,
+      "native_success_rate": 0.0,
+      "native_successes": 0,
+      "predicted_tools": [
+        "run_python",
+        "run_python",
+        "run_python",
+        "run_python",
+        "run_python",
+        "run_python"
+      ],
+      "report": {
+        "bytes": 11703,
+        "path": "/private/tmp/m693-m679-appworld-native/warm.json",
+        "sha256": "ac4f1d1a8a56a7d8e8ba30953a7adb7e2ff35fc31fd6b36e891a4cd18fa5c1f3"
+      },
+      "summary": {
+        "action_replayed": 6,
+        "native_action_api_calls": 6,
+        "native_api_calls": 24,
+        "native_bootstrap_api_calls": 18,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "tasks": 6
+      },
+      "task_results": [
+        {
+          "action_replayed": true,
+          "failed": 1,
+          "passed": 1,
+          "predicted_tool": "run_python",
+          "schema_translation_applied": true,
+          "success": false,
+          "task_id": "6bdbc26_1"
+        },
+        {
+          "action_replayed": true,
+          "failed": 1,
+          "passed": 1,
+          "predicted_tool": "run_python",
+          "schema_translation_applied": true,
+          "success": false,
+          "task_id": "6bdbc26_2"
+        },
+        {
+          "action_replayed": true,
+          "failed": 1,
+          "passed": 1,
+          "predicted_tool": "run_python",
+          "schema_translation_applied": true,
+          "success": false,
+          "task_id": "6bdbc26_3"
+        },
+        {
+          "action_replayed": true,
+          "failed": 6,
+          "passed": 0,
+          "predicted_tool": "run_python",
+          "schema_translation_applied": true,
+          "success": false,
+          "task_id": "396c5a2_1"
+        },
+        {
+          "action_replayed": true,
+          "failed": 6,
+          "passed": 0,
+          "predicted_tool": "run_python",
+          "schema_translation_applied": true,
+          "success": false,
+          "task_id": "396c5a2_2"
+        },
+        {
+          "action_replayed": true,
+          "failed": 6,
+          "passed": 0,
+          "predicted_tool": "run_python",
+          "schema_translation_applied": true,
+          "success": false,
+          "task_id": "396c5a2_3"
+        }
+      ]
+    },
+    "m692_random": {
+      "action_replayed": 0,
+      "checkpoint": {
+        "bytes": 52206759,
+        "path": "/private/tmp/m692-m679-appworld/random-child.pt",
+        "sha256": "0873136c164ab2ea3ebe9c6137bcecfae329ac84176f083b3d83fae9d67f135f"
+      },
+      "native_action_api_calls": 0,
+      "native_api_calls": 0,
+      "native_bootstrap_api_calls": 0,
+      "native_success_rate": 0.0,
+      "native_successes": 0,
+      "predicted_tools": [
+        "jira_issue",
+        "jira_issue",
+        "jira_issue",
+        "jira_issue",
+        "jira_issue",
+        "jira_issue"
+      ],
+      "report": {
+        "bytes": 10007,
+        "path": "/private/tmp/m693-m679-appworld-native/m692-random.json",
+        "sha256": "38473281d2adf57515a2ac5508d2adea1d8f950903cf0a11d79a5cc43a8a4ee6"
+      },
+      "summary": {
+        "action_replayed": 0,
+        "native_action_api_calls": 0,
+        "native_api_calls": 0,
+        "native_bootstrap_api_calls": 0,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "tasks": 6
+      },
+      "task_results": [
+        {
+          "action_replayed": false,
+          "failed": 1,
+          "passed": 1,
+          "predicted_tool": "jira_issue",
+          "schema_translation_applied": false,
+          "success": false,
+          "task_id": "6bdbc26_1"
+        },
+        {
+          "action_replayed": false,
+          "failed": 1,
+          "passed": 1,
+          "predicted_tool": "jira_issue",
+          "schema_translation_applied": false,
+          "success": false,
+          "task_id": "6bdbc26_2"
+        },
+        {
+          "action_replayed": false,
+          "failed": 1,
+          "passed": 1,
+          "predicted_tool": "jira_issue",
+          "schema_translation_applied": false,
+          "success": false,
+          "task_id": "6bdbc26_3"
+        },
+        {
+          "action_replayed": false,
+          "failed": 6,
+          "passed": 0,
+          "predicted_tool": "jira_issue",
+          "schema_translation_applied": false,
+          "success": false,
+          "task_id": "396c5a2_1"
+        },
+        {
+          "action_replayed": false,
+          "failed": 6,
+          "passed": 0,
+          "predicted_tool": "jira_issue",
+          "schema_translation_applied": false,
+          "success": false,
+          "task_id": "396c5a2_2"
+        },
+        {
+          "action_replayed": false,
+          "failed": 6,
+          "passed": 0,
+          "predicted_tool": "jira_issue",
+          "schema_translation_applied": false,
+          "success": false,
+          "task_id": "396c5a2_3"
+        }
+      ]
+    },
+    "m692_warm": {
+      "action_replayed": 6,
+      "checkpoint": {
+        "bytes": 52206645,
+        "path": "/private/tmp/m692-m679-appworld/warm-child.pt",
+        "sha256": "d39a92aaf5144274ce23e8992d9e78ad3f138b2af347ffc8dce8156539b7a1cb"
+      },
+      "native_action_api_calls": 6,
+      "native_api_calls": 24,
+      "native_bootstrap_api_calls": 18,
+      "native_success_rate": 0.0,
+      "native_successes": 0,
+      "predicted_tools": [
+        "run_python",
+        "run_python",
+        "run_python",
+        "run_python",
+        "run_python",
+        "run_python"
+      ],
+      "report": {
+        "bytes": 11706,
+        "path": "/private/tmp/m693-m679-appworld-native/m692-warm.json",
+        "sha256": "3eba9c2bcf329c1a6e43ab29d8ba67a9caa05aa0080c9fb3007f407444af1a71"
+      },
+      "summary": {
+        "action_replayed": 6,
+        "native_action_api_calls": 6,
+        "native_api_calls": 24,
+        "native_bootstrap_api_calls": 18,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "tasks": 6
+      },
+      "task_results": [
+        {
+          "action_replayed": true,
+          "failed": 1,
+          "passed": 1,
+          "predicted_tool": "run_python",
+          "schema_translation_applied": true,
+          "success": false,
+          "task_id": "6bdbc26_1"
+        },
+        {
+          "action_replayed": true,
+          "failed": 1,
+          "passed": 1,
+          "predicted_tool": "run_python",
+          "schema_translation_applied": true,
+          "success": false,
+          "task_id": "6bdbc26_2"
+        },
+        {
+          "action_replayed": true,
+          "failed": 1,
+          "passed": 1,
+          "predicted_tool": "run_python",
+          "schema_translation_applied": true,
+          "success": false,
+          "task_id": "6bdbc26_3"
+        },
+        {
+          "action_replayed": true,
+          "failed": 6,
+          "passed": 0,
+          "predicted_tool": "run_python",
+          "schema_translation_applied": true,
+          "success": false,
+          "task_id": "396c5a2_1"
+        },
+        {
+          "action_replayed": true,
+          "failed": 6,
+          "passed": 0,
+          "predicted_tool": "run_python",
+          "schema_translation_applied": true,
+          "success": false,
+          "task_id": "396c5a2_2"
+        },
+        {
+          "action_replayed": true,
+          "failed": 6,
+          "passed": 0,
+          "predicted_tool": "run_python",
+          "schema_translation_applied": true,
+          "success": false,
+          "task_id": "396c5a2_3"
+        }
+      ]
+    }
+  },
+  "benchmark_id": "appworld_native_public_dev_probe",
+  "claim_boundary": "Native AppWorld reset/verifier execution on six caller-selected public dev tasks. Each model was allowed one translated API action; no task completed (0/6 in every arm). This is not an official AppWorld/AppWorld-UL score, does not cover Gmail or Notion, and uses no external accounts or screenshots. The successful oracle contract only proves that the pinned environment and verifier were live.",
+  "comparison": {
+    "action_replayed": {
+      "m679_random": 0,
+      "m679_warm": 6,
+      "m692_random": 0,
+      "m692_warm": 6
+    },
+    "m679_warm_vs_random_success_delta_pp": 0.0,
+    "m692_warm_minus_m679_warm_success_delta_pp": 0.0,
+    "m692_warm_vs_random_success_delta_pp": 0.0,
+    "native_task_success": {
+      "m679_random": 0,
+      "m679_warm": 0,
+      "m692_random": 0,
+      "m692_warm": 0
+    },
+    "native_task_success_rate": {
+      "m679_random": 0.0,
+      "m679_warm": 0.0,
+      "m692_random": 0.0,
+      "m692_warm": 0.0
+    }
+  },
+  "kind": "localagent_m693_m679_appworld_native",
+  "parent_checkpoint": {
+    "bytes": 52206773,
+    "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "protocol": {
+    "action_translation": "strict AST appworld_api_step with checkpoint-ranked schema candidates",
+    "environment_reset_per_task": true,
+    "external_accounts": false,
+    "max_interactions": 1,
+    "native_runtime": "AppWorld resettable environment with ground-truth verifier",
+    "retrieve_k": 100,
+    "screenshots": false,
+    "selector_first": true,
+    "state_side_effects": "isolated AppWorld task databases only"
+  },
+  "receipt_self_sha256": "4303b5cbbf50f22b869522c7aaa867d567a08ff078ba56a9ef0e9e1aa8039b40",
+  "runner_contract": {
+    "all_reports_contract_passed": true,
+    "oracle_tasks": 1,
+    "verified": true
+  },
+  "schema_version": 1,
+  "source": {
+    "data_version": "0.2.0",
+    "dataset": "AppWorld",
+    "dev_manifest": {
+      "bytes": 4875,
+      "output_sha256": "36fd92084d8aaac602e193b5b7db26a5fa783b9629a6f06a0087390d37527d07",
+      "path": "/private/tmp/m663-grounding/dev.manifest.json",
+      "sha256": "86a7e2cc9ea093f0259003fa31d62868c40a5c845411af67c740dc673be05fdf"
+    },
+    "package_version": "0.2.0.dev0",
+    "split": "caller-selected public dev tasks",
+    "tasks": [
+      "6bdbc26_1",
+      "6bdbc26_2",
+      "6bdbc26_3",
+      "396c5a2_1",
+      "396c5a2_2",
+      "396c5a2_3"
+    ],
+    "url": "https://github.com/StonyBrookNLP/appworld"
+  }
+}

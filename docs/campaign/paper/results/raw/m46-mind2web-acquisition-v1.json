@@ -1,0 +1,36 @@
+{
+  "kind": "localagent_public_dataset_acquisition_receipt",
+  "schema_version": 1,
+  "dataset": "osunlp/Mind2Web",
+  "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+  "config": "default",
+  "split": "train",
+  "rows_endpoint": "https://datasets-server.huggingface.co/rows?dataset=osunlp%2FMind2Web&config=default&split=train&offset=8&length=16",
+  "bounded_request": {
+    "offset": 8,
+    "length": 16,
+    "response_bytes": 100224134,
+    "response_sha256": "2dd5f66a822306b1a0227542a75cca5e5d23e043409a321e0db658fcff37a145"
+  },
+  "filtered_source": {
+    "records_seen": 16,
+    "records_retained": 12,
+    "bytes": 75700696,
+    "sha256": "b595045074b0131b54fd4a5c9ae6c31920cadb136526feb84bb9206525f4fa96",
+    "rule": "retain only records whose every action has a positive candidate backend_node_id and whose operation is CLICK, TYPE, or SELECT",
+    "max_actions_per_record": 12
+  },
+  "normalized_outputs": {
+    "all_rows": {"rows": 48, "bytes": 190949, "sha256": "7f981d5443a151c9eec68d7918daffeb1d75eec83204d75a677562aa3a4b96f7"},
+    "train_rows": {"rows": 36, "bytes": 136007, "sha256": "e7b1e382d06b25ce19e50ade975d7894fdbb30a2efabc17144d5c8c2f39f9867"},
+    "eval_rows": {"rows": 12, "bytes": 42316, "sha256": "4f8149cf8b24154d493f3107ea33ff51de05851a4b1538d82c206dcf432d6bb0"},
+    "manifest": {"bytes": 2595, "sha256": "0d4e00cb90eefd822fdada5c2f2759d642d343760c19de1754d2e74f14410fb2"}
+  },
+  "parent_split": {
+    "train_parents": 9,
+    "eval_parents": 3,
+    "parent_record_overlap": 0,
+    "typed_slot_overlap": 0
+  },
+  "claim_boundary": "Bounded public Mind2Web train acquisition and normalization only; no protected test score, browser environment success, screenshot grounding, or external-account execution."
+}

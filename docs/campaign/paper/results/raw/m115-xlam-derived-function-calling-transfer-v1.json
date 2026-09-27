@@ -1,0 +1,70 @@
+{
+  "kind": "localagent_xlam_derived_function_calling_transfer_ablation",
+  "schema_version": 1,
+  "source": {
+    "derived_dataset": "product-science/xlam-function-calling-60k-raw",
+    "derived_url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw",
+    "derived_license": "Apache-2.0",
+    "derived_revision": "main",
+    "source_parquet": {
+      "path": "/private/tmp/xlam-public-test-shard0.parquet",
+      "bytes": 527269,
+      "sha256": "83da335d43dafe27b2e368920dcd2141579d468d983835d6aa243c4908e63fb9"
+    },
+    "normalized_jsonl": {
+      "path": "/private/tmp/xlam-public-test-shard0.jsonl",
+      "bytes": 1600869,
+      "sha256": "43db9250b50f44d96d2be31983690e101bd083eefea2a4a327e13a3ed8caeee1"
+    },
+    "original_dataset": "Salesforce/xlam-function-calling-60k",
+    "original_url": "https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k",
+    "original_access": "gated_and_not_authenticated_in_this_environment",
+    "official_original_split_verified": false,
+    "split": "derived_public_test_shard_0",
+    "rows_evaluated": 128,
+    "rows_available_in_shard": 1000,
+    "training_used": false
+  },
+  "warm": {
+    "checkpoint_sha256": "35fedcefdafece153912b3bf6629fb23c0ad48f269126d2f8021ef04e0e384ae",
+    "report_sha256": "38727a34a75dda967bfeea30088b35a9efc054119d194337b15e67f0aad1be4a",
+    "row_retriever": {
+      "route_rate": 1.0,
+      "first_tool_exact_rate": 0.5,
+      "first_arguments_exact_rate": 0.0,
+      "schema_valid_rate": 1.0
+    },
+    "global_selector": {
+      "route_rate": 1.0,
+      "first_tool_exact_rate": 0.0078125,
+      "first_arguments_exact_rate": 0.0,
+      "schema_valid_rate": 0.015625
+    }
+  },
+  "random_control": {
+    "checkpoint_sha256": "f52549e366cf60a529ba3b197bd64fedd8b34d07fb137c0bcf625d56a4bacb9f",
+    "report_sha256": "d56d686fa7af929dd0b2fc36c3b4f9d1cc18697b7641bbcaa6be41fddc8e66d7",
+    "row_retriever": {
+      "route_rate": 1.0,
+      "first_tool_exact_rate": 0.5,
+      "first_arguments_exact_rate": 0.0,
+      "schema_valid_rate": 1.0
+    },
+    "global_selector": {
+      "route_rate": 1.0,
+      "first_tool_exact_rate": 0.0,
+      "first_arguments_exact_rate": 0.0,
+      "schema_valid_rate": 0.0
+    }
+  },
+  "evaluator": {
+    "script": "scripts/evaluate_xlam_public.py",
+    "script_sha256": "1c845120cfea0b6f75c068f2f1826ad09faa064d46b70c9c5039cec1330a530e",
+    "candidate_modes": [
+      "row_retriever",
+      "global_selector"
+    ],
+    "first_call_only": true
+  },
+  "claim_boundary": "This is a bounded first-call evaluation on a public derivative of xLAM, not the gated Salesforce source or its official split. The 10.5M model gets 50% first-tool exactness with row-local retrieval but 0% first-argument exactness; the global selector transfers poorly to unseen xLAM tools. Multi-call exactness, live API execution, and external side effects were not evaluated."
+}

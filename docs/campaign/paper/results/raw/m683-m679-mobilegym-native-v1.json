@@ -1,0 +1,64 @@
+{
+  "benchmark_id": "mobilegym",
+  "checkpoint": {
+    "bytes": 52206773,
+    "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "claim_boundary": "Complete pinned MobileGym native simulator/state-diff evaluation over the official 256-task test split using a bounded DOM/text projection. This is not visual Android control, AndroidWorld success, or real-account side effects.",
+  "decision": {
+    "native_mobile_promotion": false,
+    "next_training_need": "accessibility/screenshot-grounded multi-step mobile state actions",
+    "retain_as_current_negative_control": true
+  },
+  "environment_executed": true,
+  "kind": "localagent_m683_m679_mobilegym_native_receipt",
+  "official_split_verified": true,
+  "protocol": {
+    "observation_mode": "text_projection",
+    "official_split": "test",
+    "run": {
+      "elapsed_seconds": 595.389,
+      "full_official_test_split": true,
+      "limit": null,
+      "max_steps": 2,
+      "seed": 0,
+      "selector_first": false,
+      "selector_top_m": 1,
+      "start": 0
+    },
+    "vision_used": false
+  },
+  "result": {
+    "failed_tasks": 255,
+    "passed_tasks": 1,
+    "success_rate": 0.00390625,
+    "suite_crossapp_life": {
+      "passed": 1,
+      "tasks": 29,
+      "success_rate": 0.034482758620689655
+    },
+    "tool_counts": {
+      "mobile_navigate_back": 255,
+      "mobile_navigate_home": 6,
+      "mobile_open_app": 1
+    }
+  },
+  "schema_version": 1,
+  "source": {
+    "raw_report": {
+      "bytes": 191038,
+      "path": "/private/tmp/m683-m679-mobilegym-full.json",
+      "sha256": "8b60a9a068549d9c357222385128b3b7e1b5c783dc27f7ff82820a9226ebfcfe"
+    },
+    "repository": "https://github.com/Purewhiter/mobilegym",
+    "revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "source_root": "MobileGym-m546",
+    "test_ids_sha256": "cf61a0b2e71721864a1b526a531c433f852e128d2ffa8b81504fc3d74b9830bf",
+    "test_split_sha256": "a3d485015d480f4f1ebbd12dbbf02c25c0aa667d1afcf5f6fa35f0263a82c567",
+    "train_split_sha256": "0ecef460fecfd8aa91dcbb2cd4cca17b033f620f85a50d7f0b598ed19a27c0eb"
+  },
+  "success_rate": 0.00390625,
+  "task_count": 256,
+  "receipt_self_sha256": "b47ea477715238af935fcee716d0c55d649e33091cb69de2f5856d26da5104e8"
+}

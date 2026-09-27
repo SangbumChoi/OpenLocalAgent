@@ -1,0 +1,79 @@
+{
+  "kind": "localagent_mind2web_grounded_dom_webgpu_receipt",
+  "schema_version": 1,
+  "status": "measured_gap_not_publish_ready",
+  "source": {
+    "dataset": "osunlp/Mind2Web",
+    "subset": "train",
+    "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+    "url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+    "license": "cc-by-4.0",
+    "raw_snapshot": {
+      "bytes": 28366146,
+      "sha256": "182542d7947b3fa9e90fc57a3d82d4d8f2997ca5a06664217720d7a78a956e33"
+    },
+    "adapter": {
+      "script": "scripts/export_mind2web_grounded_rows.py",
+      "version": "mind2web_grounded_dom_v1",
+      "max_candidates": 12,
+      "train_jsonl_sha256": "812d25f03b82733032911a57141cbefa29984592b1d2e255bce6e6fbb11cddda",
+      "eval_jsonl_sha256": "99591dc2f765a5dc8c43f6e785aa023eeb65999451a14fe749622ee0b60ee51a"
+    }
+  },
+  "training": {
+    "parent_checkpoint_sha256": "d698225de6bfefd7ec6fe2534bf1a796e70d96fe4c22c968a39e1dc3a5045781",
+    "child_checkpoint_sha256": "aa5b9809a0b9f7b57d8d30fb9921c7d2d653b09b278d43609f18b7a1568ee756",
+    "child_checkpoint_bytes": 52234992,
+    "steps": 32,
+    "batch_size": 1,
+    "learning_rate": 0.00002,
+    "model_parameters": 10524544,
+    "pointer_args": [
+      "city", "query", "goal", "term", "song", "topic", "path", "pattern", "command",
+      "message", "task", "duration", "title", "recipient", "url", "content", "summary",
+      "target_id", "value"
+    ],
+    "heldout_pointer_exact_span": 0.5,
+    "heldout_pointer_span_rows": 6,
+    "split_contract": "parent-record and slot disjoint normalized train/eval rows"
+  },
+  "webgpu_bundle": {
+    "checkpoint_stage": "sft_grounded_mind2web",
+    "bundle_manifest_sha256": "291469ace8e3f103352e849dd4abde83c64f8bf0c2db45115d27b9df0b64562e",
+    "bundle_manifest": {
+      "action_model.fp16.onnx": {"bytes": 21430322, "sha256": "4d98521f503490117b041708aee7780d851c0364509267ea3cebb02011f0ecde"},
+      "action_model.onnx": {"bytes": 42700043, "sha256": "f11187495e538b8d9e36f1adb0be54bc6775d93ecd9cc7da86836b028bbaa195"},
+      "dispatch_heads.json": {"bytes": 1315441, "sha256": "04bdffb1c00339d54cb3c993cdd7fea6a996b1946b442612f3fd90a2e9b4adfb"},
+      "heads.json": {"bytes": 3345840, "sha256": "4d2947c380f2b6fd64c02b0c0635cf47efe35ab7ff1f8ced42bae78489082b11"},
+      "meta.json": {"bytes": 12427, "sha256": "3e55e2f867206289e245b509e41e9c5c6bbb8df07ecd887ab7cc31bd19459648"},
+      "model.fp16.onnx": {"bytes": 34026190, "sha256": "80fa490ff75b1882cbdebb567856d482936e248dde6a1103994a1a98f540e377"},
+      "model.onnx": {"bytes": 67877334, "sha256": "b93428da4e579e7ae6f0cef6f5bfb443054392138536ebc4f8b64a8b19040114"},
+      "tokenizer.json": {"bytes": 1134224, "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"}
+    },
+    "parity_gate": "passed",
+    "tool_pool": 53,
+    "webgpu_adapter": {"vendor": "apple", "architecture": "metal-3", "is_fallback_adapter": false}
+  },
+  "action_suite": {
+    "suite": "mind2web_train10_grounded_dom_heldout_v1",
+    "bytes": 2946,
+    "sha256": "467d2c287a6f72968b88241deda99a505db3a52e7a8068276a5db40c4efbe247",
+    "cases": 4,
+    "warmups": 1,
+    "repetitions": 1,
+    "target_input_tokens": 512,
+    "context_condition": "fixed_compute_tokens_natural_decision_feature",
+    "padding": "single-token spaces appended after the natural assistant marker"
+  },
+  "runtime": {
+    "backend": "webgpu",
+    "precision": "fp16",
+    "exact_action_accuracy": 0.25,
+    "schema_valid_rate": 1.0,
+    "tool_selection_accuracy_on_tool_cases": 1.0,
+    "abstention_accuracy": 1.0,
+    "latency_ms": {"p50": 18.65, "p95": 19.385, "all_cases_under_100ms": true},
+    "failure_mode": "three web_click actions selected the correct tool but copied a long DOM-candidate span beginning at target_id=2932 instead of the gold backend node target_id=170"
+  },
+  "claim_boundary": "This is a public-train, parent-record-disjoint DOM-enriched continuation and a four-case WebGPU runtime check. It is not the official Mind2Web test split, does not establish browser task completion, and is not a 100-percent workshop result."
+}

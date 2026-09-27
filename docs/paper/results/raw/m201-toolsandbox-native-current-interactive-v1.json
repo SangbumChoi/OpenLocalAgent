@@ -1,0 +1,92 @@
+{
+  "claim_boundary": "Native pinned ToolSandbox simulator/verifier stress evidence over the established five-scenario interactive set. The bounded scripted user is not the upstream model-based user simulator; official split, full scenario matrix, RapidAPI tools, and external accounts were not executed. This is not an official ToolSandbox score or real email/Notion/MCP side-effect evidence.",
+  "comparison": {
+    "all_scenarios_match_m92_stateful": true,
+    "all_scenarios_match_m92_public": true,
+    "all_scenarios_match_m92_projection": true,
+    "current_minus_prior_success_rate_pp": 0.0,
+    "current_success_rate": 0.2,
+    "current_success_count": 1,
+    "task_count": 5
+  },
+  "dataset": "apple/ToolSandbox",
+  "decision": {
+    "checkpoint_promoted": false,
+    "reason": "The current m194 dispatch-repair child exactly matches all three prior m92 interactive arms on every selected scenario; route repair did not improve multi-tool or multi-turn behavior."
+  },
+  "kind": "localagent_toolsandbox_native_current_interactive_comparison",
+  "metrics": {
+    "mean_milestone_similarity": 0.4166666666666667,
+    "mean_similarity": 0.4166666666666667,
+    "exceptions": 0,
+    "max_agent_turns": 8,
+    "success_count": 1,
+    "success_rate": 0.2,
+    "task_count": 5,
+    "scenarios": [
+      {
+        "name": "send_message_with_contact_content_cellular_off",
+        "similarity": 0.25,
+        "milestone_similarity": 0.25,
+        "turn_count": 17
+      },
+      {
+        "name": "turn_on_wifi_low_battery_mode",
+        "similarity": 0.3333333333333333,
+        "milestone_similarity": 0.3333333333333333,
+        "turn_count": 17
+      },
+      {
+        "name": "find_current_city_insufficient_information",
+        "similarity": 1.0,
+        "milestone_similarity": 1.0,
+        "turn_count": 1
+      },
+      {
+        "name": "remove_contact_by_phone_ambiguous",
+        "similarity": 0.0,
+        "milestone_similarity": 0.0,
+        "turn_count": 17
+      },
+      {
+        "name": "search_message_with_recency_latest_multiple_user_turn",
+        "similarity": 0.5,
+        "milestone_similarity": 0.5,
+        "turn_count": 17
+      }
+    ]
+  },
+  "official_split_verified": false,
+  "protocol": {
+    "name": "bounded_multi_step_scripted_user",
+    "interactive": true,
+    "user_simulator_executed": false,
+    "verifier_executed": true
+  },
+  "prior_arms": {
+    "m92_stateful_m75": {
+      "checkpoint_sha256": "e563b91a5ad7540801d41fc9f71692d6d29a29a5a17f45c33773d34c2e457e86",
+      "receipt": "docs/paper/results/raw/m92-toolsandbox-native-interactive-stateful-m75-v1.json"
+    },
+    "m92_public_m70": {
+      "checkpoint_sha256": "0d6721455b89d4d3a569edeed8bae57ef8b3a3b000b6e7d92890ded1cdd00a61",
+      "receipt": "docs/paper/results/raw/m92-toolsandbox-native-interactive-public-m70-v1.json"
+    },
+    "m92_projection_m59": {
+      "checkpoint_sha256": "e1d442b1511cab57c77b0368c33ec3beefdd4f44ae0de32ef498018677c63d9d",
+      "receipt": "docs/paper/results/raw/m92-toolsandbox-native-interactive-public-projection-m59-v1.json"
+    }
+  },
+  "runner": {
+    "path": "scripts/run_toolsandbox_native.py",
+    "sha256": "9744f98b610b672f38707709233eb05d47e396dc748cce6cb35f54e7d4581524"
+  },
+  "source_revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+  "source_url": "https://github.com/apple/ToolSandbox",
+  "warm_checkpoint": {
+    "bytes": 52276521,
+    "path": "/private/tmp/m194-m180-dispatch-repair-warm.pt",
+    "sha256": "3b3fd817c6f52e8b922f84c9bb36e7d55e0e243a0f8ee6d0f20c85962a4eeba7"
+  },
+  "receipt_self_sha256": "a76f65336326d7b686ebd67a94a0937cf86184600c92506ab0e11ffccfb3ffc2"
+}

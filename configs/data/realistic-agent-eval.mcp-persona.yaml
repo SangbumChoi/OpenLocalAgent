@@ -1,0 +1,45 @@
+# Eval-only addendum for personalized, stateful MCP application tasks.
+kind: localagent_realistic_agent_catalog
+schema_version: 1
+purpose: mcp_persona_personalized_mcp_audit_addendum
+entries:
+  - id: mcp_persona
+    family: tool_api
+    name: MCP-Persona
+    source_url: https://github.com/wwh0411/MCP-Persona
+    paper_url: https://arxiv.org/abs/2606.02470
+    code_url: https://github.com/wwh0411/MCP-Persona
+    source_revision: b510f5a5371c4524a58aeeb679c1ace845603e95
+    access_status: public_download
+    license:
+      name: MIT
+      url: https://opensource.org/license/mit
+      evidence: https://github.com/wwh0411/MCP-Persona/blob/main/README.md
+      caveat: public_revision_has_readme_mit_badge_but_no_root_license_file
+    scale:
+      kind: benchmark
+      tasks: 173
+      unique_tools: 139
+      servers: 18
+      chain_length_max: 18
+      language_releases: 2
+    observation:
+      modalities: [text, personalized_context, tool_schema, state_summary]
+      formats: [JSON, JSONL, Python, MCP]
+    action:
+      modalities: [tool_call, personalized_search, stateful_operation]
+      formats: [JSON, Python, MCP]
+    domains: [email, notion, lark, slack, obsidian, reddit, instagram, xiaohongshu, collaboration]
+    train_policy: eval_only
+    integration:
+      status: protocol_audit_only
+      target_adapter: scripts.audit_mcp_persona_source
+      source_split_policy: en_and_zh_are_duplicate_language_releases;no_train_test_split
+    webgpu_projection:
+      status: bridge_only
+      recommended_observation: instruction_plus_compact_persona_state_and_tool_history
+      screenshot_policy: none
+    contamination:
+      split: no_official_train_test_split;ground_truth_checkpoints_present
+      rule: do not train on tasks, persona contexts, ground-truth checkpoints, or simulator state; native evaluation requires the upstream sandbox and checkpoint/execution evaluator
+    notes: Directly relevant to personalized email, Notion-like content, calendar, collaboration, and multi-step MCP control; public release is useful for eval design but not a training corpus.

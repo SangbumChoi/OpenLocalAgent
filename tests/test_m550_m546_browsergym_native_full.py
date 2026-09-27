@@ -1,0 +1,20 @@
+import hashlib
+import json
+from pathlib import Path
+
+
+def test_m550_browsergym_receipt_is_checkpoint_bound_and_official_split() -> None:
+    path = Path("docs/paper/results/raw/m550-m546-browsergym-native-full-v1.json")
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    recorded = payload.pop("receipt_self_sha256")
+    expected = hashlib.sha256(
+        json.dumps(payload, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
+    assert recorded == expected
+    assert payload["environment"]["official_split_verified"] is True
+    assert payload["environment"]["task_count"] == 240
+    assert payload["environment"]["errors"] == []
+    assert payload["result"]["success_rate"] == 5 / 240
+    assert payload["result"]["action_errors"] == 0
+    assert payload["candidate_checkpoint"]["parameters"] < 100_000_000
+    assert payload["decision"]["adoption"] == "retain_as_native_negative_control"

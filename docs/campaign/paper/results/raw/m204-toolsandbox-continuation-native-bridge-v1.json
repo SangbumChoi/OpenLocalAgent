@@ -1,0 +1,98 @@
+{
+  "claim_boundary": "Public AST-only ToolSandbox scenario projection followed by matched warm/random teacher-forced continuation and a five-scenario native interactive simulator/verifier check. The projection is not an official dataset split, the native run is not the official ToolSandbox split or user simulator, and no external API, real email, Notion, MCP, or WebGPU side effect was executed.",
+  "dataset": {
+    "name": "apple/ToolSandbox",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "url": "https://github.com/apple/ToolSandbox",
+    "projection_manifest": {
+      "bytes": 4610,
+      "path": "/private/tmp/m202-toolsandbox-projection/toolsandbox-manifest.json",
+      "sha256": "85f977aed04a40c959c41a5f80e5c3c2c75653aa44c4c789e8234e3aae8ff356"
+    },
+    "train": {
+      "bytes": 245109,
+      "path": "/private/tmp/m202-toolsandbox-projection/toolsandbox-train.jsonl",
+      "rows": 107,
+      "sha256": "773b44877677e7b2be72295bc9eb26d158c5932d6665aac15bcae9592d46609d"
+    },
+    "eval": {
+      "bytes": 45613,
+      "path": "/private/tmp/m202-toolsandbox-projection/toolsandbox-eval.jsonl",
+      "rows": 20,
+      "sha256": "925ce977082ffb980e46bce5b25ea81fdd335d25e5996feefd503015ba3ff46d"
+    }
+  },
+  "kind": "localagent_toolsandbox_continuation_native_bridge",
+  "native_interactive": {
+    "official_split_verified": false,
+    "scenario_count": 5,
+    "scenario_names": [
+      "send_message_with_contact_content_cellular_off",
+      "turn_on_wifi_low_battery_mode",
+      "find_current_city_insufficient_information",
+      "remove_contact_by_phone_ambiguous",
+      "search_message_with_recency_latest_multiple_user_turn"
+    ],
+    "warm": {
+      "checkpoint_sha256": "558c312174d1c220a7b93bb80e9d3764de891251979b357bbb040d00e2989fa2",
+      "report_sha256": "4e9a9648832ae708c6985e0cda2298ff4473efe655d5aa77ac0e2fb05609f557",
+      "success_count": 1,
+      "success_rate": 0.2,
+      "per_scenario_similarity": [0.25, 0.3333333333333333, 1.0, 0.0, 0.5]
+    },
+    "random": {
+      "checkpoint_sha256": "dcfdebbe3eed3b823c7e989cf3adbf2eeeec31522b78a2a09bd1099a61ace7c1",
+      "report_sha256": "bf6af20096eee24ec5a1f2471130ada020e26c83bb8fb1ee9048091bbbab0f62",
+      "success_count": 1,
+      "success_rate": 0.2,
+      "per_scenario_similarity": [0.25, 0.3333333333333333, 1.0, 0.0, 0.5]
+    },
+    "warm_minus_random_success_rate_pp": 0.0,
+    "per_scenario_parity": true
+  },
+  "parent_checkpoint": {
+    "bytes": 52276521,
+    "path": "/private/tmp/m194-m180-dispatch-repair-warm.pt",
+    "sha256": "3b3fd817c6f52e8b922f84c9bb36e7d55e0e243a0f8ee6d0f20c85962a4eeba7"
+  },
+  "training": {
+    "steps": 32,
+    "batch_size": 4,
+    "learning_rate": 1e-05,
+    "max_seq_len": 2048,
+    "warm": {
+      "report_sha256": "7f1a5d88932cd867b9f603d57a6839ec2d31d347df35bd517a5bdbf7dffbc32f",
+      "child_sha256": "558c312174d1c220a7b93bb80e9d3764de891251979b357bbb040d00e2989fa2",
+      "eval_token_accuracy_before": 0.6578947368421053,
+      "eval_token_accuracy_after": 0.7320574162679426,
+      "eval_sequence_accuracy_after": 0.0,
+      "weight_movement": {
+        "embedding": 0.0052111835889709236,
+        "attention_or_mixer": 0.0018524460805786755,
+        "ffn": 0.0023572006092407805,
+        "normalization": 0.00010327262832436695,
+        "action_heads": 0.0
+      }
+    },
+    "random": {
+      "report_sha256": "72bc3a5d5a95d311db86952452b020ff6c2fa181301274a7ef317571c1d33139",
+      "child_sha256": "dcfdebbe3eed3b823c7e989cf3adbf2eeeec31522b78a2a09bd1099a61ace7c1",
+      "eval_token_accuracy_before": 0.0,
+      "eval_token_accuracy_after": 0.0861244019138756,
+      "eval_sequence_accuracy_after": 0.0,
+      "weight_movement": {
+        "embedding": 1.2345921561512778,
+        "attention_or_mixer": 0.7787951999213468,
+        "ffn": 0.8780725591975775,
+        "normalization": 0.07908584523253387,
+        "action_heads": 0.0
+      }
+    }
+  },
+  "decision": {
+    "export_child": false,
+    "adopt_warm_backbone": false,
+    "reason": "Warm transfer improves public held-out token accuracy by 7.42 points with small backbone movement, but warm and random native interactive action behavior is exactly identical at 1/5. The continuation did not update action heads, so language-loss transfer cannot support WebGPU action adoption."
+  },
+  "receipt_self_sha256": "470a663635cf4b9481c242256f6d2fa7dcd1481b089c6189cca1f72f88a894dd"
+}

@@ -1,0 +1,33 @@
+{
+  "catalog": {
+    "dataset": "Qwen/AgentWorldBench",
+    "entries": 1,
+    "path": "configs/data/realistic-agent-eval.agentworldbench.yaml",
+    "sha256": "2a87c8fbc09a0aac071dfe196bc1f13d8eb1b6e1a926b405489139af43b72f49",
+    "source_revision": "6b8d28437042434dcdd168434227ca0de408c5ba",
+    "train_policy": "eval_only"
+  },
+  "claim_boundary": "This addendum makes AgentWorldBench discoverable as a pinned eval-only source. It does not authorize training on test rows or convert the teacher-forced projection into an official judge/native benchmark score.",
+  "decision": {
+    "catalog_discovery": true,
+    "official_native_score": false,
+    "training_admission": false
+  },
+  "kind": "localagent_agentworldbench_catalog_addendum_audit",
+  "projection_receipt": {
+    "domains": [
+      "android",
+      "mcp",
+      "os",
+      "search",
+      "swe",
+      "terminal",
+      "web"
+    ],
+    "path": "docs/paper/results/raw/m612-m585-agentworldbench-text-projection-v1.json",
+    "rows": 224,
+    "sha256": "1c64d0d1c34879c95cdb3db0021c0461a4b25cee64ff42e0c07f074b3e4928ae"
+  },
+  "receipt_self_sha256": "2fa856e32ef00695f44f3220ee8129e2ee85b2136b0bf5d24fdff574b844aa37",
+  "schema_version": 1
+}

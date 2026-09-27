@@ -1,0 +1,45 @@
+# Eval-only public web-agent benchmark addendum. Tasks require the upstream live-browser harness.
+kind: localagent_realistic_agent_catalog
+schema_version: 1
+purpose: clawbench_live_web_task_audit_addendum
+entries:
+  - id: clawbench
+    family: browser
+    name: ClawBench
+    source_url: https://huggingface.co/datasets/TIGER-Lab/ClawBench
+    paper_url: https://arxiv.org/abs/2604.08523
+    code_url: https://github.com/TIGER-AI-Lab/ClawBench
+    source_revision: cc146e2128724f47f2a7246f1a3057c643b22f70
+    access_status: public_download
+    license:
+      name: Apache-2.0
+      url: https://www.apache.org/licenses/LICENSE-2.0
+      evidence: https://huggingface.co/datasets/TIGER-Lab/ClawBench
+    scale:
+      kind: benchmark
+      v1_tasks: 153
+      v2_tasks: 130
+      v1_platforms: 144
+      v2_platforms: 63
+      v1_extra_info_tasks: 32
+      v2_extra_info_tasks: 15
+    observation:
+      modalities: [text, browser_state, action_history, http_interception]
+      formats: [Parquet, JSON, JSONL, browser_trace]
+    action:
+      modalities: [browser_action, http_request]
+      formats: [click, type, scroll, keypress, GET, POST, PUT, PATCH]
+    domains: [daily_life, shopping, travel, jobs, education, productivity, safety]
+    train_policy: eval_only
+    integration:
+      status: protocol_audit_only
+      target_adapter: scripts.audit_clawbench_source
+      source_split_policy: v1_and_v2_are_test_corpora;live_harness_required
+    webgpu_projection:
+      status: bridge_only
+      recommended_observation: instruction_plus_compact_browser_state
+      screenshot_policy: no_screenshot_training_from_task_release
+    contamination:
+      split: no_static_train_split;v1_v2_task_id_overlap_present
+      rule: do not train on benchmark instructions, traces, shared profile, or eval schemas; native scoring requires the upstream live-browser harness
+    notes: Realistic end-to-end web workflows with safe request interception; especially relevant to email, scheduling, applications, commerce, and browser confirmation policy.

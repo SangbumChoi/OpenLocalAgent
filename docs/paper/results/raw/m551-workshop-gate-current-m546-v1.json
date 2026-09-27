@@ -1,0 +1,47 @@
+{
+  "kind": "localagent_workshop_publication_gate",
+  "schema_version": 1,
+  "current_checkpoint": {
+    "sha256": "2663f3fc76bad1b8f20afacfbde157e305f9decd369c3586ea1b51a6bcbc80a6",
+    "parameters": 10524544,
+    "stage": "sft_public_agent_continuation"
+  },
+  "inputs": {
+    "catalog": "configs/data/realistic-agent-eval.catalog.yaml",
+    "catalog_sha256": "04bdd515e080c4e7fedab935ae9a31a01a77ca73268645719e5c9129d2eb3c61",
+    "mobilegym_receipt": "docs/paper/results/raw/m547-m546-mobilegym-native-full-v1.json",
+    "browsergym_receipt": "docs/paper/results/raw/m550-m546-browsergym-native-full-v1.json",
+    "webgpu_receipt": "/private/tmp/m546-webgpu-capability.json",
+    "weight_report": "docs/paper/results/raw/m546-multisurface-public-transfer-webgpu-v1.json",
+    "rl_preflight_receipt": "/private/tmp/m549-m546-rl-preflight.json",
+    "upstream_gate_report_sha256": "96da9322943dcdebaccae9df8c541217f8da1d9e8b17765d434994a37223f28c"
+  },
+  "checks": {
+    "catalog_realistic_family_coverage": "pass",
+    "catalog_no_pending_train_adapter": "pass",
+    "native_mobilegym": "pass",
+    "native_browsergym_miniwob": "pass",
+    "webgpu_native_capability_and_latency": "pass",
+    "native_androidworld": "blocked",
+    "native_mobile_safety_bench": "blocked",
+    "native_iosworld": "blocked",
+    "native_osworld": "blocked",
+    "native_osworld_v2": "blocked",
+    "native_agentnet": "blocked",
+    "native_toolsandbox": "blocked",
+    "native_mcpmark": "blocked",
+    "native_enterpriseopsgym": "blocked",
+    "weights_transfer_and_no_transfer_ablation": "blocked",
+    "training_rl_preflight": "blocked",
+    "artifacts_public_model_demo_manifest": "blocked"
+  },
+  "blocker_reasons": [
+    "nine required native benchmark receipts are absent",
+    "m546 weight receipt is not a combined warm/random compatibility ablation",
+    "m546 RL preflight failed closed because the diagnostic child has no lineage metadata",
+    "no authenticated public Hugging Face model/Space manifest is supplied"
+  ],
+  "ready": false,
+  "claim_boundary": "This is a fail-closed workshop/publication readiness result. Passing MobileGym, BrowserGym, WebGPU, and catalog checks does not imply workshop readiness or general agent competence.",
+  "receipt_self_sha256": "4470f36616ada502e4ed06290cf44dc391b776e7cd3cb543cf9cf9de124d4718"
+}

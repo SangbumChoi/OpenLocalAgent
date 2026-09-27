@@ -1,0 +1,161 @@
+# Paper-scale, auditable pretraining mixture for the matched 34M WebGPU backbones.
+#
+# `target_chars` is only a bounded streaming target. Corpus packing records the exact final-tokenizer
+# count; extend or truncate the stream to hit the locally prespecified 5/10/20
+# tokens-per-parameter arms. External timestamping remains a separate requirement.
+# Dataset revisions, accepted rows, licenses, and config checksum are written to the download
+# manifest. Frozen evaluation prompts/pages must then be supplied to prepare_corpus.py's
+# decontamination denylist before tokenizer training or packing.
+#
+# Scope is intentionally literal: the 25% code arm below is permissively licensed Python from
+# CodeParrot Clean, and the 10% structured arm is WebSight HTML text only. JSON, JSON Schema,
+# OpenAPI, YAML, multilingual code, tests, and API documentation require additional configured
+# sources with their own provenance/license records; this file does not claim to include them.
+version: 1
+seed: 2026
+target_chars: 2200000000
+min_document_chars: 200
+max_document_chars: 1000000
+require_full_source_budgets: true
+require_license_evidence: true
+
+# The downloader retains one atomic spool per completed source and then assembles the committed
+# JSONL, so peak acquisition storage is larger than the final JSONL. This is an explicit
+# fail-before-network floor and an independent hard cap, not a claim that 2.2B Unicode characters
+# always occupy 2.2GB.
+storage:
+  # The selected WebSight prefix alone is 25.24 GB. Keep room for its verified Hub cache,
+  # completed-source spools, final assembly, and temporary files before any network work begins.
+  minimum_free_bytes: 60000000000
+  max_raw_jsonl_bytes: 13200000000
+
+# Corpus-owned policy for prepare_corpus.py. The downloaded mixture manifest carries this policy,
+# so corpus preparation fails closed unless every required suite is supplied; a denylist list
+# manifest cannot weaken it by self-declaring a smaller required set. The four external benchmark
+# exports are deliberately prompt-only, are not fabricated or vendored here, and must precede
+# tokenizer fitting. They establish revision-bound local holdout, not post-training chronological
+# freshness. Local suite and agent-eval hashes pin their exact frozen artifacts.
+evaluation_decontamination:
+  manifest_kind: localagent_evaluation_denylist_manifest
+  manifest_schema_version: 1
+  required_suites:
+    - name: bfcl
+    - name: mind2web
+    - name: weblinx
+    - name: browsergym
+    - name: local-realtime-actions
+      bytes: 4596
+      sha256: f6e479c10b420edcd1630e99c43df3206a40431f1256d919d5ea1a57bc88142c
+    - name: local-browser-tasks
+      bytes: 6285
+      sha256: 4c46b5b347257b81e716ec0a20a6c6116df716466e1ba8e8a74a117bb5708971
+    - name: local-agent-eval
+      bytes: 50859313
+      sha256: e2c2406865a076f21ca1dd8747187ae2c2a2af0c06888b207b702aa6f2ebfb07
+
+sources:
+  # Near-deduplicated educational web text; the dataset card declares ODC-By.
+  - name: fineweb_edu_dedup
+    dataset: HuggingFaceTB/smollm-corpus
+    revision: 3ba9d605774198c5868892d7a8deda78031a781f
+    subset: fineweb-edu-dedup
+    split: train
+    text_field: text
+    license: ODC-By-1.0
+    license_evidence:
+      id: smollm-card
+      url: https://huggingface.co/datasets/HuggingFaceTB/smollm-corpus/resolve/3ba9d605774198c5868892d7a8deda78031a781f/README.md
+      bytes: 7048
+      sha256: e09544d7132303ae6bbc6e156e984db0305d81561615476be49eabd4be4b8bed
+      scope: dataset-distribution
+    weight: 0.50
+    shuffle_buffer: 20000
+    source_fields: [id]
+
+  # Synthetic textbook/blog/story material generated from diverse seed pages.
+  - name: cosmopedia_v2
+    dataset: HuggingFaceTB/smollm-corpus
+    revision: 3ba9d605774198c5868892d7a8deda78031a781f
+    subset: cosmopedia-v2
+    split: train
+    text_field: text
+    license: ODC-By-1.0
+    license_evidence:
+      id: smollm-card
+      url: https://huggingface.co/datasets/HuggingFaceTB/smollm-corpus/resolve/3ba9d605774198c5868892d7a8deda78031a781f/README.md
+      bytes: 7048
+      sha256: e09544d7132303ae6bbc6e156e984db0305d81561615476be49eabd4be4b8bed
+      scope: dataset-distribution
+    weight: 0.15
+    shuffle_buffer: 20000
+    # The subset has no stable row id; content hashing supplies the document id. Avoid embedding
+    # long seed-page text in the source label.
+    source_fields: []
+
+  # Deduplicated Python, restricted by the dataset's row-level license label to straightforward
+  # permissive identifiers. This is auditable filtering, not an independent legal determination.
+  - name: permissive_python
+    dataset: codeparrot/codeparrot-clean
+    revision: 35a59fb025bc0a102f7d96eac09d145b896d487b
+    split: train
+    text_field: content
+    # The generic Arrow streaming route proved transport-fragile on this legacy gzip/JSONL
+    # dataset. Pin the complete 48-shard LFS inventory, select four shards by the lowest
+    # SHA256("<source-seed>:<path>"), verify each compressed SHA-256, and interleave their rows
+    # before the bounded deterministic shuffle. This avoids order-picking a single shard while
+    # retaining a reproducible, fail-closed acquisition plan.
+    raw_stream:
+      backend: hf-jsonl-gzip-v1
+      files_manifest: codeparrot-clean-35a59fb0-files.json
+      files_manifest_bytes: 8356
+      files_manifest_sha256: 1810d31f48ccca2fbbc07cf667bc7c30e66ea4d7bb349a249f749990a5474f78
+      interleave_files: 4
+      selection: sha256-seed-path-v1
+    license_field: license
+    allowed_licenses:
+      - apache-2.0
+      - bsd-2-clause
+      - bsd-3-clause
+      - isc
+      - mit
+    license_evidence:
+      id: codeparrot-card
+      url: https://huggingface.co/datasets/codeparrot/codeparrot-clean/resolve/35a59fb025bc0a102f7d96eac09d145b896d487b/README.md
+      bytes: 1299
+      sha256: e5b9f048922eba1444f5bfcf9059dfa917821d4d9d88516bda0a32e01c098699
+      scope: row-level-license-field
+    weight: 0.25
+    shuffle_buffer: 4096
+    source_fields: [repo_name, path]
+
+  # CC-BY-4.0 synthetic HTML paired with website descriptions. The pinned card also requires
+  # disclosure when the dataset trains a released model/application. Only the HTML text field is
+  # ingested by this language-model pipeline; screenshots are deliberately excluded.
+  - name: structured_html
+    dataset: HuggingFaceM4/WebSight
+    revision: 7795db7d595faf39443cd9440bd9186609c42b6e
+    subset: v0.2
+    split: train
+    text_field: text
+    # `subset` is retained as provenance but is not passed to a datasets builder. This backend
+    # verifies the complete 738-file v0.2 inventory, selects the lowest 64
+    # SHA256("<source-seed>:<path>") artifacts, verifies their exact bytes and LFS SHA-256, and
+    # projects only the Parquet `text` column. Two pinned selected shards yielded 4,394,889 and
+    # 4,354,111 Unicode characters; 64 shards project to about 280M characters before the
+    # fail-closed required-budget check.
+    raw_stream:
+      backend: hf-parquet-text-v1
+      files_manifest: websight-v02-7795db7d-files.json
+      files_manifest_bytes: 141431
+      files_manifest_sha256: 16c6db1cd43843a1d5f852d2e676b984d2b651fedab5db9fc08606641f99412b
+      interleave_files: 64
+      selection: sha256-seed-path-v1
+    license: CC-BY-4.0
+    license_evidence:
+      id: websight-card
+      url: https://huggingface.co/datasets/HuggingFaceM4/WebSight/resolve/7795db7d595faf39443cd9440bd9186609c42b6e/README.md
+      bytes: 3272
+      sha256: be37caf530a8c4ea5c13a3b30fe0d01a5c40b835776663269713331fb1bfaadd
+      scope: dataset-card-terms
+    weight: 0.10
+    shuffle_buffer: 20000

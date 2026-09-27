@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "name": "localagent-single-step-dom-microtasks",
+  "description": "Text-grounded exact-prompt holdouts for a local model-to-DOM state loop. Some argument slots come from named evaluation pools, while schema enums, no-argument intents, and template vocabulary may be shared; this suite does not claim primitive-value or template-family disjointness.",
+  "holdout_contract": {
+    "training_exclusion": "canonical normalized query equality",
+    "normalization": "Unicode NFKC, Unicode whitespace collapse, Unicode casefold",
+    "case_sensitive": false,
+    "primitive_value_disjointness_claimed": false,
+    "template_disjointness_claimed": false
+  },
+  "fixture_contract": {
+    "name": "localagent-dom-fixtures",
+    "version": 1
+  },
+  "scope": {
+    "steps_per_case": 1,
+    "input_modality": "text",
+    "dispatch_surface": "same-page DOM fixtures",
+    "navigation_scope": "same-document fragment in a disposable local iframe"
+  },
+  "cases": [
+    {
+      "id": "dom-click-confirm",
+      "family": "click",
+      "fixture": {
+        "id": "confirm-button",
+        "version": 1
+      },
+      "query": "Select 'the Confirm button'.",
+      "expected": {
+        "tool": "click",
+        "args": {
+          "target": "the Confirm button"
+        }
+      },
+      "expected_dom": [
+        {
+          "document": "main",
+          "selector": "#fixture-confirm",
+          "kind": "attribute",
+          "name": "data-state",
+          "equals": "confirmed"
+        }
+      ]
+    },
+    {
+      "id": "dom-double-click-back",
+      "family": "double_click",
+      "fixture": {
+        "id": "back-arrow",
+        "version": 1
+      },
+      "query": "Open 'the Back arrow' by double-clicking.",
+      "expected": {
+        "tool": "double_click",
+        "args": {
+          "target": "the Back arrow"
+        }
+      },
+      "expected_dom": [
+        {
+          "document": "main",
+          "selector": "#fixture-back",
+          "kind": "attribute",
+          "name": "aria-expanded",
+          "equals": "true"
+        }
+      ]
+    },
+    {
+      "id": "dom-type-feedback",
+      "family": "type_text",
+      "fixture": {
+        "id": "feedback-field",
+        "version": 1
+      },
+      "query": "Fill in 'customer feedback'.",
+      "expected": {
+        "tool": "type_text",
+        "args": {
+          "text": "customer feedback"
+        }
+      },
+      "expected_dom": [
+        {
+          "document": "main",
+          "selector": "#fixture-feedback",
+          "kind": "property",
+          "name": "value",
+          "equals": "customer feedback"
+        },
+        {
+          "document": "main",
+          "selector": "#fixture-feedback",
+          "kind": "attribute",
+          "name": "data-input-seen",
+          "equals": "true"
+        }
+      ]
+    },
+    {
+      "id": "dom-key-escape",
+      "family": "key_press",
+      "fixture": {
+        "id": "escape-dialog",
+        "version": 1
+      },
+      "query": "Send an Escape keypress.",
+      "expected": {
+        "tool": "key_press",
+        "args": {
+          "key": "Escape"
+        }
+      },
+      "expected_dom": [
+        {
+          "document": "main",
+          "selector": "#fixture-dialog",
+          "kind": "property",
+          "name": "hidden",
+          "equals": true
+        },
+        {
+          "document": "main",
+          "selector": "#fixture-key-target",
+          "kind": "attribute",
+          "name": "data-last-key",
+          "equals": "Escape"
+        }
+      ]
+    },
+    {
+      "id": "dom-scroll-down",
+      "family": "scroll",
+      "fixture": {
+        "id": "scroll-pane",
+        "version": 1
+      },
+      "query": "Please scroll down.",
+      "expected": {
+        "tool": "scroll",
+        "args": {
+          "direction": "down"
+        }
+      },
+      "expected_dom": [
+        {
+          "document": "main",
+          "selector": "#fixture-scroll",
+          "kind": "property",
+          "name": "scrollTop",
+          "greater_than": 0
+        },
+        {
+          "document": "main",
+          "selector": "#fixture-scroll",
+          "kind": "attribute",
+          "name": "data-scroll-direction",
+          "equals": "down"
+        }
+      ]
+    },
+    {
+      "id": "dom-drag-bell",
+      "family": "drag",
+      "fixture": {
+        "id": "notification-drag",
+        "version": 1
+      },
+      "query": "Drag 'the notification bell' onto 'the Done button'.",
+      "expected": {
+        "tool": "drag",
+        "args": {
+          "dest": "the Done button",
+          "source": "the notification bell"
+        }
+      },
+      "expected_dom": [
+        {
+          "document": "main",
+          "selector": "#fixture-bell",
+          "kind": "parent",
+          "equals": "#fixture-done"
+        },
+        {
+          "document": "main",
+          "selector": "#fixture-done",
+          "kind": "attribute",
+          "name": "data-drop-seen",
+          "equals": "true"
+        }
+      ]
+    },
+    {
+      "id": "dom-move-bookmark",
+      "family": "move_cursor",
+      "fixture": {
+        "id": "bookmark-hover",
+        "version": 1
+      },
+      "query": "Bring the cursor to 'the Bookmark star'.",
+      "expected": {
+        "tool": "move_cursor",
+        "args": {
+          "target": "the Bookmark star"
+        }
+      },
+      "expected_dom": [
+        {
+          "document": "main",
+          "selector": "#fixture-bookmark",
+          "kind": "attribute",
+          "name": "data-pointer-seen",
+          "equals": "true"
+        }
+      ]
+    },
+    {
+      "id": "dom-local-navigation",
+      "family": "open_url",
+      "fixture": {
+        "id": "local-navigation",
+        "version": 1
+      },
+      "query": "Navigate to fixture.local/details in the browser.",
+      "expected": {
+        "tool": "open_url",
+        "args": {
+          "url": "fixture.local/details"
+        }
+      },
+      "expected_dom": [
+        {
+          "document": "frame:#fixture-navigation-frame",
+          "kind": "location_hash",
+          "equals": "#details"
+        },
+        {
+          "document": "frame:#fixture-navigation-frame",
+          "selector": "#details-page",
+          "kind": "attribute",
+          "name": "data-active",
+          "equals": "true"
+        }
+      ]
+    }
+  ]
+}

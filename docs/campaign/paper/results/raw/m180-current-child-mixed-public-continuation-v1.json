@@ -1,0 +1,192 @@
+{
+  "kind": "localagent_current_child_mixed_public_continuation_receipt",
+  "schema_version": 1,
+  "measurement": "m180_current_child_mobile_computer_mixed_continuation",
+  "generated_at": "2026-08-03",
+  "claim_boundary": "This is a bounded text-first continuation over public AgentNet and Mind2Web projections with source-disjoint held-out rows. It is not an official AgentNet or Mind2Web score, native browser/desktop/mobile/MCP execution, screenshot grounding, WebGPU quality, or an email/Notion side effect. Sequence exactness is zero in both arms. The selector score is not interpretable because the fixed REALISTIC_BROWSER_TOOLS catalog does not cover the source action names; it is not a selector-adoption result.",
+  "source": {
+    "datasets": [
+      {
+        "id": "agentnet",
+        "name": "xlangai/AgentNet",
+        "url": "https://huggingface.co/datasets/xlangai/AgentNet",
+        "revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+        "train_rows": 513,
+        "eval_rows": 133,
+        "train_input": {
+          "path": "/private/tmp/agentnet_text_v4.train.jsonl",
+          "bytes": 911095,
+          "sha256": "44fad4c6e98fb6f5afd3cc45b89e1c1987d5d273293922521ef67677ace79db8"
+        },
+        "eval_input": {
+          "path": "/private/tmp/agentnet_text_v4.eval.jsonl",
+          "bytes": 239724,
+          "sha256": "2cadf65145b07734eb13988dc305396d027f6e98d1a5a7cf7de9a5fd31c3dc7c"
+        }
+      },
+      {
+        "id": "mind2web",
+        "name": "osunlp/Mind2Web",
+        "url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+        "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+        "train_rows": 36,
+        "eval_rows": 12,
+        "train_input": {
+          "path": "/private/tmp/mind2web-grounded-offset8-train-disjoint.jsonl",
+          "bytes": 282261,
+          "sha256": "78f7e647c3728106901c51ecc772c834467ef6a019c1c083af6849700b361621"
+        },
+        "eval_input": {
+          "path": "/private/tmp/mind2web-grounded-offset8-eval-disjoint.jsonl",
+          "bytes": 81803,
+          "sha256": "46305cb512f7368ed31817c79b798f5469e8658db12aed5d6880ea81b4e6fcbe"
+        }
+      }
+    ],
+    "split_policy": "AgentNet parent records and Mind2Web tasks/typed pointer slots are disjoint between train and eval; visual inputs and native environments were not used.",
+    "rows": {
+      "train": 549,
+      "eval": 145
+    }
+  },
+  "hyperparameters": {
+    "steps": 32,
+    "batch_size": 1,
+    "learning_rate": 0.00001,
+    "max_seq_len": 2048,
+    "device": "cpu",
+    "seed": 2027,
+    "head_init": "parent",
+    "head_steps": 0
+  },
+  "warm_start": {
+    "parent": {
+      "path": "/private/tmp/m166-androidcontrol-current-child.pt",
+      "bytes": 52223636,
+      "sha256": "f19d0cd48d86913fbb5d2915cc515622cc0839f1597c46f6ca20de0c6ac068eb"
+    },
+    "child": {
+      "path": "/private/tmp/m180-mixed-mobile-computer-child.pt",
+      "bytes": 52225051,
+      "sha256": "10827649f07182a08f8c11104d4713e76b8acaddc73020c5a4c77950de7b23a0"
+    },
+    "report": {
+      "path": "/private/tmp/m180-mixed-mobile-computer-report.json",
+      "bytes": 7534,
+      "sha256": "46d5bcb08c23a72811731a964e70f0bc7e2044625901404f76b1e32eb2f92f58"
+    },
+    "eval": {
+      "before": {
+        "token_accuracy": 0.5198767334360554,
+        "mean_loss": 3.4377758522797808,
+        "sequence_accuracy": 0.0
+      },
+      "after": {
+        "token_accuracy": 0.5805855161787365,
+        "mean_loss": 2.661511542286454,
+        "sequence_accuracy": 0.0
+      },
+      "route": {
+        "before": 0.09547738693467336,
+        "after": 0.35175879396984927,
+        "rows": 199
+      },
+      "selector": {
+        "before": 0.0,
+        "after": 0.0,
+        "tool_rows": 196,
+        "interpretation": "not_interpretable_catalog_mismatch"
+      }
+    }
+  },
+  "matched_random_control": {
+    "parent": {
+      "path": "/private/tmp/agentnet-random-backbone-parent.pt",
+      "bytes": 52319842,
+      "sha256": "a322e3100ddec6a733ec474dfc5f3c545a15fa23232f914a8b5994af7b8e7527"
+    },
+    "child": {
+      "path": "/private/tmp/m180-mixed-mobile-computer-random-child.pt",
+      "bytes": 52321834,
+      "sha256": "35bc7d6c00c9121e6fe43c656049b5f531ed754919553bd203bf2e7a400026f3"
+    },
+    "report": {
+      "path": "/private/tmp/m180-mixed-mobile-computer-random-report.json",
+      "bytes": 7447,
+      "sha256": "ce1cff5e6685a9ddc80717a8003bcade5a627487566341b7a48e36e621a1f221"
+    },
+    "random_backbone_seed": 2027,
+    "eval": {
+      "before": {
+        "token_accuracy": 0.0,
+        "mean_loss": 9.789437455939952,
+        "sequence_accuracy": 0.0
+      },
+      "after": {
+        "token_accuracy": 0.1292758089368259,
+        "mean_loss": 8.962378356416346,
+        "sequence_accuracy": 0.0
+      },
+      "route": {
+        "before": 0.005025125628140704,
+        "after": 0.010050251256281407,
+        "rows": 199
+      },
+      "selector": {
+        "before": 0.015306122448979591,
+        "after": 0.00510204081632653,
+        "tool_rows": 196,
+        "interpretation": "not_interpretable_catalog_mismatch"
+      }
+    }
+  },
+  "comparison": {
+    "warm_minus_random_after_token_accuracy": 0.4513097072419105,
+    "warm_minus_random_after_mean_loss": -6.300866814136565,
+    "warm_minus_random_after_route_accuracy": 0.34170854271356786,
+    "warm_start_better_on_held_out_language_model": true,
+    "warm_start_better_on_route": true,
+    "warm_start_better_on_sequence_exact": false,
+    "decision": "retain_warm_start_as_text_continuation_evidence_only; do_not_promote_checkpoint_or_selector",
+    "interpretation": "The current AndroidControl-adapted representation transfers useful teacher-forced signal to these public mobile/computer projections under this bounded comparison, and the matched random control confirms the gap is not explained by the training loop alone. It does not establish native agent control, robust grounding, or universal pretrained-weight adoption."
+  },
+  "weight_transfer": {
+    "warm_report": {
+      "path": "/private/tmp/m180-mixed-mobile-computer-weight.json",
+      "bytes": 19665,
+      "sha256": "3cb422cded01047ca91491f5d8dd557802a67fe26274be1b1b849257a3e9e705"
+    },
+    "random_report": {
+      "path": "/private/tmp/m180-mixed-mobile-computer-random-weight.json",
+      "bytes": 19786,
+      "sha256": "549056a067b49914e6432700eacaf03061caa63b9febba3fe60d3076b9716796"
+    },
+    "compatibility": {
+      "warm_shared_tensors": 51,
+      "random_shared_tensors": 51,
+      "warm_config_mismatches": {},
+      "random_config_mismatches": {},
+      "warm_tokenizer_equal": true,
+      "random_tokenizer_equal": true
+    },
+    "relative_delta_l2": {
+      "warm": {
+        "embedding": 0.004490350105064425,
+        "attention_or_mixer": 0.002226679448159172,
+        "ffn": 0.0027335217515166363,
+        "normalization": 0.00009005231351657393,
+        "action_heads": 0.0
+      },
+      "random": {
+        "embedding": 0.005540084029198012,
+        "attention_or_mixer": 0.0021030336402727717,
+        "ffn": 0.0027783324703175333,
+        "normalization": 0.00010320617836712158,
+        "action_heads": 0.0
+      }
+    },
+    "interpretation": "The warm and random backbones both move only modestly at 32 low-rate updates; compatibility and movement are lineage evidence, not proof that transfer is optimal. Action heads were unchanged, so the route gain is not a newly trained catalog selector."
+  },
+  "next_gate": "Train a surface-specific catalog/grounding head with an explicit no-transfer arm, then run the frozen public protocol in native BrowserGym/OSWorld/MCP or mobile environments before any deployment or workshop claim.",
+  "receipt_self_sha256": "0f7ccb2aa58de4d31a1b8f147befe4d4a7dca585e3b32b200bc55b0e9b616c59"
+}

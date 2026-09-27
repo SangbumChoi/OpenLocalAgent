@@ -1,0 +1,192 @@
+{
+  "benchmark": {
+    "data_version": "0.2.0",
+    "dataset": "AppWorld",
+    "eval_rows": 18,
+    "max_actions_per_row": 16,
+    "observations": "redacted status/api/step summaries",
+    "official_split": "public train / public dev",
+    "protected_test_used": false,
+    "source_revision": "a072b7a86e7c1d5b1d7175659d750eebb9b79f10a",
+    "source_url": "https://github.com/StonyBrookNLP/appworld",
+    "train_rows": 64
+  },
+  "children": {
+    "random": {
+      "bytes": 52203288,
+      "path": "/private/tmp/m651-appworld/random/child.pt",
+      "sha256": "082a0304708abe74af6a40d8cf12131db9f7a328d4e7314fa3702821496213ea"
+    },
+    "warm": {
+      "bytes": 52203288,
+      "path": "/private/tmp/m651-appworld/warm/child.pt",
+      "sha256": "fbfaae3b84146a298c4732637c8893fbb71037f0347c77017615b97bd93cec34"
+    }
+  },
+  "claim_boundary": "Public AppWorld 0.2.0 train/dev ground-truth API-trajectory continuation with bootstrap credentials removed and deterministic observation summaries. Metrics are teacher-forced token metrics, not an official AppWorld leaderboard score, complete task success, live email/Notion side effect, or WebGPU deployment result.",
+  "decision": {
+    "adapt_action_heads_separately": true,
+    "promote_to_native_appworld_or_webgpu_success": false,
+    "reason": "Warm transfer remains ahead by 27.38 percentage points after matched trajectory continuation, with small shared-body movement and large action-head movement. Exact sequence accuracy is still zero, observations are redacted, and no native free-run trajectory score was run; this is a weight-adoption recommendation only.",
+    "retain_warm_initialization": true,
+    "reuse_shared_body_with_low_rate": true
+  },
+  "inputs": {
+    "eval_manifest": {
+      "bytes": 18756,
+      "path": "/private/tmp/m651-appworld/dev-manifest.json",
+      "sha256": "db402a1d195b8b33d99a54a90f64cd904e868f6ae8bba17d1341d7ee4b8268f9"
+    },
+    "random_report": {
+      "bytes": 5519,
+      "path": "/private/tmp/m651-appworld/random/report.json",
+      "sha256": "e5997fbd57b2959723c2448a2925869b67e64f92998b4ef7411c74b986e0e7e0"
+    },
+    "random_weight": {
+      "bytes": 19909,
+      "path": "/private/tmp/m651-appworld/random/weight.json",
+      "sha256": "47528d9d6fe14048d7cd28694e6207da1ffff32941c8e6c3f130dc18328bde38"
+    },
+    "train_manifest": {
+      "bytes": 62151,
+      "path": "/private/tmp/m651-appworld/train-manifest.json",
+      "sha256": "1c1dbbf82b98c7fe1b34abe7d2d6680d336060b5f05e0e46bbf236230d9f3920"
+    },
+    "warm_report": {
+      "bytes": 5550,
+      "path": "/private/tmp/m651-appworld/warm/report.json",
+      "sha256": "9cb700dffa5387f1b069fd9e1464ff8209923eebe75fbad675a7e023afd5958b"
+    },
+    "warm_weight": {
+      "bytes": 19897,
+      "path": "/private/tmp/m651-appworld/warm/weight.json",
+      "sha256": "1ddb0601639511594ab1acae10e39487a9018798f3542db8b4769a556615c8b6"
+    }
+  },
+  "kind": "localagent_m651_appworld_trajectory_transfer_receipt",
+  "metrics": {
+    "random_after": {
+      "assistant_loss_tokens": 10893,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.37124759019553843,
+      "mean_loss": 8.26130530447449,
+      "rows": 18
+    },
+    "random_before": {
+      "assistant_loss_tokens": 10893,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.1675387863765721,
+      "mean_loss": 8.913253807993092,
+      "rows": 18
+    },
+    "random_continuation_delta_pp": 20.370880381896633,
+    "random_exact_sequence_accuracy": 0.0,
+    "warm_after": {
+      "assistant_loss_tokens": 10893,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.6450013770311209,
+      "mean_loss": 2.427643037987053,
+      "rows": 18
+    },
+    "warm_after_minus_random_after_pp": 27.37537868355825,
+    "warm_before": {
+      "assistant_loss_tokens": 10893,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.5614614890296521,
+      "mean_loss": 2.7840062698844728,
+      "rows": 18
+    },
+    "warm_continuation_delta_pp": 8.353988800146883,
+    "warm_exact_sequence_accuracy": 0.0
+  },
+  "parent_checkpoints": {
+    "random": {
+      "bytes": 52203288,
+      "path": "/private/tmp/m649-appworld/random/child.pt",
+      "sha256": "f39869027d7822f454fcd181d24cc139b4286e7837d349856c497633675559cd"
+    },
+    "warm": {
+      "bytes": 52203288,
+      "path": "/private/tmp/m649-appworld/warm/child.pt",
+      "sha256": "9c760ff270d12c797db937c94366ef33e801cac1f9fbee2c0015184f7837111e"
+    }
+  },
+  "receipt_self_sha256": "612e1db9110cfa4a3ec769b222f57cc4a57b09d9da02a5005fa701ef940714a6",
+  "schema_version": 1,
+  "weight_movement": {
+    "random": {
+      "action_heads": {
+        "base_l2": 91.57057783201145,
+        "delta_l2": 23.57566285188022,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.2574589285122823,
+        "target_l2": 91.66802139811138
+      },
+      "attention_or_mixer": {
+        "base_l2": 50.41283477352483,
+        "delta_l2": 0.07297880902104445,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0014476235932554726,
+        "target_l2": 50.41305333852961
+      },
+      "embedding": {
+        "base_l2": 50.18570788808166,
+        "delta_l2": 0.16307187209847018,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.0032493687737180903,
+        "target_l2": 50.18522771300549
+      },
+      "ffn": {
+        "base_l2": 49.79714460836108,
+        "delta_l2": 0.08700027052609023,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0017470935574784472,
+        "target_l2": 49.79830719164596
+      },
+      "normalization": {
+        "base_l2": 19.59987856482613,
+        "delta_l2": 0.001320714906544633,
+        "parameters": 384,
+        "relative_delta_l2": 6.738383108734066e-05,
+        "target_l2": 19.60078933856495
+      }
+    },
+    "warm": {
+      "action_heads": {
+        "base_l2": 91.78676828150552,
+        "delta_l2": 24.185599246505497,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.2634976663774614,
+        "target_l2": 91.71624889879571
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.698350633444605,
+        "delta_l2": 0.07057133864159608,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0013650597703196781,
+        "target_l2": 51.69884082313258
+      },
+      "embedding": {
+        "base_l2": 77.68753053023842,
+        "delta_l2": 0.18121592589923505,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.002332625643554214,
+        "target_l2": 77.75023926260988
+      },
+      "ffn": {
+        "base_l2": 50.60973789349284,
+        "delta_l2": 0.08190587098248936,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0016183816473197034,
+        "target_l2": 50.6101115921683
+      },
+      "normalization": {
+        "base_l2": 21.451560121678863,
+        "delta_l2": 0.0012952860828107401,
+        "parameters": 384,
+        "relative_delta_l2": 6.038190581307553e-05,
+        "target_l2": 21.452472153590172
+      }
+    }
+  }
+}

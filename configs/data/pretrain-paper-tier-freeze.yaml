@@ -1,0 +1,25 @@
+# Content-addressed readiness contract for the shared-tokenizer 1M/10M/96M
+# real-paper pilots. This is separate from the prespecified 34M paper screen so
+# adding tier experiments cannot mutate that experiment's frozen consumer set.
+kind: localagent_packed_corpus_freeze_spec
+schema_version: 1
+
+corpus_config: configs/data/pretrain-paper.yaml
+shards_dir: data/shards/paper-all
+freeze_path: data/shards/paper-all/tier-freeze.json
+tokenizer:
+  kind: bpe
+  path: data/tokenizer-paper-16k.json
+  vocab_size: 16384
+
+expected:
+  seq_len: 2048
+  min_train_tokens: 19628032
+  tokenizer_training_split: train
+
+training_configs:
+  - configs/pretrain/pretrain-paper-tier-1m.yaml
+  - configs/pretrain/pretrain-paper-tier-10m-hybrid.yaml
+  - configs/pretrain/pretrain-paper-tier-10m-attn.yaml
+  - configs/pretrain/pretrain-paper-tier-96m-hybrid.yaml
+  - configs/pretrain/pretrain-paper-tier-96m-attn.yaml

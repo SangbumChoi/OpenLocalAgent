@@ -1,0 +1,38 @@
+# Bounded exact-reward RL pilot inheriting the seed-2027 SFT checkpoint.
+stage: rl
+model_config: configs/model/webgpu-10m-hybrid.yaml
+init_from: runs/sft-webgpu-proxy-pilot-hybrid-seed2027/latest.pt
+data:
+  conversations:
+    - data/synth/agent_sft.jsonl
+  eval_conversations:
+    - data/synth/agent_eval_pilot65.jsonl
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-webgpu-proxy-16k.json
+environment:
+  name: canonical_toolcalls
+  learned_judge: false
+rollout:
+  prompts_per_step: 4
+  group_size: 2
+  max_new_tokens: 64
+  temperature: 1.0
+policy:
+  clip_ratio: 0.2
+  kl_beta: 0.02
+  epochs_per_rollout: 2
+reward:
+  format_weight: 0.1
+  truncation_penalty: 0.05
+optim:
+  name: adamw
+  lr: 2.0e-5
+schedule:
+  total_steps: 32
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2027
+log:
+  out_dir: runs/rl-webgpu-proxy-pilot-hybrid-seed2027

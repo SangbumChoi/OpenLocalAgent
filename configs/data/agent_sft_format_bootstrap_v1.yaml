@@ -1,0 +1,65 @@
+# Continuation-SFT recovery corpus for the trained 1M paper checkpoint.
+#
+# The 8,192 rows are unchanged members of the verified 50k train artifact. With source-order
+# sampling, an effective batch of 16 consumes this curriculum exactly once in 512 optimizer
+# updates. The phase order first drills the strict single-call envelope, then adds multi-argument
+# JSON, parallel envelopes, and finally text/explicit-restraint decisions.
+kind: localagent_format_bootstrap_config
+schema_version: 1
+algorithm: balanced_shortest_simple_turn_v1
+prompt_contract: openai_full_catalog_v1
+
+source:
+  path: data/synth/agent_sft_paper_train_v2.jsonl
+  generator_config: configs/data/agent_synth_paper_train_v2.yaml
+  manifest: data/synth/agent_sft_paper_train_v2.jsonl.manifest.v1.json
+  expected_identity:
+    kind: localagent_synthetic_conversation_artifact
+    schema_version: 1
+    split: train
+    jsonl:
+      bytes: 526494339
+      sha256: 233f4f2d796568097897c73d4547a0129e73a8509981a308600779e3cb4cc060
+    sidecar:
+      bytes: 6341
+      sha256: 9d415aef41a1557d4dd16339fcde94d6dff5fcf6fec121372e5cfe3f1875f383
+      manifest_self_sha256: e5b9d66c7761fb6d9f731e4fab2aa5b316d4714911ab7d00d89a9cbe1bd36243
+    generator_config:
+      bytes: 1600
+      sha256: 2f03b929507e49f7f73a50e125c144fdd09efa6989306ad0e3c0d03beabc6dbe
+
+evaluation_holdout:
+  path: data/synth/agent_eval.jsonl
+  generator_config: configs/data/agent_synth_eval.yaml
+  manifest: data/synth/agent_eval.jsonl.manifest.v1.json
+  expected_identity:
+    kind: localagent_synthetic_conversation_artifact
+    schema_version: 1
+    split: eval
+    jsonl:
+      bytes: 50859313
+      sha256: e2c2406865a076f21ca1dd8747187ae2c2a2af0c06888b207b702aa6f2ebfb07
+    sidecar:
+      bytes: 3834
+      sha256: 299152ffa32e7b358e59de37fbf127461d31dd3e1b0e782b4a1fca9600553bdd
+      manifest_self_sha256: 3e923355316dc222ab5fcee46e205faef388fab245827fad8444cfb9d43dd10b
+    generator_config:
+      bytes: 932
+      sha256: 073dec74894b14bfddfda42fbe73210532d5c8de96ae3ff56ff981d1e6a10cd3
+
+tokenizer:
+  kind: bpe
+  path: data/tokenizer-paper-16k.json
+  identity:
+    bytes: 1133030
+    sha256: a6de45b9f5e5d7b570c3b12191cc9299fe728e857844b56486760c32f5d45436
+
+phases:
+  format_core: 4096
+  multi_argument: 1536
+  parallel: 1024
+  text: 1536
+
+out: data/synth/agent_sft_format_bootstrap_v1.jsonl
+manifest: data/synth/agent_sft_format_bootstrap_v1.jsonl.manifest.v1.json
+receipt: data/provenance/paper/agent-sft-format-bootstrap-v1.json

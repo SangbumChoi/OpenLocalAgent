@@ -1,0 +1,889 @@
+{
+  "aggregate_sha256": "071c6ee837e50968369497f65bd6938f8920c185875d2495c3152bdcae3f15bc",
+  "design": {
+    "difference": "attention_minus_hybrid",
+    "document_bootstrap_role": "within-seed held-out-document uncertainty only; intervals are not pooled or treated as architecture-seed uncertainty",
+    "exploratory_subgroups": [
+      "code",
+      "general"
+    ],
+    "inference_caveat": "three seeds permit only a fragile model-based t interval and a low-power exact sign test; report every seed estimate",
+    "primary_metric": "overall.bits_per_byte",
+    "secondary_metrics": [
+      "overall.cross_entropy_nats_per_token",
+      "overall.top1_accuracy"
+    ],
+    "seed_count": 3,
+    "training_seeds": [
+      2027,
+      2028,
+      2029
+    ],
+    "unit_of_replication": "training_seed"
+  },
+  "evaluation": {
+    "batch_size": 1,
+    "boundary_policy": "predict source tokens only; prepend EOS once at document start; use non-overlapping target chunks with exact source-token coverage; later chunks reset model state but overlap the preceding source token as their first input; exclude closing EOS from CE and BPB",
+    "chunk_length": 2048,
+    "device": "cpu",
+    "dtype": "float32"
+  },
+  "groups": {
+    "code": {
+      "documents_per_seed": 24,
+      "metrics": {
+        "bits_per_byte": {
+          "attention": {
+            "maximum": 2.2376669205892243,
+            "mean": 2.2298690233649956,
+            "median": 2.2268774917584238,
+            "minimum": 2.2250626577473382,
+            "sample_standard_deviation": 0.006813868685385394,
+            "standard_error": 0.003933988919730019
+          },
+          "difference": "attention_minus_hybrid",
+          "difference_attention_minus_hybrid": {
+            "attention_favoring_seeds": 0,
+            "exact_sign_test": {
+              "majority_one_sided_p_value": 0.125,
+              "majority_wins": 3,
+              "non_ties": 3,
+              "two_sided_p_value": 0.25
+            },
+            "hybrid_favoring_seeds": 3,
+            "maximum": 0.10406720942100897,
+            "mean": 0.10169832878279628,
+            "median": 0.1025188254535319,
+            "minimum": 0.09850895147384796,
+            "sample_standard_deviation": 0.0028685307984769523,
+            "standard_error": 0.0016561470286794006,
+            "student_t_95_interval": {
+              "assumption": "model-based interval assuming approximately normal seed effects; normality cannot be assessed with three seeds",
+              "confidence": 0.95,
+              "critical_value": 4.302652729911275,
+              "degrees_of_freedom": 2,
+              "lower": 0.09457250324871441,
+              "upper": 0.10882415431687814
+            },
+            "ties": 0
+          },
+          "hybrid": {
+            "maximum": 2.1335997111682152,
+            "mean": 2.128170694582199,
+            "median": 2.1265537062734903,
+            "minimum": 2.124358666304892,
+            "sample_standard_deviation": 0.0048280654442917036,
+            "standard_error": 0.0027874848839269453
+          },
+          "orientation": "lower_is_better",
+          "seed_estimates": [
+            {
+              "attention": 2.2268774917584238,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": 0.09516904489947095,
+                "upper": 0.1166304355429558
+              },
+              "estimate": 0.1025188254535319,
+              "hybrid": 2.124358666304892,
+              "training_seed": 2027
+            },
+            {
+              "attention": 2.2376669205892243,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": 0.09621023399330186,
+                "upper": 0.11678328920522317
+              },
+              "estimate": 0.10406720942100897,
+              "hybrid": 2.1335997111682152,
+              "training_seed": 2028
+            },
+            {
+              "attention": 2.2250626577473382,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": 0.09189419339916421,
+                "upper": 0.11076870440429866
+              },
+              "estimate": 0.09850895147384796,
+              "hybrid": 2.1265537062734903,
+              "training_seed": 2029
+            }
+          ]
+        },
+        "cross_entropy_nats_per_token": {
+          "attention": {
+            "maximum": 5.437051765946036,
+            "mean": 5.418104544407588,
+            "median": 5.410835762778502,
+            "minimum": 5.406426104498228,
+            "sample_standard_deviation": 0.016556242766927784,
+            "standard_error": 0.00955875121825455
+          },
+          "difference": "attention_minus_hybrid",
+          "difference_attention_minus_hybrid": {
+            "attention_favoring_seeds": 0,
+            "exact_sign_test": {
+              "majority_one_sided_p_value": 0.125,
+              "majority_wins": 3,
+              "non_ties": 3,
+              "two_sided_p_value": 0.25
+            },
+            "hybrid_favoring_seeds": 3,
+            "maximum": 0.25286104895834133,
+            "mean": 0.2471051759377408,
+            "median": 0.24909880726487385,
+            "minimum": 0.23935567159000729,
+            "sample_standard_deviation": 0.006969915987059815,
+            "standard_error": 0.00402408287135806,
+            "student_t_95_interval": {
+              "assumption": "model-based interval assuming approximately normal seed effects; normality cannot be assessed with three seeds",
+              "confidence": 0.95,
+              "critical_value": 4.302652729911275,
+              "degrees_of_freedom": 2,
+              "lower": 0.22979094478590284,
+              "upper": 0.2644194070895788
+            },
+            "ties": 0
+          },
+          "hybrid": {
+            "maximum": 5.184190716987694,
+            "mean": 5.170999368469848,
+            "median": 5.16707043290822,
+            "minimum": 5.161736955513628,
+            "sample_standard_deviation": 0.011731165844413432,
+            "standard_error": 0.006772991758180238
+          },
+          "orientation": "lower_is_better",
+          "seed_estimates": [
+            {
+              "attention": 5.410835762778502,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": 0.23618644018846233,
+                "upper": 0.27255878887174206
+              },
+              "estimate": 0.24909880726487385,
+              "hybrid": 5.161736955513628,
+              "training_seed": 2027
+            },
+            {
+              "attention": 5.437051765946036,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": 0.23629487894478787,
+                "upper": 0.273030180257849
+              },
+              "estimate": 0.25286104895834133,
+              "hybrid": 5.184190716987694,
+              "training_seed": 2028
+            },
+            {
+              "attention": 5.406426104498228,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": 0.22763102835958413,
+                "upper": 0.25916118885063816
+              },
+              "estimate": 0.23935567159000729,
+              "hybrid": 5.16707043290822,
+              "training_seed": 2029
+            }
+          ]
+        },
+        "top1_accuracy": {
+          "attention": {
+            "maximum": 0.19082613754669606,
+            "mean": 0.18940399153516918,
+            "median": 0.18915222405944435,
+            "minimum": 0.18823361299936717,
+            "sample_standard_deviation": 0.001314471767859759,
+            "standard_error": 0.0007589106290159952
+          },
+          "difference": "attention_minus_hybrid",
+          "difference_attention_minus_hybrid": {
+            "attention_favoring_seeds": 0,
+            "exact_sign_test": {
+              "majority_one_sided_p_value": 0.125,
+              "majority_wins": 3,
+              "non_ties": 3,
+              "two_sided_p_value": 0.25
+            },
+            "hybrid_favoring_seeds": 3,
+            "maximum": -0.026027313368852962,
+            "mean": -0.029905893400289874,
+            "median": -0.031191948884397903,
+            "minimum": -0.032498417947618756,
+            "sample_standard_deviation": 0.0034218785262607088,
+            "standard_error": 0.0019756224882708203,
+            "student_t_95_interval": {
+              "assumption": "model-based interval assuming approximately normal seed effects; normality cannot be assessed with three seeds",
+              "confidence": 0.95,
+              "critical_value": 4.302652729911275,
+              "degrees_of_freedom": 2,
+              "lower": -0.03840631089272242,
+              "upper": -0.021405475907857324
+            },
+            "ties": 0
+          },
+          "hybrid": {
+            "maximum": 0.22332455549431482,
+            "mean": 0.21930988493545908,
+            "median": 0.22034417294384223,
+            "minimum": 0.21426092636822014,
+            "sample_standard_deviation": 0.004619486659474391,
+            "standard_error": 0.002667061866365425
+          },
+          "orientation": "higher_is_better",
+          "seed_estimates": [
+            {
+              "attention": 0.18915222405944435,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": -0.04176192796332896,
+                "upper": -0.02472252863628819
+              },
+              "estimate": -0.031191948884397903,
+              "hybrid": 0.22034417294384223,
+              "training_seed": 2027
+            },
+            {
+              "attention": 0.18823361299936717,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": -0.032489828003835056,
+                "upper": -0.021621369695318467
+              },
+              "estimate": -0.026027313368852962,
+              "hybrid": 0.21426092636822014,
+              "training_seed": 2028
+            },
+            {
+              "attention": 0.19082613754669606,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": -0.043209344888595534,
+                "upper": -0.026518983280678716
+              },
+              "estimate": -0.032498417947618756,
+              "hybrid": 0.22332455549431482,
+              "training_seed": 2029
+            }
+          ]
+        }
+      },
+      "tokens_per_seed": 48987,
+      "utf8_bytes_per_seed": 171721
+    },
+    "general": {
+      "documents_per_seed": 216,
+      "metrics": {
+        "bits_per_byte": {
+          "attention": {
+            "maximum": 2.0825204058141127,
+            "mean": 2.0811585990371504,
+            "median": 2.082269812117247,
+            "minimum": 2.078685579180091,
+            "sample_standard_deviation": 0.002145360042110363,
+            "standard_error": 0.001238624197821085
+          },
+          "difference": "attention_minus_hybrid",
+          "difference_attention_minus_hybrid": {
+            "attention_favoring_seeds": 0,
+            "exact_sign_test": {
+              "majority_one_sided_p_value": 0.125,
+              "majority_wins": 3,
+              "non_ties": 3,
+              "two_sided_p_value": 0.25
+            },
+            "hybrid_favoring_seeds": 3,
+            "maximum": 0.07046547910019577,
+            "mean": 0.06813601214548147,
+            "median": 0.06841312072964385,
+            "minimum": 0.0655294366066048,
+            "sample_standard_deviation": 0.002479661418459439,
+            "standard_error": 0.0014316331874466865,
+            "student_t_95_interval": {
+              "assumption": "model-based interval assuming approximately normal seed effects; normality cannot be assessed with three seeds",
+              "confidence": 0.95,
+              "critical_value": 4.302652729911275,
+              "degrees_of_freedom": 2,
+              "lower": 0.061976191703282404,
+              "upper": 0.07429583258768054
+            },
+            "ties": 0
+          },
+          "hybrid": {
+            "maximum": 2.016740375510642,
+            "mean": 2.013022586891669,
+            "median": 2.0141072850844686,
+            "minimum": 2.0082201000798956,
+            "sample_standard_deviation": 0.0043624764734085456,
+            "standard_error": 0.0025186769662558332
+          },
+          "orientation": "lower_is_better",
+          "seed_estimates": [
+            {
+              "attention": 2.082269812117247,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": 0.06290683653999342,
+                "upper": 0.06833965469005712
+              },
+              "estimate": 0.0655294366066048,
+              "hybrid": 2.016740375510642,
+              "training_seed": 2027
+            },
+            {
+              "attention": 2.0825204058141127,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": 0.06626305250443715,
+                "upper": 0.0708320744233481
+              },
+              "estimate": 0.06841312072964385,
+              "hybrid": 2.0141072850844686,
+              "training_seed": 2028
+            },
+            {
+              "attention": 2.078685579180091,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": 0.06834934103461905,
+                "upper": 0.07291128958662266
+              },
+              "estimate": 0.07046547910019577,
+              "hybrid": 2.0082201000798956,
+              "training_seed": 2029
+            }
+          ]
+        },
+        "cross_entropy_nats_per_token": {
+          "attention": {
+            "maximum": 6.202106217496992,
+            "mean": 6.198050521209527,
+            "median": 6.201359906094204,
+            "minimum": 6.190685440037387,
+            "sample_standard_deviation": 0.0063892535308630784,
+            "standard_error": 0.0036888372459645655
+          },
+          "difference": "attention_minus_hybrid",
+          "difference_attention_minus_hybrid": {
+            "attention_favoring_seeds": 0,
+            "exact_sign_test": {
+              "majority_one_sided_p_value": 0.125,
+              "majority_wins": 3,
+              "non_ties": 3,
+              "two_sided_p_value": 0.25
+            },
+            "hybrid_favoring_seeds": 3,
+            "maximum": 0.20985839314039284,
+            "mean": 0.20292083735800936,
+            "median": 0.2037461146844437,
+            "minimum": 0.19515800424919152,
+            "sample_standard_deviation": 0.007384860891532333,
+            "standard_error": 0.004263651423654133,
+            "student_t_95_interval": {
+              "assumption": "model-based interval assuming approximately normal seed effects; normality cannot be assessed with three seeds",
+              "confidence": 0.95,
+              "critical_value": 4.302652729911275,
+              "degrees_of_freedom": 2,
+              "lower": 0.18457582592063382,
+              "upper": 0.2212658487953849
+            },
+            "ties": 0
+          },
+          "hybrid": {
+            "maximum": 6.006201901845013,
+            "mean": 5.995129683851519,
+            "median": 5.998360102812548,
+            "minimum": 5.980827046896994,
+            "sample_standard_deviation": 0.0129922100085427,
+            "standard_error": 0.007501055945800279
+          },
+          "orientation": "lower_is_better",
+          "seed_estimates": [
+            {
+              "attention": 6.201359906094204,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": 0.18591157639386724,
+                "upper": 0.20531556938592263
+              },
+              "estimate": 0.19515800424919152,
+              "hybrid": 6.006201901845013,
+              "training_seed": 2027
+            },
+            {
+              "attention": 6.202106217496992,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": 0.19613942154146904,
+                "upper": 0.2125025281653034
+              },
+              "estimate": 0.2037461146844437,
+              "hybrid": 5.998360102812548,
+              "training_seed": 2028
+            },
+            {
+              "attention": 6.190685440037387,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": 0.20177439096290795,
+                "upper": 0.21915557587698167
+              },
+              "estimate": 0.20985839314039284,
+              "hybrid": 5.980827046896994,
+              "training_seed": 2029
+            }
+          ]
+        },
+        "top1_accuracy": {
+          "attention": {
+            "maximum": 0.14403590525839383,
+            "mean": 0.14314190567186863,
+            "median": 0.14274519335534808,
+            "minimum": 0.142644618401864,
+            "sample_standard_deviation": 0.0007758577677947793,
+            "standard_error": 0.000447941691089178
+          },
+          "difference": "attention_minus_hybrid",
+          "difference_attention_minus_hybrid": {
+            "attention_favoring_seeds": 0,
+            "exact_sign_test": {
+              "majority_one_sided_p_value": 0.125,
+              "majority_wins": 3,
+              "non_ties": 3,
+              "two_sided_p_value": 0.25
+            },
+            "hybrid_favoring_seeds": 3,
+            "maximum": -0.018945806862564325,
+            "mean": -0.020292393739767895,
+            "median": -0.02031614060378497,
+            "minimum": -0.02161523375295439,
+            "sample_standard_deviation": 0.001334871872483415,
+            "standard_error": 0.0007706886349119595,
+            "student_t_95_interval": {
+              "assumption": "model-based interval assuming approximately normal seed effects; normality cannot be assessed with three seeds",
+              "confidence": 0.95,
+              "critical_value": 4.302652729911275,
+              "degrees_of_freedom": 2,
+              "lower": -0.02360839929868343,
+              "upper": -0.01697638818085236
+            },
+            "ties": 0
+          },
+          "hybrid": {
+            "maximum": 0.1656511390113482,
+            "mean": 0.16343429941163654,
+            "median": 0.16296075900564896,
+            "minimum": 0.1616910002179124,
+            "sample_standard_deviation": 0.002022091788939345,
+            "standard_error": 0.0011674552386702628
+          },
+          "orientation": "higher_is_better",
+          "seed_estimates": [
+            {
+              "attention": 0.14274519335534808,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": -0.02079162156461442,
+                "upper": -0.017175565938768646
+              },
+              "estimate": -0.018945806862564325,
+              "hybrid": 0.1616910002179124,
+              "training_seed": 2027
+            },
+            {
+              "attention": 0.142644618401864,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": -0.022296737334932055,
+                "upper": -0.018601489841045354
+              },
+              "estimate": -0.02031614060378497,
+              "hybrid": 0.16296075900564896,
+              "training_seed": 2028
+            },
+            {
+              "attention": 0.14403590525839383,
+              "document_bootstrap_percentile_ci": {
+                "confidence": 0.95,
+                "lower": -0.023356614059721333,
+                "upper": -0.0199796818006437
+              },
+              "estimate": -0.02161523375295439,
+              "hybrid": 0.1656511390113482,
+              "training_seed": 2029
+            }
+          ]
+        }
+      },
+      "tokens_per_seed": 238628,
+      "utf8_bytes_per_seed": 1025288
+    }
+  },
+  "inputs": [
+    {
+      "attention_checkpoint_sha256": "2b8ec35b0684c4386983e835e22ada2dfb2288f1a2944b7014f196fa33fcb3eb",
+      "attention_config": {
+        "bytes": 790,
+        "lineage_sha256": "e773507d9ecc510e923b294cf0121232fa24897334f68a62c90bba1aed5540fe",
+        "path": "configs/train/pretrain-webgpu-proxy-1tpp-attn-seed2027.yaml",
+        "sha256": "df63241c120b456e5d3d3b6675d49cf0be578de5c39f1fc647aa742e0f4d4e4e"
+      },
+      "comparison": {
+        "bytes": 8980,
+        "comparison_sha256": "9bbf14fe395e196d0c78e10e820a401fa3d1572e91ea65091490424534986bc4",
+        "path": "docs/paper/results/raw/pretrain-proxy-seeds2027-2029/seed2027.paired.json",
+        "sha256": "4b65e2d6858abcf98b2c9291e197cd881ecf5f39d52b6b7915d40eaa3d569c80"
+      },
+      "document_bootstrap": {
+        "confidence": 0.95,
+        "resamples": 10000,
+        "seed": 2026,
+        "unit": "document"
+      },
+      "hybrid_checkpoint_sha256": "1952ad7f956e02352a395ee9b34d37e893b210f9943935c0bfc3af3c4057bd2b",
+      "hybrid_config": {
+        "bytes": 799,
+        "lineage_sha256": "40e4c5a78f83468af2f9aa3ba934be5530a9dad1971cfb9e02c73b1f1e0b35b3",
+        "path": "configs/train/pretrain-webgpu-proxy-1tpp-hybrid-seed2027.yaml",
+        "sha256": "2850e12f23ec3610b9a51e574d4f98c8f8f1ecbb84a7e34d72568f6c915a0fe8"
+      },
+      "token_accounting": {
+        "input_tokens": 10549844,
+        "loss_tokens": 10549838,
+        "source": "checkpoint.token_accounting"
+      },
+      "training_seed": 2027
+    },
+    {
+      "attention_checkpoint_sha256": "dccc178203835407b93d0594d0db67a350ef559b647b621096dd2162afa2f6ee",
+      "attention_config": {
+        "bytes": 790,
+        "lineage_sha256": "4d5e0d932963eb13e7106e67527286e454e85d35603023e9dc0317175aaef710",
+        "path": "configs/train/pretrain-webgpu-proxy-1tpp-attn-seed2028.yaml",
+        "sha256": "63ff429e804345ba5f733bd35a07a3893e2dd58c8f1c3d36f895381047eae036"
+      },
+      "comparison": {
+        "bytes": 8979,
+        "comparison_sha256": "9bebd8b4cc7b80d260c8b4d0ea9e9ee6d0baf86783bdfb14aad3a3b06b334dc8",
+        "path": "docs/paper/results/raw/pretrain-proxy-seeds2027-2029/seed2028.paired.json",
+        "sha256": "e0ae568bb8906bd2d877f2d8c498449cf0dbbbb4e0fa083cdf0cfa0c6e2ab3dc"
+      },
+      "document_bootstrap": {
+        "confidence": 0.95,
+        "resamples": 10000,
+        "seed": 2026,
+        "unit": "document"
+      },
+      "hybrid_checkpoint_sha256": "69044c80828db469f865dc4d29677979428c0ae1453a52e19285e86f607747c7",
+      "hybrid_config": {
+        "bytes": 799,
+        "lineage_sha256": "3ed3a45d544f0398adfe24d5d56466973db9a77f65edef483ed5acb4afb1af95",
+        "path": "configs/train/pretrain-webgpu-proxy-1tpp-hybrid-seed2028.yaml",
+        "sha256": "7dc8354845d4fb9e863d5c1eccfa2b185d558677d5aea608781996a694b02386"
+      },
+      "token_accounting": {
+        "input_tokens": 10551296,
+        "loss_tokens": 10551292,
+        "source": "checkpoint.token_accounting"
+      },
+      "training_seed": 2028
+    },
+    {
+      "attention_checkpoint_sha256": "835c1d5c111b479b9a721ee4b87c73abdcda0a6701875367ccbf35a700f49732",
+      "attention_config": {
+        "bytes": 790,
+        "lineage_sha256": "bbaff95621adefc49392f1e1ff3e1f3d6efe641da403ed64b8647aae7aca3bb1",
+        "path": "configs/train/pretrain-webgpu-proxy-1tpp-attn-seed2029.yaml",
+        "sha256": "ed70b28f35eec70e644dff0d083f44d326c8e9ea3ae6a54e7f0161c78795e1da"
+      },
+      "comparison": {
+        "bytes": 8982,
+        "comparison_sha256": "58ba5151fe2e4fa3f920f9dfffbc57833124844c0fc8ad546a64a4b3fe494f17",
+        "path": "docs/paper/results/raw/pretrain-proxy-seeds2027-2029/seed2029.paired.json",
+        "sha256": "bab5296e66463a49a257493c97cb7fdfc806d707a525cc8a0e2896e81fcee51f"
+      },
+      "document_bootstrap": {
+        "confidence": 0.95,
+        "resamples": 10000,
+        "seed": 2026,
+        "unit": "document"
+      },
+      "hybrid_checkpoint_sha256": "4791d5650fd526fe9fe010975ad961b6754f527b60b632423b00948e9d888753",
+      "hybrid_config": {
+        "bytes": 799,
+        "lineage_sha256": "1f2e58f4c07fec6921e56ffd41a85aefa57f7a6accfe2104649085f546b173dd",
+        "path": "configs/train/pretrain-webgpu-proxy-1tpp-hybrid-seed2029.yaml",
+        "sha256": "24610df51165dd5a9719f1a31c3ffeb25a8f20a68f1dd196e7be091f19069ed6"
+      },
+      "token_accounting": {
+        "input_tokens": 10551296,
+        "loss_tokens": 10551292,
+        "source": "checkpoint.token_accounting"
+      },
+      "training_seed": 2029
+    }
+  ],
+  "kind": "localagent_pretrain_seed_aggregate",
+  "matched_bindings": {
+    "manifest_canonical_sha256": "0959bc556ceb47259f8e52aafb2c06e8629e49183eb5365022b8827a30b17002",
+    "manifest_sha256": "6a10cc606902a648258dc58ddb3ba19aa68c5b5ed6d812fcb2f06cbedfcaa9fd",
+    "split_assignment_sha256": "1135168824cea6f6ed6ec2d983933a303023794fd0064d8e0041b4afaf7b904b",
+    "staging_database_sha256": "b207f7a08cf868c280427a34c8043363fbe8f42b2e6a23b9af34fd936bf1c930",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+    "validation_document_content_sha256": "c32a0bf500b2283c6e77822b421eb1bf1dd044a2737872922b66024e72dc6808",
+    "validation_document_set_sha256": "29f7302550af5e15fe7a3c9cda305bf8ca56c084cd0d20f38a7a26db1274b0a6"
+  },
+  "overall": {
+    "documents_per_seed": 240,
+    "metrics": {
+      "bits_per_byte": {
+        "attention": {
+          "maximum": 2.104777477117417,
+          "mean": 2.102492359080727,
+          "median": 2.103014998958501,
+          "minimum": 2.0996846011662638,
+          "sample_standard_deviation": 0.0025863508452718524,
+          "standard_error": 0.0014932303567365202
+        },
+        "difference": "attention_minus_hybrid",
+        "difference_attention_minus_hybrid": {
+          "attention_favoring_seeds": 0,
+          "exact_sign_test": {
+            "majority_one_sided_p_value": 0.125,
+            "majority_wins": 3,
+            "non_ties": 3,
+            "two_sided_p_value": 0.25
+          },
+          "hybrid_favoring_seeds": 3,
+          "maximum": 0.07448855087281897,
+          "mean": 0.07295080850480402,
+          "median": 0.0735279993681252,
+          "minimum": 0.07083587527346794,
+          "sample_standard_deviation": 0.0018935077839950067,
+          "standard_error": 0.001093217228802169,
+          "student_t_95_interval": {
+            "assumption": "model-based interval assuming approximately normal seed effects; normality cannot be assessed with three seeds",
+            "confidence": 0.95,
+            "critical_value": 4.302652729911275,
+            "degrees_of_freedom": 2,
+            "lower": 0.06824707441091234,
+            "upper": 0.07765454259869571
+          },
+          "ties": 0
+        },
+        "hybrid": {
+          "maximum": 2.032179123685033,
+          "mean": 2.029541550575923,
+          "median": 2.031249477749292,
+          "minimum": 2.0251960502934447,
+          "sample_standard_deviation": 0.0037919111171315282,
+          "standard_error": 0.0021892609042190223
+        },
+        "orientation": "lower_is_better",
+        "seed_estimates": [
+          {
+            "attention": 2.103014998958501,
+            "document_bootstrap_percentile_ci": {
+              "confidence": 0.95,
+              "lower": 0.06722231162705555,
+              "upper": 0.07483361694431187
+            },
+            "estimate": 0.07083587527346794,
+            "hybrid": 2.032179123685033,
+            "training_seed": 2027
+          },
+          {
+            "attention": 2.104777477117417,
+            "document_bootstrap_percentile_ci": {
+              "confidence": 0.95,
+              "lower": 0.07005373487788366,
+              "upper": 0.07754557159173162
+            },
+            "estimate": 0.0735279993681252,
+            "hybrid": 2.031249477749292,
+            "training_seed": 2028
+          },
+          {
+            "attention": 2.0996846011662638,
+            "document_bootstrap_percentile_ci": {
+              "confidence": 0.95,
+              "lower": 0.07161798547908169,
+              "upper": 0.07769700129903515
+            },
+            "estimate": 0.07448855087281897,
+            "hybrid": 2.0251960502934447,
+            "training_seed": 2029
+          }
+        ]
+      },
+      "cross_entropy_nats_per_token": {
+        "attention": {
+          "maximum": 6.071801044198914,
+          "mean": 6.065209001936901,
+          "median": 6.066716698303907,
+          "minimum": 6.057109263307882,
+          "sample_standard_deviation": 0.007461029934857145,
+          "standard_error": 0.004307627641321629
+        },
+        "difference": "attention_minus_hybrid",
+        "difference_attention_minus_hybrid": {
+          "attention_favoring_seeds": 0,
+          "exact_sign_test": {
+            "majority_one_sided_p_value": 0.125,
+            "majority_wins": 3,
+            "non_ties": 3,
+            "two_sided_p_value": 0.25
+          },
+          "hybrid_favoring_seeds": 3,
+          "maximum": 0.21488241198298194,
+          "mean": 0.2104463773820182,
+          "median": 0.21211144085058742,
+          "minimum": 0.20434527931248525,
+          "sample_standard_deviation": 0.005462336358618443,
+          "standard_error": 0.0031536813670526385,
+          "student_t_95_interval": {
+            "assumption": "model-based interval assuming approximately normal seed effects; normality cannot be assessed with three seeds",
+            "confidence": 0.95,
+            "critical_value": 4.302652729911275,
+            "degrees_of_freedom": 2,
+            "lower": 0.19687718163879886,
+            "upper": 0.22401557312523757
+          },
+          "ties": 0
+        },
+        "hybrid": {
+          "maximum": 5.862371418991422,
+          "mean": 5.8547626245548825,
+          "median": 5.859689603348326,
+          "minimum": 5.8422268513249,
+          "sample_standard_deviation": 0.010938795255468235,
+          "standard_error": 0.0063155163853547865
+        },
+        "orientation": "lower_is_better",
+        "seed_estimates": [
+          {
+            "attention": 6.066716698303907,
+            "document_bootstrap_percentile_ci": {
+              "confidence": 0.95,
+              "lower": 0.1946704127661112,
+              "upper": 0.21453532333643738
+            },
+            "estimate": 0.20434527931248525,
+            "hybrid": 5.862371418991422,
+            "training_seed": 2027
+          },
+          {
+            "attention": 6.071801044198914,
+            "document_bootstrap_percentile_ci": {
+              "confidence": 0.95,
+              "lower": 0.20338425376232894,
+              "upper": 0.2217138334703234
+            },
+            "estimate": 0.21211144085058742,
+            "hybrid": 5.859689603348326,
+            "training_seed": 2028
+          },
+          {
+            "attention": 6.057109263307882,
+            "document_bootstrap_percentile_ci": {
+              "confidence": 0.95,
+              "lower": 0.20710949224813233,
+              "upper": 0.22358193596918424
+            },
+            "estimate": 0.21488241198298194,
+            "hybrid": 5.8422268513249,
+            "training_seed": 2029
+          }
+        ]
+      },
+      "top1_accuracy": {
+        "attention": {
+          "maximum": 0.15200528484258471,
+          "mean": 0.15102133059819553,
+          "median": 0.15064930549519323,
+          "minimum": 0.1504094014568086,
+          "sample_standard_deviation": 0.0008605306230442707,
+          "standard_error": 0.000496827586860526
+        },
+        "difference": "attention_minus_hybrid",
+        "difference_attention_minus_hybrid": {
+          "attention_favoring_seeds": 0,
+          "exact_sign_test": {
+            "majority_one_sided_p_value": 0.125,
+            "majority_wins": 3,
+            "non_ties": 3,
+            "two_sided_p_value": 0.25
+          },
+          "hybrid_favoring_seeds": 3,
+          "maximum": -0.021031587365053978,
+          "mean": -0.021929778813112435,
+          "median": -0.021288875754046206,
+          "minimum": -0.023468873320237123,
+          "sample_standard_deviation": 0.0013390885912341992,
+          "standard_error": 0.0007731231586178217,
+          "student_t_95_interval": {
+            "assumption": "model-based interval assuming approximately normal seed effects; normality cannot be assessed with three seeds",
+            "confidence": 0.95,
+            "critical_value": 4.302652729911275,
+            "degrees_of_freedom": 2,
+            "lower": -0.025256259282097033,
+            "upper": -0.018603298344127838
+          },
+          "ties": 0
+        },
+        "hybrid": {
+          "maximum": 0.17547415816282183,
+          "mean": 0.17295110941130795,
+          "median": 0.1716982772108548,
+          "minimum": 0.1716808928602472,
+          "sample_standard_deviation": 0.002185041602761456,
+          "standard_error": 0.0012615343575448582
+        },
+        "orientation": "higher_is_better",
+        "seed_estimates": [
+          {
+            "attention": 0.15064930549519323,
+            "document_bootstrap_percentile_ci": {
+              "confidence": 0.95,
+              "lower": -0.023279874247819972,
+              "upper": -0.018963660669609087
+            },
+            "estimate": -0.021031587365053978,
+            "hybrid": 0.1716808928602472,
+            "training_seed": 2027
+          },
+          {
+            "attention": 0.1504094014568086,
+            "document_bootstrap_percentile_ci": {
+              "confidence": 0.95,
+              "lower": -0.023250808111455887,
+              "upper": -0.01949600915185404
+            },
+            "estimate": -0.021288875754046206,
+            "hybrid": 0.1716982772108548,
+            "training_seed": 2028
+          },
+          {
+            "attention": 0.15200528484258471,
+            "document_bootstrap_percentile_ci": {
+              "confidence": 0.95,
+              "lower": -0.025589802704637562,
+              "upper": -0.021610848160124978
+            },
+            "estimate": -0.023468873320237123,
+            "hybrid": 0.17547415816282183,
+            "training_seed": 2029
+          }
+        ]
+      }
+    },
+    "tokens_per_seed": 287615,
+    "utf8_bytes_per_seed": 1197009
+  },
+  "schema_version": 1
+}

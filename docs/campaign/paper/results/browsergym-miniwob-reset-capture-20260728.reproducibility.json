@@ -1,0 +1,127 @@
+{
+  "capture": {
+    "bytes": 348513,
+    "rows": 240,
+    "sha256": "128f7f6be8d5b52f745523b0bca4517fdaf8107044eee5a76366464ac10079ff"
+  },
+  "claim_scope": "Reproducibility of reset-returned MiniWoB goal capture only; this is prompt-only decontamination input, not agent evaluation or task-success evidence.",
+  "comparison": {
+    "capture_byte_identical": true,
+    "receipt_byte_identical": true,
+    "separate_python_and_chromium_processes": true
+  },
+  "controlled_plan": {
+    "fixed_seeds": [
+      11,
+      17,
+      23,
+      29
+    ],
+    "localagent_policy_exclusions": [
+      "click-pie",
+      "click-pie-nodelay",
+      "terminal"
+    ],
+    "similarity_groups": 41,
+    "task_variants": 60
+  },
+  "derived_decontamination_suite": {
+    "adapter_audit": {
+      "audit_self_sha256": "037f41f1eb11b0d7f1df51d619bb0e7aa1b7e1a0114554f023d7b0073de77175",
+      "bytes": 6841,
+      "sha256": "5fcef66fe418e2643f5306850363848e60d619f447937b712f0bbeb94e83e03e"
+    },
+    "benchmark_plan": {
+      "bytes": 10113,
+      "sha256": "09584d59c133345eb3fe4507b65a1b7514f04378d6f9b7cae1372afda4a108db"
+    },
+    "denylist": {
+      "bytes": 26402,
+      "records": 163,
+      "sha256": "808b4c5206e5d6ebcd0704b88ba87b7c5c9c7e1866ccfe96ab4201228f436120"
+    },
+    "freeze_contract": {
+      "bytes": 2340,
+      "sha256": "c244a7ba584dbaa1353aa1b4e56f0c1b933896afd13cb7d3e64785ad08a4f557"
+    },
+    "independent_replay": {
+      "denylist_byte_identical": true,
+      "provenance_byte_identical": true,
+      "public_verifier_passed": true
+    },
+    "license_evidence": {
+      "browsergym": {
+        "bytes": 579,
+        "sha256": "b192c58991e8ff585cc574615d40e74185404d4b96c1109d423071ab1367344b"
+      },
+      "miniwob_plusplus": {
+        "bytes": 1222,
+        "sha256": "fd6529fb8f648d4130fd969e3d7fc740c9992a0bd94a1998f52555a873311511"
+      }
+    },
+    "prompt_export": {
+      "bytes": 30773,
+      "rows": 240,
+      "sha256": "383513a042f0421f9a40da24fb42fae5b45ece69b53bdf762dc0cf6086d0f477"
+    },
+    "provenance": {
+      "bytes": 4082,
+      "file_sha256": "b9387948eb98837baf5191415acf0458c08d7fb899f70236b56d9f02ced98922",
+      "manifest_self_sha256": "63c8b48a8fdbc58c3086d41537594a2335d7f573360390a9ecf612561372e95f"
+    }
+  },
+  "goal_statistics": {
+    "exact_unique_goals": 163,
+    "goal_utf8_bytes_max": 100,
+    "goal_utf8_bytes_mean": 57.479166666666664,
+    "goal_utf8_bytes_min": 12,
+    "goal_utf8_bytes_sum": 13795,
+    "normalized_duplicate_rows_removed": 77,
+    "normalized_unique_denylist_prompts": 163,
+    "seed_static_tasks": 15,
+    "seed_varying_tasks": 45
+  },
+  "kind": "localagent_browsergym_miniwob_capture_reproducibility",
+  "limitations": [
+    "The capture copies observation.goal returned by reset and takes no actions.",
+    "The two runs used one macOS arm64 host and one frozen browser/runtime installation.",
+    "Artifact hashes establish local integrity and repeatability, not upstream authorship or chronological freshness."
+  ],
+  "producer_receipt": {
+    "bytes": 6538,
+    "kind": "localagent_browsergym_capture_producer_receipt",
+    "producer": "browsergym-miniwob-controlled-reset-goals-v3",
+    "receipt_self_sha256": "e8cece5a8acf0f5e2333e004c33b035b4b31fa7ec3e3d501c43fcbbac341611a",
+    "schema_version": 3,
+    "sha256": "b04318c36579a05d3f61a40ea09c1f1c0bd1e004a534b2b5d18305b50e68ebea"
+  },
+  "report_self_sha256": "1630d3b947c6f06797b3fe1d237199c72a886f296d4b82bfbc55997bd6c42d4c",
+  "runs": [
+    {
+      "capture_file": "data/private/browsergym/browsergym-miniwob-reset-goals-a.jsonl",
+      "name": "a",
+      "receipt_file": "data/private/browsergym/browsergym-miniwob-reset-goals-a.receipt.json"
+    },
+    {
+      "capture_file": "data/private/browsergym/browsergym-miniwob-reset-goals-b.jsonl",
+      "name": "b",
+      "receipt_file": "data/private/browsergym/browsergym-miniwob-reset-goals-b.receipt.json"
+    }
+  ],
+  "runtime_manifest": {
+    "bytes": 12996,
+    "distributions": 51,
+    "file": "configs/data/browsergym-capture-runtime-darwin-arm64-py312.json",
+    "kind": "localagent_browsergym_capture_environment",
+    "playwright_driver_sha256": "cb628761b7355e456bd2581f8a0b008d200ca3e2a6f53c466c3c245b63db26da",
+    "schema_version": 1,
+    "self_sha256": "274802850e0bef5635b906a668f49e3c540e459dee1841b20a54e55ccc3863c7",
+    "sha256": "5edf3987b09db987eabbef52324ef6d0eb87d69e7c36e94d5f88cdccddf21382"
+  },
+  "schema_version": 1,
+  "source_revisions": {
+    "browsergym": "9e779f087de9a65668b6974d11f9ce9816026e96",
+    "miniwob_plusplus": "7fd85d71a4b60325c6585396ec4f48377d049838"
+  },
+  "status": "verified_reproducible_controlled_acquisition_and_prompt_freeze"
+}

@@ -1,0 +1,178 @@
+[
+  {
+    "name": "write_file",
+    "description": "write or create a file",
+    "arg": "path",
+    "format": "path",
+    "examples": [
+      "Write to X.",
+      "Create the file X.",
+      "Save the file X."
+    ]
+  },
+  {
+    "name": "move_file",
+    "description": "move or rename a file",
+    "arg": "path",
+    "format": "path",
+    "examples": [
+      "Move the file X.",
+      "Relocate X.",
+      "Move X to the archive."
+    ]
+  },
+  {
+    "name": "read_file",
+    "description": "read a file",
+    "arg": "path",
+    "format": "path",
+    "examples": [
+      "Read the file X.",
+      "Open X.",
+      "Show me the contents of X."
+    ]
+  },
+  {
+    "name": "google_search",
+    "description": "search Google for something",
+    "arg": "query",
+    "format": "string",
+    "examples": [
+      "Google X.",
+      "Search Google for X.",
+      "Look up X on Google."
+    ]
+  },
+  {
+    "name": "click_link",
+    "description": "click a link / open a website in the browser",
+    "arg": "url",
+    "format": "url",
+    "examples": [
+      "Click the link X.",
+      "Open the website X.",
+      "Click through to X."
+    ]
+  },
+  {
+    "name": "summarize",
+    "description": "summarize some text or a document",
+    "arg": "content",
+    "format": "quoted",
+    "examples": [
+      "Summarize 'X'.",
+      "Give me a summary of 'X'.",
+      "TL;DR of 'X'."
+    ]
+  },
+  {
+    "name": "send_email",
+    "description": "send an email to someone",
+    "arg": "recipient",
+    "format": "string",
+    "examples": [
+      "Send an email to X.",
+      "Email X.",
+      "Compose an email to X."
+    ]
+  },
+  {
+    "name": "calendar_event",
+    "description": "create a calendar event",
+    "arg": "title",
+    "format": "quoted",
+    "examples": [
+      "Add a calendar event 'X'.",
+      "Schedule 'X'.",
+      "Put 'X' on my calendar."
+    ]
+  },
+  {
+    "name": "slack_send",
+    "description": "send a Slack message",
+    "arg": "message",
+    "format": "quoted",
+    "examples": [
+      "Send a Slack message 'X'.",
+      "Slack the team 'X'.",
+      "Post 'X' to Slack."
+    ]
+  },
+  {
+    "name": "jira_issue",
+    "description": "create a Jira issue",
+    "arg": "summary",
+    "format": "quoted",
+    "examples": [
+      "Create a Jira ticket 'X'.",
+      "File a Jira bug for 'X'.",
+      "Open a Jira issue 'X'."
+    ]
+  },
+  {
+    "name": "get_weather",
+    "description": "get the weather for a city",
+    "arg": "city",
+    "format": "string",
+    "examples": [
+      "What's the weather in X?",
+      "Weather for X.",
+      "How's the weather in X?"
+    ]
+  },
+  {
+    "name": "run_command",
+    "description": "run a shell command",
+    "arg": "command",
+    "format": "quoted",
+    "examples": [
+      "Run the command 'X'.",
+      "Execute 'X'.",
+      "Run 'X' in the shell."
+    ]
+  },
+  {
+    "name": "git_commit",
+    "description": "make a git commit",
+    "arg": "message",
+    "format": "quoted",
+    "examples": [
+      "Commit with message 'X'.",
+      "Git commit 'X'.",
+      "Commit the changes 'X'."
+    ]
+  },
+  {
+    "name": "grep_search",
+    "description": "search the codebase for a pattern",
+    "arg": "pattern",
+    "format": "quoted",
+    "examples": [
+      "Grep for 'X'.",
+      "Search the code for 'X'.",
+      "Find 'X' in the repo."
+    ]
+  },
+  {
+    "name": "play_music",
+    "description": "play a song",
+    "arg": "song",
+    "format": "string",
+    "examples": [
+      "Play X.",
+      "Put on X.",
+      "Start playing X."
+    ]
+  },
+  {
+    "name": "set_timer",
+    "description": "set a timer",
+    "arg": "duration",
+    "format": "string",
+    "examples": [
+      "Set a timer for X.",
+      "Timer for X.",
+      "Wake me in X."
+    ]
+  }
+]

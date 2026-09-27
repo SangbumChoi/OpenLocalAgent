@@ -1,0 +1,119 @@
+{
+  "artifacts": [
+    {
+      "bytes": 21430301,
+      "file": "action_model.fp16.onnx",
+      "manifest_bytes": 21430301,
+      "manifest_sha256": "b91e7f84077155640a5e288a7c58c2245c298859ddd86bd7268e71039e65c49a",
+      "path": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/web/action_model.fp16.onnx",
+      "present": true,
+      "sha256": "b91e7f84077155640a5e288a7c58c2245c298859ddd86bd7268e71039e65c49a",
+      "verified": true
+    },
+    {
+      "bytes": 42700043,
+      "file": "action_model.onnx",
+      "manifest_bytes": 42700043,
+      "manifest_sha256": "5bf3817b9f147e528056d237a5cab964a90ed4f3db7a2cc398523d7a391bfcba",
+      "path": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/web/action_model.onnx",
+      "present": true,
+      "sha256": "5bf3817b9f147e528056d237a5cab964a90ed4f3db7a2cc398523d7a391bfcba",
+      "verified": true
+    },
+    {
+      "bytes": 1178050,
+      "file": "dispatch_heads.json",
+      "manifest_bytes": 1178050,
+      "manifest_sha256": "175a22b30290c9b09758fbd3d0d2182f479cd83a9ec76b93b52eded0ad69a7e5",
+      "path": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/web/dispatch_heads.json",
+      "present": true,
+      "sha256": "175a22b30290c9b09758fbd3d0d2182f479cd83a9ec76b93b52eded0ad69a7e5",
+      "verified": true
+    },
+    {
+      "bytes": 3337015,
+      "file": "heads.json",
+      "manifest_bytes": 3337015,
+      "manifest_sha256": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486",
+      "path": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/web/heads.json",
+      "present": true,
+      "sha256": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486",
+      "verified": true
+    },
+    {
+      "bytes": 11548,
+      "file": "meta.json",
+      "manifest_bytes": 11548,
+      "manifest_sha256": "6d6a79b331ce3f60c097f2bd3662a2178345aef68a7ded61e67737ff8e8cb89e",
+      "path": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/web/meta.json",
+      "present": true,
+      "sha256": "6d6a79b331ce3f60c097f2bd3662a2178345aef68a7ded61e67737ff8e8cb89e",
+      "verified": true
+    },
+    {
+      "bytes": 34026169,
+      "file": "model.fp16.onnx",
+      "manifest_bytes": 34026169,
+      "manifest_sha256": "e758c3529e3b68dd48c2e5fc188dce214af027eb66cd0ba0020df25cfe0ec816",
+      "path": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/web/model.fp16.onnx",
+      "present": true,
+      "sha256": "e758c3529e3b68dd48c2e5fc188dce214af027eb66cd0ba0020df25cfe0ec816",
+      "verified": true
+    },
+    {
+      "bytes": 67877334,
+      "file": "model.onnx",
+      "manifest_bytes": 67877334,
+      "manifest_sha256": "24c36c70d4b043693e2d117455bae6e93c6142ac391b80a8122ac5fe46386b57",
+      "path": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/web/model.onnx",
+      "present": true,
+      "sha256": "24c36c70d4b043693e2d117455bae6e93c6142ac391b80a8122ac5fe46386b57",
+      "verified": true
+    },
+    {
+      "bytes": 1134224,
+      "file": "tokenizer.json",
+      "manifest_bytes": 1134224,
+      "manifest_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+      "path": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/web/tokenizer.json",
+      "present": true,
+      "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+      "verified": true
+    }
+  ],
+  "blockers": [
+    "deployment_target:bundle_not_staged"
+  ],
+  "bundle_dir": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/web",
+  "bundle_identity_sha256": "14a883bdc6c781ad1ad771a03d820bab1db59554bb502b39142bbc2aefda3f5f",
+  "claim_boundary": "A clean Space is deployable only when every generated artifact is present and its exporter manifest, byte count, hash, and parity gate verify; local synthetic or text-first receipts do not establish native WebGPU deployment.",
+  "demo_dir": "spaces/localagent-webgpu",
+  "deployment_bundle_present": false,
+  "kind": "localagent_webgpu_demo_deploy_verification",
+  "manifest": {
+    "parity_gate_passed": true,
+    "path": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/web/bundle-manifest.json",
+    "schema_version": 3,
+    "sha256": "86bbee00d783ca69af02843a4cf935ff978612b81b6a2fedd47fd943e611bee4"
+  },
+  "schema_version": 1,
+  "static": [
+    {
+      "file": "index.html",
+      "present": true
+    },
+    {
+      "file": "app.js",
+      "present": true
+    },
+    {
+      "file": "style.css",
+      "present": true
+    },
+    {
+      "file": "tokenizer.js",
+      "present": true
+    }
+  ],
+  "verified": false
+}

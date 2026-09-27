@@ -1,0 +1,332 @@
+{
+  "child": {
+    "bytes": 52236785,
+    "path": "/private/tmp/m96-mind2web-mcp-service-lowrate-child.pt",
+    "sha256": "644588f515db600b701ea8895e14c1a2e7b5a966eeedc86d1647046cef39014d"
+  },
+  "claim_boundary": "Low-rate-unfrozen synthetic service/tool-contract probe only; MCPMark fields are task-description routing proxy metrics, not live MCP execution, verifier success, pass@k, or an official leaderboard score.",
+  "comparison": {
+    "lowrate_minus_random": {
+      "route_accuracy": 0.008368200836820106,
+      "selector_top1": -0.01255230125523013,
+      "selector_top3": -0.10041841004184104
+    },
+    "lowrate_minus_transfer": {
+      "route_accuracy": 0.21757322175732213,
+      "selector_top1": -0.06276150627615062,
+      "selector_top3": -0.10041841004184104
+    },
+    "lowrate_pretrained_unfrozen": {
+      "route_accuracy": 0.4811715481171548,
+      "selector_top1": 0.1589958158995816,
+      "selector_top3": 0.5523012552301255
+    },
+    "random_backbone": {
+      "route_accuracy": 0.4728033472803347,
+      "selector_top1": 0.17154811715481172,
+      "selector_top3": 0.6527196652719666
+    },
+    "rows": 239,
+    "transfer_pretrained_frozen": {
+      "route_accuracy": 0.26359832635983266,
+      "selector_top1": 0.2217573221757322,
+      "selector_top3": 0.6527196652719666
+    }
+  },
+  "head_metrics": {
+    "route_accuracy": 1.0,
+    "rows": 28,
+    "selector_top1": 0.9642857142857143,
+    "selector_top3": 1.0,
+    "tool_rows": 28
+  },
+  "kind": "localagent_mcp_service_contract_lowrate_probe",
+  "mcpmark": {
+    "easy": {
+      "by_difficulty": {
+        "L1": {
+          "route_accuracy": 0.4,
+          "route_correct": 28,
+          "rows": 70,
+          "selector_top1": 0.14285714285714285,
+          "selector_top3": 0.5857142857142857
+        }
+      },
+      "by_service": {
+        "filesystem": {
+          "route_accuracy": 0.9,
+          "route_correct": 9,
+          "rows": 10,
+          "selector_top1": 0.0,
+          "selector_top3": 0.1
+        },
+        "github": {
+          "route_accuracy": 0.8,
+          "route_correct": 8,
+          "rows": 10,
+          "selector_top1": 0.0,
+          "selector_top3": 0.0
+        },
+        "notion": {
+          "route_accuracy": 0.2,
+          "route_correct": 2,
+          "rows": 10,
+          "selector_top1": 1.0,
+          "selector_top3": 1.0
+        },
+        "playwright": {
+          "route_accuracy": 0.0,
+          "route_correct": 0,
+          "rows": 10,
+          "selector_top1": 0.0,
+          "selector_top3": 0.0
+        },
+        "postgres": {
+          "route_accuracy": 0.3,
+          "route_correct": 9,
+          "rows": 30,
+          "selector_top1": 0.0,
+          "selector_top3": 1.0
+        }
+      },
+      "checkpoint": {
+        "bytes": 52236785,
+        "path": "/private/tmp/m96-mind2web-mcp-service-lowrate-child.pt",
+        "sha256": "644588f515db600b701ea8895e14c1a2e7b5a966eeedc86d1647046cef39014d"
+      },
+      "claim_boundary": "Public MCPMark task-description service-routing proxy only; not live MCP execution, verifier success, pass@k, or official leaderboard evaluation.",
+      "dataset": {
+        "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+        "suite": "easy",
+        "url": "https://github.com/eval-sys/mcpmark"
+      },
+      "kind": "localagent_mcpmark_task_router_proxy",
+      "overall": {
+        "route_accuracy": 0.4,
+        "route_correct": 28,
+        "rows": 70,
+        "selector_top1": 0.14285714285714285,
+        "selector_top3": 0.5857142857142857
+      },
+      "schema_version": 1,
+      "source": {
+        "checkout": "/private/tmp/mcpmark",
+        "mcp_servers_executed": false,
+        "metadata_and_description_bytes": 385446,
+        "task_manifest_sha256": "f8eea15c843ee222c3899849d724ddbe6cd89f0f709ff7a84659d9cafef52f06",
+        "task_rows": 70,
+        "task_text_retained": false,
+        "verifiers_executed": false
+      },
+      "tool_family_contract": {
+        "filesystem": [
+          "find_files",
+          "grep_search",
+          "list_dir",
+          "make_dir",
+          "read_file",
+          "unzip",
+          "write_file"
+        ],
+        "github": [
+          "apply_patch",
+          "git_commit",
+          "git_diff",
+          "git_status",
+          "http_request",
+          "read_file",
+          "run_command",
+          "write_file"
+        ],
+        "notion": [
+          "notion_create_page",
+          "notion_write"
+        ],
+        "playwright": [
+          "click",
+          "double_click",
+          "drag",
+          "key_press",
+          "move_cursor",
+          "open_url",
+          "screenshot",
+          "scroll",
+          "type_text",
+          "wait"
+        ],
+        "postgres": [
+          "sql_query"
+        ]
+      }
+    },
+    "standard": {
+      "by_difficulty": {
+        "L3": {
+          "route_accuracy": 0.514792899408284,
+          "route_correct": 87,
+          "rows": 169,
+          "selector_top1": 0.16568047337278108,
+          "selector_top3": 0.5384615384615384
+        }
+      },
+      "by_service": {
+        "filesystem": {
+          "route_accuracy": 0.7666666666666667,
+          "route_correct": 23,
+          "rows": 30,
+          "selector_top1": 0.0,
+          "selector_top3": 0.0
+        },
+        "github": {
+          "route_accuracy": 0.8260869565217391,
+          "route_correct": 19,
+          "rows": 23,
+          "selector_top1": 0.0,
+          "selector_top3": 0.0
+        },
+        "notion": {
+          "route_accuracy": 0.21428571428571427,
+          "route_correct": 6,
+          "rows": 28,
+          "selector_top1": 1.0,
+          "selector_top3": 1.0
+        },
+        "playwright": {
+          "route_accuracy": 0.0,
+          "route_correct": 0,
+          "rows": 25,
+          "selector_top1": 0.0,
+          "selector_top3": 0.12
+        },
+        "postgres": {
+          "route_accuracy": 0.6190476190476191,
+          "route_correct": 39,
+          "rows": 63,
+          "selector_top1": 0.0,
+          "selector_top3": 0.9523809523809523
+        }
+      },
+      "checkpoint": {
+        "bytes": 52236785,
+        "path": "/private/tmp/m96-mind2web-mcp-service-lowrate-child.pt",
+        "sha256": "644588f515db600b701ea8895e14c1a2e7b5a966eeedc86d1647046cef39014d"
+      },
+      "claim_boundary": "Public MCPMark task-description service-routing proxy only; not live MCP execution, verifier success, pass@k, or official leaderboard evaluation.",
+      "dataset": {
+        "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+        "suite": "standard",
+        "url": "https://github.com/eval-sys/mcpmark"
+      },
+      "kind": "localagent_mcpmark_task_router_proxy",
+      "overall": {
+        "route_accuracy": 0.514792899408284,
+        "route_correct": 87,
+        "rows": 169,
+        "selector_top1": 0.16568047337278108,
+        "selector_top3": 0.5384615384615384
+      },
+      "schema_version": 1,
+      "source": {
+        "checkout": "/private/tmp/mcpmark",
+        "mcp_servers_executed": false,
+        "metadata_and_description_bytes": 1272143,
+        "task_manifest_sha256": "b35b92adfb8a846eb32dc36c411c17aa5ecf757e5b63aeaa1671755f475686d5",
+        "task_rows": 169,
+        "task_text_retained": false,
+        "verifiers_executed": false
+      },
+      "tool_family_contract": {
+        "filesystem": [
+          "find_files",
+          "grep_search",
+          "list_dir",
+          "make_dir",
+          "read_file",
+          "unzip",
+          "write_file"
+        ],
+        "github": [
+          "apply_patch",
+          "git_commit",
+          "git_diff",
+          "git_status",
+          "http_request",
+          "read_file",
+          "run_command",
+          "write_file"
+        ],
+        "notion": [
+          "notion_create_page",
+          "notion_write"
+        ],
+        "playwright": [
+          "click",
+          "double_click",
+          "drag",
+          "key_press",
+          "move_cursor",
+          "open_url",
+          "screenshot",
+          "scroll",
+          "type_text",
+          "wait"
+        ],
+        "postgres": [
+          "sql_query"
+        ]
+      }
+    }
+  },
+  "parent": {
+    "bytes": 52231121,
+    "path": "runs/sft-mind2web-trajectory-continuation-20260802-m46/latest.pt",
+    "sha256": "b19828908594463385870607d89c084afc1bb237cc5fb51752ac6860a204a041"
+  },
+  "random_reference": {
+    "backbone_initialization": "deterministic_random",
+    "combined_route_accuracy": 0.4728033472803347,
+    "combined_selector_top1": 0.17154811715481172,
+    "combined_selector_top3": 0.6527196652719666,
+    "receipt": "docs/paper/results/raw/m94-mind2web-mcp-service-random-matched-v1.json",
+    "receipt_sha256": "095de378c36cfbce0c2fd3b3bcb90d026a9885cf18104c7c1ee19044a931bd0e"
+  },
+  "receipt_self_sha256": "d6f92459cb8d8375f00ad35685b6bfda3c575c31476730075cf0d2e1db3395dd",
+  "schema_version": 1,
+  "training": {
+    "backbone_lr": 1e-05,
+    "batch_size": 8,
+    "decisions": 28,
+    "head_lr": 0.005,
+    "mcpmark_task_text_used": false,
+    "random_seed": 2031,
+    "rows": 28,
+    "services": [
+      "filesystem",
+      "github",
+      "notion",
+      "playwright",
+      "postgres"
+    ],
+    "source_text": "generated service/tool contracts only",
+    "steps": 200
+  },
+  "transfer_reference": {
+    "backbone_initialization": "pretrained_frozen",
+    "combined_route_accuracy": 0.26359832635983266,
+    "combined_selector_top1": 0.2217573221757322,
+    "combined_selector_top3": 0.6527196652719666,
+    "receipt": "docs/paper/results/raw/m93-mind2web-mcp-service-contract-v1.json",
+    "receipt_sha256": "f008cf88527684dac926e4bfe51bf36b24cfd90b88ca96f81404e06801e81ad7"
+  },
+  "weight_delta": {
+    "dense_selector": 107.45902407169342,
+    "groups": {
+      "backbone": 0.002970523722023013,
+      "embedding": 0.0005900880105314839,
+      "ffn": 0.006971227699467742,
+      "mixer": 0.006023937628743809,
+      "normalization": 0.00013269282461222926
+    },
+    "route_head": 1.906146377325058
+  }
+}

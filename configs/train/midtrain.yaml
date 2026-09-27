@@ -1,0 +1,54 @@
+# Continued pretraining toward the deployment domain. Keep general/code data present while
+# agent conversations ramp up; this prevents the tiny model from becoming a brittle tool router.
+stage: midtrain
+model_config: configs/model/tiny-30m-byte.yaml
+init_from: runs/pretrain/latest.pt
+data:
+  strict_conversation_artifacts: true
+  # Agent rows are much shorter than packed replay rows; schedule the measurable loss-token mix.
+  mixture:
+    unit: loss_tokens
+  tokenizer:
+    kind: byte
+  sources:
+    - name: general
+      type: shards
+      path: data/shards/general
+      split: train
+      weight: 0.55
+      end_weight: 0.35
+    - name: code
+      type: shards
+      path: data/shards/code
+      split: train
+      weight: 0.30
+      end_weight: 0.35
+    - name: rule_audited_agent
+      type: conversations
+      path: data/synth/agent_sft.jsonl
+      artifact:
+        generator_config: configs/data/agent_synth.yaml
+        manifest: data/synth/agent_sft.jsonl.manifest.v1.json
+        expected_split: train
+        expected_rule_verified: true
+        environment_policy: forbid
+      weight: 0.15
+      end_weight: 0.30
+optim:
+  name: adamw
+  lr: 1.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 100
+  total_steps: 4000
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 8
+  grad_accum_steps: 4
+runtime:
+  device: auto
+  seed: 42
+log:
+  out_dir: runs/midtrain

@@ -1,0 +1,38 @@
+{
+  "kind": "localagent_lineage_preserving_training_receipt",
+  "schema_version": 1,
+  "candidate_checkpoint": {
+    "stage": "sft_public_agent_continuation",
+    "sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+    "parameters": 10524544,
+    "lineage_stage": "sft",
+    "lineage_parent_sha256": "a55ac6fec415f1e991dcd59438168b21415b43f3d790100b76617ac387abd6fb"
+  },
+  "chain": {
+    "verified_rl_parent": "1f0feee786d2dd9291b8af59c537a9941f40485b99d1317a800246f7bead9d69",
+    "grounded_child": "a55ac6fec415f1e991dcd59438168b21415b43f3d790100b76617ac387abd6fb",
+    "multisurface_child": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "data": {
+    "mind2web_train_sha256": "f7acd30b226fb3f9dce64faa5ac27f91e2ec066f047e66a529a9679e1aded077",
+    "mind2web_eval_sha256": "a4ce3c08a6cf1dce4ef5314a0d0847c67c2b3aae99c12b1b2d022ba2c0d51076",
+    "androidcontrol_train_sha256": "34c68424d9bc660a5c594a6f21c946b822f87c8ed0ad0cede43a11cc585f6c29",
+    "androidcontrol_eval_sha256": "5168c544664cd4f7c0723387280a423b1ba3e518da2ba381305522f0dea270bc",
+    "agentnet_train_sha256": "fb17df74512f3f9a7c15c030ffbf82701f728803b987539e7c872e025967edf8",
+    "agentnet_eval_sha256": "7f0f080e33c4a069c532f3efcc0ec72e73d456f606cd4e5608df6f4dd949ac43"
+  },
+  "metrics": {
+    "grounded_pointer_exact_span": {"before": 0.0, "after": 0.22043010752688172, "rows": 186},
+    "multisurface_token_accuracy": {"before": 0.5990276356192425, "after": 0.6946008188331627, "rows": 513},
+    "multisurface_sequence_exact": 0.0,
+    "route_accuracy": 1.0,
+    "selector_top1_accuracy": 0.7003891050583657
+  },
+  "reports": {
+    "grounded": {"path": "/private/tmp/m552-grounded-lineage-report.json", "sha256": "40bf096f038f1b3f96e14087b5db0e6e58aaa7c4d21473a6a16da6a9eb023df3"},
+    "multisurface": {"path": "/private/tmp/m553-multisurface-lineage-report.json", "sha256": "97a5d3abc796d1494524756a69d63ee856bb14fe1ab80401dd6d104a9da4801"}
+  },
+  "claim_boundary": "The fresh continuation preserves strict lineage from the verified m540 RL parent and exact public train/eval input hashes. Metrics are teacher-forced DOM/text projections; sequence exactness remains zero and no native or external-account success is claimed.",
+  "receipt_self_sha256": "d18526832f0cc85db9fa9441c488007ff528c1e645dba973bc0de1b8b821277b"
+}

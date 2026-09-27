@@ -1,0 +1,103 @@
+{
+  "checkpoint": {
+    "bytes": 52250473,
+    "parameters": 10524544,
+    "path": "/private/tmp/m479-mcpmark-productivity-warm.pt",
+    "sha256": "1fc2d4014e746a4f2784338577794a759279fbb3636bdf0e8e3954c4fe6f40db",
+    "stage": "sft_cross_surface_public_continuation",
+    "step": 319
+  },
+  "claim_boundary": "The warm child has a local HF-format model bundle, parity-verified WebGPU bundle, and native Apple WebGPU capability receipt. No Hugging Face upload, public URL, official MCPMark score, real email/Notion account, or closed-loop productivity success is claimed.",
+  "kind": "localagent_warm_child_hf_webgpu_release_candidate",
+  "model_bundle": {
+    "config": {
+      "bytes": 38446,
+      "path": "/private/tmp/m480-hf-warm/config.json",
+      "sha256": "4727459ba2cb38d619f94a9aa18a1814e3689379463cffbd2b7427f736361230"
+    },
+    "files": [
+      "README.md",
+      "agent_heads.bin",
+      "config.json",
+      "model.safetensors",
+      "tokenizer.json"
+    ],
+    "path": "/private/tmp/m480-hf-warm"
+  },
+  "native_mcpmark": {
+    "official_split_verified": false,
+    "receipt": {
+      "bytes": 4909,
+      "path": "docs/paper/results/raw/m480-mcpmark-native-playwright-replay-v1.json",
+      "sha256": "9712e42a301957fd51e0f76371c80094bdb1d25d1e5f2ef8d0a0173c6a4689b1"
+    },
+    "warm_verifier_pass": false
+  },
+  "native_webgpu": {
+    "backend": "webgpu",
+    "closed_loop_success": 0,
+    "environment_executed": true,
+    "evaluated_cases": 3,
+    "exact_actions": 3,
+    "hardware_adapter": "vendor=apple; architecture=metal-3",
+    "latency_ms_p50": 16.749999940395355,
+    "peak_memory_mb": 20.458142280578613,
+    "receipt": {
+      "bytes": 11477,
+      "path": "/private/tmp/m480-webgpu-warm-capability.json",
+      "sha256": "e7a55fdc848e93b88d43879f255ba7700ba58a84861854c316f64acd78901eac"
+    },
+    "tokens_per_second_p50": 607.9027360028429
+  },
+  "publication": {
+    "blocker": "HF_TOKEN_or_hf_auth_login_required",
+    "hf_authenticated": false,
+    "model_url": null,
+    "published": false,
+    "space_url": null
+  },
+  "receipt_self_sha256": "bb7d805f8a6b2acfc9dbc1e39d4c6f767282051cc7f9026befcf14b2f0fb4b60",
+  "schema_version": 1,
+  "webgpu_bundle": {
+    "bundle_identity_sha256": "d2a6a0650625cc825deed042b075768264a231b883058572a25dc1222cbaf755",
+    "files": [
+      "README.md",
+      "action_model.fp16.onnx",
+      "action_model.onnx",
+      "app.js",
+      "backbone-benchmark.html",
+      "backbone-benchmark.js",
+      "benchmark-cases.json",
+      "benchmark.html",
+      "benchmark.js",
+      "browser-task-cases.json",
+      "browser-tasks.html",
+      "browser-tasks.js",
+      "bundle-manifest.json",
+      "decode-benchmark.html",
+      "decode-benchmark.js",
+      "dispatch_heads.json",
+      "heads.json",
+      "index.html",
+      "meta.json",
+      "mobile-tasks.html",
+      "mobile-tasks.js",
+      "mobile-trajectories.html",
+      "mobile-trajectories.js",
+      "model.fp16.onnx",
+      "model.onnx",
+      "style.css",
+      "tokenizer.js",
+      "tokenizer.json",
+      "webgpu-capability.html",
+      "webgpu-capability.js"
+    ],
+    "manifest": {
+      "bytes": 9333,
+      "path": "/private/tmp/m480-space-warm/bundle-manifest.json",
+      "sha256": "5b4f47d754a1c2887eda9030f18ca94769f416be7e980295ce7f4600dfd211dd"
+    },
+    "parity_gate_passed": true,
+    "path": "/private/tmp/m480-space-warm"
+  }
+}

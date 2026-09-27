@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "kind": "localagent_mobilegym_answer_adaptation",
+  "benchmark_id": "mobilegym_model_adaptation_probe",
+  "native_benchmark_id": "mobilegym",
+  "native_receipt_eligible": false,
+  "environment_executed": true,
+  "official_split": "test",
+  "official_split_verified": true,
+  "task_id": "notes.ReadTodoText",
+  "task_count": 1,
+  "observation_mode": "text_projection",
+  "vision_used": false,
+  "max_steps": 2,
+  "data": {
+    "source": "AndroidControl/AITW public train/eval projections",
+    "train_rows": 4096,
+    "eval_rows": 904,
+    "train_sha256": "6971d5fe81fe3c6e8ee12e0072481ec653f98bdb5699af54e8f63649358743fd",
+    "eval_sha256": "2d798115fe0feb14ac6d65f86a4b51b4463b593a35281eedce4de8751356bc95",
+    "synthetic_mobile_rows": 94,
+    "synthetic_answer_rows": 8,
+    "state_conditioned_trajectory_rows": 23,
+    "split_policy": "external_eval_files; no MobileGym task text or state entered training"
+  },
+  "training": {
+    "steps": 300,
+    "focus_tool": "mobile_submit_answer",
+    "focus_repeat": 24,
+    "parent_checkpoint_sha256": "0d0ae0bb4a4f35b40bb9ba5d2e234e3ec389e12758b6dd2527e072e9b7589251",
+    "tool_pool_size": 63,
+    "arms": {
+      "warm": {
+        "initialization": "parent_heads",
+        "checkpoint_sha256": "a15551fdc12c23b05bb069a384da24e0a5281088dcee95e55d12fc6f3295ed3e",
+        "held_out_selector_top1": 0.42920353982300885,
+        "held_out_route_accuracy": 1.0,
+        "productivity_selector_top1": 0.5,
+        "productivity_route_accuracy": 0.75,
+        "native_success_rate": 0.0,
+        "native_model_calls": 2,
+        "native_judge_passed": false,
+        "native_judge_issue_count": 3,
+        "native_judge_issue_fields": [
+          "answer.todo_1",
+          "answer.todo_2",
+          "answer.todo_3"
+        ],
+        "native_receipt_sha256": "b341b74aa4a87942a0c8d493ba310e6b88a6a0863368c8b7377a644791c95f8b5",
+        "weight_report": {
+          "shared_tensors": 51,
+          "config_compatible": true,
+          "tokenizer_compatible": true,
+          "backbone_relative_delta_l2": 0.0,
+          "action_heads_relative_delta_l2": 0.44830509842332783
+        }
+      },
+      "random": {
+        "initialization": "random",
+        "checkpoint_sha256": "644476c8c5215f6109fad58488e0ead2bf7faa141c10beb98eeeff0c519e3641",
+        "held_out_selector_top1": 0.4745575221238938,
+        "held_out_route_accuracy": 1.0,
+        "productivity_selector_top1": 0.25,
+        "productivity_route_accuracy": 0.75,
+        "native_success_rate": 0.0,
+        "native_model_calls": 2,
+        "native_judge_passed": false,
+        "native_judge_issue_count": 3,
+        "native_judge_issue_fields": [
+          "answer.todo_1",
+          "answer.todo_2",
+          "answer.todo_3"
+        ],
+        "native_receipt_sha256": "9a56fcaefcd40ad4f75b5891e93ace6dc065e61a428cc4d1122f2c62ed41c480",
+        "weight_report": {
+          "shared_tensors": 51,
+          "config_compatible": true,
+          "tokenizer_compatible": true,
+          "backbone_relative_delta_l2": 0.0,
+          "action_heads_relative_delta_l2": 0.9371765515511772
+        }
+      }
+    }
+  },
+  "conclusion": {
+    "answer_tool_selection": "warm arm selects mobile_submit_answer on the native task, but emits an empty message and fails all three answer fields",
+    "transfer_decision": "retain the compatible pretrained backbone; do not promote this answer adapter or either arm to native capability evidence",
+    "claim_boundary": "bounded adaptation and weight-movement diagnostic; not a MobileGym score, not a screenshot-grounded result, and not a publication gate pass"
+  },
+  "receipt_self_sha256": "00895927b23f44f79c81b8460b9e0e1d2d47a92ec29e339652baf2a973a4c0fd"
+}

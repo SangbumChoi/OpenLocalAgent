@@ -1,0 +1,71 @@
+{
+  "kind": "localagent_stateful_lowrate_webgpu_deploy_verification",
+  "schema_version": 1,
+  "checkpoint": {
+    "stage": "stateful_productivity_lowrate_probe",
+    "step": 319,
+    "parameters": 10524544,
+    "config": "webgpu-10m-hybrid",
+    "sha256": "3263678aadae50106f32bc557d5bd99d8aa3e2fc96ce055a36c28260b21f6062"
+  },
+  "bundle": {
+    "manifest_schema_version": 3,
+    "manifest_sha256": "ad3b6603a835fb74d1b6e3aa354f1e0929be7e58a38345db912987e650140f67",
+    "identity_sha256": "ece69893a268d43a14bda15175c9ee582364cc86351f7a7b23c29c7142181d85",
+    "artifacts": {
+      "action_model.fp16.onnx": {
+        "bytes": 21430301,
+        "sha256": "9f4647038119e806ca4307c73cad044ee9f0e9d03bb418a4c59cd67ef07c1079"
+      },
+      "action_model.onnx": {
+        "bytes": 42700043,
+        "sha256": "185dee4a24b85b5c9b36c647ee9f0ce24bff612341c75a9e26523ce04a7c3385"
+      },
+      "dispatch_heads.json": {
+        "bytes": 1265256,
+        "sha256": "10a3ff6292ac8abe2ba7b4fd5de38c476017feee96743b9f58137fee2f5164a1"
+      },
+      "heads.json": {
+        "bytes": 3362030,
+        "sha256": "27b408b035f43126601b61371283f6cd3811be7ffa0fc721669372bf6e1a43a6"
+      },
+      "meta.json": {
+        "bytes": 11548,
+        "sha256": "6d6a79b331ce3f60c097f2bd3662a2178345aef68a7ded61e67737ff8e8cb89e"
+      },
+      "model.fp16.onnx": {
+        "bytes": 34026169,
+        "sha256": "d922f6f8e1791e1d1e5fb3ec61aaa08f296d41bccfe95cef843e561e2e1f1b86"
+      },
+      "model.onnx": {
+        "bytes": 67877334,
+        "sha256": "b8bcc67326dbb00b1fef753eb284dfcde05377c9a05b2f333f8e7f5104d77dbc"
+      },
+      "tokenizer.json": {
+        "bytes": 1134224,
+        "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+      }
+    }
+  },
+  "parity_gate": {
+    "passed": true,
+    "provider": "CPUExecutionProvider",
+    "fp32_max_abs_diff": {
+      "logits": 0.00000667572021484375,
+      "hidden": 0.000004887580871582031
+    },
+    "fp16_max_abs_diff": {
+      "logits": 0.007356137037277222,
+      "hidden": 0.004343748092651367
+    },
+    "fp16_logits_argmax_agreement": 1.0
+  },
+  "static_files": ["index.html", "app.js", "style.css", "tokenizer.js"],
+  "verified": true,
+  "hub": {
+    "authenticated": false,
+    "uploaded": false,
+    "reason": "hf auth whoami reports no login; no public model or Space URL is claimed"
+  },
+  "claim_boundary": "This is a reproducible local export and static deployment verification. It does not claim native WebGPU hardware execution, external email/Notion/browser side effects, benchmark success, or a public Hugging Face upload."
+}

@@ -1,0 +1,275 @@
+{
+ "model": "lora:data/baselines/Qwen3-0.6B|runs/lora/qwen3-06b",
+ "suites": {
+  "toolace": {
+   "correct_name": 185,
+   "wrong_in_catalog": 11,
+   "out_of_catalog": 4,
+   "parse_fail": 0,
+   "rows": 200,
+   "shares": {
+    "correct_name": 92.5,
+    "wrong_in_catalog": 5.5,
+    "out_of_catalog": 2.0,
+    "parse_fail": 0.0
+   },
+   "samples": [
+    {
+     "bucket": "out_of_catalog",
+     "gold": "loginUser",
+     "predicted": "Login",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "GetPdfInStorageToXls",
+     "predicted": "ConvertPdfToMobiXml",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "products/list",
+     "predicted": "Products",
+     "catalog_size": 4
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "Regions Search",
+     "predicted": "Book Vehicle",
+     "catalog_size": 4
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "GameEnvironment.simulateWeather",
+     "predicted": "GameAnalytics.trackPlayerProgress",
+     "catalog_size": 2
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "veteranPopulationAnalysis.getDemographics",
+     "predicted": "veteranServiceRecords.queryServiceHistory",
+     "catalog_size": 2
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "Get Social Statistics for Bots",
+     "predicted": "Twitter Sentiment Analysis",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "StockAndOptionsData",
+     "predicted": "Options",
+     "catalog_size": 5
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "longterm_analysis_list",
+     "predicted": "Get Historical Prices",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "getFeedVersions",
+     "predicted": "Get Feed Versions",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "Get Seasons for a Specific Series",
+     "predicted": "Get Player Last Year Summary",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "Income By Zipcode",
+     "predicted": "Autocomplete Places",
+     "catalog_size": 6
+    }
+   ]
+  },
+  "xlam": {
+   "correct_name": 195,
+   "wrong_in_catalog": 3,
+   "out_of_catalog": 2,
+   "parse_fail": 0,
+   "rows": 200,
+   "shares": {
+    "correct_name": 97.5,
+    "wrong_in_catalog": 1.5,
+    "out_of_catalog": 1.0,
+    "parse_fail": 0.0
+   },
+   "samples": [
+    {
+     "bucket": "out_of_catalog",
+     "gold": "get_breed_information",
+     "predicted": "cat_breed_details",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "searchjobs",
+     "predicted": "search_jobs",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "search",
+     "predicted": "reversegeocoding",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "draw_cards",
+     "predicted": "shuffle_deck",
+     "catalog_size": 1
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "fixtures_by_date",
+     "predicted": "search_team",
+     "catalog_size": 4
+    }
+   ]
+  },
+  "bfcl": {
+   "correct_name": 194,
+   "wrong_in_catalog": 5,
+   "out_of_catalog": 1,
+   "parse_fail": 0,
+   "rows": 200,
+   "shares": {
+    "correct_name": 97.0,
+    "wrong_in_catalog": 2.5,
+    "out_of_catalog": 0.5,
+    "parse_fail": 0.0
+   },
+   "samples": [
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "instrument_price.get",
+     "predicted": "get_stock_price",
+     "catalog_size": 4
+    },
+    {
+     "bucket": "out_of_catalog",
+     "gold": "add",
+     "predicted": "subtract",
+     "catalog_size": 2
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "get_time_to_collision",
+     "predicted": "get_time_headway",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "get_time_to_collision",
+     "predicted": "get_time_headway",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "badge_api.BadgeApi.get_project_vulnerabilities_badge",
+     "predicted": "metrics_api.MetricsApi.get_project_current_metrics",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "BadgeApi.get_project_policy_violations_badge1",
+     "predicted": "badge_api.BadgeApi.get_project_policy_violations_badge",
+     "catalog_size": 3
+    }
+   ]
+  },
+  "toolbench": {
+   "correct_name": 130,
+   "wrong_in_catalog": 67,
+   "out_of_catalog": 3,
+   "parse_fail": 0,
+   "rows": 200,
+   "shares": {
+    "correct_name": 65.0,
+    "wrong_in_catalog": 33.5,
+    "out_of_catalog": 1.5,
+    "parse_fail": 0.0
+   },
+   "samples": [
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "racecards_for_greyhound_racing_uk",
+     "predicted": "race_detail_info_for_greyhound_racing_uk",
+     "catalog_size": 3
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "getproductbycategory_for_cartify",
+     "predicted": "getproducts_for_cartify",
+     "catalog_size": 4
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "browserobject_api_for_browserobject",
+     "predicted": "price_for_apfelpreise",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "languages_for_microsoft_translator_text",
+     "predicted": "supported_languages_for_bing_web_search",
+     "catalog_size": 5
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "details_for_patreon",
+     "predicted": "findalllistingactive_for_etsy",
+     "catalog_size": 9
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "get_current_status_for_given_flag_for_flag_status",
+     "predicted": "get_half_staff_events_for_given_flag_for_flag_status",
+     "catalog_size": 7
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "endpoint1_for_api1",
+     "predicted": "product_id_for_aliexpress_unofficial",
+     "catalog_size": 4
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "etthelistofcountriesregistered_for_sandbox_mktplace_eu_04_orders",
+     "predicted": "http_mrauto_parts_for_mrautoparts",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "getgroups_for_maytapi_whatsapp",
+     "predicted": "get_contacts_for_sms77io",
+     "catalog_size": 11
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "exchange_rates_for_currency_v2",
+     "predicted": "convert_for_currency_v2",
+     "catalog_size": 4
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "editorial_for_deezer",
+     "predicted": "search_for_deezer",
+     "catalog_size": 6
+    },
+    {
+     "bucket": "wrong_in_catalog",
+     "gold": "all_for_getguidelines",
+     "predicted": "api_nutrition_data_for_edamam_nutrition_analysis",
+     "catalog_size": 7
+    }
+   ]
+  }
+ }
+}

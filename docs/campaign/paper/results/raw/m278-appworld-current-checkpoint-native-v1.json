@@ -1,0 +1,349 @@
+{
+  "checkpoint": {
+    "bytes": 52242001,
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+  },
+  "claim_boundary": "Native AppWorld reset/evaluation of the current LocalAgent checkpoint only. The model emits LocalAgent tool syntax, while AppWorld expects Python/API actions; no action was translated or replayed. The score is a zero-action interface baseline, not an AppWorld leaderboard result, AppWorld-UL result, or evidence of email/SMS/Spotify task success.",
+  "configuration": {
+    "action_translation": "disabled",
+    "experiment_name": "localagent_m278_current_native",
+    "max_interactions": 1,
+    "replay_appworld_api_step": false,
+    "replay_run_python": false,
+    "retrieve_k": 51,
+    "schema_ground_appworld_api_step": false,
+    "selector_first": false,
+    "tasks": [
+      "29caf6f_3",
+      "771d8fc_3",
+      "530b157_1",
+      "530b157_2",
+      "29caf6f_1",
+      "29caf6f_2"
+    ]
+  },
+  "environment": {
+    "environment_reset_per_task": true,
+    "external_accounts": false,
+    "native_runtime_executed": true,
+    "screenshots": false,
+    "state_side_effects": "isolated AppWorld task databases only"
+  },
+  "kind": "localagent_appworld_checkpoint_native_probe",
+  "receipt_self_sha256": "4c79bea0c9aaa6c03bf0060f11679efb21f111bcf127911527269c53ab9acc88",
+  "runner": {
+    "contract_verification": {
+      "passed": 1,
+      "result": {
+        "difficulty": 2,
+        "failed": 0,
+        "failure_labels": [],
+        "num_tests": 8,
+        "pass_labels": [
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_pass"
+        ],
+        "passed": 8,
+        "success": true,
+        "task_id": "29caf6f_3"
+      },
+      "tasks": 1
+    },
+    "data_version": "0.2.0",
+    "package": "appworld",
+    "root": "/private/tmp/appworld-data",
+    "split_policy": "caller-selected train/dev tasks with full public ground-truth verifiers",
+    "version": "0.2.0.dev0"
+  },
+  "schema_version": 1,
+  "summary": {
+    "action_replayed": 0,
+    "native_action_api_calls": 0,
+    "native_api_calls": 0,
+    "native_bootstrap_api_calls": 0,
+    "native_success_rate": 0.0,
+    "native_successes": 0,
+    "tasks": 6
+  },
+  "tasks": [
+    {
+      "action_replayed": false,
+      "evaluation": {
+        "difficulty": 2,
+        "failed": 7,
+        "failure_labels": [
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail"
+        ],
+        "num_tests": 8,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 177,
+        "sha256": "47c525e5ce54d0d1e5dec16f58f5289fd3f60724749511adf9735d57fb66f421"
+      },
+      "model_output": {
+        "bytes": 52,
+        "sha256": "aeac0b5d9aeaca9c8b9bb668da2f5f2658f638bccb2c8e47b82aabdbc6c462b6"
+      },
+      "native_action_api_calls": 0,
+      "native_api_calls": 0,
+      "native_bootstrap_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 2,
+        "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+      },
+      "predicted_tool": "screenshot",
+      "schema_translation_applied": false,
+      "task_id": "29caf6f_3",
+      "task_spec": {
+        "bytes": 515,
+        "path": "/private/tmp/appworld-data/data/tasks/29caf6f_3/specs.json",
+        "sha256": "538c3c6f07f3774a84a5c75e7b7facdb834daf791050c5bba9134e4b27ba875d"
+      }
+    },
+    {
+      "action_replayed": false,
+      "evaluation": {
+        "difficulty": 1,
+        "failed": 4,
+        "failure_labels": [
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail"
+        ],
+        "num_tests": 6,
+        "pass_labels": [
+          "no_op_pass",
+          "no_op_pass"
+        ],
+        "passed": 2,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 81,
+        "sha256": "8bcd7684e41cf1ffcbb28f45ce7a98ba20f8c1d61b60023ab3c0b571336397db"
+      },
+      "model_output": {
+        "bytes": 82,
+        "sha256": "7ece57d0b8c0e3edd502bcb56cff6351504dea0d4da618af20a789eb7a7c264b"
+      },
+      "native_action_api_calls": 0,
+      "native_api_calls": 0,
+      "native_bootstrap_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 22,
+        "sha256": "e6ada7f49a8c00d205d9b40f955a1fd0fe1cfb7553f18e7d825c17faa202c55d"
+      },
+      "predicted_tool": "wait",
+      "schema_translation_applied": false,
+      "task_id": "771d8fc_3",
+      "task_spec": {
+        "bytes": 423,
+        "path": "/private/tmp/appworld-data/data/tasks/771d8fc_3/specs.json",
+        "sha256": "966ab50bd66d577d3b6ef5530ce3ccfe0b473603f5b5a42259f6a35e3ebf8321"
+      }
+    },
+    {
+      "action_replayed": false,
+      "evaluation": {
+        "difficulty": 3,
+        "failed": 9,
+        "failure_labels": [
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail"
+        ],
+        "num_tests": 10,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 238,
+        "sha256": "6fb7d0e97698da2270d7ccdd2260ae4115245421adfeae60424223a422bbff19"
+      },
+      "model_output": {
+        "bytes": 52,
+        "sha256": "aeac0b5d9aeaca9c8b9bb668da2f5f2658f638bccb2c8e47b82aabdbc6c462b6"
+      },
+      "native_action_api_calls": 0,
+      "native_api_calls": 0,
+      "native_bootstrap_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 2,
+        "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+      },
+      "predicted_tool": "screenshot",
+      "schema_translation_applied": false,
+      "task_id": "530b157_1",
+      "task_spec": {
+        "bytes": 585,
+        "path": "/private/tmp/appworld-data/data/tasks/530b157_1/specs.json",
+        "sha256": "484163be105a8423ac5c6b6172874746c2f2910b0d4713c6ecb765567c2e04fc"
+      }
+    },
+    {
+      "action_replayed": false,
+      "evaluation": {
+        "difficulty": 3,
+        "failed": 9,
+        "failure_labels": [
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail"
+        ],
+        "num_tests": 10,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 234,
+        "sha256": "29a24eb73ae70603811d0e90fb08b4ca6dfefc71c77c50e3efc84decf0b8bc71"
+      },
+      "model_output": {
+        "bytes": 52,
+        "sha256": "aeac0b5d9aeaca9c8b9bb668da2f5f2658f638bccb2c8e47b82aabdbc6c462b6"
+      },
+      "native_action_api_calls": 0,
+      "native_api_calls": 0,
+      "native_bootstrap_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 2,
+        "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+      },
+      "predicted_tool": "screenshot",
+      "schema_translation_applied": false,
+      "task_id": "530b157_2",
+      "task_spec": {
+        "bytes": 580,
+        "path": "/private/tmp/appworld-data/data/tasks/530b157_2/specs.json",
+        "sha256": "dde1a25f1d8adf32fc33b87eacd8715bbd482bd15985f7d9157a585550346843"
+      }
+    },
+    {
+      "action_replayed": false,
+      "evaluation": {
+        "difficulty": 2,
+        "failed": 7,
+        "failure_labels": [
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail"
+        ],
+        "num_tests": 8,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 182,
+        "sha256": "751317f84e615a01c02314329fde773dfcf5246f07ce0fafe26d3fe12341fc71"
+      },
+      "model_output": {
+        "bytes": 52,
+        "sha256": "aeac0b5d9aeaca9c8b9bb668da2f5f2658f638bccb2c8e47b82aabdbc6c462b6"
+      },
+      "native_action_api_calls": 0,
+      "native_api_calls": 0,
+      "native_bootstrap_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 2,
+        "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+      },
+      "predicted_tool": "screenshot",
+      "schema_translation_applied": false,
+      "task_id": "29caf6f_1",
+      "task_spec": {
+        "bytes": 518,
+        "path": "/private/tmp/appworld-data/data/tasks/29caf6f_1/specs.json",
+        "sha256": "18ba99e3a795f0fddb3b55d5dbc04fd32f0782dd267984895fe890349bf354ca"
+      }
+    },
+    {
+      "action_replayed": false,
+      "evaluation": {
+        "difficulty": 2,
+        "failed": 7,
+        "failure_labels": [
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail"
+        ],
+        "num_tests": 8,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 176,
+        "sha256": "0efafd47046ce7559b1eb147429c2e3925431453d9fd3a64ea853dcc33bbee54"
+      },
+      "model_output": {
+        "bytes": 52,
+        "sha256": "aeac0b5d9aeaca9c8b9bb668da2f5f2658f638bccb2c8e47b82aabdbc6c462b6"
+      },
+      "native_action_api_calls": 0,
+      "native_api_calls": 0,
+      "native_bootstrap_api_calls": 0,
+      "predicted_arguments": {
+        "bytes": 2,
+        "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+      },
+      "predicted_tool": "screenshot",
+      "schema_translation_applied": false,
+      "task_id": "29caf6f_2",
+      "task_spec": {
+        "bytes": 508,
+        "path": "/private/tmp/appworld-data/data/tasks/29caf6f_2/specs.json",
+        "sha256": "830e0f73d820642a9ea25776a7744b272473417335cb143cc54e4640b6305dd5"
+      }
+    }
+  ]
+}

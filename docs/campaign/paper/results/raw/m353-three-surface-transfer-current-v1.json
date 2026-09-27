@@ -1,0 +1,342 @@
+{
+  "benchmark_id": "cross_surface_public_transfer",
+  "checkpoint_sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+  "native_execution": false,
+  "official_split_verified": false,
+  "deployment_decision": "retain_parent_initialization_only_pending_native_replay",
+  "aggregate": {
+    "random_after_token_accuracy": 0.09412711182622686,
+    "warm_after_token_accuracy": 0.6757843925985519,
+    "warm_minus_random_after_pp": 58.1657280772325,
+    "warm_start_better_after": true
+  },
+  "arm_contract": {
+    "random_backbone_init": "random",
+    "random_backbone_seed": 2030,
+    "warm_backbone_init": "parent"
+  },
+  "claim_boundary": "Matched public-train-only text/accessibility continuation comparison; this is not an official benchmark score, native environment success, screenshot-grounding result, or evidence of real email/Notion/MCP side effects.",
+  "decision": "warm_start_dominates_matched_random_on_all_surfaces",
+  "eval_sources": [
+    {
+      "datasets": [],
+      "input": {
+        "bytes": 2735008,
+        "path": "/private/tmp/androidcontrol84k-conversations.test.jsonl",
+        "sha256": "2d798115fe0feb14ac6d65f86a4b51b4463b593a35281eedce4de8751356bc95"
+      },
+      "label": "androidcontrol",
+      "public_reference": {
+        "dataset": "OfficerChul/Android-Control-84k",
+        "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+      },
+      "revisions": [
+        "hf:OfficerChul/Android-Control-84k"
+      ],
+      "rows": 8,
+      "source_families": [
+        "androidcontrol_json_mirror"
+      ],
+      "source_urls": [],
+      "splits": [
+        "test"
+      ],
+      "unique_parent_records": 0,
+      "visual_input_omitted_rows": 8
+    },
+    {
+      "datasets": [
+        "xlangai/AgentNet"
+      ],
+      "input": {
+        "bytes": 239724,
+        "path": "/private/tmp/agentnet_text_v4.eval.jsonl",
+        "sha256": "2cadf65145b07734eb13988dc305396d027f6e98d1a5a7cf7de9a5fd31c3dc7c"
+      },
+      "label": "agentnet",
+      "public_reference": {
+        "dataset": "xlangai/AgentNet",
+        "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+      },
+      "revisions": [
+        "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+      ],
+      "rows": 8,
+      "source_families": [
+        "xlangai/AgentNet"
+      ],
+      "source_urls": [],
+      "splits": [
+        "ubuntu_jsonl_bounded_prefix"
+      ],
+      "unique_parent_records": 2,
+      "visual_input_omitted_rows": 0
+    },
+    {
+      "datasets": [
+        "osunlp/Mind2Web"
+      ],
+      "input": {
+        "bytes": 81803,
+        "path": "/private/tmp/mind2web-grounded-offset8-eval-disjoint.jsonl",
+        "sha256": "46305cb512f7368ed31817c79b798f5469e8658db12aed5d6880ea81b4e6fcbe"
+      },
+      "label": "mind2web",
+      "public_reference": {
+        "dataset": "osunlp/Mind2Web",
+        "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+      },
+      "revisions": [
+        "17ece8eb89862368edc0cc806acee6fca5163474"
+      ],
+      "rows": 8,
+      "source_families": [],
+      "source_urls": [
+        "https://huggingface.co/datasets/osunlp/Mind2Web"
+      ],
+      "splits": [
+        "train"
+      ],
+      "unique_parent_records": 2,
+      "visual_input_omitted_rows": 0
+    }
+  ],
+  "hyperparameters": {
+    "backbone_init": "parent",
+    "batch_size": 4,
+    "device": "cpu",
+    "learning_rate": 1e-05,
+    "max_eval_rows_per_source": 8,
+    "max_seq_len": 1024,
+    "max_train_rows_per_source": 32,
+    "random_backbone_seed": 2028,
+    "seed": 2027,
+    "steps": 32
+  },
+  "kind": "localagent_cross_surface_transfer_ablation_report",
+  "parent": {
+    "bytes": 52242001,
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+  },
+  "random_backbone_receipt": {
+    "bytes": 52250380,
+    "path": "/private/tmp/m353-three-surface-random.pt",
+    "sha256": "e3f1e37ab0ca6922d053cf08d581d530215a87d5b894df32dabe052e3f7fb8cb"
+  },
+  "random_weight_groups": {
+    "action_heads": {
+      "base_l2": 99.96533739276437,
+      "delta_l2": 0.0,
+      "parameters": 2518968,
+      "relative_delta_l2": 0.0,
+      "target_l2": 99.96533739276437
+    },
+    "attention_or_mixer": {
+      "base_l2": 51.68591919503937,
+      "delta_l2": 40.20116543740896,
+      "parameters": 1871872,
+      "relative_delta_l2": 0.7777972427211342,
+      "target_l2": 50.39737942577463
+    },
+    "embedding": {
+      "base_l2": 76.22106199454595,
+      "delta_l2": 91.2477044955811,
+      "parameters": 6291456,
+      "relative_delta_l2": 1.1971455409806595,
+      "target_l2": 50.171676569182154
+    },
+    "ffn": {
+      "base_l2": 50.59914708877707,
+      "delta_l2": 44.46130143913574,
+      "parameters": 2360832,
+      "relative_delta_l2": 0.8786966578928223,
+      "target_l2": 49.8056592667783
+    },
+    "normalization": {
+      "base_l2": 21.432378276078357,
+      "delta_l2": 1.8371753818183563,
+      "parameters": 384,
+      "relative_delta_l2": 0.08571962281334454,
+      "target_l2": 19.59621536291651
+    }
+  },
+  "rows": {
+    "eval": 24,
+    "train": 96
+  },
+  "schema_version": 1,
+  "surfaces": {
+    "agentnet": {
+      "random_backbone": {
+        "after_token_accuracy": 0.013468013468013467,
+        "before_token_accuracy": 0.0,
+        "delta_token_accuracy": 0.013468013468013467
+      },
+      "rows": 8,
+      "warm_minus_random_after_pp": 51.178451178451176,
+      "warm_start": {
+        "after_token_accuracy": 0.5252525252525253,
+        "before_token_accuracy": 0.47474747474747475,
+        "delta_token_accuracy": 0.05050505050505055
+      },
+      "warm_start_better_after": true
+    },
+    "androidcontrol": {
+      "random_backbone": {
+        "after_token_accuracy": 0.11981566820276497,
+        "before_token_accuracy": 0.0,
+        "delta_token_accuracy": 0.11981566820276497
+      },
+      "rows": 8,
+      "warm_minus_random_after_pp": 54.83870967741935,
+      "warm_start": {
+        "after_token_accuracy": 0.6682027649769585,
+        "before_token_accuracy": 0.6082949308755761,
+        "delta_token_accuracy": 0.05990783410138245
+      },
+      "warm_start_better_after": true
+    },
+    "mind2web": {
+      "random_backbone": {
+        "after_token_accuracy": 0.11934156378600823,
+        "before_token_accuracy": 0.0,
+        "delta_token_accuracy": 0.11934156378600823
+      },
+      "rows": 8,
+      "warm_minus_random_after_pp": 62.002743484224965,
+      "warm_start": {
+        "after_token_accuracy": 0.7393689986282579,
+        "before_token_accuracy": 0.6460905349794238,
+        "delta_token_accuracy": 0.09327846364883408
+      },
+      "warm_start_better_after": true
+    }
+  },
+  "train_sources": [
+    {
+      "datasets": [],
+      "input": {
+        "bytes": 251477763,
+        "path": "/private/tmp/androidcontrol84k-conversations.train.jsonl",
+        "sha256": "8986e95466dc6e7aefedcbffa43f0b1d75f642c8e8326828147df0a98a423b51"
+      },
+      "label": "androidcontrol",
+      "public_reference": {
+        "dataset": "OfficerChul/Android-Control-84k",
+        "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+      },
+      "revisions": [
+        "hf:OfficerChul/Android-Control-84k"
+      ],
+      "rows": 32,
+      "source_families": [
+        "androidcontrol_json_mirror"
+      ],
+      "source_urls": [],
+      "splits": [
+        "train"
+      ],
+      "unique_parent_records": 0,
+      "visual_input_omitted_rows": 32
+    },
+    {
+      "datasets": [
+        "xlangai/AgentNet"
+      ],
+      "input": {
+        "bytes": 911095,
+        "path": "/private/tmp/agentnet_text_v4.train.jsonl",
+        "sha256": "44fad4c6e98fb6f5afd3cc45b89e1c1987d5d273293922521ef67677ace79db8"
+      },
+      "label": "agentnet",
+      "public_reference": {
+        "dataset": "xlangai/AgentNet",
+        "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+      },
+      "revisions": [
+        "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+      ],
+      "rows": 32,
+      "source_families": [
+        "xlangai/AgentNet"
+      ],
+      "source_urls": [],
+      "splits": [
+        "ubuntu_jsonl_bounded_prefix"
+      ],
+      "unique_parent_records": 4,
+      "visual_input_omitted_rows": 0
+    },
+    {
+      "datasets": [
+        "osunlp/Mind2Web"
+      ],
+      "input": {
+        "bytes": 282261,
+        "path": "/private/tmp/mind2web-grounded-offset8-train-disjoint.jsonl",
+        "sha256": "78f7e647c3728106901c51ecc772c834467ef6a019c1c083af6849700b361621"
+      },
+      "label": "mind2web",
+      "public_reference": {
+        "dataset": "osunlp/Mind2Web",
+        "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+      },
+      "revisions": [
+        "17ece8eb89862368edc0cc806acee6fca5163474"
+      ],
+      "rows": 32,
+      "source_families": [],
+      "source_urls": [
+        "https://huggingface.co/datasets/osunlp/Mind2Web"
+      ],
+      "splits": [
+        "train"
+      ],
+      "unique_parent_records": 8,
+      "visual_input_omitted_rows": 0
+    }
+  ],
+  "warm_start_receipt": {
+    "bytes": 52250266,
+    "path": "/private/tmp/m353-three-surface-warm.pt",
+    "sha256": "c9a3be20645140ff1906a6dd9268a6f1e1f1dd68fda8b76ee75713f27b9af394"
+  },
+  "warm_weight_groups": {
+    "action_heads": {
+      "base_l2": 99.96533739276437,
+      "delta_l2": 0.0,
+      "parameters": 2518968,
+      "relative_delta_l2": 0.0,
+      "target_l2": 99.96533739276437
+    },
+    "attention_or_mixer": {
+      "base_l2": 51.68591919503937,
+      "delta_l2": 0.10569286743545703,
+      "parameters": 1871872,
+      "relative_delta_l2": 0.002044906409357252,
+      "target_l2": 51.68678151515452
+    },
+    "embedding": {
+      "base_l2": 76.22106199454595,
+      "delta_l2": 0.300659235987001,
+      "parameters": 6291456,
+      "relative_delta_l2": 0.003944568969775243,
+      "target_l2": 76.3395694488673
+    },
+    "ffn": {
+      "base_l2": 50.59914708877707,
+      "delta_l2": 0.12361876058656242,
+      "parameters": 2360832,
+      "relative_delta_l2": 0.002443099690389468,
+      "target_l2": 50.59932770844889
+    },
+    "normalization": {
+      "base_l2": 21.432378276078357,
+      "delta_l2": 0.0016993857599511362,
+      "parameters": 384,
+      "relative_delta_l2": 7.92905825970745e-05,
+      "target_l2": 21.432253289211822
+    }
+  }
+}

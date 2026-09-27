@@ -1,0 +1,82 @@
+{
+  "kind": "localagent_agentnet_weight_transfer_ablation",
+  "schema_version": 1,
+  "dataset": "xlangai/AgentNet",
+  "dataset_revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+  "source": {
+    "train_rows": 513,
+    "eval_rows": 133,
+    "train_sha256": "666e7b29bd67e6b46c8a96c0fa9248a1d79498e4c6da2baf04bb906d8778bc60",
+    "eval_sha256": "b9473550b24cea2f87b4d90ad29e6a669a179fdcee9e5d5a753011236f45af7d",
+    "parent_split": "32 train parents / 8 eval parents",
+    "images_dropped": true
+  },
+  "protocol": {
+    "steps": 32,
+    "batch_size": 4,
+    "learning_rate": 1e-5,
+    "max_seq_len": 384,
+    "seed": 2027,
+    "head_steps": 0,
+    "same_tokenizer_and_config": true,
+    "no_transfer_definition": "fresh LocalAgentLM backbone initialization; parent tokenizer, route head, and dense selector retained"
+  },
+  "arms": {
+    "pretrained_backbone": {
+      "parent": {
+        "bytes": 52320590,
+        "sha256": "27453c927bb4bacb4c93912b01a8676587287bc4f33239eb71b5f156b1551708"
+      },
+      "child": {
+        "bytes": 52320175,
+        "sha256": "4126c54313b0f72aefc07363b8942f88ab7a19cbfab2da2d52323769a080e08a"
+      },
+      "eval_before": {
+        "mean_loss": 3.780364803353921,
+        "token_accuracy": 0.4709124311083895,
+        "sequence_accuracy": 0.0,
+        "route_accuracy": 0.9924812030075187,
+        "selector_top1": 0.05263157894736842
+      },
+      "eval_after": {
+        "mean_loss": 2.612130841957742,
+        "token_accuracy": 0.5888956929985711,
+        "sequence_accuracy": 0.0,
+        "route_accuracy": 1.0,
+        "selector_top1": 0.12030075187969924
+      }
+    },
+    "random_backbone_control": {
+      "parent": {
+        "bytes": 52319842,
+        "sha256": "a322e3100ddec6a733ec474dfc5f3c545a15fa23232f914a8b5994af7b8e7527"
+      },
+      "child": {
+        "bytes": 52320930,
+        "sha256": "b645c220828e5ba5ad0c9a64d2c96f56d197275c0d104a84dcbae4b754fa763a"
+      },
+      "eval_before": {
+        "mean_loss": 9.809152834024642,
+        "token_accuracy": 0.0,
+        "sequence_accuracy": 0.0,
+        "route_accuracy": 0.0,
+        "selector_top1": 0.022556390977443608
+      },
+      "eval_after": {
+        "mean_loss": 8.593036907793284,
+        "token_accuracy": 0.21187997550520515,
+        "sequence_accuracy": 0.0,
+        "route_accuracy": 0.0,
+        "selector_top1": 0.015037593984962405
+      }
+    }
+  },
+  "delta_pretrained_minus_random_after": {
+    "mean_loss": -5.980906065835542,
+    "token_accuracy": 0.37701571749336596,
+    "selector_top1": 0.10526315789473684,
+    "sequence_accuracy": 0.0
+  },
+  "interpretation": "On this bounded text-only AgentNet continuation, warm-starting the pretrained backbone substantially outperformed the matched fresh-backbone control after identical SFT updates. The arm still has zero exact trajectories, so this is evidence for initialization quality and transfer compatibility, not a native desktop score or proof of optimal fine-tuning.",
+  "claim_boundary": "Offline source-disjoint AgentNet continuation and matched no-transfer ablation; images are excluded and no AgentNetBench, OSWorld, browser, emulator, MCP, or native desktop success is claimed."
+}

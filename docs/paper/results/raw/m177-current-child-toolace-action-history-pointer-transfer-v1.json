@@ -1,0 +1,91 @@
+{
+  "arms": {
+    "inherited_pretrained_pointer": {
+      "backbone": "m173_warm_frozen",
+      "metrics": {
+        "argument_vocab": 96,
+        "coverage": 0.49206349206349204,
+        "covered_examples": 31,
+        "decoded_value_exact": 0.0,
+        "examples": 63,
+        "span_exact": 0.0
+      },
+      "pointer": "inherited_common_rows_plus_new_arg_rows"
+    },
+    "retrained_matched_random_backbone": {
+      "backbone": "matched_random_frozen",
+      "metrics": {
+        "argument_vocab": 96,
+        "coverage": 0.49206349206349204,
+        "covered_examples": 31,
+        "decoded_value_exact": 0.1935483870967742,
+        "examples": 63,
+        "span_exact": 0.1935483870967742
+      },
+      "pointer": "retrained_on_locatable_toolace_spans"
+    },
+    "retrained_pretrained_backbone": {
+      "backbone": "m173_warm_frozen",
+      "metrics": {
+        "argument_vocab": 96,
+        "coverage": 0.49206349206349204,
+        "covered_examples": 31,
+        "decoded_value_exact": 0.0967741935483871,
+        "examples": 63,
+        "span_exact": 0.0967741935483871
+      },
+      "pointer": "retrained_on_locatable_toolace_spans",
+      "pointer_relative_movement": {
+        "argument_embedding": 1.383670687675476,
+        "end_projection": 0.3389039933681488,
+        "start_projection": 0.3680276572704315
+      }
+    }
+  },
+  "child": {
+    "bytes": 52340194,
+    "path": "/private/tmp/m177-toolace-pointer-warm-child.pt",
+    "sha256": "d576732a978c320d73104f38cba32a080c4d76bcd70778f26954ad20e843e3c8"
+  },
+  "claim_boundary": "ToolACE source-projected pointer diagnostic over values that occur verbatim in the catalog/history context; no native execution, official ToolACE/BFCL score, or external side effects.",
+  "decision": {
+    "adoption": "adopt_pointer_only_if_free_run_argument_exact_improves",
+    "reason": "The WebGPU-shaped free-run receipt is the deployment gate for pointer adoption.",
+    "transfer_beats_random_decoded_value": false,
+    "transfer_improves_over_inherited_decoded_value": true
+  },
+  "hyperparameters": {
+    "backbone_frozen": true,
+    "batch_size": 16,
+    "context": "catalog + BPE_EOS + action-history + ASSISTANT",
+    "learning_rate": 0.005,
+    "seed": 2033,
+    "steps": 32
+  },
+  "kind": "localagent_toolace_action_history_pointer_transfer_probe",
+  "parent": {
+    "bytes": 52225841,
+    "path": "/private/tmp/m173-toolace-action-history-warm-child.pt",
+    "sha256": "536266586463ea13959b379433ca73cded99dc2330d264bb66e0337615fb8b11"
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "Team-ACE/ToolACE",
+    "eval": {
+      "bytes": 344723,
+      "path": "/private/tmp/toolace-action-eval-64.jsonl",
+      "sha256": "fa4926b1be45e4471bac104fa31e480de6ab3e195317c900a695069c403b4230"
+    },
+    "eval_locatable_spans": 63,
+    "eval_rows": 64,
+    "revision": "6bda777c88d21e5a204703c1ee45597a8fa4f734",
+    "train": {
+      "bytes": 1346014,
+      "path": "/private/tmp/toolace-action-train-256.jsonl",
+      "sha256": "7ddd58ba5352492290dad0e68d7e7a3f06ad428ffcd595f4c2e014a314c793ac"
+    },
+    "train_locatable_spans": 182,
+    "train_rows": 256,
+    "url": "https://huggingface.co/datasets/Team-ACE/ToolACE"
+  }
+}

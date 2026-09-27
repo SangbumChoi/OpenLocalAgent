@@ -1,0 +1,106 @@
+{
+  "kind": "localagent_mcp_service_contract_probe_receipt",
+  "schema_version": 1,
+  "dataset": {
+    "name": "MCPMark",
+    "url": "https://github.com/eval-sys/mcpmark",
+    "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "suites": ["standard", "easy"]
+  },
+  "parent": {
+    "parameters": 10524544,
+    "bytes": 52320006,
+    "sha256": "0d0ae0bb4a4f35b40bb9ba5d2e234e3ec389e12758b6dd2527e072e9b7589251",
+    "backbone_frozen": true
+  },
+  "child": {
+    "bytes": 52320618,
+    "sha256": "2c4a6fc35199f81f97bc099dbd52fe021937bd7cb9a71d04b3bffc4c8017a179",
+    "backbone_frozen": true
+  },
+  "training": {
+    "adapter": "mcp_service_contract_probe_v1",
+    "implementation": {
+      "path": "scripts/train_mcp_service_probe.py",
+      "sha256": "1a217659ff38a3e06a80899a53d516b659bc6c9bff41b39009baad2504bdbe6e"
+    },
+    "rows": 28,
+    "decisions": 28,
+    "services": ["filesystem", "github", "notion", "playwright", "postgres"],
+    "route_steps": 800,
+    "selector_steps": 800,
+    "source_text": "generated service/tool contracts only",
+    "mcpmark_task_text_used": false,
+    "training_fit": {
+      "route_accuracy": 1.0,
+      "selector_top1": 1.0,
+      "selector_top3": 1.0
+    }
+  },
+  "weight_delta": {
+    "backbone": 0.0,
+    "route_head_l2_sum": 5.381937308236957,
+    "dense_selector_l2_sum": 143.384395301342,
+    "route_tensors": {
+      "fc.bias": 0.022998137399554253,
+      "fc.weight": 5.358939170837402
+    },
+    "selector_tensors": {
+      "q_proj.bias": 0.7777413725852966,
+      "q_proj.weight": 36.92249298095703,
+      "t_proj.bias": 0.7395579814910889,
+      "t_proj.weight": 104.9446029663086
+    }
+  },
+  "source": {
+    "standard_rows": 169,
+    "standard_metadata_and_description_bytes": 1272143,
+    "standard_task_manifest_sha256": "b35b92adfb8a846eb32dc36c411c17aa5ecf757e5b63aeaa1671755f475686d5",
+    "easy_rows": 70,
+    "easy_metadata_and_description_bytes": 385446,
+    "easy_task_manifest_sha256": "f8eea15c843ee222c3899849d724ddbe6cd89f0f709ff7a84659d9cafef52f06",
+    "task_text_retained": false,
+    "mcp_servers_executed": false,
+    "verifiers_executed": false
+  },
+  "baseline": {
+    "combined_rows": 239,
+    "route_accuracy": 0.1589958158995816,
+    "selector_top1": 0.0,
+    "selector_top3": 0.0041841004184100415
+  },
+  "results": {
+    "standard": {
+      "rows": 169,
+      "route_correct": 86,
+      "route_accuracy": 0.5088757396449705,
+      "selector_top1_correct": 64,
+      "selector_top1": 0.378698224852071,
+      "selector_top3_correct": 112,
+      "selector_top3": 0.6627218934911243
+    },
+    "easy": {
+      "rows": 70,
+      "route_correct": 26,
+      "route_accuracy": 0.37142857142857144,
+      "selector_top1_correct": 25,
+      "selector_top1": 0.35714285714285715,
+      "selector_top3_correct": 55,
+      "selector_top3": 0.7857142857142857
+    },
+    "combined": {
+      "rows": 239,
+      "route_correct": 112,
+      "route_accuracy": 0.4686192468619247,
+      "selector_top1_correct": 89,
+      "selector_top1": 0.3723849372384937,
+      "selector_top3_correct": 167,
+      "selector_top3": 0.698744769874477
+    }
+  },
+  "interpretation": {
+    "finding": "Service/tool-contract supervision transfers to unseen MCPMark task descriptions when only the route and dense-selector heads are changed; the backbone remains untouched.",
+    "next_step": "Add licensed MCP-specific multi-turn demonstrations and validate with the official MCPMark runner; do not promote this proxy child as a live execution model.",
+    "claim_boundary": "Task-description routing proxy only; not live MCP execution, verifier success, pass@k, or an official MCPMark leaderboard score."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "kind": "localagent_agentnet_surface_selector_repair_browser_checkpoint",
+  "schema_version": 1,
+  "parent_checkpoint": {
+    "path": "/private/tmp/m111-deployment-repair-warm.pt",
+    "sha256": "35fedcefdafece153912b3bf6629fb23c0ad48f269126d2f8021ef04e0e384ae",
+    "parameters": 10524544
+  },
+  "source": {
+    "dataset": "xlangai/AgentNet",
+    "url": "https://huggingface.co/datasets/xlangai/AgentNet",
+    "revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+    "license": "MIT",
+    "train_path": "/private/tmp/agentnet_text_v3.train.jsonl",
+    "train_sha256": "666e7b29bd67e6b46c8a96c0fa9248a1d79498e4c6da2baf04bb906d8778bc60",
+    "eval_path": "/private/tmp/agentnet_text_v3.eval.jsonl",
+    "eval_sha256": "b9473550b24cea2f87b4d90ad29e6a669a179fdcee9e5d5a753011236f45af7d",
+    "official_split_verified": false,
+    "images_consumed": false,
+    "desktop_runtime_executed": false
+  },
+  "training": {
+    "train_rows": 513,
+    "eval_rows": 133,
+    "tool_surface": 14,
+    "steps": 400,
+    "batch_size": 128,
+    "learning_rate": 0.005,
+    "seed": 2042,
+    "backbone_frozen": true,
+    "warm_checkpoint_sha256": "26e14bc8d13e57692a8a4127e00656704f357e15ccdb00d0690d6f7d98afdc66",
+    "random_checkpoint_sha256": "726757b0cd05359886583cba59e94f309cb324d1ef7e1be9e3481ac0d32850ab",
+    "warm": {
+      "train_selector_top1": 0.7582846283912659,
+      "eval_selector_top1": 0.7067669034004211,
+      "relative_selector_l2": 1.1593799668023588
+    },
+    "random": {
+      "train_selector_top1": 0.7290448546409607,
+      "eval_selector_top1": 0.7142857313156128,
+      "relative_selector_l2": 1.204708833156504
+    }
+  },
+  "end_to_end_text_projection": {
+    "checkpoint_sha256": "26e14bc8d13e57692a8a4127e00656704f357e15ccdb00d0690d6f7d98afdc66",
+    "projection_rows": 133,
+    "parent_tasks": 8,
+    "completeness_verified": true,
+    "first_action_type_rate": 1.0,
+    "success_rate": 0.0,
+    "exact_trajectory_rate": 0.0,
+    "mean_total": 5.749050557208484e-15,
+    "prediction_sha256": "f7f231e7bcd0ac7a7cf5c866d060804c11af94a7fbdf0938bc46b7a7d54c6462",
+    "scorer_report_sha256": "506d642d9213ce0b57e3145928e56c9415fe9dd697199c720e70ce1e626a3263"
+  },
+  "implementation": {
+    "trainer": "scripts/train_agentnet_selector_repair.py",
+    "trainer_sha256": "d74046175aeca4f72d2f6ee58a3b4f21aecd63ed9693cd4fc457b1a456aa05a2",
+    "evaluator": "scripts/evaluate_agentnet_text.py",
+    "evaluator_sha256": "ae85ba0fe3d984f35516d2ca9e13e3ec2db58557f0d68dfcfb58ce3fc57892c3",
+    "runtime_surface_selector_sha256": "81b59c4389096ed8cd9714396b33e2ffb0bac28c3c39aa6ed16290b1ebc72891"
+  },
+  "claim_boundary": "A surface-specific selector restores first-action type on the bounded AgentNet text projection, but warm is slightly below the matched random selector and all eight trajectories remain unsuccessful because coordinate/text grounding is absent. This is not an official AgentNetBench score, native desktop result, screenshot-grounding result, or WebGPU hardware result."
+}

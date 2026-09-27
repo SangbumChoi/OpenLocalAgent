@@ -1,0 +1,406 @@
+{
+  "arms": {
+    "random": {
+      "after": {
+        "eval": {
+          "assistant_loss_tokens": 1797,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.3984418475236505,
+          "mean_loss": 7.5310812447558,
+          "rows": 21
+        },
+        "train": {
+          "assistant_loss_tokens": 5247,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.37659615018105586,
+          "mean_loss": 7.495766484307998,
+          "rows": 86
+        }
+      },
+      "before": {
+        "eval": {
+          "assistant_loss_tokens": 1797,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.2548692264885921,
+          "mean_loss": 8.527244368326551,
+          "rows": 21
+        },
+        "train": {
+          "assistant_loss_tokens": 5247,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.23461025347817802,
+          "mean_loss": 8.589828674421097,
+          "rows": 86
+        }
+      },
+      "child": {
+        "bytes": 52206887,
+        "path": "/private/tmp/m671-mcp-current-v2/random-child.pt",
+        "sha256": "8a2e5b9c39737841907892b923fe74b6462b4587674c7bcc8d8b49d5a79e014d"
+      },
+      "heads": {
+        "after": {
+          "route_accuracy": 0.0,
+          "rows": 21,
+          "selector_top1_accuracy": 0.0,
+          "tool_rows": 0
+        },
+        "before": {
+          "route_accuracy": 0.0,
+          "rows": 21,
+          "selector_top1_accuracy": 0.0,
+          "tool_rows": 0
+        }
+      },
+      "parent": {
+        "bytes": 52206759,
+        "path": "/private/tmp/m665-appworld-full/max64/random-child.pt",
+        "sha256": "0cb06efb0037bb96c94846ff42e33063525aa418d8063be07444bb0d27ef1ffc"
+      },
+      "weight_transfer": {
+        "base": {
+          "auxiliary_tensors": 11,
+          "lineage": {
+            "config_sha256": "e408495cc5d15a62c21f9e1da82ec1732830dd4c585813318a656ed9b93f421c",
+            "data_sha256": "e74e53a930904488dc7558e1bdf99b9cfbc9a435e6d420b9d0f68b49aeaa0b6e",
+            "git": {
+              "commit": "1df9716b9a607e38dd587c747c5867528545d3e8",
+              "dirty": true,
+              "repository_sha256": "4f3f386c8a99593d11431d8772a6bc3b3f67365462192b3068675ebbdee038bf",
+              "worktree_sha256": "c0bc8ea43e4780b24992747cdd373f97ec5de356d82e38e8ee652592933c53aa"
+            },
+            "model_config_sha256": "893fdd2f896c6c246ceed64031b9fbd4b5b770ce2fb72cd3de5fc02703161393",
+            "parent_checkpoint_sha256": "47d2eb1caa1b17688e722f0f7c9ea7586211ca2775197636769341cfd5faa05c",
+            "stage": "sft",
+            "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+            "version": 1
+          },
+          "model_tensors": 40,
+          "path": "/private/tmp/m665-appworld-full/max64/random-child.pt",
+          "sha256": "0cb06efb0037bb96c94846ff42e33063525aa418d8063be07444bb0d27ef1ffc",
+          "stage": "sft_public_agent_continuation",
+          "step": 128
+        },
+        "compatibility": {
+          "added_tensors": [],
+          "config_mismatches": {},
+          "removed_tensors": [],
+          "shape_mismatches": {},
+          "shared_tensor_count": 51,
+          "tokenizer_sha256_equal": true
+        },
+        "groups": {
+          "action_heads": {
+            "base_l2": 91.53287681571555,
+            "delta_l2": 0.0,
+            "parameters": 2519736,
+            "relative_delta_l2": 0.0,
+            "target_l2": 91.53287681571555
+          },
+          "attention_or_mixer": {
+            "base_l2": 50.41634602456231,
+            "delta_l2": 0.21676455600990993,
+            "parameters": 1871872,
+            "relative_delta_l2": 0.0042994896120457544,
+            "target_l2": 50.416486187922494
+          },
+          "embedding": {
+            "base_l2": 50.190583246643605,
+            "delta_l2": 0.7335941322625474,
+            "parameters": 6291456,
+            "relative_delta_l2": 0.01461617069994111,
+            "target_l2": 50.209479155894165
+          },
+          "ffn": {
+            "base_l2": 49.807102596413934,
+            "delta_l2": 0.27848483478700237,
+            "parameters": 2360832,
+            "relative_delta_l2": 0.005591267515469832,
+            "target_l2": 49.81321112078124
+          },
+          "normalization": {
+            "base_l2": 19.60845052561304,
+            "delta_l2": 0.006009257303861364,
+            "parameters": 384,
+            "relative_delta_l2": 0.0003064626292634354,
+            "target_l2": 19.61378674584986
+          }
+        },
+        "recommendation": {
+          "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+          "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+          "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+          "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+        },
+        "target": {
+          "auxiliary_tensors": 11,
+          "lineage": {
+            "config_sha256": "b8d08ab91b665599d6118788b4088422a9156a83f547df2c6d2a3035fe78e886",
+            "data_sha256": "68eebb03fb59e01346180cf3d39982801404048169a067949a4b5d94374706a7",
+            "git": {
+              "commit": "418d29cc9dc9f021f1cc0e1422e3410a5bd67449",
+              "dirty": true,
+              "repository_sha256": "4f3f386c8a99593d11431d8772a6bc3b3f67365462192b3068675ebbdee038bf",
+              "worktree_sha256": "abde5ed87c0e5c645960169cf2c81010f1be41114794412167a7b6217b8da2c3"
+            },
+            "model_config_sha256": "893fdd2f896c6c246ceed64031b9fbd4b5b770ce2fb72cd3de5fc02703161393",
+            "parent_checkpoint_sha256": "0cb06efb0037bb96c94846ff42e33063525aa418d8063be07444bb0d27ef1ffc",
+            "stage": "sft",
+            "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+            "version": 1
+          },
+          "model_tensors": 40,
+          "path": "/private/tmp/m671-mcp-current-v2/random-child.pt",
+          "sha256": "8a2e5b9c39737841907892b923fe74b6462b4587674c7bcc8d8b49d5a79e014d",
+          "stage": "sft_public_agent_continuation",
+          "step": 128
+        }
+      }
+    },
+    "warm": {
+      "after": {
+        "eval": {
+          "assistant_loss_tokens": 1797,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.5592654424040067,
+          "mean_loss": 3.203211542892668,
+          "rows": 21
+        },
+        "train": {
+          "assistant_loss_tokens": 5247,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.5688965122927387,
+          "mean_loss": 3.092650675060228,
+          "rows": 86
+        }
+      },
+      "before": {
+        "eval": {
+          "assistant_loss_tokens": 1797,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.4535336672231497,
+          "mean_loss": 3.9944591490374584,
+          "rows": 21
+        },
+        "train": {
+          "assistant_loss_tokens": 5247,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.43548694492090717,
+          "mean_loss": 4.176977373882546,
+          "rows": 86
+        }
+      },
+      "child": {
+        "bytes": 52206773,
+        "path": "/private/tmp/m671-mcp-current-v2/warm-child.pt",
+        "sha256": "b5576dc8bd422d65c62bc500d0754235adb122c805e254e586c980b50bee8861"
+      },
+      "heads": {
+        "after": {
+          "route_accuracy": 0.0,
+          "rows": 21,
+          "selector_top1_accuracy": 0.0,
+          "tool_rows": 0
+        },
+        "before": {
+          "route_accuracy": 0.0,
+          "rows": 21,
+          "selector_top1_accuracy": 0.0,
+          "tool_rows": 0
+        }
+      },
+      "parent": {
+        "bytes": 52206645,
+        "path": "/private/tmp/m665-appworld-full/max64/warm-child.pt",
+        "sha256": "8c3a4ed31d468a8556faf9f1442a3d7cfb7cfcc19788055bb1c501217c65d850"
+      },
+      "weight_transfer": {
+        "base": {
+          "auxiliary_tensors": 11,
+          "lineage": {
+            "config_sha256": "e408495cc5d15a62c21f9e1da82ec1732830dd4c585813318a656ed9b93f421c",
+            "data_sha256": "e74e53a930904488dc7558e1bdf99b9cfbc9a435e6d420b9d0f68b49aeaa0b6e",
+            "git": {
+              "commit": "1df9716b9a607e38dd587c747c5867528545d3e8",
+              "dirty": true,
+              "repository_sha256": "4f3f386c8a99593d11431d8772a6bc3b3f67365462192b3068675ebbdee038bf",
+              "worktree_sha256": "c0bc8ea43e4780b24992747cdd373f97ec5de356d82e38e8ee652592933c53aa"
+            },
+            "model_config_sha256": "893fdd2f896c6c246ceed64031b9fbd4b5b770ce2fb72cd3de5fc02703161393",
+            "parent_checkpoint_sha256": "bb19d72ec5c3e5fefb13b752b9b8851fb81e6dfaeb05aa460e68c06727158614",
+            "stage": "sft",
+            "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+            "version": 1
+          },
+          "model_tensors": 40,
+          "path": "/private/tmp/m665-appworld-full/max64/warm-child.pt",
+          "sha256": "8c3a4ed31d468a8556faf9f1442a3d7cfb7cfcc19788055bb1c501217c65d850",
+          "stage": "sft_public_agent_continuation",
+          "step": 128
+        },
+        "compatibility": {
+          "added_tensors": [],
+          "config_mismatches": {},
+          "removed_tensors": [],
+          "shape_mismatches": {},
+          "shared_tensor_count": 51,
+          "tokenizer_sha256_equal": true
+        },
+        "groups": {
+          "action_heads": {
+            "base_l2": 91.77234792175153,
+            "delta_l2": 0.0,
+            "parameters": 2519736,
+            "relative_delta_l2": 0.0,
+            "target_l2": 91.77234792175153
+          },
+          "attention_or_mixer": {
+            "base_l2": 51.702521828428544,
+            "delta_l2": 0.18697824098027804,
+            "parameters": 1871872,
+            "relative_delta_l2": 0.003616424003470337,
+            "target_l2": 51.70448366526344
+          },
+          "embedding": {
+            "base_l2": 78.09260213410877,
+            "delta_l2": 0.6853024313143983,
+            "parameters": 6291456,
+            "relative_delta_l2": 0.00877551026072259,
+            "target_l2": 78.3749410059553
+          },
+          "ffn": {
+            "base_l2": 50.61285918505925,
+            "delta_l2": 0.2298142161039411,
+            "parameters": 2360832,
+            "relative_delta_l2": 0.004540628998327395,
+            "target_l2": 50.61385193782216
+          },
+          "normalization": {
+            "base_l2": 21.459685528959145,
+            "delta_l2": 0.0037236525063428544,
+            "parameters": 384,
+            "relative_delta_l2": 0.00017351850293043235,
+            "target_l2": 21.460897433576278
+          }
+        },
+        "recommendation": {
+          "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+          "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+          "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+          "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+        },
+        "target": {
+          "auxiliary_tensors": 11,
+          "lineage": {
+            "config_sha256": "b8d08ab91b665599d6118788b4088422a9156a83f547df2c6d2a3035fe78e886",
+            "data_sha256": "68eebb03fb59e01346180cf3d39982801404048169a067949a4b5d94374706a7",
+            "git": {
+              "commit": "418d29cc9dc9f021f1cc0e1422e3410a5bd67449",
+              "dirty": true,
+              "repository_sha256": "4f3f386c8a99593d11431d8772a6bc3b3f67365462192b3068675ebbdee038bf",
+              "worktree_sha256": "abde5ed87c0e5c645960169cf2c81010f1be41114794412167a7b6217b8da2c3"
+            },
+            "model_config_sha256": "893fdd2f896c6c246ceed64031b9fbd4b5b770ce2fb72cd3de5fc02703161393",
+            "parent_checkpoint_sha256": "8c3a4ed31d468a8556faf9f1442a3d7cfb7cfcc19788055bb1c501217c65d850",
+            "stage": "sft",
+            "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+            "version": 1
+          },
+          "model_tensors": 40,
+          "path": "/private/tmp/m671-mcp-current-v2/warm-child.pt",
+          "sha256": "b5576dc8bd422d65c62bc500d0754235adb122c805e254e586c980b50bee8861",
+          "stage": "sft_public_agent_continuation",
+          "step": 128
+        }
+      }
+    }
+  },
+  "claim_boundary": "Current m666-parent public MCP trajectory continuation with an agent-disjoint internal holdout. This is teacher-forced text evidence, not an official MCP benchmark score, native MCP server execution, or real email/Notion/browser side effect.",
+  "comparison": {
+    "exact_sequence_accuracy": {
+      "random": 0.0,
+      "warm": 0.0
+    },
+    "random_after_eval_token_accuracy": 0.3984418475236505,
+    "random_before_eval_token_accuracy": 0.2548692264885921,
+    "random_gain_pp": 14.35726210350584,
+    "warm_after_eval_token_accuracy": 0.5592654424040067,
+    "warm_before_eval_token_accuracy": 0.4535336672231497,
+    "warm_gain_pp": 10.573177518085696,
+    "warm_minus_random_after_pp": 16.082359488035614,
+    "warm_start_better_after": true
+  },
+  "inputs": {
+    "eval": [
+      {
+        "bytes": 23093,
+        "path": "/private/tmp/m624-mcp-traj/eval.normalized.jsonl",
+        "sha256": "e573aa4735b836a5e4496a1ccd5e2019e7f3e285389fade98ce673fe5f412360"
+      }
+    ],
+    "random_report": {
+      "bytes": 14715,
+      "path": "/private/tmp/m671-mcp-current-v2/random-report.json",
+      "sha256": "a2f4b062b530c2e63c6c3ba8d540b011fbf25ea488e7ee3bb7489a4005e86076"
+    },
+    "train": [
+      {
+        "bytes": 89818,
+        "path": "/private/tmp/m624-mcp-traj/train.normalized.jsonl",
+        "sha256": "c73577b40a55d3b2d5544f5668f32eaae991d79ab8c6611dac468005eb7f4f6a"
+      }
+    ],
+    "warm_report": {
+      "bytes": 14830,
+      "path": "/private/tmp/m671-mcp-current-v2/warm-report.json",
+      "sha256": "2c3af275a1e3d6922c1f5e93156613d0bfe360e2c73e6d510e63900003391d4e"
+    }
+  },
+  "kind": "localagent_m671_m666_mcp_current_transfer",
+  "parent_checkpoint": {
+    "random": {
+      "bytes": 52206759,
+      "path": "/private/tmp/m665-appworld-full/max64/random-child.pt",
+      "sha256": "0cb06efb0037bb96c94846ff42e33063525aa418d8063be07444bb0d27ef1ffc"
+    },
+    "warm": {
+      "bytes": 52206645,
+      "path": "/private/tmp/m665-appworld-full/max64/warm-child.pt",
+      "sha256": "8c3a4ed31d468a8556faf9f1442a3d7cfb7cfcc19788055bb1c501217c65d850"
+    }
+  },
+  "protocol": {
+    "batch_size": 4,
+    "eval_rows": 21,
+    "learning_rate": 1e-05,
+    "max_seq_len": 512,
+    "official_test_split": false,
+    "split_policy": "public train trajectories with deterministic agent-disjoint internal holdout",
+    "steps": 64,
+    "tool_outputs_and_reasoning": "excluded_from_projection",
+    "train_rows": 86
+  },
+  "receipt_self_sha256": "8c0c2a8ccbb294772f62ba6f2ebd4e223033d398aa9344d3f05ea6b318d3d3dd",
+  "schema_version": 1,
+  "source": {
+    "dataset": "obaydata/mcp-agent-trajectory-benchmark",
+    "license": "Apache-2.0",
+    "manifest": {
+      "bytes": 3500,
+      "path": "/private/tmp/m624-mcp-traj/manifest.json",
+      "sha256": "6b4803d3c80b5dca5545da781c75cac083e85602fab0d833c8c5924aafe319b8"
+    },
+    "revision": "f4f449d65271abc1e4ccd5157d121a59a1dd38c4",
+    "url": "https://huggingface.co/datasets/obaydata/mcp-agent-trajectory-benchmark"
+  },
+  "weight_adoption": {
+    "action_heads_frozen": true,
+    "backbone_learning_rate": "low",
+    "config_compatible": true,
+    "native_promotion": false,
+    "new_or_domain_heads_learning_rate": "higher_than_backbone",
+    "reason": "The warm initialization wins the held-out text projection by a large margin with compatible tensors and frozen action heads. This supports warm-start adoption and low-rate backbone continuation, but exact sequence accuracy remains zero.",
+    "reuse_warm_backbone": true,
+    "tokenizer_compatible": true
+  }
+}

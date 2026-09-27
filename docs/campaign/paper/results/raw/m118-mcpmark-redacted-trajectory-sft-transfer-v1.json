@@ -1,0 +1,125 @@
+{
+  "kind": "localagent_mcpmark_redacted_trajectory_sft_transfer",
+  "schema_version": 1,
+  "dataset": {
+    "name": "Jakumetsu/mcpmark-trajectory-log",
+    "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log",
+    "revision": "e50578f0ab904d8e6a7c576c387c1e76ae482c89",
+    "license": "MIT",
+    "source_files": [
+      {
+        "bytes": 338193,
+        "sha256": "a3cd6b3cc41635f8084229d05959476a1e86476e2fa71fea836e0db2ba8797bb",
+        "service": "filesystem",
+        "tool_calls": 21
+      },
+      {
+        "bytes": 107248,
+        "sha256": "3e59ad5c464098b66f7883dbc8006419bf97cbc286dea2c26ab9b25089f3f4a3",
+        "service": "notion",
+        "tool_calls": 27
+      },
+      {
+        "bytes": 371545,
+        "sha256": "958e13cbc2308c0743a7beeb53193005daf893b86f5801ec958813bb1a81250a",
+        "service": "playwright",
+        "tool_calls": 19
+      }
+    ],
+    "source_rows": 3,
+    "source_tool_calls": 67,
+    "content_policy": "tool_outputs_and_assistant_free_text_redacted"
+  },
+  "normalized_data": {
+    "path": "/private/tmp/m118-mcpmark-redacted-v2.jsonl",
+    "bytes": 34352,
+    "sha256": "38b0fb5698cfd1146652fe84898d2194787c755de0e8d5123493d6123880a450",
+    "metadata_path": "/private/tmp/m118-mcpmark-redacted-v2.metadata.json",
+    "metadata_bytes": 2351,
+    "metadata_sha256": "3f68aead5fd64c923a3e559c2520db16ebee8e25ac7ed8b449ca3bf02297afff",
+    "train_rows": 2,
+    "eval_rows": 1,
+    "train_services": ["filesystem", "notion"],
+    "eval_services": ["playwright"],
+    "redacted_absolute_paths": true,
+    "redacted_tool_outputs": true,
+    "redacted_assistant_text": true
+  },
+  "training": {
+    "script": "scripts/train_public_agent_continuation.py",
+    "script_sha256": "a48f2c6b21662f7dc6ceb23b22bc9fade1db3d8938497d4b1a7e31ae39bbcada",
+    "steps": 16,
+    "batch_size": 1,
+    "learning_rate": 0.00001,
+    "max_seq_len": 2048,
+    "seed": 2027,
+    "device": "cpu",
+    "teacher_forced": {
+      "warm_parent": {
+        "train_loss": 4.997168956736089,
+        "train_token_accuracy": 0.3129939930445779,
+        "eval_loss": 5.616740487097981,
+        "eval_token_accuracy": 0.2655198204936425,
+        "eval_sequence_accuracy": 0.0
+      },
+      "warm_child": {
+        "train_loss": 4.596743752222968,
+        "train_token_accuracy": 0.3569396142902308,
+        "eval_loss": 5.559923102094241,
+        "eval_token_accuracy": 0.27898279730740466,
+        "eval_sequence_accuracy": 0.0
+      },
+      "random_parent": {
+        "train_loss": 4.997168956736089,
+        "train_token_accuracy": 0.3129939930445779,
+        "eval_loss": 5.616740487097981,
+        "eval_token_accuracy": 0.2655198204936425,
+        "eval_sequence_accuracy": 0.0
+      },
+      "random_child": {
+        "train_loss": 4.596743752222968,
+        "train_token_accuracy": 0.3569396142902308,
+        "eval_loss": 5.559923102094241,
+        "eval_token_accuracy": 0.27898279730740466,
+        "eval_sequence_accuracy": 0.0
+      }
+    },
+    "report_hashes": {
+      "warm": "6f5b0458baab7795f68d573d8c2e1207659084f1f939d75f8b5688256dec17fd",
+      "random": "3aad9a953960265746b18daa98d161e048eadc5a9fa6b45b6fcee057e1c08222"
+    }
+  },
+  "checkpoints": {
+    "warm_parent": {
+      "sha256": "35fedcefdafece153912b3bf6629fb23c0ad48f269126d2f8021ef04e0e384ae",
+      "bytes": 52283646
+    },
+    "random_parent": {
+      "sha256": "f52549e366cf60a529ba3b197bd64fedd8b34d07fb137c0bcf625d56a4bacb9f",
+      "bytes": 52283760
+    },
+    "warm_child": {
+      "sha256": "404950cfe024da2031ac32e7915538fcab81b2c741eecfdb4e69cb0e60aba1cb",
+      "bytes": 52284157
+    },
+    "random_child": {
+      "sha256": "2aa17458a9bb640407f4b49bf78cc5457f9f6f32ab9f2c0f95c16f1dc8d5cbbb",
+      "bytes": 52284620
+    }
+  },
+  "weight_analysis": {
+    "warm_random_parent_backbone_state_exact": true,
+    "warm_random_child_backbone_state_exact": true,
+    "warm_child_backbone_delta_sum_norm": 0.7511086481972598,
+    "random_child_backbone_delta_sum_norm": 0.7511086481972598,
+    "interpretation": "The warm/random distinction is in dispatch heads; identical LM-backbone SFT confirms no body-level transfer advantage in this bounded run."
+  },
+  "first_unseen_playwright_action": {
+    "target": "browser_navigate",
+    "warm_parent": {"prediction": "browser_type", "exact": false},
+    "random_parent": {"prediction": "browser_type", "exact": false},
+    "warm_child": {"prediction": "browser_click", "exact": false},
+    "random_child": {"prediction": "browser_click", "exact": false}
+  },
+  "claim_boundary": "Bounded 16-step SFT on three redacted public MCPMark traces, with filesystem and Notion rows for training and one Playwright row held out. Teacher-forced loss/token accuracy and one first-action constrained-decoder probe are reported; this is not an official MCPMark score, live MCP execution, verifier success, native browser success, or evidence that the tiny sample is sufficient for deployment."
+}

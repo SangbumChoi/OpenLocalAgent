@@ -1,0 +1,306 @@
+{
+  "kind": "localagent_webgpu_native_capability_receipt",
+  "schema_version": 1,
+  "backend": "webgpu",
+  "environment_executed": true,
+  "hardware_adapter": "vendor=apple; architecture=metal-3",
+  "adapter": {
+    "identity": "vendor=apple; architecture=metal-3",
+    "vendor": "apple",
+    "architecture": "metal-3",
+    "device": null,
+    "description": null,
+    "adapter_name": null,
+    "is_fallback_adapter": null,
+    "identity_fields": [
+      "vendor",
+      "architecture"
+    ]
+  },
+  "capability": {
+    "evaluated_cases": 3,
+    "exact_actions": 3,
+    "closed_loop_success": 0,
+    "external_side_effects_executed": false,
+    "cases": [
+      {
+        "prompt": "Email Dana the quarterly report",
+        "expected_tool": "send_email",
+        "expected_argument": "recipient",
+        "measured_repetitions": 30,
+        "exact_actions": 30,
+        "exact_action_rate": 1,
+        "last_result": {
+          "tool": "send_email",
+          "route": "app_action",
+          "args": {
+            "recipient": "Dana the quarterly"
+          },
+          "conf": 0.874836107322282,
+          "selection_policy": "dense_selector",
+          "policy": "structured_one_forward",
+          "generated_text": null,
+          "parse_kind": "structured_heads",
+          "parse_failure": false,
+          "parse_error": null,
+          "schema_valid": true,
+          "validation_failure": false,
+          "validation_error": null,
+          "stop_reason": "one_forward",
+          "output_tokens": 0,
+          "decode_steps": 0,
+          "inference_passes": 1,
+          "decode_cache": null,
+          "decode_strategy": "one_forward_structured_heads",
+          "input_tokens": 10,
+          "input_bytes": 52,
+          "natural_input_tokens": 10,
+          "context_padding_tokens": 0,
+          "context_padding_placement": "none",
+          "decision_input_tokens": 10,
+          "decision_feature_index": 9,
+          "timing": {
+            "tokenize_ms": 0,
+            "inference_ms": 7.100000023841858,
+            "decode_control_ms": 0,
+            "dispatch_ms": 0.5,
+            "parse_validate_ms": 0,
+            "ttft_ms": null,
+            "tpot_ms": null,
+            "ttfa_ms": 7.600000023841858
+          },
+          "ms": 7.600000023841858
+        },
+        "wall_latency_ms": {
+          "count": 30,
+          "min_ms": 5,
+          "mean_ms": 8.213333332538605,
+          "p50_ms": 8,
+          "p95_ms": 10.664999973773956,
+          "max_ms": 10.800000071525574
+        },
+        "model_inference_ms": {
+          "count": 30,
+          "min_ms": 4.399999976158142,
+          "mean_ms": 7.5700000087420145,
+          "p50_ms": 7.399999976158142,
+          "p95_ms": 10.055000013113021,
+          "max_ms": 10.200000047683716
+        },
+        "input_tokens": 10,
+        "tokens_per_second_p50": 1351.3513557052333
+      },
+      {
+        "prompt": "Open https://example.com",
+        "expected_tool": "open_url",
+        "expected_argument": "url",
+        "measured_repetitions": 30,
+        "exact_actions": 30,
+        "exact_action_rate": 1,
+        "last_result": {
+          "tool": "open_url",
+          "route": "app_action",
+          "args": {
+            "url": "https://example.com"
+          },
+          "conf": 0.823890010434154,
+          "selection_policy": "dense_selector",
+          "policy": "structured_one_forward",
+          "generated_text": null,
+          "parse_kind": "structured_heads",
+          "parse_failure": false,
+          "parse_error": null,
+          "schema_valid": true,
+          "validation_failure": false,
+          "validation_error": null,
+          "stop_reason": "one_forward",
+          "output_tokens": 0,
+          "decode_steps": 0,
+          "inference_passes": 1,
+          "decode_cache": null,
+          "decode_strategy": "one_forward_structured_heads",
+          "input_tokens": 8,
+          "input_bytes": 45,
+          "natural_input_tokens": 8,
+          "context_padding_tokens": 0,
+          "context_padding_placement": "none",
+          "decision_input_tokens": 8,
+          "decision_feature_index": 7,
+          "timing": {
+            "tokenize_ms": 0,
+            "inference_ms": 5.700000047683716,
+            "decode_control_ms": 0,
+            "dispatch_ms": 0.5,
+            "parse_validate_ms": 0,
+            "ttft_ms": null,
+            "tpot_ms": null,
+            "ttfa_ms": 6.200000047683716
+          },
+          "ms": 6.200000047683716
+        },
+        "wall_latency_ms": {
+          "count": 30,
+          "min_ms": 6.100000023841858,
+          "mean_ms": 6.9466666658719385,
+          "p50_ms": 6.5,
+          "p95_ms": 9.100000023841858,
+          "max_ms": 9.100000023841858
+        },
+        "model_inference_ms": {
+          "count": 30,
+          "min_ms": 5.600000023841858,
+          "mean_ms": 6.369999996821085,
+          "p50_ms": 5.899999976158142,
+          "p95_ms": 8.599999970197677,
+          "max_ms": 8.600000023841858
+        },
+        "input_tokens": 8,
+        "tokens_per_second_p50": 1355.9322088691429
+      },
+      {
+        "prompt": "Write 'WebGPU state loop passed' to Notion",
+        "expected_tool": "notion_write",
+        "expected_argument": "content",
+        "measured_repetitions": 30,
+        "exact_actions": 30,
+        "exact_action_rate": 1,
+        "last_result": {
+          "tool": "notion_write",
+          "route": "app_action",
+          "args": {
+            "content": "WebGPU state loop passed"
+          },
+          "conf": 0.8866778313006943,
+          "selection_policy": "dense_selector",
+          "policy": "structured_one_forward",
+          "generated_text": null,
+          "parse_kind": "structured_heads",
+          "parse_failure": false,
+          "parse_error": null,
+          "schema_valid": true,
+          "validation_failure": false,
+          "validation_error": null,
+          "stop_reason": "one_forward",
+          "output_tokens": 0,
+          "decode_steps": 0,
+          "inference_passes": 1,
+          "decode_cache": null,
+          "decode_strategy": "one_forward_structured_heads",
+          "input_tokens": 14,
+          "input_bytes": 63,
+          "natural_input_tokens": 14,
+          "context_padding_tokens": 0,
+          "context_padding_placement": "none",
+          "decision_input_tokens": 14,
+          "decision_feature_index": 13,
+          "timing": {
+            "tokenize_ms": 0,
+            "inference_ms": 10.100000023841858,
+            "decode_control_ms": 0,
+            "dispatch_ms": 0.5,
+            "parse_validate_ms": 0,
+            "ttft_ms": null,
+            "tpot_ms": null,
+            "ttfa_ms": 10.600000023841858
+          },
+          "ms": 10.600000023841858
+        },
+        "wall_latency_ms": {
+          "count": 30,
+          "min_ms": 7.700000047683716,
+          "mean_ms": 8.52333333492279,
+          "p50_ms": 7.899999976158142,
+          "p95_ms": 10.65499997138977,
+          "max_ms": 10.799999952316284
+        },
+        "model_inference_ms": {
+          "count": 30,
+          "min_ms": 7.100000023841858,
+          "mean_ms": 7.953333346048991,
+          "p50_ms": 7.300000071525574,
+          "p95_ms": 10.15499997138977,
+          "max_ms": 10.199999928474426
+        },
+        "input_tokens": 14,
+        "tokens_per_second_p50": 1917.8082003873517
+      }
+    ]
+  },
+  "protocol": {
+    "page": "spaces/localagent-webgpu/webgpu-capability.html",
+    "ort_version": "1.27.0",
+    "requested_provider": [
+      "webgpu"
+    ],
+    "session_provider_retry": false,
+    "warmups_per_case": 3,
+    "measured_repetitions_per_case": 30,
+    "action_graph": {
+      "path": "action_model.fp16.onnx",
+      "bytes": 21430301,
+      "sha256": "b91e7f84077155640a5e288a7c58c2245c298859ddd86bd7268e71039e65c49a"
+    },
+    "bundle_manifest": {
+      "path": "bundle-manifest.json",
+      "bytes": 9294,
+      "sha256": "86bbee00d783ca69af02843a4cf935ff978612b81b6a2fedd47fd943e611bee4"
+    }
+  },
+  "performance": {
+    "tokens_per_second_p50": 1355.9322088691429,
+    "tokens_per_second_definition": "action-graph input tokens divided by p50 model inference ms",
+    "latency_ms_p50": 7.899999976158142,
+    "peak_memory_mb": 20.458142280578613,
+    "peak_memory_method": "conservative action-graph bytes plus largest host input/output tensors; driver VRAM counter unavailable",
+    "graph": {
+      "path": "action_model.fp16.onnx",
+      "bytes": 21430301,
+      "sha256": "b91e7f84077155640a5e288a7c58c2245c298859ddd86bd7268e71039e65c49a"
+    },
+    "largest_input_bytes": 112,
+    "largest_output_bytes": 21504
+  },
+  "runtime": {
+    "ort_version": "1.27.0",
+    "requested_provider": [
+      "webgpu"
+    ],
+    "session_provider_retry": false,
+    "navigator_gpu_available": true,
+    "device_features": [
+      "core-features-and-limits"
+    ],
+    "device_limits": {
+      "max_storage_buffer_binding_size": 134217728,
+      "max_buffer_size": 268435456,
+      "max_compute_workgroups_per_dimension": 65535
+    },
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+    "elapsed_ms": 1228.1000000238419
+  },
+  "checkpoint": {
+    "source": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/latest.pt",
+    "parameters": 10524544,
+    "sha256": "79387105de75d332413262e8d8ddb847b6cc13bc03f5e4df3c81663d9897aef1"
+  },
+  "claim_boundary": "Native browser WebGPU adapter and action-graph dispatch receipt covering email, browser navigation, and Notion tool routing. Calls are local predictions only: no real email, browser navigation, or Notion account was touched; closed_loop_success is zero.",
+  "receipt_id": "m40-webgpu-native-capability-notion-v1",
+  "source": {
+    "harness": "spaces/localagent-webgpu/webgpu-capability.html",
+    "harness_bytes": 2268,
+    "harness_sha256": "6649c9cee9e1322feccf242b3870423de6ece60a12fae9861f0b36f434f42288",
+    "harness_script": "spaces/localagent-webgpu/webgpu-capability.js",
+    "harness_script_bytes": 10355,
+    "harness_script_sha256": "1ab3bb3a903ffffe1c665e9d1373c8c4073ff9ef3e50888852b998a128126a4c",
+    "action_graph": {
+      "path": "action_model.fp16.onnx",
+      "bytes": 21430301,
+      "sha256": "b91e7f84077155640a5e288a7c58c2245c298859ddd86bd7268e71039e65c49a"
+    },
+    "bundle_manifest": {
+      "path": "bundle-manifest.json",
+      "bytes": 9294,
+      "sha256": "86bbee00d783ca69af02843a4cf935ff978612b81b6a2fedd47fd943e611bee4"
+    }
+  }
+}

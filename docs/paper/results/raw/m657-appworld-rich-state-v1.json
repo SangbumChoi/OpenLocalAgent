@@ -1,0 +1,208 @@
+{
+  "benchmark": {
+    "data_version": "0.2.0",
+    "dataset": "AppWorld",
+    "eval_rows": 18,
+    "eval_truncated_rows": 18,
+    "max_actions_per_row": 3,
+    "protected_test_used": false,
+    "rich_observations": true,
+    "source_url": "https://github.com/StonyBrookNLP/appworld",
+    "train_rows": 64,
+    "train_truncated_rows": 61
+  },
+  "claim_boundary": "Public AppWorld train/dev trajectory continuation with bounded safe response summaries; sensitive credentials, addresses, canaries, and tokens are redacted. Metrics are teacher-forced and the native run is a bounded diagnostic, not an official leaderboard score, complete task success, live email/Notion side effect, or WebGPU promotion.",
+  "decision": {
+    "promote_to_native_success": false,
+    "reason": "Safe response values improve the warm teacher-forced score to 63.22%, but all 18 evaluation rows are context-truncated at the 2,048-token model window and the paired native probe remains 0/6 for both arms (3 warm versus 10 random actions). Rich state is therefore a useful training direction, not deployment evidence.",
+    "rich_observations_help_teacher_forcing": true
+  },
+  "inputs": {
+    "eval_manifest": {
+      "bytes": 11591,
+      "path": "/private/tmp/m656-appworld/dev-manifest.json",
+      "sha256": "9fb1f92d5c14d24f97e58d91b58a5b0c97aac0d693c49f56fb66287851d0aa44"
+    },
+    "random_native": {
+      "bytes": 24570,
+      "path": "/private/tmp/m656-appworld/native-random.json",
+      "sha256": "34e3f65342663babc6401afe470cc520450f9025100e211ce60b41455568ca73"
+    },
+    "random_report": {
+      "bytes": 5510,
+      "path": "/private/tmp/m656-appworld/random/report.json",
+      "sha256": "99a9e4a8cee27c9b90dd13f23b2e01cc88a0d42be113ed2300fefcdbec405da3"
+    },
+    "random_weight": {
+      "bytes": 19906,
+      "path": "/private/tmp/m656-appworld/random/weight.json",
+      "sha256": "4c6bf467e63e91bf343c5845afceb094c809a3c1b931f9c4485ed4cc84b036f2"
+    },
+    "train_manifest": {
+      "bytes": 37819,
+      "path": "/private/tmp/m656-appworld/train-manifest.json",
+      "sha256": "800483e8ebb88a5493d2cbd8939993cfc3b1ca881f193bc9ee52cb731b64d0f1"
+    },
+    "warm_native": {
+      "bytes": 14936,
+      "path": "/private/tmp/m656-appworld/native-warm.json",
+      "sha256": "97b3c65da941285435f9994bc5a4797d6fea5a4be734204ef416e26e1f06312e"
+    },
+    "warm_report": {
+      "bytes": 5527,
+      "path": "/private/tmp/m656-appworld/warm/report.json",
+      "sha256": "8d3a8baee4297f46725c923bc7482e434ddc8851d30ed6c7df5cda13408603ea"
+    },
+    "warm_weight": {
+      "bytes": 19903,
+      "path": "/private/tmp/m656-appworld/warm/weight.json",
+      "sha256": "774c194b80c721271c43d18ff5c711a30516d99a5f6a134d753be7fe889578d1"
+    }
+  },
+  "kind": "localagent_m657_appworld_rich_state_receipt",
+  "metrics": {
+    "random_after": {
+      "assistant_loss_tokens": 2265,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.3562913907284768,
+      "mean_loss": 8.333712128561327,
+      "rows": 18
+    },
+    "random_before": {
+      "assistant_loss_tokens": 2265,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.17924944812362031,
+      "mean_loss": 8.872458566156181,
+      "rows": 18
+    },
+    "random_delta_pp": 17.70419426048565,
+    "random_exact_sequence_accuracy": 0.0,
+    "warm_after": {
+      "assistant_loss_tokens": 2265,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.6322295805739514,
+      "mean_loss": 2.405847679963438,
+      "rows": 18
+    },
+    "warm_after_minus_random_after_pp": 27.593818984547458,
+    "warm_before": {
+      "assistant_loss_tokens": 2265,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.5607064017660044,
+      "mean_loss": 2.7466767098466818,
+      "rows": 18
+    },
+    "warm_delta_pp": 7.152317880794701,
+    "warm_exact_sequence_accuracy": 0.0
+  },
+  "native_replay": {
+    "random": {
+      "report": {
+        "bytes": 24570,
+        "path": "/private/tmp/m656-appworld/native-random.json",
+        "sha256": "34e3f65342663babc6401afe470cc520450f9025100e211ce60b41455568ca73"
+      },
+      "summary": {
+        "action_replayed": 10,
+        "native_api_calls": 40,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "steps_attempted": 16,
+        "tasks": 6
+      }
+    },
+    "warm": {
+      "report": {
+        "bytes": 14936,
+        "path": "/private/tmp/m656-appworld/native-warm.json",
+        "sha256": "97b3c65da941285435f9994bc5a4797d6fea5a4be734204ef416e26e1f06312e"
+      },
+      "summary": {
+        "action_replayed": 3,
+        "native_api_calls": 12,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "steps_attempted": 9,
+        "tasks": 6
+      }
+    }
+  },
+  "receipt_self_sha256": "72f7f08f7c90d0010a6b5f1c573900920279649660558ad526f22cde80b91d57",
+  "schema_version": 1,
+  "weight_movement": {
+    "random": {
+      "action_heads": {
+        "base_l2": 91.57057783201145,
+        "delta_l2": 20.35178806488255,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.22225248050982516,
+        "target_l2": 91.57514486349538
+      },
+      "attention_or_mixer": {
+        "base_l2": 50.41283477352483,
+        "delta_l2": 0.07069537258219755,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0014023288493850863,
+        "target_l2": 50.41323347223129
+      },
+      "embedding": {
+        "base_l2": 50.18570788808166,
+        "delta_l2": 0.15879725743302386,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.0031641928372746096,
+        "target_l2": 50.184513235654556
+      },
+      "ffn": {
+        "base_l2": 49.79714460836108,
+        "delta_l2": 0.0856966311213928,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0017209145583621294,
+        "target_l2": 49.79838172022804
+      },
+      "normalization": {
+        "base_l2": 19.59987856482613,
+        "delta_l2": 0.0013328533087063376,
+        "parameters": 384,
+        "relative_delta_l2": 6.800314115712283e-05,
+        "target_l2": 19.60079598219489
+      }
+    },
+    "warm": {
+      "action_heads": {
+        "base_l2": 91.78676828150552,
+        "delta_l2": 20.58664490894019,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.2242877191819409,
+        "target_l2": 91.8205553364055
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.698350633444605,
+        "delta_l2": 0.06991231996041294,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0013523123872192819,
+        "target_l2": 51.698656929109355
+      },
+      "embedding": {
+        "base_l2": 77.68753053023842,
+        "delta_l2": 0.17665157883645327,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.002273873009358882,
+        "target_l2": 77.74723530704297
+      },
+      "ffn": {
+        "base_l2": 50.60973789349284,
+        "delta_l2": 0.08126699101857517,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0016057579904800118,
+        "target_l2": 50.61025517755254
+      },
+      "normalization": {
+        "base_l2": 21.451560121678863,
+        "delta_l2": 0.001282731628602118,
+        "parameters": 384,
+        "relative_delta_l2": 5.979665913929469e-05,
+        "target_l2": 21.452523869369116
+      }
+    }
+  }
+}

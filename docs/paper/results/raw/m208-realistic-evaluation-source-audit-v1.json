@@ -1,0 +1,177 @@
+{
+  "claim_boundary": "Official-source research and policy audit for realistic mobile, browser, desktop, and stateful-tool evaluation. This receipt records public benchmark contracts and safe WebGPU projection rules; it does not claim that the LocalAgent checkpoint passed any listed benchmark or that protected task text, screenshots, credentials, emulator images, or live accounts were used for training.",
+  "kind": "localagent_realistic_evaluation_source_audit",
+  "schema_version": 1,
+  "retrieved_at": "2026-08-03",
+  "method": {
+    "source_policy": "official project repository, project site, dataset card, or paper landing page",
+    "revision_policy": "exact source revision and local byte hashes are required before a native score or training admission",
+    "webgpu_policy": "text/accessibility projections may measure routing, schema validity, grounding, abstention, and action history; they do not become visual, emulator, desktop VM, live-site, MCP-server, or official leaderboard scores"
+  },
+  "catalogs": {
+    "canonical": {
+      "path": "configs/data/realistic-agent-eval.catalog.yaml",
+      "entries": 40,
+      "sha256": "d937ee52812bc66c4329eb34f84cd46ff8c8594d5035b1c643d9b389bc090e69"
+    },
+    "supplemental": {
+      "path": "configs/data/realistic-agent-eval.supplemental.yaml",
+      "entries": 21,
+      "sha256": "48eb2cf80c092638b777d5f2d9a27bdb9cb5a925fed19d3133d7d4475dbfcf34"
+    },
+    "public_matrix": {
+      "path": "configs/data/realistic-agent-public-eval-matrix.v1.json",
+      "sha256": "ef78c65a926aa3f1e057e82862a2e7e90fce790eb31e15b28398999a2ec286ed"
+    }
+  },
+  "sources": [
+    {
+      "id": "androidworld",
+      "family": "mobile",
+      "url": "https://github.com/google-research/android_world",
+      "contract": "116 hand-crafted tasks across 20 Android apps with dynamically instantiated variations and durable rewards",
+      "native_requirement": "Android emulator, ADB/accessibility bridge, pinned app/task release, reset seeds, and reward logs",
+      "webgpu_projection": "goal plus compact accessibility-tree/state text; screenshot and emulator reward remain native-only",
+      "train_admission": "evaluation-only; task templates, generated goals, and gold state stay out of SFT"
+    },
+    {
+      "id": "androidcontrol_aitw",
+      "family": "mobile",
+      "url": "https://github.com/google-research/google-research/tree/master/android_control",
+      "contract": "public human mobile demonstrations with screenshots/accessibility observations and structured actions; AITW supplies large gesture trajectories",
+      "native_requirement": "official app/task/platform split and an audited converter for raw archives",
+      "webgpu_projection": "accessibility/tree or compact screen text with explicit action schema; coordinate grounding remains visual/native",
+      "train_admission": "train partition only; hold out official app/task/platform identities"
+    },
+    {
+      "id": "mobile_safety_bench",
+      "family": "mobile_safety",
+      "url": "https://mobilesafetybench.github.io/",
+      "contract": "250 Android-emulator tasks: 200 daily scenarios and 50 indirect prompt-injection attacks over messaging, web, social, calendar, and finance",
+      "native_requirement": "release-matched Android emulator/apps, safety judge, harmful-side-effect and injection logs",
+      "webgpu_projection": "refuse/confirm/abstain policy probes over isolated synthetic state; never treat them as safety score",
+      "train_admission": "evaluation-only; prompts, attack variants, snapshots, and safety labels stay out of SFT"
+    },
+    {
+      "id": "iosworld",
+      "family": "mobile_personalization",
+      "url": "https://iosworld.io/",
+      "contract": "133 tasks over 26 interconnected iOS apps: 27 single-app, 60 multi-app, and 46 memory/personalization tasks; optional MCP tool-use mode",
+      "native_requirement": "iOS simulator or AWS runner, seeded identity, app/task/rubric release, and strict rubric logs",
+      "webgpu_projection": "compact identity/state and MCP schema rehearsal; visual iOS control and persistent state remain native-only",
+      "train_admission": "evaluation-only until release/task split and seeded identity are frozen"
+    },
+    {
+      "id": "appagent",
+      "family": "mobile",
+      "url": "https://github.com/TencentQQGYLab/AppAgent",
+      "contract": "smartphone-agent evaluation with tap/swipe actions, app documentation, and Android emulator/device execution",
+      "native_requirement": "pinned app APKs, emulator/device image, task manifest, and action/task-success logs",
+      "webgpu_projection": "action vocabulary and documentation retrieval only; no screenshot-grounding claim",
+      "train_admission": "evaluation-only; benchmark tasks and app artifacts are not SFT inputs"
+    },
+    {
+      "id": "browsergym",
+      "family": "browser",
+      "url": "https://github.com/ServiceNow/BrowserGym",
+      "contract": "Gymnasium/Playwright environments including MiniWoB, WebArena, WorkArena, VisualWebArena, WebLINX, and TimeWarp",
+      "native_requirement": "release-matched BrowserGym, browser, Playwright/Chromium, task/seed split, and episode verifier",
+      "webgpu_projection": "DOM/accessibility-tree observations with candidate grounding; live sites and screenshots remain native-only",
+      "train_admission": "evaluation-only for benchmark tasks; public Mind2Web train data is separate"
+    },
+    {
+      "id": "mind2web",
+      "family": "browser",
+      "url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+      "contract": "over 2,000 real-web tasks across 137 websites and 31 domains with DOM-grounded action traces and protected test splits",
+      "native_requirement": "official test archive or release-matched browser evaluator for native claims",
+      "webgpu_projection": "clean DOM/candidate snapshot plus task; report tool, pointer, argument, schema, and trajectory exactness separately",
+      "train_admission": "public train partition only with parent/task and typed-slot disjointness"
+    },
+    {
+      "id": "webbench_bu_bench",
+      "family": "browser_safety",
+      "url": "https://github.com/Halluminate/WebBench",
+      "secondary_url": "https://github.com/browser-use/benchmark",
+      "contract": "WebBench covers realistic live-site READ/CREATE/UPDATE/DELETE/file workflows; BU Bench V1 combines 100 encrypted tasks from WebBench, Mind2Web 2, BrowseComp, GAIA, and custom challenges",
+      "native_requirement": "vendor-approved/resettable browser infrastructure, credentials policy, encrypted task handling, and verified task judge",
+      "webgpu_projection": "DOM/action safety and routing canaries only; no task decryption or live side effect",
+      "train_admission": "evaluation-only; encrypted/decrypted tasks and credentials never enter SFT or public bundles"
+    },
+    {
+      "id": "osworld",
+      "family": "desktop",
+      "url": "https://github.com/xlang-ai/OSWorld",
+      "secondary_url": "https://osworld-v2.xlang.ai/",
+      "contract": "execution-based desktop VM evaluation; OSWorld 2.0 adds 108 long-horizon workflows with dynamic environments, cross-source reasoning, implicit state, and visual precision",
+      "native_requirement": "release-matched VM, assets, initial state, action log, and independent evaluator",
+      "webgpu_projection": "text/action-history replay and schema diagnostics only; no desktop success claim",
+      "train_admission": "evaluation-only for task trajectories and verifier outputs"
+    },
+    {
+      "id": "agentnet",
+      "family": "desktop_trajectories",
+      "url": "https://github.com/xlang-ai/OpenCUA",
+      "secondary_url": "https://huggingface.co/datasets/xlangai/AgentNet",
+      "contract": "cross-OS computer-use trajectories and AgentNetBench offline action categories covering coordinate, content, and function actions",
+      "native_requirement": "embedded images plus upstream AgentNetBench or desktop evaluator for visual/native claims",
+      "webgpu_projection": "text-only action-history and surface/tool diagnostics; screenshots are not silently discarded and then called visual evidence",
+      "train_admission": "public train projection only after task/model identity deduplication; benchmark validation/test remain held out"
+    },
+    {
+      "id": "groundcua_ui_tars",
+      "family": "grounding_protocol",
+      "url": "https://github.com/ServiceNow/GroundCUA",
+      "secondary_url": "https://github.com/bytedance/UI-TARS",
+      "contract": "GroundCUA supplies dense desktop screenshot/element annotations; UI-TARS documents computer-use, mobile-use, and grounding action contracts",
+      "native_requirement": "visual encoder plus release-matched screenshot/action benchmark for grounding claims",
+      "webgpu_projection": "schema/action vocabulary and text candidate ranking only",
+      "train_admission": "screenshots/boxes are outside the text-only model bundle pending separate terms and visual model work"
+    },
+    {
+      "id": "toolsandbox",
+      "family": "stateful_tools",
+      "url": "https://github.com/apple/ToolSandbox",
+      "contract": "stateful conversational tool execution with user role/simulator, execution context snapshots, composable tools, and milestone DAG similarity",
+      "native_requirement": "pinned simulator, model-based user simulator, full scenario matrix, optional RapidAPI policy, and independent milestone verifier",
+      "webgpu_projection": "state/action-history and candidate-schema diagnostics only; AST projection is not the official split",
+      "train_admission": "static AST rows may be used for schema diagnostics; official prompts, simulator traces, and verifier labels remain evaluation-only"
+    },
+    {
+      "id": "mcpmark",
+      "family": "mcp_tools",
+      "url": "https://github.com/eval-sys/mcpmark",
+      "secondary_url": "https://mcpmark.ai/docs/introduction",
+      "contract": "isolated Notion, GitHub, Filesystem, Postgres, and Playwright MCP services with strict verification and pass@k aggregation",
+      "native_requirement": "isolated service state, credentials/authorization policy, exact task release, verifier output, and cleanup logs",
+      "webgpu_projection": "tool retrieval, schema validity, abstention, action history, and local service-contract probes",
+      "train_admission": "trajectory metadata or redacted public traces only; tasks, state assets, credentials, and verifiers stay out of SFT"
+    },
+    {
+      "id": "enterpriseopsgym",
+      "family": "enterprise_tools",
+      "url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym",
+      "secondary_url": "https://github.com/ServiceNow/EnterpriseOps-Gym",
+      "contract": "large enterprise tool catalogs and stateful SQL-verifier workflows across email, calendar, drive, HR, ITSM, CSM, Teams, and hybrid domains",
+      "native_requirement": "containerized MCP servers, task release, SQL verifiers, reset logs, and no personal account access",
+      "webgpu_projection": "name/schema retrieval and isolated state-machine rehearsal only",
+      "train_admission": "metadata-only until task identity holdout and server/verifier licensing are frozen"
+    },
+    {
+      "id": "mobilegym",
+      "family": "mobile_simulation",
+      "url": "https://github.com/Purewhiter/mobilegym",
+      "contract": "browser-based simulated mobile apps with official train/test metadata, deterministic judges, and high-risk/payment subsets",
+      "native_requirement": "pinned simulator/browser/judge and official test manifest",
+      "webgpu_projection": "DOM/text action bridge only; no screenshot or Android-emulator claim",
+      "train_admission": "official train metadata only; test/high-risk/payment rows remain held out"
+    }
+  ],
+  "admission_summary": {
+    "train_eligible_currently": ["androidcontrol", "android_in_the_wild", "xlam_function_calling", "mind2web_train"],
+    "evaluation_only_or_restricted": ["androidworld", "mobile_safety_bench", "iosworld", "appagent", "browsergym", "mind2web_eval", "webbench_bu_bench", "osworld", "agentnet", "groundcua_ui_tars", "toolsandbox", "mcpmark", "enterpriseopsgym", "mobilegym"],
+    "native_receipt_requirements": ["official_split_verified", "environment_executed", "task_count", "success_rate", "runner_and_source_hashes", "independent_verifier_or_judge"],
+    "decision": "Keep the current four train adapters and existing diagnostic continuations. Do not admit evaluation task text, screenshots, emulator/VM assets, credentials, MCP state, or verifier outputs to SFT. Do not publish a benchmark or workshop claim until the release-matched native receipts and hardware WebGPU evidence exist."
+  },
+  "receipt_self_sha256": "59daf21a685c29387576bbaf3ba75c867f7d53a21cba4bc1d5300f4e8e33c487"
+}

@@ -1,0 +1,270 @@
+{
+  "kind": "localagent_realistic_source_method_audit_receipt",
+  "schema_version": 1,
+  "retrieved_on": "2026-08-06",
+  "scope": "Official public-source method audit for realistic mobile, browser, desktop, safety, and MCP evaluation. No task payloads, credentials, native scores, or training rows are asserted by this receipt.",
+  "sources": [
+    {
+      "id": "androidcontrol",
+      "family": "mobile_training",
+      "dataset": "AndroidControl",
+      "source_url": "https://github.com/google-research/google-research/tree/master/android_control",
+      "paper_url": "https://arxiv.org/abs/2406.03679",
+      "scale": "15,283 demonstrations; 14,548 tasks; 833 Android apps",
+      "observation": [
+        "natural_language",
+        "screenshot",
+        "accessibility_tree"
+      ],
+      "action": [
+        "structured_json_action"
+      ],
+      "evaluation_method": "official app/task generalization split with action-level scoring",
+      "verifier": "held-out demonstration/action evaluator; native device replay is separate",
+      "train_policy": "official training partition only; keep app/task holdouts hash-bound",
+      "webgpu_adapter": "text/accessibility projection; screenshot grounding remains native-only"
+    },
+    {
+      "id": "aitw",
+      "family": "mobile_training",
+      "dataset": "Android in the Wild (AITW)",
+      "source_url": "https://github.com/google-research/google-research/tree/master/android_in_the_wild",
+      "paper_url": "https://arxiv.org/abs/2307.10088",
+      "scale": "715,000 episodes; 30,000 instructions; four Android versions; eight device types",
+      "observation": [
+        "natural_language",
+        "screenshot"
+      ],
+      "action": [
+        "tap",
+        "swipe",
+        "type",
+        "gesture"
+      ],
+      "evaluation_method": "unseen instruction/app/platform robustness splits",
+      "verifier": "trajectory/action matching; native device replay is separate",
+      "train_policy": "official training partition only; preserve task/app/platform holdouts",
+      "webgpu_adapter": "compact screen description plus gesture/action history"
+    },
+    {
+      "id": "androidworld",
+      "family": "mobile_evaluation",
+      "dataset": "AndroidWorld",
+      "source_url": "https://github.com/google-research/android_world",
+      "paper_url": "https://google-research.github.io/android_world/",
+      "scale": "116 parameterized tasks across 20 Android apps",
+      "observation": [
+        "screenshot",
+        "accessibility_tree",
+        "emulator_state"
+      ],
+      "action": [
+        "tap",
+        "swipe",
+        "text",
+        "keyevent"
+      ],
+      "evaluation_method": "dynamic task instantiation with reset/setup, execution, and teardown",
+      "verifier": "durable system-state reward and task-specific success checks",
+      "train_policy": "evaluation-only; never export task templates, generated goals, or gold state",
+      "webgpu_adapter": "native emulator bridge required for official score"
+    },
+    {
+      "id": "mind2web",
+      "family": "browser_training",
+      "dataset": "Mind2Web",
+      "source_url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+      "paper_url": "https://arxiv.org/abs/2306.06070",
+      "scale": "2,000 tasks across 137 websites and 31 domains",
+      "observation": [
+        "natural_language",
+        "DOM",
+        "accessibility_tree"
+      ],
+      "action": [
+        "CLICK",
+        "TYPE",
+        "SELECT",
+        "grounded_element"
+      ],
+      "evaluation_method": "cross-task, cross-website, and cross-domain held-out web actions",
+      "verifier": "grounded action/element matching; browser execution is a separate gate",
+      "train_policy": "official train split only; denylist all test archives and task slots",
+      "webgpu_adapter": "cleaned DOM plus task and bounded candidate grounding"
+    },
+    {
+      "id": "agentnet",
+      "family": "desktop_training_and_evaluation",
+      "dataset": "xlangai/AgentNet",
+      "source_url": "https://huggingface.co/datasets/xlangai/AgentNet",
+      "source_revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+      "scale": "22.6K human-annotated tasks across Windows, macOS, and Ubuntu",
+      "observation": [
+        "screenshot",
+        "accessibility_tree",
+        "task_history"
+      ],
+      "action": [
+        "PyAutoGUI",
+        "keyboard",
+        "mouse",
+        "agent_control"
+      ],
+      "evaluation_method": "offline state-action trajectories with representative held-out tasks",
+      "verifier": "action/trajectory scoring; native desktop replay is required for OS claims",
+      "train_policy": "public training rows only; images and benchmark holdouts remain separated",
+      "webgpu_adapter": "text-first action projection only; visual coordinate grounding is out of scope"
+    },
+    {
+      "id": "browsergym_miniwob",
+      "family": "browser_evaluation",
+      "dataset": "BrowserGym / MiniWoB++",
+      "source_url": "https://github.com/ServiceNow/BrowserGym",
+      "scale": "interactive browser environments with task-specific web success checks",
+      "observation": [
+        "DOM",
+        "accessibility_tree",
+        "browser_state"
+      ],
+      "action": [
+        "click",
+        "type",
+        "scroll",
+        "keypress",
+        "navigation"
+      ],
+      "evaluation_method": "resettable browser episodes with task success and termination conditions",
+      "verifier": "environment state evaluator; text projections are not official scores",
+      "train_policy": "evaluation-only for the pinned held-out task IDs",
+      "webgpu_adapter": "native browser runtime required for official task success"
+    },
+    {
+      "id": "osworld",
+      "family": "desktop_evaluation",
+      "dataset": "OSWorld",
+      "source_url": "https://github.com/xlang-ai/OSWorld",
+      "paper_url": "https://arxiv.org/abs/2404.07972",
+      "scale": "369 real-computer tasks across web, desktop, files, code, and multi-app workflows",
+      "observation": [
+        "screenshot",
+        "accessibility_tree",
+        "terminal"
+      ],
+      "action": [
+        "mouse",
+        "keyboard",
+        "scroll",
+        "type",
+        "desktop_control"
+      ],
+      "evaluation_method": "VM snapshot, task setup, interactive execution, artifact retrieval, and custom evaluator",
+      "verifier": "execution-based final-state evaluator inside a real VM",
+      "train_policy": "evaluation-only unless a separately licensed training split is admitted",
+      "webgpu_adapter": "native VM/desktop bridge required; WebGPU latency alone is insufficient"
+    },
+    {
+      "id": "osworld_v2",
+      "family": "desktop_evaluation",
+      "dataset": "OSWorld 2.0",
+      "source_url": "https://github.com/xlang-ai/OSWorld-V2",
+      "source_revision": "osworld-v2-2026.06.24",
+      "scale": "108 long-horizon workflows; median human duration about 1.6 hours",
+      "observation": [
+        "screenshot",
+        "accessibility_tree",
+        "cross-source_state"
+      ],
+      "action": [
+        "desktop_control",
+        "keyboard",
+        "mouse",
+        "browser"
+      ],
+      "evaluation_method": "release-matched VM, gated task classes/assets, and 500-step binary completion",
+      "verifier": "task-specific final-state and safety reports; gated assets must match the release",
+      "train_policy": "evaluation-only; never mix gated task classes/assets into SFT",
+      "webgpu_adapter": "native VM and long-horizon state bridge required"
+    },
+    {
+      "id": "iosworld",
+      "family": "mobile_evaluation",
+      "dataset": "iOSWorld",
+      "source_url": "https://iosworld.io/",
+      "paper_url": "https://arxiv.org/abs/2606.09764",
+      "scale": "26 SwiftUI apps; 133 tasks: 27 single-app, 60 multi-app, 46 memory/personalization",
+      "observation": [
+        "screenshot",
+        "XCUITest_XML",
+        "persistent_identity",
+        "simulator_state"
+      ],
+      "action": [
+        "tap",
+        "type",
+        "swipe",
+        "home",
+        "wait",
+        "MCP_tool"
+      ],
+      "evaluation_method": "seeded persistent user identity with cross-app and memory workflows",
+      "verifier": "rubric/state evaluator; optional MCP server enables tool-use ablations",
+      "train_policy": "evaluation-only; seeded state, rubrics, and MCP service state stay isolated",
+      "webgpu_adapter": "text/XML bridge is diagnostic; official score needs iOS simulator execution"
+    },
+    {
+      "id": "mobile_safety_bench",
+      "family": "mobile_safety_evaluation",
+      "dataset": "MobileSafetyBench",
+      "source_url": "https://github.com/jylee425/mobilesafetybench",
+      "paper_url": "https://arxiv.org/abs/2410.17520",
+      "scale": "250 project-page tasks: 200 daily scenarios and 50 prompt-injection tasks",
+      "observation": [
+        "screenshot",
+        "accessibility_tree",
+        "action_history",
+        "emulator_state"
+      ],
+      "action": [
+        "mobile_action",
+        "confirmation",
+        "refusal",
+        "safety_decision"
+      ],
+      "evaluation_method": "Android emulator with ADB/Appium and task-local safety/helpfulness state",
+      "verifier": "episode score plus safety/prompt-injection outcome; no text-only score substitution",
+      "train_policy": "evaluation-only; keep the official safety/injection suite out of SFT",
+      "webgpu_adapter": "policy bridge only until emulator/action-history execution is available"
+    },
+    {
+      "id": "mcpmark",
+      "family": "tool_use_evaluation",
+      "dataset": "MCPMark",
+      "source_url": "https://mcpmark.ai/docs/introduction",
+      "task_url": "https://mcpmark.ai/docs/datasets/task",
+      "scale": "Notion, GitHub, filesystem, Postgres, Playwright, and Playwright-WebArena services",
+      "observation": [
+        "tool_schema",
+        "service_state",
+        "browser_state",
+        "task_history"
+      ],
+      "action": [
+        "MCP_tool_call",
+        "browser_action",
+        "database_action"
+      ],
+      "evaluation_method": "isolated service workspace, model trajectory, teardown, and independent verifier",
+      "verifier": "task-specific verification script; official score requires complete split and server execution",
+      "train_policy": "only redacted public training traces or explicitly admitted train rows; no verifier leakage",
+      "webgpu_adapter": "local schema dispatch is diagnostic; native MCP server/verifier remains mandatory"
+    }
+  ],
+  "admission_rules": {
+    "training": "Only explicit official/public train partitions are eligible; benchmark/eval rows remain denied.",
+    "split": "Keep source-local parent/task/slot disjointness and bind source revisions before training.",
+    "native": "A WebGPU capability receipt cannot substitute for an emulator, VM, browser, MCP server, or independent verifier.",
+    "safety": "Safety and prompt-injection suites require action-history/state execution; text policy projections are diagnostics."
+  },
+  "claim_boundary": "This is a source/method inventory, not a benchmark result or publication approval.",
+  "receipt_self_sha256": "f058f4cdf2d189d8934179d112219a53b0196c581770bba49e4b23efe86729dd"
+}

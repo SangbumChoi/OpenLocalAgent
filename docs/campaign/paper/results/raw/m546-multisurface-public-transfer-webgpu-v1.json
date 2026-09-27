@@ -1,0 +1,81 @@
+{
+  "benchmark_id": "androidcontrol_agentnet_public_transfer_webgpu",
+  "candidate_checkpoint": {
+    "path": "/private/tmp/m546-multisurface-child.pt",
+    "sha256": "2663f3fc76bad1b8f20afacfbde157e305f9decd369c3586ea1b51a6bcbc80a6"
+  },
+  "claim_boundary": "Source-record-disjoint text-first continuation over public AndroidControl and AgentNet projections, with local WebGPU capability probes. This is not an official Android emulator/desktop score, a visual-agent result, or external side-effect execution.",
+  "sources": {
+    "androidcontrol": {
+      "url": "https://github.com/google-research/google-research/tree/master/android_control",
+      "mirror_url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k",
+      "revision": "hf:OfficerChul/Android-Control-84k@0248027f747c9d57bd09c14e8f044f9a8103dddd",
+      "train_rows": 512,
+      "eval_rows": 256,
+      "train_jsonl_sha256": "34c68424d9bc660a5c594a6f21c946b822f87c8ed0ad0cede43a11cc585f6c29",
+      "eval_jsonl_sha256": "5168c544664cd4f7c0723387280a423b1ba3e518da2ba381305522f0dea270bc",
+      "visual_input_omitted": true
+    },
+    "agentnet": {
+      "url": "https://huggingface.co/datasets/xlangai/AgentNet",
+      "revision": "pinned-local-agentnet-manifest",
+      "train_rows": 765,
+      "eval_rows": 257,
+      "train_jsonl_sha256": "fb17df74512f3f9a7c15c030ffbf82701f728803b987539e7c872e025967edf8",
+      "eval_jsonl_sha256": "7f0f080e33c4a069c532f3efcc0ec72e73d456f606cd4e5608df6f4dd949ac43",
+      "screenshots_omitted": true
+    }
+  },
+  "training": {
+    "parent_sha256": "b9493968b7279816664056d7746ae852b3f2bd1df733923bd6abe94227caa9c8",
+    "steps": 32,
+    "batch_size": 2,
+    "learning_rate": 0.00001,
+    "train_rows": 1277,
+    "eval_rows": 513,
+    "before_token_accuracy": 0.5871929375639714,
+    "after_token_accuracy": 0.6927456499488229,
+    "before_sequence_accuracy": 0.0,
+    "after_sequence_accuracy": 0.0,
+    "route_accuracy": 1.0,
+    "selector_top1_accuracy": 0.7003891050583657
+  },
+  "weight_transfer": {
+    "config_mismatches": {},
+    "tokenizer_equal": true,
+    "shape_mismatches": {},
+    "shared_tensor_count": 51,
+    "relative_delta_l2": {
+      "action_heads": 0.0,
+      "attention_or_mixer": 0.0018619550735153203,
+      "embedding": 0.0043508944533820395,
+      "ffn": 0.002306036953660044,
+      "normalization": 0.0001030082429999758
+    },
+    "interpretation": "The m545 DOM-grounded parent transfers without shape changes; backbone movement stays below 0.44% relative L2 and structured heads remain frozen."
+  },
+  "webgpu": {
+    "parity_gate": true,
+    "model_parameters": 10524544,
+    "bundle_identity": "c48689a9034895a818ce186a3daeb6d8709a04acaf85ad57f768d977e46d7ebb",
+    "bundle_manifest_canonical_sha256": "826987f190e4176a6e29ff91bc27e21bbb581fd82d1683b0c5e613218a6ce68e",
+    "native_capability": {
+      "environment_executed": true,
+      "hardware_adapter": "vendor=apple; architecture=metal-3",
+      "exact_actions": 3,
+      "evaluated_cases": 3,
+      "tokens_per_second_p50": 1290.3225800249256,
+      "latency_ms_p50": 7.450000002980232,
+      "peak_memory_mb": 20.458142280578613,
+      "closed_loop_success": 0,
+      "external_side_effects_executed": false,
+      "receipt_sha256": "93e6fd3a25bbb1b74bcd8dc7c1579de73438eb60383d21060f298dc710473b00"
+    }
+  },
+  "decision": {
+    "adoption": "retain_as_multisurface_candidate",
+    "reason": "Held-out text accuracy and local WebGPU parity improve while the model remains under 11M parameters, but sequence exactness is zero and the native probe is structured local dispatch rather than task completion. Require native Android/desktop replay before public promotion."
+  },
+  "receipt_self_sha256": "c462e31f3cbd65bc420581565d1083769bfcb0f0230be42fc1e2aba009d25ecc",
+  "schema_version": 1
+}

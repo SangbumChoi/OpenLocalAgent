@@ -1,0 +1,111 @@
+{
+  "benchmark": {
+    "data_version": "0.2.0",
+    "dataset": "AppWorld",
+    "native_split": "public dev subset",
+    "native_tasks": 6,
+    "protected_test_used": false,
+    "source_url": "https://github.com/StonyBrookNLP/appworld"
+  },
+  "claim_boundary": "AppWorld 0.2.0 resettable native replay with a full STANDARD_TOOLS candidate pool and strict one-step schema translation. This is not an official leaderboard score, complete task success, external-account side effect, or WebGPU deployment result.",
+  "decision": {
+    "promote_to_appworld_success": false,
+    "reason": "Pool correction fixes the tool-dispatch interface (6/6 actions replayed) but not the multi-step AppWorld objective (0/6 native successes); keep the full-pool setting and extend the evaluator to a measured multi-step policy before promotion.",
+    "retain_full_pool_for_head_dispatch": true
+  },
+  "diagnostic": {
+    "default_retrieve_k": 10,
+    "finding": "The m648 head ranked run_python correctly in direct feature probes, but the default retriever could remove run_python before the dense selector. Full-pool dispatch replayed six run_python actions; native task success remained zero because this bounded adapter executes only one API step per task.",
+    "m648_default_retrieval": {
+      "action_replayed": 0,
+      "native_action_api_calls": 0,
+      "native_api_calls": 0,
+      "native_bootstrap_api_calls": 0,
+      "native_success_rate": 0.0,
+      "native_successes": 0,
+      "tasks": 6
+    },
+    "m649_full_pool": {
+      "action_replayed": 6,
+      "native_action_api_calls": 6,
+      "native_api_calls": 24,
+      "native_bootstrap_api_calls": 18,
+      "native_success_rate": 0.0,
+      "native_successes": 0,
+      "tasks": 6
+    },
+    "matched_retrieve_k": 100
+  },
+  "inputs": {
+    "m648": {
+      "bytes": 7523,
+      "path": "docs/paper/results/raw/m648-appworld-head-native-v1.json",
+      "sha256": "5026c69c9b5c4baf2c3e9a44062981947d3f1f438949cd89db3d31452fa06a66"
+    },
+    "m649_native": {
+      "bytes": 11425,
+      "path": "/private/tmp/m649-appworld/native/fullpool.json",
+      "sha256": "bd52e152faffe6a3d3342df221a2fb5f750edf6ec75d70096a914b971234a2de"
+    }
+  },
+  "kind": "localagent_m649_appworld_runtime_pool_receipt",
+  "native_replay": {
+    "checkpoint": {
+      "bytes": 52203288,
+      "path": "/private/tmp/m649-appworld/warm/child.pt",
+      "sha256": "9c760ff270d12c797db937c94366ef33e801cac1f9fbee2c0015184f7837111e"
+    },
+    "configuration": {
+      "action_translation": "appworld_api_step",
+      "appworld_api_head": null,
+      "experiment_name": "m649_fullpool",
+      "max_interactions": 1,
+      "replay_appworld_api_step": true,
+      "replay_run_python": false,
+      "retrieve_k": 100,
+      "schema_ground_appworld_api_step": true,
+      "selector_first": true,
+      "tasks": [
+        "50e1ac9_1",
+        "50e1ac9_2",
+        "50e1ac9_3",
+        "fac291d_1",
+        "fac291d_2",
+        "fac291d_3"
+      ]
+    },
+    "contract_verification": {
+      "passed": 1,
+      "result": {
+        "difficulty": 2,
+        "failed": 0,
+        "failure_labels": [],
+        "num_tests": 2,
+        "pass_labels": [
+          "no_op_fail",
+          "no_op_pass"
+        ],
+        "passed": 2,
+        "success": true,
+        "task_id": "50e1ac9_1"
+      },
+      "tasks": 1
+    },
+    "report": {
+      "bytes": 11425,
+      "path": "/private/tmp/m649-appworld/native/fullpool.json",
+      "sha256": "bd52e152faffe6a3d3342df221a2fb5f750edf6ec75d70096a914b971234a2de"
+    },
+    "summary": {
+      "action_replayed": 6,
+      "native_action_api_calls": 6,
+      "native_api_calls": 24,
+      "native_bootstrap_api_calls": 18,
+      "native_success_rate": 0.0,
+      "native_successes": 0,
+      "tasks": 6
+    }
+  },
+  "receipt_self_sha256": "1672ffd1bc614191c34c9fce83bc6ba154ad0eb3e3d3b6a6a43aa6b6ddcb0a38",
+  "schema_version": 1
+}

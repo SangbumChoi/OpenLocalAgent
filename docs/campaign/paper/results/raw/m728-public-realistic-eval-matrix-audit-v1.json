@@ -1,0 +1,392 @@
+{
+  "claim_boundary": "Source-linked metadata and local schema validation only. No benchmark task text, screenshots, credentials, emulator/VM assets, MCP service state, verifier output, or live external side effect was downloaded or executed. A train-policy row still requires a separate byte/hash acquisition receipt and source-specific adapter; runtime rows require release-matched native execution before scoring.",
+  "counts": {
+    "families": {
+      "browser": 4,
+      "computer": 4,
+      "mobile": 9,
+      "terminal": 1,
+      "tool_api": 10
+    },
+    "local_status": {
+      "adapter_ready": 3,
+      "manifest_audited_native_pending": 2,
+      "measured": 4,
+      "measured_official_text_projection": 1,
+      "metadata_only": 10,
+      "native_mock_diagnostic": 1,
+      "not_started": 6,
+      "runtime_pending": 1
+    },
+    "train_policy": {
+      "eval_only": 18,
+      "no_static_data": 3,
+      "restricted": 1,
+      "train": 6
+    }
+  },
+  "kind": "localagent_public_realistic_eval_matrix_audit",
+  "matrix": {
+    "bytes": 30388,
+    "canonical_sha256": "11539e9ab640f782cb5556538815270b52d3638fb2c35a3e3cb7adbb699fc563",
+    "entries": 28,
+    "path": "configs/data/realistic-agent-public-eval-matrix.v1.json",
+    "sha256": "09eb5c51d329d4752aff79534217974048f88a934d83570456759f3cc8aab13e"
+  },
+  "receipt_self_sha256": "4ea938e3c8b8300c4931e196950283e43b19c122ffffad5d7a7756959b7b57a2",
+  "schema_version": 1,
+  "sources": [
+    {
+      "family": "mobile",
+      "id": "androidcontrol",
+      "local_status": "adapter_ready",
+      "paper_url": "https://arxiv.org/abs/2406.03679",
+      "primary_metric": "Exact normalized action and episode/trajectory success on official app/task splits.",
+      "source_revision": "pin-the-downloaded-tfrecord-or-authorized-mirror",
+      "source_url": "https://github.com/google-research/google-research/tree/master/android_control",
+      "split_rule": "Train only on the official training partition; hold out app/task generalization splits.",
+      "train_policy": "train"
+    },
+    {
+      "family": "mobile",
+      "id": "android_in_the_wild",
+      "local_status": "adapter_ready",
+      "paper_url": "https://arxiv.org/abs/2307.10088",
+      "primary_metric": "Action/trajectory exactness under official task-app-platform splits.",
+      "source_revision": "pin-the-downloaded-episode-archive",
+      "source_url": "https://github.com/google-research/google-research/tree/master/android_in_the_wild",
+      "split_rule": "Keep unseen instruction, app, and platform partitions out of training.",
+      "train_policy": "train"
+    },
+    {
+      "family": "mobile",
+      "id": "androidworld",
+      "local_status": "metadata_only",
+      "paper_url": "https://arxiv.org/abs/2405.14573",
+      "primary_metric": "Environment reward and task completion over resettable emulator episodes.",
+      "source_revision": "3e50888527ef9f29b9157ecd537e408008bb1c85",
+      "source_url": "https://github.com/google-research/android_world",
+      "split_rule": "Task templates and generated goals are evaluator-only; report task/seed identities and emulator manifest.",
+      "train_policy": "no_static_data"
+    },
+    {
+      "family": "mobile",
+      "id": "mobilegym",
+      "local_status": "measured_official_text_projection",
+      "paper_url": "https://arxiv.org/abs/2605.26114",
+      "primary_metric": "AnswerSheet task success, dense state reward, and sim-to-real retention.",
+      "source_revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+      "source_url": "https://github.com/Purewhiter/mobilegym",
+      "split_rule": "Use the 160 train and 256 test templates only after pinning the release; never train on test templates.",
+      "train_policy": "eval_only"
+    },
+    {
+      "family": "mobile",
+      "id": "mobile_safety_bench",
+      "local_status": "manifest_audited_native_pending",
+      "paper_url": "https://arxiv.org/abs/2410.17520",
+      "primary_metric": "Safety score, helpfulness score, harmful-action rate, and injection-defense rate.",
+      "source_revision": "bc5e0579626a280c4f551261abcb721442ff92ea",
+      "source_url": "https://github.com/jylee425/mobilesafetybench",
+      "split_rule": "Safety prompts, emulator snapshots, APKs, and attack variants remain evaluation-only; report the pinned Android/Appium/ADB environment.",
+      "train_policy": "eval_only"
+    },
+    {
+      "family": "mobile",
+      "id": "iosworld",
+      "local_status": "manifest_audited_native_pending",
+      "paper_url": "https://arxiv.org/abs/2606.09764",
+      "primary_metric": "Strict task pass and rubric score by single-app, multi-app, and memory/personalization categories.",
+      "source_revision": "e91f4cb2ef4c9dd48fef83a894477b41fd5e209d",
+      "source_url": "https://github.com/ljang0/iOSWorld",
+      "split_rule": "Seeded identity, apps, task files, and rubrics remain evaluation-only until the release and simulator image are frozen.",
+      "train_policy": "eval_only"
+    },
+    {
+      "family": "mobile",
+      "id": "mobileworld",
+      "local_status": "metadata_only",
+      "paper_url": "https://arxiv.org/abs/2512.19432",
+      "primary_metric": "Long-horizon task success across agent-user and MCP-augmented workflows.",
+      "source_revision": "0dcd0980eac64d76f498f93568a1ec0594b743c4",
+      "source_url": "https://github.com/Tongyi-MAI/MobileWorld",
+      "split_rule": "Keep the public evaluation tasks and generated parameters out of SFT/RL until a release split is pinned.",
+      "train_policy": "eval_only"
+    },
+    {
+      "family": "mobile",
+      "id": "mobile_agent_bench",
+      "local_status": "not_started",
+      "paper_url": "https://arxiv.org/abs/2406.08184",
+      "primary_metric": "Task completion over 100 tasks and 10 open-source apps.",
+      "source_revision": "website-release-required",
+      "source_url": "https://mobileagentbench.github.io/",
+      "split_rule": "Do not use benchmark task instructions or app states as training data without an explicit release split.",
+      "train_policy": "eval_only"
+    },
+    {
+      "family": "mobile",
+      "id": "mobilebench",
+      "local_status": "not_started",
+      "paper_url": "https://arxiv.org/abs/2407.00993",
+      "primary_metric": "Mobile task completion and API/UI action accuracy.",
+      "source_revision": "release-required-before-score",
+      "source_url": "https://github.com/XiaoMi/MobileBench",
+      "split_rule": "Evaluation devices, app data, and task prompts remain outside training.",
+      "train_policy": "eval_only"
+    },
+    {
+      "family": "browser",
+      "id": "browsergym_miniwob",
+      "local_status": "measured",
+      "paper_url": "https://arxiv.org/abs/2412.05467",
+      "primary_metric": "Closed-loop episode reward, success, action error, and timeout rate.",
+      "source_revision": "9e779f087de9a65668b6974d11f9ce9816026e96",
+      "source_url": "https://github.com/ServiceNow/BrowserGym",
+      "split_rule": "Pin task metadata, seeds, browser executable, Playwright, viewport, locale, and max steps.",
+      "train_policy": "no_static_data"
+    },
+    {
+      "family": "browser",
+      "id": "mind2web",
+      "local_status": "measured",
+      "paper_url": "https://arxiv.org/abs/2306.06070",
+      "primary_metric": "Element accuracy, operation F1, step success, and task success.",
+      "source_revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+      "source_url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+      "split_rule": "Train only on official train files; cross-task, cross-website, and cross-domain archives stay protected/evaluation-only.",
+      "train_policy": "train"
+    },
+    {
+      "family": "browser",
+      "id": "weblinx",
+      "local_status": "metadata_only",
+      "paper_url": "https://arxiv.org/abs/2402.05930",
+      "primary_metric": "Intent match, element IoU, text F1, and micro action metrics.",
+      "source_revision": "be2e19d624febb57173e98772c1312d041a6d3b1",
+      "source_url": "https://huggingface.co/datasets/McGill-NLP/WebLINX",
+      "split_rule": "Use compact train only after privacy filtering; test_web remains held out and requires residual legal review.",
+      "train_policy": "restricted"
+    },
+    {
+      "family": "browser",
+      "id": "webarena_visualwebarena",
+      "local_status": "not_started",
+      "paper_url": "https://arxiv.org/abs/2307.13854",
+      "primary_metric": "End-to-end task success and per-site state verification.",
+      "source_revision": "runtime-release-required",
+      "source_url": "https://github.com/web-arena-x/webarena",
+      "split_rule": "Never train on evaluation goals, seeded site state, or verifier traces.",
+      "train_policy": "eval_only"
+    },
+    {
+      "family": "computer",
+      "id": "agentnet",
+      "local_status": "measured",
+      "paper_url": "https://arxiv.org/abs/2508.09123",
+      "primary_metric": "Offline action/trajectory accuracy and native AgentNetBench/OSWorld task success.",
+      "source_revision": "d76ee50",
+      "source_url": "https://huggingface.co/datasets/xlangai/AgentNet",
+      "split_rule": "Train only on train parents; validation/test parents and task/platform identities remain held out.",
+      "train_policy": "train"
+    },
+    {
+      "family": "computer",
+      "id": "computer_agent_arena",
+      "local_status": "metadata_only",
+      "paper_url": "https://openreview.net/pdf?id=3x4SDbXbgl",
+      "primary_metric": "Human correctness plus action and trajectory diagnostics.",
+      "source_revision": "897b9f45287c516a44f9e79879b14bc3c1bc5b0a",
+      "source_url": "https://huggingface.co/datasets/xlangai/computer-agent-arena",
+      "split_rule": "Deduplicate task/model identities and keep evaluation battles out of training.",
+      "train_policy": "eval_only"
+    },
+    {
+      "family": "computer",
+      "id": "osworld",
+      "local_status": "runtime_pending",
+      "paper_url": "https://arxiv.org/abs/2404.07972",
+      "primary_metric": "Execution-based task success on real desktop environments.",
+      "source_revision": "runtime-release-required",
+      "source_url": "https://github.com/xlang-ai/OSWorld",
+      "split_rule": "Task cards, VM images, and evaluation goals are runtime-only and version-bound.",
+      "train_policy": "no_static_data"
+    },
+    {
+      "family": "computer",
+      "id": "osworld_v2",
+      "local_status": "not_started",
+      "paper_url": "https://arxiv.org/abs/2606.29537",
+      "primary_metric": "Long-horizon execution success and task completion.",
+      "source_revision": "v2026.06.24",
+      "source_url": "https://github.com/xlang-ai/OSWorld-V2",
+      "split_rule": "Use code, task files, assets, and mocked websites from one release; never mix main/latest.",
+      "train_policy": "eval_only"
+    },
+    {
+      "family": "tool_api",
+      "id": "toolsandbox",
+      "local_status": "metadata_only",
+      "paper_url": "https://arxiv.org/abs/2408.04682",
+      "primary_metric": "Intermediate and final milestone success over arbitrary stateful trajectories.",
+      "source_revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+      "source_url": "https://github.com/apple/ToolSandbox",
+      "split_rule": "Scenario prompts, user simulation, tools, and verifiers remain evaluation-only.",
+      "train_policy": "eval_only"
+    },
+    {
+      "family": "tool_api",
+      "id": "mcpmark",
+      "local_status": "metadata_only",
+      "paper_url": "https://openreview.net/pdf?id=uobROwBsJm",
+      "primary_metric": "Pass@k, pass^k, and verifier success across Notion, GitHub, filesystem, Postgres, and Playwright.",
+      "source_revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+      "source_url": "https://github.com/eval-sys/mcpmark",
+      "split_rule": "Task text, credentials, service state, and verifiers stay out of SFT; use isolated official runners.",
+      "train_policy": "eval_only"
+    },
+    {
+      "family": "tool_api",
+      "id": "enterpriseopsgym",
+      "local_status": "metadata_only",
+      "paper_url": "https://arxiv.org/abs/2603.13594",
+      "primary_metric": "Final-state SQL verifier success and long-horizon tool use.",
+      "source_revision": "c8e538eae8a6205294f0a86675fefdc1fac408f6",
+      "source_url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym",
+      "split_rule": "Keep task descriptions, server configuration, and verifiers evaluation-only.",
+      "train_policy": "eval_only"
+    },
+    {
+      "family": "tool_api",
+      "id": "xlam_function_calling",
+      "local_status": "adapter_ready",
+      "paper_url": "https://huggingface.co/Salesforce/xLAM-7b-fc-r",
+      "primary_metric": "Held-out tool, argument, and JSON validity accuracy under an AST checker.",
+      "source_revision": "a88aa3aeddbc2d7d6aa7a87687d1a085c34e2aec",
+      "source_url": "https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k",
+      "split_rule": "Use only the official train partition for SFT; exclude BFCL and evaluation prompts by exact denylist.",
+      "train_policy": "train"
+    },
+    {
+      "family": "tool_api",
+      "id": "toolace",
+      "local_status": "measured",
+      "paper_url": "https://arxiv.org/abs/2409.00920",
+      "primary_metric": "Held-out teacher-forced and free-run tool/argument/sequence diagnostics plus history-turn and prose-omission audits; official ToolACE/BFCL scores remain external.",
+      "source_revision": "6bda777c88d21e5a204703c1ee45597a8fa4f734",
+      "source_url": "https://huggingface.co/datasets/Team-ACE/ToolACE",
+      "split_rule": "Use only the pinned source bytes; the current split is source-record and normalized-prompt disjoint and is not an upstream official split.",
+      "train_policy": "train"
+    },
+    {
+      "family": "tool_api",
+      "id": "appworld",
+      "local_status": "not_started",
+      "paper_url": "https://arxiv.org/abs/2407.18901",
+      "primary_metric": "Execution/unit-test success with collateral-damage checks.",
+      "source_revision": "release-required-before-score",
+      "source_url": "https://appworld.dev/",
+      "split_rule": "Benchmark tasks and app state are evaluator-only; do not train on task code or tests.",
+      "train_policy": "eval_only"
+    },
+    {
+      "family": "tool_api",
+      "id": "appworld_ul",
+      "local_status": "metadata_only",
+      "paper_url": "https://arxiv.org/abs/2607.20536",
+      "primary_metric": "Task/scenario success with user-interaction correctness and compositional-task breakdown.",
+      "source_revision": "release-required-before-score",
+      "source_url": "https://appworld.dev/appworld-ul/",
+      "split_rule": "Keep the 516 task prompts, user-simulator policies, app state, and verifiers evaluation-only; pin the AppWorld release before scoring.",
+      "train_policy": "eval_only"
+    },
+    {
+      "family": "tool_api",
+      "id": "tau_bench",
+      "local_status": "native_mock_diagnostic",
+      "paper_url": "https://arxiv.org/abs/2406.12045",
+      "primary_metric": "Task reward, policy adherence, and tool-agent-user interaction success.",
+      "source_revision": "363133ada1936491fb5bcec33cd62c3518a99f65",
+      "source_url": "https://github.com/sierra-research/tau2-bench",
+      "split_rule": "Domain policies, task prompts, and user simulator traces remain evaluation-only.",
+      "train_policy": "eval_only"
+    },
+    {
+      "family": "terminal",
+      "id": "tua_bench",
+      "local_status": "not_started",
+      "paper_url": "https://arxiv.org/abs/2606.28480",
+      "primary_metric": "Execution-based task success over deterministic terminal setups.",
+      "source_revision": "release-required-before-score",
+      "source_url": "https://tuabench.ai/",
+      "split_rule": "Task setup scripts and evaluator fixtures are not SFT inputs.",
+      "train_policy": "eval_only"
+    },
+    {
+      "family": "tool_api",
+      "id": "bfcl",
+      "local_status": "metadata_only",
+      "paper_url": "https://arxiv.org/abs/2305.15334",
+      "primary_metric": "Official AST checker accuracy across single, multiple, parallel, and irrelevance categories.",
+      "source_revision": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+      "source_url": "https://github.com/ShishirPatil/gorilla",
+      "split_rule": "Prompt-only denylist for corpus exclusion; official gold/checker remains evaluation-only.",
+      "train_policy": "eval_only"
+    },
+    {
+      "family": "tool_api",
+      "id": "bfcl_v4_agentic",
+      "local_status": "metadata_only",
+      "paper_url": "https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-calling-leaderboard",
+      "primary_metric": "Official BFCL V4 AST/execution metrics for multi-turn, agentic web-search, memory-management, and format-sensitivity categories.",
+      "source_revision": "release-required-before-score",
+      "source_url": "https://gorilla.cs.berkeley.edu/leaderboard",
+      "split_rule": "Freeze the upstream BFCL release and official checker; never train on evaluation prompts, live-service traces, or gold responses.",
+      "train_policy": "eval_only"
+    }
+  ],
+  "train_eligible": [
+    {
+      "id": "androidcontrol",
+      "license": "Apache-2.0",
+      "paper_url": "https://arxiv.org/abs/2406.03679",
+      "source_revision": "pin-the-downloaded-tfrecord-or-authorized-mirror",
+      "source_url": "https://github.com/google-research/google-research/tree/master/android_control"
+    },
+    {
+      "id": "android_in_the_wild",
+      "license": "CC-BY-4.0",
+      "paper_url": "https://arxiv.org/abs/2307.10088",
+      "source_revision": "pin-the-downloaded-episode-archive",
+      "source_url": "https://github.com/google-research/google-research/tree/master/android_in_the_wild"
+    },
+    {
+      "id": "mind2web",
+      "license": "CC-BY-4.0",
+      "paper_url": "https://arxiv.org/abs/2306.06070",
+      "source_revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+      "source_url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+    },
+    {
+      "id": "agentnet",
+      "license": "MIT",
+      "paper_url": "https://arxiv.org/abs/2508.09123",
+      "source_revision": "d76ee50",
+      "source_url": "https://huggingface.co/datasets/xlangai/AgentNet"
+    },
+    {
+      "id": "xlam_function_calling",
+      "license": "CC-BY-4.0",
+      "paper_url": "https://huggingface.co/Salesforce/xLAM-7b-fc-r",
+      "source_revision": "a88aa3aeddbc2d7d6aa7a87687d1a085c34e2aec",
+      "source_url": "https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k"
+    },
+    {
+      "id": "toolace",
+      "license": "Apache-2.0",
+      "paper_url": "https://arxiv.org/abs/2409.00920",
+      "source_revision": "6bda777c88d21e5a204703c1ee45597a8fa4f734",
+      "source_url": "https://huggingface.co/datasets/Team-ACE/ToolACE"
+    }
+  ]
+}

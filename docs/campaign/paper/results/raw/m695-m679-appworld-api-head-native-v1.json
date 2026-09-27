@@ -1,0 +1,135 @@
+{
+  "arms": {
+    "random": {
+      "head": {
+        "bytes": 23141,
+        "path": "/private/tmp/m695-m679-appworld-head/api-head-random.pt",
+        "sha256": "5c226f9b1d76f29742ac7cdba2465d6865b4f9de02cc8db599bfc3f4652e122d"
+      },
+      "head_metrics": {
+        "eval": {
+          "accuracy": 0.0,
+          "exact": 0,
+          "rows": 6
+        },
+        "train": {
+          "accuracy": 1.0,
+          "exact": 90,
+          "rows": 90
+        }
+      },
+      "head_report": {
+        "bytes": 1997,
+        "path": "/private/tmp/m695-m679-appworld-head/report-random.json",
+        "sha256": "0c9a1409b7196b7fa081068b9246716cc2d3dc83ebe2fee1a343d5aaad20c1d8"
+      },
+      "native_report": {
+        "bytes": 20426,
+        "path": "/private/tmp/m695-m679-appworld-head/native/random.json",
+        "sha256": "e1981bbe29567cb4186ae60bea68a4cde2b26b8031c4bee9afeaa7e6e2966fad"
+      },
+      "native_summary": {
+        "action_replayed": 12,
+        "native_api_calls": 36,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "steps_attempted": 18,
+        "tasks": 6
+      },
+      "parent": {
+        "bytes": 52206887,
+        "path": "/private/tmp/m679-m675-mcp/random-child.pt",
+        "sha256": "2722ea455de75fb1f99d29eb40ea88dedc59248e11ef1672c22582e7a79fa946"
+      }
+    },
+    "warm": {
+      "head": {
+        "bytes": 23085,
+        "path": "/private/tmp/m695-m679-appworld-head/api-head.pt",
+        "sha256": "413a7e536fae70585f2be5fc313c35ae9928a582cfd68c666864b08f30087d9d"
+      },
+      "head_metrics": {
+        "eval": {
+          "accuracy": 0.3333333333333333,
+          "exact": 2,
+          "rows": 6
+        },
+        "train": {
+          "accuracy": 1.0,
+          "exact": 90,
+          "rows": 90
+        }
+      },
+      "head_report": {
+        "bytes": 2003,
+        "path": "/private/tmp/m695-m679-appworld-head/report.json",
+        "sha256": "66613b012666237e1f89fef0356a68f1c150cd585481c79ee1979d89070ae121"
+      },
+      "native_report": {
+        "bytes": 19436,
+        "path": "/private/tmp/m695-m679-appworld-head/native/warm.json",
+        "sha256": "1114d378d7a76efa817dd4a095657a5f7e57e54eb8d0534947cf5fc8b163c8c6"
+      },
+      "native_summary": {
+        "action_replayed": 9,
+        "native_api_calls": 36,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "steps_attempted": 15,
+        "tasks": 6
+      },
+      "parent": {
+        "bytes": 52206773,
+        "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+        "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+      }
+    }
+  },
+  "benchmark_id": "appworld_api_head_native_free_run",
+  "claim_boundary": "Frozen-backbone public-train AppWorld API-schema head with matched random control and native resettable free-run. Not an official AppWorld score, complete policy, Gmail/Notion result, or external-account evaluation.",
+  "comparison": {
+    "head_eval_accuracy": {
+      "random": 0.0,
+      "warm": 0.3333333333333333
+    },
+    "head_eval_exact": {
+      "random": 0,
+      "warm": 2
+    },
+    "native_action_replayed": {
+      "random": 12,
+      "warm": 9
+    },
+    "native_success_rate": {
+      "random": 0.0,
+      "warm": 0.0
+    },
+    "native_successes": {
+      "random": 0,
+      "warm": 0
+    }
+  },
+  "kind": "localagent_m695_m679_appworld_api_head_native",
+  "protocol": {
+    "backbone_frozen": true,
+    "head_batch_size": 32,
+    "head_learning_rate": 0.005,
+    "head_steps": 1024,
+    "native_max_steps": 4,
+    "native_observations": "redacted response summaries",
+    "native_retrieve_k": 100
+  },
+  "receipt_self_sha256": "01abe774c5a11db7731eeadb398bb84944011252f0d69af295006f074ae4f089",
+  "schema_version": 1,
+  "source": {
+    "data_version": "0.2.0",
+    "dataset": "AppWorld",
+    "dev_tasks": 6,
+    "train_tasks": 90,
+    "url": "https://github.com/StonyBrookNLP/appworld"
+  },
+  "weight_adoption": {
+    "backbone_frozen": true,
+    "decision": "do not promote API head; native completion remains 0/6 despite warm held-out routing 2/6"
+  }
+}

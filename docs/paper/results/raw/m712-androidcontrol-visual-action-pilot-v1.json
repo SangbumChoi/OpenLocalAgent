@@ -1,0 +1,293 @@
+{
+  "claim_boundary": "Bounded AndroidControl screenshot/action transfer diagnostic only. The source records are public train data, the complete-record holdout is local, and the decoder backbone is frozen. This is not an official AndroidControl score, emulator result, native mobile success, or WebGPU visual deployment claim.",
+  "kind": "localagent_m712_androidcontrol_visual_action_pilot",
+  "model": {
+    "backbone_frozen": true,
+    "config": "configs/model/webgpu-10m-vision.yaml",
+    "parameters": 10612224,
+    "vision_tokens": 36
+  },
+  "parent": {
+    "parameters": 10524544,
+    "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "random": {
+    "after": {
+      "action_sequence_exact": 0.0,
+      "action_token_accuracy": 0.19285714285714287,
+      "mean_action_token_loss": 8.71946370601654,
+      "samples": 29
+    },
+    "before": {
+      "action_sequence_exact": 0.0,
+      "action_token_accuracy": 0.0017857142857142857,
+      "mean_action_token_loss": 9.84876537322998,
+      "samples": 29
+    },
+    "seed": 713,
+    "training": {
+      "mean_train_loss": 8.879074737429619,
+      "steps": 64,
+      "vision_update_l2": 2.9689724445343018
+    },
+    "warm": false
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "AndroidControl",
+    "object_url": "https://storage.googleapis.com/gresearch/android_control/android_control-00000-of-00020",
+    "official_split": "train source records; held-out by complete record",
+    "range_bytes": 52428800,
+    "range_sha256": "7e629d8493fb8c2beee4efdde26630a6681bc4b7f5b458e45a4bd3be95f35964",
+    "records": {
+      "episodes": [
+        {
+          "actions": 3,
+          "episode_id": 0,
+          "goal": "Open the Zoho Meet app , view the scheduled meetings .",
+          "record_bytes": 772635,
+          "record_index": 0,
+          "record_sha256": "6881efdfbcc5c843418e521eb724356fd8c2300e72cea40ae7ef0bb9274018f1",
+          "screenshot_sha256": [
+            "f32c653b876e5890e8b0b2f4b3bd0ef363ebf7b694d09e2bc7450462ea26d22e",
+            "1c295abb180541e164869bf5e3ac42e05ef710fb49af1c992860319c13978751",
+            "9ce364c888cfebd3e946baa6a38409166c22981569c41788cf96c88dc036c49c"
+          ],
+          "screenshots": 4,
+          "used_steps": 3
+        },
+        {
+          "actions": 4,
+          "episode_id": 20,
+          "goal": "Go to the mobile category after closing the pop up and browse the products",
+          "record_bytes": 6389735,
+          "record_index": 1,
+          "record_sha256": "6171157493f0d949918ca818e5a5bf167654b766702b88e08789a9dc2de6e432",
+          "screenshot_sha256": [
+            "1fe0e8f32d114d4e987dfe1ebb5d89c80799a51c6995a366c3b87fa5e8d927c6",
+            "edd213b28544e2d8764bc2167ba3957f63d469475c7af33c9c58c73407f20484",
+            "e89eb78a6783513a278062c7f709ea0e17236b151675fa026237204b79b0e365",
+            "42d649ce150115ecd79031231b19707982f9119c411a68bd104958610f970e5a"
+          ],
+          "screenshots": 5,
+          "used_steps": 4
+        },
+        {
+          "actions": 1,
+          "episode_id": 40,
+          "goal": "Check out all of the suggested products and compare pricing because I'm looking for a budget friendly sofa.",
+          "record_bytes": 3922378,
+          "record_index": 2,
+          "record_sha256": "b8a1afc32bc4dd59caf335fc15d14847443fb38f53abbe84608d4814c30bd5e2",
+          "screenshot_sha256": [
+            "68800b9b0484ef1fdbd4f981974a9c23210d25c72125ccbcdc72c61ae4768874"
+          ],
+          "screenshots": 2,
+          "used_steps": 1
+        },
+        {
+          "actions": 6,
+          "episode_id": 60,
+          "goal": "I want to view the recipe for Welsh Cakes in the kitchen stories app.",
+          "record_bytes": 5555987,
+          "record_index": 3,
+          "record_sha256": "da864ba0179adcc299b72656d82e6b6efe27225e18cfdd2a670f985143e5b6a7",
+          "screenshot_sha256": [
+            "82ceb05490c93893abd236ff2ccaa2cc3268950c462cd09ba1778918207afeac",
+            "d98571d5a1cac702df2760c400d16e9c0d159a9a09aff4fbca098712febf616b",
+            "cbcf6a34437099c30b005cf440d2a6d7a90fca16f9bd790daaf8dc120ee21cc9",
+            "5dc1c7377ce59f1b25abe23399eccf5d297ff80382238c1a54d24be1a9278ef8",
+            "1d677710ae46e2e8cc05a4eeb716ed6756ac930be7b101bd0ab6bc4058a2bd88",
+            "2d2e3051de550e95e6447778b2c6131d58d5814a0bdff4bfd16a782c45b1d47f"
+          ],
+          "screenshots": 7,
+          "used_steps": 6
+        },
+        {
+          "actions": 3,
+          "episode_id": 80,
+          "goal": "Open the Yahoo Mail App, Select the Starva Mail and Unmark an Email as read.",
+          "record_bytes": 5441985,
+          "record_index": 4,
+          "record_sha256": "f4b01b7716290c843a8bfe9643d086aec660dabbdb2ed20b194a2a71c1d215e3",
+          "screenshot_sha256": [
+            "e7a273662d03c28106bdaacaebfb174692dee530d1983cc0d78f4e551de1c842",
+            "ea1ad26c463b31bdda078f2c429a2e1b5512febfc2f22df1381f12841a7c260a",
+            "fc8857f215f4f87f7a9447e5928cce3ba2703fe0679ee40f972dc0e6160bc0e4"
+          ],
+          "screenshots": 4,
+          "used_steps": 3
+        },
+        {
+          "actions": 2,
+          "episode_id": 100,
+          "goal": "If I lose connection to the internet, I want to make the agents.txt file accessible offline in Google Drive so that I can readily access it.",
+          "record_bytes": 714842,
+          "record_index": 5,
+          "record_sha256": "1f4576ccc8bb9b54669afe0ebd1b79185aca5a1e439293ac3fb27e17df24dd05",
+          "screenshot_sha256": [
+            "6f631082090b251c41cd9e46b0572538333b6126ebae4aab86c9d2582cd4539c",
+            "6cc3302b3d3f7084023e12abb9b9b175ba1d53e0322fc6c9e6da58c2c313de71"
+          ],
+          "screenshots": 3,
+          "used_steps": 2
+        },
+        {
+          "actions": 9,
+          "episode_id": 140,
+          "goal": "Share my favorite Book \"the Queen's Gambit\" to my Friend Natalie larson over her gmail address -natalie.larson1998@gmail.com from the  PocketBook app.",
+          "record_bytes": 5552812,
+          "record_index": 6,
+          "record_sha256": "d6f4e77421a890374191f48014c6d71fb503de7170f8c7f71fa9f76ca6799cc6",
+          "screenshot_sha256": [
+            "e7b6e5e1d52ae9a225764fe7f6456884c747af4f18042a2609de6ce417f71c19",
+            "ec16dfedf040ad7b827ea7d88366bbaaf0d23972bbf87f810a27380414ac0474",
+            "e22486f5244f98ccd5b35161eaa4d8a8c2e6f988a36f1332672abbee42e610e0",
+            "d646bf5f1d29441e91d4cc71f5f56b0c91952bacf5a723b344a226cc53e96d62",
+            "e14620767cc893b865f17be620529938cfd9cb05468f3d643ff66668fc46139f",
+            "d2727730ec9d01547b6ee7cb20ba617bd3722a7212fd0dbb645282db1cbd0bf3",
+            "986d9d1c4655a1b3a885c9b7227bd754b28e078879450755a25dc9454af878b7",
+            "82bb7d74157457c14c0bc35461ea777f4631058df83302398e2446d0b6099935",
+            "a1e2a96d88f048f653a755fa2df0c6166f7015b806a125d637be6001ed8dc91c"
+          ],
+          "screenshots": 10,
+          "used_steps": 9
+        },
+        {
+          "actions": 7,
+          "episode_id": 160,
+          "goal": "I want to share ''Oscar and the wolf -somebody wants '' music to my friend karin.iversen@example.com via gmail",
+          "record_bytes": 2472080,
+          "record_index": 7,
+          "record_sha256": "b5be282474a786554329bc187809cf0d05dc3a16ffd5cc1c712532b033441c24",
+          "screenshot_sha256": [
+            "912144fe911deb08ef268bfdbc734ff78547fd09b31c9baf1e1b85adc4b8f25b",
+            "ec20c1ae63daff0517fd1b3f38b3299c73a19c6bff44df98fadb7caa3791d1be",
+            "7f31cd928cc68f05737b430396eb1dc35484f84a50a0aac2a422d8dd09b7213d",
+            "fa775cd3d9287f2d426960ea5b7167eb76d892d19c895a80d83959f85017710a",
+            "0a51f6e362fa59d25bca3f09d956ed2806e30b2524a7237e0e5a478affc59484",
+            "c77fc2eeaf787c60cad5856cb4c8ba65d46070996d1819335bfcfda5f8212335",
+            "cdb0084445487733c1bdada47e5621d796df9d022c12b057da4a055c1061a237"
+          ],
+          "screenshots": 8,
+          "used_steps": 7
+        },
+        {
+          "actions": 6,
+          "episode_id": 220,
+          "goal": "In the HealthifyMe app, view your today activity",
+          "record_bytes": 2395419,
+          "record_index": 8,
+          "record_sha256": "085a81f2473fd161d0f5a3d31cadb833be85b1c6a24f0a4495b9d9a8ca5d4c68",
+          "screenshot_sha256": [
+            "bd97940e6ed575f2975b1ac547f91d527f51977cb3cca19c71629d6083a64f6d",
+            "7877f5a3e1906f77b7e85b3bd778fff99c8391e6c1103406e1f42de83121c723",
+            "afa46ac4917cc8c7e89ce269cc921c47bfd7b611e81ef31ef016792b4c2aed7a",
+            "46202e55b874aa2b0f3baff04fa3a930140f7fd6e27c88975de2d12561758461",
+            "3d61c38dceca938fe1b69b9090a52b8fdedb7d4d1fd19537329c70efed11d0fa",
+            "43242f781de30f74a2a5952a2f949b2ad015cd0b6c19a0b3e6805e563143ff08"
+          ],
+          "screenshots": 7,
+          "used_steps": 6
+        },
+        {
+          "actions": 10,
+          "episode_id": 240,
+          "goal": "Add paintings to cart on the Rtistiq app.",
+          "record_bytes": 14602706,
+          "record_index": 9,
+          "record_sha256": "e6ca6ae7fc85c7939292d0c462fd9a03b253a444a643097fa8e56a19f2f81cbb",
+          "screenshot_sha256": [
+            "d07ba51360928d7c58a155092d137452ceec5228985d44c18d3bc357102f918d",
+            "edf55e19f32aac97d74d8718cf0fbfe27dde864a727f95c048bb7dd5249de5e0",
+            "d3b059fc6b319481ffb656cd5ec1dcea30122f3819477b269632b0b870c9195f",
+            "33e5eafbc1314319615feea364bfd4c7c88feacaec04a91953097a926b065d07",
+            "05efb85bdc6d2e688fea0592418b5bf66222c512dfdb41cd17b9104e4548f41c",
+            "d05642c6ab4b86e4a33bbe9990b053aee276e077ea28017d72d2910a3239b728",
+            "486d4540e77beb72812392d25fb46dcfc02d134d704c540fa537b8ba30859318",
+            "736bc8b8715df103b0c40196f0b457dd2de4545b362e7f0684b1a31ae9aa05f4",
+            "38b7d22aeebe8bb2c12850937cbb8c75d670b687dfe7e5f4ce18ec1ccb761d67",
+            "31383afe7b53bdc8983d0a4d57ce117a6ee30e043a2642591794445832f6c374"
+          ],
+          "screenshots": 11,
+          "used_steps": 10
+        },
+        {
+          "actions": 4,
+          "episode_id": 260,
+          "goal": "I want to add the Rockrider City Cycle Btwin My bike to my cart, so add this bicycle to my cart in the Decathlon app.",
+          "record_bytes": 1411066,
+          "record_index": 10,
+          "record_sha256": "d2d92051a94ad059ca5839506b422e0095baccd8315687adc0c068ab0c6873e8",
+          "screenshot_sha256": [
+            "3492b9d3d7b3620297b2e92db985e9a62d49782e3c3450b121b9aadeef45009a",
+            "dacc25d2f535f7813836e9c50776cad246173149b1c1b345c1c92592f2b71e76",
+            "1a1a4947af8c88ff06c0037bd16fdf2e7a144533154f60ee74282c772d54bd70",
+            "d88d8ce47dc9b723ca539f2f350677d0bd503c10be0097d5f901ef3cf66edf7f"
+          ],
+          "screenshots": 5,
+          "used_steps": 4
+        },
+        {
+          "actions": 9,
+          "episode_id": 281,
+          "goal": "Set 10 minutes before notification for the birthday event in gmail calendar",
+          "record_bytes": 1606860,
+          "record_index": 11,
+          "record_sha256": "781d150626d56b88de595086a8e156a273caef67b58f21b8f8268979a6e79dd0",
+          "screenshot_sha256": [
+            "12d5d4c733cb4f9f3339a3ab6901f4b86e5afdb367ce5647e8463e6d66d3bcf7",
+            "5d33b8f47a521fee47f60cebdb1a29467e5fad3cb297ac6cb32a0b58517c267c",
+            "1d4908d028cd5ea40fc70605e1aeca6f65a57dbf2a1399f0821b3f725575dce0",
+            "6117e962a0ba548cd97f2297b9465297a3b54b552be627350e5fa4d0405bfd49",
+            "51fc4dcdb57b86a4d6820f81e35b424e074bc9bd0996900ab79b3d8bbf7ea91a",
+            "0002445b6df143adcf2942d59cc7af718b2f365eb377e595c5585459985be600",
+            "0554ef84e6896d6f85b1c57884a9f2b3e586ad40318dc28cc26154949d43e8a4",
+            "e25b85a5571f541f0b2cdd7ad106845d79c8ae6506001dea11452c0fb3b859e3",
+            "408ae45ae99c0ff144f6f4253c8ba61c20cf94fedfe4e9cfb3bd4d1e4bd0cfac"
+          ],
+          "screenshots": 10,
+          "used_steps": 9
+        }
+      ],
+      "records_seen": 12
+    },
+    "screenshot_bytes_consumed": true
+  },
+  "split": {
+    "episodes_total": 12,
+    "eval_episodes": 4,
+    "eval_samples": 29,
+    "parent_disjoint": true,
+    "train_episodes": 8,
+    "train_samples": 35
+  },
+  "warm": {
+    "after": {
+      "action_sequence_exact": 0.0,
+      "action_token_accuracy": 0.06428571428571428,
+      "mean_action_token_loss": 6.760399520397186,
+      "samples": 29
+    },
+    "before": {
+      "action_sequence_exact": 0.0,
+      "action_token_accuracy": 0.0008928571428571428,
+      "mean_action_token_loss": 8.072317779064178,
+      "samples": 29
+    },
+    "seed": 712,
+    "training": {
+      "mean_train_loss": 7.072842910885811,
+      "steps": 64,
+      "vision_update_l2": 2.7691032886505127
+    },
+    "warm": true
+  },
+  "weight_analysis": {
+    "adoption_decision": "retain_warm_backbone_only_until_visual_action_quality_is_replicated",
+    "random_eval_loss_delta": -1.12930166721344,
+    "warm_eval_loss_delta": -1.3119182586669922,
+    "warm_minus_random_after_loss": -1.9590641856193542
+  }
+}

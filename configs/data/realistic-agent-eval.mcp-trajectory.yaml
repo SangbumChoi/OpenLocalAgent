@@ -1,0 +1,47 @@
+# Public MCP trajectory source. The Hub labels 38 rows train; the internal 30/8 holdout is not official.
+kind: localagent_realistic_agent_catalog
+schema_version: 1
+purpose: mcp_trajectory_benchmark_internal_transfer_addendum
+entries:
+  - id: mcp_trajectory_benchmark
+    family: tool_api
+    name: MCP Agent Trajectory Benchmark
+    source_url: https://huggingface.co/datasets/obaydata/mcp-agent-trajectory-benchmark
+    paper_url: https://huggingface.co/datasets/obaydata/mcp-agent-trajectory-benchmark
+    code_url: https://huggingface.co/datasets/obaydata/mcp-agent-trajectory-benchmark
+    source_revision: f4f449d65271abc1e4ccd5157d121a59a1dd38c4
+    access_status: public_download
+    license:
+      name: Apache-2.0
+      url: https://www.apache.org/licenses/LICENSE-2.0
+      evidence: https://huggingface.co/datasets/obaydata/mcp-agent-trajectory-benchmark
+    scale:
+      kind: dataset
+      single_pass_trajectories: 38
+      multi_conv_trajectories: 11
+      public_train_rows: 38
+      internal_train_agents: 30
+      internal_eval_agents: 8
+      normalized_train_rows: 86
+      normalized_eval_rows: 21
+      tool_calls: 216
+    observation:
+      modalities: [text, tool_schema, tool_history, workspace_state]
+      formats: [JSON, JSONL, Python, ATIF-v1.2]
+    action:
+      modalities: [tool_call, multi_turn_plan]
+      formats: [JSON, MCP]
+    domains: [finance, health_fitness, HR, logistics, marketing, customer_service, email_marketing]
+    train_policy: train
+    integration:
+      status: internal_holdout_projection
+      target_adapter: scripts.normalize_mcp_trajectory_benchmark
+      source_split_policy: public_train_only_with_agent_disjoint_internal_30_8_holdout
+    webgpu_projection:
+      status: bridge_only
+      recommended_observation: user_message_plus_tool_history_summary
+      screenshot_policy: none
+    contamination:
+      split: public_train_label;internal_structural_holdout_not_official
+      rule: train only on the 30 selected agent trajectories; keep the 8 held-out agent names and all multi-conv records out of training; no server execution
+    notes: Useful for function-calling and multi-turn tool planning, but the source is a community Hub release and the multi-conv files are heterogeneous; native MCP capability is not claimed.

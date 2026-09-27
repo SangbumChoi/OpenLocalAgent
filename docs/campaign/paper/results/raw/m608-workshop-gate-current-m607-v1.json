@@ -1,0 +1,309 @@
+{
+  "claim_boundary": "This refresh changes only the checkpoint-bound transfer evidence in the fail-closed gate. It does not synthesize native benchmark receipts, public Hub publication, or real email/Notion/browser side effects.",
+  "gate": {
+    "blocking_requirements": [
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:androidworld"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:mobile_safety_bench"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:iosworld"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:osworld"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:osworld_v2"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:agentnet"
+      },
+      {
+        "blockers": [
+          "official_split_not_verified"
+        ],
+        "requirement": "native:toolsandbox"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:mcpmark"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "requirement": "native:enterpriseopsgym"
+      },
+      {
+        "blockers": [
+          "artifact_sha256_invalid",
+          "current_checkpoint_not_bound",
+          "demo_url_invalid",
+          "missing_field:artifact_sha256",
+          "missing_field:demo_url",
+          "missing_field:model_url",
+          "missing_field:public",
+          "model_url_invalid",
+          "public_flag_not_true"
+        ],
+        "requirement": "artifacts:public_model_demo_manifest"
+      }
+    ],
+    "catalog": {
+      "blocked_ids": [
+        "androidworld",
+        "iosworld",
+        "mobile_safety_bench",
+        "aitw_control_eval",
+        "browsergym_miniwob",
+        "mind2web_eval",
+        "webarena",
+        "osworld",
+        "agentnet",
+        "appworld",
+        "tau_bench",
+        "toolsandbox",
+        "toolathlon",
+        "mcpmark",
+        "enterpriseopsgym",
+        "mcp_persona",
+        "tua_bench",
+        "osworld_human",
+        "mobilegym",
+        "mobileworld",
+        "memgui_bench",
+        "workarena",
+        "weblinx",
+        "osworld_v2",
+        "toolathlon_gym",
+        "phoneworld",
+        "gui_odyssey",
+        "mobile_agent_bench",
+        "agentbench_fc",
+        "visualwebarena",
+        "omni_act",
+        "worldgui",
+        "macosworld",
+        "assistgui",
+        "androiddaily",
+        "windows_agent_arena",
+        "webchorearena",
+        "timewarp"
+      ],
+      "entries": 42,
+      "path": "configs/data/realistic-agent-eval.catalog.yaml",
+      "runnable_ids": [
+        "androidcontrol",
+        "android_in_the_wild",
+        "xlam_function_calling",
+        "mind2web_train"
+      ],
+      "sha256": "dac55d7f025ebf6e523ef81869dd615b381e2d6e0ee7d7051a0ab3c8627137f6"
+    },
+    "checks": [
+      {
+        "blockers": [],
+        "evidence": [
+          "configs/data/realistic-agent-eval.catalog.yaml",
+          "dac55d7f025ebf6e523ef81869dd615b381e2d6e0ee7d7051a0ab3c8627137f6"
+        ],
+        "requirement": "catalog:realistic_family_coverage",
+        "status": "pass"
+      },
+      {
+        "blockers": [],
+        "evidence": [
+          "configs/data/realistic-agent-eval.catalog.yaml"
+        ],
+        "requirement": "catalog:no_pending_train_adapter",
+        "status": "pass"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:androidworld",
+        "status": "blocked"
+      },
+      {
+        "blockers": [],
+        "evidence": [
+          "/private/tmp/m588-m585-mobilegym-full.json",
+          "46c5c02f387181f71450d50f5a651206c8120a7086e5f31b92700193f611fe4e"
+        ],
+        "requirement": "native:mobilegym",
+        "status": "pass"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:mobile_safety_bench",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:iosworld",
+        "status": "blocked"
+      },
+      {
+        "blockers": [],
+        "evidence": [
+          "/private/tmp/m586-browsergym-m585-warm-full.json",
+          "4fa5a34d424a2176f738fe42ad21c5521f843f42ec36fcf08923a0e75896cdef"
+        ],
+        "requirement": "native:browsergym_miniwob",
+        "status": "pass"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:osworld",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:osworld_v2",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:agentnet",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "official_split_not_verified"
+        ],
+        "evidence": [
+          "/private/tmp/m589-toolsandbox-m585-warm.json",
+          "fb400794eaa467dbcd6eed874aa73355ad1e777080af31fa218654b2f498419d"
+        ],
+        "requirement": "native:toolsandbox",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:mcpmark",
+        "status": "blocked"
+      },
+      {
+        "blockers": [
+          "receipt_not_supplied"
+        ],
+        "evidence": [],
+        "requirement": "native:enterpriseopsgym",
+        "status": "blocked"
+      },
+      {
+        "blockers": [],
+        "evidence": [
+          "/Users/sangbumchoi/Documents/LocalAgent/docs/paper/results/raw/m597-m585-webgpu-capability-canonical-v1.json",
+          "60df8ea7840562b3e4d443d8b2ad8701c12cab8f85f439b753a8b4f49d3c1889"
+        ],
+        "requirement": "webgpu:native_capability_and_latency",
+        "status": "pass"
+      },
+      {
+        "blockers": [],
+        "evidence": [
+          "/Users/sangbumchoi/Documents/LocalAgent/docs/paper/results/raw/m607-m585-policy-aligned-transfer-v1.json:9b49a6020aa69973c8d75a1a214f6cb8685df7b6255a4e81b31fd797278c849f"
+        ],
+        "requirement": "weights:transfer_and_no_transfer_ablation",
+        "status": "pass"
+      },
+      {
+        "blockers": [],
+        "evidence": [
+          "/private/tmp/m594-m585-stateful-rl-preflight.json",
+          "ddb704b7239beceba0f4305c6a6270e2e86f61ed7f1e34d6d80fda9a96256740"
+        ],
+        "requirement": "training:rl_preflight",
+        "status": "pass"
+      },
+      {
+        "blockers": [
+          "artifact_sha256_invalid",
+          "current_checkpoint_not_bound",
+          "demo_url_invalid",
+          "missing_field:artifact_sha256",
+          "missing_field:demo_url",
+          "missing_field:model_url",
+          "missing_field:public",
+          "model_url_invalid",
+          "public_flag_not_true"
+        ],
+        "evidence": [
+          "/private/tmp/m603-m585-space/bundle-manifest.json",
+          "264973ce02766f5346fbff18463c02d5a8404273b89691a1c75da05e28c16a86"
+        ],
+        "requirement": "artifacts:public_model_demo_manifest",
+        "status": "blocked"
+      }
+    ],
+    "claim_boundary": "ready is false unless native benchmark receipts, native WebGPU performance and capability evidence, transfer ablations, a successful current-checkpoint RL preflight, and public model/demo artifacts are all explicitly supplied; protocol bridges and synthetic receipts do not satisfy these checks",
+    "current_checkpoint": {
+      "path": "/private/tmp/m585-public-multisurface-warm.pt",
+      "sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff"
+    },
+    "kind": "localagent_workshop_publication_gate",
+    "ready": false,
+    "schema_version": 1
+  },
+  "gate_input": {
+    "bytes": 7410,
+    "path": "/private/tmp/m607-workshop-gate-v3.json",
+    "sha256": "d220c99b7c2595d55c4760581418c2969af85ec77174fc6641bb105d5b96a517"
+  },
+  "kind": "localagent_m608_workshop_gate_current_m607",
+  "receipt_self_sha256": "812a6540296b8ce3c775578f4857b7efb771b1869b8215d212d922db28cffda2",
+  "schema_version": 1,
+  "transfer_receipt": {
+    "parent_checkpoint": {
+      "bytes": 52211696,
+      "path": "/private/tmp/m585-public-multisurface-warm.pt",
+      "sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff"
+    },
+    "path": "docs/paper/results/raw/m607-m585-policy-aligned-transfer-v1.json",
+    "sha256": "ac36c7324025c1ba76398e0aab9ae3a3811ec72e49d9b6d01decc0d3c9d94bbb",
+    "warm_minus_random_after_pp": 62.895460797799174
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "captured_at": "2026-08-06",
+  "claim_boundary": "Official source-page metadata only. No task text, screenshots, credentials, emulator/VM assets, MCP service state, verifier output, or live side effect was downloaded or executed.",
+  "kind": "localagent_official_source_integrity_audit",
+  "recommendation": "Keep these rows as evaluation-only unless an official train split is explicitly licensed. WebGPU projections may measure schema/action formatting, but publication claims require the native runtime and independent verifier for each family.",
+  "receipt_self_sha256": "b8a1087c35c8abbffe15d0f06ede55cb899fa33652401ff902e4473e80e99751",
+  "schema_version": 1,
+  "sources": [
+    {
+      "family": "mobile",
+      "id": "androidworld",
+      "observed": {
+        "environment": "live Android emulator",
+        "integration": "MiniWoB++ supported",
+        "task_scale": "116 hand-crafted tasks across 20 apps with dynamic parameterization"
+      },
+      "required_for_native": ["Android emulator", "ADB/grpc", "pinned task release"],
+      "source_url": "https://github.com/google-research/android_world",
+      "training_policy": "eval_only_native_runtime"
+    },
+    {
+      "family": "browser",
+      "id": "browsergym",
+      "observed": {
+        "benchmarks": ["MiniWoB", "WebArena", "WebArenaVerified", "VisualWebArena", "WorkArena", "AssistantBench", "WebLINX", "OpenApps", "TimeWarp"],
+        "observation_modes": ["DOM", "accessibility_tree", "screenshot"]
+      },
+      "required_for_native": ["pinned BrowserGym/MiniWoB release", "Playwright/Chromium", "task seeds"],
+      "source_url": "https://github.com/ServiceNow/BrowserGym",
+      "training_policy": "eval_only_runtime"
+    },
+    {
+      "family": "tool_api",
+      "id": "mcpmark",
+      "observed": {
+        "pinned_servers": ["GitHub MCP Server v0.15.0", "Notion MCP Server @1.9.1"],
+        "reproducibility": "isolated environments with pass@k/pass^k aggregation",
+        "services": ["Notion", "GitHub", "Filesystem", "Postgres", "Playwright"],
+        "verification": "independent final-state verifiers"
+      },
+      "required_for_native": ["isolated MCP workspace", "pinned servers", "official task/verifier release"],
+      "source_url": "https://github.com/eval-sys/mcpmark",
+      "training_policy": "eval_only_runtime"
+    },
+    {
+      "family": "mobile",
+      "id": "iosworld",
+      "observed": {
+        "apps": 26,
+        "categories": ["single_app", "multi_app", "memory_personalization"],
+        "identity": "persistent user identity",
+        "tasks": 133,
+        "tool_option": "MCP server for the 26 apps"
+      },
+      "required_for_native": ["iOS simulator", "seeded identity/data", "rubric verifier"],
+      "source_url": "https://iosworld.io/",
+      "training_policy": "eval_only_native_runtime"
+    },
+    {
+      "family": "mobile_safety",
+      "id": "mobilesafetybench",
+      "observed": {"evaluation": "task score and safety metrics", "observation": "image and text plus action history"},
+      "required_for_native": ["Android emulator", "ADB", "Appium", "pinned APKs"],
+      "source_url": "https://github.com/jylee425/mobilesafetybench",
+      "training_policy": "eval_only_native_runtime"
+    },
+    {
+      "family": "tool_api",
+      "id": "enterpriseopsgym",
+      "observed": {"domains": 8, "format": "Parquet/text with MCP endpoint and SQL verifiers", "license": "Apache-2.0", "oracle_rows": 649, "tools": 512},
+      "required_for_native": ["containerized MCP gym servers", "seed database", "SQL verifier"],
+      "source_url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym",
+      "training_policy": "eval_only"
+    },
+    {
+      "family": "computer",
+      "id": "osworld_v2",
+      "observed": {"evaluation": "long-horizon execution-based computer use", "release_rule": "code/tasks/assets must be pinned together"},
+      "paper_url": "https://arxiv.org/abs/2606.29537",
+      "required_for_native": ["release-matched VM/assets", "screenshots/accessibility/terminal state", "final-state evaluator"],
+      "source_url": "https://github.com/xlang-ai/OSWorld-V2",
+      "training_policy": "eval_only_runtime"
+    }
+  ]
+}

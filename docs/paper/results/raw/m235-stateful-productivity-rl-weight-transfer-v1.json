@@ -1,0 +1,700 @@
+{
+  "base": {
+    "auxiliary_tensors": 11,
+    "lineage": {
+      "config_sha256": "990cf69db5a91bfaba93776ef5aeee49d916d98aea0eb2f866115241f1eac006",
+      "data_sha256": "845221fe3f127f402647477d544c53b6f33876aa118007f5789a7a823d268de1",
+      "git": {
+        "commit": "dced0ccb93600b2fbe5693796bd14807af0bc3b8",
+        "dirty": true,
+        "repository_sha256": "4f3f386c8a99593d11431d8772a6bc3b3f67365462192b3068675ebbdee038bf",
+        "worktree_sha256": "79c8ee35595f201343a3093af1976d47e3891a2982aac32ac05dd8c315f782a1"
+      },
+      "model_config_sha256": "06f1e4707906d6bf0eda65764e76f8561a723d46fb829542e4554946680bf454",
+      "parent_checkpoint_sha256": "65bbd67ddbab22d07795686ea41627a4453945ef112d30b40025a0cf156aef9a",
+      "stage": "sft",
+      "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+      "version": 1
+    },
+    "model_tensors": 40,
+    "path": "/Users/sangbumchoi/Documents/LocalAgent/runs/sft-mind2web-trajectory-continuation-20260802/latest.pt",
+    "sha256": "26ae0d2597c8207e110aeceab483005c94eb98aaf83a58147f3e933f2c739782",
+    "stage": "sft_public_agent_continuation",
+    "step": 319
+  },
+  "compatibility": {
+    "added_tensors": [],
+    "config_mismatches": {},
+    "removed_tensors": [],
+    "shape_mismatches": {},
+    "shared_tensor_count": 51,
+    "tokenizer_sha256_equal": true
+  },
+  "groups": {
+    "action_heads": {
+      "base_l2": 93.53732763026021,
+      "delta_l2": 0.0,
+      "parameters": 2518968,
+      "relative_delta_l2": 0.0,
+      "target_l2": 93.53732763026021
+    },
+    "attention_or_mixer": {
+      "base_l2": 51.6110541922749,
+      "delta_l2": 0.7209104292064679,
+      "parameters": 1871872,
+      "relative_delta_l2": 0.013968139974834561,
+      "target_l2": 51.62378642606951
+    },
+    "embedding": {
+      "base_l2": 69.10418260739641,
+      "delta_l2": 3.240972806977432,
+      "parameters": 6291456,
+      "relative_delta_l2": 0.046899806707655665,
+      "target_l2": 70.20407293487149
+    },
+    "ffn": {
+      "base_l2": 50.523773329861676,
+      "delta_l2": 0.8780792107525601,
+      "parameters": 2360832,
+      "relative_delta_l2": 0.017379525575410226,
+      "target_l2": 50.535364257449096
+    },
+    "normalization": {
+      "base_l2": 21.27731578809428,
+      "delta_l2": 0.021503785290378337,
+      "parameters": 384,
+      "relative_delta_l2": 0.0010106437064026082,
+      "target_l2": 21.29586918484903
+    }
+  },
+  "kind": "localagent_weight_transfer_analysis",
+  "per_tensor": {
+    "blocks.0.attn.conv.weight": {
+      "base_l2": 0.9637955620350047,
+      "cosine": 0.9998296306755516,
+      "delta_l2": 0.017968496372332422,
+      "parameters": 1152,
+      "relative_delta_l2": 0.018643472827777778,
+      "shape": [
+        384,
+        1,
+        3
+      ],
+      "target_l2": 0.9661574349696186
+    },
+    "blocks.0.attn.in_proj.weight": {
+      "base_l2": 14.382849225233032,
+      "cosine": 0.9997003314900812,
+      "delta_l2": 0.3523848613632729,
+      "parameters": 442368,
+      "relative_delta_l2": 0.024500351484256316,
+      "shape": [
+        1152,
+        384
+      ],
+      "target_l2": 14.393065135667705
+    },
+    "blocks.0.attn.out_proj.weight": {
+      "base_l2": 8.228731825262681,
+      "cosine": 0.9996984269747305,
+      "delta_l2": 0.20221289355358726,
+      "parameters": 147456,
+      "relative_delta_l2": 0.02457400457902663,
+      "shape": [
+        384,
+        384
+      ],
+      "target_l2": 8.233731608733748
+    },
+    "blocks.0.attn_norm.weight": {
+      "base_l2": 19.868380583048317,
+      "cosine": 0.9999998867667265,
+      "delta_l2": 0.011356350015235092,
+      "parameters": 384,
+      "relative_delta_l2": 0.0005715790457992494,
+      "shape": [
+        384
+      ],
+      "target_l2": 19.874668678463618
+    },
+    "blocks.0.ffn.down.weight": {
+      "base_l2": 9.23906009801888,
+      "cosine": 0.9997259079916474,
+      "delta_l2": 0.21636089715669127,
+      "parameters": 196608,
+      "relative_delta_l2": 0.0234180636191646,
+      "shape": [
+        384,
+        512
+      ],
+      "target_l2": 9.241561240377038
+    },
+    "blocks.0.ffn.gate.weight": {
+      "base_l2": 9.268130754086824,
+      "cosine": 0.9997352385439752,
+      "delta_l2": 0.21331131056356045,
+      "parameters": 196608,
+      "relative_delta_l2": 0.02301556982992497,
+      "shape": [
+        512,
+        384
+      ],
+      "target_l2": 9.270435725953085
+    },
+    "blocks.0.ffn.up.weight": {
+      "base_l2": 9.28100023505233,
+      "cosine": 0.9997371851405438,
+      "delta_l2": 0.21282392056234534,
+      "parameters": 196608,
+      "relative_delta_l2": 0.02293114052066882,
+      "shape": [
+        512,
+        384
+      ],
+      "target_l2": 9.283441819143878
+    },
+    "blocks.0.ffn_norm.weight": {
+      "base_l2": 19.6004359680526,
+      "cosine": 0.9999999048977727,
+      "delta_l2": 0.008554851627470378,
+      "parameters": 384,
+      "relative_delta_l2": 0.0004364623134615074,
+      "shape": [
+        384
+      ],
+      "target_l2": 19.60009751107867
+    },
+    "blocks.1.attn.k.weight": {
+      "base_l2": 3.1714032898773854,
+      "cosine": 0.9996586624335339,
+      "delta_l2": 0.08288033487112278,
+      "parameters": 24576,
+      "relative_delta_l2": 0.026133647251884874,
+      "shape": [
+        64,
+        384
+      ],
+      "target_l2": 3.172348726646991
+    },
+    "blocks.1.attn.k_norm.weight": {
+      "base_l2": 7.823459694000936,
+      "cosine": 0.9999998878096253,
+      "delta_l2": 0.004810653394328664,
+      "parameters": 64,
+      "relative_delta_l2": 0.0006149010262067937,
+      "shape": [
+        64
+      ],
+      "target_l2": 7.8265261965501525
+    },
+    "blocks.1.attn.o.weight": {
+      "base_l2": 7.499991703816067,
+      "cosine": 0.9997529769669288,
+      "delta_l2": 0.1667187500663926,
+      "parameters": 147456,
+      "relative_delta_l2": 0.0222291912645136,
+      "shape": [
+        384,
+        384
+      ],
+      "target_l2": 7.501062092959736
+    },
+    "blocks.1.attn.q.weight": {
+      "base_l2": 7.987427525687094,
+      "cosine": 0.9996800368894225,
+      "delta_l2": 0.20210024796662693,
+      "parameters": 147456,
+      "relative_delta_l2": 0.025302295052654248,
+      "shape": [
+        384,
+        384
+      ],
+      "target_l2": 7.989810440158548
+    },
+    "blocks.1.attn.q_norm.weight": {
+      "base_l2": 7.810640432077264,
+      "cosine": 0.9999998655592888,
+      "delta_l2": 0.00494036285119203,
+      "parameters": 64,
+      "relative_delta_l2": 0.0006325169996179334,
+      "shape": [
+        64
+      ],
+      "target_l2": 7.813468476952882
+    },
+    "blocks.1.attn.v.weight": {
+      "base_l2": 2.952283426495229,
+      "cosine": 0.9998334051365856,
+      "delta_l2": 0.05389136661694264,
+      "parameters": 24576,
+      "relative_delta_l2": 0.018254130390495463,
+      "shape": [
+        64,
+        384
+      ],
+      "target_l2": 2.952460290687636
+    },
+    "blocks.1.attn_norm.weight": {
+      "base_l2": 19.194162744773614,
+      "cosine": 0.9999999186895453,
+      "delta_l2": 0.007749411423255826,
+      "parameters": 384,
+      "relative_delta_l2": 0.000403737924196038,
+      "shape": [
+        384
+      ],
+      "target_l2": 19.1937853487713
+    },
+    "blocks.1.ffn.down.weight": {
+      "base_l2": 9.168543213127968,
+      "cosine": 0.9996591986630097,
+      "delta_l2": 0.2394441539644346,
+      "parameters": 196608,
+      "relative_delta_l2": 0.026115834151448046,
+      "shape": [
+        384,
+        512
+      ],
+      "target_l2": 9.172219773548775
+    },
+    "blocks.1.ffn.gate.weight": {
+      "base_l2": 9.148960262670755,
+      "cosine": 0.9996756604552028,
+      "delta_l2": 0.23308251733185228,
+      "parameters": 196608,
+      "relative_delta_l2": 0.02547639410817717,
+      "shape": [
+        512,
+        384
+      ],
+      "target_l2": 9.152283516383909
+    },
+    "blocks.1.ffn.up.weight": {
+      "base_l2": 9.146433223882967,
+      "cosine": 0.9996736266771102,
+      "delta_l2": 0.23375644655257483,
+      "parameters": 196608,
+      "relative_delta_l2": 0.025557115088556605,
+      "shape": [
+        512,
+        384
+      ],
+      "target_l2": 9.150081636206174
+    },
+    "blocks.1.ffn_norm.weight": {
+      "base_l2": 19.438977827207342,
+      "cosine": 0.9999998700567962,
+      "delta_l2": 0.009958049466993385,
+      "parameters": 384,
+      "relative_delta_l2": 0.0005122722786923404,
+      "shape": [
+        384
+      ],
+      "target_l2": 19.439954318310733
+    },
+    "blocks.2.attn.conv.weight": {
+      "base_l2": 0.9975974244967136,
+      "cosine": 0.9998440749057551,
+      "delta_l2": 0.017669097175764665,
+      "parameters": 1152,
+      "relative_delta_l2": 0.017711650753988964,
+      "shape": [
+        384,
+        1,
+        3
+      ],
+      "target_l2": 0.9988085084291227
+    },
+    "blocks.2.attn.in_proj.weight": {
+      "base_l2": 15.3277876215933,
+      "cosine": 0.9997159298434591,
+      "delta_l2": 0.3655581186245835,
+      "parameters": 442368,
+      "relative_delta_l2": 0.023849372632851255,
+      "shape": [
+        1152,
+        384
+      ],
+      "target_l2": 15.336556028033595
+    },
+    "blocks.2.attn.out_proj.weight": {
+      "base_l2": 8.423652628756539,
+      "cosine": 0.9996882349881334,
+      "delta_l2": 0.21042591652937062,
+      "parameters": 147456,
+      "relative_delta_l2": 0.024980364908569683,
+      "shape": [
+        384,
+        384
+      ],
+      "target_l2": 8.427473714063623
+    },
+    "blocks.2.attn_norm.weight": {
+      "base_l2": 20.074119838180646,
+      "cosine": 0.9999998919692709,
+      "delta_l2": 0.010017027528365478,
+      "parameters": 384,
+      "relative_delta_l2": 0.0004990020787518293,
+      "shape": [
+        384
+      ],
+      "target_l2": 20.0777610876501
+    },
+    "blocks.2.ffn.down.weight": {
+      "base_l2": 9.202596611331124,
+      "cosine": 0.9996126963727705,
+      "delta_l2": 0.2562196599156169,
+      "parameters": 196608,
+      "relative_delta_l2": 0.027842104868547053,
+      "shape": [
+        384,
+        512
+      ],
+      "target_l2": 9.206871130263679
+    },
+    "blocks.2.ffn.gate.weight": {
+      "base_l2": 9.266387939423451,
+      "cosine": 0.9996438032264189,
+      "delta_l2": 0.2474253143193587,
+      "parameters": 196608,
+      "relative_delta_l2": 0.026701376624509568,
+      "shape": [
+        512,
+        384
+      ],
+      "target_l2": 9.27082259467247
+    },
+    "blocks.2.ffn.up.weight": {
+      "base_l2": 9.227074758885,
+      "cosine": 0.9996448081246555,
+      "delta_l2": 0.24602372781852277,
+      "parameters": 196608,
+      "relative_delta_l2": 0.026663242061805113,
+      "shape": [
+        512,
+        384
+      ],
+      "target_l2": 9.23135506623471
+    },
+    "blocks.2.ffn_norm.weight": {
+      "base_l2": 19.550025611650845,
+      "cosine": 0.9999998965232222,
+      "delta_l2": 0.008978677699138522,
+      "parameters": 384,
+      "relative_delta_l2": 0.0004592667998239182,
+      "shape": [
+        384
+      ],
+      "target_l2": 19.551255774655726
+    },
+    "blocks.3.attn.k.weight": {
+      "base_l2": 3.1813122394030766,
+      "cosine": 0.9997833240821069,
+      "delta_l2": 0.06623323008791253,
+      "parameters": 24576,
+      "relative_delta_l2": 0.02081946854117663,
+      "shape": [
+        64,
+        384
+      ],
+      "target_l2": 3.181835932276071
+    },
+    "blocks.3.attn.k_norm.weight": {
+      "base_l2": 8.258894696853115,
+      "cosine": 0.9999999326298793,
+      "delta_l2": 0.0032095990387547733,
+      "parameters": 64,
+      "relative_delta_l2": 0.0003886233154150429,
+      "shape": [
+        64
+      ],
+      "target_l2": 8.259948172290441
+    },
+    "blocks.3.attn.o.weight": {
+      "base_l2": 7.803140691872493,
+      "cosine": 0.9996451912559627,
+      "delta_l2": 0.20787533408523853,
+      "parameters": 147456,
+      "relative_delta_l2": 0.026639957203610974,
+      "shape": [
+        384,
+        384
+      ],
+      "target_l2": 7.80382420824727
+    },
+    "blocks.3.attn.q.weight": {
+      "base_l2": 7.856594374520516,
+      "cosine": 0.9996252729023102,
+      "delta_l2": 0.21513734184916106,
+      "parameters": 147456,
+      "relative_delta_l2": 0.02738302775905887,
+      "shape": [
+        384,
+        384
+      ],
+      "target_l2": 7.859296309157455
+    },
+    "blocks.3.attn.q_norm.weight": {
+      "base_l2": 8.265517898334691,
+      "cosine": 0.999999934039905,
+      "delta_l2": 0.0031336000820111135,
+      "parameters": 64,
+      "relative_delta_l2": 0.00037911720965996105,
+      "shape": [
+        64
+      ],
+      "target_l2": 8.2664155861359
+    },
+    "blocks.3.attn.v.weight": {
+      "base_l2": 3.1365895044167718,
+      "cosine": 0.9998277110274963,
+      "delta_l2": 0.05822177475805609,
+      "parameters": 24576,
+      "relative_delta_l2": 0.018562127647265097,
+      "shape": [
+        64,
+        384
+      ],
+      "target_l2": 3.136255293396874
+    },
+    "blocks.3.attn_norm.weight": {
+      "base_l2": 19.365518160729817,
+      "cosine": 0.9999999246680197,
+      "delta_l2": 0.007541551282691607,
+      "parameters": 384,
+      "relative_delta_l2": 0.000389431938773767,
+      "shape": [
+        384
+      ],
+      "target_l2": 19.364906372910244
+    },
+    "blocks.3.ffn.down.weight": {
+      "base_l2": 9.33826258909862,
+      "cosine": 0.9994065876686544,
+      "delta_l2": 0.3218893678129748,
+      "parameters": 196608,
+      "relative_delta_l2": 0.03446994178432557,
+      "shape": [
+        384,
+        512
+      ],
+      "target_l2": 9.344912365131798
+    },
+    "blocks.3.ffn.gate.weight": {
+      "base_l2": 9.322590008323209,
+      "cosine": 0.9995006450847014,
+      "delta_l2": 0.2948050813787549,
+      "parameters": 196608,
+      "relative_delta_l2": 0.031622658629796324,
+      "shape": [
+        512,
+        384
+      ],
+      "target_l2": 9.32947390835383
+    },
+    "blocks.3.ffn.up.weight": {
+      "base_l2": 9.301688938674967,
+      "cosine": 0.9994874352232433,
+      "delta_l2": 0.29800393222348737,
+      "parameters": 196608,
+      "relative_delta_l2": 0.03203761533934269,
+      "shape": [
+        512,
+        384
+      ],
+      "target_l2": 9.30847167824437
+    },
+    "blocks.3.ffn_norm.weight": {
+      "base_l2": 19.57679720937866,
+      "cosine": 0.9999998435702259,
+      "delta_l2": 0.01160614194696471,
+      "parameters": 384,
+      "relative_delta_l2": 0.0005928519268414628,
+      "shape": [
+        384
+      ],
+      "target_l2": 19.580641068820338
+    },
+    "dense_selector.q_proj.bias": {
+      "base_l2": 0.7479556251137705,
+      "cosine": 1.0000000000000004,
+      "delta_l2": 0.0,
+      "parameters": 256,
+      "relative_delta_l2": 0.0,
+      "shape": [
+        256
+      ],
+      "target_l2": 0.7479556251137705
+    },
+    "dense_selector.q_proj.weight": {
+      "base_l2": 14.901728142352068,
+      "cosine": 0.9999999999999423,
+      "delta_l2": 0.0,
+      "parameters": 98304,
+      "relative_delta_l2": 0.0,
+      "shape": [
+        256,
+        384
+      ],
+      "target_l2": 14.901728142352068
+    },
+    "dense_selector.t_proj.bias": {
+      "base_l2": 0.47242261004716163,
+      "cosine": 1.0000000000000004,
+      "delta_l2": 0.0,
+      "parameters": 256,
+      "relative_delta_l2": 0.0,
+      "shape": [
+        256
+      ],
+      "target_l2": 0.47242261004716163
+    },
+    "dense_selector.t_proj.weight": {
+      "base_l2": 42.10625820101615,
+      "cosine": 0.9999999999997619,
+      "delta_l2": 0.0,
+      "parameters": 2097152,
+      "relative_delta_l2": 0.0,
+      "shape": [
+        256,
+        8192
+      ],
+      "target_l2": 42.10625820101615
+    },
+    "embed.weight": {
+      "base_l2": 69.10418260739641,
+      "cosine": 0.9990421161478714,
+      "delta_l2": 3.240972806977432,
+      "parameters": 6291456,
+      "relative_delta_l2": 0.046899806707655665,
+      "shape": [
+        16384,
+        384
+      ],
+      "target_l2": 70.20407293487149
+    },
+    "norm.weight": {
+      "base_l2": 21.27731578809428,
+      "cosine": 0.9999998695880489,
+      "delta_l2": 0.021503785290378337,
+      "parameters": 384,
+      "relative_delta_l2": 0.0010106437064026082,
+      "shape": [
+        384
+      ],
+      "target_l2": 21.29586918484903
+    },
+    "ptr_head.arg_emb.weight": {
+      "base_l2": 80.45067660196214,
+      "cosine": 0.999999999999998,
+      "delta_l2": 0.0,
+      "parameters": 6528,
+      "relative_delta_l2": 0.0,
+      "shape": [
+        17,
+        384
+      ],
+      "target_l2": 80.45067660196214
+    },
+    "ptr_head.end.weight": {
+      "base_l2": 11.341164000906497,
+      "cosine": 0.9999999999999518,
+      "delta_l2": 0.0,
+      "parameters": 147456,
+      "relative_delta_l2": 0.0,
+      "shape": [
+        384,
+        384
+      ],
+      "target_l2": 11.341164000906497
+    },
+    "ptr_head.start.weight": {
+      "base_l2": 11.351812889401891,
+      "cosine": 0.9999999999999442,
+      "delta_l2": 0.0,
+      "parameters": 147456,
+      "relative_delta_l2": 0.0,
+      "shape": [
+        384,
+        384
+      ],
+      "target_l2": 11.351812889401891
+    },
+    "route_head.fc.bias": {
+      "base_l2": 0.1280855442369288,
+      "cosine": 1.0,
+      "delta_l2": 0.0,
+      "parameters": 5,
+      "relative_delta_l2": 0.0,
+      "shape": [
+        5
+      ],
+      "target_l2": 0.1280855442369288
+    },
+    "route_head.fc.weight": {
+      "base_l2": 2.1260346776666874,
+      "cosine": 1.0000000000000009,
+      "delta_l2": 0.0,
+      "parameters": 1920,
+      "relative_delta_l2": 0.0,
+      "shape": [
+        5,
+        384
+      ],
+      "target_l2": 2.1260346776666874
+    },
+    "tool_head.fc.bias": {
+      "base_l2": 0.20704546708286467,
+      "cosine": 0.9999999999999999,
+      "delta_l2": 0.0,
+      "parameters": 51,
+      "relative_delta_l2": 0.0,
+      "shape": [
+        51
+      ],
+      "target_l2": 0.20704546708286467
+    },
+    "tool_head.fc.weight": {
+      "base_l2": 4.367406379550478,
+      "cosine": 0.9999999999999865,
+      "delta_l2": 0.0,
+      "parameters": 19584,
+      "relative_delta_l2": 0.0,
+      "shape": [
+        51,
+        384
+      ],
+      "target_l2": 4.367406379550478
+    }
+  },
+  "recommendation": {
+    "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+    "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+    "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+    "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+  },
+  "schema_version": 1,
+  "target": {
+    "auxiliary_tensors": 11,
+    "lineage": {
+      "config_sha256": "9a19a05952087ffe99a19e41dea879d2dec51ef21621f1ad3812850a09caf133",
+      "data_sha256": "fa34cf9c14390b310d52e5fdee0102a0602d091e7d1ec0b87dd7ae775300dad1",
+      "git": {
+        "commit": "df77c8c913da70bae4760450674a71a4a99eabd7",
+        "dirty": true,
+        "repository_sha256": "4f3f386c8a99593d11431d8772a6bc3b3f67365462192b3068675ebbdee038bf",
+        "worktree_sha256": "296fe4985beb2b3122ad8939aa62fa5472c371c896e1b54acc910ad9c6c79843"
+      },
+      "model_config_sha256": "893fdd2f896c6c246ceed64031b9fbd4b5b770ce2fb72cd3de5fc02703161393",
+      "parent_checkpoint_sha256": "9ac0e8a2dbfbe2bf88aa0d379725e4776c00a374eede28c0261db0f93da4bebc",
+      "stage": "rl",
+      "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+      "version": 1
+    },
+    "model_tensors": 40,
+    "path": "/private/tmp/localagent-m234-rl/rl/latest.pt",
+    "sha256": "238b2dbcee18494b80ff1cbb2ab3c31c9424e7c868fc658786ac2ec296fc1c92",
+    "stage": "rl",
+    "step": 3
+  }
+}

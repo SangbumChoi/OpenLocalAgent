@@ -1,0 +1,36 @@
+{
+  "kind": "localagent_webgpu_native_capability_receipt",
+  "schema_version": 1,
+  "backend": "webgpu",
+  "environment_executed": true,
+  "hardware_adapter": "vendor=apple; architecture=metal-3",
+  "checkpoint": {
+    "sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff",
+    "stage": "sft_cross_surface_public_continuation",
+    "parameters": 10524544
+  },
+  "capability": {
+    "evaluated_cases": 3,
+    "exact_actions": 3,
+    "closed_loop_success": 0,
+    "external_side_effects_executed": false,
+    "cases": [
+      {"tool": "send_email", "exact_action_rate": 1.0, "repetitions": 30},
+      {"tool": "open_url", "exact_action_rate": 1.0, "repetitions": 30},
+      {"tool": "notion_write", "exact_action_rate": 1.0, "repetitions": 30}
+    ]
+  },
+  "performance": {
+    "tokens_per_second_p50": 1367.5213689147115,
+    "latency_ms_p50": 7.4000000059604645,
+    "peak_memory_mb": 20.458142280578613,
+    "provider": "webgpu"
+  },
+  "provenance": {
+    "source_receipt": "docs/paper/results/raw/m585-public-multisurface-transfer-webgpu-v1.json",
+    "source_receipt_sha256": "26b1e2081f6b99eadb2eccb2954909c95b913187b1db3a61e2420aaffffd0c46",
+    "capability_report_sha256": "afc5e06b2702ee7244b4f3e272ecd11e0f8d3538c0bc1fbd4c74cc8735b945fd"
+  },
+  "claim_boundary": "Canonical gate adapter for the m585 warm-child WebGPU report. It proves structured local probes and latency on Apple WebGPU, with no email, browser, Notion, or external side effects; it is not native benchmark task success.",
+  "receipt_self_sha256": "158ada0ee20293e8b412b63ba31c737a39e2af707d5dedf08fed0a6290cad5f5"
+}

@@ -1,0 +1,404 @@
+{
+  "claim_boundary": "Bounded first-call constrained-decoder canary on a public xLAM-derived shard. It is not an official Salesforce xLAM/BFCL score, multi-call score, global retriever score, native MCP result, live API execution, or browser/email/Notion side-effect claim.",
+  "comparison": {
+    "parent_first_arguments_exact_rate": 0.0,
+    "parent_first_tool_exact_rate": 0.5,
+    "parent_schema_valid_rate": 1.0,
+    "warm_first_arguments_exact_rate": 0.0,
+    "warm_first_tool_exact_rate": 0.5,
+    "warm_minus_parent_arguments_exact_rate": 0.0,
+    "warm_minus_parent_tool_exact_rate": 0.0,
+    "warm_schema_valid_rate": 1.0
+  },
+  "decision": {
+    "adoption": "retain_as_low_rate_candidate_but_not_free_run_promotion",
+    "native_replay_required": true,
+    "reason": "The warm child matches the current parent on this eight-row row-retriever canary: 50% first-tool exact, 0% first-argument exact, and 100% schema-valid. The canary is an upper-bound candidate policy and is not sufficient to promote the child to WebGPU or claim runtime/global-catalog competence.",
+    "webgpu_export_allowed": false
+  },
+  "kind": "localagent_xlam_current_free_run_row_canary",
+  "parent": {
+    "checkpoint": {
+      "bytes": 52246937,
+      "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+      "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+    },
+    "metrics": {
+      "by_answer_count": {
+        "1": {
+          "first_arguments_exact_rate": 0.0,
+          "first_tool_exact_rate": 0.5,
+          "rows": 4
+        },
+        "2": {
+          "first_arguments_exact_rate": 0.0,
+          "first_tool_exact_rate": 0.5,
+          "rows": 2
+        },
+        "3": {
+          "first_arguments_exact_rate": 0.0,
+          "first_tool_exact_rate": 1.0,
+          "rows": 1
+        },
+        "4": {
+          "first_arguments_exact_rate": 0.0,
+          "first_tool_exact_rate": 0.0,
+          "rows": 1
+        }
+      },
+      "first_arguments_exact_rate": 0.0,
+      "first_tool_exact_rate": 0.5,
+      "predictions": [
+        {
+          "arguments_exact": false,
+          "id": 3493,
+          "prediction": {
+            "arguments": {},
+            "name": "get_breed_information"
+          },
+          "schema_valid": true,
+          "target": {
+            "arguments": {
+              "breed": "Maine Coon"
+            },
+            "name": "get_breed_information"
+          },
+          "tool_exact": true
+        },
+        {
+          "arguments_exact": false,
+          "id": 57546,
+          "prediction": {
+            "arguments": {},
+            "name": "mailcheck"
+          },
+          "schema_valid": true,
+          "target": {
+            "arguments": {
+              "domain": "protonmail.com"
+            },
+            "name": "mailcheck"
+          },
+          "tool_exact": true
+        },
+        {
+          "arguments_exact": false,
+          "id": 8815,
+          "prediction": {
+            "arguments": {},
+            "name": "products_get_reviews"
+          },
+          "schema_valid": true,
+          "target": {
+            "arguments": {
+              "cat_id": 8899,
+              "is_id": 8899,
+              "language": "en"
+            },
+            "name": "navigations_get_node_content"
+          },
+          "tool_exact": false
+        },
+        {
+          "arguments_exact": false,
+          "id": 19332,
+          "prediction": {
+            "arguments": {},
+            "name": "search_jobs"
+          },
+          "schema_valid": true,
+          "target": {
+            "arguments": {
+              "keyword": "Data Analysis",
+              "location": "Stockholm",
+              "offset": 20
+            },
+            "name": "searchjobs"
+          },
+          "tool_exact": false
+        },
+        {
+          "arguments_exact": false,
+          "id": 15566,
+          "prediction": {
+            "arguments": {
+              "name": "Tesla"
+            },
+            "name": "get_coin_price_difference"
+          },
+          "schema_valid": true,
+          "target": {
+            "arguments": {
+              "ticker": "TSLA"
+            },
+            "name": "get_10_year_historical_quarterly_prices"
+          },
+          "tool_exact": false
+        },
+        {
+          "arguments_exact": false,
+          "id": 22963,
+          "prediction": {
+            "arguments": {},
+            "name": "shopify"
+          },
+          "schema_valid": true,
+          "target": {
+            "arguments": {
+              "username": "ShopMaster123"
+            },
+            "name": "shopify"
+          },
+          "tool_exact": true
+        },
+        {
+          "arguments_exact": false,
+          "id": 21972,
+          "prediction": {
+            "arguments": {},
+            "name": "rsi_oversold"
+          },
+          "schema_valid": true,
+          "target": {
+            "arguments": {
+              "ticker": "AAPL"
+            },
+            "name": "gedetailedtinsiders"
+          },
+          "tool_exact": false
+        },
+        {
+          "arguments_exact": false,
+          "id": 22093,
+          "prediction": {
+            "arguments": {},
+            "name": "getdetails"
+          },
+          "schema_valid": true,
+          "target": {
+            "arguments": {
+              "abn": "665544332211"
+            },
+            "name": "getdetails"
+          },
+          "tool_exact": true
+        }
+      ],
+      "route_rate": 1.0,
+      "rows": 8,
+      "schema_valid_rate": 1.0
+    }
+  },
+  "protocol": {
+    "candidate_mode": "row_retriever",
+    "candidate_policy": "Each row's gold tool list is supplied to the constrained decoder; this is a first-call candidate upper bound, not the global/runtime catalog path.",
+    "device": "cpu",
+    "first_call_only": true,
+    "rows": 8
+  },
+  "receipt_self_sha256": "88a75495cd19f30b8d54462289965c1c0168dc73b2a321250440aba388ff3a56",
+  "schema_version": 1,
+  "source": {
+    "derived_dataset": "product-science/xlam-function-calling-60k-raw",
+    "derived_url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw",
+    "official_original_split_verified": false,
+    "original_dataset": "Salesforce/xlam-function-calling-60k",
+    "rows": 8,
+    "source_file": {
+      "bytes": 1600869,
+      "path": "/private/tmp/xlam-public-test-shard0.jsonl",
+      "sha256": "43db9250b50f44d96d2be31983690e101bd083eefea2a4a327e13a3ed8caeee1"
+    }
+  },
+  "source_artifacts": {
+    "evaluator": {
+      "bytes": 12920,
+      "path": "scripts/evaluate_xlam_public.py",
+      "sha256": "962e72633b88f599206a98e09c59e3728be19b965381adc8d4b6843d56c91752"
+    },
+    "parent_report": {
+      "bytes": 5711,
+      "path": "/private/tmp/m463-xlam-parent-row-8.json",
+      "sha256": "3fee7d6439e31aca6cd52884e26306fb455a3f6ddab0be28775dafdfc33683a2"
+    },
+    "warm_report": {
+      "bytes": 5755,
+      "path": "/private/tmp/m463-xlam-warm-row-8.json",
+      "sha256": "d8bd93e4dacf3a725ee7e0a88045b738b6cc1de4c3c8664bd7e8326adb813418"
+    }
+  },
+  "warm": {
+    "checkpoint": {
+      "bytes": 52249569,
+      "path": "/private/tmp/m463-xlam-current-warm.pt",
+      "sha256": "75d36e34f57fb29b6883b003c93856bebd3944f79dc2640610783fb274729cb8"
+    },
+    "metrics": {
+      "by_answer_count": {
+        "1": {
+          "first_arguments_exact_rate": 0.0,
+          "first_tool_exact_rate": 0.5,
+          "rows": 4
+        },
+        "2": {
+          "first_arguments_exact_rate": 0.0,
+          "first_tool_exact_rate": 0.5,
+          "rows": 2
+        },
+        "3": {
+          "first_arguments_exact_rate": 0.0,
+          "first_tool_exact_rate": 0.0,
+          "rows": 1
+        },
+        "4": {
+          "first_arguments_exact_rate": 0.0,
+          "first_tool_exact_rate": 1.0,
+          "rows": 1
+        }
+      },
+      "first_arguments_exact_rate": 0.0,
+      "first_tool_exact_rate": 0.5,
+      "predictions": [
+        {
+          "arguments_exact": false,
+          "id": 3493,
+          "prediction": {
+            "arguments": {},
+            "name": "get_breed_information"
+          },
+          "schema_valid": true,
+          "target": {
+            "arguments": {
+              "breed": "Maine Coon"
+            },
+            "name": "get_breed_information"
+          },
+          "tool_exact": true
+        },
+        {
+          "arguments_exact": false,
+          "id": 57546,
+          "prediction": {
+            "arguments": {
+              "limit": 20
+            },
+            "name": "get_products_in_category"
+          },
+          "schema_valid": true,
+          "target": {
+            "arguments": {
+              "domain": "protonmail.com"
+            },
+            "name": "mailcheck"
+          },
+          "tool_exact": false
+        },
+        {
+          "arguments_exact": false,
+          "id": 8815,
+          "prediction": {
+            "arguments": {},
+            "name": "navigations_get_node_content"
+          },
+          "schema_valid": true,
+          "target": {
+            "arguments": {
+              "cat_id": 8899,
+              "is_id": 8899,
+              "language": "en"
+            },
+            "name": "navigations_get_node_content"
+          },
+          "tool_exact": true
+        },
+        {
+          "arguments_exact": false,
+          "id": 19332,
+          "prediction": {
+            "arguments": {},
+            "name": "search_jobs"
+          },
+          "schema_valid": true,
+          "target": {
+            "arguments": {
+              "keyword": "Data Analysis",
+              "location": "Stockholm",
+              "offset": 20
+            },
+            "name": "searchjobs"
+          },
+          "tool_exact": false
+        },
+        {
+          "arguments_exact": false,
+          "id": 15566,
+          "prediction": {
+            "arguments": {
+              "name": "Tesla"
+            },
+            "name": "get_coin_price_difference"
+          },
+          "schema_valid": true,
+          "target": {
+            "arguments": {
+              "ticker": "TSLA"
+            },
+            "name": "get_10_year_historical_quarterly_prices"
+          },
+          "tool_exact": false
+        },
+        {
+          "arguments_exact": false,
+          "id": 22963,
+          "prediction": {
+            "arguments": {},
+            "name": "shopify"
+          },
+          "schema_valid": true,
+          "target": {
+            "arguments": {
+              "username": "ShopMaster123"
+            },
+            "name": "shopify"
+          },
+          "tool_exact": true
+        },
+        {
+          "arguments_exact": false,
+          "id": 21972,
+          "prediction": {
+            "arguments": {},
+            "name": "rsi_oversold"
+          },
+          "schema_valid": true,
+          "target": {
+            "arguments": {
+              "ticker": "AAPL"
+            },
+            "name": "gedetailedtinsiders"
+          },
+          "tool_exact": false
+        },
+        {
+          "arguments_exact": false,
+          "id": 22093,
+          "prediction": {
+            "arguments": {},
+            "name": "getdetails"
+          },
+          "schema_valid": true,
+          "target": {
+            "arguments": {
+              "abn": "665544332211"
+            },
+            "name": "getdetails"
+          },
+          "tool_exact": true
+        }
+      ],
+      "route_rate": 1.0,
+      "rows": 8,
+      "schema_valid_rate": 1.0
+    }
+  }
+}

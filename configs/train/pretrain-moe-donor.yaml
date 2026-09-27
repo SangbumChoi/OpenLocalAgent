@@ -1,0 +1,32 @@
+# MoE donor for the region-transfer study: a sparse routed-FFN model pretrained on the same
+# locally packed mixture as the dense arms, so region-wise loading can be compared like for like.
+stage: pretrain
+model_config: configs/model/webgpu-44m-moe.yaml
+data:
+  shards_dir: data/shards/h100-mix
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-h100-16k.json
+optim:
+  name: adamw
+  lr: 3.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 32
+  total_steps: 1200
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 8
+  grad_accum_steps: 8
+runtime:
+  device: auto
+  dtype: fp32
+  seed: 2026
+  resume: false
+log:
+  out_dir: runs/moe-donor-seed2026
+  ckpt_every: 400
+  eval_every: 200
+  eval_batches: 32

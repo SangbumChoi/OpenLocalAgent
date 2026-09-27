@@ -1,0 +1,371 @@
+{
+  "checkpoint": {
+    "bytes": 52231121,
+    "path": "runs/sft-mind2web-trajectory-continuation-20260802-m46/latest.pt",
+    "sha256": "b19828908594463385870607d89c084afc1bb237cc5fb51752ac6860a204a041"
+  },
+  "claim_boundary": "Native tau2-bench mock-domain reset/evaluation with one LocalAgent turn per task and an oracle contract replay. This is not the complete tau2 base split, does not run the user simulator, and is not a tau2 leaderboard, retail/telecom, email, or external service score. Task text, tool outputs, and checkpoint internals are hash-only.",
+  "configuration": {
+    "domain": "mock",
+    "max_agent_turns": 1,
+    "retrieve_k": 50,
+    "selector_first": true,
+    "selector_mode": "checkpoint",
+    "split": "base",
+    "tasks": [
+      "create_task_1",
+      "create_task_1_with_env_assertions",
+      "create_task_1_nl_eval",
+      "update_task_1",
+      "update_task_with_message_history",
+      "update_task_with_initialization_data",
+      "update_task_with_initialization_actions",
+      "update_task_with_history_and_env_assertions",
+      "update_task_with_user_tools",
+      "impossible_task_1"
+    ],
+    "user_simulator": false
+  },
+  "contract_verification": {
+    "environment_reward": 1.0,
+    "gold_trajectory_replayed": true,
+    "passed": true,
+    "task_id": "create_task_1"
+  },
+  "environment": {
+    "external_accounts": false,
+    "external_services": false,
+    "native_runtime_executed": true,
+    "reset_per_task": true,
+    "screenshots": false
+  },
+  "kind": "localagent_tau2_mock_checkpoint_native_probe",
+  "receipt_self_sha256": "016d1c7ecd13c026df41947044fab0d12f1ea405ac189fd7efea18cca73624d6",
+  "runner": {
+    "package": "tau2",
+    "root": "/private/tmp/tau2-bench",
+    "source_revision": "363133ada1936491fb5bcec33cd62c3518a99f65",
+    "version": "1.0.1"
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "tau2-bench",
+    "domain": "mock",
+    "files": {
+      "LICENSE": {
+        "bytes": 1072,
+        "path": "/private/tmp/tau2-bench/LICENSE",
+        "sha256": "e67c5aa0074dfcaefd3c3a1aedb94cb539234aecd15d5a972574e3200e6252fe"
+      },
+      "README.md": {
+        "bytes": 10443,
+        "path": "/private/tmp/tau2-bench/README.md",
+        "sha256": "ed39688aa5d40bd73007355df65f4e41a6c250960642e56764c3ad44da1df8d2"
+      },
+      "data/tau2/domains/mock/db.json": {
+        "bytes": 281,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/mock/db.json",
+        "sha256": "8661f80b4c693bb15ef2fe6781d24a5765240d61fc74387c770133953f9113ea"
+      },
+      "data/tau2/domains/mock/policy.md": {
+        "bytes": 278,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/mock/policy.md",
+        "sha256": "50ccbefac7c9ba77ce54131d61cfc6882f74b88ace66771115f9d867ec098203"
+      },
+      "data/tau2/domains/mock/split_tasks.json": {
+        "bytes": 416,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/mock/split_tasks.json",
+        "sha256": "613c3298e6fd3cf03f71f848ecee519068eb4df54a1ceb28596f5aa443ee6581"
+      },
+      "data/tau2/domains/mock/tasks.json": {
+        "bytes": 14134,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/mock/tasks.json",
+        "sha256": "0d8bcd14798bf2e6e082432147f62570c57b0897b4e4e388c95bb02ecbe5d8cf"
+      },
+      "data/tau2/domains/mock/user_db.json": {
+        "bytes": 203,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/mock/user_db.json",
+        "sha256": "78d424b5177e430b7f483787a956ad3a6a0880e8e5b312be8e373b15c876d51f"
+      },
+      "pyproject.toml": {
+        "bytes": 2417,
+        "path": "/private/tmp/tau2-bench/pyproject.toml",
+        "sha256": "23d59670b4ad7bbc0f57420fd9643a8d9188c24abe4f29c9c965544d8cc4cb8d"
+      }
+    },
+    "license": "MIT",
+    "revision": "363133ada1936491fb5bcec33cd62c3518a99f65",
+    "source_url": "https://github.com/sierra-research/tau2-bench",
+    "split": "base",
+    "task_count": 10,
+    "task_ids": [
+      "create_task_1",
+      "create_task_1_nl_eval",
+      "create_task_1_with_env_assertions",
+      "impossible_task_1",
+      "update_task_1",
+      "update_task_with_history_and_env_assertions",
+      "update_task_with_initialization_actions",
+      "update_task_with_initialization_data",
+      "update_task_with_message_history",
+      "update_task_with_user_tools"
+    ]
+  },
+  "summary": {
+    "bounded_native_success_rate": 0.0,
+    "bounded_native_successes": 0,
+    "first_action_exact": 0,
+    "model_tool_calls": 10,
+    "tasks": 10
+  },
+  "tasks": [
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 1,
+        "sha256": "b0fadd2d06969c15038823276092b6e79b264c602544cec89b45e41792ca800a"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 193,
+        "sha256": "6785a950f6cef0a86ba918aac85b7d3f488f276681f675c1e7be56bc39363680"
+      },
+      "model_output": {
+        "bytes": 84,
+        "sha256": "c546837b6e088a4ddd4b86ed746c52557c2d772bfdc99405f83e94780fe98ff2"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "756155e6914b7c4b4c3b937e80690e959e80a30e4bd7852743d4dfdddcee742e"
+      },
+      "task_id": "create_task_1"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_error": {
+        "bytes": 35,
+        "sha256": "a69779ad5a2a314d11b01c125d3dfdc52f8e59b9af2afa7b86a9e2e678405437"
+      },
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 1,
+        "sha256": "b0fadd2d06969c15038823276092b6e79b264c602544cec89b45e41792ca800a"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 193,
+        "sha256": "6785a950f6cef0a86ba918aac85b7d3f488f276681f675c1e7be56bc39363680"
+      },
+      "model_output": {
+        "bytes": 84,
+        "sha256": "c546837b6e088a4ddd4b86ed746c52557c2d772bfdc99405f83e94780fe98ff2"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "756155e6914b7c4b4c3b937e80690e959e80a30e4bd7852743d4dfdddcee742e"
+      },
+      "task_id": "create_task_1_with_env_assertions"
+    },
+    {
+      "action_reward": 1.0,
+      "bounded_native_success": false,
+      "environment_reward": 1.0,
+      "expected_actions": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 220,
+        "sha256": "9ce468ccf98ae7fbc596bd62a4b6caad1ffaa3824e7cc961d46b864f356f247b"
+      },
+      "model_output": {
+        "bytes": 84,
+        "sha256": "c546837b6e088a4ddd4b86ed746c52557c2d772bfdc99405f83e94780fe98ff2"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "756155e6914b7c4b4c3b937e80690e959e80a30e4bd7852743d4dfdddcee742e"
+      },
+      "task_id": "create_task_1_nl_eval"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 1,
+        "sha256": "0a6c68b9a106bd610e09041f687305db35112480ab8ab7e686bc012d741186be"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 154,
+        "sha256": "4ac562a9f069d6bed744b4a48b5bab565d77417a1a6d50d3d3fa7e5b87019c61"
+      },
+      "model_output": {
+        "bytes": 84,
+        "sha256": "c546837b6e088a4ddd4b86ed746c52557c2d772bfdc99405f83e94780fe98ff2"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "756155e6914b7c4b4c3b937e80690e959e80a30e4bd7852743d4dfdddcee742e"
+      },
+      "task_id": "update_task_1"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 1,
+        "sha256": "36807b96408cf0653f0a6aefa6b1bf4ffc36ac1d0ceb75758dfdc5e53bfccb4b"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 143,
+        "sha256": "c5af6f6de0d1e5e878d45d0c86e3da475a9db53ebef3b2fea69f0e2ebe5022c9"
+      },
+      "model_output": {
+        "bytes": 84,
+        "sha256": "c546837b6e088a4ddd4b86ed746c52557c2d772bfdc99405f83e94780fe98ff2"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "756155e6914b7c4b4c3b937e80690e959e80a30e4bd7852743d4dfdddcee742e"
+      },
+      "task_id": "update_task_with_message_history"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 1,
+        "sha256": "36807b96408cf0653f0a6aefa6b1bf4ffc36ac1d0ceb75758dfdc5e53bfccb4b"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 158,
+        "sha256": "5cff6585e104994413a437d5c763303741e654c38e50fc5eaec61c0295607b77"
+      },
+      "model_output": {
+        "bytes": 84,
+        "sha256": "c546837b6e088a4ddd4b86ed746c52557c2d772bfdc99405f83e94780fe98ff2"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "756155e6914b7c4b4c3b937e80690e959e80a30e4bd7852743d4dfdddcee742e"
+      },
+      "task_id": "update_task_with_initialization_data"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 1,
+        "sha256": "36807b96408cf0653f0a6aefa6b1bf4ffc36ac1d0ceb75758dfdc5e53bfccb4b"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 158,
+        "sha256": "5cff6585e104994413a437d5c763303741e654c38e50fc5eaec61c0295607b77"
+      },
+      "model_output": {
+        "bytes": 84,
+        "sha256": "c546837b6e088a4ddd4b86ed746c52557c2d772bfdc99405f83e94780fe98ff2"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "756155e6914b7c4b4c3b937e80690e959e80a30e4bd7852743d4dfdddcee742e"
+      },
+      "task_id": "update_task_with_initialization_actions"
+    },
+    {
+      "action_reward": 1.0,
+      "bounded_native_success": false,
+      "environment_error": {
+        "bytes": 35,
+        "sha256": "a69779ad5a2a314d11b01c125d3dfdc52f8e59b9af2afa7b86a9e2e678405437"
+      },
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 158,
+        "sha256": "5cff6585e104994413a437d5c763303741e654c38e50fc5eaec61c0295607b77"
+      },
+      "model_output": {
+        "bytes": 84,
+        "sha256": "c546837b6e088a4ddd4b86ed746c52557c2d772bfdc99405f83e94780fe98ff2"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "756155e6914b7c4b4c3b937e80690e959e80a30e4bd7852743d4dfdddcee742e"
+      },
+      "task_id": "update_task_with_history_and_env_assertions"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 1,
+        "sha256": "0a6c68b9a106bd610e09041f687305db35112480ab8ab7e686bc012d741186be"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 360,
+        "sha256": "f36af7aab7d86e4cc96736175f2f34e955e32a3dd2b5e31157fe7039c1aac6db"
+      },
+      "model_output": {
+        "bytes": 84,
+        "sha256": "c546837b6e088a4ddd4b86ed746c52557c2d772bfdc99405f83e94780fe98ff2"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "756155e6914b7c4b4c3b937e80690e959e80a30e4bd7852743d4dfdddcee742e"
+      },
+      "task_id": "update_task_with_user_tools"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 1.0,
+      "expected_actions": {
+        "count": 1,
+        "sha256": "8f246146db6ee3c6697169dd20976ef0bf0dd9d9c22b960ae8412d66b147f2c2"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 42,
+        "sha256": "b810c2b05129bf71c27f87fdbaa54d3d5b8fcddac2f6be2657a2ce098d7c6f19"
+      },
+      "model_output": {
+        "bytes": 84,
+        "sha256": "c546837b6e088a4ddd4b86ed746c52557c2d772bfdc99405f83e94780fe98ff2"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "756155e6914b7c4b4c3b937e80690e959e80a30e4bd7852743d4dfdddcee742e"
+      },
+      "task_id": "impossible_task_1"
+    }
+  ]
+}

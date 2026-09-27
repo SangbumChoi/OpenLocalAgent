@@ -1,0 +1,886 @@
+{
+  "benchmark_id": "mcpmark",
+  "checkpoint_sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+  "decision": {
+    "claim_boundary": "The exact current LocalAgent checkpoint ran ten isolated public MCPMark easy filesystem fixtures through a real stdio server and pinned verifiers; two passed. This is not an official MCPMark split or leaderboard score, and it does not establish email, Notion, browser, desktop, user-simulator, or multi-service completion.",
+    "native_task_count": 10,
+    "native_task_passes": 2,
+    "official_split_verified": false,
+    "promotion": "blocked_pending_official_mcpmark_split_and_broader_tasks"
+  },
+  "environment": {
+    "external_api_called": false,
+    "mcp_server_executed": true,
+    "official_split_verified": false,
+    "server": "@modelcontextprotocol/server-filesystem@2025.12.18",
+    "server_js": {
+      "bytes": 26058,
+      "path": "/private/tmp/mcpmark_node_modules/node_modules/@modelcontextprotocol/server-filesystem/dist/index.js",
+      "sha256": "c2f3126214742c10f6cb25297e3b89465f894b62a4df8dd042ea3d0e2d033652"
+    },
+    "user_simulator_executed": false
+  },
+  "environment_executed": true,
+  "kind": "localagent_mcpmark_current_filesystem_easy_receipt",
+  "model": {
+    "bytes": 52246937,
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "official_split_verified": false,
+  "receipt_self_sha256": "9d9ce5abc7d44416dc0995d4b312f0796abbf9bf85464f7fa6139ca531009dab",
+  "results": [
+    {
+      "after_tree_sha256": "2a1ba10a7c469115ca7c490bd308196edddeba889a783a8b99b5793370fb95cb",
+      "before_tree_sha256": "2a1ba10a7c469115ca7c490bd308196edddeba889a783a8b99b5793370fb95cb",
+      "category": "file_context",
+      "changed": false,
+      "server_error": null,
+      "state_directory": "/private/tmp/mcpmark-file_context-file_splitting-fb9poexa/file_context",
+      "task": "filesystem/easy/file_context/file_splitting",
+      "task_id": "file_splitting",
+      "tool_count": 14,
+      "turns": [
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-file_context-file_splitting-fb9poexa/file_context"
+          },
+          "output_sha256": "7eab2a5775dae8d16c9257f78f15ea84cbc8ab76a286bf770b2409382c57e65e",
+          "result_is_error": false,
+          "result_sha256": "df587223072278de8e24fc4f6153e48a160a7d56fbf4b75e8e928fe33714e195",
+          "tool": "create_directory",
+          "turn": 1
+        },
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-file_context-file_splitting-fb9poexa/file_context/split_03.txt"
+          },
+          "output_sha256": "b3d218fdce4418199ba40e848b0534a634de49b527d3aadd1225fa9c976fab62",
+          "result_is_error": false,
+          "result_sha256": "53872b862c777e9ca1792ffffba2e17ad843e23be8a58388199863f548f64f17",
+          "tool": "create_directory",
+          "turn": 2
+        },
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-file_context-file_splitting-fb9poexa/file_context/split_03.txt"
+          },
+          "output_sha256": "b3d218fdce4418199ba40e848b0534a634de49b527d3aadd1225fa9c976fab62",
+          "result_is_error": false,
+          "result_sha256": "53872b862c777e9ca1792ffffba2e17ad843e23be8a58388199863f548f64f17",
+          "tool": "create_directory",
+          "turn": 3
+        },
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-file_context-file_splitting-fb9poexa/file_context/split_03.txt"
+          },
+          "output_sha256": "b3d218fdce4418199ba40e848b0534a634de49b527d3aadd1225fa9c976fab62",
+          "result_is_error": false,
+          "result_sha256": "53872b862c777e9ca1792ffffba2e17ad843e23be8a58388199863f548f64f17",
+          "tool": "create_directory",
+          "turn": 4
+        },
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-file_context-file_splitting-fb9poexa/file_context/split_03.txt"
+          },
+          "output_sha256": "b3d218fdce4418199ba40e848b0534a634de49b527d3aadd1225fa9c976fab62",
+          "result_is_error": false,
+          "result_sha256": "53872b862c777e9ca1792ffffba2e17ad843e23be8a58388199863f548f64f17",
+          "tool": "create_directory",
+          "turn": 5
+        },
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-file_context-file_splitting-fb9poexa/file_context/split_03.txt"
+          },
+          "output_sha256": "b3d218fdce4418199ba40e848b0534a634de49b527d3aadd1225fa9c976fab62",
+          "result_is_error": false,
+          "result_sha256": "53872b862c777e9ca1792ffffba2e17ad843e23be8a58388199863f548f64f17",
+          "tool": "create_directory",
+          "turn": 6
+        }
+      ],
+      "verifier_exit_code": 1,
+      "verifier_stderr_sha256": "369bfb0e6890ba4139bccf2d4df72fce167be5a2a10eb3d4bdf2a1c57fdf6980",
+      "verifier_stderr_tail": "xt/file_splitting/verify.py\", line 164, in <module>\n    main()\n  File \"/private/tmp/mcpmark-cd45b7f/tasks/filesystem/easy/file_context/file_splitting/verify.py\", line 150, in main\n    if not verify_func(test_dir):\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/tmp/mcpmark-cd45b7f/tasks/filesystem/easy/file_context/file_splitting/verify.py\", line 122, in verify_no_extra_files\n    actual_files = {f.name for f in split_dir.iterdir() if f.is_file()}\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/anaconda3/lib/python3.12/pathlib.py\", line 1056, in iterdir\n    for name in os.listdir(self):\n                ^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/private/tmp/mcpmark-file_context-file_splitting-fb9poexa/file_context/split'\n",
+      "verifier_stdout_sha256": "66bcd4b670c96e78b258b00be43088fa6d630a883155b67e87db7a1c347ada52",
+      "verifier_stdout_tail": "\ud83d\udd0d Verifying File Splitting Task...\n\n--- Split Directory Exists ---\n\u274c Directory 'split' not found\n\n--- All Split Files Exist ---\n\u274c Missing files: ['split_01.txt', 'split_02.txt', 'split_03.txt']\n\n--- Similar File Lengths ---\n\u274c Error reading split_01.txt: [Errno 2] No such file or directory: '/private/tmp/mcpmark-file_context-file_splitting-fb9poexa/file_context/split/split_01.txt'\n\n--- Content Integrity ---\n\u274c Error reading split_01.txt: [Errno 2] No such file or directory: '/private/tmp/mcpmark-file_context-file_splitting-fb9poexa/file_context/split/split_01.txt'\n\n--- No Extra Files ---\n"
+    },
+    {
+      "after_tree_sha256": "c460dfb626782b8547b729396694ceb96ab23251215032b16b1e4528a6f1d595",
+      "before_tree_sha256": "2a1ba10a7c469115ca7c490bd308196edddeba889a783a8b99b5793370fb95cb",
+      "category": "file_context",
+      "changed": true,
+      "server_error": null,
+      "state_directory": "/private/tmp/mcpmark-file_context-pattern_matching-9sbl6erz/file_context",
+      "task": "filesystem/easy/file_context/pattern_matching",
+      "task_id": "pattern_matching",
+      "tool_count": 14,
+      "turns": [
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-file_context-pattern_matching-9sbl6erz/file_context"
+          },
+          "output_sha256": "097eaee09753891d488804cce3a3dae6ea7aa941d829ee754737184b108145a3",
+          "result_is_error": false,
+          "result_sha256": "a1ab3e106c8c353a12a0d2a48ed289636f7f525a4a2c89feab2e3499a018f9cb",
+          "tool": "directory_tree",
+          "turn": 1
+        },
+        {
+          "arguments": {
+            "content": "arguments",
+            "path": "/private/tmp/mcpmark-file_context-pattern_matching-9sbl6erz/file_context/filename.txt"
+          },
+          "output_sha256": "7049b2b8ed0ea8b1d48277f051d63e6be9afade5046f66a93af97188ed26c4f7",
+          "result_is_error": false,
+          "result_sha256": "e5efdfd156737d2151b78a86bf941461592c0aba877d30752186761ddff1cbb9",
+          "tool": "write_file",
+          "turn": 2
+        },
+        {
+          "arguments": {
+            "content": "arguments",
+            "path": "/private/tmp/mcpmark-file_context-pattern_matching-9sbl6erz/file_context/filename.txt"
+          },
+          "output_sha256": "7049b2b8ed0ea8b1d48277f051d63e6be9afade5046f66a93af97188ed26c4f7",
+          "result_is_error": false,
+          "result_sha256": "e5efdfd156737d2151b78a86bf941461592c0aba877d30752186761ddff1cbb9",
+          "tool": "write_file",
+          "turn": 3
+        },
+        {
+          "arguments": {
+            "content": "arguments",
+            "path": "/private/tmp/mcpmark-file_context-pattern_matching-9sbl6erz/file_context/filename.txt"
+          },
+          "output_sha256": "7049b2b8ed0ea8b1d48277f051d63e6be9afade5046f66a93af97188ed26c4f7",
+          "result_is_error": false,
+          "result_sha256": "e5efdfd156737d2151b78a86bf941461592c0aba877d30752186761ddff1cbb9",
+          "tool": "write_file",
+          "turn": 4
+        },
+        {
+          "arguments": {
+            "content": "arguments",
+            "path": "/private/tmp/mcpmark-file_context-pattern_matching-9sbl6erz/file_context/filename.txt"
+          },
+          "output_sha256": "7049b2b8ed0ea8b1d48277f051d63e6be9afade5046f66a93af97188ed26c4f7",
+          "result_is_error": false,
+          "result_sha256": "e5efdfd156737d2151b78a86bf941461592c0aba877d30752186761ddff1cbb9",
+          "tool": "write_file",
+          "turn": 5
+        },
+        {
+          "arguments": {
+            "content": "arguments",
+            "path": "/private/tmp/mcpmark-file_context-pattern_matching-9sbl6erz/file_context/filename.txt"
+          },
+          "output_sha256": "7049b2b8ed0ea8b1d48277f051d63e6be9afade5046f66a93af97188ed26c4f7",
+          "result_is_error": false,
+          "result_sha256": "e5efdfd156737d2151b78a86bf941461592c0aba877d30752186761ddff1cbb9",
+          "tool": "write_file",
+          "turn": 6
+        }
+      ],
+      "verifier_exit_code": 1,
+      "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verifier_stderr_tail": "",
+      "verifier_stdout_sha256": "06510a3e0cc6e38fe3ccbf93f2b7eb79467572acf0a657ff6f03a43a424b3fec",
+      "verifier_stdout_tail": "\ud83d\udd0d Verifying File Filtering Task: Find Files with Common Substring...\n\n--- Answer File Exists ---\n\u274c File 'answer.txt' not found\n\n--- Answer Format ---\n\u274c Error reading answer file: [Errno 2] No such file or directory: '/private/tmp/mcpmark-file_context-pattern_matching-9sbl6erz/file_context/answer.txt'\n\n--- Files Exist ---\n\u274c Error verifying file existence: [Errno 2] No such file or directory: '/private/tmp/mcpmark-file_context-pattern_matching-9sbl6erz/file_context/answer.txt'\n\n--- Matches are Correct ---\n\u274c Error verifying matches: [Errno 2] No such file or directory: '/private/tmp/mcpmark-file_context-pattern_matching-9sbl6erz/file_context/answer.txt'\n\n==================================================\n\u274c Task verification: FAIL\n"
+    },
+    {
+      "after_tree_sha256": "1d2a527607b6af82dff53c07495ef986acb052a796e23e9472c0d46859090c85",
+      "before_tree_sha256": "2a1ba10a7c469115ca7c490bd308196edddeba889a783a8b99b5793370fb95cb",
+      "category": "file_context",
+      "changed": true,
+      "server_error": null,
+      "state_directory": "/private/tmp/mcpmark-file_context-uppercase-j_nsxdxq/file_context",
+      "task": "filesystem/easy/file_context/uppercase",
+      "task_id": "uppercase",
+      "tool_count": 14,
+      "turns": [
+        {
+          "arguments": {
+            "content": "vert each file** from file_01.txt to file_05.txt to uppercase\n3. **Save converted files** in the",
+            "path": "/private/tmp/mcpmark-file_context-uppercase-j_nsxdxq/file_context"
+          },
+          "output_sha256": "54cf2ca15f532af9cb78e8b54bf830d2e7b3f120cf315ff8814ce1eb2bf8759a",
+          "result_is_error": true,
+          "result_sha256": "f9ce1b0d89a10c3c8c6cd773ead83dc34abcbbfd618cf61229baf0e5ad90c9fd",
+          "tool": "write_file",
+          "turn": 1
+        },
+        {
+          "arguments": {
+            "content": "arguments",
+            "path": "/private/tmp/mcpmark-file_context-uppercase-j_nsxdxq/file_context/file_05.txt"
+          },
+          "output_sha256": "a939f74eb6963b568eaedbf8a18e0e247d573d892f198152ca53ab3965384a9c",
+          "result_is_error": false,
+          "result_sha256": "ea248c5697914927d9a4fdbb3f2cf21c750cf60f04d03833eb562ffeaf31c757",
+          "tool": "write_file",
+          "turn": 2
+        },
+        {
+          "arguments": {
+            "content": "arguments",
+            "path": "/private/tmp/mcpmark-file_context-uppercase-j_nsxdxq/file_context/file_05.txt"
+          },
+          "output_sha256": "a939f74eb6963b568eaedbf8a18e0e247d573d892f198152ca53ab3965384a9c",
+          "result_is_error": false,
+          "result_sha256": "ea248c5697914927d9a4fdbb3f2cf21c750cf60f04d03833eb562ffeaf31c757",
+          "tool": "write_file",
+          "turn": 3
+        },
+        {
+          "arguments": {
+            "content": "arguments",
+            "path": "/private/tmp/mcpmark-file_context-uppercase-j_nsxdxq/file_context/file_05.txt"
+          },
+          "output_sha256": "a939f74eb6963b568eaedbf8a18e0e247d573d892f198152ca53ab3965384a9c",
+          "result_is_error": false,
+          "result_sha256": "ea248c5697914927d9a4fdbb3f2cf21c750cf60f04d03833eb562ffeaf31c757",
+          "tool": "write_file",
+          "turn": 4
+        },
+        {
+          "arguments": {
+            "content": "arguments",
+            "path": "/private/tmp/mcpmark-file_context-uppercase-j_nsxdxq/file_context/file_05.txt"
+          },
+          "output_sha256": "a939f74eb6963b568eaedbf8a18e0e247d573d892f198152ca53ab3965384a9c",
+          "result_is_error": false,
+          "result_sha256": "ea248c5697914927d9a4fdbb3f2cf21c750cf60f04d03833eb562ffeaf31c757",
+          "tool": "write_file",
+          "turn": 5
+        },
+        {
+          "arguments": {
+            "content": "arguments",
+            "path": "/private/tmp/mcpmark-file_context-uppercase-j_nsxdxq/file_context/file_05.txt"
+          },
+          "output_sha256": "a939f74eb6963b568eaedbf8a18e0e247d573d892f198152ca53ab3965384a9c",
+          "result_is_error": false,
+          "result_sha256": "ea248c5697914927d9a4fdbb3f2cf21c750cf60f04d03833eb562ffeaf31c757",
+          "tool": "write_file",
+          "turn": 6
+        }
+      ],
+      "verifier_exit_code": 1,
+      "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verifier_stderr_tail": "",
+      "verifier_stdout_sha256": "5c0f195bba00bbd2781b2adadd952541b735cef3927b6c91f025f87cceee4765",
+      "verifier_stdout_tail": "\ud83d\udd0d Verifying Uppercase in: /private/tmp/mcpmark-file_context-uppercase-j_nsxdxq/file_context\n\n\ud83d\udccb Uppercase directory exists...\n\u274c Directory 'uppercase' not found\n\n\ud83d\udccb Uppercase files exist...\n\u274c File 'file_01.txt' not found in uppercase directory\n\n\ud83d\udccb Uppercase content is correct...\n\u274c Error reading file 'file_01.txt': [Errno 2] No such file or directory: '/private/tmp/mcpmark-file_context-uppercase-j_nsxdxq/file_context/uppercase/file_01.txt'\n\n\u274c Some verification checks failed!\n"
+    },
+    {
+      "after_tree_sha256": "32f50e467d710f242aa432467319aa9046b959752ccd3cde875b9ea5e90cd69a",
+      "before_tree_sha256": "32f50e467d710f242aa432467319aa9046b959752ccd3cde875b9ea5e90cd69a",
+      "category": "file_property",
+      "changed": false,
+      "server_error": null,
+      "state_directory": "/private/tmp/mcpmark-file_property-largest_rename-j8kh0crl/file_property",
+      "task": "filesystem/easy/file_property/largest_rename",
+      "task_id": "largest_rename",
+      "tool_count": 14,
+      "turns": [
+        {
+          "arguments": {
+            "destination": "/private/tmp/mcpmark-file_property-largest_rename-j8kh0crl/file_property",
+            "source": "/private/tmp/mcpmark-file_property-largest_rename-j8kh0crl/file_property"
+          },
+          "output_sha256": "dae07603fa8f5f9847d0bf3cf48c9428a4214f6af7c051b163b582d51db78ca1",
+          "result_is_error": false,
+          "result_sha256": "20b81b8f9054ab4543f2d24439da36c411be2202647b82829f096eff6c8b3f89",
+          "tool": "move_file",
+          "turn": 1
+        },
+        {
+          "arguments": {
+            "destination": "/private/tmp/mcpmark-file_property-largest_rename-j8kh0crl/file_property",
+            "source": "/private/tmp/mcpmark-file_property-largest_rename-j8kh0crl/file_property"
+          },
+          "output_sha256": "dae07603fa8f5f9847d0bf3cf48c9428a4214f6af7c051b163b582d51db78ca1",
+          "result_is_error": false,
+          "result_sha256": "20b81b8f9054ab4543f2d24439da36c411be2202647b82829f096eff6c8b3f89",
+          "tool": "move_file",
+          "turn": 2
+        },
+        {
+          "arguments": {
+            "destination": "/private/tmp/mcpmark-file_property-largest_rename-j8kh0crl/file_property",
+            "source": "/private/tmp/mcpmark-file_property-largest_rename-j8kh0crl/file_property"
+          },
+          "output_sha256": "dae07603fa8f5f9847d0bf3cf48c9428a4214f6af7c051b163b582d51db78ca1",
+          "result_is_error": false,
+          "result_sha256": "20b81b8f9054ab4543f2d24439da36c411be2202647b82829f096eff6c8b3f89",
+          "tool": "move_file",
+          "turn": 3
+        },
+        {
+          "arguments": {
+            "destination": "/private/tmp/mcpmark-file_property-largest_rename-j8kh0crl/file_property",
+            "source": "/private/tmp/mcpmark-file_property-largest_rename-j8kh0crl/file_property"
+          },
+          "output_sha256": "dae07603fa8f5f9847d0bf3cf48c9428a4214f6af7c051b163b582d51db78ca1",
+          "result_is_error": false,
+          "result_sha256": "20b81b8f9054ab4543f2d24439da36c411be2202647b82829f096eff6c8b3f89",
+          "tool": "move_file",
+          "turn": 4
+        },
+        {
+          "arguments": {
+            "destination": "/private/tmp/mcpmark-file_property-largest_rename-j8kh0crl/file_property",
+            "source": "/private/tmp/mcpmark-file_property-largest_rename-j8kh0crl/file_property"
+          },
+          "output_sha256": "dae07603fa8f5f9847d0bf3cf48c9428a4214f6af7c051b163b582d51db78ca1",
+          "result_is_error": false,
+          "result_sha256": "20b81b8f9054ab4543f2d24439da36c411be2202647b82829f096eff6c8b3f89",
+          "tool": "move_file",
+          "turn": 5
+        },
+        {
+          "arguments": {
+            "destination": "/private/tmp/mcpmark-file_property-largest_rename-j8kh0crl/file_property",
+            "source": "/private/tmp/mcpmark-file_property-largest_rename-j8kh0crl/file_property"
+          },
+          "output_sha256": "dae07603fa8f5f9847d0bf3cf48c9428a4214f6af7c051b163b582d51db78ca1",
+          "result_is_error": false,
+          "result_sha256": "20b81b8f9054ab4543f2d24439da36c411be2202647b82829f096eff6c8b3f89",
+          "tool": "move_file",
+          "turn": 6
+        }
+      ],
+      "verifier_exit_code": 1,
+      "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verifier_stderr_tail": "",
+      "verifier_stdout_sha256": "758e76000db60a2b16474041c845ce79146b67d72933d74defdde56d43f882db",
+      "verifier_stdout_tail": "\ud83d\udd0d Verifying largest file rename in: /private/tmp/mcpmark-file_property-largest_rename-j8kh0crl/file_property\n\n\ud83d\udccb Checking: sg.jpg does not exist\n\u274c sg.jpg still exists (should be renamed)\n\n\ud83d\udccb Checking: largest.jpg exists\n\u274c largest.jpg does not exist\n\n\u274c Some verification checks failed!\n"
+    },
+    {
+      "after_tree_sha256": "8c0865af7f0db8a2d8824a299b917600c12add8bdedfd44c7492ba6cfcaa05d0",
+      "before_tree_sha256": "32f50e467d710f242aa432467319aa9046b959752ccd3cde875b9ea5e90cd69a",
+      "category": "file_property",
+      "changed": true,
+      "server_error": null,
+      "state_directory": "/private/tmp/mcpmark-file_property-txt_merging-bp_003vs/file_property",
+      "task": "filesystem/easy/file_property/txt_merging",
+      "task_id": "txt_merging",
+      "tool_count": 14,
+      "turns": [
+        {
+          "arguments": {
+            "content": "2. **Create a new file** called `merge.txt` in the test directory\n3. **Write the content** from all `.txt` files into `merge.txt`\n4. **The",
+            "path": "/private/tmp/mcpmark-file_property-txt_merging-bp_003vs/file_property"
+          },
+          "output_sha256": "e82d25f531a583c7266338d59609a99d6cca5fa44b5cd7628033c6f492857b6a",
+          "result_is_error": true,
+          "result_sha256": "cf99b69d08b434d22335ca7f9821eed93a8577766a891752a21ce2026f7cd94e",
+          "tool": "write_file",
+          "turn": 1
+        },
+        {
+          "arguments": {
+            "content": "t matter - as long as all content from all `.txt` files is present in `merge.txt`\n\nWorkspace root: /private/tmp/mcpmark-file_property-txt_merging-bp_003vs/file_property\nUse the available MCP filesystem tools. Complete the task, then stop.\nASSISTANT: <tool_call>{",
+            "path": "/private/tmp/mcpmark-file_property-txt_merging-bp_003vs/file_property/merge.txt"
+          },
+          "output_sha256": "e239878ab4541bb368697743565c0283faa11696c25260c15dd533de8f460e2e",
+          "result_is_error": false,
+          "result_sha256": "2a063c2cb9b2368e91f436207fca84e7942242b15479749b8f3669aeb975568e",
+          "tool": "write_file",
+          "turn": 2
+        },
+        {
+          "arguments": {
+            "content": "t matter - as long as all content from all `.txt` files is present in `merge.txt`\n\nWorkspace root: /private/tmp/mcpmark-file_property-txt_merging-bp_003vs/file_property\nUse the available MCP filesystem tools. Complete the task, then stop.\nASSISTANT: <tool_call>{",
+            "path": "/private/tmp/mcpmark-file_property-txt_merging-bp_003vs/file_property/merge.txt"
+          },
+          "output_sha256": "e239878ab4541bb368697743565c0283faa11696c25260c15dd533de8f460e2e",
+          "result_is_error": false,
+          "result_sha256": "2a063c2cb9b2368e91f436207fca84e7942242b15479749b8f3669aeb975568e",
+          "tool": "write_file",
+          "turn": 3
+        },
+        {
+          "arguments": {
+            "content": "t matter - as long as all content from all `.txt` files is present in `merge.txt`\n\nWorkspace root: /private/tmp/mcpmark-file_property-txt_merging-bp_003vs/file_property\nUse the available MCP filesystem tools. Complete the task, then stop.\nASSISTANT: <tool_call>{",
+            "path": "/private/tmp/mcpmark-file_property-txt_merging-bp_003vs/file_property/merge.txt"
+          },
+          "output_sha256": "e239878ab4541bb368697743565c0283faa11696c25260c15dd533de8f460e2e",
+          "result_is_error": false,
+          "result_sha256": "2a063c2cb9b2368e91f436207fca84e7942242b15479749b8f3669aeb975568e",
+          "tool": "write_file",
+          "turn": 4
+        },
+        {
+          "arguments": {
+            "content": "t matter - as long as all content from all `.txt` files is present in `merge.txt`\n\nWorkspace root: /private/tmp/mcpmark-file_property-txt_merging-bp_003vs/file_property\nUse the available MCP filesystem tools. Complete the task, then stop.\nASSISTANT: <tool_call>{",
+            "path": "/private/tmp/mcpmark-file_property-txt_merging-bp_003vs/file_property/merge.txt"
+          },
+          "output_sha256": "e239878ab4541bb368697743565c0283faa11696c25260c15dd533de8f460e2e",
+          "result_is_error": false,
+          "result_sha256": "2a063c2cb9b2368e91f436207fca84e7942242b15479749b8f3669aeb975568e",
+          "tool": "write_file",
+          "turn": 5
+        },
+        {
+          "arguments": {
+            "content": "t matter - as long as all content from all `.txt` files is present in `merge.txt`\n\nWorkspace root: /private/tmp/mcpmark-file_property-txt_merging-bp_003vs/file_property\nUse the available MCP filesystem tools. Complete the task, then stop.\nASSISTANT: <tool_call>{",
+            "path": "/private/tmp/mcpmark-file_property-txt_merging-bp_003vs/file_property/merge.txt"
+          },
+          "output_sha256": "e239878ab4541bb368697743565c0283faa11696c25260c15dd533de8f460e2e",
+          "result_is_error": false,
+          "result_sha256": "2a063c2cb9b2368e91f436207fca84e7942242b15479749b8f3669aeb975568e",
+          "tool": "write_file",
+          "turn": 6
+        }
+      ],
+      "verifier_exit_code": 1,
+      "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verifier_stderr_tail": "",
+      "verifier_stdout_sha256": "1d28168b0024d189184b1cdc30f310c69fd05751d3c36f4b3e8071a4ac78dceb",
+      "verifier_stdout_tail": "\ud83d\udd0d Verifying text file merging in: /private/tmp/mcpmark-file_property-txt_merging-bp_003vs/file_property\n\n\ud83d\udccb Checking: Merge file existence\n\u2705 merge.txt exists\n\n\ud83d\udccb Checking: Merge file contents\n\u274c Missing content in merge.txt:\n   - O rErmZ4tDgzMNoxn1oNfQhT1TRpy9w0tQPGTcrsaoMFrrgt9b...\n   - DmRrDFFaIl1mPubzSJJaN4aMeZyBHqVxZe5tpztHQ9zSe6b69H...\n   - aFCzXJbJq02zlCKnyarJnPUiwVIuUrQci3fZvGD53F5fUsKDUl...\n\n\u274c Some verification checks failed!\n"
+    },
+    {
+      "after_tree_sha256": "492b9aba97cdf107235028e8ecbd8ea822ba35e8b0ee35a598da53a303e1da3e",
+      "before_tree_sha256": "073c294485404dcca8d94b3e2e253e7f74eca35231394fa7a465850627957154",
+      "category": "folder_structure",
+      "changed": true,
+      "server_error": null,
+      "state_directory": "/private/tmp/mcpmark-folder_structure-structure_analysis-xqdk_pdz/folder_structure",
+      "task": "filesystem/easy/folder_structure/structure_analysis",
+      "task_id": "structure_analysis",
+      "tool_count": 14,
+      "turns": [
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-folder_structure-structure_analysis-xqdk_pdz/folder_structure"
+          },
+          "output_sha256": "79fc9cd3ca1783b08af6b2877ca027562a1a6864182aaff792e4a82acbb59bc1",
+          "result_is_error": false,
+          "result_sha256": "42984dbf11defe419ac42b312842f24b39dd3b3b5804b1246d83b8d3d5cc0d46",
+          "tool": "directory_tree",
+          "turn": 1
+        },
+        {
+          "arguments": {
+            "content": "1",
+            "path": "/private/tmp/mcpmark-folder_structure-structure_analysis-xqdk_pdz/folder_structure/structure_analysis.txt"
+          },
+          "output_sha256": "bd45a2fca621c1d6c6cb5100e47a0430a4bfd18f8e9c33842dfdcb2cdb8236fc",
+          "result_is_error": false,
+          "result_sha256": "76173732f3cb4d47a19158de16c5b5f4a503acf25a4d051a77a1daf6913ea68a",
+          "tool": "write_file",
+          "turn": 2
+        },
+        {
+          "arguments": {
+            "content": "1",
+            "path": "/private/tmp/mcpmark-folder_structure-structure_analysis-xqdk_pdz/folder_structure/structure_analysis.txt"
+          },
+          "output_sha256": "bd45a2fca621c1d6c6cb5100e47a0430a4bfd18f8e9c33842dfdcb2cdb8236fc",
+          "result_is_error": false,
+          "result_sha256": "76173732f3cb4d47a19158de16c5b5f4a503acf25a4d051a77a1daf6913ea68a",
+          "tool": "write_file",
+          "turn": 3
+        },
+        {
+          "arguments": {
+            "content": "1",
+            "path": "/private/tmp/mcpmark-folder_structure-structure_analysis-xqdk_pdz/folder_structure/structure_analysis.txt"
+          },
+          "output_sha256": "bd45a2fca621c1d6c6cb5100e47a0430a4bfd18f8e9c33842dfdcb2cdb8236fc",
+          "result_is_error": false,
+          "result_sha256": "76173732f3cb4d47a19158de16c5b5f4a503acf25a4d051a77a1daf6913ea68a",
+          "tool": "write_file",
+          "turn": 4
+        },
+        {
+          "arguments": {
+            "content": "1",
+            "path": "/private/tmp/mcpmark-folder_structure-structure_analysis-xqdk_pdz/folder_structure/structure_analysis.txt"
+          },
+          "output_sha256": "bd45a2fca621c1d6c6cb5100e47a0430a4bfd18f8e9c33842dfdcb2cdb8236fc",
+          "result_is_error": false,
+          "result_sha256": "76173732f3cb4d47a19158de16c5b5f4a503acf25a4d051a77a1daf6913ea68a",
+          "tool": "write_file",
+          "turn": 5
+        },
+        {
+          "arguments": {
+            "content": "1",
+            "path": "/private/tmp/mcpmark-folder_structure-structure_analysis-xqdk_pdz/folder_structure/structure_analysis.txt"
+          },
+          "output_sha256": "bd45a2fca621c1d6c6cb5100e47a0430a4bfd18f8e9c33842dfdcb2cdb8236fc",
+          "result_is_error": false,
+          "result_sha256": "76173732f3cb4d47a19158de16c5b5f4a503acf25a4d051a77a1daf6913ea68a",
+          "tool": "write_file",
+          "turn": 6
+        }
+      ],
+      "verifier_exit_code": 0,
+      "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verifier_stderr_tail": "",
+      "verifier_stdout_sha256": "d6aa35a5de8ad51034521440dea68d3ddce290f712db87416278a27349654178",
+      "verifier_stdout_tail": "\ud83d\udd0d Verifying Directory Structure Analysis Task in: /private/tmp/mcpmark-folder_structure-structure_analysis-xqdk_pdz/folder_structure\n\n\ud83d\udccb Structure Analysis File Exists...\n\u2705 structure_analysis.txt file found\n\n\ud83d\udccb Python File Count is Correct...\n\u2705 Python file count is correct: 1\n\n\ud83c\udf89 All verification checks passed!\n"
+    },
+    {
+      "after_tree_sha256": "f540d62ad7166963784be9e5cb5799ddacf1c132c88abf59bd3e234ca8399e95",
+      "before_tree_sha256": "f540d62ad7166963784be9e5cb5799ddacf1c132c88abf59bd3e234ca8399e95",
+      "category": "legal_document",
+      "changed": false,
+      "server_error": null,
+      "state_directory": "/private/tmp/mcpmark-legal_document-file_reorganize-xisvx_y3/legal_document",
+      "task": "filesystem/easy/legal_document/file_reorganize",
+      "task_id": "file_reorganize",
+      "tool_count": 14,
+      "turns": [
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-legal_document-file_reorganize-xisvx_y3/legal_document/final_version"
+          },
+          "output_sha256": "e986047a81426160c40e24701c048f47735fd0010500680dd05f285919f5eccc",
+          "result_is_error": false,
+          "result_sha256": "240f255107332b2bf663a9223bbbb03c7f399df8b7c0100205164bf9f8065c74",
+          "tool": "create_directory",
+          "turn": 1
+        },
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-legal_document-file_reorganize-xisvx_y3/legal_document/Preferred_Stock_Purchase_Agreement_v10.txt"
+          },
+          "output_sha256": "3e9030f8bb372ffd9cd63fb9b64d9459fc844080a3918702cc5af1bd2dadd9c9",
+          "result_is_error": false,
+          "result_sha256": "b184da65f8e323e7f3eef4777acf15590cadd4d64dbfb6acf5155f0fcf37c1c9",
+          "tool": "create_directory",
+          "turn": 2
+        },
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-legal_document-file_reorganize-xisvx_y3/legal_document/Preferred_Stock_Purchase_Agreement_v10.txt"
+          },
+          "output_sha256": "3e9030f8bb372ffd9cd63fb9b64d9459fc844080a3918702cc5af1bd2dadd9c9",
+          "result_is_error": false,
+          "result_sha256": "b184da65f8e323e7f3eef4777acf15590cadd4d64dbfb6acf5155f0fcf37c1c9",
+          "tool": "create_directory",
+          "turn": 3
+        },
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-legal_document-file_reorganize-xisvx_y3/legal_document/Preferred_Stock_Purchase_Agreement_v10.txt"
+          },
+          "output_sha256": "3e9030f8bb372ffd9cd63fb9b64d9459fc844080a3918702cc5af1bd2dadd9c9",
+          "result_is_error": false,
+          "result_sha256": "b184da65f8e323e7f3eef4777acf15590cadd4d64dbfb6acf5155f0fcf37c1c9",
+          "tool": "create_directory",
+          "turn": 4
+        },
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-legal_document-file_reorganize-xisvx_y3/legal_document/Preferred_Stock_Purchase_Agreement_v10.txt"
+          },
+          "output_sha256": "3e9030f8bb372ffd9cd63fb9b64d9459fc844080a3918702cc5af1bd2dadd9c9",
+          "result_is_error": false,
+          "result_sha256": "b184da65f8e323e7f3eef4777acf15590cadd4d64dbfb6acf5155f0fcf37c1c9",
+          "tool": "create_directory",
+          "turn": 5
+        },
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-legal_document-file_reorganize-xisvx_y3/legal_document/Preferred_Stock_Purchase_Agreement_v10.txt"
+          },
+          "output_sha256": "3e9030f8bb372ffd9cd63fb9b64d9459fc844080a3918702cc5af1bd2dadd9c9",
+          "result_is_error": false,
+          "result_sha256": "b184da65f8e323e7f3eef4777acf15590cadd4d64dbfb6acf5155f0fcf37c1c9",
+          "tool": "create_directory",
+          "turn": 6
+        }
+      ],
+      "verifier_exit_code": 1,
+      "verifier_stderr_sha256": "e6294018f76412c3aa453f22b9cf08528c5169d8b48a1a9795cfdd502b66e2d8",
+      "verifier_stderr_tail": "gal_document/file_reorganize/verify.py\", line 114, in <module>\n    main()\n  File \"/private/tmp/mcpmark-cd45b7f/tasks/filesystem/easy/legal_document/file_reorganize/verify.py\", line 100, in main\n    if not verify_func(test_dir):\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/tmp/mcpmark-cd45b7f/tasks/filesystem/easy/legal_document/file_reorganize/verify.py\", line 63, in verify_only_v10_in_final_version\n    files = list(final_version_dir.iterdir())\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/anaconda3/lib/python3.12/pathlib.py\", line 1056, in iterdir\n    for name in os.listdir(self):\n                ^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/private/tmp/mcpmark-legal_document-file_reorganize-xisvx_y3/legal_document/legal_files/final_version'\n",
+      "verifier_stdout_sha256": "60229952635ef7549d35a510d9e2c142a23cf8fb2beec5ffd52256263cba8d85",
+      "verifier_stdout_tail": "\ud83d\udd0d Verifying Legal Document File Reorganization Task...\n\n--- Final Version Folder Exists ---\n\u274c Folder 'legal_files/final_version' not found\n\n--- Target File Exists ---\n\u274c File 'legal_files/final_version/Preferred_Stock_Purchase_Agreement_v10.txt' not found\n\n--- Only V10 in Final Version ---\n"
+    },
+    {
+      "after_tree_sha256": "84ae7d62c913d8352617362f493ac11442d5b50d457101c3f1db2f012de843ee",
+      "before_tree_sha256": "9b5a9825c858e2997196172fcd65ae3bec3c573114b24eefc04b87d055ff94bc",
+      "category": "papers",
+      "changed": true,
+      "server_error": null,
+      "state_directory": "/private/tmp/mcpmark-papers-papers_counting-10gbfitv/papers",
+      "task": "filesystem/easy/papers/papers_counting",
+      "task_id": "papers_counting",
+      "tool_count": 14,
+      "turns": [
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-papers-papers_counting-10gbfitv/papers"
+          },
+          "output_sha256": "67c0e56c867b0f83f4457c2977748cc50c83d5f85d15a1df586a8fa16704b37f",
+          "result_is_error": false,
+          "result_sha256": "df7a8e4ebe5d01556b0337f4e352f26dfab74f614d8b9c0169ca67670c66ba9f",
+          "tool": "directory_tree",
+          "turn": 1
+        },
+        {
+          "arguments": {
+            "content": "83",
+            "path": "/private/tmp/mcpmark-papers-papers_counting-10gbfitv/papers/count.txt"
+          },
+          "output_sha256": "54182deda9a315709cee9c0a93142a2e2b69ebb535bc91bd84331ca5ecc054d4",
+          "result_is_error": false,
+          "result_sha256": "d60c386127c1cf3468aef6bdad7502867d388722eaeee067e93a2c7e778cc22a",
+          "tool": "write_file",
+          "turn": 2
+        },
+        {
+          "arguments": {
+            "content": "83",
+            "path": "/private/tmp/mcpmark-papers-papers_counting-10gbfitv/papers/count.txt"
+          },
+          "output_sha256": "54182deda9a315709cee9c0a93142a2e2b69ebb535bc91bd84331ca5ecc054d4",
+          "result_is_error": false,
+          "result_sha256": "d60c386127c1cf3468aef6bdad7502867d388722eaeee067e93a2c7e778cc22a",
+          "tool": "write_file",
+          "turn": 3
+        },
+        {
+          "arguments": {
+            "content": "83",
+            "path": "/private/tmp/mcpmark-papers-papers_counting-10gbfitv/papers/count.txt"
+          },
+          "output_sha256": "54182deda9a315709cee9c0a93142a2e2b69ebb535bc91bd84331ca5ecc054d4",
+          "result_is_error": false,
+          "result_sha256": "d60c386127c1cf3468aef6bdad7502867d388722eaeee067e93a2c7e778cc22a",
+          "tool": "write_file",
+          "turn": 4
+        },
+        {
+          "arguments": {
+            "content": "83",
+            "path": "/private/tmp/mcpmark-papers-papers_counting-10gbfitv/papers/count.txt"
+          },
+          "output_sha256": "54182deda9a315709cee9c0a93142a2e2b69ebb535bc91bd84331ca5ecc054d4",
+          "result_is_error": false,
+          "result_sha256": "d60c386127c1cf3468aef6bdad7502867d388722eaeee067e93a2c7e778cc22a",
+          "tool": "write_file",
+          "turn": 5
+        },
+        {
+          "arguments": {
+            "content": "83",
+            "path": "/private/tmp/mcpmark-papers-papers_counting-10gbfitv/papers/count.txt"
+          },
+          "output_sha256": "54182deda9a315709cee9c0a93142a2e2b69ebb535bc91bd84331ca5ecc054d4",
+          "result_is_error": false,
+          "result_sha256": "d60c386127c1cf3468aef6bdad7502867d388722eaeee067e93a2c7e778cc22a",
+          "tool": "write_file",
+          "turn": 6
+        }
+      ],
+      "verifier_exit_code": 0,
+      "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verifier_stderr_tail": "",
+      "verifier_stdout_sha256": "0df37d5a39a9491bacb96bb8846bd99e30bd0463cdfbd22b313ffe526f95a0ae",
+      "verifier_stdout_tail": "\ud83d\udd0d Verifying HTML file count in: /private/tmp/mcpmark-papers-papers_counting-10gbfitv/papers\n\n--- Count File Exists ---\n\u2705 count.txt file found\n\n--- Count Content ---\n\u2705 count.txt contains the correct number: 83\n\n--- Actual HTML Count ---\n\u2705 Verified: There are exactly 83 HTML files in the directory\n\n==================================================\n\u2705 HTML file count is correct!\n\ud83c\udf89 Task verification: PASS\n"
+    },
+    {
+      "after_tree_sha256": "cb19d1227cf2d5f6bdc24ddf7d0a8419ed69b7fae58f95b829facfd15671955f",
+      "before_tree_sha256": "082dcd5f488d75f5136c7f3540746cc39370bc2752a30a30bff7ae95ec449d05",
+      "category": "student_database",
+      "changed": true,
+      "server_error": null,
+      "state_directory": "/private/tmp/mcpmark-student_database-duplicate_name-sw3ro5la/student_database",
+      "task": "filesystem/easy/student_database/duplicate_name",
+      "task_id": "duplicate_name",
+      "tool_count": 14,
+      "turns": [
+        {
+          "arguments": {
+            "content": "Workspace root: /private/tmp/mcpmark-student_database-duplicate_name-sw3ro5la/student_database\nUse the",
+            "path": "/private/tmp/mcpmark-student_database-duplicate_name-sw3ro5la/student_database"
+          },
+          "output_sha256": "8970f49323608006adc736e88f45ccf9209b361b08dfb56de41e0d5bb6adaf68",
+          "result_is_error": true,
+          "result_sha256": "952723f6fb337f4c4c5ca41f75c1f2e557e728787bf9e60fbc7345dca2780cc7",
+          "tool": "write_file",
+          "turn": 1
+        },
+        {
+          "arguments": {
+            "content": ":",
+            "path": "/private/tmp/mcpmark-student_database-duplicate_name-sw3ro5la/student_database/namesake.txt"
+          },
+          "output_sha256": "3cd9b4c642df7b8c48f412a64fa8ba9ac0fde24c511507368b17f1b02780165d",
+          "result_is_error": false,
+          "result_sha256": "8450ef131a30bce0855c0637bc70a9f9b7bf9b090156015deebe87e14edf3d09",
+          "tool": "write_file",
+          "turn": 2
+        },
+        {
+          "arguments": {
+            "content": ":",
+            "path": "/private/tmp/mcpmark-student_database-duplicate_name-sw3ro5la/student_database/namesake.txt"
+          },
+          "output_sha256": "3cd9b4c642df7b8c48f412a64fa8ba9ac0fde24c511507368b17f1b02780165d",
+          "result_is_error": false,
+          "result_sha256": "8450ef131a30bce0855c0637bc70a9f9b7bf9b090156015deebe87e14edf3d09",
+          "tool": "write_file",
+          "turn": 3
+        },
+        {
+          "arguments": {
+            "content": ":",
+            "path": "/private/tmp/mcpmark-student_database-duplicate_name-sw3ro5la/student_database/namesake.txt"
+          },
+          "output_sha256": "3cd9b4c642df7b8c48f412a64fa8ba9ac0fde24c511507368b17f1b02780165d",
+          "result_is_error": false,
+          "result_sha256": "8450ef131a30bce0855c0637bc70a9f9b7bf9b090156015deebe87e14edf3d09",
+          "tool": "write_file",
+          "turn": 4
+        },
+        {
+          "arguments": {
+            "content": ":",
+            "path": "/private/tmp/mcpmark-student_database-duplicate_name-sw3ro5la/student_database/namesake.txt"
+          },
+          "output_sha256": "3cd9b4c642df7b8c48f412a64fa8ba9ac0fde24c511507368b17f1b02780165d",
+          "result_is_error": false,
+          "result_sha256": "8450ef131a30bce0855c0637bc70a9f9b7bf9b090156015deebe87e14edf3d09",
+          "tool": "write_file",
+          "turn": 5
+        },
+        {
+          "arguments": {
+            "content": ":",
+            "path": "/private/tmp/mcpmark-student_database-duplicate_name-sw3ro5la/student_database/namesake.txt"
+          },
+          "output_sha256": "3cd9b4c642df7b8c48f412a64fa8ba9ac0fde24c511507368b17f1b02780165d",
+          "result_is_error": false,
+          "result_sha256": "8450ef131a30bce0855c0637bc70a9f9b7bf9b090156015deebe87e14edf3d09",
+          "tool": "write_file",
+          "turn": 6
+        }
+      ],
+      "verifier_exit_code": 1,
+      "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verifier_stderr_tail": "",
+      "verifier_stdout_sha256": "46757400deee1fb48c780c137eaee1546e400d7530bb224f7891ef6dcf1bdf6e",
+      "verifier_stdout_tail": "\ud83d\udd0d Verifying Student Database Task: Find Duplicate Names...\n\n--- File Existence Check ---\n\u2705 Namesake file found\n\n--- Content Verification ---\n\u274c Incomplete group at line 1\n\u274c Failed to parse namesake file\n"
+    },
+    {
+      "after_tree_sha256": "082dcd5f488d75f5136c7f3540746cc39370bc2752a30a30bff7ae95ec449d05",
+      "before_tree_sha256": "082dcd5f488d75f5136c7f3540746cc39370bc2752a30a30bff7ae95ec449d05",
+      "category": "student_database",
+      "changed": false,
+      "server_error": null,
+      "state_directory": "/private/tmp/mcpmark-student_database-recommender_name-mhdf4is7/student_database",
+      "task": "filesystem/easy/student_database/recommender_name",
+      "task_id": "recommender_name",
+      "tool_count": 14,
+      "turns": [
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-student_database-recommender_name-mhdf4is7/student_database"
+          },
+          "output_sha256": "3d7385271271ffd76c297984c623f1b2119673b9c1cfa1df5ed2ec232598bdd6",
+          "result_is_error": false,
+          "result_sha256": "b9bbcb981b3648312d4973256be21ddbc9e68576a4dd783646c2933a6145cbaa",
+          "tool": "get_file_info",
+          "turn": 1
+        },
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-student_database-recommender_name-mhdf4is7/student_database/recommender.txt"
+          },
+          "output_sha256": "07cff5277935fee884a6e7c6e5d18fd96bd4083d3724980be12c9c20fa824c48",
+          "result_is_error": false,
+          "result_sha256": "b07dcd113784434a675c7159d212e770e95ff513cb52d64ccf8f1103b9735b70",
+          "tool": "create_directory",
+          "turn": 2
+        },
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-student_database-recommender_name-mhdf4is7/student_database/recommender.txt"
+          },
+          "output_sha256": "07cff5277935fee884a6e7c6e5d18fd96bd4083d3724980be12c9c20fa824c48",
+          "result_is_error": false,
+          "result_sha256": "b07dcd113784434a675c7159d212e770e95ff513cb52d64ccf8f1103b9735b70",
+          "tool": "create_directory",
+          "turn": 3
+        },
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-student_database-recommender_name-mhdf4is7/student_database/recommender.txt"
+          },
+          "output_sha256": "07cff5277935fee884a6e7c6e5d18fd96bd4083d3724980be12c9c20fa824c48",
+          "result_is_error": false,
+          "result_sha256": "b07dcd113784434a675c7159d212e770e95ff513cb52d64ccf8f1103b9735b70",
+          "tool": "create_directory",
+          "turn": 4
+        },
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-student_database-recommender_name-mhdf4is7/student_database/recommender.txt"
+          },
+          "output_sha256": "07cff5277935fee884a6e7c6e5d18fd96bd4083d3724980be12c9c20fa824c48",
+          "result_is_error": false,
+          "result_sha256": "b07dcd113784434a675c7159d212e770e95ff513cb52d64ccf8f1103b9735b70",
+          "tool": "create_directory",
+          "turn": 5
+        },
+        {
+          "arguments": {
+            "path": "/private/tmp/mcpmark-student_database-recommender_name-mhdf4is7/student_database/recommender.txt"
+          },
+          "output_sha256": "07cff5277935fee884a6e7c6e5d18fd96bd4083d3724980be12c9c20fa824c48",
+          "result_is_error": false,
+          "result_sha256": "b07dcd113784434a675c7159d212e770e95ff513cb52d64ccf8f1103b9735b70",
+          "tool": "create_directory",
+          "turn": 6
+        }
+      ],
+      "verifier_exit_code": 1,
+      "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verifier_stderr_tail": "",
+      "verifier_stdout_sha256": "e990c1f6600d161679887d18a2f1cb9d07d99dc87d0a43e46cb4e36c503094c3",
+      "verifier_stdout_tail": "\ud83d\udd0d Verifying Student Database Task: Find Recommender Name...\n\n--- File Existence Check ---\n\u2705 Recommender file found\n\n--- Content Verification ---\n\u274c Error reading recommender file: [Errno 21] Is a directory: '/private/tmp/mcpmark-student_database-recommender_name-mhdf4is7/student_database/recommender.txt'\n\n\u274c Task verification: FAIL\n"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "dataset": {
+      "name": "MCPMark",
+      "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+      "service": "filesystem",
+      "suite": "easy",
+      "tasks_requested": 10,
+      "url": "https://github.com/eval-sys/mcpmark"
+    },
+    "official_split_verified": false,
+    "receipt": {
+      "bytes": 46569,
+      "path": "/private/tmp/m493-mcpmark-filesystem-easy-current-grounded.json",
+      "sha256": "1d7f125c4263a6ab76995961c03b0d9406eb9813b6c48d4d7800b1159ced9f5c"
+    }
+  },
+  "success_rate": 0.2,
+  "summary": {
+    "changed_workspaces": 6,
+    "runtime_errors": 0,
+    "success_rate": 0.2,
+    "task_count": 10,
+    "tasks": 10,
+    "verifier_failures": 8,
+    "verifier_passes": 2
+  },
+  "task_count": 10,
+  "task_source": {
+    "state_root": "/private/tmp/mcpmark-fs-eval-20260805",
+    "task_root_revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "verifiers_executed": true
+  }
+}

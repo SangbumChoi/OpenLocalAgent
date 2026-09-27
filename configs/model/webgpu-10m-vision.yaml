@@ -1,0 +1,24 @@
+# Experimental screenshot-conditioned sibling of webgpu-10m-hybrid.
+#
+# The compact patch bridge is PyTorch-only for now: ONNX/WebGPU export and native visual
+# evaluation are intentionally not claimed until the image preprocessing contract is frozen.
+name: webgpu-10m-vision
+vocab_size: 16384
+d_model: 384
+n_layers: 4
+n_loops: 1
+n_heads: 6
+n_kv_heads: 1
+ffn_hidden: 512
+max_seq_len: 2048
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types: [conv, attn, conv, attn]
+vision_enabled: true
+vision_image_size: 96
+vision_patch_size: 16
+vision_width: 64

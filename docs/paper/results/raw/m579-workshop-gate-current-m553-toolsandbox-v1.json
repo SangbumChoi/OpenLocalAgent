@@ -1,0 +1,41 @@
+{
+  "kind": "localagent_workshop_gate_receipt",
+  "schema_version": 1,
+  "status": "blocked",
+  "ready": false,
+  "current_checkpoint_sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+  "checks": {
+    "catalog_realistic_family_coverage": "pass",
+    "native_mobilegym": "pass",
+    "native_browsergym_miniwob": "pass",
+    "native_toolsandbox": "blocked",
+    "native_toolsandbox_blocker": "official_split_not_verified",
+    "webgpu_native_capability_and_latency": "pass",
+    "weights_transfer_and_no_transfer_ablation": "pass",
+    "training_rl_preflight": "pass",
+    "artifacts_public_model_demo_manifest": "blocked",
+    "public_artifact_blocker": "current_checkpoint_not_bound"
+  },
+  "blocking_requirements": [
+    "native:androidworld",
+    "native:mobile_safety_bench",
+    "native:iosworld",
+    "native:osworld",
+    "native:osworld_v2",
+    "native:agentnet",
+    "native:toolsandbox",
+    "native:mcpmark",
+    "native:enterpriseopsgym",
+    "artifacts:public_model_demo_manifest"
+  ],
+  "native_receipt": "docs/paper/results/raw/m578-toolsandbox-native-m553-v1.json",
+  "public_manifest": "docs/paper/results/raw/m576-public-release-audit-v1.json",
+  "evidence": {
+    "gate_output_sha256": "bfa1710ea75b0f7f2aae2921902c8889f6f1ec72f1dd61f0f4b36b2a70a1977d",
+    "toolsandbox_current_checkpoint_bound": true,
+    "toolsandbox_native_success_rate": 1.0,
+    "toolsandbox_official_split_verified": false
+  },
+  "claim_boundary": "The current m553 checkpoint now has a verifier-backed ToolSandbox smoke receipt. It is not promoted to official benchmark evidence because the upstream official split and user simulator were not executed; all remaining native and public-release blockers remain explicit.",
+  "receipt_self_sha256": "00db585b353c991d57e27427d8c9ae08e5d18fac07aac61ac62802d2cb4c8858"
+}

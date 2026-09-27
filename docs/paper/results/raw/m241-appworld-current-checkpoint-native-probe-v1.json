@@ -1,0 +1,300 @@
+{
+  "checkpoint": {
+    "bytes": 52231121,
+    "path": "runs/sft-mind2web-trajectory-continuation-20260802/latest.pt",
+    "sha256": "26ae0d2597c8207e110aeceab483005c94eb98aaf83a58147f3e933f2c739782"
+  },
+  "claim_boundary": "Native AppWorld reset/evaluation of the current LocalAgent checkpoint only. The model emits LocalAgent tool syntax, while AppWorld expects Python/API actions; no action was translated or replayed. The score is a zero-action interface baseline, not an AppWorld leaderboard result, AppWorld-UL result, or evidence of email/SMS/Spotify task success.",
+  "configuration": {
+    "action_translation": "disabled",
+    "experiment_name": "localagent_m241_native_probe_v2",
+    "max_interactions": 1,
+    "tasks": [
+      "29caf6f_3",
+      "771d8fc_3",
+      "530b157_1",
+      "530b157_2",
+      "29caf6f_1",
+      "29caf6f_2"
+    ]
+  },
+  "environment": {
+    "environment_reset_per_task": true,
+    "external_accounts": false,
+    "native_runtime_executed": true,
+    "screenshots": false,
+    "state_side_effects": "isolated AppWorld task databases only"
+  },
+  "kind": "localagent_appworld_checkpoint_native_probe",
+  "receipt_self_sha256": "9da228e50c04c8abed539dcd7d8e65278633fc150186345fa2db6b65f1e004c2",
+  "runner": {
+    "contract_verification": {
+      "passed": 1,
+      "result": {
+        "difficulty": 2,
+        "failed": 0,
+        "failure_labels": [],
+        "num_tests": 8,
+        "pass_labels": [
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_pass"
+        ],
+        "passed": 8,
+        "success": true,
+        "task_id": "29caf6f_3"
+      },
+      "tasks": 1
+    },
+    "data_version": "0.2.0",
+    "package": "appworld",
+    "root": "/private/tmp/appworld-data",
+    "split_policy": "caller-selected train/dev tasks with full public ground-truth verifiers",
+    "version": "0.2.0.dev0"
+  },
+  "schema_version": 1,
+  "summary": {
+    "action_replayed": 0,
+    "native_api_calls": 0,
+    "native_success_rate": 0.0,
+    "native_successes": 0,
+    "tasks": 6
+  },
+  "tasks": [
+    {
+      "action_replayed": false,
+      "evaluation": {
+        "difficulty": 2,
+        "failed": 7,
+        "failure_labels": [
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail"
+        ],
+        "num_tests": 8,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 177,
+        "sha256": "47c525e5ce54d0d1e5dec16f58f5289fd3f60724749511adf9735d57fb66f421"
+      },
+      "model_output": {
+        "bytes": 16,
+        "sha256": "f05f9d7fd66b5797ac3b9d113e1d21b8406313702f3494c7e9f233545340a847"
+      },
+      "native_api_calls": 0,
+      "predicted_tool": null,
+      "task_id": "29caf6f_3",
+      "task_spec": {
+        "bytes": 515,
+        "path": "/private/tmp/appworld-data/data/tasks/29caf6f_3/specs.json",
+        "sha256": "538c3c6f07f3774a84a5c75e7b7facdb834daf791050c5bba9134e4b27ba875d"
+      }
+    },
+    {
+      "action_replayed": false,
+      "evaluation": {
+        "difficulty": 1,
+        "failed": 4,
+        "failure_labels": [
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail"
+        ],
+        "num_tests": 6,
+        "pass_labels": [
+          "no_op_pass",
+          "no_op_pass"
+        ],
+        "passed": 2,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 81,
+        "sha256": "8bcd7684e41cf1ffcbb28f45ce7a98ba20f8c1d61b60023ab3c0b571336397db"
+      },
+      "model_output": {
+        "bytes": 16,
+        "sha256": "f05f9d7fd66b5797ac3b9d113e1d21b8406313702f3494c7e9f233545340a847"
+      },
+      "native_api_calls": 0,
+      "predicted_tool": null,
+      "task_id": "771d8fc_3",
+      "task_spec": {
+        "bytes": 423,
+        "path": "/private/tmp/appworld-data/data/tasks/771d8fc_3/specs.json",
+        "sha256": "966ab50bd66d577d3b6ef5530ce3ccfe0b473603f5b5a42259f6a35e3ebf8321"
+      }
+    },
+    {
+      "action_replayed": false,
+      "evaluation": {
+        "difficulty": 3,
+        "failed": 9,
+        "failure_labels": [
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail"
+        ],
+        "num_tests": 10,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 238,
+        "sha256": "6fb7d0e97698da2270d7ccdd2260ae4115245421adfeae60424223a422bbff19"
+      },
+      "model_output": {
+        "bytes": 104,
+        "sha256": "26e8eb10853162e582f234951a2ee040d74323ccda9968134b38848b1fe13722"
+      },
+      "native_api_calls": 0,
+      "predicted_tool": "write_clipboard",
+      "task_id": "530b157_1",
+      "task_spec": {
+        "bytes": 585,
+        "path": "/private/tmp/appworld-data/data/tasks/530b157_1/specs.json",
+        "sha256": "484163be105a8423ac5c6b6172874746c2f2910b0d4713c6ecb765567c2e04fc"
+      }
+    },
+    {
+      "action_replayed": false,
+      "evaluation": {
+        "difficulty": 3,
+        "failed": 9,
+        "failure_labels": [
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail"
+        ],
+        "num_tests": 10,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 234,
+        "sha256": "29a24eb73ae70603811d0e90fb08b4ca6dfefc71c77c50e3efc84decf0b8bc71"
+      },
+      "model_output": {
+        "bytes": 92,
+        "sha256": "ce563fe18a2d53c19e8fa86fc652d816a598669b3832903abef3012b05f85b3d"
+      },
+      "native_api_calls": 0,
+      "predicted_tool": "write_clipboard",
+      "task_id": "530b157_2",
+      "task_spec": {
+        "bytes": 580,
+        "path": "/private/tmp/appworld-data/data/tasks/530b157_2/specs.json",
+        "sha256": "dde1a25f1d8adf32fc33b87eacd8715bbd482bd15985f7d9157a585550346843"
+      }
+    },
+    {
+      "action_replayed": false,
+      "evaluation": {
+        "difficulty": 2,
+        "failed": 7,
+        "failure_labels": [
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail"
+        ],
+        "num_tests": 8,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 182,
+        "sha256": "751317f84e615a01c02314329fde773dfcf5246f07ce0fafe26d3fe12341fc71"
+      },
+      "model_output": {
+        "bytes": 16,
+        "sha256": "f05f9d7fd66b5797ac3b9d113e1d21b8406313702f3494c7e9f233545340a847"
+      },
+      "native_api_calls": 0,
+      "predicted_tool": null,
+      "task_id": "29caf6f_1",
+      "task_spec": {
+        "bytes": 518,
+        "path": "/private/tmp/appworld-data/data/tasks/29caf6f_1/specs.json",
+        "sha256": "18ba99e3a795f0fddb3b55d5dbc04fd32f0782dd267984895fe890349bf354ca"
+      }
+    },
+    {
+      "action_replayed": false,
+      "evaluation": {
+        "difficulty": 2,
+        "failed": 7,
+        "failure_labels": [
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail",
+          "no_op_fail"
+        ],
+        "num_tests": 8,
+        "pass_labels": [
+          "no_op_pass"
+        ],
+        "passed": 1,
+        "success": false
+      },
+      "instruction": {
+        "bytes": 176,
+        "sha256": "0efafd47046ce7559b1eb147429c2e3925431453d9fd3a64ea853dcc33bbee54"
+      },
+      "model_output": {
+        "bytes": 16,
+        "sha256": "f05f9d7fd66b5797ac3b9d113e1d21b8406313702f3494c7e9f233545340a847"
+      },
+      "native_api_calls": 0,
+      "predicted_tool": null,
+      "task_id": "29caf6f_2",
+      "task_spec": {
+        "bytes": 508,
+        "path": "/private/tmp/appworld-data/data/tasks/29caf6f_2/specs.json",
+        "sha256": "830e0f73d820642a9ea25776a7744b272473417335cb143cc54e4640b6305dd5"
+      }
+    }
+  ]
+}

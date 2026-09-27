@@ -1,0 +1,69 @@
+{
+  "claim_boundary": "This is a current-checkpoint, name-only tool-retrieval diagnostic over a public EnterpriseOps-Gym email slice. It drops verifiers, server configuration, task execution, and state transitions. It is not an official EnterpriseOps-Gym task-success score, MCP result, real-email action, WebGPU closed-loop result, or training artifact.",
+  "comparison": {
+    "baseline_receipt": "m114-enterpriseopsgym-email-retrieval-m111-ablation-v1.json",
+    "baseline_checkpoint_sha256": "35fedcefdafece153912b3bf6629fb23c0ad48f269126d2f8021ef04e0e384ae",
+    "baseline_hit_at_1": 0.208955223880597,
+    "baseline_hit_at_3": 0.5970149253731343,
+    "baseline_hit_at_5": 0.8656716417910447,
+    "warm_minus_baseline_pp": {
+      "hit_at_1": 28.358208955223126,
+      "hit_at_3": 25.373134328358195,
+      "hit_at_5": 8.955223880597008
+    },
+    "decision": "retain_m194_as_a_retrieval_diagnostic; do_not_promote_to_native_email_or_enterprise_task_success"
+  },
+  "dataset": {
+    "name": "ServiceNow-AI/EnterpriseOps-Gym",
+    "url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym",
+    "revision": "c8e538eae8a6205294f0a86675fefdc1fac408f6",
+    "oracle": {
+      "records": 67,
+      "bytes": 496997,
+      "sha256": "b5290259d09bc02e605b8cf5ffa3b20d22c65219eb05196a69fd340712f286fe"
+    },
+    "plus_15_tools": {
+      "records": 67,
+      "bytes": 513881,
+      "sha256": "7db6e7c2ce574d74161ad72d10a8de54ad4128bb87fb9caa86c6eb05affc3f39"
+    },
+    "domain": "email",
+    "candidate_mode": "plus_15_tools",
+    "tool_description_policy": "generated_name_only_v1",
+    "verifiers_dropped": true,
+    "server_configuration_dropped": true,
+    "tool_execution": false
+  },
+  "checkpoint": {
+    "stage": "m194_current_m180_dispatch_repair_warm",
+    "parameters": 10524544,
+    "bytes": 52276521,
+    "sha256": "3b3fd817c6f52e8b922f84c9bb36e7d55e0e243a0f8ee6d0f20c85962a4eeba7",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "training_lineage": {
+    "backbone_frozen_during_repair": true,
+    "synthetic_adapter_train_rows": 1286,
+    "repair_steps": 500,
+    "warm_route_head_relative_l2": 1.3137242691753344,
+    "warm_dense_selector_relative_l2": 1.4887015721080055,
+    "backbone_relative_l2": 0.0,
+    "matched_random_selector_top1": 0.8294573643410853,
+    "interpretation": "The large selector movement and zero backbone movement identify this as a head-only contract repair; the retrieval gain is useful but does not establish pretrained-weight superiority or end-to-end task completion."
+  },
+  "evaluation": {
+    "records": 67,
+    "hit_at_1": 0.4925373134328358,
+    "hit_at_3": 0.8507462686567164,
+    "hit_at_5": 0.9552238805970149,
+    "mean_candidate_tool_count": 20.0,
+    "mean_oracle_tool_count": 5.686567164179104
+  },
+  "evaluator": {
+    "script": "scripts/evaluate_enterpriseopsgym_tool_retrieval.py",
+    "module": "src/localagent/eval/enterpriseopsgym.py",
+    "metric_scope": "name_only_email_tool_retrieval_hit_at_k"
+  },
+  "schema_version": 1,
+  "receipt_self_sha256": "7d7a56885d6bf3a607adb30c02ea416b499ce38a3a25ed3052805fa1837d096d"
+}

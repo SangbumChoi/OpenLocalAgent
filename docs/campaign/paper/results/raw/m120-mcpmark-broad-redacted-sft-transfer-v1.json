@@ -1,0 +1,553 @@
+{
+  "checkpoints": {
+    "parent": {
+      "bytes": 52283646,
+      "path": "/private/tmp/m111-deployment-repair-warm.pt",
+      "sha256": "35fedcefdafece153912b3bf6629fb23c0ad48f269126d2f8021ef04e0e384ae"
+    },
+    "random_child": {
+      "bytes": 52280964,
+      "path": "/private/tmp/m120-random-child.pt",
+      "sha256": "ab4c41abf9cc0cd98b4217267dca51653d25020e0ec65158e4b5f141824a00f9"
+    },
+    "warm_child": {
+      "bytes": 52280850,
+      "path": "/private/tmp/m120-warm-child.pt",
+      "sha256": "187c63508af185a155e7990ba5b9e9bb7366ee174b7683863bd201e5064685c1"
+    }
+  },
+  "claim_boundary": "Ten redacted public MCPMark trajectories spanning filesystem, Notion, GitHub, Postgres, and Playwright; eight train rows and two held-out Playwright rows. Tool outputs and assistant free text were replaced by fixed markers. This is a matched teacher-forced transfer comparison, not an official MCPMark score, native MCP/browser execution, verifier success, screenshot grounding, or external-account side effect.",
+  "comparison": {
+    "aggregate": {
+      "random_after_token_accuracy": 0.031226199543031227,
+      "warm_after_token_accuracy": 0.4226961157654227,
+      "warm_minus_random_after_pp": 39.14699162223915,
+      "warm_start_better_after": true
+    },
+    "arm_contract": {
+      "random_backbone_init": "random",
+      "random_backbone_seed": 2028,
+      "warm_backbone_init": "parent"
+    },
+    "claim_boundary": "Matched public-train-only text/accessibility continuation comparison; this is not an official benchmark score, native environment success, screenshot-grounding result, or evidence of real email/Notion/MCP side effects.",
+    "decision": "warm_start_dominates_matched_random_on_all_surfaces",
+    "eval_sources": [
+      {
+        "datasets": [
+          "Jakumetsu/mcpmark-trajectory-log"
+        ],
+        "input": {
+          "bytes": 14123,
+          "path": "/private/tmp/m120-eval.jsonl",
+          "sha256": "12f8d6bec22a5c21e3d77055eced3360648286c11362e81ce60cdeb26a7e232d"
+        },
+        "label": "m120_holdout",
+        "public_reference": {
+          "dataset": "Jakumetsu/mcpmark-trajectory-log",
+          "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log"
+        },
+        "revisions": [
+          "e50578f0ab904d8e6a7c576c387c1e76ae482c89"
+        ],
+        "rows": 2,
+        "source_families": [
+          "Jakumetsu/mcpmark-trajectory-log"
+        ],
+        "source_urls": [],
+        "splits": [],
+        "unique_parent_records": 2,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "hyperparameters": {
+      "backbone_init": "parent",
+      "batch_size": 1,
+      "device": "cpu",
+      "learning_rate": 1e-05,
+      "max_seq_len": 2048,
+      "random_backbone_seed": 2028,
+      "seed": 2027,
+      "steps": 32
+    },
+    "kind": "localagent_cross_surface_transfer_ablation_report",
+    "parent": {
+      "bytes": 52283646,
+      "path": "/private/tmp/m111-deployment-repair-warm.pt",
+      "sha256": "35fedcefdafece153912b3bf6629fb23c0ad48f269126d2f8021ef04e0e384ae"
+    },
+    "random_backbone_receipt": {
+      "bytes": 52280964,
+      "path": "/private/tmp/m120-random-child.pt",
+      "sha256": "ab4c41abf9cc0cd98b4217267dca51653d25020e0ec65158e4b5f141824a00f9"
+    },
+    "random_weight_groups": {
+      "action_heads": {
+        "base_l2": 142.4759921907119,
+        "delta_l2": 0.0,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.0,
+        "target_l2": 142.4759921907119
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.60966440694701,
+        "delta_l2": 40.19343327369353,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.778796640814491,
+        "target_l2": 50.41053504719155
+      },
+      "embedding": {
+        "base_l2": 69.10020087217465,
+        "delta_l2": 85.38879789634868,
+        "parameters": 6291456,
+        "relative_delta_l2": 1.2357243078685916,
+        "target_l2": 50.18671685806504
+      },
+      "ffn": {
+        "base_l2": 50.523844408558325,
+        "delta_l2": 44.36316627276109,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.8780639476683674,
+        "target_l2": 49.792269637306305
+      },
+      "normalization": {
+        "base_l2": 21.276535547423002,
+        "delta_l2": 1.681976456943717,
+        "parameters": 384,
+        "relative_delta_l2": 0.07905311713905588,
+        "target_l2": 19.595685694122125
+      }
+    },
+    "rows": {
+      "eval": 2,
+      "train": 8
+    },
+    "schema_version": 1,
+    "surfaces": {
+      "m120_holdout": {
+        "random_backbone": {
+          "after_token_accuracy": 0.031226199543031227,
+          "before_token_accuracy": 0.006854531607006854,
+          "delta_token_accuracy": 0.024371667936024372
+        },
+        "rows": 2,
+        "warm_minus_random_after_pp": 39.14699162223915,
+        "warm_start": {
+          "after_token_accuracy": 0.4226961157654227,
+          "before_token_accuracy": 0.3968012185833968,
+          "delta_token_accuracy": 0.025894897182025922
+        },
+        "warm_start_better_after": true
+      }
+    },
+    "train_sources": [
+      {
+        "datasets": [
+          "Jakumetsu/mcpmark-trajectory-log"
+        ],
+        "input": {
+          "bytes": 83877,
+          "path": "/private/tmp/m120-train.jsonl",
+          "sha256": "80aedf60607e2e113f21e0bdcb4794411ea616eed30b870f384dd24a4c336735"
+        },
+        "label": "m120_train",
+        "public_reference": {
+          "dataset": "Jakumetsu/mcpmark-trajectory-log",
+          "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log"
+        },
+        "revisions": [
+          "e50578f0ab904d8e6a7c576c387c1e76ae482c89"
+        ],
+        "rows": 8,
+        "source_families": [
+          "Jakumetsu/mcpmark-trajectory-log"
+        ],
+        "source_urls": [],
+        "splits": [],
+        "unique_parent_records": 8,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "warm_start_receipt": {
+      "bytes": 52280850,
+      "path": "/private/tmp/m120-warm-child.pt",
+      "sha256": "187c63508af185a155e7990ba5b9e9bb7366ee174b7683863bd201e5064685c1"
+    },
+    "warm_weight_groups": {
+      "action_heads": {
+        "base_l2": 142.4759921907119,
+        "delta_l2": 0.0,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.0,
+        "target_l2": 142.4759921907119
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.60966440694701,
+        "delta_l2": 0.09364790267533785,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0018145419806824437,
+        "target_l2": 51.6094172520039
+      },
+      "embedding": {
+        "base_l2": 69.10020087217465,
+        "delta_l2": 0.3220187335086927,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.0046601707295233575,
+        "target_l2": 69.21253023217648
+      },
+      "ffn": {
+        "base_l2": 50.523844408558325,
+        "delta_l2": 0.1072677840406801,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0021231120730494098,
+        "target_l2": 50.52394092123576
+      },
+      "normalization": {
+        "base_l2": 21.276535547423002,
+        "delta_l2": 0.0017848468509006907,
+        "parameters": 384,
+        "relative_delta_l2": 8.388803933433937e-05,
+        "target_l2": 21.275436841395855
+      }
+    }
+  },
+  "dataset": {
+    "content_policy": "tool_outputs_and_assistant_free_text_redacted",
+    "eval_rows": 2,
+    "eval_services": [
+      "playwright"
+    ],
+    "license": "MIT",
+    "name": "Jakumetsu/mcpmark-trajectory-log",
+    "revision": "e50578f0ab904d8e6a7c576c387c1e76ae482c89",
+    "source_files": [
+      {
+        "bytes": 3679,
+        "path": "/private/tmp/mcpmark-gpt41mini-filesystem-desktop-music.json",
+        "service": "filesystem",
+        "sha256": "9c07dd797f95b453a468667c7faf3b0ed93f57806469824791d8ed1b087a2d26",
+        "task_label": "filesystem-desktop-music",
+        "tool_calls": 3
+      },
+      {
+        "bytes": 22761,
+        "path": "/private/tmp/mcpmark-gpt41mini-filesystem-file-context.json",
+        "service": "filesystem",
+        "sha256": "4f7d3b31e70a790f93a65dd4e476304c8da9c7ea7207bd1e074aebcf52ca2a2e",
+        "task_label": "filesystem-file-context",
+        "tool_calls": 15
+      },
+      {
+        "bytes": 58696,
+        "path": "/private/tmp/mcpmark-gpt41mini-notion-onboarding.json",
+        "service": "notion",
+        "sha256": "763399b96b75fcb50a698990cb7f5a5d51f3a45990285dba9ff0a2487a7658e2",
+        "task_label": "notion-onboarding",
+        "tool_calls": 14
+      },
+      {
+        "bytes": 106910,
+        "path": "/private/tmp/mcpmark-gpt41mini-notion-courses.json",
+        "service": "notion",
+        "sha256": "941c170f5ed47bdf2ef65e5c7dbf5b66648f7b099bd51c8abcb48710444e738e",
+        "task_label": "notion-courses",
+        "tool_calls": 35
+      },
+      {
+        "bytes": 145938,
+        "path": "/private/tmp/mcpmark-gpt41mini-github-commit.json",
+        "service": "github",
+        "sha256": "f5ebd9ccbb2c242e544b85fcd329154040a467278e70bb43bc13f2e0f6a82d8d",
+        "task_label": "github-commit",
+        "tool_calls": 17
+      },
+      {
+        "bytes": 268167,
+        "path": "/private/tmp/mcpmark-gpt41mini-github-changelog.json",
+        "service": "github",
+        "sha256": "ed0fa420e6499f13ac84cbf10e78f46b15a99ab511fc9a399cb981145a7f2dcf",
+        "task_label": "github-changelog",
+        "tool_calls": 15
+      },
+      {
+        "bytes": 36367,
+        "path": "/private/tmp/mcpmark-gpt41mini-postgres-chinook.json",
+        "service": "postgres",
+        "sha256": "86b1167faa4780bc46a803b19df9736235229838b0461eaafa055a6c530d4674",
+        "task_label": "postgres-chinook",
+        "tool_calls": 3
+      },
+      {
+        "bytes": 13385,
+        "path": "/private/tmp/mcpmark-gpt41mini-postgres-dvd.json",
+        "service": "postgres",
+        "sha256": "66e3d2e5c98d5a780f3a261d0b2269739e10c5e4c0a1659313729190927e2b67",
+        "task_label": "postgres-dvd",
+        "tool_calls": 5
+      },
+      {
+        "bytes": 22816,
+        "path": "/private/tmp/mcpmark-gpt41mini-playwright-extraction.json",
+        "service": "playwright",
+        "sha256": "768621948b7b56ba99ebc414275f542b3c164618fd08868269e2ae57589decb5",
+        "task_label": "playwright-extraction",
+        "tool_calls": 2
+      },
+      {
+        "bytes": 95036,
+        "path": "/private/tmp/mcpmark-gpt41mini-playwright-travel.json",
+        "service": "playwright",
+        "sha256": "2688b4c4f901a2830e0659b8d950f19fada41635299d73527913b361bc4f5891",
+        "task_label": "playwright-travel",
+        "tool_calls": 22
+      }
+    ],
+    "source_rows": 10,
+    "source_tool_calls": 131,
+    "train_rows": 8,
+    "train_services": [
+      "filesystem",
+      "notion",
+      "github",
+      "postgres"
+    ],
+    "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log"
+  },
+  "kind": "localagent_mcpmark_broad_redacted_sft_transfer",
+  "normalized_data": {
+    "all": {
+      "bytes": 98000,
+      "path": "/private/tmp/m120-mcpmark-redacted-v1.jsonl",
+      "sha256": "9232ab918515f146c7b1e4ea33072c6b7201d68aae19bee6aae0df550c3cae9d"
+    },
+    "eval": {
+      "bytes": 14123,
+      "path": "/private/tmp/m120-eval.jsonl",
+      "sha256": "12f8d6bec22a5c21e3d77055eced3360648286c11362e81ce60cdeb26a7e232d"
+    },
+    "metadata": {
+      "bytes": 4617,
+      "path": "/private/tmp/m120-mcpmark-redacted-v1.metadata.json",
+      "sha256": "e9f86ffcd8439a50aef1fcb0a10a81091660b1aef99e600c60ed5789ce25bddc"
+    },
+    "redacted_absolute_paths": true,
+    "redacted_assistant_text": true,
+    "redacted_tool_outputs": true,
+    "train": {
+      "bytes": 83877,
+      "path": "/private/tmp/m120-train.jsonl",
+      "sha256": "80aedf60607e2e113f21e0bdcb4794411ea616eed30b870f384dd24a4c336735"
+    }
+  },
+  "schema_version": 1,
+  "training": {
+    "batch_size": 1,
+    "comparison_script": {
+      "bytes": 6620,
+      "path": "scripts/compare_cross_surface_controls.py",
+      "sha256": "d2cc56a4fc61c5ded067db7eb6daf4b474f327a619586b2dd004bac7511cc6a4"
+    },
+    "device": "cpu",
+    "learning_rate": 1e-05,
+    "max_seq_len": 2048,
+    "random_backbone": {
+      "after": {
+        "eval": {
+          "assistant_loss_tokens": 1313,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.031226199543031227,
+          "mean_loss": 9.337616826774324,
+          "rows": 2
+        },
+        "eval_by_source": {
+          "m120_holdout": {
+            "assistant_loss_tokens": 1313,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.031226199543031227,
+            "mean_loss": 9.337616826774324,
+            "rows": 2
+          }
+        },
+        "train": {
+          "assistant_loss_tokens": 8713,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.05187650636979226,
+          "mean_loss": 9.350557034590016,
+          "rows": 8
+        }
+      },
+      "before": {
+        "eval": {
+          "assistant_loss_tokens": 1313,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.006854531607006854,
+          "mean_loss": 9.829225957075876,
+          "rows": 2
+        },
+        "eval_by_source": {
+          "m120_holdout": {
+            "assistant_loss_tokens": 1313,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.006854531607006854,
+            "mean_loss": 9.829225957075876,
+            "rows": 2
+          }
+        },
+        "train": {
+          "assistant_loss_tokens": 8713,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.0001147710317915758,
+          "mean_loss": 9.83654840496286,
+          "rows": 8
+        }
+      }
+    },
+    "random_report": {
+      "bytes": 10183,
+      "path": "/private/tmp/m120-random-report.json",
+      "sha256": "bfd7f1954485e66fec64fe8ebe2faa950a44e018f31b45d4d40eb0c53ea1e25e"
+    },
+    "script": {
+      "bytes": 12239,
+      "path": "scripts/train_cross_surface_continuation.py",
+      "sha256": "32f4ce887cad7c44df045519ebf8910f44c19f62beee2fc9206b3f541a094d62"
+    },
+    "seed": 2027,
+    "steps": 32,
+    "warm": {
+      "after": {
+        "eval": {
+          "assistant_loss_tokens": 1313,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.4226961157654227,
+          "mean_loss": 4.313769512655893,
+          "rows": 2
+        },
+        "eval_by_source": {
+          "m120_holdout": {
+            "assistant_loss_tokens": 1313,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.4226961157654227,
+            "mean_loss": 4.313769512655893,
+            "rows": 2
+          }
+        },
+        "train": {
+          "assistant_loss_tokens": 8713,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.32227705727074485,
+          "mean_loss": 4.939687010205655,
+          "rows": 8
+        }
+      },
+      "before": {
+        "eval": {
+          "assistant_loss_tokens": 1313,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.3968012185833968,
+          "mean_loss": 4.52275207473046,
+          "rows": 2
+        },
+        "eval_by_source": {
+          "m120_holdout": {
+            "assistant_loss_tokens": 1313,
+            "assistant_sequence_accuracy": 0.0,
+            "assistant_token_accuracy": 0.3968012185833968,
+            "mean_loss": 4.52275207473046,
+            "rows": 2
+          }
+        },
+        "train": {
+          "assistant_loss_tokens": 8713,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.2685642143922874,
+          "mean_loss": 5.341875930693315,
+          "rows": 8
+        }
+      }
+    },
+    "warm_report": {
+      "bytes": 10202,
+      "path": "/private/tmp/m120-warm-report.json",
+      "sha256": "ef40e145b00867e0bf972d3f8192d2caeb8094f59ee718384bbbec0eb3c8472c"
+    }
+  },
+  "weight_analysis": {
+    "interpretation": "Warm initialization retains a useful body: after identical 32-step SFT, held-out token accuracy is 42.27% versus 3.12% for the random body, while warm backbone movement remains below 0.5% in every group. Exact sequence accuracy remains zero, so this supports transfer for representation/teacher-forcing stability, not native task success.",
+    "random_backbone_relative_delta_l2": 1.0205633730154409,
+    "random_groups": {
+      "action_heads": {
+        "base_l2": 142.4759921907119,
+        "delta_l2": 0.0,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.0,
+        "target_l2": 142.4759921907119
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.60966440694701,
+        "delta_l2": 40.19343327369353,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.778796640814491,
+        "target_l2": 50.41053504719155
+      },
+      "embedding": {
+        "base_l2": 69.10020087217465,
+        "delta_l2": 85.38879789634868,
+        "parameters": 6291456,
+        "relative_delta_l2": 1.2357243078685916,
+        "target_l2": 50.18671685806504
+      },
+      "ffn": {
+        "base_l2": 50.523844408558325,
+        "delta_l2": 44.36316627276109,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.8780639476683674,
+        "target_l2": 49.792269637306305
+      },
+      "normalization": {
+        "base_l2": 21.276535547423002,
+        "delta_l2": 1.681976456943717,
+        "parameters": 384,
+        "relative_delta_l2": 0.07905311713905588,
+        "target_l2": 19.595685694122125
+      }
+    },
+    "warm_backbone_relative_delta_l2": 0.003445402024888062,
+    "warm_groups": {
+      "action_heads": {
+        "base_l2": 142.4759921907119,
+        "delta_l2": 0.0,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.0,
+        "target_l2": 142.4759921907119
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.60966440694701,
+        "delta_l2": 0.09364790267533785,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0018145419806824437,
+        "target_l2": 51.6094172520039
+      },
+      "embedding": {
+        "base_l2": 69.10020087217465,
+        "delta_l2": 0.3220187335086927,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.0046601707295233575,
+        "target_l2": 69.21253023217648
+      },
+      "ffn": {
+        "base_l2": 50.523844408558325,
+        "delta_l2": 0.1072677840406801,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0021231120730494098,
+        "target_l2": 50.52394092123576
+      },
+      "normalization": {
+        "base_l2": 21.276535547423002,
+        "delta_l2": 0.0017848468509006907,
+        "parameters": 384,
+        "relative_delta_l2": 8.388803933433937e-05,
+        "target_l2": 21.275436841395855
+      }
+    }
+  }
+}

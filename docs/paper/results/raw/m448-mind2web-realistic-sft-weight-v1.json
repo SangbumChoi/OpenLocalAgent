@@ -1,0 +1,358 @@
+{
+  "child_checkpoint": {
+    "bytes": 52247906,
+    "path": "/private/tmp/m448-mind2web-realistic-mixture.pt",
+    "sha256": "2f7a6c933275b72ee53568bbd3d8e30840ba8c57b9c5f760213026db54003844"
+  },
+  "claim_boundary": "This is a public train-only Mind2Web DOM/action continuation with a source-disjoint teacher-forced eval and a matched checkpoint weight audit. It is not an official Mind2Web test score, BrowserGym score, visual grounding result, live browser result, MCP result, or real-account side-effect claim.",
+  "dataset": {
+    "eval_identity": [
+      {
+        "bytes": 113763,
+        "path": "data/private/mind2web/normalized/m420/eval.jsonl",
+        "sha256": "2b3e502978496dd75151a244477ad8efebfec0ebdd912bf97f0910c14f0d7ed9"
+      }
+    ],
+    "eval_rows": 32,
+    "manifest_self_sha256": "6a8ffffa112099053d235b5bb8ed099b6b463d69f47b2bda9527aba2fe919a4e",
+    "name": "osunlp/Mind2Web",
+    "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+    "source_manifest": {
+      "bytes": 3328,
+      "path": "data/private/mind2web/normalized/m420/manifest.json",
+      "sha256": "f6656200ae983f315cda8d3bc0a6ebfc0f0b8870797b3367faaaf48e318e8c2d"
+    },
+    "train_identity": [
+      {
+        "bytes": 352766,
+        "path": "data/private/mind2web/normalized/m420/train.jsonl",
+        "sha256": "b6cc595007bb91aa37f4d89e15e477b5b223bb9a66913856273c7cf995abf866"
+      }
+    ],
+    "train_rows": 96,
+    "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+  },
+  "decision": {
+    "adoption": "retain_as_low_rate_initialization_candidate",
+    "native_replay_required": true,
+    "reason": "Held-out token accuracy improves on a source-disjoint public Mind2Web split, while all shared backbone groups move below 0.2% and action heads remain frozen. Exact sequence accuracy is still 0%, so this child is not promoted to native browser or WebGPU deployment.",
+    "webgpu_export_allowed": false
+  },
+  "heads": {
+    "after": {
+      "route_accuracy": 1.0,
+      "rows": 186,
+      "selector_top1_accuracy": 0.8494623655913979,
+      "tool_rows": 186
+    },
+    "before": {
+      "route_accuracy": 1.0,
+      "rows": 186,
+      "selector_top1_accuracy": 0.8494623655913979,
+      "tool_rows": 186
+    }
+  },
+  "kind": "localagent_mind2web_realistic_sft_and_weight_receipt",
+  "loss_history": [
+    1.7433174848556519,
+    1.6815730333328247,
+    1.8822975158691406,
+    1.6447927951812744,
+    1.9096043109893799,
+    1.9994467496871948,
+    2.5552616119384766,
+    1.8497449159622192,
+    1.3754591941833496,
+    2.4802534580230713,
+    1.3419808149337769,
+    1.4249306917190552
+  ],
+  "native_canary": {
+    "benchmark_id": "mcpmark",
+    "claim_boundary": "Four MCPMark Playwright standard task fixtures were run with the current LocalAgent checkpoint, the pinned @playwright/mcp stdio server, live browser navigation, and pinned task verifiers. This is a native service diagnostic, not an official MCPMark split or leaderboard score: the MCPMark user simulator, verified/official aggregation, and other services were not executed.",
+    "dataset": {
+      "name": "MCPMark",
+      "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+      "service": "playwright",
+      "suite": "standard",
+      "tasks_requested": 1,
+      "url": "https://github.com/eval-sys/mcpmark"
+    },
+    "environment": {
+      "external_api_called": true,
+      "headless": true,
+      "mcp_server_executed": true,
+      "official_split_verified": false,
+      "server": "@playwright/mcp@0.0.68",
+      "user_simulator_executed": false
+    },
+    "kind": "localagent_mcpmark_native_playwright_current_checkpoint",
+    "model": {
+      "bytes": 52247906,
+      "path": "/private/tmp/m448-mind2web-realistic-mixture.pt",
+      "sha256": "2f7a6c933275b72ee53568bbd3d8e30840ba8c57b9c5f760213026db54003844"
+    },
+    "receipt_self_sha256": "f1ccc4ee73cad1dc1ddd3babe776ede60acd80a56800394f4a9af581e8803979",
+    "results": [
+      {
+        "category": "eval_web",
+        "messages_sha256": "d122ea0c86a0eae91356392e2fd931f040b34bdf31c25b347d5b7a2f04b0e595",
+        "server_error": null,
+        "task": "playwright/standard/eval_web/extraction_table",
+        "task_id": "extraction_table",
+        "tool_count": 22,
+        "turns": [
+          {
+            "arguments": {
+              "url": "https://eval-web.mcpmark.ai/extraction"
+            },
+            "output_sha256": "11a9a24f9b576fcb334ef83aa20ddd9e2daf65916962d8a76582e96a7177aa59",
+            "result_is_error": false,
+            "result_sha256": "e8f2d7df5d78b8ee8ef4f58df4ca0d3fbd4003bc8040f3ed2d65080f3c344e31",
+            "tool": "browser_navigate",
+            "turn": 1
+          },
+          {
+            "arguments": {},
+            "output_sha256": "351ce2759b94df8fb2c8eb3192da84fa34e34a03d40e95c659bb97c468950659",
+            "result_is_error": false,
+            "result_sha256": "09318d3531f6d5da4b4b056e65baf94bc0491916acec808733cea8c34eb769c0",
+            "tool": "browser_snapshot",
+            "turn": 2
+          },
+          {
+            "arguments": null,
+            "output_sha256": "5977ca6bf8d5e6c5ff7be2ad78ecaa9a38346be6baf5e303e196c4120ca220c0",
+            "tool": null,
+            "turn": 3
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "20bd0169aa64a14e07e66a26d4be43b6151dee2f583770045aa02ceb0458a841",
+        "verifier_stderr_tail": "| MCP_MESSAGES: /private/tmp/mcpmark-playwright-extraction_table-yeu17m47/messages.json\n|\n| Model response (first 500 characters): I cannot complete this request....\n|\n| \u2717 CSV data not found in response\n",
+        "verifier_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stdout_tail": ""
+      }
+    ],
+    "schema_version": 1,
+    "summary": {
+      "runtime_errors": 0,
+      "tasks": 1,
+      "verifier_failures": 1,
+      "verifier_passes": 0
+    },
+    "task_source": {
+      "task_root_revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+      "verifiers_executed": true
+    }
+  },
+  "parent_checkpoint": {
+    "bytes": 52246937,
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "protocol": {
+    "batch_size": 1,
+    "device": "cpu",
+    "head_init": "parent",
+    "head_steps": 0,
+    "learning_rate": 1e-05,
+    "max_seq_len": 512,
+    "seed": 2027,
+    "selector_pool": "realistic",
+    "steps": 12
+  },
+  "receipt_self_sha256": "e3933525877b8542f6ab1c0544d9edeb4f909c7615f0e433200f1d8d38a260fd",
+  "schema_version": 1,
+  "source_artifacts": {
+    "training_report": {
+      "bytes": 5175,
+      "path": "/private/tmp/m448-mind2web-realistic-mixture.json",
+      "sha256": "1081aba9a79d11bda6121a7dda3de63fdaa5c81f03ed4859841658735ab1d6a5"
+    },
+    "weight_report": {
+      "bytes": 19714,
+      "path": "/private/tmp/m448-mind2web-realistic-weight-analysis.json",
+      "sha256": "eb647b63b3d5d2901560dbc8eb766290be28b445f8ce981add7f5a422df1461f"
+    }
+  },
+  "teacher_forced": {
+    "eval": {
+      "assistant_loss_tokens": 5004,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.790167865707434,
+      "mean_loss": 1.4537212865815745,
+      "rows": 32
+    },
+    "train": {
+      "assistant_loss_tokens": 15996,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.7803825956489122,
+      "mean_loss": 1.5202614206408047,
+      "rows": 96
+    }
+  },
+  "teacher_forced_before": {
+    "eval": {
+      "assistant_loss_tokens": 5004,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.7272182254196643,
+      "mean_loss": 1.8302576398963837,
+      "rows": 32
+    },
+    "train": {
+      "assistant_loss_tokens": 15996,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.7171167791947987,
+      "mean_loss": 1.8735087199877667,
+      "rows": 96
+    }
+  },
+  "token_accounting": {
+    "dataset_token_accounting": {
+      "decay": null,
+      "main": {
+        "input_tokens": 32692,
+        "loss_tokens": 15996,
+        "sources": {
+          "multi_turn": {
+            "input_tokens": 32692,
+            "loss_tokens": 15996,
+            "rows": 96
+          }
+        }
+      }
+    },
+    "fixed_horizon_progress": {
+      "completed_optimizer_updates": 12,
+      "partial": false,
+      "planned_optimizer_updates": 12
+    },
+    "lm_sampling": {
+      "mode": "iid_with_replacement_v1"
+    },
+    "loss_components": {
+      "lm_loss": [
+        1.7433174848556519,
+        1.6815730333328247,
+        1.8822975158691406,
+        1.6447927951812744,
+        1.9096043109893799,
+        1.9994467496871948,
+        2.5552616119384766,
+        1.8497449159622192,
+        1.3754591941833496,
+        2.4802534580230713,
+        1.3419808149337769,
+        1.4249306917190552
+      ],
+      "optimization": [
+        1.7433174848556519,
+        1.6815730333328247,
+        1.8822975158691406,
+        1.6447927951812744,
+        1.9096043109893799,
+        1.9994467496871948,
+        2.5552616119384766,
+        1.8497449159622192,
+        1.3754591941833496,
+        2.4802534580230713,
+        1.3419808149337769,
+        1.4249306917190552
+      ],
+      "router_aux": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "router_weighted": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "token_accounting": {
+      "input_tokens": 4195,
+      "loss_tokens": 2067,
+      "sources": {
+        "multi_turn": {
+          "input_tokens": 4195,
+          "loss_tokens": 2067,
+          "rows": 12
+        }
+      }
+    },
+    "token_accounting_scope": "language_model_microbatches"
+  },
+  "weight_transfer": {
+    "compatibility": {
+      "added_tensors": [],
+      "config_mismatches": {},
+      "removed_tensors": [],
+      "shape_mismatches": {},
+      "shared_tensor_count": 51,
+      "tokenizer_sha256_equal": true
+    },
+    "groups": {
+      "action_heads": {
+        "base_l2": 87.12721149777144,
+        "delta_l2": 0.0,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.0,
+        "target_l2": 87.12721149777144
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.686243041747026,
+        "delta_l2": 0.05270366973076524,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0010196846709906238,
+        "target_l2": 51.68678448674391
+      },
+      "embedding": {
+        "base_l2": 76.26811513665427,
+        "delta_l2": 0.12181661057459324,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.001597215433426235,
+        "target_l2": 76.3120417347154
+      },
+      "ffn": {
+        "base_l2": 50.599417154543154,
+        "delta_l2": 0.06072422601617293,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0012000973416493336,
+        "target_l2": 50.599316925189164
+      },
+      "normalization": {
+        "base_l2": 21.431829234008912,
+        "delta_l2": 0.0008460163347002377,
+        "parameters": 384,
+        "relative_delta_l2": 3.9474760901777995e-05,
+        "target_l2": 21.432100879091617
+      }
+    },
+    "recommendation": {
+      "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+      "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+      "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+      "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+    }
+  }
+}

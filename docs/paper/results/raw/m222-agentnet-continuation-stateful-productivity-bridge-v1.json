@@ -1,0 +1,86 @@
+{
+  "claim_boundary": "This is a deterministic in-memory local state-machine bridge after AgentNet text continuation. It uses no external account, MCP server, browser session, emulator, or public benchmark task. Oracle success validates the fixture; model success is diagnostic only and must not be reported as email, Notion, BrowserGym, MCPMark, or native WebGPU capability.",
+  "comparison": {
+    "warm_minus_random_accepted_steps": 4,
+    "warm_minus_random_attempt_success_rate": 0.08695652173913042,
+    "warm_task_complete_rate": 0.2,
+    "random_task_complete_rate": 0.2,
+    "warm_email_task_complete_rate": 0.0,
+    "warm_notion_task_complete_rate": 0.0,
+    "decision": "retain_warm_continuation as a partial stateful transfer diagnostic; do_not_promote because email, Notion, browser, and recovery workflows remain incomplete"
+  },
+  "kind": "localagent_agentnet_continuation_stateful_productivity_bridge",
+  "runtime": {
+    "suite": "localagent-stateful-productivity-v1",
+    "tool_pool_size": 63,
+    "tool_pool_sha256": "fd3c5d30a3c7fcb2c010c04e79e1b47cd88e3897712e98f5a144d09699f25694",
+    "tasks": 5,
+    "expected_steps": 16,
+    "max_attempts_per_step": 3,
+    "selector_first": true,
+    "environment_executed": true,
+    "public_benchmark": false,
+    "external_accounts_used": false,
+    "tool_side_effects": "in_memory_only"
+  },
+  "schema_version": 1,
+  "source": {
+    "training_receipt": "m221-agentnet-public-continuation-transfer-v1",
+    "dataset_url": "https://huggingface.co/datasets/xlangai/AgentNet",
+    "warm_checkpoint": {
+      "path": "/private/tmp/m221-agentnet-warm-child.pt",
+      "sha256": "316dca88d058ed6da78525115f811038e0faf3bf78a35208329a99b0bd758f8f"
+    },
+    "random_checkpoint": {
+      "path": "/private/tmp/m221-agentnet-random-child.pt",
+      "sha256": "ae3741cd52bf0dde584755e0da1853bc07a394cb3679444cb9657c5b7fd97354"
+    }
+  },
+  "warm": {
+    "receipt": {
+      "path": "/private/tmp/m221-agentnet-warm-stateful.json",
+      "bytes": 7362,
+      "sha256": "2c7e2a840002f537ce18bf22ae419ad07b1d3eff3bebd9fac741ab1bab44fd2d",
+      "receipt_self_sha256": "7e5b4d5809e4038e145de1bfd62ecb81bec619e671277be355edde22a9166278"
+    },
+    "accepted_steps": 5,
+    "attempts": 46,
+    "attempt_success_rate": 0.10869565217391304,
+    "task_complete_rate": 0.2,
+    "by_family": {
+      "email": {"accepted_steps": 0, "task_complete_rate": 0.0},
+      "notion": {"accepted_steps": 1, "task_complete_rate": 0.0},
+      "browser": {"accepted_steps": 1, "task_complete_rate": 0.0},
+      "recovery": {"accepted_steps": 2, "task_complete_rate": 0.0},
+      "abstention": {"accepted_steps": 1, "task_complete_rate": 1.0}
+    },
+    "model_event_sha256": "8d5e88ef10d66fcd819da2c2c79a035704c56ff3ec6ff838a36cd1bb9349f688"
+  },
+  "random_control": {
+    "receipt": {
+      "path": "/private/tmp/m221-agentnet-random-stateful.json",
+      "bytes": 7367,
+      "sha256": "fb592345acd614115c5586dd7f81b31e4731992a6c938544b696421412bbf5b3",
+      "receipt_self_sha256": "2dcb9ddd88e94f9a828ba45a31312cd5a97ecb91d780dc922767fbc9249297c1"
+    },
+    "accepted_steps": 1,
+    "attempts": 46,
+    "attempt_success_rate": 0.021739130434782608,
+    "task_complete_rate": 0.2,
+    "by_family": {
+      "email": {"accepted_steps": 0, "task_complete_rate": 0.0},
+      "notion": {"accepted_steps": 0, "task_complete_rate": 0.0},
+      "browser": {"accepted_steps": 0, "task_complete_rate": 0.0},
+      "recovery": {"accepted_steps": 0, "task_complete_rate": 0.0},
+      "abstention": {"accepted_steps": 1, "task_complete_rate": 1.0}
+    },
+    "model_event_sha256": "850c66d23a7ab8c9162b5bad8f925f48659e6e6b4f421e6078558789720a9fb3"
+  },
+  "oracle": {
+    "task_complete_rate": 1.0,
+    "accepted_steps": 16,
+    "attempt_success_rate": 1.0,
+    "oracle_event_sha256": "9df12b73719cf53fde32debf557c06944115f7a072ad02a5b9798a70af6ec4d2"
+  },
+  "receipt_self_sha256": "9d128d3ed9019aaf2ea46cb370956bd257a8aa4cd05c03c244ebe3329f95ebc4"
+}

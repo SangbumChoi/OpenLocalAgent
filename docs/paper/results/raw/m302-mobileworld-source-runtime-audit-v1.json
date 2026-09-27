@@ -1,0 +1,1312 @@
+{
+  "benchmark_contract": {
+    "actions": [
+      "tap",
+      "swipe",
+      "type",
+      "keyevent",
+      "wait",
+      "mcp_call"
+    ],
+    "apps": 20,
+    "domains": {
+      "calendar": 14,
+      "chrome": 4,
+      "gmail": 21,
+      "mall": 13,
+      "map": 10,
+      "mastodon": 41,
+      "messages": 23,
+      "native": 33,
+      "settings": 7,
+      "work": 35
+    },
+    "features": [
+      "long_horizon_cross_app_workflows",
+      "agent_user_interaction",
+      "mcp_augmented_tasks",
+      "deterministic_backend_and_local_storage_verification"
+    ],
+    "observation": [
+      "screenshot",
+      "accessibility_tree",
+      "backend_state"
+    ],
+    "tasks": 201
+  },
+  "claim_boundary": "Pinned MobileWorld source/task-definition audit only. The profiler parses the public task classes and checks local command availability; it does not launch the privileged Docker/KVM Android environment, use ADB, call MCP services, send email, or execute a model. No native score or training-data admission is claimed.",
+  "dataset": "Tongyi-MAI/MobileWorld",
+  "execution": {
+    "native_environment_executed": false,
+    "official_runner_executed": false,
+    "score": null,
+    "task_rows_copied_to_training": 0
+  },
+  "host_preflight": {
+    "adb_command": false,
+    "docker_command": false,
+    "kvm_device": false,
+    "machine": "arm64",
+    "qemu_command": false,
+    "release": "25.5.0",
+    "system": "Darwin"
+  },
+  "kind": "localagent_mobileworld_source_runtime_audit",
+  "license": "Apache-2.0 (source repository; benchmark assets/runtime terms remain upstream-controlled)",
+  "receipt_self_sha256": "0fe29dea99bfb7a93713f16979f4106de14041da567cd4e1e6a4da687ebfb5e3",
+  "runtime_requirements": {
+    "docker_privileged": true,
+    "host": "Linux or WSL2 with KVM; macOS support is listed as in progress upstream",
+    "mcp_credentials_for_mcp_tasks": true,
+    "model_api_credentials": true,
+    "rooted_android_avd": true,
+    "user_agent_credentials_for_interactive_tasks": true
+  },
+  "schema_version": 1,
+  "source": {
+    "files": [
+      {
+        "bytes": 14857,
+        "path": "README.md",
+        "sha256": "fbc306b3414dfdb230171358efd6eb8d67573fbb94e11487a4a7e971e2abf0d9"
+      },
+      {
+        "bytes": 12664,
+        "path": "LICENSE",
+        "sha256": "b09fcaf4fbc265223c2479c410beef2b98c5e687c78ecedf3452aa12ffc465f1"
+      },
+      {
+        "bytes": 3195,
+        "path": "pyproject.toml",
+        "sha256": "07647c89021cf5377a78032bd35cefb389873534cc250325bb39084b1ac42d50"
+      },
+      {
+        "bytes": 244,
+        "path": ".env.example",
+        "sha256": "c5debcc60cd96606ceead46b5b49892de40640d93a01661199b85a5853e434d1"
+      },
+      {
+        "bytes": 4689,
+        "path": "src/mobile_world/tasks/registry.py",
+        "sha256": "3906cb07799249624500db7139f468ded740f35b7ab6d6f6441d5a657e75a6d0"
+      }
+    ],
+    "task_definition_files": [
+      {
+        "bytes": 2235,
+        "path": "src/mobile_world/tasks/definitions/calendar/add_business_trip_with_cafe.py",
+        "sha256": "144153c2b1527a6cb9ae6c41979bc9573131ff61643254d7f62ec271d7e3aa71",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3876,
+        "path": "src/mobile_world/tasks/definitions/calendar/add_business_trip_with_cafe_ask_user.py",
+        "sha256": "a3475688101848b15be1416ca6ba9ac448d41ccee787edd89df0efb560b8df16",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1753,
+        "path": "src/mobile_world/tasks/definitions/calendar/check_conference_and_send_sms_1.py",
+        "sha256": "4e8a4a0cc85b45f4e72d33a581742185c9d506ebb95918f30e5b2a3441dc63db",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1721,
+        "path": "src/mobile_world/tasks/definitions/calendar/check_conference_and_send_sms_2.py",
+        "sha256": "aac1feb3bd9c6fd3a0a81e6945e2cface35d98321f32af7cbb32623b403b9768",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2209,
+        "path": "src/mobile_world/tasks/definitions/calendar/check_conference_duration.py",
+        "sha256": "73a2294c44734d3508498281e35e8081aec4e3f4d50c181311c00a2c7bfae8ab",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1146,
+        "path": "src/mobile_world/tasks/definitions/calendar/check_deduplicated_events.py",
+        "sha256": "c707c6993bf279be2be9002fbab8f7face971c27714b950cbc2a6ce95e5ab994",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1773,
+        "path": "src/mobile_world/tasks/definitions/calendar/check_event_and_set_alarm.py",
+        "sha256": "f84a469b10e7a46b10fbcbadc5cd86bedefc32bd37cbef8f3ea0f9c069808029",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1890,
+        "path": "src/mobile_world/tasks/definitions/calendar/check_meal_event_ask_user.py",
+        "sha256": "c64641e3627d72f92a4adcaf77664f2d97c27e22fa9f6130dbb3a3fdcabd51ff",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2127,
+        "path": "src/mobile_world/tasks/definitions/calendar/check_meeting_event_ask_user.py",
+        "sha256": "c9357b82c346d479769616e42962fb085c1a074659bede9e4133104029187c08",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2916,
+        "path": "src/mobile_world/tasks/definitions/calendar/delete_event_ask_user.py",
+        "sha256": "95bd98c08058cfc64bb1864d4f568f03c4e77b7a2ad95d090d9ff1bbad648317",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2495,
+        "path": "src/mobile_world/tasks/definitions/calendar/schedule_coffee_time_via_sms.py",
+        "sha256": "0a1fda4887e693324d1997cdd6f238845fb9437c66cde4675df517ca2ad72073",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4236,
+        "path": "src/mobile_world/tasks/definitions/calendar/schedule_lunch_via_sms.py",
+        "sha256": "b04d5159b0cef4581a09a71454a117b2c6d9567fa9f66f9dc5e0404bb51bf179",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4432,
+        "path": "src/mobile_world/tasks/definitions/calendar/schedule_lunch_via_sms_ask_user.py",
+        "sha256": "ddfbaacab438027b50e84bff772db3a7cebbb1997ca43a5d1faa43c5e7abad1f",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3310,
+        "path": "src/mobile_world/tasks/definitions/calendar/schedule_oneone_via_sms_ask_user.py",
+        "sha256": "1818f6d79e511de0418855d2552c8fbb9626b72c754ae8a37299e390ccaeaa84",
+        "task_classes": 1
+      },
+      {
+        "bytes": 7093,
+        "path": "src/mobile_world/tasks/definitions/chrome/check_github_info.py",
+        "sha256": "88a2860b1d0211e2c7668119680c9380360f83332fe8b068052f1c0049fc3931",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2415,
+        "path": "src/mobile_world/tasks/definitions/chrome/check_weather.py",
+        "sha256": "070542c439860b82c545d40f5aadc2b62508d88466924477dbd8bd1e2685dd4e",
+        "task_classes": 1
+      },
+      {
+        "bytes": 5210,
+        "path": "src/mobile_world/tasks/definitions/chrome/check_weather_ask_user.py",
+        "sha256": "ac8e4eb07aa44e47823bbf894e2623a81220698981916e79881341750e298d0c",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3581,
+        "path": "src/mobile_world/tasks/definitions/chrome/search_top_info_ask_user.py",
+        "sha256": "31cdf53efbb571ac33a0331195c66edbfc74c2a4c7d3d79e6c289aec2de7c050",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2522,
+        "path": "src/mobile_world/tasks/definitions/gmail/accept_meeting.py",
+        "sha256": "c4e64bd82c8f97502494b903994752074b51cc604f2840ad39f64350a317d391",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2522,
+        "path": "src/mobile_world/tasks/definitions/gmail/cancel_meeting.py",
+        "sha256": "fbc1003f529b75e2a517f97c64b666e6a7b5ac2491fe3bef0f07a7b4a4c0ff54",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3497,
+        "path": "src/mobile_world/tasks/definitions/gmail/check_conference_location.py",
+        "sha256": "27fcbf70b2c4942923fe2752d3b532234920d44fcfc5aee3e8ed5d2a996b0324",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2558,
+        "path": "src/mobile_world/tasks/definitions/gmail/check_depart_time.py",
+        "sha256": "7a712803bec36149b9427d7547277eed0741c9b22f40b7d6ce3feb9386f740e0",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2383,
+        "path": "src/mobile_world/tasks/definitions/gmail/check_event_time.py",
+        "sha256": "24ed02cf879e394a7f097449b0649baa6b3ecc12659cbd400ab44bcc4aa1d903",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3289,
+        "path": "src/mobile_world/tasks/definitions/gmail/check_interview_times.py",
+        "sha256": "1f7ea81cb8aed097a189f418efb735318f5ea7b68b71811b1c404cb1a7b07132",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2506,
+        "path": "src/mobile_world/tasks/definitions/gmail/check_registration.py",
+        "sha256": "fcabd32e358860f0d7fcf4fc0c37a77599fd8fd99196471a932e1cfde9873a35",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2555,
+        "path": "src/mobile_world/tasks/definitions/gmail/check_set_meet_time.py",
+        "sha256": "94a195d9b60caf89e18428548de3c0ad06b5ba1c1297e07fb3285d64f53027b1",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3205,
+        "path": "src/mobile_world/tasks/definitions/gmail/compare_esg_ratings_email.py",
+        "sha256": "bbe0267da9c29c7a9c4f22fd56bef53c75ab89c1297e1b389b0baddc47be9010",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3341,
+        "path": "src/mobile_world/tasks/definitions/gmail/download_send_receipt.py",
+        "sha256": "08c68e161c56a5c71b5af7e3452601fa1b461c639ad5e05dd374608d11b784fa",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3160,
+        "path": "src/mobile_world/tasks/definitions/gmail/estimate_bike_route.py",
+        "sha256": "ee7b70daba77358aa29685a1a48fd9a96c4017307afe62cb95e1a4bbacd73aef",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4170,
+        "path": "src/mobile_world/tasks/definitions/gmail/graduation_mass_email.py",
+        "sha256": "cd5029aff604aab364a74a8a688855b41c08bd9027545ee1cdeff73be987930e",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2875,
+        "path": "src/mobile_world/tasks/definitions/gmail/plan_route_task.py",
+        "sha256": "f02e690c71d1abd15100cd30a7e16388e637d9d98560a8c837bc0abdb9002dc2",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2581,
+        "path": "src/mobile_world/tasks/definitions/gmail/reply_email_via_sms_ask_user.py",
+        "sha256": "2bf26562cad50f6a20042611c91424ca9854217e0910b1645b75ab3a73d83980",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2624,
+        "path": "src/mobile_world/tasks/definitions/gmail/request_carpooling.py",
+        "sha256": "24fba7e1fb3445be24ab3c16a43ecb69038112651289eaaaf98f7f48a3a92ba3",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3741,
+        "path": "src/mobile_world/tasks/definitions/gmail/send_forms.py",
+        "sha256": "0683cce7b852167b2f753625482f1267393ef398460aa558d857e14f22ea2cbc",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3135,
+        "path": "src/mobile_world/tasks/definitions/gmail/send_interview_email.py",
+        "sha256": "662763f1216f0a88bdf0b8cacb2ba08494a91e2c4a526f2e00795aa15bc25412",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2776,
+        "path": "src/mobile_world/tasks/definitions/gmail/send_phone_number_ask_user.py",
+        "sha256": "26187a3c3214a4358869419839ef0f43dce37cfad0d55cbda06cedf806f98231",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2417,
+        "path": "src/mobile_world/tasks/definitions/gmail/send_waiver.py",
+        "sha256": "eb5f31350ca587fa41b45e7cfd9623fbb739939a6138810e476a9ddda65ef876",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3290,
+        "path": "src/mobile_world/tasks/definitions/gmail/suggest_paper.py",
+        "sha256": "c32ad72076c9b54649c9a470c23ffe4d7a3d2136a356bdb9cd58f148885a9554",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2577,
+        "path": "src/mobile_world/tasks/definitions/gmail/thanksgiving_prep.py",
+        "sha256": "ee800d1f1e0e7532f98190fcf9365ff825e1ddd307a60c9c296832ad9ec9f74c",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3801,
+        "path": "src/mobile_world/tasks/definitions/mall/buy_cola_ask_user.py",
+        "sha256": "080d0ea81881360f73242b90dbd96e5e141fc0a3889398a72404ae2a213e3259",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3653,
+        "path": "src/mobile_world/tasks/definitions/mall/buy_shoes_ask_user.py",
+        "sha256": "8e90e7ffa6d50c38162f118396bc608880c50444a0189ffa9289dfcfd22cfa57",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4898,
+        "path": "src/mobile_world/tasks/definitions/mall/calculate_cart_prices_by_owner_ask_user.py",
+        "sha256": "001b311038b0d1aa4112b893582d4007969be05b3de99f9ca934acb841a76d48",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2714,
+        "path": "src/mobile_world/tasks/definitions/mall/cart_info_notification.py",
+        "sha256": "eb0d5f58c0988d0ffb14fb687771b09ce041e56f18ff4dfc6c958db33eb5c4a3",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1714,
+        "path": "src/mobile_world/tasks/definitions/mall/cart_management.py",
+        "sha256": "27aa0951cac6d9248c34827b74be1873e6ce7469b2d58f548ec3020270e225f4",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1941,
+        "path": "src/mobile_world/tasks/definitions/mall/cart_management_ask_user.py",
+        "sha256": "5134a32c5b5b750cce5e8028ef9db1e72343a2b06adcbd9b8c8d1e97ddd04a36",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2323,
+        "path": "src/mobile_world/tasks/definitions/mall/check_cart_price_1.py",
+        "sha256": "41ca90d9cb22ebd3b3b769d40f0afd69f00eb67095f6ddbbc4dc6166253eefd7",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3633,
+        "path": "src/mobile_world/tasks/definitions/mall/check_purchased_item.py",
+        "sha256": "84d91044fd71374a89030d06eb547571b74440c0c443c46bd0748b27424f4378",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3403,
+        "path": "src/mobile_world/tasks/definitions/mall/delete_items_ask_user.py",
+        "sha256": "711f459c326b1a41521990bd2af882cc2c0093c8fd79fc872668baec5bfb452e",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2190,
+        "path": "src/mobile_world/tasks/definitions/mall/item_checkout.py",
+        "sha256": "d0aa5c52ded4580352baf65f7867c25c20bc1bef35417e05167331ec83dd920a",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2273,
+        "path": "src/mobile_world/tasks/definitions/mall/recent_total_expense.py",
+        "sha256": "4e85d40e3508ba733b2bc20c9957e3bbf1e79115eebd4ea228ee6c65d1135554",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1676,
+        "path": "src/mobile_world/tasks/definitions/mall/search_item_and_checkout.py",
+        "sha256": "9f477766834cb67a38112a95b55e7f7fb9eb837fa1db3c51284fea86e204dcef",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3107,
+        "path": "src/mobile_world/tasks/definitions/mall/search_white_sneakers_checkout_ask_user.py",
+        "sha256": "0d29bf5fc69b5e1139cb513d4a24f6a144a66b636e29934f6296376c65e045e1",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3299,
+        "path": "src/mobile_world/tasks/definitions/map/check_distance_ask_user_1.py",
+        "sha256": "c872ed8b5c005d3d61ea3360dcbcbe70b45c58a65854d3bd61a6e3b7e7ba234a",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3443,
+        "path": "src/mobile_world/tasks/definitions/map/check_distance_ask_user_2.py",
+        "sha256": "f0e9ef483995f9582edfef4b5688b5361c5229ee03565f1a87602e038f7941bd",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1640,
+        "path": "src/mobile_world/tasks/definitions/map/check_distance_mcp.py",
+        "sha256": "e7e34c83228dcfa1c9d962c68e43529ef957729c0fe31bf5b75331bfaf04c54f",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1490,
+        "path": "src/mobile_world/tasks/definitions/map/check_distance_mcp_2.py",
+        "sha256": "638be4576e1dd4e0b9cecfae4bead5dcacffc81aec9121c0bbf7632dabeca106",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1463,
+        "path": "src/mobile_world/tasks/definitions/map/check_neighbours.py",
+        "sha256": "4280dcb8399b92fccb083340489178dba274b4f2a6c94d00b04010536232787b",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1585,
+        "path": "src/mobile_world/tasks/definitions/map/check_neighbours_ask_user.py",
+        "sha256": "8fb05ef71b6083f7419655b14be78d86e32d43f5a0be6974193f15c8d9263dc9",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1810,
+        "path": "src/mobile_world/tasks/definitions/map/check_phone_numbers.py",
+        "sha256": "56d03c2759773af17f50c1392d9045e36e895f33c851bddebe8737325607a87b",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1963,
+        "path": "src/mobile_world/tasks/definitions/map/check_phone_numbers_ask_user.py",
+        "sha256": "78f7ea7c6ca09a03e2552a1744a271a515f778f7e3f9d40f75ec81b9d17d62cc",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4137,
+        "path": "src/mobile_world/tasks/definitions/map/download_poi_images_mcp.py",
+        "sha256": "2511601b93e21d6bfa520cd7cf516337d1a22b552737623188f5aaba16819d7d",
+        "task_classes": 1
+      },
+      {
+        "bytes": 6069,
+        "path": "src/mobile_world/tasks/definitions/map/text_arrival_time.py",
+        "sha256": "a2d0eec721b5923d5c299b363139ae4518a1d2845ab773281bbb3e23e689b18e",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2008,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_add_bookmark.py",
+        "sha256": "efbf5c32f3b87d3eae26b8a4aca41887934395ffe16489c03f60f28082f40124",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2017,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_add_featured_hashtags.py",
+        "sha256": "bb3ae86ba111bfbe1eb42564e268a23d59fdf5b6391e151a147b9a06d5826de5",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4287,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_adjust_toots.py",
+        "sha256": "6e68dc857bf733cd20ff7a170dd93f6b4c8c1a69700930a5723faabd039c3528",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4967,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_calendar_multi_memos.py",
+        "sha256": "a8dc25516c8f1e61badc67d30910cf6298f1650aab1cf79aa15e24f79d07afad",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2769,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_change_header.py",
+        "sha256": "304cb404771b4579b925e8b25af2b8b7ffa18b7c7037f0176bf6236be32d9ebb",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1938,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_change_language.py",
+        "sha256": "2c82735bb8f0dbeb07ac1ac1911891dc3450b752943d68356444c2ac9660a51d",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2258,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_conditional_favo.py",
+        "sha256": "942804a2e35701acaf5012e0077501f43d7025abfd67b1c21c6cb9a0479cc5a7",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3288,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_create_calendar_memo.py",
+        "sha256": "bdee9c44da4d939a8888d138da5efc823ec7effc046deab9557c6f4376e4f8ab",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2984,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_create_list.py",
+        "sha256": "cbe589565ba0892cb658e9b6fbcd3ec56680926bb6d24a8d936b0adf9085476b",
+        "task_classes": 1
+      },
+      {
+        "bytes": 10233,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_dump_img_ask_user.py",
+        "sha256": "3aa9e13ef6cfd6ed312b8cb25cb37a8b22f51101948a3c083f06d08b20b39a67",
+        "task_classes": 1
+      },
+      {
+        "bytes": 6113,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_dump_qcode_ask_user.py",
+        "sha256": "ca648f4205e99e24896ee3a32bb51b908fa5376dea8db2b603a2e9481c584ac8",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2473,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_export_follows.py",
+        "sha256": "29c124eaa7724d1e39ae1f0cf7eec4daddbc680a0d98e89a10d4ed837928fbeb",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2266,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_favorite_toots.py",
+        "sha256": "6e2ca20e1683b4947cfa5c6b881584e2614318114cd8c99c6acf6a78c1c06f45",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2136,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_filter_language.py",
+        "sha256": "c0b3440f485e5710ef43c8e5a3b9a6dbde704eec71f0ade9b8f4b133e84a0579",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1816,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_follow.py",
+        "sha256": "0163c5670d7faa72bf3e275a48907a027bbdfda6fc7b813c83d953ab3afbd96b",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2281,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_get_server_info.py",
+        "sha256": "7eec0b78d3c052df8fa394527d8c532312fe3887e576302eefd8744d42fdc25b",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2673,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_import_muted.py",
+        "sha256": "2ad41a182a0ea3fa0d67320afee914aed0530f1b9a7fa11ed5147026c88992d9",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3655,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_invite.py",
+        "sha256": "79aa98df2ac174a344cff7cd4a2c58c67bbb99a5544c34ba3efa4f6e55f54477",
+        "task_classes": 1
+      },
+      {
+        "bytes": 5129,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_mall_purchase_commodity.py",
+        "sha256": "991355b775f4cd29922c2e235785d8d24161a5e057409f4eb28915a92af3f0f6",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3971,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_mall_share_order.py",
+        "sha256": "d86993fc2a2c7e435f0393d69aff937d8c84b8fd98b7612ea3fa2fd334e34edf",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1995,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_manage_hashtags.py",
+        "sha256": "c1980e126d4bb712dc7e5a873a31955653562641d222534dec278492c1eccb54",
+        "task_classes": 1
+      },
+      {
+        "bytes": 5933,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_manage_multi_list.py",
+        "sha256": "7ed31cbe617e3aaf514f99ce8287e6ca203e72a25336797791e83d49ab554276",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3210,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_mattermost_post_notice.py",
+        "sha256": "240ddf5ea255514647b8ecef3af00c8ebcabac9a25729610803efed33d049d6e",
+        "task_classes": 1
+      },
+      {
+        "bytes": 7273,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_multi_invite.py",
+        "sha256": "2f7b5af8946f85887131c380c1cda3c95365f4720a465a2851a4bf950618b5f7",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4299,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_new_filter.py",
+        "sha256": "209251bbab83e6e4b9b6471234ab72c924672bdc95b50b2689c74fd292fa70df",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1738,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_new_post.py",
+        "sha256": "fb7d98ce5360cefa9bf6486b8b5dc5eedecc837dfce935d833f9efb4e5032e37",
+        "task_classes": 1
+      },
+      {
+        "bytes": 5684,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_open_automated_deletion.py",
+        "sha256": "75d7e3c087859963b7e3d72661814ad74d15574301fd393f661f44b86fa658c6",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1976,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_pin_toots.py",
+        "sha256": "8f1d9f9bd344249e254adf8e4e206c8a87487b0ec647a4aa794317d1e2460034",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2962,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_post_edited_photo.py",
+        "sha256": "3ac3de78582a6e4cb5cec0ae131c731d2114f7b4a97a8cdb0973f89ed3c3c8ac",
+        "task_classes": 1
+      },
+      {
+        "bytes": 5005,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_post_poll.py",
+        "sha256": "da805dbfbe4263ca1094eaefd0af4912c4bbe0158c0cc67c2ae5f6a47529d91d",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2014,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_remove_bookmark.py",
+        "sha256": "80882f7d87094ee1c281ed758dcc95cb3ead7d1da138c9f7ab013b756f9cacba",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2629,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_reply.py",
+        "sha256": "59db0caad50a4f7ac1b22514ef6c30998a5dfbd6ef8bd7c0930481e9686c9738",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4151,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_report.py",
+        "sha256": "d8e9ce673e9388ce9655650878316ededb7dad9c54f73bf757057b8522ceca19",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2233,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_revise_photo_alt.py",
+        "sha256": "222bfa97c065ce7847bc11a9c51d806c9652f17016e4db9e9f4e8e55ac6fb1ec",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3061,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_revise_poll.py",
+        "sha256": "497b16e117ee96a44b6144850562173c4fd8c08a6894bb3478e1eca053673262",
+        "task_classes": 1
+      },
+      {
+        "bytes": 5780,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_save_photos.py",
+        "sha256": "d40bf8f997c068e109a5a8951c45fab2049e3944dca5ef7edc50a994a4d40779",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4108,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_server_info_report.py",
+        "sha256": "bc1f402c2a35a9db061534bb2730be162f5bcdee4299e1101060902096fe3726",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4064,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_share_location.py",
+        "sha256": "1df09b86652dcf32375abd021d895c5e5b07d4e5d68a745609a49d4e2e28f60c",
+        "task_classes": 1
+      },
+      {
+        "bytes": 10526,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_share_photos_ask_user.py",
+        "sha256": "8e8c2327408af8daae220e36253c64af2671b85866e9b8b6a6fe2fb885a7b478",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2349,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_unfollow.py",
+        "sha256": "c23332ed7ac593311678956bc0d193fd363267ef330e52e0683733df06273f4a",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3242,
+        "path": "src/mobile_world/tasks/definitions/mastodon/mastodon_update_contacts.py",
+        "sha256": "378e52f689111eac6e270f10919bf44f67ebd76b76e52a6d3f4fe1024992e91d",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3185,
+        "path": "src/mobile_world/tasks/definitions/messages/check_candidate_ask_user_1.py",
+        "sha256": "1c042cd85c3e99cad8b86fe2ed035ba849754a219e1d39b7e9c8b72e3454c822",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3183,
+        "path": "src/mobile_world/tasks/definitions/messages/check_candidate_ask_user_2.py",
+        "sha256": "22f5c93230e8a97dc5714802e22bdffe90a9a83045a4fa9d4802f3690c7e5585",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2722,
+        "path": "src/mobile_world/tasks/definitions/messages/compare_apartments_distance_sms.py",
+        "sha256": "da30553ff88883b90265920444806c07e0e919b442c294b2db87415c99cf5eeb",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2647,
+        "path": "src/mobile_world/tasks/definitions/messages/delete_messages_ask_user.py",
+        "sha256": "05b432a59a6fc030d370488009950f3507ab5b966fe0a87f4d795527b342c7d2",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4571,
+        "path": "src/mobile_world/tasks/definitions/messages/delete_single_message_ask_user.py",
+        "sha256": "c66d666d5d9074ac6a82f8f533fc5118491b0898190c30c7989a55783ebbf8e3",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1576,
+        "path": "src/mobile_world/tasks/definitions/messages/fact_check_lemon_water_sms.py",
+        "sha256": "d8533efe0b92801f9c75f62a67738c6a32e15c8c2cf24370a1d669efea5691a6",
+        "task_classes": 1
+      },
+      {
+        "bytes": 6482,
+        "path": "src/mobile_world/tasks/definitions/messages/plan_commute_route_sms.py",
+        "sha256": "1a2c3c41bdee88030bc34f7c752b56a190956b66e83dbf6c9827505d7e5ca04f",
+        "task_classes": 1
+      },
+      {
+        "bytes": 8094,
+        "path": "src/mobile_world/tasks/definitions/messages/plan_cycling_route_sms.py",
+        "sha256": "977d56a59d3287a15a20d3a816a02632535304ee18cefcde679d0544956baa16",
+        "task_classes": 1
+      },
+      {
+        "bytes": 6117,
+        "path": "src/mobile_world/tasks/definitions/messages/plan_driving_route_sms.py",
+        "sha256": "777d89a427fdcf967762afc108387d8428f9b86fb6dd64ad7b38943d2375a696",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4575,
+        "path": "src/mobile_world/tasks/definitions/messages/plan_taxi_route_sms.py",
+        "sha256": "0ffffe468faa5725f3786f298992d581700109059e97a1e48573184d61d76999",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2996,
+        "path": "src/mobile_world/tasks/definitions/messages/say_hello_roommates_ask_user_1.py",
+        "sha256": "771a33564f50d8d45797f7d8f0fcfc3817848b364543c38f87839e4fe99a4dee",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3093,
+        "path": "src/mobile_world/tasks/definitions/messages/say_hello_roommates_ask_user_2.py",
+        "sha256": "12b9a354d9228af0e113d146da8867586eac45e2dae4b48eddd1f480712fcbef",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1418,
+        "path": "src/mobile_world/tasks/definitions/messages/search_benchmark_tasks_sms.py",
+        "sha256": "5e127e30f349ec1fdbd2162f1b1acb03e5b01730df446edf96f23e887410e8af",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2244,
+        "path": "src/mobile_world/tasks/definitions/messages/search_github_issues_sms.py",
+        "sha256": "ae3f3e8be133b733246cfa4ba4f46d3b92f7c3ed44f37f5784603fac48f88624",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1742,
+        "path": "src/mobile_world/tasks/definitions/messages/search_pharmacy_task.py",
+        "sha256": "78237dfc8488eb066509674157f104582879bc158fb862b7079480813ed4016e",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1807,
+        "path": "src/mobile_world/tasks/definitions/messages/send_arxiv_papers_sms.py",
+        "sha256": "c403915c51e7a51ab07845576512845ce6c6108b00ddab7469f363af0da1e9d6",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2209,
+        "path": "src/mobile_world/tasks/definitions/messages/send_high_dividend_stocks_sms.py",
+        "sha256": "08e6bf6a5d16123ddd806ec2030d923a479e9416c68e3c89a0d7d0de3f75663b",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2752,
+        "path": "src/mobile_world/tasks/definitions/messages/send_interview_invitation.py",
+        "sha256": "35c59c279bdc8cd881891d9c5d4e3b4b30625199cf3c5810e29043399ca00626",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1888,
+        "path": "src/mobile_world/tasks/definitions/messages/send_interview_invitation_ask_user.py",
+        "sha256": "24795f96dbc3bbfb3c877db99e466af2ec567cc5a1911b3d2e4f61fba7a2bff1",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1567,
+        "path": "src/mobile_world/tasks/definitions/messages/send_location_address_sms.py",
+        "sha256": "20562ce36d8f3af29fe633a63e8850f46cf5e12ca20190d681d26aad36992836",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2496,
+        "path": "src/mobile_world/tasks/definitions/messages/send_stock_esg_rating_sms.py",
+        "sha256": "d2d792650882146a79f7757abf67a94352c84f797d9564959364d4253b1fb730",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1835,
+        "path": "src/mobile_world/tasks/definitions/messages/send_weather_sms.py",
+        "sha256": "62f55406db0da2e983ab0ee422c3fc8ebd6dd021b5e92e570065dae720674544",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1682,
+        "path": "src/mobile_world/tasks/definitions/messages/send_webpage_audio_count_sms.py",
+        "sha256": "11789dd40aa354646e8c0df886a8f27c78d00d981ba0373e4cd9b841f8ac24aa",
+        "task_classes": 1
+      },
+      {
+        "bytes": 18581,
+        "path": "src/mobile_world/tasks/definitions/native/bid_file_rename.py",
+        "sha256": "0477527ebaced163315f2d14fb5ca2f5095c1c8c8a234036354398f4ce52f915",
+        "task_classes": 1
+      },
+      {
+        "bytes": 18868,
+        "path": "src/mobile_world/tasks/definitions/native/bid_file_rename_ask_user.py",
+        "sha256": "77f1c2930c6fb270125d0abe269b610d7710efc12b39d7c730553566595a9cd8",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3529,
+        "path": "src/mobile_world/tasks/definitions/native/check_invoice_1.py",
+        "sha256": "4d7cd1bc28d2e8e6b03c81134f71d7113fc55505fe1826328f7ee9afa64dd09c",
+        "task_classes": 1
+      },
+      {
+        "bytes": 5123,
+        "path": "src/mobile_world/tasks/definitions/native/check_invoice_2.py",
+        "sha256": "dbfbf78a9224128bdbe56553625130bad2373b9f004172a1eedaef43cb8cf44e",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3788,
+        "path": "src/mobile_world/tasks/definitions/native/check_invoice_3.py",
+        "sha256": "6451c9e4c5631546b93e83469a585fed1f3b3333c324026c1d406f3f07cac405",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4121,
+        "path": "src/mobile_world/tasks/definitions/native/check_invoice_4_ask_user.py",
+        "sha256": "6e31cf6efd14b0037dad858ddf2ec5086fb895d0bd9ff31dbe2c0fdf7521e2b0",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1898,
+        "path": "src/mobile_world/tasks/definitions/native/count_file_lines.py",
+        "sha256": "f9c97c7d598dcfa537bab4111fe5813c1ee84c38e67ccfdc20f9086adfb5b446",
+        "task_classes": 1
+      },
+      {
+        "bytes": 10168,
+        "path": "src/mobile_world/tasks/definitions/native/cv_email_ask_user.py",
+        "sha256": "c6d36efa8d7117993e1966587a720b3850cbb0f38459c2d3306f046a1f1e790f",
+        "task_classes": 1
+      },
+      {
+        "bytes": 17374,
+        "path": "src/mobile_world/tasks/definitions/native/cv_email_task.py",
+        "sha256": "2817b3aa5195c7d67f9a08e8ec5bd1669a40ad3ef48ae6106631b78071ac9f07",
+        "task_classes": 1
+      },
+      {
+        "bytes": 8320,
+        "path": "src/mobile_world/tasks/definitions/native/delete_useless_files_ask_user.py",
+        "sha256": "07f1deb9a0f9de5f5999b13096f4fd0420866a14cc06e533882cee62e9f195ef",
+        "task_classes": 1
+      },
+      {
+        "bytes": 15812,
+        "path": "src/mobile_world/tasks/definitions/native/invoice_receipt_copy_ask_user_task.py",
+        "sha256": "be1009db5b3a2d08adc34a9155624b3447870bfba1b586af449cd0590a05d503",
+        "task_classes": 1
+      },
+      {
+        "bytes": 14806,
+        "path": "src/mobile_world/tasks/definitions/native/invoice_receipt_copy_task.py",
+        "sha256": "5ed4bebd348bc025fbfcceed827c2469a258fb8550994bea52033bdc62f4bd1b",
+        "task_classes": 1
+      },
+      {
+        "bytes": 30491,
+        "path": "src/mobile_world/tasks/definitions/native/project_paper_email_task_ask_user.py",
+        "sha256": "a987c99244a110d14796dfbf442e9f5135db7b9469badbdb4a02f994392056e7",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3285,
+        "path": "src/mobile_world/tasks/definitions/native/read_paper_1.py",
+        "sha256": "1cab7e6c597479af44dc144c331dcb70d500791fe8c0c3ce92c2f1617d935f8e",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3199,
+        "path": "src/mobile_world/tasks/definitions/native/read_paper_2.py",
+        "sha256": "c46c0bb46e3d39663bf2ecaf13343fc601b9851b9f5e5aa68f443ec5d1fad2e8",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3268,
+        "path": "src/mobile_world/tasks/definitions/native/read_paper_3.py",
+        "sha256": "a756de4df0caf57eae35f72e33af0db869bab9ef0d9298ddb9249d3251b5b820",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3250,
+        "path": "src/mobile_world/tasks/definitions/native/read_paper_4.py",
+        "sha256": "55f892cddb28bf37dbe66c953107f6936d6f0ab1189c84e8f876ab46d5aa750f",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3646,
+        "path": "src/mobile_world/tasks/definitions/native/read_paper_5.py",
+        "sha256": "a409657ae4ae75d361cb49508ce26412b439e004cd4d7f96cc6ab277b57bf8bc",
+        "task_classes": 1
+      },
+      {
+        "bytes": 26931,
+        "path": "src/mobile_world/tasks/definitions/native/review_paper_email_task.py",
+        "sha256": "e217dd7149e0a88f4593bc6a2a99f73af5f6f2a1ed3fb58180ec65cbcccf0d0c",
+        "task_classes": 1
+      },
+      {
+        "bytes": 12406,
+        "path": "src/mobile_world/tasks/definitions/native/send_invoice_with_info.py",
+        "sha256": "0ca3054c289669a662dcbfb5c8552e5231f9beb0383658f405718c17f07e681e",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3465,
+        "path": "src/mobile_world/tasks/definitions/native/send_zip_files_ask_user_1.py",
+        "sha256": "b8e215666e24b9d104bbed9a904256779d93342a52e83309780d83792b679cac",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3483,
+        "path": "src/mobile_world/tasks/definitions/native/send_zip_files_ask_user_2.py",
+        "sha256": "1481ea09b377b76905b25c4be3af0b8128168c7c4b307cb300be076d297a1094",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2083,
+        "path": "src/mobile_world/tasks/definitions/native/set_alarm.py",
+        "sha256": "625d46339ff4f1527a1d33f77954dd610eeb10ca2e0d2a81f97b0ced6c17cfa7",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1992,
+        "path": "src/mobile_world/tasks/definitions/native/set_alarm_ask_user_1.py",
+        "sha256": "77da6429596dbc22809d92cf25cdb22e0cdd09a93b1412d410e1c59addf77c41",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2093,
+        "path": "src/mobile_world/tasks/definitions/native/set_alarm_ask_user_2.py",
+        "sha256": "452274edc0bdba9bbb7d643dde0ec6016dd77e1676c3b6b6a339bd0517424c3b",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2118,
+        "path": "src/mobile_world/tasks/definitions/native/set_alarm_ask_user_3.py",
+        "sha256": "2ba6e86f9ea633684da40dbd1cef8ede754500b417ef923d348bca373377b1a4",
+        "task_classes": 1
+      },
+      {
+        "bytes": 5279,
+        "path": "src/mobile_world/tasks/definitions/native/share_photos.py",
+        "sha256": "1b8d0d26d155713f47e6523a0884f446dde4e12ab4801b9c6a6874c93ced208e",
+        "task_classes": 1
+      },
+      {
+        "bytes": 5973,
+        "path": "src/mobile_world/tasks/definitions/native/share_photos_ask_user.py",
+        "sha256": "9c1316bc53787d28e5a8f7dd3c9a8ae152f184054ee25860bd1d8dfca56849a1",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2121,
+        "path": "src/mobile_world/tasks/definitions/native/sms_management.py",
+        "sha256": "3307a436fe46862fd247df2f898d07a33aa00fda26f9b4a75852f51a0af6c4e3",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1879,
+        "path": "src/mobile_world/tasks/definitions/native/sum_file_lines.py",
+        "sha256": "d46b69eeb57a9862418c0edc3d1040d3240af4041789776aec7b7052220c4064",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4894,
+        "path": "src/mobile_world/tasks/definitions/native/take_selfie.py",
+        "sha256": "b2435425f0b54bfc877a352fc7cb3f6108ed6163aba492f0cf8156d6fb836564",
+        "task_classes": 1
+      },
+      {
+        "bytes": 15898,
+        "path": "src/mobile_world/tasks/definitions/native/take_selfie_and_share_ask_user_1.py",
+        "sha256": "6d8a434e1ff7b4307c8618e0187ed30fabb24db9f4d0a498f3fc9cbe26bec343",
+        "task_classes": 1
+      },
+      {
+        "bytes": 17475,
+        "path": "src/mobile_world/tasks/definitions/native/take_selfie_and_share_ask_user_2.py",
+        "sha256": "3560b1d39560057023d1c1831bfdd46b7ae3906a5f61ed75162322aa02f4dd2e",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1745,
+        "path": "src/mobile_world/tasks/definitions/settings/adjust_brigtness_max.py",
+        "sha256": "06f6ed33ac1d222d6d34c32892c4774cdc5ee8a38545f61bed96971b7c4e6c54",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1743,
+        "path": "src/mobile_world/tasks/definitions/settings/adjust_brigtness_min.py",
+        "sha256": "78acfe6c54bd720d0e76f93ed98a1a864c6af26e436a3b787c9bfa3b060b5ffd",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1989,
+        "path": "src/mobile_world/tasks/definitions/settings/adjust_font_icon_max.py",
+        "sha256": "d36dc818443539f6063413a4850871b7c3debf07cf5bfcfd8826b0f0813e2a04",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1990,
+        "path": "src/mobile_world/tasks/definitions/settings/adjust_font_icon_min.py",
+        "sha256": "8dde433ad4586bce459c24e9de606832f7c157bcc6c6a55c83c4d7f6409563c7",
+        "task_classes": 1
+      },
+      {
+        "bytes": 7043,
+        "path": "src/mobile_world/tasks/definitions/settings/change_wallpaper.py",
+        "sha256": "813ca981b0249797625f4a4c2cd944430c812d23646396df10ce6e1396e197ae",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2262,
+        "path": "src/mobile_world/tasks/definitions/settings/close_flight_mode.py",
+        "sha256": "e5948573ca3fdeed410a5bdd991e9ca93f12bb4984b4c038cab5c3e50c250c68",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2216,
+        "path": "src/mobile_world/tasks/definitions/settings/open_flight_mode.py",
+        "sha256": "f6296573911206a72fc7292e70acec870667fd56b56ce9be4f9cadb49b598795",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2740,
+        "path": "src/mobile_world/tasks/definitions/work/assets/visual_instruction/generate_images.py",
+        "sha256": "7c81f486c2e043b6893989a26eaafc7862c4bbed2c08bf6902379b62eb0ba0c6",
+        "task_classes": 0
+      },
+      {
+        "bytes": 3591,
+        "path": "src/mobile_world/tasks/definitions/work/calculate_walking_route_email.py",
+        "sha256": "edd81f9b02b3598d663ee751620a7b752ecabb1081ecae2da99f1fa3b4d689f8",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2169,
+        "path": "src/mobile_world/tasks/definitions/work/download_readme_task.py",
+        "sha256": "ae900fd1f476093854cb6e0dad9764924c2801a3573429dcc33da1049f696fde",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3454,
+        "path": "src/mobile_world/tasks/definitions/work/extract_benchmark_comparison_email.py",
+        "sha256": "a02df1a3d104f7c3b4c9156d8e7e9d61ee265848b095c9f9b6df15505c3289be",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4208,
+        "path": "src/mobile_world/tasks/definitions/work/extract_multilingual_scores_email.py",
+        "sha256": "06a03d094eaba59dde6db058379f7ffc57059ec9a87aa183830da682fc2c9f8c",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3654,
+        "path": "src/mobile_world/tasks/definitions/work/extract_pipeline_stages_email.py",
+        "sha256": "0d47ac9575c9e3abcd9ad01163b99b0d46a7c93be7abffe71834bf06816682e1",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4087,
+        "path": "src/mobile_world/tasks/definitions/work/extract_trajectory_environments_email.py",
+        "sha256": "2ecad9d5f134a20918f7505f1c51cdbc9441bb6ee64216e2fa8d0b809370fdec",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2245,
+        "path": "src/mobile_world/tasks/definitions/work/extract_webpage_links_email.py",
+        "sha256": "75c46777ac77c89c770c807e4f6aa424f56a1295b323ce172fae7af5dc8ec8b6",
+        "task_classes": 1
+      },
+      {
+        "bytes": 4002,
+        "path": "src/mobile_world/tasks/definitions/work/get_arxiv_paper_email.py",
+        "sha256": "9fe2c20be0e84161fe364859d29d512b11a380604d026d4714ff93f9fda501bd",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2481,
+        "path": "src/mobile_world/tasks/definitions/work/get_issue_email_task.py",
+        "sha256": "b9e6aebee34dc98cc53952e5cced1fb9a4c834addee4337d576dedd60f758dc7",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2650,
+        "path": "src/mobile_world/tasks/definitions/work/list_github_issues_email.py",
+        "sha256": "7d2cce2800a42fedfc253a0bc56bee1983ef2f9664146b2b37449762956c514a",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3392,
+        "path": "src/mobile_world/tasks/definitions/work/list_recent_commits_email.py",
+        "sha256": "74d5b409c1baef7e9dc75e438ebd9c36ad3167c2d66f36cdeca0ca4d9ba4fc3d",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2715,
+        "path": "src/mobile_world/tasks/definitions/work/local_file_management.py",
+        "sha256": "a414ca23b836763e8f912abfc6d54deef0e938639b56047f9f9a3a0a48a5cb15",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2853,
+        "path": "src/mobile_world/tasks/definitions/work/local_file_management_2.py",
+        "sha256": "7b9ba500c639bf4194819def025e8d7781fb22544032d218f0d6e78a407b48b8",
+        "task_classes": 1
+      },
+      {
+        "bytes": 15505,
+        "path": "src/mobile_world/tasks/definitions/work/mattermost_budget_approval_pipeline.py",
+        "sha256": "88f8d8c82e916892bca9f381e091d2e119955425e58dba88be689d38527753d9",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1607,
+        "path": "src/mobile_world/tasks/definitions/work/mattermost_create_channel.py",
+        "sha256": "5d921b062151893ce4d2130d84a987a7d12199e4d1ddf91bd0eadfa213a9a1d5",
+        "task_classes": 1
+      },
+      {
+        "bytes": 8077,
+        "path": "src/mobile_world/tasks/definitions/work/mattermost_customer_feedback_analysis.py",
+        "sha256": "8f141eb16389b8bcf172addfdb313eb999b8d63c4ccabd92b8f3b13069439913",
+        "task_classes": 1
+      },
+      {
+        "bytes": 11138,
+        "path": "src/mobile_world/tasks/definitions/work/mattermost_deadline_reconciliation.py",
+        "sha256": "aa18b8efe528bd5a2fb547b051da769f5060778770795c742bc7a914da979c77",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2871,
+        "path": "src/mobile_world/tasks/definitions/work/mattermost_email.py",
+        "sha256": "5eb066ad48013acc81de0136c7023c7bf513f0b96ab5567ee0f6fbdde29fb07e",
+        "task_classes": 1
+      },
+      {
+        "bytes": 11032,
+        "path": "src/mobile_world/tasks/definitions/work/mattermost_incident_escalation.py",
+        "sha256": "c2e0426e359bdb74bbc22f8ac9e64939ece8e52733d427c64e295048780e57a4",
+        "task_classes": 1
+      },
+      {
+        "bytes": 12570,
+        "path": "src/mobile_world/tasks/definitions/work/mattermost_meeting_planning.py",
+        "sha256": "4aeedee5e5221a91eb1ae2613ed1ef8575fe4a8a62eddfb79e33042738fe9c16",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2606,
+        "path": "src/mobile_world/tasks/definitions/work/mattermost_project_handover.py",
+        "sha256": "29ba6a4301710eb8ae80a5618e10d2604632a023daef8bfc3e6aec968c82cf37",
+        "task_classes": 1
+      },
+      {
+        "bytes": 10890,
+        "path": "src/mobile_world/tasks/definitions/work/mattermost_project_status_report.py",
+        "sha256": "b328729c77d92fcab6e60e6b907146aee1d36970eff75a46bac310731f47fea5",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2929,
+        "path": "src/mobile_world/tasks/definitions/work/mattermost_reading_group.py",
+        "sha256": "7eccda3d414ab37dbc6379484dd1f1ac3a69807abdac0c114363779e9321aa32",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1514,
+        "path": "src/mobile_world/tasks/definitions/work/mattermost_reply_to_message.py",
+        "sha256": "7ab33b283b8d55724581a1e7cd08e09d2271aa01e002bd25818e5c228d61eb7a",
+        "task_classes": 1
+      },
+      {
+        "bytes": 9513,
+        "path": "src/mobile_world/tasks/definitions/work/mattermost_resource_conflict_resolution.py",
+        "sha256": "cfb7d2e04db377c2f75fdf46fbc45ff214c6c8ae3b6654970258272518ad2f5b",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2287,
+        "path": "src/mobile_world/tasks/definitions/work/mattermost_send_file.py",
+        "sha256": "02dbf167fc5e42bcd6d02dde561f17a44dfe151ea5011c15f29f46b521588de7",
+        "task_classes": 1
+      },
+      {
+        "bytes": 5653,
+        "path": "src/mobile_world/tasks/definitions/work/mattermost_shift_coverage.py",
+        "sha256": "9a7f4de19a6d26c8d536a7cfe7aa04cb291b357d9168a6b8208e10f7bf7dd5d8",
+        "task_classes": 1
+      },
+      {
+        "bytes": 15344,
+        "path": "src/mobile_world/tasks/definitions/work/mattermost_technical_debt_triage.py",
+        "sha256": "7bb2747cd62a3fc5160251f59858f3e8a0ea7d2138d41d689d9e850e3c51560d",
+        "task_classes": 1
+      },
+      {
+        "bytes": 6925,
+        "path": "src/mobile_world/tasks/definitions/work/mattermost_visual_instruction_response.py",
+        "sha256": "79fffb81c30ef422a6b1012b6eb92e869dc8f4dab962132d1fe296bfd54094a6",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2848,
+        "path": "src/mobile_world/tasks/definitions/work/parse_reading_group_paper_email.py",
+        "sha256": "d52bcac5867c938b04d6c21e37796dcdb107c661a303c34be7945d215bb669e8",
+        "task_classes": 1
+      },
+      {
+        "bytes": 1822,
+        "path": "src/mobile_world/tasks/definitions/work/photo_management.py",
+        "sha256": "2a92aac6fdeb3ce4de1994d893732b4a400284410890e14f1561901e82a435f8",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2530,
+        "path": "src/mobile_world/tasks/definitions/work/search_mllm_papers_email.py",
+        "sha256": "bf894c700de8af789600db5134b4f85590af1d2ee7616a56ef7b804de28d5336",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2758,
+        "path": "src/mobile_world/tasks/definitions/work/search_python_repos_email.py",
+        "sha256": "5dd31cf7307a0359f2372e7476972b5a8dcb645b76d3b1a46b79faf4e5393558",
+        "task_classes": 1
+      },
+      {
+        "bytes": 2470,
+        "path": "src/mobile_world/tasks/definitions/work/search_rust_users_task.py",
+        "sha256": "2b548b6a96b9e9bba185b7b1e396376d5f456299ab9675600861d2326361bb11",
+        "task_classes": 1
+      },
+      {
+        "bytes": 3098,
+        "path": "src/mobile_world/tasks/definitions/work/stock_candidate_list.py",
+        "sha256": "aba6044a52e0ceba9ca3fe1e98e7b17dd11d5e69430cd39a9592bc66ccd01f0a",
+        "task_classes": 1
+      }
+    ],
+    "task_definitions_sha256": "4a202f8b85abdc57572f8f479433b2343e01c86a90311c9d083194a173b1c3e3"
+  },
+  "source_revision": "0dcd0980eac64d76f498f93568a1ec0594b743c4",
+  "source_url": "https://github.com/Tongyi-MAI/MobileWorld"
+}

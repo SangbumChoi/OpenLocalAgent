@@ -1,0 +1,22 @@
+# Random-weight browser cached-decode latency candidate; not a quality-selected model or claim.
+#
+# Four 384-wide blocks favor fewer WebGPU dispatches and larger, aligned matrix multiplies over the
+# narrower nine-layer 16M candidate. Six 64-wide query heads and one KV head use conventional head
+# geometry. The [conv, attn, conv, attn] pattern preserves two full long-context attention layers
+# while approximately halving the FP16 cache relative to webgpu-10m-attn.yaml.
+name: webgpu-10m-hybrid
+vocab_size: 16384
+d_model: 384
+n_layers: 4
+n_loops: 1
+n_heads: 6
+n_kv_heads: 1
+ffn_hidden: 512
+max_seq_len: 2048
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types: [conv, attn, conv, attn]

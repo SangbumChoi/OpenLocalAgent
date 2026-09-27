@@ -1,0 +1,141 @@
+{
+  "benchmark_id": "mcpmark",
+  "checkpoint_sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533",
+  "dataset": {
+    "name": "MCPMark Verified",
+    "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "scope": "bounded_public_browser_service_diagnostic",
+    "service": "playwright",
+    "suite": "standard",
+    "url": "https://github.com/eval-sys/mcpmark"
+  },
+  "decision": {
+    "browser_action_evidence": {
+      "browser_tool_errors": 1,
+      "navigation_and_snapshot_without_server_error": true
+    },
+    "claim_boundary": "Two public MCPMark Verified Playwright tasks exercised the real pinned MCP browser server with an isolated local Chromium executable. Both verifiers failed; this is not an official split score, browser-version parity claim, visual answer claim, user-simulator result, or external-account result.",
+    "promotion": "blocked_bounded_subset_and_verifier_zero"
+  },
+  "environment": {
+    "browser_executable": {
+      "bytes": 285744,
+      "path": "/Users/sangbumchoi/Library/Caches/ms-playwright/chromium-1117/chrome-mac/Chromium.app/Contents/MacOS/Chromium",
+      "sha256": "c6cf40504b92a677552e51dfaf1addfc95dc60c8b57ce5f6b41c9ee0575cf230"
+    },
+    "browser_version": "Chromium 125.0.6422.26",
+    "external_api_called": false,
+    "mcp_server_executed": true,
+    "official_split_verified": false,
+    "server_command": [
+      "npx",
+      "-y",
+      "@playwright/mcp@0.0.68",
+      "--headless",
+      "--isolated",
+      "--no-sandbox",
+      "--browser",
+      "chromium",
+      "--executable-path",
+      "/Users/sangbumchoi/Library/Caches/ms-playwright/chromium-1117/chrome-mac/Chromium.app/Contents/MacOS/Chromium",
+      "--viewport-size",
+      "1280,720"
+    ],
+    "server_package": "@playwright/mcp@0.0.68",
+    "user_simulator_executed": false
+  },
+  "environment_executed": true,
+  "kind": "localagent_m700_m679_mcpmark_playwright_standard",
+  "model": {
+    "bytes": 52206773,
+    "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "official_split_verified": false,
+  "receipt_self_sha256": "50d13e394f3cee2e059f5488120327fc0b22116bf9e2d5ace7d104a2b630ee7f",
+  "results": [
+    {
+      "category": "eval_web",
+      "server_error": null,
+      "task": "playwright/standard/eval_web/extraction_table",
+      "task_id": "extraction_table",
+      "turns": [
+        {
+          "arguments_sha256": "b43b2f37070c2ce27132a59844bb100dd3e030c4136fad477c1adda180088927",
+          "output_sha256": "11a9a24f9b576fcb334ef83aa20ddd9e2daf65916962d8a76582e96a7177aa59",
+          "result_is_error": false,
+          "result_preview": "[{'type': 'text', 'text': '### Ran Playwright code\\n```js\\nawait page.goto(\\'https://eval-web.mcpmark.ai/extraction\\');\\n```\\n### Page\\n- Page URL: https://eval-web.mcpmark.ai/extraction\\n- Page Title: MCPBench Test Environment\\n### Snapshot\\n```yaml\\n- generic [ref=e2]:\\n  - navigation [ref=e3]:\\n ",
+          "result_sha256": "680ca90bd24af52ed54ede3e7c9aca53f497d86fb3e1a3ef400a1bf7d8688d13",
+          "tool": "browser_navigate",
+          "turn": 1
+        },
+        {
+          "arguments_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "output_sha256": "351ce2759b94df8fb2c8eb3192da84fa34e34a03d40e95c659bb97c468950659",
+          "result_is_error": false,
+          "result_preview": "[{'type': 'text', 'text': '### Page\\n- Page URL: https://eval-web.mcpmark.ai/extraction\\n- Page Title: MCPBench Test Environment\\n### Snapshot\\n```yaml\\n- generic [ref=e2]:\\n  - navigation [ref=e3]:\\n    - generic [ref=e5]:\\n      - img [ref=e6]\\n      - heading \"MCPBench Test\" [level=1] [ref=e8]\\n ",
+          "result_sha256": "7f8dbd6c138cb292afece21b05ee03a9e29e2767449ab4d0f87a395eb5d78388",
+          "tool": "browser_snapshot",
+          "turn": 2
+        },
+        {
+          "arguments_sha256": null,
+          "output_sha256": "1f4e76262fdbee5865e42636621f8c49d8bd4f6b3762f462f985931fa015faa5",
+          "tool": null,
+          "turn": 3
+        }
+      ],
+      "verifier_exit_code": 1,
+      "verifier_stderr_sha256": "e0a9b02645d5c76962bf5d9ea43a38df7f27d640c1b74a3a030ba22d17ea943b",
+      "verifier_stderr_tail": "complete CSV formatted data (no additional text or e...\n|\n| Found CSV data (first 300 characters):\n| <tool_call>{\"arguments\":{\"code\":\"extract all data from the specified website and present it in CSV format.\\n\\n## Requirements:\\n\\n1. Navigate to https://eval-web.mcpmark.ai/extraction\\n2. Wait for the page to fully load\\n3. Extract all data content from the page, including:\\n   - Title\\n   - Rating\\...\n|\n| \u2717 CSV validation failed: | CSV total row count mismatch, expected: 98 rows, actual: 1 rows\n",
+      "verifier_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verifier_stdout_tail": ""
+    },
+    {
+      "category": "web_search",
+      "server_error": null,
+      "task": "playwright/standard/web_search/r1_arxiv",
+      "task_id": "r1_arxiv",
+      "turns": [
+        {
+          "arguments_sha256": "8c55e11b98369fa08d7b40d84518e63a26744ed35b54d7075382920537ba4a1d",
+          "output_sha256": "40bb01afe417f02586bfc1c9893b045ea2cdf724b4baac847c8e89023bba7f3c",
+          "result_is_error": true,
+          "result_preview": "[{'type': 'text', 'text': \"### Error\\nSyntaxError: Unexpected token 'for'\", 'annotations': None, 'meta': None}]",
+          "result_sha256": "95676f652b8707665e53db8f5106edd472024de7f7066702552e5fee7c984b4c",
+          "tool": "browser_run_code",
+          "turn": 1
+        },
+        {
+          "arguments_sha256": null,
+          "output_sha256": "2dd97044f7fbb85a4111b960b79abd862e6fd57589c2f25e70a9ef609d3f711d",
+          "tool": null,
+          "turn": 2
+        }
+      ],
+      "verifier_exit_code": 1,
+      "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verifier_stderr_tail": "",
+      "verifier_stdout_sha256": "d9cd30edac557140ba5ce927983bb30f5a75f5d2c91900a423a903dbe15415e3",
+      "verifier_stdout_tail": "acted content with expected content...\n| Content comparison results:\n|   - Extracted length: 2675 characters\n|   - Expected length: 2436 characters\n|   - Similarity: 0.0102 (threshold: 0.9)\n|   - Extracted preview: <tool_call>{\"arguments\":{\"code\":\"search for the v1 (initial) version of the deepseek r1 research pap...\n|   - Expected preview: in this work, we share our journey in enhancing model reasoning abilities through reinforcement lear...\n| Task verification failed. Similarity 0.0102 < 0.9.\n"
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "receipt": {
+      "bytes": 6597,
+      "path": "/private/tmp/m700-m679-mcpmark-playwright.json",
+      "sha256": "ed81938aedfe0262a1cb414170d74280ab3e8794576ca4ce0558f56c08ce04ff"
+    },
+    "source_revision": "cd45b7f57923b9b3985467f5139927575f83141c"
+  },
+  "success_rate": 0.0,
+  "summary": {
+    "browser_tool_errors": 1,
+    "runtime_errors": 0,
+    "tasks": 2,
+    "verifier_failures": 2,
+    "verifier_passes": 0
+  },
+  "task_count": 2
+}

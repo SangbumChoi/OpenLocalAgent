@@ -1,0 +1,102 @@
+{
+  "claim_boundary": "Frozen-backbone ToolSandbox candidate-selector repair over the public AST projection, paired warm/random offline evaluation, and five-scenario native interactive simulator/verifier replay. The projection is not an official dataset split, the native run is not the official ToolSandbox split or model-based user simulator, and no external API, real email, Notion, MCP, or WebGPU side effect was executed.",
+  "dataset": {
+    "name": "apple/ToolSandbox",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "url": "https://github.com/apple/ToolSandbox",
+    "projection_manifest": {
+      "bytes": 4610,
+      "path": "/private/tmp/m202-toolsandbox-projection/toolsandbox-manifest.json",
+      "sha256": "85f977aed04a40c959c41a5f80e5c3c2c75653aa44c4c789e8234e3aae8ff356"
+    },
+    "train": {
+      "bytes": 245109,
+      "path": "/private/tmp/m202-toolsandbox-projection/toolsandbox-train.jsonl",
+      "rows": 107,
+      "sha256": "773b44877677e7b2be72295bc9eb26d158c5932d6665aac15bcae9592d46609d"
+    },
+    "eval": {
+      "bytes": 45613,
+      "path": "/private/tmp/m202-toolsandbox-projection/toolsandbox-eval.jsonl",
+      "rows": 20,
+      "sha256": "925ce977082ffb980e46bce5b25ea81fdd335d25e5996feefd503015ba3ff46d"
+    },
+    "tool_count": 32
+  },
+  "kind": "localagent_toolsandbox_selector_repair_native_bridge",
+  "native_interactive": {
+    "official_split_verified": false,
+    "scenario_count": 5,
+    "scenario_names": [
+      "send_message_with_contact_content_cellular_off",
+      "turn_on_wifi_low_battery_mode",
+      "find_current_city_insufficient_information",
+      "remove_contact_by_phone_ambiguous",
+      "search_message_with_recency_latest_multiple_user_turn"
+    ],
+    "warm": {
+      "checkpoint_sha256": "95b56f234e2bc062cd492f2cb08295641c72bea00e5caf9cf4db849d4588e273",
+      "report_sha256": "a85cbfa8915ea1f76e7c1ba53db52462097edafaeb9b272f4fdf0ea74681feb5",
+      "success_count": 1,
+      "success_rate": 0.2,
+      "per_scenario_similarity": [0.25, 0.3333333333333333, 1.0, 0.0, 0.5]
+    },
+    "random": {
+      "checkpoint_sha256": "db9a567ef26473d0e6641b725cc2ac9587865113bc23eb9981ab0514b87eed5f",
+      "report_sha256": "b882219cc220f8bc78721f334156c671b283e0b3a264356f75b16069de4ef338",
+      "success_count": 1,
+      "success_rate": 0.2,
+      "per_scenario_similarity": [0.25, 0.3333333333333333, 1.0, 0.0, 0.5]
+    },
+    "warm_minus_random_success_rate_pp": 0.0,
+    "per_scenario_parity": true
+  },
+  "parent_checkpoint": {
+    "bytes": 52276521,
+    "path": "/private/tmp/m194-m180-dispatch-repair-warm.pt",
+    "sha256": "3b3fd817c6f52e8b922f84c9bb36e7d55e0e243a0f8ee6d0f20c85962a4eeba7"
+  },
+  "training": {
+    "backbone_frozen": true,
+    "steps": 400,
+    "batch_size": 32,
+    "learning_rate": 0.005,
+    "seed": 2046,
+    "warm": {
+      "report_sha256": "36c3f9a21745c56931e7fbd459135e3e60f63a791827ba63ac8852f620dbe8f8",
+      "child_sha256": "95b56f234e2bc062cd492f2cb08295641c72bea00e5caf9cf4db849d4588e273",
+      "eval_rows": 20,
+      "eval_top1_before": 0.0,
+      "eval_top1_after": 0.5,
+      "eval_top3_before": 0.0,
+      "eval_top3_after": 0.65,
+      "train_top1_after": 0.8504672646522522,
+      "train_top3_after": 0.9906542301177979,
+      "selector_movement": {
+        "query_tower": 1.1195858716964722,
+        "tool_tower": 0.5817065238952637
+      }
+    },
+    "random": {
+      "report_sha256": "a773c6773ba168b4f635724f7338276df5608088791733e96e01b16418f65911",
+      "child_sha256": "db9a567ef26473d0e6641b725cc2ac9587865113bc23eb9981ab0514b87eed5f",
+      "eval_rows": 20,
+      "eval_top1_before": 0.0,
+      "eval_top1_after": 0.45,
+      "eval_top3_before": 0.05,
+      "eval_top3_after": 0.65,
+      "train_top1_after": 0.8504672646522522,
+      "train_top3_after": 0.9906542301177979,
+      "selector_movement": {
+        "query_tower": 1.2452114820480347,
+        "tool_tower": 1.0552387237548828
+      }
+    }
+  },
+  "decision": {
+    "export_child": false,
+    "adopt_warm_selector": false,
+    "reason": "Offline selector repair raises held-out ToolSandbox projection top-1 from 0% to 50% for warm and 45% for random, but the native simulator/verifier bridge is exactly unchanged at 1/5 with per-scenario parity. The AST projection candidate serialization and native ToolSpec/state-history interface are not sufficient evidence for WebGPU action adoption; align runtime candidates and train state-conditioned action/history supervision before another export."
+  },
+  "receipt_self_sha256": "58beb0759fcb24b774dac218560f6ece0fedf4c07a76c83381975b1ce3adf69f"
+}

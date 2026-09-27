@@ -1,0 +1,68 @@
+{
+  "kind": "localagent_public_realistic_source_refresh",
+  "schema_version": 1,
+  "refresh": {
+    "date": "2026-08-06",
+    "method": "official dataset cards/project pages searched and facts transcribed into the supplemental catalog; no payloads downloaded",
+    "purpose": "extend realistic mobile/browser/computer/tool evaluation inventory without silently changing the canonical gate or SFT inputs"
+  },
+  "sources": [
+    {
+      "id": "markov_computer_use",
+      "dataset": "markov-ai/computer-use",
+      "url": "https://huggingface.co/datasets/markov-ai/computer-use",
+      "source": "OSWorld trajectories collected with ComputerRL",
+      "reported_scale": {"trajectories": 160, "steps": 1378, "domains": 10},
+      "realistic_surfaces": ["chrome", "thunderbird_email", "libreoffice", "vscode", "multi_app"],
+      "modalities": ["instruction", "screenshot", "accessibility_tree", "pyautogui_action", "execution_status", "recording"],
+      "webgpu_use": "accessibility/action-history protocol probe only",
+      "policy": "evaluation_only_until_license_and_OSWorld_task_holdout_are_frozen",
+      "reason": "successful-only score-1.0 trajectories are selection-biased and the card does not declare a redistribution license"
+    },
+    {
+      "id": "agentworldbench",
+      "dataset": "Qwen/AgentWorldBench",
+      "url": "https://huggingface.co/datasets/Qwen/AgentWorldBench",
+      "paper_url": "https://arxiv.org/abs/2606.24597",
+      "reported_scale": {"records": 2170, "mcp": 286, "search": 458, "terminal": 354, "swe": 472, "android": 200, "web": 200, "os": 200},
+      "modalities": ["multi_turn_prompt_history", "tool_response", "MCP_state", "Android_UI_state", "browser_DOM", "desktop_state", "terminal_state"],
+      "webgpu_use": "next-observation/state-consistency probe, not action completion",
+      "policy": "evaluation_only_until_terms_and_contamination_policy_are_frozen",
+      "reason": "ground-truth observations come from real environment trajectories and the release is explicitly an evaluation benchmark"
+    },
+    {
+      "id": "scalecua_data",
+      "dataset": "OpenGVLab/ScaleCUA-Data",
+      "url": "https://huggingface.co/datasets/OpenGVLab/ScaleCUA-Data",
+      "code_url": "https://github.com/OpenGVLab/ScaleCUA",
+      "paper_url": "https://arxiv.org/abs/2509.15221",
+      "reported_scale": {"platforms": 6, "archive_size_tb": 1.07},
+      "platforms": ["linux", "macos", "windows", "android", "ios", "web"],
+      "modalities": ["instruction", "screenshot", "temporal_context", "mouse_keyboard_action", "mobile_action", "web_action"],
+      "webgpu_use": "annotation/action-schema audit until a licensed text or visual shard exists",
+      "policy": "catalog_only_until_image_terms_platform_split_and_manifest_are_frozen",
+      "reason": "large cross-platform image archive is incompatible with the current text-first 10M bundle and requires separate modality handling"
+    },
+    {
+      "id": "gui_world",
+      "dataset": "ONE-Lab/GUI-World",
+      "url": "https://huggingface.co/datasets/ONE-Lab/GUI-World",
+      "code_url": "https://github.com/Dongping-Chen/GUI-World",
+      "paper_url": "https://arxiv.org/abs/2406.10819",
+      "reported_scale": {"videos": 12379, "queries": 100000},
+      "modalities": ["video", "keyframes", "operation_description", "GUI_question_answering", "sequential_context"],
+      "surfaces": ["desktop", "mobile", "web", "xr"],
+      "webgpu_use": "temporal operation-history/QA probe only",
+      "policy": "vision_pretraining_or_evaluation_only_until_dataset_terms_and_split_are_frozen",
+      "reason": "video/QA data is not a canonical tool-call corpus and cannot be mixed into the text-only SFT path"
+    }
+  ],
+  "catalog_update": {
+    "file": "configs/data/realistic-agent-eval.supplemental.yaml",
+    "entries_added": ["markov_computer_use", "agentworldbench", "scalecua_data", "gui_world"],
+    "canonical_gate_changed": false,
+    "sft_inputs_changed": false
+  },
+  "claim_boundary": "This is source discovery and policy metadata only. No task payload, screenshot, video, credential, emulator/VM asset, verifier output, or external side effect was downloaded or executed; no official benchmark score is claimed.",
+  "receipt_self_sha256": "b13bc8608fde11fdcd7bdfc8deb8e5d0291977ef88ef6c98da1c9e66d2b6d731"
+}

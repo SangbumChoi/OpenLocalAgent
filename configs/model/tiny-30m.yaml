@@ -1,0 +1,14 @@
+# ~30M-param Llama-style decoder. Depth-over-width + GQA (SmolLM2-style).
+# Embeddings are tied; the param-budget assertion (< 100M) runs at construction.
+name: tiny-30m
+vocab_size: 32000
+d_model: 384
+n_layers: 12
+n_heads: 6
+n_kv_heads: 2          # GQA: query heads share 2 kv heads
+ffn_hidden: 1024       # SwiGLU
+max_seq_len: 2048
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0

@@ -1,0 +1,83 @@
+{
+  "benchmark_id": "toolsandbox",
+  "claim_boundary": "Native pinned ToolSandbox simulator/verifier evidence over five selected scenarios with a bounded scripted user; official split, model-based user simulator, full scenario matrix, and optional RapidAPI tools were not executed. This is not an official ToolSandbox score or evidence of real email/Notion/MCP side effects.",
+  "decision": "no_warm_native_advantage_on_bounded_toolsandbox_probe",
+  "kind": "localagent_toolsandbox_native_head_ablation_report",
+  "random_receipt": {
+    "bytes": 52242687,
+    "path": "/private/tmp/m104-cross-surface-random-head-child.pt",
+    "sha256": "e7f9e33e05afb2662be5ba541994617bbe9e6c6207a0140037dddbcc72e09a1b"
+  },
+  "random_success_count": 1,
+  "random_success_rate": 0.2,
+  "runner": {
+    "bytes": 18083,
+    "path": "/Users/sangbumchoi/Documents/LocalAgent/scripts/run_toolsandbox_native.py",
+    "sha256": "9744f98b610b672f38707709233eb05d47e396dc748cce6cb35f54e7d4581524"
+  },
+  "scenario_names": [
+    "send_message_with_contact_content_cellular_off",
+    "turn_on_wifi_low_battery_mode",
+    "find_current_city_insufficient_information",
+    "remove_contact_by_phone_ambiguous",
+    "search_message_with_recency_latest_multiple_user_turn"
+  ],
+  "scenarios": {
+    "find_current_city_insufficient_information": {
+      "random_milestone_similarity": 1.0,
+      "random_similarity": 1.0,
+      "random_turn_count": 1,
+      "warm_milestone_similarity": 1.0,
+      "warm_minus_random_similarity": 0.0,
+      "warm_similarity": 1.0,
+      "warm_turn_count": 1
+    },
+    "remove_contact_by_phone_ambiguous": {
+      "random_milestone_similarity": 0.3333333333333333,
+      "random_similarity": 0.3333333333333333,
+      "random_turn_count": 17,
+      "warm_milestone_similarity": 0.0,
+      "warm_minus_random_similarity": -0.3333333333333333,
+      "warm_similarity": 0.0,
+      "warm_turn_count": 17
+    },
+    "search_message_with_recency_latest_multiple_user_turn": {
+      "random_milestone_similarity": 0.5,
+      "random_similarity": 0.5,
+      "random_turn_count": 17,
+      "warm_milestone_similarity": 0.5,
+      "warm_minus_random_similarity": 0.0,
+      "warm_similarity": 0.5,
+      "warm_turn_count": 17
+    },
+    "send_message_with_contact_content_cellular_off": {
+      "random_milestone_similarity": 0.25,
+      "random_similarity": 0.25,
+      "random_turn_count": 17,
+      "warm_milestone_similarity": 0.25,
+      "warm_minus_random_similarity": 0.0,
+      "warm_similarity": 0.25,
+      "warm_turn_count": 17
+    },
+    "turn_on_wifi_low_battery_mode": {
+      "random_milestone_similarity": 0.3333333333333333,
+      "random_similarity": 0.3333333333333333,
+      "random_turn_count": 17,
+      "warm_milestone_similarity": 0.3333333333333333,
+      "warm_minus_random_similarity": 0.0,
+      "warm_similarity": 0.3333333333333333,
+      "warm_turn_count": 17
+    }
+  },
+  "schema_version": 1,
+  "source_revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+  "task_count": 5,
+  "warm_minus_random_success_rate_pp": 0.0,
+  "warm_receipt": {
+    "bytes": 52242509,
+    "path": "/private/tmp/m103-cross-surface-warm-head-child.pt",
+    "sha256": "d81771f61a8391a1973c84e396b8c79e1dd94a8b28bf3e41f90b585ba1d57486"
+  },
+  "warm_success_count": 1,
+  "warm_success_rate": 0.2
+}

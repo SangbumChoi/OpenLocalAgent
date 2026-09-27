@@ -1,0 +1,90 @@
+{
+  "ablation": {
+    "backbone_frozen": true,
+    "batch_size": 32,
+    "learning_rate": 0.005,
+    "seed": 2047,
+    "steps": 300,
+    "arms": ["warm", "random"],
+    "native_protocol": "single_step_smoke",
+    "native_scenario_count": 3
+  },
+  "checkpoint": {
+    "parent_sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "parameters": 10524544
+  },
+  "claim_boundary": "Source-disjoint frozen-head transfer plus native ToolSandbox simulator/verifier control only. The official split, model-based user simulator, full scenario matrix, external APIs, screenshots, and productivity workflows were not executed. Offline selector gains do not establish native ToolSandbox, email, Notion, MCP, or WebGPU capability.",
+  "decision": {
+    "native_quality_lift": false,
+    "adoption": "reject_transfer_for_deployment",
+    "retain_parent_as_initialization_candidate": true,
+    "reason": "Warm selector top-1 is 85% versus 80% random, but both arms have identical native single-step success (2/3) and message milestone similarity (0.4252903702412298)."
+  },
+  "generated_at": "2026-08-05",
+  "kind": "localagent_toolsandbox_weight_transfer_native_control",
+  "metrics": {
+    "held_out": {
+      "warm": {
+        "selector_top1": 0.85,
+        "selector_top3": 0.95,
+        "route_app_action": 1.0
+      },
+      "random": {
+        "selector_top1": 0.8,
+        "selector_top3": 0.95,
+        "route_app_action": 1.0
+      },
+      "warm_minus_random": {
+        "selector_top1": 0.05,
+        "selector_top3": 0.0,
+        "route_app_action": 0.0
+      }
+    },
+    "native_single_step": {
+      "warm": {
+        "success_count": 2,
+        "task_count": 3,
+        "success_rate": 0.6666666666666666,
+        "message_similarity": 0.4252903702412298
+      },
+      "random": {
+        "success_count": 2,
+        "task_count": 3,
+        "success_rate": 0.6666666666666666,
+        "message_similarity": 0.4252903702412298
+      },
+      "warm_minus_random": {
+        "success_rate": 0.0,
+        "message_similarity": 0.0
+      }
+    },
+    "head_movement": {
+      "warm": {
+        "route": 1.3904165029525757,
+        "selector_query_tower": 1.2712944746017456,
+        "selector_tool_tower": 1.1630631685256958
+      },
+      "random": {
+        "route": 1.491851568222046,
+        "selector_query_tower": 1.3100272417068481,
+        "selector_tool_tower": 1.2225635051727295
+      }
+    }
+  },
+  "provenance": {
+    "dataset": "apple/ToolSandbox",
+    "source_url": "https://github.com/apple/ToolSandbox",
+    "source_revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "projection_manifest_sha256": "85f977aed04a40c959c41a5f80e5c3c2c75653aa44c4c789e8234e3aae8ff356",
+    "train_rows": 107,
+    "eval_rows": 20,
+    "eval_parent_ids": 20,
+    "warm_report_sha256": "dc33831165c03dd09303747c23a575e37423c7a7402a29031a339f2d3ba50f4f",
+    "random_report_sha256": "0d52f8ce09a397ffb23cf3636b2a0891dc1c4649242aa8f9e71acf92a3252a7d",
+    "warm_child_sha256": "87ed6e4cc3cf8368208432cc343fb49ecb0bc2e76da399e763f5571e6d0f07c9",
+    "random_child_sha256": "7af1273346f940e28fcde5a4b50fb2aeab0cdcc8cf5edc7f37fc31c5526b4fc1",
+    "warm_native_report_sha256": "336269441ed2d768cb67344fa22944f45165b61ab29fd738692d74db7b4b6948",
+    "random_native_report_sha256": "7179c16a74399ada99d1102be14de5838e12f6f7ff36654bfde0598df477b3e5"
+  },
+  "receipt_self_sha256": "531ac29bfa6c826f8354e068c961ee0f7bea0bb6d744b928574b2daf8a5ff82d"
+}

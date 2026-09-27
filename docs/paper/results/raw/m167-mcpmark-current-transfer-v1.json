@@ -1,0 +1,110 @@
+{
+  "kind": "localagent_mcpmark_current_child_transfer_receipt",
+  "schema_version": 1,
+  "measurement": "m167_mcpmark_current_child_warm_random_continuation",
+  "generated_at": "2026-08-03",
+  "dataset": "Jakumetsu/mcpmark-trajectory-log",
+  "source_url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log",
+  "source_revision": "e50578f0ab904d8e6a7c576c387c1e76ae482c89",
+  "license": "MIT (public trajectory-log source; verify upstream terms before redistribution)",
+  "inputs": {
+    "train": {
+      "path": "/private/tmp/m120-train.jsonl",
+      "bytes": 83877,
+      "sha256": "80aedf60607e2e113f21e0bdcb4794411ea616eed30b870f384dd24a4c336735",
+      "rows": 8,
+      "parent_records": 8
+    },
+    "eval": {
+      "path": "/private/tmp/m120-eval.jsonl",
+      "bytes": 14123,
+      "sha256": "12f8d6bec22a5c21e3d77055eced3360648286c11362e81ce60cdeb26a7e232d",
+      "rows": 2,
+      "parent_records": 2
+    },
+    "parent_record_disjoint": true,
+    "tool_outputs_redacted": true,
+    "assistant_text_redacted": true,
+    "visual_input_omitted": true
+  },
+  "parent": {
+    "path": "/private/tmp/m166-androidcontrol-current-child.pt",
+    "bytes": 52223636,
+    "sha256": "f19d0cd48d86913fbb5d2915cc515622cc0839f1597c46f6ca20de0c6ac068eb",
+    "stage": "sft_realistic_mobile_pilot",
+    "step": 383,
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "training": {
+    "steps": 32,
+    "batch_size": 4,
+    "learning_rate": 0.00001,
+    "seed": 2027,
+    "warm_child": {
+      "path": "/private/tmp/m167-mcpmark-current-warm-child.pt",
+      "bytes": 52225186,
+      "sha256": "f3a6ae05112a6248eb8b4ecff2f59b38b7f7eb2170c67097bde235072fdb4bd4",
+      "report_sha256": "5e664d9337403e4dd7aed27a7efeefdb514a8b2cd710a611f07189b9059d0407",
+      "backbone_init": "parent",
+      "before_eval": {
+        "assistant_token_accuracy": 0.4127951257,
+        "mean_loss": 4.5035760187,
+        "sequence_accuracy": 0.0
+      },
+      "after_eval": {
+        "assistant_token_accuracy": 0.4318354912,
+        "mean_loss": 4.3320762477,
+        "sequence_accuracy": 0.0
+      },
+      "relative_delta_l2": {
+        "embedding": 0.0052051991,
+        "attention_or_mixer": 0.0025714516,
+        "ffn": 0.0029975631,
+        "normalization": 0.0001050288,
+        "action_heads": 0.0
+      }
+    },
+    "random_child": {
+      "path": "/private/tmp/m167-mcpmark-current-random-child.pt",
+      "bytes": 52225300,
+      "sha256": "ada1064df2a09a2b5a903db4ada22bc6d0d165a237f1525a9611e5bf9cd2a69b",
+      "report_sha256": "2c900e6c361635ad1f14ccf1ddf1f5f4b6bd12d38484d1ceb7b3e054935fc9c7",
+      "backbone_init": "random",
+      "random_backbone_seed": 2028,
+      "before_eval": {
+        "assistant_token_accuracy": 0.0068545316,
+        "mean_loss": 9.8292257711,
+        "sequence_accuracy": 0.0
+      },
+      "after_eval": {
+        "assistant_token_accuracy": 0.0472201066,
+        "mean_loss": 9.2383957897,
+        "sequence_accuracy": 0.0
+      },
+      "relative_delta_l2": {
+        "embedding": 1.2352932975,
+        "attention_or_mixer": 0.7787971696,
+        "ffn": 0.8780729743,
+        "normalization": 0.0790853141,
+        "action_heads": 0.0
+      }
+    }
+  },
+  "comparison": {
+    "warm_after_token_accuracy": 0.4318354912,
+    "random_after_token_accuracy": 0.0472201066,
+    "warm_minus_random_after_pp": 38.46153846,
+    "warm_after_sequence_accuracy": 0.0,
+    "random_after_sequence_accuracy": 0.0,
+    "warm_start_better_after": true
+  },
+  "compatibility": {
+    "config_mismatches": {},
+    "shape_mismatches": {},
+    "shared_tensor_count": 51,
+    "tokenizer_sha256_equal": true
+  },
+  "decision": "diagnostic_only",
+  "claim_boundary": "Public MIT-licensed MCPMark trajectory-log rows with tool outputs and assistant free text redacted, source-disjoint teacher-forced continuation on the current AndroidControl-adapted child. This is not an official MCPMark score, live MCP/server/verifier execution, native browser or desktop success, screenshot grounding, or a real Notion/email side effect.",
+  "receipt_self_sha256": "10d16c476f56c7622cc9d06485cc7eb507119e5f75911620969bf6703b7c37d0"
+}

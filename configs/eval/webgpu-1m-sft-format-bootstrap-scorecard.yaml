@@ -1,0 +1,31 @@
+# Post-intervention internal BFCL-style scorecard for the 1M format-recovery child.
+# This uses the exact same sealed 512-conversation / 820-decision slice as the parent scorecard.
+# It is a LocalAgent benchmark, not an official BFCL result.
+kind: localagent_internal_agent_scorecard_config
+schema_version: 1
+checkpoint: runs/sft-paper-tier-1m-format-bootstrap/latest.pt
+training_config: configs/train/sft-paper-tier-1m-format-bootstrap.yaml
+model_config: configs/model/webgpu-1m-bpe-router.yaml
+tokenizer:
+  kind: bpe
+  path: data/tokenizer-paper-16k.json
+cases:
+  path: data/synth/agent_eval.jsonl
+  manifest: data/synth/agent_eval.jsonl.manifest.v1.json
+  generator_config: configs/data/agent_synth_eval.yaml
+  expected_split: eval
+  expected_rule_verified: true
+  environment_policy: forbid
+  selection:
+    algorithm: greedy_uncovered_strata_then_semantic_sha256_fill_v1
+    max_rows: 512
+    expected_source_rows: 5000
+    expected_source_assistant_decisions: 7963
+    expected_source_semantic_set_sha256: 02c7e08baaaa97b54f522ba3ee5f979993000de5a3c24507c7bc4a2479355999
+    expected_selected_rows: 512
+    expected_selected_assistant_decisions: 820
+    expected_selected_semantic_set_sha256: 5eb08ef61dcdfab5889f66ecb04c17fbce6ce2726f868ab85f1afe6120505bf3
+    expected_audit_sha256: 342abcb7ad550d4b73c726c7bbf74a68cc1fef5bda1ca68707fd8b75a16bc641
+generation:
+  device: auto
+  max_new_tokens: 96

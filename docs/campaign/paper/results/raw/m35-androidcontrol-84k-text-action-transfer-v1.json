@@ -1,0 +1,116 @@
+{
+  "kind": "localagent_androidcontrol_84k_text_action_transfer_receipt",
+  "schema_version": 1,
+  "source": {
+    "mirror": "OfficerChul/Android-Control-84k",
+    "mirror_url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k",
+    "original_url": "https://github.com/google-research/google-research/tree/master/android_control",
+    "license": "Apache-2.0 (reformatted mirror; verify upstream terms before redistribution)",
+    "train_raw": {
+      "bytes": 42592477,
+      "rows": 82944,
+      "sha256": "fb9658913080251d5ae26614d24e68e93af1639d716a9d40be04c1095d821852"
+    },
+    "test_raw": {
+      "bytes": 459922,
+      "rows": 904,
+      "sha256": "a4719bbbac28ffe4f8e0e227f800619626180e76076252c2e43b7d8d83894361"
+    },
+    "train_action_distribution": {
+      "mobile_click": 51793,
+      "mobile_input_text": 5966,
+      "mobile_long_press": 42,
+      "mobile_navigate_back": 2909,
+      "mobile_open_app": 5572,
+      "mobile_scroll": 11005,
+      "mobile_wait": 5657
+    },
+    "test_action_distribution": {
+      "mobile_click": 125,
+      "mobile_input_text": 125,
+      "mobile_long_press": 125,
+      "mobile_navigate_back": 125,
+      "mobile_navigate_home": 29,
+      "mobile_open_app": 125,
+      "mobile_scroll": 125,
+      "mobile_wait": 125
+    }
+  },
+  "normalization": {
+    "adapter": "src/localagent/data/androidcontrol_json.py",
+    "full_train_manifest_sha256": "4ba22289d01bc3b7a9d89f24b190098ff77f3bf48d9d347c04d65f630892b347",
+    "test_manifest_sha256": "e40860a721f6937b229c2a1def2b0fbf075e99a965a3a1dcdd34d730b7998a5c",
+    "full_train_conversations_sha256": "8986e95466dc6e7aefedcbffa43f0b1d75f642c8e8326828147df0a98a423b51",
+    "test_conversations_sha256": "2d798115fe0feb14ac6d65f86a4b51b4463b593a35281eedce4de8751356bc95",
+    "visual_input_omitted": true,
+    "grounding_evaluable": false,
+    "split_boundary": "train-only continuation; all 904 public test rows remain evaluation-only"
+  },
+  "training": {
+    "parent_checkpoint_sha256": "79387105de75d332413262e8d8ddb847b6cc13bc03f5e4df3c81663d9897aef1",
+    "parent_parameters": 10524544,
+    "train_slice_rows": 4096,
+    "train_slice_action_counts": {
+      "mobile_click": 676,
+      "mobile_input_text": 676,
+      "mobile_long_press": 42,
+      "mobile_navigate_back": 676,
+      "mobile_open_app": 676,
+      "mobile_scroll": 675,
+      "mobile_wait": 675
+    },
+    "train_slice_jsonl_sha256": "6971d5fe81fe3c6e8ee12e0072481ec653f98bdb5699af54e8f63649358743fd",
+    "steps": 32,
+    "batch_size": 8,
+    "learning_rate": 0.00001,
+    "child_checkpoint_sha256": "1e35d8ef3309224fced0738784c84d0a93614c1557d7bcdf0025db0a4e2d6f8f",
+    "report_sha256": "079af3ad99bd505582a5d7a91cfb33ed0488e3a15cc1bc4df4f9f537ffe8429c",
+    "held_out_test_rows": 904,
+    "teacher_forced": {
+      "before_token_accuracy": 0.5927783783783783,
+      "after_token_accuracy": 0.6547459459459459,
+      "before_mean_loss": 2.7889780181059964,
+      "after_mean_loss": 2.048952810916385,
+      "sequence_exact_before": 0.0,
+      "sequence_exact_after": 0.0
+    }
+  },
+  "dispatch_probe": {
+    "child_checkpoint_sha256": "0d0ae0bb4a4f35b40bb9ba5d2e234e3ec389e12758b6dd2527e072e9b7589251",
+    "report_sha256": "405d1bf82b06e5493fba02bdec3ef0e3007a57606d9dbc107c6819137eeec12f",
+    "steps": 300,
+    "probe_initialization": "parent_heads",
+    "frozen_backbone": true,
+    "test_rows": 904,
+    "route_accuracy": 1.0,
+    "selector_top1": 0.46238938053097345,
+    "selector_top1_by_tool": {
+      "mobile_click": 0.2,
+      "mobile_input_text": 0.48,
+      "mobile_long_press": 0.0,
+      "mobile_navigate_back": 0.744,
+      "mobile_navigate_home": 0.0,
+      "mobile_open_app": 0.744,
+      "mobile_scroll": 0.664,
+      "mobile_wait": 0.512
+    },
+    "weight_report_sha256": "12f4a8644cf84591e6b4164a7048b26a15123c3c2d809c7d6e33082b9c3181d3",
+    "action_heads_relative_delta_l2": 1.0726417505742485,
+    "backbone_relative_delta_l2": 0.0
+  },
+  "transfer_audit": {
+    "report_sha256": "97aad72b0d278414b94f800c8140e2768f9c9152cc3c15ad5291a0750ecc1d5e",
+    "shared_tensor_count": 51,
+    "config_mismatches": {},
+    "shape_mismatches": {},
+    "tokenizer_sha256_equal": true,
+    "backbone_relative_delta_l2": {
+      "embedding": 0.005188768104367293,
+      "attention_or_mixer": 0.0022438178663214776,
+      "ffn": 0.002764088582444294,
+      "normalization": 0.00010731745290530603
+    },
+    "interpretation": "The compatible pretrained backbone moved modestly during LM continuation; a subsequent frozen-backbone probe moved only dispatch heads. This supports a staged freeze-then-head recipe, but does not establish that transfer improves device success."
+  },
+  "claim_boundary": "Held-out public AndroidControl JSON action-format and frozen-feature dispatch diagnostics only. Screenshots were not loaded, so this is not AndroidControl visual grounding, official emulator reward, AndroidWorld success, or WebGPU hardware throughput."
+}

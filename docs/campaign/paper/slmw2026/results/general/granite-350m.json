@@ -1,0 +1,43 @@
+{
+  "model": "data/baselines/granite-4.0-350m",
+  "adapter": "runs/lora/granite-350m",
+  "tag": "granite-350m",
+  "rows_requested": 300,
+  "rows": {
+    "arc-easy": 300,
+    "arc-challenge": 300,
+    "hellaswag": 300,
+    "openbookqa": 300,
+    "winogrande": 300,
+    "mmlu": 300
+  },
+  "scores": {
+    "base": {
+      "arc-easy": 63.3,
+      "arc-challenge": 31.7,
+      "hellaswag": 48.0,
+      "openbookqa": 35.7,
+      "winogrande": 56.0,
+      "mmlu": 26.7,
+      "seconds": 115.1
+    },
+    "finetuned": {
+      "arc-easy": 56.0,
+      "arc-challenge": 28.3,
+      "hellaswag": 48.3,
+      "openbookqa": 36.0,
+      "winogrande": 54.0,
+      "mmlu": 28.0,
+      "seconds": 182.2
+    }
+  },
+  "delta": {
+    "arc-easy": -7.3,
+    "arc-challenge": -3.4,
+    "hellaswag": 0.3,
+    "openbookqa": 0.3,
+    "winogrande": -2.0,
+    "mmlu": 1.3
+  },
+  "mean_delta": -1.8
+}

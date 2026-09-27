@@ -1,0 +1,194 @@
+{
+  "kind": "localagent_mobilegym_native_runtime_smoke",
+  "localagent_adaptation": {
+    "claim_boundary": "Local browser/runtime preflight only; no model action, task judge, screenshot score, or benchmark result was produced.",
+    "model_invocations": 0,
+    "official_score": null,
+    "task_episodes": 0,
+    "training_rows_added": 0
+  },
+  "receipt_self_sha256": "5d6a7ff46212a101d03384709bce400d67011734122b0b78bece6ebe56fe3ca1",
+  "registry": {
+    "loaded_task_ids_unique": true,
+    "loaded_tasks": 423,
+    "test_missing": [],
+    "test_tasks": 256,
+    "train_missing": [],
+    "train_tasks": 160,
+    "train_test_overlap": []
+  },
+  "runtime": {
+    "body_bytes": 686,
+    "body_sha256": "7b4240373f1fdc036bbb52fcb1057897596d0256aca91780c8004d7cb7d77207",
+    "console_error_classes": [
+      "http_404",
+      "wmr_widget"
+    ],
+    "console_error_count": 9,
+    "env_url": "http://127.0.0.1:4175/",
+    "final_url": "http://127.0.0.1:4175/",
+    "http_status": 200,
+    "page_error_count": 0,
+    "page_title": "MobileGym",
+    "reset_diff_paths": [
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_box/0/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_box/1/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_box/2/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_box/3/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_box/4/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_box/5/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_box/6/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_box/7/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_box/8/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_p_1/0/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_p_1/1/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_p_1/2/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_p_10/0/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_p_10/1/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_p_10/2/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_p_10/3/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_p_12/0/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_p_12/1/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_p_12/2/timestamp",
+        "right": "int"
+      },
+      {
+        "kind": "value",
+        "left": "int",
+        "path": "/apps/alipay/chatHistory/conv_p_12/3/timestamp",
+        "right": "int"
+      }
+    ],
+    "reset_hash_equal": false,
+    "sim_bridge": true,
+    "state_after_reset": {
+      "bytes": 404295,
+      "sha256": "95e9bf9f0662ef5a6bf50b017cdd0307f5ecb0487d714ceb06a666aa918a7b7e",
+      "top_level_keys": [
+        "apps",
+        "os"
+      ]
+    },
+    "state_after_second_reset": {
+      "bytes": 404295,
+      "sha256": "c9bc7f86d25019994385013ce0b497e27feaa2e884824ae2249c6b5c27781aa0",
+      "top_level_keys": [
+        "apps",
+        "os"
+      ]
+    },
+    "state_initial": {
+      "bytes": 404295,
+      "sha256": "d31d2ffb0a9077b4c1016de84e0ab2699c8586918614664ce134fe3fb0abbd99",
+      "top_level_keys": [
+        "apps",
+        "os"
+      ]
+    },
+    "visible_app_markers": 5
+  },
+  "schema_version": 1,
+  "source": {
+    "archive": {
+      "bytes": 185182209,
+      "path": "/private/tmp/m122-mobilegym-source.tar.gz",
+      "sha256": "29fdb0c2817da44b8a18e2b10e69e44497fc3acd4523f68b00329f0c4a11a13c"
+    },
+    "repository": "https://github.com/Purewhiter/mobilegym",
+    "revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "source_root": "/private/tmp/m122-mobilegym-source/mobilegym-093a3292d13fc4186e279af4ef1b005ac8e4d2b7"
+  }
+}

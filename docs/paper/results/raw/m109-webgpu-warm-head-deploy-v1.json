@@ -1,0 +1,129 @@
+{
+  "artifacts": [
+    {
+      "bytes": 21430301,
+      "file": "action_model.fp16.onnx",
+      "manifest_bytes": 21430301,
+      "manifest_sha256": "717d53ef6e633dacd97f438a9c1c1a245dbf33d1c55b33064c0dcc0094b0bed4",
+      "path": "/private/tmp/m109-demo/action_model.fp16.onnx",
+      "present": true,
+      "sha256": "717d53ef6e633dacd97f438a9c1c1a245dbf33d1c55b33064c0dcc0094b0bed4",
+      "verified": true
+    },
+    {
+      "bytes": 42700043,
+      "file": "action_model.onnx",
+      "manifest_bytes": 42700043,
+      "manifest_sha256": "32f273f1c6ba11466de6c27183608e40ca387a081a96d2cca2c734c22542db7e",
+      "path": "/private/tmp/m109-demo/action_model.onnx",
+      "present": true,
+      "sha256": "32f273f1c6ba11466de6c27183608e40ca387a081a96d2cca2c734c22542db7e",
+      "verified": true
+    },
+    {
+      "bytes": 1300442,
+      "file": "dispatch_heads.json",
+      "manifest_bytes": 1300442,
+      "manifest_sha256": "37ffaa49e2e5a04138b0dadbf9c94dc8645b7082a95a205045b0b24ed94d89c4",
+      "path": "/private/tmp/m109-demo/dispatch_heads.json",
+      "present": true,
+      "sha256": "37ffaa49e2e5a04138b0dadbf9c94dc8645b7082a95a205045b0b24ed94d89c4",
+      "verified": true
+    },
+    {
+      "bytes": 3337015,
+      "file": "heads.json",
+      "manifest_bytes": 3337015,
+      "manifest_sha256": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486",
+      "path": "/private/tmp/m109-demo/heads.json",
+      "present": true,
+      "sha256": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486",
+      "verified": true
+    },
+    {
+      "bytes": 11548,
+      "file": "meta.json",
+      "manifest_bytes": 11548,
+      "manifest_sha256": "6d6a79b331ce3f60c097f2bd3662a2178345aef68a7ded61e67737ff8e8cb89e",
+      "path": "/private/tmp/m109-demo/meta.json",
+      "present": true,
+      "sha256": "6d6a79b331ce3f60c097f2bd3662a2178345aef68a7ded61e67737ff8e8cb89e",
+      "verified": true
+    },
+    {
+      "bytes": 34026169,
+      "file": "model.fp16.onnx",
+      "manifest_bytes": 34026169,
+      "manifest_sha256": "2852a0d5941a8a274245c2b65da66ea0989f518b1a80f85a803ae1140d7846e9",
+      "path": "/private/tmp/m109-demo/model.fp16.onnx",
+      "present": true,
+      "sha256": "2852a0d5941a8a274245c2b65da66ea0989f518b1a80f85a803ae1140d7846e9",
+      "verified": true
+    },
+    {
+      "bytes": 67877334,
+      "file": "model.onnx",
+      "manifest_bytes": 67877334,
+      "manifest_sha256": "b3b52e53b4b56d7cf7d513f4b70e15ef1e6786bd05fdf4b3dbba74a79c06887c",
+      "path": "/private/tmp/m109-demo/model.onnx",
+      "present": true,
+      "sha256": "b3b52e53b4b56d7cf7d513f4b70e15ef1e6786bd05fdf4b3dbba74a79c06887c",
+      "verified": true
+    },
+    {
+      "bytes": 1134224,
+      "file": "tokenizer.json",
+      "manifest_bytes": 1134224,
+      "manifest_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+      "path": "/private/tmp/m109-demo/tokenizer.json",
+      "present": true,
+      "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+      "verified": true
+    }
+  ],
+  "blockers": [],
+  "bundle_dir": "/private/tmp/m109-demo",
+  "bundle_identity_sha256": "b30126c4cf3d348f146ff4798bca7fe68e83a12051b4d5f58d4508fa06f76ded",
+  "checkpoint": {
+    "path": "/private/tmp/m103-cross-surface-warm-head-child.pt",
+    "sha256": "d81771f61a8391a1973c84e396b8c79e1dd94a8b28bf3e41f90b585ba1d57486",
+    "parameters": 10524544,
+    "stage": "sft_cross_surface_dispatch_head_probe"
+  },
+  "export": {
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+    "action_graph": "action_model.fp16.onnx",
+    "model_graph": "model.fp16.onnx",
+    "parity_hard_gate": true
+  },
+  "claim_boundary": "A clean Space is deployable only when every generated artifact is present and its exporter manifest, byte count, hash, and parity gate verify; local synthetic or text-first receipts do not establish native WebGPU deployment.",
+  "demo_dir": "/private/tmp/m109-demo",
+  "deployment_bundle_present": true,
+  "kind": "localagent_webgpu_demo_deploy_verification",
+  "manifest": {
+    "parity_gate_passed": true,
+    "path": "/private/tmp/m109-demo/bundle-manifest.json",
+    "schema_version": 3,
+    "sha256": "b203ba1d9892aea847a2540a20e1bc92942c4360ca8510e701551282aaa9c663"
+  },
+  "schema_version": 1,
+  "static": [
+    {
+      "file": "index.html",
+      "present": true
+    },
+    {
+      "file": "app.js",
+      "present": true
+    },
+    {
+      "file": "style.css",
+      "present": true
+    },
+    {
+      "file": "tokenizer.js",
+      "present": true
+    }
+  ],
+  "verified": true
+}

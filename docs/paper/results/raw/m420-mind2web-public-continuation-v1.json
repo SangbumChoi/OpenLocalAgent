@@ -1,0 +1,131 @@
+{
+  "accessed_utc": "2026-08-05",
+  "claim_boundary": "This is a bounded, text-first continuation over a derived positive-grounding subset of the public Mind2Web TRAIN shard. It is not the official Mind2Web test score, native BrowserGym score, visual screenshot-grounding result, live-site action, or external-account/MCP execution.",
+  "kind": "localagent_mind2web_public_continuation",
+  "schema_version": 1,
+  "acquisition": {
+    "dataset": "osunlp/Mind2Web",
+    "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+    "source_url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+    "license": "CC-BY-4.0",
+    "raw_snapshot": {
+      "path": "data/private/mind2web/data/train/train_0.json",
+      "bytes": 616000823,
+      "sha256": "c8b622901057bca813a6d171733c41e4fc266c2902a23d63b9094c0add3f8f2c",
+      "split": "train",
+      "source_file": "data/train/train_0.json"
+    },
+    "derived_filter": {
+      "path": "data/private/mind2web/data/train/train_0_filtered64.json",
+      "bytes": 401790766,
+      "sha256": "97164f38f1bcf6f35b1b1a7a26cddcdf93d28b11f1bb702a56cb8be8a2d7089c",
+      "rule": "retain the first 64 records with supported CLICK/TYPE/SELECT operations and a positive backend_node_id; cap each trajectory at 8 actions",
+      "records_inspected": 83,
+      "records_retained": 64,
+      "records_rejected": 19,
+      "rejection_reason": "missing or invalid positive grounded target, or unsupported operation"
+    }
+  },
+  "normalization": {
+    "adapter": "mind2web_v1",
+    "enrichment_level": 1,
+    "manifest": {
+      "path": "data/private/mind2web/normalized/m420/manifest.json",
+      "bytes": 3328,
+      "sha256": "f6656200ae983f315cda8d3bc0a6ebfc0f0b8870797b3367faaaf48e318e8c2d",
+      "self_sha256": "6a8ffffa112099053d235b5bb8ed099b6b463d69f47b2bda9527aba2fe919a4e"
+    },
+    "conversation_rows": 128,
+    "parent_tasks": 64,
+    "tool_calls": 772,
+    "operations": {
+      "web_click": 128,
+      "web_select": 14,
+      "web_type": 76
+    },
+    "holdout_denylist_matches": 0,
+    "source_disjoint_split": {
+      "train_rows": 96,
+      "train_parent_tasks": 48,
+      "train_path": "data/private/mind2web/normalized/m420/train.jsonl",
+      "train_bytes": 352766,
+      "train_sha256": "b6cc595007bb91aa37f4d89e15e477b5b223bb9a66913856273c7cf995abf866",
+      "eval_rows": 32,
+      "eval_parent_tasks": 16,
+      "eval_path": "data/private/mind2web/normalized/m420/eval.jsonl",
+      "eval_bytes": 113763,
+      "eval_sha256": "2b3e502978496dd75151a244477ad8efebfec0ebdd912bf97f0910c14f0d7ed9",
+      "parent_overlap": 0,
+      "typed_slot_overlap": 0
+    }
+  },
+  "training": {
+    "parent_checkpoint": {
+      "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+      "bytes": 52242001,
+      "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+      "parameters": 10524544
+    },
+    "child_checkpoint": {
+      "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+      "bytes": 52246937,
+      "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+    },
+    "steps": 8,
+    "head_steps": 8,
+    "head_init": "parent",
+    "learning_rate": 0.00002,
+    "max_seq_len": 128,
+    "batch_size": 1,
+    "device": "cpu",
+    "seed": 2027,
+    "loss_history": [2.669562, 2.621171, 2.441145, 2.526768, 2.951245, 2.456157, 3.355757, 2.386254],
+    "input_tokens": 12192,
+    "loss_tokens": 5728
+  },
+  "metrics": {
+    "teacher_forced": {
+      "train_before_token_accuracy": 0.6040502793,
+      "train_after_token_accuracy": 0.6969273743,
+      "eval_before_token_accuracy": 0.6059670782,
+      "eval_after_token_accuracy": 0.6965020576,
+      "eval_token_accuracy_delta": 0.0905349794,
+      "train_sequence_accuracy_before": 0.0,
+      "train_sequence_accuracy_after": 0.0,
+      "eval_sequence_accuracy_before": 0.0,
+      "eval_sequence_accuracy_after": 0.0
+    },
+    "heads": {
+      "eval_route_accuracy_before": 1.0,
+      "eval_route_accuracy_after": 1.0,
+      "eval_selector_top1_before": 0.0053763441,
+      "eval_selector_top1_after": 0.8494623656,
+      "eval_selector_top1_delta": 0.8440860215,
+      "selector_eval_tool_rows": 186
+    }
+  },
+  "weight_movement": {
+    "relative_l2_percent": {
+      "embedding": 0.1573577821,
+      "attention": 0.1422321349,
+      "ffn": 0.1606981456,
+      "norm": 0.0053555686,
+      "route_head": 61.9222564697,
+      "dense_selector": 97.7988586426,
+      "ptr_head": 0.0,
+      "tool_head": 0.0
+    },
+    "interpretation": "The compatible pretrained backbone is retained while browser routing/selection heads absorb most of the source-specific update; exact sequence accuracy remains zero, so this is an initialization/adaptation signal rather than task completion."
+  },
+  "provenance_policy": {
+    "train_source": "public Mind2Web TRAIN only",
+    "eval_source": "parent-disjoint held-out rows from the same bounded TRAIN shard",
+    "screenshots_used": false,
+    "dom_used": true,
+    "native_browser_executed": false,
+    "external_side_effects": false,
+    "mcp_executed": false,
+    "official_test_rows_admitted": 0
+  },
+  "receipt_self_sha256": "05438a23e53e312bbf38300c2c6ebd56d108e1d0ce0f41080b40eca3c09e2c82"
+}

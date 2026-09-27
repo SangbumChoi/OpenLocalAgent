@@ -1,0 +1,61 @@
+{
+  "kind": "localagent_mcpmark_current_checkpoint_router_proxy",
+  "schema_version": 1,
+  "dataset": {
+    "name": "MCPMark",
+    "url": "https://github.com/eval-sys/mcpmark",
+    "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "standard_rows": 169,
+    "easy_rows": 70,
+    "standard_task_manifest_sha256": "b35b92adfb8a846eb32dc36c411c17aa5ecf757e5b63aeaa1671755f475686d5",
+    "easy_task_manifest_sha256": "f8eea15c843ee222c3899849d724ddbe6cd89f0f709ff7a84659d9cafef52f06",
+    "task_text_retained": false,
+    "mcp_servers_executed": false,
+    "verifiers_executed": false
+  },
+  "arms": {
+    "m56_stateful_lowrate_child": {
+      "checkpoint_sha256": "3263678aadae50106f32bc557d5bd99d8aa3e2fc96ce055a36c28260b21f6062",
+      "standard": {
+        "rows": 169,
+        "route_accuracy": 0.17751479289940827,
+        "selector_top1": 0.03550295857988166,
+        "selector_top3": 0.13609467455621302
+      },
+      "easy": {
+        "rows": 70,
+        "route_accuracy": 0.12857142857142856,
+        "selector_top1": 0.02857142857142857,
+        "selector_top3": 0.12857142857142856
+      }
+    },
+    "m59_toolsandbox_sft_child": {
+      "checkpoint_sha256": "e1d442b1511cab57c77b0368c33ec3beefdd4f44ae0de32ef498018677c63d9d",
+      "standard": {
+        "rows": 169,
+        "route_accuracy": 0.20710059171597633,
+        "selector_top1": 0.023668639053254437,
+        "selector_top3": 0.14792899408284024
+      },
+      "easy": {
+        "rows": 70,
+        "route_accuracy": 0.22857142857142856,
+        "selector_top1": 0.014285714285714285,
+        "selector_top3": 0.14285714285714285
+      }
+    }
+  },
+  "delta_m59_minus_m56": {
+    "standard_route_accuracy_points": 2.958579881656805,
+    "standard_selector_top1_points": -1.1834319526627226,
+    "standard_selector_top3_points": 1.1834319526627226,
+    "easy_route_accuracy_points": 10.0,
+    "easy_selector_top1_points": -1.4285714285714286,
+    "easy_selector_top3_points": 1.4285714285714286
+  },
+  "interpretation": {
+    "finding": "ToolSandbox continuation improves service-family routing but does not improve exact tool-family selection on the untouched MCPMark descriptions.",
+    "next_step": "Train a schema-conditioned MCP adapter on permitted non-evaluation data, then run the official stateful MCPMark servers and verifiers separately.",
+    "claim_boundary": "Public MCPMark description-routing proxy only; not live MCP execution, verifier success, pass@k, or an official leaderboard score."
+  }
+}

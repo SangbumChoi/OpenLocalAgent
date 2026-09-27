@@ -1,0 +1,34 @@
+# Matched attention-vs-hybrid quality arm on the H100 replication corpus.
+# Identical seed, corpus, tokenizer, schedule and token budget across both arms; only
+# configs/model/webgpu-10m-{attn,hybrid}.yaml differ. Not the paper-tier corpus: this mixture is
+# fineweb-edu-dedup + cosmopedia-v2 + permissive-python only, packed locally.
+stage: pretrain
+model_config: configs/model/webgpu-10m-attn.yaml
+data:
+  shards_dir: data/shards/h100-mix
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-h100-16k.json
+optim:
+  name: adamw
+  lr: 3.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 32
+  total_steps: 1600
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 16
+  grad_accum_steps: 4
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2027
+  resume: false
+log:
+  out_dir: runs/mix-10m-attn-seed2027
+  ckpt_every: 200
+  eval_every: 100
+  eval_batches: 32

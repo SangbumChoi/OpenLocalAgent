@@ -1,0 +1,20 @@
+# Browser decode-latency candidate, sized below 20M parameters for WebGPU-class devices.
+# This is an untrained architecture candidate, not a quality-selected model or a quality claim.
+# The [conv, conv, attn] pattern keeps one full GQA layer per three blocks while making six of
+# nine cache slots constant-size short-conv state. Compare only against webgpu-16m-attn.yaml.
+name: webgpu-16m-hybrid
+vocab_size: 16384
+d_model: 320
+n_layers: 9
+n_loops: 1
+n_heads: 5
+n_kv_heads: 1
+ffn_hidden: 832
+max_seq_len: 2048
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types: [conv, conv, attn, conv, conv, attn, conv, conv, attn]

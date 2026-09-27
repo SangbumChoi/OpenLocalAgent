@@ -1,0 +1,21 @@
+model ultra-tiny-1m: 0.977M params on cpu seed=0 sft_scale=1.0
+  [pretrain] step    0/200  loss 5.550  loss_tokens 8,192
+  [pretrain] step   25/200  loss 3.503  loss_tokens 212,992
+  [pretrain] step   50/200  loss 3.434  loss_tokens 417,792
+  [pretrain] step   75/200  loss 3.430  loss_tokens 622,592
+  [pretrain] step  100/200  loss 3.448  loss_tokens 827,392
+  [pretrain] step  125/200  loss 3.145  loss_tokens 1,032,192
+  [pretrain] step  150/200  loss 3.020  loss_tokens 1,236,992
+  [pretrain] step  175/200  loss 2.876  loss_tokens 1,441,792
+  [pretrain] step  199/200  loss 2.763  loss_tokens 1,638,400
+=== Round 1: overall=12.5%  browser=0% code=11% computer_use=18% define=7% music=7% news=0% parallel=0% planner=0% productivity=8% text=3% tool_call=24% web_search=20%
+    multi-turn: step_acc=19% episode_acc=3% (81 steps)
+=== Round 2: overall=19.3%  browser=20% code=21% computer_use=20% define=3% music=0% news=3% parallel=0% planner=3% productivity=16% text=18% tool_call=32% web_search=30%
+    multi-turn: step_acc=20% episode_acc=3% (76 steps)
+=== Round 3: overall=25.2%  browser=73% code=25% computer_use=27% define=0% music=30% news=30% parallel=3% planner=0% productivity=28% text=0% tool_call=34% web_search=33%
+    multi-turn: step_acc=33% episode_acc=3% (72 steps)
+=== Round 4: overall=33.5%  browser=67% code=36% computer_use=38% define=0% music=7% news=10% parallel=3% planner=0% productivity=35% text=23% tool_call=41% web_search=53%
+    multi-turn: step_acc=27% episode_acc=0% (79 steps)
+=== Round 5: overall=35.9%  browser=90% code=36% computer_use=39% define=3% music=37% news=0% parallel=3% planner=33% productivity=42% text=15% tool_call=42% web_search=57%
+    multi-turn: step_acc=30% episode_acc=0% (84 steps)
+ABLATION_DONE runs/ablate/cpu-s0

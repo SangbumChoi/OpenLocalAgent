@@ -1,0 +1,22 @@
+# Parameter-matched all-attention control for webgpu-16m-hybrid.yaml.
+#
+# This is an untrained browser decode-latency candidate, not a quality-selected model or a
+# quality claim. Tokenizer, width, depth, heads, context, and normalization are identical to the
+# hybrid arm. The 944-wide FFN is WebGPU-friendly (16-aligned) and yields 15.618M parameters,
+# only 0.13% below the hybrid arm's 15.638M.
+name: webgpu-16m-attn
+vocab_size: 16384
+d_model: 320
+n_layers: 9
+n_loops: 1
+n_heads: 5
+n_kv_heads: 1
+ffn_hidden: 944
+max_seq_len: 2048
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types: [attn, attn, attn, attn, attn, attn, attn, attn, attn]

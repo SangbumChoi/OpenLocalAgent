@@ -1,0 +1,45 @@
+{
+  "kind": "localagent_public_model_demo_manifest",
+  "schema_version": 1,
+  "public": true,
+  "model_url": "https://huggingface.co/danelcsb/localagent-tiny-30m-byte",
+  "demo_url": "https://huggingface.co/spaces/danelcsb/localagent-webgpu",
+  "artifact_sha256": "a0043408fe287de4171bc63d83d3e1fa76d638241893e72bc7f034e287c1d0c2",
+  "verified_at": "2026-08-02",
+  "model": {
+    "repo": "danelcsb/localagent-tiny-30m-byte",
+    "revision": "d15db7c46d32a3987169a1a6e8cd43a525ad2a4c",
+    "file": "model.safetensors",
+    "bytes": 113297968,
+    "sha256": "a0043408fe287de4171bc63d83d3e1fa76d638241893e72bc7f034e287c1d0c2",
+    "config_file": "config.json",
+    "config_sha256": "7b271dd293c71f54428df8dfa96d957c5414a10f8022e930f113e14785f6f95e",
+    "variant": "tiny-30m-byte",
+    "vocab_size": 256,
+    "parameters": 28322304,
+    "parameter_budget_claim": "sub-100M"
+  },
+  "demo": {
+    "repo": "danelcsb/localagent-webgpu",
+    "revision": "3c07f7db500ac5ab23222e8d1e2fc5033fa5aeb0",
+    "entrypoint": "index.html",
+    "entrypoint_bytes": 2813,
+    "entrypoint_sha256": "58b7e237783f736355add4804d3b96e51d6ce976bc2a7a6fa5f108d8bb54bbe",
+    "model_graph": {
+      "file": "model.fp16.onnx",
+      "bytes": 57468760,
+      "sha256": "0778adbb104d4e6b028de52fe404747801dcc43a45594eba2071bc2375850bbe"
+    }
+  },
+  "dataset": {
+    "url": "https://huggingface.co/datasets/danelcsb/localagent-dispatch-data",
+    "revision": "ce39512e09610fbd3c3e4ff3aad269a0d905286b"
+  },
+  "verification": {
+    "method": "anonymous Hugging Face API, resolver headers, and downloaded model.safetensors/index.html SHA-256",
+    "public_model_http_status": 200,
+    "public_demo_http_status": 200,
+    "model_and_demo_revisions_observed": true
+  },
+  "claim_boundary": "This manifest verifies a publicly reachable 30M byte model and static WebGPU Space. It does not claim that the newer local 10.52M BPE Mind2Web continuation is the published model, nor does it establish native Android, desktop VM, MCP-server, external-email, or real-Notion task success."
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "localagent_public_dataset_acquisition_receipt",
+  "schema_version": 1,
+  "dataset": "osunlp/Mind2Web",
+  "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+  "config": "default",
+  "split": "train",
+  "rows_endpoint": "https://datasets-server.huggingface.co/rows?dataset=osunlp%2FMind2Web&config=default&split=train&offset=0&length=8",
+  "bounded_request": {
+    "offset": 0,
+    "length": 8,
+    "response_bytes": 67694921,
+    "response_sha256": "ac3a5c41998e1431cebb4f32ff939b626901552d7fe44d732db67209302852c9"
+  },
+  "filtered_source": {
+    "records_seen": 8,
+    "records_retained": 5,
+    "bytes": 43286518,
+    "sha256": "c74b0e58ae04fd275b0177ad729a0d167792dc59b60d1b0d92aa539d0315d622",
+    "annotation_ids": [
+      "7bda9645-0b5f-470a-8dd7-6af0bff4da68",
+      "a6372f23-f462-4706-8455-5b350c46d83c",
+      "9e035a36-1c77-4014-98ec-4d48ee41d904",
+      "cf361c84-6414-4b05-a7a1-77383997150a",
+      "46a3683f-fbe0-40d0-8729-6c7964d994e6"
+    ],
+    "rule": "retain only records whose every action has a positive candidate backend_node_id and whose operation is CLICK, TYPE, or SELECT"
+  },
+  "normalized_outputs": {
+    "all_rows": {"rows": 20, "bytes": 96731, "sha256": "daec3538c139d98535f7e1f4af6beef3e4d24a2a8c414b7d9c429f2330ce0ffa"},
+    "train_rows": {"rows": 16, "bytes": 72827, "sha256": "85fc7223863bc7d78439e7c66a254e0af28820ec6fdac3f004bbbe78919f5217"},
+    "eval_rows": {"rows": 4, "bytes": 17388, "sha256": "8e1068a85a8db948660e0b853f893224441fc11f49c3c990d0984b9503d586c8"}
+  },
+  "claim_boundary": "Bounded public Mind2Web train acquisition and normalization only; no protected test score, browser environment success, screenshot grounding, or external-account execution."
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "localagent_toolsandbox_native_smoke",
+  "schema_version": 1,
+  "benchmark_id": "toolsandbox",
+  "source_url": "https://github.com/apple/ToolSandbox",
+  "source_revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+  "environment_executed": true,
+  "official_split_verified": false,
+  "verifier_executed": true,
+  "user_simulator_executed": false,
+  "external_api_called": false,
+  "checkpoint_sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+  "task_count": 3,
+  "success_count": 3,
+  "success_rate": 1.0,
+  "scenarios": [
+    {"scenario": "cellular_off", "similarity": 1.0, "milestone_similarity": 1.0, "exception": null},
+    {"scenario": "wifi_off", "similarity": 1.0, "milestone_similarity": 1.0, "exception": null},
+    {"scenario": "send_message_with_phone_number_and_content", "similarity": 1.0, "milestone_similarity": 1.0, "exception": null}
+  ],
+  "raw_report": {
+    "path": "/private/tmp/m578-toolsandbox-native-m553-venv.json",
+    "sha256": "c53c84e37b91c534fcf194cca0edad3d01d3924c3ee4256e6b8c96835c07a32"
+  },
+  "claim_boundary": "Current m553 native ToolSandbox simulator/verifier smoke only. The three scenarios use a scripted one-turn user; the official split, model-based user simulator, full scenario matrix, and optional RapidAPI tools were not executed. This is not an official ToolSandbox leaderboard score and remains ineligible for the publication gate.",
+  "receipt_self_sha256": "2fa002a10fb77f32d19076aaad32bd4a5ee753e0c11bc06620ca68989920b33d"
+}

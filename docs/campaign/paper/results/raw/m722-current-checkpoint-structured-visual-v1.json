@@ -1,0 +1,54 @@
+{
+  "kind": "localagent_m722_current_checkpoint_structured_visual",
+  "schema_version": 1,
+  "checkpoint": {
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+    "parameters": 10524544,
+    "config": "webgpu-10m-hybrid"
+  },
+  "source": {
+    "dataset": "AndroidControl",
+    "object_url": "https://storage.googleapis.com/gresearch/android_control/android_control-00000-of-00020",
+    "range_bytes": 209715200,
+    "range_sha256": "031ab4dc3d74498ee9363c0d6a5c216616cf2f3289a0c08351428f5eae80acb2",
+    "complete_episodes": 57,
+    "train_episodes": 49,
+    "heldout_episodes": 8,
+    "train_rows": 276,
+    "heldout_rows": 40,
+    "split": "complete-record disjoint; final heldout episodes"
+  },
+  "training": {
+    "config": "configs/model/webgpu-10m-vision.yaml",
+    "parameters": 10612224,
+    "backbone_frozen": true,
+    "trainable": ["vision", "structured_action_head"],
+    "steps": 256,
+    "action_names": ["click", "input_text", "long_press", "navigate_back", "open_app", "scroll", "wait"]
+  },
+  "warm": {
+    "before": {"action_accuracy": 0.175, "action_loss": 1.8417361974716187, "coordinate_mae": 0.2678567036276772, "coordinate_rows": 21, "samples": 40},
+    "after": {"action_accuracy": 0.525, "action_loss": 1.368727207183838, "coordinate_mae": 0.29188580881981624, "coordinate_rows": 21, "samples": 40},
+    "seed": 720,
+    "mean_train_loss": 1.4497532589593902
+  },
+  "random": {
+    "before": {"action_accuracy": 0.1, "action_loss": 1.9876859188079834, "coordinate_mae": 0.25404939977895646, "coordinate_rows": 21, "samples": 40},
+    "after": {"action_accuracy": 0.525, "action_loss": 1.4463045597076416, "coordinate_mae": 0.27531726587386357, "coordinate_rows": 21, "samples": 40},
+    "seed": 721,
+    "mean_train_loss": 1.498544844915159
+  },
+  "weight_transfer": {
+    "warm_minus_random_action_accuracy": 0.0,
+    "warm_minus_random_coordinate_mae": 0.01656854294595267,
+    "decision": "do_not_promote_current_release_visual_transfer"
+  },
+  "export": {
+    "file": "visual_action_model.fp16.onnx",
+    "bytes": 44255651,
+    "sha256": "5f87d6cb0380600433a21f97f98baa9e12467bcbaa4d285570c2f2d827ccbdd5",
+    "cpu_onnx_parity": {"passed": true, "max_abs_diffs": [1.1920928955078125e-06, 5.960464477539063e-08]}
+  },
+  "claim_boundary": "Current-checkpoint visual transfer and CPU ONNX parity only. The warm arm ties random on held-out action accuracy and is worse on pointer MAE; no native Android emulator, official AndroidControl score, browser run of this current graph, or HF upload is claimed."
+}

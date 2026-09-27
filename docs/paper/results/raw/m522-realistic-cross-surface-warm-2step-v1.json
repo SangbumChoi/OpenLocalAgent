@@ -1,0 +1,475 @@
+{
+  "after": {
+    "eval": {
+      "assistant_loss_tokens": 92,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.40217391304347827,
+      "mean_loss": 4.564689200857411,
+      "rows": 4
+    },
+    "eval_by_source": {
+      "agentnet": {
+        "assistant_loss_tokens": 31,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.3870967741935484,
+        "mean_loss": 5.1040368849231355,
+        "rows": 1
+      },
+      "androidcontrol": {
+        "assistant_loss_tokens": 20,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.4,
+        "mean_loss": 3.8766128540039064,
+        "rows": 1
+      },
+      "mcpmark_fs": {
+        "assistant_loss_tokens": 31,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.3870967741935484,
+        "mean_loss": 5.018565516318044,
+        "rows": 1
+      },
+      "mind2web": {
+        "assistant_loss_tokens": 10,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.5,
+        "mean_loss": 2.861847496032715,
+        "rows": 1
+      }
+    },
+    "train": {
+      "assistant_loss_tokens": 172,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.38953488372093026,
+      "mean_loss": 4.458854386972827,
+      "rows": 8
+    }
+  },
+  "before": {
+    "eval": {
+      "assistant_loss_tokens": 92,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.391304347826087,
+      "mean_loss": 4.600161137788192,
+      "rows": 4
+    },
+    "eval_by_source": {
+      "agentnet": {
+        "assistant_loss_tokens": 31,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.3870967741935484,
+        "mean_loss": 5.110343686995968,
+        "rows": 1
+      },
+      "androidcontrol": {
+        "assistant_loss_tokens": 20,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.4,
+        "mean_loss": 3.9931026458740235,
+        "rows": 1
+      },
+      "mcpmark_fs": {
+        "assistant_loss_tokens": 31,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.3548387096774194,
+        "mean_loss": 5.032865462764617,
+        "rows": 1
+      },
+      "mind2web": {
+        "assistant_loss_tokens": 10,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.5,
+        "mean_loss": 2.891328811645508,
+        "rows": 1
+      }
+    },
+    "train": {
+      "assistant_loss_tokens": 172,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.38372093023255816,
+      "mean_loss": 4.566606632498807,
+      "rows": 8
+    }
+  },
+  "child": {
+    "bytes": 52252285,
+    "path": "/private/tmp/m522-warm-2step-v2.pt",
+    "sha256": "4259da721ffed72979d8a83eb28d87b4e153ff6bd234a0bdc5e0ef99c8011e71"
+  },
+  "claim_boundary": "Public-train-only text/accessibility continuation across mobile, browser, and desktop projections with source-disjoint held-out metrics; no official benchmark score, native emulator/browser/desktop/MCP execution, screenshot grounding, or external-account claim.",
+  "eval_sources": [
+    {
+      "datasets": [],
+      "input": {
+        "bytes": 2610672,
+        "path": "/private/tmp/m475-androidcontrol-eval.jsonl",
+        "sha256": "9d07848ce40b590aa28dc0248e48b47ce80aba985d141723761a1df70f37be12"
+      },
+      "label": "androidcontrol",
+      "public_reference": {
+        "dataset": "AndroidControl",
+        "url": "https://github.com/google-research/google-research/tree/master/android_control"
+      },
+      "revisions": [
+        "hf:OfficerChul/Android-Control-84k@train4096"
+      ],
+      "rows": 1,
+      "source_families": [
+        "androidcontrol_json_mirror"
+      ],
+      "source_urls": [],
+      "splits": [
+        "eval",
+        "train"
+      ],
+      "unique_parent_records": 1,
+      "visual_input_omitted_rows": 1
+    },
+    {
+      "datasets": [
+        "xlangai/AgentNet"
+      ],
+      "input": {
+        "bytes": 239744,
+        "path": "/private/tmp/agentnet_text_v3.eval.jsonl",
+        "sha256": "b9473550b24cea2f87b4d90ad29e6a669a179fdcee9e5d5a753011236f45af7d"
+      },
+      "label": "agentnet",
+      "public_reference": {
+        "dataset": "OpenCUA-AgentNet",
+        "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+      },
+      "revisions": [
+        "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+      ],
+      "rows": 1,
+      "source_families": [
+        "xlangai/AgentNet"
+      ],
+      "source_urls": [],
+      "splits": [
+        "ubuntu_jsonl_bounded_prefix"
+      ],
+      "unique_parent_records": 1,
+      "visual_input_omitted_rows": 0
+    },
+    {
+      "datasets": [
+        "osunlp/Mind2Web"
+      ],
+      "input": {
+        "bytes": 81803,
+        "path": "/private/tmp/mind2web-grounded-offset8-eval-disjoint.jsonl",
+        "sha256": "46305cb512f7368ed31817c79b798f5469e8658db12aed5d6880ea81b4e6fcbe"
+      },
+      "label": "mind2web",
+      "public_reference": {
+        "dataset": "Mind2Web-train",
+        "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+      },
+      "revisions": [
+        "17ece8eb89862368edc0cc806acee6fca5163474"
+      ],
+      "rows": 1,
+      "source_families": [],
+      "source_urls": [
+        "https://huggingface.co/datasets/osunlp/Mind2Web"
+      ],
+      "splits": [
+        "train"
+      ],
+      "unique_parent_records": 1,
+      "visual_input_omitted_rows": 0
+    },
+    {
+      "datasets": [
+        "MCPMark"
+      ],
+      "input": {
+        "bytes": 28557,
+        "path": "/private/tmp/mcpmark-fs-transfer-eval.jsonl",
+        "sha256": "275dee91549d64e79752c314ec860dfa27e998e0a0f47374e97eff51ce4fd47e"
+      },
+      "label": "mcpmark_fs",
+      "public_reference": {
+        "dataset": "MCPMark",
+        "url": "https://github.com/eval-sys/mcpmark"
+      },
+      "revisions": [
+        "cd45b7f57923b9b3985467f5139927575f83141c"
+      ],
+      "rows": 1,
+      "source_families": [
+        "MCPMark",
+        "mcpmark_filesystem"
+      ],
+      "source_urls": [
+        "https://github.com/eval-sys/mcpmark"
+      ],
+      "splits": [
+        "easy"
+      ],
+      "unique_parent_records": 1,
+      "visual_input_omitted_rows": 0
+    }
+  ],
+  "hyperparameters": {
+    "backbone_init": "parent",
+    "batch_size": 1,
+    "device": "cpu",
+    "learning_rate": 1e-05,
+    "max_eval_rows_per_source": 1,
+    "max_seq_len": 32,
+    "max_train_rows_per_source": 2,
+    "random_backbone_seed": 2028,
+    "seed": 2027,
+    "steps": 2
+  },
+  "kind": "localagent_cross_surface_public_continuation_report",
+  "loss_history": [
+    5.013728141784668,
+    5.348971366882324
+  ],
+  "parent": {
+    "bytes": 52246937,
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "rows": {
+    "eval": 4,
+    "train": 8
+  },
+  "schema_version": 1,
+  "split_contract": {
+    "cross_source_slot_reuse_allowed": true,
+    "labels_checked": [
+      "agentnet",
+      "androidcontrol",
+      "mcpmark_fs",
+      "mind2web"
+    ],
+    "mode": "source_local_parent_and_slot_disjoint"
+  },
+  "token_accounting": {
+    "dataset_token_accounting": {
+      "decay": null,
+      "main": {
+        "input_tokens": 248,
+        "loss_tokens": 172,
+        "sources": {
+          "multi_turn": {
+            "input_tokens": 248,
+            "loss_tokens": 172,
+            "rows": 8
+          }
+        }
+      }
+    },
+    "fixed_horizon_progress": {
+      "completed_optimizer_updates": 2,
+      "partial": false,
+      "planned_optimizer_updates": 2
+    },
+    "lm_sampling": {
+      "mode": "iid_with_replacement_v1"
+    },
+    "loss_components": {
+      "lm_loss": [
+        5.013728141784668,
+        5.348971366882324
+      ],
+      "optimization": [
+        5.013728141784668,
+        5.348971366882324
+      ],
+      "router_aux": [
+        0.0,
+        0.0
+      ],
+      "router_weighted": [
+        0.0,
+        0.0
+      ]
+    },
+    "token_accounting": {
+      "input_tokens": 62,
+      "loss_tokens": 51,
+      "sources": {
+        "multi_turn": {
+          "input_tokens": 62,
+          "loss_tokens": 51,
+          "rows": 2
+        }
+      }
+    },
+    "token_accounting_scope": "language_model_microbatches"
+  },
+  "train_sources": [
+    {
+      "datasets": [],
+      "input": {
+        "bytes": 10321415,
+        "path": "/private/tmp/m475-androidcontrol-train.jsonl",
+        "sha256": "983a4e5b20fe29f9dd8b4886c038dc5a77799aa3905868d6e7b9e47ef5a28c50"
+      },
+      "label": "androidcontrol",
+      "public_reference": {
+        "dataset": "AndroidControl",
+        "url": "https://github.com/google-research/google-research/tree/master/android_control"
+      },
+      "revisions": [
+        "hf:OfficerChul/Android-Control-84k@train4096"
+      ],
+      "rows": 2,
+      "source_families": [
+        "androidcontrol_json_mirror"
+      ],
+      "source_urls": [],
+      "splits": [
+        "train"
+      ],
+      "unique_parent_records": 2,
+      "visual_input_omitted_rows": 2
+    },
+    {
+      "datasets": [
+        "xlangai/AgentNet"
+      ],
+      "input": {
+        "bytes": 911115,
+        "path": "/private/tmp/agentnet_text_v3.train.jsonl",
+        "sha256": "666e7b29bd67e6b46c8a96c0fa9248a1d79498e4c6da2baf04bb906d8778bc60"
+      },
+      "label": "agentnet",
+      "public_reference": {
+        "dataset": "OpenCUA-AgentNet",
+        "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+      },
+      "revisions": [
+        "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+      ],
+      "rows": 2,
+      "source_families": [
+        "xlangai/AgentNet"
+      ],
+      "source_urls": [],
+      "splits": [
+        "ubuntu_jsonl_bounded_prefix"
+      ],
+      "unique_parent_records": 1,
+      "visual_input_omitted_rows": 0
+    },
+    {
+      "datasets": [
+        "osunlp/Mind2Web"
+      ],
+      "input": {
+        "bytes": 282261,
+        "path": "/private/tmp/mind2web-grounded-offset8-train-disjoint.jsonl",
+        "sha256": "78f7e647c3728106901c51ecc772c834467ef6a019c1c083af6849700b361621"
+      },
+      "label": "mind2web",
+      "public_reference": {
+        "dataset": "Mind2Web-train",
+        "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+      },
+      "revisions": [
+        "17ece8eb89862368edc0cc806acee6fca5163474"
+      ],
+      "rows": 2,
+      "source_families": [],
+      "source_urls": [
+        "https://huggingface.co/datasets/osunlp/Mind2Web"
+      ],
+      "splits": [
+        "train"
+      ],
+      "unique_parent_records": 1,
+      "visual_input_omitted_rows": 0
+    },
+    {
+      "datasets": [
+        "MCPMark"
+      ],
+      "input": {
+        "bytes": 22896,
+        "path": "/private/tmp/mcpmark-fs-transfer-train.jsonl",
+        "sha256": "e824a803cb852fae5ab387dc669afb1488c7a7c01d178a8f579d7f46480430f4"
+      },
+      "label": "mcpmark_fs",
+      "public_reference": {
+        "dataset": "MCPMark",
+        "url": "https://github.com/eval-sys/mcpmark"
+      },
+      "revisions": [
+        "cd45b7f57923b9b3985467f5139927575f83141c"
+      ],
+      "rows": 2,
+      "source_families": [
+        "MCPMark",
+        "mcpmark_filesystem"
+      ],
+      "source_urls": [
+        "https://github.com/eval-sys/mcpmark"
+      ],
+      "splits": [
+        "easy"
+      ],
+      "unique_parent_records": 2,
+      "visual_input_omitted_rows": 0
+    }
+  ],
+  "weight_transfer": {
+    "compatibility": {
+      "added_tensors": [],
+      "config_mismatches": {},
+      "removed_tensors": [],
+      "shape_mismatches": {},
+      "shared_tensor_count": 51,
+      "tokenizer_sha256_equal": true
+    },
+    "groups": {
+      "action_heads": {
+        "base_l2": 87.12721149777144,
+        "delta_l2": 0.0,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.0,
+        "target_l2": 87.12721149777144
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.686243041747026,
+        "delta_l2": 0.009743269990560223,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0001885079939490006,
+        "target_l2": 51.68620658348291
+      },
+      "embedding": {
+        "base_l2": 76.26811513665427,
+        "delta_l2": 0.017377554531456698,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.00022784822334104185,
+        "target_l2": 76.27305150038374
+      },
+      "ffn": {
+        "base_l2": 50.599417154543154,
+        "delta_l2": 0.010906662134617457,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0002155491653452412,
+        "target_l2": 50.599448626074256
+      },
+      "normalization": {
+        "base_l2": 21.431829234008912,
+        "delta_l2": 0.00013939425184519115,
+        "parameters": 384,
+        "relative_delta_l2": 6.504076265407835e-06,
+        "target_l2": 21.43184076448875
+      }
+    },
+    "recommendation": {
+      "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+      "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+      "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+      "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+    }
+  }
+}

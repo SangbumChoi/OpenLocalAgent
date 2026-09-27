@@ -1,0 +1,56 @@
+{
+  "kind": "localagent_hf_local_export_receipt",
+  "schema_version": 1,
+  "measurement": "m164_hf_local_export_current_stateful_child",
+  "generated_at": "2026-08-03",
+  "checkpoint": {
+    "path": "/private/tmp/m161-stateful-lowrate-current.pt",
+    "bytes": 52219184,
+    "sha256": "67ea2e43ed5f066f432ebcff149aa1305e9d9a9bc9fcae0d350b55842bf0ea51",
+    "parameters": 10524544,
+    "model_config": "webgpu-10m-hybrid",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "bundle": {
+    "path": "/private/tmp/m164-hf-current",
+    "export_verified_locally": true,
+    "files": {
+      "README.md": {
+        "bytes": 3472,
+        "sha256": "750b1ccd45e76a74e9f6d18683a6c69b772bf7c8e851a8df2d3a4adf12cb1834"
+      },
+      "agent_heads.bin": {
+        "bytes": 10097350,
+        "sha256": "343d8bed3d8556807b8b92603077680a11eadac9ac8e48d141319597a100a118"
+      },
+      "config.json": {
+        "bytes": 9476,
+        "sha256": "3855988ae29942591281aebb63eb10941a5d2c659486e25a2b3c8618d48027f3"
+      },
+      "model.safetensors": {
+        "bytes": 42101904,
+        "sha256": "a06728fd56561bc7b9af37a3493edcff3e4128ae247aac0d1f847e6b54c4e6b9"
+      },
+      "tokenizer.json": {
+        "bytes": 1134224,
+        "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+      }
+    }
+  },
+  "dispatch_metadata": {
+    "tool_count": 63,
+    "pointer_argument_count": 23,
+    "provenance": "inferred_standard_tool_pool_from_51_class_tool_head",
+    "model_card_reports_tools": 63,
+    "heads_included": true
+  },
+  "publication": {
+    "published": false,
+    "hub_url": null,
+    "authenticated": false,
+    "uploaded": false,
+    "reason": "hf auth whoami reports no login; upload requires a user-provided Hugging Face token and repository"
+  },
+  "claim_boundary": "This is a self-contained local Hugging Face-format bundle for the current 10.52M BPE stateful child. It is not a public Hub repository, download URL, hosted inference deployment, or native benchmark score. The agent heads contain local synthetic productivity examples, not public benchmark task payloads.",
+  "receipt_self_sha256": "d35f0115178423fc0e53e215e7d973459c75644cb0cddad5b213d497d856cf32"
+}

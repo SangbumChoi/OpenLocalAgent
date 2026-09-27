@@ -1,0 +1,55 @@
+{
+  "kind": "localagent_cross_surface_public_transfer_receipt",
+  "schema_version": 1,
+  "parent_checkpoint": {
+    "sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+    "parameters": 10524544
+  },
+  "comparison": {
+    "arm_contract": {
+      "warm_backbone_init": "parent",
+      "random_backbone_init": "random",
+      "random_backbone_seed": 2028
+    },
+    "aggregate": {
+      "warm_after_token_accuracy": 0.704772262026612,
+      "random_after_token_accuracy": 0.08348259979529171,
+      "warm_minus_random_after_pp": 62.12896622313203,
+      "warm_start_better_after": true
+    },
+    "surfaces": {
+      "androidcontrol": {"warm_after": 0.7088122605363985, "random_after": 0.11172413793103449, "warm_minus_random_after_pp": 59.70881226053639},
+      "agentnet": {"warm_after": 0.7018776765125727, "random_after": 0.06324805094981882, "warm_minus_random_after_pp": 63.86296255627539}
+    },
+    "decision": "warm_start_dominates_matched_random_on_all_surfaces"
+  },
+  "weight_transfer_analysis": {
+    "warm": {
+      "compatibility": {"config_mismatches": {}, "shape_mismatches": {}, "tokenizer_sha256_equal": true},
+      "groups": {
+        "embedding": {"relative_delta_l2": 0.0042885979407142685},
+        "attention_or_mixer": {"relative_delta_l2": 0.0017295467650537408},
+        "ffn": {"relative_delta_l2": 0.0021751853350943846},
+        "normalization": {"relative_delta_l2": 0.00012279582190038833},
+        "action_heads": {"relative_delta_l2": 0.0}
+      }
+    },
+    "random": {
+      "compatibility": {"config_mismatches": {}, "shape_mismatches": {}, "tokenizer_sha256_equal": true},
+      "groups": {
+        "embedding": {"relative_delta_l2": 1.1948575490830253},
+        "attention_or_mixer": {"relative_delta_l2": 0.7788287282318225},
+        "ffn": {"relative_delta_l2": 0.8779261817476353},
+        "normalization": {"relative_delta_l2": 0.08579282025011566},
+        "action_heads": {"relative_delta_l2": 0.0}
+      }
+    }
+  },
+  "children": {
+    "warm": {"sha256": "b7f2c52f09a72708a40e240f7b0cb11034ed0aa91cc097b82c191c333c32e9d9"},
+    "random": {"sha256": "8d2c30aefe0b13e32c5f2d052ea3b5df43de1162cbd141e01e4e65d12e0383eb"}
+  },
+  "raw_receipt": {"path": "/private/tmp/m558-m553-transfer-receipt.json", "sha256": "71d2bae4310a93f8b0618a6bc4021f155dcb9a5498ca4cf229e988a238b50957"},
+  "claim_boundary": "Matched public-train-only teacher-forced transfer ablation. Warm-start wins by 62.13 percentage points, but this is not native Android/browser/MCP execution or sequence-complete agent competence.",
+  "receipt_self_sha256": "73b545ab8da591c99a04d30663212240324bc2a27347f9f287739a4dabd40d1c"
+}

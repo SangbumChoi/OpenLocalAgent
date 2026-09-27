@@ -1,0 +1,96 @@
+{
+  "benchmark_id": "toolsandbox",
+  "checkpoint": {
+    "bytes": 52220621,
+    "path": "/private/tmp/toolsandbox-schema-continuation-v1.pt",
+    "sha256": "af18d4f12e4472bcb251ab1c2ffed8f0e42dabec0c0422f993388ae00b50a7a9"
+  },
+  "claim_boundary": "Native pinned ToolSandbox simulator and milestone verifier smoke only. The selected single-turn scenarios used a scripted user to terminate after the model response, and a deterministic post-tool response template to match the fixture's expected confirmation text; the official split, model-based user simulator, full scenario matrix, and optional RapidAPI tools were not executed. This is not an official ToolSandbox leaderboard score and does not satisfy the publication gate's official-split requirement.",
+  "environment_executed": true,
+  "external_api_called": false,
+  "kind": "localagent_toolsandbox_native_smoke",
+  "official_split_verified": false,
+  "output_dir": "/private/tmp/toolsandbox-native-smoke-v4",
+  "post_tool_response_policy": "deterministic_function_name_and_argument_template",
+  "runner": {
+    "bytes": 14348,
+    "path": "/Users/sangbumchoi/Documents/LocalAgent/scripts/run_toolsandbox_native.py",
+    "sha256": "bac30d859ce833c1673a97a34b31c57b77b1769b49e7db751b1a5c43b1c984eb"
+  },
+  "scenarios": [
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "cellular_off",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "wifi_off",
+      "similarity": 1.0,
+      "turn_count": 3
+    },
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "exception": null,
+      "milestone_similarity": 1.0,
+      "minefield_similarity": 0.0,
+      "scenario": "send_message_with_phone_number_and_content",
+      "similarity": 1.0,
+      "turn_count": 3
+    }
+  ],
+  "schema_version": 1,
+  "source_files": [
+    {
+      "bytes": 48824,
+      "path": "/private/tmp/ToolSandbox-165848b9a78cead7ca7fe7c89c688b58e6501219/README.md",
+      "sha256": "0e5cfb9077769e2dcbe74dbfc8b8fac8314d8a213ab34364ab6b2ecaf47d8fe8"
+    },
+    {
+      "bytes": 2668,
+      "path": "/private/tmp/ToolSandbox-165848b9a78cead7ca7fe7c89c688b58e6501219/LICENSE",
+      "sha256": "2283d5566b38210fbfb9fcb06619f1d0a8101bff9df974ea8afc3393508e9015"
+    },
+    {
+      "bytes": 56027,
+      "path": "/private/tmp/ToolSandbox-165848b9a78cead7ca7fe7c89c688b58e6501219/tool_sandbox/common/evaluation.py",
+      "sha256": "0425cff032bd1ca2ebe8cc1c875cdf2ea86463af24b2940734007d938e516ab3"
+    },
+    {
+      "bytes": 35461,
+      "path": "/private/tmp/ToolSandbox-165848b9a78cead7ca7fe7c89c688b58e6501219/tool_sandbox/common/execution_context.py",
+      "sha256": "a18f54e157b92fa011e84780bc33941ea0635ad70ab4b38e7408beedc6221437"
+    },
+    {
+      "bytes": 5572,
+      "path": "/private/tmp/ToolSandbox-165848b9a78cead7ca7fe7c89c688b58e6501219/tool_sandbox/scenarios/__init__.py",
+      "sha256": "113cc01d10bb1630a93e09785893235ae4a3863d3a61542839eeb2791914724a"
+    }
+  ],
+  "source_revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+  "source_url": "https://github.com/apple/ToolSandbox",
+  "success_count": 3,
+  "success_rate": 1.0,
+  "task_count": 3,
+  "user_simulator_executed": false,
+  "verifier_executed": true
+}

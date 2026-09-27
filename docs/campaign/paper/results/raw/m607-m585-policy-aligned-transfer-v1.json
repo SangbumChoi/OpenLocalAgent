@@ -1,0 +1,1448 @@
+{
+  "claim_boundary": "Matched current-checkpoint public projection transfer only. The warm arm trains four normalized projections and evaluates a source-disjoint AgentNet text projection; all screenshots are omitted, and no Android emulator, browser, desktop VM, MCP service, email/Notion account, or external side effect ran. This is not an official score for AndroidControl, Mind2Web, xLAM, ToolACE, or AgentNet. ToolACE remains a matrix train candidate pending the executable-catalog terms/split review.",
+  "comparison": {
+    "aggregate": {
+      "random_after_token_accuracy": 0.10557083906464924,
+      "warm_after_token_accuracy": 0.734525447042641,
+      "warm_minus_random_after_pp": 62.895460797799174,
+      "warm_start_better_after": true
+    },
+    "arm_contract": {
+      "random_backbone_init": "random",
+      "random_backbone_seed": 2028,
+      "warm_backbone_init": "parent"
+    },
+    "claim_boundary": "Matched public-train-only text/accessibility continuation comparison; this is not an official benchmark score, native environment success, screenshot-grounding result, or evidence of real email/Notion/MCP side effects.",
+    "decision": "warm_start_dominates_matched_random_on_all_surfaces",
+    "eval_sources": [
+      {
+        "datasets": [],
+        "input": {
+          "bytes": 838022,
+          "path": "/private/tmp/localagent-public-data/androidcontrol-eval-256.jsonl",
+          "sha256": "5168c544664cd4f7c0723387280a423b1ba3e518da2ba381305522f0dea270bc"
+        },
+        "label": "androidcontrol",
+        "public_reference": {
+          "dataset": "OfficerChul/Android-Control-84k",
+          "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+        },
+        "revisions": [
+          "hf:OfficerChul/Android-Control-84k@0248027f747c9d57bd09c14e8f044f9a8103dddd"
+        ],
+        "rows": 8,
+        "source_families": [
+          "androidcontrol_json_mirror"
+        ],
+        "source_urls": [],
+        "splits": [
+          "test"
+        ],
+        "unique_parent_records": 0,
+        "visual_input_omitted_rows": 8
+      },
+      {
+        "datasets": [
+          "osunlp/Mind2Web"
+        ],
+        "input": {
+          "bytes": 113763,
+          "path": "data/private/mind2web/normalized/m420/eval.jsonl",
+          "sha256": "2b3e502978496dd75151a244477ad8efebfec0ebdd912bf97f0910c14f0d7ed9"
+        },
+        "label": "mind2web",
+        "public_reference": {
+          "dataset": "osunlp/Mind2Web",
+          "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+        },
+        "revisions": [
+          "17ece8eb89862368edc0cc806acee6fca5163474"
+        ],
+        "rows": 8,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/osunlp/Mind2Web"
+        ],
+        "splits": [
+          "train"
+        ],
+        "unique_parent_records": 4,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "product-science/xlam-function-calling-60k-raw"
+        ],
+        "input": {
+          "bytes": 350040,
+          "path": "/private/tmp/xlam-m574-normalized-a/eval.jsonl",
+          "sha256": "0e42db60b81539586274b2ff2d1dcfd792e5f1d1d42fed5b1b1255b9c0954a73"
+        },
+        "label": "xlam",
+        "public_reference": {
+          "dataset": "product-science/xlam-function-calling-60k-raw",
+          "url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+        },
+        "revisions": [
+          "dfbd3c669354c27f2727870d39a4d86c32381448"
+        ],
+        "rows": 8,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+        ],
+        "splits": [
+          "eval"
+        ],
+        "unique_parent_records": 8,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "Team-ACE/ToolACE"
+        ],
+        "input": {
+          "bytes": 3673279,
+          "path": "/private/tmp/m607-toolace/eval.jsonl",
+          "sha256": "472dc36be441bf929c03f33b5591eff267db0975df5b60f240d1931566de7c7d"
+        },
+        "label": "toolace",
+        "public_reference": {
+          "dataset": "Team-ACE/ToolACE",
+          "url": "https://huggingface.co/datasets/Team-ACE/ToolACE"
+        },
+        "revisions": [
+          "6bda777c88d21e5a204703c1ee45597a8fa4f734"
+        ],
+        "rows": 8,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/Team-ACE/ToolACE"
+        ],
+        "splits": [
+          "eval",
+          "source_record_disjoint_eval"
+        ],
+        "unique_parent_records": 8,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "xlangai/AgentNet"
+        ],
+        "input": {
+          "bytes": 483445,
+          "path": "/private/tmp/localagent-public-data/agentnet-eval-64.jsonl",
+          "sha256": "7f0f080e33c4a069c532f3efcc0ec72e73d456f606cd4e5608df6f4dd949ac43"
+        },
+        "label": "agentnet",
+        "public_reference": {
+          "dataset": "xlangai/AgentNet",
+          "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+        },
+        "revisions": [
+          "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+        ],
+        "rows": 8,
+        "source_families": [
+          "xlangai/AgentNet"
+        ],
+        "source_urls": [],
+        "splits": [
+          "ubuntu_jsonl_bounded_prefix"
+        ],
+        "unique_parent_records": 1,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "hyperparameters": {
+      "backbone_init": "parent",
+      "batch_size": 2,
+      "device": "cpu",
+      "learning_rate": 1e-05,
+      "max_eval_rows_per_source": 8,
+      "max_seq_len": 512,
+      "max_train_rows_per_source": 8,
+      "random_backbone_seed": 2028,
+      "seed": 2027,
+      "steps": 32
+    },
+    "kind": "localagent_cross_surface_transfer_ablation_report",
+    "parent": {
+      "bytes": 52211696,
+      "path": "/private/tmp/m585-public-multisurface-warm.pt",
+      "sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff"
+    },
+    "random_backbone_receipt": {
+      "bytes": 52212186,
+      "path": "/private/tmp/m607-m585-policy-random.pt",
+      "sha256": "fb64816a837412d2d88906ede50621b7f4ba90fc6b6ffca7f0931287e90e28c0"
+    },
+    "random_weight_groups": {
+      "action_heads": {
+        "base_l2": 91.45685930938616,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.45685930938616
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.695321046570925,
+        "delta_l2": 40.26154043946663,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.7788236850912694,
+        "target_l2": 50.41069496034951
+      },
+      "embedding": {
+        "base_l2": 77.12846650545255,
+        "delta_l2": 92.00652361386057,
+        "parameters": 6291456,
+        "relative_delta_l2": 1.1928996877872091,
+        "target_l2": 50.185445854846684
+      },
+      "ffn": {
+        "base_l2": 50.607539495945986,
+        "delta_l2": 44.42824863590085,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.8778978207280728,
+        "target_l2": 49.792670044398925
+      },
+      "normalization": {
+        "base_l2": 21.44468864636463,
+        "delta_l2": 1.849606033820397,
+        "parameters": 384,
+        "relative_delta_l2": 0.0862500763858816,
+        "target_l2": 19.596097240079324
+      }
+    },
+    "rows": {
+      "eval": 40,
+      "train": 32
+    },
+    "schema_version": 1,
+    "surfaces": {
+      "agentnet": {
+        "random_backbone": {
+          "after_token_accuracy": 0.007722007722007722,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.007722007722007722
+        },
+        "rows": 8,
+        "warm_minus_random_after_pp": 74.90347490347492,
+        "warm_start": {
+          "after_token_accuracy": 0.7567567567567568,
+          "before_token_accuracy": 0.7644787644787645,
+          "delta_token_accuracy": -0.007722007722007707
+        },
+        "warm_start_better_after": true
+      },
+      "androidcontrol": {
+        "random_backbone": {
+          "after_token_accuracy": 0.05069124423963134,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.05069124423963134
+        },
+        "rows": 8,
+        "warm_minus_random_after_pp": 74.19354838709677,
+        "warm_start": {
+          "after_token_accuracy": 0.7926267281105991,
+          "before_token_accuracy": 0.7880184331797235,
+          "delta_token_accuracy": 0.004608294930875556
+        },
+        "warm_start_better_after": true
+      },
+      "mind2web": {
+        "random_backbone": {
+          "after_token_accuracy": 0.1820113314447592,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.1820113314447592
+        },
+        "rows": 8,
+        "warm_minus_random_after_pp": 70.3257790368272,
+        "warm_start": {
+          "after_token_accuracy": 0.8852691218130312,
+          "before_token_accuracy": 0.8859773371104815,
+          "delta_token_accuracy": -0.0007082152974503542
+        },
+        "warm_start_better_after": true
+      },
+      "toolace": {
+        "random_backbone": {
+          "after_token_accuracy": 0.04580152671755725,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.04580152671755725
+        },
+        "rows": 8,
+        "warm_minus_random_after_pp": 45.610687022900755,
+        "warm_start": {
+          "after_token_accuracy": 0.5019083969465649,
+          "before_token_accuracy": 0.5,
+          "delta_token_accuracy": 0.001908396946564861
+        },
+        "warm_start_better_after": true
+      },
+      "xlam": {
+        "random_backbone": {
+          "after_token_accuracy": 0.02620967741935484,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.02620967741935484
+        },
+        "rows": 8,
+        "warm_minus_random_after_pp": 48.79032258064517,
+        "warm_start": {
+          "after_token_accuracy": 0.5141129032258065,
+          "before_token_accuracy": 0.5161290322580645,
+          "delta_token_accuracy": -0.002016129032258007
+        },
+        "warm_start_better_after": true
+      }
+    },
+    "train_sources": [
+      {
+        "datasets": [],
+        "input": {
+          "bytes": 1680018,
+          "path": "/private/tmp/localagent-public-data/androidcontrol-train-512.jsonl",
+          "sha256": "34c68424d9bc660a5c594a6f21c946b822f87c8ed0ad0cede43a11cc585f6c29"
+        },
+        "label": "androidcontrol",
+        "public_reference": {
+          "dataset": "OfficerChul/Android-Control-84k",
+          "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+        },
+        "revisions": [
+          "hf:OfficerChul/Android-Control-84k@0248027f747c9d57bd09c14e8f044f9a8103dddd"
+        ],
+        "rows": 8,
+        "source_families": [
+          "androidcontrol_json_mirror"
+        ],
+        "source_urls": [],
+        "splits": [
+          "train"
+        ],
+        "unique_parent_records": 0,
+        "visual_input_omitted_rows": 8
+      },
+      {
+        "datasets": [
+          "osunlp/Mind2Web"
+        ],
+        "input": {
+          "bytes": 352766,
+          "path": "data/private/mind2web/normalized/m420/train.jsonl",
+          "sha256": "b6cc595007bb91aa37f4d89e15e477b5b223bb9a66913856273c7cf995abf866"
+        },
+        "label": "mind2web",
+        "public_reference": {
+          "dataset": "osunlp/Mind2Web",
+          "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+        },
+        "revisions": [
+          "17ece8eb89862368edc0cc806acee6fca5163474"
+        ],
+        "rows": 8,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/osunlp/Mind2Web"
+        ],
+        "splits": [
+          "train"
+        ],
+        "unique_parent_records": 4,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "product-science/xlam-function-calling-60k-raw"
+        ],
+        "input": {
+          "bytes": 694892,
+          "path": "/private/tmp/xlam-m574-normalized-a/train.jsonl",
+          "sha256": "cbbeac51ec9e0f3cc6871c1ef6f30c153373335341e35ab053d9c301b47b1f1a"
+        },
+        "label": "xlam",
+        "public_reference": {
+          "dataset": "product-science/xlam-function-calling-60k-raw",
+          "url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+        },
+        "revisions": [
+          "dfbd3c669354c27f2727870d39a4d86c32381448"
+        ],
+        "rows": 8,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+        ],
+        "splits": [
+          "train"
+        ],
+        "unique_parent_records": 8,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "Team-ACE/ToolACE"
+        ],
+        "input": {
+          "bytes": 30732018,
+          "path": "/private/tmp/m607-toolace/train.jsonl",
+          "sha256": "77e75db2caec61b39d08c784544390e2242b49db1d6833424c2dacf6940e8881"
+        },
+        "label": "toolace",
+        "public_reference": {
+          "dataset": "Team-ACE/ToolACE",
+          "url": "https://huggingface.co/datasets/Team-ACE/ToolACE"
+        },
+        "revisions": [
+          "6bda777c88d21e5a204703c1ee45597a8fa4f734"
+        ],
+        "rows": 8,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/Team-ACE/ToolACE"
+        ],
+        "splits": [
+          "source_record_disjoint_train",
+          "train"
+        ],
+        "unique_parent_records": 8,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "warm_start_receipt": {
+      "bytes": 52212008,
+      "path": "/private/tmp/m607-m585-policy-warm.pt",
+      "sha256": "a2cba579c5e16a7e3115af64b3424bd384c55f3b863e1200676444a6b22b1ecf"
+    },
+    "warm_weight_groups": {
+      "action_heads": {
+        "base_l2": 91.45685930938616,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.45685930938616
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.695321046570925,
+        "delta_l2": 0.0786567647452893,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0015215451447613516,
+        "target_l2": 51.69565783582095
+      },
+      "embedding": {
+        "base_l2": 77.12846650545255,
+        "delta_l2": 0.32230351369212845,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.00417878804409191,
+        "target_l2": 77.22855137357101
+      },
+      "ffn": {
+        "base_l2": 50.607539495945986,
+        "delta_l2": 0.09256953781582761,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0018291649571946305,
+        "target_l2": 50.60798035528062
+      },
+      "normalization": {
+        "base_l2": 21.44468864636463,
+        "delta_l2": 0.0019127887912624307,
+        "parameters": 384,
+        "relative_delta_l2": 8.919638903625177e-05,
+        "target_l2": 21.446450647499336
+      }
+    }
+  },
+  "decision": {
+    "export_child_to_webgpu": false,
+    "native_promotion": false,
+    "promote_toolace_to_executable_training_plan": false,
+    "reuse_parent_as_initialization_candidate": true,
+    "warm_beats_random_all_surfaces": true,
+    "warm_minus_random_after_pp": 62.895460797799174
+  },
+  "eval_sources": [
+    {
+      "datasets": [],
+      "input": {
+        "bytes": 838022,
+        "path": "/private/tmp/localagent-public-data/androidcontrol-eval-256.jsonl",
+        "sha256": "5168c544664cd4f7c0723387280a423b1ba3e518da2ba381305522f0dea270bc"
+      },
+      "label": "androidcontrol",
+      "public_reference": {
+        "dataset": "OfficerChul/Android-Control-84k",
+        "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+      },
+      "revisions": [
+        "hf:OfficerChul/Android-Control-84k@0248027f747c9d57bd09c14e8f044f9a8103dddd"
+      ],
+      "rows": 8,
+      "source_families": [
+        "androidcontrol_json_mirror"
+      ],
+      "source_urls": [],
+      "splits": [
+        "test"
+      ],
+      "unique_parent_records": 0,
+      "visual_input_omitted_rows": 8
+    },
+    {
+      "datasets": [
+        "osunlp/Mind2Web"
+      ],
+      "input": {
+        "bytes": 113763,
+        "path": "data/private/mind2web/normalized/m420/eval.jsonl",
+        "sha256": "2b3e502978496dd75151a244477ad8efebfec0ebdd912bf97f0910c14f0d7ed9"
+      },
+      "label": "mind2web",
+      "public_reference": {
+        "dataset": "osunlp/Mind2Web",
+        "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+      },
+      "revisions": [
+        "17ece8eb89862368edc0cc806acee6fca5163474"
+      ],
+      "rows": 8,
+      "source_families": [],
+      "source_urls": [
+        "https://huggingface.co/datasets/osunlp/Mind2Web"
+      ],
+      "splits": [
+        "train"
+      ],
+      "unique_parent_records": 4,
+      "visual_input_omitted_rows": 0
+    },
+    {
+      "datasets": [
+        "product-science/xlam-function-calling-60k-raw"
+      ],
+      "input": {
+        "bytes": 350040,
+        "path": "/private/tmp/xlam-m574-normalized-a/eval.jsonl",
+        "sha256": "0e42db60b81539586274b2ff2d1dcfd792e5f1d1d42fed5b1b1255b9c0954a73"
+      },
+      "label": "xlam",
+      "public_reference": {
+        "dataset": "product-science/xlam-function-calling-60k-raw",
+        "url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+      },
+      "revisions": [
+        "dfbd3c669354c27f2727870d39a4d86c32381448"
+      ],
+      "rows": 8,
+      "source_families": [],
+      "source_urls": [
+        "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+      ],
+      "splits": [
+        "eval"
+      ],
+      "unique_parent_records": 8,
+      "visual_input_omitted_rows": 0
+    },
+    {
+      "datasets": [
+        "Team-ACE/ToolACE"
+      ],
+      "input": {
+        "bytes": 3673279,
+        "path": "/private/tmp/m607-toolace/eval.jsonl",
+        "sha256": "472dc36be441bf929c03f33b5591eff267db0975df5b60f240d1931566de7c7d"
+      },
+      "label": "toolace",
+      "public_reference": {
+        "dataset": "Team-ACE/ToolACE",
+        "url": "https://huggingface.co/datasets/Team-ACE/ToolACE"
+      },
+      "revisions": [
+        "6bda777c88d21e5a204703c1ee45597a8fa4f734"
+      ],
+      "rows": 8,
+      "source_families": [],
+      "source_urls": [
+        "https://huggingface.co/datasets/Team-ACE/ToolACE"
+      ],
+      "splits": [
+        "eval",
+        "source_record_disjoint_eval"
+      ],
+      "unique_parent_records": 8,
+      "visual_input_omitted_rows": 0
+    },
+    {
+      "datasets": [
+        "xlangai/AgentNet"
+      ],
+      "input": {
+        "bytes": 483445,
+        "path": "/private/tmp/localagent-public-data/agentnet-eval-64.jsonl",
+        "sha256": "7f0f080e33c4a069c532f3efcc0ec72e73d456f606cd4e5608df6f4dd949ac43"
+      },
+      "label": "agentnet",
+      "public_reference": {
+        "dataset": "xlangai/AgentNet",
+        "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+      },
+      "revisions": [
+        "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+      ],
+      "rows": 8,
+      "source_families": [
+        "xlangai/AgentNet"
+      ],
+      "source_urls": [],
+      "splits": [
+        "ubuntu_jsonl_bounded_prefix"
+      ],
+      "unique_parent_records": 1,
+      "visual_input_omitted_rows": 0
+    }
+  ],
+  "input_reports": {
+    "random": {
+      "bytes": 17948,
+      "path": "/private/tmp/m607-m585-policy-random.json",
+      "sha256": "3963a69a90316a67517e40a2ff10966eebd0420cd1cc45d00aca9fa269e37517"
+    },
+    "warm": {
+      "bytes": 18129,
+      "path": "/private/tmp/m607-m585-policy-warm.json",
+      "sha256": "f129b3dbd5b4b65cc660a2ca43d77f41865f700f47cadc0be522d29ceee58b75"
+    }
+  },
+  "kind": "localagent_m607_current_policy_transfer",
+  "parent_checkpoint": {
+    "bytes": 52211696,
+    "path": "/private/tmp/m585-public-multisurface-warm.pt",
+    "sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff"
+  },
+  "protocol": {
+    "batch_size": 2,
+    "held_out_labels": [
+      "agentnet"
+    ],
+    "learning_rate": 1e-05,
+    "max_eval_rows_per_source": 8,
+    "max_seq_len": 512,
+    "max_train_rows_per_source": 8,
+    "random_backbone_seed": 2028,
+    "rows": {
+      "eval": 40,
+      "train": 32
+    },
+    "seed": 2027,
+    "split_contract": {
+      "cross_source_slot_reuse_allowed": true,
+      "labels_checked": [
+        "agentnet",
+        "androidcontrol",
+        "mind2web",
+        "toolace",
+        "xlam"
+      ],
+      "mode": "source_local_parent_and_slot_disjoint"
+    },
+    "steps": 32,
+    "train_labels": [
+      "androidcontrol",
+      "mind2web",
+      "xlam",
+      "toolace"
+    ]
+  },
+  "receipt_self_sha256": "ac36c7324025c1ba76398e0aab9ae3a3811ec72e49d9b6d01decc0d3c9d94bbb",
+  "schema_version": 1,
+  "source_policy": {
+    "agentnet": "held_out_evaluation_only; no AgentNet training rows used",
+    "androidcontrol": "executable_catalog_train",
+    "mind2web": "executable_catalog_train_projection",
+    "toolace": "public_matrix_train_candidate; executable_catalog_terms_review_required",
+    "xlam": "executable_catalog_train_projection_from_public_derivative"
+  },
+  "train_sources": [
+    {
+      "datasets": [],
+      "input": {
+        "bytes": 1680018,
+        "path": "/private/tmp/localagent-public-data/androidcontrol-train-512.jsonl",
+        "sha256": "34c68424d9bc660a5c594a6f21c946b822f87c8ed0ad0cede43a11cc585f6c29"
+      },
+      "label": "androidcontrol",
+      "public_reference": {
+        "dataset": "OfficerChul/Android-Control-84k",
+        "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+      },
+      "revisions": [
+        "hf:OfficerChul/Android-Control-84k@0248027f747c9d57bd09c14e8f044f9a8103dddd"
+      ],
+      "rows": 8,
+      "source_families": [
+        "androidcontrol_json_mirror"
+      ],
+      "source_urls": [],
+      "splits": [
+        "train"
+      ],
+      "unique_parent_records": 0,
+      "visual_input_omitted_rows": 8
+    },
+    {
+      "datasets": [
+        "osunlp/Mind2Web"
+      ],
+      "input": {
+        "bytes": 352766,
+        "path": "data/private/mind2web/normalized/m420/train.jsonl",
+        "sha256": "b6cc595007bb91aa37f4d89e15e477b5b223bb9a66913856273c7cf995abf866"
+      },
+      "label": "mind2web",
+      "public_reference": {
+        "dataset": "osunlp/Mind2Web",
+        "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+      },
+      "revisions": [
+        "17ece8eb89862368edc0cc806acee6fca5163474"
+      ],
+      "rows": 8,
+      "source_families": [],
+      "source_urls": [
+        "https://huggingface.co/datasets/osunlp/Mind2Web"
+      ],
+      "splits": [
+        "train"
+      ],
+      "unique_parent_records": 4,
+      "visual_input_omitted_rows": 0
+    },
+    {
+      "datasets": [
+        "product-science/xlam-function-calling-60k-raw"
+      ],
+      "input": {
+        "bytes": 694892,
+        "path": "/private/tmp/xlam-m574-normalized-a/train.jsonl",
+        "sha256": "cbbeac51ec9e0f3cc6871c1ef6f30c153373335341e35ab053d9c301b47b1f1a"
+      },
+      "label": "xlam",
+      "public_reference": {
+        "dataset": "product-science/xlam-function-calling-60k-raw",
+        "url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+      },
+      "revisions": [
+        "dfbd3c669354c27f2727870d39a4d86c32381448"
+      ],
+      "rows": 8,
+      "source_families": [],
+      "source_urls": [
+        "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+      ],
+      "splits": [
+        "train"
+      ],
+      "unique_parent_records": 8,
+      "visual_input_omitted_rows": 0
+    },
+    {
+      "datasets": [
+        "Team-ACE/ToolACE"
+      ],
+      "input": {
+        "bytes": 30732018,
+        "path": "/private/tmp/m607-toolace/train.jsonl",
+        "sha256": "77e75db2caec61b39d08c784544390e2242b49db1d6833424c2dacf6940e8881"
+      },
+      "label": "toolace",
+      "public_reference": {
+        "dataset": "Team-ACE/ToolACE",
+        "url": "https://huggingface.co/datasets/Team-ACE/ToolACE"
+      },
+      "revisions": [
+        "6bda777c88d21e5a204703c1ee45597a8fa4f734"
+      ],
+      "rows": 8,
+      "source_families": [],
+      "source_urls": [
+        "https://huggingface.co/datasets/Team-ACE/ToolACE"
+      ],
+      "splits": [
+        "source_record_disjoint_train",
+        "train"
+      ],
+      "unique_parent_records": 8,
+      "visual_input_omitted_rows": 0
+    }
+  ],
+  "weight_transfer": {
+    "random": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 91.45685930938616,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.45685930938616
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.695321046570925,
+          "delta_l2": 40.26154043946663,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.7788236850912694,
+          "target_l2": 50.41069496034951
+        },
+        "embedding": {
+          "base_l2": 77.12846650545255,
+          "delta_l2": 92.00652361386057,
+          "parameters": 6291456,
+          "relative_delta_l2": 1.1928996877872091,
+          "target_l2": 50.185445854846684
+        },
+        "ffn": {
+          "base_l2": 50.607539495945986,
+          "delta_l2": 44.42824863590085,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.8778978207280728,
+          "target_l2": 49.792670044398925
+        },
+        "normalization": {
+          "base_l2": 21.44468864636463,
+          "delta_l2": 1.849606033820397,
+          "parameters": 384,
+          "relative_delta_l2": 0.0862500763858816,
+          "target_l2": 19.596097240079324
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    },
+    "warm": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 91.45685930938616,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.45685930938616
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.695321046570925,
+          "delta_l2": 0.0786567647452893,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0015215451447613516,
+          "target_l2": 51.69565783582095
+        },
+        "embedding": {
+          "base_l2": 77.12846650545255,
+          "delta_l2": 0.32230351369212845,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.00417878804409191,
+          "target_l2": 77.22855137357101
+        },
+        "ffn": {
+          "base_l2": 50.607539495945986,
+          "delta_l2": 0.09256953781582761,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.0018291649571946305,
+          "target_l2": 50.60798035528062
+        },
+        "normalization": {
+          "base_l2": 21.44468864636463,
+          "delta_l2": 0.0019127887912624307,
+          "parameters": 384,
+          "relative_delta_l2": 8.919638903625177e-05,
+          "target_l2": 21.446450647499336
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    }
+  },
+  "weight_transfer_analysis": {
+    "comparison": {
+      "aggregate": {
+        "random_after_token_accuracy": 0.10557083906464924,
+        "warm_after_token_accuracy": 0.734525447042641,
+        "warm_minus_random_after_pp": 62.895460797799174,
+        "warm_start_better_after": true
+      },
+      "arm_contract": {
+        "random_backbone_init": "random",
+        "random_backbone_seed": 2028,
+        "warm_backbone_init": "parent"
+      },
+      "claim_boundary": "Matched public-train-only text/accessibility continuation comparison; this is not an official benchmark score, native environment success, screenshot-grounding result, or evidence of real email/Notion/MCP side effects.",
+      "decision": "warm_start_dominates_matched_random_on_all_surfaces",
+      "eval_sources": [
+        {
+          "datasets": [],
+          "input": {
+            "bytes": 838022,
+            "path": "/private/tmp/localagent-public-data/androidcontrol-eval-256.jsonl",
+            "sha256": "5168c544664cd4f7c0723387280a423b1ba3e518da2ba381305522f0dea270bc"
+          },
+          "label": "androidcontrol",
+          "public_reference": {
+            "dataset": "OfficerChul/Android-Control-84k",
+            "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+          },
+          "revisions": [
+            "hf:OfficerChul/Android-Control-84k@0248027f747c9d57bd09c14e8f044f9a8103dddd"
+          ],
+          "rows": 8,
+          "source_families": [
+            "androidcontrol_json_mirror"
+          ],
+          "source_urls": [],
+          "splits": [
+            "test"
+          ],
+          "unique_parent_records": 0,
+          "visual_input_omitted_rows": 8
+        },
+        {
+          "datasets": [
+            "osunlp/Mind2Web"
+          ],
+          "input": {
+            "bytes": 113763,
+            "path": "data/private/mind2web/normalized/m420/eval.jsonl",
+            "sha256": "2b3e502978496dd75151a244477ad8efebfec0ebdd912bf97f0910c14f0d7ed9"
+          },
+          "label": "mind2web",
+          "public_reference": {
+            "dataset": "osunlp/Mind2Web",
+            "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+          },
+          "revisions": [
+            "17ece8eb89862368edc0cc806acee6fca5163474"
+          ],
+          "rows": 8,
+          "source_families": [],
+          "source_urls": [
+            "https://huggingface.co/datasets/osunlp/Mind2Web"
+          ],
+          "splits": [
+            "train"
+          ],
+          "unique_parent_records": 4,
+          "visual_input_omitted_rows": 0
+        },
+        {
+          "datasets": [
+            "product-science/xlam-function-calling-60k-raw"
+          ],
+          "input": {
+            "bytes": 350040,
+            "path": "/private/tmp/xlam-m574-normalized-a/eval.jsonl",
+            "sha256": "0e42db60b81539586274b2ff2d1dcfd792e5f1d1d42fed5b1b1255b9c0954a73"
+          },
+          "label": "xlam",
+          "public_reference": {
+            "dataset": "product-science/xlam-function-calling-60k-raw",
+            "url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+          },
+          "revisions": [
+            "dfbd3c669354c27f2727870d39a4d86c32381448"
+          ],
+          "rows": 8,
+          "source_families": [],
+          "source_urls": [
+            "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+          ],
+          "splits": [
+            "eval"
+          ],
+          "unique_parent_records": 8,
+          "visual_input_omitted_rows": 0
+        },
+        {
+          "datasets": [
+            "Team-ACE/ToolACE"
+          ],
+          "input": {
+            "bytes": 3673279,
+            "path": "/private/tmp/m607-toolace/eval.jsonl",
+            "sha256": "472dc36be441bf929c03f33b5591eff267db0975df5b60f240d1931566de7c7d"
+          },
+          "label": "toolace",
+          "public_reference": {
+            "dataset": "Team-ACE/ToolACE",
+            "url": "https://huggingface.co/datasets/Team-ACE/ToolACE"
+          },
+          "revisions": [
+            "6bda777c88d21e5a204703c1ee45597a8fa4f734"
+          ],
+          "rows": 8,
+          "source_families": [],
+          "source_urls": [
+            "https://huggingface.co/datasets/Team-ACE/ToolACE"
+          ],
+          "splits": [
+            "eval",
+            "source_record_disjoint_eval"
+          ],
+          "unique_parent_records": 8,
+          "visual_input_omitted_rows": 0
+        },
+        {
+          "datasets": [
+            "xlangai/AgentNet"
+          ],
+          "input": {
+            "bytes": 483445,
+            "path": "/private/tmp/localagent-public-data/agentnet-eval-64.jsonl",
+            "sha256": "7f0f080e33c4a069c532f3efcc0ec72e73d456f606cd4e5608df6f4dd949ac43"
+          },
+          "label": "agentnet",
+          "public_reference": {
+            "dataset": "xlangai/AgentNet",
+            "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+          },
+          "revisions": [
+            "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+          ],
+          "rows": 8,
+          "source_families": [
+            "xlangai/AgentNet"
+          ],
+          "source_urls": [],
+          "splits": [
+            "ubuntu_jsonl_bounded_prefix"
+          ],
+          "unique_parent_records": 1,
+          "visual_input_omitted_rows": 0
+        }
+      ],
+      "hyperparameters": {
+        "backbone_init": "parent",
+        "batch_size": 2,
+        "device": "cpu",
+        "learning_rate": 1e-05,
+        "max_eval_rows_per_source": 8,
+        "max_seq_len": 512,
+        "max_train_rows_per_source": 8,
+        "random_backbone_seed": 2028,
+        "seed": 2027,
+        "steps": 32
+      },
+      "kind": "localagent_cross_surface_transfer_ablation_report",
+      "parent": {
+        "bytes": 52211696,
+        "path": "/private/tmp/m585-public-multisurface-warm.pt",
+        "sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff"
+      },
+      "random_backbone_receipt": {
+        "bytes": 52212186,
+        "path": "/private/tmp/m607-m585-policy-random.pt",
+        "sha256": "fb64816a837412d2d88906ede50621b7f4ba90fc6b6ffca7f0931287e90e28c0"
+      },
+      "random_weight_groups": {
+        "action_heads": {
+          "base_l2": 91.45685930938616,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.45685930938616
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.695321046570925,
+          "delta_l2": 40.26154043946663,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.7788236850912694,
+          "target_l2": 50.41069496034951
+        },
+        "embedding": {
+          "base_l2": 77.12846650545255,
+          "delta_l2": 92.00652361386057,
+          "parameters": 6291456,
+          "relative_delta_l2": 1.1928996877872091,
+          "target_l2": 50.185445854846684
+        },
+        "ffn": {
+          "base_l2": 50.607539495945986,
+          "delta_l2": 44.42824863590085,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.8778978207280728,
+          "target_l2": 49.792670044398925
+        },
+        "normalization": {
+          "base_l2": 21.44468864636463,
+          "delta_l2": 1.849606033820397,
+          "parameters": 384,
+          "relative_delta_l2": 0.0862500763858816,
+          "target_l2": 19.596097240079324
+        }
+      },
+      "rows": {
+        "eval": 40,
+        "train": 32
+      },
+      "schema_version": 1,
+      "surfaces": {
+        "agentnet": {
+          "random_backbone": {
+            "after_token_accuracy": 0.007722007722007722,
+            "before_token_accuracy": 0.0,
+            "delta_token_accuracy": 0.007722007722007722
+          },
+          "rows": 8,
+          "warm_minus_random_after_pp": 74.90347490347492,
+          "warm_start": {
+            "after_token_accuracy": 0.7567567567567568,
+            "before_token_accuracy": 0.7644787644787645,
+            "delta_token_accuracy": -0.007722007722007707
+          },
+          "warm_start_better_after": true
+        },
+        "androidcontrol": {
+          "random_backbone": {
+            "after_token_accuracy": 0.05069124423963134,
+            "before_token_accuracy": 0.0,
+            "delta_token_accuracy": 0.05069124423963134
+          },
+          "rows": 8,
+          "warm_minus_random_after_pp": 74.19354838709677,
+          "warm_start": {
+            "after_token_accuracy": 0.7926267281105991,
+            "before_token_accuracy": 0.7880184331797235,
+            "delta_token_accuracy": 0.004608294930875556
+          },
+          "warm_start_better_after": true
+        },
+        "mind2web": {
+          "random_backbone": {
+            "after_token_accuracy": 0.1820113314447592,
+            "before_token_accuracy": 0.0,
+            "delta_token_accuracy": 0.1820113314447592
+          },
+          "rows": 8,
+          "warm_minus_random_after_pp": 70.3257790368272,
+          "warm_start": {
+            "after_token_accuracy": 0.8852691218130312,
+            "before_token_accuracy": 0.8859773371104815,
+            "delta_token_accuracy": -0.0007082152974503542
+          },
+          "warm_start_better_after": true
+        },
+        "toolace": {
+          "random_backbone": {
+            "after_token_accuracy": 0.04580152671755725,
+            "before_token_accuracy": 0.0,
+            "delta_token_accuracy": 0.04580152671755725
+          },
+          "rows": 8,
+          "warm_minus_random_after_pp": 45.610687022900755,
+          "warm_start": {
+            "after_token_accuracy": 0.5019083969465649,
+            "before_token_accuracy": 0.5,
+            "delta_token_accuracy": 0.001908396946564861
+          },
+          "warm_start_better_after": true
+        },
+        "xlam": {
+          "random_backbone": {
+            "after_token_accuracy": 0.02620967741935484,
+            "before_token_accuracy": 0.0,
+            "delta_token_accuracy": 0.02620967741935484
+          },
+          "rows": 8,
+          "warm_minus_random_after_pp": 48.79032258064517,
+          "warm_start": {
+            "after_token_accuracy": 0.5141129032258065,
+            "before_token_accuracy": 0.5161290322580645,
+            "delta_token_accuracy": -0.002016129032258007
+          },
+          "warm_start_better_after": true
+        }
+      },
+      "train_sources": [
+        {
+          "datasets": [],
+          "input": {
+            "bytes": 1680018,
+            "path": "/private/tmp/localagent-public-data/androidcontrol-train-512.jsonl",
+            "sha256": "34c68424d9bc660a5c594a6f21c946b822f87c8ed0ad0cede43a11cc585f6c29"
+          },
+          "label": "androidcontrol",
+          "public_reference": {
+            "dataset": "OfficerChul/Android-Control-84k",
+            "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+          },
+          "revisions": [
+            "hf:OfficerChul/Android-Control-84k@0248027f747c9d57bd09c14e8f044f9a8103dddd"
+          ],
+          "rows": 8,
+          "source_families": [
+            "androidcontrol_json_mirror"
+          ],
+          "source_urls": [],
+          "splits": [
+            "train"
+          ],
+          "unique_parent_records": 0,
+          "visual_input_omitted_rows": 8
+        },
+        {
+          "datasets": [
+            "osunlp/Mind2Web"
+          ],
+          "input": {
+            "bytes": 352766,
+            "path": "data/private/mind2web/normalized/m420/train.jsonl",
+            "sha256": "b6cc595007bb91aa37f4d89e15e477b5b223bb9a66913856273c7cf995abf866"
+          },
+          "label": "mind2web",
+          "public_reference": {
+            "dataset": "osunlp/Mind2Web",
+            "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+          },
+          "revisions": [
+            "17ece8eb89862368edc0cc806acee6fca5163474"
+          ],
+          "rows": 8,
+          "source_families": [],
+          "source_urls": [
+            "https://huggingface.co/datasets/osunlp/Mind2Web"
+          ],
+          "splits": [
+            "train"
+          ],
+          "unique_parent_records": 4,
+          "visual_input_omitted_rows": 0
+        },
+        {
+          "datasets": [
+            "product-science/xlam-function-calling-60k-raw"
+          ],
+          "input": {
+            "bytes": 694892,
+            "path": "/private/tmp/xlam-m574-normalized-a/train.jsonl",
+            "sha256": "cbbeac51ec9e0f3cc6871c1ef6f30c153373335341e35ab053d9c301b47b1f1a"
+          },
+          "label": "xlam",
+          "public_reference": {
+            "dataset": "product-science/xlam-function-calling-60k-raw",
+            "url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+          },
+          "revisions": [
+            "dfbd3c669354c27f2727870d39a4d86c32381448"
+          ],
+          "rows": 8,
+          "source_families": [],
+          "source_urls": [
+            "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+          ],
+          "splits": [
+            "train"
+          ],
+          "unique_parent_records": 8,
+          "visual_input_omitted_rows": 0
+        },
+        {
+          "datasets": [
+            "Team-ACE/ToolACE"
+          ],
+          "input": {
+            "bytes": 30732018,
+            "path": "/private/tmp/m607-toolace/train.jsonl",
+            "sha256": "77e75db2caec61b39d08c784544390e2242b49db1d6833424c2dacf6940e8881"
+          },
+          "label": "toolace",
+          "public_reference": {
+            "dataset": "Team-ACE/ToolACE",
+            "url": "https://huggingface.co/datasets/Team-ACE/ToolACE"
+          },
+          "revisions": [
+            "6bda777c88d21e5a204703c1ee45597a8fa4f734"
+          ],
+          "rows": 8,
+          "source_families": [],
+          "source_urls": [
+            "https://huggingface.co/datasets/Team-ACE/ToolACE"
+          ],
+          "splits": [
+            "source_record_disjoint_train",
+            "train"
+          ],
+          "unique_parent_records": 8,
+          "visual_input_omitted_rows": 0
+        }
+      ],
+      "warm_start_receipt": {
+        "bytes": 52212008,
+        "path": "/private/tmp/m607-m585-policy-warm.pt",
+        "sha256": "a2cba579c5e16a7e3115af64b3424bd384c55f3b863e1200676444a6b22b1ecf"
+      },
+      "warm_weight_groups": {
+        "action_heads": {
+          "base_l2": 91.45685930938616,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.45685930938616
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.695321046570925,
+          "delta_l2": 0.0786567647452893,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0015215451447613516,
+          "target_l2": 51.69565783582095
+        },
+        "embedding": {
+          "base_l2": 77.12846650545255,
+          "delta_l2": 0.32230351369212845,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.00417878804409191,
+          "target_l2": 77.22855137357101
+        },
+        "ffn": {
+          "base_l2": 50.607539495945986,
+          "delta_l2": 0.09256953781582761,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.0018291649571946305,
+          "target_l2": 50.60798035528062
+        },
+        "normalization": {
+          "base_l2": 21.44468864636463,
+          "delta_l2": 0.0019127887912624307,
+          "parameters": 384,
+          "relative_delta_l2": 8.919638903625177e-05,
+          "target_l2": 21.446450647499336
+        }
+      }
+    },
+    "random": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 91.45685930938616,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.45685930938616
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.695321046570925,
+          "delta_l2": 40.26154043946663,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.7788236850912694,
+          "target_l2": 50.41069496034951
+        },
+        "embedding": {
+          "base_l2": 77.12846650545255,
+          "delta_l2": 92.00652361386057,
+          "parameters": 6291456,
+          "relative_delta_l2": 1.1928996877872091,
+          "target_l2": 50.185445854846684
+        },
+        "ffn": {
+          "base_l2": 50.607539495945986,
+          "delta_l2": 44.42824863590085,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.8778978207280728,
+          "target_l2": 49.792670044398925
+        },
+        "normalization": {
+          "base_l2": 21.44468864636463,
+          "delta_l2": 1.849606033820397,
+          "parameters": 384,
+          "relative_delta_l2": 0.0862500763858816,
+          "target_l2": 19.596097240079324
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    },
+    "warm": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 91.45685930938616,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.45685930938616
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.695321046570925,
+          "delta_l2": 0.0786567647452893,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0015215451447613516,
+          "target_l2": 51.69565783582095
+        },
+        "embedding": {
+          "base_l2": 77.12846650545255,
+          "delta_l2": 0.32230351369212845,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.00417878804409191,
+          "target_l2": 77.22855137357101
+        },
+        "ffn": {
+          "base_l2": 50.607539495945986,
+          "delta_l2": 0.09256953781582761,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.0018291649571946305,
+          "target_l2": 50.60798035528062
+        },
+        "normalization": {
+          "base_l2": 21.44468864636463,
+          "delta_l2": 0.0019127887912624307,
+          "parameters": 384,
+          "relative_delta_l2": 8.919638903625177e-05,
+          "target_l2": 21.446450647499336
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    }
+  }
+}

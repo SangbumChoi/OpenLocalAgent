@@ -1,0 +1,84 @@
+{
+  "kind": "localagent_current_m194_webgpu_browser_unguarded",
+  "schema_version": 1,
+  "generated_at": "2026-08-03",
+  "checkpoint": {
+    "sha256": "3b3fd817c6f52e8b922f84c9bb36e7d55e0e243a0f8ee6d0f20c85962a4eeba7",
+    "parent_sha256": "10827649f07182a08f8c11104d4713e76b8acaddc73020c5a4c77950de7b23a0",
+    "parameters": 10524544,
+    "stage": "sft_deployment_dispatch_repair",
+    "backbone_frozen": true
+  },
+  "bundle": {
+    "manifest_sha256": "329222b3c1ce1f7175f46ceda3c72458174f67edebb4cd2360048eaa71b37543",
+    "app_sha256": "eb1db3ddd72b12f669a977cdcc0ac0464ef64194e5f58294f6c37ce64efb5036",
+    "parity_gate_passed": true,
+    "model_parameters": 10524544,
+    "graphs": {
+      "action_model.fp16.onnx": {
+        "bytes": 21430322,
+        "sha256": "909ed6edb21b1e83f57ab4cf745ccfb0091295d5535378c9b2d5f4178c5f6dab"
+      },
+      "action_model.onnx": {
+        "bytes": 42700043,
+        "sha256": "8e20bea228e0f68f45d966d2c552de9c0424f04da2e6a4d23b6ec38af4b78b64"
+      },
+      "model.fp16.onnx": {
+        "bytes": 34026190,
+        "sha256": "ac829906a42b43f8ac4b99fb3cd26e1c7a02c7baae45f5c61499437a1e0b89ef"
+      },
+      "model.onnx": {
+        "bytes": 67877334,
+        "sha256": "61bd44a302085e0bba478b3a45fae8bec8682b7c2d367af5db926b8258eff0e4"
+      }
+    },
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "browser": {
+    "url": "http://127.0.0.1:5183/",
+    "model_ready": true,
+    "backend_badge": "WEBGPU",
+    "runtime": "onnxruntime-web@1.27.0",
+    "external_side_effects": false,
+    "ort_provider_diagnostics": 2
+  },
+  "prompt_set": {
+    "source_comparison": "m193-current-m180-webgpu-browser-fresh-realistic-actions-v1",
+    "single_step_rows": 12,
+    "single_step_unambiguous_rows": 9,
+    "planner_rows": 2,
+    "tool_aliases_for_comparison": {
+      "notion_write": "notion_create_page",
+      "send_email": "email_send"
+    }
+  },
+  "quality": {
+    "single_step": {
+      "normalized_tool_family_exact_count": 5,
+      "normalized_tool_family_exact_rate": 0.5555555555555556,
+      "strict_action_exact_count": 1,
+      "strict_action_exact_rate": 0.1111111111111111,
+      "grounding_failures_remain": true
+    },
+    "planner": {
+      "normalized_tool_sequence_exact_count": 1,
+      "normalized_tool_sequence_total": 2,
+      "strict_trajectory_exact_count": 0,
+      "strict_trajectory_total": 2
+    },
+    "comparison_to_m193": {
+      "parent_single_step_exact_tool_count": 1,
+      "parent_single_step_unambiguous_rows": 9,
+      "routing_gain_after_catalog_alias_normalization_pp": 44.44444444444444,
+      "strict_action_gain_pp": 0.0,
+      "planner_strict_gain_pp": 0.0
+    }
+  },
+  "decision": {
+    "adopt_for_public_deployment": false,
+    "reason": "The warm head improves tool-family routing on the matched prompt set, but strict action exactness and complete planner trajectories remain unchanged at 1/9 and 0/2 because argument grounding and stateful planning fail.",
+    "guards_used": false
+  },
+  "claim_boundary": "Temporary parity-gated WebGPU export of the m194 frozen-backbone dispatch repair, evaluated with the unguarded m180 comparison shell and no external side effects. This is not an official BrowserGym/Mind2Web score, native mobile/desktop/MCP execution, visual grounding, real email/Notion access, physical-GPU placement proof, or public Hub deployment.",
+  "receipt_self_sha256": "d9427820794426c649933e00605082cd9a30378b38079e9ef9893dd5ab4ddd10"
+}

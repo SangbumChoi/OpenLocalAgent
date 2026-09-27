@@ -1,0 +1,385 @@
+{
+  "benchmark": {
+    "dataset": "osunlp/Mind2Web",
+    "dataset_revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+    "dataset_url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+    "projection": "normalized DOM/action Conversation projection"
+  },
+  "children": {
+    "random": {
+      "bytes": 52203672,
+      "path": "/private/tmp/m643-mind2web-random/child.pt",
+      "sha256": "e455e85778e10601226b55fc0f762c725f6c51e1eaf3c4e59b909f2cff0e8930"
+    },
+    "warm": {
+      "bytes": 52203672,
+      "path": "/private/tmp/m643-mind2web-warm/child.pt",
+      "sha256": "3b1737e93fbfbdc6c412d8b9385a885098b280494fb07c0e2bdb8839749f0076"
+    }
+  },
+  "claim_boundary": "Public Mind2Web normalized DOM/action continuation only. This is not the official Mind2Web test score, BrowserGym score, screenshot grounding, live website control, or an external side effect.",
+  "comparison": {
+    "aggregate": {
+      "random_after_token_accuracy": 0.056554756195043965,
+      "warm_after_token_accuracy": 0.8699040767386091,
+      "warm_minus_random_after_pp": 81.33493205435651,
+      "warm_start_better_after": true
+    },
+    "arm_contract": {
+      "random_backbone_init": "random",
+      "random_backbone_seed": 2028,
+      "warm_backbone_init": "parent"
+    },
+    "claim_boundary": "Matched public-train-only text/accessibility continuation comparison; this is not an official benchmark score, native environment success, screenshot-grounding result, or evidence of real email/Notion/MCP side effects.",
+    "decision": "warm_start_dominates_matched_random_on_all_surfaces",
+    "eval_sources": [
+      {
+        "datasets": [
+          "osunlp/Mind2Web"
+        ],
+        "input": {
+          "bytes": 113763,
+          "path": "data/private/mind2web/normalized/m420/eval.jsonl",
+          "sha256": "2b3e502978496dd75151a244477ad8efebfec0ebdd912bf97f0910c14f0d7ed9"
+        },
+        "label": "mind2web",
+        "public_reference": {
+          "dataset": "osunlp/Mind2Web",
+          "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+        },
+        "revisions": [
+          "17ece8eb89862368edc0cc806acee6fca5163474"
+        ],
+        "rows": 32,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/osunlp/Mind2Web"
+        ],
+        "splits": [
+          "train"
+        ],
+        "unique_parent_records": 16,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "hyperparameters": {
+      "backbone_init": "parent",
+      "batch_size": 4,
+      "device": "cpu",
+      "learning_rate": 1e-05,
+      "max_eval_rows_per_source": 0,
+      "max_seq_len": 512,
+      "max_train_rows_per_source": 0,
+      "random_backbone_seed": 2028,
+      "seed": 2027,
+      "steps": 16
+    },
+    "kind": "localagent_cross_surface_transfer_ablation_report",
+    "parent": {
+      "bytes": 52203615,
+      "path": "/private/tmp/m626-androidcontrol/warm.pt",
+      "sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c"
+    },
+    "random_backbone_receipt": {
+      "bytes": 52203672,
+      "path": "/private/tmp/m643-mind2web-random/child.pt",
+      "sha256": "e455e85778e10601226b55fc0f762c725f6c51e1eaf3c4e59b909f2cff0e8930"
+    },
+    "random_weight_groups": {
+      "action_heads": {
+        "base_l2": 91.45685930938616,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.45685930938616
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.69880319159533,
+        "delta_l2": 40.26391185696916,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.7788170977140697,
+        "target_l2": 50.41062190174689
+      },
+      "embedding": {
+        "base_l2": 77.55555240216619,
+        "delta_l2": 92.36652060379052,
+        "parameters": 6291456,
+        "relative_delta_l2": 1.190972377126807,
+        "target_l2": 50.188774367954274
+      },
+      "ffn": {
+        "base_l2": 50.609413534253534,
+        "delta_l2": 44.42921612113017,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.8778844293672663,
+        "target_l2": 49.79227272064473
+      },
+      "normalization": {
+        "base_l2": 21.451040319317258,
+        "delta_l2": 1.8561106834050989,
+        "parameters": 384,
+        "relative_delta_l2": 0.08652777001839018,
+        "target_l2": 19.595948053576695
+      }
+    },
+    "rows": {
+      "eval": 32,
+      "train": 96
+    },
+    "schema_version": 1,
+    "surfaces": {
+      "mind2web": {
+        "random_backbone": {
+          "after_token_accuracy": 0.056554756195043965,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.056554756195043965
+        },
+        "rows": 32,
+        "warm_minus_random_after_pp": 81.33493205435651,
+        "warm_start": {
+          "after_token_accuracy": 0.8699040767386091,
+          "before_token_accuracy": 0.859912070343725,
+          "delta_token_accuracy": 0.009992006394884179
+        },
+        "warm_start_better_after": true
+      }
+    },
+    "train_sources": [
+      {
+        "datasets": [
+          "osunlp/Mind2Web"
+        ],
+        "input": {
+          "bytes": 352766,
+          "path": "data/private/mind2web/normalized/m420/train.jsonl",
+          "sha256": "b6cc595007bb91aa37f4d89e15e477b5b223bb9a66913856273c7cf995abf866"
+        },
+        "label": "mind2web",
+        "public_reference": {
+          "dataset": "osunlp/Mind2Web",
+          "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+        },
+        "revisions": [
+          "17ece8eb89862368edc0cc806acee6fca5163474"
+        ],
+        "rows": 96,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/osunlp/Mind2Web"
+        ],
+        "splits": [
+          "train"
+        ],
+        "unique_parent_records": 48,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "warm_start_receipt": {
+      "bytes": 52203672,
+      "path": "/private/tmp/m643-mind2web-warm/child.pt",
+      "sha256": "3b1737e93fbfbdc6c412d8b9385a885098b280494fb07c0e2bdb8839749f0076"
+    },
+    "warm_weight_groups": {
+      "action_heads": {
+        "base_l2": 91.45685930938616,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.45685930938616
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.69880319159533,
+        "delta_l2": 0.05704764411726112,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0011034616005682575,
+        "target_l2": 51.69885349656151
+      },
+      "embedding": {
+        "base_l2": 77.55555240216619,
+        "delta_l2": 0.18128741974846993,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.0023375169685904583,
+        "target_l2": 77.61205319861685
+      },
+      "ffn": {
+        "base_l2": 50.609413534253534,
+        "delta_l2": 0.07041760690112224,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0013913934579277846,
+        "target_l2": 50.609822179221055
+      },
+      "normalization": {
+        "base_l2": 21.451040319317258,
+        "delta_l2": 0.0014780277880354136,
+        "parameters": 384,
+        "relative_delta_l2": 6.890238263663178e-05,
+        "target_l2": 21.45247318094515
+      }
+    }
+  },
+  "decision": {
+    "export_to_webgpu_as_native_browser_agent": false,
+    "keep_native_browsergym_gate_separate": true,
+    "reason": "Warm initialization improves the held-out Mind2Web text projection, but exact sequence accuracy remains zero and no live BrowserGym site or side effect ran.",
+    "retain_warm_browser_initialization": true
+  },
+  "input_reports": {
+    "random": {
+      "bytes": 8752,
+      "path": "/private/tmp/m643-mind2web-random/report.json",
+      "sha256": "5b619cf747e9422b787218a78eb12b30caebbd056a0c75d55c5239bf9c626580"
+    },
+    "warm": {
+      "bytes": 8849,
+      "path": "/private/tmp/m643-mind2web-warm/report.json",
+      "sha256": "665c72def55f8d9c453341edb3ea9a67d04ef6a80542d3a36b2c8d5c25103b9e"
+    }
+  },
+  "kind": "localagent_m643_mind2web_current_browser_continuation_receipt",
+  "parent_checkpoint": {
+    "bytes": 52203615,
+    "path": "/private/tmp/m626-androidcontrol/warm.pt",
+    "sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c"
+  },
+  "receipt_self_sha256": "9c9d602a0c02f30a785cfa45d18c8c83d096d2daab1a7ed7f51d256a8d9d42f2",
+  "rows": {
+    "eval": 32,
+    "train": 96
+  },
+  "schema_version": 1,
+  "source_inputs": {
+    "eval": {
+      "bytes": 113763,
+      "path": "data/private/mind2web/normalized/m420/eval.jsonl",
+      "sha256": "2b3e502978496dd75151a244477ad8efebfec0ebdd912bf97f0910c14f0d7ed9"
+    },
+    "train": {
+      "bytes": 352766,
+      "path": "data/private/mind2web/normalized/m420/train.jsonl",
+      "sha256": "b6cc595007bb91aa37f4d89e15e477b5b223bb9a66913856273c7cf995abf866"
+    }
+  },
+  "split_contract": {
+    "eval_parent_records": 16,
+    "mode": "source_local_parent_and_slot_disjoint",
+    "train_parent_records": 48,
+    "validated_by_training_runner": true,
+    "visual_input_omitted_rows": 0
+  },
+  "training": {
+    "hyperparameters": {
+      "backbone_init": "parent",
+      "batch_size": 4,
+      "device": "cpu",
+      "learning_rate": 1e-05,
+      "max_eval_rows_per_source": 0,
+      "max_seq_len": 512,
+      "max_train_rows_per_source": 0,
+      "random_backbone_seed": 2028,
+      "seed": 2027,
+      "steps": 16
+    },
+    "random_after": {
+      "assistant_loss_tokens": 5004,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.056554756195043965,
+      "mean_loss": 8.977281016983289,
+      "rows": 32
+    },
+    "random_before": {
+      "assistant_loss_tokens": 5004,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.0,
+      "mean_loss": 9.756185871615207,
+      "rows": 32
+    },
+    "random_weight_groups": {
+      "action_heads": {
+        "base_l2": 91.45685930938616,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.45685930938616
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.69880319159533,
+        "delta_l2": 40.26391185696916,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.7788170977140697,
+        "target_l2": 50.41062190174689
+      },
+      "embedding": {
+        "base_l2": 77.55555240216619,
+        "delta_l2": 92.36652060379052,
+        "parameters": 6291456,
+        "relative_delta_l2": 1.190972377126807,
+        "target_l2": 50.188774367954274
+      },
+      "ffn": {
+        "base_l2": 50.609413534253534,
+        "delta_l2": 44.42921612113017,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.8778844293672663,
+        "target_l2": 49.79227272064473
+      },
+      "normalization": {
+        "base_l2": 21.451040319317258,
+        "delta_l2": 1.8561106834050989,
+        "parameters": 384,
+        "relative_delta_l2": 0.08652777001839018,
+        "target_l2": 19.595948053576695
+      }
+    },
+    "warm_after": {
+      "assistant_loss_tokens": 5004,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.8699040767386091,
+      "mean_loss": 0.9025415196407327,
+      "rows": 32
+    },
+    "warm_before": {
+      "assistant_loss_tokens": 5004,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.859912070343725,
+      "mean_loss": 1.0181029675771103,
+      "rows": 32
+    },
+    "warm_weight_groups": {
+      "action_heads": {
+        "base_l2": 91.45685930938616,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.45685930938616
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.69880319159533,
+        "delta_l2": 0.05704764411726112,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0011034616005682575,
+        "target_l2": 51.69885349656151
+      },
+      "embedding": {
+        "base_l2": 77.55555240216619,
+        "delta_l2": 0.18128741974846993,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.0023375169685904583,
+        "target_l2": 77.61205319861685
+      },
+      "ffn": {
+        "base_l2": 50.609413534253534,
+        "delta_l2": 0.07041760690112224,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0013913934579277846,
+        "target_l2": 50.609822179221055
+      },
+      "normalization": {
+        "base_l2": 21.451040319317258,
+        "delta_l2": 0.0014780277880354136,
+        "parameters": 384,
+        "relative_delta_l2": 6.890238263663178e-05,
+        "target_l2": 21.45247318094515
+      }
+    }
+  }
+}

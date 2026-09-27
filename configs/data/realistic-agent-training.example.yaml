@@ -1,0 +1,83 @@
+# Training contract for realistic public demonstrations.
+# This file is intentionally not executable acquisition metadata.  Replace each source snapshot
+# with a locally verified artifact (bytes + SHA-256 + upstream revision) before ingestion.
+kind: localagent_realistic_training_plan
+schema_version: 1
+catalog: realistic-agent-eval.catalog.yaml
+allowed_train_ids:
+  - androidcontrol
+  - android_in_the_wild
+  - xlam_function_calling
+  - mind2web_train
+forbidden_train_ids:
+  - androidworld
+  - iosworld
+  - mobile_safety_bench
+  - aitw_control_eval
+  - browsergym_miniwob
+  - mind2web_eval
+  - webarena
+  - osworld
+  - agentnet
+  - appworld
+  - tau_bench
+  - toolsandbox
+  - toolathlon
+  - mcpmark
+  - enterpriseopsgym
+  - mcp_persona
+  - tua_bench
+  - osworld_human
+  - mobilegym
+  - mobileworld
+  - memgui_bench
+  - workarena
+  - weblinx
+  - osworld_v2
+  - toolathlon_gym
+  - phoneworld
+  - gui_odyssey
+  - mobile_agent_bench
+  - agentbench_fc
+  - visualwebarena
+  - omni_act
+  - worldgui
+  - macosworld
+  - assistgui
+  - androiddaily
+  - windows_agent_arena
+  - webchorearena
+  - timewarp
+normalization:
+  interchange: openlocalagent.data.schema.Conversation
+  text_first_observation: accessibility_tree_or_cleaned_dom_plus_goal
+  action_encoding: canonical_sorted_json
+  screenshot_policy: retain_in_provenance_do_not_feed_text_checkpoint
+  require_official_split_manifest: true
+  require_source_sha256: true
+  fail_closed_on_unknown_license: true
+evaluation_holdouts:
+  local_exact_denylists:
+    - data/private/bfcl/bfcl-v4-denylist-v3.jsonl
+    - data/private/mind2web/mind2web-denylist-v3.jsonl
+    - data/private/weblinx/weblinx-test-web-denylist-v3.jsonl
+  runtime_benchmarks:
+    - androidworld
+    - iosworld
+    - mobile_safety_bench
+    - webarena
+    - osworld
+    - appworld
+    - toolathlon
+    - mcpmark
+    - enterpriseopsgym
+    - mcp_persona
+    - tua_bench
+    - gui_odyssey
+    - mobile_agent_bench
+    - agentbench_fc
+    - visualwebarena
+    - omni_act
+    - worldgui
+    - macosworld
+    - assistgui

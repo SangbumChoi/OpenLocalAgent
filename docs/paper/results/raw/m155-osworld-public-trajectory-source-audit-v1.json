@@ -1,0 +1,62 @@
+{
+  "kind": "localagent_osworld_public_trajectory_source_audit",
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "osworld2.0-trajectory",
+      "dataset": "xlangai/osworld2.0-trajectory",
+      "source_url": "https://huggingface.co/datasets/xlangai/osworld2.0-trajectory",
+      "source_revision": "f94fa61bfeaf7b49da9816ddee83c80494cc4a31",
+      "last_modified": "2026-07-22T15:18:48.000Z",
+      "access": {"public": true, "gated": false, "downloads_at_audit": 22904},
+      "license": "not_declared_on_dataset_card",
+      "inventory": {
+        "listed_siblings": 99146,
+        "root_files": 18,
+        "root_zip_archives": 17,
+        "root_file_bytes": 177760548349,
+        "root_zip_bytes": 177760538257,
+        "trajectory_image_references": {"png": 96757, "jpg": 22},
+        "other_listed_files": {"json": 728, "jsonl": 322, "log": 646, "txt": 636}
+      },
+      "website_demo_agents": [
+        "MiniMax-M3",
+        "claude-opus-4-7",
+        "claude-sonnet-4-6-max",
+        "claude-sonnet-4-6-medium",
+        "gpt-5.5",
+        "gpt-5.6",
+        "qwen3.7"
+      ],
+      "policy": "evaluation_only_until_task_identity_deduplication_and_source_license_are_reviewed",
+      "content_consumed": false,
+      "runtime_executed": false,
+      "claim_boundary": "Repository inventory only; no trajectory, screenshot, task asset, model result, OSWorld-V2 score, or training use is claimed."
+    },
+    {
+      "id": "ubuntu_osworld_verified_trajs",
+      "dataset": "xlangai/ubuntu_osworld_verified_trajs",
+      "source_url": "https://huggingface.co/datasets/xlangai/ubuntu_osworld_verified_trajs",
+      "source_revision": "8413d635f654c1f95a17f8813f52f2b1b450c566",
+      "last_modified": "2026-07-27T09:08:32.000Z",
+      "access": {"public": true, "gated": false, "downloads_at_audit": 3463},
+      "license": "MIT",
+      "inventory": {
+        "root_files": 50,
+        "root_zip_archives": 46,
+        "root_file_bytes": 259828374157,
+        "root_zip_bytes": 259828351921,
+        "non_archive_files": [".gitattributes", "README.md", "all_result.json", "args.json"]
+      },
+      "policy": "evaluation_only_until_verified_task_identity_deduplication_and_train_holdout_are_frozen",
+      "content_consumed": false,
+      "runtime_executed": false,
+      "claim_boundary": "Public trajectory-package inventory only; no archive, screenshot, task state, verifier, OSWorld score, or training use is claimed."
+    }
+  ],
+  "api_snapshot_sha256": {
+    "osworld2.0-trajectory": "c985debf25a4608e04bd97dc09f56a82360a10d6a935db0a20751a1b06a3aac5",
+    "ubuntu_osworld_verified_trajs": "fec42211de188198819d2e9302baf0738220c31d460a8f4a4d0d76f7ca1173e1"
+  },
+  "claim_boundary": "Source and access audit only. OSWorld 2.0 gated task classes/assets, matching VMs, and official evaluators remain required for native benchmark evidence; public trajectory archives are not silently admitted to SFT."
+}

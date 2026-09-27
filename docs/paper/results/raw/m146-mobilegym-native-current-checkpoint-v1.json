@@ -1,0 +1,7222 @@
+{
+  "kind": "localagent_mobilegym_native_text_eval",
+  "schema_version": 1,
+  "benchmark_id": "mobilegym",
+  "source": {
+    "repository": "https://github.com/Purewhiter/mobilegym",
+    "revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "source_root": "mobilegym-093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "test_split_sha256": "a3d485015d480f4f1ebbd12dbbf02c25c0aa667d1afcf5f6fa35f0263a82c567",
+    "train_split_sha256": "0ecef460fecfd8aa91dcbb2cd4cca17b033f620f85a50d7f0b598ed19a27c0eb",
+    "test_ids_sha256": "cf61a0b2e71721864a1b526a531c433f852e128d2ffa8b81504fc3d74b9830bf"
+  },
+  "environment_executed": true,
+  "official_split": "test",
+  "official_split_verified": true,
+  "native_receipt_eligible": true,
+  "task_count": 256,
+  "official_test_task_count": 256,
+  "success_rate": 0.05078125,
+  "passed_tasks": 13,
+  "failed_tasks": 243,
+  "errors": [],
+  "run": {
+    "seed": 0,
+    "max_steps": 2,
+    "selector_top_m": 1,
+    "start": 0,
+    "limit": null,
+    "full_official_test_split": true,
+    "elapsed_seconds": 1104.124
+  },
+  "observation_mode": "text_projection",
+  "vision_used": false,
+  "checkpoint_sha256": "8cc3ee42ed38b830b9b04935e156f80d166abeece2dd0c37184ee4d692de7eb1",
+  "task_results": [
+    {
+      "task_id": "account.Railway12306ChangePassword",
+      "suite": "account",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "00c4ad2dd32fc613c687d1586125b7aae223420f48da99f5288d3ecff03804a3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "password.changed"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.937
+    },
+    {
+      "task_id": "account.Railway12306ForgotPasswordReset",
+      "suite": "account",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "f364edb78fb0a126866d7320bad18a80869e0d3738460686f0b80954722e58db",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "code_verified",
+          "logged_with_new_password",
+          "password_updated"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.879
+    },
+    {
+      "task_id": "account.Railway12306LoginWithAccount",
+      "suite": "account",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "b703dd10f6c68ab528aae6dbe9959559fad938f70ac083ab890f3d0ffc5ec607",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "login.success",
+          "notes.content.filtered"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.223
+    },
+    {
+      "task_id": "account.Railway12306RegisterThenLogin",
+      "suite": "account",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "f364edb78fb0a126866d7320bad18a80869e0d3738460686f0b80954722e58db",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "registration"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.826
+    },
+    {
+      "task_id": "account.WechatAccountCancellation",
+      "suite": "account",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "977ea8d4d99537dbdba7abdc188d8e673e605d117754cdf602f34ec33a0ff662",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "user.accountStatus"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.847
+    },
+    {
+      "task_id": "alipay.CalculateMonthlyExpenseTrend",
+      "suite": "alipay",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "c2145a8270cc3d81f6e5b1c05a20d98a5a01a3bac00a62295f4d4fd84d2f7fb0",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.156
+    },
+    {
+      "task_id": "alipay.CheckUnreadMessageCount",
+      "suite": "alipay",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "818a74e3d7e5f9017cee63ce503d1b282e2a0e22356cda4f63239f0aaaad559b",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.069
+    },
+    {
+      "task_id": "alipay.CountLargeTransferIncomes",
+      "suite": "alipay",
+      "passed": true,
+      "clean": true,
+      "progress": 1.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "818a74e3d7e5f9017cee63ce503d1b282e2a0e22356cda4f63239f0aaaad559b",
+      "judge": {
+        "success": true,
+        "clean": true,
+        "progress": 1.0,
+        "passed": true,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.0
+    },
+    {
+      "task_id": "alipay.EnableRefreshSound",
+      "suite": "alipay",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "818a74e3d7e5f9017cee63ce503d1b282e2a0e22356cda4f63239f0aaaad559b",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "settings.general.refreshSoundEnabled"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.014
+    },
+    {
+      "task_id": "alipay.FindFriend",
+      "suite": "alipay",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "818a74e3d7e5f9017cee63ce503d1b282e2a0e22356cda4f63239f0aaaad559b",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer.电话号码"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.034
+    },
+    {
+      "task_id": "alipay.FindLargestTransferPartner",
+      "suite": "alipay",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "818a74e3d7e5f9017cee63ce503d1b282e2a0e22356cda4f63239f0aaaad559b",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.983
+    },
+    {
+      "task_id": "alipay.SearchTransferRecords",
+      "suite": "alipay",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "818a74e3d7e5f9017cee63ce503d1b282e2a0e22356cda4f63239f0aaaad559b",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.035
+    },
+    {
+      "task_id": "alipay.SetFontSizeLevel",
+      "suite": "alipay",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "818a74e3d7e5f9017cee63ce503d1b282e2a0e22356cda4f63239f0aaaad559b",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "settings.general.fontSizeLevel"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.298
+    },
+    {
+      "task_id": "alipay.SetPayOrderCcbYuebaoBalance",
+      "suite": "alipay",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "818a74e3d7e5f9017cee63ce503d1b282e2a0e22356cda4f63239f0aaaad559b",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "settings.payment.payOrder.customOrderIds[0]",
+          "settings.payment.payOrder.customOrderIds[1]",
+          "settings.payment.payOrder.customOrderIds[2]",
+          "settings.payment.payOrder.mode"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.068
+    },
+    {
+      "task_id": "bilibili.CoinVideoTask",
+      "suite": "bilibili",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "coined"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 3.037
+    },
+    {
+      "task_id": "bilibili.FollowRecommendationTask",
+      "suite": "bilibili",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "follow_recommendation",
+          "follow_target"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.999
+    },
+    {
+      "task_id": "bilibili.OpenRankingTask",
+      "suite": "bilibili",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "route_contains"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 3.05
+    },
+    {
+      "task_id": "bilibili.SanlianTask",
+      "suite": "bilibili",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "activeVideoId",
+          "coined",
+          "favored",
+          "liked"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 3.067
+    },
+    {
+      "task_id": "bilibili.SetSexTask",
+      "suite": "bilibili",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "user.sex"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 3.553
+    },
+    {
+      "task_id": "bilibili.ToggleAnimeSubscriptionTask",
+      "suite": "bilibili",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "anime_subscribed"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.835
+    },
+    {
+      "task_id": "bilibili.UnfollowAndClearHistoryTask",
+      "suite": "bilibili",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "search_history_cleared",
+          "unfollowed"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 3.013
+    },
+    {
+      "task_id": "bilibili.VideoAnswerTagsTask",
+      "suite": "bilibili",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer_tags"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 3.643
+    },
+    {
+      "task_id": "bilibili.VideoCommentContainsAnswerUidTask",
+      "suite": "bilibili",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 3.173
+    },
+    {
+      "task_id": "calendar.ChangeDefaultReminder",
+      "suite": "calendar",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a887ae85324bbacde78c1a012a7ad4e0cca0712ecddbab0099e5a02bb79cd2a2",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "settings.defaultReminder"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.894
+    },
+    {
+      "task_id": "calendar.ConfigAllReminders",
+      "suite": "calendar",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a887ae85324bbacde78c1a012a7ad4e0cca0712ecddbab0099e5a02bb79cd2a2",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "settings.defaultAllDayReminder",
+          "settings.defaultReminder",
+          "settings.defaultReminderLaterTime"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.902
+    },
+    {
+      "task_id": "calendar.CreateTimedEvent",
+      "suite": "calendar",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a887ae85324bbacde78c1a012a7ad4e0cca0712ecddbab0099e5a02bb79cd2a2",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "event_created",
+          "event_time"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.932
+    },
+    {
+      "task_id": "calendar.DateCalcForward",
+      "suite": "calendar",
+      "passed": true,
+      "clean": true,
+      "progress": 1.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a887ae85324bbacde78c1a012a7ad4e0cca0712ecddbab0099e5a02bb79cd2a2",
+      "judge": {
+        "success": true,
+        "clean": true,
+        "progress": 1.0,
+        "passed": true,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.884
+    },
+    {
+      "task_id": "calendar.DateCalcThenCreate",
+      "suite": "calendar",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a887ae85324bbacde78c1a012a7ad4e0cca0712ecddbab0099e5a02bb79cd2a2",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "answer",
+          "event_created",
+          "event_date"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.867
+    },
+    {
+      "task_id": "calendar.EditAndReportNewTime",
+      "suite": "calendar",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a887ae85324bbacde78c1a012a7ad4e0cca0712ecddbab0099e5a02bb79cd2a2",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "answer.date",
+          "answer.time",
+          "event_time"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.867
+    },
+    {
+      "task_id": "calendar.EditEventTime",
+      "suite": "calendar",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a887ae85324bbacde78c1a012a7ad4e0cca0712ecddbab0099e5a02bb79cd2a2",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "event_time"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.899
+    },
+    {
+      "task_id": "calendar.MakeupDayReminder",
+      "suite": "calendar",
+      "passed": false,
+      "clean": true,
+      "progress": 0.5,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a887ae85324bbacde78c1a012a7ad4e0cca0712ecddbab0099e5a02bb79cd2a2",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.5,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer",
+          "event_created"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.934
+    },
+    {
+      "task_id": "calendar.QueryMakeupWorkday",
+      "suite": "calendar",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "83a0e2bf950b7a72a1a5fb91ea78ff6c50ff0da7b8fd38aa5464b50998f8e2e6",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.866
+    },
+    {
+      "task_id": "calendar.SearchDeleteAll",
+      "suite": "calendar",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "83a0e2bf950b7a72a1a5fb91ea78ff6c50ff0da7b8fd38aa5464b50998f8e2e6",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer",
+          "deleted_events"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.985
+    },
+    {
+      "task_id": "calendar.SearchEventTitle",
+      "suite": "calendar",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "83a0e2bf950b7a72a1a5fb91ea78ff6c50ff0da7b8fd38aa5464b50998f8e2e6",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.916
+    },
+    {
+      "task_id": "clock.AddAlarmWithSettings",
+      "suite": "clock",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5c17ddf435bbca4bf5c389e20de804ad52658b65b6855c76c261046faf32e7b5",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "alarm_created"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.964
+    },
+    {
+      "task_id": "clock.AddCityAndCheckTime",
+      "suite": "clock",
+      "passed": false,
+      "clean": true,
+      "progress": 0.5,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5c17ddf435bbca4bf5c389e20de804ad52658b65b6855c76c261046faf32e7b5",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.5,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer",
+          "selectedCityIds"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.903
+    },
+    {
+      "task_id": "clock.AddCityAndCompareTimeDiff",
+      "suite": "clock",
+      "passed": false,
+      "clean": true,
+      "progress": 0.5,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5c17ddf435bbca4bf5c389e20de804ad52658b65b6855c76c261046faf32e7b5",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.5,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer",
+          "selectedCityIds"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.864
+    },
+    {
+      "task_id": "clock.CheckAlarmNote",
+      "suite": "clock",
+      "passed": true,
+      "clean": true,
+      "progress": 1.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5c17ddf435bbca4bf5c389e20de804ad52658b65b6855c76c261046faf32e7b5",
+      "judge": {
+        "success": true,
+        "clean": true,
+        "progress": 1.0,
+        "passed": true,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.883
+    },
+    {
+      "task_id": "clock.CompareCityTimeDiff",
+      "suite": "clock",
+      "passed": true,
+      "clean": true,
+      "progress": 1.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5c17ddf435bbca4bf5c389e20de804ad52658b65b6855c76c261046faf32e7b5",
+      "judge": {
+        "success": true,
+        "clean": true,
+        "progress": 1.0,
+        "passed": true,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.767
+    },
+    {
+      "task_id": "clock.CountAlarms",
+      "suite": "clock",
+      "passed": true,
+      "clean": true,
+      "progress": 1.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5c17ddf435bbca4bf5c389e20de804ad52658b65b6855c76c261046faf32e7b5",
+      "judge": {
+        "success": true,
+        "clean": true,
+        "progress": 1.0,
+        "passed": true,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.815
+    },
+    {
+      "task_id": "clock.EnableAllAlarms",
+      "suite": "clock",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5c17ddf435bbca4bf5c389e20de804ad52658b65b6855c76c261046faf32e7b5",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "alarms"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.819
+    },
+    {
+      "task_id": "clock.SetupMorningAlarms",
+      "suite": "clock",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5c17ddf435bbca4bf5c389e20de804ad52658b65b6855c76c261046faf32e7b5",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "alarm1",
+          "alarm2"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.834
+    },
+    {
+      "task_id": "clock.ToggleAlarm",
+      "suite": "clock",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "1311ded2f1b1711493922b96e30a0cbc5a2f158d51973755cec726d7748892d9",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "alarms[id=a7].enabled"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.015
+    },
+    {
+      "task_id": "crossapp_commerce.AlipayLargestExpenseToMoments",
+      "suite": "crossapp_commerce",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "b095a58a29badea7b14758267c2d109e18cd1b22303af846b1999e2e00bca184",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "moment_tx"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.223
+    },
+    {
+      "task_id": "crossapp_commerce.AlipayLargestExpenseToNotes",
+      "suite": "crossapp_commerce",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "b095a58a29badea7b14758267c2d109e18cd1b22303af846b1999e2e00bca184",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "largest_expense_amount",
+          "largest_expense_target"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.247
+    },
+    {
+      "task_id": "crossapp_commerce.EbayBalanceDiffToNotes",
+      "suite": "crossapp_commerce",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "b095a58a29badea7b14758267c2d109e18cd1b22303af846b1999e2e00bca184",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "ebay_search",
+          "note_price",
+          "note_remain",
+          "note_title"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.593
+    },
+    {
+      "task_id": "crossapp_commerce.EbayDualItemBalanceToNotes",
+      "suite": "crossapp_commerce",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "b095a58a29badea7b14758267c2d109e18cd1b22303af846b1999e2e00bca184",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "item1_title",
+          "item2_title",
+          "prices_and_balance"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.605
+    },
+    {
+      "task_id": "crossapp_commerce.EbayDualItemCompareToNotes",
+      "suite": "crossapp_commerce",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "b095a58a29badea7b14758267c2d109e18cd1b22303af846b1999e2e00bca184",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "cheaper_item",
+          "item1_search",
+          "item2_search",
+          "price_diff"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.264
+    },
+    {
+      "task_id": "crossapp_commerce.EbayLowestPriceToNotes",
+      "suite": "crossapp_commerce",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "b095a58a29badea7b14758267c2d109e18cd1b22303af846b1999e2e00bca184",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "ebay_search",
+          "note_price",
+          "note_title"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.292
+    },
+    {
+      "task_id": "crossapp_commerce.EbayProductShareToWechat",
+      "suite": "crossapp_commerce",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "b095a58a29badea7b14758267c2d109e18cd1b22303af846b1999e2e00bca184",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "ebay_search",
+          "wechat_price",
+          "wechat_title"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.272
+    },
+    {
+      "task_id": "crossapp_commerce.FullShoppingDecisionFlow",
+      "suite": "crossapp_commerce",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "b095a58a29badea7b14758267c2d109e18cd1b22303af846b1999e2e00bca184",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "ebay_search",
+          "note_balance_after_buy",
+          "note_title",
+          "wechat_title"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.882
+    },
+    {
+      "task_id": "crossapp_content.BilibiliRankingToWechat",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "b095a58a29badea7b14758267c2d109e18cd1b22303af846b1999e2e00bca184",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "bili_ranking_title"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 3.893
+    },
+    {
+      "task_id": "crossapp_content.BilibiliTripleLikeThenMoments",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.4,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "b095a58a29badea7b14758267c2d109e18cd1b22303af846b1999e2e00bca184",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.4,
+        "passed": false,
+        "issue_count": 5,
+        "issue_fields": [
+          "coined",
+          "favored",
+          "liked",
+          "moment_no_images",
+          "moment_share"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 3.635
+    },
+    {
+      "task_id": "crossapp_content.CulturalChecklistToRedbook",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "b095a58a29badea7b14758267c2d109e18cd1b22303af846b1999e2e00bca184",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "cultural_note",
+          "cultural_redbook"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 3.423
+    },
+    {
+      "task_id": "crossapp_content.DailyLogToMoments",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "b095a58a29badea7b14758267c2d109e18cd1b22303af846b1999e2e00bca184",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "daily_log"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.424
+    },
+    {
+      "task_id": "crossapp_content.EbayCheapToRedbook",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "b095a58a29badea7b14758267c2d109e18cd1b22303af846b1999e2e00bca184",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "ebay_search",
+          "product_recommendation"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.768
+    },
+    {
+      "task_id": "crossapp_content.NotesContentToRedbookAndX",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "aa2870a5674e15972163e93e63adce991f0eda00537499901e3336d54dac63e1",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "notes_content",
+          "redbook_sync",
+          "x_sync"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.96
+    },
+    {
+      "task_id": "crossapp_content.ReadingPlanToNotes",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "plan_note"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.239
+    },
+    {
+      "task_id": "crossapp_content.RedbookDmThenWechatReport",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "redbook_dm",
+          "wechat_report"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.389
+    },
+    {
+      "task_id": "crossapp_content.RedbookFollowingNoteCountToSms",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "redbook_note_count"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.549
+    },
+    {
+      "task_id": "crossapp_content.RedbookSearchTitleToWechat",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "redbook_title_share"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.354
+    },
+    {
+      "task_id": "crossapp_content.SpotifyTodayNthPlayToRedbook",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "redbook_today_nth_play"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.39
+    },
+    {
+      "task_id": "crossapp_content.WechatReadingBestBookToWechat",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "best_book_share"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.255
+    },
+    {
+      "task_id": "crossapp_content.WechatReadingStatsToWechat",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "reading_stats"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.261
+    },
+    {
+      "task_id": "crossapp_content.XLatestPostToReddit_WithTitleFormat",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "reddit_post"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.723
+    },
+    {
+      "task_id": "crossapp_life.CalendarFreeWeatherInvite",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "invite_activity",
+          "invite_date"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.932
+    },
+    {
+      "task_id": "crossapp_life.FullTripPlanWeatherDriven",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "alarm",
+          "newPendingOrder",
+          "query.searched"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 3.032
+    },
+    {
+      "task_id": "crossapp_life.MapNearbyBestToWechat",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "best_poi_share"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.226
+    },
+    {
+      "task_id": "crossapp_life.MapPlaceToWechat",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "place_address_share"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.188
+    },
+    {
+      "task_id": "crossapp_life.MapRatingConditionBuyTicket",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "newPendingOrder",
+          "query.searched"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.216
+    },
+    {
+      "task_id": "crossapp_life.RailwayBalanceConditionalBuyNotify",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "balance_branch",
+          "query.searched"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.566
+    },
+    {
+      "task_id": "crossapp_life.RailwayDestWeatherQuery",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer.temp",
+          "answer.weather"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.286
+    },
+    {
+      "task_id": "crossapp_life.RailwayPriceVsBalance",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer",
+          "query.searched"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.265
+    },
+    {
+      "task_id": "crossapp_life.RailwayTrainInfoToWechat",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "query.searched",
+          "train_info_share"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.25
+    },
+    {
+      "task_id": "crossapp_life.RailwayWeatherToWechat",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "combined_share",
+          "query.searched"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.601
+    },
+    {
+      "task_id": "crossapp_life.RestaurantRatingInviteCalendar",
+      "suite": "crossapp_life",
+      "passed": true,
+      "clean": true,
+      "progress": 1.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": true,
+        "clean": true,
+        "progress": 1.0,
+        "passed": true,
+        "issue_count": 2,
+        "issue_fields": [
+          "no_dinner_event",
+          "no_invite_when_low_rating"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.548
+    },
+    {
+      "task_id": "crossapp_life.TravelPlanToWechat",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "travel_plan_address",
+          "travel_plan_temp",
+          "travel_plan_weather"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.587
+    },
+    {
+      "task_id": "crossapp_life.TripClosedLoopNotify",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "alarm",
+          "calendar_trip_event",
+          "query.searched",
+          "wechat_share"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.813
+    },
+    {
+      "task_id": "crossapp_life.TripMemoAndNotify",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "memo",
+          "notify",
+          "query.searched"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.854
+    },
+    {
+      "task_id": "crossapp_life.WeatherFilterNonRainyDays",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "non_rainy_dates_note"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.233
+    },
+    {
+      "task_id": "crossapp_life.WeatherFirstNonRainyDayBuyTicket",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "821ed7546c19049ccd8e30f45f19455af45c03258c2e13d7a5a1f45fcde5ffa3",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "newPendingOrder"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.299
+    },
+    {
+      "task_id": "crossapp_life.WeatherFirstSunnyDayCalendarAlarm",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "alarm",
+          "event_created",
+          "event_date"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.638
+    },
+    {
+      "task_id": "crossapp_life.WeatherShareMetric",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "sent_weather_metric"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.23
+    },
+    {
+      "task_id": "crossapp_life.WechatFoodExtractMapSms",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "food_address_sms"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.562
+    },
+    {
+      "task_id": "crossapp_life.WeekendTripFullPlan",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "map_search",
+          "weekend_invite",
+          "weekend_trip_date",
+          "weekend_trip_event"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.903
+    },
+    {
+      "task_id": "crossapp_work.ExistingMeetingToCalendar",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "calendar_event_matches_meeting"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.333
+    },
+    {
+      "task_id": "crossapp_work.FullMeetingConflictCheckBroadcast",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.75,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.75,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "busy_no_calendar_event",
+          "busy_no_meeting",
+          "busy_no_sms",
+          "reject_wechat"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.965
+    },
+    {
+      "task_id": "crossapp_work.MeetingDurationToWechat",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "wechat_total_duration"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.285
+    },
+    {
+      "task_id": "crossapp_work.MeetingFullFlowToWechat",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "flow_calendar_alarm15",
+          "flow_meeting",
+          "flow_wechat"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.583
+    },
+    {
+      "task_id": "crossapp_work.MeetingJoinAndNotifySms",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "activeMeeting",
+          "participant_name",
+          "sms_joined"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.3
+    },
+    {
+      "task_id": "crossapp_work.MeetingLongestInfoToWechat",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "wechat_longest_meeting"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.217
+    },
+    {
+      "task_id": "crossapp_work.MeetingMultiChannelNotify",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "multichannel_id"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.553
+    },
+    {
+      "task_id": "crossapp_work.MeetingReminderToNotes",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "meeting_note"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.296
+    },
+    {
+      "task_id": "crossapp_work.MeetingRouteEtaToWechat",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "wechat_eta_and_meeting"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.667
+    },
+    {
+      "task_id": "crossapp_work.SmsAndCalendarOnDate",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "calendar_event_created",
+          "calendar_event_date",
+          "sms"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.25
+    },
+    {
+      "task_id": "crossapp_work.WeatherConditionalCancelMeeting",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.5,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.5,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "alarm_before_meeting_if_dry",
+          "cancel_if_rain"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.634
+    },
+    {
+      "task_id": "crossapp_commerce.BillTypeYearSummaryToWechat",
+      "suite": "crossapp_commerce",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "wechat_bill_count",
+          "wechat_bill_spending",
+          "wechat_bill_type"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.219
+    },
+    {
+      "task_id": "launcher.ChangeWallpaperAndAddWidget",
+      "suite": "launcher",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "wallpaper_changed",
+          "widget_added"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.944
+    },
+    {
+      "task_id": "calendar.CreateEventWithAlarmAndConfirm",
+      "suite": "calendar",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "63bec77c2a521d90fe437b61ce4e22f7f7cda83008a348f7218df9c5866ff867",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "event_created",
+          "event_time",
+          "reminder_30min"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.949
+    },
+    {
+      "task_id": "crossapp_commerce.MonthCompareThenExplainToNote",
+      "suite": "crossapp_commerce",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "note_numbers",
+          "note_title",
+          "note_winner"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.202
+    },
+    {
+      "task_id": "crossapp_life.RealisticTrip001",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "query.searched",
+          "rest"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.887
+    },
+    {
+      "task_id": "crossapp_work.ScheduleReleaseMeetingAndNotifyViaNotesWechatSms",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "notes",
+          "scheduled_password",
+          "scheduled_time_duration"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.88
+    },
+    {
+      "task_id": "crossapp_content.ThirdSpotifyPlayRecommendOnRedbookAndPlaylist",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "playlist_exists",
+          "playlist_has_song",
+          "redbook_post"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.35
+    },
+    {
+      "task_id": "crossapp_commerce.Top3ExpenseSummaryToWechat",
+      "suite": "crossapp_commerce",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "wechat_closing",
+          "wechat_top1_amount",
+          "wechat_top2_amount",
+          "wechat_top3_amount"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.266
+    },
+    {
+      "task_id": "crossapp_life.TopRatedNearbyPlaceConditionalWechatOrSmsInvite",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "28100de3b890c2494b9773f497b71b31bb0ccca8220b134cd8c3422bcc704929",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "map_search_best",
+          "rest"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.6
+    },
+    {
+      "task_id": "crossapp_life.WeekendShanghaiTripIfClearAndFree",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "b63c6ed4ecb8ac9c4634f31209690a058b12e1e6fb0070aced84940af9c74ca4",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "query.searched",
+          "rest"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 3.607
+    },
+    {
+      "task_id": "crossapp_content.WeeklyReadingAndLikedSpotifySongsToMoment",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a97aa0f8422fed3b722d97cadd2c107af7e8c0bb51d83148c2b9d4e89667c8e0",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "moment_reading",
+          "moment_song"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.643
+    },
+    {
+      "task_id": "ebay.CompareTwoGroupCounts",
+      "suite": "ebay",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "6d7614418cc413109574609bae4d9144ba972c2fe2f0578778e3979e582b8e9f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 5,
+        "issue_fields": [
+          "answer.more",
+          "answer.发动机零件Count",
+          "answer.运动鞋Count",
+          "history.发动机零件_search",
+          "history.运动鞋_search"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.217
+    },
+    {
+      "task_id": "ebay.CompareTwoProductPrices",
+      "suite": "ebay",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "6d7614418cc413109574609bae4d9144ba972c2fe2f0578778e3979e582b8e9f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 5,
+        "issue_fields": [
+          "answer.winner",
+          "answer.发动机零件Total",
+          "answer.电风扇Total",
+          "history.发动机零件_search",
+          "history.电风扇_search"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.108
+    },
+    {
+      "task_id": "ebay.CountNikeSneakersInRange",
+      "suite": "ebay",
+      "passed": false,
+      "clean": true,
+      "progress": 0.5,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "6d7614418cc413109574609bae4d9144ba972c2fe2f0578778e3979e582b8e9f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.5,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer",
+          "snapshot.Dyson_吸尘器_亚洲"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.976
+    },
+    {
+      "task_id": "ebay.CountSonyHeadphonesEurope",
+      "suite": "ebay",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "6d7614418cc413109574609bae4d9144ba972c2fe2f0578778e3979e582b8e9f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer",
+          "snapshot.Bosch_发动机零件_欧洲"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.966
+    },
+    {
+      "task_id": "ebay.FindCheapestProduct",
+      "suite": "ebay",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "6d7614418cc413109574609bae4d9144ba972c2fe2f0578778e3979e582b8e9f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "answer.price",
+          "answer.title",
+          "snapshot.Sony_耳机_欧洲"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.982
+    },
+    {
+      "task_id": "crossapp_commerce.AlipayThankTopIncomeTransfer",
+      "suite": "crossapp_commerce",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a97aa0f8422fed3b722d97cadd2c107af7e8c0bb51d83148c2b9d4e89667c8e0",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "thank_note",
+          "top_income_transfer_note"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.469
+    },
+    {
+      "task_id": "crossapp_commerce.AlipayYearCompareTopExpenseToWechat",
+      "suite": "crossapp_commerce",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a97aa0f8422fed3b722d97cadd2c107af7e8c0bb51d83148c2b9d4e89667c8e0",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "year_compare_top_expense_amount",
+          "year_compare_top_expense_counterparty"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.216
+    },
+    {
+      "task_id": "crossapp_content.BilibiliRankAuthorLastNovToWechat",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a97aa0f8422fed3b722d97cadd2c107af7e8c0bb51d83148c2b9d4e89667c8e0",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "rank_author_followers_share",
+          "rank_author_last_nov_count_share",
+          "rank_author_top_video_share"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 3.655
+    },
+    {
+      "task_id": "crossapp_content.BilibiliRankTop3FolderAndWechat",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a97aa0f8422fed3b722d97cadd2c107af7e8c0bb51d83148c2b9d4e89667c8e0",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "new_folder_with_top3",
+          "top_video_play_count",
+          "top_video_title"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 3.543
+    },
+    {
+      "task_id": "file_manager.CleanObsoleteHandoffFiles",
+      "suite": "file_manager",
+      "passed": false,
+      "clean": true,
+      "progress": 0.5,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a43b76fbf77a2f09e25212f0a0a56adda33383e87d82be12e944e92ccd4d0d57",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.5,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "file_system.important_preserved",
+          "file_system.obsolete_deleted"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.948
+    },
+    {
+      "task_id": "crossapp_work.CountCurrentLogErrorsToWechat",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a97aa0f8422fed3b722d97cadd2c107af7e8c0bb51d83148c2b9d4e89667c8e0",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "wechat.boss_error_count"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.29
+    },
+    {
+      "task_id": "crossapp_work.CountOpenWorkOrdersFromPhotosToWechat",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a97aa0f8422fed3b722d97cadd2c107af7e8c0bb51d83148c2b9d4e89667c8e0",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "wechat.chenjing_no_distractor_work_orders",
+          "wechat.chenjing_open_work_order_count",
+          "wechat.chenjing_open_work_order_ids",
+          "wechat.chenjing_photographed_count"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.567
+    },
+    {
+      "task_id": "file_manager.CreateKeepFolderAndDeleteRawLogs",
+      "suite": "file_manager",
+      "passed": false,
+      "clean": true,
+      "progress": 0.3333333333333333,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a43b76fbf77a2f09e25212f0a0a56adda33383e87d82be12e944e92ccd4d0d57",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.3333333333333333,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "file_system.keep_folder_created",
+          "file_system.raw_logs_deleted",
+          "file_system.summary_preserved"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.842
+    },
+    {
+      "task_id": "launcher.DesktopAppsToFolder",
+      "suite": "launcher",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a97aa0f8422fed3b722d97cadd2c107af7e8c0bb51d83148c2b9d4e89667c8e0",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "launcher_folder"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 3.025
+    },
+    {
+      "task_id": "crossapp_content.FavoriteWaterSceneryPhotos",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a97aa0f8422fed3b722d97cadd2c107af7e8c0bb51d83148c2b9d4e89667c8e0",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "gallery.water_scenery_favorites_exact",
+          "wechat.latest_water_scenery_photo"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.229
+    },
+    {
+      "task_id": "crossapp_work.InspectionReportToWechat",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.2,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a97aa0f8422fed3b722d97cadd2c107af7e8c0bb51d83148c2b9d4e89667c8e0",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.2,
+        "passed": false,
+        "issue_count": 5,
+        "issue_fields": [
+          "inspection_report_excludes_resolved_boss",
+          "inspection_report_excludes_resolved_inspector",
+          "inspection_report_not_sent_to_previous_inspector",
+          "inspection_report_share_boss",
+          "inspection_report_share_inspector"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.148
+    },
+    {
+      "task_id": "map.NorthResearchInstituteAnswer",
+      "suite": "map",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "78d1e69ce6fd33e55ccd8b0b79c48be28b4d5497e8805296b57be5ed8e7044a9",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.833
+    },
+    {
+      "task_id": "crossapp_life.OpenedFridgeFoodsToMom",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a97aa0f8422fed3b722d97cadd2c107af7e8c0bb51d83148c2b9d4e89667c8e0",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 7,
+        "issue_fields": [
+          "wechat.mom_no_fridge_distractors",
+          "wechat.mom_opened_fridge_food_1",
+          "wechat.mom_opened_fridge_food_2",
+          "wechat.mom_opened_fridge_food_3",
+          "wechat.mom_opened_fridge_food_4",
+          "wechat.mom_opened_fridge_food_5",
+          "wechat.mom_opened_fridge_food_6"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.318
+    },
+    {
+      "task_id": "crossapp_work.OrganizeMeetingMaterialsToWechat",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.2,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a97aa0f8422fed3b722d97cadd2c107af7e8c0bb51d83148c2b9d4e89667c8e0",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.2,
+        "passed": false,
+        "issue_count": 5,
+        "issue_fields": [
+          "file_system.distractors_preserved",
+          "file_system.meeting_materials_moved",
+          "file_system.meeting_pack_created",
+          "file_system.meeting_pack_exact_files",
+          "wechat.boss_meeting_file_names"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.667
+    },
+    {
+      "task_id": "crossapp_work.OrganizePdfReportsToWechat",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.2,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a97aa0f8422fed3b722d97cadd2c107af7e8c0bb51d83148c2b9d4e89667c8e0",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.2,
+        "passed": false,
+        "issue_count": 5,
+        "issue_fields": [
+          "file_system.distractors_preserved",
+          "file_system.final_reports_created",
+          "file_system.final_reports_exact",
+          "file_system.pdf_reports_moved",
+          "wechat.boss_report_names"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.367
+    },
+    {
+      "task_id": "crossapp_work.OrganizeReimbursementPhotosToWechat",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.16666666666666666,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a97aa0f8422fed3b722d97cadd2c107af7e8c0bb51d83148c2b9d4e89667c8e0",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.16666666666666666,
+        "passed": false,
+        "issue_count": 6,
+        "issue_fields": [
+          "file_system.distractors_preserved",
+          "file_system.reimburse_photos_created",
+          "file_system.reimburse_photos_exact_files",
+          "file_system.reimbursement_photos_moved",
+          "wechat.boss_reimbursement_images",
+          "wechat.boss_reimbursement_total"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.699
+    },
+    {
+      "task_id": "crossapp_life.RailwayEarliestGTrainToWechat",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "a97aa0f8422fed3b722d97cadd2c107af7e8c0bb51d83148c2b9d4e89667c8e0",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "earliest_g_share",
+          "query.searched"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.698
+    },
+    {
+      "task_id": "crossapp_life.RailwayMyAccountToWechat",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5ab6b0c189b3be8d812e9df9ee74340a20f562633475776f6228af7847d97720",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "railway_account_share"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.204
+    },
+    {
+      "task_id": "crossapp_life.RailwayTomorrowMomBookingToWechat",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5f982c212f4e9520471de988f98320e624c50231f4aa9648403cce2a14c57769",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "mom_train_share",
+          "query.searched"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.364
+    },
+    {
+      "task_id": "crossapp_life.RecommendMenuDishesToXiaozhou",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5f982c212f4e9520471de988f98320e624c50231f4aa9648403cce2a14c57769",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "wechat.xiaozhou_menu_hot_vegetable",
+          "wechat.xiaozhou_menu_light_chicken",
+          "wechat.xiaozhou_menu_noodle_main",
+          "wechat.xiaozhou_no_menu_distractors"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.374
+    },
+    {
+      "task_id": "crossapp_content.RedbookAuthorTopCollectToWechat",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5f982c212f4e9520471de988f98320e624c50231f4aa9648403cce2a14c57769",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "author_top_collected_stats_share",
+          "author_top_collected_title_author_share"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.535
+    },
+    {
+      "task_id": "crossapp_content.RedbookTopLikedToNotes",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5f982c212f4e9520471de988f98320e624c50231f4aa9648403cce2a14c57769",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "top_liked_titles"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.531
+    },
+    {
+      "task_id": "crossapp_content.RedbookUserBestWorstToNotes",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5f982c212f4e9520471de988f98320e624c50231f4aa9648403cce2a14c57769",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "user_best_worst_titles"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.548
+    },
+    {
+      "task_id": "crossapp_content.RedbookUserTopCollectToWechat",
+      "suite": "crossapp_content",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5f982c212f4e9520471de988f98320e624c50231f4aa9648403cce2a14c57769",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "top_liked_note_collected",
+          "top_liked_stats_share",
+          "top_liked_title_share"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.414
+    },
+    {
+      "task_id": "file_manager.RenameEvidenceFilesByDate",
+      "suite": "file_manager",
+      "passed": false,
+      "clean": true,
+      "progress": 0.5,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "dbc0da0d30afa35eb3c0209ac26635edafcbe63149a0530c93fd797526568b79",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.5,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "file_system.evidence_distractors_preserved",
+          "file_system.evidence_renamed"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.894
+    },
+    {
+      "task_id": "crossapp_work.SubmitRequestedAttachmentsToBoss",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.2,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5f982c212f4e9520471de988f98320e624c50231f4aa9648403cce2a14c57769",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.2,
+        "passed": false,
+        "issue_count": 5,
+        "issue_fields": [
+          "file_system.distractors_preserved",
+          "file_system.requested_files_moved",
+          "file_system.submission_created",
+          "file_system.submission_exact_files",
+          "wechat.boss_file_names"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.389
+    },
+    {
+      "task_id": "crossapp_work.TencentMeetingKeywordLongestParticipationToNotes",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5f982c212f4e9520471de988f98320e624c50231f4aa9648403cce2a14c57769",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "keyword_longest_participation_note"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.33
+    },
+    {
+      "task_id": "crossapp_work.TencentMeetingLongestPlannedToWechat",
+      "suite": "crossapp_work",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5f982c212f4e9520471de988f98320e624c50231f4aa9648403cce2a14c57769",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "longest_history_share"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.322
+    },
+    {
+      "task_id": "crossapp_life.WeatherFirstNonRainyToCalendarAndSms",
+      "suite": "crossapp_life",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "5f982c212f4e9520471de988f98320e624c50231f4aa9648403cce2a14c57769",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "event_created",
+          "event_date",
+          "sms_date",
+          "sms_weather"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.617
+    },
+    {
+      "task_id": "map.BestRatedWithWalkRoute",
+      "suite": "map",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "571d39bb66c00881a69d76adeb86fa3502f234ec3a13a3883311cfc1287b506f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "answer.name",
+          "answer.walk_distance",
+          "search.performed",
+          "walk_route_to_best_rated"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.927
+    },
+    {
+      "task_id": "map.CheckDriveRoute",
+      "suite": "map",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "571d39bb66c00881a69d76adeb86fa3502f234ec3a13a3883311cfc1287b506f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "route"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.917
+    },
+    {
+      "task_id": "map.CheckHighestRatedPlace",
+      "suite": "map",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "571d39bb66c00881a69d76adeb86fa3502f234ec3a13a3883311cfc1287b506f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer.name",
+          "search.performed"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.933
+    },
+    {
+      "task_id": "map.CheckNearestPlaceAddress",
+      "suite": "map",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "571d39bb66c00881a69d76adeb86fa3502f234ec3a13a3883311cfc1287b506f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer.address",
+          "search.performed"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.967
+    },
+    {
+      "task_id": "map.CheckRouteSuccess",
+      "suite": "map",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "571d39bb66c00881a69d76adeb86fa3502f234ec3a13a3883311cfc1287b506f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "route_generated",
+          "route_steps"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.867
+    },
+    {
+      "task_id": "map.CompareRouteDuration",
+      "suite": "map",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "571d39bb66c00881a69d76adeb86fa3502f234ec3a13a3883311cfc1287b506f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "answer.drive_duration",
+          "answer.faster_mode",
+          "answer.walk_duration"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.888
+    },
+    {
+      "task_id": "map.DarkModeSettings",
+      "suite": "map",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "571d39bb66c00881a69d76adeb86fa3502f234ec3a13a3883311cfc1287b506f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "settings.appDisplay.theme"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.895
+    },
+    {
+      "task_id": "map.EstimateDrivingCost",
+      "suite": "map",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "571d39bb66c00881a69d76adeb86fa3502f234ec3a13a3883311cfc1287b506f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer.cost"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.95
+    },
+    {
+      "task_id": "map.FindBestRatedAndRoute",
+      "suite": "map",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "571d39bb66c00881a69d76adeb86fa3502f234ec3a13a3883311cfc1287b506f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "answer.distance",
+          "answer.name",
+          "route_to_best_rated",
+          "search.performed"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.0
+    },
+    {
+      "task_id": "map.FindNearestAndRoute",
+      "suite": "map",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "571d39bb66c00881a69d76adeb86fa3502f234ec3a13a3883311cfc1287b506f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "route_to_nearest",
+          "search.performed"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.834
+    },
+    {
+      "task_id": "map.FindNearestWithRating",
+      "suite": "map",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "571d39bb66c00881a69d76adeb86fa3502f234ec3a13a3883311cfc1287b506f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "answer.name",
+          "answer.rating",
+          "search.performed"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.85
+    },
+    {
+      "task_id": "map.ModifyMultiSettings",
+      "suite": "map",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "571d39bb66c00881a69d76adeb86fa3502f234ec3a13a3883311cfc1287b506f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "settings.locationPrivacy.saveRecentSearches",
+          "settings.notifications.traffic.parkingLocation"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.832
+    },
+    {
+      "task_id": "map.NearestDetailAndWalkRoute",
+      "suite": "map",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "571d39bb66c00881a69d76adeb86fa3502f234ec3a13a3883311cfc1287b506f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "answer.name",
+          "answer.rating",
+          "answer.walk_duration",
+          "search.performed"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.883
+    },
+    {
+      "task_id": "map.NearestInRadiusRatingRank",
+      "suite": "map",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "571d39bb66c00881a69d76adeb86fa3502f234ec3a13a3883311cfc1287b506f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer.rank",
+          "search.performed"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.901
+    },
+    {
+      "task_id": "map.QueryDrivingDistance",
+      "suite": "map",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "571d39bb66c00881a69d76adeb86fa3502f234ec3a13a3883311cfc1287b506f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer.drive_distance"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.103
+    },
+    {
+      "task_id": "map.SetMapNorthUp",
+      "suite": "map",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "571d39bb66c00881a69d76adeb86fa3502f234ec3a13a3883311cfc1287b506f",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "settings.navigation.keepMapNorthUp"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.963
+    },
+    {
+      "task_id": "notes.CreateFolderAndMoveNote",
+      "suite": "notes",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "99b0c335ab409f52eb34261da316544b7834c0d8cff9c8dbb0715018714483be",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "folders.folder_created",
+          "notes.note_folder"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.014
+    },
+    {
+      "task_id": "notes.CreateNoteWithReminder",
+      "suite": "notes",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "c530c8286383ce8b4c9ed6e8bf311252b93997c9816ca05a90d57c17bff08a71",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "answer.reminder_time",
+          "notes.note_content",
+          "notes.note_created",
+          "notes.note_reminder"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.049
+    },
+    {
+      "task_id": "notes.DeleteAllCompletedTodos",
+      "suite": "notes",
+      "passed": false,
+      "clean": true,
+      "progress": 0.5,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "c530c8286383ce8b4c9ed6e8bf311252b93997c9816ca05a90d57c17bff08a71",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.5,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "todos.completed_all_deleted",
+          "todos.incomplete_preserved"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.935
+    },
+    {
+      "task_id": "notes.DeleteTodo",
+      "suite": "notes",
+      "passed": false,
+      "clean": true,
+      "progress": 0.5,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "c530c8286383ce8b4c9ed6e8bf311252b93997c9816ca05a90d57c17bff08a71",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.5,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "todos.other_todos_preserved",
+          "todos.todo_deleted"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.981
+    },
+    {
+      "task_id": "notes.ReadTodoText",
+      "suite": "notes",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "c530c8286383ce8b4c9ed6e8bf311252b93997c9816ca05a90d57c17bff08a71",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "answer.todo_1",
+          "answer.todo_2",
+          "answer.todo_3"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.999
+    },
+    {
+      "task_id": "railway12306.BuyReturnTicketFromLatestOrder",
+      "suite": "railway12306",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "d7cc8cf44e7497b154214bdd0ab84fec3b96f5bca795e19d4e7b3004d3310220",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "newReturnOrder"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.089
+    },
+    {
+      "task_id": "railway12306.BuyTicketForNewPassenger",
+      "suite": "railway12306",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "d7cc8cf44e7497b154214bdd0ab84fec3b96f5bca795e19d4e7b3004d3310220",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "newPassenger.exists",
+          "newPendingOrder"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.034
+    },
+    {
+      "task_id": "railway12306.BuyTicketForPassenger",
+      "suite": "railway12306",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "d7cc8cf44e7497b154214bdd0ab84fec3b96f5bca795e19d4e7b3004d3310220",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "newPendingOrder"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.081
+    },
+    {
+      "task_id": "railway12306.BuyTicketsForTwoPassengers",
+      "suite": "railway12306",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "d7cc8cf44e7497b154214bdd0ab84fec3b96f5bca795e19d4e7b3004d3310220",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "newPendingOrder"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.067
+    },
+    {
+      "task_id": "railway12306.CheckPassengerCount",
+      "suite": "railway12306",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "d7cc8cf44e7497b154214bdd0ab84fec3b96f5bca795e19d4e7b3004d3310220",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.035
+    },
+    {
+      "task_id": "railway12306.CheckRecentTripCities",
+      "suite": "railway12306",
+      "passed": false,
+      "clean": true,
+      "progress": 0.6666666666666666,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "d7cc8cf44e7497b154214bdd0ab84fec3b96f5bca795e19d4e7b3004d3310220",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.6666666666666666,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "answer.city_1",
+          "answer.city_2",
+          "answer.city_3"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.165
+    },
+    {
+      "task_id": "railway12306.CheckStudentVerify",
+      "suite": "railway12306",
+      "passed": false,
+      "clean": true,
+      "progress": 0.5,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "d7cc8cf44e7497b154214bdd0ab84fec3b96f5bca795e19d4e7b3004d3310220",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.5,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer.from",
+          "answer.to"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.116
+    },
+    {
+      "task_id": "railway12306.FindTrainByDate",
+      "suite": "railway12306",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "d7cc8cf44e7497b154214bdd0ab84fec3b96f5bca795e19d4e7b3004d3310220",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.134
+    },
+    {
+      "task_id": "railway12306.OpenAllApps",
+      "suite": "railway12306",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "d7cc8cf44e7497b154214bdd0ab84fec3b96f5bca795e19d4e7b3004d3310220",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "route"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.05
+    },
+    {
+      "task_id": "railway12306.OpenInvoice",
+      "suite": "railway12306",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "d7cc8cf44e7497b154214bdd0ab84fec3b96f5bca795e19d4e7b3004d3310220",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "invoiceEmail",
+          "invoiceHeaders[name=王明].isDefault",
+          "invoiceHeaders[name=王明].name"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.071
+    },
+    {
+      "task_id": "railway12306.QueryAndCheckRoute",
+      "suite": "railway12306",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "d7cc8cf44e7497b154214bdd0ab84fec3b96f5bca795e19d4e7b3004d3310220",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "query.searched"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.08
+    },
+    {
+      "task_id": "railway12306.QueryFastestTrainDetails",
+      "suite": "railway12306",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "d7cc8cf44e7497b154214bdd0ab84fec3b96f5bca795e19d4e7b3004d3310220",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "query.searched"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.083
+    },
+    {
+      "task_id": "redbook.CheckFirstChatLastMessage",
+      "suite": "redbook",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.907
+    },
+    {
+      "task_id": "redbook.CheckFollowingUserNoteCount",
+      "suite": "redbook",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.937
+    },
+    {
+      "task_id": "redbook.CollectFeedNoteAndDMAuthor",
+      "suite": "redbook",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "collect_feed_note",
+          "dm_author"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.953
+    },
+    {
+      "task_id": "redbook.LikeFeedNoteAndReportLikes",
+      "suite": "redbook",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer",
+          "like_feed_note_and_report_likes"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.967
+    },
+    {
+      "task_id": "redbook.PublishAndShareToFollowing",
+      "suite": "redbook",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "publish_note",
+          "publish_title_entered",
+          "share_title_to_following"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.926
+    },
+    {
+      "task_id": "redbook.SearchFirstNoteAuthorTopLikedTitle",
+      "suite": "redbook",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.05
+    },
+    {
+      "task_id": "reddit.Reddit_AdvancedPrivacyToggles",
+      "suite": "reddit",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "4991233f39b253d92e9ab51f47ddba6a000ee70efd8c5cfddaba119977fac718",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "settings.blurNSFW",
+          "settings.showCommunityStyles",
+          "settings.showNSFW"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.53
+    },
+    {
+      "task_id": "reddit.Reddit_CreatePostToCommunity",
+      "suite": "reddit",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "4991233f39b253d92e9ab51f47ddba6a000ee70efd8c5cfddaba119977fac718",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "reddit.posts(new)"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.449
+    },
+    {
+      "task_id": "reddit.Reddit_DeleteSeededChatMessage",
+      "suite": "reddit",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "4991233f39b253d92e9ab51f47ddba6a000ee70efd8c5cfddaba119977fac718",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "reddit.chatThreads.Objective-Skill-2591.deleted.ct_obj_2"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.485
+    },
+    {
+      "task_id": "reddit.Reddit_DisableCommunityThemes",
+      "suite": "reddit",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "4991233f39b253d92e9ab51f47ddba6a000ee70efd8c5cfddaba119977fac718",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "settings.showCommunityStyles"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.432
+    },
+    {
+      "task_id": "reddit.Reddit_JoinCommunityFromFeed",
+      "suite": "reddit",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "4991233f39b253d92e9ab51f47ddba6a000ee70efd8c5cfddaba119977fac718",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "reddit.joinedCommunityIds.r/memes",
+          "reddit.postVotes.new_upvote_in_r/memes"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.518
+    },
+    {
+      "task_id": "reddit.Reddit_UpdateProfileBio",
+      "suite": "reddit",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "4991233f39b253d92e9ab51f47ddba6a000ee70efd8c5cfddaba119977fac718",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "reddit.user.bio"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.348
+    },
+    {
+      "task_id": "sms.CompareConversationMessageCount",
+      "suite": "sms",
+      "passed": true,
+      "clean": true,
+      "progress": 1.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "709eaf8dfcd189063c597dbb82b9c3367aef0d8a596753671517af031149d010",
+      "judge": {
+        "success": true,
+        "clean": true,
+        "progress": 1.0,
+        "passed": true,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.229
+    },
+    {
+      "task_id": "sms.OpenConversationBySender",
+      "suite": "sms",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "b3ef376a1e12283f1cf976e29f41138ca6e36060ab11cc4fcfeb266760b796ad",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "route"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.166
+    },
+    {
+      "task_id": "sms.ToggleFreeNetworkSetting",
+      "suite": "sms",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "b3ef376a1e12283f1cf976e29f41138ca6e36060ab11cc4fcfeb266760b796ad",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "settings.block_strangers"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.134
+    },
+    {
+      "task_id": "spotify.AddArtistSongsToPlaylist",
+      "suite": "spotify",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "ee318f2db73f4ad296bc421c5c8521a1a7aa317c7ea051ceb0fd53aff04ebe7a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "artist_tracks_added",
+          "playlist_exists"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 51.212
+    },
+    {
+      "task_id": "spotify.AddToQueueAndPlay",
+      "suite": "spotify",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "ee318f2db73f4ad296bc421c5c8521a1a7aa317c7ea051ceb0fd53aff04ebe7a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 0,
+        "issue_fields": [],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": true
+      },
+      "elapsed_seconds": 35.036
+    },
+    {
+      "task_id": "spotify.BuildPlaylistFromTwoArtists",
+      "suite": "spotify",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "ee318f2db73f4ad296bc421c5c8521a1a7aa317c7ea051ceb0fd53aff04ebe7a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 8,
+        "issue_fields": [
+          "isPlaying",
+          "playing_two_artist_playlist",
+          "playlist_artist1_count",
+          "playlist_artist2_count",
+          "playlist_exists",
+          "playlist_track_count",
+          "searched_artist1",
+          "searched_artist2"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 28.033
+    },
+    {
+      "task_id": "spotify.CollectLikedRecentAndPlay",
+      "suite": "spotify",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "ee318f2db73f4ad296bc421c5c8521a1a7aa317c7ea051ceb0fd53aff04ebe7a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "isPlaying",
+          "playing_liked_recent_playlist",
+          "playlist_contains_liked_recent_titles",
+          "playlist_exists"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 28.362
+    },
+    {
+      "task_id": "spotify.DiscoverSaveAndReport",
+      "suite": "spotify",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "ee318f2db73f4ad296bc421c5c8521a1a7aa317c7ea051ceb0fd53aff04ebe7a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 0,
+        "issue_fields": [],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": true
+      },
+      "elapsed_seconds": 27.862
+    },
+    {
+      "task_id": "spotify.FilterLikedSongsToPlaylist",
+      "suite": "spotify",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "ee318f2db73f4ad296bc421c5c8521a1a7aa317c7ea051ceb0fd53aff04ebe7a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 0,
+        "issue_fields": [],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": true
+      },
+      "elapsed_seconds": 35.19
+    },
+    {
+      "task_id": "spotify.FindRecentArtistSongs",
+      "suite": "spotify",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "ee318f2db73f4ad296bc421c5c8521a1a7aa317c7ea051ceb0fd53aff04ebe7a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 0,
+        "issue_fields": [],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": true
+      },
+      "elapsed_seconds": 31.785
+    },
+    {
+      "task_id": "spotify.LikeSongFromSearch",
+      "suite": "spotify",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "ee318f2db73f4ad296bc421c5c8521a1a7aa317c7ea051ceb0fd53aff04ebe7a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 0,
+        "issue_fields": [],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": true
+      },
+      "elapsed_seconds": 27.903
+    },
+    {
+      "task_id": "spotify.ListLibraryArtists",
+      "suite": "spotify",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "ee318f2db73f4ad296bc421c5c8521a1a7aa317c7ea051ceb0fd53aff04ebe7a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 0,
+        "issue_fields": [],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": true
+      },
+      "elapsed_seconds": 33.48
+    },
+    {
+      "task_id": "spotify.MoveArtistToNewPlaylist",
+      "suite": "spotify",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "ee318f2db73f4ad296bc421c5c8521a1a7aa317c7ea051ceb0fd53aff04ebe7a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 0,
+        "issue_fields": [],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": true
+      },
+      "elapsed_seconds": 28.505
+    },
+    {
+      "task_id": "spotify.PlaySongFromSearch",
+      "suite": "spotify",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "ee318f2db73f4ad296bc421c5c8521a1a7aa317c7ea051ceb0fd53aff04ebe7a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 0,
+        "issue_fields": [],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": true
+      },
+      "elapsed_seconds": 28.387
+    },
+    {
+      "task_id": "spotify.QueueAndLikeSong",
+      "suite": "spotify",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "ee318f2db73f4ad296bc421c5c8521a1a7aa317c7ea051ceb0fd53aff04ebe7a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 0,
+        "issue_fields": [],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": true
+      },
+      "elapsed_seconds": 28.442
+    },
+    {
+      "task_id": "spotify.QueueTopArtistSongs",
+      "suite": "spotify",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "ee318f2db73f4ad296bc421c5c8521a1a7aa317c7ea051ceb0fd53aff04ebe7a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 0,
+        "issue_fields": [],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": true
+      },
+      "elapsed_seconds": 37.773
+    },
+    {
+      "task_id": "spotify.SearchBuildPlaylistAndPlay",
+      "suite": "spotify",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "ee318f2db73f4ad296bc421c5c8521a1a7aa317c7ea051ceb0fd53aff04ebe7a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 6,
+        "issue_fields": [
+          "isPlaying",
+          "playing_created_playlist",
+          "playlist_exists",
+          "playlist_track_count",
+          "repeat",
+          "searched_keyword"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 33.789
+    },
+    {
+      "task_id": "spotify.SearchPlayAndReport",
+      "suite": "spotify",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "ee318f2db73f4ad296bc421c5c8521a1a7aa317c7ea051ceb0fd53aff04ebe7a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 0,
+        "issue_fields": [],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": true
+      },
+      "elapsed_seconds": 33.478
+    },
+    {
+      "task_id": "spotify.SetSleepTimer",
+      "suite": "spotify",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "ee318f2db73f4ad296bc421c5c8521a1a7aa317c7ea051ceb0fd53aff04ebe7a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "settings.playback.sleepTimer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 32.337
+    },
+    {
+      "task_id": "spotify.SwapSongInPlaylist",
+      "suite": "spotify",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "ee318f2db73f4ad296bc421c5c8521a1a7aa317c7ea051ceb0fd53aff04ebe7a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 0,
+        "issue_fields": [],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": true
+      },
+      "elapsed_seconds": 32.77
+    },
+    {
+      "task_id": "tencent_meeting.CalculateTotalMeetingDuration",
+      "suite": "tencent_meeting",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "6913f01ce9e77f1e15598bb3b21fd6b026e443e731b0e1aa6d056cb027821da9",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.27
+    },
+    {
+      "task_id": "tencent_meeting.CheckContactCount",
+      "suite": "tencent_meeting",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "6913f01ce9e77f1e15598bb3b21fd6b026e443e731b0e1aa6d056cb027821da9",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.113
+    },
+    {
+      "task_id": "tencent_meeting.ConfigAudioSettings",
+      "suite": "tencent_meeting",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "6913f01ce9e77f1e15598bb3b21fd6b026e443e731b0e1aa6d056cb027821da9",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "settings.micOnJoin",
+          "settings.speakerOnJoin"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.134
+    },
+    {
+      "task_id": "tencent_meeting.ConfigShowIdentity",
+      "suite": "tencent_meeting",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "6913f01ce9e77f1e15598bb3b21fd6b026e443e731b0e1aa6d056cb027821da9",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "settings.showIdentity"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.112
+    },
+    {
+      "task_id": "tencent_meeting.CountFriendMeetings",
+      "suite": "tencent_meeting",
+      "passed": true,
+      "clean": true,
+      "progress": 1.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "6913f01ce9e77f1e15598bb3b21fd6b026e443e731b0e1aa6d056cb027821da9",
+      "judge": {
+        "success": true,
+        "clean": true,
+        "progress": 1.0,
+        "passed": true,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.032
+    },
+    {
+      "task_id": "tencent_meeting.FindLongestMeeting",
+      "suite": "tencent_meeting",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "6913f01ce9e77f1e15598bb3b21fd6b026e443e731b0e1aa6d056cb027821da9",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.019
+    },
+    {
+      "task_id": "tencent_meeting.FindMeetingHistory",
+      "suite": "tencent_meeting",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "6913f01ce9e77f1e15598bb3b21fd6b026e443e731b0e1aa6d056cb027821da9",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer.duration",
+          "answer.start_time"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.022
+    },
+    {
+      "task_id": "tencent_meeting.ScheduleMeeting",
+      "suite": "tencent_meeting",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "6913f01ce9e77f1e15598bb3b21fd6b026e443e731b0e1aa6d056cb027821da9",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "answer",
+          "scheduledMeetings.new.duration",
+          "scheduledMeetings.new.password",
+          "scheduledMeetings.new.title"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.023
+    },
+    {
+      "task_id": "tencent_meeting.ToggleNotification",
+      "suite": "tencent_meeting",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "6913f01ce9e77f1e15598bb3b21fd6b026e443e731b0e1aa6d056cb027821da9",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "settings.notifications"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.055
+    },
+    {
+      "task_id": "weather.AddCityAndFindWarmestDay",
+      "suite": "weather",
+      "passed": false,
+      "clean": true,
+      "progress": 0.5,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "708769e71261e942f45eef68e504cdb059a82a2eaa007b2528a62d445302f0fb",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.5,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer.date",
+          "savedCities"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.378
+    },
+    {
+      "task_id": "weather.AddCityFullReport",
+      "suite": "weather",
+      "passed": false,
+      "clean": true,
+      "progress": 0.25,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "708769e71261e942f45eef68e504cdb059a82a2eaa007b2528a62d445302f0fb",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.25,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "answer.aqi",
+          "answer.humidity",
+          "answer.temp",
+          "savedCities"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.261
+    },
+    {
+      "task_id": "weather.CheckCurrentTemp",
+      "suite": "weather",
+      "passed": true,
+      "clean": true,
+      "progress": 1.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "708769e71261e942f45eef68e504cdb059a82a2eaa007b2528a62d445302f0fb",
+      "judge": {
+        "success": true,
+        "clean": true,
+        "progress": 1.0,
+        "passed": true,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.267
+    },
+    {
+      "task_id": "weather.CheckDetailCard",
+      "suite": "weather",
+      "passed": true,
+      "clean": true,
+      "progress": 1.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "708769e71261e942f45eef68e504cdb059a82a2eaa007b2528a62d445302f0fb",
+      "judge": {
+        "success": true,
+        "clean": true,
+        "progress": 1.0,
+        "passed": true,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.181
+    },
+    {
+      "task_id": "weather.ColdestDayIn14",
+      "suite": "weather",
+      "passed": true,
+      "clean": true,
+      "progress": 1.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "708769e71261e942f45eef68e504cdb059a82a2eaa007b2528a62d445302f0fb",
+      "judge": {
+        "success": true,
+        "clean": true,
+        "progress": 1.0,
+        "passed": true,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer.date",
+          "answer.temp"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 5.201
+    },
+    {
+      "task_id": "weather.EnableNightDnd",
+      "suite": "weather",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "708769e71261e942f45eef68e504cdb059a82a2eaa007b2528a62d445302f0fb",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "settings.nightDnd"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.349
+    },
+    {
+      "task_id": "weather.NightLowTemp",
+      "suite": "weather",
+      "passed": true,
+      "clean": true,
+      "progress": 1.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "708769e71261e942f45eef68e504cdb059a82a2eaa007b2528a62d445302f0fb",
+      "judge": {
+        "success": true,
+        "clean": true,
+        "progress": 1.0,
+        "passed": true,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.2
+    },
+    {
+      "task_id": "weather.SwitchUnitAndReport",
+      "suite": "weather",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "708769e71261e942f45eef68e504cdb059a82a2eaa007b2528a62d445302f0fb",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer",
+          "settings.tempUnit"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.234
+    },
+    {
+      "task_id": "weather.WarmestDayInWeek",
+      "suite": "weather",
+      "passed": false,
+      "clean": true,
+      "progress": 0.6666666666666666,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "f08981d0809787d065df9f387c86f12ae77e5078a1e0867628ccce7769b81121",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.6666666666666666,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "answer.date",
+          "answer.temp",
+          "answer.weather"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.283
+    },
+    {
+      "task_id": "wechat.ConditionalReplyToBoss",
+      "suite": "wechat",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "7293fedf76720282bab67f7c14d54dbdde1fefa69c858daa2572503d3d75b702",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "conditional_reply"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.995
+    },
+    {
+      "task_id": "wechat.DeauthorizeApp",
+      "suite": "wechat",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "7293fedf76720282bab67f7c14d54dbdde1fefa69c858daa2572503d3d75b702",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "authorizedApps[name=微信读书]"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.976
+    },
+    {
+      "task_id": "wechat.DisableWechatSportsLeaderboard",
+      "suite": "wechat",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "7293fedf76720282bab67f7c14d54dbdde1fefa69c858daa2572503d3d75b702",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "settings.accessibility.wechatSports.enabled",
+          "settings.accessibility.wechatSports.joinLeaderboard"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.983
+    },
+    {
+      "task_id": "wechat.PostMomentFromChat",
+      "suite": "wechat",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "7293fedf76720282bab67f7c14d54dbdde1fefa69c858daa2572503d3d75b702",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "moment_from_chat",
+          "moment_no_images"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.985
+    },
+    {
+      "task_id": "wechat.PostMomentsText",
+      "suite": "wechat",
+      "passed": false,
+      "clean": true,
+      "progress": 0.5,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "069f0a727fe0ede5bb18404ab5c092739544129e9cb02bb267062145cefbbf3a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.5,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "moments[0].content",
+          "moments[0].images"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.798
+    },
+    {
+      "task_id": "wechat.PostMomentsTextWithCity",
+      "suite": "wechat",
+      "passed": false,
+      "clean": true,
+      "progress": 0.3333333333333333,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "069f0a727fe0ede5bb18404ab5c092739544129e9cb02bb267062145cefbbf3a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.3333333333333333,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "moments[0].content",
+          "moments[0].images",
+          "moments[0].location"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.966
+    },
+    {
+      "task_id": "wechat.ReadContactRegion",
+      "suite": "wechat",
+      "passed": true,
+      "clean": true,
+      "progress": 1.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "7293fedf76720282bab67f7c14d54dbdde1fefa69c858daa2572503d3d75b702",
+      "judge": {
+        "success": true,
+        "clean": true,
+        "progress": 1.0,
+        "passed": true,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer.地区"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.984
+    },
+    {
+      "task_id": "wechat.ReadStepsLeaderboardTop",
+      "suite": "wechat",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "7293fedf76720282bab67f7c14d54dbdde1fefa69c858daa2572503d3d75b702",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer",
+          "settings.accessibility.wechatSports.enabled"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.901
+    },
+    {
+      "task_id": "wechat.SetMomentsVisibleRange",
+      "suite": "wechat",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "7293fedf76720282bab67f7c14d54dbdde1fefa69c858daa2572503d3d75b702",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "settings.privacy.momentsRange"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.832
+    },
+    {
+      "task_id": "wechat.ToggleDiscoverEntry",
+      "suite": "wechat",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "7293fedf76720282bab67f7c14d54dbdde1fefa69c858daa2572503d3d75b702",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "settings.discover.listen.visible"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.9
+    },
+    {
+      "task_id": "wechat.ToggleWechatSports",
+      "suite": "wechat",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "7293fedf76720282bab67f7c14d54dbdde1fefa69c858daa2572503d3d75b702",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "settings.accessibility.wechatSports.enabled"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.85
+    },
+    {
+      "task_id": "wechat_reading.AddBookAndReadTo",
+      "suite": "wechat_reading",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "365d1630d2a42c69cf368aafc6e6cf9bec8f3aa8889dbd570f615b95f616bd81",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "read_progress",
+          "shelf_after_add"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.084
+    },
+    {
+      "task_id": "wechat_reading.CheckHotSearchRank",
+      "suite": "wechat_reading",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "365d1630d2a42c69cf368aafc6e6cf9bec8f3aa8889dbd570f615b95f616bd81",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "answer"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.051
+    },
+    {
+      "task_id": "wechat_reading.CompareBookLengths",
+      "suite": "wechat_reading",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "365d1630d2a42c69cf368aafc6e6cf9bec8f3aa8889dbd570f615b95f616bd81",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "answer",
+          "shelf_thicker_book"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.116
+    },
+    {
+      "task_id": "wechat_reading.ConfigureReaderSettings",
+      "suite": "wechat_reading",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "365d1630d2a42c69cf368aafc6e6cf9bec8f3aa8889dbd570f615b95f616bd81",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "readerPrefs.fontSize",
+          "settings.pageTurnStyle"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.117
+    },
+    {
+      "task_id": "wechat_reading.FindLowestProgressAndRead",
+      "suite": "wechat_reading",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "365d1630d2a42c69cf368aafc6e6cf9bec8f3aa8889dbd570f615b95f616bd81",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "bookProgress"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.049
+    },
+    {
+      "task_id": "wechat_reading.ManageShelf",
+      "suite": "wechat_reading",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "365d1630d2a42c69cf368aafc6e6cf9bec8f3aa8889dbd570f615b95f616bd81",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "shelf"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.101
+    },
+    {
+      "task_id": "wechat_reading.OrganizeShelfByRecommendation",
+      "suite": "wechat_reading",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "365d1630d2a42c69cf368aafc6e6cf9bec8f3aa8889dbd570f615b95f616bd81",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "shelf"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.1
+    },
+    {
+      "task_id": "wechat_reading.PrivacyAndThemeBundle",
+      "suite": "wechat_reading",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "365d1630d2a42c69cf368aafc6e6cf9bec8f3aa8889dbd570f615b95f616bd81",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 3,
+        "issue_fields": [
+          "readerPrefs.themeColor",
+          "settings.pageTurnStyle",
+          "settings.privacy.rejectStrangerMsg"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.15
+    },
+    {
+      "task_id": "wechat_reading.ReadBookProgress",
+      "suite": "wechat_reading",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "365d1630d2a42c69cf368aafc6e6cf9bec8f3aa8889dbd570f615b95f616bd81",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "bookProgress"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.132
+    },
+    {
+      "task_id": "wechat_reading.SetDarkMode",
+      "suite": "wechat_reading",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "365d1630d2a42c69cf368aafc6e6cf9bec8f3aa8889dbd570f615b95f616bd81",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "settings.darkMode"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.133
+    },
+    {
+      "task_id": "wechat_reading.SetProfileVisibility",
+      "suite": "wechat_reading",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "365d1630d2a42c69cf368aafc6e6cf9bec8f3aa8889dbd570f615b95f616bd81",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "settings.privacy.profile.visibility"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.034
+    },
+    {
+      "task_id": "wechat_reading.TogglePrivateReading",
+      "suite": "wechat_reading",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "365d1630d2a42c69cf368aafc6e6cf9bec8f3aa8889dbd570f615b95f616bd81",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "privateReading"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.066
+    },
+    {
+      "task_id": "wechat_reading.UnfollowUser",
+      "suite": "wechat_reading",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "365d1630d2a42c69cf368aafc6e6cf9bec8f3aa8889dbd570f615b95f616bd81",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "unfollowed"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.066
+    },
+    {
+      "task_id": "x.ComplexSettingsChain",
+      "suite": "x",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 5,
+        "issue_fields": [
+          "settings.onlyImportant",
+          "settings.prefRecommend",
+          "settings.pushOnlyDm",
+          "settings.showInteractionCounts",
+          "settings.showLocalContent"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.009
+    },
+    {
+      "task_id": "x.FollowUserAndLikeTheirPost",
+      "suite": "x",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "followed_user",
+          "liked_post_by_user"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.068
+    },
+    {
+      "task_id": "x.PostWithImageAndReply",
+      "suite": "x",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "post_created",
+          "reply_to_new_post"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.033
+    },
+    {
+      "task_id": "x.QuotePostAndTweet",
+      "suite": "x",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "quoted_post_created"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 1.988
+    },
+    {
+      "task_id": "x.ReplyAndRetweetSamePost",
+      "suite": "x",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 2,
+        "issue_fields": [
+          "post_retweeted",
+          "reply_created"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.148
+    },
+    {
+      "task_id": "x.SendDmToConversation",
+      "suite": "x",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "8b330065b55f4a08f1f66e1b4b3fe4bf6415d9b3f1ac4445f1ff6a102907872a",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "dm_sent"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 5.762
+    },
+    {
+      "task_id": "x.SetCallPermissionsBundle",
+      "suite": "x",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 1,
+      "model_invocations": 1,
+      "tool_names": [],
+      "trace_sha256": "5fc647eeb79a9bae89ed779bfd721fab2ee862ed049f9a51f66c67c461f26461",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 4,
+        "issue_fields": [
+          "settings.allowCallFromFollowing",
+          "settings.allowCallFromLogs",
+          "settings.allowCallFromVerified",
+          "settings.enableAvCalls"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.068
+    },
+    {
+      "task_id": "crossapp_commerce.AlipayShareBillDetail",
+      "suite": "crossapp_commerce",
+      "passed": false,
+      "clean": true,
+      "progress": 0.0,
+      "steps": 2,
+      "model_invocations": 2,
+      "tool_names": [
+        "mobile_submit_answer"
+      ],
+      "trace_sha256": "c8556c178a81d5af4f80ec34a504d08ac992b8558f4bd4e6b0a7afaa28a47a15",
+      "judge": {
+        "success": false,
+        "clean": true,
+        "progress": 0.0,
+        "passed": false,
+        "issue_count": 1,
+        "issue_fields": [
+          "sent_bill_detail"
+        ],
+        "warning_count": 0,
+        "warning_fields": [],
+        "judge_error": false
+      },
+      "elapsed_seconds": 2.441
+    }
+  ],
+  "suite_summary": {
+    "account": {
+      "tasks": 5,
+      "passed": 0,
+      "success_rate": 0.0
+    },
+    "alipay": {
+      "tasks": 9,
+      "passed": 1,
+      "success_rate": 0.1111111111111111
+    },
+    "bilibili": {
+      "tasks": 9,
+      "passed": 0,
+      "success_rate": 0.0
+    },
+    "calendar": {
+      "tasks": 12,
+      "passed": 1,
+      "success_rate": 0.08333333333333333
+    },
+    "clock": {
+      "tasks": 9,
+      "passed": 3,
+      "success_rate": 0.3333333333333333
+    },
+    "crossapp_commerce": {
+      "tasks": 14,
+      "passed": 0,
+      "success_rate": 0.0
+    },
+    "crossapp_content": {
+      "tasks": 23,
+      "passed": 0,
+      "success_rate": 0.0
+    },
+    "crossapp_life": {
+      "tasks": 29,
+      "passed": 1,
+      "success_rate": 0.034482758620689655
+    },
+    "crossapp_work": {
+      "tasks": 21,
+      "passed": 0,
+      "success_rate": 0.0
+    },
+    "ebay": {
+      "tasks": 5,
+      "passed": 0,
+      "success_rate": 0.0
+    },
+    "file_manager": {
+      "tasks": 3,
+      "passed": 0,
+      "success_rate": 0.0
+    },
+    "launcher": {
+      "tasks": 2,
+      "passed": 0,
+      "success_rate": 0.0
+    },
+    "map": {
+      "tasks": 17,
+      "passed": 0,
+      "success_rate": 0.0
+    },
+    "notes": {
+      "tasks": 5,
+      "passed": 0,
+      "success_rate": 0.0
+    },
+    "railway12306": {
+      "tasks": 12,
+      "passed": 0,
+      "success_rate": 0.0
+    },
+    "redbook": {
+      "tasks": 6,
+      "passed": 0,
+      "success_rate": 0.0
+    },
+    "reddit": {
+      "tasks": 6,
+      "passed": 0,
+      "success_rate": 0.0
+    },
+    "sms": {
+      "tasks": 3,
+      "passed": 1,
+      "success_rate": 0.3333333333333333
+    },
+    "spotify": {
+      "tasks": 17,
+      "passed": 0,
+      "success_rate": 0.0
+    },
+    "tencent_meeting": {
+      "tasks": 9,
+      "passed": 1,
+      "success_rate": 0.1111111111111111
+    },
+    "weather": {
+      "tasks": 9,
+      "passed": 4,
+      "success_rate": 0.4444444444444444
+    },
+    "wechat": {
+      "tasks": 11,
+      "passed": 1,
+      "success_rate": 0.09090909090909091
+    },
+    "wechat_reading": {
+      "tasks": 13,
+      "passed": 0,
+      "success_rate": 0.0
+    },
+    "x": {
+      "tasks": 7,
+      "passed": 0,
+      "success_rate": 0.0
+    }
+  },
+  "tool_counts": {
+    "mobile_submit_answer": 215
+  },
+  "claim_boundary": "Native MobileGym simulator and official state-diff judge over the complete public test split using a bounded DOM/text observation projection. This is not a visual mobile-agent score, Android emulator result, or claim of screenshot grounding.",
+  "receipt_self_sha256": "71e556ec4e5e6ea165fcb22e8291c363b15fc0d03efdfc07950e1f863ec8c0bb"
+}

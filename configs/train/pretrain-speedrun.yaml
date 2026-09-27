@@ -1,0 +1,29 @@
+# CPU-friendly proof that corpus -> packed shards -> checkpoint works. This is a smoke test,
+# not a useful language-model training budget.
+stage: pretrain
+model_config: configs/model/ultra-tiny-1m.yaml
+data:
+  shards_dir: data/shards/sample
+  tokenizer:
+    kind: byte
+optim:
+  name: adamw
+  lr: 3.0e-3
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: cosine
+  warmup_steps: 2
+  total_steps: 20
+batch:
+  micro_batch_size: 4
+  grad_accum_steps: 1
+runtime:
+  device: auto
+  seed: 42
+  resume: false
+log:
+  out_dir: runs/pretrain-smoke
+  ckpt_every: 10
+  eval_every: 10
+  eval_batches: 2

@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "kind": "public_realistic_agent_source_audit",
+  "measurement": "m121_mobilegym_osworld_v2_source_audit",
+  "generated_at": "2026-08-03",
+  "claim_boundary": "This receipt hash-pins public source metadata, release manifests, and license boundaries for MobileGym and OSWorld-V2. It is a dataset/protocol audit only: no task rows were copied into training, no official runner was executed, and no native mobile or desktop score is claimed.",
+  "sources": [
+    {
+      "id": "mobilegym",
+      "name": "MobileGym / MobileGym-Bench",
+      "repository_url": "https://github.com/Purewhiter/mobilegym",
+      "paper_url": "https://arxiv.org/abs/2605.26114",
+      "project_url": "https://mobilegym.github.io/",
+      "repository_revision": {
+        "branch": "main",
+        "commit": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+        "commit_url": "https://github.com/Purewhiter/mobilegym/commit/093a3292d13fc4186e279af4ef1b005ac8e4d2b7"
+      },
+      "source_files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/Purewhiter/mobilegym/093a3292d13fc4186e279af4ef1b005ac8e4d2b7/README.md",
+          "bytes": 33352,
+          "sha256": "b4d56024af5711f0a0bd79f3e8e347f00f41ce1c9e15a7d53862da1fcc1a7e7f"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/Purewhiter/mobilegym/093a3292d13fc4186e279af4ef1b005ac8e4d2b7/LICENSE",
+          "bytes": 11353,
+          "sha256": "7618cd7de039c264759ca8ca0b9130c6de63a4536dcf436baedd4cfbf639073e"
+        },
+        {
+          "path": "LICENSE-DATA",
+          "url": "https://raw.githubusercontent.com/Purewhiter/mobilegym/093a3292d13fc4186e279af4ef1b005ac8e4d2b7/LICENSE-DATA",
+          "bytes": 21114,
+          "sha256": "e222fa518c5003d425ee9b371e987c95ba10e52b54fea078571254ae6a8eaf23"
+        }
+      ],
+      "benchmark_contract": {
+        "simulated_apps": 28,
+        "task_templates_total": 416,
+        "test_tasks": 256,
+        "train_templates_derived": 160,
+        "train_count_derivation": "416 total templates minus the README's explicit 256-task held-out test split; the pinned README does not publish a separate train manifest.",
+        "parallel_instances": 256,
+        "observation": "structured JSON environment state plus browser UI",
+        "actions": ["tap", "type", "swipe", "back", "home", "wait", "drag", "complete"],
+        "judge": "deterministic programmatic state/check function with side-effect diffing",
+        "answer_protocol": "structured AnswerSheet fields rather than free-text grading"
+      },
+      "license": {
+        "code": "Apache-2.0",
+        "benchmark_data": "CC-BY-NC-4.0",
+        "data_use": "non-commercial academic evaluation; do not redistribute benchmark content in model training or public checkpoints"
+      },
+      "data_release": {
+        "url": "https://github.com/Purewhiter/mobilegym/releases/download/data-v0.1.0/mobilegym-data-v0.1.0.tar.gz",
+        "acquired": false,
+        "reason": "The audit records the public release pointer and license boundary without vendoring the approximately 1.9 GB companion data archive."
+      },
+      "local_status": "catalog_and_protocol_audit_only; browser simulator, resettable states, judges, and official 256-task run not executed"
+    },
+    {
+      "id": "osworld_v2",
+      "name": "OSWorld-V2",
+      "repository_url": "https://github.com/xlang-ai/OSWorld-V2",
+      "website_url": "https://osworld-v2.xlang.ai/",
+      "repository_revision": {
+        "branch": "main",
+        "commit": "015ab89aab71e5c791f70afe7d5416f89ac6b110",
+        "commit_url": "https://github.com/xlang-ai/OSWorld-V2/commit/015ab89aab71e5c791f70afe7d5416f89ac6b110"
+      },
+      "release": {
+        "name": "osworld-v2-2026.06.24",
+        "status": "active",
+        "manifest_url": "https://raw.githubusercontent.com/xlang-ai/OSWorld-V2/015ab89aab71e5c791f70afe7d5416f89ac6b110/benchmark_releases/osworld-v2-2026.06.24.json",
+        "manifest_bytes": 1534,
+        "manifest_sha256": "b04c0855dd1e12c37410b8cdea8260c97a22c4dcd4e67f32059242d7b9d598a4",
+        "release_readme_url": "https://raw.githubusercontent.com/xlang-ai/OSWorld-V2/015ab89aab71e5c791f70afe7d5416f89ac6b110/benchmark_releases/README.md",
+        "release_readme_sha256": "59724efad09b5682004a4a461cc02d18b947beae75ce97382a5b994156a092d0",
+        "task_count": 108,
+        "code_tag": "v2026.06.24",
+        "website_tag": "v2026.06.24",
+        "task_dataset": "xlangai/osworld_v2_tasks",
+        "task_tag": "v2026.06.24",
+        "asset_dataset": "xlangai/osworld_v2_assets_gated",
+        "asset_tag": "v2026.06.24",
+        "task_hash_manifest_sha256": "3312a7df40dbd004c300804f71c57d5a23a083d6c675082fcc34c60a37f9a76c",
+        "docker_image_artifact_sha256": "eb737ae70b49849e24af407de6a518439a23de05a8497096a948334ce0a909aa"
+      },
+      "access": {
+        "task_implementations": "gated Hugging Face dataset",
+        "assets": "gated Hugging Face dataset",
+        "local_status": "release manifest audited; gated tasks/assets, provider VM, action logs, and verifier not acquired"
+      },
+      "license_and_training_policy": "Respect the upstream gated dataset terms. Keep OSWorld-V2 task text, assets, and verifier evaluation-only; do not train on the gated release or publish derived task content."
+    }
+  ],
+  "localagent_adaptation": {
+    "training_rows_added": 0,
+    "native_runs": 0,
+    "webgpu_runs": 0,
+    "official_scores_added": 0,
+    "reason": "The repository lacks the required Android/browser desktop runtimes and authenticated gated assets in this environment; this pass deliberately records provenance rather than fabricating native results."
+  },
+  "next_gate": "Acquire MobileGym v0.1.0 in an isolated evaluation workspace and the release-matched OSWorld-V2 gated task/assets plus VM provider, then run native reset/verifier protocols before any workshop capability claim."
+}

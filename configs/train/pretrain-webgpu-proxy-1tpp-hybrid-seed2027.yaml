@@ -1,0 +1,33 @@
+# Hybrid treatment for the seed-2027 10.5M one-tpp proxy replicate. The paired attention arm uses
+# the same deterministic sample draws, optimizer, schedule, batch, runtime, and evaluation fields.
+stage: pretrain
+model_config: configs/model/webgpu-10m-hybrid.yaml
+data:
+  shards_dir: data/shards/webgpu-proxy-120m
+  min_train_tokens: 10551296
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-webgpu-proxy-16k.json
+optim:
+  name: adamw
+  lr: 3.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 6
+  total_steps: 322
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 2
+  grad_accum_steps: 8
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2027
+  resume: true
+log:
+  out_dir: runs/pretrain-webgpu-proxy-1tpp-hybrid-seed2027
+  ckpt_every: 50
+  eval_every: 25
+  eval_batches: 16

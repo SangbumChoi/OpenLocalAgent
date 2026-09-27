@@ -1,0 +1,123 @@
+{
+  "kind": "localagent_webgpu_native_canonical_productivity_receipt",
+  "schema_version": 1,
+  "backend": "webgpu",
+  "environment_executed": true,
+  "hardware_adapter": "vendor=apple; architecture=metal-3",
+  "adapter": {
+    "identity": "vendor=apple; architecture=metal-3",
+    "vendor": "apple",
+    "architecture": "metal-3",
+    "identity_fields": ["vendor", "architecture"]
+  },
+  "canonical_contract": {
+    "public_tools": ["send_email", "open_url", "notion_write"],
+    "legacy_aliases": {
+      "email_send": "send_email",
+      "notion_create_page": "notion_write"
+    },
+    "selection_policy": "canonical_public_schema_preferred; legacy_alias_only_when_canonical_missing",
+    "interpretation": "This receipt measures the explicit schema boundary. It is not a learned-quality gain and does not execute an external account action."
+  },
+  "capability": {
+    "evaluated_cases": 3,
+    "exact_actions": 3,
+    "exact_action_rate": 1.0,
+    "closed_loop_success": 0,
+    "external_side_effects_executed": false,
+    "warmups_per_case": 3,
+    "measured_repetitions_per_case": 30,
+    "cases": [
+      {
+        "prompt": "Email Dana the quarterly report",
+        "expected_tool": "send_email",
+        "observed_tool": "send_email",
+        "observed_args": {"recipient": "Dana"},
+        "schema_valid": true,
+        "exact_action_rate": 1.0,
+        "inference_ms_p50": 4.700000047683716,
+        "wall_latency_ms_p50": 5.100000023841858,
+        "input_tokens": 10,
+        "tokens_per_second_p50": 2127.6595528819757,
+        "selection_policy": "productivity_email_intent_guard"
+      },
+      {
+        "prompt": "Open https://example.com",
+        "expected_tool": "open_url",
+        "observed_tool": "open_url",
+        "observed_args": {"url": "https://example.com"},
+        "schema_valid": true,
+        "exact_action_rate": 1.0,
+        "inference_ms_p50": 4.399999976158142,
+        "wall_latency_ms_p50": 4.800000011920929,
+        "input_tokens": 8,
+        "tokens_per_second_p50": 1818.1818280338257,
+        "selection_policy": "explicit_url_safety_guard"
+      },
+      {
+        "prompt": "Write 'WebGPU state loop passed' to Notion",
+        "expected_tool": "notion_write",
+        "observed_tool": "notion_write",
+        "observed_args": {"content": "'WebGPU state loop passed'"},
+        "schema_valid": true,
+        "exact_action_rate": 1.0,
+        "inference_ms_p50": 7.300000011920929,
+        "wall_latency_ms_p50": 7.700000047683716,
+        "input_tokens": 14,
+        "tokens_per_second_p50": 1917.8082160462939,
+        "selection_policy": "productivity_notion_intent_guard"
+      }
+    ]
+  },
+  "protocol": {
+    "page": "spaces/localagent-webgpu/webgpu-capability.html",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+    "ort_version": "1.27.0",
+    "requested_provider": ["webgpu"],
+    "session_provider_retry": false,
+    "action_graph": {
+      "path": "action_model.fp16.onnx",
+      "bytes": 21430301,
+      "sha256": "9f0cc76426611b061994f6efc27a1539082156327dfbbd5a2984e681e74c143a"
+    },
+    "bundle_manifest": {
+      "path": "bundle-manifest.json",
+      "bytes": 9325,
+      "sha256": "db4aad83ad26f726e456abe98aa7c2aad964ac468a30dd92a06288233ec51738"
+    },
+    "app_js_sha256": "1120bf6a38526e324f9d80c1f8a1d4009f5267555abbe747543fb083e9f48e4c",
+    "webgpu_capability_js_sha256": "1ab3bb3a903ffffe1c665e9d1373c8c4073ff9ef3e50888852b998a128126a4c"
+  },
+  "performance": {
+    "tokens_per_second_p50": 1917.8082160462939,
+    "tokens_per_second_definition": "action-graph input tokens divided by p50 model inference ms",
+    "latency_ms_p50": 5.100000023841858,
+    "peak_memory_mb": 20.458142280578613,
+    "peak_memory_method": "conservative action-graph bytes plus largest host input/output tensors; driver VRAM counter unavailable",
+    "largest_input_bytes": 112,
+    "largest_output_bytes": 21504
+  },
+  "runtime": {
+    "navigator_gpu_available": true,
+    "device_features": ["core-features-and-limits"],
+    "device_limits": {
+      "max_storage_buffer_binding_size": 134217728,
+      "max_buffer_size": 268435456,
+      "max_compute_workgroups_per_dimension": 65535
+    }
+  },
+  "deployment_bundle": {
+    "verification_receipt_sha256": "90f33a00d5a2b5a02188b4b8ed508dbf3e8cc74ecf1a336c6ca8e19ec409d52e",
+    "bundle_identity_sha256": "c750c254140c47824b5cb82063b99ea0c22c1112606ee725bed23ae911251791",
+    "manifest_sha256": "db4aad83ad26f726e456abe98aa7c2aad964ac468a30dd92a06288233ec51738",
+    "parity_gate_passed": true,
+    "artifact_count": 8
+  },
+  "checkpoint": {
+    "source": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/latest.pt",
+    "parameters": 10524544,
+    "sha256": "79387105de75d332413262e8d8ddb847b6cc13bc03f5e4df3c81663d9897aef1"
+  },
+  "claim_boundary": "Native browser WebGPU capability and canonical schema-boundary receipt. The three calls are local predictions only: no real email, browser navigation, or Notion account was touched; closed_loop_success is zero. The 3/3 result must not be presented as learned benchmark accuracy because two productivity routes use explicit intent guards.",
+  "receipt_self_sha256": "273677f811378ee50fadd4a4da98e902624d74718e32fa5e63704ab80406e620"
+}

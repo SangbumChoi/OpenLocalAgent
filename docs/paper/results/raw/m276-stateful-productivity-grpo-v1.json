@@ -1,0 +1,289 @@
+{
+  "claim_boundary": "This is an actual pure-PyTorch GRPO update over canonical local stateful email, Notion, browser, recovery, and abstention conversations. It is an RL simulation: the reward is opt-in schema/tool/argument/expected-transition shaping and the serialized tool responses are local fixtures. It is not public benchmark training, native Android/browser/MCP execution, real-account side effects, or evidence of WebGPU throughput.",
+  "configuration": {
+    "config_bytes": 904,
+    "config_sha256": "f7f9f3a891220293b5d6e2c4fd8e1eec4f7c02ffdd4c22ec35ae28ce0644b224",
+    "deployment_heads_preserved": [
+      "tool_head",
+      "ptr_head",
+      "route_head",
+      "dense_selector",
+      "selector_proj"
+    ],
+    "deployment_heads_trainable": false,
+    "group_size": 2,
+    "max_new_tokens": 64,
+    "model_config": "configs/model/webgpu-10m-hybrid.yaml",
+    "prompts_per_step": 4,
+    "reward_environment": "stateful_productivity",
+    "seed": 2030,
+    "sft": {
+      "batch_size": 4,
+      "lr": 0.0001,
+      "metrics": {
+        "dataset_token_accounting": {
+          "decay": null,
+          "main": {
+            "input_tokens": 2338,
+            "loss_tokens": 436,
+            "sources": {
+              "single_turn": {
+                "input_tokens": 2338,
+                "loss_tokens": 436,
+                "rows": 16
+              }
+            }
+          }
+        },
+        "fixed_horizon_progress": {
+          "completed_optimizer_updates": 16,
+          "partial": false,
+          "planned_optimizer_updates": 16
+        },
+        "lm_sampling": {
+          "mode": "iid_with_replacement_v1"
+        },
+        "loss_components": {
+          "lm_loss": [
+            1.8651421070098877,
+            2.959606170654297,
+            2.1411962509155273,
+            1.947163701057434,
+            2.043372392654419,
+            2.3332512378692627,
+            2.198269844055176,
+            2.075936794281006,
+            1.3196641206741333,
+            2.1296608448028564,
+            2.257133722305298,
+            2.1762776374816895,
+            1.9174022674560547,
+            2.277458906173706,
+            1.5572558641433716,
+            1.2596485614776611
+          ],
+          "optimization": [
+            1.8651421070098877,
+            2.959606170654297,
+            2.1411962509155273,
+            1.947163701057434,
+            2.043372392654419,
+            2.3332512378692627,
+            2.198269844055176,
+            2.075936794281006,
+            1.3196641206741333,
+            2.1296608448028564,
+            2.257133722305298,
+            2.1762776374816895,
+            1.9174022674560547,
+            2.277458906173706,
+            1.5572558641433716,
+            1.2596485614776611
+          ],
+          "router_aux": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "router_weighted": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "token_accounting": {
+          "input_tokens": 9242,
+          "loss_tokens": 1702,
+          "sources": {
+            "single_turn": {
+              "input_tokens": 9242,
+              "loss_tokens": 1702,
+              "rows": 64
+            }
+          }
+        },
+        "token_accounting_scope": "language_model_microbatches"
+      },
+      "seed": 2030,
+      "steps": 16
+    },
+    "steps": 4
+  },
+  "kind": "localagent_stateful_productivity_grpo_simulation",
+  "output": {
+    "checkpoint": {
+      "bytes": 178556154,
+      "path": "/private/tmp/m276-stateful-rl-v1/rl/latest.pt",
+      "sha256": "db89b1d3d1f9dedd9d18df1a0f26e9e12bd3a02277253f06a9521e4f9e11ddc0"
+    },
+    "metrics": {
+      "bytes": 11993,
+      "path": "/private/tmp/m276-stateful-rl-v1/rl/metrics.json",
+      "sha256": "0b95ae957c3699df2bebe5ca189d6a0659f8dc099348523df90b7cac7a4d1537"
+    }
+  },
+  "parent": {
+    "original": {
+      "bytes": 52242001,
+      "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+      "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+    },
+    "sft": {
+      "bytes": 52243893,
+      "path": "/private/tmp/m276-stateful-rl-v1/sft-parent.pt",
+      "sha256": "6f0d78964facacaaa107d32d8c68ee7a089017643baea33433d15928873a7633"
+    }
+  },
+  "receipt_self_sha256": "d1bd77e2bbc8b7b13c5727c559bcc4fc54eef827080154d064e9680fe5489d7a",
+  "schema_version": 1,
+  "source": {
+    "eval": {
+      "bytes": 24910,
+      "path": "/private/tmp/m276-stateful-rl-v1/data/stateful-productivity-eval.jsonl",
+      "sha256": "7406306874f4379168b94182875249546891b9130897f4985a486b991a1376b0",
+      "task_hash": "07471a921a097485936c37b646be03b99e4071f5ac4644cecd130194154b072c",
+      "tasks": [
+        "eval-email-send",
+        "eval-notion-create",
+        "eval-browser-search",
+        "eval-browser-recovery",
+        "eval-abstain"
+      ]
+    },
+    "external_accounts_used": false,
+    "kind": "local_deterministic_state_machine",
+    "native_runtime_executed": false,
+    "public_benchmark_text_used": false,
+    "tool_side_effects": "in_memory_only",
+    "train": {
+      "bytes": 24876,
+      "path": "/private/tmp/m276-stateful-rl-v1/data/stateful-productivity-train.jsonl",
+      "sha256": "def9ad382ba4f8a206e6efac3ad92f1bd5bd4b5a47dfabe8dc86c239bc87f17a",
+      "task_hash": "5cd64016dc92e6d0d118ea57b6e5b5be6bdd188445022ad5d385173415e194e4",
+      "tasks": [
+        "train-email-send",
+        "train-notion-create",
+        "train-browser-search",
+        "train-browser-recovery",
+        "train-abstain"
+      ]
+    }
+  },
+  "suite": "localagent-stateful-productivity-v1",
+  "training": {
+    "exact_match_accuracy_post": 0.0,
+    "exact_match_accuracy_pre": 0.0,
+    "mean_reward_last": 0.037500000558793545,
+    "mean_reward_post": 0.09375000000000001,
+    "mean_reward_pre": 0.0,
+    "reward_steps": 4,
+    "rl_accounting": {
+      "attempted_groups": 16,
+      "attempted_rollout_steps": 4,
+      "attempted_rollouts": 32,
+      "fixed_horizon_progress": {
+        "bounded_prefix": false,
+        "completed_rollout_steps": 4,
+        "execution_rollout_step_limit": 4,
+        "planned_rollout_steps": 4
+      },
+      "generated_eos_tokens": 32,
+      "generated_tokens": 954,
+      "informative_groups": 4,
+      "informative_scoring_input_slots": 1186,
+      "learning_rate_history": [
+        0.0,
+        2e-05,
+        1.55e-05,
+        6.500000000000003e-06
+      ],
+      "model_forward_token_slots": {
+        "phases": {
+          "current_policy_optimization": 1186,
+          "old_policy_scoring": 1186,
+          "reference_policy_scoring": 1186,
+          "rollout_cached_decode": 922,
+          "rollout_prefill": 3810
+        },
+        "total": 8290
+      },
+      "policy_epochs_per_informative_batch": 1,
+      "realized_optimizer_updates": 3,
+      "rollout_observability": {
+        "parsing": {
+          "complete_parser_format_valid_rollouts": 9,
+          "parser_format_valid_rollouts": 9,
+          "parser_tool_syntax_rollouts": 31,
+          "strict_tool_format_valid_rollouts": 0,
+          "text_reward_rollouts": 2,
+          "tool_reward_rollouts": 30
+        },
+        "reward": {
+          "distribution": [
+            {
+              "count": 24,
+              "reward": 0.0,
+              "reward_hex": "0x0.0p+0"
+            },
+            {
+              "count": 8,
+              "reward": 0.1,
+              "reward_hex": "0x1.999999999999ap-4"
+            }
+          ],
+          "exact_success_rollouts": 0,
+          "unique_values": 2
+        },
+        "tokens": {
+          "generated_eos_tokens": 32,
+          "generated_tokens": 954,
+          "model_forward_token_slots": {
+            "phases": {
+              "current_policy_optimization": 1186,
+              "old_policy_scoring": 1186,
+              "reference_policy_scoring": 1186,
+              "rollout_cached_decode": 922,
+              "rollout_prefill": 3810
+            },
+            "total": 8290
+          },
+          "rollout_prompt_tokens": 3810,
+          "selected_prompt_tokens": 1905
+        },
+        "truncation": {
+          "truncated_rollouts": 0
+        }
+      },
+      "truncated_rollouts": 0,
+      "zero_signal_steps": 1
+    },
+    "tool_exact_match_accuracy_post": 0.0,
+    "tool_exact_match_accuracy_pre": 0.0
+  }
+}

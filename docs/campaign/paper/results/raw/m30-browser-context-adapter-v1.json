@@ -1,0 +1,68 @@
+{
+  "kind": "localagent_browser_context_adapter",
+  "schema_version": 1,
+  "base_checkpoint": {
+    "path": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/latest.pt",
+    "sha256": "79387105de75d332413262e8d8ddb847b6cc13bc03f5e4df3c81663d9897aef1"
+  },
+  "tokenizer": {
+    "path": "data/tokenizer-webgpu-proxy-16k.json",
+    "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "train": {
+    "source": "data/synth/agent_sft.jsonl",
+    "source_sha256": "161c4b8baab4adb75fe7f968f2bfc15b3e1828c5e376a16b494ee61072179a00",
+    "projected_rows": 589,
+    "projection_sha256": "dbee8c9ae5535ef99830ef0dceeee9359459910db1f2e246c7f083c084495f86",
+    "tools": {
+      "click": 79,
+      "double_click": 75,
+      "drag": 103,
+      "key_press": 48,
+      "move_cursor": 75,
+      "open_app": 73,
+      "screenshot": 5,
+      "scroll": 19,
+      "type_text": 62,
+      "wait": 50
+    }
+  },
+  "eval": {
+    "source": "data/synth/agent_eval_pilot65.jsonl",
+    "source_sha256": "a46aaba70b0135cdb10abba760de23f17ddc61ad9515d277b1b6d21f1b4ee179",
+    "projected_rows": 10,
+    "tools": {
+      "click": 1,
+      "double_click": 1,
+      "drag": 1,
+      "key_press": 1,
+      "move_cursor": 1,
+      "open_app": 1,
+      "screenshot": 1,
+      "scroll": 1,
+      "type_text": 1,
+      "wait": 1
+    }
+  },
+  "hyperparameters": {
+    "backbone_steps": 300,
+    "head_steps": 1000,
+    "learning_rate": 0.00005,
+    "seed": 2027,
+    "matmul_precision": "highest"
+  },
+  "before": {
+    "rows": 10,
+    "route_accuracy": 0.4,
+    "tool_accuracy": 0.3,
+    "argument_exact_accuracy": 0.2
+  },
+  "after": {
+    "rows": 10,
+    "route_accuracy": 1.0,
+    "tool_accuracy": 1.0,
+    "argument_exact_accuracy": 0.6
+  },
+  "child_checkpoint_sha256": "a18459ad5cc640e929a76a29ea9695b229d2a38a4c405202c124d58ddca73c3f",
+  "claim_boundary": "Train-only synthetic observation-contract adaptation; not a BrowserGym score and not training on BrowserGym task prompts or labels."
+}

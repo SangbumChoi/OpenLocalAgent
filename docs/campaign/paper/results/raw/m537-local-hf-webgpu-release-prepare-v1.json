@@ -1,0 +1,41 @@
+{
+  "claim_boundary": "Local-only release preparation. The current checkpoint, Hugging Face model bundle, ONNX WebGPU graphs, and static Space staging directory were regenerated and parity-verified, but no Hugging Face model or Space repository was created or uploaded and no public URL is claimed.",
+  "checkpoint": {
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+    "parameters": 10524544
+  },
+  "kind": "localagent_local_hf_webgpu_release_prepare",
+  "model": {
+    "artifacts": {
+      "README.md": {"bytes": 3520, "sha256": "e354f7fa554772fab3931927c561a07c76767decd028609f78ad3624bbf3d416"},
+      "agent_heads.bin": {"bytes": 10116038, "sha256": "4cf15dd4f4cc2e7cdd418a18f14dfb31830785eca4c668e4963fd9d67350d7d5"},
+      "config.json": {"bytes": 38446, "sha256": "51255c4d8d89ba18a24177c0c7b1792a0d1bc9a78ea062d66e228df29f8b4f6b"},
+      "model.safetensors": {"bytes": 42101904, "sha256": "57f797c1a71c12e1dafbf9cc7fd1cab9cfce370d21087ec4771b3a4d5f06f62d"},
+      "tokenizer.json": {"bytes": 1134224, "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"}
+    },
+    "repo_id_requested": "local/localagent-webgpu-10m"
+  },
+  "parity": {
+    "hard_gate": true,
+    "passed": true,
+    "bundle_manifest_sha256": "a7895541f802b4836d76dc2b9f5bc203168d80c534a2339126fc7b00a31dadca",
+    "bundle_identity_sha256": "ff0259b3f86c08de56533a32bd3db61783a8077e8090cb84e2bca6393258fc00",
+    "action_model_fp16_sha256": "66eb2e83d233e9733a6cfe904d5351b7c925a6b51553a76be4db0c001f215583",
+    "action_model_sha256": "35ab375ca8fb0ae594b57c94c5be12439bf0ae15ea877ac7f1af4f81e6af62c7",
+    "model_fp16_sha256": "d563e405afa192673460d8086b0849613b715c469ce21e240e9b8e09fd4450ba",
+    "model_sha256": "65648cf31b889f86f28f04d9d7ff92d6e619f963b1ccf98d1e4a77c688fbdfc9",
+    "tool_count": 63
+  },
+  "publication": {
+    "published": false,
+    "reason": "HF authentication is not configured",
+    "space_repo_id_requested": "local/localagent-webgpu"
+  },
+  "schema_version": 1,
+  "receipt_self_sha256": "5eef6de4ddd4b950e0e3bce9f8ee351cc20f03b966baa571b39d2ba7cd5edd54",
+  "source": {
+    "publisher": "scripts/publish_hf_release.py",
+    "webgpu_export": "localagent.inference.export.to_onnx.export_web"
+  }
+}

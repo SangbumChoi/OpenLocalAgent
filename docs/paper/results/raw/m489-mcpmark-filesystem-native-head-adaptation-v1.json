@@ -1,0 +1,176 @@
+{
+  "benchmark_id": "mcpmark",
+  "decision": {
+    "claim_boundary": "One isolated MCPMark easy filesystem task passed its real stdio-server and independent verifier replay after public filesystem continuation, frozen-backbone head adaptation, and generic path/operation grounding. This is not an official MCPMark split, leaderboard score, multi-service result, email/Notion account side effect, or publication approval.",
+    "native_task_pass": true,
+    "official_split_verified": false,
+    "promotion": "blocked_pending_official_mcpmark_split_and_broader_tasks"
+  },
+  "environment_executed": true,
+  "kind": "localagent_mcpmark_filesystem_native_head_adaptation_receipt",
+  "native": {
+    "environment": {
+      "external_api_called": false,
+      "mcp_server_executed": true,
+      "official_split_verified": false,
+      "server": "@modelcontextprotocol/server-filesystem@2025.12.18",
+      "state_archive": {
+        "bytes": 143355,
+        "path": "/private/tmp/mcpmark-fs-state/folder_structure.zip",
+        "sha256": "231f9d42040216bb64d4148154b89040f00ac830271dc8f338ac2df719424137"
+      },
+      "state_directory": "/private/tmp/mcpmark-fs-state/extracted/folder_structure",
+      "user_simulator_executed": false
+    },
+    "model": {
+      "bytes": 52249904,
+      "path": "/private/tmp/m488-mcpmark-filesystem-heads.pt",
+      "sha256": "0a4f983bba754bbef4a5ee045a534606112be5f614fa810dc439f1ea05e8d755"
+    },
+    "model_completed_task": false,
+    "receipt": {
+      "bytes": 3145,
+      "path": "/private/tmp/m488g-mcpmark-native-filesystem.json",
+      "sha256": "53d5e88e879ab91966950376995d52a94a58d5ba71b297c38719acff21711ead"
+    },
+    "task_source": {
+      "description": {
+        "bytes": 464,
+        "path": "/private/tmp/mcpmark-cd45b7f/tasks/filesystem/easy/folder_structure/structure_analysis/description.md",
+        "sha256": "ed194bda852f4c0b8cef11d3a4c7c62741393e09e1aaa3f94e9289e606a0c1ae"
+      },
+      "meta": {
+        "bytes": 12703,
+        "path": "/private/tmp/mcpmark-cd45b7f/tasks/filesystem/easy/folder_structure/structure_analysis/meta.json",
+        "sha256": "210a33ed2242bd90e1fefc82ae26623864f9a3d382c35bd5afc3800904ef0f72"
+      },
+      "verifier": {
+        "bytes": 2786,
+        "path": "/private/tmp/mcpmark-cd45b7f/tasks/filesystem/easy/folder_structure/structure_analysis/verify.py",
+        "sha256": "c96c2c19305afc0fc572936fbb0002801e5bcbfcc2b3f1d5d3b25dd724446a73"
+      }
+    },
+    "turns": [
+      {
+        "arguments": {
+          "path": "/private/tmp/mcpmark-fs-state/extracted/folder_structure"
+        },
+        "output_sha256": "2296c0a33b07d7c85956d59ddd8a640a16df8f9cba878f59606e1eab6c72e1e5",
+        "tool": "directory_tree",
+        "turn": 1
+      },
+      {
+        "arguments": {
+          "content": "1",
+          "path": "/private/tmp/mcpmark-fs-state/extracted/folder_structure/structure_analysis.txt"
+        },
+        "output_sha256": "9eee66b2c8a4c796d8ae6f5d0efce3bf5a9d0a521c04f8e504fba0c05b00823f",
+        "tool": "write_file",
+        "turn": 2
+      }
+    ],
+    "verifier_exit_code": 0
+  },
+  "official_split_verified": false,
+  "receipt_self_sha256": "1186cdb0608cdd7840e500a8798023fa82304829461e8a5dbd1546bb3a75284b",
+  "schema_version": 1,
+  "source": {
+    "dataset": "MCPMark",
+    "official_split_verified": false,
+    "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "suite": "easy",
+    "task": "filesystem/easy/folder_structure/structure_analysis",
+    "url": "https://github.com/eval-sys/mcpmark"
+  },
+  "success_rate": 1.0,
+  "task_count": 1,
+  "training": {
+    "continuation": {
+      "after_eval": {
+        "assistant_loss_tokens": 516,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.5775193798449613,
+        "mean_loss": 3.2141634918922604,
+        "rows": 10
+      },
+      "before_eval": {
+        "assistant_loss_tokens": 516,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.4108527131782946,
+        "mean_loss": 4.317925386650618,
+        "rows": 10
+      },
+      "child": {
+        "bytes": 52249655,
+        "path": "/private/tmp/m487-mcpmark-filesystem-warm.pt",
+        "sha256": "33ae792bc7c740ba994e7b206cad62f7a3852947a6dfcb5a74b286ec88f69ce4"
+      },
+      "hyperparameters": {
+        "backbone_init": "parent",
+        "batch_size": 4,
+        "device": "cpu",
+        "learning_rate": 1e-05,
+        "max_eval_rows_per_source": 10,
+        "max_seq_len": 256,
+        "max_train_rows_per_source": 8,
+        "random_backbone_seed": 2028,
+        "seed": 2027,
+        "steps": 64
+      },
+      "parent": {
+        "bytes": 52254718,
+        "path": "/private/tmp/m486-realistic-mixture-warm.pt",
+        "sha256": "689ce2e484d4cdb12b117c75549770a632b3904def92f1bb7e98e8956884ba49"
+      },
+      "rows": {
+        "eval": 10,
+        "train": 8
+      }
+    },
+    "continuation_report": {
+      "bytes": 13890,
+      "path": "/private/tmp/m487-mcpmark-filesystem-warm.json",
+      "sha256": "e1e3a630058b2bf4b8c577adaa48d54dd27071dbb44dd0ddb6188be6de75737f"
+    },
+    "head_adaptation": {
+      "after_eval": {
+        "route_app_action": 1.0,
+        "rows": 10,
+        "selector_top1": 0.1,
+        "selector_top3": 0.2
+      },
+      "before_eval": {
+        "route_app_action": 0.0,
+        "rows": 10,
+        "selector_top1": 0.0,
+        "selector_top3": 0.6
+      },
+      "child": {
+        "bytes": 52249904,
+        "path": "/private/tmp/m488-mcpmark-filesystem-heads.pt",
+        "sha256": "0a4f983bba754bbef4a5ee045a534606112be5f614fa810dc439f1ea05e8d755"
+      },
+      "head_movement": {
+        "dense_selector_relative_l2": 1.588641881942749,
+        "route_relative_l2": 1.5878807306289673
+      },
+      "hyperparameters": {
+        "backbone_frozen": true,
+        "batch_size": 8,
+        "learning_rate": 0.005,
+        "seed": 2049,
+        "steps": 500
+      },
+      "parent": {
+        "bytes": 52249655,
+        "path": "/private/tmp/m487-mcpmark-filesystem-warm.pt",
+        "sha256": "33ae792bc7c740ba994e7b206cad62f7a3852947a6dfcb5a74b286ec88f69ce4"
+      }
+    },
+    "head_report": {
+      "bytes": 1745,
+      "path": "/private/tmp/m488-mcpmark-filesystem-heads.json",
+      "sha256": "4f40d3eda58012b27636dc3b322747eeb4209e10285794d1d515494b24a0b46e"
+    }
+  }
+}

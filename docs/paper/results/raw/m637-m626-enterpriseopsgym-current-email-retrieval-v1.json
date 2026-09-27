@@ -1,0 +1,1535 @@
+{
+  "benchmark": {
+    "code_url": "https://github.com/ServiceNow/EnterpriseOps-Gym",
+    "dataset": "ServiceNow-AI/EnterpriseOps-Gym",
+    "dataset_revision": "c8e538eae8a6205294f0a86675fefdc1fac408f6",
+    "dataset_url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym",
+    "slice": "oracle/email vs plus_15_tools/email"
+  },
+  "checkpoint": {
+    "bytes": 52203615,
+    "parameters": 10524544,
+    "sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "claim_boundary": "Current m626 checkpoint on the public EnterpriseOps-Gym email tool-retrieval slice. The adapter drops server configuration and verifiers and uses generated name-only tool descriptions with no execution. This is not official EnterpriseOps-Gym stateful task success, leaderboard performance, or a training artifact.",
+  "kind": "localagent_m637_enterpriseopsgym_current_email_retrieval_receipt",
+  "protocol": {
+    "candidate_mode": "plus_15_tools",
+    "execution": "frozen_localagent_dense_selector_no_tool_execution",
+    "oracle_mode": "oracle",
+    "records": 67,
+    "server_configuration_dropped": true,
+    "tool_description_policy": "generated_name_only_v1",
+    "verifiers_dropped": true
+  },
+  "raw_report": {
+    "bytes": 37132,
+    "path": "/private/tmp/m637-enterpriseopsgym-m626-email.json",
+    "sha256": "b8acfc2ecf466e6103ac57b65db6727d69cc6817d266c31886d2205ff80b9afa"
+  },
+  "receipt_self_sha256": "200da1fe581e2b1f6cc4a68582d0307e7d5e2b29f61109dd7d288b0e1052f0d0",
+  "records": [
+    {
+      "candidate_tool_count": 15,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 5,
+      "task_id": "task_20251125_150631_436_e5bf1251_77dd7cbb",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "modify_message",
+        "list_messages"
+      ],
+      "top5": [
+        "create_filter",
+        "modify_message",
+        "list_messages",
+        "list_threads",
+        "list_filters"
+      ]
+    },
+    {
+      "candidate_tool_count": 15,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20251125_154624_258_701c5774_59c41eed",
+      "top1": "create_draft",
+      "top3": [
+        "create_draft",
+        "list_messages",
+        "modify_message"
+      ],
+      "top5": [
+        "create_draft",
+        "list_messages",
+        "modify_message",
+        "list_threads",
+        "list_drafts"
+      ]
+    },
+    {
+      "candidate_tool_count": 15,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 9,
+      "task_id": "task_20251125_202309_857_e7cfb93b_9c156259",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "modify_message"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "modify_message",
+        "list_filters",
+        "list_messages"
+      ]
+    },
+    {
+      "candidate_tool_count": 15,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 8,
+      "task_id": "task_20251126_174607_703_8ce75c22_a984b9e7",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "list_send_as_aliases",
+        "email_list_cse_keypairs"
+      ],
+      "top5": [
+        "create_label",
+        "list_send_as_aliases",
+        "email_list_cse_keypairs",
+        "list_history",
+        "list_smime_configs"
+      ]
+    },
+    {
+      "candidate_tool_count": 15,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20251127_150451_336_701c5774_c2e9609a",
+      "top1": "create_draft",
+      "top3": [
+        "create_draft",
+        "list_send_as_aliases",
+        "list_messages"
+      ],
+      "top5": [
+        "create_draft",
+        "list_send_as_aliases",
+        "list_messages",
+        "list_drafts",
+        "insert_message"
+      ]
+    },
+    {
+      "candidate_tool_count": 15,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": false,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20251128_154607_365_1628b966_a730b5cf",
+      "top1": "list_send_as_aliases",
+      "top3": [
+        "list_send_as_aliases",
+        "list_filters",
+        "list_labels"
+      ],
+      "top5": [
+        "list_send_as_aliases",
+        "list_filters",
+        "list_labels",
+        "update_pop_settings",
+        "update_language_settings"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20251203_093009_456_701c5774_24b57fbd",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "create_draft",
+        "list_messages"
+      ],
+      "top5": [
+        "create_label",
+        "create_draft",
+        "list_messages",
+        "list_drafts",
+        "list_threads"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": false,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20251203_104951_949_701c5774_5a606512",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "create_draft",
+        "list_threads"
+      ],
+      "top5": [
+        "create_label",
+        "create_draft",
+        "list_threads",
+        "list_drafts",
+        "list_messages"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20251203_113003_327_701c5774_2e2c97d2",
+      "top1": "list_send_as_aliases",
+      "top3": [
+        "list_send_as_aliases",
+        "create_forwarding_address",
+        "list_smime_configs"
+      ],
+      "top5": [
+        "list_send_as_aliases",
+        "create_forwarding_address",
+        "list_smime_configs",
+        "create_send_as_alias",
+        "list_forwarding_addresses"
+      ]
+    },
+    {
+      "candidate_tool_count": 7,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20251203_120537_904_701c5774_849b4b7c",
+      "top1": "list_send_as_aliases",
+      "top3": [
+        "list_send_as_aliases",
+        "create_send_as_alias",
+        "patch_send_as_alias"
+      ],
+      "top5": [
+        "list_send_as_aliases",
+        "create_send_as_alias",
+        "patch_send_as_alias",
+        "verify_send_as_alias",
+        "update_send_as_alias"
+      ]
+    },
+    {
+      "candidate_tool_count": 20,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 5,
+      "task_id": "task_20251203_180743_144_e7cfb93b_56dbcb89",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "untrash_message",
+        "list_messages"
+      ],
+      "top5": [
+        "create_label",
+        "untrash_message",
+        "list_messages",
+        "modify_message",
+        "patch_label"
+      ]
+    },
+    {
+      "candidate_tool_count": 31,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 16,
+      "task_id": "task_20251204_083406_171_e7cfb93b_89e0d558",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "create_draft"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "create_draft",
+        "patch_label",
+        "list_send_as_aliases"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20251204_100249_196_701c5774_af32832e",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "create_draft",
+        "list_messages"
+      ],
+      "top5": [
+        "create_label",
+        "create_draft",
+        "list_messages",
+        "patch_label",
+        "list_drafts"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20251204_101148_724_701c5774_7cb6254a",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "patch_label",
+        "create_draft"
+      ],
+      "top5": [
+        "create_label",
+        "patch_label",
+        "create_draft",
+        "list_history",
+        "modify_message"
+      ]
+    },
+    {
+      "candidate_tool_count": 24,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 9,
+      "task_id": "task_20251204_120643_371_8ce75c22_f09e1799",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "create_draft",
+        "patch_label"
+      ],
+      "top5": [
+        "create_label",
+        "create_draft",
+        "patch_label",
+        "modify_message",
+        "list_filters"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": false,
+      "hit_at_5": false,
+      "oracle_tool_count": 4,
+      "task_id": "task_20251204_142444_575_e5bf1251_65039f7d",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "modify_message"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "modify_message",
+        "list_messages",
+        "list_filters"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20251204_142744_756_e5bf1251_9501fccb",
+      "top1": "email_create_delegate",
+      "top3": [
+        "email_create_delegate",
+        "create_draft",
+        "email_list_delegates"
+      ],
+      "top5": [
+        "email_create_delegate",
+        "create_draft",
+        "email_list_delegates",
+        "list_messages",
+        "list_threads"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": false,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20251204_144745_585_e5bf1251_4e4c189d",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "patch_label"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "patch_label",
+        "modify_message",
+        "list_history"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20251204_145059_811_e5bf1251_3b195ec1",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "email_create_delegate",
+        "email_list_delegates"
+      ],
+      "top5": [
+        "create_filter",
+        "email_create_delegate",
+        "email_list_delegates",
+        "list_messages",
+        "modify_message"
+      ]
+    },
+    {
+      "candidate_tool_count": 20,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 5,
+      "task_id": "task_20251204_153830_645_1628b966_3df25b52",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "email_create_delegate",
+        "create_label"
+      ],
+      "top5": [
+        "create_filter",
+        "email_create_delegate",
+        "create_label",
+        "create_draft",
+        "email_list_delegates"
+      ]
+    },
+    {
+      "candidate_tool_count": 20,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 5,
+      "task_id": "task_20251204_155848_470_1628b966_f45fd2fb",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "create_draft"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "create_draft",
+        "patch_label",
+        "modify_message"
+      ]
+    },
+    {
+      "candidate_tool_count": 20,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 5,
+      "task_id": "task_20251209_094942_478_701c5774_dc4a4b13",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_draft",
+        "modify_message"
+      ],
+      "top5": [
+        "create_filter",
+        "create_draft",
+        "modify_message",
+        "list_filters",
+        "send_message"
+      ]
+    },
+    {
+      "candidate_tool_count": 22,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": false,
+      "hit_at_5": true,
+      "oracle_tool_count": 7,
+      "task_id": "task_20251211_054846_540_e5bf1251_265c5883",
+      "top1": "modify_message",
+      "top3": [
+        "modify_message",
+        "trash_message",
+        "list_filters"
+      ],
+      "top5": [
+        "modify_message",
+        "trash_message",
+        "list_filters",
+        "list_messages",
+        "list_threads"
+      ]
+    },
+    {
+      "candidate_tool_count": 22,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 7,
+      "task_id": "task_20251211_100706_985_701c5774_8d658f71",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "create_draft",
+        "patch_label"
+      ],
+      "top5": [
+        "create_label",
+        "create_draft",
+        "patch_label",
+        "modify_message",
+        "list_history"
+      ]
+    },
+    {
+      "candidate_tool_count": 24,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 9,
+      "task_id": "task_20251211_194841_657_8ce75c22_43c6bc2f",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "create_draft",
+        "patch_label"
+      ],
+      "top5": [
+        "create_label",
+        "create_draft",
+        "patch_label",
+        "modify_message",
+        "untrash_message"
+      ]
+    },
+    {
+      "candidate_tool_count": 24,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": false,
+      "hit_at_5": true,
+      "oracle_tool_count": 9,
+      "task_id": "task_20251212_072144_983_8ce75c22_1b848fdd",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "modify_message",
+        "list_filters"
+      ],
+      "top5": [
+        "create_label",
+        "modify_message",
+        "list_filters",
+        "list_messages",
+        "list_threads"
+      ]
+    },
+    {
+      "candidate_tool_count": 24,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 9,
+      "task_id": "task_20251212_162948_602_8ce75c22_8b25a027",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "email_list_delegates"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "email_list_delegates",
+        "patch_label",
+        "modify_message"
+      ]
+    },
+    {
+      "candidate_tool_count": 22,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 7,
+      "task_id": "task_20260105_122123_327_8ce75c22_e27766ca",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "email_create_delegate"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "email_create_delegate",
+        "patch_label",
+        "email_list_delegates"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20260105_145825_060_701c5774_1054ca6e",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "patch_label",
+        "modify_message"
+      ],
+      "top5": [
+        "create_label",
+        "patch_label",
+        "modify_message",
+        "untrash_message",
+        "list_messages"
+      ]
+    },
+    {
+      "candidate_tool_count": 20,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 5,
+      "task_id": "task_20260105_153912_808_8ce75c22_f7553dba",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "list_cse_identities",
+        "create_label"
+      ],
+      "top5": [
+        "create_filter",
+        "list_cse_identities",
+        "create_label",
+        "patch_label",
+        "email_list_cse_keypairs"
+      ]
+    },
+    {
+      "candidate_tool_count": 20,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 5,
+      "task_id": "task_20260105_161440_926_701c5774_7dd66a6f",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "patch_label"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "patch_label",
+        "modify_message",
+        "list_messages"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20260105_173701_207_8ce75c22_3b124b32",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "create_draft",
+        "patch_label"
+      ],
+      "top5": [
+        "create_label",
+        "create_draft",
+        "patch_label",
+        "modify_message",
+        "list_messages"
+      ]
+    },
+    {
+      "candidate_tool_count": 18,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 3,
+      "task_id": "task_20260105_175342_189_e5bf1251_60089921",
+      "top1": "list_send_as_aliases",
+      "top3": [
+        "list_send_as_aliases",
+        "list_smime_configs",
+        "create_send_as_alias"
+      ],
+      "top5": [
+        "list_send_as_aliases",
+        "list_smime_configs",
+        "create_send_as_alias",
+        "insert_smime_config",
+        "list_forwarding_addresses"
+      ]
+    },
+    {
+      "candidate_tool_count": 26,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 11,
+      "task_id": "task_20260105_182555_369_e7cfb93b_c2cc205b",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "create_draft"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "create_draft",
+        "patch_label",
+        "list_history"
+      ]
+    },
+    {
+      "candidate_tool_count": 22,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 7,
+      "task_id": "task_20260105_214127_504_e7cfb93b_e6640be3",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "patch_label"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "patch_label",
+        "modify_message",
+        "list_messages"
+      ]
+    },
+    {
+      "candidate_tool_count": 22,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 7,
+      "task_id": "task_20260105_233603_790_e7cfb93b_cc802e4b",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "modify_message"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "modify_message",
+        "patch_label",
+        "list_filters"
+      ]
+    },
+    {
+      "candidate_tool_count": 20,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 5,
+      "task_id": "task_20260106_050111_551_701c5774_419d6733",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "create_draft"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "create_draft",
+        "patch_label",
+        "modify_message"
+      ]
+    },
+    {
+      "candidate_tool_count": 21,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 6,
+      "task_id": "task_20260106_052248_226_1628b966_d8c22aed",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "create_draft"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "create_draft",
+        "patch_label",
+        "list_filters"
+      ]
+    },
+    {
+      "candidate_tool_count": 20,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 5,
+      "task_id": "task_20260106_053348_337_1628b966_4896f265",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "email_create_delegate"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "email_create_delegate",
+        "create_draft",
+        "email_list_delegates"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20260106_054515_137_1628b966_fe1068d4",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "list_filters",
+        "create_forwarding_address"
+      ],
+      "top5": [
+        "create_filter",
+        "list_filters",
+        "create_forwarding_address",
+        "update_pop_settings",
+        "list_forwarding_addresses"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20260106_060646_574_1628b966_0fc7207a",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "create_draft"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "create_draft",
+        "create_forwarding_address",
+        "list_filters"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20260106_071510_179_911d75d7_0ae789ae",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "create_draft"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "create_draft",
+        "patch_label",
+        "list_history"
+      ]
+    },
+    {
+      "candidate_tool_count": 20,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 5,
+      "task_id": "task_20260106_085129_923_e5bf1251_dd76af07",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "patch_label",
+        "list_threads"
+      ],
+      "top5": [
+        "create_label",
+        "patch_label",
+        "list_threads",
+        "list_history",
+        "modify_message"
+      ]
+    },
+    {
+      "candidate_tool_count": 21,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 6,
+      "task_id": "task_20260106_140034_876_e7cfb93b_fc943e0e",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "modify_message"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "modify_message",
+        "patch_label",
+        "list_history"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20260106_153333_351_1628b966_f96547a2",
+      "top1": "list_cse_identities",
+      "top3": [
+        "list_cse_identities",
+        "create_cse_identity",
+        "email_create_cse_keypair"
+      ],
+      "top5": [
+        "list_cse_identities",
+        "create_cse_identity",
+        "email_create_cse_keypair",
+        "list_send_as_aliases",
+        "patch_cse_identity"
+      ]
+    },
+    {
+      "candidate_tool_count": 21,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 6,
+      "task_id": "task_20260106_213903_609_e7cfb93b_5e95c001",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "modify_message",
+        "patch_label"
+      ],
+      "top5": [
+        "create_label",
+        "modify_message",
+        "patch_label",
+        "untrash_message",
+        "trash_message"
+      ]
+    },
+    {
+      "candidate_tool_count": 20,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 5,
+      "task_id": "task_20260107_101510_200_e7cfb93b_142300ed",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "modify_message",
+        "patch_label"
+      ],
+      "top5": [
+        "create_label",
+        "modify_message",
+        "patch_label",
+        "untrash_message",
+        "trash_message"
+      ]
+    },
+    {
+      "candidate_tool_count": 21,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 6,
+      "task_id": "task_20260107_125943_886_1628b966_f951b083",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "patch_label"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "patch_label",
+        "modify_message",
+        "list_history"
+      ]
+    },
+    {
+      "candidate_tool_count": 21,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 6,
+      "task_id": "task_20260107_131200_705_1628b966_84e87e0f",
+      "top1": "list_cse_identities",
+      "top3": [
+        "list_cse_identities",
+        "create_cse_identity",
+        "create_label"
+      ],
+      "top5": [
+        "list_cse_identities",
+        "create_cse_identity",
+        "create_label",
+        "list_send_as_aliases",
+        "patch_label"
+      ]
+    },
+    {
+      "candidate_tool_count": 21,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 6,
+      "task_id": "task_20260107_132943_755_911d75d7_4c944103",
+      "top1": "create_draft",
+      "top3": [
+        "create_draft",
+        "email_list_delegates",
+        "modify_message"
+      ],
+      "top5": [
+        "create_draft",
+        "email_list_delegates",
+        "modify_message",
+        "list_history",
+        "list_messages"
+      ]
+    },
+    {
+      "candidate_tool_count": 21,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 6,
+      "task_id": "task_20260107_141130_029_1628b966_8e264839",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "email_create_delegate",
+        "create_label"
+      ],
+      "top5": [
+        "create_filter",
+        "email_create_delegate",
+        "create_label",
+        "list_send_as_aliases",
+        "patch_label"
+      ]
+    },
+    {
+      "candidate_tool_count": 20,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 5,
+      "task_id": "task_20260107_141655_644_911d75d7_9516dfe1",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "patch_label"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "patch_label",
+        "modify_message",
+        "untrash_message"
+      ]
+    },
+    {
+      "candidate_tool_count": 21,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 6,
+      "task_id": "task_20260107_142454_824_1628b966_4a482da4",
+      "top1": "list_cse_identities",
+      "top3": [
+        "list_cse_identities",
+        "create_label",
+        "email_create_cse_keypair"
+      ],
+      "top5": [
+        "list_cse_identities",
+        "create_label",
+        "email_create_cse_keypair",
+        "email_list_cse_keypairs",
+        "list_history"
+      ]
+    },
+    {
+      "candidate_tool_count": 20,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": false,
+      "hit_at_5": false,
+      "oracle_tool_count": 5,
+      "task_id": "task_20260107_160335_693_911d75d7_d116d7cf",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "create_draft",
+        "patch_label"
+      ],
+      "top5": [
+        "create_label",
+        "create_draft",
+        "patch_label",
+        "list_history",
+        "list_drafts"
+      ]
+    },
+    {
+      "candidate_tool_count": 20,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 5,
+      "task_id": "task_20260107_162939_118_e5bf1251_437648af",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "modify_message"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "modify_message",
+        "list_history",
+        "trash_message"
+      ]
+    },
+    {
+      "candidate_tool_count": 20,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": false,
+      "hit_at_5": false,
+      "oracle_tool_count": 5,
+      "task_id": "task_20260107_191539_515_911d75d7_3ea7750e",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "create_draft",
+        "patch_label"
+      ],
+      "top5": [
+        "create_label",
+        "create_draft",
+        "patch_label",
+        "list_history",
+        "list_drafts"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20260107_202437_273_911d75d7_89789b9a",
+      "top1": "list_cse_identities",
+      "top3": [
+        "list_cse_identities",
+        "create_cse_identity",
+        "email_create_cse_keypair"
+      ],
+      "top5": [
+        "list_cse_identities",
+        "create_cse_identity",
+        "email_create_cse_keypair",
+        "list_send_as_aliases",
+        "patch_cse_identity"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": false,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20260107_212831_019_911d75d7_d1212b63",
+      "top1": "list_cse_identities",
+      "top3": [
+        "list_cse_identities",
+        "create_cse_identity",
+        "create_label"
+      ],
+      "top5": [
+        "list_cse_identities",
+        "create_cse_identity",
+        "create_label",
+        "email_create_cse_keypair",
+        "create_draft"
+      ]
+    },
+    {
+      "candidate_tool_count": 21,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 6,
+      "task_id": "task_20260107_214637_627_911d75d7_eb9d8622",
+      "top1": "list_cse_identities",
+      "top3": [
+        "list_cse_identities",
+        "create_cse_identity",
+        "email_create_cse_keypair"
+      ],
+      "top5": [
+        "list_cse_identities",
+        "create_cse_identity",
+        "email_create_cse_keypair",
+        "list_send_as_aliases",
+        "email_list_cse_keypairs"
+      ]
+    },
+    {
+      "candidate_tool_count": 22,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 7,
+      "task_id": "task_20260108_031733_760_e5bf1251_9e81ad1b",
+      "top1": "list_send_as_aliases",
+      "top3": [
+        "list_send_as_aliases",
+        "modify_message",
+        "trash_message"
+      ],
+      "top5": [
+        "list_send_as_aliases",
+        "modify_message",
+        "trash_message",
+        "create_send_as_alias",
+        "list_filters"
+      ]
+    },
+    {
+      "candidate_tool_count": 22,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": false,
+      "hit_at_5": false,
+      "oracle_tool_count": 7,
+      "task_id": "task_20260108_050214_962_e5bf1251_0cabbd3d",
+      "top1": "create_draft",
+      "top3": [
+        "create_draft",
+        "modify_message",
+        "trash_message"
+      ],
+      "top5": [
+        "create_draft",
+        "modify_message",
+        "trash_message",
+        "send_message",
+        "list_messages"
+      ]
+    },
+    {
+      "candidate_tool_count": 22,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 7,
+      "task_id": "task_20260108_101001_581_701c5774_3ac4e4fb",
+      "top1": "create_filter",
+      "top3": [
+        "create_filter",
+        "create_label",
+        "create_draft"
+      ],
+      "top5": [
+        "create_filter",
+        "create_label",
+        "create_draft",
+        "patch_label",
+        "modify_message"
+      ]
+    },
+    {
+      "candidate_tool_count": 21,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 6,
+      "task_id": "task_20260108_143038_654_e5bf1251_b9e616b8",
+      "top1": "list_cse_identities",
+      "top3": [
+        "list_cse_identities",
+        "create_cse_identity",
+        "create_label"
+      ],
+      "top5": [
+        "list_cse_identities",
+        "create_cse_identity",
+        "create_label",
+        "patch_cse_identity",
+        "patch_label"
+      ]
+    },
+    {
+      "candidate_tool_count": 20,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 5,
+      "task_id": "task_20260109_080715_585_911d75d7_ded91685",
+      "top1": "create_draft",
+      "top3": [
+        "create_draft",
+        "modify_message",
+        "untrash_message"
+      ],
+      "top5": [
+        "create_draft",
+        "modify_message",
+        "untrash_message",
+        "trash_message",
+        "list_messages"
+      ]
+    },
+    {
+      "candidate_tool_count": 21,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 6,
+      "task_id": "task_20260109_085044_179_911d75d7_57c54b4e",
+      "top1": "list_cse_identities",
+      "top3": [
+        "list_cse_identities",
+        "create_cse_identity",
+        "email_create_cse_keypair"
+      ],
+      "top5": [
+        "list_cse_identities",
+        "create_cse_identity",
+        "email_create_cse_keypair",
+        "list_send_as_aliases",
+        "patch_cse_identity"
+      ]
+    },
+    {
+      "candidate_tool_count": 19,
+      "domain": "email",
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 4,
+      "task_id": "task_20260109_160851_122_911d75d7_3ece8e5e",
+      "top1": "list_send_as_aliases",
+      "top3": [
+        "list_send_as_aliases",
+        "create_draft",
+        "modify_message"
+      ],
+      "top5": [
+        "list_send_as_aliases",
+        "create_draft",
+        "modify_message",
+        "create_send_as_alias",
+        "send_message"
+      ]
+    },
+    {
+      "candidate_tool_count": 23,
+      "domain": "email",
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "oracle_tool_count": 8,
+      "task_id": "task_20260109_170111_125_8ce75c22_1c7034c5",
+      "top1": "create_label",
+      "top3": [
+        "create_label",
+        "patch_label",
+        "create_draft"
+      ],
+      "top5": [
+        "create_label",
+        "patch_label",
+        "create_draft",
+        "list_messages",
+        "list_history"
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "source_files": {
+    "distractors": {
+      "bytes": 333635,
+      "sha256": "3dc74c726c935e0a26d4b8f4c8dc77a07f6c3f00c7c474e3bec0ea8eaae36df9"
+    },
+    "oracle": {
+      "bytes": 316743,
+      "sha256": "cf03fc450963cd3cce92850cc822135b156332cdd4702b84094f531f8258c048"
+    }
+  },
+  "summary": {
+    "by_domain": {
+      "email": {
+        "hit_at_1": 0.5970149253731343,
+        "hit_at_3": 0.8507462686567164,
+        "hit_at_5": 0.9402985074626866,
+        "records": 67
+      }
+    },
+    "hit_at_1": 0.5970149253731343,
+    "hit_at_3": 0.8507462686567164,
+    "hit_at_5": 0.9402985074626866,
+    "mean_candidate_tool_count": 20.0,
+    "mean_oracle_tool_count": 5.686567164179104,
+    "records": 67
+  }
+}

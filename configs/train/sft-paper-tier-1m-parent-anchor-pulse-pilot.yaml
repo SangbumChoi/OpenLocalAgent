@@ -1,0 +1,110 @@
+# Parent-anchored format-pulse recovery pilot for the completed 1M paper SFT checkpoint.
+#
+# The first mixed-replay pilot was not true replay: only 713/4,096 selected decisions belonged to
+# the parent's trained 5,568-decision prefix. This pilot preserves all 348 original 16-decision
+# update blocks byte-for-byte and inserts only 24 balanced format-pulse updates at deterministic
+# centered positions. Token input/output parameters are frozen because the rejected child retained
+# held-out quality when either token-I/O or block-core drift was substituted alone, but not when
+# both groups co-adapted.
+stage: sft
+model_config: configs/model/webgpu-1m-bpe-router.yaml
+init_from: runs/sft-paper-tier-1m/latest.pt
+continuation:
+  mode: fresh_optimizer_sft_child_v1
+  parent:
+    checkpoint_sha256: 1913123ea0982f675f0add7c5b23154faf6adda99424a0a2009130104c32021f
+    resume_integrity_sha256: 71bdebf928b157a695b0a6ebf4b5dac0fea72a9e30b916f72cba71834b1df693
+    training_contract_sha256: 6032ac576b96655aa5df6646bf0bf655aa7b64f056083a1a29dc67c50e13700b
+    lm_sampling_sha256: 4fe6c5e1b275981575514b0c5c33d5b022b7884ad596fb1050892fa16f9dbba1
+    completed_steps: 348
+    completed_lm_cursor: 5568
+data:
+  conversation_prompt_contract: openai_full_catalog_v1
+  strict_conversation_artifacts: true
+  conversations:
+    - path: data/synth/agent_sft_paper_train_v2.jsonl
+      artifact:
+        generator_config: configs/data/agent_synth_paper_train_v2.yaml
+        manifest: data/synth/agent_sft_paper_train_v2.jsonl.manifest.v1.json
+        expected_split: train
+        expected_rule_verified: true
+        environment_policy: forbid
+    - path: data/synth/agent_sft_format_bootstrap_v1.jsonl
+      artifact:
+        generator_config: configs/data/agent_sft_format_bootstrap_v1.yaml
+        manifest: data/synth/agent_sft_format_bootstrap_v1.jsonl.manifest.v1.json
+        expected_split: train
+        expected_rule_verified: true
+        environment_policy: forbid
+  eval_conversations:
+    - path: data/synth/agent_eval.jsonl
+      artifact:
+        generator_config: configs/data/agent_synth_eval.yaml
+        manifest: data/synth/agent_eval.jsonl.manifest.v1.json
+        expected_split: eval
+        expected_rule_verified: true
+        environment_policy: forbid
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-paper-16k.json
+  seq_len: 4096
+  function_masking: false
+  shuffle: false
+  sampling:
+    mode: parent_quota_update_blocks_with_format_pulses_v3
+    general_source_index: 0
+    format_source_index: 1
+    parent_prefix_decisions: 5568
+    update_decisions: 16
+    expected_parent_order_sha256: b1f78dc4b3a08647fa91f1643c40c625804ee63c38728f198dc7fa013aad5c9d
+    expected_parent_prefix_sha256: d7cf1bfcc61cf6b8882cfe149f78f7c2536855536f1190685d77569c5a3adedb
+    format_pulses:
+      count: 24
+      rows_per_phase: 4
+      phase_order:
+        - format_core
+        - multi_argument
+        - parallel
+        - text
+      within_pulse_order: phase_round_robin_v1
+      position_contract: centered_update_quantiles_v1
+optim:
+  name: adamw
+  lr: 1.0e-6
+  weight_decay: 0.0
+  grad_clip: 1.0
+  # Preserve the exact parent objective so the sampler and frozen parameter side are the only
+  # intended experimental changes.
+  loss_normalization: microbatch_mean_v1
+  freeze_parameters:
+    - loop_embed
+    - embed.weight
+    - in_proj.weight
+    - out_proj.weight
+schedule:
+  type: cosine
+  warmup_steps: 24
+  total_steps: 372
+batch:
+  micro_batch_size: 2
+  grad_accum_steps: 8
+  pad_to_input_tokens: 3684
+evaluation:
+  batch_size: 8
+  max_conversations: 512
+  selection: greedy_uncovered_strata_then_semantic_sha256_fill_v1
+  pad_to_input_tokens: 3598
+heads:
+  joint_tool_pointer: false
+  train_route_head: false
+  train_dense_selector: false
+  example_centroids: false
+  multi_turn_batch_size: 0
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+log:
+  out_dir: runs/sft-paper-tier-1m-parent-anchor-pulse-pilot
+  ckpt_every: 12
+  archive_checkpoints: true

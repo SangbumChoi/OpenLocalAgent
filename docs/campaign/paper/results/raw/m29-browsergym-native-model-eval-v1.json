@@ -1,0 +1,52 @@
+{
+  "benchmark_id": "browsergym_miniwob",
+  "browsergym": {
+    "revision": "9e779f087de9a65668b6974d11f9ce9816026e96",
+    "version": "0.14.3"
+  },
+  "checkpoint": {
+    "sha256": "79387105de75d332413262e8d8ddb847b6cc13bc03f5e4df3c81663d9897aef1",
+    "source": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/latest.pt"
+  },
+  "claim_boundary": "Native BrowserGym/MiniWoB checkpoint-in-the-loop evaluation over the pinned task plan. This is a one-step text/accessibility-tree modality probe, not an official max-step score, visual-agent result, WebArena result, or real-account email/Notion execution.",
+  "environment_executed": true,
+  "kind": "localagent_browsergym_native_eval_summary",
+  "official_split_verified": false,
+  "success_rate": 0.0,
+  "task_count": 240,
+  "result": {
+    "episodes": 240,
+    "task_variants": 60,
+    "similarity_groups": 41,
+    "fixed_seeds": [11, 17, 23, 29],
+    "max_steps": 1,
+    "successes": 0,
+    "success_rate": 0.0,
+    "grounded_actions": 0,
+    "predicted_tool_calls": 0,
+    "abstentions": 240,
+    "terminated_episodes": 0,
+    "truncated_episodes": 240,
+    "mean_model_step_ms": 767.754,
+    "model_output_mode": "I am LocalAgent."
+  },
+  "runtime": {
+    "browser_executable_sha256": "c6cf40504b92a677552e51dfaf1addfc95dc60c8b57ce5f6b41c9ee0575cf230",
+    "chromium_revision": "1117",
+    "chromium_version": "125.0.6422.26",
+    "headless": true,
+    "miniwob_revision": "7fd85d71a4b60325c6585396ec4f48377d049838",
+    "playwright_version": "1.44.0"
+  },
+  "schema_version": 1,
+  "source_receipt": {
+    "path": "local full-case log (not committed)",
+    "cases": 240
+  },
+  "task_plan": {
+    "expected_episodes": 240,
+    "expected_task_variants": 60,
+    "expected_similarity_groups": 41,
+    "selected_limit": 240
+  }
+}

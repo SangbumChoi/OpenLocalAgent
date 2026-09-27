@@ -1,0 +1,68 @@
+{
+  "kind": "localagent_toolsandbox_current_native_smoke_comparison",
+  "schema_version": 1,
+  "benchmark": {
+    "id": "toolsandbox",
+    "repository": "https://github.com/apple/ToolSandbox",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "official_split_verified": false,
+    "scenarios": [
+      "cellular_off",
+      "wifi_off",
+      "send_message_with_phone_number_and_content"
+    ],
+    "license": "Apple Software License"
+  },
+  "benchmark_id": "toolsandbox",
+  "checkpoint": {
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "parameters": 10524544
+  },
+  "runner": {
+    "path": "scripts/run_toolsandbox_native.py",
+    "sha256": "ccfa3fa48147dd982148b29d4954533760250d24a5498e67d1d670612f39af25",
+    "simulator_executed": true,
+    "verifier_executed": true,
+    "external_api_called": false,
+    "user_simulator_executed": false
+  },
+  "environment_executed": true,
+  "official_split_verified": false,
+  "task_count": 3,
+  "success_rate": 0.6666666666666666,
+  "single_step": {
+    "report": "/private/tmp/m295-toolsandbox-native-current.json",
+    "report_sha256": "af42b4c4df9ada6fbc01ca555b3a2250b9659a8d5fd8e32b03bad582303dd3f4",
+    "task_count": 3,
+    "success_count": 2,
+    "success_rate": 0.6666666666666666,
+    "milestone_similarity": {
+      "cellular_off": 1.0,
+      "wifi_off": 1.0,
+      "send_message_with_phone_number_and_content": 0.4252903702412298
+    },
+    "protocol": "scripted user terminates after first agent response"
+  },
+  "interactive": {
+    "report": "/private/tmp/m296-toolsandbox-native-current-interactive.json",
+    "report_sha256": "8a16ecb6b84e75c326ad51a141a45c633981a64a4faa61440a3c80457848b777",
+    "task_count": 3,
+    "success_count": 0,
+    "success_rate": 0.0,
+    "milestone_similarity": {
+      "cellular_off": 0.5,
+      "wifi_off": 0.5,
+      "send_message_with_phone_number_and_content": 0.0
+    },
+    "protocol": "bounded scripted user, max_agent_turns=4"
+  },
+  "decision": {
+    "native_tool_use_verified": true,
+    "multi_turn_tool_use_verified": false,
+    "promote_checkpoint": false,
+    "reason": "The current checkpoint executes the simulator and passes two simple one-step settings tasks, but the phone-message schema is only partial and bounded interactive continuation loses all three milestones."
+  },
+  "claim_boundary": "Native ToolSandbox simulator/verifier smoke only; not the official split, model-based user simulator, leaderboard score, MCPMark score, or external-account evidence.",
+  "receipt_self_sha256": "05a7253215f2c6d640f2661ae9a75ed9773ac7a799d25b2ce3bfdfbed82295d7"
+}

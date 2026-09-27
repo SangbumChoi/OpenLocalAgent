@@ -1,0 +1,48 @@
+{
+ "agentic-free": {
+  "tasks": 1400,
+  "rows": 9072,
+  "unique": 5911,
+  "by_kind": {
+   "step": 6560,
+   "recovery": 2312,
+   "abstain": 200
+  },
+  "err": 0.35,
+  "tokens": 1449768,
+  "plan_mean": 4.86,
+  "plan_max": 10,
+  "families": {
+   "email": 200,
+   "notion": 200,
+   "browser": 200,
+   "recovery": 200,
+   "email_notion": 200,
+   "browser_email": 200,
+   "abstention": 200
+  }
+ },
+ "agentic-free-xl": {
+  "tasks": 5600,
+  "rows": 38905,
+  "unique": 21287,
+  "by_kind": {
+   "step": 26308,
+   "recovery": 11797,
+   "abstain": 800
+  },
+  "err": 0.45,
+  "tokens": 6273003,
+  "plan_mean": 4.86,
+  "plan_max": 10,
+  "families": {
+   "email": 800,
+   "notion": 800,
+   "browser": 800,
+   "recovery": 800,
+   "email_notion": 800,
+   "browser_email": 800,
+   "abstention": 800
+  }
+ }
+}

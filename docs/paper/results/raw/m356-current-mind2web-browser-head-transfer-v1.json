@@ -1,0 +1,93 @@
+{
+  "claim_boundary": "Frozen-backbone route and dense-selector transfer over the public Mind2Web train split only. This is not an official Mind2Web score, BrowserGym score, screenshot-grounding result, visual-agent result, account-control result, or external-side-effect test.",
+  "generated_at": "2026-08-05",
+  "kind": "localagent_current_mind2web_browser_head_transfer",
+  "schema_version": 1,
+  "checkpoint": {
+    "parent": {
+      "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+      "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+      "parameters": 10524544
+    }
+  },
+  "source": {
+    "dataset": "osunlp/Mind2Web",
+    "url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+    "original_url": "https://github.com/OSU-NLP-Group/Mind2Web",
+    "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+    "license": "CC-BY-4.0",
+    "upstream_split": "train",
+    "train": {
+      "path": "/private/tmp/mind2web-grounded-offset8-train-disjoint.jsonl",
+      "bytes": 282261,
+      "sha256": "78f7e647c3728106901c51ecc772c834467ef6a019c1c083af6849700b361621",
+      "conversations": 36,
+      "decisions": 219
+    },
+    "eval": {
+      "path": "/private/tmp/mind2web-grounded-offset8-eval-disjoint.jsonl",
+      "bytes": 81803,
+      "sha256": "46305cb512f7368ed31817c79b798f5469e8658db12aed5d6880ea81b4e6fcbe",
+      "conversations": 12,
+      "decisions": 63
+    },
+    "split_audit": {
+      "parent_record_disjoint": true,
+      "typed_slot_disjoint": true,
+      "official_test_consumed": false,
+      "screenshots_consumed": false
+    }
+  },
+  "protocol": {
+    "backbone_frozen": true,
+    "steps": 32,
+    "batch_size": 4,
+    "learning_rate": 0.001,
+    "seed": 2047,
+    "source_action_map": {
+      "web_click": "click",
+      "web_select": "click",
+      "web_type": "type_text"
+    }
+  },
+  "warm": {
+    "child_sha256": "b559069e63db102478ae6e9d8c627482fcd9ba56c6853d5efd70b10d7aec5b23",
+    "report_sha256": "abc7d1ad0d2395df6a0ad2fd1aa0b862dc33305dbcf3a6e862bcc0101918d581",
+    "before": {
+      "route_accuracy": 1.0,
+      "selector_top1": 0.19047619047619047,
+      "selector_top3": 0.8571428571428571
+    },
+    "after": {
+      "route_accuracy": 1.0,
+      "selector_top1": 0.8571428571428571,
+      "selector_top3": 1.0
+    },
+    "route_relative_delta_l2": 0.23220092058181763,
+    "selector_relative_delta_l2": 0.21596185863018036
+  },
+  "matched_random": {
+    "child_sha256": "85dfca1a875a55ee32c7c65fa02822aaddedd8eb2f87d3cc61b16f2c59b06ca4",
+    "report_sha256": "67bb637fcff032610dd8253b84b7484e4bb2db6514a7607414093b9004ca0283",
+    "before": {
+      "route_accuracy": 0.0,
+      "selector_top1": 0.0,
+      "selector_top3": 0.0
+    },
+    "after": {
+      "route_accuracy": 1.0,
+      "selector_top1": 0.8571428571428571,
+      "selector_top3": 1.0
+    },
+    "route_relative_delta_l2": 1.1537383794784546,
+    "selector_relative_delta_l2": 1.029801368713379
+  },
+  "native_execution": false,
+  "decision": {
+    "promote_child_to_deployment": false,
+    "adopt_browser_heads": false,
+    "keep_as_diagnostic": true,
+    "reason": "Warm and matched-random frozen-head controls converge to the same held-out selector result after 32 updates; warm initialization moves the heads substantially less. Without native BrowserGym replay, this does not establish executable browser competence.",
+    "native_gate_status": "unchanged_blocked"
+  }
+}

@@ -1,0 +1,464 @@
+{
+  "arms": {
+    "matched_random": {
+      "after": {
+        "eval_canonical": {
+          "assistant_loss_tokens": 197,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.10152284263959391,
+          "mean_loss": 9.0240258541204,
+          "rows": 8
+        },
+        "eval_masked": {
+          "assistant_loss_tokens": 259,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.06177606177606178,
+          "mean_loss": 9.126988002232142,
+          "rows": 8
+        },
+        "train_masked": {
+          "assistant_loss_tokens": 217,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.08755760368663594,
+          "mean_loss": 9.113416539908554,
+          "rows": 8
+        }
+      },
+      "batch_size": 4,
+      "before": {
+        "eval_canonical": {
+          "assistant_loss_tokens": 197,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.0,
+          "mean_loss": 9.708611967599937,
+          "rows": 8
+        },
+        "eval_masked": {
+          "assistant_loss_tokens": 259,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.0,
+          "mean_loss": 9.717952536800192,
+          "rows": 8
+        },
+        "train_masked": {
+          "assistant_loss_tokens": 217,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.0,
+          "mean_loss": 9.708539409022178,
+          "rows": 8
+        }
+      },
+      "kind": "matched_random",
+      "loss_first": 9.67715835571289,
+      "loss_last": 9.185135841369629,
+      "lr": 1e-05,
+      "seed": 2058,
+      "sft_metrics": {
+        "conversation_prompt_contract": "openai_full_catalog_v1",
+        "dataset_token_accounting": {
+          "decay": null,
+          "main": {
+            "input_tokens": 68821,
+            "loss_tokens": 3853,
+            "sources": {
+              "toolsandbox_projection": {
+                "input_tokens": 68821,
+                "loss_tokens": 3853,
+                "rows": 156
+              }
+            }
+          }
+        },
+        "fixed_horizon_progress": {
+          "completed_optimizer_updates": 16,
+          "partial": false,
+          "planned_optimizer_updates": 16
+        },
+        "lm_sampling": {
+          "mode": "iid_with_replacement_v1"
+        },
+        "loss_components": {
+          "lm_loss": [
+            9.67715835571289,
+            9.721245765686035,
+            9.676313400268555,
+            9.635009765625,
+            9.57766056060791,
+            9.442365646362305,
+            9.352544784545898,
+            9.347566604614258,
+            9.303996086120605,
+            9.243324279785156,
+            9.216819763183594,
+            9.09298324584961,
+            9.124956130981445,
+            9.13829231262207,
+            9.077950477600098,
+            9.185135841369629
+          ],
+          "optimization": [
+            9.67715835571289,
+            9.721245765686035,
+            9.676313400268555,
+            9.635009765625,
+            9.57766056060791,
+            9.442365646362305,
+            9.352544784545898,
+            9.347566604614258,
+            9.303996086120605,
+            9.243324279785156,
+            9.216819763183594,
+            9.09298324584961,
+            9.124956130981445,
+            9.13829231262207,
+            9.077950477600098,
+            9.185135841369629
+          ],
+          "router_aux": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "router_weighted": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "token_accounting": {
+          "input_tokens": 30899,
+          "loss_tokens": 1543,
+          "sources": {
+            "toolsandbox_projection": {
+              "input_tokens": 30899,
+              "loss_tokens": 1543,
+              "rows": 64
+            }
+          }
+        },
+        "token_accounting_scope": "language_model_microbatches"
+      },
+      "steps": 16,
+      "weight_movement_relative_l2": {
+        "backbone": 0.002517756344864303,
+        "embedding": 0.0037226978717349412,
+        "ffn": 0.003099476767839086,
+        "mixer": 0.0024922051167874815,
+        "normalization": 6.242355917326614e-05
+      }
+    },
+    "warm_start": {
+      "after": {
+        "eval_canonical": {
+          "assistant_loss_tokens": 197,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.6040609137055838,
+          "mean_loss": 2.9860700423342323,
+          "rows": 8
+        },
+        "eval_masked": {
+          "assistant_loss_tokens": 259,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.4749034749034749,
+          "mean_loss": 4.005858432372104,
+          "rows": 8
+        },
+        "train_masked": {
+          "assistant_loss_tokens": 217,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.5207373271889401,
+          "mean_loss": 3.409522271925403,
+          "rows": 8
+        }
+      },
+      "batch_size": 4,
+      "before": {
+        "eval_canonical": {
+          "assistant_loss_tokens": 197,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.5583756345177665,
+          "mean_loss": 3.7900807337107394,
+          "rows": 8
+        },
+        "eval_masked": {
+          "assistant_loss_tokens": 259,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.44787644787644787,
+          "mean_loss": 5.313239727241192,
+          "rows": 8
+        },
+        "train_masked": {
+          "assistant_loss_tokens": 217,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.511520737327189,
+          "mean_loss": 4.185899725707445,
+          "rows": 8
+        }
+      },
+      "kind": "warm_start",
+      "loss_first": 3.4739861488342285,
+      "loss_last": 4.009273529052734,
+      "lr": 1e-05,
+      "seed": 2058,
+      "sft_metrics": {
+        "conversation_prompt_contract": "openai_full_catalog_v1",
+        "dataset_token_accounting": {
+          "decay": null,
+          "main": {
+            "input_tokens": 68821,
+            "loss_tokens": 3853,
+            "sources": {
+              "toolsandbox_projection": {
+                "input_tokens": 68821,
+                "loss_tokens": 3853,
+                "rows": 156
+              }
+            }
+          }
+        },
+        "fixed_horizon_progress": {
+          "completed_optimizer_updates": 16,
+          "partial": false,
+          "planned_optimizer_updates": 16
+        },
+        "lm_sampling": {
+          "mode": "iid_with_replacement_v1"
+        },
+        "loss_components": {
+          "lm_loss": [
+            3.4739861488342285,
+            5.018636703491211,
+            3.0854899883270264,
+            3.796138286590576,
+            3.6336445808410645,
+            2.918605089187622,
+            2.494741201400757,
+            2.7496085166931152,
+            3.8966145515441895,
+            3.6483161449432373,
+            3.8812389373779297,
+            2.5441782474517822,
+            2.9373538494110107,
+            3.150984287261963,
+            2.8467493057250977,
+            4.009273529052734
+          ],
+          "optimization": [
+            3.4739861488342285,
+            5.018636703491211,
+            3.0854899883270264,
+            3.796138286590576,
+            3.6336445808410645,
+            2.918605089187622,
+            2.494741201400757,
+            2.7496085166931152,
+            3.8966145515441895,
+            3.6483161449432373,
+            3.8812389373779297,
+            2.5441782474517822,
+            2.9373538494110107,
+            3.150984287261963,
+            2.8467493057250977,
+            4.009273529052734
+          ],
+          "router_aux": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "router_weighted": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "token_accounting": {
+          "input_tokens": 30899,
+          "loss_tokens": 1543,
+          "sources": {
+            "toolsandbox_projection": {
+              "input_tokens": 30899,
+              "loss_tokens": 1543,
+              "rows": 64
+            }
+          }
+        },
+        "token_accounting_scope": "language_model_microbatches"
+      },
+      "steps": 16,
+      "weight_movement_relative_l2": {
+        "backbone": 0.0016459849470262676,
+        "embedding": 0.0019066167476310917,
+        "ffn": 0.0023879557904455118,
+        "mixer": 0.00191913134598114,
+        "normalization": 5.000557375711683e-05
+      }
+    }
+  },
+  "benchmark_id": "toolsandbox_function_masking_transfer_pilot",
+  "checkpoint": {
+    "config": {
+      "conv_kernel": 3,
+      "d_model": 384,
+      "dropout": 0.0,
+      "embed_dim": 384,
+      "ffn_hidden": 512,
+      "ffn_num_experts": 1,
+      "ffn_top_k": 1,
+      "layer_types": [
+        "conv",
+        "attn",
+        "conv",
+        "attn"
+      ],
+      "max_seq_len": 2048,
+      "n_heads": 6,
+      "n_kv_heads": 1,
+      "n_layers": 4,
+      "n_loops": 1,
+      "name": "webgpu-10m-hybrid",
+      "norm_eps": 1e-05,
+      "qk_norm": true,
+      "rope_theta": 10000.0,
+      "router_aux_loss_coef": 0.0,
+      "tie_embeddings": true,
+      "vocab_size": 16384
+    },
+    "params": 10524544,
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "tokenizer": {
+      "bytes": 1134224,
+      "path": "data/tokenizer-webgpu-proxy-16k.json",
+      "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+    }
+  },
+  "claim_boundary": "Diagnostic only: this is a schema-valid subset of the public ToolSandbox scenario projection, not the official ToolSandbox split or leaderboard. No ToolSandbox simulator, verifier, user simulator, external API, mobile runtime, or desktop environment was executed. Invalid projection rows are reported and excluded from the full-catalog renderer because their declared required arguments are incomplete.",
+  "data": {
+    "masked_eval_rows": 30,
+    "masked_train_rows": 156,
+    "masking": {
+      "eval": {
+        "algorithm": "sha256_row_seeded_selection_and_aliases_v1",
+        "enabled": true,
+        "kind": "schema_preserving_tool_name_mask_v1",
+        "mapping_sha256": "f66b5d7262a926cde31a1133b0c5f65dd222fc6356cc8444e459dad786167d65",
+        "mask_fraction": 1.0,
+        "masked_rows": 15,
+        "name_prefix": "opaque",
+        "output_rows": 30,
+        "seed": 2058,
+        "source_rows": 15,
+        "variants": 1
+      },
+      "train": {
+        "algorithm": "sha256_row_seeded_selection_and_aliases_v1",
+        "enabled": true,
+        "kind": "schema_preserving_tool_name_mask_v1",
+        "mapping_sha256": "10135e11f6acea1b9ff560362f60920482327f26d426ec95a3b66582a93a5925",
+        "mask_fraction": 1.0,
+        "masked_rows": 78,
+        "name_prefix": "opaque",
+        "output_rows": 156,
+        "seed": 2058,
+        "source_rows": 78,
+        "variants": 1
+      }
+    },
+    "prompt_contract": "openai_full_catalog_v1",
+    "raw_eval_rows": 20,
+    "raw_train_rows": 107,
+    "schema_invalid_eval_rows": 5,
+    "schema_invalid_train_rows": 29,
+    "schema_valid_eval_rows": 15,
+    "schema_valid_train_rows": 78
+  },
+  "protocol": {
+    "arms": [
+      "warm_start",
+      "matched_random"
+    ],
+    "batch_size": 4,
+    "device": "cpu",
+    "eval_limit": 8,
+    "lr": 1e-05,
+    "seed": 2058,
+    "steps": 16
+  },
+  "receipt_self_sha256": "4751abdfaacefe3c2fafb602deff1c0316f863234bd7ebdf840b532af878654f",
+  "schema_version": 1,
+  "source": {
+    "dataset": "apple/ToolSandbox",
+    "eval": {
+      "bytes": 45613,
+      "path": "/private/tmp/m348-toolsandbox-projection/toolsandbox-eval.jsonl",
+      "sha256": "925ce977082ffb980e46bce5b25ea81fdd335d25e5996feefd503015ba3ff46d"
+    },
+    "manifest": {
+      "bytes": 4610,
+      "path": "/private/tmp/m348-toolsandbox-projection/toolsandbox-manifest.json",
+      "sha256": "85f977aed04a40c959c41a5f80e5c3c2c75653aa44c4c789e8234e3aae8ff356"
+    },
+    "manifest_self_sha256": "095e321875b954e90852468d89462ae1339ec8fa9cdd5f9df4b67e2d2f578dc4",
+    "projection_kind": "localagent_toolsandbox_public_projection",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "source_url": "https://github.com/apple/ToolSandbox",
+    "train": {
+      "bytes": 245109,
+      "path": "/private/tmp/m348-toolsandbox-projection/toolsandbox-train.jsonl",
+      "sha256": "773b44877677e7b2be72295bc9eb26d158c5932d6665aac15bcae9592d46609d"
+    }
+  }
+}

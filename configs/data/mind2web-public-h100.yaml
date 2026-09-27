@@ -1,0 +1,22 @@
+schema_version: 1
+seed: 42
+enrichment_level: 3
+max_source_bytes: 8589934592
+outputs:
+  train: /home/jovyan/sbchoi/localagent/data/public/mind2web-train.jsonl
+manifest: /home/jovyan/sbchoi/localagent/data/public/mind2web.manifest.json
+
+sources:
+  - source_id: mind2web-train-grounded-subset
+    dataset: osunlp/Mind2Web
+    subset: train
+    revision: 17ece8eb89862368edc0cc806acee6fca5163474
+    url: https://huggingface.co/datasets/osunlp/Mind2Web
+    license: cc-by-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    adapter: mind2web_v1
+    split: train
+    path: /home/jovyan/sbchoi/localagent/data/public/mind2web_grounded/train_0.json
+    bytes: 4168808536
+    sha256: d67dcc17b03ac7a6da6e119aa0d532761cc9095027704c045234fcbe91f66d99
+    max_actions_per_record: 12

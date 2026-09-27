@@ -1,0 +1,43 @@
+{
+  "model": "data/baselines/LFM2-350M",
+  "adapter": "runs/lora/lfm2-350m",
+  "tag": "lfm2-350m",
+  "rows_requested": 300,
+  "rows": {
+    "arc-easy": 300,
+    "arc-challenge": 300,
+    "hellaswag": 300,
+    "openbookqa": 300,
+    "winogrande": 300,
+    "mmlu": 300
+  },
+  "scores": {
+    "base": {
+      "arc-easy": 62.0,
+      "arc-challenge": 40.0,
+      "hellaswag": 46.7,
+      "openbookqa": 40.7,
+      "winogrande": 54.0,
+      "mmlu": 38.3,
+      "seconds": 81.5
+    },
+    "finetuned": {
+      "arc-easy": 63.7,
+      "arc-challenge": 40.7,
+      "hellaswag": 46.7,
+      "openbookqa": 40.7,
+      "winogrande": 54.7,
+      "mmlu": 38.7,
+      "seconds": 109.5
+    }
+  },
+  "delta": {
+    "arc-easy": 1.7,
+    "arc-challenge": 0.7,
+    "hellaswag": 0.0,
+    "openbookqa": 0.0,
+    "winogrande": 0.7,
+    "mmlu": 0.4
+  },
+  "mean_delta": 0.58
+}

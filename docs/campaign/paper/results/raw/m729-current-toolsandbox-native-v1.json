@@ -1,0 +1,49 @@
+{
+  "benchmark_id": "toolsandbox",
+  "checkpoint": {
+    "bytes": 52246937,
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "claim_boundary": "Current-checkpoint native ToolSandbox simulator/verifier smoke only: three simple single-step fixtures and a bounded scripted continuation. No official split, upstream user simulator, full scenario matrix, RapidAPI service, real email/Notion account, or leaderboard score is claimed.",
+  "decision": {
+    "multi_turn_tool_use_verified": false,
+    "native_tool_use_verified": true,
+    "promote_checkpoint": false,
+    "reason": "Single-step fixtures pass, but bounded continuation reaches only 0/3 exact milestones; official split and model-based user simulator were not executed."
+  },
+  "environment_executed": true,
+  "external_api_called": false,
+  "interactive": {
+    "max_agent_turns": 4,
+    "protocol": "bounded_multi_step_scripted_user",
+    "raw_report": {
+      "bytes": 3775,
+      "path": "/private/tmp/m729-toolsandbox-current-interactive.json",
+      "sha256": "fdd189441fac7571ff8e6b71afe4f1dfe39d6a689f82d0bd0810a21bd73b9301"
+    },
+    "success_count": 0,
+    "success_rate": 0.0,
+    "task_count": 3
+  },
+  "kind": "localagent_m729_current_toolsandbox_native",
+  "official_split_verified": false,
+  "receipt_self_sha256": "944b910912bfb8164ed8d632420d0931833118001f2a3001cb83099d5e7b5ebf",
+  "schema_version": 1,
+  "single_step": {
+    "protocol": "single_step_smoke",
+    "raw_report": {
+      "bytes": 3779,
+      "path": "/private/tmp/m729-toolsandbox-current.json",
+      "sha256": "cda87187d71e7a82bae05b6189da92cf3abca5c2a364c9d3e1df3977c33374c9"
+    },
+    "success_count": 3,
+    "success_rate": 1.0,
+    "task_count": 3
+  },
+  "source": {
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "url": "https://github.com/apple/ToolSandbox"
+  },
+  "verifier_executed": true
+}

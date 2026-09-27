@@ -1,0 +1,36 @@
+{
+  "kind": "localagent_workshop_gate_receipt",
+  "schema_version": 1,
+  "status": "blocked",
+  "ready": false,
+  "current_checkpoint": {"path": "/private/tmp/m553-multisurface-lineage-child.pt", "sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c", "parameters": 10524544},
+  "checks": {
+    "catalog_realistic_family_coverage": "pass",
+    "catalog_no_pending_train_adapter": "pass",
+    "native_mobilegym": "pass",
+    "native_browsergym_miniwob": "pass",
+    "webgpu_native_capability_and_latency": "pass",
+    "weights_transfer_and_no_transfer_ablation": "pass",
+    "training_rl_preflight": "pass",
+    "native_androidworld": "blocked",
+    "native_mobile_safety_bench": "blocked",
+    "native_iosworld": "blocked",
+    "native_osworld": "blocked",
+    "native_osworld_v2": "blocked",
+    "native_agentnet": "blocked",
+    "native_toolsandbox": "blocked",
+    "native_mcpmark": "blocked",
+    "native_enterpriseopsgym": "blocked",
+    "artifacts_public_model_demo_manifest": "blocked"
+  },
+  "weight_reports": [
+    "docs/paper/results/raw/m565-m553-transfer-ablation-v1.json",
+    "docs/paper/results/raw/m574-xlam-derived-warm-random-transfer-v1.json"
+  ],
+  "blocking_requirements": [
+    "native:androidworld", "native:mobile_safety_bench", "native:iosworld", "native:osworld", "native:osworld_v2", "native:agentnet", "native:toolsandbox", "native:mcpmark", "native:enterpriseopsgym", "artifacts:public_model_demo_manifest"
+  ],
+  "evidence": {"gate_output_sha256": "0406597a17afb0e6e7eb28cc1803e012f5eb0be7ae4a0066882343f1fec42769", "xlam_transfer": "docs/paper/results/raw/m574-xlam-derived-warm-random-transfer-v1.json"},
+  "claim_boundary": "The current m553 checkpoint now has a second, public xLAM-derived warm/random transfer ablation in addition to the AndroidControl/AgentNet transfer. It still has no official xLAM/BFCL score, and publication remains blocked by the nine native benchmark receipts and public Hugging Face model/demo manifest.",
+  "receipt_self_sha256": "9e0c2a6b9b88c9f9aaee167709a332724b2c9aaddb7b4c56f6d726e7d5a8ed1c"
+}

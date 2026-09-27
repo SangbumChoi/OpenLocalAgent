@@ -1,0 +1,48 @@
+{
+  "adoption": {
+    "local_webgpu_adopted": true,
+    "public_model_published": false,
+    "public_space_published": false,
+    "publication_blockers": [
+      "authenticated Hugging Face upload has not been executed",
+      "native visual/service-backed task gates remain open"
+    ]
+  },
+  "checkpoint": {
+    "bytes": 52206773,
+    "path": "/private/tmp/m671-mcp-current-v2/warm-child.pt",
+    "sha256": "b5576dc8bd422d65c62bc500d0754235adb122c805e254e586c980b50bee8861"
+  },
+  "claim_boundary": "The m671 child is locally export-, parity-, and native-WebGPU verified. The three actions are structured local predictions only; no real email, browser navigation, Notion account, MCP server, or external side effect ran.",
+  "kind": "localagent_m674_m671_webgpu_adoption",
+  "native_webgpu": {
+    "adapter": "vendor=apple; architecture=metal-3",
+    "closed_loop_success": 0,
+    "environment_executed": true,
+    "evaluated_cases": 3,
+    "exact_actions": 3,
+    "external_side_effects_executed": false,
+    "latency_ms_p50": 7.4000000059604645,
+    "peak_memory_mb": 20.458142280578613,
+    "receipt": {
+      "bytes": 11458,
+      "path": "/private/tmp/m673-m671-webgpu-capability.json",
+      "sha256": "f3fb24e3236b19ea1bf02c37199108ca722086eb4546dcee203b151ebcfb35d3"
+    },
+    "tokens_per_second_p50": 1454.5454545454545
+  },
+  "receipt_self_sha256": "e01c5d13619ad146cce1095544771d563d2437be33920734d61b22c94fccc679",
+  "release_preparation": {
+    "bundle_identity_sha256": "27c357ac705ad10ef1a4ec59d7f8bb72ca4d38623e40760f568646f1441c98dd",
+    "model_repo": "SangbumChoi/localagent-webgpu-10m-m671",
+    "prepared": true,
+    "published": false,
+    "receipt": {
+      "bytes": 4743,
+      "path": "docs/paper/results/raw/m673-m671-hf-space-preparation-v2.json",
+      "sha256": "e426b7f6fc20a954d5435229fc0e675f2ac78e6de25319156df19ca3226cc6fa"
+    },
+    "space_repo": "SangbumChoi/localagent-webgpu-m671"
+  },
+  "schema_version": 1
+}

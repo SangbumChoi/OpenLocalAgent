@@ -1,0 +1,229 @@
+{
+  "benchmark": {
+    "data_version": "0.2.0",
+    "dataset": "AppWorld",
+    "head_eval_rows": 18,
+    "head_train_rows": 64,
+    "native_split": "public dev subset",
+    "native_tasks": 6,
+    "protected_test_used": false,
+    "source_url": "https://github.com/StonyBrookNLP/appworld"
+  },
+  "claim_boundary": "AppWorld 0.2.0 route/selector head adaptation on public train/dev first-action projections plus a six-task resettable native replay. The replay used no external accounts and no protected test tasks. This is not an AppWorld leaderboard score, complete task success, real email/SMS side effects, or WebGPU deployment evidence.",
+  "decision": {
+    "promote_head_to_native_success": false,
+    "reason": "Head training reaches 100% route and selector accuracy on the held-out projection, but the paired native six-task replay remains 0/6 with zero API calls; the metric is a candidate-ranking diagnostic and does not establish free-run AppWorld success.",
+    "retain_warm_body": true,
+    "train_schema_action_heads": true
+  },
+  "head_adaptation": {
+    "matched": {
+      "random_route_after": 1.0,
+      "random_selector_after": 1.0,
+      "same_hyperparameters": true,
+      "same_rows": true,
+      "warm_route_after": 1.0,
+      "warm_selector_after": 1.0
+    },
+    "random": {
+      "child": {
+        "bytes": 52203288,
+        "path": "/private/tmp/m648-appworld/random/child.pt",
+        "sha256": "9a66832fcb5f962055a14241950f8b7055991a64fa9d56543ebba6b97908a42d"
+      },
+      "heads_after": {
+        "route_accuracy": 1.0,
+        "rows": 18,
+        "selector_top1_accuracy": 1.0,
+        "tool_rows": 18
+      },
+      "heads_before": {
+        "route_accuracy": 0.3333333333333333,
+        "rows": 18,
+        "selector_top1_accuracy": 0.0,
+        "tool_rows": 18
+      },
+      "parent": {
+        "bytes": 52203288,
+        "path": "/private/tmp/m647-appworld/random/child.pt",
+        "sha256": "64329be82c3f8e963159b022c215985c12ba989759ae58e25f90b23367afdef9"
+      },
+      "weight_movement": {
+        "action_heads": {
+          "base_l2": 91.45685930938616,
+          "delta_l2": 36.939218413386484,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.4038977359634242,
+          "target_l2": 91.69031495070435
+        },
+        "attention_or_mixer": {
+          "base_l2": 50.41283477352483,
+          "delta_l2": 0.0,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0,
+          "target_l2": 50.41283477352483
+        },
+        "embedding": {
+          "base_l2": 50.18570788808166,
+          "delta_l2": 0.0,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.0,
+          "target_l2": 50.18570788808166
+        },
+        "ffn": {
+          "base_l2": 49.79714460836108,
+          "delta_l2": 0.0,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.0,
+          "target_l2": 49.79714460836108
+        },
+        "normalization": {
+          "base_l2": 19.59987856482613,
+          "delta_l2": 0.0,
+          "parameters": 384,
+          "relative_delta_l2": 0.0,
+          "target_l2": 19.59987856482613
+        }
+      }
+    },
+    "warm": {
+      "child": {
+        "bytes": 52203288,
+        "path": "/private/tmp/m648-appworld/warm/child.pt",
+        "sha256": "7206ecd36c42b4d4b154891db9d765c149fa31416cee112dea881d2737ef7c2b"
+      },
+      "heads_after": {
+        "route_accuracy": 1.0,
+        "rows": 18,
+        "selector_top1_accuracy": 1.0,
+        "tool_rows": 18
+      },
+      "heads_before": {
+        "route_accuracy": 0.0,
+        "rows": 18,
+        "selector_top1_accuracy": 0.0,
+        "tool_rows": 18
+      },
+      "parent": {
+        "bytes": 52203288,
+        "path": "/private/tmp/m647-appworld/warm/child.pt",
+        "sha256": "039386d75721a12bfe9da636347302a51245c8e1571245711b66d4e13e1fe4a0"
+      },
+      "weight_movement": {
+        "action_heads": {
+          "base_l2": 91.45685930938616,
+          "delta_l2": 34.205796436773554,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.3740101802649923,
+          "target_l2": 91.91963267977451
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.698350633444605,
+          "delta_l2": 0.0,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0,
+          "target_l2": 51.698350633444605
+        },
+        "embedding": {
+          "base_l2": 77.68753053023842,
+          "delta_l2": 0.0,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.0,
+          "target_l2": 77.68753053023842
+        },
+        "ffn": {
+          "base_l2": 50.60973789349284,
+          "delta_l2": 0.0,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.0,
+          "target_l2": 50.60973789349284
+        },
+        "normalization": {
+          "base_l2": 21.451560121678863,
+          "delta_l2": 0.0,
+          "parameters": 384,
+          "relative_delta_l2": 0.0,
+          "target_l2": 21.451560121678863
+        }
+      }
+    }
+  },
+  "inputs": {
+    "random_report": {
+      "bytes": 3951,
+      "path": "/private/tmp/m648-appworld/random/report.json",
+      "sha256": "391201cf655627120e0732ed20c9f95d0f882c2504b8eddbc53dd255b0166d34"
+    },
+    "random_weight": {
+      "bytes": 18347,
+      "path": "/private/tmp/m648-appworld/random/weight.json",
+      "sha256": "ba9f1d8894aa261600326cddf4fa48f8a5049fb58dfd3d0c46007090dfe24d31"
+    },
+    "warm_report": {
+      "bytes": 3935,
+      "path": "/private/tmp/m648-appworld/warm/report.json",
+      "sha256": "98b9a2cc1d48090d92eb2c4a47a573370e022842ee1a8543558c4e6ac02a5d26"
+    },
+    "warm_weight": {
+      "bytes": 18339,
+      "path": "/private/tmp/m648-appworld/warm/weight.json",
+      "sha256": "6108696373ad18cf480bf4055bc0b95969260f08802185e6028d559bcf302e68"
+    }
+  },
+  "kind": "localagent_m648_appworld_head_native_receipt",
+  "native_replay": {
+    "baseline": {
+      "checkpoint": {
+        "bytes": 52203288,
+        "path": "/private/tmp/m647-appworld/warm/child.pt",
+        "sha256": "039386d75721a12bfe9da636347302a51245c8e1571245711b66d4e13e1fe4a0"
+      },
+      "report": {
+        "bytes": 9117,
+        "path": "/private/tmp/m648-appworld/native/baseline.json",
+        "sha256": "3d1e7b3d692390c8aa6da4bf514db4762676158eba382f5e59e8f04964dbc039"
+      },
+      "summary": {
+        "action_replayed": 0,
+        "native_action_api_calls": 0,
+        "native_api_calls": 0,
+        "native_bootstrap_api_calls": 0,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "tasks": 6
+      }
+    },
+    "head_adapted": {
+      "checkpoint": {
+        "bytes": 52203288,
+        "path": "/private/tmp/m648-appworld/warm/child.pt",
+        "sha256": "7206ecd36c42b4d4b154891db9d765c149fa31416cee112dea881d2737ef7c2b"
+      },
+      "report": {
+        "bytes": 9238,
+        "path": "/private/tmp/m648-appworld/native/head.json",
+        "sha256": "03d158908decf6cd1b9a4cbac52b72b814a02013276d7e1b88b2310fed09b886"
+      },
+      "summary": {
+        "action_replayed": 0,
+        "native_action_api_calls": 0,
+        "native_api_calls": 0,
+        "native_bootstrap_api_calls": 0,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "tasks": 6
+      }
+    },
+    "paired_task_ids": [
+      "50e1ac9_1",
+      "50e1ac9_2",
+      "50e1ac9_3",
+      "fac291d_1",
+      "fac291d_2",
+      "fac291d_3"
+    ],
+    "same_task_order": true
+  },
+  "receipt_self_sha256": "6052688d6d12e147b97ba25dda2b59f2c3684a469ba8b4e5066e85bdb1181f95",
+  "schema_version": 1
+}

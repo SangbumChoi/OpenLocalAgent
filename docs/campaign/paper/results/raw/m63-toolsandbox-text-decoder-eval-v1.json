@@ -1,0 +1,82 @@
+{
+  "kind": "localagent_toolsandbox_text_projection_eval",
+  "schema_version": 1,
+  "dataset": {
+    "name": "apple/ToolSandbox",
+    "source_url": "https://github.com/apple/ToolSandbox",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "license": "Apple Software License; see upstream LICENSE and ACKNOWLEDGEMENTS",
+    "projection_path": "/private/tmp/toolsandbox-schema-projection-v1/toolsandbox-eval.jsonl",
+    "projection_bytes": 45613,
+    "projection_sha256": "925ce977082ffb980e46bce5b25ea81fdd335d25e5996feefd503015ba3ff46d",
+    "rows": 20,
+    "candidate_tools": 25,
+    "official_split_verified": false,
+    "simulator_executed": false,
+    "verifiers_executed": false,
+    "external_api_called": false
+  },
+  "evaluator": {
+    "script": "scripts/evaluate_toolsandbox_text.py",
+    "script_sha256": "862327b2d654b0e799b80f956023a189b967fe1561c214660a9bf96ae0518487",
+    "decoder": "localagent.agent.constrained.hybrid_decode",
+    "schema_checker": "localagent.data.prompt_contract.schema_matches"
+  },
+  "arms": {
+    "schema_child_row_retriever": {
+      "checkpoint_sha256": "af18d4f12e4472bcb251ab1c2ffed8f0e42dabec0c0422f993388ae00b50a7a9",
+      "candidate_mode": "row_retriever",
+      "rows": 20,
+      "route_rate": 1.0,
+      "tool_exact_rate": 0.6,
+      "arguments_exact_rate": 0.3,
+      "schema_valid_rate": 1.0,
+      "by_category": {
+        "CANONICALIZATION": {
+          "rows": 14,
+          "tool_exact_rate": 0.6428571428571429,
+          "arguments_exact_rate": 0.35714285714285715,
+          "schema_valid_rate": 1.0
+        },
+        "STATE_DEPENDENCY": {
+          "rows": 4,
+          "tool_exact_rate": 0.25,
+          "arguments_exact_rate": 0.25,
+          "schema_valid_rate": 1.0
+        },
+        "UNCATEGORIZED": {
+          "rows": 4,
+          "tool_exact_rate": 0.75,
+          "arguments_exact_rate": 0.25,
+          "schema_valid_rate": 1.0
+        }
+      }
+    },
+    "no_schema_child_row_retriever": {
+      "checkpoint_sha256": "e1d442b1511cab57c77b0368c33ec3beefdd4f44ae0de32ef498018677c63d9d",
+      "candidate_mode": "row_retriever",
+      "rows": 20,
+      "route_rate": 1.0,
+      "tool_exact_rate": 0.6,
+      "arguments_exact_rate": 0.3,
+      "schema_valid_rate": 1.0,
+      "interpretation": "No measurable difference from the schema-child arm on this constrained row-retrieval path."
+    },
+    "schema_child_global_selector": {
+      "checkpoint_sha256": "af18d4f12e4472bcb251ab1c2ffed8f0e42dabec0c0422f993388ae00b50a7a9",
+      "candidate_mode": "global_selector",
+      "rows": 20,
+      "route_rate": 1.0,
+      "tool_exact_rate": 0.1,
+      "arguments_exact_rate": 0.1,
+      "schema_valid_rate": 0.1,
+      "interpretation": "The inherited selector is not safe when the runtime exposes a global union rather than a task-specific candidate list."
+    }
+  },
+  "decision": {
+    "adopt_schema_child_as_quality_claim": false,
+    "adopt_row_candidate_retrieval_contract": true,
+    "reason": "Candidate-restricted decoding gives 60% tool exactness and 100% schema validity, but the matched no-schema child ties it and exact arguments remain 30%; global selector exposure collapses to 10% exactness."
+  },
+  "claim_boundary": "Bounded offline ToolSandbox text-observation/action projection only. The checkpoint-backed decoder was run against retained candidate lists and schemas, but the upstream simulator, user simulator, milestone verifiers, official split, MCP services, and native WebGPU runtime were not executed. This is not an official ToolSandbox or MCPMark score."
+}

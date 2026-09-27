@@ -1,0 +1,205 @@
+{
+  "arms": {
+    "random": {
+      "after_eval": {
+        "assistant_loss_tokens": 1797,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.10907067334446299,
+        "mean_loss": 9.125307111787876,
+        "rows": 21
+      },
+      "before_eval": {
+        "assistant_loss_tokens": 1797,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.0,
+        "mean_loss": 9.84714297048901,
+        "rows": 21
+      },
+      "checkpoint": {
+        "bytes": 52203665,
+        "path": "/private/tmp/m624-mcp-traj/random.pt",
+        "sha256": "24ded249d8a185cb5f0cec29fef084125b5bc930d868e4de0e760d3833752930"
+      },
+      "report": {
+        "bytes": 10353,
+        "path": "/private/tmp/m624-mcp-traj/random.json",
+        "sha256": "259937fa6884786acc36416ae0efd51af9d01f79aa7f46766952b15db9089a39"
+      },
+      "weight_transfer": {
+        "compatibility": {
+          "added_tensors": [],
+          "config_mismatches": {},
+          "removed_tensors": [],
+          "shape_mismatches": {},
+          "shared_tensor_count": 51,
+          "tokenizer_sha256_equal": true
+        },
+        "groups": {
+          "action_heads": {
+            "base_l2": 91.45685930938616,
+            "delta_l2": 0.0,
+            "parameters": 2519736,
+            "relative_delta_l2": 0.0,
+            "target_l2": 91.45685930938616
+          },
+          "attention_or_mixer": {
+            "base_l2": 51.69565783582095,
+            "delta_l2": 40.26196037221461,
+            "parameters": 1871872,
+            "relative_delta_l2": 0.7788267343474309,
+            "target_l2": 50.41083978961659
+          },
+          "embedding": {
+            "base_l2": 77.22855137357101,
+            "delta_l2": 92.10366003057516,
+            "parameters": 6291456,
+            "relative_delta_l2": 1.1926115198645908,
+            "target_l2": 50.18602122195714
+          },
+          "ffn": {
+            "base_l2": 50.60798035528062,
+            "delta_l2": 44.428467853096556,
+            "parameters": 2360832,
+            "relative_delta_l2": 0.8778945048033463,
+            "target_l2": 49.79262421603175
+          },
+          "normalization": {
+            "base_l2": 21.446450647499336,
+            "delta_l2": 1.8515287075366151,
+            "parameters": 384,
+            "relative_delta_l2": 0.08633264021021138,
+            "target_l2": 19.595934026925537
+          }
+        },
+        "recommendation": {
+          "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+          "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+          "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+          "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+        }
+      }
+    },
+    "warm": {
+      "after_eval": {
+        "assistant_loss_tokens": 1797,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.5470228158041179,
+        "mean_loss": 3.5742029138054527,
+        "rows": 21
+      },
+      "before_eval": {
+        "assistant_loss_tokens": 1797,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.38564273789649417,
+        "mean_loss": 4.4848669749468515,
+        "rows": 21
+      },
+      "checkpoint": {
+        "bytes": 52203551,
+        "path": "/private/tmp/m624-mcp-traj/warm.pt",
+        "sha256": "984152a802357e18387a6a28c93c9d30f43c5b0c9e9fede48caa24157716b43b"
+      },
+      "report": {
+        "bytes": 10470,
+        "path": "/private/tmp/m624-mcp-traj/warm.json",
+        "sha256": "7bb04833f928b1fcdd586fac70387fd2f1254d4d22ecb7ec93fefb0e4854e77d"
+      },
+      "weight_transfer": {
+        "compatibility": {
+          "added_tensors": [],
+          "config_mismatches": {},
+          "removed_tensors": [],
+          "shape_mismatches": {},
+          "shared_tensor_count": 51,
+          "tokenizer_sha256_equal": true
+        },
+        "groups": {
+          "action_heads": {
+            "base_l2": 91.45685930938616,
+            "delta_l2": 0.0,
+            "parameters": 2519736,
+            "relative_delta_l2": 0.0,
+            "target_l2": 91.45685930938616
+          },
+          "attention_or_mixer": {
+            "base_l2": 51.69565783582095,
+            "delta_l2": 0.12578668449058936,
+            "parameters": 1871872,
+            "relative_delta_l2": 0.0024332156656188104,
+            "target_l2": 51.69656945938965
+          },
+          "embedding": {
+            "base_l2": 77.22855137357101,
+            "delta_l2": 0.33262419263252235,
+            "parameters": 6291456,
+            "relative_delta_l2": 0.0043070106420039925,
+            "target_l2": 77.35950458203261
+          },
+          "ffn": {
+            "base_l2": 50.60798035528062,
+            "delta_l2": 0.15214182429370227,
+            "parameters": 2360832,
+            "relative_delta_l2": 0.0030062812865802742,
+            "target_l2": 50.6080163706903
+          },
+          "normalization": {
+            "base_l2": 21.446450647499336,
+            "delta_l2": 0.0022879758571944108,
+            "parameters": 384,
+            "relative_delta_l2": 0.00010668319410052075,
+            "target_l2": 21.44544873480751
+          }
+        },
+        "recommendation": {
+          "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+          "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+          "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+          "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+        }
+      }
+    }
+  },
+  "claim_boundary": "Internal agent-disjoint teacher-forced tool-call projection. The Hub release has no official held-out split; this 30/8 split is an explicit structural holdout. No MCP server, tool output, reasoning trace, native evaluator, or external side effect was executed; this is not an official MCP benchmark score.",
+  "comparison": {
+    "random_eval_gain": 0.10907067334446299,
+    "random_eval_token_accuracy_after": 0.10907067334446299,
+    "random_eval_token_accuracy_before": 0.0,
+    "random_exact_sequence_accuracy": 0.0,
+    "warm_eval_gain": 0.16138007790762376,
+    "warm_eval_token_accuracy_after": 0.5470228158041179,
+    "warm_eval_token_accuracy_before": 0.38564273789649417,
+    "warm_exact_sequence_accuracy": 0.0,
+    "warm_minus_random_after": 0.43795214245965497
+  },
+  "kind": "localagent_mcp_trajectory_transfer_v1",
+  "protocol": {
+    "batch_size": 4,
+    "eval_rows": 21,
+    "internal_eval_agents": 8,
+    "internal_train_agents": 30,
+    "lr": 1e-05,
+    "max_seq_len": 512,
+    "multi_conv_invalid_json": 1,
+    "multi_conv_trajectories_seen": 11,
+    "official_test_split": false,
+    "public_train_trajectories": 38,
+    "split_policy": "sorted_agent_name_first_30_train_last_8_eval",
+    "steps": 32,
+    "target": "user_to_tool_calls_json",
+    "train_rows": 86
+  },
+  "receipt_self_sha256": "94f1f1706dec59c0cf4102d04add8c8d3cc143296415dca691884443065d32df",
+  "schema_version": 1,
+  "source": {
+    "dataset": "obaydata/mcp-agent-trajectory-benchmark",
+    "license": "Apache-2.0",
+    "manifest_sha256": "d5ce6dded1e2b27ac1e898d03f0fcac5bf2ba09fce75af0a1b68e6f23c2854ca",
+    "normalization_manifest": {
+      "bytes": 3500,
+      "path": "/private/tmp/m624-mcp-traj/manifest.json",
+      "sha256": "6b4803d3c80b5dca5545da781c75cac083e85602fab0d833c8c5924aafe319b8"
+    },
+    "revision": "f4f449d65271abc1e4ccd5157d121a59a1dd38c4",
+    "url": "https://huggingface.co/datasets/obaydata/mcp-agent-trajectory-benchmark"
+  }
+}

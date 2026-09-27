@@ -1,0 +1,43 @@
+{
+  "kind": "localagent_webgpu_realistic_mobile_productivity_receipt",
+  "schema_version": 1,
+  "suite": "localagent-mobile-productivity-v1",
+  "bundle": {
+    "checkpoint_sha256": "fdeb03f3e4e369e852f8aa4a07f6c4ecf44e855fdd9799f3a4af039555b879b1",
+    "manifest_bytes": 9320,
+    "manifest_sha256": "a3ee88d198719299b95d5cbbbe7199e101da89c648e97e2df71bdb5e95eb6ad0",
+    "model_parameters": 10524544,
+    "vocab_size": 16384,
+    "model_fp16_sha256": "5e2d3d5befa1b00d3b9621f53d10046f1214e78e10a2cc727d30226c540db363",
+    "action_model_fp16_sha256": "e898270de7cf11604a4d6773e21be337939abce95d937012f889de66eba756d1",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "environment": {
+    "browser_surface": "codex_in_app_browser",
+    "provider_requested": "webgpu",
+    "observed_backend_badge": "WEBGPU",
+    "selector": "dense",
+    "mobile_guard": false,
+    "external_accounts": false,
+    "screenshots": false,
+    "trusted_os_input": false
+  },
+  "webgpu": {
+    "records": 9,
+    "exact_tool": {"correct": 4, "total": 9},
+    "exact_arguments": {"correct": 4, "total": 9},
+    "schema_valid": {"correct": 6, "total": 9},
+    "state_transition": {"correct": 4, "total": 9},
+    "closed_loop_success": {"correct": 4, "total": 9},
+    "by_family": {
+      "mobile": {"records": 7, "exact_action_rate": 0.2857142857142857, "schema_valid_rate": 0.5714285714285714, "closed_loop_success_rate": 0.2857142857142857},
+      "productivity": {"records": 2, "exact_action_rate": 1.0, "schema_valid_rate": 1.0, "closed_loop_success_rate": 1.0}
+    }
+  },
+  "wasm_control": {
+    "records": 9,
+    "closed_loop_success": {"correct": 4, "total": 9},
+    "note": "same deterministic quality result; timing was not collected in this receipt"
+  },
+  "claim_boundary": "local text-first WebGPU compatibility and synthetic state-loop result only; not AndroidWorld, Mind2Web native test, real email, real Notion, screenshot grounding, or hardware throughput"
+}

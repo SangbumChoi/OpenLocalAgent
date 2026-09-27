@@ -1,0 +1,55 @@
+# Verifiable single-turn autoregressive tool-call RL. This is an offline exact-reward stage, not
+# BrowserGym. It updates the backbone and therefore drops inherited structured heads as stale.
+stage: rl
+model_config: configs/model/webgpu-35m-hybrid.yaml
+init_from: runs/sft-paper-hybrid/latest.pt
+data:
+  strict_conversation_artifacts: true
+  conversations:
+    - path: data/synth/agent_sft_paper_train_v2.jsonl
+      artifact:
+        generator_config: configs/data/agent_synth_paper_train_v2.yaml
+        manifest: data/synth/agent_sft_paper_train_v2.jsonl.manifest.v1.json
+        expected_split: train
+        expected_rule_verified: true
+        environment_policy: forbid
+  eval_conversations:
+    - path: data/synth/agent_eval.jsonl
+      artifact:
+        generator_config: configs/data/agent_synth_eval.yaml
+        manifest: data/synth/agent_eval.jsonl.manifest.v1.json
+        expected_split: eval
+        expected_rule_verified: true
+        environment_policy: forbid
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-paper-16k.json
+environment:
+  name: canonical_toolcalls
+  learned_judge: false
+rollout:
+  prompts_per_step: 8
+  group_size: 4
+  # Covers the longest canonical exact-reward target (including EOS); the runner fails closed if
+  # either train or held-out gold output exceeds this budget.
+  max_new_tokens: 256
+  temperature: 1.0
+policy:
+  clip_ratio: 0.2
+  kl_beta: 0.02
+  # Two updates over each sampled batch make the old-policy clipping constraint active.
+  epochs_per_rollout: 2
+reward:
+  format_weight: 0.1
+  truncation_penalty: 0.05
+optim:
+  name: adamw
+  lr: 2.0e-5
+schedule:
+  total_steps: 300
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+log:
+  out_dir: runs/rl-paper-hybrid

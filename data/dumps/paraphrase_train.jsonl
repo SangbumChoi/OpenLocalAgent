@@ -1,0 +1,1000 @@
+{"prompt": "Key Space.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Space\"},\"name\":\"key_press\"}"}
+{"prompt": "Remind me later to stretch.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"stretch\"},\"name\":\"set_reminder\"}"}
+{"prompt": "What files are in assets?", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"assets\"},\"name\":\"list_dir\"}"}
+{"prompt": "Double-click 'the word' to open it.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the word\"},\"name\":\"double_click\"}"}
+{"prompt": "Put 'client call' on the calendar.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"client call\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Search for files matching 'src/**/*.rb'.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"src/**/*.rb\"},\"name\":\"find_files\"}"}
+{"prompt": "Slide 'the avatar' onto 'the menu icon'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the menu icon\",\"source\":\"the avatar\"},\"name\":\"drag\"}"}
+{"prompt": "Download the file from https://blog.dev/assets/data.csv.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"https://blog.dev/assets/data.csv\"},\"name\":\"download_file\"}"}
+{"prompt": "Drag and drop 'the Login link' to 'the search bar'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the search bar\",\"source\":\"the Login link\"},\"name\":\"drag\"}"}
+{"prompt": "Find all '*.proto' files.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"*.proto\"},\"name\":\"find_files\"}"}
+{"prompt": "Run 'caddy' as a container.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"caddy\"},\"name\":\"docker_run\"}"}
+{"prompt": "Open portal.app.", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"portal.app\"},\"name\":\"open_url\"}"}
+{"prompt": "What's it like outside in Bristol?", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Bristol\"},\"name\":\"get_weather\"}"}
+{"prompt": "Any news about the trade negotiations?", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the trade negotiations\"},\"name\":\"get_news\"}"}
+{"prompt": "Check the repo status.", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "Take a screenshot.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Get 'express' installed.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"express\"},\"name\":\"install_package\"}"}
+{"prompt": "Help me get into shape.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"get into shape\"},\"name\":\"planner\"}"}
+{"prompt": "Jot 'workout log' into Notion.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"workout log\"},\"name\":\"notion_write\"}"}
+{"prompt": "Stroke Escape.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Escape\"},\"name\":\"key_press\"}"}
+{"prompt": "Apply changes to report.csv as a patch.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"report.csv\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Email a note to Sofia.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Sofia\"},\"name\":\"send_email\"}"}
+{"prompt": "Search the repo for 'TODO'.", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"TODO\"},\"name\":\"grep_search\"}"}
+{"prompt": "Drag 'the Login link' over onto 'the avatar'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the avatar\",\"source\":\"the Login link\"},\"name\":\"drag\"}"}
+{"prompt": "Slot in '1:1 with manager' on my calendar.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"1:1 with manager\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Trigger the test suite.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "I was wondering the lifespan of a turtle.", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"the lifespan of a turtle\"},\"name\":\"web_search\"}"}
+{"prompt": "Start 'Stocks'.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Stocks\"},\"name\":\"open_app\"}"}
+{"prompt": "Give it 22 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":22},\"name\":\"wait\"}"}
+{"prompt": "Add a calendar event called 'book club'.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"book club\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Check the environment variable 'API_URL'.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"API_URL\"},\"name\":\"env_get\"}"}
+{"prompt": "Apply the patch to server.rb.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"server.rb\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Put the cursor on 'the Save button'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the Save button\"},\"name\":\"move_cursor\"}"}
+{"prompt": "How much is 44+11?", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"44+11\"},\"name\":\"calculator\"}"}
+{"prompt": "Spin up a file styles.css.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"styles.css\"},\"name\":\"write_file\"}"}
+{"prompt": "Locate everything matching '*.graphql'.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"*.graphql\"},\"name\":\"find_files\"}"}
+{"prompt": "Update me on the new tax bill.", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the new tax bill\"},\"name\":\"get_news\"}"}
+{"prompt": "What's in the assets directory?", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"assets\"},\"name\":\"list_dir\"}"}
+{"prompt": "Open the 'Books' app.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Books\"},\"name\":\"open_app\"}"}
+{"prompt": "Mouse over and click 'the avatar'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the avatar\"},\"name\":\"click\"}"}
+{"prompt": "Make changes to pipeline.yml.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"pipeline.yml\"},\"name\":\"edit_file\"}"}
+{"prompt": "Update me on the championship game.", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the championship game\"},\"name\":\"get_news\"}"}
+{"prompt": "I want to build a treehouse.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"build a treehouse\"},\"name\":\"planner\"}"}
+{"prompt": "Make me a directory src.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"src\"},\"name\":\"make_dir\"}"}
+{"prompt": "Slide the cursor to 'the logo'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the logo\"},\"name\":\"move_cursor\"}"}
+{"prompt": "Capture a screenshot.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Tap Enter.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Enter\"},\"name\":\"key_press\"}"}
+{"prompt": "Run this Python: 'sorted([3, 1, 2])'.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"sorted([3, 1, 2])\"},\"name\":\"run_python\"}"}
+{"prompt": "Set a reminder to drink water.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"drink water\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Drag 'the plus button' over onto 'the search bar'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the search bar\",\"source\":\"the plus button\"},\"name\":\"drag\"}"}
+{"prompt": "Give me the contents of notes.md.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"notes.md\"},\"name\":\"read_file\"}"}
+{"prompt": "Remind me in 55 minutes.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"55 minutes\"},\"name\":\"set_timer\"}"}
+{"prompt": "Show the value of 'REGION'.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"REGION\"},\"name\":\"env_get\"}"}
+{"prompt": "Drift the mouse over to 'the tab'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the tab\"},\"name\":\"move_cursor\"}"}
+{"prompt": "Fire 'INSERT INTO logs VALUES (1)' at the database.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"INSERT INTO logs VALUES (1)\"},\"name\":\"sql_query\"}"}
+{"prompt": "Double tap 'the slide'.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the slide\"},\"name\":\"double_click\"}"}
+{"prompt": "Mouse over and click 'the Login link'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the Login link\"},\"name\":\"click\"}"}
+{"prompt": "Jot 'study schedule' into Notion.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"study schedule\"},\"name\":\"notion_write\"}"}
+{"prompt": "What's the meaning of candor?", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"candor\"},\"name\":\"define\"}"}
+{"prompt": "Copy 'wifi password'.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"wifi password\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Capture the screen.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Create a plan to train for a triathlon.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"train for a triathlon\"},\"name\":\"planner\"}"}
+{"prompt": "Generate the file Makefile.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"Makefile\"},\"name\":\"write_file\"}"}
+{"prompt": "Search online for the longest bridge.", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"the longest bridge\"},\"name\":\"web_search\"}"}
+{"prompt": "Download and install 'webpack'.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"webpack\"},\"name\":\"install_package\"}"}
+{"prompt": "Fire up 'Pages'.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Pages\"},\"name\":\"open_app\"}"}
+{"prompt": "Run our tests.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "File a Jira bug for 'stale cache'.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"stale cache\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Show the git status.", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "Search the code for 'def parse'.", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"def parse\"},\"name\":\"grep_search\"}"}
+{"prompt": "Show me files matching '*.proto'.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"*.proto\"},\"name\":\"find_files\"}"}
+{"prompt": "Press the Space key.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Space\"},\"name\":\"key_press\"}"}
+{"prompt": "Fire off 'tox'.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"tox\"},\"name\":\"run_command\"}"}
+{"prompt": "Fix up index.ts.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"index.ts\"},\"name\":\"edit_file\"}"}
+{"prompt": "Stop 'php' from running.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"php\"},\"name\":\"kill_process\"}"}
+{"prompt": "Go ahead and click 'the toggle'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the toggle\"},\"name\":\"click\"}"}
+{"prompt": "Kill the process 'ngrok'.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"ngrok\"},\"name\":\"kill_process\"}"}
+{"prompt": "Wipe out the 'deno' process.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"deno\"},\"name\":\"kill_process\"}"}
+{"prompt": "Find every '*.lock' file.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"*.lock\"},\"name\":\"find_files\"}"}
+{"prompt": "Spin up a file index.ts.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"index.ts\"},\"name\":\"write_file\"}"}
+{"prompt": "Add 'express' as a dependency.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"express\"},\"name\":\"install_package\"}"}
+{"prompt": "Run the command 'make build'.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"make build\"},\"name\":\"run_command\"}"}
+{"prompt": "Fire off an email to Kenji.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Kenji\"},\"name\":\"send_email\"}"}
+{"prompt": "Add a reminder to call mom.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"call mom\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Stick 'habit tracker' into Notion.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"habit tracker\"},\"name\":\"notion_write\"}"}
+{"prompt": "Kick off the 'Pages' app.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Pages\"},\"name\":\"open_app\"}"}
+{"prompt": "Make a Jira issue about 'duplicate emails'.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"duplicate emails\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Find every 'test_*.go' file.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"test_*.go\"},\"name\":\"find_files\"}"}
+{"prompt": "Query the database with 'INSERT INTO logs VALUES (1)'.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"INSERT INTO logs VALUES (1)\"},\"name\":\"sql_query\"}"}
+{"prompt": "Get 'dentist appointment' on my calendar.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"dentist appointment\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Have Python evaluate 'list(reversed([1, 2]))'.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"list(reversed([1, 2]))\"},\"name\":\"run_python\"}"}
+{"prompt": "Reach Omar by email.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Omar\"},\"name\":\"send_email\"}"}
+{"prompt": "Put a timer on for 50 seconds.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"50 seconds\"},\"name\":\"set_timer\"}"}
+{"prompt": "Write 'home address' in the box.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"home address\"},\"name\":\"type_text\"}"}
+{"prompt": "Create folder fixtures.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"fixtures\"},\"name\":\"make_dir\"}"}
+{"prompt": "Slack the team 'can someone take a look'.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"can someone take a look\"},\"name\":\"slack_send\"}"}
+{"prompt": "Fetch acme.io via HTTP.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"acme.io\"},\"name\":\"http_request\"}"}
+{"prompt": "Bring down the 'php' process.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"php\"},\"name\":\"kill_process\"}"}
+{"prompt": "Check the clipboard.", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Tell me the longest bridge.", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"the longest bridge\"},\"name\":\"web_search\"}"}
+{"prompt": "Show all running processes.", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Fire 'SELECT * FROM invoices' at the database.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"SELECT * FROM invoices\"},\"name\":\"sql_query\"}"}
+{"prompt": "Look up the env variable 'APP_NAME'.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"APP_NAME\"},\"name\":\"env_get\"}"}
+{"prompt": "Sum up 6*9.", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"6*9\"},\"name\":\"calculator\"}"}
+{"prompt": "Sum up 100-33.", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"100-33\"},\"name\":\"calculator\"}"}
+{"prompt": "Search the repo for 'handle_request'.", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"handle_request\"},\"name\":\"grep_search\"}"}
+{"prompt": "Open blog.dev.", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"blog.dev\"},\"name\":\"open_url\"}"}
+{"prompt": "Do a GET on api.service.dev.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"api.service.dev\"},\"name\":\"http_request\"}"}
+{"prompt": "Modify styles.css.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"styles.css\"},\"name\":\"edit_file\"}"}
+{"prompt": "Patch the file server.rb.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"server.rb\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Make a quick edit to index.ts.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"index.ts\"},\"name\":\"edit_file\"}"}
+{"prompt": "Work out 44+11.", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"44+11\"},\"name\":\"calculator\"}"}
+{"prompt": "What's on the clipboard?", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Unpack the file src.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"src.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "Hold for 6 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":6},\"name\":\"wait\"}"}
+{"prompt": "What's going on with the space launch?", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the space launch\"},\"name\":\"get_news\"}"}
+{"prompt": "Copy 'order 7781' to the clipboard.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"order 7781\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Kill the 'watchman' process.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"watchman\"},\"name\":\"kill_process\"}"}
+{"prompt": "Drag the page down.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"down\"},\"name\":\"scroll\"}"}
+{"prompt": "Run the test suite.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "Open 'Numbers'.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Numbers\"},\"name\":\"open_app\"}"}
+{"prompt": "Double-click 'the node' to open it.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the node\"},\"name\":\"double_click\"}"}
+{"prompt": "Issue an HTTP request to status.host.io.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"status.host.io\"},\"name\":\"http_request\"}"}
+{"prompt": "Open 'Keynote'.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Keynote\"},\"name\":\"open_app\"}"}
+{"prompt": "Unzip the archive release.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"release.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "Round up files matching '**/*.kt'.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"**/*.kt\"},\"name\":\"find_files\"}"}
+{"prompt": "What's the current git state?", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "Show me the process list.", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Fetch the value of 'PORT'.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"PORT\"},\"name\":\"env_get\"}"}
+{"prompt": "Write 'study schedule' in Notion.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"study schedule\"},\"name\":\"notion_write\"}"}
+{"prompt": "Get 'dentist appointment' on my calendar.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"dentist appointment\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Can you visit store.example.net?", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"store.example.net\"},\"name\":\"open_url\"}"}
+{"prompt": "Grab https://docs.product.com/manual.pdf for me.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"https://docs.product.com/manual.pdf\"},\"name\":\"download_file\"}"}
+{"prompt": "What's the git status?", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "Print the clipboard.", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Plan how to get into shape.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"get into shape\"},\"name\":\"planner\"}"}
+{"prompt": "Can you find out the boiling point of mercury?", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"the boiling point of mercury\"},\"name\":\"web_search\"}"}
+{"prompt": "Move down on the page.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"down\"},\"name\":\"scroll\"}"}
+{"prompt": "Wait for 35 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":35},\"name\":\"wait\"}"}
+{"prompt": "Capture a screenshot.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Slot in 'yoga class' on my calendar.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"yoga class\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Open 'iMovie'.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"iMovie\"},\"name\":\"open_app\"}"}
+{"prompt": "Write 'study schedule' in Notion.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"study schedule\"},\"name\":\"notion_write\"}"}
+{"prompt": "Run the Python code 'sum([1, 2, 3])'.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"sum([1, 2, 3])\"},\"name\":\"run_python\"}"}
+{"prompt": "Make a directory called examples.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"examples\"},\"name\":\"make_dir\"}"}
+{"prompt": "Send an email to Aisha.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Aisha\"},\"name\":\"send_email\"}"}
+{"prompt": "Drag 'the avatar' over onto 'the menu icon'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the menu icon\",\"source\":\"the avatar\"},\"name\":\"drag\"}"}
+{"prompt": "Figure out how to plan a road trip.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"plan a road trip\"},\"name\":\"planner\"}"}
+{"prompt": "Slide the cursor to 'the logo'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the logo\"},\"name\":\"move_cursor\"}"}
+{"prompt": "Sum up 7*7.", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"7*7\"},\"name\":\"calculator\"}"}
+{"prompt": "Double-click the 'the thumbnail'.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the thumbnail\"},\"name\":\"double_click\"}"}
+{"prompt": "Drop in the 'babel' package.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"babel\"},\"name\":\"install_package\"}"}
+{"prompt": "Run a Docker container from 'consul'.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"consul\"},\"name\":\"docker_run\"}"}
+{"prompt": "Print the diff.", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Apply the diff to handler.kt.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"handler.kt\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Give it 35 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":35},\"name\":\"wait\"}"}
+{"prompt": "Double-click 'the row' to open it.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the row\"},\"name\":\"double_click\"}"}
+{"prompt": "Stick 'groceries list' into Notion.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"groceries list\"},\"name\":\"notion_write\"}"}
+{"prompt": "What's the git status?", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "What's on the clipboard?", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Draw up a plan to organize the office.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"organize the office\"},\"name\":\"planner\"}"}
+{"prompt": "Shoot Priya an email.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Priya\"},\"name\":\"send_email\"}"}
+{"prompt": "Show the changes I made.", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Move the cursor to 'the arrow'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the arrow\"},\"name\":\"move_cursor\"}"}
+{"prompt": "What's the meaning of ambiguous?", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"ambiguous\"},\"name\":\"define\"}"}
+{"prompt": "Send an email over to Sofia.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Sofia\"},\"name\":\"send_email\"}"}
+{"prompt": "Position the cursor on 'the menu icon'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the menu icon\"},\"name\":\"move_cursor\"}"}
+{"prompt": "Double click 'the track'.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the track\"},\"name\":\"double_click\"}"}
+{"prompt": "Tell me the weather for Hamburg.", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Hamburg\"},\"name\":\"get_weather\"}"}
+{"prompt": "Stick 'see you soon' on the clipboard.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"see you soon\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "docker run 'consul'.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"consul\"},\"name\":\"docker_run\"}"}
+{"prompt": "Run the query 'DELETE FROM sessions' on the db.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"DELETE FROM sessions\"},\"name\":\"sql_query\"}"}
+{"prompt": "Show the contents of schema.graphql.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"schema.graphql\"},\"name\":\"read_file\"}"}
+{"prompt": "List everything in assets.", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"assets\"},\"name\":\"list_dir\"}"}
+{"prompt": "Execute the command 'uname -a' in the terminal.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"uname -a\"},\"name\":\"run_command\"}"}
+{"prompt": "Find the '*.yml' files.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"*.yml\"},\"name\":\"find_files\"}"}
+{"prompt": "List the directory config.", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"config\"},\"name\":\"list_dir\"}"}
+{"prompt": "Input 'the lazy dog'.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"the lazy dog\"},\"name\":\"type_text\"}"}
+{"prompt": "Navigate to news.site.org.", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"news.site.org\"},\"name\":\"open_url\"}"}
+{"prompt": "Unpack release.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"release.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "What's new with the latest tech layoffs?", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the latest tech layoffs\"},\"name\":\"get_news\"}"}
+{"prompt": "Run the unit tests.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "docker run 'consul'.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"consul\"},\"name\":\"docker_run\"}"}
+{"prompt": "Slack the team 'lgtm'.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"lgtm\"},\"name\":\"slack_send\"}"}
+{"prompt": "Search the repo for 'class Server'.", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"class Server\"},\"name\":\"grep_search\"}"}
+{"prompt": "Change main.go.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"main.go\"},\"name\":\"edit_file\"}"}
+{"prompt": "Tap 'the logo'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the logo\"},\"name\":\"click\"}"}
+{"prompt": "Do I need an umbrella in Galway?", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Galway\"},\"name\":\"get_weather\"}"}
+{"prompt": "Make changes to setup.cfg.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"setup.cfg\"},\"name\":\"edit_file\"}"}
+{"prompt": "Make a plan to train for a triathlon.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"train for a triathlon\"},\"name\":\"planner\"}"}
+{"prompt": "Click on 'the tab'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the tab\"},\"name\":\"click\"}"}
+{"prompt": "Raise a Jira ticket for 'image upload error'.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"image upload error\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Put 'promo code' on the clipboard.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"promo code\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Run 'tox'.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"tox\"},\"name\":\"run_command\"}"}
+{"prompt": "Log a Jira issue: 'timezone bug'.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"timezone bug\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Download cdn.assets.io/images.tar.gz.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"cdn.assets.io/images.tar.gz\"},\"name\":\"download_file\"}"}
+{"prompt": "Reach Elena by email.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Elena\"},\"name\":\"send_email\"}"}
+{"prompt": "Stream Counting Stars.", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Counting Stars\"},\"name\":\"play_music\"}"}
+{"prompt": "Knock out 'envoy'.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"envoy\"},\"name\":\"kill_process\"}"}
+{"prompt": "Float over 'the arrow'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the arrow\"},\"name\":\"move_cursor\"}"}
+{"prompt": "Set the timer to 35 minutes.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"35 minutes\"},\"name\":\"set_timer\"}"}
+{"prompt": "Save a commit 'cleanup'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"cleanup\"},\"name\":\"git_commit\"}"}
+{"prompt": "Do the math on 44+11.", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"44+11\"},\"name\":\"calculator\"}"}
+{"prompt": "Do I need an umbrella in Galway?", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Galway\"},\"name\":\"get_weather\"}"}
+{"prompt": "List out assets.", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"assets\"},\"name\":\"list_dir\"}"}
+{"prompt": "Press 'the toggle'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the toggle\"},\"name\":\"click\"}"}
+{"prompt": "Download the file located at https://assets.site.org/logo.png.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"https://assets.site.org/logo.png\"},\"name\":\"download_file\"}"}
+{"prompt": "Ping Slack with 'standup in 10'.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"standup in 10\"},\"name\":\"slack_send\"}"}
+{"prompt": "I need to remember to take out the trash.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"take out the trash\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Read what's in the clipboard.", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "What are people saying about the trade negotiations?", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the trade negotiations\"},\"name\":\"get_news\"}"}
+{"prompt": "Define the term candid.", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"candid\"},\"name\":\"define\"}"}
+{"prompt": "Copy 'ticket number' for me.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"ticket number\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Tell me what 'DB_HOST' is set to.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"DB_HOST\"},\"name\":\"env_get\"}"}
+{"prompt": "Double click 'the layer'.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the layer\"},\"name\":\"double_click\"}"}
+{"prompt": "Modify styles.css.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"styles.css\"},\"name\":\"edit_file\"}"}
+{"prompt": "Add the dependency 'express'.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"express\"},\"name\":\"install_package\"}"}
+{"prompt": "Create a directory named templates.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"templates\"},\"name\":\"make_dir\"}"}
+{"prompt": "Select 'the toggle'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the toggle\"},\"name\":\"click\"}"}
+{"prompt": "Remind me, what is what causes rainbows?", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"what causes rainbows\"},\"name\":\"web_search\"}"}
+{"prompt": "Wake me in 35 minutes.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"35 minutes\"},\"name\":\"set_timer\"}"}
+{"prompt": "Pull in 'express'.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"express\"},\"name\":\"install_package\"}"}
+{"prompt": "Add a Notion note saying 'groceries list'.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"groceries list\"},\"name\":\"notion_write\"}"}
+{"prompt": "Start the test run.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "Show me the working tree status.", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "Grep for 'handle_request'.", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"handle_request\"},\"name\":\"grep_search\"}"}
+{"prompt": "Shut down 'deno'.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"deno\"},\"name\":\"kill_process\"}"}
+{"prompt": "Add the dependency 'webpack'.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"webpack\"},\"name\":\"install_package\"}"}
+{"prompt": "Execute 'ls -la'.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"ls -la\"},\"name\":\"run_command\"}"}
+{"prompt": "Type 'secret pass'.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"secret pass\"},\"name\":\"type_text\"}"}
+{"prompt": "Unpack the archive logs.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"logs.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "Draw up a plan to organize the office.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"organize the office\"},\"name\":\"planner\"}"}
+{"prompt": "Git status.", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "What are people saying about the new iPhone launch?", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the new iPhone launch\"},\"name\":\"get_news\"}"}
+{"prompt": "Add a reminder to check email.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"check email\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Search the code for 'train_step'.", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"train_step\"},\"name\":\"grep_search\"}"}
+{"prompt": "Move the mouse to 'the menu icon'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the menu icon\"},\"name\":\"move_cursor\"}"}
+{"prompt": "Spin up a file setup.cfg.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"setup.cfg\"},\"name\":\"write_file\"}"}
+{"prompt": "Display the current diff.", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Move the mouse to 'the arrow'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the arrow\"},\"name\":\"move_cursor\"}"}
+{"prompt": "Drag and drop 'the search bar' to 'the menu icon'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the menu icon\",\"source\":\"the search bar\"},\"name\":\"drag\"}"}
+{"prompt": "Click on 'the Save button'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the Save button\"},\"name\":\"click\"}"}
+{"prompt": "Stroke Space.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Space\"},\"name\":\"key_press\"}"}
+{"prompt": "How does the repo look?", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "Start counting down 18 minutes.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"18 minutes\"},\"name\":\"set_timer\"}"}
+{"prompt": "Grab 'the Login link' and drag it to 'the plus button'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the plus button\",\"source\":\"the Login link\"},\"name\":\"drag\"}"}
+{"prompt": "Run a Docker container from 'node:18'.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"node:18\"},\"name\":\"docker_run\"}"}
+{"prompt": "Look up 'API_TOKEN' in the source code.", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"API_TOKEN\"},\"name\":\"grep_search\"}"}
+{"prompt": "Write a commit 'fix lint'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"fix lint\"},\"name\":\"git_commit\"}"}
+{"prompt": "Write a commit 'add feature flag'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"add feature flag\"},\"name\":\"git_commit\"}"}
+{"prompt": "Can you play Happy?", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Happy\"},\"name\":\"play_music\"}"}
+{"prompt": "Enter 'search term' into the field.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"search term\"},\"name\":\"type_text\"}"}
+{"prompt": "Run 'tox' in the terminal.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"tox\"},\"name\":\"run_command\"}"}
+{"prompt": "Create a commit 'tweak styles'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"tweak styles\"},\"name\":\"git_commit\"}"}
+{"prompt": "Take a screenshot.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "What's the meaning of resilience?", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"resilience\"},\"name\":\"define\"}"}
+{"prompt": "Is it warm in Auckland?", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Auckland\"},\"name\":\"get_weather\"}"}
+{"prompt": "Throw 'see you soon' on the clipboard.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"see you soon\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Execute the query 'SELECT id FROM tickets'.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"SELECT id FROM tickets\"},\"name\":\"sql_query\"}"}
+{"prompt": "Help me plan to launch a newsletter.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"launch a newsletter\"},\"name\":\"planner\"}"}
+{"prompt": "Display notes.md.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"notes.md\"},\"name\":\"read_file\"}"}
+{"prompt": "Kill the process 'php'.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"php\"},\"name\":\"kill_process\"}"}
+{"prompt": "Make a plan to learn to code.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"learn to code\"},\"name\":\"planner\"}"}
+{"prompt": "List out the processes.", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Visit store.example.net.", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"store.example.net\"},\"name\":\"open_url\"}"}
+{"prompt": "Let me see the diff.", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "What is nostalgia?", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"nostalgia\"},\"name\":\"define\"}"}
+{"prompt": "Apply the patch to notes.md.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"notes.md\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Execute all tests.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "Grab a screenshot of the screen.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Run the Python code 'print(sum(range(10)))'.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"print(sum(range(10)))\"},\"name\":\"run_python\"}"}
+{"prompt": "Open up 'Music'.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Music\"},\"name\":\"open_app\"}"}
+{"prompt": "Make a directory called scripts.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"scripts\"},\"name\":\"make_dir\"}"}
+{"prompt": "Run the unit tests.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "Save a screenshot.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Sleep 35 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":35},\"name\":\"wait\"}"}
+{"prompt": "Drag 'the Save button' onto 'the Login link'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the Login link\",\"source\":\"the Save button\"},\"name\":\"drag\"}"}
+{"prompt": "Run 'ps aux' in the shell.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"ps aux\"},\"name\":\"run_command\"}"}
+{"prompt": "Drag and drop 'the plus button' to 'the avatar'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the avatar\",\"source\":\"the plus button\"},\"name\":\"drag\"}"}
+{"prompt": "What's in the vendor directory?", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"vendor\"},\"name\":\"list_dir\"}"}
+{"prompt": "Show me the working tree status.", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "Patch up the file index.ts.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"index.ts\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Drop a Slack note: 'joining now'.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"joining now\"},\"name\":\"slack_send\"}"}
+{"prompt": "Any uncommitted changes?", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "Give me a listing of migrations.", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"migrations\"},\"name\":\"list_dir\"}"}
+{"prompt": "Print the running processes.", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Fire off an email to Aisha.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Aisha\"},\"name\":\"send_email\"}"}
+{"prompt": "Type 'order 3310' into the field.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"order 3310\"},\"name\":\"type_text\"}"}
+{"prompt": "Capture the screen.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Screenshot the current screen.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Run the unit tests.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "Show me the process list.", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Pull down files.example.com/report.pdf.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"files.example.com/report.pdf\"},\"name\":\"download_file\"}"}
+{"prompt": "Pause for 14 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":14},\"name\":\"wait\"}"}
+{"prompt": "Meaning of empathy?", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"empathy\"},\"name\":\"define\"}"}
+{"prompt": "Capture a screenshot.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Run 'df -h'.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"df -h\"},\"name\":\"run_command\"}"}
+{"prompt": "Run the query 'SELECT count(*) FROM sales' on the db.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"SELECT count(*) FROM sales\"},\"name\":\"sql_query\"}"}
+{"prompt": "Bring up 'Keynote'.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Keynote\"},\"name\":\"open_app\"}"}
+{"prompt": "Fire off the test suite.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "Send an email to Marco.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Marco\"},\"name\":\"send_email\"}"}
+{"prompt": "List out scripts.", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"scripts\"},\"name\":\"list_dir\"}"}
+{"prompt": "Catch me up on the celebrity scandal.", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the celebrity scandal\"},\"name\":\"get_news\"}"}
+{"prompt": "Issue an HTTP request to acme.io.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"acme.io\"},\"name\":\"http_request\"}"}
+{"prompt": "Locate everything matching 'test_*.go'.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"test_*.go\"},\"name\":\"find_files\"}"}
+{"prompt": "Take a look at styles.css and show it to me.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"styles.css\"},\"name\":\"read_file\"}"}
+{"prompt": "Drift the mouse over to 'the Login link'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the Login link\"},\"name\":\"move_cursor\"}"}
+{"prompt": "Find 'def parse' in the code.", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"def parse\"},\"name\":\"grep_search\"}"}
+{"prompt": "Call the API at portal.app.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"portal.app\"},\"name\":\"http_request\"}"}
+{"prompt": "Set up a calendar event for 'client call'.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"client call\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Open a Jira issue for 'timezone bug'.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"timezone bug\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Make a plan to start a business.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"start a business\"},\"name\":\"planner\"}"}
+{"prompt": "Set a reminder to check email.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"check email\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Let Python compute 'round(3.14159, 2)'.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"round(3.14159, 2)\"},\"name\":\"run_python\"}"}
+{"prompt": "Create the directory logs.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"logs\"},\"name\":\"make_dir\"}"}
+{"prompt": "Kill 'ngrok'.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"ngrok\"},\"name\":\"kill_process\"}"}
+{"prompt": "Show the value of 'TOKEN'.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"TOKEN\"},\"name\":\"env_get\"}"}
+{"prompt": "List out the processes.", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Print the diff.", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Tell me what 7*7 is.", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"7*7\"},\"name\":\"calculator\"}"}
+{"prompt": "Unzip assets.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"assets.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "Show me the process list.", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Open a Jira issue for 'wrong totals'.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"wrong totals\"},\"name\":\"jira_issue\"}"}
+{"prompt": "What's different?", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Let me see Makefile.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"Makefile\"},\"name\":\"read_file\"}"}
+{"prompt": "Commit the changes: 'refactor api'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"refactor api\"},\"name\":\"git_commit\"}"}
+{"prompt": "Email a note to Maya.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Maya\"},\"name\":\"send_email\"}"}
+{"prompt": "Fix up handler.kt.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"handler.kt\"},\"name\":\"edit_file\"}"}
+{"prompt": "Set up a folder called vendor.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"vendor\"},\"name\":\"make_dir\"}"}
+{"prompt": "Check the environment variable 'MAX_RETRIES'.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"MAX_RETRIES\"},\"name\":\"env_get\"}"}
+{"prompt": "Bring up portal.app.", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"portal.app\"},\"name\":\"open_url\"}"}
+{"prompt": "Drop in the 'vitest' package.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"vitest\"},\"name\":\"install_package\"}"}
+{"prompt": "Scroll up.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"up\"},\"name\":\"scroll\"}"}
+{"prompt": "Look up the env variable 'PORT'.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"PORT\"},\"name\":\"env_get\"}"}
+{"prompt": "Help me plan to build a treehouse.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"build a treehouse\"},\"name\":\"planner\"}"}
+{"prompt": "What processes are running?", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Remind me to take out the trash.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"take out the trash\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Edit the file queries.sql.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"queries.sql\"},\"name\":\"edit_file\"}"}
+{"prompt": "Set the clipboard to 'ticket number'.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"ticket number\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Hit 'the node' twice.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the node\"},\"name\":\"double_click\"}"}
+{"prompt": "Slide 'the Save button' onto 'the search bar'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the search bar\",\"source\":\"the Save button\"},\"name\":\"drag\"}"}
+{"prompt": "Hit shop.co with a request.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"shop.co\"},\"name\":\"http_request\"}"}
+{"prompt": "Wake me in 55 minutes.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"55 minutes\"},\"name\":\"set_timer\"}"}
+{"prompt": "Evaluate 'sorted([3, 1, 2])' in a Python shell.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"sorted([3, 1, 2])\"},\"name\":\"run_python\"}"}
+{"prompt": "Move up on the page.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"up\"},\"name\":\"scroll\"}"}
+{"prompt": "Install the 'axios' package.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"axios\"},\"name\":\"install_package\"}"}
+{"prompt": "Explain the word candid.", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"candid\"},\"name\":\"define\"}"}
+{"prompt": "Wire up 'vite'.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"vite\"},\"name\":\"install_package\"}"}
+{"prompt": "Let me see the diff.", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Spin up a Jira ticket for 'missing icons'.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"missing icons\"},\"name\":\"jira_issue\"}"}
+{"prompt": "New directory: tests.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"tests\"},\"name\":\"make_dir\"}"}
+{"prompt": "Find out the fastest car.", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"the fastest car\"},\"name\":\"web_search\"}"}
+{"prompt": "Copy 'wifi password' to the clipboard.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"wifi password\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Create the file main.go.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"main.go\"},\"name\":\"write_file\"}"}
+{"prompt": "Find the '*.json' files.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"*.json\"},\"name\":\"find_files\"}"}
+{"prompt": "Please scroll up.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"up\"},\"name\":\"scroll\"}"}
+{"prompt": "Send an email over to Marco.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Marco\"},\"name\":\"send_email\"}"}
+{"prompt": "Start 'Books'.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Books\"},\"name\":\"open_app\"}"}
+{"prompt": "Drag 'the search bar' onto 'the plus button'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the plus button\",\"source\":\"the search bar\"},\"name\":\"drag\"}"}
+{"prompt": "Send 'SELECT * FROM clients' to the database.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"SELECT * FROM clients\"},\"name\":\"sql_query\"}"}
+{"prompt": "Report 'bad redirect' in Jira.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"bad redirect\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Copy 'wifi password' to the clipboard.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"wifi password\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Apply changes to notes.md as a patch.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"notes.md\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Add a new file queries.sql.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"queries.sql\"},\"name\":\"write_file\"}"}
+{"prompt": "Double-click 'the row' to open it.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the row\"},\"name\":\"double_click\"}"}
+{"prompt": "Expand release.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"release.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "Play some Shape of You.", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Shape of You\"},\"name\":\"play_music\"}"}
+{"prompt": "Remind me in 7 minutes.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"7 minutes\"},\"name\":\"set_timer\"}"}
+{"prompt": "Ping the URL blog.dev.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"blog.dev\"},\"name\":\"http_request\"}"}
+{"prompt": "Add a Notion note saying 'recipe ideas'.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"recipe ideas\"},\"name\":\"notion_write\"}"}
+{"prompt": "Show the changes I made.", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Call out to news.site.org.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"news.site.org\"},\"name\":\"http_request\"}"}
+{"prompt": "Author the file pipeline.yml.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"pipeline.yml\"},\"name\":\"write_file\"}"}
+{"prompt": "Make a git commit saying 'bump deps'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"bump deps\"},\"name\":\"git_commit\"}"}
+{"prompt": "Fire up portal.app in the browser.", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"portal.app\"},\"name\":\"open_url\"}"}
+{"prompt": "Get 'dentist appointment' on my calendar.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"dentist appointment\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Queue up Royals.", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Royals\"},\"name\":\"play_music\"}"}
+{"prompt": "Call out to mail.provider.net.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"mail.provider.net\"},\"name\":\"http_request\"}"}
+{"prompt": "Play Despacito.", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Despacito\"},\"name\":\"play_music\"}"}
+{"prompt": "List all processes.", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Copy 'ticket number'.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"ticket number\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Explain the word lucid.", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"lucid\"},\"name\":\"define\"}"}
+{"prompt": "List the running processes.", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Save 'sprint retro notes' to Notion.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"sprint retro notes\"},\"name\":\"notion_write\"}"}
+{"prompt": "Put a timer on for 55 minutes.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"55 minutes\"},\"name\":\"set_timer\"}"}
+{"prompt": "Run this SQL: 'DELETE FROM sessions'.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"DELETE FROM sessions\"},\"name\":\"sql_query\"}"}
+{"prompt": "Create the file styles.css.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"styles.css\"},\"name\":\"write_file\"}"}
+{"prompt": "Let's listen to Happy.", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Happy\"},\"name\":\"play_music\"}"}
+{"prompt": "Ping Slack with 'great work everyone'.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"great work everyone\"},\"name\":\"slack_send\"}"}
+{"prompt": "Check the weather in Lyon.", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Lyon\"},\"name\":\"get_weather\"}"}
+{"prompt": "Issue an HTTP request to store.example.net.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"store.example.net\"},\"name\":\"http_request\"}"}
+{"prompt": "Help me build a treehouse.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"build a treehouse\"},\"name\":\"planner\"}"}
+{"prompt": "Create a calendar event 'yoga class'.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"yoga class\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Give me 15+8.", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"15+8\"},\"name\":\"calculator\"}"}
+{"prompt": "Jog my memory to stand up.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"stand up\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Hey, what is what causes rainbows?", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"what causes rainbows\"},\"name\":\"web_search\"}"}
+{"prompt": "Let me know in 18 minutes.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"18 minutes\"},\"name\":\"set_timer\"}"}
+{"prompt": "What are people saying about the new iPhone launch?", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the new iPhone launch\"},\"name\":\"get_news\"}"}
+{"prompt": "Do the math on 7*7.", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"7*7\"},\"name\":\"calculator\"}"}
+{"prompt": "What processes are running?", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Run 'loki' as a container.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"loki\"},\"name\":\"docker_run\"}"}
+{"prompt": "Set a timer for 5 hours.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"5 hours\"},\"name\":\"set_timer\"}"}
+{"prompt": "Expand logs.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"logs.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "Look up the tallest mountain.", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"the tallest mountain\"},\"name\":\"web_search\"}"}
+{"prompt": "Retrieve the file from cdn.acme.io/fonts.woff2.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"cdn.acme.io/fonts.woff2\"},\"name\":\"download_file\"}"}
+{"prompt": "Unpack the archive samples.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"samples.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "Spin up a file handler.kt.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"handler.kt\"},\"name\":\"write_file\"}"}
+{"prompt": "Decompress release.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"release.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "Unzip the archive images.tar.gz.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"images.tar.gz\"},\"name\":\"unzip\"}"}
+{"prompt": "Type 'hello there' into the field.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"hello there\"},\"name\":\"type_text\"}"}
+{"prompt": "Run our tests.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "Explain the word meticulous.", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"meticulous\"},\"name\":\"define\"}"}
+{"prompt": "Sit tight 11 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":11},\"name\":\"wait\"}"}
+{"prompt": "Start counting down 50 seconds.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"50 seconds\"},\"name\":\"set_timer\"}"}
+{"prompt": "Nudge me to log hours.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"log hours\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Evaluate 'sorted([3, 1, 2])' in a Python shell.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"sorted([3, 1, 2])\"},\"name\":\"run_python\"}"}
+{"prompt": "Do the math on 20-4.", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"20-4\"},\"name\":\"calculator\"}"}
+{"prompt": "Download store.example.net/export.json.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"store.example.net/export.json\"},\"name\":\"download_file\"}"}
+{"prompt": "Create a reminder to stretch.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"stretch\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Kill the process 'ngrok'.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"ngrok\"},\"name\":\"kill_process\"}"}
+{"prompt": "Explain the word ephemeral.", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"ephemeral\"},\"name\":\"define\"}"}
+{"prompt": "Send Liam a message by email.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Liam\"},\"name\":\"send_email\"}"}
+{"prompt": "File a Jira bug for 'missing icons'.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"missing icons\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Press the Tab key.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Tab\"},\"name\":\"key_press\"}"}
+{"prompt": "What's in the config directory?", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"config\"},\"name\":\"list_dir\"}"}
+{"prompt": "Give me the contents of handler.kt.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"handler.kt\"},\"name\":\"read_file\"}"}
+{"prompt": "Create report.csv.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"report.csv\"},\"name\":\"write_file\"}"}
+{"prompt": "Wait 22 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":22},\"name\":\"wait\"}"}
+{"prompt": "Double click 'the app icon'.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the app icon\"},\"name\":\"double_click\"}"}
+{"prompt": "Open 'the slide' by double-clicking.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the slide\"},\"name\":\"double_click\"}"}
+{"prompt": "Run the patch on schema.graphql.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"schema.graphql\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Fire 'UPDATE users SET role = 'admin'' at the database.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"UPDATE users SET role = 'admin'\"},\"name\":\"sql_query\"}"}
+{"prompt": "How hot is it in Lyon?", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Lyon\"},\"name\":\"get_weather\"}"}
+{"prompt": "Give me the news on the space launch.", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the space launch\"},\"name\":\"get_news\"}"}
+{"prompt": "Make a commit with the message 'bump deps'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"bump deps\"},\"name\":\"git_commit\"}"}
+{"prompt": "Save 'vacation plans' to Notion.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"vacation plans\"},\"name\":\"notion_write\"}"}
+{"prompt": "Point at 'the menu icon'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the menu icon\"},\"name\":\"move_cursor\"}"}
+{"prompt": "How's the weather in Galway?", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Galway\"},\"name\":\"get_weather\"}"}
+{"prompt": "I need to learn to code.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"learn to code\"},\"name\":\"planner\"}"}
+{"prompt": "Send 'deploy finished' to the Slack channel.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"deploy finished\"},\"name\":\"slack_send\"}"}
+{"prompt": "Change schema.graphql.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"schema.graphql\"},\"name\":\"edit_file\"}"}
+{"prompt": "Take me to docs.product.com.", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"docs.product.com\"},\"name\":\"open_url\"}"}
+{"prompt": "Add a calendar event called '1:1 with manager'.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"1:1 with manager\"},\"name\":\"calendar_event\"}"}
+{"prompt": "What's in examples?", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"examples\"},\"name\":\"list_dir\"}"}
+{"prompt": "Can you tell me the distance to the moon?", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"the distance to the moon\"},\"name\":\"web_search\"}"}
+{"prompt": "Pull up the weather for Auckland.", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Auckland\"},\"name\":\"get_weather\"}"}
+{"prompt": "What's on the clipboard?", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Which files contain 'train_step'?", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"train_step\"},\"name\":\"grep_search\"}"}
+{"prompt": "Read the clipboard.", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Commit everything with 'add migration'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"add migration\"},\"name\":\"git_commit\"}"}
+{"prompt": "Execute all tests.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "Show the git status.", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "Work out 9*6.", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"9*6\"},\"name\":\"calculator\"}"}
+{"prompt": "Slide 'the search bar' onto 'the avatar'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the avatar\",\"source\":\"the search bar\"},\"name\":\"drag\"}"}
+{"prompt": "Start counting down 7 minutes.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"7 minutes\"},\"name\":\"set_timer\"}"}
+{"prompt": "Put a timer on for 7 minutes.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"7 minutes\"},\"name\":\"set_timer\"}"}
+{"prompt": "Fire off an email to Freya.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Freya\"},\"name\":\"send_email\"}"}
+{"prompt": "Make a file called Makefile.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"Makefile\"},\"name\":\"write_file\"}"}
+{"prompt": "What's the git status?", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "How much is 12+7?", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"12+7\"},\"name\":\"calculator\"}"}
+{"prompt": "Got any info on the tallest mountain?", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"the tallest mountain\"},\"name\":\"web_search\"}"}
+{"prompt": "Show me the news for the latest tech layoffs.", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the latest tech layoffs\"},\"name\":\"get_news\"}"}
+{"prompt": "Schedule 'vaccine shot' on my calendar.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"vaccine shot\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Type the Enter key.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Enter\"},\"name\":\"key_press\"}"}
+{"prompt": "Scroll the page up.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"up\"},\"name\":\"scroll\"}"}
+{"prompt": "Create the file notes.md.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"notes.md\"},\"name\":\"write_file\"}"}
+{"prompt": "Install the package 'prettier'.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"prettier\"},\"name\":\"install_package\"}"}
+{"prompt": "Find all '*.cfg' files.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"*.cfg\"},\"name\":\"find_files\"}"}
+{"prompt": "Scroll down a bit.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"down\"},\"name\":\"scroll\"}"}
+{"prompt": "Where is 'class Server' defined?", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"class Server\"},\"name\":\"grep_search\"}"}
+{"prompt": "Run 'node:18' as a container.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"node:18\"},\"name\":\"docker_run\"}"}
+{"prompt": "Snap a picture of what's on screen.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Show running processes.", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Read server.rb for me.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"server.rb\"},\"name\":\"read_file\"}"}
+{"prompt": "Commit as 'add feature flag'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"add feature flag\"},\"name\":\"git_commit\"}"}
+{"prompt": "Kill the 'watchman' process.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"watchman\"},\"name\":\"kill_process\"}"}
+{"prompt": "I was wondering the longest bridge.", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"the longest bridge\"},\"name\":\"web_search\"}"}
+{"prompt": "Query the endpoint portal.app.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"portal.app\"},\"name\":\"http_request\"}"}
+{"prompt": "Run the SQL query 'UPDATE users SET role = 'admin''.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"UPDATE users SET role = 'admin'\"},\"name\":\"sql_query\"}"}
+{"prompt": "Draw up a plan to learn to code.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"learn to code\"},\"name\":\"planner\"}"}
+{"prompt": "Find 'handle_request' in the code.", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"handle_request\"},\"name\":\"grep_search\"}"}
+{"prompt": "Make a reminder to check email.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"check email\"},\"name\":\"set_reminder\"}"}
+{"prompt": "List files matching '**/*.md'.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"**/*.md\"},\"name\":\"find_files\"}"}
+{"prompt": "Get 'book club' on my calendar.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"book club\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Do I need an umbrella in Lyon?", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Lyon\"},\"name\":\"get_weather\"}"}
+{"prompt": "Click 'the logo'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the logo\"},\"name\":\"click\"}"}
+{"prompt": "Save 'team lunch' as a calendar event.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"team lunch\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Show me what changed.", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "File a Jira bug for 'duplicate emails'.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"duplicate emails\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Slack the team 'PR is up for review'.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"PR is up for review\"},\"name\":\"slack_send\"}"}
+{"prompt": "Tell me the weather for Geneva.", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Geneva\"},\"name\":\"get_weather\"}"}
+{"prompt": "Scroll down.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"down\"},\"name\":\"scroll\"}"}
+{"prompt": "Apply a patch to the file queries.sql.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"queries.sql\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Keep scrolling up.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"up\"},\"name\":\"scroll\"}"}
+{"prompt": "Which files contain 'on_click'?", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"on_click\"},\"name\":\"grep_search\"}"}
+{"prompt": "What's running right now?", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Mark down 'haircut' on the calendar.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"haircut\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Execute 'rake db:migrate'.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"rake db:migrate\"},\"name\":\"run_command\"}"}
+{"prompt": "Read what's in the clipboard.", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Download and install 'zod'.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"zod\"},\"name\":\"install_package\"}"}
+{"prompt": "What processes are running?", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Run the unit tests.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "Add 'expense tracker' as a Notion note.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"expense tracker\"},\"name\":\"notion_write\"}"}
+{"prompt": "Key in 'user@site.com'.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"user@site.com\"},\"name\":\"type_text\"}"}
+{"prompt": "Read what's in the clipboard.", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Get the clipboard contents.", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Drag 'the search bar' over onto 'the Save button'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the Save button\",\"source\":\"the search bar\"},\"name\":\"drag\"}"}
+{"prompt": "Fetch the value of 'DB_HOST'.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"DB_HOST\"},\"name\":\"env_get\"}"}
+{"prompt": "Nudge me to take vitamins.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"take vitamins\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Where is 'retry_count' used?", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"retry_count\"},\"name\":\"grep_search\"}"}
+{"prompt": "Hover over 'the toggle'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the toggle\"},\"name\":\"move_cursor\"}"}
+{"prompt": "Press the Space key.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Space\"},\"name\":\"key_press\"}"}
+{"prompt": "Touch up styles.css.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"styles.css\"},\"name\":\"edit_file\"}"}
+{"prompt": "Send a request to shop.co.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"shop.co\"},\"name\":\"http_request\"}"}
+{"prompt": "Create a directory named logs.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"logs\"},\"name\":\"make_dir\"}"}
+{"prompt": "Unpack the archive exports.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"exports.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "Snap a picture of what's on screen.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Install the 'eslint' package.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"eslint\"},\"name\":\"install_package\"}"}
+{"prompt": "Edit index.ts.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"index.ts\"},\"name\":\"edit_file\"}"}
+{"prompt": "Log a Jira issue: 'missing translations'.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"missing translations\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Put 'promo code' on the clipboard.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"promo code\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Look up the distance to the moon.", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"the distance to the moon\"},\"name\":\"web_search\"}"}
+{"prompt": "Download the file located at https://files.example.com/sample.xlsx.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"https://files.example.com/sample.xlsx\"},\"name\":\"download_file\"}"}
+{"prompt": "Run the patch on handler.kt.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"handler.kt\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Show what's inside templates.", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"templates\"},\"name\":\"list_dir\"}"}
+{"prompt": "Execute 'SELECT name FROM teams' on the database.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"SELECT name FROM teams\"},\"name\":\"sql_query\"}"}
+{"prompt": "Bring up main.go.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"main.go\"},\"name\":\"read_file\"}"}
+{"prompt": "Can you play Shape of You?", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Shape of You\"},\"name\":\"play_music\"}"}
+{"prompt": "Peek inside vendor.", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"vendor\"},\"name\":\"list_dir\"}"}
+{"prompt": "Read out main.go.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"main.go\"},\"name\":\"read_file\"}"}
+{"prompt": "Pull the file down from https://portal.app/files/backup.zip.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"https://portal.app/files/backup.zip\"},\"name\":\"download_file\"}"}
+{"prompt": "Open 'Pages'.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Pages\"},\"name\":\"open_app\"}"}
+{"prompt": "Drag and drop 'the Save button' to 'the Login link'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the Login link\",\"source\":\"the Save button\"},\"name\":\"drag\"}"}
+{"prompt": "Hit 'the plus button'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the plus button\"},\"name\":\"click\"}"}
+{"prompt": "Install the 'zod' package.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"zod\"},\"name\":\"install_package\"}"}
+{"prompt": "Download the file from https://files.example.com/sample.xlsx.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"https://files.example.com/sample.xlsx\"},\"name\":\"download_file\"}"}
+{"prompt": "Start the 'consul' image in Docker.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"consul\"},\"name\":\"docker_run\"}"}
+{"prompt": "Slack the team 'out for lunch'.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"out for lunch\"},\"name\":\"slack_send\"}"}
+{"prompt": "Make a file called main.go.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"main.go\"},\"name\":\"write_file\"}"}
+{"prompt": "Read the clipboard.", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Have Python evaluate 'round(3.14159, 2)'.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"round(3.14159, 2)\"},\"name\":\"run_python\"}"}
+{"prompt": "What's in the docs directory?", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"docs\"},\"name\":\"list_dir\"}"}
+{"prompt": "Time 55 minutes for me.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"55 minutes\"},\"name\":\"set_timer\"}"}
+{"prompt": "Take a screen capture.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Roll up.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"up\"},\"name\":\"scroll\"}"}
+{"prompt": "Let's listen to Royals.", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Royals\"},\"name\":\"play_music\"}"}
+{"prompt": "Open the 'Keynote' app.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Keynote\"},\"name\":\"open_app\"}"}
+{"prompt": "Hit 'the OK button'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the OK button\"},\"name\":\"click\"}"}
+{"prompt": "Grab 'the menu icon' and drag it to 'the avatar'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the avatar\",\"source\":\"the menu icon\"},\"name\":\"drag\"}"}
+{"prompt": "Touch up styles.css.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"styles.css\"},\"name\":\"edit_file\"}"}
+{"prompt": "Put together a plan to learn to code.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"learn to code\"},\"name\":\"planner\"}"}
+{"prompt": "Send an HTTP GET to status.host.io.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"status.host.io\"},\"name\":\"http_request\"}"}
+{"prompt": "Apply changes to report.csv as a patch.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"report.csv\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Execute 'make build'.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"make build\"},\"name\":\"run_command\"}"}
+{"prompt": "Unzip docs.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"docs.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "Key in 'March 2026'.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"March 2026\"},\"name\":\"type_text\"}"}
+{"prompt": "Run our tests.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "What is 'BUILD_ID' set to?", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"BUILD_ID\"},\"name\":\"env_get\"}"}
+{"prompt": "Slide the cursor to 'the tab'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the tab\"},\"name\":\"move_cursor\"}"}
+{"prompt": "Kick off 'ls -la'.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"ls -la\"},\"name\":\"run_command\"}"}
+{"prompt": "Key Space.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Space\"},\"name\":\"key_press\"}"}
+{"prompt": "Read out notes.md.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"notes.md\"},\"name\":\"read_file\"}"}
+{"prompt": "Hit 'the Save button'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the Save button\"},\"name\":\"click\"}"}
+{"prompt": "Move 'the search bar' over to 'the Login link' by dragging.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the Login link\",\"source\":\"the search bar\"},\"name\":\"drag\"}"}
+{"prompt": "Scroll up some more.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"up\"},\"name\":\"scroll\"}"}
+{"prompt": "Grep the code for 'handle_request'.", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"handle_request\"},\"name\":\"grep_search\"}"}
+{"prompt": "Email Omar.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Omar\"},\"name\":\"send_email\"}"}
+{"prompt": "Give it 100 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":100},\"name\":\"wait\"}"}
+{"prompt": "Swipe up.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"up\"},\"name\":\"scroll\"}"}
+{"prompt": "Run the Python code '[x*x for x in range(4)]'.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"[x*x for x in range(4)]\"},\"name\":\"run_python\"}"}
+{"prompt": "Can you tell me why the sky is blue?", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"why the sky is blue\"},\"name\":\"web_search\"}"}
+{"prompt": "Make a Jira issue about 'bad redirect'.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"bad redirect\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Save the file main.go.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"main.go\"},\"name\":\"write_file\"}"}
+{"prompt": "Locate 'API_TOKEN' in the source.", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"API_TOKEN\"},\"name\":\"grep_search\"}"}
+{"prompt": "Tap Space.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Space\"},\"name\":\"key_press\"}"}
+{"prompt": "Screenshot the current screen.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Position the cursor on 'the search bar'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the search bar\"},\"name\":\"move_cursor\"}"}
+{"prompt": "Set up a directory docs.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"docs\"},\"name\":\"make_dir\"}"}
+{"prompt": "Double-click 'the slide'.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the slide\"},\"name\":\"double_click\"}"}
+{"prompt": "Spin up a file schema.graphql.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"schema.graphql\"},\"name\":\"write_file\"}"}
+{"prompt": "Copy 'license key' to the clipboard.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"license key\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Do the math on 100-33.", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"100-33\"},\"name\":\"calculator\"}"}
+{"prompt": "Grab https://files.example.com/sample.xlsx for me.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"https://files.example.com/sample.xlsx\"},\"name\":\"download_file\"}"}
+{"prompt": "Display main.go.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"main.go\"},\"name\":\"read_file\"}"}
+{"prompt": "Give me a plan to plan a road trip.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"plan a road trip\"},\"name\":\"planner\"}"}
+{"prompt": "Tell me the latest about the celebrity scandal.", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the celebrity scandal\"},\"name\":\"get_news\"}"}
+{"prompt": "Install 'zod'.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"zod\"},\"name\":\"install_package\"}"}
+{"prompt": "Set up a calendar event for 'book club'.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"book club\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Which files contain 'on_click'?", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"on_click\"},\"name\":\"grep_search\"}"}
+{"prompt": "What's a verbose?", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"verbose\"},\"name\":\"define\"}"}
+{"prompt": "Move up on the page.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"up\"},\"name\":\"scroll\"}"}
+{"prompt": "Give me the contents of schema.graphql.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"schema.graphql\"},\"name\":\"read_file\"}"}
+{"prompt": "Fill in 'home address'.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"home address\"},\"name\":\"type_text\"}"}
+{"prompt": "Kill the 'deno' process.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"deno\"},\"name\":\"kill_process\"}"}
+{"prompt": "Ping me in 18 minutes.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"18 minutes\"},\"name\":\"set_timer\"}"}
+{"prompt": "Throw 'ticket number' on the clipboard.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"ticket number\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Commit everything with 'wip'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"wip\"},\"name\":\"git_commit\"}"}
+{"prompt": "Stop the 'watchman' process.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"watchman\"},\"name\":\"kill_process\"}"}
+{"prompt": "Pull the file down from mirror.service.dev/pkg.whl.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"mirror.service.dev/pkg.whl\"},\"name\":\"download_file\"}"}
+{"prompt": "Key in 'order 3310'.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"order 3310\"},\"name\":\"type_text\"}"}
+{"prompt": "Open up the archive logs.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"logs.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "Trigger the test suite.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "Screenshot the current screen.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Make a git commit saying 'wip'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"wip\"},\"name\":\"git_commit\"}"}
+{"prompt": "Show me files matching '*.yml'.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"*.yml\"},\"name\":\"find_files\"}"}
+{"prompt": "Install the 'lodash' package.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"lodash\"},\"name\":\"install_package\"}"}
+{"prompt": "Hold on 80 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":80},\"name\":\"wait\"}"}
+{"prompt": "Is it raining in Galway?", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Galway\"},\"name\":\"get_weather\"}"}
+{"prompt": "Go ahead and click 'the Login link'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the Login link\"},\"name\":\"click\"}"}
+{"prompt": "Start a container from 'consul'.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"consul\"},\"name\":\"docker_run\"}"}
+{"prompt": "Capture a screenshot.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "What did I change?", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Fire up news.site.org in the browser.", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"news.site.org\"},\"name\":\"open_url\"}"}
+{"prompt": "Let's run the tests.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "Fix up server.rb.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"server.rb\"},\"name\":\"edit_file\"}"}
+{"prompt": "Lay the patch over notes.md.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"notes.md\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Start the 'node:18' image in Docker.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"node:18\"},\"name\":\"docker_run\"}"}
+{"prompt": "Hit Space.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Space\"},\"name\":\"key_press\"}"}
+{"prompt": "Save 'tracking code' to the clipboard.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"tracking code\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Explain the word pristine.", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"pristine\"},\"name\":\"define\"}"}
+{"prompt": "Message the channel 'deploy finished'.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"deploy finished\"},\"name\":\"slack_send\"}"}
+{"prompt": "Jog my memory to call mom.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"call mom\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Capture a screenshot.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Pull up the news on the trade negotiations.", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the trade negotiations\"},\"name\":\"get_news\"}"}
+{"prompt": "Navigate to files.example.com.", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"files.example.com\"},\"name\":\"open_url\"}"}
+{"prompt": "Hold for 100 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":100},\"name\":\"wait\"}"}
+{"prompt": "Double-click 'the cell' to open it.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the cell\"},\"name\":\"double_click\"}"}
+{"prompt": "mkdir src.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"src\"},\"name\":\"make_dir\"}"}
+{"prompt": "Type in 'search term'.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"search term\"},\"name\":\"type_text\"}"}
+{"prompt": "Hit 'the OK button'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the OK button\"},\"name\":\"click\"}"}
+{"prompt": "Show me the working tree status.", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "What's going on with the trade negotiations?", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the trade negotiations\"},\"name\":\"get_news\"}"}
+{"prompt": "Patch up the file server.rb.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"server.rb\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Crank up Pompeii.", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Pompeii\"},\"name\":\"play_music\"}"}
+{"prompt": "Wait for 22 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":22},\"name\":\"wait\"}"}
+{"prompt": "Which files match '*.yml'?", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"*.yml\"},\"name\":\"find_files\"}"}
+{"prompt": "List files matching '*.cfg'.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"*.cfg\"},\"name\":\"find_files\"}"}
+{"prompt": "Download the file from store.example.net/export.json.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"store.example.net/export.json\"},\"name\":\"download_file\"}"}
+{"prompt": "Snap a picture of what's on screen.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Execute 'npm ci'.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"npm ci\"},\"name\":\"run_command\"}"}
+{"prompt": "Send Tariq an email message.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Tariq\"},\"name\":\"send_email\"}"}
+{"prompt": "Point at 'the banner'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the banner\"},\"name\":\"move_cursor\"}"}
+{"prompt": "Type 'rake db:migrate' in the terminal.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"rake db:migrate\"},\"name\":\"run_command\"}"}
+{"prompt": "Send a Slack message saying 'merging this'.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"merging this\"},\"name\":\"slack_send\"}"}
+{"prompt": "Brief me on the election results.", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the election results\"},\"name\":\"get_news\"}"}
+{"prompt": "Use Python to run 'abs(-7)'.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"abs(-7)\"},\"name\":\"run_python\"}"}
+{"prompt": "Show the contents of server.rb.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"server.rb\"},\"name\":\"read_file\"}"}
+{"prompt": "Give me 12+7.", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"12+7\"},\"name\":\"calculator\"}"}
+{"prompt": "Remind me later to call mom.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"call mom\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Fix up index.ts.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"index.ts\"},\"name\":\"edit_file\"}"}
+{"prompt": "Start playing Shape of You.", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Shape of You\"},\"name\":\"play_music\"}"}
+{"prompt": "Run our tests.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "Unpack the archive src.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"src.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "Download the file located at https://cdn.acme.io/release.zip.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"https://cdn.acme.io/release.zip\"},\"name\":\"download_file\"}"}
+{"prompt": "Fetch the value of 'API_URL'.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"API_URL\"},\"name\":\"env_get\"}"}
+{"prompt": "Run the 'consul' image.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"consul\"},\"name\":\"docker_run\"}"}
+{"prompt": "Double tap 'the thumbnail'.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the thumbnail\"},\"name\":\"double_click\"}"}
+{"prompt": "Can you visit files.example.com?", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"files.example.com\"},\"name\":\"open_url\"}"}
+{"prompt": "Show the git diff.", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Pull in 'vitest'.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"vitest\"},\"name\":\"install_package\"}"}
+{"prompt": "Move the cursor to 'the OK button'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the OK button\"},\"name\":\"move_cursor\"}"}
+{"prompt": "Calculate 15+8.", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"15+8\"},\"name\":\"calculator\"}"}
+{"prompt": "Get the clipboard contents.", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Have Python evaluate 'len('hello')'.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"len('hello')\"},\"name\":\"run_python\"}"}
+{"prompt": "I want to know the weight of an elephant.", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"the weight of an elephant\"},\"name\":\"web_search\"}"}
+{"prompt": "What did I change?", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Run this command: 'df -h'.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"df -h\"},\"name\":\"run_command\"}"}
+{"prompt": "Go ahead and click 'the arrow'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the arrow\"},\"name\":\"click\"}"}
+{"prompt": "How hot is it in Hamburg?", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Hamburg\"},\"name\":\"get_weather\"}"}
+{"prompt": "Type 'monthly report' into the field.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"monthly report\"},\"name\":\"type_text\"}"}
+{"prompt": "Give me a listing of config.", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"config\"},\"name\":\"list_dir\"}"}
+{"prompt": "Patch pipeline.yml.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"pipeline.yml\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Execute the SQL statement 'UPDATE users SET role = 'admin''.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"UPDATE users SET role = 'admin'\"},\"name\":\"sql_query\"}"}
+{"prompt": "Hit api.service.dev with a request.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"api.service.dev\"},\"name\":\"http_request\"}"}
+{"prompt": "Find occurrences of 'validate_input'.", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"validate_input\"},\"name\":\"grep_search\"}"}
+{"prompt": "Drag 'the search bar' onto 'the Save button'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the Save button\",\"source\":\"the search bar\"},\"name\":\"drag\"}"}
+{"prompt": "Give me a plan to learn to code.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"learn to code\"},\"name\":\"planner\"}"}
+{"prompt": "Save a screenshot.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Interpret 'int('100')' as Python.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"int('100')\"},\"name\":\"run_python\"}"}
+{"prompt": "Move up on the page.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"up\"},\"name\":\"scroll\"}"}
+{"prompt": "Fetch the value of 'QUEUE_NAME'.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"QUEUE_NAME\"},\"name\":\"env_get\"}"}
+{"prompt": "Run the shell command 'df -h'.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"df -h\"},\"name\":\"run_command\"}"}
+{"prompt": "Hit 'the shortcut' twice.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the shortcut\"},\"name\":\"double_click\"}"}
+{"prompt": "What does ephemeral mean?", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"ephemeral\"},\"name\":\"define\"}"}
+{"prompt": "Git diff.", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Run 'sum([1, 2, 3])' in Python.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"sum([1, 2, 3])\"},\"name\":\"run_python\"}"}
+{"prompt": "Open 'Reminders'.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Reminders\"},\"name\":\"open_app\"}"}
+{"prompt": "Play the song Blinding Lights.", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Blinding Lights\"},\"name\":\"play_music\"}"}
+{"prompt": "Show me what changed.", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Forecast for Florence?", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Florence\"},\"name\":\"get_weather\"}"}
+{"prompt": "Drag 'the avatar' to 'the search bar'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the search bar\",\"source\":\"the avatar\"},\"name\":\"drag\"}"}
+{"prompt": "Fire a Slack message 'PR is up for review'.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"PR is up for review\"},\"name\":\"slack_send\"}"}
+{"prompt": "Check the weather in Auckland.", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Auckland\"},\"name\":\"get_weather\"}"}
+{"prompt": "Find out what causes thunder.", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"what causes thunder\"},\"name\":\"web_search\"}"}
+{"prompt": "Commit as 'bump deps'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"bump deps\"},\"name\":\"git_commit\"}"}
+{"prompt": "Calculate 9*6.", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"9*6\"},\"name\":\"calculator\"}"}
+{"prompt": "Write 'vacation plans' in Notion.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"vacation plans\"},\"name\":\"notion_write\"}"}
+{"prompt": "Read out the clipboard.", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "I want to hear Royals.", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Royals\"},\"name\":\"play_music\"}"}
+{"prompt": "Find the function 'handle_request'.", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"handle_request\"},\"name\":\"grep_search\"}"}
+{"prompt": "Reach Elena by email.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Elena\"},\"name\":\"send_email\"}"}
+{"prompt": "Execute 'uname -a'.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"uname -a\"},\"name\":\"run_command\"}"}
+{"prompt": "Make a reminder to log hours.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"log hours\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Define paradox.", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"paradox\"},\"name\":\"define\"}"}
+{"prompt": "New directory: vendor.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"vendor\"},\"name\":\"make_dir\"}"}
+{"prompt": "Any idea about the height of a giraffe?", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"the height of a giraffe\"},\"name\":\"web_search\"}"}
+{"prompt": "Drift the mouse over to 'the plus button'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the plus button\"},\"name\":\"move_cursor\"}"}
+{"prompt": "Google how old the universe is.", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"how old the universe is\"},\"name\":\"web_search\"}"}
+{"prompt": "Click 'the OK button'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the OK button\"},\"name\":\"click\"}"}
+{"prompt": "Tell me the git status.", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "What did I copy?", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Dash off an email to Freya.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Freya\"},\"name\":\"send_email\"}"}
+{"prompt": "Type 'full name'.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"full name\"},\"name\":\"type_text\"}"}
+{"prompt": "Kill 'bun'.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"bun\"},\"name\":\"kill_process\"}"}
+{"prompt": "Tell me the weather for Sydney.", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Sydney\"},\"name\":\"get_weather\"}"}
+{"prompt": "Get the file at https://assets.site.org/logo.png.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"https://assets.site.org/logo.png\"},\"name\":\"download_file\"}"}
+{"prompt": "Drag the page down.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"down\"},\"name\":\"scroll\"}"}
+{"prompt": "Email a note to Elena.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Elena\"},\"name\":\"send_email\"}"}
+{"prompt": "Copy the text 'see you soon'.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"see you soon\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Unpack fonts.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"fonts.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "Run a Docker container from 'node:18'.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"node:18\"},\"name\":\"docker_run\"}"}
+{"prompt": "Press Escape now.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Escape\"},\"name\":\"key_press\"}"}
+{"prompt": "Open a Jira issue for 'missing translations'.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"missing translations\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Call out to portal.app.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"portal.app\"},\"name\":\"http_request\"}"}
+{"prompt": "Commit the changes: 'update readme'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"update readme\"},\"name\":\"git_commit\"}"}
+{"prompt": "Let Python compute 'print(sum(range(10)))'.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"print(sum(range(10)))\"},\"name\":\"run_python\"}"}
+{"prompt": "Wipe out the 'dotnet' process.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"dotnet\"},\"name\":\"kill_process\"}"}
+{"prompt": "Hit 'the app icon' twice.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the app icon\"},\"name\":\"double_click\"}"}
+{"prompt": "What is 'API_URL' set to?", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"API_URL\"},\"name\":\"env_get\"}"}
+{"prompt": "Double-click the 'the track'.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the track\"},\"name\":\"double_click\"}"}
+{"prompt": "Post 'build is broken' to Slack.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"build is broken\"},\"name\":\"slack_send\"}"}
+{"prompt": "Give me the diff.", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Fire an HTTP request at mail.provider.net.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"mail.provider.net\"},\"name\":\"http_request\"}"}
+{"prompt": "Can you play Pompeii?", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Pompeii\"},\"name\":\"play_music\"}"}
+{"prompt": "List the processes.", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Press the Enter key.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Enter\"},\"name\":\"key_press\"}"}
+{"prompt": "Pull up store.example.net.", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"store.example.net\"},\"name\":\"open_url\"}"}
+{"prompt": "Where is 'def parse' used?", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"def parse\"},\"name\":\"grep_search\"}"}
+{"prompt": "Run our tests.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "Open the site acme.io.", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"acme.io\"},\"name\":\"open_url\"}"}
+{"prompt": "Make the folder tests.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"tests\"},\"name\":\"make_dir\"}"}
+{"prompt": "Press 'the search bar'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the search bar\"},\"name\":\"click\"}"}
+{"prompt": "Tell me the latest about the merger talks.", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the merger talks\"},\"name\":\"get_news\"}"}
+{"prompt": "Set a timer for 100 seconds.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"100 seconds\"},\"name\":\"set_timer\"}"}
+{"prompt": "Boot up 'loki' in Docker.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"loki\"},\"name\":\"docker_run\"}"}
+{"prompt": "Put on Uptown Funk.", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Uptown Funk\"},\"name\":\"play_music\"}"}
+{"prompt": "Show the git diff.", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Add the dependency 'lodash'.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"lodash\"},\"name\":\"install_package\"}"}
+{"prompt": "List the processes.", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Which files match '*.cfg'?", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"*.cfg\"},\"name\":\"find_files\"}"}
+{"prompt": "Kick off a timer for 18 minutes.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"18 minutes\"},\"name\":\"set_timer\"}"}
+{"prompt": "Hit 'the Login link'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the Login link\"},\"name\":\"click\"}"}
+{"prompt": "Print the diff.", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Tweak main.go.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"main.go\"},\"name\":\"edit_file\"}"}
+{"prompt": "Let the team know on Slack: 'deploy finished'.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"deploy finished\"},\"name\":\"slack_send\"}"}
+{"prompt": "Peek inside src.", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"src\"},\"name\":\"list_dir\"}"}
+{"prompt": "Apply changes to handler.kt as a patch.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"handler.kt\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Set up a directory examples.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"examples\"},\"name\":\"make_dir\"}"}
+{"prompt": "mkdir logs.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"logs\"},\"name\":\"make_dir\"}"}
+{"prompt": "Press Escape.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Escape\"},\"name\":\"key_press\"}"}
+{"prompt": "Show the git status.", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "Add a Jira ticket titled 'stale cache'.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"stale cache\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Show me headlines about the new tax bill.", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the new tax bill\"},\"name\":\"get_news\"}"}
+{"prompt": "Show me headlines about the new tax bill.", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the new tax bill\"},\"name\":\"get_news\"}"}
+{"prompt": "Run the snippet 'max(3, 9)' in Python.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"max(3, 9)\"},\"name\":\"run_python\"}"}
+{"prompt": "Message the channel 'out for lunch'.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"out for lunch\"},\"name\":\"slack_send\"}"}
+{"prompt": "Let me know in 35 minutes.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"35 minutes\"},\"name\":\"set_timer\"}"}
+{"prompt": "Save 'gift ideas' to Notion.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"gift ideas\"},\"name\":\"notion_write\"}"}
+{"prompt": "Apply the patch to Makefile.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"Makefile\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Unpack the file assets.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"assets.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "Let me see the diff.", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Drop 'uname -a' into the shell.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"uname -a\"},\"name\":\"run_command\"}"}
+{"prompt": "Run 'haproxy' as a container.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"haproxy\"},\"name\":\"docker_run\"}"}
+{"prompt": "Make a git commit saying 'cleanup'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"cleanup\"},\"name\":\"git_commit\"}"}
+{"prompt": "Print the running processes.", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Ping Slack with 'running late'.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"running late\"},\"name\":\"slack_send\"}"}
+{"prompt": "Log 'habit tracker' in Notion.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"habit tracker\"},\"name\":\"notion_write\"}"}
+{"prompt": "Find files matching 'src/**/*.rb'.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"src/**/*.rb\"},\"name\":\"find_files\"}"}
+{"prompt": "Commit everything with 'tweak styles'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"tweak styles\"},\"name\":\"git_commit\"}"}
+{"prompt": "Take a shot of the screen.", "kind": "tool", "category": "screenshot", "tool": "screenshot", "target": "{\"arguments\":{},\"name\":\"screenshot\"}"}
+{"prompt": "Move the mouse to 'the search bar'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the search bar\"},\"name\":\"move_cursor\"}"}
+{"prompt": "Show all running processes.", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Download the file from https://blog.dev/assets/data.csv.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"https://blog.dev/assets/data.csv\"},\"name\":\"download_file\"}"}
+{"prompt": "What does the term frugal mean?", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"frugal\"},\"name\":\"define\"}"}
+{"prompt": "Open blog.dev.", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"blog.dev\"},\"name\":\"open_url\"}"}
+{"prompt": "Scroll down some more.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"down\"},\"name\":\"scroll\"}"}
+{"prompt": "Add a Notion note saying 'travel checklist'.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"travel checklist\"},\"name\":\"notion_write\"}"}
+{"prompt": "Tap Tab.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Tab\"},\"name\":\"key_press\"}"}
+{"prompt": "What's the weather like in Marrakech today?", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Marrakech\"},\"name\":\"get_weather\"}"}
+{"prompt": "Commit with message 'fix build'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"fix build\"},\"name\":\"git_commit\"}"}
+{"prompt": "Set the timer to 50 seconds.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"50 seconds\"},\"name\":\"set_timer\"}"}
+{"prompt": "Schedule 'book club' on my calendar.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"book club\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Key Enter.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Enter\"},\"name\":\"key_press\"}"}
+{"prompt": "Commit the changes: 'add logging'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"add logging\"},\"name\":\"git_commit\"}"}
+{"prompt": "Fire off the test suite.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "Set up a directory templates.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"templates\"},\"name\":\"make_dir\"}"}
+{"prompt": "Run this SQL: 'UPDATE users SET role = 'admin''.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"UPDATE users SET role = 'admin'\"},\"name\":\"sql_query\"}"}
+{"prompt": "I don't know the word nostalgia.", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"nostalgia\"},\"name\":\"define\"}"}
+{"prompt": "Can you visit status.host.io?", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"status.host.io\"},\"name\":\"open_url\"}"}
+{"prompt": "What's the state of the repo?", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "Pull up store.example.net.", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"store.example.net\"},\"name\":\"open_url\"}"}
+{"prompt": "Wire up 'jest'.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"jest\"},\"name\":\"install_package\"}"}
+{"prompt": "Read out the clipboard.", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Build a folder named tests.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"tests\"},\"name\":\"make_dir\"}"}
+{"prompt": "Send 'SELECT * FROM clients' to the database.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"SELECT * FROM clients\"},\"name\":\"sql_query\"}"}
+{"prompt": "List out src.", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"src\"},\"name\":\"list_dir\"}"}
+{"prompt": "Print the clipboard.", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Open 'Maps'.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Maps\"},\"name\":\"open_app\"}"}
+{"prompt": "Give me the diff.", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Execute the query 'INSERT INTO logs VALUES (1)'.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"INSERT INTO logs VALUES (1)\"},\"name\":\"sql_query\"}"}
+{"prompt": "Hold on 50 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":50},\"name\":\"wait\"}"}
+{"prompt": "Save 'coupon code' to the clipboard.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"coupon code\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "How much is 44+11?", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"44+11\"},\"name\":\"calculator\"}"}
+{"prompt": "Is it raining in Marrakech?", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Marrakech\"},\"name\":\"get_weather\"}"}
+{"prompt": "Fire off 'npm ci'.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"npm ci\"},\"name\":\"run_command\"}"}
+{"prompt": "Hold on 35 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":35},\"name\":\"wait\"}"}
+{"prompt": "Launch the 'Stocks' app.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Stocks\"},\"name\":\"open_app\"}"}
+{"prompt": "Show me pipeline.yml.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"pipeline.yml\"},\"name\":\"read_file\"}"}
+{"prompt": "Make an HTTP request to mail.provider.net.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"mail.provider.net\"},\"name\":\"http_request\"}"}
+{"prompt": "I'm curious about the population of Brazil.", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"the population of Brazil\"},\"name\":\"web_search\"}"}
+{"prompt": "Lay the patch over styles.css.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"styles.css\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Read server.rb for me.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"server.rb\"},\"name\":\"read_file\"}"}
+{"prompt": "Look up the meaning of obsolete.", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"obsolete\"},\"name\":\"define\"}"}
+{"prompt": "Note 'vacation plans' in Notion.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"vacation plans\"},\"name\":\"notion_write\"}"}
+{"prompt": "Read the file notes.md.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"notes.md\"},\"name\":\"read_file\"}"}
+{"prompt": "Save 'flight to NYC' as a calendar event.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"flight to NYC\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Fetch the value of 'REGION'.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"REGION\"},\"name\":\"env_get\"}"}
+{"prompt": "Check the clipboard.", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Input 'billing info'.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"billing info\"},\"name\":\"type_text\"}"}
+{"prompt": "Download whatever is at files.example.com/report.pdf.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"files.example.com/report.pdf\"},\"name\":\"download_file\"}"}
+{"prompt": "What's a meticulous?", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"meticulous\"},\"name\":\"define\"}"}
+{"prompt": "Hang on 11 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":11},\"name\":\"wait\"}"}
+{"prompt": "Create folder vendor.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"vendor\"},\"name\":\"make_dir\"}"}
+{"prompt": "Sleep 50 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":50},\"name\":\"wait\"}"}
+{"prompt": "Track 'checkout fails' in Jira.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"checkout fails\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Fill in 'hello there'.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"hello there\"},\"name\":\"type_text\"}"}
+{"prompt": "Kill off 'php'.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"php\"},\"name\":\"kill_process\"}"}
+{"prompt": "Create a plan to grow a garden.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"grow a garden\"},\"name\":\"planner\"}"}
+{"prompt": "Double-click on 'the slide'.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the slide\"},\"name\":\"double_click\"}"}
+{"prompt": "Take a look at notes.md and show it to me.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"notes.md\"},\"name\":\"read_file\"}"}
+{"prompt": "Execute 'round(3.14159, 2)' in Python.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"round(3.14159, 2)\"},\"name\":\"run_python\"}"}
+{"prompt": "Make a calendar entry for 'team lunch'.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"team lunch\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Generate the file main.go.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"main.go\"},\"name\":\"write_file\"}"}
+{"prompt": "Log 'book recommendations' in Notion.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"book recommendations\"},\"name\":\"notion_write\"}"}
+{"prompt": "Drag 'the search bar' all the way to 'the plus button'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the plus button\",\"source\":\"the search bar\"},\"name\":\"drag\"}"}
+{"prompt": "Commit with message 'add feature flag'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"add feature flag\"},\"name\":\"git_commit\"}"}
+{"prompt": "Where is 'train_step' used?", "kind": "tool", "category": "grep_search", "tool": "grep_search", "target": "{\"arguments\":{\"pattern\":\"train_step\"},\"name\":\"grep_search\"}"}
+{"prompt": "Help me remember to feed the cat.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"feed the cat\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Type in 'March 2026'.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"March 2026\"},\"name\":\"type_text\"}"}
+{"prompt": "Create a Jira ticket titled 'duplicate emails'.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"duplicate emails\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Patch up the file pipeline.yml.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"pipeline.yml\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Grab the file at cdn.assets.io/images.tar.gz.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"cdn.assets.io/images.tar.gz\"},\"name\":\"download_file\"}"}
+{"prompt": "Press the Escape key.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Escape\"},\"name\":\"key_press\"}"}
+{"prompt": "Press Space now.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Space\"},\"name\":\"key_press\"}"}
+{"prompt": "Read what's in the clipboard.", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Set up a reminder to take out the trash.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"take out the trash\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Pop on Levitating.", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Levitating\"},\"name\":\"play_music\"}"}
+{"prompt": "Run this Python: 'sum([1, 2, 3])'.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"sum([1, 2, 3])\"},\"name\":\"run_python\"}"}
+{"prompt": "Type 'daily notes'.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"daily notes\"},\"name\":\"type_text\"}"}
+{"prompt": "Got any info on why the sky is blue?", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"why the sky is blue\"},\"name\":\"web_search\"}"}
+{"prompt": "Two clicks on 'the row'.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the row\"},\"name\":\"double_click\"}"}
+{"prompt": "Type the Enter key.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Enter\"},\"name\":\"key_press\"}"}
+{"prompt": "Commit everything with 'add feature flag'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"add feature flag\"},\"name\":\"git_commit\"}"}
+{"prompt": "Can you visit status.host.io?", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"status.host.io\"},\"name\":\"open_url\"}"}
+{"prompt": "Copy 'promo code' to the clipboard.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"promo code\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Launch 'Stocks'.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Stocks\"},\"name\":\"open_app\"}"}
+{"prompt": "List the processes.", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "What does diligent mean?", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"diligent\"},\"name\":\"define\"}"}
+{"prompt": "Launch the 'golang:1.22' container.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"golang:1.22\"},\"name\":\"docker_run\"}"}
+{"prompt": "Fetch the value of 'NODE_ENV'.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"NODE_ENV\"},\"name\":\"env_get\"}"}
+{"prompt": "Hey, what is the population of Brazil?", "kind": "tool", "category": "web_search", "tool": "web_search", "target": "{\"arguments\":{\"query\":\"the population of Brazil\"},\"name\":\"web_search\"}"}
+{"prompt": "Hold for 6 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":6},\"name\":\"wait\"}"}
+{"prompt": "Click on 'the arrow'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the arrow\"},\"name\":\"click\"}"}
+{"prompt": "Start a new file Makefile.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"Makefile\"},\"name\":\"write_file\"}"}
+{"prompt": "Message the team on Slack: 'can someone take a look'.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"can someone take a look\"},\"name\":\"slack_send\"}"}
+{"prompt": "Any news about the celebrity scandal?", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the celebrity scandal\"},\"name\":\"get_news\"}"}
+{"prompt": "Bring up 'Maps'.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Maps\"},\"name\":\"open_app\"}"}
+{"prompt": "What is 7*7?", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"7*7\"},\"name\":\"calculator\"}"}
+{"prompt": "Remind me to take vitamins.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"take vitamins\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Track 'duplicate emails' in Jira.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"duplicate emails\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Stand up a container from 'node:18'.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"node:18\"},\"name\":\"docker_run\"}"}
+{"prompt": "Show the docs directory.", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"docs\"},\"name\":\"list_dir\"}"}
+{"prompt": "Hit 'the banner'.", "kind": "tool", "category": "click", "tool": "click", "target": "{\"arguments\":{\"target\":\"the banner\"},\"name\":\"click\"}"}
+{"prompt": "Run this command: 'make build'.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"make build\"},\"name\":\"run_command\"}"}
+{"prompt": "Patch up the file server.rb.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"server.rb\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Have Python evaluate 'max(3, 9)'.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"max(3, 9)\"},\"name\":\"run_python\"}"}
+{"prompt": "Boot up 'openjdk' in Docker.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"openjdk\"},\"name\":\"docker_run\"}"}
+{"prompt": "Make a new folder scripts.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"scripts\"},\"name\":\"make_dir\"}"}
+{"prompt": "Create queries.sql.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"queries.sql\"},\"name\":\"write_file\"}"}
+{"prompt": "Stick 'address line' on the clipboard.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"address line\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Edit styles.css.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"styles.css\"},\"name\":\"edit_file\"}"}
+{"prompt": "Get the file at https://cdn.acme.io/release.zip.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"https://cdn.acme.io/release.zip\"},\"name\":\"download_file\"}"}
+{"prompt": "Sum up 15+8.", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"15+8\"},\"name\":\"calculator\"}"}
+{"prompt": "Check the environment variable 'MAX_RETRIES'.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"MAX_RETRIES\"},\"name\":\"env_get\"}"}
+{"prompt": "Scroll down some more.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"down\"},\"name\":\"scroll\"}"}
+{"prompt": "Put 'wifi password' on the clipboard.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"wifi password\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Git status.", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "Help me plan to train for a triathlon.", "kind": "tool", "category": "planner", "tool": "planner", "target": "{\"arguments\":{\"goal\":\"train for a triathlon\"},\"name\":\"planner\"}"}
+{"prompt": "Read what's in the clipboard.", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Pause for 11 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":11},\"name\":\"wait\"}"}
+{"prompt": "Sleep 22 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":22},\"name\":\"wait\"}"}
+{"prompt": "List the processes.", "kind": "tool", "category": "list_processes", "tool": "list_processes", "target": "{\"arguments\":{},\"name\":\"list_processes\"}"}
+{"prompt": "Create a commit 'bump deps'.", "kind": "tool", "category": "git_commit", "tool": "git_commit", "target": "{\"arguments\":{\"message\":\"bump deps\"},\"name\":\"git_commit\"}"}
+{"prompt": "Show the git status.", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "Bring down the 'dotnet' process.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"dotnet\"},\"name\":\"kill_process\"}"}
+{"prompt": "Enter 'secret pass'.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"secret pass\"},\"name\":\"type_text\"}"}
+{"prompt": "Hit shop.co with a request.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"shop.co\"},\"name\":\"http_request\"}"}
+{"prompt": "Kick off the tests.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "Create a directory named vendor.", "kind": "tool", "category": "make_dir", "tool": "make_dir", "target": "{\"arguments\":{\"path\":\"vendor\"},\"name\":\"make_dir\"}"}
+{"prompt": "Move the mouse to 'the logo'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the logo\"},\"name\":\"move_cursor\"}"}
+{"prompt": "Stick 'vacation plans' into Notion.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"vacation plans\"},\"name\":\"notion_write\"}"}
+{"prompt": "Hit 'the thumbnail' twice.", "kind": "tool", "category": "double_click", "tool": "double_click", "target": "{\"arguments\":{\"target\":\"the thumbnail\"},\"name\":\"double_click\"}"}
+{"prompt": "Issue an HTTP request to news.site.org.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"news.site.org\"},\"name\":\"http_request\"}"}
+{"prompt": "Crank up Levitating.", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Levitating\"},\"name\":\"play_music\"}"}
+{"prompt": "Reach Tariq by email.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Tariq\"},\"name\":\"send_email\"}"}
+{"prompt": "Write 'the lazy dog' in the box.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"the lazy dog\"},\"name\":\"type_text\"}"}
+{"prompt": "List everything in fixtures.", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"fixtures\"},\"name\":\"list_dir\"}"}
+{"prompt": "Bring down the 'bun' process.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"bun\"},\"name\":\"kill_process\"}"}
+{"prompt": "Log 'recipe ideas' in Notion.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"recipe ideas\"},\"name\":\"notion_write\"}"}
+{"prompt": "Unpack assets.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"assets.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "Play some Counting Stars.", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Counting Stars\"},\"name\":\"play_music\"}"}
+{"prompt": "Check the weather in Cardiff.", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Cardiff\"},\"name\":\"get_weather\"}"}
+{"prompt": "Do the math on 9*6.", "kind": "tool", "category": "calculator", "tool": "calculator", "target": "{\"arguments\":{\"expression\":\"9*6\"},\"name\":\"calculator\"}"}
+{"prompt": "Run the 'vault' image.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"vault\"},\"name\":\"docker_run\"}"}
+{"prompt": "Define vivid.", "kind": "tool", "category": "define", "tool": "define", "target": "{\"arguments\":{\"term\":\"vivid\"},\"name\":\"define\"}"}
+{"prompt": "Send 'great work everyone' on Slack.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"great work everyone\"},\"name\":\"slack_send\"}"}
+{"prompt": "Create the file Makefile.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"Makefile\"},\"name\":\"write_file\"}"}
+{"prompt": "What does 'round(3.14159, 2)' return in Python?", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"round(3.14159, 2)\"},\"name\":\"run_python\"}"}
+{"prompt": "Search for files matching '**/*.md'.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"**/*.md\"},\"name\":\"find_files\"}"}
+{"prompt": "Query the database with 'SELECT * FROM clients'.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"SELECT * FROM clients\"},\"name\":\"sql_query\"}"}
+{"prompt": "Add a reminder to drink water.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"drink water\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Pop on Uptown Funk.", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Uptown Funk\"},\"name\":\"play_music\"}"}
+{"prompt": "Move up on the page.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"up\"},\"name\":\"scroll\"}"}
+{"prompt": "Open the 'Stocks' app.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Stocks\"},\"name\":\"open_app\"}"}
+{"prompt": "Tweak Makefile.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"Makefile\"},\"name\":\"edit_file\"}"}
+{"prompt": "Launch the 'Pages' app.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Pages\"},\"name\":\"open_app\"}"}
+{"prompt": "Shell out 'whoami'.", "kind": "tool", "category": "run_command", "tool": "run_command", "target": "{\"arguments\":{\"command\":\"whoami\"},\"name\":\"run_command\"}"}
+{"prompt": "Execute the SQL statement 'DELETE FROM sessions'.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"DELETE FROM sessions\"},\"name\":\"sql_query\"}"}
+{"prompt": "Patch server.rb.", "kind": "tool", "category": "apply_patch", "tool": "apply_patch", "target": "{\"arguments\":{\"path\":\"server.rb\"},\"name\":\"apply_patch\"}"}
+{"prompt": "Show me the working tree status.", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "Execute 'DELETE FROM sessions' on the database.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"DELETE FROM sessions\"},\"name\":\"sql_query\"}"}
+{"prompt": "Start playing Royals.", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Royals\"},\"name\":\"play_music\"}"}
+{"prompt": "Swipe up.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"up\"},\"name\":\"scroll\"}"}
+{"prompt": "Decompress assets.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"assets.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "List out examples.", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"examples\"},\"name\":\"list_dir\"}"}
+{"prompt": "Edit setup.cfg.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"setup.cfg\"},\"name\":\"edit_file\"}"}
+{"prompt": "Start 'Pages'.", "kind": "tool", "category": "open_app", "tool": "open_app", "target": "{\"arguments\":{\"name\":\"Pages\"},\"name\":\"open_app\"}"}
+{"prompt": "Put the cursor on 'the search bar'.", "kind": "tool", "category": "move_cursor", "tool": "move_cursor", "target": "{\"arguments\":{\"target\":\"the search bar\"},\"name\":\"move_cursor\"}"}
+{"prompt": "What's it like outside in Cork?", "kind": "tool", "category": "get_weather", "tool": "get_weather", "target": "{\"arguments\":{\"city\":\"Cork\"},\"name\":\"get_weather\"}"}
+{"prompt": "Read the file index.ts.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"index.ts\"},\"name\":\"read_file\"}"}
+{"prompt": "Bring up handler.kt.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"handler.kt\"},\"name\":\"read_file\"}"}
+{"prompt": "Issue an HTTP request to acme.io.", "kind": "tool", "category": "http_request", "tool": "http_request", "target": "{\"arguments\":{\"url\":\"acme.io\"},\"name\":\"http_request\"}"}
+{"prompt": "Play some Happy.", "kind": "tool", "category": "play_music", "tool": "play_music", "target": "{\"arguments\":{\"song\":\"Happy\"},\"name\":\"play_music\"}"}
+{"prompt": "Knock out 'watchman'.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"watchman\"},\"name\":\"kill_process\"}"}
+{"prompt": "Make a Jira issue about 'timezone bug'.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"timezone bug\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Open a Jira issue for 'bad redirect'.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"bad redirect\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Add 'flight to NYC' to my calendar.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"flight to NYC\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Scroll down.", "kind": "tool", "category": "scroll", "tool": "scroll", "target": "{\"arguments\":{\"direction\":\"down\"},\"name\":\"scroll\"}"}
+{"prompt": "Enter 'hello there' into the field.", "kind": "tool", "category": "type_text", "tool": "type_text", "target": "{\"arguments\":{\"text\":\"hello there\"},\"name\":\"type_text\"}"}
+{"prompt": "Post a Slack update: 'joining now'.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"joining now\"},\"name\":\"slack_send\"}"}
+{"prompt": "Fire up store.example.net in the browser.", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"store.example.net\"},\"name\":\"open_url\"}"}
+{"prompt": "Ping Slack with 'build is broken'.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"build is broken\"},\"name\":\"slack_send\"}"}
+{"prompt": "Start a container from 'grafana:latest'.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"grafana:latest\"},\"name\":\"docker_run\"}"}
+{"prompt": "Unpack the archive assets.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"assets.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "Start the test run.", "kind": "tool", "category": "run_tests", "tool": "run_tests", "target": "{\"arguments\":{},\"name\":\"run_tests\"}"}
+{"prompt": "Create a calendar event 'parent meeting'.", "kind": "tool", "category": "calendar_event", "tool": "calendar_event", "target": "{\"arguments\":{\"title\":\"parent meeting\"},\"name\":\"calendar_event\"}"}
+{"prompt": "Wait 80 seconds.", "kind": "tool", "category": "wait", "tool": "wait", "target": "{\"arguments\":{\"seconds\":80},\"name\":\"wait\"}"}
+{"prompt": "Show me what changed.", "kind": "tool", "category": "git_diff", "tool": "git_diff", "target": "{\"arguments\":{},\"name\":\"git_diff\"}"}
+{"prompt": "Find files matching '**/*.kt'.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"**/*.kt\"},\"name\":\"find_files\"}"}
+{"prompt": "Let the team know on Slack: 'joining now'.", "kind": "tool", "category": "slack_send", "tool": "slack_send", "target": "{\"arguments\":{\"message\":\"joining now\"},\"name\":\"slack_send\"}"}
+{"prompt": "Look up the env variable 'APP_NAME'.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"APP_NAME\"},\"name\":\"env_get\"}"}
+{"prompt": "Display schema.graphql.", "kind": "tool", "category": "read_file", "tool": "read_file", "target": "{\"arguments\":{\"path\":\"schema.graphql\"},\"name\":\"read_file\"}"}
+{"prompt": "Fire 'INSERT INTO logs VALUES (1)' at the database.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"INSERT INTO logs VALUES (1)\"},\"name\":\"sql_query\"}"}
+{"prompt": "Drag 'the Save button' onto 'the menu icon'.", "kind": "tool", "category": "drag", "tool": "drag", "target": "{\"arguments\":{\"dest\":\"the menu icon\",\"source\":\"the Save button\"},\"name\":\"drag\"}"}
+{"prompt": "Dash off an email to Omar.", "kind": "tool", "category": "send_email", "tool": "send_email", "target": "{\"arguments\":{\"recipient\":\"Omar\"},\"name\":\"send_email\"}"}
+{"prompt": "Tap Tab.", "kind": "tool", "category": "key_press", "tool": "key_press", "target": "{\"arguments\":{\"key\":\"Tab\"},\"name\":\"key_press\"}"}
+{"prompt": "Make changes to handler.kt.", "kind": "tool", "category": "edit_file", "tool": "edit_file", "target": "{\"arguments\":{\"path\":\"handler.kt\"},\"name\":\"edit_file\"}"}
+{"prompt": "Can you visit cdn.assets.io?", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"cdn.assets.io\"},\"name\":\"open_url\"}"}
+{"prompt": "Save the file pipeline.yml.", "kind": "tool", "category": "write_file", "tool": "write_file", "target": "{\"arguments\":{\"path\":\"pipeline.yml\"},\"name\":\"write_file\"}"}
+{"prompt": "Get the env variable 'REGION'.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"REGION\"},\"name\":\"env_get\"}"}
+{"prompt": "I need to remember to send the invoice.", "kind": "tool", "category": "set_reminder", "tool": "set_reminder", "target": "{\"arguments\":{\"task\":\"send the invoice\"},\"name\":\"set_reminder\"}"}
+{"prompt": "Retrieve the file from cdn.assets.io/images.tar.gz.", "kind": "tool", "category": "download_file", "tool": "download_file", "target": "{\"arguments\":{\"url\":\"cdn.assets.io/images.tar.gz\"},\"name\":\"download_file\"}"}
+{"prompt": "Show me the repo status.", "kind": "tool", "category": "git_status", "tool": "git_status", "target": "{\"arguments\":{},\"name\":\"git_status\"}"}
+{"prompt": "Spin up a Jira ticket for 'image upload error'.", "kind": "tool", "category": "jira_issue", "tool": "jira_issue", "target": "{\"arguments\":{\"summary\":\"image upload error\"},\"name\":\"jira_issue\"}"}
+{"prompt": "Get the clipboard contents.", "kind": "tool", "category": "read_clipboard", "tool": "read_clipboard", "target": "{\"arguments\":{},\"name\":\"read_clipboard\"}"}
+{"prompt": "Set the clipboard to 'tracking code'.", "kind": "tool", "category": "write_clipboard", "tool": "write_clipboard", "target": "{\"arguments\":{\"text\":\"tracking code\"},\"name\":\"write_clipboard\"}"}
+{"prompt": "Show the value of 'MAX_RETRIES'.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"MAX_RETRIES\"},\"name\":\"env_get\"}"}
+{"prompt": "docker run 'haproxy'.", "kind": "tool", "category": "docker_run", "tool": "docker_run", "target": "{\"arguments\":{\"image\":\"haproxy\"},\"name\":\"docker_run\"}"}
+{"prompt": "Stop 'consul' from running.", "kind": "tool", "category": "kill_process", "tool": "kill_process", "target": "{\"arguments\":{\"name\":\"consul\"},\"name\":\"kill_process\"}"}
+{"prompt": "Brief me on the protests downtown.", "kind": "tool", "category": "get_news", "tool": "get_news", "target": "{\"arguments\":{\"topic\":\"the protests downtown\"},\"name\":\"get_news\"}"}
+{"prompt": "Run this SQL: 'DELETE FROM sessions'.", "kind": "tool", "category": "sql_query", "tool": "sql_query", "target": "{\"arguments\":{\"query\":\"DELETE FROM sessions\"},\"name\":\"sql_query\"}"}
+{"prompt": "Open up api.service.dev please.", "kind": "tool", "category": "open_url", "tool": "open_url", "target": "{\"arguments\":{\"url\":\"api.service.dev\"},\"name\":\"open_url\"}"}
+{"prompt": "Drop in the 'zod' package.", "kind": "tool", "category": "install_package", "tool": "install_package", "target": "{\"arguments\":{\"name\":\"zod\"},\"name\":\"install_package\"}"}
+{"prompt": "Peek inside templates.", "kind": "tool", "category": "list_dir", "tool": "list_dir", "target": "{\"arguments\":{\"path\":\"templates\"},\"name\":\"list_dir\"}"}
+{"prompt": "Set a timer for 55 minutes.", "kind": "tool", "category": "set_timer", "tool": "set_timer", "target": "{\"arguments\":{\"duration\":\"55 minutes\"},\"name\":\"set_timer\"}"}
+{"prompt": "List files matching 'src/**/*.rb'.", "kind": "tool", "category": "find_files", "tool": "find_files", "target": "{\"arguments\":{\"pattern\":\"src/**/*.rb\"},\"name\":\"find_files\"}"}
+{"prompt": "Run the snippet 'list(reversed([1, 2]))' in Python.", "kind": "tool", "category": "run_python", "tool": "run_python", "target": "{\"arguments\":{\"code\":\"list(reversed([1, 2]))\"},\"name\":\"run_python\"}"}
+{"prompt": "Expand docs.zip.", "kind": "tool", "category": "unzip", "tool": "unzip", "target": "{\"arguments\":{\"path\":\"docs.zip\"},\"name\":\"unzip\"}"}
+{"prompt": "Get the env variable 'NODE_ENV'.", "kind": "tool", "category": "env_get", "tool": "env_get", "target": "{\"arguments\":{\"name\":\"NODE_ENV\"},\"name\":\"env_get\"}"}
+{"prompt": "Log 'workout log' in Notion.", "kind": "tool", "category": "notion_write", "tool": "notion_write", "target": "{\"arguments\":{\"content\":\"workout log\"},\"name\":\"notion_write\"}"}

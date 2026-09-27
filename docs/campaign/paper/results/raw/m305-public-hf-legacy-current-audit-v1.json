@@ -1,0 +1,42 @@
+{
+  "artifact_sha256": "a0043408fe287de4171bc63d83d3e1fa76d638241893e72bc7f034e287c1d0c2",
+  "claim_boundary": "This receipt verifies public Hub reachability and exact downloaded artifact hashes. It binds the current release only when current_checkpoint_match is true; otherwise the public model/demo is legacy or unrelated to the supplied checkpoint. No native mobile, browser, desktop, MCP, email, or Notion task success is implied.",
+  "current_checkpoint_sha256": null,
+  "dataset": {
+    "url": "https://huggingface.co/datasets/danelcsb/localagent-dispatch-data"
+  },
+  "demo": {
+    "model_graph": {
+      "bytes": 57468760,
+      "file": "model.fp16.onnx",
+      "sha256": "59f06336320d05c3ea796492da5d342f67be028cd01e7600d5a659c125d3d34c"
+    },
+    "repo": "danelcsb/localagent-webgpu",
+    "revision": "3c07f7db500ac5ab23222e8d1e2fc5033fa5aeb0"
+  },
+  "demo_url": "https://huggingface.co/spaces/danelcsb/localagent-webgpu",
+  "kind": "localagent_public_model_demo_manifest",
+  "model": {
+    "bytes": 113297968,
+    "config_sha256": "7b271dd293c71f54428df8dfa96d957c5414a10f8022e930f113e14785f6f95e",
+    "file": "model.safetensors",
+    "parameters": null,
+    "repo": "danelcsb/localagent-tiny-30m-byte",
+    "revision": "d15db7c46d32a3987169a1a6e8cd43a525ad2a4c",
+    "sha256": "a0043408fe287de4171bc63d83d3e1fa76d638241893e72bc7f034e287c1d0c2"
+  },
+  "model_url": "https://huggingface.co/danelcsb/localagent-tiny-30m-byte",
+  "public": true,
+  "receipt_self_sha256": "30706b66deed099a09314826a95f08bc539f34fcd78296722309fd753ce8ad1f",
+  "schema_version": 2,
+  "verification": {
+    "current_checkpoint_match": false,
+    "local_checkpoint": "/Users/sangbumchoi/Documents/LocalAgent/runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "local_checkpoint_sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "method": "anonymous Hugging Face API, resolver downloads, and SHA-256",
+    "model_revision": "d15db7c46d32a3987169a1a6e8cd43a525ad2a4c",
+    "public_demo_http_status": 200,
+    "public_model_http_status": 200,
+    "space_revision": "3c07f7db500ac5ab23222e8d1e2fc5033fa5aeb0"
+  }
+}

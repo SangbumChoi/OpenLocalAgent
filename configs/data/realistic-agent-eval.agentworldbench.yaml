@@ -1,0 +1,42 @@
+# Current source addendum kept separate from the frozen 42-entry gate catalog.
+# AgentWorldBench is a public test benchmark and is never an implicit training input.
+kind: localagent_realistic_agent_catalog
+schema_version: 1
+purpose: agentworldbench_eval_only_addendum
+entries:
+  - id: agentworldbench
+    family: computer
+    name: Qwen AgentWorldBench
+    source_url: https://huggingface.co/datasets/Qwen/AgentWorldBench
+    paper_url: https://github.com/QwenLM/Qwen-AgentWorld
+    code_url: https://github.com/QwenLM/Qwen-AgentWorld
+    source_revision: 6b8d28437042434dcdd168434227ca0de408c5ba
+    access_status: public_download
+    license:
+      name: Apache-2.0
+      url: https://www.apache.org/licenses/LICENSE-2.0
+      evidence: https://huggingface.co/datasets/Qwen/AgentWorldBench
+    scale:
+      kind: benchmark
+      test_turns: 2170
+      domains: 7
+    observation:
+      modalities: [text, screenshot, environment_state]
+      formats: [JSONL, PNG]
+    action:
+      modalities: [tool_call, computer_action, terminal_action, browser_action]
+      formats: [text, JSON, structured_action]
+    domains: [android, web, os, mcp, terminal, swe, search]
+    train_policy: eval_only
+    integration:
+      status: text_projection_available
+      target_adapter: scripts.normalize_agentworldbench
+      source_split_policy: official_test_only
+    webgpu_projection:
+      status: bridge_only
+      recommended_observation: prior_trajectory_text_plus_last_observation
+      screenshot_policy: omitted_from_text_projection
+    contamination:
+      split: official_test_only
+      rule: do not train on AgentWorldBench test rows; preserve source revision and normalized-output hashes
+    notes: Public world-model benchmark covering Android, Web, OS, MCP, terminal, SWE, and search. Official judge/native execution is separate from LocalAgent's teacher-forced projection.

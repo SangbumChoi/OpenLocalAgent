@@ -1,0 +1,183 @@
+{
+  "benchmark": {
+    "dataset": "xlangai/AgentNet",
+    "dataset_url": "https://huggingface.co/datasets/xlangai/AgentNet",
+    "projection_sha256": "7f0f080e33c4a069c532f3efcc0ec72e73d456f606cd4e5608df6f4dd949ac43",
+    "source_revision": "d76ee50",
+    "source_url": "https://github.com/xlang-ai/OpenCUA"
+  },
+  "claim_boundary": "Current m626 AgentNet text-observation/action projection. The four-parent random arm is bounded because random decoding produced unbounded malformed action text on the full 16-parent run; no full-random score is claimed. Screenshots, desktop state, and the upstream AgentNetBench runtime were not used, so this is not native computer-use success or an official leaderboard result.",
+  "kind": "localagent_m640_agentnet_current_text_projection_control_receipt",
+  "matched_subset": {
+    "parents": 4,
+    "random": {
+      "checkpoint": {
+        "bytes": 52203729,
+        "path": "/private/tmp/m626-androidcontrol/random.pt",
+        "sha256": "390f1414260e118cd621af735fe6e87b01e8641b1cff650d594585e39b212e45"
+      },
+      "overall": {
+        "by_action": {
+          "click": {
+            "mean_score": 0.0,
+            "tasks_with_action": 4
+          },
+          "hotkey": {
+            "mean_score": 0.0,
+            "tasks_with_action": 2
+          },
+          "press": {
+            "mean_score": 0.0,
+            "tasks_with_action": 1
+          },
+          "rightclick": {
+            "mean_score": 0.0,
+            "tasks_with_action": 1
+          },
+          "write": {
+            "mean_score": 0.0,
+            "tasks_with_action": 3
+          }
+        },
+        "exact_trajectory_rate": 0.0,
+        "first_action_type_rate": 0.0,
+        "mean_action_count_penalty": 0.9166666666666666,
+        "mean_ground_truth_actions": 11.25,
+        "mean_predicted_actions": 10.5,
+        "mean_total": 0.0,
+        "success_rate": 0.0,
+        "tasks": 4
+      },
+      "rows": {
+        "parents": 4,
+        "projected_actions": 257
+      }
+    },
+    "warm": {
+      "checkpoint": {
+        "bytes": 52203615,
+        "path": "/private/tmp/m626-androidcontrol/warm.pt",
+        "sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c"
+      },
+      "overall": {
+        "by_action": {
+          "click": {
+            "mean_score": 0.0,
+            "tasks_with_action": 4
+          },
+          "hotkey": {
+            "mean_score": 0.0,
+            "tasks_with_action": 2
+          },
+          "press": {
+            "mean_score": 0.0,
+            "tasks_with_action": 1
+          },
+          "rightclick": {
+            "mean_score": 0.0,
+            "tasks_with_action": 1
+          },
+          "write": {
+            "mean_score": 0.042581826012058586,
+            "tasks_with_action": 3
+          }
+        },
+        "exact_trajectory_rate": 0.0,
+        "first_action_type_rate": 0.75,
+        "mean_action_count_penalty": 0.9166666666666666,
+        "mean_ground_truth_actions": 11.25,
+        "mean_predicted_actions": 12.0,
+        "mean_total": 0.014985734280792425,
+        "success_rate": 0.0,
+        "tasks": 4
+      },
+      "rows": {
+        "parents": 4,
+        "projected_actions": 257
+      }
+    },
+    "warm_minus_random": {
+      "exact_trajectory_rate": 0.0,
+      "first_action_type_rate": 0.75,
+      "mean_total": 0.014985734280792425
+    }
+  },
+  "receipt_self_sha256": "5e955430d0320060e09704306bfe38f83120a41186b3b9b5cc373b44b2952928",
+  "schema_version": 1,
+  "source_reports": {
+    "random_subset": {
+      "bytes": 3714,
+      "path": "/private/tmp/m640-agentnet-m626-random4/report.json",
+      "sha256": "77366af62ca2c453f526cc2042798edd1edc7733055fd988553263178ebe2abe"
+    },
+    "warm_full": {
+      "bytes": 6161,
+      "path": "/private/tmp/m640-agentnet-m626-warm/report.json",
+      "sha256": "d2f2e4980afd057f5691187a53cb4118f6dff26126561ea8d057c808613cabb3"
+    },
+    "warm_subset": {
+      "bytes": 3778,
+      "path": "/private/tmp/m640-agentnet-m626-warm4/report.json",
+      "sha256": "65e39f01baacb4aa5e5f7967e60dd7fad13762b025fec6e11236307fa42e76b2"
+    }
+  },
+  "warm_full": {
+    "checkpoint": {
+      "bytes": 52203615,
+      "path": "/private/tmp/m626-androidcontrol/warm.pt",
+      "sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c"
+    },
+    "overall": {
+      "by_action": {
+        "click": {
+          "mean_score": 0.0,
+          "tasks_with_action": 16
+        },
+        "doubleclick": {
+          "mean_score": 0.0,
+          "tasks_with_action": 8
+        },
+        "dragto": {
+          "mean_score": 0.0,
+          "tasks_with_action": 5
+        },
+        "hotkey": {
+          "mean_score": 0.0,
+          "tasks_with_action": 5
+        },
+        "moveto": {
+          "mean_score": 0.0,
+          "tasks_with_action": 3
+        },
+        "press": {
+          "mean_score": 0.0,
+          "tasks_with_action": 1
+        },
+        "rightclick": {
+          "mean_score": 0.0,
+          "tasks_with_action": 8
+        },
+        "scroll": {
+          "mean_score": 0.0,
+          "tasks_with_action": 4
+        },
+        "write": {
+          "mean_score": 0.14279164867197094,
+          "tasks_with_action": 12
+        }
+      },
+      "exact_trajectory_rate": 0.0,
+      "first_action_type_rate": 0.75,
+      "mean_action_count_penalty": 0.9734848484848485,
+      "mean_ground_truth_actions": 15.75,
+      "mean_predicted_actions": 16.0,
+      "mean_total": 0.023256095797206947,
+      "success_rate": 0.0,
+      "tasks": 16
+    },
+    "rows": {
+      "parents": 16,
+      "projected_actions": 257
+    }
+  }
+}

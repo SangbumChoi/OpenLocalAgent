@@ -1,0 +1,40 @@
+# One-microbatch CPU feasibility preflight for the 4K near-budget 95.3M hybrid.
+#
+# The production config uses grad_accum_steps=16. This bounded derivative uses one
+# microbatch so a single optimizer update can finish on CPU; it is a systems/loss-path
+# gate, not a capability-saturating training claim and not a replacement for production
+# throughput or full-corpus training.
+stage: pretrain
+model_config: configs/model/webgpu-96m-hybrid.yaml
+data:
+  shards_dir: data/shards/paper-all
+  min_train_tokens: 19628032
+  corpus_freeze:
+    spec: configs/data/pretrain-paper-tier-freeze.yaml
+    path: data/shards/paper-all/tier-freeze.json
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-paper-16k.json
+optim:
+  name: adamw
+  lr: 2.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 58
+  total_steps: 2909
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 1
+  grad_accum_steps: 1
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+  resume: true
+log:
+  out_dir: runs/pretrain-paper-tier-96m-hybrid-seed2026
+  ckpt_every: 100
+  eval_every: 100
+  eval_batches: 16

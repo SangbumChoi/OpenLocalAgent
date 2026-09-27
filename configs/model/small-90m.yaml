@@ -1,0 +1,13 @@
+# ~90M-param Llama-style decoder. Still under the 100M budget.
+name: small-90m
+vocab_size: 32000
+d_model: 640
+n_layers: 16
+n_heads: 10
+n_kv_heads: 2          # GQA
+ffn_hidden: 1728       # SwiGLU
+max_seq_len: 2048
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0

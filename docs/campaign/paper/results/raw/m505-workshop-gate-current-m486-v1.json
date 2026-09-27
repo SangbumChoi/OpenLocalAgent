@@ -1,0 +1,295 @@
+{
+  "blocking_requirements": [
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:androidworld"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:mobilegym"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:mobile_safety_bench"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:iosworld"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:browsergym_miniwob"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:osworld"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:osworld_v2"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:agentnet"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:toolsandbox"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:mcpmark"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:enterpriseopsgym"
+    },
+    {
+      "blockers": [
+        "artifact_sha256_invalid",
+        "current_checkpoint_not_bound",
+        "demo_url_invalid",
+        "missing_field:artifact_sha256",
+        "missing_field:demo_url",
+        "missing_field:model_url",
+        "missing_field:public",
+        "model_url_invalid",
+        "public_flag_not_true"
+      ],
+      "requirement": "artifacts:public_model_demo_manifest"
+    }
+  ],
+  "catalog": {
+    "blocked_ids": [
+      "androidworld",
+      "iosworld",
+      "mobile_safety_bench",
+      "aitw_control_eval",
+      "browsergym_miniwob",
+      "mind2web_eval",
+      "webarena",
+      "osworld",
+      "agentnet",
+      "appworld",
+      "tau_bench",
+      "toolsandbox",
+      "toolathlon",
+      "mcpmark",
+      "enterpriseopsgym",
+      "mcp_persona",
+      "tua_bench",
+      "osworld_human",
+      "mobilegym",
+      "mobileworld",
+      "memgui_bench",
+      "workarena",
+      "weblinx",
+      "osworld_v2",
+      "toolathlon_gym",
+      "phoneworld",
+      "gui_odyssey",
+      "mobile_agent_bench",
+      "agentbench_fc",
+      "visualwebarena",
+      "omni_act",
+      "worldgui",
+      "macosworld",
+      "assistgui",
+      "androiddaily",
+      "windows_agent_arena",
+      "webchorearena",
+      "timewarp"
+    ],
+    "entries": 42,
+    "path": "configs/data/realistic-agent-eval.catalog.yaml",
+    "runnable_ids": [
+      "androidcontrol",
+      "android_in_the_wild",
+      "xlam_function_calling",
+      "mind2web_train"
+    ],
+    "sha256": "04bdd515e080c4e7fedab935ae9a31a01a77ca73268645719e5c9129d2eb3c61"
+  },
+  "checks": [
+    {
+      "blockers": [],
+      "evidence": [
+        "04bdd515e080c4e7fedab935ae9a31a01a77ca73268645719e5c9129d2eb3c61",
+        "configs/data/realistic-agent-eval.catalog.yaml"
+      ],
+      "requirement": "catalog:realistic_family_coverage",
+      "status": "pass"
+    },
+    {
+      "blockers": [],
+      "evidence": [
+        "configs/data/realistic-agent-eval.catalog.yaml"
+      ],
+      "requirement": "catalog:no_pending_train_adapter",
+      "status": "pass"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:androidworld",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:mobilegym",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:mobile_safety_bench",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:iosworld",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:browsergym_miniwob",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:osworld",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:osworld_v2",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:agentnet",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:toolsandbox",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:mcpmark",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:enterpriseopsgym",
+      "status": "blocked"
+    },
+    {
+      "blockers": [],
+      "evidence": [
+        "/Users/sangbumchoi/Documents/LocalAgent/docs/paper/results/raw/m451-webgpu-native-current-rerun-v1.json",
+        "9f799e5d7baef3255da1cc8d4c7b5e718ea8c71a08a3aa2728860e9b7c2ddd8e"
+      ],
+      "requirement": "webgpu:native_capability_and_latency",
+      "status": "pass"
+    },
+    {
+      "blockers": [],
+      "evidence": [
+        "/Users/sangbumchoi/Documents/LocalAgent/docs/paper/results/raw/m475-androidcontrol-current-warm-random-v1.json:91f4173bff263f34ec967cc9d13b7d7260b7ac0d8ca90b5e48548c779935e938"
+      ],
+      "requirement": "weights:transfer_and_no_transfer_ablation",
+      "status": "pass"
+    },
+    {
+      "blockers": [],
+      "evidence": [
+        "/Users/sangbumchoi/Documents/LocalAgent/docs/paper/results/raw/m457-current-checkpoint-rl-preflight-v1.json",
+        "5260a2537267a7f4f6477f34d77d3f1176ec76abf5183897e52abf05d75596fd"
+      ],
+      "requirement": "training:rl_preflight",
+      "status": "pass"
+    },
+    {
+      "blockers": [
+        "artifact_sha256_invalid",
+        "current_checkpoint_not_bound",
+        "demo_url_invalid",
+        "missing_field:artifact_sha256",
+        "missing_field:demo_url",
+        "missing_field:model_url",
+        "missing_field:public",
+        "model_url_invalid",
+        "public_flag_not_true"
+      ],
+      "evidence": [
+        "/Users/sangbumchoi/Documents/LocalAgent/spaces/localagent-webgpu/bundle-manifest.json",
+        "a7895541f802b4836d76dc2b9f5bc203168d80c534a2339126fc7b00a31dadca"
+      ],
+      "requirement": "artifacts:public_model_demo_manifest",
+      "status": "blocked"
+    }
+  ],
+  "claim_boundary": "ready is false unless native benchmark receipts, native WebGPU performance and capability evidence, transfer ablations, a successful current-checkpoint RL preflight, and public model/demo artifacts are all explicitly supplied; protocol bridges and synthetic receipts do not satisfy these checks",
+  "current_checkpoint": {
+    "path": "/Users/sangbumchoi/Documents/LocalAgent/runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "kind": "localagent_workshop_publication_gate",
+  "ready": false,
+  "schema_version": 1
+}

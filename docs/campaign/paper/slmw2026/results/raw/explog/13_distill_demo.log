@@ -1,0 +1,25 @@
+teacher tiny-30m-byte: 28.3M — pretrain+SFT
+  teacher held-out: NLL=0.492 top1=88.1%
+  student SFT-only : NLL=1.206 top1=68.3%
+caching teacher soft targets ...
+  [cache] 0/1500
+  [cache] 160/1500
+  [cache] 320/1500
+  [cache] 480/1500
+  [cache] 640/1500
+  [cache] 800/1500
+  [cache] 960/1500
+  [cache] 1120/1500
+  [cache] 1280/1500
+  [cache] 1440/1500
+  [distill] step 0/300  loss 9.505
+  [distill] step 50/300  loss 8.094
+  [distill] step 100/300  loss 6.312
+  [distill] step 150/300  loss 5.088
+  [distill] step 200/300  loss 3.758
+  [distill] step 250/300  loss 3.209
+  [distill] step 299/300  loss 2.961
+  student DISTILLED: NLL=1.252 top1=69.4%
+
+Distillation effect (1M student): top1 68.3% -> 69.4%  (+1.0 pts), NLL 1.206 -> 1.252
+Artifacts in runs/distill/

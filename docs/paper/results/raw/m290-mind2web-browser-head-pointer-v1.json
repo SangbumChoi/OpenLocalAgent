@@ -1,0 +1,42 @@
+{
+  "claim_boundary": "Public Mind2Web train-only browser-head and standard-tool pointer transfer with separate pinned BrowserGym/MiniWoW canaries. No official Mind2Web test score, BrowserGym full-plan score, screenshot grounding, visual-agent result, external account, or side effect is claimed.",
+  "generated_at": "2026-08-04",
+  "kind": "localagent_mind2web_browser_head_pointer_receipt",
+  "checkpoint": {"parent": {"path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt", "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361", "parameters": 10524544}},
+  "source": {
+    "dataset": "osunlp/Mind2Web",
+    "url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+    "original_url": "https://github.com/OSU-NLP-Group/Mind2Web",
+    "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+    "license": "CC-BY-4.0",
+    "upstream_split": "train",
+    "train": {"path": "/private/tmp/mind2web-grounded-offset8-train-disjoint.jsonl", "bytes": 282261, "sha256": "78f7e647c3728106901c51ecc772c834467ef6a019c1c083af6849700b361621", "conversations": 36, "decisions": 219},
+    "eval": {"path": "/private/tmp/mind2web-grounded-offset8-eval-disjoint.jsonl", "bytes": 81803, "sha256": "46305cb512f7368ed31817c79b798f5469e8658db12aed5d6880ea81b4e6fcbe", "conversations": 12, "decisions": 63},
+    "split_audit": {"parent_record_disjoint": true, "typed_slot_disjoint": true, "official_test_consumed": false, "screenshots_consumed": false}
+  },
+  "head_transfer": {
+    "protocol": {"backbone_frozen": true, "steps": 500, "batch_size": 32, "learning_rate": 0.005, "seed": 2047, "source_action_map": {"web_click": "click", "web_select": "click", "web_type": "type_text"}},
+    "warm": {"child_sha256": "9ec3de3681cc8e2ad3f2baea28db6b7f316cb26f621a89bb9e8c482073ee051b", "report_sha256": "36df4d9b09411b3107c79912109e2759124fdc2b319504baa853ea258893cc41", "before": {"route": 1.0, "selector_top1": 0.1904761905, "selector_top3": 0.8571428571}, "after": {"route": 1.0, "selector_top1": 0.9206349206, "selector_top3": 1.0}, "route_relative_delta_l2": 0.6743251085, "selector_relative_delta_l2": 0.8195741773},
+    "matched_random": {"child_sha256": "c03df6fa84c2f21dec57c96affdc11276d26d5f0a678f3c74b7b1a2e4d35770b", "report_sha256": "62aa0af1732c0f7ee444c5cf4bc1f5a53483ce2c1d2aae1bbc7aabf08fe42c12", "before": {"route": 0.0, "selector_top1": 0.0, "selector_top3": 0.0}, "after": {"route": 1.0, "selector_top1": 0.8571428571, "selector_top3": 1.0}, "route_relative_delta_l2": 1.2530081272, "selector_relative_delta_l2": 1.133315444}
+  },
+  "pointer_transfer": {
+    "projection": "web_click->click(target), web_type->type_text(text), web_select->click(target)",
+    "child_sha256": "bfafa48931645e8f11d0ce5abad24fa51cb0e14e0304ef47d38052b9f052a952",
+    "report_sha256": "bb34c26303105ddc7bd73b549429a9f0b0650db0d788c1a9e72e9f1cff421584",
+    "pointer_args_added": ["target", "text"],
+    "steps": 64,
+    "learning_rate": 0.00001,
+    "heldout_exact_span_before": 0.0,
+    "heldout_exact_span_after": 0.0476190476,
+    "heldout_span_rows": 63,
+    "implementation_change": "Learned pointer spans now take precedence over quoted-string heuristics when the deployed schema argument is present in the pointer vocabulary."
+  },
+  "native_canaries": {
+    "head_warm": {"receipt_sha256": "7d7296846295e4044b59d885f48a7ef8c4c64c39002fd969c29075b0ba22274f", "episodes": 20, "successes": 0, "success_rate": 0.0, "model_tools": {"type_text": 160, "none": 40}, "argument_failure": "type_text repeatedly copied the placeholder Submit"},
+    "head_plus_m289_pointer": {"receipt_sha256": "ee3cc365dee2080acb5dde4d636ca44937cd771cccf2d31d2ceceaac644a09da", "episodes": 20, "successes": 0, "success_rate": 0.0, "model_tools": {"type_text": 160, "none": 40}},
+    "standard_pointer_child": {"receipt_sha256": "affbab81dff011e2a49ac225c02f66dafcdbb9497822abd81ce9fa432be15126", "episodes": 20, "successes": 0, "success_rate": 0.0, "model_tools": {"type_text": 200}, "argument_failure": "pointer copied a prompt-fragment string instead of a live target/value"},
+    "environment": {"browsergym_revision": "9e779f087de9a65668b6974d11f9ce9816026e96", "miniwob_revision": "7fd85d71a4b60325c6585396ec4f48377d049838", "chromium_revision": "1117", "chromium_version": "125.0.6422.26", "playwright_version": "1.44.0", "max_steps": 10, "tool_pool": "standard", "coordinate_fallback": false, "official_split_verified": false}
+  },
+  "decision": {"promote_child_to_deployment": false, "adopt_browser_heads": false, "keep_as_diagnostic": true, "reason": "Mind2Web head transfer materially improves source-disjoint selector accuracy and warm beats matched random, but native BrowserGym remains 0/20. Pointer precedence exposes a remaining grounding failure rather than hiding it behind quoted-string heuristics.", "native_gate_status": "unchanged_blocked"},
+  "schema_version": 1
+}

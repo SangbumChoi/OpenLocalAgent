@@ -1,0 +1,103 @@
+{
+  "adapter": "mcpmark_metadata_profile_v1",
+  "backend_directory_counts": {
+    "filesystem": 40,
+    "github": 33,
+    "insforge": 31,
+    "notion": 38,
+    "playwright": 4,
+    "playwright_webarena": 31,
+    "postgres": 31,
+    "supabase": 31
+  },
+  "category_counts_top20": {
+    "chinook": 15,
+    "claude-code": 8,
+    "computer_science_student_dashboard": 5,
+    "dvdrental": 12,
+    "easyr1": 4,
+    "employees": 30,
+    "file_context": 8,
+    "file_property": 4,
+    "harmony": 5,
+    "japan_travel_planner": 5,
+    "lego": 15,
+    "mcpmark-cicd": 7,
+    "missing-semester": 5,
+    "online_resume": 5,
+    "reddit": 12,
+    "security": 6,
+    "shopping": 7,
+    "shopping_admin": 12,
+    "sports": 12,
+    "student_database": 5
+  },
+  "claim_boundary": "Metadata inventory only; no prompt text, trajectories, state assets, verifier code, or MCPMark model score was retained. Standard and easy tasks remain evaluation-only under LocalAgent's contamination policy.",
+  "dataset": "MCPMark",
+  "dataset_url": "https://github.com/eval-sys/mcpmark",
+  "difficulty_counts": {
+    "L1": 70,
+    "L3": 169
+  },
+  "kind": "localagent_mcpmark_metadata_profile",
+  "mcp_service_counts": {
+    "filesystem": 40,
+    "github": 33,
+    "notion": 38,
+    "playwright": 35,
+    "postgres": 93
+  },
+  "profile_sha256": "785983f42bfba3784dd0ec8cf8591bae3ce231c822f9ddda50a09304fd02b20f",
+  "realistic_surface_counts": {
+    "browser_tasks": 35,
+    "database_tasks": 93,
+    "filesystem_tasks": 40,
+    "github_tasks": 33,
+    "notion_tasks": 38
+  },
+  "schema_version": 1,
+  "source": {
+    "checkout_root": "external_checkout",
+    "description_text_retained": false,
+    "metadata_bytes": 1136480,
+    "metadata_files": 239,
+    "metadata_glob": "tasks/*/*/*/*/meta.json",
+    "metadata_manifest_sha256": "c57893de273740ac12b566002848376cb7b5c8e71ff4df9c77bf1ef5b46610cf",
+    "state_assets_consumed": false,
+    "task_id_set_sha256": "de649c095975813d8c2244cc964d97923c254eb29a0b50ed0b57e1ac07a2f02e",
+    "verifiers_consumed": false
+  },
+  "source_revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+  "state_type_counts": {
+    "none": 2,
+    "text": 133,
+    "url": 71,
+    "video": 33
+  },
+  "suite_counts": {
+    "easy": 70,
+    "standard": 169
+  },
+  "tag_counts_top20": {
+    "audit and compliance": 12,
+    "comparative analysis": 23,
+    "conditional filtering": 20,
+    "content submission": 25,
+    "cross-reference linking": 13,
+    "data aggregation": 18,
+    "data extraction": 44,
+    "data integrity enforcement": 12,
+    "data migration": 18,
+    "database manipulation": 17,
+    "pattern analysis": 20,
+    "performance optimization": 18,
+    "reporting and analytics": 30,
+    "schema design": 33,
+    "statistical aggregation": 24,
+    "stored procedures and functions": 15,
+    "template population": 16,
+    "transactional operations": 18,
+    "user interaction": 13,
+    "visual formatting": 24
+  }
+}

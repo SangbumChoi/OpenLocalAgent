@@ -1,0 +1,98 @@
+{
+  "kind": "localagent_toolsandbox_schema_conditioned_transfer",
+  "schema_version": 1,
+  "dataset": {
+    "name": "apple/ToolSandbox",
+    "source_url": "https://github.com/apple/ToolSandbox",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "license": "Apple Software License; see upstream LICENSE and ACKNOWLEDGEMENTS",
+    "manifest_sha256": "85f977aed04a40c959c41a5f80e5c3c2c75653aa44c4c789e8234e3aae8ff356",
+    "train_rows": 107,
+    "eval_rows": 20,
+    "candidate_tools": 32,
+    "tool_schema_functions": 38,
+    "tool_schema_policy": "AST-only top-level function signatures and docstring summaries from tool_sandbox/tools/*.py",
+    "train_jsonl_sha256": "773b44877677e7b2be72295bc9eb26d158c5932d6665aac15bcae9592d46609d",
+    "eval_jsonl_sha256": "925ce977082ffb980e46bce5b25ea81fdd335d25e5996feefd503015ba3ff46d"
+  },
+  "projection_policy": {
+    "scenario_ast_only": true,
+    "tool_schema_ast_only": true,
+    "scenario_prompts_retained": true,
+    "verifiers_read": false,
+    "tools_executed": false,
+    "user_simulator_executed": false,
+    "external_api_called": false,
+    "claim_boundary": "Public ToolSandbox source projection with static tool schemas; not an official ToolSandbox score."
+  },
+  "continuation": {
+    "parent_checkpoint_sha256": "3263678aadae50106f32bc557d5bd99d8aa3e2fc96ce055a36c28260b21f6062",
+    "child_checkpoint_sha256": "af18d4f12e4472bcb251ab1c2ffed8f0e42dabec0c0422f993388ae00b50a7a9",
+    "steps": 32,
+    "batch_size": 4,
+    "learning_rate": 0.00001,
+    "before": {
+      "eval_mean_loss": 2.7657637527684846,
+      "eval_token_accuracy": 0.65311004784689,
+      "eval_sequence_accuracy": 0.0
+    },
+    "after": {
+      "eval_mean_loss": 2.139274724932949,
+      "eval_token_accuracy": 0.715311004784689,
+      "eval_sequence_accuracy": 0.0
+    },
+    "backbone_weight_movement": {
+      "attention_or_mixer_relative_delta_l2": 0.001955857806453809,
+      "embedding_relative_delta_l2": 0.004761368193828262,
+      "ffn_relative_delta_l2": 0.002433408019892814,
+      "normalization_relative_delta_l2": 0.00009721083865387263
+    }
+  },
+  "selector_probe": {
+    "steps": 128,
+    "batch_size": 32,
+    "learning_rate": 0.005,
+    "seed": 2029,
+    "candidate_list_scoring": true,
+    "arms": {
+      "inherited_pretrained_selector": {
+        "top1": 0.45,
+        "top3": 0.85,
+        "candidate_coverage": 1.0
+      },
+      "retrained_pretrained_backbone": {
+        "top1": 0.75,
+        "top3": 1.0,
+        "candidate_coverage": 1.0,
+        "selector_query_tower_relative_delta_l2": 1.3053897619247437,
+        "selector_tool_tower_relative_delta_l2": 1.0805925130844116
+      },
+      "retrained_matched_random_backbone": {
+        "top1": 0.75,
+        "top3": 0.9,
+        "candidate_coverage": 1.0
+      }
+    },
+    "adoption": "do_not_adopt_as_representation_evidence",
+    "reason": "Schema conditioning improves transferred top-3 coverage, but transferred and matched-random backbones tie on top-1 over this 20-row projection."
+  },
+  "mcpmark_untouched_description_proxy": {
+    "source_revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "mcp_servers_executed": false,
+    "verifiers_executed": false,
+    "standard": {
+      "rows": 169,
+      "route_accuracy": 0.20710059171597633,
+      "selector_top1": 0.023668639053254437,
+      "selector_top3": 0.14792899408284024
+    },
+    "easy": {
+      "rows": 70,
+      "route_accuracy": 0.22857142857142856,
+      "selector_top1": 0.014285714285714285,
+      "selector_top3": 0.14285714285714285
+    },
+    "interpretation": "Schema-conditioned ToolSandbox SFT does not change the untouched MCPMark description proxy relative to m59; cross-service schema retrieval remains unresolved."
+  },
+  "claim_boundary": "This receipt binds static public-source schemas, a text-first held-out continuation, and candidate-list selector diagnostics. It does not claim ToolSandbox simulator completion, state milestone success, MCPMark success, native WebGPU capability, or external side effects."
+}

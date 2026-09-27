@@ -1,0 +1,109 @@
+{
+  "blocked_requirements": {
+    "artifacts:public_model_demo_manifest": "current_checkpoint_not_bound",
+    "artifacts:visual_webgpu_export": "browser_visual_probe_bound_but_native_mobile_verifier_missing",
+    "native:agentnet": "visual_runtime_and_native_verifier_missing; text_projection_success_zero",
+    "native:androidcontrol_structured_visual": "structured_action_head_native_emulator_unverified",
+    "native:androidcontrol_visual": "visual_pilot_sequence_exact_zero_and_no_emulator_verifier",
+    "native:androidworld": "receipt_not_supplied",
+    "native:appworld": "native_completion_zero",
+    "native:enterpriseopsgym": "no_server_or_verifier_execution",
+    "native:iosworld": "receipt_not_supplied",
+    "native:mcpmark": "native_verifier_zero",
+    "native:mcpmark_playwright": "browser_sft_native_verifier_zero",
+    "native:mobile_safety_bench": "receipt_not_supplied",
+    "native:osworld": "receipt_not_supplied",
+    "native:osworld_v2": "receipt_not_supplied",
+    "native:toolsandbox": "official_split_not_verified"
+  },
+  "claim_boundary": "Fail-closed gate after browser execution of the pinned visual sidecar. The graph now has an explicit onnxruntime-web WebGPU probe, but native Android emulator validation, official AndroidControl scoring, and current-checkpoint release binding remain absent.",
+  "current_checkpoint": {
+    "bytes": 52206773,
+    "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "evidence": {
+    "agentnet_selector_transfer": {
+      "bytes": 6398,
+      "path": "docs/paper/results/raw/m709-m679-agentnet-selector-transfer-v1.json",
+      "sha256": "487c7f7c116a46728dcda6e36f8162abc53f0b388d73a6eeb8914b0297bc1eef"
+    },
+    "agentnet_visual_source": {
+      "bytes": 10470,
+      "path": "docs/paper/results/raw/m708-agentnet-visual-source-audit-v1.json",
+      "sha256": "bdcec4ef8281c26c04853f10c222e0c42533ad7fd2a13943ad87263d32dfdaac"
+    },
+    "androidcontrol_structured_visual_pilot": {
+      "bytes": 11945,
+      "path": "docs/paper/results/raw/m714-androidcontrol-structured-visual-pilot-v1.json",
+      "sha256": "a1c6e6aa1ade47613801057d0b411cbd711b3536a88743661b8116c9126d896a"
+    },
+    "androidcontrol_visual_action_pilot": {
+      "bytes": 13200,
+      "path": "docs/paper/results/raw/m712-androidcontrol-visual-action-pilot-v1.json",
+      "sha256": "4f80ac03a33de6f4e2d58424ae3b2a0247f5b6951bfd474b1e16e0a184a6d6dd"
+    },
+    "androidcontrol_visual_bridge": {
+      "bytes": 1831,
+      "path": "docs/paper/results/raw/m711-androidcontrol-visual-bridge-smoke-v1.json",
+      "sha256": "8d29d7ecbb9b71cf341bffe20d941e09bcb23f7f73326565835d0cc5cae8f0f3"
+    },
+    "appworld_free": "docs/paper/results/raw/m694-m679-appworld-free-v1.json",
+    "appworld_native": "docs/paper/results/raw/m693-m679-appworld-native-v1.json",
+    "appworld_sft_native": "docs/paper/results/raw/m696-m679-appworld-sft-native-v1.json",
+    "browsergym_miniwob": "docs/paper/results/raw/m684-m679-browsergym-native-v1.json",
+    "mcpmark_browser_transfer_native": {
+      "bytes": 13424,
+      "path": "docs/paper/results/raw/m705-m679-browser-transfer-native-v1.json",
+      "sha256": "1ac379ea0aa7eb29e3bcaa447a2f6356b93e9cb9e18796ece8b77bfc2430958b"
+    },
+    "mcpmark_native_filesystem_standard": {
+      "bytes": 98001,
+      "path": "docs/paper/results/raw/m697-m679-mcpmark-filesystem-standard-v1.json",
+      "sha256": "80caf8daa655d94cd77f34a4c7d109ed322a986d851d9f8b2448b1d35c62c38f"
+    },
+    "mcpmark_playwright": {
+      "bytes": 11252,
+      "path": "docs/paper/results/raw/m702-m679-mcpmark-playwright-standard-v1.json",
+      "sha256": "9cba1e9cf82bce6584335fe789b3c31cae59ad72ca29a3aeb7b9dc0ef3b09580"
+    },
+    "mcpmark_trajectory_continuation_native": {
+      "bytes": 104086,
+      "path": "docs/paper/results/raw/m698-m679-mcpmark-continuation-native-v1.json",
+      "sha256": "80761c271881dfc89fe84954b1b95be292ac6a38b439a4bab06db028596b4591"
+    },
+    "mobilegym": "docs/paper/results/raw/m683-m679-mobilegym-native-v1.json",
+    "rl_preflight": "docs/paper/results/raw/m686-m679-rl-preflight-v1.json",
+    "structured_visual_onnx_parity": {
+      "bytes": 1766,
+      "path": "docs/paper/results/raw/m716-structured-visual-onnx-parity-v1.json",
+      "sha256": "fe7f12860e693ffdc367b4848cb49f56cafd90f7731f4f06337d2c4f9f0c15c4"
+    },
+    "toolsandbox": "docs/paper/results/raw/m688-m679-toolsandbox-native-v1.json",
+    "visual_webgpu_probe": {
+      "bytes": 2701,
+      "path": "docs/paper/results/raw/m718-visual-webgpu-probe-v1.json",
+      "sha256": "4a9fda47f20486cfebf0db431b0f52975ae64d0120ec249a5035372eee7377a7"
+    },
+    "webgpu": "/private/tmp/m682-m679-webgpu-capability-current.json",
+    "weight_transfer": "docs/paper/results/raw/m687-m679-current-weight-transfer-v1.json"
+  },
+  "kind": "localagent_m719_workshop_gate_current_m679",
+  "passed_requirements": [
+    "catalog:no_pending_train_adapter",
+    "catalog:realistic_family_coverage",
+    "native:browsergym_miniwob",
+    "native:mobilegym",
+    "training:rl_preflight",
+    "webgpu:native_capability_and_latency",
+    "weights:transfer_and_no_transfer_ablation"
+  ],
+  "ready": false,
+  "receipt_self_sha256": "7334aeffe6f80f5bac5e8b00b907b44f30c5c60491cb7be98dbd24f84bc2ff7f",
+  "schema_version": 1,
+  "source_gate": {
+    "bytes": 5277,
+    "path": "docs/paper/results/raw/m717-workshop-gate-current-m679-v1.json",
+    "sha256": "e5df10b9cb5480fdbbdeb08c71877ddd9ed6290b7d8487739152b6af0205cdea"
+  }
+}

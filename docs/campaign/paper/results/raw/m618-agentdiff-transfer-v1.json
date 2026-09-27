@@ -1,0 +1,100 @@
+{
+  "arms": {
+    "random": {
+      "checkpoint": {
+        "bytes": 52212186,
+        "path": "/private/tmp/m607-m585-policy-random.pt",
+        "sha256": "fb64816a837412d2d88906ede50621b7f4ba90fc6b6ffca7f0931287e90e28c0"
+      },
+      "projection_report": {
+        "bytes": 2535,
+        "path": "/private/tmp/m618-agentdiff/eval/random.json",
+        "sha256": "9a3a7491c440662fa03b6d6dcc49f84bce3f698cd2a725a9077386d9b615776b"
+      }
+    },
+    "warm": {
+      "checkpoint": {
+        "bytes": 52212008,
+        "path": "/private/tmp/m607-m585-policy-warm.pt",
+        "sha256": "a2cba579c5e16a7e3115af64b3424bd384c55f3b863e1200676444a6b22b1ecf"
+      },
+      "projection_report": {
+        "bytes": 2534,
+        "path": "/private/tmp/m618-agentdiff/eval/warm.json",
+        "sha256": "4f84813abb4d7f1407cfb88163e05ea2a1bcdaf47b4c2ae20ea1e9d7d0acde13"
+      }
+    }
+  },
+  "claim_boundary": "Matched warm/random teacher-forced assertion-text projection on the public Agent-Diff test split. This is not deterministic state-diff success, sandbox execution, API interaction, an official leaderboard score, or evidence of external side effects.",
+  "dataset": {
+    "license": "MIT",
+    "name": "hubertmarek/agent-diff-bench",
+    "services": [
+      "box",
+      "calendar",
+      "linear",
+      "slack"
+    ],
+    "source_revision": "4a96ea93a8d074daba93ded109f340da7fae2f70",
+    "test_manifest_sha256": "ee1be8aaba75496f5073e9f57f4c0995707a8173d8069839cb5320a25be681c9",
+    "test_rows": 45,
+    "train_manifest_sha256": "c5dec3a6f9ba04c50c3ea20b6013157e3b20d4a6478bff0c2be4cf8891059cf9",
+    "train_policy": "train_split_only;test_split_eval_only",
+    "train_rows": 179
+  },
+  "decision": {
+    "export_to_webgpu": false,
+    "native_promotion": false,
+    "reuse_warm_backbone_as_initialization_candidate": true,
+    "warm_wins_token_accuracy": true
+  },
+  "kind": "localagent_m618_agentdiff_transfer_eval",
+  "metrics": {
+    "by_service": {
+      "box": {
+        "random_mean_loss": 9.366660373063135,
+        "random_token_accuracy": 0.10037002775208141,
+        "rows": 10,
+        "warm_mean_loss": 5.391690150992281,
+        "warm_minus_random_pp": 16.69750231267345,
+        "warm_token_accuracy": 0.26734505087881594
+      },
+      "calendar": {
+        "random_mean_loss": 9.424538997803474,
+        "random_token_accuracy": 0.07978186225005049,
+        "rows": 12,
+        "warm_mean_loss": 5.511346547730256,
+        "warm_minus_random_pp": 19.894970712987277,
+        "warm_token_accuracy": 0.27873156937992327
+      },
+      "linear": {
+        "random_mean_loss": 9.44955179906722,
+        "random_token_accuracy": 0.11409189022510022,
+        "rows": 11,
+        "warm_mean_loss": 5.581347535798257,
+        "warm_minus_random_pp": 13.536848596978107,
+        "warm_token_accuracy": 0.2494603761948813
+      },
+      "slack": {
+        "random_mean_loss": 9.38252470509106,
+        "random_token_accuracy": 0.07431935246504782,
+        "rows": 12,
+        "warm_mean_loss": 5.593537836587105,
+        "warm_minus_random_pp": 21.0448859455482,
+        "warm_token_accuracy": 0.2847682119205298
+      }
+    },
+    "overall": {
+      "random_exact_sequence_accuracy": 0.0,
+      "random_mean_loss": 9.41243751015852,
+      "random_token_accuracy": 0.09056141961144255,
+      "rows": 45,
+      "warm_exact_sequence_accuracy": 0.0,
+      "warm_mean_loss": 5.526010108026904,
+      "warm_minus_random_pp": 18.02814746825761,
+      "warm_token_accuracy": 0.27084289429401864
+    }
+  },
+  "receipt_self_sha256": "70151f1bd5236973413668f0822a9879daa9802a5d7ca2dc44bc918e20c67820",
+  "schema_version": 1
+}

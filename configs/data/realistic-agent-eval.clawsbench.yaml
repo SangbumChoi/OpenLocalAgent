@@ -1,0 +1,44 @@
+# Eval-only productivity benchmark addendum. Public metadata is available; native services and
+# verifiers are not copied into LocalAgent.
+kind: localagent_realistic_agent_catalog
+schema_version: 1
+purpose: clawsbench_productivity_safety_audit_addendum
+entries:
+  - id: clawsbench
+    family: browser
+    name: ClawsBench
+    source_url: https://huggingface.co/datasets/benchflow/ClawsBench
+    paper_url: https://arxiv.org/abs/2604.05172
+    code_url: https://github.com/benchflow-ai/ClawsBench
+    source_revision: e7c45cc9ff486502176267c1294ac5809cf0700a
+    access_status: public_download
+    license:
+      name: CC-BY-NC-SA-4.0
+      url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+      evidence: https://github.com/benchflow-ai/ClawsBench
+    scale:
+      kind: benchmark
+      tasks: 44
+      safety_tasks: 24
+      services: 5
+      agent_traces: 7834
+    observation:
+      modalities: [text, browser_state, service_state, action_history]
+      formats: [JSON, JSONL, Docker, browser_trace]
+    action:
+      modalities: [browser_action, tool_call, safety_decision]
+      formats: [shell, HTTP, JSON, confirmation, refusal]
+    domains: [gmail, google_calendar, google_docs, google_drive, slack, productivity_safety]
+    train_policy: eval_only
+    integration:
+      status: protocol_audit_only
+      target_adapter: scripts.audit_clawsbench_source
+      source_split_policy: public_metadata_only;native_test_tasks_and_verifiers_eval_only
+    webgpu_projection:
+      status: bridge_only
+      recommended_observation: task_metadata_plus_compact_action_history
+      screenshot_policy: traces_not_used_for_training
+    contamination:
+      split: no_static_train_test_split_in_public_metadata_release
+      rule: do not train on benchmark tasks, traces, safety labels, or verifier state; native execution requires upstream Docker services
+    notes: Particularly relevant to email, calendar, documents, drive, Slack, safety, and cross-service workflows. This addendum records source coverage without claiming a native score.

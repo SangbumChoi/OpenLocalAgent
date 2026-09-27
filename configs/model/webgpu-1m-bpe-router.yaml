@@ -1,0 +1,29 @@
+# Frozen-paper-stream-compatible ~1M router. This is deliberately a separate candidate from
+# ultra-tiny-1m.yaml: the byte model spends far less of its budget on embeddings and remains the
+# preferred 1M architecture when a byte-packed corpus is available.
+#
+# A 16,384-token vocabulary forces this model to spend 524,288 parameters (53.5% of the total)
+# on its tied 32-wide embedding table. Factorization and shared-depth recurrence leave enough
+# capacity for two distinct blocks run three times (effective depth 6). The [conv, attn] schedule
+# keeps one exact-copying attention pass per loop while halving the long-context cache versus a
+# recurrent two-attention-block model.
+#
+# Its 4K window fits the maximum frozen proxy prompt plus a 96-token decode allowance. This is an
+# untrained tool-router / structured-action candidate, not a general-chat or throughput claim.
+name: webgpu-1m-bpe-router
+vocab_size: 16384
+d_model: 128
+embed_dim: 32
+n_layers: 2
+n_loops: 3
+n_heads: 2
+n_kv_heads: 1
+ffn_hidden: 432
+max_seq_len: 4096
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types: [conv, attn]

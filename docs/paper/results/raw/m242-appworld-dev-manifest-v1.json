@@ -1,0 +1,219 @@
+{
+  "claim_boundary": "Public AppWorld train/dev ground-truth programs normalized as run_python supervision. No protected test split, AppWorld-UL asset, external account, or native task score is included; source code remains outside the repository.",
+  "kind": "localagent_appworld_conversation_export",
+  "manifest_self_sha256": "74ba1b8027b7979661be81827acf742fbe038828279f85a1552bfc050a542d99",
+  "output": {
+    "bytes": 48715,
+    "path": "/private/tmp/appworld-dev12.jsonl",
+    "sha256": "8a4fc56d4ffa1dc129467c4d9d59e754e490f84ae2afbea380430bd4deafa509"
+  },
+  "rows": 12,
+  "schema_version": 1,
+  "source": {
+    "data_version": "0.2.0",
+    "dataset": "appworld",
+    "package_version": "0.2.0.dev0",
+    "purpose": "eval",
+    "root": "/private/tmp/appworld-data",
+    "split": "dev",
+    "split_file": {
+      "bytes": 569,
+      "path": "/private/tmp/appworld-data/data/datasets/dev.txt",
+      "sha256": "9fa976589300ea8905708257144d801d1604b06d85fb0181e381df8a3ba85001"
+    }
+  },
+  "tasks": [
+    {
+      "instruction": {
+        "bytes": 126,
+        "sha256": "48940cac5af02a921d596148a45a92c7dce56da60d1d0111c57d065d672fb1cf"
+      },
+      "solution": {
+        "bytes": 4027,
+        "sha256": "fd290b377a89b1e066033b9371f2f4af315a29d50e9dc6d75ace62ba5abfba10"
+      },
+      "spec": {
+        "bytes": 464,
+        "path": "/private/tmp/appworld-data/data/tasks/50e1ac9_1/specs.json",
+        "sha256": "d1e04d2e674fdd635e29655f82e80e506e8f2faa095f7f959a123985df6a90b4"
+      },
+      "task_id": "50e1ac9_1"
+    },
+    {
+      "instruction": {
+        "bytes": 126,
+        "sha256": "de5ef39de524e38ef7ebd9ea57d40351242c7ba13fe5675fb728cbfe39bb236c"
+      },
+      "solution": {
+        "bytes": 4027,
+        "sha256": "6b0b1f42fd6b74b6fef7567b87ea34a3f1c1e2540a92c5ae6f96501d205cb9cc"
+      },
+      "spec": {
+        "bytes": 464,
+        "path": "/private/tmp/appworld-data/data/tasks/50e1ac9_2/specs.json",
+        "sha256": "2023f602a5d4a054304bdc5ebac3390e1b7ea7c7c8321a167e732d1b7dfb0758"
+      },
+      "task_id": "50e1ac9_2"
+    },
+    {
+      "instruction": {
+        "bytes": 128,
+        "sha256": "29e764f25b119c475255c8252047be2496e29108315a86dcb84898a81127a111"
+      },
+      "solution": {
+        "bytes": 4039,
+        "sha256": "dcaa5eaa992104f9c5298a547b550246b618ef3ffecb0aa377903071e273b40d"
+      },
+      "spec": {
+        "bytes": 463,
+        "path": "/private/tmp/appworld-data/data/tasks/50e1ac9_3/specs.json",
+        "sha256": "67eccd0da583cfc9e8005954e5493432e4e5e2ef88cb72d7a8da8bd5cfca2d4e"
+      },
+      "task_id": "50e1ac9_3"
+    },
+    {
+      "instruction": {
+        "bytes": 97,
+        "sha256": "027fa6fa6f1b718d3df30a9efd13cad8f1e8f4f57bf521dd8b73f28683786d39"
+      },
+      "solution": {
+        "bytes": 2332,
+        "sha256": "8a1226f55a5cb92796eebb2642043a73bd4bc9586115f1b718e3bf0831df823e"
+      },
+      "spec": {
+        "bytes": 430,
+        "path": "/private/tmp/appworld-data/data/tasks/fac291d_1/specs.json",
+        "sha256": "a768552ee9194958bec0f399e399efadf613a9e09ff126f115b4cc47999494bd"
+      },
+      "task_id": "fac291d_1"
+    },
+    {
+      "instruction": {
+        "bytes": 97,
+        "sha256": "027fa6fa6f1b718d3df30a9efd13cad8f1e8f4f57bf521dd8b73f28683786d39"
+      },
+      "solution": {
+        "bytes": 2332,
+        "sha256": "8a1226f55a5cb92796eebb2642043a73bd4bc9586115f1b718e3bf0831df823e"
+      },
+      "spec": {
+        "bytes": 438,
+        "path": "/private/tmp/appworld-data/data/tasks/fac291d_2/specs.json",
+        "sha256": "835d0be299df2208a0ec83e3bbd3605eb5a24444ffbcd1f2b7f9f03f67b62793"
+      },
+      "task_id": "fac291d_2"
+    },
+    {
+      "instruction": {
+        "bytes": 97,
+        "sha256": "027fa6fa6f1b718d3df30a9efd13cad8f1e8f4f57bf521dd8b73f28683786d39"
+      },
+      "solution": {
+        "bytes": 2332,
+        "sha256": "8a1226f55a5cb92796eebb2642043a73bd4bc9586115f1b718e3bf0831df823e"
+      },
+      "spec": {
+        "bytes": 439,
+        "path": "/private/tmp/appworld-data/data/tasks/fac291d_3/specs.json",
+        "sha256": "7117f9e4481de69b06d02bd1e2eb9c8f5b1e3d526c537ef4fcb63b3805d117aa"
+      },
+      "task_id": "fac291d_3"
+    },
+    {
+      "instruction": {
+        "bytes": 238,
+        "sha256": "6fb7d0e97698da2270d7ccdd2260ae4115245421adfeae60424223a422bbff19"
+      },
+      "solution": {
+        "bytes": 2929,
+        "sha256": "ac7b25c6e0868177a0213853cca75516d6df62cf9fd56f6e4fe80d474939b8dc"
+      },
+      "spec": {
+        "bytes": 585,
+        "path": "/private/tmp/appworld-data/data/tasks/530b157_1/specs.json",
+        "sha256": "484163be105a8423ac5c6b6172874746c2f2910b0d4713c6ecb765567c2e04fc"
+      },
+      "task_id": "530b157_1"
+    },
+    {
+      "instruction": {
+        "bytes": 234,
+        "sha256": "29a24eb73ae70603811d0e90fb08b4ca6dfefc71c77c50e3efc84decf0b8bc71"
+      },
+      "solution": {
+        "bytes": 2920,
+        "sha256": "efdcf15d9698d54f04428ac51d19472d53cecad2e54cca4c31a2cc3cd6b51ca9"
+      },
+      "spec": {
+        "bytes": 580,
+        "path": "/private/tmp/appworld-data/data/tasks/530b157_2/specs.json",
+        "sha256": "dde1a25f1d8adf32fc33b87eacd8715bbd482bd15985f7d9157a585550346843"
+      },
+      "task_id": "530b157_2"
+    },
+    {
+      "instruction": {
+        "bytes": 255,
+        "sha256": "0442311f80099ce6023bd75887538661dedfa798ec11c3f058083908a92ee299"
+      },
+      "solution": {
+        "bytes": 2962,
+        "sha256": "89b85a1747b5557c895a6f4137195c174f71be34a40142212ebdc77ba33bb213"
+      },
+      "spec": {
+        "bytes": 598,
+        "path": "/private/tmp/appworld-data/data/tasks/530b157_3/specs.json",
+        "sha256": "8e6a596843b8153cd47952bd72e43fabfb1c7541d6f4a056bf0bea22b0f4e8b7"
+      },
+      "task_id": "530b157_3"
+    },
+    {
+      "instruction": {
+        "bytes": 98,
+        "sha256": "2df257490aeb122f0f9d9b18d40e48b8d79a801330f74a5111eaa3b8bacc3163"
+      },
+      "solution": {
+        "bytes": 2713,
+        "sha256": "c935949b8600e88654c7c8cf0924911dadaca9bf5abfa04bab6d6d65a7c81b12"
+      },
+      "spec": {
+        "bytes": 435,
+        "path": "/private/tmp/appworld-data/data/tasks/4ec8de5_1/specs.json",
+        "sha256": "24fad846908b271549c264e75d60f3ddddb510eda428c2e390718e73d0d23981"
+      },
+      "task_id": "4ec8de5_1"
+    },
+    {
+      "instruction": {
+        "bytes": 90,
+        "sha256": "6f0ba91d135433c54094480db4b68a6296131d511ccbd838ae73860ef4423946"
+      },
+      "solution": {
+        "bytes": 2691,
+        "sha256": "dbd780df010bb9045cb2c6f9bdb82a1060920f53d38745377acb677269b08b3e"
+      },
+      "spec": {
+        "bytes": 428,
+        "path": "/private/tmp/appworld-data/data/tasks/4ec8de5_2/specs.json",
+        "sha256": "5bb5c1c07e10b46c7cfa6c465204e0823648183886e5437286be6be8b7fcee02"
+      },
+      "task_id": "4ec8de5_2"
+    },
+    {
+      "instruction": {
+        "bytes": 94,
+        "sha256": "559fce2c5e80289432d1bfcf539f47870f59f14445a35c7a7af7d3c49ad7a421"
+      },
+      "solution": {
+        "bytes": 2685,
+        "sha256": "8b3822629dcf467be2f4d561a103dda089844dcffa7657991d9a93ad1eccaaa3"
+      },
+      "spec": {
+        "bytes": 425,
+        "path": "/private/tmp/appworld-data/data/tasks/4ec8de5_3/specs.json",
+        "sha256": "a17fba48c1bc42f656dd1a580fe2d8778d16c478e04fb28e40d16474f9a13f65"
+      },
+      "task_id": "4ec8de5_3"
+    }
+  ]
+}

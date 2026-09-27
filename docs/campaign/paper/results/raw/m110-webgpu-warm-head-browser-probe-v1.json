@@ -1,0 +1,77 @@
+{
+  "bundle": {
+    "bundle_identity_sha256": "b30126c4cf3d348f146ff4798bca7fe68e83a12051b4d5f58d4508fa06f76ded",
+    "checkpoint_sha256": "d81771f61a8391a1973c84e396b8c79e1dd94a8b28bf3e41f90b585ba1d57486",
+    "manifest_sha256": "b203ba1d9892aea847a2540a20e1bc92942c4360ca8510e701551282aaa9c663",
+    "model_parameters": 10524544,
+    "source_receipt": "m109-webgpu-warm-head-deploy-v1.json"
+  },
+  "cases": [
+    {
+      "backend_label": "webgpu",
+      "expected_route": "app_action",
+      "expected_tool": "send_email",
+      "latency_ms": 11,
+      "observed_args": {"target": "Dana the quarterly report"},
+      "observed_route": "computer_use",
+      "observed_tool": "click",
+      "prompt": "Email Dana the quarterly report",
+      "exact_match": false
+    },
+    {
+      "backend_label": "webgpu",
+      "expected_route": "app_action",
+      "expected_tool": "send_email",
+      "latency_ms": 43,
+      "observed_args": {"target": "alice@example.com with subject WebGPU test and body Local bundle verified"},
+      "observed_route": "computer_use",
+      "observed_tool": "click",
+      "prompt": "Send an email to alice@example.com with subject WebGPU test and body Local bundle verified.",
+      "exact_match": false
+    },
+    {
+      "backend_label": "webgpu",
+      "expected_route": "app_action",
+      "expected_tool": "notion_create_page",
+      "latency_ms": 13,
+      "observed_args": {"target": "content Verify the browser gate"},
+      "observed_route": "computer_use",
+      "observed_tool": "click",
+      "prompt": "Create a Notion page titled Launch log with content Verify the browser gate.",
+      "exact_match": false
+    },
+    {
+      "backend_label": "webgpu",
+      "expected_route": "web_search_then_app_action",
+      "expected_tool": "web_search -> notion_create_page",
+      "latency_ms": 14,
+      "observed_args": {"target": "AI news, then save it to Notion"},
+      "observed_route": "computer_use",
+      "observed_tool": "click",
+      "prompt": "Search the web for AI news, then save it to Notion.",
+      "exact_match": false
+    }
+  ],
+  "claim_boundary": "This is a local Codex in-app Browser probe of the clean m109 staging copy. It verifies that the page loads, the bundle is fetched, and the UI completes a WebGPU-labeled inference request without external side effects. It is negative evidence for the current warm-head dispatch: all four realistic prompts selected computer_use.click rather than the required email, browser-search, or Notion tools. It does not establish a native GPU adapter, external-account execution, benchmark success, or a public Hub/Space upload.",
+  "deployment": {
+    "browser_surface": "Codex in-app Browser",
+    "demo_source": "spaces/localagent-webgpu",
+    "external_accounts": false,
+    "external_action_executed": false,
+    "model_ready": true,
+    "native_adapter_verified": false,
+    "served_url": "http://127.0.0.1:8777/index.html",
+    "webgpu_badge_observed": true,
+    "ort_execution_provider_requested": "webgpu",
+    "ort_warning_observed": "Some shape-related nodes were assigned to CPU; per-node placement is not exposed by the browser API."
+  },
+  "kind": "localagent_webgpu_warm_head_browser_probe",
+  "outcome": {
+    "case_count": 4,
+    "exact_dispatch_count": 0,
+    "exact_dispatch_rate": 0.0,
+    "status": "blocked_current_bundle_dispatch_regression"
+  },
+  "schema_version": 1,
+  "verified": true
+}

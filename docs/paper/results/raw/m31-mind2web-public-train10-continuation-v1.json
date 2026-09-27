@@ -1,0 +1,90 @@
+{
+  "kind": "localagent_mind2web_public_train_continuation",
+  "schema_version": 1,
+  "source": {
+    "dataset": "osunlp/Mind2Web",
+    "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+    "url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+    "license": "CC-BY-4.0",
+    "upstream_split": "train",
+    "downloaded_shard": {
+      "name": "data/train/train_10.json",
+      "bytes": 28366146,
+      "sha256": "182542d7947b3fa9e90fc57a3d82d4d8f2997ca5a06664217720d7a78a956e33"
+    },
+    "retained_grounded_snapshot": {
+      "records": 6,
+      "bytes": 20021031,
+      "sha256": "44b9cf80d795499a2e955ab3f538a7ac8ccb52bde3a06f47595e1f13c77f7208",
+      "rule": "retain only records whose every action has a positive candidate with a non-empty backend_node_id"
+    },
+    "normalization_manifest": {
+      "rows": 24,
+      "tool_calls": 123,
+      "bytes": 88945,
+      "sha256": "c43e296cd558387cea7cdd3e308ebc18018907ff375453fc23feff7222dbe177",
+      "manifest_self_sha256": "17364ae847dde00f66f01c542b64eea2ed715660ee85c7e116ead5e7a56c8963"
+    }
+  },
+  "split": {
+    "train_rows": 20,
+    "train_source_records": 5,
+    "train_jsonl_sha256": "8a9b0b97661623f540ee2346a911a6727a8ede8d1dbd39d32137c3d57c7b78aa",
+    "eval_rows": 4,
+    "eval_source_records": 1,
+    "eval_jsonl_sha256": "557d615d3930988809b873d097b58c5b40cfff026d90963a27eb3ebb56d06041",
+    "parent_record_disjoint": true,
+    "slot_values_disjoint": true
+  },
+  "training": {
+    "parent_checkpoint_sha256": "79387105de75d332413262e8d8ddb847b6cc13bc03f5e4df3c81663d9897aef1",
+    "child_checkpoint_sha256": "d698225de6bfefd7ec6fe2534bf1a796e70d96fe4c22c968a39e1dc3a5045781",
+    "steps": 32,
+    "head_steps": 256,
+    "batch_size": 1,
+    "learning_rate": 0.00001,
+    "seed": 2027,
+    "parameter_count": 10524544,
+    "teacher_forced": {
+      "before": {
+        "train_mean_loss": 2.1049516330358937,
+        "train_token_accuracy": 0.6729382251489495,
+        "eval_mean_loss": 1.9241416699958571,
+        "eval_token_accuracy": 0.6909090909090909
+      },
+      "after": {
+        "train_mean_loss": 1.5418844034620196,
+        "train_token_accuracy": 0.7660708686108498,
+        "eval_mean_loss": 1.3893455042983547,
+        "eval_token_accuracy": 0.8
+      }
+    },
+    "realistic_browser_tool_pool": ["web_click", "web_type", "web_select"],
+    "selector_heads": {
+      "eval_decisions": 7,
+      "eval_tool_decisions": 6,
+      "before_route_accuracy": 0.0,
+      "after_route_accuracy": 1.0,
+      "before_selector_top1": 0.0,
+      "after_selector_top1": 1.0
+    },
+    "generative_replay": {
+      "eval_tool_decisions": 6,
+      "before_parseable_calls": 2,
+      "after_parseable_calls": 3,
+      "before_tool_exact": 0,
+      "after_tool_exact": 3
+    },
+    "dispatch_export": {
+      "tool_count": 53,
+      "extra_tools": ["web_click", "web_type", "web_select"],
+      "bytes": 1315441,
+      "sha256": "15bdc2012922d83e19f0bc65178635734752b2e2e9593dbabf9bd410d4018422",
+      "route_argmax_agreement": 1.0,
+      "selector_top1_agreement": 1.0,
+      "route_max_abs_diff": 0.000017642974853515625,
+      "selector_max_abs_diff": 0.0000012516975402832031
+    }
+  },
+  "claim_boundary": "Held-out public Mind2Web train-record continuation with text-first and bounded selector metrics; no official Mind2Web test score, browser execution, emulator reward, screenshot grounding, or external-account claim. Generative replay still has argument/context failures."
+}

@@ -1,0 +1,63 @@
+{
+  "kind": "localagent_stateful_head_transfer_toolsandbox_bridge",
+  "schema_version": 1,
+  "parent_checkpoint": {
+    "path": "/private/tmp/m553-multisurface-lineage-child.pt",
+    "sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c"
+  },
+  "child_checkpoint": {
+    "path": "/private/tmp/m581-stateful-child.pt",
+    "sha256": "de9ac60cff050e835fb43ad456c7526b1cb115cfd5bd0663216784208f46a99b"
+  },
+  "local_probe": {
+    "report": "/private/tmp/m581-stateful-probe.json",
+    "report_sha256": "c5385bd4839f101411f9a1fb0a58595e8ae4b5ea5dd9e91fc0835c40babf8882",
+    "suite": "localagent-stateful-productivity-v1",
+    "train_rows": 5,
+    "eval_rows": 5,
+    "train_eval_task_hashes_disjoint": true,
+    "warm": {
+      "closed_loop_success_rate": 0.6875,
+      "task_complete_rate": 0.4,
+      "state_transition_rate": 0.6875,
+      "selector_route_accuracy": 0.875,
+      "selector_top1": 0.5333333333333333,
+      "selector_top3": 0.9333333333333333
+    },
+    "matched_random": {
+      "closed_loop_success_rate": 0.6875,
+      "task_complete_rate": 0.4,
+      "state_transition_rate": 0.6875,
+      "selector_route_accuracy": 0.8125,
+      "selector_top1": 0.4666666666666667,
+      "selector_top3": 0.8666666666666667
+    },
+    "comparison": {
+      "warm_minus_random_closed_loop": 0.0,
+      "warm_minus_random_task_complete": 0.0,
+      "warm_minus_random_selector_top1": 0.06666666666666665,
+      "warm_minus_random_selector_top3": 0.06666666666666665
+    },
+    "claim_boundary": "This is a deterministic local synthetic state-machine probe, not a public benchmark or real-account evaluation. The probe trains route, dense-selector, and pointer heads while freezing the pretrained backbone; it does not establish stateful competence on its own."
+  },
+  "native_toolsandbox_bridge": {
+    "source_url": "https://github.com/apple/ToolSandbox",
+    "source_revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "parent_interactive_report": "docs/paper/results/raw/m580-toolsandbox-m553-interactive-stress-v1.json",
+    "parent_interactive_report_sha256": "a21e6c3d8d39bf5744684ddacf40533e78303535c6911077e9a830a7ca0eeefb",
+    "child_interactive_report": "/private/tmp/m583-toolsandbox-child-interactive.json",
+    "child_interactive_report_sha256": "f91d2433fe15f279ffecea1346d654532746f9d5683a7d9685ef4a85d1f32143",
+    "parent_success_rate": 0.0,
+    "child_success_rate": 0.0,
+    "parent_task_count": 3,
+    "child_task_count": 3,
+    "child_official_split_verified": false,
+    "child_user_simulator_executed": false,
+    "child_external_api_called": false,
+    "single_step_child_report": "/private/tmp/m582-toolsandbox-child-native.json",
+    "single_step_child_report_sha256": "f5cc4d0ee25b1689a3e329affd18386c63ee896b8699bc560aa79411f8a5b37b",
+    "single_step_child_success_rate": 1.0
+  },
+  "interpretation": "Head-only stateful fitting improves local selector ranking but does not improve closed-loop local completion or bounded native ToolSandbox multi-turn stress: warm and matched-random local completion are both 0.6875, and parent and child native interactive stress are both 0/3. The child preserves the 3/3 single-step smoke. This is a negative transfer result and does not satisfy any official ToolSandbox or workshop publication gate.",
+  "receipt_self_sha256": "d867a02e9a6a5813c7f15a344f1abc9adb85e6d984dc6fa509bc51e599a6f6cc"
+}

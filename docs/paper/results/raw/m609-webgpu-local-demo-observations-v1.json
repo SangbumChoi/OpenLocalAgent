@@ -1,0 +1,57 @@
+{
+  "backend": "webgpu",
+  "browser": "Codex In-app Browser",
+  "browser_url": "http://127.0.0.1:8765/index.html",
+  "model_ready": true,
+  "model_parameters": 10524544,
+  "tool_count": 63,
+  "email": {
+    "request": "Email Dana the quarterly report",
+    "tool": "send_email",
+    "arguments": {
+      "recipient": "Dana"
+    },
+    "confirmation_required": true,
+    "side_effect_executed": false,
+    "latency_ms": 15
+  },
+  "plan": {
+    "request": "Search the web for AI news, then save it to Notion.",
+    "step_count": 2,
+    "steps": [
+      {
+        "tool": "web_search",
+        "arguments": {
+          "query": "AI news"
+        },
+        "classification": "read_only_or_abstention_action"
+      },
+      {
+        "tool": "notion_write",
+        "arguments": {
+          "content": "AI news"
+        },
+        "classification": "external_state_write",
+        "confirmation_required": true
+      }
+    ],
+    "confirmation_required": true,
+    "side_effect_executed": false,
+    "latency_ms": 84
+  },
+  "quality_negative_control": {
+    "request": "What does ephemeral mean?",
+    "expected": "text_answer_or_abstention",
+    "observed_tool": "click",
+    "observed_route": "computer_use",
+    "confirmation_required": true,
+    "side_effect_executed": false,
+    "latency_ms": 1309,
+    "passed": false
+  },
+  "console_warnings": [
+    "ONNX Runtime reported shape-related nodes assigned to CPU; the browser still selected WebGPU for the model session."
+  ],
+  "side_effects_executed": false,
+  "observation_policy": "local_static_bundle_only; no credentials, accounts, network writes, or external services"
+}

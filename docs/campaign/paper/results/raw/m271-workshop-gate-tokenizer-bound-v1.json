@@ -1,0 +1,54 @@
+{
+  "kind": "localagent_workshop_publication_gate",
+  "schema_version": 1,
+  "measurement": "m271_workshop_gate_tokenizer_bound_webgpu",
+  "generated_at": "2026-08-04",
+  "inputs": {
+    "catalog": "configs/data/realistic-agent-eval.catalog.yaml",
+    "native_receipts": {
+      "mobilegym": "docs/paper/results/raw/m262-mobilegym-native-current-browser-context-v1.json",
+      "browsergym_miniwob": "docs/paper/results/raw/m43-browsergym-native-adapter-full-model-eval-v1.json"
+    },
+    "webgpu_receipt": "docs/paper/results/raw/m270-webgpu-native-tokenizer-bound-v1.json",
+    "weight_report": "docs/paper/results/raw/m25-weight-transfer-ablation-v1.json",
+    "public_artifact_manifest": "docs/paper/results/raw/public-model-demo-manifest-v1.json"
+  },
+  "ready": false,
+  "passing_requirements": [
+    "catalog:realistic_family_coverage",
+    "catalog:no_pending_train_adapter",
+    "native:mobilegym",
+    "native:browsergym_miniwob",
+    "webgpu:native_capability_and_latency",
+    "weights:transfer_and_no_transfer_ablation",
+    "artifacts:public_model_demo_manifest"
+  ],
+  "blocked_requirements": [
+    {"requirement": "native:androidworld", "blockers": ["receipt_not_supplied"]},
+    {"requirement": "native:mobile_safety_bench", "blockers": ["receipt_not_supplied"]},
+    {"requirement": "native:iosworld", "blockers": ["receipt_not_supplied"]},
+    {"requirement": "native:osworld", "blockers": ["receipt_not_supplied"]},
+    {"requirement": "native:osworld_v2", "blockers": ["receipt_not_supplied"]},
+    {"requirement": "native:agentnet", "blockers": ["receipt_not_supplied"]},
+    {"requirement": "native:toolsandbox", "blockers": ["receipt_not_supplied"]},
+    {"requirement": "native:mcpmark", "blockers": ["receipt_not_supplied"]},
+    {"requirement": "native:enterpriseopsgym", "blockers": ["receipt_not_supplied"]}
+  ],
+  "webgpu_summary": {
+    "receipt": "docs/paper/results/raw/m270-webgpu-native-tokenizer-bound-v1.json",
+    "checkpoint_sha256": "104a630947a7a7916031dcccdbe0b2eab031622b77863711bea442d81f1438c0",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+    "hardware_adapter": "vendor=apple; architecture=metal-3",
+    "evaluated_cases": 3,
+    "exact_actions": 3,
+    "exact_action_rate": 1.0,
+    "measured_repetitions_per_case": 30,
+    "latency_ms_p50": 7.85,
+    "tokens_per_second_p50": 1379.3103448275863,
+    "peak_memory_mb": 20.458142280578613,
+    "external_side_effects_executed": false,
+    "closed_loop_success": 0
+  },
+  "claim_boundary": "ready is false: the corrected checkpoint-tokenizer-bound native WebGPU receipt now passes, but nine official native benchmark receipts remain absent; no synthetic or protocol bridge is substituted.",
+  "receipt_self_sha256": "e207fd5c7249644d6990485627e19d455145f0c758d79944ed82dde828c0ff9b"
+}

@@ -1,0 +1,77 @@
+{
+  "kind": "localagent_enterpriseopsgym_current_email_retrieval_receipt",
+  "schema_version": 1,
+  "measurement": "m275_enterpriseopsgym_current_email_retrieval",
+  "generated_at": "2026-08-04",
+  "dataset": {
+    "name": "ServiceNow-AI/EnterpriseOps-Gym",
+    "url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym",
+    "code_url": "https://github.com/ServiceNow/EnterpriseOps-Gym",
+    "revision": "c8e538eae8a6205294f0a86675fefdc1fac408f6",
+    "domain": "email",
+    "records": 67,
+    "candidate_mode": "plus_15_tools",
+    "mean_candidate_tool_count": 20.0,
+    "mean_oracle_tool_count": 5.686567164179104,
+    "oracle_source": {
+      "bytes": 496997,
+      "sha256": "b5290259d09bc02e605b8cf5ffa3b20d22c65219eb05196a69fd340712f286fe"
+    },
+    "distractor_source": {
+      "bytes": 513881,
+      "sha256": "7db6e7c2ce574d74161ad72d10a8de54ad4128bb87fb9caa86c6eb05affc3f39"
+    },
+    "server_configuration_dropped": true,
+    "verifiers_dropped": true
+  },
+  "evaluator": {
+    "path": "scripts/evaluate_enterpriseopsgym_tool_retrieval.py",
+    "bytes": 3182,
+    "sha256": "a56f8ccbf4441330404a706f4126a21989441327521b008c7a95671a91d37f3f",
+    "execution": "frozen_localagent_dense_selector_no_tool_execution",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "checkpoints": {
+    "current_parent": {
+      "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+      "bytes": 52242001,
+      "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+    },
+    "m273_warm_child": {
+      "path": "/private/tmp/m273-cross-surface-warm.pt",
+      "bytes": 52249114,
+      "sha256": "86460f8398ebed7c48181885c5be5514d71a1c51d35e9765ff00600d6194d7cb"
+    },
+    "m273_random_child": {
+      "path": "/private/tmp/m273-cross-surface-random.pt",
+      "bytes": 52249228,
+      "sha256": "b0d88293c184e5a1f331a2bceeb8ca83b6090285a81eac249e416fcddd2ee326"
+    }
+  },
+  "results": {
+    "current_parent": {
+      "report_bytes": 38674,
+      "report_sha256": "7e18c903bb5191828f64a619955f28b03a63b5951e498a8162322f31925a4d06",
+      "hit_at_1": 0.208955223880597,
+      "hit_at_3": 0.5373134328358209,
+      "hit_at_5": 0.7611940298507462
+    },
+    "m273_warm_child": {
+      "report_bytes": 38673,
+      "report_sha256": "ad07d0cdf82d01643e150adf6e4624c7a156e844877389952fe98f7f7512477e",
+      "hit_at_1": 0.2537313432835821,
+      "hit_at_3": 0.5522388059701493,
+      "hit_at_5": 0.746268656716418
+    },
+    "m273_random_child": {
+      "report_bytes": 38549,
+      "report_sha256": "5f5ce88d2df0751feb2c9a7228e3255f957f93fa44afc21502da4822e42bc529",
+      "hit_at_1": 0.3582089552238806,
+      "hit_at_3": 0.8059701492537313,
+      "hit_at_5": 0.9402985074626866
+    }
+  },
+  "interpretation": "The current checkpoint retrieves the correct email tool in 14/67 rows at top-1 and 51/67 at top-3. The warm public continuation improves top-1 to 17/67 but remains below the matched random control at 24/67; this is negative-transfer evidence for unseen EnterpriseOps tool names and argues against promoting the warm child without an in-domain schema/adaptation stage.",
+  "claim_boundary": "Out-of-domain name-only EnterpriseOps-Gym email retrieval diagnostic. No MCP server, SQL verifier, stateful enterprise environment, email account, external side effect, official leaderboard score, or training artifact was used.",
+  "receipt_self_sha256": "1fdbf4aa83f6f0bd010d7720281e3752c49ecaf0d72444f89381a1470768eea5"
+}

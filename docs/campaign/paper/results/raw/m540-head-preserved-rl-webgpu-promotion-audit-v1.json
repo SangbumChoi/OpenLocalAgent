@@ -1,0 +1,66 @@
+{
+  "claim_boundary": "Head-preserved local RL promotion audit only. The candidate uses the deterministic in-memory productivity simulator; no public benchmark split, emulator, MCP server, live account, or external side effect was executed.",
+  "comparison": {
+    "parent_warm_checkpoint_sha256": "3b6325676bb1812ea34ddf55326a1a9cdaa62970d38309350451eea520930a1b",
+    "raw_preflight_child": {
+      "checkpoint_sha256": "496fc36b60e946f731d814ebe7172c4d007186baeb6fccec1791ef3b9fe9a38a",
+      "structured_heads_available": false,
+      "invalidated_structured_heads": ["tool_head", "ptr_head", "route_head", "dense_selector"],
+      "exportable_webgpu": false,
+      "export_error": "KeyError: 'tool_head'"
+    },
+    "head_preserved_child": {
+      "checkpoint_sha256": "1f0feee786d2dd9291b8af59c537a9941f40485b99d1317a800246f7bead9d69",
+      "deployment_heads_preserved": ["tool_head", "ptr_head", "route_head", "dense_selector", "selector_proj"],
+      "deployment_heads_trainable": false,
+      "exportable_webgpu": true
+    }
+  },
+  "kind": "localagent_head_preserved_rl_webgpu_promotion_audit",
+  "browsergym_canary": {
+    "receipt": "docs/paper/results/raw/m541-head-preserved-rl-browsergym-canary-v1.json",
+    "receipt_self_sha256": "5849e707a078b5a4e48aa175627608315dba3ab6ea7b9dc2ef7a74769e7f6cce",
+    "episodes": 16,
+    "success_rate": 0.0,
+    "official_split_verified": false
+  },
+  "local_trajectory": {
+    "receipt_self_sha256": "efa043092c672862dbeba49f8fb3fbbca3fa264bcc74a449b978c620bd3a0fbc",
+    "trajectories": 3,
+    "steps": 13,
+    "exact_action_rate": 1.0,
+    "state_transition_rate": 1.0,
+    "closed_loop_success_rate": 1.0,
+    "pass_at_1": 1.0
+  },
+  "rl": {
+    "receipt_self_sha256": "37d31843e4da03d8fd89930b8162bb26fb578408e99efdd59342329f1bf6c8b3",
+    "sft_steps": 1,
+    "rl_steps": 2,
+    "realized_optimizer_updates": 2,
+    "mean_reward_before": 0.0,
+    "mean_reward_after": 0.10625000000000001,
+    "exact_match_after": 0.0,
+    "body_movement_relative_l2": {
+      "embedding": 0.000388202820617232,
+      "attention_or_mixer": 0.00040417472889703494,
+      "ffn": 0.0004618491442764255,
+      "normalization": 0.00001358162691579595,
+      "action_heads": 0.0
+    }
+  },
+  "receipt_self_sha256": "4df58f1296b2b63a2cd7e1a32d0496077b5547f2fe7d2d327c63b9a5d237ed51",
+  "schema_version": 1,
+  "webgpu": {
+    "receipt_self_sha256": "72357686bd43b295fe7d2d4c4f0d970733d8c7e7d5824075ac92e68833762f79",
+    "backend": "webgpu",
+    "hardware_adapter": "vendor=apple; architecture=metal-3",
+    "evaluated_cases": 3,
+    "exact_actions": 3,
+    "tokens_per_second_p50": 1249.9999988358468,
+    "latency_ms_p50": 7.4000000059604645,
+    "peak_memory_mb": 20.458142280578613,
+    "bundle_identity_sha256": "e6a6271bfa0268a68b186175ae1e0caa569316140dacd4a3317560e7d23a28e2"
+  },
+  "decision": "retain_head_preserved_child_as_deployable_rl_candidate; reject_raw_preflight_child_for_webgpu"
+}

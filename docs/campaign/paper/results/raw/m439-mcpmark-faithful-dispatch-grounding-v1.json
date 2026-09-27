@@ -1,0 +1,71 @@
+{
+  "kind": "localagent_mcpmark_faithful_dispatch_grounding_diagnostic",
+  "schema_version": 1,
+  "benchmark_id": "mcpmark",
+  "dataset": {
+    "name": "MCPMark",
+    "url": "https://github.com/eval-sys/mcpmark",
+    "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "suite": "easy",
+    "service": "filesystem",
+    "source_disjoint_train_rows": 8,
+    "source_disjoint_eval_decisions": 10
+  },
+  "checkpoint": {
+    "parent_sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+    "dispatch_head_child_sha256": "951e775ee1449e90541b962c2b1168f77efa5229154c851bb5a8d02181779782",
+    "pointer_child_sha256": "2c3430dacfb4bcc7009248c4c8fa21abed503fc113fddf41e49cd6ff72060166",
+    "parameters": 10524544
+  },
+  "dispatch_head_transfer": {
+    "backbone_frozen": true,
+    "head_steps": 80,
+    "head_learning_rate": 0.005,
+    "held_out_route_accuracy_before": 0.0,
+    "held_out_route_accuracy_after": 0.5,
+    "held_out_selector_top1_before": 0.1,
+    "held_out_selector_top1_after": 0.0,
+    "action_head_relative_delta_l2": 0.6342792797185641,
+    "backbone_relative_delta_l2": 0.0,
+    "report_sha256": "c0e419a4c9510c9bc7d8913f0b045d7b9483eeb015199771ff4daa6b1e6916f5"
+  },
+  "pointer_transfer": {
+    "steps": 24,
+    "learning_rate": 0.00002,
+    "span_exact_before": 0.0,
+    "span_exact_after": 0.0,
+    "span_rows": 1,
+    "report_sha256": "353d6145fdee34c3fe7744235d3fe13bf7c389e85f17f8506b56fcc019db9f04"
+  },
+  "faithful_native_holdout": {
+    "protocol": {
+      "tasks": 5,
+      "max_turns": 6,
+      "continues_after_write_or_move": true,
+      "tool_results_returned": true,
+      "independent_verifiers": true
+    },
+    "tasks": [
+      "folder_structure/structure_analysis",
+      "legal_document/file_reorganize",
+      "papers/papers_counting",
+      "student_database/duplicate_name",
+      "student_database/recommender_name"
+    ],
+    "verifier_passes": 0,
+    "verifier_failures": 5,
+    "changed_workspaces": 0,
+    "runtime_errors": 0,
+    "full_receipt_sha256": "71492fb9fe2e13a06242ca7311463e4120cbf5bdffdbd8f158eb0365a6980c44"
+  },
+  "top3_candidate_probe": {
+    "task": "papers/papers_counting",
+    "top_m": 3,
+    "selected_tool": "write_file",
+    "verifier_pass": false,
+    "failure": "path and content arguments were malformed",
+    "full_receipt_sha256": "6159cfc89cfbb82b8e7dea04f7317489bffc800de86990827a26695b487d0a0a"
+  },
+  "claim_boundary": "The corrected closed-loop protocol continues after write/move calls and still records 0/5 native verifier passes. Route-head adaptation improves route accuracy but destroys selector top-1, and pointer SFT has no valid span gain because task prompts do not contain the full target strings. The current child is not promoted or exported; this remains a native diagnostic, not an official MCPMark score.",
+  "receipt_self_sha256": "864a1068324fa37424c762e063ca7b911f0a68e09761521c1f9e8db8c9c5f61d"
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "kind": "localagent_mobilegym_model_probe",
+  "benchmark_id": "mobilegym_model_probe",
+  "native_benchmark_id": "mobilegym",
+  "native_receipt_eligible": false,
+  "environment_executed": true,
+  "official_split": "test",
+  "official_split_verified": true,
+  "task_id": "notes.ReadTodoText",
+  "task_count": 1,
+  "success_rate": 0.0,
+  "judge": {
+    "success": false,
+    "clean": true,
+    "progress": 0.0,
+    "passed": false,
+    "issue_count": 3,
+    "issue_fields": [
+      "answer.todo_1",
+      "answer.todo_2",
+      "answer.todo_3"
+    ],
+    "warning_count": 0,
+    "warning_fields": [],
+    "judge_error": false
+  },
+  "observation_mode": "text_projection",
+  "vision_used": false,
+  "max_steps": 2,
+  "model_invocations": 2,
+  "model_calls": 2,
+  "trace": [
+    {
+      "step": 0,
+      "tool": "mobile_input_text",
+      "argument_keys": [
+        "text"
+      ],
+      "arguments_sha256": "fe194d127b8140b06973cb3c374547a3c8bcc91cb47e9574281bc8808b5f67ed",
+      "model_output_sha256": "d2f4d499393d4aef311b74fc873b31d2be004d6cdd3bd398621d599b4d1a23af",
+      "translated": true
+    },
+    {
+      "step": 1,
+      "tool": "mobile_input_text",
+      "argument_keys": [
+        "text"
+      ],
+      "arguments_sha256": "fe194d127b8140b06973cb3c374547a3c8bcc91cb47e9574281bc8808b5f67ed",
+      "model_output_sha256": "d2f4d499393d4aef311b74fc873b31d2be004d6cdd3bd398621d599b4d1a23af",
+      "translated": true
+    }
+  ],
+  "checkpoint_sha256": "35fedcefdafece153912b3bf6629fb23c0ad48f269126d2f8021ef04e0e384ae",
+  "source_root": "mobilegym-093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+  "source_revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+  "receipt_self_sha256": "6b143adfc438ae1198e4142e5fc8ec5ca5cadd9fbb2f4921fbcd0b58b33051b7"
+}

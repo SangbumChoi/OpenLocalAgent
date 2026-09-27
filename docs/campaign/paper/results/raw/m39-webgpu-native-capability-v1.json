@@ -1,0 +1,124 @@
+{
+  "kind": "localagent_webgpu_native_capability_receipt",
+  "schema_version": 1,
+  "benchmark": "native_webgpu_action_graph_capability",
+  "backend": "webgpu",
+  "environment_executed": true,
+  "hardware_adapter": "vendor=apple; architecture=metal-3",
+  "adapter": {
+    "identity": "vendor=apple; architecture=metal-3",
+    "vendor": "apple",
+    "architecture": "metal-3",
+    "device": null,
+    "description": null,
+    "adapter_name": null,
+    "is_fallback_adapter": null,
+    "identity_fields": ["vendor", "architecture"]
+  },
+  "protocol": {
+    "page": "spaces/localagent-webgpu/webgpu-capability.html",
+    "ort_version": "1.27.0",
+    "requested_provider": ["webgpu"],
+    "session_provider_retry": false,
+    "warmups_per_case": 3,
+    "measured_repetitions_per_case": 30,
+    "action_graph": {
+      "path": "action_model.fp16.onnx",
+      "bytes": 21430301,
+      "sha256": "b91e7f84077155640a5e288a7c58c2245c298859ddd86bd7268e71039e65c49a"
+    },
+    "bundle_manifest": {
+      "path": "bundle-manifest.json",
+      "bytes": 9294,
+      "sha256": "86bbee00d783ca69af02843a4cf935ff978612b81b6a2fedd47fd943e611bee4"
+    }
+  },
+  "protocol": {
+    "page": "spaces/localagent-webgpu/webgpu-capability.html",
+    "ort_version": "1.27.0",
+    "requested_provider": ["webgpu"],
+    "session_provider_retry": false,
+    "warmups_per_case": 3,
+    "measured_repetitions_per_case": 30,
+    "action_graph": {
+      "file": "action_model.fp16.onnx",
+      "bytes": 21430301,
+      "sha256": "b91e7f84077155640a5e288a7c58c2245c298859ddd86bd7268e71039e65c49a"
+    },
+    "bundle_manifest_sha256": "86bbee00d783ca69af02843a4cf935ff978612b81b6a2fedd47fd943e611bee4"
+  },
+  "capability": {
+    "evaluated_cases": 2,
+    "exact_actions": 2,
+    "closed_loop_success": 0,
+    "external_side_effects_executed": false,
+    "cases": [
+      {
+        "prompt": "Email Dana the quarterly report",
+        "expected_tool": "send_email",
+        "expected_argument": "recipient",
+        "measured_repetitions": 30,
+        "exact_actions": 30,
+        "exact_action_rate": 1.0,
+        "last_result": {
+          "tool": "send_email",
+          "route": "app_action",
+          "args": {"recipient": "Dana the quarterly"},
+          "schema_valid": true,
+          "selection_policy": "dense_selector",
+          "confidence": 0.874836107322282,
+          "wall_latency_ms_p50": 6.5,
+          "model_inference_ms_p50": 5.75,
+          "input_tokens": 10,
+          "tokens_per_second_p50": 1739.1304347826087
+        }
+      },
+      {
+        "prompt": "Open https://example.com",
+        "expected_tool": "open_url",
+        "expected_argument": "url",
+        "measured_repetitions": 30,
+        "exact_actions": 30,
+        "exact_action_rate": 1.0,
+        "last_result": {
+          "tool": "open_url",
+          "route": "app_action",
+          "args": {"url": "https://example.com"},
+          "schema_valid": true,
+          "selection_policy": "dense_selector",
+          "confidence": 0.823890010434154,
+          "wall_latency_ms_p50": 5.300000011920929,
+          "model_inference_ms_p50": 4.75,
+          "input_tokens": 8,
+          "tokens_per_second_p50": 1684.2105263157894
+        }
+      }
+    ]
+  },
+  "performance": {
+    "tokens_per_second_p50": 1711.670480549199,
+    "tokens_per_second_definition": "action-graph input tokens divided by p50 model inference ms",
+    "latency_ms_p50": 5.9000000059604645,
+    "peak_memory_mb": 20.45225238800049,
+    "peak_memory_method": "conservative action-graph bytes plus largest host input/output tensors; driver VRAM counter unavailable",
+    "largest_input_bytes": 80,
+    "largest_output_bytes": 15360
+  },
+  "runtime": {
+    "navigator_gpu_available": true,
+    "device_features": ["core-features-and-limits"],
+    "device_limits": {
+      "max_storage_buffer_binding_size": 134217728,
+      "max_buffer_size": 268435456,
+      "max_compute_workgroups_per_dimension": 65535
+    },
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+    "elapsed_ms": 810.3000000715256
+  },
+  "checkpoint": {
+    "source": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/latest.pt",
+    "parameters": 10524544,
+    "sha256": "79387105de75d332413262e8d8ddb847b6cc13bc03f5e4df3c81663d9897aef1"
+  },
+  "claim_boundary": "Native browser WebGPU adapter and action-graph dispatch receipt. The calls are local predictions only: no real email, browser navigation, or Notion account was touched; closed_loop_success is therefore zero."
+}

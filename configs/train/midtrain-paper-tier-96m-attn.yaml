@@ -1,0 +1,92 @@
+# Parameter-matched all-attention continuation for the 4K near-budget 95.3M tier.
+# Execution remains gated on a measured one-update memory/throughput preflight.
+# The 2,909-update horizon mirrors its 1-TPP pretrain feasibility pilot.
+stage: midtrain
+model_config: configs/model/webgpu-96m-attn.yaml
+init_from: runs/pretrain-paper-tier-96m-attn-seed2026/latest.pt
+data:
+  conversation_prompt_contract: openai_full_catalog_v1
+  strict_conversation_artifacts: true
+  # Weights are scheduled input-token shares, not whole-row draw probabilities.
+  mixture:
+    unit: input_tokens
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-paper-16k.json
+  sources:
+    - name: general_replay
+      type: shards
+      path: data/shards/paper-general
+      split: train
+      weight: 0.45
+      end_weight: 0.30
+    - name: permissive_python
+      type: shards
+      path: data/shards/paper-code
+      split: train
+      weight: 0.25
+      end_weight: 0.25
+    - name: structured_web
+      type: shards
+      path: data/shards/paper-structured
+      split: train
+      weight: 0.15
+      end_weight: 0.15
+    - name: rule_audited_agent
+      type: conversations
+      path: data/synth/agent_sft_paper_train_v2.jsonl
+      artifact:
+        generator_config: configs/data/agent_synth_paper_train_v2.yaml
+        manifest: data/synth/agent_sft_paper_train_v2.jsonl.manifest.v1.json
+        expected_split: train
+        expected_rule_verified: true
+        environment_policy: forbid
+      weight: 0.15
+      end_weight: 0.30
+  eval_sources:
+    - name: general_holdout
+      type: shards
+      path: data/shards/paper-general
+      split: val
+    - name: permissive_python_holdout
+      type: shards
+      path: data/shards/paper-code
+      split: val
+    - name: structured_web_holdout
+      type: shards
+      path: data/shards/paper-structured
+      split: val
+    - name: agent_holdout
+      type: conversations
+      path: data/synth/agent_eval.jsonl
+      artifact:
+        generator_config: configs/data/agent_synth_eval.yaml
+        manifest: data/synth/agent_eval.jsonl.manifest.v1.json
+        expected_split: eval
+        expected_rule_verified: true
+        environment_policy: forbid
+optim:
+  name: adamw
+  lr: 1.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 58
+  total_steps: 2909
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 1
+  grad_accum_steps: 16
+evaluation:
+  batches_per_source: 16
+  batch_size: 2
+  seed: 12026
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+  resume: true
+log:
+  out_dir: runs/midtrain-paper-tier-96m-attn
+  ckpt_every: 100

@@ -1,0 +1,117 @@
+{
+  "artifacts": [
+    {
+      "bytes": 21430301,
+      "file": "action_model.fp16.onnx",
+      "manifest_bytes": 21430301,
+      "manifest_sha256": "9f0cc76426611b061994f6efc27a1539082156327dfbbd5a2984e681e74c143a",
+      "path": "spaces/localagent-webgpu/action_model.fp16.onnx",
+      "present": true,
+      "sha256": "9f0cc76426611b061994f6efc27a1539082156327dfbbd5a2984e681e74c143a",
+      "verified": true
+    },
+    {
+      "bytes": 42700043,
+      "file": "action_model.onnx",
+      "manifest_bytes": 42700043,
+      "manifest_sha256": "f307f2478c954b104417a3a6432b92c35512004eb1c401ab8471631381829dd9",
+      "path": "spaces/localagent-webgpu/action_model.onnx",
+      "present": true,
+      "sha256": "f307f2478c954b104417a3a6432b92c35512004eb1c401ab8471631381829dd9",
+      "verified": true
+    },
+    {
+      "bytes": 1332640,
+      "file": "dispatch_heads.json",
+      "manifest_bytes": 1332640,
+      "manifest_sha256": "98ab584385b00321a653fa13d06f8b5f5467719f0bee617da5d2844399e42663",
+      "path": "spaces/localagent-webgpu/dispatch_heads.json",
+      "present": true,
+      "sha256": "98ab584385b00321a653fa13d06f8b5f5467719f0bee617da5d2844399e42663",
+      "verified": true
+    },
+    {
+      "bytes": 3337938,
+      "file": "heads.json",
+      "manifest_bytes": 3337938,
+      "manifest_sha256": "c4160783cb9ebd03057dbc82ec8d86b8798fa7f7a4621dc27fd0f7b5fc578c40",
+      "path": "spaces/localagent-webgpu/heads.json",
+      "present": true,
+      "sha256": "c4160783cb9ebd03057dbc82ec8d86b8798fa7f7a4621dc27fd0f7b5fc578c40",
+      "verified": true
+    },
+    {
+      "bytes": 14728,
+      "file": "meta.json",
+      "manifest_bytes": 14728,
+      "manifest_sha256": "d26f68ed2201f9db7d97898001b5dadfef484a39e497405975cf5e859693a8ce",
+      "path": "spaces/localagent-webgpu/meta.json",
+      "present": true,
+      "sha256": "d26f68ed2201f9db7d97898001b5dadfef484a39e497405975cf5e859693a8ce",
+      "verified": true
+    },
+    {
+      "bytes": 34026169,
+      "file": "model.fp16.onnx",
+      "manifest_bytes": 34026169,
+      "manifest_sha256": "898c09ae957e81e6a42cb9351d570f66510c4c27a02b3ce0b37c22aba48e8b42",
+      "path": "spaces/localagent-webgpu/model.fp16.onnx",
+      "present": true,
+      "sha256": "898c09ae957e81e6a42cb9351d570f66510c4c27a02b3ce0b37c22aba48e8b42",
+      "verified": true
+    },
+    {
+      "bytes": 67877334,
+      "file": "model.onnx",
+      "manifest_bytes": 67877334,
+      "manifest_sha256": "e462e022bd958b0917227e818d0844ec145df885724a6713ecebb26fd21b94f8",
+      "path": "spaces/localagent-webgpu/model.onnx",
+      "present": true,
+      "sha256": "e462e022bd958b0917227e818d0844ec145df885724a6713ecebb26fd21b94f8",
+      "verified": true
+    },
+    {
+      "bytes": 1134224,
+      "file": "tokenizer.json",
+      "manifest_bytes": 1134224,
+      "manifest_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+      "path": "spaces/localagent-webgpu/tokenizer.json",
+      "present": true,
+      "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+      "verified": true
+    }
+  ],
+  "blockers": [],
+  "bundle_dir": "spaces/localagent-webgpu",
+  "bundle_identity_sha256": "c750c254140c47824b5cb82063b99ea0c22c1112606ee725bed23ae911251791",
+  "claim_boundary": "A clean Space is deployable only when every generated artifact is present and its exporter manifest, byte count, hash, and parity gate verify; local synthetic or text-first receipts do not establish native WebGPU deployment.",
+  "demo_dir": "spaces/localagent-webgpu",
+  "deployment_bundle_present": true,
+  "kind": "localagent_webgpu_demo_deploy_verification",
+  "manifest": {
+    "parity_gate_passed": true,
+    "path": "spaces/localagent-webgpu/bundle-manifest.json",
+    "schema_version": 3,
+    "sha256": "db4aad83ad26f726e456abe98aa7c2aad964ac468a30dd92a06288233ec51738"
+  },
+  "schema_version": 1,
+  "static": [
+    {
+      "file": "index.html",
+      "present": true
+    },
+    {
+      "file": "app.js",
+      "present": true
+    },
+    {
+      "file": "style.css",
+      "present": true
+    },
+    {
+      "file": "tokenizer.js",
+      "present": true
+    }
+  ],
+  "verified": true
+}

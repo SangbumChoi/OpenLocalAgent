@@ -1,0 +1,515 @@
+{
+  "arms": {
+    "m679_random": {
+      "checkpoint": {
+        "bytes": 52206887,
+        "path": "/private/tmp/m679-m675-mcp/random-child.pt",
+        "sha256": "2722ea455de75fb1f99d29eb40ea88dedc59248e11ef1672c22582e7a79fa946"
+      },
+      "report": {
+        "bytes": 15297,
+        "path": "/private/tmp/m694-m679-appworld-free/m679-random.json",
+        "sha256": "19b9e57e5ff30630e39cea9e7d75e5ff5b5ea5e75890d569effc1d864e3ed0e3"
+      },
+      "summary": {
+        "action_replayed": 6,
+        "native_api_calls": 24,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "steps_attempted": 12,
+        "tasks": 6
+      },
+      "task_results": [
+        {
+          "action_replayed": 1,
+          "apis": [
+            "spotify.show_song_queue"
+          ],
+          "failed": 1,
+          "native_api_calls": 4,
+          "passed": 1,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_1"
+        },
+        {
+          "action_replayed": 1,
+          "apis": [
+            "spotify.show_song_queue"
+          ],
+          "failed": 1,
+          "native_api_calls": 4,
+          "passed": 1,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_2"
+        },
+        {
+          "action_replayed": 1,
+          "apis": [
+            "spotify.show_song_queue"
+          ],
+          "failed": 1,
+          "native_api_calls": 4,
+          "passed": 1,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_3"
+        },
+        {
+          "action_replayed": 1,
+          "apis": [
+            "spotify.show_volume"
+          ],
+          "failed": 6,
+          "native_api_calls": 4,
+          "passed": 0,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_1"
+        },
+        {
+          "action_replayed": 1,
+          "apis": [
+            "spotify.show_volume"
+          ],
+          "failed": 6,
+          "native_api_calls": 4,
+          "passed": 0,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_2"
+        },
+        {
+          "action_replayed": 1,
+          "apis": [
+            "spotify.show_volume"
+          ],
+          "failed": 6,
+          "native_api_calls": 4,
+          "passed": 0,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_3"
+        }
+      ]
+    },
+    "m679_warm": {
+      "checkpoint": {
+        "bytes": 52206773,
+        "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+        "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+      },
+      "report": {
+        "bytes": 22263,
+        "path": "/private/tmp/m694-m679-appworld-free/m679-warm.json",
+        "sha256": "34e64e5c46dd05908a1117e66905b9296e670eb301942492330244db29e95b0b"
+      },
+      "summary": {
+        "action_replayed": 9,
+        "native_api_calls": 36,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "steps_attempted": 15,
+        "tasks": 6
+      },
+      "task_results": [
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_song_queue",
+            "spotify.show_song"
+          ],
+          "failed": 1,
+          "native_api_calls": 8,
+          "passed": 1,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_1"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_song_queue",
+            "spotify.show_song"
+          ],
+          "failed": 1,
+          "native_api_calls": 8,
+          "passed": 1,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_2"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_song_queue",
+            "spotify.show_song"
+          ],
+          "failed": 1,
+          "native_api_calls": 8,
+          "passed": 1,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_3"
+        },
+        {
+          "action_replayed": 1,
+          "apis": [
+            "spotify.show_song_queue"
+          ],
+          "failed": 6,
+          "native_api_calls": 4,
+          "passed": 0,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_1"
+        },
+        {
+          "action_replayed": 1,
+          "apis": [
+            "spotify.show_current_song"
+          ],
+          "failed": 6,
+          "native_api_calls": 4,
+          "passed": 0,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_2"
+        },
+        {
+          "action_replayed": 1,
+          "apis": [
+            "spotify.show_song_queue"
+          ],
+          "failed": 6,
+          "native_api_calls": 4,
+          "passed": 0,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_3"
+        }
+      ]
+    },
+    "m692_random": {
+      "checkpoint": {
+        "bytes": 52206759,
+        "path": "/private/tmp/m692-m679-appworld/random-child.pt",
+        "sha256": "0873136c164ab2ea3ebe9c6137bcecfae329ac84176f083b3d83fae9d67f135f"
+      },
+      "report": {
+        "bytes": 23836,
+        "path": "/private/tmp/m694-m679-appworld-free/m692-random.json",
+        "sha256": "66499f961b41cbb3412f050b0ab1ae6f93e38bf4dfeb68b5fdce2f9e7945c8c7"
+      },
+      "summary": {
+        "action_replayed": 12,
+        "native_api_calls": 48,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "steps_attempted": 18,
+        "tasks": 6
+      },
+      "task_results": [
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_current_song",
+            "spotify.show_song"
+          ],
+          "failed": 1,
+          "native_api_calls": 8,
+          "passed": 1,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_1"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_current_song",
+            "spotify.show_song"
+          ],
+          "failed": 1,
+          "native_api_calls": 8,
+          "passed": 1,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_2"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_current_song",
+            "spotify.show_song"
+          ],
+          "failed": 1,
+          "native_api_calls": 8,
+          "passed": 1,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_3"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_song_queue",
+            "spotify.play_music"
+          ],
+          "failed": 3,
+          "native_api_calls": 8,
+          "passed": 3,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_1"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_song_queue",
+            "spotify.play_music"
+          ],
+          "failed": 3,
+          "native_api_calls": 8,
+          "passed": 3,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_2"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_song_queue",
+            "spotify.next_song"
+          ],
+          "failed": 3,
+          "native_api_calls": 8,
+          "passed": 3,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_3"
+        }
+      ]
+    },
+    "m692_warm": {
+      "checkpoint": {
+        "bytes": 52206645,
+        "path": "/private/tmp/m692-m679-appworld/warm-child.pt",
+        "sha256": "d39a92aaf5144274ce23e8992d9e78ad3f138b2af347ffc8dce8156539b7a1cb"
+      },
+      "report": {
+        "bytes": 23819,
+        "path": "/private/tmp/m694-m679-appworld-free/m692-warm.json",
+        "sha256": "86248a6f93a141cab3793267f414f51ca65de6b1766afbac5fc2861914ac560e"
+      },
+      "summary": {
+        "action_replayed": 12,
+        "native_api_calls": 48,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "steps_attempted": 18,
+        "tasks": 6
+      },
+      "task_results": [
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_current_song",
+            "spotify.show_song"
+          ],
+          "failed": 1,
+          "native_api_calls": 8,
+          "passed": 1,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_1"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_current_song",
+            "spotify.show_song"
+          ],
+          "failed": 1,
+          "native_api_calls": 8,
+          "passed": 1,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_2"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_current_song",
+            "spotify.show_song"
+          ],
+          "failed": 1,
+          "native_api_calls": 8,
+          "passed": 1,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_3"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_song_queue",
+            "spotify.play_music"
+          ],
+          "failed": 3,
+          "native_api_calls": 8,
+          "passed": 3,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_1"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_song_queue",
+            "spotify.play_music"
+          ],
+          "failed": 3,
+          "native_api_calls": 8,
+          "passed": 3,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_2"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_song_queue",
+            "spotify.next_song"
+          ],
+          "failed": 3,
+          "native_api_calls": 8,
+          "passed": 3,
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_3"
+        }
+      ]
+    }
+  },
+  "benchmark_id": "appworld_native_public_dev_free_running_probe",
+  "claim_boundary": "Native resettable AppWorld free-running trajectory probe over six caller-selected public dev tasks. The model receives only redacted tool-result summaries and may emit at most four translated API steps. All four arms score 0/6 task completion; this is not an official AppWorld/AppWorld-UL score, does not cover Gmail or Notion, and uses no external accounts, screenshots, or irreversible side effects.",
+  "comparison": {
+    "action_replayed": {
+      "m679_random": 6,
+      "m679_warm": 9,
+      "m692_random": 12,
+      "m692_warm": 12
+    },
+    "all_arms_zero_task_completion": true,
+    "m679_warm_random_action_sequences_identical": false,
+    "m692_warm_random_action_sequences_identical": true,
+    "native_task_success": {
+      "m679_random": 0,
+      "m679_warm": 0,
+      "m692_random": 0,
+      "m692_warm": 0
+    },
+    "native_task_success_rate": {
+      "m679_random": 0.0,
+      "m679_warm": 0.0,
+      "m692_random": 0.0,
+      "m692_warm": 0.0
+    },
+    "steps_attempted": {
+      "m679_random": 12,
+      "m679_warm": 15,
+      "m692_random": 18,
+      "m692_warm": 18
+    }
+  },
+  "environment_contract": {
+    "oracle_contract_passed": true,
+    "receipt": "docs/paper/results/raw/m693-m679-appworld-native-v1.json",
+    "receipt_sha256": "4303b5cbbf50f22b869522c7aaa867d567a08ff078ba56a9ef0e9e1aa8039b40"
+  },
+  "kind": "localagent_m694_m679_appworld_free_running",
+  "parent_checkpoint": {
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "protocol": {
+    "allow_completion": true,
+    "environment_reset_per_task": true,
+    "external_accounts": false,
+    "max_steps": 4,
+    "native_runtime": "resettable AppWorld environment with ground-truth verifier",
+    "observations": "redacted response type/keys summaries",
+    "retrieve_k": 100,
+    "schema_adapter": "strict one literal API call per step",
+    "screenshots": false,
+    "state_side_effects": "isolated AppWorld task databases only"
+  },
+  "receipt_self_sha256": "41fbc9b00afc1dc568c65d685efb0ff82139e222aa408ddc2d9653d172bf135e",
+  "schema_version": 1,
+  "source": {
+    "data_version": "0.2.0",
+    "dataset": "AppWorld",
+    "split": "caller-selected public dev tasks",
+    "tasks": [
+      "6bdbc26_1",
+      "6bdbc26_2",
+      "6bdbc26_3",
+      "396c5a2_1",
+      "396c5a2_2",
+      "396c5a2_3"
+    ],
+    "url": "https://github.com/StonyBrookNLP/appworld"
+  },
+  "weight_adoption": {
+    "decision": "do not promote m692 AppWorld child; retain m679 backbone only as an initialization candidate and require multi-step native success before deployment",
+    "m692_warm_vs_random_free_run_gain_pp": 0.0
+  }
+}

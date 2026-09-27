@@ -1,0 +1,18 @@
+cases:
+  environment_policy: forbid
+  expected_rule_verified: true
+  expected_split: eval
+  generator_config: configs/eval/paper-confirmatory-eval-split-v2.yaml
+  manifest: data/synth/agent_eval_confirmatory_v2.jsonl.manifest.v1.json
+  path: data/synth/agent_eval_confirmatory_v2.jsonl
+checkpoint: runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000012.pt
+generation:
+  device: mps
+  max_new_tokens: 96
+kind: localagent_internal_agent_scorecard_config
+model_config: configs/model/webgpu-1m-bpe-router.yaml
+schema_version: 1
+tokenizer:
+  kind: bpe
+  path: data/tokenizer-paper-16k.json
+training_config: configs/train/sft-paper-tier-1m-parent-anchor-pulse-pilot.yaml

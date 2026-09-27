@@ -1,0 +1,32 @@
+benchmark over 18 tools (realistic only)
+
+tool@1     :  86.1%
+args-exact :  83.9%  (of correctly-selected)
+full-call  :  72.2%  (26/36)
+abstention :   0.0%  (0/8 irrelevant declined)
+
+misses:
+  'transfer db/q.sql to arch/m.py.'
+    gold move_file{'source': 'db/q.sql', 'dest': 'arch/m.py'}
+    got  translate_text{'text': 'arch/m.py', 'language': 'arch/m.py'}
+  "execute 'git pull'."
+    gold run_command{'command': 'git pull'}
+    got  git_commit{'message': 'git pull'}
+  "save 'tidy imports'."
+    gold git_commit{'message': 'tidy imports'}
+    got  create_ticket{'summary': 'tidy imports'}
+  "book 'retro' at 3pm."
+    gold schedule_meeting{'title': 'retro', 'time': '3pm'}
+    got  schedule_meeting{'title': 'retro', 'time': "'retro' at 3pm"}
+  'Turn off the garage light.'
+    gold toggle_light{'room': 'garage', 'state': False}
+    got  toggle_light{'room': 'off the garage light', 'state': False}
+  'Switch on the bedroom light.'
+    gold toggle_light{'room': 'bedroom', 'state': True}
+    got  toggle_light{'room': 'the bedroom light', 'state': True}
+  'play the song Clocks.'
+    gold play_music{'song': 'Clocks'}
+    got  play_music{'song': 'the song Clocks'}
+  "convert 'goodbye' into Italian."
+    gold translate_text{'text': 'goodbye', 'language': 'Italian'}
+    got  translate_text{'text': 'goodbye', 'language': "'goodbye' into Italian"}

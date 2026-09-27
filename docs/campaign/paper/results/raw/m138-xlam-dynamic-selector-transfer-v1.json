@@ -1,0 +1,66 @@
+{
+  "child": {
+    "bytes": 52331589,
+    "sha256": "ae8fd57c74208271d403daa5fa36083c84cf5f1306e4d1da30a31527fdcb6357"
+  },
+  "claim_boundary": "Frozen-backbone two-tower dispatch probe over a public xLAM-derived candidate catalog; not the gated Salesforce split, generated argument exactness, native API execution, or an official benchmark score. Global metrics include eval-row tool descriptions in the candidate catalog; row-local metrics are the more favorable closed-world diagnostic.",
+  "decision": {
+    "production_checkpoint_promoted": false,
+    "workshop_gate_eligible": false
+  },
+  "hyperparameters": {
+    "backbone_frozen": true,
+    "batch_size": 64,
+    "lr": 0.005,
+    "proj": 256,
+    "seed": 2030,
+    "steps": 64
+  },
+  "kind": "localagent_xlam_dynamic_selector_transfer",
+  "metrics": {
+    "after_eval": {
+      "global_tool_top1": 0.02,
+      "row_local_tool_top1": 0.604
+    },
+    "after_train": {
+      "global_tool_top1": 0.05599590897468678,
+      "row_local_tool_top1": 0.6890820761953464
+    },
+    "before_eval": {
+      "global_tool_top1": 0.0,
+      "row_local_tool_top1": 0.558
+    },
+    "before_train": {
+      "global_tool_top1": 0.00025568908207619537,
+      "row_local_tool_top1": 0.5185374584505241
+    },
+    "eval_row_local_candidate_count_mean": 2.548
+  },
+  "parent": {
+    "bytes": 52330935,
+    "sha256": "9bba544ae37190fdc24ea51ac9f3f8d80350cd905c01e13186156c19f7e0f9ee"
+  },
+  "receipt_self_sha256": "8e5445b60a461242baae70570702f53d5bf3b9bb13bf3689b933ca13db3c875e",
+  "rows": {
+    "eval": 500,
+    "train": 3911,
+    "train_decisions": 3911
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "product-science/xlam-function-calling-60k-raw",
+    "eval_normalized_slot_disjoint_jsonl_sha256": "661b5b58f133958b076ffec24dd2d3b538ebc814d465e0d039f9d171c0680688",
+    "eval_rows_removed_for_slot_overlap": 482,
+    "license": "apache-2.0",
+    "official_salesforce_split_verified": false,
+    "revision": "dfbd3c669354c27f2727870d39a4d86c32381448",
+    "train_normalized_jsonl_sha256": "0e66edaeef3fed8403939f6f7df97ac135f5e2002c8230f55aeb86c39a2ce429",
+    "url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+  },
+  "tools": {
+    "candidate_schema_conflicts": 209,
+    "candidate_union": 2840,
+    "train_schema_conflicts": 194,
+    "train_union": 2702
+  }
+}

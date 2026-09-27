@@ -1,0 +1,31 @@
+stage: pretrain
+model_config: configs/model/webgpu-96m-hybrid.yaml
+data:
+  shards_dir: data/shards/pt-big
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-h100-16k.json
+optim:
+  name: adamw
+  lr: 0.0003
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 320
+  total_steps: 3548
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 8
+  grad_accum_steps: 8
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+  resume: true
+log:
+  out_dir: runs/pre-skel-1ep-96m
+  ckpt_every: 2000
+  eval_every: 2000
+  eval_batches: 32
+init_from: runs/donor-init/skel-1ep-96m/latest.pt

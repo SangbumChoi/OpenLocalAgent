@@ -1,0 +1,96 @@
+{
+  "checkpoint": {
+    "parameters": 10524544,
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+  },
+  "claim_boundary": "The paired publisher built and verified local model and static Space artifacts from the current checkpoint. No Hub upload, public URL, anonymous Hub audit, native WebGPU hardware claim, or benchmark score is implied.",
+  "generated_at": "2026-08-05",
+  "kind": "localagent_hf_paired_release_preparation",
+  "measurement": "m331_hf_paired_release_local_only",
+  "model": {
+    "files": {
+      "README.md": {
+        "bytes": 3487,
+        "sha256": "710d87c5e9c2fafbe047fdd41a3daa7efa87cc8c06a38e135da4c880b9a1018c"
+      },
+      "agent_heads.bin": {
+        "bytes": 10116038,
+        "sha256": "f2af8f83698276b63d9def1f89c990ee9343c8360a30f6411267c0902fe0a128"
+      },
+      "config.json": {
+        "bytes": 38446,
+        "sha256": "29ac9528d9af3b329fe4628966cf4fa0347f54060cceb18b74664fa6c8e0ab56"
+      },
+      "model.safetensors": {
+        "bytes": 42101904,
+        "sha256": "c95406240d299e6846b79f347add8aede5707c761fc545184aa2c2149c504404"
+      },
+      "tokenizer.json": {
+        "bytes": 1134224,
+        "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+      }
+    },
+    "path": "/private/tmp/m331-hf-model",
+    "repo": "local/test-model"
+  },
+  "publication": {
+    "authenticated": false,
+    "published": false,
+    "reason": "local-only preparation; HF authentication was not configured",
+    "uploaded": false
+  },
+  "schema_version": 1,
+  "source": {
+    "command": "python scripts/publish_hf_release.py --checkpoint runs/sft-webgpu-browser-context-adapter-20260802/latest.pt --model-repo <user>/localagent-webgpu-10m --space-repo <user>/localagent-webgpu --model-out <model-out> --web-out <web-out> --space-out <space-out>",
+    "demo_source": "spaces/localagent-webgpu",
+    "script": "scripts/publish_hf_release.py"
+  },
+  "space": {
+    "bundle_identity_sha256": "558fb82e4483916874956ba866be21aa5d55ff5bdc2ba734072f45b3ba89fcdb",
+    "path": "/private/tmp/m331-space",
+    "repo": "local/test-space",
+    "verified": true
+  },
+  "webgpu": {
+    "artifacts": {
+      "action_model.fp16.onnx": {
+        "bytes": 21430301,
+        "sha256": "8856dcaeca1ad2125b0ba34d0fa47da8f0271d3078195a9288862cd1603a1434"
+      },
+      "action_model.onnx": {
+        "bytes": 42700043,
+        "sha256": "57751f41902a66a24fd9336de120c58b566018043c4131a10d10d003bf9df5f6"
+      },
+      "dispatch_heads.json": {
+        "bytes": 1300522,
+        "sha256": "b8c9b486a7d26ccfe3e6e9a49e3ee216c0b3f181d4a631bbe3c46e6b988139fa"
+      },
+      "heads.json": {
+        "bytes": 3337015,
+        "sha256": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486"
+      },
+      "meta.json": {
+        "bytes": 11548,
+        "sha256": "6d6a79b331ce3f60c097f2bd3662a2178345aef68a7ded61e67737ff8e8cb89e"
+      },
+      "model.fp16.onnx": {
+        "bytes": 34026169,
+        "sha256": "d10584a5c41e281af13e4d6d45d4bc06bc5646434705b052b66cb75047ada1e0"
+      },
+      "model.onnx": {
+        "bytes": 67877334,
+        "sha256": "74e4be16cc3090606c09ebb09c068fba7e9cb5ba096d05e1ce158279c8032fc2"
+      },
+      "tokenizer.json": {
+        "bytes": 1134224,
+        "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+      }
+    },
+    "bundle_identity_sha256": "558fb82e4483916874956ba866be21aa5d55ff5bdc2ba734072f45b3ba89fcdb",
+    "bundle_manifest_sha256": "a7c290c4d250afb227f89104b6621ea34dbb3171829a975c1e9d38dc09ea73bc2",
+    "parity_gate": true,
+    "path": "/private/tmp/m331-web"
+  },
+  "receipt_self_sha256": "4f736f036aca16bb1062840ac312640447dd3abe576dfbee0052fbbd9189291d"
+}

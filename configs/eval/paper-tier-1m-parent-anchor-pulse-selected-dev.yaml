@@ -1,0 +1,28 @@
+cases:
+  environment_policy: forbid
+  expected_rule_verified: true
+  expected_split: eval
+  generator_config: configs/data/agent_synth_eval.yaml
+  manifest: data/synth/agent_eval.jsonl.manifest.v1.json
+  path: data/synth/agent_eval.jsonl
+  selection:
+    algorithm: greedy_uncovered_strata_then_semantic_sha256_fill_v1
+    expected_audit_sha256: 342abcb7ad550d4b73c726c7bbf74a68cc1fef5bda1ca68707fd8b75a16bc641
+    expected_selected_assistant_decisions: 820
+    expected_selected_rows: 512
+    expected_selected_semantic_set_sha256: 5eb08ef61dcdfab5889f66ecb04c17fbce6ce2726f868ab85f1afe6120505bf3
+    expected_source_assistant_decisions: 7963
+    expected_source_rows: 5000
+    expected_source_semantic_set_sha256: 02c7e08baaaa97b54f522ba3ee5f979993000de5a3c24507c7bc4a2479355999
+    max_rows: 512
+checkpoint: runs/sft-paper-tier-1m-parent-anchor-pulse-pilot/latest.step-00000012.pt
+generation:
+  device: mps
+  max_new_tokens: 96
+kind: localagent_internal_agent_scorecard_config
+model_config: configs/model/webgpu-1m-bpe-router.yaml
+schema_version: 1
+tokenizer:
+  kind: bpe
+  path: data/tokenizer-paper-16k.json
+training_config: configs/train/sft-paper-tier-1m-parent-anchor-pulse-pilot.yaml

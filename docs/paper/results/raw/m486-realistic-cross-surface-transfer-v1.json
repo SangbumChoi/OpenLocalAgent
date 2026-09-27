@@ -1,0 +1,589 @@
+{
+  "aggregate": {
+    "random_after_token_accuracy": 0.0,
+    "warm_after_token_accuracy": 0.46612466124661245,
+    "warm_minus_random_after_pp": 46.612466124661246,
+    "warm_start_better_after": true
+  },
+  "benchmark_id": "realistic_agent_cross_surface_16step_canary",
+  "children": {
+    "random": {
+      "bytes": 52254832,
+      "path": "/private/tmp/m486-realistic-mixture-random.pt",
+      "sha256": "f5be2cc5967dd2d2b9f6c5cd26c3551051d23c572f5bc0e34763bb00ebd9905e"
+    },
+    "warm": {
+      "bytes": 52254718,
+      "path": "/private/tmp/m486-realistic-mixture-warm.pt",
+      "sha256": "689ce2e484d4cdb12b117c75549770a632b3904def92f1bb7e98e8956884ba49"
+    }
+  },
+  "claim_boundary": "Matched public-train-only text/accessibility continuation across AndroidControl, AgentNet, Mind2Web, and MCPMark projections. This is a 16-step canary, not an official benchmark score, native environment result, screenshot-grounding result, or evidence of real email/Notion/MCP side effects.",
+  "kind": "localagent_realistic_cross_surface_transfer_receipt",
+  "parent": {
+    "bytes": 52246937,
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "receipt_self_sha256": "1968c040066a410c4eba2c21996656cb25995f401cd08ca1e363fbaef0a847a2",
+  "schema_version": 1,
+  "sources": {
+    "agentnet": {
+      "dataset": "xlangai/AgentNet",
+      "revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+      "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+    },
+    "androidcontrol": {
+      "dataset": "OfficerChul/Android-Control-84k",
+      "revision": "hf:OfficerChul/Android-Control-84k@train4096",
+      "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+    },
+    "mcpmark": {
+      "dataset": "MCPMark",
+      "official_split_verified": false,
+      "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+      "url": "https://github.com/eval-sys/mcpmark"
+    },
+    "mcpmark_trajectory_log": {
+      "dataset": "Jakumetsu/mcpmark-trajectory-log",
+      "revision": "e50578f0ab904d8e6a7c576c387c1e76ae482c89",
+      "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log"
+    },
+    "mind2web": {
+      "dataset": "osunlp/Mind2Web",
+      "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+      "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+    }
+  },
+  "surfaces": {
+    "agentnet": {
+      "random_backbone": {
+        "after_token_accuracy": 0.0,
+        "before_token_accuracy": 0.0,
+        "delta_token_accuracy": 0.0
+      },
+      "rows": 4,
+      "warm_minus_random_after_pp": 53.06122448979592,
+      "warm_start": {
+        "after_token_accuracy": 0.5306122448979592,
+        "before_token_accuracy": 0.4965986394557823,
+        "delta_token_accuracy": 0.03401360544217691
+      },
+      "warm_start_better_after": true
+    },
+    "androidcontrol": {
+      "random_backbone": {
+        "after_token_accuracy": 0.0,
+        "before_token_accuracy": 0.0,
+        "delta_token_accuracy": 0.0
+      },
+      "rows": 4,
+      "warm_minus_random_after_pp": 64.54545454545455,
+      "warm_start": {
+        "after_token_accuracy": 0.6454545454545455,
+        "before_token_accuracy": 0.6272727272727273,
+        "delta_token_accuracy": 0.018181818181818188
+      },
+      "warm_start_better_after": true
+    },
+    "mcpmark_filesystem": {
+      "random_backbone": {
+        "after_token_accuracy": 0.0,
+        "before_token_accuracy": 0.0,
+        "delta_token_accuracy": 0.0
+      },
+      "rows": 4,
+      "warm_minus_random_after_pp": 41.46341463414634,
+      "warm_start": {
+        "after_token_accuracy": 0.4146341463414634,
+        "before_token_accuracy": 0.36585365853658536,
+        "delta_token_accuracy": 0.04878048780487804
+      },
+      "warm_start_better_after": true
+    },
+    "mcpmark_playwright_extraction": {
+      "random_backbone": {
+        "after_token_accuracy": 0.0,
+        "before_token_accuracy": 0.0,
+        "delta_token_accuracy": 0.0
+      },
+      "rows": 1,
+      "warm_minus_random_after_pp": 11.818181818181818,
+      "warm_start": {
+        "after_token_accuracy": 0.11818181818181818,
+        "before_token_accuracy": 0.10909090909090909,
+        "delta_token_accuracy": 0.009090909090909094
+      },
+      "warm_start_better_after": true
+    },
+    "mcpmark_playwright_travel": {
+      "random_backbone": {
+        "after_token_accuracy": 0.0,
+        "before_token_accuracy": 0.0,
+        "delta_token_accuracy": 0.0
+      },
+      "rows": 1,
+      "warm_minus_random_after_pp": 43.42105263157895,
+      "warm_start": {
+        "after_token_accuracy": 0.4342105263157895,
+        "before_token_accuracy": 0.40789473684210525,
+        "delta_token_accuracy": 0.026315789473684237
+      },
+      "warm_start_better_after": true
+    },
+    "mind2web": {
+      "random_backbone": {
+        "after_token_accuracy": 0.0,
+        "before_token_accuracy": 0.0,
+        "delta_token_accuracy": 0.0
+      },
+      "rows": 4,
+      "warm_minus_random_after_pp": 71.11111111111111,
+      "warm_start": {
+        "after_token_accuracy": 0.7111111111111111,
+        "before_token_accuracy": 0.6666666666666666,
+        "delta_token_accuracy": 0.04444444444444451
+      },
+      "warm_start_better_after": true
+    }
+  },
+  "training": {
+    "cap_contract": {
+      "max_eval_rows_per_source": 4,
+      "max_seq_len": 128,
+      "max_train_rows_per_source": 16,
+      "purpose": "matched_canary_not_final_training_run",
+      "steps": 16
+    },
+    "comparison": {
+      "bytes": 15371,
+      "path": "/private/tmp/m486-realistic-mixture-comparison.json",
+      "sha256": "e4881a268dd6216eb59ee73b6b2054d2678b2ade0d66144cc26c624c253ac280"
+    },
+    "eval_sources": [
+      {
+        "datasets": [],
+        "input": {
+          "bytes": 2610672,
+          "path": "/private/tmp/m475-androidcontrol-eval.jsonl",
+          "sha256": "9d07848ce40b590aa28dc0248e48b47ce80aba985d141723761a1df70f37be12"
+        },
+        "label": "androidcontrol",
+        "public_reference": {
+          "dataset": "OfficerChul/Android-Control-84k",
+          "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+        },
+        "revisions": [
+          "hf:OfficerChul/Android-Control-84k@train4096"
+        ],
+        "rows": 4,
+        "source_families": [
+          "androidcontrol_json_mirror"
+        ],
+        "source_urls": [],
+        "splits": [
+          "eval",
+          "train"
+        ],
+        "unique_parent_records": 4,
+        "visual_input_omitted_rows": 4
+      },
+      {
+        "datasets": [
+          "xlangai/AgentNet"
+        ],
+        "input": {
+          "bytes": 239744,
+          "path": "/private/tmp/agentnet_text_v3.eval.jsonl",
+          "sha256": "b9473550b24cea2f87b4d90ad29e6a669a179fdcee9e5d5a753011236f45af7d"
+        },
+        "label": "agentnet",
+        "public_reference": {
+          "dataset": "xlangai/AgentNet",
+          "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+        },
+        "revisions": [
+          "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+        ],
+        "rows": 4,
+        "source_families": [
+          "xlangai/AgentNet"
+        ],
+        "source_urls": [],
+        "splits": [
+          "ubuntu_jsonl_bounded_prefix"
+        ],
+        "unique_parent_records": 1,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "osunlp/Mind2Web"
+        ],
+        "input": {
+          "bytes": 81803,
+          "path": "/private/tmp/mind2web-grounded-offset8-eval-disjoint.jsonl",
+          "sha256": "46305cb512f7368ed31817c79b798f5469e8658db12aed5d6880ea81b4e6fcbe"
+        },
+        "label": "mind2web",
+        "public_reference": {
+          "dataset": "osunlp/Mind2Web",
+          "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+        },
+        "revisions": [
+          "17ece8eb89862368edc0cc806acee6fca5163474"
+        ],
+        "rows": 4,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/osunlp/Mind2Web"
+        ],
+        "splits": [
+          "train"
+        ],
+        "unique_parent_records": 1,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "Jakumetsu/mcpmark-trajectory-log"
+        ],
+        "input": {
+          "bytes": 3310,
+          "path": "/private/tmp/mcpmark-playwright-eval-extraction.jsonl",
+          "sha256": "c32b05b4a20499463fcde9089b705fac056fab50194a0931b813319fc227f688"
+        },
+        "label": "mcpmark_playwright_extraction",
+        "public_reference": {
+          "dataset": "Jakumetsu/mcpmark-trajectory-log",
+          "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log"
+        },
+        "revisions": [
+          "e50578f0ab904d8e6a7c576c387c1e76ae482c89"
+        ],
+        "rows": 1,
+        "source_families": [
+          "Jakumetsu/mcpmark-trajectory-log"
+        ],
+        "source_urls": [],
+        "splits": [],
+        "unique_parent_records": 1,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "Jakumetsu/mcpmark-trajectory-log"
+        ],
+        "input": {
+          "bytes": 10813,
+          "path": "/private/tmp/mcpmark-playwright-eval-travel.jsonl",
+          "sha256": "def538660d893e49809db1a1488bd9679d7aa04c1873e3e0a64ddf9dd29a836c"
+        },
+        "label": "mcpmark_playwright_travel",
+        "public_reference": {
+          "dataset": "Jakumetsu/mcpmark-trajectory-log",
+          "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log"
+        },
+        "revisions": [
+          "e50578f0ab904d8e6a7c576c387c1e76ae482c89"
+        ],
+        "rows": 1,
+        "source_families": [
+          "Jakumetsu/mcpmark-trajectory-log"
+        ],
+        "source_urls": [],
+        "splits": [],
+        "unique_parent_records": 1,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "MCPMark"
+        ],
+        "input": {
+          "bytes": 28557,
+          "path": "/private/tmp/mcpmark-fs-transfer-eval.jsonl",
+          "sha256": "275dee91549d64e79752c314ec860dfa27e998e0a0f47374e97eff51ce4fd47e"
+        },
+        "label": "mcpmark_filesystem",
+        "public_reference": {
+          "dataset": "MCPMark",
+          "url": "https://github.com/eval-sys/mcpmark"
+        },
+        "revisions": [
+          "cd45b7f57923b9b3985467f5139927575f83141c"
+        ],
+        "rows": 4,
+        "source_families": [
+          "MCPMark",
+          "mcpmark_filesystem"
+        ],
+        "source_urls": [
+          "https://github.com/eval-sys/mcpmark"
+        ],
+        "splits": [
+          "easy"
+        ],
+        "unique_parent_records": 4,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "hyperparameters": {
+      "backbone_init": "parent",
+      "batch_size": 4,
+      "device": "cpu",
+      "learning_rate": 1e-05,
+      "max_eval_rows_per_source": 4,
+      "max_seq_len": 128,
+      "max_train_rows_per_source": 16,
+      "random_backbone_seed": 2028,
+      "seed": 2027,
+      "steps": 16
+    },
+    "random_report": {
+      "bytes": 18134,
+      "path": "/private/tmp/m486-realistic-mixture-random.json",
+      "sha256": "a82e2a16f7e36874d6ad22b459c10698b2a49aa3af5d0058e9fec3f3895619fe"
+    },
+    "rows": {
+      "eval": 18,
+      "train": 59
+    },
+    "split_contract": {
+      "cross_source_slot_reuse_allowed": true,
+      "labels_checked": [
+        "agentnet",
+        "androidcontrol",
+        "mcpmark_filesystem",
+        "mcpmark_playwright_extraction",
+        "mcpmark_playwright_travel",
+        "mcpmark_productivity",
+        "mind2web"
+      ],
+      "mode": "source_local_parent_and_slot_disjoint"
+    },
+    "train_sources": [
+      {
+        "datasets": [],
+        "input": {
+          "bytes": 10321415,
+          "path": "/private/tmp/m475-androidcontrol-train.jsonl",
+          "sha256": "983a4e5b20fe29f9dd8b4886c038dc5a77799aa3905868d6e7b9e47ef5a28c50"
+        },
+        "label": "androidcontrol",
+        "public_reference": {
+          "dataset": "OfficerChul/Android-Control-84k",
+          "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k"
+        },
+        "revisions": [
+          "hf:OfficerChul/Android-Control-84k@train4096"
+        ],
+        "rows": 16,
+        "source_families": [
+          "androidcontrol_json_mirror"
+        ],
+        "source_urls": [],
+        "splits": [
+          "train"
+        ],
+        "unique_parent_records": 13,
+        "visual_input_omitted_rows": 16
+      },
+      {
+        "datasets": [
+          "xlangai/AgentNet"
+        ],
+        "input": {
+          "bytes": 911115,
+          "path": "/private/tmp/agentnet_text_v3.train.jsonl",
+          "sha256": "666e7b29bd67e6b46c8a96c0fa9248a1d79498e4c6da2baf04bb906d8778bc60"
+        },
+        "label": "agentnet",
+        "public_reference": {
+          "dataset": "xlangai/AgentNet",
+          "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+        },
+        "revisions": [
+          "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+        ],
+        "rows": 16,
+        "source_families": [
+          "xlangai/AgentNet"
+        ],
+        "source_urls": [],
+        "splits": [
+          "ubuntu_jsonl_bounded_prefix"
+        ],
+        "unique_parent_records": 2,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "osunlp/Mind2Web"
+        ],
+        "input": {
+          "bytes": 282261,
+          "path": "/private/tmp/mind2web-grounded-offset8-train-disjoint.jsonl",
+          "sha256": "78f7e647c3728106901c51ecc772c834467ef6a019c1c083af6849700b361621"
+        },
+        "label": "mind2web",
+        "public_reference": {
+          "dataset": "osunlp/Mind2Web",
+          "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+        },
+        "revisions": [
+          "17ece8eb89862368edc0cc806acee6fca5163474"
+        ],
+        "rows": 16,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/osunlp/Mind2Web"
+        ],
+        "splits": [
+          "train"
+        ],
+        "unique_parent_records": 4,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "Jakumetsu/mcpmark-trajectory-log"
+        ],
+        "input": {
+          "bytes": 35640,
+          "path": "/private/tmp/m482-mcpmark-productivity-train.jsonl",
+          "sha256": "5a4244ba18fb88e0f7c85a048b79fa5e2d4a34b1f792ad5bee05949e378d6665"
+        },
+        "label": "mcpmark_productivity",
+        "public_reference": {
+          "dataset": "Jakumetsu/mcpmark-trajectory-log",
+          "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log"
+        },
+        "revisions": [
+          "e50578f0ab904d8e6a7c576c387c1e76ae482c89"
+        ],
+        "rows": 3,
+        "source_families": [
+          "Jakumetsu/mcpmark-trajectory-log"
+        ],
+        "source_urls": [],
+        "splits": [],
+        "unique_parent_records": 3,
+        "visual_input_omitted_rows": 0
+      },
+      {
+        "datasets": [
+          "MCPMark"
+        ],
+        "input": {
+          "bytes": 22896,
+          "path": "/private/tmp/mcpmark-fs-transfer-train.jsonl",
+          "sha256": "e824a803cb852fae5ab387dc669afb1488c7a7c01d178a8f579d7f46480430f4"
+        },
+        "label": "mcpmark_filesystem",
+        "public_reference": {
+          "dataset": "MCPMark",
+          "url": "https://github.com/eval-sys/mcpmark"
+        },
+        "revisions": [
+          "cd45b7f57923b9b3985467f5139927575f83141c"
+        ],
+        "rows": 8,
+        "source_families": [
+          "MCPMark",
+          "mcpmark_filesystem"
+        ],
+        "source_urls": [
+          "https://github.com/eval-sys/mcpmark"
+        ],
+        "splits": [
+          "easy"
+        ],
+        "unique_parent_records": 8,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "warm_report": {
+      "bytes": 18428,
+      "path": "/private/tmp/m486-realistic-mixture-warm.json",
+      "sha256": "de425324b697085b21b96958afad224c9eb1fe3c80ba0cceece15a0f1eeda907"
+    }
+  },
+  "transfer_decision": "warm_start_dominates_matched_random_on_all_surfaces",
+  "weight_groups": {
+    "random": {
+      "action_heads": {
+        "base_l2": 87.12721149777144,
+        "delta_l2": 0.0,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.0,
+        "target_l2": 87.12721149777144
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.686243041747026,
+        "delta_l2": 40.25506391222233,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.778835170505782,
+        "target_l2": 50.410583636581244
+      },
+      "embedding": {
+        "base_l2": 76.26811513665427,
+        "delta_l2": 91.2929215351677,
+        "parameters": 6291456,
+        "relative_delta_l2": 1.1969998389443943,
+        "target_l2": 50.18739678149015
+      },
+      "ffn": {
+        "base_l2": 50.599417154543154,
+        "delta_l2": 44.422423002090014,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.8779236105904724,
+        "target_l2": 49.79206302717839
+      },
+      "normalization": {
+        "base_l2": 21.431829234008912,
+        "delta_l2": 1.8370369184032822,
+        "parameters": 384,
+        "relative_delta_l2": 0.0857153581406946,
+        "target_l2": 19.595802299744374
+      }
+    },
+    "warm": {
+      "action_heads": {
+        "base_l2": 87.12721149777144,
+        "delta_l2": 0.0,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.0,
+        "target_l2": 87.12721149777144
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.686243041747026,
+        "delta_l2": 0.05936402447838332,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0011485459376576266,
+        "target_l2": 51.686433515738536
+      },
+      "embedding": {
+        "base_l2": 76.26811513665427,
+        "delta_l2": 0.1449316301391092,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.0019002912275913242,
+        "target_l2": 76.32886592396478
+      },
+      "ffn": {
+        "base_l2": 50.599417154543154,
+        "delta_l2": 0.06880831321718381,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0013598637511382033,
+        "target_l2": 50.59942303458323
+      },
+      "normalization": {
+        "base_l2": 21.431829234008912,
+        "delta_l2": 0.0009000165256203761,
+        "parameters": 384,
+        "relative_delta_l2": 4.199438675034759e-05,
+        "target_l2": 21.43201479873746
+      }
+    }
+  }
+}

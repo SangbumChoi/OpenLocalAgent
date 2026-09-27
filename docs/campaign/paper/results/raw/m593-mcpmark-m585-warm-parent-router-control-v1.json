@@ -1,0 +1,59 @@
+{
+  "kind": "localagent_mcpmark_m585_warm_parent_router_control_receipt",
+  "schema_version": 1,
+  "dataset": "MCPMark",
+  "source_url": "https://github.com/eval-sys/mcpmark",
+  "source_revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+  "source": {
+    "standard": {
+      "rows": 169,
+      "task_manifest_sha256": "0aa0548ff7bdcd7533001b6e5898b8c4e64ec25e445d4605a271f5e78bd2e3d5",
+      "metadata_and_description_bytes": 1272143
+    },
+    "easy": {
+      "rows": 70,
+      "task_manifest_sha256": "fc525f8c92af23195fd22e92a2f860b6dc8fd57c9df089ff2733ae88c14a0247",
+      "metadata_and_description_bytes": 385446
+    },
+    "mcp_servers_executed": false,
+    "verifiers_executed": false,
+    "task_text_retained": false
+  },
+  "parent": {
+    "checkpoint_sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+    "standard_report_sha256": "4435c6f458b23958458c178f6ac11b0c2217536ba4c60cbbb8447dbaaa712ee8",
+    "easy_report_sha256": "cd53e6403141fa3ddb8f1c07ed421994a0f77d0f76bee8ed44564d7a38372d27",
+    "standard": {"route_correct": 25, "rows": 169, "route_accuracy": 0.14792899408284024},
+    "easy": {"route_correct": 10, "rows": 70, "route_accuracy": 0.14285714285714285},
+    "by_service_standard": {
+      "filesystem": [0, 30],
+      "github": [0, 23],
+      "notion": [0, 28],
+      "playwright": [25, 25],
+      "postgres": [0, 63]
+    }
+  },
+  "warm_child": {
+    "checkpoint_sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff",
+    "standard_report_sha256": "cd003a4645e6fc17bf5e9f0d738312c061693c168b37c2b83737e408905abad7",
+    "easy_report_sha256": "deb0df5fcd94e4eb1b5a30d4239092861c0554f6a0287ae8189b758b10af2c84",
+    "standard": {"route_correct": 25, "rows": 169, "route_accuracy": 0.14792899408284024},
+    "easy": {"route_correct": 10, "rows": 70, "route_accuracy": 0.14285714285714285},
+    "by_service_standard": {
+      "filesystem": [0, 30],
+      "github": [0, 23],
+      "notion": [0, 28],
+      "playwright": [25, 25],
+      "postgres": [0, 63]
+    }
+  },
+  "transfer_delta": {
+    "standard_route_accuracy_pp": 0.0,
+    "easy_route_accuracy_pp": 0.0,
+    "notion_standard_pp": 0.0,
+    "playwright_standard_pp": 0.0,
+    "interpretation": "The warm public continuation exactly matches the parent service router: Playwright routes are correct, while Notion, filesystem, GitHub, and Postgres routes remain 0/144 on the standard suite. No Notion transfer is observed."
+  },
+  "claim_boundary": "Public MCPMark task-description service-routing proxy only. No live MCP server, browser, Notion account, verifier, official split score, pass@k, or external side effect was run; this is not an official MCPMark result.",
+  "receipt_self_sha256": "75e525639bf438efffc1460990a86abf401c0941a376f6746d94ee104a8dc0ab"
+}

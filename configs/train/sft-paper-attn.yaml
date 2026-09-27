@@ -1,0 +1,63 @@
+# Parameter-matched all-MQA SFT control. Every training/data knob matches the hybrid arm.
+stage: sft
+model_config: configs/model/webgpu-35m-attn.yaml
+init_from: runs/midtrain-paper-attn/latest.pt
+data:
+  strict_conversation_artifacts: true
+  conversations:
+    - path: data/synth/agent_sft_paper_train_v2.jsonl
+      artifact:
+        generator_config: configs/data/agent_synth_paper_train_v2.yaml
+        manifest: data/synth/agent_sft_paper_train_v2.jsonl.manifest.v1.json
+        expected_split: train
+        expected_rule_verified: true
+        environment_policy: forbid
+  eval_conversations:
+    - path: data/synth/agent_eval.jsonl
+      artifact:
+        generator_config: configs/data/agent_synth_eval.yaml
+        manifest: data/synth/agent_eval.jsonl.manifest.v1.json
+        expected_split: eval
+        expected_rule_verified: true
+        environment_policy: forbid
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-paper-16k.json
+  seq_len: 2048
+  function_masking: false
+  shuffle: true
+optim:
+  name: adamw
+  lr: 5.0e-5
+  weight_decay: 0.0
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 200
+  total_steps: 10000
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 2
+  grad_accum_steps: 8
+evaluation:
+  batch_size: 8
+heads:
+  joint_tool_pointer: true
+  train_route_head: true
+  train_dense_selector: true
+  tool_loss_weight: 1.0
+  pointer_loss_weight: 0.15
+  multi_turn_head_weight: 1.0
+  selector_proj: 256
+  example_centroids: true
+  examples_per_tool: 16
+  route_steps: 1000
+  selector_steps: 1500
+  probe_batch_size: 64
+  probe_lr: 5.0e-3
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+log:
+  out_dir: runs/sft-paper-attn

@@ -1,0 +1,32 @@
+# Size-ladder backbone: same corpus, tokenizer, schedule and token budget as the 10M pair, so the
+# warm-start and catalog-conditioning studies can be read across scales.
+stage: pretrain
+model_config: configs/model/la64k-16k.yaml
+data:
+  shards_dir: data/shards/pool-64k
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-h100-64k.json
+optim:
+  name: adamw
+  lr: 3.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 320
+  total_steps: 16000
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 8
+  grad_accum_steps: 8
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+  resume: true
+log:
+  out_dir: runs/pre-la64k-16k
+  ckpt_every: 2000
+  eval_every: 2000
+  eval_batches: 32

@@ -1,0 +1,98 @@
+{
+  "claim_boundary": "Public MobileSafetyBench text/context policy projection only. The Android emulator, Appium/ADB actions, screenshots, task verifier, official safety score, and helpfulness score were not executed; rows remain evaluation-only and were not admitted to training.",
+  "kind": "localagent_mobilesafety_text_policy_projection",
+  "measurement": "m332_mobilesafety_public_text_policy",
+  "notable_findings": {
+    "blocked_rows": 23,
+    "blocked_task_safety_rows": 22,
+    "blocked_qa_rows": 1,
+    "helpful_blocked_rows": 0,
+    "block_reason_counts": {
+      "high_risk_safety_signal": 22,
+      "prompt_injection_or_secret_exfiltration_signal": 1
+    },
+    "risk_indicator_counts": {
+      "risk_pattern_1": 1,
+      "risk_pattern_2": 2,
+      "risk_pattern_3": 3,
+      "risk_pattern_4": 3,
+      "risk_pattern_5": 8,
+      "risk_pattern_6": 3,
+      "risk_pattern_7": 1,
+      "risk_pattern_8": 1
+    },
+    "task_text_committed": false
+  },
+  "policy": {
+    "app": "spaces/localagent-webgpu/app.js",
+    "app_sha256": "a2d8fed113f3a6716798a0d2ac656c47d17e759dc45b2899b50f65bc03160ca6",
+    "external_side_effects": false,
+    "native_execution": false,
+    "runner": "Node.js checked-in static app actionSafetyPolicy",
+    "version": "side_effect_confirmation_v1",
+    "risk_version": "text_harm_block_v1"
+  },
+  "qa_summary": {
+    "action_counts": {
+      "post_message": 1,
+      "send_message": 1,
+      "web_search": 1
+    },
+    "confirmation_rate": 0.6666666666666666,
+    "policy_status_counts": {
+      "blocked": 1,
+      "confirmation_required": 2
+    },
+    "rows": 3,
+    "rows_with_prompt_injection_indicators": 0,
+    "scenario_prefixes": {
+      "safety": 3
+    }
+  },
+  "receipt_self_sha256": "21d1ade335e89943d662f49fa78d7b79bb0cec7396cef1f15412c36f1280c775",
+  "schema_version": 1,
+  "source": {
+    "dataset": "MobileSafetyBench",
+    "qa_rows": 3,
+    "qa_tasks": {
+      "bytes": 1778,
+      "path": "/private/tmp/mobilesafetybench-qa_tasks.json",
+      "sha256": "de9fde3d2cc0d1573e4aa4844b0a1cbc900e3f5941eeafa4f3f42c8d60befe3e"
+    },
+    "revision": "bc5e0579626a280c4f551261abcb721442ff92ea",
+    "task_rows": 90,
+    "tasks": {
+      "bytes": 69821,
+      "path": "/private/tmp/mobilesafetybench-tasks.json",
+      "sha256": "a44664bc7a575e69f6ac65c7bd07f1620dd177c49bf15a8ac029de5fa25540a4"
+    },
+    "url": "https://github.com/jylee425/mobilesafetybench"
+  },
+  "source_script": "scripts/evaluate_mobilesafety_text.py",
+  "summary": {
+    "action_counts": {
+      "calendar_event": 2,
+      "click": 4,
+      "delete_event": 2,
+      "delete_file": 4,
+      "open_url": 4,
+      "post_message": 12,
+      "read_message": 16,
+      "send_message": 26,
+      "web_search": 16,
+      "write_file": 4
+    },
+    "confirmation_rate": 0.5,
+    "policy_status_counts": {
+      "allowed": 23,
+      "blocked": 22,
+      "confirmation_required": 45
+    },
+    "rows": 90,
+    "rows_with_prompt_injection_indicators": 1,
+    "scenario_prefixes": {
+      "helpful": 45,
+      "safety": 45
+    }
+  }
+}

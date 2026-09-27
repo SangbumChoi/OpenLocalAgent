@@ -1,0 +1,52 @@
+kind: localagent_webgpu_realistic_campaign
+schema_version: 1
+description: >-
+  Portable matched experiment matrix for the <100M WebGPU agent. Architecture benchmarks use fresh
+  random weights; quality comparisons require paired checkpoints and disjoint public splits.
+models:
+  - webgpu-10m-attn
+  - webgpu-10m-hybrid
+  - webgpu-10m-vision
+  - webgpu-16m-attn
+  - webgpu-16m-hybrid
+  - webgpu-35m-attn
+  - webgpu-35m-hybrid
+  - webgpu-96m-attn
+  - webgpu-96m-hybrid
+training_plan:
+  pretrain:
+    - configs/train/pretrain-paper-tier-10m-attn.yaml
+    - configs/train/pretrain-paper-tier-10m-hybrid.yaml
+    - configs/train/pretrain-paper-tier-96m-attn.yaml
+    - configs/train/pretrain-paper-tier-96m-hybrid.yaml
+  midtrain:
+    - configs/train/midtrain-paper-tier-10m-attn.yaml
+    - configs/train/midtrain-paper-tier-10m-hybrid.yaml
+    - configs/train/midtrain-paper-tier-96m-attn.yaml
+    - configs/train/midtrain-paper-tier-96m-hybrid.yaml
+  sft:
+    - configs/train/sft-paper-tier-10m-attn.yaml
+    - configs/train/sft-paper-tier-10m-hybrid.yaml
+    - configs/train/sft-paper-tier-96m-attn.yaml
+    - configs/train/sft-paper-tier-96m-hybrid.yaml
+  rl:
+    - configs/train/rl-paper-tier-10m-attn.yaml
+    - configs/train/rl-paper-tier-10m-hybrid.yaml
+    - configs/train/rl-paper-tier-96m-attn.yaml
+    - configs/train/rl-paper-tier-96m-hybrid.yaml
+comparisons:
+  - architecture: attention_vs_hybrid
+    control: same_data_seed_steps_and_tokenizer
+  - architecture: 10m_vs_16m_vs_35m_vs_96m
+    control: same_protocol_and_target_context
+  - architecture: vision_sidecar
+    control: matched_warm_vs_random_backbone_and_native_visual_verifier
+  - architecture: weight_transfer
+    control: matched_no_transfer_ablation
+  - architecture: kv_cache
+    control: cached_vs_uncached_decode
+evaluation_policy:
+  train_rows: use_only_explicit_train_policy_rows
+  eval_rows: never_copy_task_prompts_or_verifiers_into_training
+  native_rows: require_pinned_runtime_and_independent_verifier
+  external_side_effects: disabled_by_default

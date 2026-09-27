@@ -1,0 +1,53 @@
+{
+  "kind": "localagent_browsergym_m585_warm_full_receipt",
+  "schema_version": 1,
+  "benchmark_id": "browsergym_miniwob",
+  "environment_executed": true,
+  "official_split_verified": true,
+  "task_count": 240,
+  "success_rate": 0.020833333333333332,
+  "checkpoint_sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff",
+  "checkpoint": {
+    "parent_path": "/private/tmp/m553-multisurface-lineage-child.pt",
+    "parent_sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+    "child_path": "/private/tmp/m585-public-multisurface-warm.pt",
+    "child_sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff",
+    "parameters": 10524544
+  },
+  "source": {
+    "browsergym_revision": "9e779f087de9a65668b6974d11f9ce9816026e96",
+    "miniwob_revision": "7fd85d71a4b60325c6585396ec4f48377d049838",
+    "playwright_version": "1.51.1",
+    "chromium_revision": "1117",
+    "official_plan": "BrowserGym MiniWoB full plan",
+    "official_split_verified": true,
+    "references": {
+      "browsergym": "https://github.com/ServiceNow/BrowserGym",
+      "miniwob": "https://github.com/Farama-Foundation/miniwob-plusplus"
+    }
+  },
+  "result": {
+    "task_count": 240,
+    "passed_tasks": 5,
+    "failed_tasks": 235,
+    "success_rate": 0.020833333333333332,
+    "total_model_steps": 2179,
+    "grounded_steps": 219,
+    "noop_or_ungrounded_steps": 1960,
+    "action_errors": 0,
+    "successful_task_families": {
+      "miniwob.click-button": 4,
+      "miniwob.sign-agreement": 1
+    },
+    "observation_mode": "accessibility_tree_text",
+    "vision_used": false,
+    "coordinate_fallback": false,
+    "semantic_fallback": false
+  },
+  "raw_report": {
+    "path": "/private/tmp/m586-browsergym-m585-warm-full.json",
+    "sha256": "4fa5a34d424a2176f738fe42ad21c5521f843f42ec36fcf08923a0e75896cdef"
+  },
+  "claim_boundary": "Native pinned BrowserGym/MiniWoB execution on the official 240-task plan using text/accessibility-tree observations. This is not a visual-agent, WebArena, OSWorld, real-account email/Notion, or general computer-use result; no external side effects were used.",
+  "receipt_self_sha256": "89e3302fb8774a27e93b522251e2cce21afd07d5df667e7ac6082b06c12c641f"
+}

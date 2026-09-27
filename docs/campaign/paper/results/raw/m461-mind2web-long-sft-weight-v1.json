@@ -1,0 +1,339 @@
+{
+  "child_checkpoint": {
+    "bytes": 52247564,
+    "path": "/private/tmp/m461b-mind2web-long-child.pt",
+    "sha256": "c80238f5454dbba89045f7f0677fc18e002818a94f474fe84c71374216ca8dd7"
+  },
+  "claim_boundary": "This is a longer public train-only Mind2Web DOM/action continuation with a source-disjoint teacher-forced evaluation and a matched checkpoint weight audit. It is not an official Mind2Web test score, BrowserGym score, visual grounding result, live browser result, MCP result, or real-account side-effect claim.",
+  "dataset": {
+    "eval_identity": [
+      {
+        "bytes": 113763,
+        "path": "data/private/mind2web/normalized/m420/eval.jsonl",
+        "sha256": "2b3e502978496dd75151a244477ad8efebfec0ebdd912bf97f0910c14f0d7ed9"
+      }
+    ],
+    "eval_rows": 32,
+    "manifest_self_sha256": "6a8ffffa112099053d235b5bb8ed099b6b463d69f47b2bda9527aba2fe919a4e",
+    "name": "osunlp/Mind2Web",
+    "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+    "source_manifest": {
+      "bytes": 3328,
+      "path": "data/private/mind2web/normalized/m420/manifest.json",
+      "sha256": "f6656200ae983f315cda8d3bc0a6ebfc0f0b8870797b3367faaaf48e318e8c2d"
+    },
+    "train_identity": [
+      {
+        "bytes": 352766,
+        "path": "data/private/mind2web/normalized/m420/train.jsonl",
+        "sha256": "b6cc595007bb91aa37f4d89e15e477b5b223bb9a66913856273c7cf995abf866"
+      }
+    ],
+    "train_rows": 96,
+    "url": "https://huggingface.co/datasets/osunlp/Mind2Web"
+  },
+  "decision": {
+    "adoption": "retain_as_low_rate_initialization_candidate",
+    "native_replay_required": true,
+    "reason": "Held-out token accuracy improves on a source-disjoint public Mind2Web split, but the 24-step continuation moves the embedding/attention/FFN groups by 0.328%/0.173%/0.206% and exact sequence accuracy remains 0%. Action heads are frozen, so native replay and a matched no-transfer control are required before any WebGPU export or promotion.",
+    "webgpu_export_allowed": false
+  },
+  "heads": {
+    "after": {
+      "route_accuracy": 1.0,
+      "rows": 186,
+      "selector_top1_accuracy": 0.8494623655913979,
+      "tool_rows": 186
+    },
+    "before": {
+      "route_accuracy": 1.0,
+      "rows": 186,
+      "selector_top1_accuracy": 0.8494623655913979,
+      "tool_rows": 186
+    }
+  },
+  "kind": "localagent_mind2web_long_sft_and_weight_receipt",
+  "loss_history": [
+    1.7433174848556519,
+    1.6815730333328247,
+    1.8822975158691406,
+    1.6447927951812744,
+    1.9096043109893799,
+    1.9994467496871948,
+    2.5555906295776367,
+    1.8484320640563965,
+    1.3660863637924194,
+    2.4573943614959717,
+    1.3083794116973877,
+    1.3887096643447876,
+    1.541486144065857,
+    1.247033953666687,
+    1.745795488357544,
+    1.1967226266860962,
+    1.0897021293640137,
+    1.1077789068222046,
+    1.0898473262786865,
+    1.6277791261672974,
+    1.097571611404419,
+    1.3803292512893677,
+    1.2357779741287231,
+    1.0720669031143188
+  ],
+  "parent_checkpoint": {
+    "bytes": 52246937,
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "protocol": {
+    "batch_size": 1,
+    "device": "cpu",
+    "head_init": "parent",
+    "head_steps": 0,
+    "learning_rate": 1e-05,
+    "max_seq_len": 512,
+    "seed": 2027,
+    "selector_pool": "realistic",
+    "steps": 24
+  },
+  "receipt_self_sha256": "520b3ed72fb626c0c00452a5b80099db036b69336ecf4de1e32cef16b2a9b15e",
+  "schema_version": 1,
+  "source_artifacts": {
+    "training_report": {
+      "bytes": 6430,
+      "path": "/private/tmp/m461b-mind2web-long-report.json",
+      "sha256": "774dbcc2b60cd47df4ba7a7fe5bbe5142de325dbcf555b83fbfccd3dec46f6df"
+    },
+    "weight_report": {
+      "bytes": 19700,
+      "path": "/private/tmp/m461b-mind2web-long-weight-analysis.json",
+      "sha256": "026414289fa9cf795bac55e9339173e0730438c9874382e881991353020a21d4"
+    }
+  },
+  "teacher_forced": {
+    "eval": {
+      "assistant_loss_tokens": 5004,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.7897681854516387,
+      "mean_loss": 1.3102839810670994,
+      "rows": 32
+    },
+    "train": {
+      "assistant_loss_tokens": 15996,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.7812578144536134,
+      "mean_loss": 1.3690103219431262,
+      "rows": 96
+    }
+  },
+  "teacher_forced_before": {
+    "eval": {
+      "assistant_loss_tokens": 5004,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.7272182254196643,
+      "mean_loss": 1.8302576398963837,
+      "rows": 32
+    },
+    "train": {
+      "assistant_loss_tokens": 15996,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.7171167791947987,
+      "mean_loss": 1.8735087199877667,
+      "rows": 96
+    }
+  },
+  "token_accounting": {
+    "dataset_token_accounting": {
+      "decay": null,
+      "main": {
+        "input_tokens": 32692,
+        "loss_tokens": 15996,
+        "sources": {
+          "multi_turn": {
+            "input_tokens": 32692,
+            "loss_tokens": 15996,
+            "rows": 96
+          }
+        }
+      }
+    },
+    "fixed_horizon_progress": {
+      "completed_optimizer_updates": 24,
+      "partial": false,
+      "planned_optimizer_updates": 24
+    },
+    "lm_sampling": {
+      "mode": "iid_with_replacement_v1"
+    },
+    "loss_components": {
+      "lm_loss": [
+        1.7433174848556519,
+        1.6815730333328247,
+        1.8822975158691406,
+        1.6447927951812744,
+        1.9096043109893799,
+        1.9994467496871948,
+        2.5555906295776367,
+        1.8484320640563965,
+        1.3660863637924194,
+        2.4573943614959717,
+        1.3083794116973877,
+        1.3887096643447876,
+        1.541486144065857,
+        1.247033953666687,
+        1.745795488357544,
+        1.1967226266860962,
+        1.0897021293640137,
+        1.1077789068222046,
+        1.0898473262786865,
+        1.6277791261672974,
+        1.097571611404419,
+        1.3803292512893677,
+        1.2357779741287231,
+        1.0720669031143188
+      ],
+      "optimization": [
+        1.7433174848556519,
+        1.6815730333328247,
+        1.8822975158691406,
+        1.6447927951812744,
+        1.9096043109893799,
+        1.9994467496871948,
+        2.5555906295776367,
+        1.8484320640563965,
+        1.3660863637924194,
+        2.4573943614959717,
+        1.3083794116973877,
+        1.3887096643447876,
+        1.541486144065857,
+        1.247033953666687,
+        1.745795488357544,
+        1.1967226266860962,
+        1.0897021293640137,
+        1.1077789068222046,
+        1.0898473262786865,
+        1.6277791261672974,
+        1.097571611404419,
+        1.3803292512893677,
+        1.2357779741287231,
+        1.0720669031143188
+      ],
+      "router_aux": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "router_weighted": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "token_accounting": {
+      "input_tokens": 8289,
+      "loss_tokens": 4050,
+      "sources": {
+        "multi_turn": {
+          "input_tokens": 8289,
+          "loss_tokens": 4050,
+          "rows": 24
+        }
+      }
+    },
+    "token_accounting_scope": "language_model_microbatches"
+  },
+  "weight_transfer": {
+    "compatibility": {
+      "added_tensors": [],
+      "config_mismatches": {},
+      "removed_tensors": [],
+      "shape_mismatches": {},
+      "shared_tensor_count": 51,
+      "tokenizer_sha256_equal": true
+    },
+    "groups": {
+      "action_heads": {
+        "base_l2": 87.12721149777144,
+        "delta_l2": 0.0,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.0,
+        "target_l2": 87.12721149777144
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.686243041747026,
+        "delta_l2": 0.08923668134569397,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0017265074049513992,
+        "target_l2": 51.68713459914807
+      },
+      "embedding": {
+        "base_l2": 76.26811513665427,
+        "delta_l2": 0.2501477230588391,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.003279846664764614,
+        "target_l2": 76.35771295949137
+      },
+      "ffn": {
+        "base_l2": 50.599417154543154,
+        "delta_l2": 0.10444554186128115,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0020641649199689117,
+        "target_l2": 50.59945768020924
+      },
+      "normalization": {
+        "base_l2": 21.431829234008912,
+        "delta_l2": 0.0016131726391207031,
+        "parameters": 384,
+        "relative_delta_l2": 7.526994646639187e-05,
+        "target_l2": 21.432639472932454
+      }
+    },
+    "recommendation": {
+      "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+      "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+      "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+      "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+    }
+  }
+}

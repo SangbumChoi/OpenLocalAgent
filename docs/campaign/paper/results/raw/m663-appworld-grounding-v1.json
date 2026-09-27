@@ -1,0 +1,309 @@
+{
+  "api_head": {
+    "classes": [
+      "file_system.compress_directory",
+      "file_system.move_file",
+      "file_system.show_directory",
+      "file_system.show_file",
+      "phone.delete_text_message",
+      "phone.search_contacts",
+      "phone.search_text_messages",
+      "phone.send_text_message",
+      "simple_note.search_notes",
+      "simple_note.show_note",
+      "spotify.follow_artist",
+      "spotify.like_song",
+      "spotify.remove_song_from_library",
+      "spotify.search_artists",
+      "spotify.show_album_library",
+      "spotify.show_current_song",
+      "spotify.show_liked_songs",
+      "spotify.show_playlist",
+      "spotify.show_playlist_library",
+      "spotify.show_recommendations",
+      "spotify.show_song",
+      "spotify.show_song_library",
+      "spotify.show_song_queue",
+      "supervisor.complete_task",
+      "venmo.create_transaction",
+      "venmo.show_sent_payment_requests",
+      "venmo.show_social_feed",
+      "venmo.show_transactions"
+    ],
+    "metrics": {
+      "eval": {
+        "accuracy": 0.25,
+        "exact": 3,
+        "rows": 12,
+        "unseen_labels": [
+          "spotify.add_to_queue",
+          "spotify.search_songs",
+          "spotify.show_artist"
+        ]
+      },
+      "train": {
+        "accuracy": 0.9368070960044861,
+        "exact": 845,
+        "rows": 902,
+        "unseen_labels": []
+      }
+    },
+    "report": {
+      "bytes": 2687,
+      "path": "/private/tmp/m663-grounding/api-head-report.json",
+      "sha256": "d3b29426cdced90c6d9a8fbf7b305d88bf1de8d9d87231ba9e9817398b802006"
+    }
+  },
+  "benchmark": {
+    "completion_prefix_tasks": 6,
+    "data_version": "0.2.0",
+    "dataset": "AppWorld",
+    "eval_rows": 6,
+    "max_native_steps": 5,
+    "native_tasks": 6,
+    "protected_test_used": false,
+    "source_url": "https://github.com/StonyBrookNLP/appworld",
+    "train_rows": 64
+  },
+  "claim_boundary": "Public AppWorld trajectory continuation, frozen API-head diagnostic, persisted native free-running replay, and ground-truth-prefix completion control. The prefix result is not a free-running benchmark score; no external accounts, email, Notion, or WebGPU side effect is claimed.",
+  "decision": {
+    "promote_to_native_success": false,
+    "reason": "The follower-count state sketch and persisted AppWorld execution contract make the completion layer measurable: both arms complete all 6/6 tasks after an explicitly injected public ground-truth API prefix. Fully free-running success remains 0/6, with wrong first-API choices dominating; the remaining blocker is action selection and state-conditioned planning, not the final completion call.",
+    "retain_warm_initialization": true
+  },
+  "inputs": {
+    "api_head_report": {
+      "bytes": 2687,
+      "path": "/private/tmp/m663-grounding/api-head-report.json",
+      "sha256": "d3b29426cdced90c6d9a8fbf7b305d88bf1de8d9d87231ba9e9817398b802006"
+    },
+    "eval_manifest": {
+      "bytes": 4875,
+      "path": "/private/tmp/m663-grounding/dev.manifest.json",
+      "sha256": "86a7e2cc9ea093f0259003fa31d62868c40a5c845411af67c740dc673be05fdf"
+    },
+    "random_completion": {
+      "bytes": 6636,
+      "path": "/private/tmp/m663-grounding/completion-random-fixed.json",
+      "sha256": "0a9643539b9ed4cb151b058360847294139b4161694acd1b809ac4ab70d4c188"
+    },
+    "random_native": {
+      "bytes": 19435,
+      "path": "/private/tmp/m663-grounding/native-random-fixed.json",
+      "sha256": "727d40a8e61eded8de80ae25b99e6c7ddba1f7dac75a00443da5c988724d4b12"
+    },
+    "random_report": {
+      "bytes": 6345,
+      "path": "/private/tmp/m663-grounding/random-report.json",
+      "sha256": "4cf5acab58344d836ef1f265f85e687aa4742df9d4c70455d79fd01817923279"
+    },
+    "random_weight": {
+      "bytes": 19672,
+      "path": "/private/tmp/m663-grounding/random-weight.json",
+      "sha256": "6de1dc2614af0be91b0d445e7afb0a8eef5b26f06a2abc5cd5530cbd1ef17a42"
+    },
+    "train_manifest": {
+      "bytes": 62792,
+      "path": "/private/tmp/m663-grounding/fulltrain.manifest.json",
+      "sha256": "4b9c3bb2020f755b42d12eec5eb411aa0c7a5879cb42e227bcc85ffb7e326377"
+    },
+    "warm_completion": {
+      "bytes": 6634,
+      "path": "/private/tmp/m663-grounding/completion-warm-v6.json",
+      "sha256": "1f903401945226b63a48afcac3e9e963d60537cf2e2e47a0fa6d13663c1e1754"
+    },
+    "warm_native": {
+      "bytes": 16791,
+      "path": "/private/tmp/m663-grounding/native-warm-fixed.json",
+      "sha256": "ff5bbaf0e2bba9d50a40bf4b4f89535c3c234dbd6d1931e535d7a7eaf91962d4"
+    },
+    "warm_report": {
+      "bytes": 6367,
+      "path": "/private/tmp/m663-grounding/warm-report.json",
+      "sha256": "5efe4dd13a11862d0b2d5f883be8dc7ed829edf4466abe63f33384529320b7d2"
+    },
+    "warm_weight": {
+      "bytes": 19672,
+      "path": "/private/tmp/m663-grounding/warm-weight.json",
+      "sha256": "1148462427a9e37f9dd8db7953f4e51974032d61ac242ada7a9db5e7da520769"
+    }
+  },
+  "kind": "localagent_m663_appworld_grounding_receipt",
+  "metrics": {
+    "api_head_seen_label_accuracy": 0.25,
+    "completion_prefix_random_success_rate": 1.0,
+    "completion_prefix_warm_success_rate": 1.0,
+    "free_running_random_success_rate": 0.0,
+    "free_running_warm_success_rate": 0.0,
+    "random_after": {
+      "assistant_loss_tokens": 878,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.37699316628701596,
+      "mean_loss": 8.098466251868594,
+      "rows": 6
+    },
+    "random_before": {
+      "assistant_loss_tokens": 878,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.3348519362186788,
+      "mean_loss": 8.461442743184083,
+      "rows": 6
+    },
+    "random_exact_sequence_accuracy": 0.0,
+    "warm_after": {
+      "assistant_loss_tokens": 878,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.6514806378132119,
+      "mean_loss": 2.6717467079944655,
+      "rows": 6
+    },
+    "warm_after_minus_random_after_pp": 27.44874715261959,
+    "warm_before": {
+      "assistant_loss_tokens": 878,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.5535307517084282,
+      "mean_loss": 2.940354610086845,
+      "rows": 6
+    },
+    "warm_delta_pp": 9.794988610478361,
+    "warm_exact_sequence_accuracy": 0.0
+  },
+  "native_replay": {
+    "free_running": {
+      "random": {
+        "report": {
+          "bytes": 19435,
+          "path": "/private/tmp/m663-grounding/native-random-fixed.json",
+          "sha256": "727d40a8e61eded8de80ae25b99e6c7ddba1f7dac75a00443da5c988724d4b12"
+        },
+        "summary": {
+          "action_replayed": 12,
+          "native_api_calls": 48,
+          "native_success_rate": 0.0,
+          "native_successes": 0,
+          "steps_attempted": 18,
+          "tasks": 6
+        }
+      },
+      "warm": {
+        "report": {
+          "bytes": 16791,
+          "path": "/private/tmp/m663-grounding/native-warm-fixed.json",
+          "sha256": "ff5bbaf0e2bba9d50a40bf4b4f89535c3c234dbd6d1931e535d7a7eaf91962d4"
+        },
+        "summary": {
+          "action_replayed": 8,
+          "native_api_calls": 32,
+          "native_success_rate": 0.0,
+          "native_successes": 0,
+          "steps_attempted": 14,
+          "tasks": 6
+        }
+      }
+    },
+    "ground_truth_prefix_completion": {
+      "random": {
+        "report": {
+          "bytes": 6636,
+          "path": "/private/tmp/m663-grounding/completion-random-fixed.json",
+          "sha256": "0a9643539b9ed4cb151b058360847294139b4161694acd1b809ac4ab70d4c188"
+        },
+        "summary": {
+          "native_success_rate": 1.0,
+          "native_successes": 6,
+          "tasks": 6
+        }
+      },
+      "warm": {
+        "report": {
+          "bytes": 6634,
+          "path": "/private/tmp/m663-grounding/completion-warm-v6.json",
+          "sha256": "1f903401945226b63a48afcac3e9e963d60537cf2e2e47a0fa6d13663c1e1754"
+        },
+        "summary": {
+          "native_success_rate": 1.0,
+          "native_successes": 6,
+          "tasks": 6
+        }
+      }
+    }
+  },
+  "receipt_self_sha256": "39dd11fa638642a6be5d4b51aea01900018257daa26f492dd22e435f922d74b4",
+  "schema_version": 1,
+  "weight_movement": {
+    "random": {
+      "action_heads": {
+        "base_l2": 91.53287681571555,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.53287681571555
+      },
+      "attention_or_mixer": {
+        "base_l2": 50.41319278959981,
+        "delta_l2": 0.10423018886218015,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.002067518105770177,
+        "target_l2": 50.41399605655558
+      },
+      "embedding": {
+        "base_l2": 50.184502750936375,
+        "delta_l2": 0.25354871568139165,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.0050523309345066846,
+        "target_l2": 50.18559824667564
+      },
+      "ffn": {
+        "base_l2": 49.7983940976635,
+        "delta_l2": 0.1262555443504449,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0025353336515799153,
+        "target_l2": 49.8005718383114
+      },
+      "normalization": {
+        "base_l2": 19.600807133673225,
+        "delta_l2": 0.0021622092244671636,
+        "parameters": 384,
+        "relative_delta_l2": 0.00011031225447612279,
+        "target_l2": 19.602629852580797
+      }
+    },
+    "warm": {
+      "action_heads": {
+        "base_l2": 91.77234792175153,
+        "delta_l2": 0.0,
+        "parameters": 2519736,
+        "relative_delta_l2": 0.0,
+        "target_l2": 91.77234792175153
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.69873779490864,
+        "delta_l2": 0.09671620955147633,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0018707653934445006,
+        "target_l2": 51.69982110214159
+      },
+      "embedding": {
+        "base_l2": 77.7475153918363,
+        "delta_l2": 0.26815516061644806,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.003449051191732425,
+        "target_l2": 77.83728232986009
+      },
+      "ffn": {
+        "base_l2": 50.61025928761937,
+        "delta_l2": 0.11341945188628232,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.002241036767697963,
+        "target_l2": 50.61082055567932
+      },
+      "normalization": {
+        "base_l2": 21.452501677208907,
+        "delta_l2": 0.0019675147707336805,
+        "parameters": 384,
+        "relative_delta_l2": 9.17149337796796e-05,
+        "target_l2": 21.454191348716357
+      }
+    }
+  }
+}

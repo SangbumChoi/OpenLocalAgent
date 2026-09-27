@@ -1,0 +1,93 @@
+{
+  "interpretation": {
+    "claim_boundary": "This receipt audits the public scenario universe and execution protocol only. It is not a ToolSandbox model score, user-simulator run, or external-side-effect result.",
+    "gate_action": "retain official_split_not_verified until a benchmark owner defines a split or protocol exception",
+    "native_smoke_is_official_score": false,
+    "training_policy": "eval_only"
+  },
+  "kind": "localagent_toolsandbox_protocol_audit",
+  "official_protocol": {
+    "augmentation_factor": 8,
+    "base_scenario_count": 129,
+    "category_counts": {
+      "ALL_TOOLS_AVAILABLE": 129,
+      "ARG_DESCRIPTION_SCRAMBLED": 129,
+      "ARG_TYPE_SCRAMBLED": 129,
+      "CANONICALIZATION": 472,
+      "INSUFFICIENT_INFORMATION": 224,
+      "MULTIPLE_TOOL_CALL": 656,
+      "MULTIPLE_USER_TURN": 224,
+      "NO_DISTRACTION_TOOLS": 129,
+      "SINGLE_TOOL_CALL": 152,
+      "SINGLE_USER_TURN": 584,
+      "STATE_DEPENDENCY": 192,
+      "TEN_DISTRACTION_TOOLS": 129,
+      "THREE_DISTRACTION_TOOLS": 645,
+      "TOOL_DESCRIPTION_SCRAMBLED": 129,
+      "TOOL_NAME_SCRAMBLED": 129
+    },
+    "official_split": null,
+    "official_split_verified": false,
+    "requires_external_credentials_for_default_simulator": true,
+    "requires_user_simulator": true,
+    "scenario_count": 1032,
+    "scenario_resolution": "all scenarios when --scenario is omitted",
+    "split_finding": "The pinned repository defines scenario categories and generated tool/argument augmentations, but no train/test split or static leaderboard subset."
+  },
+  "receipt_self_sha256": "05bf8a96dcd2246e41d21721ce16eae84d9f3572494bf3b90ceec1a3bf5f54fd",
+  "schema_version": 1,
+  "source": {
+    "dataset": "apple/ToolSandbox",
+    "files": [
+      {
+        "bytes": 48824,
+        "path": "README.md",
+        "sha256": "0e5cfb9077769e2dcbe74dbfc8b8fac8314d8a213ab34364ab6b2ecaf47d8fe8"
+      },
+      {
+        "bytes": 2668,
+        "path": "LICENSE",
+        "sha256": "2283d5566b38210fbfb9fcb06619f1d0a8101bff9df974ea8afc3393508e9015"
+      },
+      {
+        "bytes": 3214,
+        "path": "pyproject.toml",
+        "sha256": "1374abe6c850da500a4f64534456b25cb029eb6dc1c0e3c3f78431949a2e5ad0"
+      },
+      {
+        "bytes": 12745,
+        "path": "tool_sandbox/cli/utils.py",
+        "sha256": "43ebded7eac3fb3af5ae72f34bc87528aae544bd7b0f421688addc6a4be09897"
+      },
+      {
+        "bytes": 5572,
+        "path": "tool_sandbox/scenarios/__init__.py",
+        "sha256": "113cc01d10bb1630a93e09785893235ae4a3863d3a61542839eeb2791914724a"
+      },
+      {
+        "bytes": 49816,
+        "path": "tool_sandbox/scenarios/single_tool_call_scenarios.py",
+        "sha256": "dd295b0f64c53015bfebea538891be3183a7a1f74ec37454a0f154b93fab9e38"
+      },
+      {
+        "bytes": 265184,
+        "path": "tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+        "sha256": "e2d351bebf9afec76d37263b02544120c78b687f4dd4501ab0a4b6c981ce1ff3"
+      },
+      {
+        "bytes": 148087,
+        "path": "tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+        "sha256": "784c636140afbb452e94df301191f466f6d06929d3eebec13ba1a66992a74baf"
+      },
+      {
+        "bytes": 73027,
+        "path": "tool_sandbox/scenarios/insufficient_information_scenarios.py",
+        "sha256": "3920e5bb8df528c5e87427c29edc7ee346057324eb47e56df61189a298c901b1"
+      }
+    ],
+    "license": "Apple Sample Code License",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "revision_url": "https://github.com/apple/ToolSandbox/tree/165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "source_url": "https://github.com/apple/ToolSandbox"
+  }
+}

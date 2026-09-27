@@ -1,0 +1,120 @@
+{
+  "benchmark_id": "mcpmark",
+  "claim_boundary": "One-task native MCPMark Playwright replay with a real stdio MCP server and independent task verifier. The official split is not verified, the warm child did not pass the CSV verifier, the parent timed out before tool discovery, and no external account side effect is implied.",
+  "comparison": {
+    "parent_runtime_error": true,
+    "parent_tool_calls": 0,
+    "parent_verifier_pass": false,
+    "warm_runtime_error": false,
+    "warm_tool_calls": 3,
+    "warm_verifier_pass": false
+  },
+  "kind": "localagent_mcpmark_native_playwright_replay_receipt",
+  "parent": {
+    "checkpoint": {
+      "bytes": 52246937,
+      "path": "/Users/sangbumchoi/Documents/LocalAgent/runs/sft-mind2web-public-continuation-20260805/latest.pt",
+      "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+    },
+    "receipt": {
+      "bytes": 2348,
+      "path": "/private/tmp/m480-mcpmark-playwright-native-parent.json",
+      "sha256": "3cf8e4b4f6fc7997ee9f33bc8139f6a4a7e495c2446c4a7c63cc8999ea191d50"
+    },
+    "summary": {
+      "runtime_errors": 1,
+      "tasks": 1,
+      "verifier_failures": 1,
+      "verifier_passes": 0
+    },
+    "task_result": {
+      "category": "eval_web",
+      "messages_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "server_error": "TimeoutError: ",
+      "task": "playwright/standard/eval_web/extraction_table",
+      "task_id": "extraction_table",
+      "tool_count": 0,
+      "turns": [],
+      "verifier_exit_code": 1,
+      "verifier_stderr_sha256": "b23962997d4a6f6e3f7620aefb99dfaa181dab8a9d9a8458fc6e6c38e185bc27",
+      "verifier_stderr_tail": "| MCP_MESSAGES: /private/tmp/mcpmark-playwright-extraction_table-rwjwvgi7/messages.json\n| Warning: No completed assistant message found\n| Model response not found\n",
+      "verifier_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verifier_stdout_tail": ""
+    }
+  },
+  "receipt_self_sha256": "67ed63432bfd07ebe7581cde73f5521c78b588ba38f1647997181ff35ce8704f",
+  "runtime": {
+    "external_api_called": true,
+    "headless": true,
+    "mcp_server_executed": true,
+    "server": "@playwright/mcp@0.0.68",
+    "verifiers_executed": true
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "MCPMark",
+    "official_split_verified": false,
+    "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "service": "playwright",
+    "suite": "standard",
+    "task": "playwright/standard/eval_web/extraction_table",
+    "url": "https://github.com/eval-sys/mcpmark"
+  },
+  "warm_child": {
+    "checkpoint": {
+      "bytes": 52250473,
+      "path": "/private/tmp/m479-mcpmark-productivity-warm.pt",
+      "sha256": "1fc2d4014e746a4f2784338577794a759279fbb3636bdf0e8e3954c4fe6f40db"
+    },
+    "receipt": {
+      "bytes": 3264,
+      "path": "/private/tmp/m480-mcpmark-playwright-native-warm.json",
+      "sha256": "246334648e9d4a96ce4933417242d274bac2987ce38c4f0bac077f6b63c8e3c1"
+    },
+    "summary": {
+      "runtime_errors": 0,
+      "tasks": 1,
+      "verifier_failures": 1,
+      "verifier_passes": 0
+    },
+    "task_result": {
+      "category": "eval_web",
+      "messages_sha256": "d122ea0c86a0eae91356392e2fd931f040b34bdf31c25b347d5b7a2f04b0e595",
+      "server_error": null,
+      "task": "playwright/standard/eval_web/extraction_table",
+      "task_id": "extraction_table",
+      "tool_count": 22,
+      "turns": [
+        {
+          "arguments": {
+            "url": "https://eval-web.mcpmark.ai/extraction"
+          },
+          "output_sha256": "11a9a24f9b576fcb334ef83aa20ddd9e2daf65916962d8a76582e96a7177aa59",
+          "result_is_error": false,
+          "result_sha256": "680ca90bd24af52ed54ede3e7c9aca53f497d86fb3e1a3ef400a1bf7d8688d13",
+          "tool": "browser_navigate",
+          "turn": 1
+        },
+        {
+          "arguments": {},
+          "output_sha256": "351ce2759b94df8fb2c8eb3192da84fa34e34a03d40e95c659bb97c468950659",
+          "result_is_error": false,
+          "result_sha256": "7f8dbd6c138cb292afece21b05ee03a9e29e2767449ab4d0f87a395eb5d78388",
+          "tool": "browser_snapshot",
+          "turn": 2
+        },
+        {
+          "arguments": null,
+          "output_sha256": "5977ca6bf8d5e6c5ff7be2ad78ecaa9a38346be6baf5e303e196c4120ca220c0",
+          "tool": null,
+          "turn": 3
+        }
+      ],
+      "verifier_exit_code": 1,
+      "verifier_stderr_sha256": "cfa0ae2f2383e935dd8c6e144f57aa1668fb74afec136cf5294856deb9744865",
+      "verifier_stderr_tail": "| MCP_MESSAGES: /private/tmp/mcpmark-playwright-extraction_table-e9xx0zfy/messages.json\n|\n| Model response (first 500 characters): I cannot complete this request....\n|\n| \u2717 CSV data not found in response\n",
+      "verifier_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verifier_stdout_tail": ""
+    }
+  }
+}

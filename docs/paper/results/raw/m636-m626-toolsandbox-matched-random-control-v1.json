@@ -1,0 +1,408 @@
+{
+  "benchmark_id": "toolsandbox",
+  "category_summary": {
+    "CANONICALIZATION": {
+      "random_exact": 0,
+      "random_exact_rate": 0.0,
+      "tasks": 18,
+      "warm_exact": 0,
+      "warm_exact_rate": 0.0
+    },
+    "INSUFFICIENT_INFORMATION": {
+      "random_exact": 4,
+      "random_exact_rate": 0.8,
+      "tasks": 5,
+      "warm_exact": 5,
+      "warm_exact_rate": 1.0
+    },
+    "MULTIPLE_TOOL_CALL": {
+      "random_exact": 0,
+      "random_exact_rate": 0.0,
+      "tasks": 17,
+      "warm_exact": 0,
+      "warm_exact_rate": 0.0
+    },
+    "MULTIPLE_USER_TURN": {
+      "random_exact": 0,
+      "random_exact_rate": 0.0,
+      "tasks": 9,
+      "warm_exact": 0,
+      "warm_exact_rate": 0.0
+    },
+    "NO_DISTRACTION_TOOLS": {
+      "random_exact": 4,
+      "random_exact_rate": 0.16,
+      "tasks": 25,
+      "warm_exact": 5,
+      "warm_exact_rate": 0.2
+    },
+    "SINGLE_TOOL_CALL": {
+      "random_exact": 0,
+      "random_exact_rate": 0.0,
+      "tasks": 3,
+      "warm_exact": 0,
+      "warm_exact_rate": 0.0
+    },
+    "SINGLE_USER_TURN": {
+      "random_exact": 0,
+      "random_exact_rate": 0.0,
+      "tasks": 11,
+      "warm_exact": 0,
+      "warm_exact_rate": 0.0
+    }
+  },
+  "checkpoint": {
+    "bytes": 52203729,
+    "path": "/private/tmp/m626-androidcontrol/random.pt",
+    "sha256": "390f1414260e118cd621af735fe6e87b01e8641b1cff650d594585e39b212e45"
+  },
+  "claim_boundary": "Matched 25-scenario random-backbone control using the same pinned ToolSandbox base-matrix scenario names as the current m626 warm checkpoint. It is a native simulator/verifier subset, not the official ToolSandbox split, model-based user simulator, full matrix, external APIs, or a leaderboard result.",
+  "kind": "localagent_m636_toolsandbox_matched_random_control_receipt",
+  "matched_warm": {
+    "success_count": 5,
+    "success_rate": 0.2,
+    "task_count": 25
+  },
+  "protocol": {
+    "external_api_called": false,
+    "name": "bounded_multi_step_scripted_user",
+    "official_split_verified": false,
+    "task_count": 25,
+    "user_simulator_executed": false,
+    "verifier_executed": true
+  },
+  "random_control": {
+    "success_count": 4,
+    "success_rate": 0.16,
+    "task_count": 25
+  },
+  "random_raw_report": {
+    "path": "/private/tmp/m636-m626-toolsandbox-random-control-v1.json",
+    "sha256": "f845cfcbcf8c145fc87675f7d7b981f4a9bf9cb24074ac7736265c9ca9e55e96"
+  },
+  "receipt_self_sha256": "33f85169f1065b2b4b073462a4ae162b43b4fcc2680d805ff175a1a7da2b8a83",
+  "scenarios": [
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.5,
+      "scenario": "add_contact_with_name_and_phone_number",
+      "warm_exception": null,
+      "warm_similarity": 0.5
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.5,
+      "scenario": "add_reminder_content_and_date_and_time",
+      "warm_exception": null,
+      "warm_similarity": 0.5
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.5,
+      "scenario": "add_reminder_content_and_date_and_time_alt",
+      "warm_exception": null,
+      "warm_similarity": 0.0
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.0,
+      "scenario": "add_reminder_content_and_date_and_time_multiple_user_turn",
+      "warm_exception": null,
+      "warm_similarity": 0.0
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.5,
+      "scenario": "add_reminder_content_and_date_and_time_multiple_user_turn_alt",
+      "warm_exception": null,
+      "warm_similarity": 0.0
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.5,
+      "scenario": "add_reminder_content_and_week_delta_and_time",
+      "warm_exception": null,
+      "warm_similarity": 0.0
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.5,
+      "scenario": "add_reminder_content_and_week_delta_and_time_alt",
+      "warm_exception": null,
+      "warm_similarity": 0.0
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.0,
+      "scenario": "add_reminder_content_and_week_delta_and_time_and_location",
+      "warm_exception": null,
+      "warm_similarity": 0.0
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.0,
+      "scenario": "add_reminder_content_and_week_delta_and_time_and_location_alt",
+      "warm_exception": null,
+      "warm_similarity": 0.0
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.0,
+      "scenario": "add_reminder_content_and_week_delta_and_time_and_location_low_battery_mode_multiple_user_turn_alt",
+      "warm_exception": null,
+      "warm_similarity": 0.0
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.0,
+      "scenario": "add_reminder_content_and_week_delta_and_time_and_location_multiple_user_turn",
+      "warm_exception": null,
+      "warm_similarity": 0.0
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.0,
+      "scenario": "add_reminder_content_and_week_delta_and_time_and_location_multiple_user_turn_alt",
+      "warm_exception": null,
+      "warm_similarity": 0.0
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.5,
+      "scenario": "add_reminder_content_and_week_delta_and_time_multiple_user_turn",
+      "warm_exception": null,
+      "warm_similarity": 0.0
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.0,
+      "scenario": "add_reminder_content_and_week_delta_and_time_multiple_user_turn_alt",
+      "warm_exception": null,
+      "warm_similarity": 0.0
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.5,
+      "scenario": "add_reminder_content_and_weekday_delta_and_time",
+      "warm_exception": null,
+      "warm_similarity": 0.0
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_USER_TURN"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.0,
+      "scenario": "add_reminder_content_and_weekday_delta_and_time_alt",
+      "warm_exception": null,
+      "warm_similarity": 0.0
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.5,
+      "scenario": "add_reminder_content_and_weekday_delta_and_time_multiple_user_turn",
+      "warm_exception": null,
+      "warm_similarity": 0.0
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "MULTIPLE_TOOL_CALL",
+        "MULTIPLE_USER_TURN",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.0,
+      "scenario": "add_reminder_content_and_weekday_delta_and_time_multiple_user_turn_alt",
+      "warm_exception": null,
+      "warm_similarity": 0.0
+    },
+    {
+      "categories": [
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.5,
+      "scenario": "cellular_off",
+      "warm_exception": null,
+      "warm_similarity": 0.5
+    },
+    {
+      "categories": [
+        "CANONICALIZATION",
+        "NO_DISTRACTION_TOOLS",
+        "SINGLE_TOOL_CALL",
+        "SINGLE_USER_TURN"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.0,
+      "scenario": "convert_currency",
+      "warm_exception": null,
+      "warm_similarity": 0.0
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "random_exception": null,
+      "random_similarity": 1.0,
+      "scenario": "find_current_city_insufficient_information",
+      "warm_exception": null,
+      "warm_similarity": 1.0
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "random_exception": null,
+      "random_similarity": 1.0,
+      "scenario": "find_current_city_low_battery_mode_insufficient_information",
+      "warm_exception": null,
+      "warm_similarity": 1.0
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "random_exception": null,
+      "random_similarity": 1.0,
+      "scenario": "find_current_location_insufficient_information",
+      "warm_exception": null,
+      "warm_similarity": 1.0
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "random_exception": null,
+      "random_similarity": 1.0,
+      "scenario": "find_current_location_low_battery_mode_insufficient_information",
+      "warm_exception": null,
+      "warm_similarity": 1.0
+    },
+    {
+      "categories": [
+        "INSUFFICIENT_INFORMATION",
+        "NO_DISTRACTION_TOOLS"
+      ],
+      "random_exception": null,
+      "random_similarity": 0.0,
+      "scenario": "find_days_till_holiday_insufficient_information",
+      "warm_exception": null,
+      "warm_similarity": 1.0
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "url": "https://github.com/apple/ToolSandbox"
+  },
+  "warm_receipt": {
+    "path": "docs/paper/results/raw/m635-m626-toolsandbox-native-base-v1.json",
+    "sha256": "8e5e6f044c6cd2879f59b7a563d7e6d5a9058ea61de7ca9e9b8fc4332e02b1c6"
+  }
+}

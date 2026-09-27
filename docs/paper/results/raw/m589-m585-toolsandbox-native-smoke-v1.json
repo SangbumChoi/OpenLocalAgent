@@ -1,0 +1,40 @@
+{
+  "kind": "localagent_toolsandbox_m585_warm_smoke_receipt",
+  "schema_version": 1,
+  "benchmark_id": "toolsandbox",
+  "environment_executed": true,
+  "official_split_verified": false,
+  "user_simulator_executed": false,
+  "verifier_executed": true,
+  "external_api_called": false,
+  "task_count": 3,
+  "success_count": 3,
+  "success_rate": 1.0,
+  "checkpoint_sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff",
+  "checkpoint": {
+    "path": "/private/tmp/m585-public-multisurface-warm.pt",
+    "bytes": 52211696,
+    "sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff"
+  },
+  "source": {
+    "url": "https://github.com/apple/ToolSandbox",
+    "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "runner_sha256": "ccfa3fa48147dd982148b29d4954533760250d24a5498e67d1d670612f39af25"
+  },
+  "protocol": "single_step_smoke",
+  "scenarios": {
+    "cellular_off": {"similarity": 1.0, "milestone_similarity": 1.0, "turn_count": 3},
+    "wifi_off": {"similarity": 1.0, "milestone_similarity": 1.0, "turn_count": 3},
+    "send_message_with_phone_number_and_content": {"similarity": 1.0, "milestone_similarity": 1.0, "turn_count": 3}
+  },
+  "comparison": {
+    "parent_receipt": "docs/paper/results/raw/m578-toolsandbox-native-m553-v1.json",
+    "interpretation": "The current warm child preserves the parent smoke contract, but this bounded scripted-user result does not test stateful multi-turn chaining or the official user simulator."
+  },
+  "raw_report": {
+    "path": "/private/tmp/m589-toolsandbox-m585-warm.json",
+    "sha256": "fb400794eaa467dbcd6eed874aa73355ad1e777080af31fa218654b2f498419d"
+  },
+  "claim_boundary": "Native pinned ToolSandbox simulator and milestone-verifier smoke only. The scripted user terminates after the first agent response; the official split, model-based user simulator, full scenario matrix, and optional external tools were not executed. This is not an official ToolSandbox leaderboard score or real-account side-effect result.",
+  "receipt_self_sha256": "b9ced5e130decbddca59270e1543886b517e345f353ebb1633be295acd1c9cbb"
+}

@@ -1,0 +1,44 @@
+{
+  "child": {
+    "bytes": 6775,
+    "path": "/private/tmp/m281-appworld-api-retriever-v2.pt",
+    "sha256": "8a8fc14eae6b1ec4c720850190dda8d2ef40564e9b97bf159bd602370c01f2f8"
+  },
+  "claim_boundary": "Char-ngram nearest-neighbor schema adapter over public AppWorld train prompts, evaluated on disjoint dev prompts. It has no learned model weights and is not a complete AppWorld trajectory, official leaderboard score, or external-account result.",
+  "classes": [
+    "phone.search_contacts",
+    "spotify.show_album_library",
+    "spotify.show_playlist_library",
+    "spotify.show_recommendations",
+    "spotify.show_song_library"
+  ],
+  "kind": "localagent_appworld_api_retriever_report",
+  "learned_weights": false,
+  "metrics": {
+    "accuracy": 1.0,
+    "eval_rows": 12,
+    "exact": 12
+  },
+  "parent": {
+    "bytes": 52247329,
+    "path": "/private/tmp/m280-appworld-long-sft.pt",
+    "sha256": "5cd04ab0a878d37aacdad87a8691e0a2021144781a66fd5c2bb6486829b72105"
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "appworld",
+    "eval_input": {
+      "bytes": 14083,
+      "path": "/private/tmp/appworld-action-dev12.jsonl",
+      "sha256": "d64c5f8cde624e380e81071fd808cccd05a94a3bf4d81ae416a013f6d7a1f6e5"
+    },
+    "eval_rows": 12,
+    "revision": "appworld-0.2.0-data-0.2.0",
+    "train_input": {
+      "bytes": 28425,
+      "path": "/private/tmp/appworld-action-train24.jsonl",
+      "sha256": "d250f1b5628203a5de542f96ad710820df705a61ea5e6e2755fd84fb5089ca09"
+    },
+    "train_rows": 24
+  }
+}

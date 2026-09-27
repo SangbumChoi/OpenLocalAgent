@@ -1,0 +1,139 @@
+{
+  "benchmark_id": "mobilegym",
+  "claim_boundary": "Bounded native MobileGym simulator/state-diff replay over four official test IDs. This is not the complete 256-task score, visual grounding, Android emulator evaluation, or real-account execution.",
+  "decision": {
+    "adopt_androidcontrol_child_for_native_mobile": false,
+    "reason": "The Android-Control warm child matches the current parent at 0/4 MobileGym success, zero progress, and the same mobile_input_text-only collapse. The offline text-projection gain therefore does not transfer to native state completion; keep the child as an initialization diagnostic only.",
+    "webgpu_export_allowed": false
+  },
+  "inputs": {
+    "parent_report": {
+      "bytes": 4647,
+      "path": "/private/tmp/m466-mobilegym-current-parent-canary.json",
+      "sha256": "9ac229da4f6bc1f3250ec0a55bb94ca359852931ae811dcb2b98040b0aabdc2b"
+    },
+    "warm_report": {
+      "bytes": 4652,
+      "path": "/private/tmp/m475-androidcontrol-mobilegym-warm.json",
+      "sha256": "8f0f24d8fcf02186634cfbaf8e58a8d975b8907ee96a8c7101b5d8471515e4dd"
+    }
+  },
+  "kind": "localagent_androidcontrol_mobilegym_replay_receipt",
+  "parent": {
+    "checkpoint_sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+    "progress_sum": 0.0,
+    "success_rate": 0.0,
+    "tasks": {
+      "account.Railway12306ChangePassword": {
+        "passed": false,
+        "progress": 0.0,
+        "steps": 2,
+        "tool_names": [
+          "mobile_input_text"
+        ],
+        "trace_sha256": "09e94c2607b9c50e0295dbc0a66f3eebda3a940a0ecd33317681de2c5f2fd33d"
+      },
+      "account.Railway12306ForgotPasswordReset": {
+        "passed": false,
+        "progress": 0.0,
+        "steps": 2,
+        "tool_names": [
+          "mobile_input_text"
+        ],
+        "trace_sha256": "a60b3cb28c17787b0097cdb178e98d9f9009df9098bf845a6dd815a54a9ea3c8"
+      },
+      "account.Railway12306LoginWithAccount": {
+        "passed": false,
+        "progress": 0.0,
+        "steps": 2,
+        "tool_names": [
+          "mobile_input_text"
+        ],
+        "trace_sha256": "b17aabb64a337db1a168c56b6defabccf02bb258cc0a6d0cf58ffacf03be14f7"
+      },
+      "account.Railway12306RegisterThenLogin": {
+        "passed": false,
+        "progress": 0.0,
+        "steps": 2,
+        "tool_names": [
+          "mobile_input_text"
+        ],
+        "trace_sha256": "3455e29687dfa91e37f6bd3f8bbfb8db87c62d871fd1eb5c8e69126634b77b40"
+      }
+    },
+    "tool_counts": {
+      "mobile_input_text": 4
+    }
+  },
+  "protocol": {
+    "max_steps": 2,
+    "native_receipt_eligible": false,
+    "observation_mode": "text_projection",
+    "official_split": "test",
+    "official_split_verified": true,
+    "task_count": 4,
+    "task_ids": [
+      "account.Railway12306ChangePassword",
+      "account.Railway12306ForgotPasswordReset",
+      "account.Railway12306LoginWithAccount",
+      "account.Railway12306RegisterThenLogin"
+    ],
+    "vision_used": false
+  },
+  "receipt_self_sha256": "100f265e69a5a49aefaebe13923d1b7c7065f51fa8849ecf07f3f3b78b0f57a0",
+  "schema_version": 1,
+  "source": {
+    "repository": "https://github.com/Purewhiter/mobilegym",
+    "revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "source_root": "mobilegym-093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "test_ids_sha256": "cf61a0b2e71721864a1b526a531c433f852e128d2ffa8b81504fc3d74b9830bf",
+    "test_split_sha256": "a3d485015d480f4f1ebbd12dbbf02c25c0aa667d1afcf5f6fa35f0263a82c567",
+    "train_split_sha256": "0ecef460fecfd8aa91dcbb2cd4cca17b033f620f85a50d7f0b598ed19a27c0eb"
+  },
+  "warm": {
+    "checkpoint_sha256": "939547bd3955488794efca2dfb994ef5fd793df80d9aeebbd33b45aeb97e6ff9",
+    "progress_sum": 0.0,
+    "success_rate": 0.0,
+    "tasks": {
+      "account.Railway12306ChangePassword": {
+        "passed": false,
+        "progress": 0.0,
+        "steps": 2,
+        "tool_names": [
+          "mobile_input_text"
+        ],
+        "trace_sha256": "4ed323aadaf88a0b71dcd67152f8e819ae3b61bc842be559e1bbdcc8bb7edfa4"
+      },
+      "account.Railway12306ForgotPasswordReset": {
+        "passed": false,
+        "progress": 0.0,
+        "steps": 2,
+        "tool_names": [
+          "mobile_input_text"
+        ],
+        "trace_sha256": "909f148f57c7797eb18d4fa3a4082591a8f5191e06b1c6aa7501e600da7552ce"
+      },
+      "account.Railway12306LoginWithAccount": {
+        "passed": false,
+        "progress": 0.0,
+        "steps": 2,
+        "tool_names": [
+          "mobile_input_text"
+        ],
+        "trace_sha256": "a244bc948e859b9a1c98fa3906264cbd4478e4427c1e5de6220bc265d4b20c49"
+      },
+      "account.Railway12306RegisterThenLogin": {
+        "passed": false,
+        "progress": 0.0,
+        "steps": 2,
+        "tool_names": [
+          "mobile_input_text"
+        ],
+        "trace_sha256": "e38d504085f7a1b83c6bb9256b09a74e9dda32cbd8d129ede35dc635785bed90"
+      }
+    },
+    "tool_counts": {
+      "mobile_input_text": 4
+    }
+  }
+}

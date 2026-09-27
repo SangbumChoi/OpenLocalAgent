@@ -1,0 +1,246 @@
+{
+  "benchmark_id": "mcpmark",
+  "checkpoint": {
+    "bytes": 52251682,
+    "parameters": 10524544,
+    "path": "/private/tmp/m482-mcpmark-cross-surface-warm.pt",
+    "sha256": "4c2355f54194ee38423df148122673d1d287246e714c329911d8b7d6fbf2f813"
+  },
+  "claim_boundary": "The larger public MCPMark cross-surface child has a matched transfer audit, native Playwright MCP/verifier replay, and parity-verified Apple WebGPU bundle. Native task success is zero, the official split is unverified, no real productivity side effect is claimed, and the model/Space remain unpublished without HF authentication.",
+  "kind": "localagent_mcpmark_cross_surface_webgpu_evidence_receipt",
+  "native_mcpmark": {
+    "official_split_verified": false,
+    "receipt": {
+      "bytes": 3265,
+      "path": "/private/tmp/m482-mcpmark-native-warm.json",
+      "sha256": "a147f76109c8cc83e3fe3bc4e4a594047b04a6b9025c668c91a1f6ec289cea6d"
+    },
+    "runtime": {
+      "external_api_called": true,
+      "headless": true,
+      "mcp_server_executed": true,
+      "official_split_verified": false,
+      "server": "@playwright/mcp@0.0.68",
+      "user_simulator_executed": false
+    },
+    "summary": {
+      "runtime_errors": 0,
+      "tasks": 1,
+      "verifier_failures": 1,
+      "verifier_passes": 0
+    },
+    "task": {
+      "category": "eval_web",
+      "messages_sha256": "d122ea0c86a0eae91356392e2fd931f040b34bdf31c25b347d5b7a2f04b0e595",
+      "server_error": null,
+      "task": "playwright/standard/eval_web/extraction_table",
+      "task_id": "extraction_table",
+      "tool_count": 22,
+      "turns": [
+        {
+          "arguments": {
+            "url": "https://eval-web.mcpmark.ai/extraction"
+          },
+          "output_sha256": "11a9a24f9b576fcb334ef83aa20ddd9e2daf65916962d8a76582e96a7177aa59",
+          "result_is_error": false,
+          "result_sha256": "680ca90bd24af52ed54ede3e7c9aca53f497d86fb3e1a3ef400a1bf7d8688d13",
+          "tool": "browser_navigate",
+          "turn": 1
+        },
+        {
+          "arguments": {},
+          "output_sha256": "351ce2759b94df8fb2c8eb3192da84fa34e34a03d40e95c659bb97c468950659",
+          "result_is_error": false,
+          "result_sha256": "7f8dbd6c138cb292afece21b05ee03a9e29e2767449ab4d0f87a395eb5d78388",
+          "tool": "browser_snapshot",
+          "turn": 2
+        },
+        {
+          "arguments": null,
+          "output_sha256": "5977ca6bf8d5e6c5ff7be2ad78ecaa9a38346be6baf5e303e196c4120ca220c0",
+          "tool": null,
+          "turn": 3
+        }
+      ],
+      "verifier_exit_code": 1,
+      "verifier_stderr_sha256": "56bc95e77671685e3dfcf6c59a43130560e86125c0666cae96853bdecb302e9c",
+      "verifier_stderr_tail": "| MCP_MESSAGES: /private/tmp/mcpmark-playwright-extraction_table-9lqh0i62/messages.json\n|\n| Model response (first 500 characters): I cannot complete this request....\n|\n| \u2717 CSV data not found in response\n",
+      "verifier_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "verifier_stdout_tail": ""
+    }
+  },
+  "publication": {
+    "blocker": "HF_TOKEN_or_hf_auth_login_required",
+    "hf_authenticated": false,
+    "model_url": null,
+    "published": false,
+    "space_url": null
+  },
+  "receipt_self_sha256": "cb771fd115ab3a602cc67edbf65cf47ae04ddc870fe0a9c8d5345256598fa968",
+  "schema_version": 1,
+  "transfer": {
+    "aggregate": {
+      "random_after_token_accuracy": 0.003755868544600939,
+      "warm_after_token_accuracy": 0.38873239436619716,
+      "warm_minus_random_after_pp": 38.497652582159624,
+      "warm_start_better_after": true
+    },
+    "decision": "warm_start_dominates_matched_random_on_all_surfaces",
+    "receipt": {
+      "bytes": 11173,
+      "path": "docs/paper/results/raw/m482-mcpmark-cross-surface-transfer-v1.json",
+      "sha256": "91602e3473770599f3eaed9b4d7ca6d12185bf5ab0b0bced1f4b9754fde0ec1f"
+    },
+    "rows": {
+      "eval": 12,
+      "train": 11
+    },
+    "surfaces": {
+      "mcpmark_filesystem": {
+        "random_backbone": {
+          "after_token_accuracy": 0.0,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.0
+        },
+        "rows": 10,
+        "warm_minus_random_after_pp": 44.76744186046512,
+        "warm_start": {
+          "after_token_accuracy": 0.4476744186046512,
+          "before_token_accuracy": 0.3817829457364341,
+          "delta_token_accuracy": 0.06589147286821706
+        },
+        "warm_start_better_after": true
+      },
+      "mcpmark_playwright_holdout": {
+        "random_backbone": {
+          "after_token_accuracy": 0.0,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.0
+        },
+        "rows": 1,
+        "warm_minus_random_after_pp": 21.55688622754491,
+        "warm_start": {
+          "after_token_accuracy": 0.2155688622754491,
+          "before_token_accuracy": 0.20359281437125748,
+          "delta_token_accuracy": 0.011976047904191628
+        },
+        "warm_start_better_after": true
+      },
+      "mcpmark_playwright_holdout_travel": {
+        "random_backbone": {
+          "after_token_accuracy": 0.010471204188481676,
+          "before_token_accuracy": 0.010471204188481676,
+          "delta_token_accuracy": 0.0
+        },
+        "rows": 1,
+        "warm_minus_random_after_pp": 37.43455497382199,
+        "warm_start": {
+          "after_token_accuracy": 0.38481675392670156,
+          "before_token_accuracy": 0.36910994764397903,
+          "delta_token_accuracy": 0.01570680628272253
+        },
+        "warm_start_better_after": true
+      }
+    },
+    "weight_groups": {
+      "random": {
+        "action_heads": {
+          "base_l2": 87.12721149777144,
+          "delta_l2": 0.0,
+          "parameters": 2518968,
+          "relative_delta_l2": 0.0,
+          "target_l2": 87.12721149777144
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.686243041747026,
+          "delta_l2": 40.25497835809609,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.7788335152466412,
+          "target_l2": 50.41048032480182
+        },
+        "embedding": {
+          "base_l2": 76.26811513665427,
+          "delta_l2": 91.29488653003376,
+          "parameters": 6291456,
+          "relative_delta_l2": 1.1970256032478985,
+          "target_l2": 50.18897427904755
+        },
+        "ffn": {
+          "base_l2": 50.599417154543154,
+          "delta_l2": 44.4224482134382,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.8779241088441996,
+          "target_l2": 49.79211208850222
+        },
+        "normalization": {
+          "base_l2": 21.431829234008912,
+          "delta_l2": 1.837135386463508,
+          "parameters": 384,
+          "relative_delta_l2": 0.0857199526183358,
+          "target_l2": 19.595703402966798
+        }
+      },
+      "warm": {
+        "action_heads": {
+          "base_l2": 87.12721149777144,
+          "delta_l2": 0.0,
+          "parameters": 2518968,
+          "relative_delta_l2": 0.0,
+          "target_l2": 87.12721149777144
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.686243041747026,
+          "delta_l2": 0.05416879901773701,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.001048031271570364,
+          "target_l2": 51.686553077447705
+        },
+        "embedding": {
+          "base_l2": 76.26811513665427,
+          "delta_l2": 0.13841770155442326,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.001814882946909226,
+          "target_l2": 76.32317722682791
+        },
+        "ffn": {
+          "base_l2": 50.599417154543154,
+          "delta_l2": 0.06318101309300404,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.0012486510052088858,
+          "target_l2": 50.59917174188511
+        },
+        "normalization": {
+          "base_l2": 21.431829234008912,
+          "delta_l2": 0.0009609091557254062,
+          "parameters": 384,
+          "relative_delta_l2": 4.483561086799795e-05,
+          "target_l2": 21.4313579245196
+        }
+      }
+    }
+  },
+  "webgpu": {
+    "backend": "webgpu",
+    "bundle_identity_sha256": "d798ed151967b8015cc02ab148b87eb6d187030ce8728795c0e844f5f14de8cf",
+    "capability": {
+      "bytes": 11392,
+      "path": "/private/tmp/m482-webgpu-capability.json",
+      "sha256": "25b7b8f01c21f54586b0010ebade30abdc8ab3cfdbd7d300aa625452f2c2ed0e"
+    },
+    "hardware_adapter": "vendor=apple; architecture=metal-3",
+    "latency_ms_p50": 24.30000001192093,
+    "manifest": {
+      "bytes": 9326,
+      "path": "/private/tmp/m482-space-warm/bundle-manifest.json",
+      "sha256": "9f39036a7d5f610ba89f21ee4f9e9151f7f9c4c624a8887fb2af65c97187c3ea"
+    },
+    "parity_gate_passed": true,
+    "peak_memory_mb": 20.458142280578613,
+    "tokens_per_second_p50": 573.0659029702853,
+    "verification": {
+      "bytes": 4207,
+      "path": "/private/tmp/m483-m482-webgpu-verify.json",
+      "sha256": "096c24ab226f2f585f21adc5f8de874029d613bfd3e8417f6b620490379a0e1d"
+    }
+  }
+}

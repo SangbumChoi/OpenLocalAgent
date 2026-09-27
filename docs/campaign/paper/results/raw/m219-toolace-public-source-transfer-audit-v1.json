@@ -1,0 +1,92 @@
+{
+  "kind": "localagent_toolace_public_source_transfer_audit",
+  "schema_version": 1,
+  "dataset": {
+    "name": "Team-ACE/ToolACE",
+    "url": "https://huggingface.co/datasets/Team-ACE/ToolACE",
+    "paper_url": "https://arxiv.org/abs/2409.00920",
+    "license": "Apache-2.0",
+    "revision": "6bda777c88d21e5a204703c1ee45597a8fa4f734",
+    "raw_source": {
+      "path": "/private/tmp/toolace-data.json",
+      "bytes": 37154735,
+      "sha256": "ba12c083fca7e8da48c67ad5b895e495447da7c66e39a2e19742c082e6cb537e"
+    }
+  },
+  "projection": {
+    "adapter_versions": [
+      "toolace-first-canonical-action-v1",
+      "toolace-multiturn-canonical-actions-v1",
+      "toolace-action-history-canonical-v1"
+    ],
+    "raw_rows": 11300,
+    "accepted_rows": 8993,
+    "rejected_rows": 2308,
+    "rejection_reasons": {
+      "no_strict_first_action": 2293,
+      "schema_or_projection_failure": 15
+    },
+    "train_parent_records": 8044,
+    "eval_parent_records": 949,
+    "train_eval_parent_overlap": 0,
+    "train_prompts": 8013,
+    "eval_prompts": 944,
+    "train_eval_prompt_overlap": 0,
+    "tool_response_messages_preserved_in_multiturn": 1357,
+    "visual_inputs": 0,
+    "external_side_effects": false
+  },
+  "transfer_evidence": [
+    {
+      "receipt": "docs/paper/results/raw/m171-current-child-toolace-transfer-v1.json",
+      "projection": "first_action",
+      "train_rows": 1024,
+      "eval_rows": 256,
+      "warm_after_token_accuracy": 0.42232833341983705,
+      "random_after_token_accuracy": 0.08003321741838376,
+      "warm_minus_random_after_pp": 34.22951160014533,
+      "warm_sequence_exact": 0.0,
+      "decision": "diagnostic_only"
+    },
+    {
+      "receipt": "docs/paper/results/raw/m172-current-child-toolace-multiturn-transfer-v1.json",
+      "projection": "multiturn",
+      "train_rows": 256,
+      "eval_rows": 64,
+      "warm_after_token_accuracy": 0.1855861025614273,
+      "random_after_token_accuracy": 0.01189420418383849,
+      "warm_minus_random_after_pp": 17.36918983775888,
+      "warm_sequence_exact": 0.0,
+      "decision": "diagnostic_only"
+    },
+    {
+      "receipt": "docs/paper/results/raw/m173-current-child-toolace-action-history-transfer-v1.json",
+      "projection": "action_history",
+      "train_rows": 256,
+      "eval_rows": 64,
+      "warm_after_token_accuracy": 0.4998788466198207,
+      "random_after_token_accuracy": 0.005088441967530894,
+      "warm_minus_random_after_pp": 49.47904046522898,
+      "warm_sequence_exact": 0.0,
+      "decision": "diagnostic_only"
+    }
+  ],
+  "weight_adoption": {
+    "compatible_shared_tensors": 51,
+    "warm_backbone_movement": {
+      "first_action_attention_or_mixer": 0.0015571512398280505,
+      "first_action_embedding": 0.0046968579982583645,
+      "first_action_ffn": 0.0019198581381669614,
+      "multiturn_attention_or_mixer": 0.0012446147945578464,
+      "multiturn_embedding": 0.0023568090085367543,
+      "multiturn_ffn": 0.0015271739333817536,
+      "action_history_attention_or_mixer": 0.0008933357415402469,
+      "action_history_embedding": 0.0021775002866902685,
+      "action_history_ffn": 0.0010653792383910887
+    },
+    "random_backbone_movement_is_large": true,
+    "recommendation": "retain_pretrained_backbone_for_toolace_continuation_but_do_not_promote_tool_heads_or_native_capability"
+  },
+  "claim_boundary": "Public Apache-2.0 ToolACE source, parent-disjoint text projections, and matched warm/random transfer evidence only. ToolACE is not an official BFCL score, native MCP execution, mobile/browser/desktop control, real email/Notion side effect, visual grounding result, or evidence that the small model should be published without the remaining native gates.",
+  "receipt_self_sha256": "d9c3553c1c699051d8d64f8f5d16dfb171f6a954df0ee25cd4dc3eb20ef43c45"
+}

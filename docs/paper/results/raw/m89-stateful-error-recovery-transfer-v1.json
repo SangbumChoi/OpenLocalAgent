@@ -1,0 +1,643 @@
+{
+  "arms": {
+    "matched_random_backbone": {
+      "closed_loop": {
+        "abstention_exact": 1.0,
+        "by_family": {
+          "abstention": {
+            "closed_loop_success_rate": 1.0,
+            "steps": 1,
+            "task_complete": 1
+          },
+          "browser": {
+            "closed_loop_success_rate": 0.5,
+            "steps": 4,
+            "task_complete": 0
+          },
+          "email": {
+            "closed_loop_success_rate": 0.0,
+            "steps": 6,
+            "task_complete": 0
+          },
+          "notion": {
+            "closed_loop_success_rate": 0.0,
+            "steps": 2,
+            "task_complete": 0
+          },
+          "recovery": {
+            "closed_loop_success_rate": 0.3333333333333333,
+            "steps": 3,
+            "task_complete": 0
+          }
+        },
+        "closed_loop_success_rate": 0.25,
+        "exact_action_rate": 0.3125,
+        "exact_args_rate": 0.3125,
+        "exact_tool_rate": 0.4375,
+        "mean_shaped_reward": 0.359375,
+        "recovery_task_complete_rate": 0.0,
+        "reward_spec": {
+          "exact_args": 0.25,
+          "exact_tool": 0.25,
+          "schema_valid": 0.1,
+          "state_transition": 0.25,
+          "terminal": 0.15
+        },
+        "schema_valid_rate": 1.0,
+        "state_transition_rate": 0.25,
+        "steps": 16,
+        "task_complete_rate": 0.2,
+        "task_rows": [
+          {
+            "closed_loop_success": 0,
+            "family": "email",
+            "steps": 6,
+            "task_complete": false,
+            "task_id": "eval-email-send"
+          },
+          {
+            "closed_loop_success": 0,
+            "family": "notion",
+            "steps": 2,
+            "task_complete": false,
+            "task_id": "eval-notion-create"
+          },
+          {
+            "closed_loop_success": 2,
+            "family": "browser",
+            "steps": 4,
+            "task_complete": false,
+            "task_id": "eval-browser-search"
+          },
+          {
+            "closed_loop_success": 1,
+            "family": "recovery",
+            "steps": 3,
+            "task_complete": false,
+            "task_id": "eval-browser-recovery"
+          },
+          {
+            "closed_loop_success": 1,
+            "family": "abstention",
+            "steps": 1,
+            "task_complete": true,
+            "task_id": "eval-abstain"
+          }
+        ]
+      },
+      "head_hashes": {
+        "dense": "f56089720f997898c2f2b366bee49a7f45082326feb700e867839b3bbf5271e1",
+        "pointer": "b6be1a2332c0b91c09c9f785459186852b1d18e56f0ce9c48fb81b21e26e3c65",
+        "route": "2cd30f202ae41da207ff2ec2daaaab3cb0b5b3d53d5b76d9be6f4df1e9fd422b"
+      },
+      "label": "matched_random_backbone",
+      "random_backbone": true,
+      "selector": {
+        "by_family": {
+          "abstention": {
+            "route": 1,
+            "route_accuracy": 1.0,
+            "rows": 1,
+            "selector_top1": 0.0,
+            "selector_top3": 0.0,
+            "top1": 0,
+            "top3": 0
+          },
+          "browser": {
+            "route": 3,
+            "route_accuracy": 0.75,
+            "rows": 4,
+            "selector_top1": 0.5,
+            "selector_top3": 1.0,
+            "top1": 2,
+            "top3": 4
+          },
+          "email": {
+            "route": 5,
+            "route_accuracy": 0.8333333333333334,
+            "rows": 6,
+            "selector_top1": 0.5,
+            "selector_top3": 0.6666666666666666,
+            "top1": 3,
+            "top3": 4
+          },
+          "notion": {
+            "route": 2,
+            "route_accuracy": 1.0,
+            "rows": 2,
+            "selector_top1": 0.5,
+            "selector_top3": 1.0,
+            "top1": 1,
+            "top3": 2
+          },
+          "recovery": {
+            "route": 2,
+            "route_accuracy": 0.6666666666666666,
+            "rows": 3,
+            "selector_top1": 0.6666666666666666,
+            "selector_top3": 1.0,
+            "top1": 2,
+            "top3": 3
+          }
+        },
+        "route_accuracy": 0.8125,
+        "rows": 16,
+        "selector_top1": 0.5333333333333333,
+        "selector_top3": 0.8666666666666667,
+        "tool_rows": 15
+      },
+      "training": {
+        "example_counts": {
+          "click": 2,
+          "email_send": 1,
+          "key_press": 1,
+          "mobile_click": 1,
+          "mobile_input_text": 3,
+          "mobile_open_app": 2,
+          "notion_create_page": 1,
+          "open_url": 3,
+          "type_text": 1
+        },
+        "example_prompt_sha256": {
+          "click": "045b54797dbaadeffa69d71e903062f55ca2817170e9057e818c740fac746ea8",
+          "email_send": "71fcc1e7dbc33a247d5f8c3f1ca2479bcc15afc37d9248ca24a08ffe7a40c47f",
+          "key_press": "0ab32bdadefa512303b572dbe7e7be20b88e040c699bbcd8e925b14aa86113e5",
+          "mobile_click": "2db4a49d49c700991965a062081ef5e81be2d429887e65318d681f839ea47048",
+          "mobile_input_text": "b361184e3ac486ebcf63ffd1b10616327c805a90a3ceecf5de70f0e2a740fddf",
+          "mobile_open_app": "307927280cd3652cfd7feb6dc57788034d789c5ba0dcb1687e6b09ce70520d14",
+          "notion_create_page": "3f33a9948ceca5ae3ba8e72e4f4bd49ffcce7b18bfc2bbd6392e88232f8134d2",
+          "open_url": "724e26a2fea93d9d32393a02ca1bc0f89b374e3a9d51570661fe5f2b3865188e",
+          "type_text": "164c03a952f03b315e4dd95ec62fd245a541b2744918709878ffa5198ace88f0"
+        },
+        "pointer_span_examples": 17,
+        "route_features": 16,
+        "seed": 2029,
+        "selector_features": 15,
+        "steps": 512
+      },
+      "warm_start_heads": false
+    },
+    "pretrained_frozen_backbone": {
+      "closed_loop": {
+        "abstention_exact": 1.0,
+        "by_family": {
+          "abstention": {
+            "closed_loop_success_rate": 1.0,
+            "steps": 1,
+            "task_complete": 1
+          },
+          "browser": {
+            "closed_loop_success_rate": 0.5,
+            "steps": 4,
+            "task_complete": 0
+          },
+          "email": {
+            "closed_loop_success_rate": 0.0,
+            "steps": 6,
+            "task_complete": 0
+          },
+          "notion": {
+            "closed_loop_success_rate": 0.0,
+            "steps": 2,
+            "task_complete": 0
+          },
+          "recovery": {
+            "closed_loop_success_rate": 0.3333333333333333,
+            "steps": 3,
+            "task_complete": 0
+          }
+        },
+        "closed_loop_success_rate": 0.25,
+        "exact_action_rate": 0.3125,
+        "exact_args_rate": 0.375,
+        "exact_tool_rate": 0.4375,
+        "mean_shaped_reward": 0.375,
+        "recovery_task_complete_rate": 0.0,
+        "reward_spec": {
+          "exact_args": 0.25,
+          "exact_tool": 0.25,
+          "schema_valid": 0.1,
+          "state_transition": 0.25,
+          "terminal": 0.15
+        },
+        "schema_valid_rate": 1.0,
+        "state_transition_rate": 0.25,
+        "steps": 16,
+        "task_complete_rate": 0.2,
+        "task_rows": [
+          {
+            "closed_loop_success": 0,
+            "family": "email",
+            "steps": 6,
+            "task_complete": false,
+            "task_id": "eval-email-send"
+          },
+          {
+            "closed_loop_success": 0,
+            "family": "notion",
+            "steps": 2,
+            "task_complete": false,
+            "task_id": "eval-notion-create"
+          },
+          {
+            "closed_loop_success": 2,
+            "family": "browser",
+            "steps": 4,
+            "task_complete": false,
+            "task_id": "eval-browser-search"
+          },
+          {
+            "closed_loop_success": 1,
+            "family": "recovery",
+            "steps": 3,
+            "task_complete": false,
+            "task_id": "eval-browser-recovery"
+          },
+          {
+            "closed_loop_success": 1,
+            "family": "abstention",
+            "steps": 1,
+            "task_complete": true,
+            "task_id": "eval-abstain"
+          }
+        ]
+      },
+      "head_hashes": {
+        "dense": "470306807a12618ffc77f495c68f0a901daa00b3b56823af6f17cd6ad0f2b12f",
+        "pointer": "7859925f5495a571416a810b07537ef8beaf2c9b646fed8a79c26dcde45db75f",
+        "route": "36b1ca4bf418627d8e6e1d1580dc9c13cd2e70798f1d4f149929b2f416b5c6b1"
+      },
+      "label": "pretrained_frozen_backbone",
+      "random_backbone": false,
+      "selector": {
+        "by_family": {
+          "abstention": {
+            "route": 1,
+            "route_accuracy": 1.0,
+            "rows": 1,
+            "selector_top1": 0.0,
+            "selector_top3": 0.0,
+            "top1": 0,
+            "top3": 0
+          },
+          "browser": {
+            "route": 4,
+            "route_accuracy": 1.0,
+            "rows": 4,
+            "selector_top1": 0.5,
+            "selector_top3": 0.75,
+            "top1": 2,
+            "top3": 3
+          },
+          "email": {
+            "route": 5,
+            "route_accuracy": 0.8333333333333334,
+            "rows": 6,
+            "selector_top1": 0.6666666666666666,
+            "selector_top3": 0.8333333333333334,
+            "top1": 4,
+            "top3": 5
+          },
+          "notion": {
+            "route": 1,
+            "route_accuracy": 0.5,
+            "rows": 2,
+            "selector_top1": 1.0,
+            "selector_top3": 1.0,
+            "top1": 2,
+            "top3": 2
+          },
+          "recovery": {
+            "route": 2,
+            "route_accuracy": 0.6666666666666666,
+            "rows": 3,
+            "selector_top1": 0.6666666666666666,
+            "selector_top3": 1.0,
+            "top1": 2,
+            "top3": 3
+          }
+        },
+        "route_accuracy": 0.8125,
+        "rows": 16,
+        "selector_top1": 0.6666666666666666,
+        "selector_top3": 0.8666666666666667,
+        "tool_rows": 15
+      },
+      "training": {
+        "example_counts": {
+          "click": 2,
+          "email_send": 1,
+          "key_press": 1,
+          "mobile_click": 1,
+          "mobile_input_text": 3,
+          "mobile_open_app": 2,
+          "notion_create_page": 1,
+          "open_url": 3,
+          "type_text": 1
+        },
+        "example_prompt_sha256": {
+          "click": "045b54797dbaadeffa69d71e903062f55ca2817170e9057e818c740fac746ea8",
+          "email_send": "71fcc1e7dbc33a247d5f8c3f1ca2479bcc15afc37d9248ca24a08ffe7a40c47f",
+          "key_press": "0ab32bdadefa512303b572dbe7e7be20b88e040c699bbcd8e925b14aa86113e5",
+          "mobile_click": "2db4a49d49c700991965a062081ef5e81be2d429887e65318d681f839ea47048",
+          "mobile_input_text": "b361184e3ac486ebcf63ffd1b10616327c805a90a3ceecf5de70f0e2a740fddf",
+          "mobile_open_app": "307927280cd3652cfd7feb6dc57788034d789c5ba0dcb1687e6b09ce70520d14",
+          "notion_create_page": "3f33a9948ceca5ae3ba8e72e4f4bd49ffcce7b18bfc2bbd6392e88232f8134d2",
+          "open_url": "724e26a2fea93d9d32393a02ca1bc0f89b374e3a9d51570661fe5f2b3865188e",
+          "type_text": "164c03a952f03b315e4dd95ec62fd245a541b2744918709878ffa5198ace88f0"
+        },
+        "pointer_span_examples": 17,
+        "route_features": 16,
+        "seed": 2029,
+        "selector_features": 15,
+        "steps": 512
+      },
+      "warm_start_heads": true
+    },
+    "pretrained_lowrate_unfrozen_backbone": {
+      "closed_loop": {
+        "abstention_exact": 1.0,
+        "by_family": {
+          "abstention": {
+            "closed_loop_success_rate": 0.0,
+            "steps": 1,
+            "task_complete": 1
+          },
+          "browser": {
+            "closed_loop_success_rate": 0.5,
+            "steps": 4,
+            "task_complete": 0
+          },
+          "email": {
+            "closed_loop_success_rate": 0.16666666666666666,
+            "steps": 6,
+            "task_complete": 0
+          },
+          "notion": {
+            "closed_loop_success_rate": 0.0,
+            "steps": 2,
+            "task_complete": 0
+          },
+          "recovery": {
+            "closed_loop_success_rate": 0.6666666666666666,
+            "steps": 3,
+            "task_complete": 1
+          }
+        },
+        "closed_loop_success_rate": 0.3125,
+        "exact_action_rate": 0.5,
+        "exact_args_rate": 0.5,
+        "exact_tool_rate": 0.6875,
+        "mean_shaped_reward": 0.4937499999999999,
+        "recovery_task_complete_rate": 1.0,
+        "reward_spec": {
+          "exact_args": 0.25,
+          "exact_tool": 0.25,
+          "schema_valid": 0.1,
+          "state_transition": 0.25,
+          "terminal": 0.15
+        },
+        "schema_valid_rate": 1.0,
+        "state_transition_rate": 0.3125,
+        "steps": 16,
+        "task_complete_rate": 0.4,
+        "task_rows": [
+          {
+            "closed_loop_success": 1,
+            "family": "email",
+            "steps": 6,
+            "task_complete": false,
+            "task_id": "eval-email-send"
+          },
+          {
+            "closed_loop_success": 0,
+            "family": "notion",
+            "steps": 2,
+            "task_complete": false,
+            "task_id": "eval-notion-create"
+          },
+          {
+            "closed_loop_success": 2,
+            "family": "browser",
+            "steps": 4,
+            "task_complete": false,
+            "task_id": "eval-browser-search"
+          },
+          {
+            "closed_loop_success": 2,
+            "family": "recovery",
+            "steps": 3,
+            "task_complete": true,
+            "task_id": "eval-browser-recovery"
+          },
+          {
+            "closed_loop_success": 0,
+            "family": "abstention",
+            "steps": 1,
+            "task_complete": true,
+            "task_id": "eval-abstain"
+          }
+        ]
+      },
+      "selector": {
+        "by_family": {
+          "abstention": {
+            "route": 1,
+            "route_accuracy": 1.0,
+            "rows": 1,
+            "selector_top1": 0.0,
+            "selector_top3": 0.0,
+            "top1": 0,
+            "top3": 0
+          },
+          "browser": {
+            "route": 4,
+            "route_accuracy": 1.0,
+            "rows": 4,
+            "selector_top1": 0.75,
+            "selector_top3": 0.75,
+            "top1": 3,
+            "top3": 3
+          },
+          "email": {
+            "route": 6,
+            "route_accuracy": 1.0,
+            "rows": 6,
+            "selector_top1": 0.6666666666666666,
+            "selector_top3": 1.0,
+            "top1": 4,
+            "top3": 6
+          },
+          "notion": {
+            "route": 1,
+            "route_accuracy": 0.5,
+            "rows": 2,
+            "selector_top1": 1.0,
+            "selector_top3": 1.0,
+            "top1": 2,
+            "top3": 2
+          },
+          "recovery": {
+            "route": 3,
+            "route_accuracy": 1.0,
+            "rows": 3,
+            "selector_top1": 1.0,
+            "selector_top3": 1.0,
+            "top1": 3,
+            "top3": 3
+          }
+        },
+        "route_accuracy": 0.9375,
+        "rows": 16,
+        "selector_top1": 0.8,
+        "selector_top3": 0.9333333333333333,
+        "tool_rows": 15
+      },
+      "training": {
+        "backbone_lr": 1e-05,
+        "batch_size": 8,
+        "clean_route_features": 16,
+        "error_recovery_features": 16,
+        "example_counts": {
+          "click": 2,
+          "email_send": 1,
+          "key_press": 1,
+          "mobile_click": 1,
+          "mobile_input_text": 3,
+          "mobile_open_app": 2,
+          "notion_create_page": 1,
+          "open_url": 3,
+          "type_text": 1
+        },
+        "example_prompt_sha256": {
+          "click": "045b54797dbaadeffa69d71e903062f55ca2817170e9057e818c740fac746ea8",
+          "email_send": "71fcc1e7dbc33a247d5f8c3f1ca2479bcc15afc37d9248ca24a08ffe7a40c47f",
+          "key_press": "0ab32bdadefa512303b572dbe7e7be20b88e040c699bbcd8e925b14aa86113e5",
+          "mobile_click": "2db4a49d49c700991965a062081ef5e81be2d429887e65318d681f839ea47048",
+          "mobile_input_text": "b361184e3ac486ebcf63ffd1b10616327c805a90a3ceecf5de70f0e2a740fddf",
+          "mobile_open_app": "307927280cd3652cfd7feb6dc57788034d789c5ba0dcb1687e6b09ce70520d14",
+          "notion_create_page": "3f33a9948ceca5ae3ba8e72e4f4bd49ffcce7b18bfc2bbd6392e88232f8134d2",
+          "open_url": "724e26a2fea93d9d32393a02ca1bc0f89b374e3a9d51570661fe5f2b3865188e",
+          "type_text": "164c03a952f03b315e4dd95ec62fd245a541b2744918709878ffa5198ace88f0"
+        },
+        "head_lr": 0.005,
+        "pointer_span_examples": 17,
+        "route_features": 32,
+        "seed": 2029,
+        "selector_features": 30,
+        "steps": 512
+      },
+      "weight_movement": {
+        "backbone": 0.004221672831813739,
+        "embedding": 0.0013261414529056235,
+        "ffn": 0.009362956171782703,
+        "mixer": 0.008842138023778716,
+        "normalization": 0.0001966595467779794
+      }
+    }
+  },
+  "claim_boundary": "This is a matched local state-machine transfer ablation. Weight movement and held-out selector/closed-loop diagnostics do not establish native mobile, browser, desktop, MCP, real email, Notion, or WebGPU capability.",
+  "comparison": {
+    "lowrate_minus_frozen_closed_loop": 0.0625,
+    "lowrate_minus_frozen_selector_top1": 0.13333333333333341,
+    "lowrate_minus_random_closed_loop": 0.0625,
+    "lowrate_minus_random_selector_top1": 0.2666666666666667,
+    "transfer_adoption_decision": "retain_pretrained_backbone_for_next_native_probe"
+  },
+  "configuration": {
+    "backbone_lr": 1e-05,
+    "batch_size": 8,
+    "device": "cpu",
+    "head_lr": 0.005,
+    "model_config": {
+      "conv_kernel": 3,
+      "d_model": 384,
+      "dropout": 0.0,
+      "embed_dim": 384,
+      "ffn_hidden": 512,
+      "layer_types": [
+        "conv",
+        "attn",
+        "conv",
+        "attn"
+      ],
+      "max_seq_len": 2048,
+      "n_heads": 6,
+      "n_kv_heads": 1,
+      "n_layers": 4,
+      "n_loops": 1,
+      "name": "webgpu-10m-hybrid",
+      "norm_eps": 1e-05,
+      "qk_norm": true,
+      "rope_theta": 10000.0,
+      "tie_embeddings": true,
+      "vocab_size": 16384
+    },
+    "reward_spec": {
+      "exact_args": 0.25,
+      "exact_tool": 0.25,
+      "schema_valid": 0.1,
+      "state_transition": 0.25,
+      "terminal": 0.15
+    },
+    "seed": 2029,
+    "steps": 512,
+    "tool_pool_sha256": "4bdc35dc13c05a688df5717edd6fb81d74e1c095e22c3ae49358623ff5efbe8f",
+    "tool_pool_size": 62
+  },
+  "kind": "localagent_stateful_productivity_transfer_ablation",
+  "output": {
+    "bytes": 52221012,
+    "path": "/private/tmp/m75-stateful-error-recovery-child.pt",
+    "sha256": "e563b91a5ad7540801d41fc9f71692d6d29a29a5a17f45c33773d34c2e457e86"
+  },
+  "parent": {
+    "bytes": 52236707,
+    "path": "/private/tmp/m70-mixed-public-agent-random-head-child.pt",
+    "sha256": "0d6721455b89d4d3a569edeed8bae57ef8b3a3b000b6e7d92890ded1cdd00a61"
+  },
+  "receipt_self_sha256": "8c797fd052fd13ab2d79b94daecb2eecef137c00e9437bb5d8a7a5c8b96a779e",
+  "schema_version": 1,
+  "source": {
+    "eval_inventory": {
+      "abstention_tasks": 1,
+      "conversation_rows": 5,
+      "families": {
+        "abstention": 1,
+        "browser": 1,
+        "email": 1,
+        "notion": 1,
+        "recovery": 1
+      },
+      "recovery_tasks": 1,
+      "split": "eval",
+      "steps": 16,
+      "suite": "localagent-stateful-productivity-v1",
+      "tasks": 5
+    },
+    "eval_task_hash": "07471a921a097485936c37b646be03b99e4071f5ac4644cecd130194154b072c",
+    "external_accounts_used": false,
+    "kind": "local_synthetic_state_machine",
+    "native_runtime_executed": false,
+    "public_benchmark_text_used": false,
+    "tools_executed": false,
+    "train_inventory": {
+      "abstention_tasks": 1,
+      "conversation_rows": 5,
+      "families": {
+        "abstention": 1,
+        "browser": 1,
+        "email": 1,
+        "notion": 1,
+        "recovery": 1
+      },
+      "recovery_tasks": 1,
+      "split": "train",
+      "steps": 16,
+      "suite": "localagent-stateful-productivity-v1",
+      "tasks": 5
+    },
+    "train_task_hash": "5cd64016dc92e6d0d118ea57b6e5b5be6bdd188445022ad5d385173415e194e4"
+  },
+  "suite": "localagent-stateful-productivity-v1"
+}

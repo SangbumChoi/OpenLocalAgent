@@ -1,0 +1,121 @@
+{
+  "kind": "localagent_mcpmark_current_m180_transfer_receipt",
+  "schema_version": 1,
+  "measurement": "m185_mcpmark_current_m180_warm_random_continuation",
+  "generated_at": "2026-08-03",
+  "dataset": "Jakumetsu/mcpmark-trajectory-log",
+  "source_url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log",
+  "source_revision": "e50578f0ab904d8e6a7c576c387c1e76ae482c89",
+  "license": "MIT (public trajectory-log source; verify upstream terms before redistribution)",
+  "inputs": {
+    "train": {
+      "path": "/private/tmp/m120-train.jsonl",
+      "bytes": 83877,
+      "sha256": "80aedf60607e2e113f21e0bdcb4794411ea616eed30b870f384dd24a4c336735",
+      "rows": 8,
+      "parent_records": 8
+    },
+    "eval": {
+      "path": "/private/tmp/m120-eval.jsonl",
+      "bytes": 14123,
+      "sha256": "12f8d6bec22a5c21e3d77055eced3360648286c11362e81ce60cdeb26a7e232d",
+      "rows": 2,
+      "parent_records": 2
+    },
+    "parent_record_disjoint": true,
+    "tool_outputs_redacted": true,
+    "assistant_text_redacted": true,
+    "visual_input_omitted": true
+  },
+  "parent": {
+    "path": "/private/tmp/m180-mixed-mobile-computer-child.pt",
+    "bytes": 52225051,
+    "sha256": "10827649f07182a08f8c11104d4713e76b8acaddc73020c5a4c77950de7b23a0",
+    "stage": "sft_realistic_mobile_computer_mixed",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "training": {
+    "steps": 32,
+    "batch_size": 4,
+    "learning_rate": 0.00001,
+    "seed": 2027,
+    "warm": {
+      "backbone_init": "parent",
+      "child": {
+        "path": "/private/tmp/m185-mcpmark-current-cross-warm-child.pt",
+        "bytes": 52227064,
+        "sha256": "7b7d1d77f5bcdb0bfce7ca58c5a55fef7e9a4a32d9c281fc579bf9f1b7b52e86"
+      },
+      "report": {
+        "path": "/private/tmp/m185-mcpmark-current-cross-warm-report.json",
+        "bytes": 10212,
+        "sha256": "978eaec5c137025545b5a6d8b458cf153869a286d71e25eb8254ec97cc27bb87"
+      },
+      "before_eval": {
+        "assistant_token_accuracy": 0.38842345773038844,
+        "mean_loss": 4.669349920268469,
+        "sequence_accuracy": 0.0
+      },
+      "after_eval": {
+        "assistant_token_accuracy": 0.42726580350342724,
+        "mean_loss": 4.339113745358911,
+        "sequence_accuracy": 0.0
+      },
+      "relative_delta_l2": {
+        "embedding": 0.0052888739679732765,
+        "attention_or_mixer": 0.0024969730250309174,
+        "ffn": 0.0028780695906654554,
+        "normalization": 0.00009715698346310825,
+        "action_heads": 0.0
+      }
+    },
+    "random": {
+      "backbone_init": "random",
+      "random_backbone_seed": 2028,
+      "child": {
+        "path": "/private/tmp/m185-mcpmark-current-cross-random-child.pt",
+        "bytes": 52227178,
+        "sha256": "fb25f7eaef18b6727a5b3233b59a7f221ffbaa65ac71a5eb520f199353f8719f"
+      },
+      "report": {
+        "path": "/private/tmp/m185-mcpmark-current-cross-random-report.json",
+        "bytes": 10193,
+        "sha256": "513dd33c12b6e47d571f4c5ed3c0825d0043d9c53972f9dd19828dfd8ede9635"
+      },
+      "before_eval": {
+        "assistant_token_accuracy": 0.006854531607006854,
+        "mean_loss": 9.829225771134805,
+        "sequence_accuracy": 0.0
+      },
+      "after_eval": {
+        "assistant_token_accuracy": 0.04722010662604722,
+        "mean_loss": 9.238395789699162,
+        "sequence_accuracy": 0.0
+      },
+      "relative_delta_l2": {
+        "embedding": 1.2346276815522224,
+        "attention_or_mixer": 0.7787954700736099,
+        "ffn": 0.8780710982631273,
+        "normalization": 0.07909978170670796,
+        "action_heads": 0.0
+      }
+    }
+  },
+  "comparison": {
+    "warm_after_token_accuracy": 0.42726580350342724,
+    "random_after_token_accuracy": 0.04722010662604722,
+    "warm_minus_random_after_pp": 38.004569687738005,
+    "warm_after_sequence_accuracy": 0.0,
+    "random_after_sequence_accuracy": 0.0,
+    "warm_start_better_after": true
+  },
+  "compatibility": {
+    "config_mismatches": {},
+    "shape_mismatches": {},
+    "shared_tensor_count": 51,
+    "tokenizer_sha256_equal": true
+  },
+  "decision": "diagnostic_only",
+  "claim_boundary": "Public MIT-licensed MCPMark trajectory-log rows with tool outputs and assistant free text redacted, source-disjoint teacher-forced continuation on the current m180 mixed mobile/computer child. This is not an official MCPMark score, live MCP/server/verifier execution, native browser or desktop success, screenshot grounding, or a real Notion/email side effect.",
+  "receipt_self_sha256": "64a5159b05b26113c2c713d0ed2ca7af96936c0205823fdfe6f958fc42e2ec88"
+}

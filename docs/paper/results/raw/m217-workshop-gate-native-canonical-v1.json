@@ -1,0 +1,261 @@
+{
+  "blocking_requirements": [
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:androidworld"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:mobilegym"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:mobile_safety_bench"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:iosworld"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:browsergym_miniwob"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:osworld"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:osworld_v2"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:agentnet"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:toolsandbox"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:mcpmark"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "requirement": "native:enterpriseopsgym"
+    },
+    {
+      "blockers": [
+        "manifest_not_supplied"
+      ],
+      "requirement": "artifacts:public_model_demo_manifest"
+    }
+  ],
+  "catalog": {
+    "blocked_ids": [
+      "androidworld",
+      "aitw_control_eval",
+      "browsergym_miniwob",
+      "mind2web_eval",
+      "webarena",
+      "osworld",
+      "agentnet",
+      "appworld",
+      "tau_bench",
+      "toolsandbox",
+      "toolathlon",
+      "mcpmark",
+      "enterpriseopsgym",
+      "mcp_persona",
+      "tua_bench",
+      "osworld_human",
+      "mobilegym",
+      "mobileworld",
+      "memgui_bench",
+      "workarena",
+      "weblinx",
+      "osworld_v2",
+      "toolathlon_gym",
+      "phoneworld",
+      "gui_odyssey",
+      "mobile_agent_bench",
+      "agentbench_fc",
+      "visualwebarena",
+      "omni_act",
+      "worldgui",
+      "macosworld",
+      "assistgui",
+      "androiddaily",
+      "windows_agent_arena",
+      "webchorearena",
+      "timewarp"
+    ],
+    "entries": 40,
+    "path": "configs/data/realistic-agent-eval.catalog.yaml",
+    "runnable_ids": [
+      "androidcontrol",
+      "android_in_the_wild",
+      "xlam_function_calling",
+      "mind2web_train"
+    ],
+    "sha256": "67ecf6d0e15ad1ebfaaf2eeb58634112bd8a69775b64cb5a30f3314cd7ce34a8"
+  },
+  "checks": [
+    {
+      "blockers": [],
+      "evidence": [
+        "67ecf6d0e15ad1ebfaaf2eeb58634112bd8a69775b64cb5a30f3314cd7ce34a8",
+        "configs/data/realistic-agent-eval.catalog.yaml"
+      ],
+      "requirement": "catalog:realistic_family_coverage",
+      "status": "pass"
+    },
+    {
+      "blockers": [],
+      "evidence": [
+        "configs/data/realistic-agent-eval.catalog.yaml"
+      ],
+      "requirement": "catalog:no_pending_train_adapter",
+      "status": "pass"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:androidworld",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:mobilegym",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:mobile_safety_bench",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:iosworld",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:browsergym_miniwob",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:osworld",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:osworld_v2",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:agentnet",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:toolsandbox",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:mcpmark",
+      "status": "blocked"
+    },
+    {
+      "blockers": [
+        "receipt_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "native:enterpriseopsgym",
+      "status": "blocked"
+    },
+    {
+      "blockers": [],
+      "evidence": [
+        "/Users/sangbumchoi/Documents/LocalAgent/docs/paper/results/raw/m216-webgpu-native-canonical-productivity-v1.json",
+        "4764954fdb324e1c6beb13b7f304dd4ef6839c6ed76e02c3a4f10efc99d8592f"
+      ],
+      "requirement": "webgpu:native_capability_and_latency",
+      "status": "pass"
+    },
+    {
+      "blockers": [],
+      "evidence": [
+        "/Users/sangbumchoi/Documents/LocalAgent/docs/paper/results/raw/m25-weight-transfer-ablation-v1.json:770a792b2545222ea2db89af584daebc5985d2089d117f68eba157718271ab1f"
+      ],
+      "requirement": "weights:transfer_and_no_transfer_ablation",
+      "status": "pass"
+    },
+    {
+      "blockers": [
+        "manifest_not_supplied"
+      ],
+      "evidence": [],
+      "requirement": "artifacts:public_model_demo_manifest",
+      "status": "blocked"
+    }
+  ],
+  "claim_boundary": "ready is false unless native benchmark receipts, native WebGPU performance and capability evidence, transfer ablations, and public model/demo artifacts are all explicitly supplied; protocol bridges and synthetic receipts do not satisfy these checks",
+  "kind": "localagent_workshop_publication_gate",
+  "ready": false,
+  "schema_version": 1
+}

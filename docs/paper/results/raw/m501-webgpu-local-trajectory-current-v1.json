@@ -1,0 +1,60 @@
+{
+  "backend": "webgpu",
+  "bundle_identity": {
+    "checkpoint_sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+    "manifest": {
+      "bytes": 9308,
+      "path": "spaces/localagent-webgpu/bundle-manifest.json",
+      "sha256": "a7895541f802b4836d76dc2b9f5bc203168d80c534a2339126fc7b00a31dadca"
+    },
+    "model_parameters": 10524544,
+    "parity_gate_passed": true
+  },
+  "claim_boundary": "Native Chrome WebGPU execution of the resettable local browser/email/Notion trajectory fixture. This is deployment-shaped evidence only; it is not an AndroidWorld, BrowserGym, MCPMark, OSWorld, real-account, or external-side-effect score.",
+  "environment_executed": true,
+  "kind": "localagent_webgpu_local_trajectory_receipt",
+  "schema_version": 1,
+  "trajectory_result": {
+    "backend": "webgpu",
+    "by_trajectory": {
+      "browser_search_open": {
+        "closed_loop_success_rate": 1.0,
+        "exact_action_rate": 1.0,
+        "family": "browser",
+        "first_failure": null,
+        "schema_valid_rate": 1.0,
+        "state_transition_rate": 1.0,
+        "steps": 5,
+        "trajectory_success": true
+      },
+      "gmail_compose_send": {
+        "closed_loop_success_rate": 1.0,
+        "exact_action_rate": 1.0,
+        "family": "email",
+        "first_failure": null,
+        "schema_valid_rate": 1.0,
+        "state_transition_rate": 1.0,
+        "steps": 6,
+        "trajectory_success": true
+      },
+      "notion_capture": {
+        "closed_loop_success_rate": 1.0,
+        "exact_action_rate": 1.0,
+        "family": "notion",
+        "first_failure": null,
+        "schema_valid_rate": 1.0,
+        "state_transition_rate": 1.0,
+        "steps": 2,
+        "trajectory_success": true
+      }
+    },
+    "closed_loop_success_rate": 1.0,
+    "exact_action_rate": 1.0,
+    "pass_at_1": 1.0,
+    "schema_valid_rate": 1.0,
+    "state_transition_rate": 1.0,
+    "steps": 13,
+    "suite": "localagent-mobile-productivity-trajectory-v1",
+    "trajectories": 3
+  }
+}

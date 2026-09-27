@@ -1,0 +1,318 @@
+{
+  "adapter": {
+    "adapter_name": null,
+    "architecture": "metal-3",
+    "description": null,
+    "device": null,
+    "identity": "vendor=apple; architecture=metal-3",
+    "identity_fields": [
+      "vendor",
+      "architecture"
+    ],
+    "is_fallback_adapter": null,
+    "vendor": "apple"
+  },
+  "backend": "webgpu",
+  "bundle_identity": {
+    "action_graph": {
+      "bytes": 21430301,
+      "path": "/Users/sangbumchoi/Documents/LocalAgent/spaces/localagent-webgpu/action_model.fp16.onnx",
+      "sha256": "66eb2e83d233e9733a6cfe904d5351b7c925a6b51553a76be4db0c001f215583"
+    },
+    "checkpoint_sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+    "manifest": {
+      "bytes": 9308,
+      "path": "/Users/sangbumchoi/Documents/LocalAgent/spaces/localagent-webgpu/bundle-manifest.json",
+      "sha256": "a7895541f802b4836d76dc2b9f5bc203168d80c534a2339126fc7b00a31dadca"
+    }
+  },
+  "capability": {
+    "cases": [
+      {
+        "exact_action_rate": 1,
+        "exact_actions": 30,
+        "expected_argument": "recipient",
+        "expected_tool": "send_email",
+        "input_tokens": 10,
+        "last_result": {
+          "args": {
+            "recipient": "Dana"
+          },
+          "conf": 1,
+          "context_padding_placement": "none",
+          "context_padding_tokens": 0,
+          "decision_feature_index": 9,
+          "decision_input_tokens": 10,
+          "decode_cache": null,
+          "decode_steps": 0,
+          "decode_strategy": "one_forward_structured_heads",
+          "generated_text": null,
+          "inference_passes": 1,
+          "input_bytes": 52,
+          "input_tokens": 10,
+          "ms": 38.89999997615814,
+          "natural_input_tokens": 10,
+          "output_tokens": 0,
+          "parse_error": null,
+          "parse_failure": false,
+          "parse_kind": "structured_heads",
+          "policy": "structured_one_forward",
+          "route": "app_action",
+          "schema_valid": true,
+          "selection_policy": "productivity_email_intent_guard",
+          "stop_reason": "one_forward",
+          "timing": {
+            "decode_control_ms": 0,
+            "dispatch_ms": 1.2000000476837158,
+            "inference_ms": 37.59999990463257,
+            "parse_validate_ms": 0,
+            "tokenize_ms": 0.10000002384185791,
+            "tpot_ms": null,
+            "ttfa_ms": 38.89999997615814,
+            "ttft_ms": null
+          },
+          "tool": "send_email",
+          "validation_error": null,
+          "validation_failure": false
+        },
+        "measured_repetitions": 30,
+        "model_inference_ms": {
+          "count": 30,
+          "max_ms": 101.69999992847443,
+          "mean_ms": 36.58666665951411,
+          "min_ms": 11.600000023841858,
+          "p50_ms": 25.44999998807907,
+          "p95_ms": 86.83500002622603
+        },
+        "prompt": "Email Dana the quarterly report",
+        "tokens_per_second_p50": 392.9273086319866,
+        "wall_latency_ms": {
+          "count": 30,
+          "max_ms": 102.70000004768372,
+          "mean_ms": 38.640000001589456,
+          "min_ms": 12.5,
+          "p50_ms": 28.44999998807907,
+          "p95_ms": 87.89000003933904
+        }
+      },
+      {
+        "exact_action_rate": 1,
+        "exact_actions": 30,
+        "expected_argument": "url",
+        "expected_tool": "open_url",
+        "input_tokens": 8,
+        "last_result": {
+          "args": {
+            "url": "https://example.com"
+          },
+          "conf": 1,
+          "context_padding_placement": "none",
+          "context_padding_tokens": 0,
+          "decision_feature_index": 7,
+          "decision_input_tokens": 8,
+          "decode_cache": null,
+          "decode_steps": 0,
+          "decode_strategy": "one_forward_structured_heads",
+          "generated_text": null,
+          "inference_passes": 1,
+          "input_bytes": 45,
+          "input_tokens": 8,
+          "ms": 25.300000071525574,
+          "natural_input_tokens": 8,
+          "output_tokens": 0,
+          "parse_error": null,
+          "parse_failure": false,
+          "parse_kind": "structured_heads",
+          "policy": "structured_one_forward",
+          "route": "web_search",
+          "schema_valid": true,
+          "selection_policy": "explicit_url_safety_guard",
+          "stop_reason": "one_forward",
+          "timing": {
+            "decode_control_ms": 0,
+            "dispatch_ms": 0.8000000715255737,
+            "inference_ms": 24.299999952316284,
+            "parse_validate_ms": 0,
+            "tokenize_ms": 0.20000004768371582,
+            "tpot_ms": null,
+            "ttfa_ms": 25.300000071525574,
+            "ttft_ms": null
+          },
+          "tool": "open_url",
+          "validation_error": null,
+          "validation_failure": false
+        },
+        "measured_repetitions": 30,
+        "model_inference_ms": {
+          "count": 30,
+          "max_ms": 112.59999990463257,
+          "mean_ms": 22.429999987284344,
+          "min_ms": 9,
+          "p50_ms": 15.700000047683716,
+          "p95_ms": 44.13999997377394
+        },
+        "prompt": "Open https://example.com",
+        "tokens_per_second_p50": 509.55413857978124,
+        "wall_latency_ms": {
+          "count": 30,
+          "max_ms": 113.89999997615814,
+          "mean_ms": 23.433333333333334,
+          "min_ms": 10.100000023841858,
+          "p50_ms": 16.699999928474426,
+          "p95_ms": 45.164999991655336
+        }
+      },
+      {
+        "exact_action_rate": 1,
+        "exact_actions": 30,
+        "expected_argument": "content",
+        "expected_tool": "notion_write",
+        "input_tokens": 14,
+        "last_result": {
+          "args": {
+            "content": "WebGPU state loop passed"
+          },
+          "conf": 1,
+          "context_padding_placement": "none",
+          "context_padding_tokens": 0,
+          "decision_feature_index": 13,
+          "decision_input_tokens": 14,
+          "decode_cache": null,
+          "decode_steps": 0,
+          "decode_strategy": "one_forward_structured_heads",
+          "generated_text": null,
+          "inference_passes": 1,
+          "input_bytes": 63,
+          "input_tokens": 14,
+          "ms": 14.700000047683716,
+          "natural_input_tokens": 14,
+          "output_tokens": 0,
+          "parse_error": null,
+          "parse_failure": false,
+          "parse_kind": "structured_heads",
+          "policy": "structured_one_forward",
+          "route": "app_action",
+          "schema_valid": true,
+          "selection_policy": "productivity_notion_intent_guard",
+          "stop_reason": "one_forward",
+          "timing": {
+            "decode_control_ms": 0,
+            "dispatch_ms": 0.6000000238418579,
+            "inference_ms": 13.899999976158142,
+            "parse_validate_ms": 0,
+            "tokenize_ms": 0.20000004768371582,
+            "tpot_ms": null,
+            "ttfa_ms": 14.700000047683716,
+            "ttft_ms": null
+          },
+          "tool": "notion_write",
+          "validation_error": null,
+          "validation_failure": false
+        },
+        "measured_repetitions": 30,
+        "model_inference_ms": {
+          "count": 30,
+          "max_ms": 132.79999995231628,
+          "mean_ms": 39.17333334287007,
+          "min_ms": 10.600000023841858,
+          "p50_ms": 30.600000023841858,
+          "p95_ms": 105.36999991536129
+        },
+        "prompt": "Write 'WebGPU state loop passed' to Notion",
+        "tokens_per_second_p50": 457.51633951280917,
+        "wall_latency_ms": {
+          "count": 30,
+          "max_ms": 134.40000009536743,
+          "mean_ms": 40.44333333174388,
+          "min_ms": 11.800000071525574,
+          "p50_ms": 31.349999964237213,
+          "p95_ms": 106.89499998688686
+        }
+      }
+    ],
+    "closed_loop_success": 0,
+    "evaluated_cases": 3,
+    "exact_actions": 3,
+    "external_side_effects_executed": false
+  },
+  "checkpoint": {
+    "config_name": "webgpu-10m-hybrid",
+    "parameters": 10524544,
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+    "source": "bundle-manifest.json",
+    "stage": "sft_public_agent_continuation",
+    "step": 319
+  },
+  "claim_boundary": "Native browser WebGPU adapter and action-graph dispatch receipt. The calls are local predictions only: no real email, browser navigation, or Notion account was touched; closed_loop_success is therefore zero.",
+  "environment_executed": true,
+  "hardware_adapter": "vendor=apple; architecture=metal-3",
+  "kind": "localagent_webgpu_native_capability_receipt",
+  "performance": {
+    "graph": {
+      "bytes": 21430301,
+      "path": "action_model.fp16.onnx",
+      "sha256": "66eb2e83d233e9733a6cfe904d5351b7c925a6b51553a76be4db0c001f215583"
+    },
+    "largest_input_bytes": 112,
+    "largest_output_bytes": 21504,
+    "latency_ms_p50": 28.44999998807907,
+    "peak_memory_mb": 20.458142280578613,
+    "peak_memory_method": "conservative action-graph bytes plus largest host input/output tensors; driver VRAM counter unavailable",
+    "tokens_per_second_definition": "action-graph input tokens divided by p50 model inference ms",
+    "tokens_per_second_p50": 457.51633951280917
+  },
+  "protocol": {
+    "action_graph": {
+      "bytes": 21430301,
+      "path": "action_model.fp16.onnx",
+      "sha256": "66eb2e83d233e9733a6cfe904d5351b7c925a6b51553a76be4db0c001f215583"
+    },
+    "bundle_manifest": {
+      "bytes": 9308,
+      "path": "bundle-manifest.json",
+      "sha256": "a7895541f802b4836d76dc2b9f5bc203168d80c534a2339126fc7b00a31dadca"
+    },
+    "measured_repetitions_per_case": 30,
+    "ort_version": "1.27.0",
+    "page": "spaces/localagent-webgpu/webgpu-capability.html",
+    "requested_provider": [
+      "webgpu"
+    ],
+    "session_provider_retry": false,
+    "warmups_per_case": 3
+  },
+  "receipt_self_sha256": "c589e90c57e308fd972baed5162cf348fabadbe77f9e87fc500333cc6178ad36",
+  "runner": {
+    "console_error_classes": [
+      "\u001b[0;93m2026-08-06 00:24:12.159599 [W:onnxruntime:, session_state.cc:1367 VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.\u001b[m",
+      "\u001b[0;93m2026-08-06 00:24:12.186000 [W:onnxruntime:, session_state.cc:1369 VerifyEachNodeIsAssignedToAnEp] Rerunning with verbose output on a non-minimal build will show node assignments.\u001b[m"
+    ],
+    "console_error_count": 2,
+    "final_url": "http://127.0.0.1:8787/webgpu-capability.html",
+    "page_error_count": 0,
+    "response_status": 200,
+    "status_text": "Native WebGPU capability receipt complete.",
+    "title": "LocalAgent \u2014 Native WebGPU Capability Receipt",
+    "url": "http://127.0.0.1:8787/webgpu-capability.html",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36"
+  },
+  "runtime": {
+    "device_features": [
+      "core-features-and-limits"
+    ],
+    "device_limits": {
+      "max_buffer_size": 268435456,
+      "max_compute_workgroups_per_dimension": 65535,
+      "max_storage_buffer_binding_size": 134217728
+    },
+    "elapsed_ms": 20410.899999976158,
+    "navigator_gpu_available": true,
+    "ort_version": "1.27.0",
+    "requested_provider": [
+      "webgpu"
+    ],
+    "session_provider_retry": false,
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36"
+  },
+  "schema_version": 1
+}

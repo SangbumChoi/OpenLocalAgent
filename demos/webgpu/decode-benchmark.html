@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LocalAgent — Cached Autoregressive Decode Latency</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    const decodeQuery = new URLSearchParams(window.location.search);
+    window.__localAgentDecodeBenchmarkStart = performance.now();
+    window.__localAgentDecodeRequestedProvider =
+      decodeQuery.get("backend") || "webgpu";
+    window.__localAgentDecodeBenchmarkMode = decodeQuery.get("mode") || "matched";
+    window.__localAgentDecodeAcceptanceMode = decodeQuery.get("acceptance") === "1";
+    window.__localAgentDecodeAcceptanceRootSha256 =
+      decodeQuery.get("acceptance_root_sha256");
+    window.__localAgentDecodeRunChallenge = decodeQuery.get("run_challenge");
+    window.__localAgentDecodeMachineConditionSha256 =
+      decodeQuery.get("machine_condition_sha256");
+    window.__localAgentDecodeHarnessHtmlSha256 =
+      decodeQuery.get("harness_html_sha256");
+    window.__localAgentDecodeHarnessJavascriptSha256 =
+      decodeQuery.get("harness_js_sha256");
+    window.__localAgentDecodeOrtJavascriptSha256 =
+      decodeQuery.get("ort_js_sha256");
+    window.__localAgentDecodeOrtWasmSha256 =
+      decodeQuery.get("ort_wasm_sha256");
+    window.__localAgentDecodeManifestUrl =
+      decodeQuery.get("manifest") ||
+      "../../runs/webgpu/random-cached-decode-latency-seed-20260728-v2/matched-decode.json";
+    window.__localAgentDecodeProvenanceUrl = decodeQuery.get("provenance");
+    window.__localAgentDecodeProvenanceSha256 =
+      decodeQuery.get("provenance_sha256") || decodeQuery.get("manifest_sha256");
+    window.__localAgentDecodeProvenanceBytes =
+      decodeQuery.get("provenance_bytes") || decodeQuery.get("manifest_bytes");
+    window.__localAgentDecodeBenchmarkResult = null;
+  </script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>⚠️ LocalAgent <span class="sub">cached decode latency only</span></h1>
+      <p class="tagline">
+        <strong id="decode-artifact-heading">
+          UNTRAINED RANDOM WEIGHTS — NO CAPABILITY OR QUALITY RESULT.
+        </strong>
+        <span id="decode-artifact-description">
+          This page measures prefill and iterative cache-bearing ONNX graph execution. Generated
+          token IDs are meaningless random-model outputs and are retained only to prove the exact
+          autoregressive pass count.
+        </span>
+        The default requests one WebGPU provider; use
+        <a href="?backend=wasm">?backend=wasm</a> for a separately labeled WASM condition.
+      </p>
+    </header>
+
+    <section id="decode-status" class="status loading">
+      <span class="dot"></span>
+      <span id="decode-status-text">Verifying configs, provenance, and ONNX graphs…</span>
+      <span id="decode-backend-badge" class="badge" hidden></span>
+    </section>
+
+    <section class="benchmark-panel">
+      <div class="benchmark-disclaimer">
+        <strong id="decode-artifact-disclaimer">LATENCY ONLY · UNTRAINED RANDOM WEIGHTS</strong>
+        <span id="decode-artifact-disclaimer-description">
+          No accuracy, language quality, action success, or agent capability is evaluated.
+          For WebGPU, present caches are requested as GPU buffers and rebound without JavaScript
+          cache readback; physical residency and per-node placement are not exposed. WASM requests
+          CPU caches.
+        </span>
+      </div>
+      <div class="benchmark-settings">
+        <span id="decode-acceptance-protocol">
+          Acceptance mode (<code>?mode=single&amp;acceptance=1</code>) locks the exact
+          32-output, 3-warmup, 30-repetition protocol and additionally requires
+          <code>acceptance_root_sha256=&lt;single-decode.json SHA-256&gt;</code>, an external
+          <code>run_challenge</code>, <code>machine_condition_sha256</code>, and external
+          SHA-256 roots for the HTML, harness JavaScript, ORT JavaScript, and ORT WASM bytes.
+        </span>
+        <label>
+          Output tokens per condition
+          <input id="decode-output-tokens" type="number" min="2" max="256" value="32" />
+        </label>
+        <label>
+          Warmups per model × context
+          <input id="decode-warmups" type="number" min="3" max="20" value="3" />
+        </label>
+        <label>
+          Measured repetitions per model × context
+          <input id="decode-repetitions" type="number" min="30" max="100" value="30" />
+        </label>
+        <label>
+          Randomization seed
+          <input id="decode-seed" type="text" value="slmw2026-cached-decode-v1" />
+        </label>
+      </div>
+      <div class="row">
+        <span id="decode-progress" class="timing">
+          Loading and hashing the exporter-produced bundle; no inference has run.
+        </span>
+        <div class="button-row">
+          <button id="download-decode-benchmark" class="secondary-button" disabled>
+            Download raw JSON
+          </button>
+          <button id="start-decode-benchmark" class="primary-button" disabled>
+            Run once
+          </button>
+        </div>
+      </div>
+      <div id="decode-output"></div>
+      <script id="decode-result-json" type="application/json"></script>
+    </section>
+
+    <footer>
+      <p>
+        Every condition performs one prefill graph pass, which produces the first token and an
+        initial cache, followed by <code>output_tokens - 1</code> one-token decode graph passes.
+        For current exporter-produced graphs, TTFT starts immediately before prefill submission
+        and ends when the first CPU <code>logits</code> tensor has been validated and reduced by
+        argmax. The exported <code>next_token</code> is only a compatibility cross-check and must
+        agree with that logits decision. The pinned default v2 random bundle is explicitly audited
+        as the older <code>legacy_exported_next_token_only</code> ABI: it has no logits output,
+        uses its validated CPU <code>next_token</code>, and is ineligible for acceptance mode.
+        TPOT is time from the applicable first-token timestamp through the final-token timestamp,
+        divided by the <code>output_tokens - 1</code> intervals. The separate model-decode rate
+        uses only summed decode
+        <code>session.run</code> time. Context lengths are exactly 128, 512, 1,024, and 1,536
+        deterministic pre-tokenized IDs.
+      </p>
+      <p>
+        A trained pair or explicit single-model export switches the visible and raw-result label to
+        <strong>trained weights, latency only; quality scored separately</strong>. Single mode
+        requires WebGPU and either a wrapper manifest that pins <code>provenance.json</code>, or a
+        direct <code>?mode=single&amp;provenance=…&amp;provenance_sha256=…&amp;provenance_bytes=…</code>
+        query. Acceptance mode disallows the direct form and requires the wrapper plus its external
+        <code>acceptance_root_sha256</code>. It fails closed unless every acquisition resource is
+        self-hosted at the page origin and matches an external SHA-256 root. Those roots do not
+        attest browser execution or GPU hardware identity. Trained weights do not turn this
+        benchmark into an action, tool-use, or agent-capability evaluation.
+      </p>
+      <p>
+        Exploratory mode permits at least three excluded warmups and thirty measured repetitions.
+        Acceptance mode requires exactly 32 output tokens, three warmups, and thirty measured
+        repetitions for each of the four fixed contexts. Condition order is seeded and randomized.
+        The page requests exactly one execution provider and performs no provider retry.
+        Single-model mode fails closed unless two WebGPU sessions are created from the exact
+        provider request and ONNX Runtime exposes its GPU device. ONNX Runtime Web does not expose
+        per-node placement, so per-node placement and fallback remain explicitly unknown.
+        Reload before a second run; the run-once contract prevents warmed state from being
+        mislabeled as a fresh run.
+      </p>
+      <p>
+        WebGPU sessions request CPU output location for <code>next_token</code> and, when the
+        graph exposes it, <code>logits</code>, plus <code>gpu-buffer</code> output location for
+        every present cache. Present tensors are fed directly to the corresponding past
+        inputs—without reading cache data to JavaScript—and superseded and final tensors must be
+        disposed successfully for acceptance.
+        Each graph call returns fresh presents: attention uses append/concat and short-conv returns
+        a fresh fixed-width tail; this is not an in-place or paged cache. WASM uses CPU caches. The
+        full raw payload is downloadable, mirrored in
+        <code>#decode-result-json</code>, and exposed at
+        <code>window.__localAgentDecodeBenchmarkResult</code>.
+      </p>
+    </footer>
+  </main>
+
+  <script
+    src="vendor/onnxruntime-web-1.27.0/ort.webgpu.min.js"
+    integrity="sha384-vRrDQHAbl9gWevu3ErZ/gXohErGlZmJy4wyowACQUyuTXCTWAgX8fpBBg70OGWVv"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="decode-benchmark.js"
+    integrity="sha384-YF8S2WdnlPK8Ywg2+7Eg6dMtL1TbBvy0zRo8XC6KkVtOmZCcpnhaEiXQkZVuMqau"
+  ></script>
+</body>
+</html>

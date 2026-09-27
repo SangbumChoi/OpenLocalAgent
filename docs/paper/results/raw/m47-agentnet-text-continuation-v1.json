@@ -1,0 +1,300 @@
+{
+  "after": {
+    "eval": {
+      "assistant_loss_tokens": 4899,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.5888956929985711,
+      "mean_loss": 2.612130841957742,
+      "rows": 133
+    },
+    "train": {
+      "assistant_loss_tokens": 18466,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.5949853785335211,
+      "mean_loss": 2.588712343761106,
+      "rows": 513
+    }
+  },
+  "before": {
+    "eval": {
+      "assistant_loss_tokens": 4899,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.4709124311083895,
+      "mean_loss": 3.780364803353921,
+      "rows": 133
+    },
+    "train": {
+      "assistant_loss_tokens": 18466,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.48072132567962744,
+      "mean_loss": 3.7376187536371215,
+      "rows": 513
+    }
+  },
+  "child": {
+    "bytes": 52320175,
+    "path": "/private/tmp/sft-agentnet-text-v3.pt",
+    "sha256": "4126c54313b0f72aefc07363b8942f88ab7a19cbfab2da2d52323769a080e08a"
+  },
+  "claim_boundary": "Held-out public AgentNet Ubuntu trajectory continuation with text-only teacher-forced metrics; images are excluded, the prefix is not an official AgentNet validation split, and no AgentNetBench, OSWorld, browser execution, emulator reward, or native desktop score is claimed.",
+  "eval_inputs": [
+    {
+      "bytes": 239744,
+      "path": "/private/tmp/agentnet_text_v3.eval.jsonl",
+      "sha256": "b9473550b24cea2f87b4d90ad29e6a669a179fdcee9e5d5a753011236f45af7d"
+    }
+  ],
+  "heads": {
+    "after": {
+      "route_accuracy": 1.0,
+      "rows": 133,
+      "selector_top1_accuracy": 0.12030075187969924,
+      "tool_rows": 133
+    },
+    "before": {
+      "route_accuracy": 0.9924812030075187,
+      "rows": 133,
+      "selector_top1_accuracy": 0.05263157894736842,
+      "tool_rows": 133
+    }
+  },
+  "hyperparameters": {
+    "batch_size": 4,
+    "device": "cpu",
+    "learning_rate": 1e-05,
+    "max_seq_len": 384,
+    "seed": 2027,
+    "steps": 32
+  },
+  "kind": "localagent_public_agent_continuation_report",
+  "loss_history": [
+    2.4284980297088623,
+    3.9361064434051514,
+    3.980654239654541,
+    3.5968177318573,
+    2.9639081954956055,
+    3.3333616256713867,
+    3.497727394104004,
+    3.4404261112213135,
+    3.100337028503418,
+    3.005528211593628,
+    3.0733227729797363,
+    2.5190556049346924,
+    2.9644196033477783,
+    2.8845198154449463,
+    2.9888713359832764,
+    2.963294506072998,
+    2.878434896469116,
+    2.6264090538024902,
+    2.8483688831329346,
+    2.843540906906128,
+    2.6770195960998535,
+    2.092154026031494,
+    2.7345712184906006,
+    2.6767992973327637,
+    2.6408259868621826,
+    2.4846298694610596,
+    2.6398134231567383,
+    2.4499473571777344,
+    2.6893086433410645,
+    2.484717845916748,
+    2.4571690559387207,
+    2.431208848953247
+  ],
+  "parent": {
+    "bytes": 52320590,
+    "path": "/private/tmp/sft-androidcontrol84k-4096-dispatch-focused.pt",
+    "sha256": "27453c927bb4bacb4c93912b01a8676587287bc4f33239eb71b5f156b1551708"
+  },
+  "rows": {
+    "eval": 133,
+    "train": 513
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "xlangai/AgentNet",
+    "manifest": "docs/paper/results/raw/m47-agentnet-acquisition-v1.json",
+    "revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+  },
+  "token_accounting": {
+    "dataset_token_accounting": {
+      "decay": null,
+      "main": {
+        "input_tokens": 159397,
+        "loss_tokens": 18466,
+        "sources": {
+          "multi_turn": {
+            "input_tokens": 159397,
+            "loss_tokens": 18466,
+            "rows": 513
+          }
+        }
+      }
+    },
+    "fixed_horizon_progress": {
+      "completed_optimizer_updates": 32,
+      "partial": false,
+      "planned_optimizer_updates": 32
+    },
+    "lm_sampling": {
+      "mode": "iid_with_replacement_v1"
+    },
+    "loss_components": {
+      "lm_loss": [
+        2.4284980297088623,
+        3.9361064434051514,
+        3.980654239654541,
+        3.5968177318573,
+        2.9639081954956055,
+        3.3333616256713867,
+        3.497727394104004,
+        3.4404261112213135,
+        3.100337028503418,
+        3.005528211593628,
+        3.0733227729797363,
+        2.5190556049346924,
+        2.9644196033477783,
+        2.8845198154449463,
+        2.9888713359832764,
+        2.963294506072998,
+        2.878434896469116,
+        2.6264090538024902,
+        2.8483688831329346,
+        2.843540906906128,
+        2.6770195960998535,
+        2.092154026031494,
+        2.7345712184906006,
+        2.6767992973327637,
+        2.6408259868621826,
+        2.4846298694610596,
+        2.6398134231567383,
+        2.4499473571777344,
+        2.6893086433410645,
+        2.484717845916748,
+        2.4571690559387207,
+        2.431208848953247
+      ],
+      "optimization": [
+        2.4284980297088623,
+        3.9361064434051514,
+        3.980654239654541,
+        3.5968177318573,
+        2.9639081954956055,
+        3.3333616256713867,
+        3.497727394104004,
+        3.4404261112213135,
+        3.100337028503418,
+        3.005528211593628,
+        3.0733227729797363,
+        2.5190556049346924,
+        2.9644196033477783,
+        2.8845198154449463,
+        2.9888713359832764,
+        2.963294506072998,
+        2.878434896469116,
+        2.6264090538024902,
+        2.8483688831329346,
+        2.843540906906128,
+        2.6770195960998535,
+        2.092154026031494,
+        2.7345712184906006,
+        2.6767992973327637,
+        2.6408259868621826,
+        2.4846298694610596,
+        2.6398134231567383,
+        2.4499473571777344,
+        2.6893086433410645,
+        2.484717845916748,
+        2.4571690559387207,
+        2.431208848953247
+      ],
+      "router_aux": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "router_weighted": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "token_accounting": {
+      "input_tokens": 39720,
+      "loss_tokens": 4458,
+      "sources": {
+        "multi_turn": {
+          "input_tokens": 39720,
+          "loss_tokens": 4458,
+          "rows": 128
+        }
+      }
+    },
+    "token_accounting_scope": "language_model_microbatches"
+  },
+  "train_inputs": [
+    {
+      "bytes": 911115,
+      "path": "/private/tmp/agentnet_text_v3.train.jsonl",
+      "sha256": "666e7b29bd67e6b46c8a96c0fa9248a1d79498e4c6da2baf04bb906d8778bc60"
+    }
+  ]
+}

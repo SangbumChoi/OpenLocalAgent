@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "kind": "public_realistic_agent_source_audit",
+  "measurement": "m163_mobile_grounding_source_audit",
+  "generated_at": "2026-08-03",
+  "claim_boundary": "This receipt hash-pins public source metadata for four mobile/GUI references. It is a provenance and protocol audit only: no benchmark task text, screenshots, hidden profiles, APKs, or grounding annotations were admitted to SFT; no native emulator, desktop VM, user simulator, or official benchmark evaluator was executed; and no official score is claimed.",
+  "sources": [
+    {
+      "id": "knowu_bench",
+      "name": "KnowU-Bench",
+      "repository_url": "https://github.com/ZJU-REAL/KnowU-Bench",
+      "paper_url": "https://arxiv.org/abs/2604.08455",
+      "repository_revision": {
+        "branch": "main",
+        "commit": "c03a825991ede13add6631f2ed19b90755930dc6",
+        "commit_url": "https://github.com/ZJU-REAL/KnowU-Bench/commit/c03a825991ede13add6631f2ed19b90755930dc6"
+      },
+      "source_files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/ZJU-REAL/KnowU-Bench/c03a825991ede13add6631f2ed19b90755930dc6/README.md",
+          "bytes": 8899,
+          "sha256": "b0310fb2612ac96e50ebd6802b2c8cadb50286bb1752cd0484d48097dbd9bb86"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/ZJU-REAL/KnowU-Bench/c03a825991ede13add6631f2ed19b90755930dc6/LICENSE",
+          "bytes": 12664,
+          "sha256": "b09fcaf4fbc265223c2479c410beef2b98c5e687c78ecedf3452aa12ffc465f1"
+        }
+      ],
+      "benchmark_contract": {
+        "app_coverage": 23,
+        "registered_tasks": 192,
+        "task_families": {
+          "general": 42,
+          "personalized": 86,
+          "proactive": 64
+        },
+        "agent_user_interaction_tasks": 94,
+        "app_identifiers_in_current_python_registry": 17,
+        "hidden_profiles": true,
+        "exposed_behavioral_logs": true,
+        "online_user_simulator": true,
+        "verification": [
+          "textual_answer",
+          "backend_database",
+          "local_storage",
+          "application_callback",
+          "hybrid_personalization"
+        ]
+      },
+      "runtime": {
+        "host": "Linux",
+        "docker": true,
+        "kvm_android_emulator": true,
+        "api_backed_agent": true,
+        "api_backed_user_simulator": true,
+        "local_task_runner_executed": false
+      },
+      "license": {
+        "code": "Apache-2.0",
+        "benchmark_assets_and_app_terms": "review_required"
+      },
+      "local_status": "source_metadata_only; hidden profiles, logs, task definitions, container, and simulator not acquired"
+    },
+    {
+      "id": "appagent_benchmark",
+      "name": "AppAgent smartphone evaluation benchmark",
+      "repository_url": "https://github.com/TencentQQGYLab/AppAgent",
+      "paper_url": "https://arxiv.org/abs/2312.13771",
+      "repository_revision": {
+        "branch": "main",
+        "commit": "2c1900422caf6f9e94e96d5dd984b530e5a5fbf8",
+        "commit_url": "https://github.com/TencentQQGYLab/AppAgent/commit/2c1900422caf6f9e94e96d5dd984b530e5a5fbf8"
+      },
+      "source_files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/TencentQQGYLab/AppAgent/2c1900422caf6f9e94e96d5dd984b530e5a5fbf8/README.md",
+          "bytes": 11385,
+          "sha256": "ac94cca1f69807d2d31d30bd5521fbf1bda6155996881054df87a85522cd8f5b"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/TencentQQGYLab/AppAgent/2c1900422caf6f9e94e96d5dd984b530e5a5fbf8/LICENSE",
+          "bytes": 1068,
+          "sha256": "d9e2b107cbaa3599336510dbb6703cb30210f1b4345221e76cf75cba85c2d113"
+        },
+        {
+          "path": "assets/testset.md",
+          "url": "https://raw.githubusercontent.com/TencentQQGYLab/AppAgent/2c1900422caf6f9e94e96d5dd984b530e5a5fbf8/assets/testset.md",
+          "bytes": 6567,
+          "sha256": "f3229dbc6432a9c1af33bead89d7376c6279b65b2e06ba3e5080f29fd64533f5"
+        }
+      ],
+      "benchmark_contract": {
+        "tasks": 45,
+        "android_apps": 9,
+        "action_family": [
+          "tap",
+          "swipe",
+          "text_input",
+          "back",
+          "home"
+        ],
+        "test_manifest_text_retained": false,
+        "test_manifest_sha256_only": true
+      },
+      "runtime": {
+        "android_device_or_android_studio_emulator": true,
+        "adb": true,
+        "app_installation": true,
+        "local_task_runner_executed": false
+      },
+      "license": {
+        "code": "MIT",
+        "benchmark_manifest_and_app_apks": "review_required"
+      },
+      "local_status": "test-manifest count/hash only; benchmark task text, app packages, and device state not acquired"
+    },
+    {
+      "id": "groundcua",
+      "name": "GroundCUA desktop grounding dataset",
+      "repository_url": "https://github.com/ServiceNow/GroundCUA",
+      "paper_url": "https://arxiv.org/abs/2511.07332",
+      "repository_revision": {
+        "branch": "main",
+        "commit": "94cba61693d6258c7100f7016a299b84b1bb7732",
+        "commit_url": "https://github.com/ServiceNow/GroundCUA/commit/94cba61693d6258c7100f7016a299b84b1bb7732"
+      },
+      "source_files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/ServiceNow/GroundCUA/94cba61693d6258c7100f7016a299b84b1bb7732/README.md",
+          "bytes": 14492,
+          "sha256": "ea25e5db95415f19bcf42f37547912eed185b72441a4fa57a0c981a7f50d732a"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://raw.githubusercontent.com/ServiceNow/GroundCUA/94cba61693d6258c7100f7016a299b84b1bb7732/pyproject.toml",
+          "bytes": 2477,
+          "sha256": "9f2fa5ebcb0eb56f1a8bfe7e5db3ddf8147cf032ac4d347d34ce37c5d7458688"
+        }
+      ],
+      "benchmark_contract": {
+        "screenshots": 56000,
+        "human_verified_annotations_at_least": 3560000,
+        "human_tasks_at_least": 10000,
+        "desktop_applications": 87,
+        "training_datapoints_reported": 700000,
+        "evaluation_benchmarks": 5,
+        "screenshot_payload_retained": false,
+        "annotation_payload_retained": false
+      },
+      "runtime": {
+        "offline_image_grounding": true,
+        "release_matched_desktop_evaluation": true,
+        "visual_encoder_required": true,
+        "local_task_runner_executed": false
+      },
+      "license": {
+        "code": "Apache-2.0 (pyproject metadata)",
+        "dataset_terms_and_research_use": "review_required"
+      },
+      "local_status": "README/pyproject metadata only; screenshots, boxes, annotations, and evaluation payloads not acquired"
+    },
+    {
+      "id": "ui_tars_action_contract",
+      "name": "UI-TARS GUI action contract and benchmark protocol",
+      "repository_url": "https://github.com/bytedance/UI-TARS",
+      "paper_url": "https://arxiv.org/abs/2501.12326",
+      "repository_revision": {
+        "branch": "main",
+        "commit": "582f3a7ea5d285ee8ed9e2e84048d1ab01453c49",
+        "commit_url": "https://github.com/bytedance/UI-TARS/commit/582f3a7ea5d285ee8ed9e2e84048d1ab01453c49"
+      },
+      "source_files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/bytedance/UI-TARS/582f3a7ea5d285ee8ed9e2e84048d1ab01453c49/README.md",
+          "bytes": 14638,
+          "sha256": "0c4feb17b657c0c9a71d7e0c5e2142abbd19bb5cff22e6cd3b6b082644c98ee7"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/bytedance/UI-TARS/582f3a7ea5d285ee8ed9e2e84048d1ab01453c49/LICENSE",
+          "bytes": 11357,
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ],
+      "benchmark_contract": {
+        "prompt_modes": [
+          "computer_use",
+          "mobile_use",
+          "grounding"
+        ],
+        "mobile_actions": [
+          "long_press",
+          "open_app",
+          "press_home",
+          "press_back"
+        ],
+        "coordinate_or_screenshot_payload_retained": false,
+        "benchmark_task_payload_retained": false
+      },
+      "runtime": {
+        "release_matched_gui_environment": true,
+        "visual_encoder_required_for_grounding": true,
+        "local_task_runner_executed": false
+      },
+      "license": {
+        "code": "Apache-2.0",
+        "upstream_benchmark_tasks_and_traces": "review_required"
+      },
+      "local_status": "action-contract metadata only; screenshots, coordinates, benchmark tasks, and model traces not acquired"
+    }
+  ],
+  "localagent_adaptation": {
+    "training_rows_added": 0,
+    "native_runs": 0,
+    "webgpu_runs": 0,
+    "official_scores_added": 0,
+    "reason": "This pass records public provenance and modality boundaries; the current text-first WebGPU model has no native Android/desktop vision runtime and no authenticated benchmark services."
+  },
+  "next_gate": "Acquire only the release-approved task manifests/assets in isolated evaluation workspaces, then run native Android or desktop evaluators with frozen model/tokenizer hashes; use text-only projections solely for contract diagnostics.",
+  "receipt_self_sha256": "4afc1ed05d3e2c5f85cd7fc3fd8dd316aa2f00e4f0fedc485e165d5caca69b32"
+}

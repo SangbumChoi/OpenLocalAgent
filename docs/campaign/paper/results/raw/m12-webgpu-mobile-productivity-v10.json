@@ -1,0 +1,95 @@
+{
+  "kind": "localagent_webgpu_realistic_mobile_productivity_receipt",
+  "schema_version": 1,
+  "suite": "localagent-mobile-productivity-v1",
+  "bundle": {
+    "checkpoint_sha256": "0646bf9469565a721fc02850b87026e33b4a1ce9e8a10edf237c3833a88c0294",
+    "manifest_bytes": 9333,
+    "manifest_sha256": "e190ab98db01ff7138058cbe26cc217a2e4a963b0b821c15fbb8d2394b39fc96",
+    "model_parameters": 10524544,
+    "vocab_size": 16384,
+    "model_onnx_sha256": "9bc6dd8a0ad8ec3e106cb1756eaf50afd8f3d4a291698ebfbb5e5b2ce40d2a2a",
+    "model_fp16_sha256": "290f57cc004b2684b3283eaf519c0a64c111e969719ec34e9421e42d21fb0330",
+    "action_model_onnx_sha256": "eae02cb662579ccb53fd4216d39ae0db7dd4aa43237ec164d59b1dd8976574cc",
+    "action_model_fp16_sha256": "fdccd5936157a6ff3effd1fd97ce7dff477b4b686fec96f1729eaec320211e1d",
+    "dispatch_heads_sha256": "c0e3006d60f83c769fe0138bb24ee697653b0851d91954710e2e977dd25c8d26",
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+    "parity_max_abs_diff": {
+      "model_logits_fp32": 8.58306884765625e-06,
+      "model_hidden_fp32": 6.139278411865234e-06,
+      "model_logits_fp16": 0.007607460021972656,
+      "model_hidden_fp16": 0.0047164857387542725,
+      "fp16_argmax_agreement": 1.0
+    }
+  },
+  "source_data": [
+    {
+      "path": "androidcontrol_conversations_v2.train.jsonl",
+      "bytes": 1512235,
+      "sha256": "705bf99465b5feb2b24f03e5c81cc2c1560ac8f28200eb83ed8c921626c995fa"
+    },
+    {
+      "path": "aitw_conversations_v2.train.jsonl",
+      "bytes": 252386,
+      "sha256": "1f0a08fac5684f21d62a10855fc05171b4d7bda699f8aae51f062d01f7b52031"
+    }
+  ],
+  "training": {
+    "parent_checkpoint_sha256": "523946f03fd8439e0c085ad9cbcab3bc43bcf3d28ef9385d9c42666a6f9eb0ec",
+    "report_sha256": "0893f492ce7080992f59be656f26c936c6425366a185bf73cd1856d7d807928c",
+    "steps": 3000,
+    "rows": 114,
+    "synthetic_mobile_rows": 86,
+    "synthetic_mobile_repeats": 4,
+    "held_out_mobile_selector_top1": 0.6,
+    "held_out_productivity_selector_top1": 0.75,
+    "route_accuracy_train_and_held_out": 1.0
+  },
+  "weight_transfer": {
+    "report_sha256": "28d2034ba793b752364303d82aa28da3d9fee97f33d4fea31d3a592fedf61a91",
+    "shared_tensor_count": 51,
+    "config_mismatches": {},
+    "shape_mismatches": {},
+    "tokenizer_sha256_equal": true,
+    "backbone_relative_delta_l2": 0.0,
+    "action_heads_relative_delta_l2": 0.5294195207992387,
+    "interpretation": "The continuation reused the compatible backbone and moved dispatch heads; no no-transfer ablation was run."
+  },
+  "environment": {
+    "browser_surface": "codex_in_app_browser",
+    "provider_requested": "webgpu",
+    "observed_backend_badge": "WEBGPU",
+    "selector": "dense",
+    "mobile_guard": false,
+    "external_accounts": false,
+    "screenshots": false,
+    "trusted_os_input": false,
+    "timing_collected": false
+  },
+  "webgpu": {
+    "records": 9,
+    "summary_canonical_sha256": "4ead8b2c07a11f06709c49a190d18929a30866046582df73c38631b505f4e56c",
+    "exact_tool": {"correct": 4, "total": 9},
+    "exact_arguments": {"correct": 4, "total": 9},
+    "exact_action": {"correct": 4, "total": 9},
+    "schema_valid": {"correct": 6, "total": 9},
+    "state_transition": {"correct": 4, "total": 9},
+    "closed_loop_success": {"correct": 4, "total": 9},
+    "selection_policy_counts": {"dense_selector": 9},
+    "by_family": {
+      "mobile": {
+        "records": 7,
+        "exact_action_rate": 0.2857142857142857,
+        "schema_valid_rate": 0.5714285714285714,
+        "closed_loop_success_rate": 0.2857142857142857
+      },
+      "productivity": {
+        "records": 2,
+        "exact_action_rate": 1.0,
+        "schema_valid_rate": 1.0,
+        "closed_loop_success_rate": 1.0
+      }
+    }
+  },
+  "claim_boundary": "Local text-first WebGPU compatibility and deterministic synthetic state-loop result only; not AndroidWorld, OSWorld, AppWorld, Mind2Web native test, real email, real Notion, screenshot grounding, trusted OS control, or hardware throughput."
+}

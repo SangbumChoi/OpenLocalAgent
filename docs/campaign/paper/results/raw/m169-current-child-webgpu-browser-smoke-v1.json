@@ -1,0 +1,120 @@
+{
+  "kind": "localagent_current_child_webgpu_browser_smoke_receipt",
+  "schema_version": 1,
+  "measurement": "m169_current_child_webgpu_browser_smoke",
+  "generated_at": "2026-08-03",
+  "environment": {
+    "browser": "Codex In-app Browser",
+    "surface": "local_static_http_server",
+    "url": "http://localhost:18123/browser-tasks.html?backend=webgpu",
+    "benchmark_version": "rtab-dom-0.4",
+    "backend": "webgpu",
+    "requested_backend": "webgpu",
+    "execution_provider_request": {
+      "requested": "webgpu",
+      "session_provider_count": 1,
+      "single_provider_session_creation_succeeded": true,
+      "whole_session_retry": false,
+      "per_node_placement": "unknown",
+      "per_node_fallback_status": "unknown",
+      "note": "ORT Web does not expose per-node placement; this proves the requested session provider and does not claim every node executed on the GPU."
+    },
+    "benchmark_scope": {
+      "input_modality": "text-only prompt",
+      "actions_per_case": 1,
+      "target_resolution": "local data-semantic-target labels",
+      "event_trust": "synthetic; Event.isTrusted is false",
+      "physical_cursor_control": false,
+      "visual_grounding": false,
+      "multi_step_planning": false,
+      "browser_wide_control": false,
+      "external_navigation": false,
+      "local_navigation": "fragment route in a disposable same-origin iframe"
+    }
+  },
+  "bundle": {
+    "directory": "/private/tmp/m168-webgpu-demo",
+    "checkpoint_sha256": "0c8ba38784169d621eb908e1cb34ce6736993d966f0759f746c7b88e9c26066e",
+    "checkpoint_stage": "sft_cross_surface_public_continuation",
+    "checkpoint_step": 383,
+    "model_parameters": 10524544,
+    "bundle_manifest_sha256": "bc33c846cc6dde4e9e0f2f658eada70efe8881a956c60950ebb52a8e83fed49e",
+    "bundle_identity_sha256": "b56629df9f1c3310f66a54388e7db7e085e8443eab22fae2f9d193e94f80b3fb",
+    "action_graph": {
+      "file": "action_model.fp16.onnx",
+      "bytes": 21430322,
+      "sha256": "ff90d2a95f294ec16dfdc294246ee79db24274eb49a48188c1de753caaea9019"
+    },
+    "tokenizer": {
+      "file": "tokenizer.json",
+      "bytes": 1134224,
+      "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+    },
+    "heads": {
+      "file": "heads.json",
+      "bytes": 3361821,
+      "sha256": "bde4232e35997c158815c6141a8cced94b6f1caadd0b4e8add8a4d4c5e3211bf"
+    },
+    "dispatch_heads": {
+      "file": "dispatch_heads.json",
+      "bytes": 1279360,
+      "sha256": "bbcea72a94cd4b68a3737eb0e5aa6b29aaade846a1333065454915de556e95d1"
+    },
+    "parity_gate_passed": true,
+    "deployment_verification": {
+      "verified": true,
+      "blockers": [],
+      "fp32_logits_max_abs_diff": 0.00000858306884765625,
+      "fp32_hidden_max_abs_diff": 0.000005632638931274414,
+      "fp16_logits_max_abs_diff": 0.005415201187133789,
+      "fp16_hidden_max_abs_diff": 0.004531979560852051
+    }
+  },
+  "run": {
+    "case_order_seed": "dom-loop-v2-trailing",
+    "compute_input": "natural_prompt",
+    "warmup_actions": 0,
+    "repetitions_per_case": 1,
+    "records": 8,
+    "actions": [
+      "click",
+      "double_click",
+      "type_text",
+      "key_press",
+      "scroll",
+      "drag",
+      "move_cursor",
+      "open_url"
+    ],
+    "closed_loop_success_rate": 0.25,
+    "exact_action_rate": 0.25,
+    "exact_args_rate": 0.25,
+    "exact_tool_rate": 0.25,
+    "schema_valid_rate": 1.0,
+    "final_dom_rate": 0.25,
+    "state_transition_rate": 0.25,
+    "latency_ms": {
+      "model_wall_p50": null,
+      "harness_ttfa_p50": 8.4,
+      "closed_loop_p50": 33.3
+    },
+    "by_action": {
+      "click": {"exact_action_rate": 0.0, "schema_valid_rate": 1.0, "final_dom_rate": 0.0, "closed_loop_success_rate": 0.0, "closed_loop_p50_ms": 33.3},
+      "double_click": {"exact_action_rate": 0.0, "schema_valid_rate": 1.0, "final_dom_rate": 0.0, "closed_loop_success_rate": 0.0, "closed_loop_p50_ms": 33.3},
+      "type_text": {"exact_action_rate": 1.0, "schema_valid_rate": 1.0, "final_dom_rate": 1.0, "closed_loop_success_rate": 1.0, "closed_loop_p50_ms": 33.4},
+      "key_press": {"exact_action_rate": 0.0, "schema_valid_rate": 1.0, "final_dom_rate": 0.0, "closed_loop_success_rate": 0.0, "closed_loop_p50_ms": 31.6},
+      "scroll": {"exact_action_rate": 0.0, "schema_valid_rate": 1.0, "final_dom_rate": 0.0, "closed_loop_success_rate": 0.0, "closed_loop_p50_ms": 164.6},
+      "drag": {"exact_action_rate": 0.0, "schema_valid_rate": 1.0, "final_dom_rate": 0.0, "closed_loop_success_rate": 0.0, "closed_loop_p50_ms": 66.5},
+      "move_cursor": {"exact_action_rate": 0.0, "schema_valid_rate": 1.0, "final_dom_rate": 0.0, "closed_loop_success_rate": 0.0, "closed_loop_p50_ms": 33.3},
+      "open_url": {"exact_action_rate": 1.0, "schema_valid_rate": 1.0, "final_dom_rate": 1.0, "closed_loop_success_rate": 1.0, "closed_loop_p50_ms": 33.1}
+    }
+  },
+  "claim_boundary": "A local, synthetic, text-only single-step DOM smoke run against the hash-pinned m168-derived static bundle. It is not an official BrowserGym/MiniWob score, a vision-grounded result, trusted OS/browser control, multi-step planning, external email or Notion side effect, native Android/desktop/MCP execution, or a public Hugging Face upload.",
+  "decision": "diagnostic_only",
+  "publication": {
+    "public_hub_url": null,
+    "uploaded": false,
+    "reason": "Hugging Face authentication is not configured."
+  },
+  "receipt_self_sha256": "774f1109ee80224fa153be9397c7fdbb9a9a7547ef5d5ef897a71f12ce0f41e5"
+}

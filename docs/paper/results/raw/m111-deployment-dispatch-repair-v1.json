@@ -1,0 +1,172 @@
+{
+  "browser_probe": {
+    "backend_label": "webgpu",
+    "claim_boundary": "The browser cases run against a clean local staging copy with no email, Notion, browser, or network side effect. Learned-head selection and explicit safety/planner adapters are reported separately; this is not a native benchmark score or a hardware-adapter claim.",
+    "external_action_executed": false,
+    "native_adapter_verified": false,
+    "served_url": "http://127.0.0.1:8777/index.html",
+    "single_step_cases": [
+      {
+        "args": {"recipient": "Dana"},
+        "expected_route": "app_action",
+        "expected_tool": "send_email",
+        "latency_ms": 39,
+        "observed_route": "app_action",
+        "observed_tool": "send_email",
+        "prompt": "Email Dana the quarterly report",
+        "selection_policy": "dense_selector",
+        "tool_exact": true
+      },
+      {
+        "args": {"recipient": "alice@example.com"},
+        "expected_route": "app_action",
+        "expected_tool": "send_email",
+        "latency_ms": 14,
+        "observed_route": "app_action",
+        "observed_tool": "send_email",
+        "prompt": "Send an email to alice@example.com with subject WebGPU test and body Local bundle verified.",
+        "selection_policy": "dense_selector",
+        "tool_exact": true
+      },
+      {
+        "args": {"content": "Verify the browser gate"},
+        "expected_route": "app_action",
+        "expected_tool": "notion_write",
+        "latency_ms": 13,
+        "observed_route": "app_action",
+        "observed_tool": "notion_write",
+        "prompt": "Create a Notion page titled Launch log with content Verify the browser gate.",
+        "selection_policy": "dense_selector",
+        "tool_exact": true
+      },
+      {
+        "args": {"query": "AI news"},
+        "expected_route": "web_search",
+        "expected_tool": "web_search",
+        "latency_ms": 14,
+        "observed_route": "web_search",
+        "observed_tool": "web_search",
+        "prompt": "Search the web for AI news, then save it to Notion.",
+        "selection_policy": "compound_search_first_step_guard",
+        "tool_exact": true
+      },
+      {
+        "args": {"url": "https://github.com/pytorch/pytorch"},
+        "expected_route": "web_search",
+        "expected_tool": "open_url",
+        "latency_ms": 10,
+        "observed_route": "web_search",
+        "observed_tool": "open_url",
+        "prompt": "Open https://github.com/pytorch/pytorch",
+        "selection_policy": "explicit_url_safety_guard",
+        "tool_exact": true
+      }
+    ],
+    "single_step_exact_tool_count": 5,
+    "single_step_exact_tool_rate": 1.0,
+    "planner_case": {
+      "expected_tools": ["web_search", "notion_write"],
+      "observed_tools": ["web_search", "notion_write"],
+      "observed_args": [
+        {"query": "AI news"},
+        {"content": "AI news"}
+      ],
+      "prompt": "Search the web for AI news, then save it to Notion.",
+      "step_count": 2,
+      "sequence_exact": true,
+      "planner_adapters": [
+        "compound_search_first_step_guard",
+        "normalized_followup_forward",
+        "bounded_two_step_stop"
+      ]
+    },
+    "ort_warning_observed": "Some shape-related nodes were assigned to CPU; per-node placement is not exposed by the browser API."
+  },
+  "checkpoint": {
+    "parameters": 10524544,
+    "parent_sha256": "d81771f61a8391a1973c84e396b8c79e1dd94a8b28bf3e41f90b585ba1d57486",
+    "warm_sha256": "35fedcefdafece153912b3bf6629fb23c0ad48f269126d2f8021ef04e0e384ae",
+    "random_sha256": "f52549e366cf60a529ba3b197bd64fedd8b34d07fb137c0bcf625d56a4bacb9f"
+  },
+  "export": {
+    "app_js_sha256": "88cd51e746907a1f293ac251a7f85dbe0678bca4608e53b6e82e131674d97bca",
+    "bundle_identity_sha256": "e91e0b26a078fe52ffc5fa768533c00f710ccb487e9e0640f7efc9e090b0e8e0",
+    "manifest_sha256": "aee2fcddd802e528f700c25a28c27442898419e742f753933849c0f4eeaa592a",
+    "parity_hard_gate": true,
+    "artifacts": {
+      "action_model.fp16.onnx": "717d53ef6e633dacd97f438a9c1c1a245dbf33d1c55b33064c0dcc0094b0bed4",
+      "action_model.onnx": "32f273f1c6ba11466de6c27183608e40ca387a081a96d2cca2c734c22542db7e",
+      "dispatch_heads.json": "dbb2520a5617fdba2cb896c6f937d4bee4577c46c193e80f7bd79b26d40dd3b5",
+      "heads.json": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486",
+      "meta.json": "6d6a79b331ce3f60c097f2bd3662a2178345aef68a7ded61e67737ff8e8cb89e",
+      "model.fp16.onnx": "2852a0d5941a8a274245c2b65da66ea0989f518b1a80f85a803ae1140d7846e9",
+      "model.onnx": "b3b52e53b4b56d7cf7d513f4b70e15ef1e6786bd05fdf4b3dbba74a79c06887c",
+      "tokenizer.json": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+    }
+  },
+  "kind": "localagent_deployment_dispatch_repair_browser_verification",
+  "schema_version": 1,
+  "training": {
+    "backbone_frozen": true,
+    "batch_size": 256,
+    "head_lr": 0.005,
+    "head_steps": 400,
+    "seed": 2041,
+    "public_train_rows": 4731,
+    "public_eval_rows": 1044,
+    "synthetic_train_rows": 1030,
+    "synthetic_eval_rows": 256,
+    "public_sources": [
+      {
+        "dataset": "OfficerChul/Android-Control-84k",
+        "url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k",
+        "train_sha256": "6971d5fe81fe3c6e8ee12e0072481ec653f98bdb5699af54e8f63649358743fd",
+        "eval_sha256": "2d798115fe0feb2f3e8ee12e0072481ec653f98bdb5699af54e8f63649358743fd"
+      },
+      {
+        "dataset": "xlangai/AgentNet",
+        "url": "https://huggingface.co/datasets/xlangai/AgentNet",
+        "train_sha256": "666e7b29bd67e6b46c8a96c0fa9248a1d79498e4c6da2baf04bb906d8778bc60",
+        "eval_sha256": "b9473550b24cea2f87b4d90ad29e6a669a179fdcee9e5d5a753011236f45af7d"
+      },
+      {
+        "dataset": "osunlp/Mind2Web",
+        "url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+        "train_sha256": "8a9b0b97661623f540ee2346a911a6727a8ede8d1dbd39d32137c3d57c7b78aa",
+        "eval_sha256": "557d615d3930988809b873d097b58c5b40cfff026d90963a27eb3ebb56d06041"
+      }
+    ],
+    "repair_tools": [
+      "send_email",
+      "notion_write",
+      "web_search",
+      "open_url",
+      "calendar_event",
+      "slack_send",
+      "click",
+      "type_text"
+    ],
+    "synthetic_adapter_only": true,
+    "offline_mixed_probe": {
+      "warm_route_accuracy": 0.9946153846153846,
+      "warm_selector_top1": 0.8025316455696202,
+      "random_route_accuracy": 0.9953846153846154,
+      "random_selector_top1": 0.8202531645569621,
+      "warm_canonical_route_exact": 5,
+      "warm_canonical_tool_exact": 4,
+      "random_canonical_route_exact": 4,
+      "random_canonical_tool_exact": 4,
+      "canonical_cases": 6
+    },
+    "weight_movement": {
+      "warm_backbone_relative_l2": 0.0,
+      "warm_route_head_relative_l2": 1.2294168553072515,
+      "warm_dense_selector_relative_l2": 2.086095421376501,
+      "random_backbone_relative_l2": 0.0,
+      "random_route_head_relative_l2": 1.3020615366312507,
+      "random_dense_selector_relative_l2": 1.4575934219942042
+    }
+  },
+  "claim_boundary": "This repairs the current local WebGPU demo contract and proves 5/5 single-step tool names plus a bounded 2-step search→Notion sequence in a browser-labeled runtime. It does not prove a native GPU adapter, real external side effects, official AndroidWorld/OSWorld/AgentNet/MCPMark/ToolSandbox success, or public Hub publication. The matched random arm does not show a universal warm-start selector gain; the repair is deployment-specific.",
+  "verified": true
+}

@@ -1,0 +1,91 @@
+{
+  "benchmark_id": "toolsandbox",
+  "checkpoint": {
+    "parameters": 10524544,
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "stage": "sft_browser_context"
+  },
+  "claim_boundary": "Current-checkpoint native ToolSandbox simulator and milestone-verifier diagnostics only. The pinned source revision and verifier executed locally, but the official split, upstream model-based user simulator, full scenario matrix, and optional RapidAPI tools were not executed. This is not an official ToolSandbox leaderboard score and does not establish email, Notion, MCP, or multi-turn productivity capability.",
+  "environment": {
+    "external_api_called": false,
+    "native_simulator_executed": true,
+    "verifier_executed": true,
+    "source_revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+    "source_url": "https://github.com/apple/ToolSandbox",
+    "official_split_verified": false,
+    "user_simulator_executed": false
+  },
+  "generated_at": "2026-08-05",
+  "kind": "localagent_toolsandbox_current_native_smoke",
+  "protocols": {
+    "interactive": {
+      "max_agent_turns": 6,
+      "scenario_count": 1,
+      "success_count": 0,
+      "success_rate": 0.0,
+      "scenarios": [
+        {
+          "milestone_similarity": 0.0,
+          "scenario": "send_message_with_phone_number_and_content",
+          "similarity": 0.0,
+          "turn_count": 13
+        }
+      ],
+      "scripted_user_policy": "bounded_multi_step_scripted_user; no model-based user simulator"
+    },
+    "single_step_smoke": {
+      "scenario_count": 3,
+      "success_count": 2,
+      "success_rate": 0.6666666666666666,
+      "scenarios": [
+        {
+          "milestone_similarity": 1.0,
+          "scenario": "cellular_off",
+          "similarity": 1.0,
+          "turn_count": 3
+        },
+        {
+          "milestone_similarity": 1.0,
+          "scenario": "wifi_off",
+          "similarity": 1.0,
+          "turn_count": 3
+        },
+        {
+          "milestone_similarity": 0.4252903702412298,
+          "scenario": "send_message_with_phone_number_and_content",
+          "similarity": 0.4252903702412298,
+          "turn_count": 3
+        }
+      ],
+      "scripted_user_policy": "single_step_smoke; terminate_after_first_agent_response"
+    }
+  },
+  "runner": {
+    "path": "scripts/run_toolsandbox_native.py",
+    "sha256": "ccfa3fa48147dd982148b29d4954533760250d24a5498e67d1d670612f39af25"
+  },
+  "schema_version": 1,
+  "source_files": [
+    {
+      "file": "README.md",
+      "sha256": "0e5cfb9077769e2dcbe74dbfc8b8fac8314d8a213ab34364ab6b2ecaf47d8fe8"
+    },
+    {
+      "file": "LICENSE",
+      "sha256": "2283d5566b38210fbfb9fcb06619f1d0a8101bff9df974ea8afc3393508e9015"
+    },
+    {
+      "file": "tool_sandbox/common/evaluation.py",
+      "sha256": "0425cff032bd1ca2ebe8cc1c875cdf2ea86463af24b2940734007d938e516ab3"
+    },
+    {
+      "file": "tool_sandbox/common/execution_context.py",
+      "sha256": "a18f54e157b92fa011e84780bc33941ea0635ad70ab4b38e7408beedc6221437"
+    },
+    {
+      "file": "tool_sandbox/scenarios/__init__.py",
+      "sha256": "113cc01d10bb1630a93e09785893235ae4a3863d3a61542839eeb2791914724a"
+    }
+  ],
+  "receipt_self_sha256": "d838bc6035c63bf65f91ce0e1bbf91a0500de426018f275a64f9ceb5fe0dcf41"
+}

@@ -1,0 +1,115 @@
+{
+  "integrity": {
+    "all_split_task_ids_unique": false,
+    "official_test_tasks": 256,
+    "official_train_tasks": 160,
+    "train_test_overlap": [],
+    "train_test_unique_tasks": 416
+  },
+  "kind": "localagent_mobilegym_source_split_receipt",
+  "localagent_adaptation": {
+    "claim_boundary": "Official split provenance only; no MobileGym simulator, judge, WebGPU model, or native score was run.",
+    "native_scores": 0,
+    "simulator_runs": 0,
+    "task_text_retained": false,
+    "training_rows_added": 0
+  },
+  "receipt_self_sha256": "9c5e3e42497b4688e3ed95f744670638c94277991c453f255ea6b05f21278bc2",
+  "schema_version": 1,
+  "source": {
+    "archive": {
+      "bytes": 185182209,
+      "path": "/private/tmp/m122-mobilegym-source.tar.gz",
+      "sha256": "29fdb0c2817da44b8a18e2b10e69e44497fc3acd4523f68b00329f0c4a11a13c"
+    },
+    "archive_url": "https://codeload.github.com/Purewhiter/mobilegym/tar.gz/093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "license": {
+      "benchmark_data": "CC-BY-NC-4.0",
+      "code": "Apache-2.0",
+      "policy": "split metadata only; no task text or benchmark content retained"
+    },
+    "repository": "Purewhiter/mobilegym",
+    "repository_url": "https://github.com/Purewhiter/mobilegym",
+    "revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7"
+  },
+  "splits": {
+    "high_risk": {
+      "bytes": 583,
+      "families": {
+        "account": 4,
+        "crossapp_commerce": 1,
+        "notes": 1,
+        "payment": 7,
+        "reddit": 1
+      },
+      "sha256": "b0d821586d5ff1f6450fb0134722fc9c71922b91f5f4f9fab5dfdbe6cf26cf9e",
+      "tasks": 14
+    },
+    "payment": {
+      "bytes": 321,
+      "families": {
+        "payment": 7
+      },
+      "sha256": "66edeab794d5f82faf497ed6b42db16d49445a505cc03ed806ef7fe4a4309529",
+      "tasks": 7
+    },
+    "test": {
+      "bytes": 8874,
+      "families": {
+        "account": 5,
+        "alipay": 9,
+        "bilibili": 9,
+        "calendar": 12,
+        "clock": 9,
+        "crossapp_commerce": 14,
+        "crossapp_content": 23,
+        "crossapp_life": 29,
+        "crossapp_work": 21,
+        "ebay": 5,
+        "file_manager": 3,
+        "launcher": 2,
+        "map": 17,
+        "notes": 5,
+        "railway12306": 12,
+        "redbook": 6,
+        "reddit": 6,
+        "sms": 3,
+        "spotify": 17,
+        "tencent_meeting": 9,
+        "weather": 9,
+        "wechat": 11,
+        "wechat_reading": 13,
+        "x": 7
+      },
+      "sha256": "a3d485015d480f4f1ebbd12dbbf02c25c0aa667d1afcf5f6fa35f0263a82c567",
+      "tasks": 256
+    },
+    "train": {
+      "bytes": 4910,
+      "families": {
+        "alipay": 10,
+        "bilibili": 11,
+        "calendar": 9,
+        "clock": 9,
+        "crossapp_commerce": 6,
+        "crossapp_content": 7,
+        "crossapp_life": 4,
+        "crossapp_work": 1,
+        "ebay": 3,
+        "notes": 10,
+        "railway12306": 4,
+        "redbook": 11,
+        "reddit": 10,
+        "sms": 7,
+        "spotify": 5,
+        "tencent_meeting": 12,
+        "weather": 13,
+        "wechat": 15,
+        "wechat_reading": 9,
+        "x": 4
+      },
+      "sha256": "0ecef460fecfd8aa91dcbb2cd4cca17b033f620f85a50d7f0b598ed19a27c0eb",
+      "tasks": 160
+    }
+  }
+}

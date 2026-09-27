@@ -1,0 +1,48 @@
+# Bounded SFT pilot inheriting the seed-2027 capability-midtraining checkpoint.
+stage: sft
+model_config: configs/model/webgpu-10m-hybrid.yaml
+init_from: runs/midtrain-webgpu-proxy-pilot-hybrid-seed2027/latest.pt
+data:
+  conversations:
+    - data/synth/agent_sft.jsonl
+  eval_conversations:
+    - data/synth/agent_eval_pilot65.jsonl
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-webgpu-proxy-16k.json
+  seq_len: 2048
+  function_masking: false
+  shuffle: true
+optim:
+  name: adamw
+  lr: 5.0e-5
+schedule:
+  type: wsd
+  warmup_steps: 16
+  total_steps: 320
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 2
+  grad_accum_steps: 8
+evaluation:
+  batch_size: 8
+heads:
+  joint_tool_pointer: true
+  train_route_head: true
+  train_dense_selector: true
+  tool_loss_weight: 1.0
+  pointer_loss_weight: 0.15
+  multi_turn_head_weight: 1.0
+  selector_proj: 256
+  example_centroids: true
+  examples_per_tool: 16
+  route_steps: 64
+  selector_steps: 64
+  probe_batch_size: 64
+  probe_lr: 5.0e-3
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2027
+log:
+  out_dir: runs/sft-webgpu-proxy-pilot-hybrid-seed2027

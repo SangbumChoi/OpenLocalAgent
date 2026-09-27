@@ -1,0 +1,43 @@
+{
+  "model": "data/baselines/LFM2-700M",
+  "adapter": "runs/lora/lfm2-700m",
+  "tag": "lfm2-700m",
+  "rows_requested": 300,
+  "rows": {
+    "arc-easy": 300,
+    "arc-challenge": 300,
+    "hellaswag": 300,
+    "openbookqa": 300,
+    "winogrande": 300,
+    "mmlu": 300
+  },
+  "scores": {
+    "base": {
+      "arc-easy": 66.3,
+      "arc-challenge": 46.3,
+      "hellaswag": 54.0,
+      "openbookqa": 44.3,
+      "winogrande": 59.3,
+      "mmlu": 42.7,
+      "seconds": 73.2
+    },
+    "finetuned": {
+      "arc-easy": 67.7,
+      "arc-challenge": 45.7,
+      "hellaswag": 53.7,
+      "openbookqa": 44.3,
+      "winogrande": 59.7,
+      "mmlu": 40.3,
+      "seconds": 103.1
+    }
+  },
+  "delta": {
+    "arc-easy": 1.4,
+    "arc-challenge": -0.6,
+    "hellaswag": -0.3,
+    "openbookqa": 0.0,
+    "winogrande": 0.4,
+    "mmlu": -2.4
+  },
+  "mean_delta": -0.25
+}

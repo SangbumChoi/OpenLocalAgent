@@ -1,0 +1,260 @@
+# Immutable upstream plan for paper decontamination and external evaluation.
+#
+# This file contains no benchmark payload or gold label. The prompt-only suites generated before
+# tokenizer fitting establish revision-bound local holdout, not chronological freshness. A later
+# fresh-evaluation claim requires a different post-training source or procedural seed freeze.
+kind: localagent_external_benchmark_plan
+schema_version: 1
+purpose: pretraining_prompt_only_decontamination
+forbid_gold_in_prompt_exports: true
+
+prompt_freeze:
+  suite_contract_kind: localagent_evaluation_denylist_suite_contract
+  suite_provenance_kind: localagent_evaluation_denylist_suite_provenance
+  list_manifest_kind: localagent_evaluation_denylist_manifest
+  schema_version: 1
+  require_adapter_audit_binding: true
+  require_license_evidence_binding: true
+  require_prompt_only_isolation: true
+  external_manifest_suites: [bfcl, browsergym, mind2web, weblinx]
+  config_hash_pinned_direct_suites:
+    - local-realtime-actions
+    - local-browser-tasks
+    - local-agent-eval
+
+suites:
+  bfcl:
+    benchmark: bfcl-v4
+    repository: https://github.com/ShishirPatil/gorilla
+    revision: 6ea57973c7a6097fd7c5915698c54c17c5b1b6c8
+    license: Apache-2.0
+    adapter: bfcl-v4-prompt-rows-v1
+    prompt_freeze_split: multiple+parallel+parallel_multiple+simple_python
+    categories:
+      - simple_python
+      - multiple
+      - parallel
+      - parallel_multiple
+    expected_input_rows: 1000
+    pinned_prompt_sources:
+      simple_python:
+        file: BFCL_v4_simple_python.json
+        bytes: 283274
+        rows: 400
+        sha256: 82dd63ba502eb2520c6b5d1d9a5c4b590e03ff261565175561f6228a367d1991
+      multiple:
+        file: BFCL_v4_multiple.json
+        bytes: 316583
+        rows: 200
+        sha256: aef168155ebd74b7ac2401198b201343bc7d16d7a3d7e0d4e6d8ee82c6969b2a
+      parallel:
+        file: BFCL_v4_parallel.json
+        bytes: 171896
+        rows: 200
+        sha256: 19f51a82eff42e5d62541aa500115a056eb78f437c2ba1f10415fd7c8e5dda84
+      parallel_multiple:
+        file: BFCL_v4_parallel_multiple.json
+        bytes: 347080
+        rows: 200
+        sha256: 8863ea8433239f55c5f016154cf0830853c89f693c6ea270396a2fa121960579
+    prompt_components:
+      - question_messages
+      - canonical_function_specs
+    official_evaluation: pinned_bfcl_ast_checker
+    v1_evaluation_scope: derived_unique_ground_truth_exact_action_only
+
+  browsergym:
+    benchmark: browsergym-miniwob
+    repository: https://github.com/ServiceNow/BrowserGym
+    revision: 9e779f087de9a65668b6974d11f9ce9816026e96
+    browsergym_version: 0.14.3
+    license: Apache-2.0
+    miniwob_repository: https://github.com/Farama-Foundation/miniwob-plusplus
+    miniwob_revision: 7fd85d71a4b60325c6585396ec4f48377d049838
+    miniwob_license: MIT
+    adapter: browsergym-miniwob-reset-capture-prompt-rows-v1
+    prompt_freeze_split: test
+    split: test
+    fixed_seeds: [11, 17, 23, 29]
+    localagent_policy_exclusions:
+      - click-pie
+      - click-pie-nodelay
+      - terminal
+    expected_task_variants: 60
+    expected_similarity_groups: 41
+    expected_prompt_rows: 240
+    task_groups_sha256: e2a596126bc3bc37c2351b60cc4d59971628c8d9eac804c990d34515453fd3df
+    runtime_pins:
+      playwright_version: 1.44.0
+      chromium_revision: "1117"
+      chromium_version: 125.0.6422.26
+      locale: en-US
+      timezone_id: UTC
+      headless: true
+      viewport:
+        width: 1280
+        height: 720
+      device_scale_factor: 1.0
+      action_set: highlevel-default-unused-reset-only
+      observation_mode: processed-dom-axtree-screenshot
+      max_steps: 10
+      playwright_operation_timeout_seconds: 30.0
+      environment_manifest:
+        kind: localagent_browsergym_capture_environment
+        schema_version: 1
+        file: browsergym-capture-runtime-darwin-arm64-py312.json
+        bytes: 12996
+        sha256: 5edf3987b09db987eabbef52324ef6d0eb87d69e7c36e94d5f88cdccddf21382
+        self_sha256: 274802850e0bef5635b906a668f49e3c540e459dee1841b20a54e55ccc3863c7
+        distributions: 51
+        playwright_driver_sha256: cb628761b7355e456bd2581f8a0b008d200ca3e2a6f53c466c3c245b63db26da
+    prompt_capture:
+      status: frozen_controlled_acquisition
+      file: browsergym-miniwob-reset-goals.jsonl
+      bytes: 348513
+      sha256: 128f7f6be8d5b52f745523b0bca4517fdaf8107044eee5a76366464ac10079ff
+      requirement: freeze_before_tokenizer_fit
+    capture_receipt:
+      status: frozen_controlled_acquisition
+      file: browsergym-miniwob-reset-goals.receipt.json
+      bytes: 6538
+      sha256: b04318c36579a05d3f61a40ea09c1f1c0bd1e004a534b2b5d18305b50e68ebea
+      receipt_self_sha256: e8cece5a8acf0f5e2333e004c33b035b4b31fa7ec3e3d501c43fcbbac341611a
+      kind: localagent_browsergym_capture_producer_receipt
+      schema_version: 3
+      producer: browsergym-miniwob-controlled-reset-goals-v3
+    official_evaluation: binary_final_environment_reward
+    v1_evaluation_scope: unsupported_requires_episode_runner
+
+  mind2web:
+    benchmark: mind2web
+    dataset: osunlp/Mind2Web
+    revision: 17ece8eb89862368edc0cc806acee6fca5163474
+    code_repository: https://github.com/OSU-NLP-Group/Mind2Web
+    code_revision: 33bd95caeee7bba22dd08ecc935845e15c5e5dc7
+    dataset_license: CC-BY-4.0
+    code_license: MIT
+    adapter: mind2web-private-prompt-rows-v2
+    prompt_freeze_split: cross_domain+cross_task+cross_website
+    # The production prompt export is label-blind: ranking sees only the natural-language task
+    # and current cleaned HTML. The generic freezer replays this exact config and implementation
+    # from the protected archive, then requires byte-identical prompt rows and audit receipts.
+    # The two implementation records below moved when src/openlocalagent/data/ was split by purpose.
+    # Their bytes/sha256 describe the files as they are now; the versions that produced the frozen
+    # prompt export are at the pre-refactor tag.
+    prompt_ranker:
+      ranker_version: mind2web-dom-lexical-v1
+      adapter_version: mind2web-private-prompt-rows-v2
+      config:
+        file: mind2web-dom-lexical-v1.json
+        bytes: 2273
+        sha256: cf9c6e75c465827a97121601b937e77ce992cda25316620dbae73b32b90a3f46
+        config_self_sha256: ea258f0eee464f69f18baa97e0631a259c06051d2a9b2ae8454ce34b3244b8f3
+      implementation:
+        module: openlocalagent.data.adapters.mind2web_dom_ranker
+        path: src/openlocalagent/data/adapters/mind2web_dom_ranker.py
+        bytes: 33610
+        sha256: 7b6ed35015e8829481c083ce8634277517991e570bbb9485e0ec9b4354b0ddc8
+      adapter_implementation:
+        module: openlocalagent.data.adapters.mind2web_prompts
+        path: src/openlocalagent/data/adapters/mind2web_prompts.py
+        bytes: 73268
+        sha256: 9083ad20cc10f95cdd03ddbaa034faea668e7227c19eda7f5de219c75e22267d
+      runtime:
+        html_parser: stdlib.html.parser.HTMLParser
+        python_implementation: CPython
+        python_version: 3.12.2
+        unicode_version: 15.0.0
+      budget:
+        model_max_seq_len: 2048
+        generation_reserve_tokens_including_eos: 256
+        max_framed_prompt_bytes: 1792
+        max_unframed_prompt_bytes: 1771
+        minimum_dom_bytes: 768
+        user_marker_bytes: 8
+        assistant_marker_bytes: 13
+      input_projection:
+        allowed: [confirmed_task, cleaned_html]
+        forbidden:
+          [action_reprs, action_uid, neg_candidates, operation, pos_candidates, raw_html]
+    heldout_splits:
+      cross_task: 252
+      cross_website: 177
+      cross_domain: 912
+    protected_test_archive:
+      bytes: 567745122
+      compression: deflate
+      encryption: zipcrypto
+      members: 15
+      member_splits:
+        test_domain/test_domain_0.json: cross_domain
+        test_domain/test_domain_1.json: cross_domain
+        test_domain/test_domain_2.json: cross_domain
+        test_domain/test_domain_3.json: cross_domain
+        test_domain/test_domain_4.json: cross_domain
+        test_domain/test_domain_5.json: cross_domain
+        test_domain/test_domain_6.json: cross_domain
+        test_domain/test_domain_7.json: cross_domain
+        test_domain/test_domain_8.json: cross_domain
+        test_domain/test_domain_9.json: cross_domain
+        test_task/test_task_0.json: cross_task
+        test_task/test_task_1.json: cross_task
+        test_task/test_task_2.json: cross_task
+        test_website/test_website_0.json: cross_website
+        test_website/test_website_1.json: cross_website
+      sha256: 8f5fbe72afab942fe97cdf7fb397e179885d89b5c16862288e9a14bc6d41ca89
+      uncompressed_bytes: 6107912752
+      require_exact_member_set: true
+      require_plaintext_member_hash_binding: true
+    redistribution: private_hashes_and_counts_only
+    require_canary_scan: true
+    official_evaluation:
+      - element_accuracy
+      - operation_f1
+      - step_success
+      - task_success
+    v1_evaluation_scope: unsupported_requires_multi_positive_native_metrics
+
+  weblinx:
+    benchmark: weblinx-chat-v1.0
+    dataset: McGill-NLP/WebLINX
+    revision: be2e19d624febb57173e98772c1312d041a6d3b1
+    code_repository: https://github.com/McGill-NLP/weblinx
+    code_revision: b3f7010ca4677edc8c3ac705ad9bde20f7f29ce6
+    dataset_license: CC-BY-NC-SA-4.0
+    code_license: Apache-2.0
+    adapter: weblinx-private-prompt-rows-v1
+    prompt_freeze_split: test_web
+    split: test_web
+    expected_demonstrations: 211
+    expected_source_rows: 4856
+    pinned_prompt_sources:
+      chat:
+        file: test_web.json.gz
+        bytes: 2187263
+        sha256: 10d780712da997da9ff2d15d642aa199410ebe5d30d2ea3f9ba56fb044a745db
+      splits:
+        file: splits.json
+        bytes: 38210
+        sha256: db6fd50e6b1ba053817ede3f2a8ec61a292ad2710dd7f4e300cf685f70d843e6
+    redistribution: private_hashes_and_counts_only
+    require_whole_demo_sensitive_pattern_exclusion_v1: true
+    require_private_manual_residual_privacy_review: true
+    privacy_filter_receipt:
+      filter_version: localagent_weblinx_whole_demo_privacy_v1
+      scanned_demos: 211
+      accepted_demos: 146
+      excluded_demos: 65
+      excluded_rows: 1936
+      retained_rows: 2920
+      reason_counts:
+        email: 61
+        labeled_secret: 43
+        payment_card: 11
+    allow_training_use: false
+    official_evaluation:
+      - intent_match
+      - element_iou
+      - text_f1
+      - overall_micro
+    v1_evaluation_scope: unsupported_requires_native_metrics_and_text_actions

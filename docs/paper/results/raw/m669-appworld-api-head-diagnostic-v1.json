@@ -1,0 +1,384 @@
+{
+  "api_head": {
+    "classes": [
+      "file_system.show_directory",
+      "phone.search_contacts",
+      "phone.search_text_messages",
+      "phone.show_alarms",
+      "simple_note.search_notes",
+      "spotify.search_albums",
+      "spotify.search_artists",
+      "spotify.show_album_library",
+      "spotify.show_current_song",
+      "spotify.show_following_artists",
+      "spotify.show_playlist_library",
+      "spotify.show_recommendations",
+      "spotify.show_song_library"
+    ],
+    "eval": {
+      "accuracy": 0.3333333333333333,
+      "exact": 2,
+      "rows": 6
+    },
+    "sidecar": {
+      "bytes": 23325,
+      "path": "/private/tmp/m668-appworld-api-head.pt",
+      "sha256": "aba4670f503212f315a425d87a802d99afd59e240b5a6b2eea9b14afcd705341"
+    },
+    "train": {
+      "accuracy": 1.0,
+      "exact": 90,
+      "rows": 90
+    },
+    "training_report": {
+      "bytes": 2026,
+      "path": "/private/tmp/m668-appworld-api-head.json",
+      "sha256": "ed65b9f9f0c61f12dbddbe7f2ff5f3ae9a1f560fd5b2bbb8a3a394f30b3333bd"
+    }
+  },
+  "benchmark": {
+    "data_version": "0.2.0",
+    "dataset": "AppWorld",
+    "eval_rows": 6,
+    "protected_test_used": false,
+    "source_url": "https://github.com/StonyBrookNLP/appworld",
+    "train_rows": 90
+  },
+  "checkpoint": {
+    "bytes": 52206645,
+    "path": "/private/tmp/m665-appworld-full/max64/warm-child.pt",
+    "sha256": "8c3a4ed31d468a8556faf9f1442a3d7cfb7cfcc19788055bb1c501217c65d850"
+  },
+  "claim_boundary": "Frozen-backbone AppWorld app.api head trained on public train rows and evaluated on six disjoint public dev tasks. Native replay uses resettable local AppWorld databases only; this is not an official leaderboard score, external-account result, email/Notion result, or WebGPU deployment claim.",
+  "dataset_inputs": {
+    "eval": {
+      "bytes": 4875,
+      "path": "/private/tmp/m663-grounding/dev.manifest.json",
+      "sha256": "86a7e2cc9ea093f0259003fa31d62868c40a5c845411af67c740dc673be05fdf"
+    },
+    "train": {
+      "bytes": 153405,
+      "path": "/private/tmp/m665-appworld-full/max64/train.manifest.json",
+      "sha256": "76d98aac052741f6ea11d8703a44aea0c482e14966d41c5d2f872a0b86c70efb"
+    }
+  },
+  "decision": {
+    "promote_api_head": false,
+    "promote_to_webgpu": false,
+    "reason": "The API head memorizes the 90 public train labels (100% train exact) but reaches only 2/6 disjoint dev labels. With selector-first schema replay, three actions are replayed but native task success remains 0/6; the learned routing head therefore does not replace the executor-side planner.",
+    "retain_frozen_body": true
+  },
+  "kind": "localagent_m669_appworld_api_head_diagnostic_receipt",
+  "native_replay": {
+    "configuration": {
+      "action_translation": "appworld_api_step",
+      "appworld_api_head": "/private/tmp/m668-appworld-api-head.pt",
+      "experiment_name": "localagent_appworld_native_probe",
+      "max_interactions": 1,
+      "replay_appworld_api_step": true,
+      "replay_run_python": false,
+      "retrieve_k": 30,
+      "schema_ground_appworld_api_step": true,
+      "selector_first": true,
+      "tasks": [
+        "6bdbc26_1",
+        "6bdbc26_2",
+        "6bdbc26_3",
+        "396c5a2_1",
+        "396c5a2_2",
+        "396c5a2_3"
+      ]
+    },
+    "report": {
+      "bytes": 10904,
+      "path": "/private/tmp/m668-appworld-api-head-native-selector.json",
+      "sha256": "bc2f33d3e566f2fab464f030ef27a5bf541b3c17a27db29ad67813bacd2d7fde"
+    },
+    "summary": {
+      "action_replayed": 3,
+      "native_action_api_calls": 3,
+      "native_api_calls": 12,
+      "native_bootstrap_api_calls": 9,
+      "native_success_rate": 0.0,
+      "native_successes": 0,
+      "tasks": 6
+    },
+    "tasks": [
+      {
+        "action_replayed": true,
+        "appworld_api_head_applied": true,
+        "evaluation": {
+          "difficulty": 1,
+          "failed": 1,
+          "failure_labels": [
+            "no_op_fail"
+          ],
+          "num_tests": 2,
+          "pass_labels": [
+            "no_op_pass"
+          ],
+          "passed": 1,
+          "success": false
+        },
+        "instruction": {
+          "bytes": 75,
+          "sha256": "c511833b9b42fc23534f2c79a1b9029788267b9c06ea5d52dc090742d8a2df8c"
+        },
+        "model_output": {
+          "bytes": 296,
+          "sha256": "3efdfd014f1d2142af8397988a889e0d3bf67dcbd3b08a3bff8769847c4661b6"
+        },
+        "native_action_api_calls": 1,
+        "native_api_calls": 4,
+        "native_bootstrap_api_calls": 3,
+        "predicted_arguments": {
+          "bytes": 48,
+          "sha256": "32c67b41df0e30f060075b6a9a62156a7192e1dd2a96fa0afbf32de42aed0e50"
+        },
+        "predicted_tool": "run_python",
+        "replay_response": {
+          "bytes": 1508,
+          "sha256": "7ae71448deed7584549cf0070cc6f6979ff7c1083ef22ef8e51548236d4878a6"
+        },
+        "schema_translation_applied": true,
+        "task_id": "6bdbc26_1",
+        "task_spec": {
+          "bytes": 419,
+          "path": "/private/tmp/appworld-data/data/tasks/6bdbc26_1/specs.json",
+          "sha256": "d970928e94c2493032bf769c16fba2669732edd2a6aa96508a6f78efbe5a9960"
+        },
+        "translated_code": {
+          "bytes": 48,
+          "sha256": "f270b2dda1ecc7cff7fd703e776098cb5959e09b1fdc23ffbc6620990c2447d8"
+        }
+      },
+      {
+        "action_replayed": true,
+        "appworld_api_head_applied": true,
+        "evaluation": {
+          "difficulty": 1,
+          "failed": 1,
+          "failure_labels": [
+            "no_op_fail"
+          ],
+          "num_tests": 2,
+          "pass_labels": [
+            "no_op_pass"
+          ],
+          "passed": 1,
+          "success": false
+        },
+        "instruction": {
+          "bytes": 75,
+          "sha256": "c511833b9b42fc23534f2c79a1b9029788267b9c06ea5d52dc090742d8a2df8c"
+        },
+        "model_output": {
+          "bytes": 296,
+          "sha256": "3efdfd014f1d2142af8397988a889e0d3bf67dcbd3b08a3bff8769847c4661b6"
+        },
+        "native_action_api_calls": 1,
+        "native_api_calls": 4,
+        "native_bootstrap_api_calls": 3,
+        "predicted_arguments": {
+          "bytes": 48,
+          "sha256": "32c67b41df0e30f060075b6a9a62156a7192e1dd2a96fa0afbf32de42aed0e50"
+        },
+        "predicted_tool": "run_python",
+        "replay_response": {
+          "bytes": 1452,
+          "sha256": "77519e66369daebe7e7529e33e8fd3ed4ba15c8f4a527c0e28a71e1348f6ae96"
+        },
+        "schema_translation_applied": true,
+        "task_id": "6bdbc26_2",
+        "task_spec": {
+          "bytes": 412,
+          "path": "/private/tmp/appworld-data/data/tasks/6bdbc26_2/specs.json",
+          "sha256": "d5eefe5be288d8a019d47137bfe8cfb737780ac894898d01372dc8a99f04db95"
+        },
+        "translated_code": {
+          "bytes": 48,
+          "sha256": "f270b2dda1ecc7cff7fd703e776098cb5959e09b1fdc23ffbc6620990c2447d8"
+        }
+      },
+      {
+        "action_replayed": true,
+        "appworld_api_head_applied": true,
+        "evaluation": {
+          "difficulty": 1,
+          "failed": 1,
+          "failure_labels": [
+            "no_op_fail"
+          ],
+          "num_tests": 2,
+          "pass_labels": [
+            "no_op_pass"
+          ],
+          "passed": 1,
+          "success": false
+        },
+        "instruction": {
+          "bytes": 75,
+          "sha256": "c511833b9b42fc23534f2c79a1b9029788267b9c06ea5d52dc090742d8a2df8c"
+        },
+        "model_output": {
+          "bytes": 296,
+          "sha256": "3efdfd014f1d2142af8397988a889e0d3bf67dcbd3b08a3bff8769847c4661b6"
+        },
+        "native_action_api_calls": 1,
+        "native_api_calls": 4,
+        "native_bootstrap_api_calls": 3,
+        "predicted_arguments": {
+          "bytes": 48,
+          "sha256": "32c67b41df0e30f060075b6a9a62156a7192e1dd2a96fa0afbf32de42aed0e50"
+        },
+        "predicted_tool": "run_python",
+        "replay_response": {
+          "bytes": 1462,
+          "sha256": "fee92a1239c1ec169bb3d1e7a94f808124147d63651655a213843cf400974e3d"
+        },
+        "schema_translation_applied": true,
+        "task_id": "6bdbc26_3",
+        "task_spec": {
+          "bytes": 415,
+          "path": "/private/tmp/appworld-data/data/tasks/6bdbc26_3/specs.json",
+          "sha256": "c4d6a7157389fd65f0639f53378a555d4d2e99f32373890027bd4369f4e88826"
+        },
+        "translated_code": {
+          "bytes": 48,
+          "sha256": "f270b2dda1ecc7cff7fd703e776098cb5959e09b1fdc23ffbc6620990c2447d8"
+        }
+      },
+      {
+        "action_replayed": false,
+        "appworld_api_head_applied": true,
+        "evaluation": {
+          "difficulty": 1,
+          "failed": 6,
+          "failure_labels": [
+            "no_op_fail",
+            "no_op_fail",
+            "no_op_fail",
+            "no_op_fail",
+            "no_op_fail",
+            "no_op_fail"
+          ],
+          "num_tests": 6,
+          "pass_labels": [],
+          "passed": 0,
+          "success": false
+        },
+        "instruction": {
+          "bytes": 97,
+          "sha256": "f6f56cedcc0069c098901c07e1039803ed30686dc4ab30776afb36917090f48b"
+        },
+        "model_output": {
+          "bytes": 77,
+          "sha256": "ccd09943ca07b677b834efad36b030cbecc41f6f3f65516da90c00e2764ae0d8"
+        },
+        "native_action_api_calls": 0,
+        "native_api_calls": 0,
+        "native_bootstrap_api_calls": 0,
+        "predicted_arguments": {
+          "bytes": 2,
+          "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+        },
+        "predicted_tool": "read_clipboard",
+        "schema_translation_applied": false,
+        "task_id": "396c5a2_1",
+        "task_spec": {
+          "bytes": 434,
+          "path": "/private/tmp/appworld-data/data/tasks/396c5a2_1/specs.json",
+          "sha256": "8b922a4756c1427fea13b87340a5c58b4be6db1803a060f7468d412e372a62da"
+        }
+      },
+      {
+        "action_replayed": false,
+        "appworld_api_head_applied": true,
+        "evaluation": {
+          "difficulty": 1,
+          "failed": 6,
+          "failure_labels": [
+            "no_op_fail",
+            "no_op_fail",
+            "no_op_fail",
+            "no_op_fail",
+            "no_op_fail",
+            "no_op_fail"
+          ],
+          "num_tests": 6,
+          "pass_labels": [],
+          "passed": 0,
+          "success": false
+        },
+        "instruction": {
+          "bytes": 101,
+          "sha256": "348f0802f5e4dc043541a9db3e39239bdb75beecfefeea4725b87adda1138445"
+        },
+        "model_output": {
+          "bytes": 77,
+          "sha256": "ccd09943ca07b677b834efad36b030cbecc41f6f3f65516da90c00e2764ae0d8"
+        },
+        "native_action_api_calls": 0,
+        "native_api_calls": 0,
+        "native_bootstrap_api_calls": 0,
+        "predicted_arguments": {
+          "bytes": 2,
+          "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+        },
+        "predicted_tool": "read_clipboard",
+        "schema_translation_applied": false,
+        "task_id": "396c5a2_2",
+        "task_spec": {
+          "bytes": 434,
+          "path": "/private/tmp/appworld-data/data/tasks/396c5a2_2/specs.json",
+          "sha256": "deebe9fd6787a8faa9b1af0f54fd27ca39234fffa92e90ad1b548ac215b93d87"
+        }
+      },
+      {
+        "action_replayed": false,
+        "appworld_api_head_applied": true,
+        "evaluation": {
+          "difficulty": 1,
+          "failed": 6,
+          "failure_labels": [
+            "no_op_fail",
+            "no_op_fail",
+            "no_op_fail",
+            "no_op_fail",
+            "no_op_fail",
+            "no_op_fail"
+          ],
+          "num_tests": 6,
+          "pass_labels": [],
+          "passed": 0,
+          "success": false
+        },
+        "instruction": {
+          "bytes": 105,
+          "sha256": "1b10f92d71b159d2b6e6f33820f4f2b78d278807dd684541082352acde612e26"
+        },
+        "model_output": {
+          "bytes": 77,
+          "sha256": "ccd09943ca07b677b834efad36b030cbecc41f6f3f65516da90c00e2764ae0d8"
+        },
+        "native_action_api_calls": 0,
+        "native_api_calls": 0,
+        "native_bootstrap_api_calls": 0,
+        "predicted_arguments": {
+          "bytes": 2,
+          "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+        },
+        "predicted_tool": "read_clipboard",
+        "schema_translation_applied": false,
+        "task_id": "396c5a2_3",
+        "task_spec": {
+          "bytes": 438,
+          "path": "/private/tmp/appworld-data/data/tasks/396c5a2_3/specs.json",
+          "sha256": "e61a7aa60c9f4536eec7df1b6c8b31f4efcec88ff9099bfb08699c58edc97b47"
+        }
+      }
+    ]
+  },
+  "receipt_self_sha256": "c006e2b280dbeb0945d179fbd2554d89d5223077096ef98ed1c25fd8013b28fa",
+  "schema_version": 1
+}

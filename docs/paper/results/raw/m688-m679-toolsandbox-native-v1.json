@@ -1,0 +1,30 @@
+{
+  "benchmark_id": "toolsandbox",
+  "category_metrics": {
+    "CANONICALIZATION": {"exact_count": 0, "exact_rate": 0.0, "mean_similarity": 0.1652542372881356, "rows": 59},
+    "INSUFFICIENT_INFORMATION": {"exact_count": 26, "exact_rate": 0.9285714285714286, "mean_similarity": 0.9285714285714286, "rows": 28},
+    "MULTIPLE_TOOL_CALL": {"exact_count": 0, "exact_rate": 0.0, "mean_similarity": 0.14602503138805945, "rows": 82},
+    "MULTIPLE_USER_TURN": {"exact_count": 0, "exact_rate": 0.0, "mean_similarity": 0.12202380952380952, "rows": 28},
+    "NO_DISTRACTION_TOOLS": {"exact_count": 30, "exact_rate": 0.23255813953488372, "mean_similarity": 0.3408841284792316, "rows": 129},
+    "SINGLE_TOOL_CALL": {"exact_count": 4, "exact_rate": 0.21052631578947367, "mean_similarity": 0.3157894736842105, "rows": 19},
+    "SINGLE_USER_TURN": {"exact_count": 4, "exact_rate": 0.0547945205479452, "mean_similarity": 0.1994162453034823, "rows": 73},
+    "STATE_DEPENDENCY": {"exact_count": 0, "exact_rate": 0.0, "mean_similarity": 0.0371133016869809, "rows": 24}
+  },
+  "checkpoint": {"bytes": 52206773, "path": "/private/tmp/m679-m675-mcp/warm-child.pt", "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"},
+  "claim_boundary": "Native pinned ToolSandbox simulator and milestone verifier over all 129 base scenarios. This is not an official leaderboard score: the upstream model-based user simulator, official split (none published), augmentation matrix, and RapidAPI services were not executed. No external account or API side effect was used.",
+  "environment_executed": true,
+  "external_api_called": false,
+  "kind": "localagent_m688_m679_toolsandbox_native_base",
+  "mean_similarity": 0.3408841284792316,
+  "official_split_verified": false,
+  "protocol": "single_step_smoke",
+  "raw_receipt": {"bytes": 49635, "path": "/private/tmp/m688b-m679-toolsandbox/receipt.json", "sha256": "7a6b4ba37e2bdaecf9ae7c9abf74e83d03d4dee2f05e14ded6edff6865ed04e5"},
+  "receipt_self_sha256": "8f8025f93dbec93bc2bf30f1e1039dca9dfc65ed0586185076393433be71623b",
+  "schema_version": 1,
+  "source": {"augmentation_variants_excluded": true, "base_scenario_count": 129, "license": "Apple Sample Code License", "official_scenario_universe_count": 1032, "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219", "url": "https://github.com/apple/ToolSandbox"},
+  "success_count": 30,
+  "success_rate": 0.23255813953488372,
+  "task_count": 129,
+  "user_simulator_executed": false,
+  "verifier_executed": true
+}

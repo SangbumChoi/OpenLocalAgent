@@ -1,0 +1,82 @@
+{
+  "model": "sft-rc-embed",
+  "kind": "catalog",
+  "location": "runs/sft-rc-embed/latest.pt",
+  "parameters": 10524544,
+  "rows_per_suite": 200,
+  "max_new_tokens": 64,
+  "suites": {
+    "androidcontrol": {
+      "rows": 200,
+      "parse_rate": 0.99,
+      "type_match": 0.495,
+      "step_success_rate": 0.17,
+      "seconds_per_row": 0.1301625955104828,
+      "grounding_accuracy": 0.05084745762711865
+    },
+    "mind2web": {
+      "rows": 200,
+      "parse_rate": 1.0,
+      "type_match": 0.79,
+      "step_success_rate": 0.005,
+      "seconds_per_row": 0.11142674326896668
+    },
+    "toolace": {
+      "rows": 200,
+      "parse_rate": 0.85,
+      "type_match": 0.17,
+      "step_success_rate": 0.005,
+      "seconds_per_row": 0.21196170330047606
+    },
+    "xlam": {
+      "rows": 200,
+      "parse_rate": 0.89,
+      "type_match": 0.305,
+      "step_success_rate": 0.04,
+      "seconds_per_row": 0.24628368973731996
+    },
+    "agentnet": {
+      "rows": 200,
+      "parse_rate": 0.845,
+      "type_match": 0.04,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.18102221608161925
+    },
+    "toolbench": {
+      "rows": 200,
+      "parse_rate": 0.705,
+      "type_match": 0.045,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.08406950116157531
+    },
+    "bfcl": {
+      "rows": 200,
+      "parse_rate": 0.87,
+      "type_match": 0.35,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.05848194360733032,
+      "grounding_accuracy": 0.0
+    },
+    "toolsandbox": {
+      "rows": 17,
+      "parse_rate": 0.0,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.004720715915455538
+    },
+    "mcpatlas": {
+      "rows": 200,
+      "parse_rate": 0.66,
+      "type_match": 0.0,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.0648878824710846
+    },
+    "mobileactions": {
+      "rows": 200,
+      "parse_rate": 0.89,
+      "type_match": 0.21,
+      "step_success_rate": 0.0,
+      "seconds_per_row": 0.06530396819114685
+    }
+  }
+}

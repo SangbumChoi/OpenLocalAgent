@@ -1,0 +1,113 @@
+{
+  "claim_boundary": "Public-source contract audit only. No task prompts, app databases, user-simulator policies, credentials, service state, verifier scripts, or live benchmark runs were admitted to training or executed locally.",
+  "generated_at": "2026-08-04",
+  "kind": "localagent_stateful_productivity_benchmark_refresh",
+  "measurement": "m229_stateful_productivity_benchmark_refresh",
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "mcpmark",
+      "name": "MCPMark",
+      "project_url": "https://github.com/eval-sys/mcpmark",
+      "docs_url": "https://mcpmark.ai/docs/introduction",
+      "task_contract_url": "https://mcpmark.ai/docs/datasets/task",
+      "source_revision": "release-required-before-score",
+      "services": ["Notion", "GitHub", "Filesystem", "Postgres", "Playwright", "Playwright-WebArena"],
+      "task_contract": {
+        "task_files": ["meta.json", "description.md", "verify.py"],
+        "verification": "independent Python state verifier",
+        "isolation": "resettable isolated environment",
+        "reported_average_execution_turns": 16.2,
+        "reported_average_tool_calls": 17.4
+      },
+      "webgpu_projection": "Use only for schema routing, candidate retrieval, state-summary planning, confirmation, and abstention diagnostics; no Notion credentials or live services.",
+      "training_rows_admitted": 0,
+      "runtime_executed": false
+    },
+    {
+      "id": "enterpriseopsgym",
+      "name": "EnterpriseOps-Gym",
+      "dataset_url": "https://huggingface.co/datasets/EnterpriseAgents/EnterpriseOpsGym",
+      "source_revision": "release-required-before-score",
+      "access_status": "public_task_table_with_container_runtime",
+      "domains": ["calendar", "csm", "drive", "email", "hr", "itsm", "teams", "hybrid"],
+      "task_contract": {
+        "rows": 649,
+        "email_rows": 67,
+        "tool_surface": "MCP endpoints with selected/restricted tools",
+        "reset": "reset_database_between_runs",
+        "verification": "SQL/database-state verifiers"
+      },
+      "webgpu_projection": "Name/schema retrieval and compact state transitions can be evaluated offline; final-state success requires the containerized MCP servers and SQL verifiers.",
+      "training_rows_admitted": 0,
+      "runtime_executed": false
+    },
+    {
+      "id": "appworld_ul",
+      "name": "AppWorld-UL",
+      "project_url": "https://appworld.dev/appworld-ul/",
+      "paper_url": "https://arxiv.org/abs/2607.20536",
+      "code_url": "https://github.com/StonyBrookNLP/appworld",
+      "source_revision": "release-required-before-score",
+      "task_contract": {
+        "tasks": 516,
+        "base_environment": "AppWorld with 9 simulated apps",
+        "interaction_types": ["clarification", "confirmation", "infeasible_request_handling"],
+        "user_simulation": "LLM user simulator with explicit knowledge boundaries",
+        "reported_metrics": ["task_success", "scenario_success", "compositional_breakdown"]
+      },
+      "code_contract": {
+        "linked_from_official_ul_page": true,
+        "license": "Apache-2.0",
+        "installation": ["pip install appworld", "appworld install", "appworld download data"],
+        "execution": "resettable AppWorld(task_id=..., experiment_name=...) with world.evaluate()",
+        "release_caveat": "The linked repository is the base AppWorld runner; UL-specific task assets and user-simulator release must be pinned before scoring."
+      },
+      "webgpu_projection": "This is the closest public contract for the deployment safety boundary: emit a clarification or confirmation request when required, abstain/reject infeasible actions, and only then select a state-changing tool.",
+      "training_rows_admitted": 0,
+      "runtime_executed": false
+    },
+    {
+      "id": "tau3_bench",
+      "name": "τ³-Bench / τ-Knowledge",
+      "project_url": "https://github.com/sierra-research/tau2-bench",
+      "knowledge_url": "https://taubench.com/blog/tau-knowledge.html",
+      "source_revision": "release-required-before-score",
+      "task_contract": {
+        "base_domains": ["retail", "airline", "telecom"],
+        "new_knowledge_domain": "banking_knowledge",
+        "knowledge_base_documents": 698,
+        "knowledge_base_product_categories": 21,
+        "evaluation_modes": ["text", "knowledge_retrieval", "full_duplex_voice"],
+        "reliability_metric": "pass^k"
+      },
+      "webgpu_projection": "Text-only policy/tool/retrieval probe; voice and live knowledge-base execution are outside the current WebGPU model.",
+      "training_rows_admitted": 0,
+      "runtime_executed": false
+    },
+    {
+      "id": "tua_bench",
+      "name": "TUA-Bench",
+      "project_url": "https://tuabench.ai/",
+      "paper_url": "https://arxiv.org/abs/2606.28480",
+      "source_revision": "release-required-before-score",
+      "task_contract": {
+        "tasks": 120,
+        "task_families": 5,
+        "realistic_productivity_areas": ["document_editing", "email_management", "live_web_information_seeking"],
+        "runtime": "deterministic terminal setup",
+        "verification": "execution-based scoring"
+      },
+      "webgpu_projection": "Command safety and tool-schema diagnostics only; shell state and execution must stay in an isolated runtime.",
+      "training_rows_admitted": 0,
+      "runtime_executed": false
+    }
+  ],
+  "adoption_and_training_decision": {
+    "trainable_sources": ["androidcontrol", "android_in_the_wild", "mind2web", "agentnet", "toolace"],
+    "evaluation_only_sources": ["mcpmark", "enterpriseopsgym", "appworld_ul", "tau3_bench", "tua_bench"],
+    "weight_adoption_rule": "Do not adopt a warm checkpoint from improved retrieval or token accuracy alone. Require matched random and no-transfer arms, per-group tensor movement, and native state-verifier success on the same release.",
+    "deployment_rule": "A WebGPU action may be emitted only after the interaction policy classifies it as allowed, confirmation-required, clarification-required, or blocked; the static demo executes none of these external effects."
+  },
+  "receipt_self_sha256": "97aac87e8a9cf6003705ef59d72d92cb64369ab810effb81beabba9a281c7ffb"
+}

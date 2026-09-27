@@ -1,0 +1,53 @@
+{
+  "kind": "localagent_current_child_mobilegym_native_canary",
+  "schema_version": 1,
+  "measurement": "m182_current_child_mobilegym_native_text_canary",
+  "generated_at": "2026-08-03",
+  "claim_boundary": "This receipt is a one-task native MobileGym canary on the official test whitelist using the pinned simulator and state-diff judge. It is not a full 256-task score, not a visual mobile-agent result, not Android emulator evidence, and not a WebGPU hardware-quality claim.",
+  "source": {
+    "repository": "https://github.com/Purewhiter/mobilegym",
+    "revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "test_split_sha256": "a3d485015d480f4f1ebbd12dbbf02c25c0aa667d1afcf5f6fa35f0263a82c567",
+    "train_split_sha256": "0ecef460fecfd8aa91dcbb2cd4cca17b033f620f85a50d7f0b598ed19a27c0eb",
+    "test_ids_sha256": "cf61a0b2e71721864a1b526a531c433f852e128d2ffa8b81504fc3d74b9830bf"
+  },
+  "checkpoint": {
+    "path": "/private/tmp/m180-mixed-mobile-computer-child.pt",
+    "sha256": "10827649f07182a08f8c11104d4713e76b8acaddc73020c5a4c77950de7b23a0"
+  },
+  "environment": {
+    "executed": true,
+    "official_split_verified": true,
+    "observation_mode": "text_projection",
+    "vision_used": false,
+    "selector_top_m": 1,
+    "max_steps": 2,
+    "seed": 0,
+    "test_task_count": 256
+  },
+  "canary": {
+    "task_count": 1,
+    "task_start": 0,
+    "task_limit": 1,
+    "success_rate": 0.0,
+    "passed_tasks": 0,
+    "failed_tasks": 1,
+    "runtime_errors": 0,
+    "elapsed_seconds": 2.257,
+    "trace_sha256": "597bbb32a0dbb6f55c32b77484c652511afc2c7c006959a9461f9eeb26382c86",
+    "judge": {
+      "clean": true,
+      "progress": 0.0,
+      "judge_error": false,
+      "issue_fields": ["password.changed"]
+    }
+  },
+  "runner": {
+    "path": "scripts/run_mobilegym_full_eval.py",
+    "receipt_bytes": 2369,
+    "receipt_sha256": "f636287c26429c01bcde322cee2461becdd456054a5c3027246789f30af6e406"
+  },
+  "decision": "diagnostic_only",
+  "next_gate": "Run all 256 official test tasks with the same checkpoint, simulator revision, text projection, and two-step cap before comparing current-child performance with m146.",
+  "receipt_self_sha256": "ca30163fca48c5460ee3708af85a51a8a84891685fd33950ab4f40ae9905d6b3"
+}

@@ -1,0 +1,47 @@
+# Stage 1 of the ladder for la-300m-moe: language modelling on the extended open corpus.
+#
+# data/shards/pt-xl is FineWeb-Edu-dedup (ODC-BY-1.0) at roughly 7.5B tokens - sixteen times
+# pt-big, which the three small tiers pretrained on and which cannot feed a model this size.
+# Whole-file GETs from the Nexus HuggingFace mirror run at ~300 MB/s, so the corpus is a download
+# and a packing job rather than a blocker; scripts/fetch_fineweb_xl.sh does both.
+#
+# Global batch is 64 rows x 2048 = 131,072 tokens per update, the same as every tier below, so the
+# ladder varies capacity and step count and not the batch. 24,000 steps = 3.15B tokens.
+#
+# CORPUS: pt-big, not pt-xl. The extended corpus cannot currently be built - packing restarts from
+# scratch whenever the box stops, which it does every three to four hours, and the job needs longer
+# than that. pt-big holds 460.7M tokens, so this budget is 6.8 passes over it at
+# 10.5 tokens per parameter. Under-trained against Chinchilla, and stated rather than implied.
+#
+# What matters for the sparse arm is that la-150m, la-300m and la-300m-moe see the SAME corpus and
+# the SAME budget; that comparison is internal, and pt-big serves it exactly as well.
+stage: pretrain
+model_config: configs/model/la-300m-moe.yaml
+data:
+  shards_dir: data/shards/pt-big
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-h100-16k.json
+optim:
+  name: adamw
+  lr: 2.5e-04
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 480
+  total_steps: 24000
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 8
+  grad_accum_steps: 8
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+  resume: true
+log:
+  out_dir: results/runs/pretrain-la-300m-moe
+  ckpt_every: 2000
+  eval_every: 2000
+  eval_batches: 32

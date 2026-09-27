@@ -1,0 +1,57 @@
+{
+  "kind": "localagent_public_data_training_receipt",
+  "schema_version": 1,
+  "source": {
+    "dataset": "osunlp/Mind2Web",
+    "revision": "17ece8eb89862368edc0cc806acee6fca5163474",
+    "url": "https://huggingface.co/datasets/osunlp/Mind2Web",
+    "license": "CC-BY-4.0",
+    "upstream_split": "train",
+    "stream_snapshot": {
+      "rows": 8,
+      "bytes": 67693156,
+      "sha256": "9421227e398c5283e89fef8acf7b40a28c118460207fa6f43a3a9a803e8514bb"
+    },
+    "retained_snapshot": {
+      "rows": 5,
+      "bytes": 43286515,
+      "sha256": "1ed5fa89b3894bdd66ee1d4fddb865869a5e5d04933d5c0d47983b5a3c40c701"
+    },
+    "retention_rule": "retain only records whose every action has a positive candidate with a non-empty backend_node_id"
+  },
+  "normalization": {
+    "adapter": "mind2web_v1",
+    "interchange": "localagent.data.schema.Conversation",
+    "rows": 10,
+    "bytes": 55582,
+    "jsonl_sha256": "28114a2a94b6d402fb05a7815ef9a84eee331bab383372997973a0e000f55139",
+    "manifest_sha256": "ecb14b7ff9829d62f135c4d894bc3c0bf69dd98be62363487add9ae511af70cb",
+    "tool_calls": 116,
+    "capabilities": ["web_click", "web_select", "web_type"],
+    "domains": ["Shopping", "Travel"]
+  },
+  "training": {
+    "parent_checkpoint_sha256": "cc12da27808d251df46d1beb649622e896cb32233dc2b6317deb917dec93c08a",
+    "child_checkpoint_sha256": "fdeb03f3e4e369e852f8aa4a07f6c4ecf44e855fdd9799f3a4af039555b879b1",
+    "steps": 16,
+    "before": {
+      "mean_loss": 2.278957418940472,
+      "assistant_token_accuracy": 0.6397149938042132,
+      "assistant_sequence_accuracy": 0.0
+    },
+    "after": {
+      "mean_loss": 1.7594999292082947,
+      "assistant_token_accuracy": 0.7428748451053284,
+      "assistant_sequence_accuracy": 0.0
+    },
+    "transfer_report_sha256": "85772a6ad09fb14f82245d59ce9662feab61dc0f056d798aa82be026bd6b824d",
+    "transfer_compatibility": {
+      "shared_tensor_count": 51,
+      "config_mismatches": {},
+      "shape_mismatches": {},
+      "tokenizer_sha256_equal": true,
+      "action_heads_relative_delta_l2": 0.0
+    }
+  },
+  "claim_boundary": "bounded public-train normalization and teacher-forced continuation only; no Mind2Web native test score or browser environment execution"
+}

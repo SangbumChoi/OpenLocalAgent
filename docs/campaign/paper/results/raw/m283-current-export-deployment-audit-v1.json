@@ -1,0 +1,69 @@
+{
+  "checkpoint": {
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "parameters": 10524544
+  },
+  "claim_boundary": "This audit proves a hash-verified local Hugging Face-format export, a hard-parity-gated ONNX/WebGPU bundle, and clean static-demo packaging. Hugging Face publication is not claimed without authentication, and native WebGPU capability is not claimed when the host fails to expose an adapter identity.",
+  "generated_at": "2026-08-04",
+  "hf_export": {
+    "path": "/private/tmp/m283-hf-export",
+    "published": false,
+    "hub_url": null,
+    "publication_blocker": "hf auth whoami reports Not logged in",
+    "files": {
+      "README.md": {"bytes": 3490, "sha256": "a40b145c7195ae7508bf40e1b9d2de3b90d07db06204ea82696b5f9221021adb"},
+      "agent_heads.bin": {"bytes": 10116038, "sha256": "f2af8f83698276b63d9def1f89c990ee9343c8360a30f6411267c0902fe0a128"},
+      "config.json": {"bytes": 38446, "sha256": "8781c2d97a16955eaf259ad3469a2208387a17a3ce1541b7ba848db5fca00ffc"},
+      "pytorch_model.bin": {"bytes": 42113215, "sha256": "d7f86754ef31609f6f559c27e5516ac0193989a12e758381df2e9c27bd2da574"},
+      "tokenizer.json": {"bytes": 1134224, "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"}
+    },
+    "loader_smoke": {
+      "reloaded_parameters": 10524544,
+      "tokenizer_vocab": 16384,
+      "logits_shape": [1, 9, 16384],
+      "finite": true,
+      "source_vs_reloaded_max_abs_diff": 0.0,
+      "source_vs_reloaded_argmax_agreement": 1.0
+    }
+  },
+  "kind": "localagent_current_export_deployment_audit",
+  "schema_version": 1,
+  "static_demo": {
+    "path": "/private/tmp/m283-space",
+    "verified": true,
+    "bundle_identity_sha256": "e989e7375ecf3b0ec8e74b843d3bd92a7e6b4221677581f1700c9048df00a1f4",
+    "manifest": {
+      "bytes": 9303,
+      "sha256": "ff817b51fb81cebec4b331ff9713d25f6ab310f9f742efed8aad759324079612",
+      "schema_version": 3,
+      "checkpoint_sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+      "parity_gate_passed": true
+    }
+  },
+  "webgpu_export": {
+    "path": "/private/tmp/m283-webgpu-current",
+    "parity_gate_passed": true,
+    "action_model_fp16": {"bytes": 21430322, "sha256": "8074df1474345c5114f26895e52d41eb2fd6d7ada58bc3800ae48ac3bafc2c44"},
+    "model_fp16": {"bytes": 34026190, "sha256": "83bb0621167847ea0bd9563b65590282c808397221fe6113b940e50a675b67af"},
+    "tokenizer": {"bytes": 1134224, "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"}
+  },
+  "native_webgpu": {
+    "headless": {
+      "path": "/private/tmp/m283-native-webgpu.json",
+      "bytes": 3201,
+      "sha256": "9c03b6c5be44032d3b00827bac2b7feb146d897b017122f6beed5369fcd0dd19",
+      "environment_executed": false,
+      "error": "WebGPU adapter exists but exposes no non-empty hardware identity.",
+      "receipt_self_sha256": "574f49476972d7ffea566f0394c53a78f9a3c2534ec1fe4e6efc981057661e7f"
+    },
+    "headful": {
+      "path": "/private/tmp/m283-native-webgpu-headful.json",
+      "bytes": 3282,
+      "sha256": "a41c67dc4cb13f9020fa035cc80677fbf131530cca57f8a2188fb9801dccc725",
+      "environment_executed": false,
+      "error": "WebGPU adapter exists but exposes no non-empty hardware identity.",
+      "receipt_self_sha256": "09cae4e06dd81f06d88aea5ede9726c8e9530b25a8635a6f326da602450df829"
+    }
+  }
+}

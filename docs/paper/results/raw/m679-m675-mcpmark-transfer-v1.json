@@ -1,0 +1,243 @@
+{
+  "arms": {
+    "random": {
+      "after": {
+        "assistant_loss_tokens": 2166,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.19205909510618652,
+        "mean_loss": 8.426854409229282,
+        "rows": 5
+      },
+      "before": {
+        "assistant_loss_tokens": 2166,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.17636195752539244,
+        "mean_loss": 8.753854851973685,
+        "rows": 5
+      },
+      "child": {
+        "bytes": 52206887,
+        "path": "/private/tmp/m679-m675-mcp/random-child.pt",
+        "sha256": "2722ea455de75fb1f99d29eb40ea88dedc59248e11ef1672c22582e7a79fa946"
+      },
+      "parent": {
+        "bytes": 52206887,
+        "path": "/private/tmp/m675-m671-androidcontrol/random-child.pt",
+        "sha256": "ef9e7d978bbb047086259e76a012c16fa15093a33e948fbe6907935b2faf5ad0"
+      },
+      "weight_transfer": {
+        "compatibility": {
+          "added_tensors": [],
+          "config_mismatches": {},
+          "removed_tensors": [],
+          "shape_mismatches": {},
+          "shared_tensor_count": 51,
+          "tokenizer_sha256_equal": true
+        },
+        "groups": {
+          "action_heads": {
+            "base_l2": 87.72169577645614,
+            "delta_l2": 0.0,
+            "parameters": 2519736,
+            "relative_delta_l2": 0.0,
+            "target_l2": 87.72169577645614
+          },
+          "attention_or_mixer": {
+            "base_l2": 50.4173609039623,
+            "delta_l2": 0.1186326174202745,
+            "parameters": 1871872,
+            "relative_delta_l2": 0.0023530112503558505,
+            "target_l2": 50.41787409676431
+          },
+          "embedding": {
+            "base_l2": 50.22275120960626,
+            "delta_l2": 0.3380308798270857,
+            "parameters": 6291456,
+            "relative_delta_l2": 0.0067306324660770375,
+            "target_l2": 50.23352684920299
+          },
+          "ffn": {
+            "base_l2": 49.81756675267405,
+            "delta_l2": 0.14023054550150085,
+            "parameters": 2360832,
+            "relative_delta_l2": 0.0028148814693759352,
+            "target_l2": 49.818761179424754
+          },
+          "normalization": {
+            "base_l2": 19.61712139999288,
+            "delta_l2": 0.0025354491793282033,
+            "parameters": 384,
+            "relative_delta_l2": 0.00012924674969535152,
+            "target_l2": 19.619348262812863
+          }
+        },
+        "recommendation": {
+          "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+          "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+          "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+          "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+        }
+      }
+    },
+    "warm": {
+      "after": {
+        "assistant_loss_tokens": 2166,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.3047091412742382,
+        "mean_loss": 5.23010546965172,
+        "rows": 5
+      },
+      "before": {
+        "assistant_loss_tokens": 2166,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.26038781163434904,
+        "mean_loss": 5.5108741767298595,
+        "rows": 5
+      },
+      "child": {
+        "bytes": 52206773,
+        "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+        "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+      },
+      "parent": {
+        "bytes": 52206773,
+        "path": "/private/tmp/m675-m671-androidcontrol/warm-child.pt",
+        "sha256": "91eb969628d77099d6b834cf3c1a6bd0a1fa37adefffe80f2d57605e1b775dcc"
+      },
+      "weight_transfer": {
+        "compatibility": {
+          "added_tensors": [],
+          "config_mismatches": {},
+          "removed_tensors": [],
+          "shape_mismatches": {},
+          "shared_tensor_count": 51,
+          "tokenizer_sha256_equal": true
+        },
+        "groups": {
+          "action_heads": {
+            "base_l2": 91.77234792175153,
+            "delta_l2": 0.0,
+            "parameters": 2519736,
+            "relative_delta_l2": 0.0,
+            "target_l2": 91.77234792175153
+          },
+          "attention_or_mixer": {
+            "base_l2": 51.70576747511334,
+            "delta_l2": 0.11360479849296969,
+            "parameters": 1871872,
+            "relative_delta_l2": 0.0021971397784134846,
+            "target_l2": 51.70583183858278
+          },
+          "embedding": {
+            "base_l2": 78.4715282491715,
+            "delta_l2": 0.32888258763851985,
+            "parameters": 6291456,
+            "relative_delta_l2": 0.004191107207625872,
+            "target_l2": 78.5827108674603
+          },
+          "ffn": {
+            "base_l2": 50.6146109751804,
+            "delta_l2": 0.12986323474071113,
+            "parameters": 2360832,
+            "relative_delta_l2": 0.0025657262248719335,
+            "target_l2": 50.615098537061556
+          },
+          "normalization": {
+            "base_l2": 21.46385565722656,
+            "delta_l2": 0.0016527115240951497,
+            "parameters": 384,
+            "relative_delta_l2": 7.69997502074473e-05,
+            "target_l2": 21.464259287065175
+          }
+        },
+        "recommendation": {
+          "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+          "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+          "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+          "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+        }
+      }
+    }
+  },
+  "claim_boundary": "Redacted public MCPMark trajectory continuation with text-only teacher-forced metrics. This is not an official MCPMark score, native MCP server execution, or real Notion, browser, filesystem, GitHub, or Postgres side effect.",
+  "comparison": {
+    "exact_sequence_accuracy": {
+      "random": 0.0,
+      "warm": 0.0
+    },
+    "random_after_eval_token_accuracy": 0.19205909510618652,
+    "random_before_eval_token_accuracy": 0.17636195752539244,
+    "random_gain_pp": 1.5697137580794078,
+    "warm_after_eval_token_accuracy": 0.3047091412742382,
+    "warm_before_eval_token_accuracy": 0.26038781163434904,
+    "warm_gain_pp": 4.432132963988916,
+    "warm_minus_random_after_pp": 11.265004616805168,
+    "warm_start_better_after": true
+  },
+  "kind": "localagent_m679_m675_mcpmark_transfer",
+  "protocol": {
+    "batch_size": 2,
+    "domains": [
+      "filesystem",
+      "notion",
+      "github",
+      "playwright",
+      "postgres"
+    ],
+    "eval_rows": 5,
+    "learning_rate": 1e-05,
+    "max_seq_len": 512,
+    "official_native_score": false,
+    "steps": 32,
+    "train_rows": 10
+  },
+  "raw_reports": {
+    "random": {
+      "bytes": 11517,
+      "path": "/private/tmp/m679-m675-mcp/random-report.json",
+      "sha256": "c2c44be2591678aaf1ff98a52e083a8fca4c4ac4e13bc2de1f533423228c22e5"
+    },
+    "warm": {
+      "bytes": 11511,
+      "path": "/private/tmp/m679-m675-mcp/warm-report.json",
+      "sha256": "2e6081aad74e0efb04f3c48db04cde40deadfbd0d168da144e8d48c584e96328"
+    }
+  },
+  "receipt_self_sha256": "dcbb55d027f3913b676518163a048688359793d9cb045b4832bbea54977ac079",
+  "schema_version": 1,
+  "source": {
+    "dataset": "Jakumetsu/mcpmark-trajectory-log",
+    "eval_rows": [
+      {
+        "bytes": 79133,
+        "path": "/private/tmp/localagent-public-data/mcpmark-traj/mcpmark-eval.jsonl",
+        "sha256": "34c8e24ec58994f97372d9702fca54709a62140a2fef4a4d5e3099f6f4dcca89"
+      }
+    ],
+    "original_benchmark": "https://github.com/eval-sys/mcpmark",
+    "redaction": "tool_outputs_and_assistant_free_text_redacted",
+    "revision": "e50578f0ab904d8e6a7c576c387c1e76ae482c89",
+    "train_manifest": {
+      "bytes": 5582,
+      "path": "/private/tmp/localagent-public-data/mcpmark-traj/mcpmark-train.metadata.json",
+      "sha256": "041add5f719d584b444ed31e1f25fa58ac77919e785f3c0a0676c03acd4156da"
+    },
+    "train_rows": [
+      {
+        "bytes": 133877,
+        "path": "/private/tmp/localagent-public-data/mcpmark-traj/mcpmark-train.jsonl",
+        "sha256": "21322d7218dd1f5906c4ae22162f1ef3e9ecb988d5633ca6a8f6d2943b8314d6"
+      }
+    ],
+    "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log"
+  },
+  "weight_adoption": {
+    "config_compatible": true,
+    "random_body_relative_delta_max": 0.0067306324660770375,
+    "recommendation": "retain warm initialization for MCP text continuation; require live server/verifier tests before promotion",
+    "reuse_warm_backbone": true,
+    "tokenizer_compatible": true,
+    "warm_action_heads_frozen": true,
+    "warm_body_relative_delta_max": 0.004191107207625872
+  }
+}

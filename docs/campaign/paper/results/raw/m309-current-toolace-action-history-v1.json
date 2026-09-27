@@ -1,0 +1,2143 @@
+{
+  "checkpoint": {
+    "bytes": 52242001,
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+  },
+  "claim_boundary": "Bounded free-run ToolACE action-history probe with catalog-constrained generation; no tool dispatch, no external side effects, and no official ToolACE or BFCL score.",
+  "kind": "localagent_toolace_action_history_free_run_probe",
+  "metrics": {
+    "argument_exact_rate": 0.02654867256637168,
+    "by_turn": {
+      "1": {
+        "step_exact_rate": 0.03125,
+        "steps": 64
+      },
+      "2": {
+        "step_exact_rate": 0.023809523809523808,
+        "steps": 42
+      },
+      "3": {
+        "step_exact_rate": 0.0,
+        "steps": 7
+      }
+    },
+    "episode_exact_rate": 0.0,
+    "episodes": 64,
+    "schema_valid_rate": 0.6991150442477876,
+    "step_exact_rate": 0.02654867256637168,
+    "steps": 113,
+    "tool_exact_rate": 0.22123893805309736
+  },
+  "predictions": [
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "q": "my desktop"
+        },
+        "name": "items"
+      },
+      "row": 0,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "output_path": "desktop",
+          "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        },
+        "name": "S_YTD"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 0,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "srcPath": "/documents/my_notes.md",
+          "storage": "Google Drive"
+        },
+        "name": "GetMarkdownInStorageToPdf"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {},
+        "name": "getAllTech"
+      },
+      "row": 1,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "currency": "USD",
+          "location": "Venice"
+        },
+        "name": "Rental Property Ratings"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {},
+        "name": "getAllTech"
+      },
+      "row": 1,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "url": "https://news.xx/venice-archi-2026"
+        },
+        "name": "Article Extraction API"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 8,
+      "prediction": {
+        "arguments": {},
+        "name": "getAllTech"
+      },
+      "row": 1,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "url": "www.instagram.com/reel/venicecarnival2026"
+        },
+        "name": "Instagram Reel Downloader"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "tour": "Formula 1 drivers and their quotes"
+        },
+        "name": "Get Golf Leaderboard Data"
+      },
+      "row": 2,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "Get F1 Drivers and Personalities"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {},
+        "name": "Get F1 Drivers and Personalities"
+      },
+      "row": 2,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "tour": "PGA"
+        },
+        "name": "Get Golf Leaderboard Data"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "country": "a digital marketing campaign for a new product that targets the US market. Can you help me find the most effective keywords related to \"vegan skincare\"",
+          "keyword": "a digital marketing campaign for a new product that targets the US market. Can you help me find the most effective keywords related to \"vegan skincare\""
+        },
+        "name": "Keyword Research API"
+      },
+      "row": 3,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "country": "US",
+          "keyword": "vegan skincare"
+        },
+        "name": "Keyword Research API"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 3,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "country": "US",
+          "latency": 100,
+          "ssl": true,
+          "type": "HTTPS"
+        },
+        "name": "Tier1 Proxies"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "postcode": "addresses for the postcode EC1A 1BB"
+        },
+        "name": "Get Addresses by Postcode"
+      },
+      "row": 4,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "postcode": "EC1A 1BB"
+        },
+        "name": "Get Addresses by Postcode"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 4,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "region": "Greater Accra",
+          "type": "hospital"
+        },
+        "name": "Facilities Lookup"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {},
+        "name": "Generate IP Address"
+      },
+      "row": 5,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "domain": "example.com"
+        },
+        "name": "Domain Whois Lookup"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {},
+        "name": "Generate IP Address"
+      },
+      "row": 5,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "domain": "example.com"
+        },
+        "name": "Chinese Firewall Test"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "currency": "get an overview of cryptocurrency ID 45. Can you assist me with that",
+          "time_frame": "get an overview of cryptocurrency ID 45. Can you assist me with that"
+        },
+        "name": "Crypto Symbols API"
+      },
+      "row": 6,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "pair_ID": 45.0
+        },
+        "name": "Get Cryptocurrency Overview"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 6,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "string_range": "today"
+        },
+        "name": "Top Collections Today"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "username": "a song with the keyword \"love\". Can you help me find it"
+        },
+        "name": "Medium Username Check"
+      },
+      "row": 7,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "keyword": "love"
+        },
+        "name": "Search Music"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 7,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "url": "https://www.instagram.com/p/B1xLwiZnRb9/"
+        },
+        "name": "Download Story - Post - Highlight"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {},
+        "name": "News Sources API"
+      },
+      "row": 8,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "category": "technology",
+          "country": "us",
+          "language": "en"
+        },
+        "name": "News Sources API"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {},
+        "name": "News Sources API"
+      },
+      "row": 8,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "last_n_hours": 24.0,
+          "subject": "TechCrunch"
+        },
+        "name": "Latest Crypto News Articles"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {},
+        "name": "getGasPrice"
+      },
+      "row": 9,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "Powerball Recent Draw"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "url": " you fetch me"
+        },
+        "name": "Song Download and Conversion"
+      },
+      "row": 10,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "range": "1-10",
+          "string": "2026-06-01"
+        },
+        "name": "Croatia Songs API"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {
+          "url": " A\", \"position\": 1}, {\"title\": \"Simulated Song 2\", \"artist\": \"Simulated Artist B\", \"position\": 2}, {\"title\": \"Simulated Song 3\", \"artist\": \"Simulated Artist C\", \"position\": 3}, {\"title\": \"Simulated Song 4\", \"artist\": \"Simulated Artist D\", \"position\": 4}, {\"title\": \"Simulated Song 5\", \"artist\": \"Simulated Artist E\", \"position\": 5}, {\"title\": \"Simulated Song 6\", \"artist\": \"Simulated Artist F\", \"position\": 6}, {\"title\": \"Simulated Song 7\", \"artist\": \"Simulated Artist G\", \"position\": 7}, {\"title\": \"Simulated Song 8\", \"artist\": \"Simulated Artist H\", \"position\": 8}, {\"title\": \"Simulated Song 9\", \"artist\": \"Simulated Artist I\", \"position\": 9}, {\"title\": \"Simulated Song 10\", \"artist\": \"Simulated Artist J\", \"position\": 10}]}}]</tool_response><|user|>Wow, those songs sound intriguing! By the way, what's the buzz in the European music scene these days? Any spicy new trends I should know about? I'm all ears! \ud83c\udfa7\u2728<|user|>I thoroughly enjoyed \"Simulated Song 1\" by \"Simulated Artist A\". Could you please assist me in converting a YouTube link of this song into an mp3 format? Here's the link: https://www.youtube.com"
+        },
+        "name": "Song Download and Conversion"
+      },
+      "row": 10,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "fmt": "mp3",
+          "url": "https://www.youtube.com/watch?v=s98Zxz7Ee"
+        },
+        "name": "Song Download and Conversion"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 8,
+      "prediction": {
+        "arguments": {
+          "limit": -1,
+          "term": " G\", \"position\": 7}, {\"title\": \"Simulated Song 8\", \"artist\": \"Simulated Artist H\", \"position\": 8}, {\"title\": \"Simulated Song 9\", \"artist\": \"Simulated Artist I\", \"position\": 9}, {\"title\": \"Simulated Song 10\", \"artist\": \"Simulated Artist J\", \"position\": 10}]}}]</tool_response><|user|>Wow, those songs sound intriguing! By the way, what's the buzz in the European music scene these days? Any spicy new trends I should know about? I'm all ears! \ud83c\udfa7\u2728<|user|>I thoroughly enjoyed \"Simulated Song 1\" by"
+        },
+        "name": "Search for Albums"
+      },
+      "row": 10,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "term": "Simulated Artist A"
+        },
+        "name": "Search for Albums"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "first_string": "come up with a name for my new business venture. Could you assist by generating a few unique and catchy options for me",
+          "second_string": "come up with a name for my new business venture. Could you assist by generating a few unique and catchy options for me"
+        },
+        "name": "business_delta"
+      },
+      "row": 11,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "Business Name Generator"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {},
+        "name": "Get Areas"
+      },
+      "row": 12,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "season": 2019
+        },
+        "name": "topAssistsBySeason"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {},
+        "name": "Get Areas"
+      },
+      "row": 12,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "string": "2021-01-20"
+        },
+        "name": "Get Baseball Schedule"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "url": "Could you generate a QR code for the website www.example.com"
+        },
+        "name": "QR Code Image Generation"
+      },
+      "row": 13,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "url": "www.example.com"
+        },
+        "name": "QR Code Image Generation"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "ticker": "Tesla (TSLA) over the past three months"
+        },
+        "name": "Historical Stock Prices"
+      },
+      "row": 14,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "ticker": "TSLA"
+        },
+        "name": "Historical Stock Prices"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 6,
+      "prediction": null,
+      "row": 14,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "airport_code": "MXP",
+          "end_string": "2024-08-31",
+          "start_string": "2024-06-01"
+        },
+        "name": "Italy Scheduled Flights Growth API"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "district": "send a parcel to my friend living in the district of Coimbatore in Tamil Nadu, India. I want to ensure that it reaches the correct place without any hitches. Can you help me find out the pincode of this district"
+        },
+        "name": "findpincodebydistrict"
+      },
+      "row": 15,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "district": "Coimbatore"
+        },
+        "name": "findpincodebydistrict"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 3,
+      "prediction": {
+        "arguments": {
+          "id_detail": "traveling to Tokyo next week?<|user|>I'll be flying out of San Francisco, and I'm aiming to leave on November 25th. Can you work with that?<|user|>Yes, please go ahead and list the airports in both San Francisco and Tokyo. Also, could you check if there are any current travel advisories or restrictions for traveling from the USA to Japan? I want to make sure everything is smooth sailing for my upcoming trip"
+        },
+        "name": "Get Property Description"
+      },
+      "row": 16,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "name": "San Francisco"
+        },
+        "name": "Search Flights by Location"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "path": " image to your system already"
+        },
+        "name": "GetFileVersions"
+      },
+      "row": 17,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "Get Available OCR Algorithms"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 17,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "Get OCR Version"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {},
+        "name": "Get US State Metadata"
+      },
+      "row": 18,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "GetBooks"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {
+          "location": "Holy Bible"
+        },
+        "name": "locationSuggestions"
+      },
+      "row": 18,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "Get US State Metadata"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": true,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "ticker_slug": "AAPL"
+        },
+        "name": "Seeking Alpha Finance: Symbols Ratings Relative"
+      },
+      "row": 19,
+      "schema_valid": true,
+      "step_exact": true,
+      "target": {
+        "arguments": {
+          "ticker_slug": "AAPL"
+        },
+        "name": "Seeking Alpha Finance: Symbols Ratings Relative"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 19,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "interval": "1day",
+          "symbol": "AAPL"
+        },
+        "name": "STOCHF"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "image": "exploring the various domain-specific models supported by the Microsoft Computer Vision API. Could you please provide me with a list of these models? My API key is `abcd1234`",
+          "language_code": "exploring the various domain-specific models supported by the Microsoft Computer Vision API. Could you please provide me with a list of these models? My API key is `abcd1234`"
+        },
+        "name": "Language-Specific Text Recognition"
+      },
+      "row": 20,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "api_key": "abcd1234"
+        },
+        "name": "Get Computer Vision Models"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 20,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "content": "http://example.com/my-image.jpg"
+        },
+        "name": "User-Generated Photo Scoring"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 4,
+      "prediction": {
+        "arguments": {},
+        "name": "Get Earnings Before Interest and Taxes"
+      },
+      "row": 21,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "symbol": "TSLA"
+        },
+        "name": "Get Earnings Before Interest and Taxes"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 4,
+      "prediction": {
+        "arguments": {
+          "count": 320,
+          "userid": "the hashtag #summer2025? Please ensure the data is fresh and limit the results to 10.<|tool|><tool_response>[{\"name\": \"Hashtag Feed (Video Posts)\", \"results\": [{\"video_url\": \"http://example.com/video1.mp4\", \"statistics\": {\"views\": 15000, \"likes\": 2300, \"comments\": 150}, \"metadata\": {\"creator_name\": \"user123\", \"profile_url\": \"http://example.com/profile/user123\"}}, {\"video_url\": \"http://example.com/video2.mp4\", \"statistics\": {\"views\": 20000, \"likes\": 3400, \"comments\": 220}, \"metadata\": {\"creator_name\": \"user456\", \"profile_url\": \"http://example.com/profile/user456\"}}, {\"video_url\": \"http://example.com/video3.mp4\", \"statistics\": {\"views\": 9500, \"likes\": 1200, \"comments\": 98}, \"metadata\": {\"creator_name\": \"user789\", \"profile_url\": \"http://example.com/profile/user789\"}}, {\"video_url\": \"http://example.com/video4.mp4\", \"statistics\": {\"views\": 48000, \"likes\": 5300, \"comments\": 320}, \"metadata\": {\"creator_name\": \"user101\", \"profile_url\": \"http://example.com/profile/user101\"}}, {\"video_url\": \"http://example.com/video5.mp4\", \"statistics\": {\"views\": 27500, \"likes\": 2000, \"comments\": 184}, \"metadata\": {\"creator_name\": \"user202\", \"profile_url\": \"http://example.com/profile/user202\"}}, {\"video_url\": \"http://example.com/video6.mp4\", \"statistics\": {\"views\": 32500, \"likes\": 2900, \"comments\": 210}, \"metadata\": {\"creator_name\": \"user303\", \"profile_url\": \"http://example.com/profile/user303\"}}, {\"video_url\": \"http://example.com/video7.mp4\", \"statistics\": {\"views\": 19800, \"likes\": 1650, \"comments\": 123}, \"metadata\": {\"creator_name\": \"user404\", \"profile_url\": \"http://example.com/profile/user404\"}}, {\"video_url\": \"http://example.com/video8.mp4\", \"statistics\": {\"views\": 22300, \"likes\": 1800, \"comments\": 140}, \"metadata\": {\"creator_name\": \"user505\", \"profile_url\": \"http://example.com/profile/user505\"}}, {\"video_url\": \"http://example.com/video9.mp4\", \"statistics\": {\"views\": 5600, \"likes\": 800, \"comments\": 58}, \"metadata\": {\"creator_name\": \"user606\", \"profile_url\": \"http://example.com/profile/user606\"}}, {\"video_url\": \"http://example.com/video10.mp4\", \"statistics\": {\"views\": 41000, \"likes\": 3900, \"comments\": 285}, \"metadata\": {\"creator_name\": \"user707\", \"profile_url\": \"http://example.com/profile/user707\"}}]}]</tool_response><|user|>How is the popularity of these posts determined? Is it based just on views, or do likes and comments factor in as well?<|user|>Could you now fetch the list of followers for the Instagram user with the ID \"creative_artist\"? I'd like to see the first 50 followers to understand their demographics better"
+        },
+        "name": "Get Instagram User Followers"
+      },
+      "row": 22,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "count": 50,
+          "userid": "creative_artist"
+        },
+        "name": "Get Instagram User Followers"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "keyword": "the day along with a brief explanation"
+        },
+        "name": "Airports by Keyword"
+      },
+      "row": 23,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "Picture Of The Day"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {},
+        "name": "American Football Categories"
+      },
+      "row": 24,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "string": "16/01/2022"
+        },
+        "name": "Daily Match List-Live"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {},
+        "name": "American Football Categories"
+      },
+      "row": 24,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "side": "offense",
+          "year": 2022
+        },
+        "name": "Get Team Rushing Data"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "code": "my mobile. Could you help me to verify it? The code is 123456 and my mobile number is 9876543210",
+          "mobile": "9876543210"
+        },
+        "name": "Verify SMS Code"
+      },
+      "row": 25,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "code": "123456",
+          "mobile": "9876543210"
+        },
+        "name": "Verify SMS Code"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 4,
+      "prediction": null,
+      "row": 25,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "hashtag": "DanceOff"
+        },
+        "name": "Get Challenge Posts"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 7,
+      "prediction": null,
+      "row": 25,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "url": "https://www.tiktok.com/@funny_user/video/6827412221119991111"
+        },
+        "name": "Get Original TikTok Video"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "q": "English for a good laugh this evening"
+        },
+        "name": "Search"
+      },
+      "row": 26,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "genre": "comedy",
+          "language": "en"
+        },
+        "name": "Get Upcoming Movies"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 26,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "genre": "superhero",
+          "language": "en"
+        },
+        "name": "Get Upcoming Movies"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "address": "stocks. Can you provide me with the estimated earnings for Nvidia",
+          "receiverAddress": "stocks. Can you provide me with the estimated earnings for Nvidia"
+        },
+        "name": "clearAddress"
+      },
+      "row": 27,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "ticker_slug": "NVDA"
+        },
+        "name": "Estimated Earnings Announces API"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {},
+        "name": "Retrieve Collections"
+      },
+      "row": 28,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "substring": "art"
+        },
+        "name": "Get Word by Contain"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {},
+        "name": "Retrieve Collections"
+      },
+      "row": 28,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "asset_owner": "0x92d3e963aa94d909869940a8d15fa16ccbc6651e"
+        },
+        "name": "Retrieve Collections"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "digit": "3D",
+          "keyword": "beauty is a joy forever\"",
+          "language": "zh"
+        },
+        "name": "4D Dream Dictionary"
+      },
+      "row": 29,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "line": "A thing of beauty is a joy forever"
+        },
+        "name": "Search Poems by Line"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {},
+        "name": "Get BCAA Products"
+      },
+      "row": 30,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "symbol": "gold"
+        },
+        "name": "Get Commodities"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {},
+        "name": "Get BCAA Products"
+      },
+      "row": 30,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "Get Bank Sector Groups"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "interval": "grain futures for me? I want to assess them for my investment strategy",
+          "symbol": "grain futures for me? I want to assess them for my investment strategy"
+        },
+        "name": "HT_SINE"
+      },
+      "row": 31,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "Grains Futures Prices API"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 31,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "category": "dividend distribution",
+          "ticker_slug": "ADM"
+        },
+        "name": "Symbols Attributes"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "searchtopic": "available domains? I'm starting a new business and would like to check for domains with the name \"creativeinnovations\""
+        },
+        "name": "Pirate Bay Torrent Search"
+      },
+      "row": 32,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "sld": "creativeinnovations"
+        },
+        "name": "Domain Search"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 32,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "sld": "modernsolutions.tech"
+        },
+        "name": "Domain Search"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "area_uid": "the city of New York"
+        },
+        "name": "Get Area Flag"
+      },
+      "row": 33,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "area_type": "team",
+          "location": "New York"
+        },
+        "name": "Explore Areas"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": null,
+      "row": 34,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "symbol": "BTC"
+        },
+        "name": "Get Realtime Crypto Prices"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 34,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "identifier": "EUR/USD"
+        },
+        "name": "forex_retrieve"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "query": "oe"
+        },
+        "name": "Search for Words in Title, Text, or URL"
+      },
+      "row": 35,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "password": "secret_password",
+          "username": "john_doe"
+        },
+        "name": "loginUser"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 4,
+      "prediction": {
+        "arguments": {
+          "location": "My",
+          "query": "<|tool|><tool_response>[{\"name\": \"loginUser\", \"results\": {\"authToken\": \"abcdefghijklmnopqrstuvwxyz123456\", \"userId\": 12345}}]</tool_response><|user|>Alright, I\u2019m feeling inspired! Can you hit me up with a dazzling quote to share with my followers? Something that will make them think, \u201cWow"
+        },
+        "name": "Search for Words in Title, Text, or URL"
+      },
+      "row": 35,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "Quotes"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": true,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {},
+        "name": "Get Trending TV Shows"
+      },
+      "row": 36,
+      "schema_valid": true,
+      "step_exact": true,
+      "target": {
+        "arguments": {},
+        "name": "Get Trending TV Shows"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 4,
+      "prediction": {
+        "arguments": {},
+        "name": "Get Trending TV Shows"
+      },
+      "row": 36,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "Get Genres"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 7,
+      "prediction": {
+        "arguments": {},
+        "name": "Get Trending TV Shows"
+      },
+      "row": 36,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "ids": "80100172,80189685"
+        },
+        "name": "Title Seasons"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "pageNumber": 3,
+          "pageSize": 3
+        },
+        "name": "Get Users List"
+      },
+      "row": 37,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "Book": "John",
+          "Chapter": 3,
+          "Verse": 16
+        },
+        "name": "GetSingleVerse"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 4,
+      "prediction": {
+        "arguments": {
+          "pageNumber": 3,
+          "pageSize": 3
+        },
+        "name": "Get Users List"
+      },
+      "row": 37,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "Get Bible Books"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "lat": 2871442438.0,
+          "lng": 2871442438.0,
+          "type": "my address in Dubai"
+        },
+        "name": "Nearby Places - ArcGIS"
+      },
+      "row": 38,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "makaniNo": "2871442438"
+        },
+        "name": "IsValidMakani"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {},
+        "name": "Get Users"
+      },
+      "row": 39,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "email": "example@temporarymail.com"
+        },
+        "name": "Check Email Validity"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 2,
+      "prediction": {
+        "arguments": {
+          "domain1": "explore new job opportunities. Can you advise me on how to find suitable job postings?<|user|>I found a job posting on LinkedIn that interests me. Can you retrieve the full job details from this URL: https://www.linkedin.com/jobs/view/1234567890",
+          "domain2": "explore new job opportunities. Can you advise me on how to find suitable job postings?<|user|>I found a job posting on LinkedIn that interests me. Can you retrieve the full job details from this URL: https://www.linkedin.com/jobs/view/1234567890"
+        },
+        "name": "Check Similarity"
+      },
+      "row": 40,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "job_url": "https://www.linkedin.com/jobs/view/1234567890"
+        },
+        "name": "Get Job Details"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "address": "countries where sales tax is supported? I need to ensure that our business operations are compliant in those markets"
+        },
+        "name": "GetPowerplantByRadiusAndAddress"
+      },
+      "row": 41,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "Get Supported Countries"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": null,
+      "row": 42,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "iso2Code": "DE"
+        },
+        "name": "Get Country GDP Data"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 42,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "getRandomColor"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "stringName": "my recent messages with a status of \"SENT\" in descending order, limited to the last 10 messages"
+        },
+        "name": "Get Processing Status of File"
+      },
+      "row": 43,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "limit": 10,
+          "order_by": "created_at",
+          "order_direction": "desc",
+          "status": "SENT"
+        },
+        "name": "Get Messages"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {},
+        "name": "GetAllCategories"
+      },
+      "row": 44,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "url": "https://www.facebook.com/mygardeningpage"
+        },
+        "name": "posts"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 4,
+      "prediction": {
+        "arguments": {
+          "address": "a virtual gardening event this weekend.\", \"nextUrl\": \"https://www.facebook.com/mygardeningpage/posts/3\"}], \"nextUrl\": \"https://www.facebook.com/mygardeningpage/posts/page2\"}}]</tool_response><|user|>I've been meaning to get some plants for my home, but it's not super bright inside. Any advice on what plants might be good for lower light conditions",
+          "chain": "hmy"
+        },
+        "name": "Get Address Transaction History"
+      },
+      "row": 44,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "GetAllCategories"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 7,
+      "prediction": null,
+      "row": 44,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "GetAllCategories"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "payload": "interpret it. Can you help me analyze its sentiment? Here's the text: \"The interface is intriguing, but the functionality could use some serious improvement. Delivery was swift, however the product underperformed in general. Still, kudos to the customer service team for handling complaints well.\""
+        },
+        "name": "wrt_transformer"
+      },
+      "row": 45,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "text": "The interface is intriguing, but the functionality could use some serious improvement. Delivery was swift, however the product underperformed in general. Still, kudos to the customer service team for handling complaints well."
+        },
+        "name": "Text Sentiment Analysis"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 2,
+      "prediction": {
+        "arguments": {
+          "apiKey": "CSV format, please?<|user|>The API key is 12345-abcde-67890-fghij",
+          "exportType": "INBOXES",
+          "outputFormat": "CSV"
+        },
+        "name": "exportEntities"
+      },
+      "row": 46,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "apiKey": "12345-abcde-67890-fghij",
+          "exportType": "CONTACTS",
+          "outputFormat": "CSV"
+        },
+        "name": "exportEntities"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": null,
+      "row": 47,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "folder": "invoices",
+          "name": "invoice.pdf",
+          "storage": "Google Drive"
+        },
+        "name": "GetPdfInStorageToXls"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 47,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "folder": "invoices",
+          "name": "converted_invoice.xlsx",
+          "storage": "Google Drive"
+        },
+        "name": "ConvertPdfToMobiXml"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "interval": "Tesla's stocks, say, with a time interval of 30 minutes",
+          "symbol": "Tesla's stocks, say, with a time interval of 30 minutes"
+        },
+        "name": "T3MA"
+      },
+      "row": 48,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "interval": "30min",
+          "symbol": "TSLA"
+        },
+        "name": "T3MA"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "country": "Canada is? I need it for my presentation tomorrow"
+        },
+        "name": "Capital By Country"
+      },
+      "row": 49,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "country": "Canada"
+        },
+        "name": "Capital By Country"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 2,
+      "prediction": {
+        "arguments": {
+          "symbol": "analyzing the financial performance of a company. Can you help me with that?<|user|>The stock symbol of the company is AAPL"
+        },
+        "name": "Get Company Quarterly Income Statement"
+      },
+      "row": 50,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "symbol": "AAPL"
+        },
+        "name": "Get Company Quarterly Income Statement"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 6,
+      "prediction": null,
+      "row": 50,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "social": "twitter",
+          "tickers": "AAPL"
+        },
+        "name": "/get-social-timestamps/15m"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "keyword": "the domain \"google.com\" including its DNS records and certificate details"
+        },
+        "name": "Web Search"
+      },
+      "row": 51,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "q": "google.com",
+          "type": "LIVESCAN"
+        },
+        "name": "Domain Information"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "ticker": "Apple Inc"
+        },
+        "name": "GetMarketData"
+      },
+      "row": 52,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "ticker": "AAPL"
+        },
+        "name": "GetMarketData"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {},
+        "name": "Get All Active Users"
+      },
+      "row": 53,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "cid": "4563",
+          "end_string": "2024-09-30",
+          "start_string": "2024-07-01"
+        },
+        "name": "Get NPS Summary"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": true,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {},
+        "name": "Get All Active Users"
+      },
+      "row": 53,
+      "schema_valid": true,
+      "step_exact": true,
+      "target": {
+        "arguments": {},
+        "name": "Get All Active Users"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "ticker": "the Euro"
+        },
+        "name": "Options Expirations"
+      },
+      "row": 54,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "base_code": "EUR"
+        },
+        "name": "Latest Exchange Rates"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 54,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "community": true,
+          "explorers": true,
+          "news": true,
+          "slug": "bitcoin"
+        },
+        "name": "Get Coin Prostring by Slug"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "location": "Austin",
+          "school_type": "unearthing some data about public elementary schools located in the mystical lands of Austin, Texas? I'm gearing up to make sure my little munchkins have the best battlegrounds of knowledge to play in"
+        },
+        "name": "Get Filtered School Data"
+      },
+      "row": 55,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "grade_level": "elementary",
+          "location": "Austin, Texas",
+          "school_type": "public"
+        },
+        "name": "Get Filtered School Data"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 55,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "Get Supported Languages"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "symbol": "Apple stocks, and news articles related to the current market situation for these stocks"
+        },
+        "name": "Financial Income Statement API"
+      },
+      "row": 56,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "symbol": "AAPL"
+        },
+        "name": "Get Market Upstring"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 6,
+      "prediction": null,
+      "row": 56,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "page": 1,
+          "page_size": 10
+        },
+        "name": "longterm_analysis_list"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 8,
+      "prediction": null,
+      "row": 56,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "module": "income-statement,balance-sheet,sec-filings",
+          "symbol": "MSFT"
+        },
+        "name": "stock/combine/data"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {},
+        "name": "Get Categories"
+      },
+      "row": 57,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "category": "eyeshadow",
+          "maxprice": 50.0,
+          "page": 1,
+          "pagesize": 10,
+          "sort": "newest"
+        },
+        "name": "products/list"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {},
+        "name": "Get Categories"
+      },
+      "row": 57,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "productid": "103"
+        },
+        "name": "Get Product Details"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "country_code": "you tell me how many companies have been created recently"
+        },
+        "name": "VAT Rates and Categories API"
+      },
+      "row": 58,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {},
+        "name": "CountCompanies"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": {
+        "arguments": {
+          "country_code": "business taxes should I be aware of as I continue to expand my operations?<|user|>We are planning to expand to Germany. Could you let me know the VAT rates there"
+        },
+        "name": "VAT Rates and Categories API"
+      },
+      "row": 58,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "country_code": "DE"
+        },
+        "name": "VAT Rates and Categories API"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "address": "the IP address 123.45.67.89"
+        },
+        "name": "IP Lookup"
+      },
+      "row": 59,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "ip": "123.45.67.89"
+        },
+        "name": "Get IP Location"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 59,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "restaurant": "The Gourmet Bistro"
+        },
+        "name": "Get Restaurant Ratings"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "communicationDetails": "a written format, and I want to ensure it was effective. Can you generate structured feedback and help me develop a conversation starter for a follow-up meeting to address any concerns? My observer's email is john.doe@example.com",
+          "observerEmail": "a written format, and I want to ensure it was effective. Can you generate structured feedback and help me develop a conversation starter for a follow-up meeting to address any concerns? My observer's email is john.doe@example.com"
+        },
+        "name": "feedbackGenerator.generateFeedback"
+      },
+      "row": 60,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "communicationDetails": {
+            "content": "crucial project discussion",
+            "mode": "written"
+          },
+          "observerEmail": "john.doe@example.com"
+        },
+        "name": "feedbackGenerator.generateFeedback"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 3,
+      "prediction": null,
+      "row": 60,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "context": "workplace",
+          "date": "2026-10-03 00:00",
+          "relationshipType": "colleague"
+        },
+        "name": "communicationEnhancer.initiateDialogue"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "genre": "PlayStation for next weekend. Could you recommend an action game that supports 4 players? Also, if the game is released after today, see if there's any new VR action movie under 120 minutes to watch instead",
+          "platform": "PlayStation for next weekend. Could you recommend an action game that supports 4 players? Also, if the game is released after today, see if there's any new VR action movie under 120 minutes to watch instead"
+        },
+        "name": "getVRGame"
+      },
+      "row": 61,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "genre": "action",
+          "platform": "PlayStation",
+          "player_count": 4
+        },
+        "name": "getVRGame"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 3,
+      "prediction": null,
+      "row": 61,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "genre": "action",
+          "length": 120
+        },
+        "name": "getVRMovie"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "chinese": "analyze a piece of Chinese text to find out its segments, then classify each segment to understand the categories according to IAB taxonomy. The text is \"\u4eca\u5929\u662f2024\u5e744\u670825\u65e5\uff0c\u661f\u671f\u56db\u3002\""
+        },
+        "name": "Language Segmenter"
+      },
+      "row": 62,
+      "schema_valid": true,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "chinese": "\u4eca\u5929\u662f2024\u5e744\u670825\u65e5\uff0c\u661f\u671f\u56db\u3002"
+        },
+        "name": "Language Segmenter"
+      },
+      "tool_exact": true
+    },
+    {
+      "argument_exact": false,
+      "message_index": 3,
+      "prediction": null,
+      "row": 62,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "text": "\u4eca\u5929\u662f2024\u5e744\u670825\u65e5"
+        },
+        "name": "Classify"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 5,
+      "prediction": null,
+      "row": 62,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "text": "\u661f\u671f\u56db"
+        },
+        "name": "Classify"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 1,
+      "prediction": {
+        "arguments": {
+          "recipes": "a meal prep for the coming week. I am a vegan and I am particularly interested in lunch recipes. After fetching the recipes, could you generate a grocery list for me for 4 servings each recipe",
+          "servings": 4
+        },
+        "name": "mealprep.get_grocery_list"
+      },
+      "row": 63,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "dietary_restrictions": [
+            "Vegan"
+          ],
+          "meal_type": "Lunch"
+        },
+        "name": "mealprep.get_recipes"
+      },
+      "tool_exact": false
+    },
+    {
+      "argument_exact": false,
+      "message_index": 3,
+      "prediction": null,
+      "row": 63,
+      "schema_valid": false,
+      "step_exact": false,
+      "target": {
+        "arguments": {
+          "recipes": [
+            "Vegan Tofu Stir Fry",
+            "Vegan Bean Soup"
+          ],
+          "servings": 4
+        },
+        "name": "mealprep.get_grocery_list"
+      },
+      "tool_exact": false
+    }
+  ],
+  "receipt_self_sha256": "c84d1d62a357237614e03b7472e2dae5460c751a3bf28c5817aaa473abb57612",
+  "rows_evaluated": 64,
+  "rows_requested": 64,
+  "schema_version": 1,
+  "source": {
+    "dataset": "Team-ACE/ToolACE",
+    "input": {
+      "bytes": 3673279,
+      "path": "/private/tmp/toolace-action-eval.jsonl",
+      "sha256": "472dc36be441bf929c03f33b5591eff267db0975df5b60f240d1931566de7c7d"
+    },
+    "revision": "6bda777c88d21e5a204703c1ee45597a8fa4f734",
+    "training_used": false,
+    "url": "https://huggingface.co/datasets/Team-ACE/ToolACE"
+  }
+}

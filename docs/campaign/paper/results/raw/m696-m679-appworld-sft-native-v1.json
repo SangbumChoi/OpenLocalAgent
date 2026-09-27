@@ -1,0 +1,371 @@
+{
+  "arms": {
+    "random": {
+      "after": {
+        "assistant_loss_tokens": 878,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.5056947608200456,
+        "mean_loss": 7.569388352656961,
+        "rows": 6
+      },
+      "before": {
+        "assistant_loss_tokens": 878,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.0,
+        "mean_loss": 9.796057212325598,
+        "rows": 6
+      },
+      "child": {
+        "bytes": 52206631,
+        "path": "/private/tmp/m696-m679-appworld-sft/random-child.pt",
+        "sha256": "56041f0acd68887b6fe397d1a38fb7d2b2ea7d4f99bc4db741e848a1c7b6d3fe"
+      },
+      "native_report": {
+        "bytes": 19766,
+        "path": "/private/tmp/m696-m679-appworld-sft/native/random.json",
+        "sha256": "7a5fe0dd449a2ab321000a5f3723f8d174f6762b3bf124103a2c58cce9ba4757"
+      },
+      "native_summary": {
+        "action_replayed": 10,
+        "native_api_calls": 40,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "steps_attempted": 16,
+        "tasks": 6
+      },
+      "native_tasks": [
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_song_library",
+            "spotify.show_song_queue"
+          ],
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_1"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_song_library",
+            "spotify.show_song_queue"
+          ],
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_2"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_song_library",
+            "spotify.show_song_queue"
+          ],
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_3"
+        },
+        {
+          "action_replayed": 1,
+          "apis": [
+            "spotify.show_volume"
+          ],
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_1"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_song_queue",
+            "spotify.show_volume"
+          ],
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_2"
+        },
+        {
+          "action_replayed": 1,
+          "apis": [
+            "spotify.show_volume"
+          ],
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_3"
+        }
+      ],
+      "parent": {
+        "bytes": 52206773,
+        "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+        "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+      },
+      "sft_report": {
+        "bytes": 20001,
+        "path": "/private/tmp/m696-m679-appworld-sft/random-report.json",
+        "sha256": "2d87d51628443194f6269882b76e501e1b46a206e4f52b4a953eb53ab1f25539"
+      },
+      "weight_groups": {
+        "action_heads": {
+          "base_l2": 91.77234792175153,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.77234792175153
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.70583183858278,
+          "delta_l2": 40.27226443185,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.7788727692762679,
+          "target_l2": 50.41434606610011
+        },
+        "embedding": {
+          "base_l2": 78.5827108674603,
+          "delta_l2": 93.19893806221147,
+          "parameters": 6291456,
+          "relative_delta_l2": 1.1859980017666134,
+          "target_l2": 50.18355549333329
+        },
+        "ffn": {
+          "base_l2": 50.615098537061556,
+          "delta_l2": 44.43901139466583,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.8779793515985462,
+          "target_l2": 49.802829332715234
+        },
+        "normalization": {
+          "base_l2": 21.464259287065175,
+          "delta_l2": 1.861309058761748,
+          "parameters": 384,
+          "relative_delta_l2": 0.0867166685730177,
+          "target_l2": 19.604010995138946
+        }
+      }
+    },
+    "warm": {
+      "after": {
+        "assistant_loss_tokens": 878,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.7687927107061503,
+        "mean_loss": 1.7669274193279292,
+        "rows": 6
+      },
+      "before": {
+        "assistant_loss_tokens": 878,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.6389521640091116,
+        "mean_loss": 2.501932131130766,
+        "rows": 6
+      },
+      "child": {
+        "bytes": 52206517,
+        "path": "/private/tmp/m696-m679-appworld-sft/warm-child.pt",
+        "sha256": "84986cc2036deff8e979f1cebcd7386e169036909d1bf285e6d0d48727807fd8"
+      },
+      "native_report": {
+        "bytes": 22336,
+        "path": "/private/tmp/m696-m679-appworld-sft/native/warm.json",
+        "sha256": "1a6d2a4eafa005c9cd3c0f1951bc5e8441e684535e1d592895c87d6331b0fc9a"
+      },
+      "native_summary": {
+        "action_replayed": 12,
+        "native_api_calls": 48,
+        "native_success_rate": 0.0,
+        "native_successes": 0,
+        "steps_attempted": 18,
+        "tasks": 6
+      },
+      "native_tasks": [
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_current_song",
+            "spotify.show_song"
+          ],
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_1"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_current_song",
+            "spotify.show_song"
+          ],
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_2"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_current_song",
+            "spotify.show_song"
+          ],
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "6bdbc26_3"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_current_song",
+            "spotify.next_song"
+          ],
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_1"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_current_song",
+            "spotify.next_song"
+          ],
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_2"
+        },
+        {
+          "action_replayed": 2,
+          "apis": [
+            "spotify.show_current_song",
+            "spotify.next_song"
+          ],
+          "stop_reasons": [
+            "repeated_api_candidate"
+          ],
+          "success": false,
+          "task_id": "396c5a2_3"
+        }
+      ],
+      "parent": {
+        "bytes": 52206773,
+        "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+        "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+      },
+      "sft_report": {
+        "bytes": 20358,
+        "path": "/private/tmp/m696-m679-appworld-sft/warm-report.json",
+        "sha256": "b5b0b3f198267dd2069cb78bc473ac0d75a5ce158183271a198148bef88899f3"
+      },
+      "weight_groups": {
+        "action_heads": {
+          "base_l2": 91.77234792175153,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.77234792175153
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.70583183858278,
+          "delta_l2": 0.2994949651426164,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0057922859857973295,
+          "target_l2": 51.7116805015699
+        },
+        "embedding": {
+          "base_l2": 78.5827108674603,
+          "delta_l2": 1.3839032219306664,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.017610784950710015,
+          "target_l2": 79.10900924944833
+        },
+        "ffn": {
+          "base_l2": 50.615098537061556,
+          "delta_l2": 0.3782687129352803,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.007473436264443961,
+          "target_l2": 50.61997725543572
+        },
+        "normalization": {
+          "base_l2": 21.464259287065175,
+          "delta_l2": 0.012614034636029172,
+          "parameters": 384,
+          "relative_delta_l2": 0.0005876762140881637,
+          "target_l2": 21.476825302991166
+        }
+      }
+    }
+  },
+  "benchmark_id": "appworld_public_train_sft_native_free_run",
+  "claim_boundary": "Public AppWorld train-only 128-step multi-turn SFT with matched random initialization, followed by native resettable free-running evaluation on six public dev tasks. Warm token accuracy improves, but both arms score 0/6 native completion. This is not an official AppWorld/AppWorld-UL score, does not cover Gmail or Notion, and uses no external accounts, screenshots, or irreversible side effects.",
+  "comparison": {
+    "native_action_replayed": {
+      "random": 10,
+      "warm": 12
+    },
+    "native_success_rate": {
+      "random": 0.0,
+      "warm": 0.0
+    },
+    "native_successes": {
+      "random": 0,
+      "warm": 0
+    },
+    "random_after_eval_token_accuracy": 0.5056947608200456,
+    "random_before_eval_token_accuracy": 0.0,
+    "random_gain_pp": 50.56947608200456,
+    "warm_after_eval_token_accuracy": 0.7687927107061503,
+    "warm_before_eval_token_accuracy": 0.6389521640091116,
+    "warm_gain_pp": 12.98405466970387,
+    "warm_minus_random_after_pp": 26.30979498861047
+  },
+  "kind": "localagent_m696_m679_appworld_sft_native",
+  "parent_checkpoint": {
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "protocol": {
+    "batch_size": 2,
+    "learning_rate": 1e-05,
+    "max_seq_len": 2048,
+    "native_environment_reset_per_task": true,
+    "native_external_accounts": false,
+    "native_max_steps": 4,
+    "native_retrieve_k": 100,
+    "native_schema_adapter": "strict one literal API call per step",
+    "native_screenshots": false,
+    "sft_steps": 128
+  },
+  "receipt_self_sha256": "f1806c39111cd5dea39fd7f68efdd1dd6029064f6e2ec3eba3b6c6a99f9d5dcd",
+  "schema_version": 1,
+  "source": {
+    "data_version": "0.2.0",
+    "dataset": "AppWorld",
+    "dev_tasks": 6,
+    "observations": "bounded redacted API summaries; no credentials or task databases",
+    "split_policy": "public train tasks only; separate public dev tasks for native evaluation",
+    "train_tasks": 90,
+    "url": "https://github.com/StonyBrookNLP/appworld"
+  },
+  "weight_adoption": {
+    "config_compatible": true,
+    "decision": "retain warm shared weights only as an initialization candidate; do not promote the child because native task success remains 0/6",
+    "random_action_heads_frozen": true,
+    "random_body_relative_delta_max": 1.1859980017666134,
+    "tokenizer_compatible": true,
+    "warm_action_heads_frozen": true,
+    "warm_body_relative_delta_max": 0.017610784950710015
+  }
+}

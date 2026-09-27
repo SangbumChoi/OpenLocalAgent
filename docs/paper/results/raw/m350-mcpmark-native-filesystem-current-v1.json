@@ -1,0 +1,83 @@
+{
+  "benchmark_id": "mcpmark",
+  "environment_executed": true,
+  "official_split_verified": false,
+  "success_rate": 0.0,
+  "task_count": 1,
+  "claim_boundary": "One native MCPMark filesystem task fixture was run with the current LocalAgent checkpoint, a real MCP stdio server, and the pinned task verifier. The model failed to complete this task; no official MCPMark split or leaderboard score is claimed. The user simulator and the remaining MCP services were not executed.",
+  "dataset": {
+    "name": "MCPMark",
+    "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "suite": "easy",
+    "task": "filesystem/easy/folder_structure/structure_analysis",
+    "url": "https://github.com/eval-sys/mcpmark"
+  },
+  "environment": {
+    "external_api_called": false,
+    "mcp_server_executed": true,
+    "official_split_verified": false,
+    "server": "@modelcontextprotocol/server-filesystem@2025.12.18",
+    "state_archive": {
+      "bytes": 143355,
+      "path": "/private/tmp/mcpmark-fs-state/folder_structure.zip",
+      "sha256": "231f9d42040216bb64d4148154b89040f00ac830271dc8f338ac2df719424137"
+    },
+    "state_directory": "/private/tmp/mcpmark-fs-state/extracted/folder_structure",
+    "user_simulator_executed": false
+  },
+  "kind": "localagent_mcpmark_native_filesystem_current_checkpoint",
+  "model": {
+    "bytes": 52242001,
+    "path": "/Users/sangbumchoi/Documents/LocalAgent/runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+  },
+  "receipt_self_sha256": "7d00d806e9618111230ab6d5ffe8af70915765f717350d28f5031d3277bc2392",
+  "rollout": {
+    "model_completed_task": false,
+    "turns": [
+      {
+        "arguments": {
+          "path": "verse the entire folder structure under the main directory and count the total number of .py files in all subdirectories. Write the answer (just a single number) to structure_analysis.txt in the main directory. Do not change or delete existing files. Do not use Python code.\nMain directory: /private/tmp/mcp"
+        },
+        "output_sha256": "82e9bed074999bae3e28a3891fe23f5269ea60b239e9335355ba1e9f0fc7e4ce",
+        "tool": "read_text_file",
+        "turn": 1
+      },
+      {
+        "arguments": {},
+        "output_sha256": "c0e36d44171fc246855bf634bedf56fea34f1aca9778ac1b7a3854203b0a3e24",
+        "tool": "list_allowed_directories",
+        "turn": 2
+      },
+      {
+        "arguments": {
+          "path": " allowed directories: /Users/sangbumchoi/Documents/LocalAgent/verse the entire folder structure under the main directory and count the total number of .py"
+        },
+        "output_sha256": "fa837dd3a3ffdadb3361640ef454336e67dd1a66edf1317d22acb1edeb98d0cd",
+        "tool": "read_media_file",
+        "turn": 3
+      }
+    ],
+    "verifier_exit_code": 1,
+    "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verifier_stdout_sha256": "ed6f7baf62a62bf1d21ee2cc25b9683c3294833b33e74dc9dcdc42acc15b88c3"
+  },
+  "schema_version": 1,
+  "task_source": {
+    "description": {
+      "bytes": 464,
+      "path": "/private/tmp/mcpmark-cd45b7f/tasks/filesystem/easy/folder_structure/structure_analysis/description.md",
+      "sha256": "ed194bda852f4c0b8cef11d3a4c7c62741393e09e1aaa3f94e9289e606a0c1ae"
+    },
+    "meta": {
+      "bytes": 12703,
+      "path": "/private/tmp/mcpmark-cd45b7f/tasks/filesystem/easy/folder_structure/structure_analysis/meta.json",
+      "sha256": "210a33ed2242bd90e1fefc82ae26623864f9a3d382c35bd5afc3800904ef0f72"
+    },
+    "verifier": {
+      "bytes": 2786,
+      "path": "/private/tmp/mcpmark-cd45b7f/tasks/filesystem/easy/folder_structure/structure_analysis/verify.py",
+      "sha256": "c96c2c19305afc0fc572936fbb0002801e5bcbfcc2b3f1d5d3b25dd724446a73"
+    }
+  }
+}

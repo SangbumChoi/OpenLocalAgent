@@ -1,0 +1,94 @@
+{
+  "benchmark": {
+    "dataset": "ServiceNow-AI/EnterpriseOps-Gym",
+    "dataset_revision": "c8e538eae8a6205294f0a86675fefdc1fac408f6",
+    "dataset_url": "https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym",
+    "records": 67,
+    "slice": "oracle/email vs plus_15_tools/email"
+  },
+  "claim_boundary": "Matched warm-versus-random backbone ablation on the public EnterpriseOps-Gym email retrieval projection. The warm advantage is evidence for retaining the pretrained backbone, but the adapter performs no tool execution and drops verifiers, servers, credentials, and side effects; this is not official stateful benchmark success.",
+  "kind": "localagent_m638_enterpriseopsgym_warm_random_weight_transfer_receipt",
+  "protocol": {
+    "adapter": "generated_name_only_v1",
+    "execution": "frozen_localagent_dense_selector_no_tool_execution",
+    "same_source_files": true,
+    "server_configuration_dropped": true,
+    "training_on_eval_rows": false,
+    "verifiers_dropped": true
+  },
+  "random_checkpoint": {
+    "identity": {
+      "bytes": 52203729,
+      "parameters": 10524544,
+      "sha256": "390f1414260e118cd621af735fe6e87b01e8641b1cff650d594585e39b212e45",
+      "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+    },
+    "summary": {
+      "by_domain": {
+        "email": {
+          "hit_at_1": 0.3880597014925373,
+          "hit_at_3": 0.7611940298507462,
+          "hit_at_5": 0.8507462686567164,
+          "records": 67
+        }
+      },
+      "hit_at_1": 0.3880597014925373,
+      "hit_at_3": 0.7611940298507462,
+      "hit_at_5": 0.8507462686567164,
+      "mean_candidate_tool_count": 20.0,
+      "mean_oracle_tool_count": 5.686567164179104,
+      "records": 67
+    }
+  },
+  "random_raw_report": {
+    "bytes": 36991,
+    "path": "/private/tmp/m637-enterpriseopsgym-m626-random-email.json",
+    "sha256": "110a732f770ddc2dd197e5fe42cced91438ac5954f922bb2b70ff54c5cbcd3be"
+  },
+  "receipt_self_sha256": "118bd575b99aa1201c493fdc72d02abcb162d35395b74b2edd4bed6f2f6f0762",
+  "schema_version": 1,
+  "source_files": {
+    "distractors": {
+      "bytes": 333635,
+      "sha256": "3dc74c726c935e0a26d4b8f4c8dc77a07f6c3f00c7c474e3bec0ea8eaae36df9"
+    },
+    "oracle": {
+      "bytes": 316743,
+      "sha256": "cf03fc450963cd3cce92850cc822135b156332cdd4702b84094f531f8258c048"
+    }
+  },
+  "warm_checkpoint": {
+    "identity": {
+      "bytes": 52203615,
+      "parameters": 10524544,
+      "sha256": "d6b5df5ff0ba53cb797501b21fd788ca904b2773cf7ea56269864d0350670e3c",
+      "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+    },
+    "summary": {
+      "by_domain": {
+        "email": {
+          "hit_at_1": 0.5970149253731343,
+          "hit_at_3": 0.8507462686567164,
+          "hit_at_5": 0.9402985074626866,
+          "records": 67
+        }
+      },
+      "hit_at_1": 0.5970149253731343,
+      "hit_at_3": 0.8507462686567164,
+      "hit_at_5": 0.9402985074626866,
+      "mean_candidate_tool_count": 20.0,
+      "mean_oracle_tool_count": 5.686567164179104,
+      "records": 67
+    }
+  },
+  "warm_minus_random_delta": {
+    "hit_at_1": 0.20895522388059695,
+    "hit_at_3": 0.08955223880597019,
+    "hit_at_5": 0.08955223880597019
+  },
+  "warm_raw_report": {
+    "bytes": 37132,
+    "path": "/private/tmp/m637-enterpriseopsgym-m626-email.json",
+    "sha256": "b8acfc2ecf466e6103ac57b65db6727d69cc6817d266c31886d2205ff80b9afa"
+  }
+}

@@ -1,0 +1,643 @@
+{
+  "benchmark_id": "agentnet_text_projection",
+  "claim_boundary": "Bounded text-only AgentNet continuation with source-parent-disjoint train/eval rows. It is not AgentNetBench, OSWorld, visual grounding, native desktop control, or any email/Notion/browser side-effect result.",
+  "comparison": {
+    "aggregate": {
+      "random_after_token_accuracy": 0.0,
+      "warm_after_token_accuracy": 0.5252525252525253,
+      "warm_minus_random_after_pp": 52.52525252525253,
+      "warm_start_better_after": true
+    },
+    "arm_contract": {
+      "random_backbone_init": "random",
+      "random_backbone_seed": 2028,
+      "warm_backbone_init": "parent"
+    },
+    "claim_boundary": "Matched public-train-only text/accessibility continuation comparison; this is not an official benchmark score, native environment success, screenshot-grounding result, or evidence of real email/Notion/MCP side effects.",
+    "decision": "warm_start_dominates_matched_random_on_all_surfaces",
+    "eval_sources": [
+      {
+        "datasets": [
+          "xlangai/AgentNet"
+        ],
+        "input": {
+          "bytes": 239724,
+          "path": "/private/tmp/agentnet_text_v4.eval.jsonl",
+          "sha256": "2cadf65145b07734eb13988dc305396d027f6e98d1a5a7cf7de9a5fd31c3dc7c"
+        },
+        "label": "agentnet",
+        "public_reference": {
+          "dataset": "xlangai/AgentNet",
+          "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+        },
+        "revisions": [
+          "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+        ],
+        "rows": 8,
+        "source_families": [
+          "xlangai/AgentNet"
+        ],
+        "source_urls": [],
+        "splits": [
+          "ubuntu_jsonl_bounded_prefix"
+        ],
+        "unique_parent_records": 2,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "hyperparameters": {
+      "backbone_init": "parent",
+      "batch_size": 1,
+      "device": "cpu",
+      "learning_rate": 1e-05,
+      "max_eval_rows_per_source": 8,
+      "max_seq_len": 512,
+      "max_train_rows_per_source": 32,
+      "random_backbone_seed": 2028,
+      "seed": 2027,
+      "steps": 8
+    },
+    "kind": "localagent_cross_surface_transfer_ablation_report",
+    "parent": {
+      "bytes": 52246937,
+      "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+      "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+    },
+    "random_backbone_receipt": {
+      "bytes": 52249869,
+      "path": "/private/tmp/m467-agentnet-current-random-small.pt",
+      "sha256": "8824f431cea58ba738d592f66d9ee9ccfcdcc52576da40c8e904b181a45126ac"
+    },
+    "random_weight_groups": {
+      "action_heads": {
+        "base_l2": 87.12721149777144,
+        "delta_l2": 0.0,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.0,
+        "target_l2": 87.12721149777144
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.686243041747026,
+        "delta_l2": 40.254971240991445,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.7788333775484023,
+        "target_l2": 50.41048767157214
+      },
+      "embedding": {
+        "base_l2": 76.26811513665427,
+        "delta_l2": 91.29121253556312,
+        "parameters": 6291456,
+        "relative_delta_l2": 1.1969774311583685,
+        "target_l2": 50.190198877772715
+      },
+      "ffn": {
+        "base_l2": 50.599417154543154,
+        "delta_l2": 44.4223807047442,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.8779227746649184,
+        "target_l2": 49.79200816035642
+      },
+      "normalization": {
+        "base_l2": 21.431829234008912,
+        "delta_l2": 1.8369895261040572,
+        "parameters": 384,
+        "relative_delta_l2": 0.08571314683625074,
+        "target_l2": 19.59585001989852
+      }
+    },
+    "rows": {
+      "eval": 8,
+      "train": 32
+    },
+    "schema_version": 1,
+    "surfaces": {
+      "agentnet": {
+        "random_backbone": {
+          "after_token_accuracy": 0.0,
+          "before_token_accuracy": 0.0,
+          "delta_token_accuracy": 0.0
+        },
+        "rows": 8,
+        "warm_minus_random_after_pp": 52.52525252525253,
+        "warm_start": {
+          "after_token_accuracy": 0.5252525252525253,
+          "before_token_accuracy": 0.4781144781144781,
+          "delta_token_accuracy": 0.0471380471380472
+        },
+        "warm_start_better_after": true
+      }
+    },
+    "train_sources": [
+      {
+        "datasets": [
+          "xlangai/AgentNet"
+        ],
+        "input": {
+          "bytes": 911095,
+          "path": "/private/tmp/agentnet_text_v4.train.jsonl",
+          "sha256": "44fad4c6e98fb6f5afd3cc45b89e1c1987d5d273293922521ef67677ace79db8"
+        },
+        "label": "agentnet",
+        "public_reference": {
+          "dataset": "xlangai/AgentNet",
+          "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+        },
+        "revisions": [
+          "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+        ],
+        "rows": 32,
+        "source_families": [
+          "xlangai/AgentNet"
+        ],
+        "source_urls": [],
+        "splits": [
+          "ubuntu_jsonl_bounded_prefix"
+        ],
+        "unique_parent_records": 4,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "warm_start_receipt": {
+      "bytes": 52249755,
+      "path": "/private/tmp/m467-agentnet-current-warm-small.pt",
+      "sha256": "3f2653236a4a3c77ac2a2bb1a05d5b8a5d3ae69afdc5f8d6d65d77ed18c4f3fa"
+    },
+    "warm_weight_groups": {
+      "action_heads": {
+        "base_l2": 87.12721149777144,
+        "delta_l2": 0.0,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.0,
+        "target_l2": 87.12721149777144
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.686243041747026,
+        "delta_l2": 0.03904111264336283,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.0007553482386372963,
+        "target_l2": 51.686480105422
+      },
+      "embedding": {
+        "base_l2": 76.26811513665427,
+        "delta_l2": 0.08302995638106049,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.0010886588220030168,
+        "target_l2": 76.29504319911058
+      },
+      "ffn": {
+        "base_l2": 50.599417154543154,
+        "delta_l2": 0.045845392093886966,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0009060458533319422,
+        "target_l2": 50.59942684992505
+      },
+      "normalization": {
+        "base_l2": 21.431829234008912,
+        "delta_l2": 0.0006046566976829046,
+        "parameters": 384,
+        "relative_delta_l2": 2.8213023306634525e-05,
+        "target_l2": 21.431802297081763
+      }
+    }
+  },
+  "decision": {
+    "adopt_parent_as_initialization_candidate": true,
+    "export_child_to_webgpu": false,
+    "native_promotion": false,
+    "reason": "The warm current-parent arm improves held-out AgentNet text-projection token accuracy while the matched random arm remains at zero token accuracy, and warm body movement stays below 0.11% relative L2. Exact sequence accuracy is 0% for both arms, images were dropped, and no native Ubuntu/OSWorld execution ran; retain as initialization evidence only and require deployment-shaped replay."
+  },
+  "inputs": {
+    "eval": [
+      {
+        "datasets": [
+          "xlangai/AgentNet"
+        ],
+        "input": {
+          "bytes": 239724,
+          "path": "/private/tmp/agentnet_text_v4.eval.jsonl",
+          "sha256": "2cadf65145b07734eb13988dc305396d027f6e98d1a5a7cf7de9a5fd31c3dc7c"
+        },
+        "label": "agentnet",
+        "public_reference": {
+          "dataset": "xlangai/AgentNet",
+          "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+        },
+        "revisions": [
+          "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+        ],
+        "rows": 8,
+        "source_families": [
+          "xlangai/AgentNet"
+        ],
+        "source_urls": [],
+        "splits": [
+          "ubuntu_jsonl_bounded_prefix"
+        ],
+        "unique_parent_records": 2,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "random_report": {
+      "bytes": 7852,
+      "path": "/private/tmp/m467-agentnet-current-random-small.json",
+      "sha256": "91e9b612c5a14261ff49055a74b5d667813df7e5c1cf6bde57404beec2fe51e2"
+    },
+    "train": [
+      {
+        "datasets": [
+          "xlangai/AgentNet"
+        ],
+        "input": {
+          "bytes": 911095,
+          "path": "/private/tmp/agentnet_text_v4.train.jsonl",
+          "sha256": "44fad4c6e98fb6f5afd3cc45b89e1c1987d5d273293922521ef67677ace79db8"
+        },
+        "label": "agentnet",
+        "public_reference": {
+          "dataset": "xlangai/AgentNet",
+          "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+        },
+        "revisions": [
+          "d76ee50a63fad81cfdbe576416757d7c2091ed50"
+        ],
+        "rows": 32,
+        "source_families": [
+          "xlangai/AgentNet"
+        ],
+        "source_urls": [],
+        "splits": [
+          "ubuntu_jsonl_bounded_prefix"
+        ],
+        "unique_parent_records": 4,
+        "visual_input_omitted_rows": 0
+      }
+    ],
+    "warm_report": {
+      "bytes": 7975,
+      "path": "/private/tmp/m467-agentnet-current-warm-small.json",
+      "sha256": "aa8a28e83818b15dc56aa9c0bbe3476b6e90daa1cbfa5e8db070317f4d60ffc4"
+    }
+  },
+  "kind": "localagent_agentnet_current_warm_random_transfer_receipt",
+  "parent_checkpoint": {
+    "bytes": 52246937,
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "protocol": {
+    "batch_size": 1,
+    "eval_rows": 8,
+    "learning_rate": 1e-05,
+    "max_seq_len": 512,
+    "random_backbone_seed": 2028,
+    "seed": 2027,
+    "split_contract": {
+      "cross_source_slot_reuse_allowed": true,
+      "labels_checked": [
+        "agentnet"
+      ],
+      "mode": "source_local_parent_and_slot_disjoint"
+    },
+    "steps": 8,
+    "train_rows": 32
+  },
+  "random": {
+    "after": {
+      "eval": {
+        "assistant_loss_tokens": 297,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.0,
+        "mean_loss": 9.52259934550584,
+        "rows": 8
+      },
+      "eval_by_source": {
+        "agentnet": {
+          "assistant_loss_tokens": 297,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.0,
+          "mean_loss": 9.52259934550584,
+          "rows": 8
+        }
+      },
+      "train": {
+        "assistant_loss_tokens": 1122,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.0,
+        "mean_loss": 9.491889749618775,
+        "rows": 32
+      }
+    },
+    "before": {
+      "eval": {
+        "assistant_loss_tokens": 297,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.0,
+        "mean_loss": 9.797299369015677,
+        "rows": 8
+      },
+      "eval_by_source": {
+        "agentnet": {
+          "assistant_loss_tokens": 297,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.0,
+          "mean_loss": 9.797299369015677,
+          "rows": 8
+        }
+      },
+      "train": {
+        "assistant_loss_tokens": 1122,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.0,
+        "mean_loss": 9.790812854460855,
+        "rows": 32
+      }
+    },
+    "child": {
+      "bytes": 52249869,
+      "path": "/private/tmp/m467-agentnet-current-random-small.pt",
+      "sha256": "8824f431cea58ba738d592f66d9ee9ccfcdcc52576da40c8e904b181a45126ac"
+    },
+    "weight_transfer": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 87.12721149777144,
+          "delta_l2": 0.0,
+          "parameters": 2518968,
+          "relative_delta_l2": 0.0,
+          "target_l2": 87.12721149777144
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.686243041747026,
+          "delta_l2": 40.254971240991445,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.7788333775484023,
+          "target_l2": 50.41048767157214
+        },
+        "embedding": {
+          "base_l2": 76.26811513665427,
+          "delta_l2": 91.29121253556312,
+          "parameters": 6291456,
+          "relative_delta_l2": 1.1969774311583685,
+          "target_l2": 50.190198877772715
+        },
+        "ffn": {
+          "base_l2": 50.599417154543154,
+          "delta_l2": 44.4223807047442,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.8779227746649184,
+          "target_l2": 49.79200816035642
+        },
+        "normalization": {
+          "base_l2": 21.431829234008912,
+          "delta_l2": 1.8369895261040572,
+          "parameters": 384,
+          "relative_delta_l2": 0.08571314683625074,
+          "target_l2": 19.59585001989852
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    }
+  },
+  "receipt_self_sha256": "51cd41936d4a95f9015a53423c0d1c895a8a448b5608ad82059cb99695bb8225",
+  "schema_version": 1,
+  "source": {
+    "dataset": "xlangai/AgentNet",
+    "images_dropped": true,
+    "official_split_verified": false,
+    "parent_split": "32 train parent records / 8 eval parent records in the bounded projection",
+    "revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+    "source_split": "ubuntu_jsonl_bounded_prefix",
+    "url": "https://huggingface.co/datasets/xlangai/AgentNet"
+  },
+  "warm": {
+    "after": {
+      "eval": {
+        "assistant_loss_tokens": 297,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.5252525252525253,
+        "mean_loss": 3.319322605325718,
+        "rows": 8
+      },
+      "eval_by_source": {
+        "agentnet": {
+          "assistant_loss_tokens": 297,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.5252525252525253,
+          "mean_loss": 3.319322605325718,
+          "rows": 8
+        }
+      },
+      "train": {
+        "assistant_loss_tokens": 1122,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.5418894830659536,
+        "mean_loss": 3.1463667194686047,
+        "rows": 32
+      }
+    },
+    "before": {
+      "eval": {
+        "assistant_loss_tokens": 297,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.4781144781144781,
+        "mean_loss": 3.885246713554819,
+        "rows": 8
+      },
+      "eval_by_source": {
+        "agentnet": {
+          "assistant_loss_tokens": 297,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.4781144781144781,
+          "mean_loss": 3.885246713554819,
+          "rows": 8
+        }
+      },
+      "train": {
+        "assistant_loss_tokens": 1122,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.5089126559714795,
+        "mean_loss": 3.652013984380984,
+        "rows": 32
+      }
+    },
+    "child": {
+      "bytes": 52249755,
+      "path": "/private/tmp/m467-agentnet-current-warm-small.pt",
+      "sha256": "3f2653236a4a3c77ac2a2bb1a05d5b8a5d3ae69afdc5f8d6d65d77ed18c4f3fa"
+    },
+    "weight_transfer": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 87.12721149777144,
+          "delta_l2": 0.0,
+          "parameters": 2518968,
+          "relative_delta_l2": 0.0,
+          "target_l2": 87.12721149777144
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.686243041747026,
+          "delta_l2": 0.03904111264336283,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0007553482386372963,
+          "target_l2": 51.686480105422
+        },
+        "embedding": {
+          "base_l2": 76.26811513665427,
+          "delta_l2": 0.08302995638106049,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.0010886588220030168,
+          "target_l2": 76.29504319911058
+        },
+        "ffn": {
+          "base_l2": 50.599417154543154,
+          "delta_l2": 0.045845392093886966,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.0009060458533319422,
+          "target_l2": 50.59942684992505
+        },
+        "normalization": {
+          "base_l2": 21.431829234008912,
+          "delta_l2": 0.0006046566976829046,
+          "parameters": 384,
+          "relative_delta_l2": 2.8213023306634525e-05,
+          "target_l2": 21.431802297081763
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    }
+  },
+  "weight_transfer_analysis": {
+    "random": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 87.12721149777144,
+          "delta_l2": 0.0,
+          "parameters": 2518968,
+          "relative_delta_l2": 0.0,
+          "target_l2": 87.12721149777144
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.686243041747026,
+          "delta_l2": 40.254971240991445,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.7788333775484023,
+          "target_l2": 50.41048767157214
+        },
+        "embedding": {
+          "base_l2": 76.26811513665427,
+          "delta_l2": 91.29121253556312,
+          "parameters": 6291456,
+          "relative_delta_l2": 1.1969774311583685,
+          "target_l2": 50.190198877772715
+        },
+        "ffn": {
+          "base_l2": 50.599417154543154,
+          "delta_l2": 44.4223807047442,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.8779227746649184,
+          "target_l2": 49.79200816035642
+        },
+        "normalization": {
+          "base_l2": 21.431829234008912,
+          "delta_l2": 1.8369895261040572,
+          "parameters": 384,
+          "relative_delta_l2": 0.08571314683625074,
+          "target_l2": 19.59585001989852
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    },
+    "warm": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 87.12721149777144,
+          "delta_l2": 0.0,
+          "parameters": 2518968,
+          "relative_delta_l2": 0.0,
+          "target_l2": 87.12721149777144
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.686243041747026,
+          "delta_l2": 0.03904111264336283,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0007553482386372963,
+          "target_l2": 51.686480105422
+        },
+        "embedding": {
+          "base_l2": 76.26811513665427,
+          "delta_l2": 0.08302995638106049,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.0010886588220030168,
+          "target_l2": 76.29504319911058
+        },
+        "ffn": {
+          "base_l2": 50.599417154543154,
+          "delta_l2": 0.045845392093886966,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.0009060458533319422,
+          "target_l2": 50.59942684992505
+        },
+        "normalization": {
+          "base_l2": 21.431829234008912,
+          "delta_l2": 0.0006046566976829046,
+          "parameters": 384,
+          "relative_delta_l2": 2.8213023306634525e-05,
+          "target_l2": 21.431802297081763
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    }
+  }
+}

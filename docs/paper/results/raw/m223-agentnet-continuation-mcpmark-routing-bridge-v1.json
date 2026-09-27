@@ -1,0 +1,114 @@
+{
+  "claim_boundary": "This is a public MCPMark task-description service-routing proxy run on the m221 AgentNet continuation children. It does not execute MCP servers, credentials, state transitions, verifiers, pass@k, official leaderboard evaluation, or real Notion, email, browser, filesystem, GitHub, or Postgres side effects.",
+  "comparison": {
+    "standard_warm_minus_random_route_pp": -2.958579881656807,
+    "easy_warm_minus_random_route_pp": 4.285714285714284,
+    "standard_warm_notation": "warm has 10/28 Notion rows and 23/25 Playwright rows correct; filesystem, GitHub, and Postgres are 0/30, 0/23, and 0/63",
+    "decision": "retain_warm_backbone_as_a_candidate_for_service_grounded_continuation; do_not_promote_native_mcp_or_productivity_control"
+  },
+  "dataset": {
+    "name": "MCPMark",
+    "url": "https://github.com/eval-sys/mcpmark",
+    "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "checkout": "/private/tmp/mcpmark",
+    "standard": {
+      "rows": 169,
+      "manifest_sha256": "b35b92adfb8a846eb32dc36c411c17aa5ecf757e5b63aeaa1671755f475686d5",
+      "metadata_and_description_bytes": 1272143
+    },
+    "easy": {
+      "rows": 70,
+      "manifest_sha256": "f8eea15c843ee222c3899849d724ddbe6cd89f0f709ff7a84659d9cafef52f06",
+      "metadata_and_description_bytes": 385446
+    },
+    "task_text_retained": false,
+    "training_used": false,
+    "mcp_servers_executed": false,
+    "verifiers_executed": false
+  },
+  "checkpoints": {
+    "warm": {
+      "path": "/private/tmp/m221-agentnet-warm-child.pt",
+      "bytes": 52224211,
+      "sha256": "316dca88d058ed6da78525115f811038e0faf3bf78a35208329a99b0bd758f8f"
+    },
+    "random_control": {
+      "path": "/private/tmp/m221-agentnet-random-child.pt",
+      "bytes": 52320645,
+      "sha256": "ae3741cd52bf0dde584755e0da1853bc07a394cb3679444cb9657c5b7fd97354"
+    }
+  },
+  "reports": {
+    "warm_standard": {
+      "path": "/private/tmp/m223-mcpmark-warm-standard.json",
+      "bytes": 2780,
+      "sha256": "ca92c5babbc4cf9504bbb02f7dc71618e82b543be1b9dc837d92a3334bd41885",
+      "rows": 169,
+      "route_accuracy": 0.1952662721893491,
+      "selector_top1": 0.0,
+      "selector_top3": 0.03550295857988166,
+      "by_service": {
+        "filesystem": 0.0,
+        "github": 0.0,
+        "notion": 0.35714285714285715,
+        "playwright": 0.92,
+        "postgres": 0.0
+      }
+    },
+    "random_standard": {
+      "path": "/private/tmp/m223-mcpmark-random-standard.json",
+      "bytes": 2913,
+      "sha256": "4360a2acea02fab1c79c7374f5f2ccb312c6b8be12749988f58ebc22c8567ed7",
+      "rows": 169,
+      "route_accuracy": 0.22485207100591717,
+      "selector_top1": 0.01775147928994083,
+      "selector_top3": 0.04142011834319527,
+      "by_service": {
+        "filesystem": 0.13333333333333333,
+        "github": 0.043478260869565216,
+        "notion": 0.14285714285714285,
+        "playwright": 0.2,
+        "postgres": 0.38095238095238093
+      }
+    },
+    "warm_easy": {
+      "path": "/private/tmp/m223-mcpmark-warm-easy.json",
+      "bytes": 2722,
+      "sha256": "fbf6921e35ccaa255cb7e09ff76a97a8c2e72afc046ab98665d99a08560eea5d",
+      "rows": 70,
+      "route_accuracy": 0.22857142857142856,
+      "selector_top1": 0.0,
+      "selector_top3": 0.0,
+      "by_service": {
+        "filesystem": 0.0,
+        "github": 0.0,
+        "notion": 0.7,
+        "playwright": 0.9,
+        "postgres": 0.0
+      }
+    },
+    "random_easy": {
+      "path": "/private/tmp/m223-mcpmark-random-easy.json",
+      "bytes": 2790,
+      "sha256": "7bbcf555770fc65063a502a3e4fc899486a9e3c4560ce676943fc0db4551d008",
+      "rows": 70,
+      "route_accuracy": 0.18571428571428572,
+      "selector_top1": 0.014285714285714285,
+      "selector_top3": 0.05714285714285714,
+      "by_service": {
+        "filesystem": 0.2,
+        "github": 0.2,
+        "notion": 0.1,
+        "playwright": 0.2,
+        "postgres": 0.2
+      }
+    }
+  },
+  "evaluator": {
+    "script": "scripts/eval_mcpmark_task_router.py",
+    "module": "src/localagent/eval/mcpmark_router.py",
+    "metric_scope": "service_family_route_and_tool_family_top_k"
+  },
+  "schema_version": 1,
+  "receipt_self_sha256": "947ed5771fc24fbb82f5fe98db9d98b39b34b662a480391dbfb919c1cc458faa"
+}

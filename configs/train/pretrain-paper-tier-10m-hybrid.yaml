@@ -1,0 +1,40 @@
+# Real-paper 5-TPP pilot for the 4K-capable 10.5M hybrid candidate.
+#
+# Both 10M arms use the same 1,610 optimizer updates and 25,760 packed-row draws:
+# 1,610 * 2 * 8 * 2,048 = 52,756,480 scheduled tokens. This is distinct from the
+# earlier one-TPP proxy corpus experiment. The frozen rows remain 2,048 tokens; the model's
+# 4,096-token limit is required for full-catalog agent evaluation, not a claim of 4K training.
+stage: pretrain
+model_config: configs/model/webgpu-10m-hybrid-4k.yaml
+data:
+  shards_dir: data/shards/paper-all
+  min_train_tokens: 19628032
+  corpus_freeze:
+    spec: configs/data/pretrain-paper-tier-freeze.yaml
+    path: data/shards/paper-all/tier-freeze.json
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-paper-16k.json
+optim:
+  name: adamw
+  lr: 3.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 32
+  total_steps: 1610
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 2
+  grad_accum_steps: 8
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+  resume: true
+log:
+  out_dir: runs/pretrain-paper-tier-10m-hybrid-seed2026
+  ckpt_every: 100
+  eval_every: 100
+  eval_batches: 16

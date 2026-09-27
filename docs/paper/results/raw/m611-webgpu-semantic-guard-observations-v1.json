@@ -1,0 +1,34 @@
+{
+  "backend": "webgpu",
+  "browser": "Codex In-app Browser",
+  "browser_url": "http://127.0.0.1:8765/index.html?probe=m611b",
+  "model_ready": true,
+  "model_parameters": 10524544,
+  "semantic": {
+    "request": "What does ephemeral mean?",
+    "abstained": true,
+    "route": "text",
+    "tool": null,
+    "selection_policy": "semantic_text_safety_guard",
+    "side_effect_executed": false,
+    "latency_ms": 43
+  },
+  "email": {
+    "request": "Email Dana the quarterly report",
+    "tool": "send_email",
+    "route": "app_action",
+    "confirmation_required": true,
+    "side_effect_executed": false,
+    "latency_ms": 14
+  },
+  "plan": {
+    "request": "Search the web for AI news, then save it to Notion.",
+    "steps": ["web_search", "notion_write"],
+    "step_count": 2,
+    "notion_confirmation_required": true,
+    "side_effect_executed": false,
+    "latency_ms": 28
+  },
+  "side_effects_executed": false,
+  "observation_policy": "local_static_bundle_only; no credentials, accounts, network writes, or external services"
+}

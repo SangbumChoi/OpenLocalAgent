@@ -1,0 +1,120 @@
+{
+  "aggregate": {
+    "bits_per_byte": 2.031249477749292,
+    "correct_tokens": 49383,
+    "cross_entropy_nats_per_token": 5.859689603348326,
+    "document_content_sha256": "c32a0bf500b2283c6e77822b421eb1bf1dd044a2737872922b66024e72dc6808",
+    "document_set_sha256": "29f7302550af5e15fe7a3c9cda305bf8ca56c084cd0d20f38a7a26db1274b0a6",
+    "documents": 240,
+    "nll_nats": 1685334.6252670288,
+    "tokens": 287615,
+    "top1_accuracy": 0.1716982772108548,
+    "utf8_bytes": 1197009
+  },
+  "checkpoint": {
+    "bytes": 126360907,
+    "model_config_sha256": "06f1e4707906d6bf0eda65764e76f8561a723d46fb829542e4554946680bf454",
+    "path": "runs/pretrain-webgpu-proxy-1tpp-hybrid-seed2028/latest.pt",
+    "pretrain_config_sha256": "3ed3a45d544f0398adfe24d5d56466973db9a77f65edef483ed5acb4afb1af95",
+    "sha256": "69044c80828db469f865dc4d29677979428c0ae1453a52e19285e86f607747c7",
+    "stage": "pretrain",
+    "step": 321,
+    "token_accounting": {
+      "input_tokens": 10551296,
+      "loss_tokens": 10551292,
+      "source": "checkpoint.token_accounting"
+    },
+    "training_seed": 2028
+  },
+  "dataset": {
+    "groups": {
+      "code": [
+        "mixture:python_code"
+      ],
+      "general": [
+        "mixture:fineweb_edu_dedup",
+        "mixture:cosmopedia_v2"
+      ]
+    },
+    "manifest": {
+      "bytes": 14959,
+      "canonical_sha256": "0959bc556ceb47259f8e52aafb2c06e8629e49183eb5365022b8827a30b17002",
+      "generation": "feeabb54739a4e5d8624488058364445",
+      "path": "data/shards/webgpu-proxy-120m/manifest.json",
+      "sha256": "6a10cc606902a648258dc58ddb3ba19aa68c5b5ed6d812fcb2f06cbedfcaa9fd",
+      "split_assignment_sha256": "1135168824cea6f6ed6ec2d983933a303023794fd0064d8e0041b4afaf7b904b"
+    },
+    "selection": "all_verified_validation_documents",
+    "source_families": {
+      "mixture:cosmopedia_v2": 57,
+      "mixture:fineweb_edu_dedup": 159,
+      "mixture:python_code": 24
+    },
+    "split": "val",
+    "staging_database": {
+      "bytes": 207577088,
+      "path": "data/shards/webgpu-proxy-120m/corpus-staging.sqlite3",
+      "sha256": "b207f7a08cf868c280427a34c8043363fbe8f42b2e6a23b9af34fd936bf1c930",
+      "staging_version": 2
+    },
+    "validation": {
+      "document_content_sha256": "c32a0bf500b2283c6e77822b421eb1bf1dd044a2737872922b66024e72dc6808",
+      "document_set_sha256": "29f7302550af5e15fe7a3c9cda305bf8ca56c084cd0d20f38a7a26db1274b0a6",
+      "documents": 240,
+      "utf8_bytes": 1197009
+    }
+  },
+  "document_sidecar": {
+    "bytes": 88650,
+    "documents": 240,
+    "kind": "localagent_pretrain_document_metrics",
+    "path": "runs/pretrain-webgpu-proxy-1tpp-hybrid-seed2028/scorecard.documents.jsonl",
+    "schema_version": 1,
+    "sha256": "4af94afe95e5425a21ec0128cf626fd9198c56ee0bf374013673c0c1f39f263e"
+  },
+  "evaluation": {
+    "batch_size": 1,
+    "boundary_policy": "predict source tokens only; prepend EOS once at document start; use non-overlapping target chunks with exact source-token coverage; later chunks reset model state but overlap the preceding source token as their first input; exclude closing EOS from CE and BPB",
+    "chunk_length": 2048,
+    "device": "cpu",
+    "dtype": "float32"
+  },
+  "groups": {
+    "code": {
+      "bits_per_byte": 2.1335997111682152,
+      "correct_tokens": 10496,
+      "cross_entropy_nats_per_token": 5.184190716987694,
+      "document_content_sha256": "1f0e8ade7c4f3441adc4cf6995abba6feedbea4797fcf43f89e6749adeaa37d8",
+      "document_set_sha256": "4ecfe8de6e952fa2ece05759829423058acb5ab4343094bcdddc230ae595ccc5",
+      "documents": 24,
+      "nll_nats": 253957.95065307617,
+      "tokens": 48987,
+      "top1_accuracy": 0.21426092636822014,
+      "utf8_bytes": 171721
+    },
+    "general": {
+      "bits_per_byte": 2.0141072850844686,
+      "correct_tokens": 38887,
+      "cross_entropy_nats_per_token": 5.998360102812548,
+      "document_content_sha256": "a7ee3701dfad5818282716f3a1e6585006858b820e3289b89684e8b67b526a07",
+      "document_set_sha256": "a36924e45b32e5e142b05a6419feeca990297e0ebb9f7c37e40857557942e038",
+      "documents": 216,
+      "nll_nats": 1431376.6746139526,
+      "tokens": 238628,
+      "top1_accuracy": 0.16296075900564896,
+      "utf8_bytes": 1025288
+    }
+  },
+  "kind": "localagent_pretrain_checkpoint_scorecard",
+  "schema_version": 1,
+  "tokenizer": {
+    "artifact": {
+      "bytes": 1134224,
+      "path": "data/tokenizer-webgpu-proxy-16k.json",
+      "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+    },
+    "kind": "bpe",
+    "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+    "vocab_size": 16384
+  }
+}

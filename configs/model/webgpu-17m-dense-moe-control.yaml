@@ -1,0 +1,25 @@
+# Dense control for webgpu-44m-moe.yaml.
+#
+# It holds the same vocabulary, width, nine-layer mixer topology, and 1024 active SwiGLU units
+# per block as the MoE candidate's 2×512 selected experts. Its 17,297,344 total/active parameters
+# are within 0.14% of the MoE candidate's 17,320,384 nominal active parameters. Compare quality at
+# fixed training tokens and measured runtime; this file does not claim WebGPU throughput.
+name: webgpu-17m-dense-moe-control
+vocab_size: 16384
+d_model: 320
+n_layers: 9
+n_loops: 1
+n_heads: 5
+n_kv_heads: 1
+ffn_hidden: 1024
+max_seq_len: 2048
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types: [conv, conv, attn, conv, conv, attn, conv, conv, attn]
+ffn_num_experts: 1
+ffn_top_k: 1
+router_aux_loss_coef: 0.0

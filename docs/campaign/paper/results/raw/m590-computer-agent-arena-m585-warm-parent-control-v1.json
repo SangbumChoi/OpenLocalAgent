@@ -1,0 +1,66 @@
+{
+  "kind": "localagent_computer_agent_arena_m585_warm_parent_control_receipt",
+  "schema_version": 1,
+  "dataset": "xlangai/computer-agent-arena",
+  "source_url": "https://huggingface.co/datasets/xlangai/computer-agent-arena",
+  "source_revision": "897b9f45287c516a44f9e79879b14bc3c1bc5b0a",
+  "source": {
+    "bytes": 50609777,
+    "sha256": "3696bc254bd64b27ddf340640c495ac887669ad8b7db2f8be371221080e3b9e1",
+    "split_policy": "evaluation_only",
+    "selection": {
+      "seed": 2027,
+      "rows": 256,
+      "unique_parent_tasks": 256,
+      "trajectory_policy": "first_parseable_action_per_unique_task"
+    }
+  },
+  "prompt_contract": {
+    "kind": "instruction_only_no_vision_v1",
+    "uses_instruction": true,
+    "uses_screenshot": false,
+    "uses_accessibility_tree": false,
+    "uses_thought": false,
+    "uses_later_trajectory_steps": false,
+    "arguments_scored": false
+  },
+  "parent": {
+    "checkpoint_sha256": "43b32b15899bcd97d7a822ef8441b04521d863b30c23c17080dbfaf4f0a14d7c",
+    "checkpoint_path": "/private/tmp/m553-multisurface-lineage-child.pt",
+    "raw_report_sha256": "303ac8a3773d4811ec6494e11ddad8c45fd090d651927363a0238bf9038b841d",
+    "overall": {
+      "tool_exact_rate": 0.015625,
+      "family_exact_rate": 0.01953125,
+      "route_accuracy": 1.0,
+      "abstention_rate": 0.96875
+    }
+  },
+  "warm_child": {
+    "checkpoint_sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff",
+    "checkpoint_path": "/private/tmp/m585-public-multisurface-warm.pt",
+    "raw_report_sha256": "ea7b5b43137b068c19b7001234d682f521d86839b3523f064290e88366c53879",
+    "overall": {
+      "tool_exact_rate": 0.015625,
+      "family_exact_rate": 0.01953125,
+      "route_accuracy": 1.0,
+      "abstention_rate": 0.96875
+    }
+  },
+  "transfer_delta": {
+    "tool_exact_pp": 0.0,
+    "family_exact_pp": 0.0,
+    "route_accuracy_pp": 0.0,
+    "abstention_pp": 0.0,
+    "by_family_tool_exact_pp": {
+      "keyboard": 0.0,
+      "observation": 0.0,
+      "pointer": 0.0,
+      "scroll": 0.0,
+      "type": 0.0,
+      "wait": 0.0
+    },
+    "interpretation": "The m585 public multisurface warm continuation leaves the matched m553 desktop action prior unchanged on this source-local evaluation projection. The 96.875% abstention rate and 0% exactness on keyboard, observation, scroll, type, and wait remain deployment blockers."
+  },
+  "claim_boundary": "Instruction-only Computer Agent Arena action-family diagnostic. Public screenshots, accessibility trees, thought traces, later trajectory state, and action arguments were omitted; no images were used, no desktop runtime was launched, and this is not a Computer Agent Arena, AgentNetBench, OSWorld, visual-grounding, or native desktop score.",
+  "receipt_self_sha256": "0ceca3d8980cca674c6fa767576ef407c51603c44d4c476d160659afb5389ff5"
+}

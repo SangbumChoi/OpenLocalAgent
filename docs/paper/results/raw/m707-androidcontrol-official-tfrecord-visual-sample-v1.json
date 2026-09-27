@@ -1,0 +1,60 @@
+{
+  "bounded_fetch": {
+    "first_record_bytes": 772635,
+    "first_record_sha256": "6881efdfbcc5c843418e521eb724356fd8c2300e72cea40ae7ef0bb9274018f1",
+    "prefix_bytes": 10485760,
+    "prefix_sha256": "c23b8865d8deed6d6145c8f9d2877dd2130600975c689f6cde429b62e86d32c3",
+    "range_end_exclusive": 10485760,
+    "range_start": 0
+  },
+  "claim_boundary": "This receipt proves that the original public AndroidControl TFRecord source contains screenshot PNG bytes, accessibility trees, instructions, and actions for a train-split episode. It does not train or evaluate a vision model, and it does not claim Android emulator, AndroidWorld, MobileGym, or WebGPU screenshot success.",
+  "episode": {
+    "accessibility_tree_count": 4,
+    "accessibility_tree_total_bytes": 63519,
+    "action_count": 3,
+    "action_types": [
+      "open_app",
+      "wait",
+      "click"
+    ],
+    "episode_id": 0,
+    "goal": "Open the Zoho Meet app , view the scheduled meetings .",
+    "screenshot_bytes_sha256": "66fb0c4bc83a2f0e628bea63469ace88ed7963217f5b129e8a897e097730b40e",
+    "screenshot_count": 4,
+    "screenshot_heights": [
+      2400,
+      2400,
+      2400,
+      2400
+    ],
+    "screenshot_total_bytes": 708631,
+    "screenshot_widths": [
+      1080,
+      1080,
+      1080,
+      1080
+    ],
+    "split": "train",
+    "step_instruction_count": 3
+  },
+  "kind": "localagent_androidcontrol_official_tfrecord_visual_sample",
+  "pipeline_boundary": {
+    "current_androidcontrol_receipts_visual_input_omitted": true,
+    "current_localagent_projection_consumes_screenshots": false,
+    "official_visual_bytes_present": true,
+    "training_admission": "provenance_only_until_a_vision_encoder_and_visual_eval_are_bound"
+  },
+  "schema_version": 1,
+  "source": {
+    "compression": "gzip",
+    "dataset": "AndroidControl",
+    "gcs_browser": "https://console.cloud.google.com/storage/browser/gresearch/android_control",
+    "object_md5_base64": "QuhP+X5aiP+iD5amlNM6tA==",
+    "object_size_bytes": 2492987829,
+    "object_url": "https://storage.googleapis.com/gresearch/android_control/android_control-00000-of-00020",
+    "original_repository": "https://github.com/google-research/google-research/tree/master/android_control",
+    "record_format": "TFRecord tf.train.Example",
+    "shard": "android_control-00000-of-00020",
+    "split_manifest_url": "https://storage.googleapis.com/gresearch/android_control/splits.json"
+  }
+}

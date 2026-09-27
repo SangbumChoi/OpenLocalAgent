@@ -1,0 +1,99 @@
+{
+  "checkpoint": {
+    "bytes": 52211696,
+    "path": "/private/tmp/m585-public-multisurface-warm.pt",
+    "sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff"
+  },
+  "claim_boundary": "Teacher-forced text/world-model projection on the public AgentWorldBench test split. This is not an official AgentWorldBench judge score, action success, screenshot score, native Android/OS/browser/MCP execution, or training result; all rows remain eval-only.",
+  "data": {
+    "bytes": 26421688,
+    "path": "/private/tmp/m612-agentworldbench/normalized.jsonl",
+    "sha256": "a73d6606f98bc928f7022454813f5b2a1ee297ccbcb86f1fd7913290208b516a"
+  },
+  "kind": "localagent_agentworldbench_text_projection_eval",
+  "manifest": {
+    "dataset": "Qwen/AgentWorldBench",
+    "path": "/private/tmp/m612-agentworldbench/manifest.json",
+    "sha256": "a3595a1f9db2949024df5273fcdd290e67c3dbb4402b3c9d8fe37634127b8961",
+    "source_revision": "6b8d28437042434dcdd168434227ca0de408c5ba",
+    "split": "test",
+    "train_policy": "eval_only"
+  },
+  "metrics": {
+    "by_domain": {
+      "android": {
+        "assistant_loss_tokens": 15931,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.056117004582261,
+        "mean_loss": 7.3216888579067545,
+        "rows": 32
+      },
+      "mcp": {
+        "assistant_loss_tokens": 10973,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.08666727421853641,
+        "mean_loss": 7.518680351060557,
+        "rows": 32
+      },
+      "os": {
+        "assistant_loss_tokens": 16352,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.09423923679060665,
+        "mean_loss": 6.583544169386772,
+        "rows": 32
+      },
+      "search": {
+        "assistant_loss_tokens": 15820,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.04475347661188369,
+        "mean_loss": 7.387265859572535,
+        "rows": 32
+      },
+      "swe": {
+        "assistant_loss_tokens": 8236,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.06058766391452161,
+        "mean_loss": 7.425042721645064,
+        "rows": 32
+      },
+      "terminal": {
+        "assistant_loss_tokens": 9167,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.04756190683975128,
+        "mean_loss": 7.148911665996237,
+        "rows": 32
+      },
+      "web": {
+        "assistant_loss_tokens": 15017,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.046347472864087365,
+        "mean_loss": 7.23424845071419,
+        "rows": 32
+      }
+    },
+    "overall": {
+      "assistant_loss_tokens": 91496,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.06257104135699922,
+      "mean_loss": 7.202373862527119,
+      "rows": 224
+    }
+  },
+  "protocol": {
+    "batch_size": 4,
+    "domains": [
+      "android",
+      "mcp",
+      "os",
+      "search",
+      "swe",
+      "terminal",
+      "web"
+    ],
+    "max_seq_len": 512,
+    "rows": 224,
+    "teacher_forced_last_observation_target": true
+  },
+  "receipt_self_sha256": "1c64d0d1c34879c95cdb3db0021c0461a4b25cee64ff42e0c07f074b3e4928ae",
+  "schema_version": 1
+}

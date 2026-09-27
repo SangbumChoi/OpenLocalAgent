@@ -1,0 +1,97 @@
+{
+  "browser": {
+    "cases": [
+      {
+        "arguments": {
+          "recipient": "Dana"
+        },
+        "decision": "confirmation_required",
+        "latency_ms": 502,
+        "name": "email_confirmation_gate",
+        "observed_tools": [
+          "app_action",
+          "send_email"
+        ],
+        "prompt": "Email Dana the quarterly report",
+        "side_effect_executed": false,
+        "tool": "send_email"
+      },
+      {
+        "arguments": {
+          "content": "quarterly report summary"
+        },
+        "decision": "confirmation_required",
+        "latency_ms": 144,
+        "name": "notion_confirmation_gate",
+        "observed_tools": [
+          "app_action",
+          "notion_write"
+        ],
+        "prompt": "Save the quarterly report summary to Notion",
+        "side_effect_executed": false,
+        "tool": "notion_write"
+      },
+      {
+        "arguments": {
+          "url": "https://github.com/pytorch/pytorch"
+        },
+        "decision": "read_only_or_abstention_action",
+        "latency_ms": 23,
+        "name": "browser_read_only_navigation",
+        "observed_tools": [
+          "web_search",
+          "open_url"
+        ],
+        "prompt": "Open https://github.com/pytorch/pytorch",
+        "side_effect_executed": false,
+        "tool": "open_url"
+      },
+      {
+        "arguments": {
+          "query": "AI news"
+        },
+        "decision": "read_only_or_abstention_action",
+        "latency_ms": 218,
+        "name": "planner_search_then_confirmation",
+        "observed_tools": [
+          "web_search",
+          "notion_write"
+        ],
+        "planner_mode_enabled": true,
+        "planner_selected_notion_write": true,
+        "planner_completed_notion_write": false,
+        "prompt": "Search the web for AI news, then save it to Notion",
+        "side_effect_executed": false,
+        "tool": "web_search -> notion_write"
+      }
+    ],
+    "model_ready": true,
+    "page_errors": 0,
+    "provider_label": "WEBGPU",
+    "request_failures": 0,
+    "status": 200,
+    "title": "LocalAgent — Tool Calling (WebGPU)",
+    "url": "http://127.0.0.1:4189/",
+    "visible_banner_bpe": true,
+    "visible_banner_tool_count": 63
+  },
+  "bundle": {
+    "bundle_identity_sha256": "e0e19a8ad529a23e6bd703ed310eabe95f0a7b8b8ca7ad984c2d0c5ec8a296ed",
+    "bundle_manifest_sha256": "f0c28409d75a03570c10aa4fa281e51ac1bc7b0c48608af1a7de3ea803ed94d7",
+    "checkpoint_sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "meta_sha256": "d26f68ed2201f9db7d97898001b5dadfef484a39e497405975cf5e859693a8ce",
+    "parity_gate_passed": true,
+    "tool_count": 63
+  },
+  "claim_boundary": "This is a local static-browser runtime smoke bound to the current 63-tool BPE bundle. The page loaded and reported a WEBGPU provider label, but this receipt does not claim a hardware WebGPU adapter, native browser benchmark score, or public Hub release. Email and Notion actions were stopped at the confirmation boundary; browser navigation was read-only; planner mode selected a read-only search followed by a staged Notion write but did not execute it. No external side effect occurred.",
+  "generated_at": "2026-08-05",
+  "kind": "localagent_webgpu_current_browser_realistic_actions",
+  "receipt_self_sha256": "ff876610f311f74851a0eff2bcc06a9b01647cf3c43fcdf61f3b434e95312759",
+  "schema_version": 1,
+  "static_sources": {
+    "app_js_sha256": "2496c9fa5210b561ce96af7cd9b4b907333293d81f72dad97dc6901955127e64",
+    "bundle_manifest_sha256": "f0c28409d75a03570c10aa4fa281e51ac1bc7b0c48608af1a7de3ea803ed94d7",
+    "index_html_sha256": "82b4a5e15a090c7bb82924ab3f0b2e6f0a13c7ea0c41094c665f9be13f8b1fe5",
+    "meta_sha256": "d26f68ed2201f9db7d97898001b5dadfef484a39e497405975cf5e859693a8ce"
+  }
+}

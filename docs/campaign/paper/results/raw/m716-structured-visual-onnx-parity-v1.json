@@ -1,0 +1,72 @@
+{
+  "abi": {
+    "action_names": [
+      "click",
+      "input_text",
+      "long_press",
+      "navigate_back",
+      "open_app",
+      "scroll",
+      "wait"
+    ],
+    "image_range": "float32 RGB [0,1]",
+    "inputs": {
+      "context_lengths": [
+        1
+      ],
+      "images": [
+        1,
+        3,
+        96,
+        96
+      ],
+      "input_ids": [
+        1,
+        128
+      ]
+    },
+    "outputs": {
+      "action_logits": [
+        1,
+        7
+      ],
+      "pointer_xy": [
+        1,
+        2
+      ]
+    }
+  },
+  "claim_boundary": "This receipt proves CPU ONNX parity for a trained structured visual sidecar and its explicit image/action tensor ABI. It does not claim onnxruntime-web WebGPU execution, browser deployment, Android emulator success, or an official AndroidControl score.",
+  "deployment_boundary": {
+    "browser_demo_bound": false,
+    "native_mobile_verifier": false,
+    "onnx_cpu_runtime": true,
+    "onnx_webgpu_runtime": false,
+    "pytorch_reference": true
+  },
+  "kind": "localagent_m716_structured_visual_onnx_parity",
+  "onnx": {
+    "bytes": 44255651,
+    "path": "/private/tmp/m714-structured-warm.onnx",
+    "sha256": "60d0d7696b78205f8517698cf757ca7ff6299567d29981bfa3fefeb33e9ae75d"
+  },
+  "parity": {
+    "checked": true,
+    "max_abs_diffs": [
+      8.642673492431641e-07,
+      1.1920928955078125e-07
+    ],
+    "passed": true
+  },
+  "pilot": {
+    "bytes": 11945,
+    "path": "/private/tmp/m714-structured-receipt-v2.json",
+    "sha256": "a1c6e6aa1ade47613801057d0b411cbd711b3536a88743661b8116c9126d896a"
+  },
+  "schema_version": 1,
+  "sidecar": {
+    "bytes": 43665721,
+    "path": "/private/tmp/m714-structured-warm.pt",
+    "sha256": "5d0981e2749fbf381631615ac9306e0ccd04e26d46add472211fad8114a8096e"
+  }
+}

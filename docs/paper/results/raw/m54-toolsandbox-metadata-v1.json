@@ -1,0 +1,185 @@
+{
+  "claim_boundary": "Public ToolSandbox source inventory only. Base scenario source is parsed without imports, task execution, user simulation, tool calls, verifiers, screenshots, external APIs, training rows, or a model score. Native evaluation still requires the pinned simulator and complete upstream result coverage.",
+  "coverage": {
+    "augmentation_policy": {
+      "distraction_variants_per_base": [
+        "none",
+        "three",
+        "ten",
+        "all"
+      ],
+      "note": "Counts are derived from the upstream named_scenarios source. Runtime tool similarity ranking can change the concrete augmented allow-lists.",
+      "schema_scramble_variants": [
+        "tool_description",
+        "argument_type",
+        "argument_description",
+        "tool_name"
+      ],
+      "schema_scramble_variants_per_base": 4
+    },
+    "base_scenarios": 129,
+    "category_tokens": {
+      "CANONICALIZATION": 59,
+      "STATE_DEPENDENCY": 24
+    },
+    "scenario_families": {
+      "insufficient_information": {
+        "base_scenarios": 28,
+        "category_tokens": {},
+        "scenario_name_sha256": "f6eeba7273a5f5e96e302eee27ba563b3f69c1c39e592040a6112df011369d9a",
+        "tool_allow_list_entries": 68,
+        "tool_allow_list_literals": 28,
+        "unique_base_scenarios": 28,
+        "unique_tools": 23
+      },
+      "multiple_tool_call": {
+        "base_scenarios": 54,
+        "category_tokens": {
+          "CANONICALIZATION": 37,
+          "STATE_DEPENDENCY": 18
+        },
+        "scenario_name_sha256": "574540c9610c18e32c61926d051d973340223242776388deecd72d9d425a3e12",
+        "tool_allow_list_entries": 219,
+        "tool_allow_list_literals": 54,
+        "unique_base_scenarios": 54,
+        "unique_tools": 30
+      },
+      "multiple_user_turn": {
+        "base_scenarios": 28,
+        "category_tokens": {
+          "CANONICALIZATION": 18,
+          "STATE_DEPENDENCY": 6
+        },
+        "scenario_name_sha256": "4a98357b624efc9434b18c422c161f858f331160df3039340bcb009d81005977",
+        "tool_allow_list_entries": 114,
+        "tool_allow_list_literals": 28,
+        "unique_base_scenarios": 28,
+        "unique_tools": 25
+      },
+      "single_tool_call": {
+        "base_scenarios": 19,
+        "category_tokens": {
+          "CANONICALIZATION": 4
+        },
+        "scenario_name_sha256": "876f89eb07afef47fc85184336e68844437207f0ea624eeedd212868e15c85eb",
+        "tool_allow_list_entries": 19,
+        "tool_allow_list_literals": 19,
+        "unique_base_scenarios": 19,
+        "unique_tools": 16
+      }
+    },
+    "source_level_augmentation_multiplier": 8,
+    "source_level_augmented_scenarios": 1032,
+    "tool_allow_list_entries": 420,
+    "tool_allow_list_literals": 129,
+    "unique_base_scenarios": 129,
+    "unique_tool_names": [
+      "add_contact",
+      "add_reminder",
+      "calculate_lat_lon_distance",
+      "convert_currency",
+      "datetime_info_to_timestamp",
+      "get_cellular_service_status",
+      "get_current_location",
+      "get_current_timestamp",
+      "get_location_service_status",
+      "get_low_battery_mode_status",
+      "get_wifi_status",
+      "modify_contact",
+      "modify_reminder",
+      "remove_contact",
+      "remove_reminder",
+      "search_contacts",
+      "search_holiday",
+      "search_lat_lon",
+      "search_location_around_lat_lon",
+      "search_messages",
+      "search_reminder",
+      "search_stock",
+      "search_weather_around_lat_lon",
+      "send_message_with_phone_number",
+      "set_cellular_service_status",
+      "set_location_service_status",
+      "set_low_battery_mode_status",
+      "set_wifi_status",
+      "shift_timestamp",
+      "timestamp_diff",
+      "timestamp_to_datetime_info",
+      "unit_conversion"
+    ],
+    "unique_tools": 32
+  },
+  "dataset": "apple/ToolSandbox",
+  "kind": "localagent_toolsandbox_metadata_receipt",
+  "license": "Apple Software License; see upstream LICENSE and ACKNOWLEDGEMENTS",
+  "receipt_self_sha256": "1509050e6bd83f0f1f53029b183c1d67db7d64404875d22488a7e0e207973338",
+  "revision": "165848b9a78cead7ca7fe7c89c688b58e6501219",
+  "runtime_requirements": {
+    "dill": true,
+    "external_api_keys": "required for optional RapidAPI search tools only",
+    "milestone_evaluator": true,
+    "polars": true,
+    "python_package": true,
+    "stateful_databases": [
+      "setting",
+      "contact",
+      "messaging",
+      "reminder"
+    ],
+    "user_simulator": true
+  },
+  "schema_version": 1,
+  "source": {
+    "checkout_root": "toolsandbox-src",
+    "external_api_called": false,
+    "files": {
+      "../../LICENSE": {
+        "bytes": 2668,
+        "path": "LICENSE",
+        "sha256": "2283d5566b38210fbfb9fcb06619f1d0a8101bff9df974ea8afc3393508e9015"
+      },
+      "../../README.md": {
+        "bytes": 48824,
+        "path": "README.md",
+        "sha256": "0e5cfb9077769e2dcbe74dbfc8b8fac8314d8a213ab34364ab6b2ecaf47d8fe8"
+      },
+      "../common/execution_context.py": {
+        "bytes": 35461,
+        "path": "tool_sandbox/common/execution_context.py",
+        "sha256": "a18f54e157b92fa011e84780bc33941ea0635ad70ab4b38e7408beedc6221437"
+      },
+      "../scenarios/__init__.py": {
+        "bytes": 5572,
+        "path": "tool_sandbox/scenarios/__init__.py",
+        "sha256": "113cc01d10bb1630a93e09785893235ae4a3863d3a61542839eeb2791914724a"
+      },
+      "insufficient_information_scenarios.py": {
+        "bytes": 73027,
+        "path": "tool_sandbox/scenarios/insufficient_information_scenarios.py",
+        "sha256": "3920e5bb8df528c5e87427c29edc7ee346057324eb47e56df61189a298c901b1"
+      },
+      "multiple_tool_call_scenarios.py": {
+        "bytes": 265184,
+        "path": "tool_sandbox/scenarios/multiple_tool_call_scenarios.py",
+        "sha256": "e2d351bebf9afec76d37263b02544120c78b687f4dd4501ab0a4b6c981ce1ff3"
+      },
+      "multiple_user_turn_scenarios.py": {
+        "bytes": 148087,
+        "path": "tool_sandbox/scenarios/multiple_user_turn_scenarios.py",
+        "sha256": "784c636140afbb452e94df301191f466f6d06929d3eebec13ba1a66992a74baf"
+      },
+      "single_tool_call_scenarios.py": {
+        "bytes": 49816,
+        "path": "tool_sandbox/scenarios/single_tool_call_scenarios.py",
+        "sha256": "dd295b0f64c53015bfebea538891be3183a7a1f74ec37454a0f154b93fab9e38"
+      }
+    },
+    "metadata_only": true,
+    "prompts_retained": false,
+    "tools_executed": false,
+    "user_simulator_executed": false,
+    "verifiers_read": false
+  },
+  "source_revision_url": "https://github.com/apple/ToolSandbox/tree/165848b9a78cead7ca7fe7c89c688b58e6501219",
+  "source_url": "https://github.com/apple/ToolSandbox"
+}

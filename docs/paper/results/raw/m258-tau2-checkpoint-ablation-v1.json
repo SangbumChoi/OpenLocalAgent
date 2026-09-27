@@ -1,0 +1,267 @@
+{
+  "arms": [
+    {
+      "checkpoint": {
+        "bytes": 52231121,
+        "path": "runs/sft-mind2web-trajectory-continuation-20260802-m46/latest.pt",
+        "sha256": "b19828908594463385870607d89c084afc1bb237cc5fb51752ac6860a204a041"
+      },
+      "configuration": {
+        "domain": "mock",
+        "max_agent_turns": 1,
+        "retrieve_k": 50,
+        "selector_first": true,
+        "selector_mode": "checkpoint",
+        "split": "base",
+        "tasks": [
+          "create_task_1",
+          "create_task_1_with_env_assertions",
+          "create_task_1_nl_eval",
+          "update_task_1",
+          "update_task_with_message_history",
+          "update_task_with_initialization_data",
+          "update_task_with_initialization_actions",
+          "update_task_with_history_and_env_assertions",
+          "update_task_with_user_tools",
+          "impossible_task_1"
+        ],
+        "user_simulator": false
+      },
+      "contract_verification": {
+        "environment_reward": 1.0,
+        "gold_trajectory_replayed": true,
+        "passed": true,
+        "task_id": "create_task_1"
+      },
+      "label": "checkpoint_m46",
+      "receipt": {
+        "bytes": 12652,
+        "path": "docs/paper/results/raw/m258-tau2-m46-checkpoint-native-v1.json",
+        "sha256": "caeeeb33f5f8b558bd8f7bd60764818ca9411802fabe82a3b0e3711fe7b86bc4"
+      },
+      "receipt_self_sha256": "016d1c7ecd13c026df41947044fab0d12f1ea405ac189fd7efea18cca73624d6",
+      "source": {
+        "domain": "mock",
+        "files": {
+          "LICENSE": "e67c5aa0074dfcaefd3c3a1aedb94cb539234aecd15d5a972574e3200e6252fe",
+          "README.md": "ed39688aa5d40bd73007355df65f4e41a6c250960642e56764c3ad44da1df8d2",
+          "data/tau2/domains/mock/db.json": "8661f80b4c693bb15ef2fe6781d24a5765240d61fc74387c770133953f9113ea",
+          "data/tau2/domains/mock/policy.md": "50ccbefac7c9ba77ce54131d61cfc6882f74b88ace66771115f9d867ec098203",
+          "data/tau2/domains/mock/split_tasks.json": "613c3298e6fd3cf03f71f848ecee519068eb4df54a1ceb28596f5aa443ee6581",
+          "data/tau2/domains/mock/tasks.json": "0d8bcd14798bf2e6e082432147f62570c57b0897b4e4e388c95bb02ecbe5d8cf",
+          "data/tau2/domains/mock/user_db.json": "78d424b5177e430b7f483787a956ad3a6a0880e8e5b312be8e373b15c876d51f",
+          "pyproject.toml": "23d59670b4ad7bbc0f57420fd9643a8d9188c24abe4f29c9c965544d8cc4cb8d"
+        },
+        "revision": "363133ada1936491fb5bcec33cd62c3518a99f65",
+        "split": "base",
+        "task_count": 10
+      },
+      "summary": {
+        "bounded_native_success_rate": 0.0,
+        "bounded_native_successes": 0,
+        "first_action_exact": 0,
+        "model_tool_calls": 10,
+        "tasks": 10
+      }
+    },
+    {
+      "checkpoint": {
+        "bytes": 52242001,
+        "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+        "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+      },
+      "configuration": {
+        "domain": "mock",
+        "max_agent_turns": 1,
+        "retrieve_k": 50,
+        "selector_first": true,
+        "selector_mode": "checkpoint",
+        "split": "base",
+        "tasks": [
+          "create_task_1",
+          "create_task_1_with_env_assertions",
+          "create_task_1_nl_eval",
+          "update_task_1",
+          "update_task_with_message_history",
+          "update_task_with_initialization_data",
+          "update_task_with_initialization_actions",
+          "update_task_with_history_and_env_assertions",
+          "update_task_with_user_tools",
+          "impossible_task_1"
+        ],
+        "user_simulator": false
+      },
+      "contract_verification": {
+        "environment_reward": 1.0,
+        "gold_trajectory_replayed": true,
+        "passed": true,
+        "task_id": "create_task_1"
+      },
+      "label": "checkpoint_browser",
+      "receipt": {
+        "bytes": 12501,
+        "path": "docs/paper/results/raw/m258-tau2-browser-checkpoint-native-v1.json",
+        "sha256": "ffb5f5ba9bf3263b5b91e4d93b2b2746cefe6d067920146320461f4b8bc2ce21"
+      },
+      "receipt_self_sha256": "1288fb46ea242908baa04d17e4cb6641073cecf90f4ad10aa40e01969bb36726",
+      "source": {
+        "domain": "mock",
+        "files": {
+          "LICENSE": "e67c5aa0074dfcaefd3c3a1aedb94cb539234aecd15d5a972574e3200e6252fe",
+          "README.md": "ed39688aa5d40bd73007355df65f4e41a6c250960642e56764c3ad44da1df8d2",
+          "data/tau2/domains/mock/db.json": "8661f80b4c693bb15ef2fe6781d24a5765240d61fc74387c770133953f9113ea",
+          "data/tau2/domains/mock/policy.md": "50ccbefac7c9ba77ce54131d61cfc6882f74b88ace66771115f9d867ec098203",
+          "data/tau2/domains/mock/split_tasks.json": "613c3298e6fd3cf03f71f848ecee519068eb4df54a1ceb28596f5aa443ee6581",
+          "data/tau2/domains/mock/tasks.json": "0d8bcd14798bf2e6e082432147f62570c57b0897b4e4e388c95bb02ecbe5d8cf",
+          "data/tau2/domains/mock/user_db.json": "78d424b5177e430b7f483787a956ad3a6a0880e8e5b312be8e373b15c876d51f",
+          "pyproject.toml": "23d59670b4ad7bbc0f57420fd9643a8d9188c24abe4f29c9c965544d8cc4cb8d"
+        },
+        "revision": "363133ada1936491fb5bcec33cd62c3518a99f65",
+        "split": "base",
+        "task_count": 10
+      },
+      "summary": {
+        "bounded_native_success_rate": 0.2,
+        "bounded_native_successes": 2,
+        "first_action_exact": 2,
+        "model_tool_calls": 4,
+        "tasks": 10
+      }
+    },
+    {
+      "checkpoint": {
+        "bytes": 52231121,
+        "path": "runs/sft-mind2web-trajectory-continuation-20260802-m46/latest.pt",
+        "sha256": "b19828908594463385870607d89c084afc1bb237cc5fb51752ac6860a204a041"
+      },
+      "configuration": {
+        "domain": "mock",
+        "max_agent_turns": 1,
+        "retrieve_k": 1,
+        "selector_first": false,
+        "selector_mode": "retriever",
+        "split": "base",
+        "tasks": [
+          "create_task_1",
+          "create_task_1_with_env_assertions",
+          "create_task_1_nl_eval",
+          "update_task_1",
+          "update_task_with_message_history",
+          "update_task_with_initialization_data",
+          "update_task_with_initialization_actions",
+          "update_task_with_history_and_env_assertions",
+          "update_task_with_user_tools",
+          "impossible_task_1"
+        ],
+        "user_simulator": false
+      },
+      "contract_verification": {
+        "environment_reward": 1.0,
+        "gold_trajectory_replayed": true,
+        "passed": true,
+        "task_id": "create_task_1"
+      },
+      "label": "retriever_m46_k1",
+      "receipt": {
+        "bytes": 12505,
+        "path": "docs/paper/results/raw/m258-tau2-m46-retriever-k1-native-v1.json",
+        "sha256": "a7223dd90b8e30b86ed164cbdb663592bea53625f46887aaa53ce93f12232de3"
+      },
+      "receipt_self_sha256": "1971b8232fc0d1f3f85bfa478b51cd099f1faea1d3fdbfdcdafa95deb9929cf8",
+      "source": {
+        "domain": "mock",
+        "files": {
+          "LICENSE": "e67c5aa0074dfcaefd3c3a1aedb94cb539234aecd15d5a972574e3200e6252fe",
+          "README.md": "ed39688aa5d40bd73007355df65f4e41a6c250960642e56764c3ad44da1df8d2",
+          "data/tau2/domains/mock/db.json": "8661f80b4c693bb15ef2fe6781d24a5765240d61fc74387c770133953f9113ea",
+          "data/tau2/domains/mock/policy.md": "50ccbefac7c9ba77ce54131d61cfc6882f74b88ace66771115f9d867ec098203",
+          "data/tau2/domains/mock/split_tasks.json": "613c3298e6fd3cf03f71f848ecee519068eb4df54a1ceb28596f5aa443ee6581",
+          "data/tau2/domains/mock/tasks.json": "0d8bcd14798bf2e6e082432147f62570c57b0897b4e4e388c95bb02ecbe5d8cf",
+          "data/tau2/domains/mock/user_db.json": "78d424b5177e430b7f483787a956ad3a6a0880e8e5b312be8e373b15c876d51f",
+          "pyproject.toml": "23d59670b4ad7bbc0f57420fd9643a8d9188c24abe4f29c9c965544d8cc4cb8d"
+        },
+        "revision": "363133ada1936491fb5bcec33cd62c3518a99f65",
+        "split": "base",
+        "task_count": 10
+      },
+      "summary": {
+        "bounded_native_success_rate": 0.3,
+        "bounded_native_successes": 3,
+        "first_action_exact": 3,
+        "model_tool_calls": 5,
+        "tasks": 10
+      }
+    }
+  ],
+  "claim_boundary": "Native resettable tau2 mock diagnostic only. The checkpoint-selector arm, zero-training schema-retriever arm, and tensor movement report do not constitute a complete tau2 base split, user-simulator, retail/telecom, leaderboard, or WebGPU task-success result.",
+  "kind": "localagent_tau2_mock_checkpoint_ablation",
+  "receipt_self_sha256": "7214301c16642cb33af6eaa5c25c23b7bd4bce8245107dcfba34b170b37c948a",
+  "schema_version": 1,
+  "source": {
+    "dataset": "tau2-bench",
+    "domain": "mock",
+    "revision": "363133ada1936491fb5bcec33cd62c3518a99f65",
+    "split": "base",
+    "task_count": 10,
+    "task_text_retained": false,
+    "tool_outputs_retained": false
+  },
+  "weight_transfer": {
+    "base": {
+      "sha256": "b19828908594463385870607d89c084afc1bb237cc5fb51752ac6860a204a041",
+      "stage": "sft_public_agent_continuation"
+    },
+    "compatibility": {
+      "config_mismatches": {},
+      "shape_mismatches": {},
+      "shared_tensor_count": 51,
+      "tokenizer_sha256_equal": true
+    },
+    "groups": {
+      "action_heads": {
+        "base_l2": 93.99105982187166,
+        "delta_l2": 67.15421946422846,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.7144745424883667,
+        "target_l2": 99.96533739276437
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.61212741977001,
+        "delta_l2": 1.6519740501909916,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.03200747833460171,
+        "target_l2": 51.68591919503937
+      },
+      "embedding": {
+        "base_l2": 69.20596774372395,
+        "delta_l2": 16.637576926860067,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.24040667978909772,
+        "target_l2": 76.22106199454595
+      },
+      "ffn": {
+        "base_l2": 50.52425180748712,
+        "delta_l2": 2.2768717777966,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.045064928155139815,
+        "target_l2": 50.59914708877707
+      },
+      "normalization": {
+        "base_l2": 21.2794818606334,
+        "delta_l2": 0.15294521988310322,
+        "parameters": 384,
+        "relative_delta_l2": 0.00718745037519211,
+        "target_l2": 21.432378276078357
+      }
+    },
+    "report": {
+      "bytes": 1595,
+      "path": "docs/paper/results/raw/m258-tau2-m46-browser-weight-transfer-summary-v1.json",
+      "sha256": "82e798e12c22b757a7db2a0dd8142cfd59b1a913e55d23cc372976e1caba3658"
+    },
+    "target": {
+      "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+      "stage": "sft_browser_context"
+    }
+  }
+}

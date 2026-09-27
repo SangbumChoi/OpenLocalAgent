@@ -1,0 +1,47 @@
+# Paper-scale, train-only synthetic agent corpus. The explicit versioned mode leaves the frozen
+# 5k v1 train/eval artifacts and their tool registry untouched.
+out: data/synth/agent_sft_paper_train_v2.jsonl
+n_samples: 50000
+seed: 2026
+level: 5
+split: train
+generator:
+  backend: deterministic_templates
+  mode: paper_train_v2
+  mode_version: 2
+complexity:
+  multi_turn: 0.25
+irrelevance_fraction: 0.20
+coverage:
+  # Counts are deterministic conversation minima, not tool-call counts. V2 reserves independent
+  # single-turn rows for the number and boolean minima even though each precise scroll covers both.
+  minimum_conversations:
+    parallel_calls: 2000
+    integer_arguments: 50
+    enum_arguments: 40
+    boolean_arguments: 2500
+    number_arguments: 2500
+    tool_response_grounded_followups: 2500
+    verified_error_recovery: 1000
+    paper_v2_schema_trajectories: 1500
+  plan_length_minimums:
+    0: 40
+    1: 50
+    2: 1000
+    3: 1500
+    4: 1500
+verification:
+  rule_based: true
+  model_based: false
+
+# Preserve the same frozen exact-prompt exclusions as the v1 training artifact. These are local,
+# hash-pinned suites; generation performs no network access or environment/tool execution.
+exact_prompt_holdouts:
+  - name: local-realtime-actions
+    path: ../../demos/webgpu/benchmark-cases.json
+    bytes: 4596
+    sha256: f6e479c10b420edcd1630e99c43df3206a40431f1256d919d5ea1a57bc88142c
+  - name: local-browser-tasks
+    path: ../../demos/webgpu/browser-task-cases.json
+    bytes: 6285
+    sha256: 4c46b5b347257b81e716ec0a20a6c6116df716466e1ba8e8a74a117bb5708971

@@ -1,0 +1,211 @@
+{
+  "benchmark_id": "mcpmark",
+  "checkpoint_sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+  "checkpoint": {
+    "parent": {
+      "bytes": 52242001,
+      "path": "/Users/sangbumchoi/Documents/LocalAgent/runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+      "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+    },
+    "parent_sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "random_child": {
+      "bytes": 52248916,
+      "path": "/private/tmp/m351-mcpmark-current-state-random.pt",
+      "sha256": "786a0e9266a54a17f11b90a6b79486764cd38d33bafd9d531d12a760bc71812b"
+    },
+    "warm_child": {
+      "bytes": 52248802,
+      "path": "/private/tmp/m351-mcpmark-current-state-warm.pt",
+      "sha256": "63e143818c65fb03d56b9741f68639e2acb3ad022feff692d4eb3a6b8041a9f6"
+    }
+  },
+  "claim_boundary": "Source-disjoint public MCPMark state-summary continuation and matched random-backbone control, followed by one native filesystem task replay per child. Warm teacher-forced token accuracy is not native MCP completion. The official MCPMark split, user simulator, remaining services, and leaderboard protocol were not executed; neither child is adopted for deployment or export.",
+  "decision": {
+    "adoption": "reject_mcpmark_transfer_for_deployment",
+    "native_quality_lift": false,
+    "reason": "Warm public-state SFT improves held-out token accuracy, but both warm and random children fail the native MCP verifier; no native quality lift is demonstrated.",
+    "teacher_forced_warm_minus_random_token_accuracy_pp": 23.00194931773879
+  },
+  "environment_executed": true,
+  "kind": "localagent_mcpmark_public_state_transfer_native_control",
+  "native": {
+    "external_api_called": false,
+    "official_split_verified": false,
+    "random": {
+      "model_completed_task": false,
+      "receipt": {
+        "bytes": 3059,
+        "path": "/private/tmp/m351-mcpmark-native-random.json",
+        "sha256": "803dbef4d7cc57ab1d281b87c07ccdd2fabba9fc5677689b63e031f7d38aaaf7"
+      },
+      "success_rate": 0.0,
+      "tool_sequence": [
+        "read_media_file",
+        null
+      ],
+      "verifier_exit_code": 1
+    },
+    "server": "@modelcontextprotocol/server-filesystem@2025.12.18",
+    "state_archive_sha256": "231f9d42040216bb64d4148154b89040f00ac830271dc8f338ac2df719424137",
+    "task": "filesystem/easy/folder_structure/structure_analysis",
+    "task_source_revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "user_simulator_executed": false,
+    "warm": {
+      "model_completed_task": false,
+      "receipt": {
+        "bytes": 3650,
+        "path": "/private/tmp/m351-mcpmark-native-warm.json",
+        "sha256": "d9c73a25d0ebce67caf55b4dd282171a40a4f77302b71f73dcd8f08820675537"
+      },
+      "success_rate": 0.0,
+      "tool_sequence": [
+        "read_text_file",
+        "list_allowed_directories",
+        "read_media_file"
+      ],
+      "verifier_exit_code": 1
+    }
+  },
+  "official_split_verified": false,
+  "receipt_self_sha256": "e117a9814cfd9c7261e2d9d9ce266095a08408579d359e741ae0ec5a851f9a5f",
+  "reports": {
+    "random": {
+      "bytes": 8832,
+      "path": "/private/tmp/m351-mcpmark-current-state-random.json",
+      "sha256": "bc7eb0cfcbc41b2b039c110922107c04d6e8467588b0f57183f6e0776eb42c82"
+    },
+    "warm": {
+      "bytes": 8864,
+      "path": "/private/tmp/m351-mcpmark-current-state-warm.json",
+      "sha256": "14b85ba541ef48ff98f1831ea4293acd1531cd4512f8ff504555d5f1c022aa76"
+    }
+  },
+  "schema_version": 1,
+  "source": {
+    "absolute_paths_redacted": true,
+    "assistant_text_redacted": true,
+    "dataset": "Jakumetsu/mcpmark-trajectory-log",
+    "eval": {
+      "bytes": 19861,
+      "path": "/private/tmp/m213-mcpmark-state-eval.jsonl",
+      "sha256": "38d5dfa36d2d89194d5e2b0e6f20b34e762d096735c34ac08ae69a47e36b5fde"
+    },
+    "eval_parent_records": 2,
+    "eval_rows": 2,
+    "revision": "e50578f0ab904d8e6a7c576c387c1e76ae482c89",
+    "source_disjoint": true,
+    "tool_outputs_redacted": true,
+    "train": {
+      "bytes": 113482,
+      "path": "/private/tmp/m213-mcpmark-state-train.jsonl",
+      "sha256": "b45da5bcdb207f7304906d016580cf9d17324aed3b59f45f08e92759fe342d1e"
+    },
+    "train_parent_records": 8,
+    "train_rows": 8,
+    "url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log"
+  },
+  "success_rate": 0.0,
+  "task_count": 1,
+  "teacher_forced": {
+    "random": {
+      "eval_loss_after": 9.490137289839181,
+      "eval_loss_before": 9.768947787219785,
+      "eval_token_accuracy_after": 0.08966861598440545,
+      "eval_token_accuracy_before": 0.005847953216374269,
+      "sequence_accuracy_after": 0.0
+    },
+    "warm": {
+      "eval_loss_after": 5.153711984496832,
+      "eval_loss_before": 5.582717984740497,
+      "eval_token_accuracy_after": 0.31968810916179335,
+      "eval_token_accuracy_before": 0.30214424951267055,
+      "sequence_accuracy_after": 0.0
+    }
+  },
+  "training": {
+    "batch_size": 4,
+    "learning_rate": 1e-05,
+    "max_seq_len": 1024,
+    "random_backbone_init": "deterministic_random",
+    "random_backbone_seed": 2028,
+    "seed": 2027,
+    "steps": 16,
+    "warm_backbone_init": "parent"
+  },
+  "weight_groups": {
+    "random": {
+      "action_heads": {
+        "base_l2": 99.96533739276437,
+        "delta_l2": 0.0,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.0,
+        "target_l2": 99.96533739276437
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.68591919503937,
+        "delta_l2": 40.25463974382009,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.7788318437738763,
+        "target_l2": 50.41041075048595
+      },
+      "embedding": {
+        "base_l2": 76.22106199454595,
+        "delta_l2": 91.25011182304524,
+        "parameters": 6291456,
+        "relative_delta_l2": 1.1971771244747904,
+        "target_l2": 50.18998275793942
+      },
+      "ffn": {
+        "base_l2": 50.59914708877707,
+        "delta_l2": 44.42237430626506,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.8779273339988368,
+        "target_l2": 49.792244729886505
+      },
+      "normalization": {
+        "base_l2": 21.432378276078357,
+        "delta_l2": 1.837740579394579,
+        "parameters": 384,
+        "relative_delta_l2": 0.08574599401531485,
+        "target_l2": 19.59565154498811
+      }
+    },
+    "warm": {
+      "action_heads": {
+        "base_l2": 99.96533739276437,
+        "delta_l2": 0.0,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.0,
+        "target_l2": 99.96533739276437
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.68591919503937,
+        "delta_l2": 0.06851411850240871,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.001325585760482798,
+        "target_l2": 51.68623787976914
+      },
+      "embedding": {
+        "base_l2": 76.22106199454595,
+        "delta_l2": 0.16388312127521734,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.0021501028322977725,
+        "target_l2": 76.27752100508611
+      },
+      "ffn": {
+        "base_l2": 50.59914708877707,
+        "delta_l2": 0.07883076905621209,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.0015579465977539533,
+        "target_l2": 50.59919989418538
+      },
+      "normalization": {
+        "base_l2": 21.432378276078357,
+        "delta_l2": 0.001249223415353279,
+        "parameters": 384,
+        "relative_delta_l2": 5.8286737909417805e-05,
+        "target_l2": 21.431328020627355
+      }
+    }
+  }
+}

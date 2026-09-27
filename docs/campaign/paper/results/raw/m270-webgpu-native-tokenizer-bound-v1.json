@@ -1,0 +1,115 @@
+{
+  "kind": "localagent_webgpu_native_capability_tokenizer_bound_receipt",
+  "schema_version": 1,
+  "measurement": "m270_webgpu_native_tokenizer_bound",
+  "generated_at": "2026-08-04",
+  "backend": "webgpu",
+  "environment_executed": true,
+  "hardware_adapter": "vendor=apple; architecture=metal-3",
+  "checkpoint": {
+    "sha256": "104a630947a7a7916031dcccdbe0b2eab031622b77863711bea442d81f1438c0",
+    "source": "bundle-manifest.json",
+    "stage": "sft_deployment_dispatch_repair",
+    "step": 319,
+    "config_name": "webgpu-10m-hybrid",
+    "parameters": 10524544
+  },
+  "tokenizer": {
+    "kind": "bpe",
+    "path": "tokenizer.json",
+    "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+    "checkpoint_recorded_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+    "checkpoint_and_bundle_match": true
+  },
+  "bundle": {
+    "checkpoint_sha256": "104a630947a7a7916031dcccdbe0b2eab031622b77863711bea442d81f1438c0",
+    "action_graph": {
+      "path": "action_model.fp16.onnx",
+      "bytes": 21430301,
+      "sha256": "8856dcaeca1ad2125b0ba34d0fa47da8f0271d3078195a9288862cd1603a1434"
+    },
+    "dispatch_heads": {
+      "path": "dispatch_heads.json",
+      "bytes": 1301005,
+      "sha256": "b066e902da77b0bda061e397e65005885c671ee5e8b03cfcbc0d56e86140281d"
+    },
+    "manifest": {
+      "path": "bundle-manifest.json",
+      "bytes": 9321,
+      "sha256": "2de91970005f1d925de1bf089aceb9d7be514350ad25d77399963f6e20cf044d"
+    }
+  },
+  "capability": {
+    "evaluated_cases": 3,
+    "exact_actions": 3,
+    "exact_action_rate": 1.0,
+    "closed_loop_success": 0,
+    "external_side_effects_executed": false,
+    "cases": [
+      {
+        "prompt": "Email Dana the quarterly report",
+        "expected_tool": "send_email",
+        "observed_tool": "send_email",
+        "expected_argument": "recipient",
+        "observed_arguments": {"recipient": "Dana"},
+        "measured_repetitions": 30,
+        "exact_actions": 30,
+        "exact_action_rate": 1.0,
+        "schema_valid": true,
+        "wall_latency_ms_p50": 7.85,
+        "model_inference_ms_p50": 7.25,
+        "tokens_per_second_p50": 1379.3103448275863,
+        "selection_policy": "dense_selector"
+      },
+      {
+        "prompt": "Open https://example.com",
+        "expected_tool": "open_url",
+        "observed_tool": "open_url",
+        "expected_argument": "url",
+        "observed_arguments": {"url": "https://example.com"},
+        "measured_repetitions": 30,
+        "exact_actions": 30,
+        "exact_action_rate": 1.0,
+        "schema_valid": true,
+        "wall_latency_ms_p50": 6.65,
+        "model_inference_ms_p50": 6.05,
+        "tokens_per_second_p50": 1322.3140469812872,
+        "selection_policy": "dense_selector"
+      },
+      {
+        "prompt": "Write 'WebGPU state loop passed' to Notion",
+        "expected_tool": "notion_write",
+        "observed_tool": "notion_write",
+        "expected_argument": "content",
+        "observed_arguments": {"content": "'WebGPU state loop passed'"},
+        "measured_repetitions": 30,
+        "exact_actions": 30,
+        "exact_action_rate": 1.0,
+        "schema_valid": true,
+        "wall_latency_ms_p50": 7.9,
+        "model_inference_ms_p50": 7.4,
+        "tokens_per_second_p50": 1891.8918979873267,
+        "selection_policy": "dense_selector"
+      }
+    ]
+  },
+  "protocol": {
+    "requested_provider": ["webgpu"],
+    "session_provider_retry": false,
+    "ort_version": "1.27.0",
+    "chromium_launch_flags": ["--use-angle=metal", "--enable-unsafe-webgpu"],
+    "local_http_only": true,
+    "warmups_per_case": 3,
+    "measured_repetitions_per_case": 30,
+    "action_graph": "action_model.fp16.onnx",
+    "tokenizer_contract": "checkpoint recorded SHA-256 equals bundled tokenizer SHA-256"
+  },
+  "performance": {
+    "latency_ms_p50": 7.85,
+    "tokens_per_second_p50": 1379.3103448275863,
+    "peak_memory_mb": 20.458142280578613,
+    "peak_memory_method": "conservative action-graph bytes plus largest host input/output tensors; driver VRAM counter unavailable"
+  },
+  "claim_boundary": "Native Chromium WebGPU/Apple Metal-3 local structured-action receipt after binding the bundle to the checkpoint-recorded BPE tokenizer. All 3 cases are exact across 30 repetitions (90/90); calls are local predictions only, no email/browser/Notion side effect ran, closed_loop_success is zero, and this is not an official mobile/browser/computer benchmark score or cross-device throughput claim.",
+  "receipt_self_sha256": "58e72cbe67b8825a4d67d5ecaaf424d0392fad6e62df2c33d4813f9e076d0d6d"
+}

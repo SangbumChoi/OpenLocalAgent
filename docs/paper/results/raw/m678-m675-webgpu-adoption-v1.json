@@ -1,0 +1,48 @@
+{
+  "adoption": {
+    "local_webgpu_adopted": true,
+    "public_model_published": false,
+    "public_space_published": false,
+    "publication_blockers": [
+      "authenticated Hugging Face upload has not been executed",
+      "native visual/service-backed task gates remain open"
+    ]
+  },
+  "checkpoint": {
+    "bytes": 52206773,
+    "path": "/private/tmp/m675-m671-androidcontrol/warm-child.pt",
+    "sha256": "91eb969628d77099d6b834cf3c1a6bd0a1fa37adefffe80f2d57605e1b775dcc"
+  },
+  "claim_boundary": "The m675 child is locally export-, parity-, and native-WebGPU verified. The three actions are structured local predictions only; no real email, browser navigation, Notion account, MCP server, or external side effect ran.",
+  "kind": "localagent_m678_m675_webgpu_adoption",
+  "native_webgpu": {
+    "adapter": "vendor=apple; architecture=metal-3",
+    "closed_loop_success": 0,
+    "environment_executed": true,
+    "evaluated_cases": 3,
+    "exact_actions": 3,
+    "external_side_effects_executed": false,
+    "latency_ms_p50": 9.850000008940697,
+    "peak_memory_mb": 20.458142280578613,
+    "receipt": {
+      "bytes": 11477,
+      "path": "/private/tmp/m676-m675-webgpu-capability.json",
+      "sha256": "f59975aaada12dd09ac3840cd9812b9e590d616aaf8e002d56643d6e04b8fd15"
+    },
+    "tokens_per_second_p50": 995.0248759169557
+  },
+  "receipt_self_sha256": "c9cc7d772e955f4a47c543a99dd070d616d3e74fce1a74f89bbd8f64ea661e3d",
+  "release_preparation": {
+    "bundle_identity_sha256": "9a71ae184a34e989640764866f5122c91c9da4ca17ae4e30f7d4594b63f8a8b9",
+    "model_repo": "SangbumChoi/localagent-webgpu-10m-m675",
+    "prepared": true,
+    "published": false,
+    "receipt": {
+      "bytes": 4748,
+      "path": "docs/paper/results/raw/m677-m675-hf-space-preparation-v1.json",
+      "sha256": "ff4fb4043ad7d78697e4517da3740b11e997209dfaaed796d3e43ff059646691"
+    },
+    "space_repo": "SangbumChoi/localagent-webgpu-m675"
+  },
+  "schema_version": 1
+}

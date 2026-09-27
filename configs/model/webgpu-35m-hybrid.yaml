@@ -1,0 +1,25 @@
+# Browser-first ~34M model. This is Kimi-K3-inspired, not a miniature copy:
+# - hybrid cheap sequence mixers + periodic full GQA for exact argument copying;
+# - QK-Norm for stable attention;
+# - dense layers and a compact 16k BPE vocabulary because browser runtimes do not benefit from
+#   trillion-scale MoE/MLA infrastructure or KDA's custom long-context kernels.
+#
+# Train a matching tokenizer:
+# python scripts/prepare_corpus.py data/raw --tokenizer bpe --vocab-size 16384 \
+#   --tokenizer-path data/tokenizer-16k.json --out data/shards/webgpu --seq-len 2048
+name: webgpu-35m-hybrid
+vocab_size: 16384
+d_model: 448
+n_layers: 12
+n_loops: 1
+n_heads: 7
+n_kv_heads: 1
+ffn_hidden: 1152
+max_seq_len: 2048
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types: [conv, conv, attn, conv, conv, attn, conv, conv, attn, conv, conv, attn]

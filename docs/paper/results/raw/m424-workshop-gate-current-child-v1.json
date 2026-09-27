@@ -1,0 +1,47 @@
+{
+  "accessed_utc": "2026-08-05",
+  "kind": "localagent_workshop_publication_gate",
+  "schema_version": 1,
+  "current_checkpoint": {
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "inputs": {
+    "catalog": "configs/data/realistic-agent-eval.catalog.yaml",
+    "catalog_sha256": "fadf942db3d1acbbf73df6cb00fd64ad07a50e652f5a980cdbddc63f08bc3643",
+    "native_receipts": {
+      "toolsandbox": "docs/paper/results/raw/m422-toolsandbox-native-child-v1.json",
+      "mcpmark": "docs/paper/results/raw/m423-mcpmark-native-child-v1.json"
+    },
+    "webgpu_receipt": "docs/paper/results/raw/m407-webgpu-native-current-rerun-v1.json",
+    "public_artifact_candidate": "data/private/mind2web/release/m420-space/bundle-manifest.json"
+  },
+  "ready": false,
+  "checks": {
+    "catalog_family_coverage": "pass",
+    "webgpu_native_capability": "pass",
+    "toolsandbox_child_receipt": "blocked:official_split_not_verified",
+    "mcpmark_child_receipt": "blocked:official_split_not_verified",
+    "transfer_ablation_current_child": "blocked:parent_checkpoint_mismatch",
+    "rl_preflight_current_child": "blocked:parent_checkpoint_mismatch",
+    "public_model_demo_manifest": "blocked:local_candidate_not_public"
+  },
+  "blocking_requirements": [
+    "native:androidworld",
+    "native:mobilegym",
+    "native:mobile_safety_bench",
+    "native:iosworld",
+    "native:browsergym_miniwob",
+    "native:osworld",
+    "native:osworld_v2",
+    "native:agentnet",
+    "native:toolsandbox:official_split_not_verified",
+    "native:mcpmark:official_split_not_verified",
+    "native:enterpriseopsgym",
+    "weights:transfer_and_no_transfer_ablation:parent_checkpoint_mismatch",
+    "training:rl_preflight:parent_checkpoint_mismatch",
+    "artifacts:public_model_demo_manifest:local_candidate_not_public"
+  ],
+  "claim_boundary": "This is a fail-closed gate for the m420 child. The two new native receipts improve current-checkpoint evidence but do not satisfy official-split requirements; local HF/WebGPU artifacts are not public uploads, and parent-bound transfer/RL receipts are not silently reused for the child.",
+  "receipt_self_sha256": "35d9ed211cfbadd7535289bfcbec9cb6c33f340d397c4f266349fd0ead276355"
+}

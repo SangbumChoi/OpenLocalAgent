@@ -1,0 +1,243 @@
+{
+  "claim_boundary": "Source/protocol audit only. No MCP server, simulated context, model checkpoint, LLM judge, credential, or external side effect was executed; no MCP-Persona score is claimed.",
+  "cross_release": {
+    "english_chinese_ids_match": true,
+    "english_chinese_task_id_overlap": 173
+  },
+  "evaluation_boundary": {
+    "official_train_test_split": false,
+    "public_simulated_tools": true,
+    "public_tasks": true,
+    "reason": "The release contains English and Chinese copies of the same 173-task benchmark, not a train/test partition. Tasks include ground-truth personalized-search and operate checkpoints; the repository ships only a subset of static simulators while the remaining server/tool behavior is generated or configured upstream.",
+    "train_policy": "eval_only"
+  },
+  "kind": "localagent_mcp_persona_source_audit",
+  "receipt_self_sha256": "0359ee67b104175d51e560afb7b86154ac55e582225009f7f00321f1879189a9",
+  "releases": {
+    "chinese": {
+      "chain_lengths": {
+        "1": 10,
+        "10": 6,
+        "11": 4,
+        "12": 1,
+        "13": 3,
+        "14": 2,
+        "15": 1,
+        "18": 1,
+        "2": 14,
+        "3": 14,
+        "4": 38,
+        "5": 25,
+        "6": 19,
+        "7": 16,
+        "8": 11,
+        "9": 8
+      },
+      "checkpoint_types": {
+        "operate": 222,
+        "personalized_search": 118
+      },
+      "id_max": 173,
+      "id_min": 1,
+      "query_types": {
+        "all_server": 8,
+        "feishu_notion": 6,
+        "feishu_obsidian": 8,
+        "feishu_other": 9,
+        "feishu_xiaohongshu": 20,
+        "instagram_single_long": 6,
+        "lark_mcp_single_long": 11,
+        "lark_mcp_single_short": 9,
+        "notion_single_long": 4,
+        "notion_single_short": 6,
+        "obsidian_single_long": 4,
+        "obsidian_single_short": 6,
+        "reddit_single_long": 4,
+        "slack_single_long": 10,
+        "universal_email_single_long": 8,
+        "universal_email_single_short": 2,
+        "wecome_single_long": 8,
+        "xiaohongshu_notion": 8,
+        "xiaohongshu_obsidian": 8,
+        "xiaohongshu_other": 8,
+        "xiaohongshu_single_long": 10,
+        "xiaohongshu_single_short": 10
+      },
+      "servers": {
+        "amap-mcp-server": 153,
+        "baidu-map": 65,
+        "context7": 10,
+        "deep-research": 4,
+        "deepseek": 13,
+        "instagram": 18,
+        "lark_mcp": 144,
+        "mcpollinations": 55,
+        "medical-mcp": 44,
+        "monitor": 25,
+        "notion": 56,
+        "obsidian": 45,
+        "reddit": 10,
+        "slack": 77,
+        "tushare_mcp": 37,
+        "universal_email": 42,
+        "wecome": 33,
+        "xiaohongshu": 128
+      },
+      "tasks": 173,
+      "tasks_without_gt": 24,
+      "tasks_without_gt_annotation": 0,
+      "unique_ids": 173,
+      "unique_tools": 139
+    },
+    "english": {
+      "chain_lengths": {
+        "1": 10,
+        "10": 6,
+        "11": 4,
+        "12": 1,
+        "13": 3,
+        "14": 2,
+        "15": 1,
+        "18": 1,
+        "2": 14,
+        "3": 14,
+        "4": 38,
+        "5": 25,
+        "6": 19,
+        "7": 16,
+        "8": 11,
+        "9": 8
+      },
+      "checkpoint_types": {
+        "operate": 222,
+        "personalized_search": 118
+      },
+      "id_max": 173,
+      "id_min": 1,
+      "query_types": {
+        "all_server": 8,
+        "feishu_notion": 6,
+        "feishu_obsidian": 8,
+        "feishu_other": 9,
+        "feishu_xiaohongshu": 20,
+        "instagram_single_long": 6,
+        "lark_mcp_single_long": 11,
+        "lark_mcp_single_short": 9,
+        "notion_single_long": 4,
+        "notion_single_short": 6,
+        "obsidian_single_long": 4,
+        "obsidian_single_short": 6,
+        "reddit_single_long": 4,
+        "slack_single_long": 10,
+        "universal_email_single_long": 8,
+        "universal_email_single_short": 2,
+        "wecome_single_long": 8,
+        "xiaohongshu_notion": 8,
+        "xiaohongshu_obsidian": 8,
+        "xiaohongshu_other": 8,
+        "xiaohongshu_single_long": 10,
+        "xiaohongshu_single_short": 10
+      },
+      "servers": {
+        "amap-mcp-server": 153,
+        "baidu-map": 65,
+        "context7": 10,
+        "deep-research": 4,
+        "deepseek": 13,
+        "instagram": 18,
+        "lark_mcp": 144,
+        "mcpollinations": 55,
+        "medical-mcp": 44,
+        "monitor": 25,
+        "notion": 56,
+        "obsidian": 45,
+        "reddit": 10,
+        "slack": 77,
+        "tushare_mcp": 37,
+        "universal_email": 42,
+        "wecome": 33,
+        "xiaohongshu": 128
+      },
+      "tasks": 173,
+      "tasks_without_gt": 24,
+      "tasks_without_gt_annotation": 0,
+      "unique_ids": 173,
+      "unique_tools": 139
+    }
+  },
+  "runtime_inventory": {
+    "chain_servers_without_static_simulator": [
+      "amap-mcp-server",
+      "baidu-map",
+      "context7",
+      "deep-research",
+      "deepseek",
+      "mcpollinations",
+      "medical-mcp",
+      "monitor",
+      "tushare_mcp",
+      "universal_email"
+    ],
+    "static_simulated_server_directories": [
+      "instagram",
+      "lark_mcp",
+      "notion",
+      "obsidian",
+      "reddit",
+      "slack",
+      "wecome",
+      "xiaohongshu"
+    ],
+    "static_simulator_coverage_count": 8,
+    "task_chain_servers": [
+      "amap-mcp-server",
+      "baidu-map",
+      "context7",
+      "deep-research",
+      "deepseek",
+      "instagram",
+      "lark_mcp",
+      "mcpollinations",
+      "medical-mcp",
+      "monitor",
+      "notion",
+      "obsidian",
+      "reddit",
+      "slack",
+      "tushare_mcp",
+      "universal_email",
+      "wecome",
+      "xiaohongshu"
+    ]
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "MCP-Persona",
+    "files": {
+      "chinese_tasks": {
+        "bytes": 5594027,
+        "path": "/private/tmp/m622-mcp-persona.QyoOVP/data/tasks/zh_release_data.json",
+        "sha256": "c58d92ed992254fa83272eb8359fdbed723e77a134852732fb5a549b9c9dd81d"
+      },
+      "english_tasks": {
+        "bytes": 5654203,
+        "path": "/private/tmp/m622-mcp-persona.QyoOVP/data/tasks/en_release_data.json",
+        "sha256": "35fe946e595b0403fdd890dd2facc136ea4c2537252d406ba4fc1f2c0aac5a7a"
+      },
+      "license": null,
+      "readme": {
+        "bytes": 4699,
+        "path": "/private/tmp/m622-mcp-persona.QyoOVP/README.md",
+        "sha256": "387c17e8ece0372f9cadbefa4396c8d00c40a6809ba1db3824b21ff842894fa4"
+      }
+    },
+    "license_evidence": {
+      "declared_by_readme_badge": "MIT",
+      "license_file_present": false,
+      "status": "metadata_badge_only"
+    },
+    "paper_url": "https://arxiv.org/abs/2606.02470",
+    "revision": "b510f5a5371c4524a58aeeb679c1ace845603e95",
+    "source_url": "https://github.com/wwh0411/MCP-Persona"
+  }
+}

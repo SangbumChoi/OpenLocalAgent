@@ -1,0 +1,53 @@
+{
+  "kind": "localagent_current_child_webgpu_export_receipt",
+  "schema_version": 1,
+  "measurement": "m184_current_m180_webgpu_action_bundle_export",
+  "generated_at": "2026-08-03",
+  "claim_boundary": "This receipt proves a hash-bound ONNX/WebGPU-shaped export and CPU parity for the current m180 checkpoint, plus clean static-app bundle verification. It is not proof of physical GPU placement, browser task success, native BrowserGym, external email/Notion effects, or a public Hugging Face deployment.",
+  "checkpoint": {
+    "path": "/private/tmp/m180-mixed-mobile-computer-child.pt",
+    "sha256": "10827649f07182a08f8c11104d4713e76b8acaddc73020c5a4c77950de7b23a0",
+    "parameters": 10524544,
+    "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+  },
+  "bundle": {
+    "path": "/private/tmp/m183-demo",
+    "bundle_manifest_bytes": 9321,
+    "bundle_manifest_sha256": "b29196afb860b3a073a042d50d90effda5ce87e8891916b454bd248a702c7683",
+    "bundle_identity_sha256": "76d0bb563031d1a4f4ea271e31e3da8edb9db8b60aeae9d2abf2c8fbdf5c1246",
+    "schema_version": 3,
+    "artifacts": {
+      "model.onnx": {"bytes": 67877334, "sha256": "d3c325d84ae4c5783fc1af6a553e1a913f1d8356ab0023802bdded3831ddc06d"},
+      "model.fp16.onnx": {"bytes": 34026169, "sha256": "257c787ef61fe2cfaff0c6c271c9ebd2ea136a9c8504814241e4069ec7d43671"},
+      "action_model.onnx": {"bytes": 42700043, "sha256": "13af542378c0ba265156c832bdff0b2bddda74004ff164c1fed8b3ac43ce70bd"},
+      "action_model.fp16.onnx": {"bytes": 21430301, "sha256": "6f2be95e765072736ed2c5dcc23670daf0e6e1de09b0dc4e33c48280eb87657c"},
+      "heads.json": {"bytes": 3361821, "sha256": "bde4232e35997c158815c6141a8cced94b6f1caadd0b4e8add8a4d4c5e3211bf"},
+      "dispatch_heads.json": {"bytes": 1265339, "sha256": "b852b9c9c655787bbc29e1b2905ebbb47e1b98b8b6715c6a92f651d2ace7649a"},
+      "meta.json": {"bytes": 11548, "sha256": "6d6a79b331ce3f60c097f2bd3662a2178345aef68a7ded61e67737ff8e8cb89e"},
+      "tokenizer.json": {"bytes": 1134224, "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"}
+    },
+    "parity_gate": {
+      "hard_gate": true,
+      "passed": true,
+      "fp32_model_logits_max_abs_diff": 0.000008106231689453125,
+      "fp32_model_hidden_max_abs_diff": 0.000004410743713378906,
+      "fp16_model_logits_max_abs_diff": 0.003964066505432129,
+      "fp16_model_hidden_max_abs_diff": 0.004292964935302734,
+      "fp32_action_hidden_max_abs_diff": 0.000004410743713378906,
+      "fp16_action_hidden_max_abs_diff": 0.004292964935302734,
+      "fp16_model_argmax_agreement": 1.0
+    },
+    "deployment_verification": {
+      "verified": true,
+      "static_app_present": true,
+      "blockers": []
+    }
+  },
+  "publication": {
+    "hub_url": null,
+    "uploaded": false,
+    "reason": "Hugging Face authentication is absent; bundle remains local-only"
+  },
+  "decision": "export_verified_local_only",
+  "receipt_self_sha256": "b6c7ed92540a59e596a2c01f2539f6a024ac92d670b81eca075a1bfaf003c5cd"
+}

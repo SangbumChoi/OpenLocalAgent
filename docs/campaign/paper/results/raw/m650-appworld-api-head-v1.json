@@ -1,0 +1,109 @@
+{
+  "api_head": {
+    "child": {
+      "bytes": 18349,
+      "path": "/private/tmp/m650-appworld/api-head.pt",
+      "sha256": "76dd7d7c89ae554a118217fcff496b180176552040b06b4721e6cd524663e190"
+    },
+    "classes": [
+      "file_system.show_directory",
+      "phone.search_contacts",
+      "phone.search_text_messages",
+      "simple_note.search_notes",
+      "spotify.search_artists",
+      "spotify.show_album_library",
+      "spotify.show_current_song",
+      "spotify.show_playlist_library",
+      "spotify.show_recommendations",
+      "spotify.show_song_library"
+    ],
+    "metrics": {
+      "eval": {
+        "accuracy": 0.6,
+        "exact": 9,
+        "rows": 15
+      },
+      "train": {
+        "accuracy": 1.0,
+        "exact": 64,
+        "rows": 64
+      }
+    },
+    "report": {
+      "bytes": 1894,
+      "path": "/private/tmp/m650-appworld/report.json",
+      "sha256": "9b0304705638b82db677986cd42b7958624c391ca87d5e4a8e8e0def2212eddc"
+    }
+  },
+  "benchmark": {
+    "api_head_eval_rows": 15,
+    "api_head_train_rows": 64,
+    "data_version": "0.2.0",
+    "dataset": "AppWorld",
+    "native_tasks": 6,
+    "protected_test_used": false,
+    "source_url": "https://github.com/StonyBrookNLP/appworld",
+    "unseen_eval_labels_excluded": true
+  },
+  "claim_boundary": "Current m649 warm-body AppWorld API-schema head trained on public train rows and measured on a disjoint seen-label dev slice, plus six resettable one-step native replays. This is not an official leaderboard score, complete task success, external-account result, or WebGPU deployment evidence.",
+  "decision": {
+    "promote_to_native_success": false,
+    "reason": "A frozen API head reaches 60% on a disjoint seen-label public dev slice and restricts all six replayed actions to the observed Spotify schema, but one-step native success remains 0/6 because these tasks require multi-step stateful plans.",
+    "retain_api_head_as_diagnostic": true
+  },
+  "inputs": {
+    "api_report": {
+      "bytes": 1894,
+      "path": "/private/tmp/m650-appworld/report.json",
+      "sha256": "9b0304705638b82db677986cd42b7958624c391ca87d5e4a8e8e0def2212eddc"
+    },
+    "native_report": {
+      "bytes": 11460,
+      "path": "/private/tmp/m650-appworld/native-head.json",
+      "sha256": "097dad265baf3ff2c1b46bf90ce82c21b2db7985dffe57df4421e19e2c88022a"
+    }
+  },
+  "kind": "localagent_m650_appworld_api_head_receipt",
+  "native_replay": {
+    "checkpoint": {
+      "bytes": 52203288,
+      "path": "/private/tmp/m649-appworld/warm/child.pt",
+      "sha256": "9c760ff270d12c797db937c94366ef33e801cac1f9fbee2c0015184f7837111e"
+    },
+    "configuration": {
+      "action_translation": "appworld_api_step",
+      "appworld_api_head": "/private/tmp/m650-appworld/api-head.pt",
+      "experiment_name": "m650_apihead",
+      "max_interactions": 1,
+      "replay_appworld_api_step": true,
+      "replay_run_python": false,
+      "retrieve_k": 100,
+      "schema_ground_appworld_api_step": true,
+      "selector_first": true,
+      "tasks": [
+        "50e1ac9_1",
+        "50e1ac9_2",
+        "50e1ac9_3",
+        "fac291d_1",
+        "fac291d_2",
+        "fac291d_3"
+      ]
+    },
+    "report": {
+      "bytes": 11460,
+      "path": "/private/tmp/m650-appworld/native-head.json",
+      "sha256": "097dad265baf3ff2c1b46bf90ce82c21b2db7985dffe57df4421e19e2c88022a"
+    },
+    "summary": {
+      "action_replayed": 6,
+      "native_action_api_calls": 6,
+      "native_api_calls": 24,
+      "native_bootstrap_api_calls": 18,
+      "native_success_rate": 0.0,
+      "native_successes": 0,
+      "tasks": 6
+    }
+  },
+  "receipt_self_sha256": "3d282561af03cb45547ca3bab644c1dd1619d73d917bd8aa1f152de97ba9b988",
+  "schema_version": 1
+}

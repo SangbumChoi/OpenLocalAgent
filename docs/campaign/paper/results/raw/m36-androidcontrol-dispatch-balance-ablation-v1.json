@@ -1,0 +1,88 @@
+{
+  "kind": "localagent_androidcontrol_dispatch_balance_ablation_receipt",
+  "schema_version": 1,
+  "source": {
+    "train_conversations_sha256": "6971d5fe81fe3c6e8ee12e0072481ec653f98bdb5699af54e8f63649358743fd",
+    "test_conversations_sha256": "2d798115fe0feb14ac6d65f86a4b51b4463b593a35281eedce4de8751356bc95",
+    "train_rows": 4096,
+    "test_rows": 904,
+    "train_action_counts": {
+      "mobile_click": 676,
+      "mobile_input_text": 676,
+      "mobile_long_press": 42,
+      "mobile_navigate_back": 676,
+      "mobile_open_app": 676,
+      "mobile_scroll": 675,
+      "mobile_wait": 675
+    },
+    "test_action_counts": {
+      "mobile_click": 125,
+      "mobile_input_text": 125,
+      "mobile_long_press": 125,
+      "mobile_navigate_back": 125,
+      "mobile_navigate_home": 29,
+      "mobile_open_app": 125,
+      "mobile_scroll": 125,
+      "mobile_wait": 125
+    },
+    "visual_input_omitted": true,
+    "grounding_evaluable": false
+  },
+  "parent": {
+    "checkpoint_sha256": "1e35d8ef3309224fced0738784c84d0a93614c1557d7bcdf0025db0a4e2d6f8f",
+    "parameters": 10524544,
+    "frozen_backbone": true,
+    "probe_steps": 300,
+    "probe_initialization": "parent_heads"
+  },
+  "baseline": {
+    "checkpoint_sha256": "0d0ae0bb4a4f35b40bb9ba5d2e234e3ec389e12758b6dd2527e072e9b7589251",
+    "report_sha256": "405d1bf82b06e5493fba02bdec3ef0e3007a57606d9dbc107c6819137eeec12f",
+    "focus_tools": [],
+    "focus_repeat": 0,
+    "held_out_route_accuracy": 1.0,
+    "held_out_selector_top1": 0.46238938053097345,
+    "held_out_selector_top1_by_tool": {
+      "mobile_click": 0.2,
+      "mobile_input_text": 0.48,
+      "mobile_long_press": 0.0,
+      "mobile_navigate_back": 0.744,
+      "mobile_navigate_home": 0.0,
+      "mobile_open_app": 0.744,
+      "mobile_scroll": 0.664,
+      "mobile_wait": 0.512
+    },
+    "productivity_held_out_route_accuracy": 0.75,
+    "productivity_held_out_selector_top1": 0.75
+  },
+  "focused": {
+    "checkpoint_sha256": "27453c927bb4bacb4c93912b01a8676587287bc4f33239eb71b5f156b1551708",
+    "report_sha256": "98ab61f027a579fc3ee5ab77fae04b107862f70a90777d720bd7be1eb9bf8e1f",
+    "weight_report_sha256": "deb3705d634f87a3b8af8d292c4ea51307d7d92fac62bbf41af8a53030fd13d6",
+    "focus_tools": ["mobile_long_press", "mobile_navigate_home"],
+    "focus_repeat": 32,
+    "held_out_route_accuracy": 1.0,
+    "held_out_selector_top1": 0.336283185840708,
+    "held_out_selector_top1_by_tool": {
+      "mobile_click": 0.872,
+      "mobile_input_text": 0.248,
+      "mobile_long_press": 0.0,
+      "mobile_navigate_back": 0.728,
+      "mobile_navigate_home": 0.0,
+      "mobile_open_app": 0.016,
+      "mobile_scroll": 0.36,
+      "mobile_wait": 0.208
+    },
+    "productivity_held_out_route_accuracy": 0.75,
+    "productivity_held_out_selector_top1": 0.75,
+    "action_heads_relative_delta_l2_vs_baseline": 0.27342181180308955,
+    "backbone_relative_delta_l2_vs_baseline": 0.0
+  },
+  "interpretation": {
+    "result": "negative",
+    "finding": "Oversampling synthetic/state-conditioned long-press and home rows did not recover either held-out action and reduced overall public-test selector accuracy from 46.24% to 33.63%.",
+    "data_gap": "The public train slice contains 42 long-press rows and zero navigate-home rows, while the held-out test contains 125 long-press and 29 navigate-home rows.",
+    "next_step": "Acquire a licensed train split containing those actions or collect a separately hash-bound real-device continuation; do not promote the focused child.",
+    "claim_boundary": "Frozen-feature selector ablation on screenshot-omitted AndroidControl JSON rows only; not visual grounding, emulator reward, AndroidWorld success, or WebGPU hardware throughput."
+  }
+}

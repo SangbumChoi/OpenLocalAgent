@@ -1,0 +1,477 @@
+{
+  "abi_guard": {
+    "behavior": [
+      "explicit URL task step -> browser_navigate with extracted URL",
+      "after navigation -> browser_snapshot with empty arguments",
+      "required ref/function without live grounding -> no candidate (abstain)"
+    ],
+    "canary": {
+      "bytes": 3274,
+      "path": "/private/tmp/m446-mcpmark-playwright-extraction-abi-guard.json",
+      "sha256": "81e0f45a236133a1fa5a9730bace7e2f8f9cb08f3a26bcbba31f4f453dbfbe75"
+    },
+    "implementation": "src/localagent/agent/constrained.py",
+    "not_learned_performance": true
+  },
+  "benchmark_id": "mcpmark",
+  "checkpoint": {
+    "parameters": 10524544,
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "checkpoint_sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+  "claim_boundary": "The corrected reports execute four pinned MCPMark Playwright standard fixtures against the current child and a selector-only warm child with a real @playwright/mcp stdio server and independent verifiers. Both are native service diagnostics, not official MCPMark scores: the user simulator, official/verified aggregation, and other services were not executed. The selector intervention is not promoted because native success remains 0/4. m440 is superseded and excluded from capability claims because its schema bridge omitted input_schema.",
+  "dataset": {
+    "name": "MCPMark",
+    "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "service": "playwright",
+    "suite": "standard",
+    "tasks_requested": 4,
+    "url": "https://github.com/eval-sys/mcpmark"
+  },
+  "environment_executed": true,
+  "kind": "localagent_mcpmark_playwright_schema_corrected_abi_guard",
+  "native_playwright": {
+    "external_api_called": true,
+    "headless": true,
+    "label": "current_child_base",
+    "mcp_server_executed": true,
+    "model_sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+    "official_split_verified": false,
+    "results": [
+      {
+        "category": "eval_web",
+        "messages_sha256": "ffb7659ca0be2d5e4d58c4265b54afb48d9f59027ece3da8cc7c26fa948704f1",
+        "server_error": null,
+        "task": "playwright/standard/eval_web/extraction_table",
+        "task_id": "extraction_table",
+        "tool_count": 22,
+        "turns": [
+          {
+            "arguments": null,
+            "output_sha256": "f05f9d7fd66b5797ac3b9d113e1d21b8406313702f3494c7e9f233545340a847",
+            "tool": null,
+            "turn": 1
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "c9ca007511db23509e829e336dc413f5c4537e424d818704d6f1c259ae010849",
+        "verifier_stderr_tail": "| MCP_MESSAGES: /private/tmp/mcpmark-playwright-extraction_table-gv7106dz/messages.json\n|\n| Model response (first 500 characters): I am LocalAgent....\n|\n| \u2717 CSV data not found in response\n",
+        "verifier_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stdout_tail": ""
+      },
+      {
+        "category": "eval_web",
+        "messages_sha256": "b7b29d9e70b52ec34afde0dadc9875b6b8fc67d26f21c2283a7cec53a92dc306",
+        "server_error": null,
+        "task": "playwright/standard/eval_web/cloudflare_turnstile_challenge",
+        "task_id": "cloudflare_turnstile_challenge",
+        "tool_count": 22,
+        "turns": [
+          {
+            "arguments": {
+              "ref": "complete Cloudflare Turnstile authentication challenge.\n\n## Requirements:\n\n1. Navigate to https://eval-web.mcpmark.ai/auth/turnstile\n2. Fill in the authentication form with provided test credentials:\n   - Username: \"testuser\"\n   - Password: \"password123\"\n3. Wait for the Cloudflare Turnstile challenge widget to load completely\n4. Interact with the Turnstile challenge widget to complete the authentication (if needed)\n5. Wait for successful challenge completion (widget shows success state with checkmark)\n6. Submit the form by clicking the \"Sign In\" button\n7. Wait for and capture any success message or confirmation that appears\n8. Output the success capture in step 7\n\n## Notes:\n\n- Use the provided test credentials: testuser / password123\n- Page shows success message inline, does not redirect to separate success page\n- Wait for all UI state changes before proceeding to next step\n\nUse the available Playwright MCP tools to complete the task. When finished, return only the requested final answer",
+              "text": "Sign In"
+            },
+            "output_sha256": "043bd98ce7a1d63f11cf16f64857b2dbc284af5dcc4cbed0f2d515bc63003af7",
+            "result_is_error": false,
+            "result_sha256": "ecee884b6b5ff0b105a7c39788cd2fdf53bbc534e517e37b0d000ef06837746a",
+            "tool": "browser_type",
+            "turn": 1
+          },
+          {
+            "arguments": null,
+            "output_sha256": "106638ea8b2b5b6ae9bfd2b480b2592f586a4da9d7ea9b641b9a8b3926fc4ab1",
+            "tool": null,
+            "turn": 2
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e75502abd4e87ea81e01501e60a60c628aa2b3641f7805e1f78ddcb577815adc",
+        "verifier_stderr_tail": "MCP_MESSAGES: /private/tmp/mcpmark-playwright-cloudflare_turnstile_challenge-g15ov7an/messages.json\n\nModel response (first 500 chars): <tool_call>{\"arguments\":{\"ref\":\"complete Cloudflare Turnstile authentication challenge.\\n\\n## Requirements:\\n\\n1. Navigate to https://eval-web.mcpmark.ai/auth/turnstile\\n2. Fill in the authentication form with provided test credentials:\\n   - Username: \\\"testuser\\\"\\n   - Password: \\\"password123\\\"\\n3. Wait for the Cloudflare Turnstile challenge widget to load completely\\n4. Interact with the Turnstile challenge widget to complete the authentication (if needed)\\n5. Wait for successful challenge co...\n\n\u2717 Success message NOT found: 'Authentication successful! Security challenge verified.'\n",
+        "verifier_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stdout_tail": ""
+      },
+      {
+        "category": "web_search",
+        "messages_sha256": "ffb7659ca0be2d5e4d58c4265b54afb48d9f59027ece3da8cc7c26fa948704f1",
+        "server_error": null,
+        "task": "playwright/standard/web_search/birth_of_arvinxu",
+        "task_id": "birth_of_arvinxu",
+        "tool_count": 22,
+        "turns": [
+          {
+            "arguments": null,
+            "output_sha256": "f05f9d7fd66b5797ac3b9d113e1d21b8406313702f3494c7e9f233545340a847",
+            "tool": null,
+            "turn": 1
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "8616264193ca38e5d1dc1f7803677df10ae575a5718aa1797d7297d29342a06a",
+        "verifier_stdout_tail": "| Working directory: /private/tmp/mcpmark-playwright-birth_of_arvinxu-ax98d5a4\n| AI agent did not find the correct answer: 1995\n"
+      },
+      {
+        "category": "web_search",
+        "messages_sha256": "10a11c488e6dee75d1c77fe623035f9bc11ec68a6b5d5474cebfc3dfd7537afd",
+        "server_error": null,
+        "task": "playwright/standard/web_search/r1_arxiv",
+        "task_id": "r1_arxiv",
+        "tool_count": 22,
+        "turns": [
+          {
+            "arguments": {
+              "ref": "search for the **v1 (initial) version** of the DeepSeek R1 research paper on arXiv and extract all the paragraphs of the \"Conclusion, Limitations, and Future Work\" section.\n\n## Requirements:\n\n1. Search for the DeepSeek R1 research paper on arXiv\n2. Navigate to the **v1 (initial) version** of the paper\n3. Find the \"Conclusion, Limitations, and Future Work\" section\n4. Extract **ALL the paragraphs** of the \"Conclusion, Limitations, and Future Work\" section\n5. **Provide the content in Markdown format - no explanations, no additional text**\n\n## Important Notes:\n\n- **Output ALL the paragraphs of text**\n- **Do NOT include any explanations, summaries, or additional content**\n- **The response should contain ONLY the \"Conclusion, Limitations, and Future Work\" section content formatted in Markdown**\n\n## Expected Output:\nAll the paragraphs of the \"Conclusion, Limitations, and Future Work\" section from the DeepSeek R1 paper, formatted in Markdown with proper paragraph structure and formatting.\n\nUse the available Playwright MCP tools to complete the task. When finished, return only the requested final answer",
+              "text": "Conclusion, Limitations, and Future Work"
+            },
+            "output_sha256": "86e012ce7f358b367bb65dcb3ff66978293a777e0b4abf60c705392572dc1306",
+            "result_is_error": false,
+            "result_sha256": "aa1c7147a77ee881897ba042ac1eed8274098bb59dc0cfd32782709dd53ecf08",
+            "tool": "browser_type",
+            "turn": 1
+          },
+          {
+            "arguments": null,
+            "output_sha256": "f648b9f4c3d6df065f0db5de71562c24956486f2120a7d7d548d79832571bba5",
+            "tool": null,
+            "turn": 2
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "0ec05b2893bf7659372ac450a03ab67425ec62823cd4eb8e5f594c0e85d925ee",
+        "verifier_stdout_tail": "| Starting verification...\n| Working directory: /private/tmp/mcpmark-playwright-r1_arxiv-lde5chlc\n| Verifying Playwright Web Search Task - DeepSeek R1 Introduction\n| ======================================================================\n| Loading expected content...\n| Found content.txt at: /private/tmp/mcpmark-cd45b7f/tasks/playwright/standard/web_search/r1_arxiv/content.txt\n| Expected content loaded (2463 characters)\n| Extracted content: 4052 characters\n| Comparing extracted content with expected content...\n| Content comparison results:\n|   - Extracted length: 3968 characters\n|   - Expected length: 2436 characters\n|   - Similarity: 0.0137 (threshold: 0.9)\n|   - Extracted preview: <tool_call>{\"arguments\":{\"ref\":\"search for the v1 (initial) version of the deepseek r1 research pape...\n|   - Expected preview: in this work, we share our journey in enhancing model reasoning abilities through reinforcement lear...\n| Task verification failed. Similarity 0.0137 < 0.9.\n"
+      }
+    ],
+    "runtime_errors": 0,
+    "server": "@playwright/mcp@0.0.68",
+    "task_count": 4,
+    "user_simulator_executed": false,
+    "verifier_failures": 4,
+    "verifier_passes": 0
+  },
+  "native_selector_warm": {
+    "external_api_called": true,
+    "headless": true,
+    "label": "selector_only_warm_child",
+    "mcp_server_executed": true,
+    "model_sha256": "ccd1fa3c4ef1fb7b8f2ec94667124b2aaabddf6f13a5cc89e9c4128dd40bd35e",
+    "official_split_verified": false,
+    "results": [
+      {
+        "category": "eval_web",
+        "messages_sha256": "e7b88590c3fc2ab0a18648a19d7bdfaae7d1166db699636e1697058015e38ae4",
+        "server_error": null,
+        "task": "playwright/standard/eval_web/extraction_table",
+        "task_id": "extraction_table",
+        "tool_count": 22,
+        "turns": [
+          {
+            "arguments": {
+              "button": "right",
+              "ref": "extract all data from the specified website and present it in CSV format.\n\n## Requirements:\n\n1. Navigate to https://eval-web.mcpmark.ai/extraction\n2. Wait for the page to fully load\n3. Extract all data content from the page, including:\n   - Title\n   - Rating\n   - Likes\n   - Views\n   - Replies\n4. Organize the extracted data into CSV format\n5. Ensure data completeness and accuracy\n6. Output ONLY the complete CSV formatted data (no additional text or explanations)\n\n## CSV Data Example:\n\n```csv\nTitle, Rating, Likes, Views, Replies\nSEO Optimization, 4.6, 756, 10123, 72\nVue 3 Composition API, 4.5, 743, 9876, 67\nAdvanced TypeScript Types Guide, 4.9, 924, 15432, 102\nNode.js Performance Optimization, 4.2, 567, 8765, 45\nFrontend Engineering Best Practices, 4.7, 812, 11234, 78\n```\n\n## Notes:\n\n- Ensure extraction of all visible data rows\n- Maintain data format consistency\n- All numeric data (Rating, Likes, Views, Replies) should NOT have quotes, only text data containing commas should be wrapped in quotes\n- Wait for the page to fully load before starting data extraction\n- Verify the quantity and format of extracted data are correct\n- **IMPORTANT: Final output must contain ONLY CSV data - no explanatory text, descriptions, or other content**\n\nUse the available Playwright MCP tools to complete the task. When finished, return only the requested final answer"
+            },
+            "output_sha256": "5b6ee5053e1c764619af311bf78450ad145a4289685aceeff79fc76afe56956d",
+            "result_is_error": false,
+            "result_sha256": "01660dd2aee761f9f71c90b79dfebccdef3fe2ae3389a01e4e7b8fa251d0e21a",
+            "tool": "browser_click",
+            "turn": 1
+          },
+          {
+            "arguments": null,
+            "output_sha256": "f5fba8e21787f37690e25861599d7c1002e772626df0e5099fc631a0baa12abe",
+            "tool": null,
+            "turn": 2
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "c0c4ff1eb7f95f4d41075f6f4de8052ff0f7f88e7b658bb0c2cfbfa0adc0fee6",
+        "verifier_stderr_tail": "ges.json\n|\n| Model response (first 500 characters): <tool_call>{\"arguments\":{\"function\":\"extract all data from the specified website and present it in CSV format.\\n\\n## Requirements:\\n\\n1. Navigate to https://eval-web.mcpmark.ai/extraction\\n2. Wait for the page to fully load\\n3. Extract all data content from the page, including:\\n   - Title\\n   - Rating\\n   - Likes\\n   - Views\\n   - Replies\\n4. Organize the extracted data into CSV format\\n5. Ensure data completeness and accuracy\\n6. Output ONLY the complete CSV formatted data (no additional text ...\n|\n| Found CSV data (first 300 characters):\n| <tool_call>{\"arguments\":{\"function\":\"extract all data from the specified website and present it in CSV format.\\n\\n## Requirements:\\n\\n1. Navigate to https://eval-web.mcpmark.ai/extraction\\n2. Wait for the page to fully load\\n3. Extract all data content from the page, including:\\n   - Title\\n   - Rat...\n|\n| \u2717 CSV validation failed: | CSV total row count mismatch, expected: 98 rows, actual: 1 rows\n",
+        "verifier_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stdout_tail": ""
+      },
+      {
+        "category": "eval_web",
+        "messages_sha256": "df64ad348dddf960ddbe7c93e39c910afa9fc413fdc386aec5085e655aed1f7c",
+        "server_error": null,
+        "task": "playwright/standard/eval_web/cloudflare_turnstile_challenge",
+        "task_id": "cloudflare_turnstile_challenge",
+        "tool_count": 22,
+        "turns": [
+          {
+            "arguments": {
+              "button": "right",
+              "ref": "complete Cloudflare Turnstile authentication challenge.\n\n## Requirements:\n\n1. Navigate to https://eval-web.mcpmark.ai/auth/turnstile\n2. Fill in the authentication form with provided test credentials:\n   - Username: \"testuser\"\n   - Password: \"password123\"\n3. Wait for the Cloudflare Turnstile challenge widget to load completely\n4. Interact with the Turnstile challenge widget to complete the authentication (if needed)\n5. Wait for successful challenge completion (widget shows success state with checkmark)\n6. Submit the form by clicking the \"Sign In\" button\n7. Wait for and capture any success message or confirmation that appears\n8. Output the success capture in step 7\n\n## Notes:\n\n- Use the provided test credentials: testuser / password123\n- Page shows success message inline, does not redirect to separate success page\n- Wait for all UI state changes before proceeding to next step\n\nUse the available Playwright MCP tools to complete the task. When finished, return only the requested final answer"
+            },
+            "output_sha256": "250e48833b36a8cf4eee78297f4088b08cca4c8324b8193ff2d6313add211cd0",
+            "result_is_error": false,
+            "result_sha256": "ecee884b6b5ff0b105a7c39788cd2fdf53bbc534e517e37b0d000ef06837746a",
+            "tool": "browser_click",
+            "turn": 1
+          },
+          {
+            "arguments": null,
+            "output_sha256": "642513b6415e5a4a7e7d4d2d54af87602f09123a6defb0a7a90b8d20fe4fbd23",
+            "tool": null,
+            "turn": 2
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "fe89867d19b01b0a8ee8237a5cd1e33b496e57b78e051f0b071be5392a58e96b",
+        "verifier_stderr_tail": "MCP_MESSAGES: /private/tmp/mcpmark-playwright-cloudflare_turnstile_challenge-8mtmcwmf/messages.json\n\nModel response (first 500 chars): <tool_call>{\"arguments\":{\"button\":\"left\",\"ref\":\"complete Cloudflare Turnstile authentication challenge.\\n\\n## Requirements:\\n\\n1. Navigate to https://eval-web.mcpmark.ai/auth/turnstile\\n2. Fill in the authentication form with provided test credentials:\\n   - Username: \\\"testuser\\\"\\n   - Password: \\\"password123\\\"\\n3. Wait for the Cloudflare Turnstile challenge widget to load completely\\n4. Interact with the Turnstile challenge widget to complete the authentication (if needed)\\n5. Wait for success...\n\n\u2717 Success message NOT found: 'Authentication successful! Security challenge verified.'\n",
+        "verifier_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stdout_tail": ""
+      },
+      {
+        "category": "web_search",
+        "messages_sha256": "b200b56de26cf72b88af69bd942eefbaea6550c4df1039b6e28199e04c4d44a8",
+        "server_error": null,
+        "task": "playwright/standard/web_search/birth_of_arvinxu",
+        "task_id": "birth_of_arvinxu",
+        "tool_count": 22,
+        "turns": [
+          {
+            "arguments": {
+              "button": "right",
+              "ref": "search for information about the X profile https://x.com/arvin17x and find out when this person was born.\n\n## Requirements:\n\nOutput ONLY the 4-digit birth year (e.g. `1990`, `2001`), with no other text \u2014 no prose, units, punctuation, quotes, or surrounding whitespace.\n\nUse the available Playwright MCP tools to complete the task. When finished, return only the requested final answer"
+            },
+            "output_sha256": "26c21bb1e9a0db3e66aa4a7063fb59f883215043e89f21d63d103c8c64bb53ba",
+            "result_is_error": false,
+            "result_sha256": "5a5a83ae3dc2222eb5fb01b6935e77eccfaa172f61012b8766efaf466ad02069",
+            "tool": "browser_click",
+            "turn": 1
+          },
+          {
+            "arguments": null,
+            "output_sha256": "3b7941a7c183adfb4236c79047ba5b6b1ac800ea6be7b2b8a00f10716759e89f",
+            "tool": null,
+            "turn": 2
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "7ff7900dd6c7a7c27ac4f9f2e3ea12e61458e39fd243f4fb5f63267127b66064",
+        "verifier_stdout_tail": "| Working directory: /private/tmp/mcpmark-playwright-birth_of_arvinxu-wiby7t4x\n| AI agent did not find the correct answer: 1995\n"
+      },
+      {
+        "category": "web_search",
+        "messages_sha256": "709376625621ffd3e71a21c0f4456c66c4fec97860af40e81fb57aca04ce524a",
+        "server_error": null,
+        "task": "playwright/standard/web_search/r1_arxiv",
+        "task_id": "r1_arxiv",
+        "tool_count": 22,
+        "turns": [
+          {
+            "arguments": {
+              "button": "right",
+              "ref": "search for the **v1 (initial) version** of the DeepSeek R1 research paper on arXiv and extract all the paragraphs of the \"Conclusion, Limitations, and Future Work\" section.\n\n## Requirements:\n\n1. Search for the DeepSeek R1 research paper on arXiv\n2. Navigate to the **v1 (initial) version** of the paper\n3. Find the \"Conclusion, Limitations, and Future Work\" section\n4. Extract **ALL the paragraphs** of the \"Conclusion, Limitations, and Future Work\" section\n5. **Provide the content in Markdown format - no explanations, no additional text**\n\n## Important Notes:\n\n- **Output ALL the paragraphs of text**\n- **Do NOT include any explanations, summaries, or additional content**\n- **The response should contain ONLY the \"Conclusion, Limitations, and Future Work\" section content formatted in Markdown**\n\n## Expected Output:\nAll the paragraphs of the \"Conclusion, Limitations, and Future Work\" section from the DeepSeek R1 paper, formatted in Markdown with proper paragraph structure and formatting.\n\nUse the available Playwright MCP tools to complete the task. When finished, return only the requested final answer"
+            },
+            "output_sha256": "383c13ee1191be42d050e5d06fc3fa704444fd12e8acc88ef64e61c8651ba156",
+            "result_is_error": false,
+            "result_sha256": "aa1c7147a77ee881897ba042ac1eed8274098bb59dc0cfd32782709dd53ecf08",
+            "tool": "browser_click",
+            "turn": 1
+          },
+          {
+            "arguments": null,
+            "output_sha256": "bd5b18d4cad38d9d96972d768179190aaed0336be25a740faa5585f6d1fea8fc",
+            "tool": null,
+            "turn": 2
+          }
+        ],
+        "verifier_exit_code": 1,
+        "verifier_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "verifier_stderr_tail": "",
+        "verifier_stdout_sha256": "3b2235a30fce6845a3d96729c03701a75026687792035396ea0e17e46e3234a9",
+        "verifier_stdout_tail": "| Starting verification...\n| Working directory: /private/tmp/mcpmark-playwright-r1_arxiv-4004jgtx\n| Verifying Playwright Web Search Task - DeepSeek R1 Introduction\n| ======================================================================\n| Loading expected content...\n| Found content.txt at: /private/tmp/mcpmark-cd45b7f/tasks/playwright/standard/web_search/r1_arxiv/content.txt\n| Expected content loaded (2463 characters)\n| Extracted content: 3995 characters\n| Comparing extracted content with expected content...\n| Content comparison results:\n|   - Extracted length: 3911 characters\n|   - Expected length: 2436 characters\n|   - Similarity: 0.0167 (threshold: 0.9)\n|   - Extracted preview: <tool_call>{\"arguments\":{\"button\":\"right\",\"ref\":\"search for the v1 (initial) version of the deepseek...\n|   - Expected preview: in this work, we share our journey in enhancing model reasoning abilities through reinforcement lear...\n| Task verification failed. Similarity 0.0167 < 0.9.\n"
+      }
+    ],
+    "runtime_errors": 0,
+    "server": "@playwright/mcp@0.0.68",
+    "task_count": 4,
+    "user_simulator_executed": false,
+    "verifier_failures": 4,
+    "verifier_passes": 0
+  },
+  "official_split_verified": false,
+  "receipt_self_sha256": "9b0666bfe784040e72f41d53a39ffa2fdacf27595cbc7b144849543d76b95041",
+  "schema_bridge": {
+    "accepted_fallback_key": "inputSchema",
+    "m440_failure_reason": "runner read inputSchema only; MCP Python SDK exposed input_schema",
+    "m440_superseded": true,
+    "mcp_python_sdk_key": "input_schema",
+    "tool_catalog_sha256": "2955f6da8180f78899422c766340083fdd747a4f01cc27a50f5efeb86a767113",
+    "tool_count": 22
+  },
+  "schema_version": 1,
+  "source_artifacts": {
+    "base_report": {
+      "bytes": 9816,
+      "path": "/private/tmp/m445-mcpmark-playwright-base-schema-corrected.json",
+      "sha256": "3a8b4d34a6c3d529874087e90b2046ad2cabf7d867976a2c1f4f5fef7f72419b"
+    },
+    "selector_report": {
+      "bytes": 13218,
+      "path": "/private/tmp/m445-mcpmark-playwright-selector-schema-corrected.json",
+      "sha256": "f635ac09964f3469430e913181fac3b4e67cb711a41124ba9ce0060f80fdb910"
+    },
+    "tool_catalog": {
+      "bytes": 23138,
+      "path": "/private/tmp/m442-playwright-tools.json",
+      "sha256": "2955f6da8180f78899422c766340083fdd747a4f01cc27a50f5efeb86a767113"
+    },
+    "transfer_receipt": {
+      "bytes": 10624,
+      "path": "docs/paper/results/raw/m440-mcpmark-playwright-native-child-and-transfer-v1.json",
+      "sha256": "4df2420101473d7f59834224fc323684fd9a83ceb82648e8e595bc9c48c10f70"
+    }
+  },
+  "success_rate": 0.0,
+  "task_count": 4,
+  "trajectory_transfer": {
+    "dataset": "Jakumetsu/mcpmark-trajectory-log",
+    "dataset_url": "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log",
+    "eval_input_sha256": [
+      "c32b05b4a20499463fcde9089b705fac056fab50194a0931b813319fc227f688",
+      "def538660d893e49809db1a1488bd9679d7aa04c1873e3e0a64ddf9dd29a836c"
+    ],
+    "random": {
+      "after": {
+        "mean_loss": 9.688384509477459,
+        "sequence_accuracy": 0.0,
+        "token_accuracy": 0.007285974499089253
+      },
+      "backbone_init": "random",
+      "before": {
+        "mean_loss": 9.788409012480077,
+        "sequence_accuracy": 0.0,
+        "token_accuracy": 0.007285974499089253
+      },
+      "child": {
+        "bytes": 52250473,
+        "path": "/private/tmp/m440-mcpmark-playwright-random.pt",
+        "sha256": "256f9298ff6b326d172ba1dc595997377517fe3bc1ccec1cc1d79434a90f0230"
+      },
+      "delta": {
+        "mean_loss": -0.10002450300261856,
+        "token_accuracy_points": 0.0
+      },
+      "eval_rows": 2,
+      "learning_rate": 2e-05,
+      "max_seq_len": 512,
+      "report_sha256": "024afc9d675689d8b796f8087c98bf9758b128275ceac74da8a2a369280f031a",
+      "steps": 8,
+      "weight_transfer": {
+        "action_heads": {
+          "base_l2": 87.12721149777144,
+          "delta_l2": 0.0,
+          "parameters": 2518968,
+          "relative_delta_l2": 0.0,
+          "target_l2": 87.12721149777144
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.686243041747026,
+          "delta_l2": 40.25516408907167,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.7788371086781745,
+          "target_l2": 50.41082436370032
+        },
+        "embedding": {
+          "base_l2": 76.26811513665427,
+          "delta_l2": 91.29768223055814,
+          "parameters": 6291456,
+          "relative_delta_l2": 1.197062259464187,
+          "target_l2": 50.1892311772249
+        },
+        "ffn": {
+          "base_l2": 50.599417154543154,
+          "delta_l2": 44.422601872602044,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.8779271456215476,
+          "target_l2": 49.79218907495966
+        },
+        "normalization": {
+          "base_l2": 21.431829234008912,
+          "delta_l2": 1.8370627141631217,
+          "parameters": 384,
+          "relative_delta_l2": 0.08571656175983311,
+          "target_l2": 19.595776216445866
+        }
+      }
+    },
+    "redaction_policy": "tool outputs and assistant free text fixed-marker redaction; absolute paths suffix-redacted",
+    "revision": "e50578f0ab904d8e6a7c576c387c1e76ae482c89",
+    "source_disjoint_eval_rows": 2,
+    "train_input_sha256": "f5c46e510df4d4d43321a799146df908b5d7867f84a6afcf6d5988061a8b7abf",
+    "train_rows": 1,
+    "warm": {
+      "after": {
+        "mean_loss": 5.0015792429772885,
+        "sequence_accuracy": 0.0,
+        "token_accuracy": 0.331511839708561
+      },
+      "backbone_init": "parent",
+      "before": {
+        "mean_loss": 5.161177060208902,
+        "sequence_accuracy": 0.0,
+        "token_accuracy": 0.31876138433515483
+      },
+      "child": {
+        "bytes": 52250359,
+        "path": "/private/tmp/m440-mcpmark-playwright-warm.pt",
+        "sha256": "7b3438d9ee512007cbce17b66f8215762a16a9d5fdf9dd85c905be2cda053425"
+      },
+      "delta": {
+        "mean_loss": -0.1595978172316137,
+        "token_accuracy_points": 1.2750455373406189
+      },
+      "eval_rows": 2,
+      "learning_rate": 2e-05,
+      "max_seq_len": 512,
+      "report_sha256": "74528c10f9e78a616bde22c80f73f07ea33499a576ae58998cfad4ce4030eaf9",
+      "steps": 8,
+      "weight_transfer": {
+        "action_heads": {
+          "base_l2": 87.12721149777144,
+          "delta_l2": 0.0,
+          "parameters": 2518968,
+          "relative_delta_l2": 0.0,
+          "target_l2": 87.12721149777144
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.686243041747026,
+          "delta_l2": 0.09572852228567948,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0018521083493795334,
+          "target_l2": 51.686644587718725
+        },
+        "embedding": {
+          "base_l2": 76.26811513665427,
+          "delta_l2": 0.18914375740007602,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.002479984683785295,
+          "target_l2": 76.31533144874744
+        },
+        "ffn": {
+          "base_l2": 50.599417154543154,
+          "delta_l2": 0.10862236239267001,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.002146711731103748,
+          "target_l2": 50.599194569913095
+        },
+        "normalization": {
+          "base_l2": 21.431829234008912,
+          "delta_l2": 0.0014356665163682736,
+          "parameters": 384,
+          "relative_delta_l2": 6.698758657940866e-05,
+          "target_l2": 21.431500356786213
+        }
+      }
+    },
+    "warm_advantage_after_points": 32.42258652094718
+  }
+}

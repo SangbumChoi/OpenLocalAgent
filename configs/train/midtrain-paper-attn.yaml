@@ -1,0 +1,96 @@
+# Parameter-matched all-MQA control. Keep every setting, tokenizer, sample order, and token budget
+# identical to midtrain-paper-hybrid.yaml; only the model/checkpoint/output paths differ.
+stage: midtrain
+model_config: configs/model/webgpu-35m-attn.yaml
+init_from: runs/pretrain-paper-attn/latest.pt
+data:
+  strict_conversation_artifacts: true
+  # Weights are scheduled supervised-token shares, not whole-row draw probabilities.
+  mixture:
+    unit: loss_tokens
+  tokenizer:
+    kind: bpe
+    path: data/tokenizer-paper-16k.json
+  sources:
+    - name: general_replay
+      type: shards
+      path: data/shards/paper-general
+      split: train
+      weight: 0.45
+      end_weight: 0.30
+    # Current prepared source is CodeParrot Clean Python only. Tests/API docs require separately
+    # licensed configured sources; do not relabel this replay stream as if they were present.
+    - name: permissive_python
+      type: shards
+      path: data/shards/paper-code
+      split: train
+      weight: 0.25
+      end_weight: 0.25
+    - name: structured_web
+      type: shards
+      path: data/shards/paper-structured
+      split: train
+      weight: 0.15
+      end_weight: 0.15
+    - name: rule_audited_agent
+      type: conversations
+      path: data/synth/agent_sft_paper_train_v2.jsonl
+      artifact:
+        generator_config: configs/data/agent_synth_paper_train_v2.yaml
+        manifest: data/synth/agent_sft_paper_train_v2.jsonl.manifest.v1.json
+        expected_split: train
+        expected_rule_verified: true
+        environment_policy: forbid
+      weight: 0.15
+      end_weight: 0.30
+  eval_sources:
+    - name: general_holdout
+      type: shards
+      path: data/shards/paper-general
+      split: val
+    - name: permissive_python_holdout
+      type: shards
+      path: data/shards/paper-code
+      split: val
+    - name: structured_web_holdout
+      type: shards
+      path: data/shards/paper-structured
+      split: val
+    - name: agent_holdout
+      type: conversations
+      path: data/synth/agent_eval.jsonl
+      artifact:
+        generator_config: configs/data/agent_synth_eval.yaml
+        manifest: data/synth/agent_eval.jsonl.manifest.v1.json
+        expected_split: eval
+        expected_rule_verified: true
+        environment_policy: forbid
+optim:
+  name: adamw
+  lr: 1.0e-4
+  weight_decay: 0.1
+  grad_clip: 1.0
+schedule:
+  type: wsd
+  warmup_steps: 100
+  # The loss-token scheduler spends many draws on short masked conversations. A production replay
+  # of the old 2,500-update ceiling measured only 7,429,270 supervised tokens, so it cannot be
+  # described as the 70–100M-token stage. The deterministic 25,000-update plan is materialized and
+  # must pass the explicit supervised-token gate before training.
+  total_steps: 25000
+  decay_frac: 0.2
+batch:
+  micro_batch_size: 2
+  grad_accum_steps: 8
+evaluation:
+  batches_per_source: 16
+  batch_size: 2
+  seed: 12026
+runtime:
+  device: auto
+  dtype: auto
+  seed: 2026
+  resume: true
+log:
+  out_dir: runs/midtrain-paper-attn
+  ckpt_every: 100

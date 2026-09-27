@@ -1,0 +1,57 @@
+{
+  "kind": "localagent_hf_local_export_receipt",
+  "schema_version": 1,
+  "checkpoint_sha256": "9bba544ae37190fdc24ea51ac9f3f8d80350cd905c01e13186156c19f7e0f9ee",
+  "parameter_count": 10524544,
+  "config": "webgpu-10m-hybrid",
+  "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+  "dispatch_tool_count": 63,
+  "pointer_args": [
+    "city",
+    "query",
+    "goal",
+    "term",
+    "song",
+    "topic",
+    "path",
+    "pattern",
+    "command",
+    "message",
+    "task",
+    "duration",
+    "title",
+    "recipient",
+    "url",
+    "content",
+    "summary"
+  ],
+  "bundle": {
+    "README.md": {
+      "bytes": 3494,
+      "sha256": "58b2a0db8e79c4dd41458647f290e4fdc5843bb8d12e0edea2af6b4809eb4294"
+    },
+    "agent_heads.bin": {
+      "bytes": 10137222,
+      "sha256": "5042a122dfa344734ced9d9910ee38f633ec86cba9db3fc6534ec8a735f216e5"
+    },
+    "config.json": {
+      "bytes": 82483,
+      "sha256": "301b3497208fc15096bb98ea0d9d1a18b2b9ec948577f611a033499000cefad6"
+    },
+    "model.safetensors": {
+      "bytes": 42101904,
+      "sha256": "ff73cf2af5f83f7614298fca40e893dcad9e88777555cb42d62d1ea3e4976e61"
+    },
+    "tokenizer.json": {
+      "bytes": 1134224,
+      "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+    }
+  },
+  "export_verified_locally": true,
+  "hub": {
+    "authenticated": false,
+    "uploaded": false,
+    "reason": "hf auth whoami reports no login; upload requires a user-provided Hugging Face token and repository"
+  },
+  "claim_boundary": "HF-format WebGPU checkpoint bundle with dispatch metadata; no public repository, download URL, or hosted inference claim is made"
+}

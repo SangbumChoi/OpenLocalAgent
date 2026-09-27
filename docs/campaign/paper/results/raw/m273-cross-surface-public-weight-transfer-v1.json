@@ -1,0 +1,141 @@
+{
+  "kind": "localagent_cross_surface_public_weight_transfer_receipt",
+  "schema_version": 1,
+  "measurement": "m273_cross_surface_public_weight_transfer",
+  "generated_at": "2026-08-04",
+  "sources": {
+    "androidcontrol": {
+      "dataset": "OfficerChul/Android-Control-84k",
+      "original_url": "https://github.com/google-research/google-research/tree/master/android_control",
+      "mirror_url": "https://huggingface.co/datasets/OfficerChul/Android-Control-84k",
+      "train_split": "train4096 prefix, 512 rows used",
+      "train_bytes": 12435496,
+      "train_sha256": "6971d5fe81fe3c6e8ee12e0072481ec653f98bdb5699af54e8f63649358743fd",
+      "eval_split": "test prefix, 32 rows used",
+      "eval_bytes": 2735008,
+      "eval_sha256": "2d798115fe0feb14ac6d65f86a4b51b4463b593a35281eedce4de8751356bc95",
+      "visual_input_omitted": true
+    },
+    "agentnet": {
+      "dataset": "xlangai/AgentNet",
+      "original_url": "https://github.com/xlang-ai/OpenCUA",
+      "dataset_url": "https://huggingface.co/datasets/xlangai/AgentNet",
+      "revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+      "train_split": "bounded Ubuntu text projection, 512 rows used",
+      "train_bytes": 911115,
+      "train_sha256": "666e7b29bd67e6b46c8a96c0fa9248a1d79498e4c6da2baf04bb906d8778bc60",
+      "eval_split": "bounded Ubuntu text projection, 32 rows used",
+      "eval_bytes": 239744,
+      "eval_sha256": "b9473550b24cea2f87b4d90ad29e6a669a179fdcee9e5d5a753011236f45af7d",
+      "visual_input_omitted": false
+    }
+  },
+  "protocol": {
+    "parent_checkpoint": {
+      "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+      "bytes": 52242001,
+      "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+    },
+    "warm_child": {
+      "path": "/private/tmp/m273-cross-surface-warm.pt",
+      "bytes": 52249114,
+      "sha256": "86460f8398ebed7c48181885c5be5514d71a1c51d35e9765ff00600d6194d7cb"
+    },
+    "random_child": {
+      "path": "/private/tmp/m273-cross-surface-random.pt",
+      "bytes": 52249228,
+      "sha256": "b0d88293c184e5a1f331a2bceeb8ca83b6090285a81eac249e416fcddd2ee326"
+    },
+    "train_rows_per_source": 512,
+    "eval_rows_per_source": 32,
+    "steps": 16,
+    "batch_size": 2,
+    "learning_rate": 0.00001,
+    "max_seq_len": 512,
+    "device": "cpu",
+    "seed": 2027,
+    "random_backbone_seed": 2028,
+    "tokenizer_sha256_equal": true,
+    "source_disjoint_policy": "official train/test split for AndroidControl; source-disjoint AgentNet parent trajectories"
+  },
+  "evaluator": {
+    "training_script": {
+      "path": "scripts/train_cross_surface_continuation.py",
+      "bytes": 13110,
+      "sha256": "799d44c6cb80c4973863a9a2ac5def06cc3913f0b709fe690e11d24245f0817f"
+    },
+    "action_script": {
+      "path": "scripts/evaluate_agentnet_text.py",
+      "bytes": 12252,
+      "sha256": "44054e2bba8de228a193f549166f7bf1dfaa24fca0321b5b67f11cc5c4915c5e"
+    }
+  },
+  "teacher_forced": {
+    "warm_start": {
+      "train_rows": 1024,
+      "eval_rows": 64,
+      "eval_before_mean_loss": 3.771652398849952,
+      "eval_after_mean_loss": 3.0768791756078593,
+      "eval_before_token_accuracy": 0.5181422351233672,
+      "eval_after_token_accuracy": 0.5544267053701016,
+      "eval_by_source": {
+        "androidcontrol": {
+          "before_mean_loss": 3.0772272558773266,
+          "after_mean_loss": 2.4983006271661496,
+          "before_token_accuracy": 0.6090686274509803,
+          "after_token_accuracy": 0.6544117647058824
+        },
+        "agentnet": {
+          "before_mean_loss": 4.224610765489171,
+          "after_mean_loss": 3.4542733367017324,
+          "before_token_accuracy": 0.45883293365307753,
+          "after_token_accuracy": 0.4892086330935252
+        }
+      }
+    },
+    "random_backbone_control": {
+      "eval_rows": 64,
+      "eval_before_mean_loss": 9.732025500824905,
+      "eval_after_mean_loss": 9.272770631123004,
+      "eval_before_token_accuracy": 0.0,
+      "eval_after_token_accuracy": 0.005321722302854378
+    }
+  },
+  "weight_movement": {
+    "warm_start_relative_delta_l2": {
+      "embedding": 0.0018376941969249262,
+      "attention_or_mixer": 0.001126356404073247,
+      "ffn": 0.0013639218247415178,
+      "normalization": 0.000043868192295893,
+      "action_heads": 0.0
+    },
+    "random_backbone_relative_delta_l2": {
+      "embedding": 1.197196139126335,
+      "attention_or_mixer": 0.7788347089397393,
+      "ffn": 0.8779260766971478,
+      "normalization": 0.08573515448524248,
+      "action_heads": 0.0
+    },
+    "recommendation": "Reuse tokenizer/config-compatible backbone weights; use smaller transferred-backbone learning rates, larger new-head rates, and retain a no-transfer ablation before promotion."
+  },
+  "action_level_agentnet_control": {
+    "eval_rows": 4,
+    "parents": 1,
+    "warm_start": {
+      "report_bytes": 2688,
+      "report_sha256": "6eedaec120edfca727825fcdf028d8b41d5902784ae0829d2ace9a689052ff6c",
+      "success_rate": 0.0,
+      "exact_trajectory_rate": 0.0,
+      "first_action_type_rate": 0.0
+    },
+    "random_backbone_control": {
+      "report_bytes": 2694,
+      "report_sha256": "3871d146a20e01f10655a9ad66eac20ba0c41517bb2fbd4f0d16a456cb568f55",
+      "success_rate": 0.0,
+      "exact_trajectory_rate": 0.0,
+      "first_action_type_rate": 0.0
+    }
+  },
+  "claim_boundary": "Public-train-only text/accessibility continuation with source-bound warm-vs-random weight transfer and a bounded AgentNet action control. The AndroidControl screenshots were omitted, the AgentNet screenshots were not consumed, no emulator/browser/desktop/MCP runtime or external account was executed, and these are not official AndroidControl, AgentNetBench, OSWorld, or native WebGPU scores.",
+  "receipt_self_sha256": "e88daca58d49c0a6d246b2ce6fc1662cc62244802b4691f10a55eb84f0b71719"
+}

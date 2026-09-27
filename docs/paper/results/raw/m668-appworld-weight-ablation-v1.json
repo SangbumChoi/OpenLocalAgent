@@ -1,0 +1,238 @@
+{
+  "ablation": {
+    "claim_boundary": "Weight movement and held-out teacher-forced continuation only; this is not a native AppWorld leaderboard score or a free-running policy score.",
+    "label": "m666_public_appworld_warm_vs_random",
+    "matched_rows": true,
+    "random_initialization": "deterministic_random",
+    "random_weight_report": {
+      "bytes": 19655,
+      "path": "/private/tmp/m665-appworld-full/max64/random-weight.json",
+      "sha256": "6cd152663a0321e0b85043677f756cbb154a19c09b7fb38ec6881f3c3cbe7f36"
+    },
+    "same_data_lineage": true,
+    "same_training_protocol": true,
+    "warm_initialization": "parent",
+    "warm_weight_report": {
+      "bytes": 19660,
+      "path": "/private/tmp/m665-appworld-full/max64/warm-weight.json",
+      "sha256": "1c69894ee9d86f673ab1cf8d81d6ddac934c753932a15a396845ba96c45c6413"
+    }
+  },
+  "compatibility": {
+    "config_mismatches": {},
+    "random": {
+      "added_tensors": [],
+      "config_mismatches": {},
+      "removed_tensors": [],
+      "shape_mismatches": {},
+      "shared_tensor_count": 51,
+      "tokenizer_sha256_equal": true
+    },
+    "shape_mismatches": {},
+    "tokenizer_sha256_equal": true,
+    "warm": {
+      "added_tensors": [],
+      "config_mismatches": {},
+      "removed_tensors": [],
+      "shape_mismatches": {},
+      "shared_tensor_count": 51,
+      "tokenizer_sha256_equal": true
+    }
+  },
+  "dataset": {
+    "eval_rows": 6,
+    "protected_test_used": false,
+    "receipt": {
+      "bytes": 9605,
+      "path": "docs/paper/results/raw/m666-appworld-public-full-v3.json",
+      "sha256": "74c46123555252f901dc3bc3b62117510a61487eba01483682744813365d1ec4"
+    },
+    "source_url": "https://github.com/StonyBrookNLP/appworld",
+    "train_rows": 90
+  },
+  "decision": {
+    "promote_to_native": false,
+    "reason": "The matched m666 arm reports preserve compatible parent geometry and show a warm held-out advantage, but both learned free-running probes remain 0/6.",
+    "retain_parent_initialization": true
+  },
+  "held_out": {
+    "parent_heads": {
+      "checkpoint_sha256": "8c3a4ed31d468a8556faf9f1442a3d7cfb7cfcc19788055bb1c501217c65d850",
+      "free_running_success_rate": 0.0,
+      "label": "warm_parent_backbone",
+      "structured_planner_success_rate": 1.0,
+      "teacher_forced": {
+        "assistant_loss_tokens": 878,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.7312072892938497,
+        "mean_loss": 2.166900061257608,
+        "rows": 6
+      }
+    },
+    "random": {
+      "checkpoint_sha256": "0cb06efb0037bb96c94846ff42e33063525aa418d8063be07444bb0d27ef1ffc",
+      "free_running_success_rate": 0.0,
+      "label": "random_backbone_control",
+      "structured_planner_success_rate": 1.0,
+      "teacher_forced": {
+        "assistant_loss_tokens": 878,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.5034168564920274,
+        "mean_loss": 7.296145984415041,
+        "rows": 6
+      }
+    }
+  },
+  "kind": "localagent_m668_appworld_weight_ablation_receipt",
+  "parent_checkpoint": {
+    "current": {
+      "bytes": 52206645,
+      "path": "/private/tmp/m665-appworld-full/max64/warm-child.pt",
+      "sha256": "8c3a4ed31d468a8556faf9f1442a3d7cfb7cfcc19788055bb1c501217c65d850"
+    },
+    "random_target": {
+      "auxiliary_tensors": 11,
+      "lineage": {
+        "config_sha256": "e408495cc5d15a62c21f9e1da82ec1732830dd4c585813318a656ed9b93f421c",
+        "data_sha256": "e74e53a930904488dc7558e1bdf99b9cfbc9a435e6d420b9d0f68b49aeaa0b6e",
+        "git": {
+          "commit": "1df9716b9a607e38dd587c747c5867528545d3e8",
+          "dirty": true,
+          "repository_sha256": "4f3f386c8a99593d11431d8772a6bc3b3f67365462192b3068675ebbdee038bf",
+          "worktree_sha256": "c0bc8ea43e4780b24992747cdd373f97ec5de356d82e38e8ee652592933c53aa"
+        },
+        "model_config_sha256": "893fdd2f896c6c246ceed64031b9fbd4b5b770ce2fb72cd3de5fc02703161393",
+        "parent_checkpoint_sha256": "47d2eb1caa1b17688e722f0f7c9ea7586211ca2775197636769341cfd5faa05c",
+        "stage": "sft",
+        "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+        "version": 1
+      },
+      "model_tensors": 40,
+      "path": "/private/tmp/m665-appworld-full/max64/random-child.pt",
+      "sha256": "0cb06efb0037bb96c94846ff42e33063525aa418d8063be07444bb0d27ef1ffc",
+      "stage": "sft_public_agent_continuation",
+      "step": 128
+    },
+    "warm_target": {
+      "auxiliary_tensors": 11,
+      "lineage": {
+        "config_sha256": "e408495cc5d15a62c21f9e1da82ec1732830dd4c585813318a656ed9b93f421c",
+        "data_sha256": "e74e53a930904488dc7558e1bdf99b9cfbc9a435e6d420b9d0f68b49aeaa0b6e",
+        "git": {
+          "commit": "1df9716b9a607e38dd587c747c5867528545d3e8",
+          "dirty": true,
+          "repository_sha256": "4f3f386c8a99593d11431d8772a6bc3b3f67365462192b3068675ebbdee038bf",
+          "worktree_sha256": "c0bc8ea43e4780b24992747cdd373f97ec5de356d82e38e8ee652592933c53aa"
+        },
+        "model_config_sha256": "893fdd2f896c6c246ceed64031b9fbd4b5b770ce2fb72cd3de5fc02703161393",
+        "parent_checkpoint_sha256": "bb19d72ec5c3e5fefb13b752b9b8851fb81e6dfaeb05aa460e68c06727158614",
+        "stage": "sft",
+        "tokenizer_sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c",
+        "version": 1
+      },
+      "model_tensors": 40,
+      "path": "/private/tmp/m665-appworld-full/max64/warm-child.pt",
+      "sha256": "8c3a4ed31d468a8556faf9f1442a3d7cfb7cfcc19788055bb1c501217c65d850",
+      "stage": "sft_public_agent_continuation",
+      "step": 128
+    }
+  },
+  "receipt_self_sha256": "8fd6ec43d453bdf8a08470d98acd1bf7b2edcd6d666b48107ce1cd23f8693643",
+  "schema_version": 1,
+  "weight_transfer_analysis": {
+    "random": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 91.53287681571555,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.53287681571555
+        },
+        "attention_or_mixer": {
+          "base_l2": 50.41399605655558,
+          "delta_l2": 0.21531838973324133,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.004271004216600727,
+          "target_l2": 50.41634602456231
+        },
+        "embedding": {
+          "base_l2": 50.18559824667564,
+          "delta_l2": 0.6496743379347542,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.012945433762519498,
+          "target_l2": 50.190583246643605
+        },
+        "ffn": {
+          "base_l2": 49.8005718383114,
+          "delta_l2": 0.2767999738995067,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.005558168584854793,
+          "target_l2": 49.807102596413934
+        },
+        "normalization": {
+          "base_l2": 19.602629852580797,
+          "delta_l2": 0.006074501203561712,
+          "parameters": 384,
+          "relative_delta_l2": 0.00030988195202604255,
+          "target_l2": 19.60845052561304
+        }
+      }
+    },
+    "warm": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 91.77234792175153,
+          "delta_l2": 0.0,
+          "parameters": 2519736,
+          "relative_delta_l2": 0.0,
+          "target_l2": 91.77234792175153
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.69982110214159,
+          "delta_l2": 0.1983137569441056,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0038358693070195313,
+          "target_l2": 51.702521828428544
+        },
+        "embedding": {
+          "base_l2": 77.83728232986009,
+          "delta_l2": 0.6969683199382298,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.008954170791634351,
+          "target_l2": 78.09260213410877
+        },
+        "ffn": {
+          "base_l2": 50.61082055567932,
+          "delta_l2": 0.24213245358177898,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.004784203277546109,
+          "target_l2": 50.61285918505925
+        },
+        "normalization": {
+          "base_l2": 21.454191348716357,
+          "delta_l2": 0.005645343825269887,
+          "parameters": 384,
+          "relative_delta_l2": 0.0002631347755555307,
+          "target_l2": 21.459685528959145
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "claim_boundary": "Held-out public xlangai/AgentNet text/action continuation only. Screenshots, desktop state, OS side effects, and the upstream AgentNetBench runtime were not used; this is not a visual-grounding result, native desktop score, or WebGPU task-completion claim.",
+  "comparison": {
+    "warm_minus_random_after_eval_token_accuracy": 0.45777959517481083,
+    "warm_minus_random_after_route_accuracy": 0.8345864661654135,
+    "warm_eval_token_accuracy_gain": 0.11204252646557461,
+    "random_eval_token_accuracy_gain": 0.21222653854017584,
+    "warm_action_first_type_rate": 1.0,
+    "random_action_first_type_rate": 0.0,
+    "warm_action_exact_trajectory_rate": 0.0,
+    "random_action_exact_trajectory_rate": 0.0,
+    "decision": "retain_warm_backbone_for_further_multimodal_or_action-grounded_training; do_not_promote_this_text_continuation_to_native_computer_use"
+  },
+  "dataset": {
+    "name": "xlangai/AgentNet",
+    "url": "https://huggingface.co/datasets/xlangai/AgentNet",
+    "license": "MIT",
+    "revision": "d76ee50a63fad81cfdbe576416757d7c2091ed50",
+    "train": {
+      "path": "/private/tmp/agentnet_text_v4.train.jsonl",
+      "bytes": 911095,
+      "sha256": "44fad4c6e98fb6f5afd3cc45b89e1c1987d5d273293922521ef67677ace79db8",
+      "rows": 513,
+      "parent_records": 32
+    },
+    "eval": {
+      "path": "/private/tmp/agentnet_text_v4.eval.jsonl",
+      "bytes": 239724,
+      "sha256": "2cadf65145b07734eb13988dc305396d027f6e98d1a5a7cf7de9a5fd31c3dc7c",
+      "rows": 133,
+      "parent_records": 8
+    },
+    "parent_disjoint": true,
+    "images_consumed": false
+  },
+  "kind": "localagent_agentnet_public_continuation_transfer",
+  "schema_version": 1,
+  "training": {
+    "steps": 32,
+    "batch_size": 4,
+    "learning_rate": 1e-05,
+    "seed": 2027,
+    "head_steps": 0,
+    "max_seq_len": 2048,
+    "device": "cpu",
+    "trainer": "scripts/train_public_agent_continuation.py"
+  },
+  "warm": {
+    "parent": {
+      "path": "/private/tmp/m180-mixed-mobile-computer-child.pt",
+      "sha256": "10827649f07182a08f8c11104d4713e76b8acaddc73020c5a4c77950de7b23a0"
+    },
+    "child": {
+      "path": "/private/tmp/m221-agentnet-warm-child.pt",
+      "bytes": 52224211,
+      "sha256": "316dca88d058ed6da78525115f811038e0faf3bf78a35208329a99b0bd758f8f"
+    },
+    "report": {
+      "path": "/private/tmp/m221-agentnet-warm-report.json",
+      "bytes": 7024,
+      "sha256": "f801fbbdd3cd175cfb0b3415df33fc71b16bb4332a4e9644ededaece4aaa8fb1"
+    },
+    "before": {
+      "eval_token_accuracy": 0.5579636066244121,
+      "eval_mean_loss": 2.8234304655453735,
+      "eval_route_accuracy": 0.18796992481203006
+    },
+    "after": {
+      "eval_token_accuracy": 0.6700061337149867,
+      "eval_mean_loss": 2.1683855729462835,
+      "eval_route_accuracy": 0.8345864661654135
+    },
+    "action_evaluation": {
+      "path": "/private/tmp/m221-agentnet-warm-actions.report.json",
+      "bytes": 4987,
+      "sha256": "c61c9576f6f54bb7925e947e6d3e5364bd082beaa544a3c84eb9748cacd57907",
+      "tasks": 8,
+      "first_action_type_rate": 1.0,
+      "exact_trajectory_rate": 0.0,
+      "mean_total": 5.749050557208484e-15
+    },
+    "weight_audit": {
+      "path": "/private/tmp/m221-agentnet-warm-weight.json",
+      "bytes": 19665,
+      "sha256": "20c3cfb10b1479664020787c936b3556df1a0fe35f9aa90cb35df89db0c33c1",
+      "shared_tensor_count": 51,
+      "tokenizer_sha256_equal": true,
+      "relative_delta_l2": {
+        "embedding": 0.005321242173089626,
+        "attention_or_mixer": 0.002844200230184535,
+        "ffn": 0.0034590186039617013,
+        "normalization": 0.0001389295378882056,
+        "action_heads": 0.0
+      }
+    }
+  },
+  "random_control": {
+    "parent": {
+      "path": "/private/tmp/agentnet-random-backbone-parent.pt",
+      "bytes": 52319842,
+      "sha256": "a322e3100ddec6a733ec474dfc5f3c545a15fa23232f914a8b5994af7b8e7527"
+    },
+    "child": {
+      "path": "/private/tmp/m221-agentnet-random-child.pt",
+      "bytes": 52320645,
+      "sha256": "ae3741cd52bf0dde584755e0da1853bc07a394cb3679444cb9657c5b7fd97354"
+    },
+    "report": {
+      "path": "/private/tmp/m221-agentnet-random-report.json",
+      "bytes": 6920,
+      "sha256": "18e92db9bdb5a5481537dc0a33131e442ab7d761d6966cc377c4af12abf1dc11"
+    },
+    "before": {
+      "eval_token_accuracy": 0.0,
+      "eval_mean_loss": 9.809472489030394,
+      "eval_route_accuracy": 0.0
+    },
+    "after": {
+      "eval_token_accuracy": 0.21222653854017584,
+      "eval_mean_loss": 8.590519704060231,
+      "eval_route_accuracy": 0.0
+    },
+    "action_evaluation": {
+      "path": "/private/tmp/m221-agentnet-random-actions.report.json",
+      "bytes": 4921,
+      "sha256": "2a8047ba2fd3d32c865479b944665bf70dcacb3b930bb3f3088dfe346a3b0fe3",
+      "tasks": 8,
+      "first_action_type_rate": 0.0,
+      "exact_trajectory_rate": 0.0,
+      "mean_total": 0.0
+    },
+    "weight_audit": {
+      "path": "/private/tmp/m221-agentnet-random-weight.json",
+      "bytes": 19775,
+      "sha256": "8de6ff8d17c2e53b99fdfba519c1f05c129b8718fdd52bc8d4a3c53d954c9838",
+      "shared_tensor_count": 51,
+      "tokenizer_sha256_equal": true,
+      "relative_delta_l2": {
+        "embedding": 0.006390588884905829,
+        "attention_or_mixer": 0.0028755718142236845,
+        "ffn": 0.0036581718837310805,
+        "normalization": 0.00012586332385367045,
+        "action_heads": 0.0
+      }
+    }
+  },
+  "receipt_self_sha256": "b02998d554f263ae386bbc8b8c2357b6cbf7b64afff2f12354db43e008347133"
+}

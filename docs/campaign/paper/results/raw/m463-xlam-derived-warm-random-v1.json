@@ -1,0 +1,440 @@
+{
+  "claim_boundary": "This is a source-bound teacher-forced continuation on a public Apache-2.0 derivative of xLAM function-calling data. It is not an official Salesforce xLAM score, BFCL score, multi-call tool-use score, native MCP result, live API execution, or proof of browser/email/Notion side-effect competence.",
+  "comparison": {
+    "random_eval_sequence_accuracy_after": 0.0,
+    "random_eval_token_accuracy_after": 0.004893736017897092,
+    "random_eval_token_accuracy_before": 0.00013982102908277405,
+    "random_eval_token_accuracy_gain": 0.0047539149888143175,
+    "warm_eval_sequence_accuracy_after": 0.0,
+    "warm_eval_token_accuracy_after": 0.513003355704698,
+    "warm_eval_token_accuracy_before": 0.5047539149888143,
+    "warm_eval_token_accuracy_gain": 0.008249440715883738,
+    "warm_minus_random_eval_token_accuracy_after": 0.5081096196868009,
+    "warm_wins_teacher_forced_tokens": true
+  },
+  "dataset": {
+    "eval": {
+      "manifest": {
+        "claim_boundary": "Public derivative source normalization only; not an official gated Salesforce xLAM split, benchmark score, multi-call evaluation, or live API execution.",
+        "invalid_examples": [
+          {
+            "file": "/private/tmp/xlam-derivative-20260806/data/test/shard_0.parquet",
+            "reason": "message 1 arguments violate the schema for 'project_investment_growth'",
+            "record_id": "35150",
+            "source_line": 22
+          }
+        ],
+        "invalid_policy": "skip_and_record_first_10",
+        "invalid_rows": 1,
+        "kind": "localagent_xlam_derived_parquet_normalization",
+        "output": {
+          "bytes": 350040,
+          "path": "/private/tmp/xlam-derivative-20260806/eval.jsonl",
+          "sha256": "0e42db60b81539586274b2ff2d1dcfd792e5f1d1d42fed5b1b1255b9c0954a73"
+        },
+        "records": 128,
+        "schema_version": 1,
+        "source": {
+          "dataset": "product-science/xlam-function-calling-60k-raw",
+          "license": "apache-2.0",
+          "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "official_salesforce_split": false,
+          "revision": "dfbd3c669354c27f2727870d39a4d86c32381448",
+          "split": "eval",
+          "url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+        },
+        "source_files": [
+          {
+            "bytes": 527269,
+            "path": "/private/tmp/xlam-derivative-20260806/data/test/shard_0.parquet",
+            "sha256": "83da335d43dafe27b2e368920dcd2141579d468d983835d6aa243c4908e63fb9"
+          }
+        ]
+      },
+      "rows": 128,
+      "source": {
+        "datasets": [
+          "product-science/xlam-function-calling-60k-raw"
+        ],
+        "input": {
+          "bytes": 350040,
+          "path": "/private/tmp/xlam-derivative-20260806/eval.jsonl",
+          "sha256": "0e42db60b81539586274b2ff2d1dcfd792e5f1d1d42fed5b1b1255b9c0954a73"
+        },
+        "label": "xlam_eval",
+        "public_reference": {
+          "dataset": "product-science/xlam-function-calling-60k-raw",
+          "url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+        },
+        "revisions": [
+          "dfbd3c669354c27f2727870d39a4d86c32381448"
+        ],
+        "rows": 128,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+        ],
+        "splits": [
+          "eval"
+        ],
+        "unique_parent_records": 128,
+        "visual_input_omitted_rows": 0
+      },
+      "source_label": "xlam_eval"
+    },
+    "license": "apache-2.0",
+    "name": "product-science/xlam-function-calling-60k-raw",
+    "official_salesforce_split_verified": false,
+    "revision": "dfbd3c669354c27f2727870d39a4d86c32381448",
+    "split_boundary": "The derivative's explicit train/test directories are retained as separate source labels. Generic slot-value overlap exists across the derivative shards, so the generic slot-disjoint guard is not used as evidence of independence.",
+    "train": {
+      "manifest": {
+        "claim_boundary": "Public derivative source normalization only; not an official gated Salesforce xLAM split, benchmark score, multi-call evaluation, or live API execution.",
+        "invalid_examples": [
+          {
+            "file": "/private/tmp/xlam-derivative-20260806/data/train/shard_0.parquet",
+            "reason": "message 1 arguments violate the schema for 'get_all_bodies_positions'",
+            "record_id": "56669",
+            "source_line": 73
+          },
+          {
+            "file": "/private/tmp/xlam-derivative-20260806/data/train/shard_0.parquet",
+            "reason": "message 1 arguments violate the schema for 'project_population'",
+            "record_id": "3367",
+            "source_line": 193
+          },
+          {
+            "file": "/private/tmp/xlam-derivative-20260806/data/train/shard_0.parquet",
+            "reason": "message 1 arguments violate the schema for 'highway_type'",
+            "record_id": "55558",
+            "source_line": 202
+          }
+        ],
+        "invalid_policy": "skip_and_record_first_10",
+        "invalid_rows": 3,
+        "kind": "localagent_xlam_derived_parquet_normalization",
+        "output": {
+          "bytes": 694892,
+          "path": "/private/tmp/xlam-derivative-20260806/train.jsonl",
+          "sha256": "cbbeac51ec9e0f3cc6871c1ef6f30c153373335341e35ab053d9c301b47b1f1a"
+        },
+        "records": 256,
+        "schema_version": 1,
+        "source": {
+          "dataset": "product-science/xlam-function-calling-60k-raw",
+          "license": "apache-2.0",
+          "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "official_salesforce_split": false,
+          "revision": "dfbd3c669354c27f2727870d39a4d86c32381448",
+          "split": "train",
+          "url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+        },
+        "source_files": [
+          {
+            "bytes": 544958,
+            "path": "/private/tmp/xlam-derivative-20260806/data/train/shard_0.parquet",
+            "sha256": "7feda86e6c083775fcfe62f85431db952d783c3197aac7e2ba43bf29b0fe7846"
+          }
+        ]
+      },
+      "rows": 256,
+      "source": {
+        "datasets": [
+          "product-science/xlam-function-calling-60k-raw"
+        ],
+        "input": {
+          "bytes": 694892,
+          "path": "/private/tmp/xlam-derivative-20260806/train.jsonl",
+          "sha256": "cbbeac51ec9e0f3cc6871c1ef6f30c153373335341e35ab053d9c301b47b1f1a"
+        },
+        "label": "xlam_train",
+        "public_reference": {
+          "dataset": "product-science/xlam-function-calling-60k-raw",
+          "url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+        },
+        "revisions": [
+          "dfbd3c669354c27f2727870d39a4d86c32381448"
+        ],
+        "rows": 256,
+        "source_families": [],
+        "source_urls": [
+          "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+        ],
+        "splits": [
+          "train"
+        ],
+        "unique_parent_records": 256,
+        "visual_input_omitted_rows": 0
+      },
+      "source_label": "xlam_train"
+    },
+    "url": "https://huggingface.co/datasets/product-science/xlam-function-calling-60k-raw"
+  },
+  "decision": {
+    "adoption": "retain_as_low_rate_initialization_candidate",
+    "native_replay_required": true,
+    "reason": "This is a bounded derivative-source continuation, not an official Salesforce xLAM split. Warm held-out teacher-forced token accuracy is 0.513003 versus 0.004894 random (50.81 percentage points); exact sequence accuracy is 0% for both. The source may inform low-rate initialization only after the public derivative terms, slot-overlap limitation, native replay, and a full tool-use evaluation are addressed.",
+    "webgpu_export_allowed": false
+  },
+  "kind": "localagent_xlam_derived_warm_random_continuation_receipt",
+  "parent_checkpoint": {
+    "bytes": 52246937,
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "protocol": {
+    "batch_size": 1,
+    "device": "cpu",
+    "learning_rate": 1e-05,
+    "max_seq_len": 512,
+    "random_backbone_init": "random",
+    "random_backbone_seed": 2028,
+    "seed": 2027,
+    "steps": 24,
+    "warm_backbone_init": "parent"
+  },
+  "random": {
+    "after": {
+      "eval": {
+        "assistant_loss_tokens": 7152,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.004893736017897092,
+        "mean_loss": 9.396947704972304,
+        "rows": 128
+      },
+      "eval_by_source": {
+        "xlam_eval": {
+          "assistant_loss_tokens": 7152,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.004893736017897092,
+          "mean_loss": 9.396947704972304,
+          "rows": 128
+        }
+      },
+      "train": {
+        "assistant_loss_tokens": 14877,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.007730053102103919,
+        "mean_loss": 9.375683232101212,
+        "rows": 256
+      }
+    },
+    "before": {
+      "eval": {
+        "assistant_loss_tokens": 7152,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.00013982102908277405,
+        "mean_loss": 9.746373805957086,
+        "rows": 128
+      },
+      "eval_by_source": {
+        "xlam_eval": {
+          "assistant_loss_tokens": 7152,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.00013982102908277405,
+          "mean_loss": 9.746373805957086,
+          "rows": 128
+        }
+      },
+      "train": {
+        "assistant_loss_tokens": 14877,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.0001344357061235464,
+        "mean_loss": 9.738025691694027,
+        "rows": 256
+      }
+    },
+    "child_checkpoint": {
+      "bytes": 52249683,
+      "path": "/private/tmp/m463-xlam-current-random.pt",
+      "sha256": "0a984a5743fcfef182b773d236619377f53f45f5093e483ac929aa735f9f28bf"
+    },
+    "weight_transfer": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 87.12721149777144,
+          "delta_l2": 0.0,
+          "parameters": 2518968,
+          "relative_delta_l2": 0.0,
+          "target_l2": 87.12721149777144
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.686243041747026,
+          "delta_l2": 40.25502963919572,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.7788345074081259,
+          "target_l2": 50.41058370774625
+        },
+        "embedding": {
+          "base_l2": 76.26811513665427,
+          "delta_l2": 91.29533154206045,
+          "parameters": 6291456,
+          "relative_delta_l2": 1.1970314380849847,
+          "target_l2": 50.18809817617946
+        },
+        "ffn": {
+          "base_l2": 50.599417154543154,
+          "delta_l2": 44.42233117683186,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.8779217958411469,
+          "target_l2": 49.79188856086673
+        },
+        "normalization": {
+          "base_l2": 21.431829234008912,
+          "delta_l2": 1.8370109415609321,
+          "parameters": 384,
+          "relative_delta_l2": 0.08571414607232346,
+          "target_l2": 19.59582883558293
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    }
+  },
+  "receipt_self_sha256": "266cb31eb0ed8ec20ba31ef488da52dc3bb1964dbdf4c0c39cf0b5bd4a6e5884",
+  "schema_version": 1,
+  "source_artifacts": {
+    "eval_manifest": {
+      "bytes": 1411,
+      "path": "/private/tmp/xlam-derivative-20260806/eval-manifest.json",
+      "sha256": "af13618d62109e84cd713b157214dc42f7965d7ba75c659c90c2d4fd2be391aa"
+    },
+    "random_report": {
+      "bytes": 9912,
+      "path": "/private/tmp/m463-xlam-current-random-report.json",
+      "sha256": "76d28fd6453c9326cabd240cdd8cf91e190975e87eeb6546a3cce44556aa732f"
+    },
+    "train_manifest": {
+      "bytes": 1869,
+      "path": "/private/tmp/xlam-derivative-20260806/train-manifest.json",
+      "sha256": "db04a13a734c22daf1431cf9e106a27da66000305e589b9113b90353e25f5789"
+    },
+    "warm_report": {
+      "bytes": 9945,
+      "path": "/private/tmp/m463-xlam-current-warm-report.json",
+      "sha256": "e2c34369296dc981a3cbb7d7ed547ca845ef3f62be83215b8fe6f37b2d346eab"
+    }
+  },
+  "warm": {
+    "after": {
+      "eval": {
+        "assistant_loss_tokens": 7152,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.513003355704698,
+        "mean_loss": 3.7744738052888738,
+        "rows": 128
+      },
+      "eval_by_source": {
+        "xlam_eval": {
+          "assistant_loss_tokens": 7152,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.513003355704698,
+          "mean_loss": 3.7744738052888738,
+          "rows": 128
+        }
+      },
+      "train": {
+        "assistant_loss_tokens": 14877,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.5216105397593601,
+        "mean_loss": 3.70919961859448,
+        "rows": 256
+      }
+    },
+    "before": {
+      "eval": {
+        "assistant_loss_tokens": 7152,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.5047539149888143,
+        "mean_loss": 4.031128380922663,
+        "rows": 128
+      },
+      "eval_by_source": {
+        "xlam_eval": {
+          "assistant_loss_tokens": 7152,
+          "assistant_sequence_accuracy": 0.0,
+          "assistant_token_accuracy": 0.5047539149888143,
+          "mean_loss": 4.031128380922663,
+          "rows": 128
+        }
+      },
+      "train": {
+        "assistant_loss_tokens": 14877,
+        "assistant_sequence_accuracy": 0.0,
+        "assistant_token_accuracy": 0.5097129797674262,
+        "mean_loss": 3.9842698985132676,
+        "rows": 256
+      }
+    },
+    "child_checkpoint": {
+      "bytes": 52249569,
+      "path": "/private/tmp/m463-xlam-current-warm.pt",
+      "sha256": "75d36e34f57fb29b6883b003c93856bebd3944f79dc2640610783fb274729cb8"
+    },
+    "weight_transfer": {
+      "compatibility": {
+        "added_tensors": [],
+        "config_mismatches": {},
+        "removed_tensors": [],
+        "shape_mismatches": {},
+        "shared_tensor_count": 51,
+        "tokenizer_sha256_equal": true
+      },
+      "groups": {
+        "action_heads": {
+          "base_l2": 87.12721149777144,
+          "delta_l2": 0.0,
+          "parameters": 2518968,
+          "relative_delta_l2": 0.0,
+          "target_l2": 87.12721149777144
+        },
+        "attention_or_mixer": {
+          "base_l2": 51.686243041747026,
+          "delta_l2": 0.056463774085597315,
+          "parameters": 1871872,
+          "relative_delta_l2": 0.0010924333200227278,
+          "target_l2": 51.68651587202547
+        },
+        "embedding": {
+          "base_l2": 76.26811513665427,
+          "delta_l2": 0.1979535435169322,
+          "parameters": 6291456,
+          "relative_delta_l2": 0.002595495419838902,
+          "target_l2": 76.3547416904785
+        },
+        "ffn": {
+          "base_l2": 50.599417154543154,
+          "delta_l2": 0.06847815994100358,
+          "parameters": 2360832,
+          "relative_delta_l2": 0.0013533389076766302,
+          "target_l2": 50.59915587692268
+        },
+        "normalization": {
+          "base_l2": 21.431829234008912,
+          "delta_l2": 0.0014155283703427431,
+          "parameters": 384,
+          "relative_delta_l2": 6.604794928547323e-05,
+          "target_l2": 21.430699644218745
+        }
+      },
+      "recommendation": {
+        "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+        "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+        "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+        "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+      }
+    }
+  }
+}

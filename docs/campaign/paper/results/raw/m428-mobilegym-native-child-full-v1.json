@@ -1,0 +1,88 @@
+{
+  "kind": "localagent_mobilegym_native_child_full_receipt",
+  "schema_version": 1,
+  "measurement": "m428_mobilegym_native_child_full",
+  "generated_at": "2026-08-05",
+  "benchmark_id": "mobilegym",
+  "checkpoint": {
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+  },
+  "source": {
+    "repository": "https://github.com/Purewhiter/mobilegym",
+    "revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "test_split_sha256": "a3d485015d480f4f1ebbd12dbbf02c25c0aa667d1afcf5f6fa35f0263a82c567",
+    "train_split_sha256": "0ecef460fecfd8aa91dcbb2cd4cca17b033f620f85a50d7f0b598ed19a27c0eb",
+    "test_ids_sha256": "cf61a0b2e71721864a1b526a531c433f852e128d2ffa8b81504fc3d74b9830bf"
+  },
+  "environment": {
+    "environment_executed": true,
+    "official_split": "test",
+    "official_split_verified": true,
+    "native_receipt_eligible": true,
+    "observation_mode": "text_projection",
+    "vision_used": false,
+    "task_count": 256,
+    "official_test_task_count": 256,
+    "full_official_test_split": true,
+    "errors": []
+  },
+  "run": {
+    "seed": 0,
+    "max_steps": 2,
+    "selector_top_m": 1,
+    "selector_first": false,
+    "elapsed_seconds": 4901.66,
+    "full_receipt": {
+      "path": "/private/tmp/m428-mobilegym-child-full.json",
+      "bytes": 190528,
+      "sha256": "10e8be8c6bc5417f43f3501f511a0b1ee1801f2367787a4881b91d1b25853dac",
+      "receipt_self_sha256": "f4fdf6046af3106c6676001889785abbd278e2eff6e9094e7290eb7c8da12abf"
+    }
+  },
+  "result": {
+    "passed_tasks": 1,
+    "failed_tasks": 255,
+    "success_rate": 0.00390625,
+    "tool_counts": {
+      "mobile_input_text": 255,
+      "mobile_navigate_home": 6,
+      "mobile_open_app": 1
+    },
+    "suite_summary": {
+      "account": {"tasks": 5, "passed": 0, "success_rate": 0.0},
+      "alipay": {"tasks": 9, "passed": 0, "success_rate": 0.0},
+      "bilibili": {"tasks": 9, "passed": 0, "success_rate": 0.0},
+      "calendar": {"tasks": 12, "passed": 0, "success_rate": 0.0},
+      "clock": {"tasks": 9, "passed": 0, "success_rate": 0.0},
+      "crossapp_commerce": {"tasks": 14, "passed": 0, "success_rate": 0.0},
+      "crossapp_content": {"tasks": 23, "passed": 0, "success_rate": 0.0},
+      "crossapp_life": {"tasks": 29, "passed": 1, "success_rate": 0.034482758620689655},
+      "crossapp_work": {"tasks": 21, "passed": 0, "success_rate": 0.0},
+      "ebay": {"tasks": 5, "passed": 0, "success_rate": 0.0},
+      "file_manager": {"tasks": 3, "passed": 0, "success_rate": 0.0},
+      "launcher": {"tasks": 2, "passed": 0, "success_rate": 0.0},
+      "map": {"tasks": 17, "passed": 0, "success_rate": 0.0},
+      "notes": {"tasks": 5, "passed": 0, "success_rate": 0.0},
+      "railway12306": {"tasks": 12, "passed": 0, "success_rate": 0.0},
+      "redbook": {"tasks": 6, "passed": 0, "success_rate": 0.0},
+      "reddit": {"tasks": 6, "passed": 0, "success_rate": 0.0},
+      "sms": {"tasks": 3, "passed": 0, "success_rate": 0.0},
+      "spotify": {"tasks": 17, "passed": 0, "success_rate": 0.0},
+      "tencent_meeting": {"tasks": 9, "passed": 0, "success_rate": 0.0},
+      "weather": {"tasks": 9, "passed": 0, "success_rate": 0.0},
+      "wechat": {"tasks": 11, "passed": 0, "success_rate": 0.0},
+      "wechat_reading": {"tasks": 13, "passed": 0, "success_rate": 0.0},
+      "x": {"tasks": 7, "passed": 0, "success_rate": 0.0}
+    }
+  },
+  "comparison": {
+    "parent_receipt": "docs/paper/results/raw/m262-mobilegym-native-current-browser-context-v1.json",
+    "parent_checkpoint_sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "parent_success_rate": 0.00390625,
+    "child_minus_parent_success_rate_pp": 0.0,
+    "interpretation": "The Mind2Web child preserves the parent's bounded text-projection MobileGym rate (1/256); no visual or Android-emulator capability is established."
+  },
+  "claim_boundary": "Complete official MobileGym test split in the pinned simulator and state-diff judge with a bounded DOM/text projection. This is native simulator evidence, not visual grounding, Android emulator control, or real-account side effects.",
+  "receipt_self_sha256": "8c8963bb1cf4e63c4398028b5743a4c777ed3406d3f82519d19961e138bdf0b8"
+}

@@ -1,0 +1,99 @@
+{
+  "kind": "localagent_mcpmark_routing_transfer_ablation",
+  "schema_version": 1,
+  "source": {
+    "dataset": "MCPMark",
+    "url": "https://github.com/eval-sys/mcpmark",
+    "revision": "cd45b7f57923b9b3985467f5139927575f83141c",
+    "standard_rows": 169,
+    "easy_rows": 70,
+    "standard_manifest_sha256": "b35b92adfb8a846eb32dc36c411c17aa5ecf757e5b63aeaa1671755f475686d5",
+    "easy_manifest_sha256": "f8eea15c843ee222c3899849d724ddbe6cd89f0f709ff7a84659d9cafef52f06",
+    "standard_metadata_and_description_bytes": 1272143,
+    "easy_metadata_and_description_bytes": 385446,
+    "task_text_retained": false,
+    "training_used": false,
+    "mcp_servers_executed": false,
+    "verifiers_executed": false
+  },
+  "checkpoints": {
+    "warm": {
+      "path": "/private/tmp/m111-deployment-repair-warm.pt",
+      "bytes": 52283646,
+      "sha256": "35fedcefdafece153912b3bf6629fb23c0ad48f269126d2f8021ef04e0e384ae"
+    },
+    "random_control": {
+      "path": "/private/tmp/m111-deployment-repair-random.pt",
+      "bytes": 52283760,
+      "sha256": "f52549e366cf60a529ba3b197bd64fedd8b34d07fb137c0bcf625d56a4bacb9f"
+    }
+  },
+  "reports": {
+    "warm_standard": {
+      "path": "/private/tmp/m116-mcpmark-warm-standard.json",
+      "sha256": "c9a39f10eab7213e2300e6761ee07040a4a3ada247ff558d0d46eba2dd57e0b8",
+      "rows": 169,
+      "route_accuracy": 0.14792899408284024,
+      "selector_top1": 0.14792899408284024,
+      "selector_top3": 0.15384615384615385,
+      "service_accuracy": {
+        "filesystem": 0.0,
+        "github": 0.0,
+        "notion": 0.0,
+        "playwright": 1.0,
+        "postgres": 0.0
+      }
+    },
+    "random_standard": {
+      "path": "/private/tmp/m116-mcpmark-random-standard.json",
+      "sha256": "ff92336e26edb165324d1efb570ff547e84afcf68d4cad9740930beed5702b0d",
+      "rows": 169,
+      "route_accuracy": 0.14792899408284024,
+      "selector_top1": 0.14792899408284024,
+      "selector_top3": 0.14792899408284024,
+      "service_accuracy": {
+        "filesystem": 0.0,
+        "github": 0.0,
+        "notion": 0.0,
+        "playwright": 1.0,
+        "postgres": 0.0
+      }
+    },
+    "warm_easy": {
+      "path": "/private/tmp/m116-mcpmark-warm-easy.json",
+      "sha256": "3d308bed0165062b0e2476700b6073cfaedc0a9df5ab2b7d36d41b4d8c8d3ab7",
+      "rows": 70,
+      "route_accuracy": 0.14285714285714285,
+      "selector_top1": 0.14285714285714285,
+      "selector_top3": 0.15714285714285714,
+      "service_accuracy": {
+        "filesystem": 0.0,
+        "github": 0.0,
+        "notion": 0.0,
+        "playwright": 1.0,
+        "postgres": 0.0
+      }
+    },
+    "random_easy": {
+      "path": "/private/tmp/m116-mcpmark-random-easy.json",
+      "sha256": "75ed655d56f402c64cde0866908ee72a8a6211812008ab6e300b168d1fa1d078",
+      "rows": 70,
+      "route_accuracy": 0.14285714285714285,
+      "selector_top1": 0.14285714285714285,
+      "selector_top3": 0.15714285714285714,
+      "service_accuracy": {
+        "filesystem": 0.0,
+        "github": 0.0,
+        "notion": 0.0,
+        "playwright": 1.0,
+        "postgres": 0.0
+      }
+    }
+  },
+  "evaluator": {
+    "script": "scripts/eval_mcpmark_task_router.py",
+    "module": "src/localagent/eval/mcpmark_router.py",
+    "metric_scope": "service_family_route_and_tool_family_top_k"
+  },
+  "claim_boundary": "This is a public MCPMark task-description routing proxy over the pinned standard and easy task manifests. It is not live MCP execution, database/browser state transition, verifier success, pass@k, or an official leaderboard score. The warm and random controls show no meaningful transfer outside the Playwright family; Notion, filesystem, GitHub, and Postgres routing remain unsolved."
+}

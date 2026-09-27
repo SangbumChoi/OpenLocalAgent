@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "name": "localagent-held-out-action-latency",
+  "description": "Deterministic exact-prompt holdouts for joint complete-action latency and exact-action quality. Many argument slots use named evaluation pools, but schema enums, no-argument intents, and template vocabulary may be shared; this suite does not claim primitive-value or template-family disjointness.",
+  "holdout_contract": {
+    "training_exclusion": "canonical normalized query equality",
+    "normalization": "Unicode NFKC, Unicode whitespace collapse, Unicode casefold",
+    "case_sensitive": false,
+    "primitive_value_disjointness_claimed": false,
+    "template_disjointness_claimed": false
+  },
+  "cases": [
+    {
+      "id": "gui-click",
+      "family": "computer_use",
+      "query": "Select 'the Confirm button'.",
+      "expected": {"tool": "click", "args": {"target": "the Confirm button"}}
+    },
+    {
+      "id": "gui-double-click",
+      "family": "computer_use",
+      "query": "Open 'the Back arrow' by double-clicking.",
+      "expected": {"tool": "double_click", "args": {"target": "the Back arrow"}}
+    },
+    {
+      "id": "gui-type",
+      "family": "computer_use",
+      "query": "Fill in 'customer feedback'.",
+      "expected": {"tool": "type_text", "args": {"text": "customer feedback"}}
+    },
+    {
+      "id": "gui-key",
+      "family": "computer_use",
+      "query": "Send an Escape keypress.",
+      "expected": {"tool": "key_press", "args": {"key": "Escape"}}
+    },
+    {
+      "id": "gui-scroll",
+      "family": "computer_use",
+      "query": "Please scroll down.",
+      "expected": {"tool": "scroll", "args": {"direction": "down"}}
+    },
+    {
+      "id": "gui-drag",
+      "family": "computer_use",
+      "query": "Drag 'the notification bell' onto 'the Done button'.",
+      "expected": {
+        "tool": "drag",
+        "args": {"dest": "the Done button", "source": "the notification bell"}
+      }
+    },
+    {
+      "id": "gui-wait",
+      "family": "computer_use",
+      "query": "Give it 12 seconds.",
+      "expected": {"tool": "wait", "args": {"seconds": 12}}
+    },
+    {
+      "id": "gui-move",
+      "family": "computer_use",
+      "query": "Bring the cursor to 'the Bookmark star'.",
+      "expected": {"tool": "move_cursor", "args": {"target": "the Bookmark star"}}
+    },
+    {
+      "id": "gui-open-app",
+      "family": "computer_use",
+      "query": "Bring up 'Obsidian'.",
+      "expected": {"tool": "open_app", "args": {"name": "Obsidian"}}
+    },
+    {
+      "id": "gui-screenshot",
+      "family": "computer_use",
+      "query": "Capture the current screen.",
+      "expected": {"tool": "screenshot", "args": {}}
+    },
+    {
+      "id": "code-read",
+      "family": "code",
+      "query": "Show me the contents of api/routes.go.",
+      "expected": {"tool": "read_file", "args": {"path": "api/routes.go"}}
+    },
+    {
+      "id": "code-grep",
+      "family": "code",
+      "query": "Find 'raise ValueError' in the repository.",
+      "expected": {"tool": "grep_search", "args": {"pattern": "raise ValueError"}}
+    },
+    {
+      "id": "code-command",
+      "family": "code",
+      "query": "Execute 'go build ./...'.",
+      "expected": {"tool": "run_command", "args": {"command": "go build ./..."}}
+    },
+    {
+      "id": "code-tests",
+      "family": "code",
+      "query": "Run all unit tests now.",
+      "expected": {"tool": "run_tests", "args": {}}
+    },
+    {
+      "id": "web-open",
+      "family": "web",
+      "query": "Navigate to huggingface.co in the browser.",
+      "expected": {"tool": "open_url", "args": {"url": "huggingface.co"}}
+    },
+    {
+      "id": "web-search",
+      "family": "web",
+      "query": "Look up recent work on quantum computing.",
+      "expected": {"tool": "web_search", "args": {"query": "quantum computing"}}
+    },
+    {
+      "id": "app-calendar",
+      "family": "app_action",
+      "query": "Schedule 'Roadmap review' on my calendar.",
+      "expected": {"tool": "calendar_event", "args": {"title": "Roadmap review"}}
+    },
+    {
+      "id": "app-slack",
+      "family": "app_action",
+      "query": "Post 'almost there' to Slack.",
+      "expected": {"tool": "slack_send", "args": {"message": "almost there"}}
+    },
+    {
+      "id": "app-notion",
+      "family": "app_action",
+      "query": "Save 'onboarding guide' to Notion.",
+      "expected": {"tool": "notion_write", "args": {"content": "onboarding guide"}}
+    },
+    {
+      "id": "abstain",
+      "family": "text",
+      "query": "Explain why the sky looks blue in one sentence.",
+      "expected": {"abstain": true}
+    }
+  ]
+}

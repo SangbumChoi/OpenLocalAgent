@@ -1,0 +1,139 @@
+{
+  "cases": [
+    {
+      "category": "text",
+      "exact_tool": false,
+      "expected_tool": null,
+      "id": "text_answer",
+      "predicted_tool": "web_search",
+      "prompt": "What is the color of a monkey?",
+      "raw_output": "[web_search({'query': ' the color'}) -> {'ok': 'web_search', 'args': {'query': ' the color'}}]"
+    },
+    {
+      "category": "browser",
+      "exact_tool": true,
+      "expected_tool": "web_search",
+      "id": "browser_search",
+      "predicted_tool": "web_search",
+      "prompt": "Look up who invented the telephone.",
+      "raw_output": "[web_search({'query': ' the telephone'}) -> {'ok': 'web_search', 'args': {'query': ' the telephone'}}]"
+    },
+    {
+      "category": "browser",
+      "exact_tool": false,
+      "expected_tool": "open_url",
+      "id": "browser_open",
+      "predicted_tool": "read_file",
+      "prompt": "Open https://github.com/pytorch/pytorch in the browser",
+      "raw_output": "[read_file({'path': 'github.com/py'}) -> {'ok': 'read_file', 'args': {'path': 'github.com/py'}}]"
+    },
+    {
+      "category": "computer",
+      "exact_tool": false,
+      "expected_tool": "list_dir",
+      "id": "filesystem_list",
+      "predicted_tool": "web_search",
+      "prompt": "List the files in the src directory",
+      "raw_output": "[web_search({'query': ' the src directory'}) -> {'ok': 'web_search', 'args': {'query': ' the src directory'}}]"
+    },
+    {
+      "category": "computer",
+      "exact_tool": false,
+      "expected_tool": "grep_search",
+      "id": "code_search",
+      "predicted_tool": null,
+      "prompt": "Search the codebase for the function train_step",
+      "raw_output": "I am LocalAgent."
+    },
+    {
+      "category": "computer",
+      "exact_tool": false,
+      "expected_tool": "make_dir",
+      "id": "filesystem_make_dir",
+      "predicted_tool": "planner",
+      "prompt": "Make a directory called build",
+      "raw_output": "[planner({'goal': '<|assistant|>'}) -> {'ok': 'planner', 'args': {'goal': '<|assistant|>'}}]"
+    },
+    {
+      "category": "computer",
+      "exact_tool": true,
+      "expected_tool": "run_tests",
+      "id": "run_tests",
+      "predicted_tool": "run_tests",
+      "prompt": "Run the test suite",
+      "raw_output": "[run_tests({}) -> {'ok': 'run_tests', 'args': {}}]"
+    },
+    {
+      "category": "tool_api",
+      "exact_tool": true,
+      "expected_tool": "calculator",
+      "id": "calculator",
+      "predicted_tool": "calculator",
+      "prompt": "What is 18 * 24?",
+      "raw_output": "[calculator({'expression': '18*24'}) -> {'ok': 'calculator', 'args': {'expression': '18*24'}}]"
+    },
+    {
+      "category": "productivity",
+      "exact_tool": true,
+      "expected_tool": "send_email",
+      "id": "email_send",
+      "predicted_tool": "send_email",
+      "prompt": "Email Dana the quarterly report",
+      "raw_output": "[send_email({'recipient': ' Dana the quarterly'}) -> {'ok': 'send_email', 'args': {'recipient': ' Dana the quarterly'}}]"
+    },
+    {
+      "category": "browser",
+      "exact_tool": false,
+      "expected_tool": "download_file",
+      "id": "download",
+      "predicted_tool": "run_command",
+      "prompt": "Download the dataset from https://example.com/data.zip",
+      "raw_output": "[run_command({'command': 'zip<|assistant|>'}) -> {'ok': 'run_command', 'args': {'command': 'zip<|assistant|>'}}]"
+    }
+  ],
+  "checkpoint": {
+    "path": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/latest.pt",
+    "sha256": "79387105de75d332413262e8d8ddb847b6cc13bc03f5e4df3c81663d9897aef1"
+  },
+  "claim_boundary": "Local checkpoint dispatch smoke only. ToolRegistry handlers echo calls; this is not a browser, Android, desktop VM, email, Notion, MCP, or official benchmark result.",
+  "environment": {
+    "environment_executed": false,
+    "external_accounts": false,
+    "name": "local_tool_registry_echo_stub",
+    "screenshots": false
+  },
+  "kind": "localagent_local_deployment_smoke",
+  "schema_version": 1,
+  "summary": {
+    "by_category": {
+      "browser": {
+        "cases": 3,
+        "exact_tool": 1,
+        "tool_accuracy": 0.3333333333333333
+      },
+      "computer": {
+        "cases": 4,
+        "exact_tool": 1,
+        "tool_accuracy": 0.25
+      },
+      "productivity": {
+        "cases": 1,
+        "exact_tool": 1,
+        "tool_accuracy": 1.0
+      },
+      "text": {
+        "cases": 1,
+        "exact_tool": 0,
+        "tool_accuracy": 0.0
+      },
+      "tool_api": {
+        "cases": 1,
+        "exact_tool": 1,
+        "tool_accuracy": 1.0
+      }
+    },
+    "cases": 10,
+    "exact_tool": 4,
+    "tool_accuracy": 0.4
+  }
+}

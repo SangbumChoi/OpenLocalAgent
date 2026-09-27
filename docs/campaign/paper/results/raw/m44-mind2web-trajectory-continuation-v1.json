@@ -1,0 +1,300 @@
+{
+  "after": {
+    "eval": {
+      "assistant_loss_tokens": 954,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.7421383647798742,
+      "mean_loss": 1.697874093205674,
+      "rows": 4
+    },
+    "train": {
+      "assistant_loss_tokens": 3948,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.7505065856129686,
+      "mean_loss": 1.644854992960241,
+      "rows": 16
+    }
+  },
+  "before": {
+    "eval": {
+      "assistant_loss_tokens": 954,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.6614255765199162,
+      "mean_loss": 2.2348785320417934,
+      "rows": 4
+    },
+    "train": {
+      "assistant_loss_tokens": 3948,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.6547619047619048,
+      "mean_loss": 2.2225827117579806,
+      "rows": 16
+    }
+  },
+  "child": {
+    "bytes": 52231121,
+    "path": "runs/sft-mind2web-trajectory-continuation-20260802/latest.pt",
+    "sha256": "26ae0d2597c8207e110aeceab483005c94eb98aaf83a58147f3e933f2c739782"
+  },
+  "claim_boundary": "Held-out public Mind2Web train-record continuation with text-first teacher-forced metrics; no Mind2Web test score, browser execution, emulator reward, or external-account claim.",
+  "eval_inputs": [
+    {
+      "bytes": 17388,
+      "path": "/private/tmp/mind2web-train-sample8-eval.jsonl",
+      "sha256": "8e1068a85a8db948660e0b853f893224441fc11f49c3c990d0984b9503d586c8"
+    }
+  ],
+  "heads": {
+    "after": {
+      "route_accuracy": 1.0,
+      "rows": 34,
+      "selector_top1_accuracy": 0.6363636363636364,
+      "tool_rows": 33
+    },
+    "before": {
+      "route_accuracy": 0.029411764705882353,
+      "rows": 34,
+      "selector_top1_accuracy": 0.0,
+      "tool_rows": 33
+    }
+  },
+  "hyperparameters": {
+    "batch_size": 1,
+    "device": "cpu",
+    "learning_rate": 1e-05,
+    "max_seq_len": 2048,
+    "seed": 2027,
+    "steps": 32
+  },
+  "kind": "localagent_public_agent_continuation_report",
+  "loss_history": [
+    4.575616359710693,
+    2.2782351970672607,
+    2.0337350368499756,
+    1.9917792081832886,
+    2.201199769973755,
+    2.0880274772644043,
+    1.881927728652954,
+    1.9704018831253052,
+    1.7915732860565186,
+    4.239420413970947,
+    1.7368134260177612,
+    1.9483842849731445,
+    1.9253004789352417,
+    1.589543342590332,
+    1.8876062631607056,
+    1.8668361902236938,
+    1.5498729944229126,
+    1.8378429412841797,
+    1.8241453170776367,
+    1.745370626449585,
+    3.8375682830810547,
+    1.5994869470596313,
+    1.7839946746826172,
+    3.803081750869751,
+    3.73180890083313,
+    1.700899362564087,
+    1.6948411464691162,
+    1.69257390499115,
+    1.5693986415863037,
+    1.684037208557129,
+    3.668612480163574,
+    1.7526031732559204
+  ],
+  "parent": {
+    "bytes": 52233212,
+    "path": "runs/sft-webgpu-proxy-pilot-hybrid-seed2027/latest.pt",
+    "sha256": "79387105de75d332413262e8d8ddb847b6cc13bc03f5e4df3c81663d9897aef1"
+  },
+  "rows": {
+    "eval": 4,
+    "train": 16
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "osunlp/Mind2Web",
+    "manifest": null,
+    "revision": "17ece8eb89862368edc0cc806acee6fca5163474"
+  },
+  "token_accounting": {
+    "dataset_token_accounting": {
+      "decay": null,
+      "main": {
+        "input_tokens": 8206,
+        "loss_tokens": 3948,
+        "sources": {
+          "multi_turn": {
+            "input_tokens": 8206,
+            "loss_tokens": 3948,
+            "rows": 16
+          }
+        }
+      }
+    },
+    "fixed_horizon_progress": {
+      "completed_optimizer_updates": 32,
+      "partial": false,
+      "planned_optimizer_updates": 32
+    },
+    "lm_sampling": {
+      "mode": "iid_with_replacement_v1"
+    },
+    "loss_components": {
+      "lm_loss": [
+        4.575616359710693,
+        2.2782351970672607,
+        2.0337350368499756,
+        1.9917792081832886,
+        2.201199769973755,
+        2.0880274772644043,
+        1.881927728652954,
+        1.9704018831253052,
+        1.7915732860565186,
+        4.239420413970947,
+        1.7368134260177612,
+        1.9483842849731445,
+        1.9253004789352417,
+        1.589543342590332,
+        1.8876062631607056,
+        1.8668361902236938,
+        1.5498729944229126,
+        1.8378429412841797,
+        1.8241453170776367,
+        1.745370626449585,
+        3.8375682830810547,
+        1.5994869470596313,
+        1.7839946746826172,
+        3.803081750869751,
+        3.73180890083313,
+        1.700899362564087,
+        1.6948411464691162,
+        1.69257390499115,
+        1.5693986415863037,
+        1.684037208557129,
+        3.668612480163574,
+        1.7526031732559204
+      ],
+      "optimization": [
+        4.575616359710693,
+        2.2782351970672607,
+        2.0337350368499756,
+        1.9917792081832886,
+        2.201199769973755,
+        2.0880274772644043,
+        1.881927728652954,
+        1.9704018831253052,
+        1.7915732860565186,
+        4.239420413970947,
+        1.7368134260177612,
+        1.9483842849731445,
+        1.9253004789352417,
+        1.589543342590332,
+        1.8876062631607056,
+        1.8668361902236938,
+        1.5498729944229126,
+        1.8378429412841797,
+        1.8241453170776367,
+        1.745370626449585,
+        3.8375682830810547,
+        1.5994869470596313,
+        1.7839946746826172,
+        3.803081750869751,
+        3.73180890083313,
+        1.700899362564087,
+        1.6948411464691162,
+        1.69257390499115,
+        1.5693986415863037,
+        1.684037208557129,
+        3.668612480163574,
+        1.7526031732559204
+      ],
+      "router_aux": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "router_weighted": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "token_accounting": {
+      "input_tokens": 17827,
+      "loss_tokens": 8687,
+      "sources": {
+        "multi_turn": {
+          "input_tokens": 17827,
+          "loss_tokens": 8687,
+          "rows": 32
+        }
+      }
+    },
+    "token_accounting_scope": "language_model_microbatches"
+  },
+  "train_inputs": [
+    {
+      "bytes": 72827,
+      "path": "/private/tmp/mind2web-train-sample8-train.jsonl",
+      "sha256": "85fc7223863bc7d78439e7c66a254e0af28820ec6fdac3f004bbbe78919f5217"
+    }
+  ]
+}

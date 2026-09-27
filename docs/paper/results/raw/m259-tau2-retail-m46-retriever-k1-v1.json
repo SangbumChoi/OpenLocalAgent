@@ -1,0 +1,437 @@
+{
+  "checkpoint": {
+    "bytes": 52231121,
+    "path": "runs/sft-mind2web-trajectory-continuation-20260802-m46/latest.pt",
+    "sha256": "b19828908594463385870607d89c084afc1bb237cc5fb51752ac6860a204a041"
+  },
+  "claim_boundary": "Native resettable tau2-bench domain diagnostic with one LocalAgent turn per task and an oracle contract replay. This is not a complete domain split, user-simulator run, leaderboard score, external-service result, or WebGPU deployment claim. Task text, tool outputs, and checkpoint internals are hash-only.",
+  "configuration": {
+    "domain": "retail",
+    "max_agent_turns": 1,
+    "retrieve_k": 1,
+    "selector_first": false,
+    "selector_mode": "retriever",
+    "split": "base",
+    "tasks": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "user_simulator": false
+  },
+  "contract_verification": {
+    "environment_reward": 1.0,
+    "gold_trajectory_replayed": true,
+    "passed": true,
+    "task_id": "0"
+  },
+  "environment": {
+    "external_accounts": false,
+    "external_services": false,
+    "native_runtime_executed": true,
+    "reset_per_task": true,
+    "screenshots": false
+  },
+  "kind": "localagent_tau2_domain_checkpoint_native_probe",
+  "receipt_self_sha256": "c9959f797608b0fe6dcdbf86170f77293a8a66a52ce84740ff086f2ac1606092",
+  "runner": {
+    "package": "tau2",
+    "root": "/private/tmp/tau2-bench",
+    "source_revision": "363133ada1936491fb5bcec33cd62c3518a99f65",
+    "version": "1.0.1"
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "tau2-bench",
+    "domain": "retail",
+    "files": {
+      "LICENSE": {
+        "bytes": 1072,
+        "path": "/private/tmp/tau2-bench/LICENSE",
+        "sha256": "e67c5aa0074dfcaefd3c3a1aedb94cb539234aecd15d5a972574e3200e6252fe"
+      },
+      "README.md": {
+        "bytes": 10443,
+        "path": "/private/tmp/tau2-bench/README.md",
+        "sha256": "ed39688aa5d40bd73007355df65f4e41a6c250960642e56764c3ad44da1df8d2"
+      },
+      "data/tau2/domains/retail/audio_difficulty.json": {
+        "bytes": 2083968,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/retail/audio_difficulty.json",
+        "sha256": "e979ab09c8b0d09ece5a2812713c00c0c7320faca303a1547e53afba7f23333c"
+      },
+      "data/tau2/domains/retail/db.json": {
+        "bytes": 2811616,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/retail/db.json",
+        "sha256": "413a65160adbdb5fde0ffc0015c49b6d70250b10c18128de169b597af7766765"
+      },
+      "data/tau2/domains/retail/policy.md": {
+        "bytes": 6699,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/retail/policy.md",
+        "sha256": "2c9652afbce57d6e087768d37cda64d31c53d50b3e3225cfdb791bac66466467"
+      },
+      "data/tau2/domains/retail/split_tasks.json": {
+        "bytes": 3263,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/retail/split_tasks.json",
+        "sha256": "ed0580ec52575b63fbf76568af42490da6ee7783ecb4aa81af46961291358f20"
+      },
+      "data/tau2/domains/retail/task_issues/task_4_issue_2b74ee61.json": {
+        "bytes": 5257159,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/retail/task_issues/task_4_issue_2b74ee61.json",
+        "sha256": "a639b7c507d0e4e5ab3413961e3a88d5f6e25ff54f0d83d84ed1cf58a6ec2f96"
+      },
+      "data/tau2/domains/retail/task_issues/task_5_issue_770466c1.json": {
+        "bytes": 13002644,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/retail/task_issues/task_5_issue_770466c1.json",
+        "sha256": "d1f80e2ba1105b4309e5fc9476ef6d32725c66aebc151bc6e35d9d70e0949ddd"
+      },
+      "data/tau2/domains/retail/task_issues/task_7_issue_9a37c151.json": {
+        "bytes": 8043615,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/retail/task_issues/task_7_issue_9a37c151.json",
+        "sha256": "a1531f1a2b6e987c48e6f7e5c1f77999b7594b586e02285e5bc41cc7072e4308"
+      },
+      "data/tau2/domains/retail/tasks.json": {
+        "bytes": 345982,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/retail/tasks.json",
+        "sha256": "8e03ebce7901bd6218e7a7dc3105faa9324091a68058f7fe61c65262868812e8"
+      },
+      "data/tau2/domains/retail/tasks_voice.json": {
+        "bytes": 3088442,
+        "path": "/private/tmp/tau2-bench/data/tau2/domains/retail/tasks_voice.json",
+        "sha256": "d6cdb8d8bec58ffbb2fd808486bdb3e9238c93517648f7180908ea5cc1a80604"
+      },
+      "pyproject.toml": {
+        "bytes": 2417,
+        "path": "/private/tmp/tau2-bench/pyproject.toml",
+        "sha256": "23d59670b4ad7bbc0f57420fd9643a8d9188c24abe4f29c9c965544d8cc4cb8d"
+      }
+    },
+    "license": "MIT",
+    "revision": "363133ada1936491fb5bcec33cd62c3518a99f65",
+    "source_url": "https://github.com/sierra-research/tau2-bench",
+    "split": "base",
+    "task_count": 114,
+    "task_ids": [
+      "0",
+      "1",
+      "10",
+      "100",
+      "101",
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109",
+      "11",
+      "110",
+      "111",
+      "112",
+      "113",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "2",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "3",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "4",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45",
+      "46",
+      "47",
+      "48",
+      "49",
+      "5",
+      "50",
+      "51",
+      "52",
+      "53",
+      "54",
+      "55",
+      "56",
+      "57",
+      "58",
+      "59",
+      "6",
+      "60",
+      "61",
+      "62",
+      "63",
+      "64",
+      "65",
+      "66",
+      "67",
+      "68",
+      "69",
+      "7",
+      "70",
+      "71",
+      "72",
+      "73",
+      "74",
+      "75",
+      "76",
+      "77",
+      "78",
+      "79",
+      "8",
+      "80",
+      "81",
+      "82",
+      "83",
+      "84",
+      "85",
+      "86",
+      "87",
+      "88",
+      "89",
+      "9",
+      "90",
+      "91",
+      "92",
+      "93",
+      "94",
+      "95",
+      "96",
+      "97",
+      "98",
+      "99"
+    ]
+  },
+  "summary": {
+    "bounded_native_success_rate": 0.0,
+    "bounded_native_successes": 0,
+    "first_action_exact": 0,
+    "model_tool_calls": 3,
+    "tasks": 8
+  },
+  "tasks": [
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 5,
+        "sha256": "d1d2d1d0ec804c6a84402c36d07ad52f88f6192644b8c336f16374bb0652de47"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 541,
+        "sha256": "fb8fdacc682a9b089cc0baffb05f4aaf27b92ad2ddbb97f076870a9253dbec69"
+      },
+      "model_output": {
+        "bytes": 16,
+        "sha256": "f05f9d7fd66b5797ac3b9d113e1d21b8406313702f3494c7e9f233545340a847"
+      },
+      "model_tool_calls": 0,
+      "predicted_actions": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "task_id": "0"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 5,
+        "sha256": "521515b326a62820490697a53487fb8a927b406bd1c0172287de9486d161fc35"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 556,
+        "sha256": "6c4c1aaacdc2d33a669bc8b90f91d6a17b0d66f282c062eca2bef10709d3db86"
+      },
+      "model_output": {
+        "bytes": 16,
+        "sha256": "f05f9d7fd66b5797ac3b9d113e1d21b8406313702f3494c7e9f233545340a847"
+      },
+      "model_tool_calls": 0,
+      "predicted_actions": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "task_id": "1"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 11,
+        "sha256": "1c36a936010e42ebcd8035ef45df9f43d1cc8b10e452b8345a34e9d1a6c403f7"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 319,
+        "sha256": "8520af7691e36b9894da588ab417dde6ef8e6e2c6f2fc15e5e5f5b6af6b5336b"
+      },
+      "model_output": {
+        "bytes": 16,
+        "sha256": "f05f9d7fd66b5797ac3b9d113e1d21b8406313702f3494c7e9f233545340a847"
+      },
+      "model_tool_calls": 0,
+      "predicted_actions": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "task_id": "2"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 12,
+        "sha256": "ed3f24ae64749bb725cfebd17b08feb47653d5d71caa8669e440092469b0b22f"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 432,
+        "sha256": "e27ad86e8ac355bfbaff57e73250d23b70c8286b393bb5be2585fe5a06b1e47e"
+      },
+      "model_output": {
+        "bytes": 16,
+        "sha256": "f05f9d7fd66b5797ac3b9d113e1d21b8406313702f3494c7e9f233545340a847"
+      },
+      "model_tool_calls": 0,
+      "predicted_actions": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "task_id": "3"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 13,
+        "sha256": "bede4a834b00dad39f2afa76044e8718b832d2aa89135f3dabf1dcc3cac070c8"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 425,
+        "sha256": "288b4a539693968106ca24d582533d920c5b3c97849671d7bb1ab1d566de369f"
+      },
+      "model_output": {
+        "bytes": 16,
+        "sha256": "f05f9d7fd66b5797ac3b9d113e1d21b8406313702f3494c7e9f233545340a847"
+      },
+      "model_tool_calls": 0,
+      "predicted_actions": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "task_id": "4"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 5,
+        "sha256": "035550c42b9c4b4f12844e76c56b3795864ca6ebfaf3bc2bd758a19218a5743c"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 513,
+        "sha256": "2db8dc6c0b767621eedf5fa33a51e0d8776186872ef1013e6e303cb69ab5d6b4"
+      },
+      "model_output": {
+        "bytes": 1149,
+        "sha256": "a66937fd4dfb7752ec61da69a8883ee6e7cba0b173b97380777b4f3c14aa8041"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "6d437d3059bf3bcc00f2042e8bd8b68d6ecd1dfe819fa5c8999404a839282ff4"
+      },
+      "task_id": "5"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 6,
+        "sha256": "012aa70eb8463dd554ff8e94b94cfd33528a05a09e04ceedb40001c5d3134182"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 415,
+        "sha256": "1616834fb1008de3829432858a9b13ca5c7be306b8660b3b6cbdcc43d02058e0"
+      },
+      "model_output": {
+        "bytes": 953,
+        "sha256": "ea6eb42037db4b84f1c0572ba9327cf1821922053162dfa12d895c2ac9f97b47"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "f0d8af4782ec590c38f4c8663d35f203f24395f14eacbcaaa992137956a822c4"
+      },
+      "task_id": "6"
+    },
+    {
+      "action_reward": 0.0,
+      "bounded_native_success": false,
+      "environment_reward": 0.0,
+      "expected_actions": {
+        "count": 6,
+        "sha256": "22b85e39b41a6452d62a0ffbe124109384cfb10893813f800d1474dba1f8dfa4"
+      },
+      "first_action_exact": false,
+      "instruction": {
+        "bytes": 423,
+        "sha256": "362915a4bd2fa4a7136abace363bae480ff6d093760a9df2835db724498d8aaf"
+      },
+      "model_output": {
+        "bytes": 969,
+        "sha256": "ccb4ae1e52018b56f1fddc5dc7483bc8816f73cb2783bab42e9179e95178e453"
+      },
+      "model_tool_calls": 1,
+      "predicted_actions": {
+        "count": 1,
+        "sha256": "a5611051f98e7ddac467ef33a68782b8789b6fc0b361500d6c3654298804bd69"
+      },
+      "task_id": "7"
+    }
+  ]
+}

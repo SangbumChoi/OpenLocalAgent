@@ -1,0 +1,53 @@
+{
+  "kind": "localagent_mobilegym_selector_first_canary",
+  "schema_version": 1,
+  "benchmark": {
+    "id": "mobilegym",
+    "repository": "https://github.com/Purewhiter/mobilegym",
+    "revision": "093a3292d13fc4186e279af4ef1b005ac8e4d2b7",
+    "test_split_sha256": "a3d485015d480f4f1ebbd12dbbf02c25c0aa667d1afcf5f6fa35f0263a82c567",
+    "official_test_task_count": 256,
+    "canary_task_count": 20
+  },
+  "checkpoint": {
+    "path": "/private/tmp/m292-mobile-dispatch-warm.pt",
+    "sha256": "3b11d7b845d276eed4fc01cf7909dc0d433cacc981d87e8497646866b0bed7d3"
+  },
+  "configuration": {
+    "max_steps": 10,
+    "selector_top_m": 1,
+    "selector_first": true,
+    "observation_mode": "text_projection",
+    "vision_used": false
+  },
+  "result": {
+    "environment_executed": true,
+    "official_split_verified": true,
+    "errors": 0,
+    "passed_tasks": 0,
+    "task_count": 20,
+    "success_rate": 0.0,
+    "tool_counts": {
+      "mobile_press_enter": 19,
+      "mobile_submit_answer": 1
+    },
+    "receipt": "/private/tmp/m293-mobilegym-selector-first-canary.json",
+    "receipt_sha256": "f24a80366f815785392fb692ae65e976d111683f6250a0dba7a2a66926902fbd"
+  },
+  "comparison": {
+    "default_m292_success_rate": 0.0,
+    "default_m292_tool_counts": {
+      "mobile_press_enter": 19,
+      "mobile_submit_answer": 1
+    },
+    "selector_first_delta_success_rate": 0.0,
+    "decision": "Selector-first enforcement does not change native behavior; the learned selector itself collapses on MobileGym task-state prompts."
+  },
+  "claim_boundary": "A 20-task native simulator canary, not a complete MobileGym score, Android emulator result, screenshot-grounding result, or visual-agent claim.",
+  "adoption": {
+    "selector_first_default": false,
+    "promote_child": false,
+    "reason": "No closed-loop improvement over the default warm dispatch child."
+  },
+  "receipt_self_sha256": "09018eb89a8be9423cb02ae0687a25b806b8d62be1e6ac8563b970c84a19577a"
+}

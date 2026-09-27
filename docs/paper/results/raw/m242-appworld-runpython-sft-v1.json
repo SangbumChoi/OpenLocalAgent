@@ -1,0 +1,306 @@
+{
+  "after": {
+    "eval": {
+      "assistant_loss_tokens": 12737,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.21598492580670486,
+      "mean_loss": 5.820789165546243,
+      "rows": 12
+    },
+    "train": {
+      "assistant_loss_tokens": 24905,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.22465368399919694,
+      "mean_loss": 5.785055241166432,
+      "rows": 24
+    }
+  },
+  "before": {
+    "eval": {
+      "assistant_loss_tokens": 12737,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.1020648504357384,
+      "mean_loss": 6.6449401381065005,
+      "rows": 12
+    },
+    "train": {
+      "assistant_loss_tokens": 24905,
+      "assistant_sequence_accuracy": 0.0,
+      "assistant_token_accuracy": 0.10347319815298132,
+      "mean_loss": 6.656848798873218,
+      "rows": 24
+    }
+  },
+  "child": {
+    "bytes": 52235575,
+    "path": "/private/tmp/appworld-sft-runpython-child.pt",
+    "sha256": "651350ac8806515b94b3d5ef3ec9a232cc86226ebc590be62eb38ce77cc6091d"
+  },
+  "claim_boundary": "Held-out public appworld source continuation with text-first teacher-forced metrics; this is not an official benchmark score and makes no native browser/emulator/MCP/external-account claim.",
+  "eval_inputs": [
+    {
+      "bytes": 48715,
+      "path": "/private/tmp/appworld-dev12.jsonl",
+      "sha256": "8a4fc56d4ffa1dc129467c4d9d59e754e490f84ae2afbea380430bd4deafa509"
+    }
+  ],
+  "heads": {
+    "after": {
+      "route_accuracy": 0.0,
+      "rows": 12,
+      "selector_top1_accuracy": 0.0,
+      "tool_rows": 12
+    },
+    "before": {
+      "route_accuracy": 0.0,
+      "rows": 12,
+      "selector_top1_accuracy": 0.0,
+      "tool_rows": 12
+    }
+  },
+  "hyperparameters": {
+    "batch_size": 2,
+    "device": "cpu",
+    "head_init": "parent",
+    "head_steps": 0,
+    "learning_rate": 1e-05,
+    "max_seq_len": 2048,
+    "seed": 2027,
+    "steps": 32
+  },
+  "kind": "localagent_public_agent_continuation_report",
+  "loss_history": [
+    6.554910659790039,
+    6.454103469848633,
+    6.591678142547607,
+    6.609680652618408,
+    6.438473224639893,
+    6.309475421905518,
+    6.178504943847656,
+    6.5049896240234375,
+    6.09047794342041,
+    6.090559482574463,
+    6.065344333648682,
+    6.06970739364624,
+    6.330613613128662,
+    6.285196781158447,
+    6.409133434295654,
+    5.746449947357178,
+    5.956048965454102,
+    6.179416656494141,
+    6.021580219268799,
+    5.8470563888549805,
+    5.766493320465088,
+    5.827513694763184,
+    5.919761657714844,
+    5.7467265129089355,
+    6.197305202484131,
+    5.816373348236084,
+    6.034336090087891,
+    5.841872692108154,
+    5.552235126495361,
+    6.008327484130859,
+    5.594347953796387,
+    5.677026271820068
+  ],
+  "parent": {
+    "bytes": 52231121,
+    "path": "runs/sft-mind2web-trajectory-continuation-20260802/latest.pt",
+    "sha256": "26ae0d2597c8207e110aeceab483005c94eb98aaf83a58147f3e933f2c739782"
+  },
+  "rows": {
+    "eval": 12,
+    "train": 24
+  },
+  "schema_version": 1,
+  "source": {
+    "dataset": "appworld",
+    "manifest": {
+      "bytes": 13686,
+      "path": "/private/tmp/appworld-train24.manifest.json",
+      "sha256": "1f0f832a0c03001a266c6ac3ff26a19ccfe45688cb7ec56b73fb7e39eccfa8e7"
+    },
+    "revision": "0.2.0"
+  },
+  "token_accounting": {
+    "dataset_token_accounting": {
+      "decay": null,
+      "main": {
+        "input_tokens": 25762,
+        "loss_tokens": 24905,
+        "sources": {
+          "multi_turn": {
+            "input_tokens": 25762,
+            "loss_tokens": 24905,
+            "rows": 24
+          }
+        }
+      }
+    },
+    "fixed_horizon_progress": {
+      "completed_optimizer_updates": 32,
+      "partial": false,
+      "planned_optimizer_updates": 32
+    },
+    "lm_sampling": {
+      "mode": "iid_with_replacement_v1"
+    },
+    "loss_components": {
+      "lm_loss": [
+        6.554910659790039,
+        6.454103469848633,
+        6.591678142547607,
+        6.609680652618408,
+        6.438473224639893,
+        6.309475421905518,
+        6.178504943847656,
+        6.5049896240234375,
+        6.09047794342041,
+        6.090559482574463,
+        6.065344333648682,
+        6.06970739364624,
+        6.330613613128662,
+        6.285196781158447,
+        6.409133434295654,
+        5.746449947357178,
+        5.956048965454102,
+        6.179416656494141,
+        6.021580219268799,
+        5.8470563888549805,
+        5.766493320465088,
+        5.827513694763184,
+        5.919761657714844,
+        5.7467265129089355,
+        6.197305202484131,
+        5.816373348236084,
+        6.034336090087891,
+        5.841872692108154,
+        5.552235126495361,
+        6.008327484130859,
+        5.594347953796387,
+        5.677026271820068
+      ],
+      "optimization": [
+        6.554910659790039,
+        6.454103469848633,
+        6.591678142547607,
+        6.609680652618408,
+        6.438473224639893,
+        6.309475421905518,
+        6.178504943847656,
+        6.5049896240234375,
+        6.09047794342041,
+        6.090559482574463,
+        6.065344333648682,
+        6.06970739364624,
+        6.330613613128662,
+        6.285196781158447,
+        6.409133434295654,
+        5.746449947357178,
+        5.956048965454102,
+        6.179416656494141,
+        6.021580219268799,
+        5.8470563888549805,
+        5.766493320465088,
+        5.827513694763184,
+        5.919761657714844,
+        5.7467265129089355,
+        6.197305202484131,
+        5.816373348236084,
+        6.034336090087891,
+        5.841872692108154,
+        5.552235126495361,
+        6.008327484130859,
+        5.594347953796387,
+        5.677026271820068
+      ],
+      "router_aux": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "router_weighted": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "token_accounting": {
+      "input_tokens": 69148,
+      "loss_tokens": 66807,
+      "sources": {
+        "multi_turn": {
+          "input_tokens": 69148,
+          "loss_tokens": 66807,
+          "rows": 64
+        }
+      }
+    },
+    "token_accounting_scope": "language_model_microbatches"
+  },
+  "train_inputs": [
+    {
+      "bytes": 97409,
+      "path": "/private/tmp/appworld-train24.jsonl",
+      "sha256": "b93145a72d16c5d854171b81dd12f9688448cf23c4529ffa09306db83348a6e5"
+    }
+  ]
+}

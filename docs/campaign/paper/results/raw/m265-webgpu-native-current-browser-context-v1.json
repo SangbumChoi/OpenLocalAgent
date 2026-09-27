@@ -1,0 +1,148 @@
+{
+  "adapter": {
+    "adapter_name": null,
+    "architecture": "metal-3",
+    "description": null,
+    "device": null,
+    "identity": "vendor=apple; architecture=metal-3",
+    "identity_fields": [
+      "vendor",
+      "architecture"
+    ],
+    "is_fallback_adapter": null,
+    "vendor": "apple"
+  },
+  "backend": "webgpu",
+  "bundle": {
+    "action_graph": {
+      "bytes": 21430301,
+      "path": "/private/tmp/m260-webgpu/action_model.fp16.onnx",
+      "sha256": "8856dcaeca1ad2125b0ba34d0fa47da8f0271d3078195a9288862cd1603a1434"
+    },
+    "checkpoint_sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "manifest": {
+      "bytes": 9310,
+      "path": "/private/tmp/m260-webgpu/bundle-manifest.json",
+      "sha256": "a7c290c4d250afb227f89104b6621ea34dbb3171829a975c1e9d38dc09ea73bc"
+    }
+  },
+  "capability": {
+    "cases": [
+      {
+        "exact_action_rate": 1,
+        "exact_actions": 30,
+        "expected_argument": "recipient",
+        "expected_tool": "send_email",
+        "input_tokens": 10,
+        "last_tool": "send_email",
+        "measured_repetitions": 30,
+        "model_inference_ms_p50": 8.75,
+        "prompt": "Email Dana the quarterly report",
+        "schema_valid": true,
+        "selection_policy": "productivity_email_intent_guard",
+        "tokens_per_second_p50": 1142.857142857143,
+        "wall_latency_ms_p50": 9.5
+      },
+      {
+        "exact_action_rate": 1,
+        "exact_actions": 30,
+        "expected_argument": "url",
+        "expected_tool": "open_url",
+        "input_tokens": 8,
+        "last_tool": "open_url",
+        "measured_repetitions": 30,
+        "model_inference_ms_p50": 5.750000059604645,
+        "prompt": "Open https://example.com",
+        "schema_valid": true,
+        "selection_policy": "explicit_url_safety_guard",
+        "tokens_per_second_p50": 1391.3043334037911,
+        "wall_latency_ms_p50": 6.200000047683716
+      },
+      {
+        "exact_action_rate": 1,
+        "exact_actions": 30,
+        "expected_argument": "content",
+        "expected_tool": "notion_write",
+        "input_tokens": 14,
+        "last_tool": "notion_write",
+        "measured_repetitions": 30,
+        "model_inference_ms_p50": 7,
+        "prompt": "Write 'WebGPU state loop passed' to Notion",
+        "schema_valid": true,
+        "selection_policy": "productivity_notion_intent_guard",
+        "tokens_per_second_p50": 2000,
+        "wall_latency_ms_p50": 7.399999976158142
+      }
+    ],
+    "closed_loop_success": 0,
+    "evaluated_cases": 3,
+    "exact_action_rate": 1.0,
+    "exact_actions": 3,
+    "external_side_effects_executed": false
+  },
+  "checkpoint": {
+    "config_name": "webgpu-10m-hybrid",
+    "parameters": 10524544,
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361",
+    "source": "bundle-manifest.json",
+    "stage": "sft_browser_context",
+    "step": 319
+  },
+  "claim_boundary": "Native Chromium WebGPU/Apple Metal-3 capability and action-graph latency receipt for the current 10.52M checkpoint. The three calls are local structured predictions only; two productivity routes use explicit intent guards, no email/browser/Notion external side effect ran, closed_loop_success is zero, and this is not an official mobile/browser/computer benchmark score or cross-device throughput claim.",
+  "environment_executed": true,
+  "generated_at": "2026-08-04",
+  "hardware_adapter": "vendor=apple; architecture=metal-3",
+  "kind": "localagent_webgpu_native_capability_current_browser_context_receipt",
+  "measurement": "m265_webgpu_native_current_browser_context",
+  "performance": {
+    "latency_ms_p50": 7.399999976158142,
+    "peak_memory_mb": 20.458142280578613,
+    "peak_memory_method": "conservative action-graph bytes plus largest host input/output tensors; driver VRAM counter unavailable",
+    "tokens_per_second_p50": 1391.3043334037911
+  },
+  "protocol": {
+    "action_graph": {
+      "bytes": 21430301,
+      "path": "action_model.fp16.onnx",
+      "sha256": "8856dcaeca1ad2125b0ba34d0fa47da8f0271d3078195a9288862cd1603a1434"
+    },
+    "bundle_manifest": {
+      "bytes": 9310,
+      "path": "bundle-manifest.json",
+      "sha256": "a7c290c4d250afb227f89104b6621ea34dbb3171829a975c1e9d38dc09ea73bc"
+    },
+    "chromium_launch_flags": [
+      "--use-angle=metal",
+      "--enable-unsafe-webgpu"
+    ],
+    "chromium_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+    "local_http_only": true,
+    "measured_repetitions_per_case": 30,
+    "ort_version": "1.27.0",
+    "page": "spaces/localagent-webgpu/webgpu-capability.html",
+    "requested_provider": [
+      "webgpu"
+    ],
+    "session_provider_retry": false,
+    "warmups_per_case": 3
+  },
+  "receipt_self_sha256": "3cef84738a78aab1ee6deaf57a8cef9a35ed90e87ac7d2d837abf4d44384132e",
+  "runner": {
+    "console_error_classes": [
+      "\u001b[0;93m2026-08-04 04:24:00.898599 [W:onnxruntime:, session_state.cc:1367 VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.\u001b[m",
+      "\u001b[0;93m2026-08-04 04:24:00.901098 [W:onnxruntime:, session_state.cc:1369 VerifyEachNodeIsAssignedToAnEp] Rerunning with verbose output on a non-minimal build will show node assignments.\u001b[m"
+    ],
+    "console_error_count": 2,
+    "full_receipt": {
+      "bytes": 11320,
+      "path": "/private/tmp/m265-webgpu-native-current-browser-context-v3.json",
+      "sha256": "8d899f31e16d81d1afbfd7a130122e69e0e32895c3bd2ec304bba69cf87f69c2"
+    },
+    "page_error_count": 0,
+    "page_receipt_self_sha256": "9c7af86c1a428cd4f57763b228f3ee169264a1b064af43dc96f19d8f977b4b88",
+    "response_status": 200,
+    "script": "scripts/run_webgpu_native_capability.py",
+    "url": "http://127.0.0.1:4185/webgpu-capability.html"
+  },
+  "schema_version": 1
+}

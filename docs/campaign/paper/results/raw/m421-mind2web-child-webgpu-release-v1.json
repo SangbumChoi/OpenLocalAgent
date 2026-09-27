@@ -1,0 +1,74 @@
+{
+  "accessed_utc": "2026-08-05",
+  "claim_boundary": "Local-only release preparation and native WebGPU execution of the m420 child. The model and Space were not uploaded to Hugging Face, and the trajectory is a resettable in-memory fixture rather than official Mind2Web, BrowserGym, AndroidWorld, MCP, or real-account success.",
+  "kind": "localagent_mind2web_child_webgpu_release",
+  "schema_version": 1,
+  "parent_receipt": {
+    "path": "docs/paper/results/raw/m420-mind2web-public-continuation-v1.json",
+    "sha256": "05438a23e53e312bbf38300c2c6ebd56d108e1d0ce0f41080b40eca3c09e2c82"
+  },
+  "checkpoint": {
+    "path": "runs/sft-mind2web-public-continuation-20260805/latest.pt",
+    "bytes": 52246937,
+    "sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45",
+    "parameters": 10524544,
+    "config": "webgpu-10m-hybrid"
+  },
+  "local_hf_bundle": {
+    "path": "data/private/mind2web/release/m420-hf-model",
+    "published": false,
+    "files": {
+      "config.json": {"bytes": 38446, "sha256": "51255c4d8d89ba18a24177c0c7b1792a0d1bc9a78ea062d66e228df29f8b4f6b"},
+      "model.safetensors": {"bytes": 42101904, "sha256": "57f797c1a71c12e1dafbf9cc7fd1cab9cfce370d21087ec4771b3a4d5f06f62d"},
+      "agent_heads.bin": {"bytes": 10116038, "sha256": "4cf15dd4f4cc2e7cdd418a18f14dfb31830785eca4c668e4963fd9d67350d7d5"},
+      "tokenizer.json": {"bytes": 1134224, "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"}
+    }
+  },
+  "local_space_bundle": {
+    "path": "data/private/mind2web/release/m420-space",
+    "published": false,
+    "bundle_identity": "ff0259b3f86c08de56533a32bd3db61783a8077e8090cb84e2bca6393258fc00",
+    "manifest": {
+      "path": "data/private/mind2web/release/m420-space/bundle-manifest.json",
+      "bytes": 9308,
+      "sha256": "a7895541f802b4836d76dc2b9f5bc203168d80c534a2339126fc7b00a31dadca",
+      "checkpoint_sha256": "6a6520264f5f81fc68c54f80d462ddde64ac2f442e6e30077c909b702939dd45"
+    },
+    "parity_gate": {
+      "passed": true,
+      "model_fp32_max_abs_diff": {"logits": 0.0000076294, "hidden": 0.0000064373},
+      "model_fp16_max_abs_diff": {"logits": 0.0043182373, "hidden": 0.0042699128},
+      "model_fp16_argmax_agreement": 1.0,
+      "action_fp32_hidden_max_abs_diff": 0.0000064373,
+      "action_fp16_hidden_max_abs_diff": 0.0042699128
+    }
+  },
+  "native_webgpu_trajectory": {
+    "receipt_path": "/private/tmp/m420-webgpu-child-trajectory.json",
+    "receipt_bytes": 40447,
+    "receipt_sha256": "c248090d400372f1ec0c7e5f7c10321874862be0391bcb6749f4d20b19108dba",
+    "receipt_self_sha256": "7fd8e5390823524f85880d67661fb5e9751f0e3a68b941c2cf43ac6f24295cd9",
+    "backend": "webgpu",
+    "environment_executed": true,
+    "page_errors": 0,
+    "console_warning_count": 2,
+    "steps": 13,
+    "trajectories": 3,
+    "schema_valid_rate": 1.0,
+    "exact_action_rate": 1.0,
+    "state_transition_rate": 1.0,
+    "closed_loop_success_rate": 1.0,
+    "pass_at_1": 1.0,
+    "latency_ms_p50": 21.6,
+    "latency_ms_cold_start": 2521.5,
+    "trajectory_ids": ["gmail_compose_send", "notion_capture", "browser_search_open"]
+  },
+  "publication_status": {
+    "hf_authentication": false,
+    "model_uploaded": false,
+    "space_uploaded": false,
+    "official_benchmark_score": null,
+    "external_side_effects": false
+  },
+  "receipt_self_sha256": "f8bb542b2b8dd8337d8ae5254aea6a09c3a6c27fb5a1666d77b4d0446d21e38b"
+}

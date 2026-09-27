@@ -1,0 +1,75 @@
+{
+  "kind": "localagent_stateful_productivity_transfer_ablation",
+  "schema_version": 1,
+  "parent": {
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+  },
+  "child": {
+    "path": "/private/tmp/m381-stateful-lowrate-80.pt",
+    "sha256": "b16d904e9d805c8ef0d91c4bbdd9f759f1a82bd69fe285e4047025e28e06fa1f",
+    "report_sha256": "7c3dfecba7317acf69197f592894b69e662691b95f33a8230efdbd60567b56c2"
+  },
+  "training": {
+    "steps": 80,
+    "batch_size": 8,
+    "backbone_lr": 1e-05,
+    "head_lr": 0.005,
+    "device": "cpu",
+    "tool_pool_size": 63,
+    "tool_pool_sha256": "fd3c5d30a3c7fcb2c010c04e79e1b47cd88e3897712e98f5a144d09699f25694",
+    "source": "local_resettable_state_machine; train/eval task hashes are disjoint",
+    "train_task_hash": "5cd64016dc92e6d0d118ea57b6e5b5be6bdd188445022ad5d385173415e194e4",
+    "eval_task_hash": "07471a921a097485936c37b646be03b99e4071f5ac4644cecd130194154b072c"
+  },
+  "weight_movement": {
+    "backbone": 0.0024188301350875152,
+    "embedding": 0.0006570424114795778,
+    "mixer": 0.005260671931640693,
+    "ffn": 0.005703418468134796,
+    "normalization": 0.00011632164417997159
+  },
+  "held_out_ablation": {
+    "frozen_backbone": {
+      "selector_top1": 0.5333333333333333,
+      "selector_top3": 0.8666666666666667,
+      "task_complete_rate": 0.2,
+      "accepted_steps": 1,
+      "mean_shaped_reward": 0.265625
+    },
+    "lowrate_unfrozen_backbone": {
+      "selector_top1": 0.6,
+      "selector_top3": 0.9333333333333333,
+      "task_complete_rate": 0.2,
+      "accepted_steps": 1,
+      "mean_shaped_reward": 0.28125
+    },
+    "matched_random_backbone": {
+      "selector_top1": 0.5333333333333333,
+      "selector_top3": 0.7333333333333333,
+      "task_complete_rate": 0.2,
+      "accepted_steps": 1,
+      "mean_shaped_reward": 0.265625
+    }
+  },
+  "strict_runtime_replay": {
+    "receipt_sha256": "c9aa29ba8f467de693e4b27fdb71bc1bd1676047ecfc29b36c71f2aaa24312f2",
+    "oracle_task_complete_rate": 1.0,
+    "oracle_accepted_steps": 16,
+    "model_task_complete_rate": 0.2,
+    "model_accepted_steps": 1,
+    "model_attempts": 46,
+    "model_attempt_success_rate": 0.021739130434782608,
+    "model_mean_shaped_reward": 0.4327777777777778,
+    "max_attempts_per_step": 3,
+    "top_m": 1
+  },
+  "comparison": {
+    "lowrate_minus_frozen_selector_top1": 0.06666666666666665,
+    "lowrate_minus_frozen_task_complete_rate": 0.0,
+    "lowrate_minus_random_task_complete_rate": 0.0,
+    "transfer_adoption_decision": "do_not_adopt_as_capability_evidence"
+  },
+  "claim_boundary": "Matched local synthetic state-machine transfer only. The oracle validates the verifier contract; model results do not establish native mobile, browser, desktop, MCP, real email, Notion, public-benchmark, or WebGPU capability.",
+  "receipt_self_sha256": "88d4b6fb9259d85e51d928b6f8b0124d9e6c283744b7c93e19748efcdc6d6569"
+}

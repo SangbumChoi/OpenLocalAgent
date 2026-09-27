@@ -1,0 +1,344 @@
+{
+  "claim_boundary": "This is a local resettable email/Notion/browser training and runtime control. It is not a public benchmark score, native emulator/browser/MCP execution, real-account operation, or WebGPU throughput result.",
+  "decision": {
+    "promote_child": false,
+    "reason": "longer stateful SFT+RL increased shaped reward signal but reduced held-out exactness and did not improve the deployment-shaped closed-loop runtime; the body movement is too large for the observed quality."
+  },
+  "kind": "localagent_stateful_productivity_long_continuation_control",
+  "parent": {
+    "bytes": 52242001,
+    "path": "runs/sft-webgpu-browser-context-adapter-20260802/latest.pt",
+    "sha256": "bc1aca209ec08df1483a3c6d088366a68f8d8f4f0766e2b4350a2ef473c16361"
+  },
+  "receipt_self_sha256": "7b282fe775f1335ecb11189d8b2aca1629f6a4c6dc9f2f758b9b5d422d99f725",
+  "runtime_comparison": {
+    "child": {
+      "abstention_exact": 0.0,
+      "accepted_steps": 0,
+      "attempt_success_rate": 0.0,
+      "attempts": 48,
+      "by_family": {
+        "abstention": {
+          "accepted_steps": 0,
+          "attempts": 3,
+          "expected_steps": 1,
+          "task_complete_rate": 0.0,
+          "tasks": 1
+        },
+        "browser": {
+          "accepted_steps": 0,
+          "attempts": 12,
+          "expected_steps": 4,
+          "task_complete_rate": 0.0,
+          "tasks": 1
+        },
+        "email": {
+          "accepted_steps": 0,
+          "attempts": 18,
+          "expected_steps": 6,
+          "task_complete_rate": 0.0,
+          "tasks": 1
+        },
+        "notion": {
+          "accepted_steps": 0,
+          "attempts": 6,
+          "expected_steps": 2,
+          "task_complete_rate": 0.0,
+          "tasks": 1
+        },
+        "recovery": {
+          "accepted_steps": 0,
+          "attempts": 9,
+          "expected_steps": 3,
+          "task_complete_rate": 0.0,
+          "tasks": 1
+        }
+      },
+      "expected_steps": 16,
+      "max_attempts_per_step": 3,
+      "mean_shaped_reward": 0.1,
+      "recovery_task_complete_rate": 0.0,
+      "task_complete_rate": 0.0,
+      "task_rows": [
+        {
+          "accepted_steps": 0,
+          "attempts": 18,
+          "event_sha256": "f1c8ab1dd0542b5f1c1597ceb80d0f7a29fac8e11cb8551b7e0b5cfbdf3e4b5a",
+          "expected_steps": 6,
+          "family": "email",
+          "mean_shaped_reward": 0.10000000000000003,
+          "task_complete": false,
+          "task_id": "eval-email-send"
+        },
+        {
+          "accepted_steps": 0,
+          "attempts": 6,
+          "event_sha256": "47d896c0cfaa42292e7e901cbffbed63cd7904ad78fb52f29de8f34cf8d3f604",
+          "expected_steps": 2,
+          "family": "notion",
+          "mean_shaped_reward": 0.09999999999999999,
+          "task_complete": false,
+          "task_id": "eval-notion-create"
+        },
+        {
+          "accepted_steps": 0,
+          "attempts": 12,
+          "event_sha256": "05615152fe4f94af231af72c49de47fec066f3ff24950510722faa85768dd50d",
+          "expected_steps": 4,
+          "family": "browser",
+          "mean_shaped_reward": 0.09999999999999999,
+          "task_complete": false,
+          "task_id": "eval-browser-search"
+        },
+        {
+          "accepted_steps": 0,
+          "attempts": 9,
+          "event_sha256": "441ac5f90664254942e7b07a962d164227f9310711c40af9abb9f9ae23ba2dfc",
+          "expected_steps": 3,
+          "family": "recovery",
+          "mean_shaped_reward": 0.09999999999999999,
+          "task_complete": false,
+          "task_id": "eval-browser-recovery"
+        },
+        {
+          "accepted_steps": 0,
+          "attempts": 3,
+          "event_sha256": "f0b90a47e041ac266dff299e859228148750a37f6705e76c298c9f739dbcab2c",
+          "expected_steps": 1,
+          "family": "abstention",
+          "mean_shaped_reward": 0.10000000000000002,
+          "task_complete": false,
+          "task_id": "eval-abstain"
+        }
+      ],
+      "tasks": 5
+    },
+    "child_receipt": {
+      "bytes": 7328,
+      "path": "/private/tmp/m323-stateful-long/runtime-child.json",
+      "sha256": "3b52deb8e63d2a38ef6e4a2cf61460ebe3edcd652ef03d7700ba6102e2e40908"
+    },
+    "delta": {
+      "accepted_steps": 0,
+      "mean_shaped_reward": 0.0,
+      "task_complete_rate": 0.0
+    },
+    "parent": {
+      "abstention_exact": 0.0,
+      "accepted_steps": 0,
+      "attempt_success_rate": 0.0,
+      "attempts": 48,
+      "by_family": {
+        "abstention": {
+          "accepted_steps": 0,
+          "attempts": 3,
+          "expected_steps": 1,
+          "task_complete_rate": 0.0,
+          "tasks": 1
+        },
+        "browser": {
+          "accepted_steps": 0,
+          "attempts": 12,
+          "expected_steps": 4,
+          "task_complete_rate": 0.0,
+          "tasks": 1
+        },
+        "email": {
+          "accepted_steps": 0,
+          "attempts": 18,
+          "expected_steps": 6,
+          "task_complete_rate": 0.0,
+          "tasks": 1
+        },
+        "notion": {
+          "accepted_steps": 0,
+          "attempts": 6,
+          "expected_steps": 2,
+          "task_complete_rate": 0.0,
+          "tasks": 1
+        },
+        "recovery": {
+          "accepted_steps": 0,
+          "attempts": 9,
+          "expected_steps": 3,
+          "task_complete_rate": 0.0,
+          "tasks": 1
+        }
+      },
+      "expected_steps": 16,
+      "max_attempts_per_step": 3,
+      "mean_shaped_reward": 0.1,
+      "recovery_task_complete_rate": 0.0,
+      "task_complete_rate": 0.0,
+      "task_rows": [
+        {
+          "accepted_steps": 0,
+          "attempts": 18,
+          "event_sha256": "e79f9ec0ad9fea19c9dfce86b242863d8f40bf15131b829ef00b87cacd50c51f",
+          "expected_steps": 6,
+          "family": "email",
+          "mean_shaped_reward": 0.10000000000000003,
+          "task_complete": false,
+          "task_id": "eval-email-send"
+        },
+        {
+          "accepted_steps": 0,
+          "attempts": 6,
+          "event_sha256": "e773f7becb216b716b1c197e6dda7c7ee7b72f1089638222e350efafc8bcc3d3",
+          "expected_steps": 2,
+          "family": "notion",
+          "mean_shaped_reward": 0.09999999999999999,
+          "task_complete": false,
+          "task_id": "eval-notion-create"
+        },
+        {
+          "accepted_steps": 0,
+          "attempts": 12,
+          "event_sha256": "a41b0375de8d048bebec5d6f7a7725aa77fe0df6b733678b9218b94287627d95",
+          "expected_steps": 4,
+          "family": "browser",
+          "mean_shaped_reward": 0.09999999999999999,
+          "task_complete": false,
+          "task_id": "eval-browser-search"
+        },
+        {
+          "accepted_steps": 0,
+          "attempts": 9,
+          "event_sha256": "9c9bddd16a060977568ac2250b91c18118bd91035485f344a1a7682501bc3214",
+          "expected_steps": 3,
+          "family": "recovery",
+          "mean_shaped_reward": 0.09999999999999999,
+          "task_complete": false,
+          "task_id": "eval-browser-recovery"
+        },
+        {
+          "accepted_steps": 0,
+          "attempts": 3,
+          "event_sha256": "f582348979c91261740a1f4e80894c2273c60885942fdb43c9da070e121a3d43",
+          "expected_steps": 1,
+          "family": "abstention",
+          "mean_shaped_reward": 0.10000000000000002,
+          "task_complete": false,
+          "task_id": "eval-abstain"
+        }
+      ],
+      "tasks": 5
+    },
+    "parent_receipt": {
+      "bytes": 7358,
+      "path": "/private/tmp/m323-stateful-long/runtime-parent.json",
+      "sha256": "e3d721c7b3a52c55b182a0e7b47a08d240a9dcb197f9b048898d50b093c6438f"
+    }
+  },
+  "schema_version": 1,
+  "source": {
+    "eval_task_hash": "07471a921a097485936c37b646be03b99e4071f5ac4644cecd130194154b072c",
+    "eval_tasks": [
+      "eval-email-send",
+      "eval-notion-create",
+      "eval-browser-search",
+      "eval-browser-recovery",
+      "eval-abstain"
+    ],
+    "external_accounts_used": false,
+    "kind": "local_deterministic_state_machine",
+    "native_runtime_executed": false,
+    "public_benchmark_text_used": false,
+    "tool_side_effects": "in_memory_only",
+    "train_task_hash": "5cd64016dc92e6d0d118ea57b6e5b5be6bdd188445022ad5d385173415e194e4",
+    "train_tasks": [
+      "train-email-send",
+      "train-notion-create",
+      "train-browser-search",
+      "train-browser-recovery",
+      "train-abstain"
+    ]
+  },
+  "training": {
+    "exact_match_accuracy_post": 0.125,
+    "exact_match_accuracy_pre": 0.25,
+    "informative_groups": 17,
+    "mean_reward_post": 0.3500000000000001,
+    "mean_reward_pre": 0.33125000000000004,
+    "realized_optimizer_updates": 7,
+    "receipt": {
+      "bytes": 14179,
+      "path": "/private/tmp/m323-stateful-long-receipt.json",
+      "sha256": "1702bc7c5f0df7dedf34e5221d770468253a7deca9473f608b4ed570dd3972b8"
+    },
+    "reward_unique_values": 6,
+    "rl_lr_history": [
+      0.0,
+      2e-05,
+      1.9108719811121773e-05,
+      1.6611408216728603e-05,
+      1.300268840560683e-05,
+      8.997311594393173e-06,
+      5.3885917832713994e-06,
+      2.8912801888782295e-06
+    ],
+    "rl_steps": 8,
+    "sft_lr": 0.0001,
+    "sft_steps": 64,
+    "tool_exact_match_accuracy_post": 0.13333333333333333,
+    "tool_exact_match_accuracy_pre": 0.26666666666666666
+  },
+  "weight_transfer": {
+    "compatibility": {
+      "added_tensors": [],
+      "config_mismatches": {},
+      "removed_tensors": [],
+      "shape_mismatches": {},
+      "shared_tensor_count": 51,
+      "tokenizer_sha256_equal": true
+    },
+    "groups": {
+      "action_heads": {
+        "base_l2": 99.96533739276437,
+        "delta_l2": 0.0,
+        "parameters": 2518968,
+        "relative_delta_l2": 0.0,
+        "target_l2": 99.96533739276437
+      },
+      "attention_or_mixer": {
+        "base_l2": 51.68591919503937,
+        "delta_l2": 1.0200935943058516,
+        "parameters": 1871872,
+        "relative_delta_l2": 0.01973639262284333,
+        "target_l2": 51.71311618944408
+      },
+      "embedding": {
+        "base_l2": 76.22106199454595,
+        "delta_l2": 5.7852112909500475,
+        "parameters": 6291456,
+        "relative_delta_l2": 0.07590042882588034,
+        "target_l2": 78.61697973556043
+      },
+      "ffn": {
+        "base_l2": 50.59914708877707,
+        "delta_l2": 1.2756440773970767,
+        "parameters": 2360832,
+        "relative_delta_l2": 0.025210782212572422,
+        "target_l2": 50.625840560610676
+      },
+      "normalization": {
+        "base_l2": 21.432378276078357,
+        "delta_l2": 0.0444814925260969,
+        "parameters": 384,
+        "relative_delta_l2": 0.0020754342776669213,
+        "target_l2": 21.47478861614179
+      }
+    },
+    "receipt": {
+      "bytes": 19584,
+      "path": "/private/tmp/m323-stateful-long/weight-report.json",
+      "sha256": "168fed2f4f803a9e6c5ed1a3c058030bd3dd9154380f606879f31cad26f4d5d8"
+    },
+    "recommendation": {
+      "action_heads": "initialize newly added tool/pointer/route/selector heads from a controlled seed",
+      "backbone": "reuse shared same-shape tensors only after config and tokenizer checks pass",
+      "claim_boundary": "movement statistics establish lineage and compatibility, not that transfer is optimal or improves task accuracy",
+      "optimization": "use a smaller learning rate for transferred backbone tensors and a larger head rate; validate with a no-transfer ablation"
+    }
+  }
+}

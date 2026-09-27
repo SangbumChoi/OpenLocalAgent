@@ -1,0 +1,244 @@
+{
+  "claim_boundary": "Frozen route-head calibration on public text/accessibility projections plus explicit no-tool/semantic adapter rows. No screenshots, emulator/VM, browser account, email/Notion side effect, official benchmark score, or public export is claimed.",
+  "data": {
+    "eval_rows": 103,
+    "public_train": [
+      {
+        "bytes": 1680018,
+        "path": "/private/tmp/localagent-public-data/androidcontrol-train-512.jsonl",
+        "rows": 512,
+        "sha256": "34c68424d9bc660a5c594a6f21c946b822f87c8ed0ad0cede43a11cc585f6c29"
+      },
+      {
+        "bytes": 352766,
+        "path": "data/private/mind2web/normalized/m420/train.jsonl",
+        "rows": 96,
+        "sha256": "b6cc595007bb91aa37f4d89e15e477b5b223bb9a66913856273c7cf995abf866"
+      },
+      {
+        "bytes": 694892,
+        "path": "/private/tmp/xlam-m574-normalized-a/train.jsonl",
+        "rows": 256,
+        "sha256": "cbbeac51ec9e0f3cc6871c1ef6f30c153373335341e35ab053d9c301b47b1f1a"
+      },
+      {
+        "bytes": 30732018,
+        "path": "/private/tmp/m607-toolace/train.jsonl",
+        "rows": 8043,
+        "sha256": "77e75db2caec61b39d08c784544390e2242b49db1d6833424c2dacf6940e8881"
+      }
+    ],
+    "semantic_eval": [
+      [
+        "What does ephemeral mean?",
+        "text"
+      ],
+      [
+        "Could you explain what a browser cache is?",
+        "text"
+      ],
+      [
+        "Thanks, that is all for now.",
+        "text"
+      ],
+      [
+        "Email Dana the quarterly report",
+        "app_action"
+      ],
+      [
+        "Create a Notion page titled Launch log.",
+        "app_action"
+      ],
+      [
+        "Search the web for AI news.",
+        "web_search"
+      ],
+      [
+        "Click the submit button.",
+        "computer_use"
+      ]
+    ],
+    "text_and_no_tool_rows_in_train": 449,
+    "train_rows": 714
+  },
+  "decision": {
+    "adopt_warm_route_head": false,
+    "export_to_webgpu": false,
+    "random_semantic_exact": false,
+    "warm_semantic_exact": false
+  },
+  "evaluation": {
+    "random": {
+      "accuracy": 0.7572815533980582,
+      "by_route": {
+        "app_action": {
+          "accuracy": 1.0,
+          "rows": 2
+        },
+        "code": {
+          "accuracy": 0.0,
+          "rows": 0
+        },
+        "computer_use": {
+          "accuracy": 0.0,
+          "rows": 1
+        },
+        "text": {
+          "accuracy": 0.7575757575757576,
+          "rows": 99
+        },
+        "web_search": {
+          "accuracy": 1.0,
+          "rows": 1
+        }
+      },
+      "rows": 103
+    },
+    "random_semantic": [
+      {
+        "expected_route": "text",
+        "predicted_route": "text",
+        "prompt": "What does ephemeral mean?",
+        "route_exact": true
+      },
+      {
+        "expected_route": "text",
+        "predicted_route": "web_search",
+        "prompt": "Could you explain what a browser cache is?",
+        "route_exact": false
+      },
+      {
+        "expected_route": "text",
+        "predicted_route": "text",
+        "prompt": "Thanks, that is all for now.",
+        "route_exact": true
+      },
+      {
+        "expected_route": "app_action",
+        "predicted_route": "app_action",
+        "prompt": "Email Dana the quarterly report",
+        "route_exact": true
+      },
+      {
+        "expected_route": "app_action",
+        "predicted_route": "app_action",
+        "prompt": "Create a Notion page titled Launch log.",
+        "route_exact": true
+      },
+      {
+        "expected_route": "web_search",
+        "predicted_route": "web_search",
+        "prompt": "Search the web for AI news.",
+        "route_exact": true
+      },
+      {
+        "expected_route": "computer_use",
+        "predicted_route": "app_action",
+        "prompt": "Click the submit button.",
+        "route_exact": false
+      }
+    ],
+    "warm": {
+      "accuracy": 0.9902912621359223,
+      "by_route": {
+        "app_action": {
+          "accuracy": 1.0,
+          "rows": 2
+        },
+        "code": {
+          "accuracy": 0.0,
+          "rows": 0
+        },
+        "computer_use": {
+          "accuracy": 0.0,
+          "rows": 1
+        },
+        "text": {
+          "accuracy": 1.0,
+          "rows": 99
+        },
+        "web_search": {
+          "accuracy": 1.0,
+          "rows": 1
+        }
+      },
+      "rows": 103
+    },
+    "warm_semantic": [
+      {
+        "expected_route": "text",
+        "predicted_route": "text",
+        "prompt": "What does ephemeral mean?",
+        "route_exact": true
+      },
+      {
+        "expected_route": "text",
+        "predicted_route": "text",
+        "prompt": "Could you explain what a browser cache is?",
+        "route_exact": true
+      },
+      {
+        "expected_route": "text",
+        "predicted_route": "text",
+        "prompt": "Thanks, that is all for now.",
+        "route_exact": true
+      },
+      {
+        "expected_route": "app_action",
+        "predicted_route": "app_action",
+        "prompt": "Email Dana the quarterly report",
+        "route_exact": true
+      },
+      {
+        "expected_route": "app_action",
+        "predicted_route": "app_action",
+        "prompt": "Create a Notion page titled Launch log.",
+        "route_exact": true
+      },
+      {
+        "expected_route": "web_search",
+        "predicted_route": "web_search",
+        "prompt": "Search the web for AI news.",
+        "route_exact": true
+      },
+      {
+        "expected_route": "computer_use",
+        "predicted_route": "app_action",
+        "prompt": "Click the submit button.",
+        "route_exact": false
+      }
+    ]
+  },
+  "hyperparameters": {
+    "backbone_frozen": true,
+    "batch_size": 64,
+    "lr": 0.005,
+    "seed": 2061,
+    "selector_frozen": true,
+    "steps": 120
+  },
+  "kind": "localagent_m610_route_abstention_calibration",
+  "parent": {
+    "bytes": 52211696,
+    "path": "/private/tmp/m585-public-multisurface-warm.pt",
+    "sha256": "6553dc2b161c03a916379fb77f174866143da6ef87173be07a12b57c4417b1ff"
+  },
+  "random_child": {
+    "bytes": 52211069,
+    "path": "/private/tmp/m610e-random-route.pt",
+    "sha256": "2a32444cd614e094ba9924af6940c2b07fcf35f6d0a0f1555839513208e49d1e"
+  },
+  "receipt_self_sha256": "70a20cbd91412b7db00e60b16181b7961036fedb359aa75c4512589e552346bb",
+  "schema_version": 1,
+  "warm_child": {
+    "bytes": 52210955,
+    "path": "/private/tmp/m610e-warm-route.pt",
+    "sha256": "3d1d80cf7b9366e58f4f6b3af26ec9a906d81d0f0f5ebb569a3ed1dd93acf427"
+  },
+  "weight_movement": {
+    "backbone_relative_l2": 0.0,
+    "dense_selector_relative_l2": 0.0,
+    "random_route_head_relative_l2": 1.815408443678053,
+    "warm_route_head_relative_l2": 1.78364296419028
+  }
+}

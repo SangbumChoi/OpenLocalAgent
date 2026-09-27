@@ -1,0 +1,78 @@
+{
+  "kind": "localagent_current_m180_dispatch_repair",
+  "schema_version": 1,
+  "parent_checkpoint": {
+    "sha256": "10827649f07182a08f8c11104d4713e76b8acaddc73020c5a4c77950de7b23a0",
+    "parameters": 10524544,
+    "stage": "sft_public_agent_continuation"
+  },
+  "public_inputs": [
+    {
+      "id": "agentnet_text_v4",
+      "source": "https://github.com/ServiceNow/AgentNet",
+      "train_rows": 513,
+      "eval_rows": 133,
+      "train_sha256": "44fad4c6e98fb6f5afd3cc45b89e1c1987d5d273293922521ef67677ace79db8",
+      "eval_sha256": "2cadf65145b07734eb13988dc305396d027f6e98d1a5a7cf7de9a5fd31c3dc7c"
+    },
+    {
+      "id": "mind2web_grounded_offset8",
+      "source": "https://osu-nlp-group.github.io/Mind2Web/",
+      "train_rows": 36,
+      "eval_rows": 12,
+      "train_sha256": "78f7e647c3728106901c51ecc772c834467ef6a019c1c083af6849700b361621",
+      "eval_sha256": "46305cb512f7368ed31817c79b798f5469e8658db12aed5d6880ea81b4e6fcbe"
+    }
+  ],
+  "adapter": {
+    "repair_tools": [
+      "send_email",
+      "notion_write",
+      "web_search",
+      "open_url",
+      "calendar_event",
+      "slack_send",
+      "click",
+      "type_text"
+    ],
+    "synthetic_train_rows": 1286,
+    "synthetic_eval_rows": 320,
+    "synthetic_adapter_only": true,
+    "backbone_frozen": true,
+    "steps": 500,
+    "batch_size": 256,
+    "learning_rate": 0.005,
+    "seed": 2041
+  },
+  "evaluation": {
+    "rows": 519,
+    "warm": {
+      "route_accuracy": 0.9961464354527938,
+      "selector_top1_accuracy": 0.8275193798449613,
+      "canonical_tool_exact": 4,
+      "canonical_total": 6,
+      "checkpoint_sha256": "3b3fd817c6f52e8b922f84c9bb36e7d55e0e243a0f8ee6d0f20c85962a4eeba7"
+    },
+    "matched_random": {
+      "route_accuracy": 0.9942196531791907,
+      "selector_top1_accuracy": 0.8294573643410853,
+      "canonical_tool_exact": 5,
+      "canonical_total": 6,
+      "checkpoint_sha256": "1dddf451ee8cd092be8c8ccc76a7ff0be9617cb267e6e6d2f5d44cf366143deb"
+    },
+    "weight_movement": {
+      "warm_route_head_relative_l2": 1.3137242691753344,
+      "warm_dense_selector_relative_l2": 1.4887015721080055,
+      "random_route_head_relative_l2": 1.4207081217045456,
+      "random_dense_selector_relative_l2": 1.243278660263116,
+      "backbone_relative_l2": 0.0
+    }
+  },
+  "decision": {
+    "adopt_warm_child": false,
+    "reason": "Warm start improves route accuracy by 0.19 points but loses selector top-1 and one canonical tool probe versus the matched random arm; the repair is not a demonstrated deployment-quality improvement.",
+    "browser_export_requested": false
+  },
+  "claim_boundary": "Frozen dispatch-head repair using public text/accessibility projections plus a deterministic local productivity adapter. This is not an official benchmark score, native Android/desktop/MCP execution, visual grounding result, real email/Notion side effect, WebGPU browser quality result, or public Hub upload.",
+  "receipt_self_sha256": "fe8c2ca686d785d77b846d533ce3c92c77663fea9ef52fe85839a5e186176beb"
+}

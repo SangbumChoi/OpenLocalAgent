@@ -1,0 +1,66 @@
+{
+  "blocked_requirements": {
+    "artifacts:public_model_demo_manifest": "current_checkpoint_not_bound",
+    "native:agentnet": "receipt_not_supplied",
+    "native:androidworld": "receipt_not_supplied",
+    "native:appworld": "native_completion_zero",
+    "native:enterpriseopsgym": "no_server_or_verifier_execution",
+    "native:iosworld": "receipt_not_supplied",
+    "native:mcpmark": "native_verifier_zero",
+    "native:mcpmark_playwright": "bounded_subset_and_verifier_zero",
+    "native:mobile_safety_bench": "receipt_not_supplied",
+    "native:osworld": "receipt_not_supplied",
+    "native:osworld_v2": "receipt_not_supplied",
+    "native:toolsandbox": "official_split_not_verified"
+  },
+  "claim_boundary": "Fail-closed gate after bounded native MCPMark Playwright browser-service evidence. The current checkpoint reaches a public browser page and snapshot through MCP, but verifiers remain zero, the full split and pinned browser parity are unverified, and visual, user-simulator, external-account, and current public artifact requirements remain incomplete.",
+  "current_checkpoint": {
+    "bytes": 52206773,
+    "path": "/private/tmp/m679-m675-mcp/warm-child.pt",
+    "sha256": "dbf45ea710e1b88cbc6631813b2abc7cfd6b454ee0052b0d0d4881c85d932533"
+  },
+  "evidence": {
+    "appworld_free": "docs/paper/results/raw/m694-m679-appworld-free-v1.json",
+    "appworld_native": "docs/paper/results/raw/m693-m679-appworld-native-v1.json",
+    "appworld_sft_native": "docs/paper/results/raw/m696-m679-appworld-sft-native-v1.json",
+    "browsergym_miniwob": "docs/paper/results/raw/m684-m679-browsergym-native-v1.json",
+    "mcpmark_native_filesystem_standard": {
+      "bytes": 98001,
+      "path": "docs/paper/results/raw/m697-m679-mcpmark-filesystem-standard-v1.json",
+      "sha256": "80caf8daa655d94cd77f34a4c7d109ed322a986d851d9f8b2448b1d35c62c38f"
+    },
+    "mcpmark_playwright": {
+      "bytes": 7190,
+      "path": "docs/paper/results/raw/m700-m679-mcpmark-playwright-standard-v1.json",
+      "sha256": "acccb466a5788b124c27814ee5ded6cb7268ffd18cc1b0f8bb2d1c513ecf945d"
+    },
+    "mcpmark_trajectory_continuation_native": {
+      "bytes": 104086,
+      "path": "docs/paper/results/raw/m698-m679-mcpmark-continuation-native-v1.json",
+      "sha256": "80761c271881dfc89fe84954b1b95be292ac6a38b439a4bab06db028596b4591"
+    },
+    "mobilegym": "docs/paper/results/raw/m683-m679-mobilegym-native-v1.json",
+    "rl_preflight": "docs/paper/results/raw/m686-m679-rl-preflight-v1.json",
+    "toolsandbox": "docs/paper/results/raw/m688-m679-toolsandbox-native-v1.json",
+    "webgpu": "/private/tmp/m682-m679-webgpu-capability-current.json",
+    "weight_transfer": "docs/paper/results/raw/m687-m679-current-weight-transfer-v1.json"
+  },
+  "kind": "localagent_m701_workshop_gate_current_m679",
+  "passed_requirements": [
+    "catalog:no_pending_train_adapter",
+    "catalog:realistic_family_coverage",
+    "native:browsergym_miniwob",
+    "native:mobilegym",
+    "training:rl_preflight",
+    "webgpu:native_capability_and_latency",
+    "weights:transfer_and_no_transfer_ablation"
+  ],
+  "ready": false,
+  "receipt_self_sha256": "b0f879cf8e8e738343c326894857636054dbd5e96157ac2e944a140a407db305",
+  "schema_version": 1,
+  "source_gate": {
+    "bytes": 3128,
+    "path": "docs/paper/results/raw/m699-workshop-gate-current-m679-v1.json",
+    "sha256": "fd2301a5002957a6901830634561f02b6786b6496dd2e76064e3714ef7d1bd4d"
+  }
+}

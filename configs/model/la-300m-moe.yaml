@@ -1,0 +1,47 @@
+# Ladder tier 4, sparse arm — the architecture question this ladder is here to answer.
+#
+# An agent's competence at this scale looks memory-bound rather than compute-bound: what it has to
+# hold is a large, mostly-inert body of tool and API knowledge, and only a small slice of that is
+# relevant to any one request. A sparse routed FFN is the shape that matches - keep the knowledge
+# resident, pay for a fraction of it per token.
+#
+# TWO controls, because "matched" means two things and they ask different questions:
+#
+#   la-150m       149,294,784 total/active   matched ACTIVE (-0.07%)
+#                 does the extra stored capacity earn anything at equal compute?
+#   la-300m       298,535,808 total/active   matched TOTAL  (+0.06%)
+#                 at equal stored parameters, does routing beat spending them densely?
+#   la-300m-moe   298,701,696 total  149,402,496 active
+#
+# docs/SPARSE_EXPERTS_REAL_DATA.md set the matched-active convention for this repository
+# (webgpu-44m-moe against webgpu-17m-dense-moe-control), so la-150m is the primary control and
+# la-300m the secondary one. Everything but the FFN is identical across all three.
+#
+# One honest limit on the claim: the ONNX exporter does not lower dynamic expert routing into a
+# sparse WebGPU dispatch, and exporting a graph that evaluates every expert would erase the compute
+# saving entirely. So any result here is a PyTorch research result about capacity-vs-compute, NOT a
+# demonstration that this tier runs on device. See section 2 of SPARSE_EXPERTS_REAL_DATA.md.
+#
+# router_aux_loss_coef keeps the experts from collapsing onto one.
+name: la-300m-moe
+vocab_size: 16384
+d_model: 1152
+n_layers: 18
+n_loops: 1
+n_heads: 18
+n_kv_heads: 1
+ffn_hidden: 400
+ffn_num_experts: 8
+ffn_top_k: 2
+router_aux_loss_coef: 0.01
+max_seq_len: 4096
+rope_theta: 10000.0
+norm_eps: 1.0e-5
+tie_embeddings: true
+dropout: 0.0
+qk_norm: true
+conv_kernel: 3
+layer_types:
+  [conv, conv, attn, conv, conv, attn, conv, conv, attn, conv, conv, attn,
+   conv, conv, attn, conv, conv, attn]
+param_budget: 350000000

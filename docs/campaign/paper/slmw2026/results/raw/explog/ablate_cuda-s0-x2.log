@@ -1,0 +1,23 @@
+model ultra-tiny-1m: 0.977M params on cuda seed=0 sft_scale=2.0
+  [pretrain] step    0/400  loss 5.550  loss_tokens 8,192
+  [pretrain] step   50/400  loss 3.434  loss_tokens 417,792
+  [pretrain] step  100/400  loss 3.341  loss_tokens 827,392
+  [pretrain] step  150/400  loss 2.915  loss_tokens 1,236,992
+  [pretrain] step  200/400  loss 2.508  loss_tokens 1,646,592
+  [pretrain] step  250/400  loss 2.020  loss_tokens 2,056,192
+  [pretrain] step  300/400  loss 1.721  loss_tokens 2,465,792
+  [pretrain] step  350/400  loss 1.571  loss_tokens 2,875,392
+  [pretrain] step  399/400  loss 1.516  loss_tokens 3,276,800
+=== Round 1: overall=49.3%  browser=70% code=50% computer_use=41% define=20% music=37% news=33% parallel=13% planner=33% productivity=67% text=77% tool_call=71% web_search=27%
+    multi-turn: step_acc=33% episode_acc=13% (81 steps)
+=== Round 2: overall=49.0%  browser=77% code=55% computer_use=37% define=33% music=23% news=20% parallel=27% planner=23% productivity=62% text=58% tool_call=60% web_search=40%
+    multi-turn: step_acc=26% episode_acc=0% (76 steps)
+=== Round 3: overall=58.6%  browser=83% code=67% computer_use=44% define=37% music=63% news=30% parallel=23% planner=40% productivity=66% text=55% tool_call=73% web_search=40%
+    multi-turn: step_acc=44% episode_acc=13% (72 steps)
+=== Round 4: overall=65.0%  browser=67% code=81% computer_use=44% define=53% music=37% news=13% parallel=17% planner=90% productivity=68% text=52% tool_call=80% web_search=50%
+    multi-turn: step_acc=41% episode_acc=17% (79 steps)
+=== Round 5: overall=68.3%  browser=80% code=85% computer_use=45% define=47% music=67% news=17% parallel=23% planner=63% productivity=75% text=62% tool_call=78% web_search=60%
+    multi-turn: step_acc=38% episode_acc=10% (84 steps)
+FINAL free-gen : overall=0.0%  browser=0% code=0% computer_use=0% define=0% music=0% news=0% parallel=0% planner=0% productivity=0% text=0% tool_call=0% web_search=0%
+FINAL grounded : overall=69.7%  browser=75% code=81% computer_use=45% define=70% music=65% news=15% parallel=30% planner=60% productivity=90% text=62% tool_call=80% web_search=80%
+ABLATION_DONE runs/ablate/cuda-s0-x2

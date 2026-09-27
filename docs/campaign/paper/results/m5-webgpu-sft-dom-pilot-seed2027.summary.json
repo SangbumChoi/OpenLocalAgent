@@ -1,0 +1,762 @@
+{
+  "aggregate": {
+    "abstentions": 720,
+    "all_predictions_abstained": true,
+    "pooled_measurement_unit": "measured single-step DOM opportunity",
+    "pooled_metrics": {
+      "by_action": {
+        "click": {
+          "closed_loop_ms": {
+            "count": 90,
+            "max": 84.40000003576279,
+            "mean": 39.330000001854366,
+            "min": 31.19999998807907,
+            "p50": 33.200000047683716,
+            "p90": 66.22000004053116,
+            "p95": 66.6099999934435,
+            "p99": 71.5840000039339
+          },
+          "closed_loop_success_rate": 0.0,
+          "count": 90,
+          "exact_action_rate": 0.0,
+          "final_dom_rate": 0.0,
+          "schema_valid_rate": 0.0
+        },
+        "double_click": {
+          "closed_loop_ms": {
+            "count": 90,
+            "max": 68.39999997615814,
+            "mean": 39.03666666878594,
+            "min": 31.19999998807907,
+            "p50": 33.39999997615814,
+            "p90": 66.5,
+            "p95": 66.75500000119209,
+            "p99": 68.13299996554852
+          },
+          "closed_loop_success_rate": 0.0,
+          "count": 90,
+          "exact_action_rate": 0.0,
+          "final_dom_rate": 0.0,
+          "schema_valid_rate": 0.0
+        },
+        "drag": {
+          "closed_loop_ms": {
+            "count": 90,
+            "max": 184.5,
+            "mean": 43.52333333426051,
+            "min": 31.299999952316284,
+            "p50": 33.80000001192093,
+            "p90": 66.59999997019767,
+            "p95": 68.07499997913837,
+            "p99": 94.43200001060956
+          },
+          "closed_loop_success_rate": 0.0,
+          "count": 90,
+          "exact_action_rate": 0.0,
+          "final_dom_rate": 0.0,
+          "schema_valid_rate": 0.0
+        },
+        "key_press": {
+          "closed_loop_ms": {
+            "count": 90,
+            "max": 68.39999997615814,
+            "mean": 38.211111109786565,
+            "min": 31.30000001192093,
+            "p50": 33.25,
+            "p90": 50.01999999880791,
+            "p95": 66.5,
+            "p99": 67.68800001859665
+          },
+          "closed_loop_success_rate": 0.0,
+          "count": 90,
+          "exact_action_rate": 0.0,
+          "final_dom_rate": 0.0,
+          "schema_valid_rate": 0.0
+        },
+        "move_cursor": {
+          "closed_loop_ms": {
+            "count": 90,
+            "max": 82.59999996423721,
+            "mean": 40.68444444470936,
+            "min": 29.19999998807907,
+            "p50": 33.30000001192093,
+            "p90": 66.51000000238419,
+            "p95": 68.15500000417232,
+            "p99": 70.22899998545645
+          },
+          "closed_loop_success_rate": 0.0,
+          "count": 90,
+          "exact_action_rate": 0.0,
+          "final_dom_rate": 0.0,
+          "schema_valid_rate": 0.0
+        },
+        "open_url": {
+          "closed_loop_ms": {
+            "count": 90,
+            "max": 69.39999997615814,
+            "mean": 38.52222222354677,
+            "min": 32.30000001192093,
+            "p50": 33.95000001788139,
+            "p90": 63.37000002264978,
+            "p95": 66.86500002145767,
+            "p99": 68.77699998676776
+          },
+          "closed_loop_success_rate": 0.0,
+          "count": 90,
+          "exact_action_rate": 0.0,
+          "final_dom_rate": 0.0,
+          "schema_valid_rate": 0.0
+        },
+        "scroll": {
+          "closed_loop_ms": {
+            "count": 90,
+            "max": 69.5,
+            "mean": 39.8922222216924,
+            "min": 31.30000001192093,
+            "p50": 33.30000001192093,
+            "p90": 66.50999999642372,
+            "p95": 67.88499999344349,
+            "p99": 68.69900002121926
+          },
+          "closed_loop_success_rate": 0.0,
+          "count": 90,
+          "exact_action_rate": 0.0,
+          "final_dom_rate": 0.0,
+          "schema_valid_rate": 0.0
+        },
+        "type_text": {
+          "closed_loop_ms": {
+            "count": 90,
+            "max": 68.19999998807907,
+            "mean": 37.9155555539661,
+            "min": 31.19999998807907,
+            "p50": 33.349999994039536,
+            "p90": 50.01000000238419,
+            "p95": 64.95500001609325,
+            "p99": 66.86499998807906
+          },
+          "closed_loop_success_rate": 0.0,
+          "count": 90,
+          "exact_action_rate": 0.0,
+          "final_dom_rate": 0.0,
+          "schema_valid_rate": 0.0
+        }
+      },
+      "closed_loop_success_rate": 0.0,
+      "deadline_attainment_ms": {
+        "100": {
+          "on_time": 719,
+          "on_time_rate": 0.9986111111111111,
+          "opportunities": 720,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        },
+        "1000": {
+          "on_time": 720,
+          "on_time_rate": 1.0,
+          "opportunities": 720,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        },
+        "2000": {
+          "on_time": 720,
+          "on_time_rate": 1.0,
+          "opportunities": 720,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        },
+        "250": {
+          "on_time": 720,
+          "on_time_rate": 1.0,
+          "opportunities": 720,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        },
+        "500": {
+          "on_time": 720,
+          "on_time_rate": 1.0,
+          "opportunities": 720,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        }
+      },
+      "exact_action_rate": 0.0,
+      "exact_args_rate": 0.0,
+      "exact_tool_rate": 0.0,
+      "final_dom_rate": 0.0,
+      "latency_ms": {
+        "closed_loop_ms": {
+          "count": 720,
+          "max": 184.5,
+          "mean": 39.63944444482525,
+          "min": 29.19999998807907,
+          "p50": 33.30000001192093,
+          "p90": 66.39999997615814,
+          "p95": 66.80000001192093,
+          "p99": 68.69999998807907
+        },
+        "harness_ttfa_ms": {
+          "count": 720,
+          "max": 114.69999998807907,
+          "mean": 28.30361111130979,
+          "min": 18.599999964237213,
+          "p50": 27.80000001192093,
+          "p90": 34.30000001192093,
+          "p95": 35.30000001192093,
+          "p99": 39.72400001645086
+        },
+        "independent_validate_ms": {
+          "count": 720,
+          "max": 0.10000002384185791,
+          "mean": 0.0026388886902067397,
+          "min": 0.0,
+          "p50": 0.0,
+          "p90": 0.0,
+          "p95": 0.0,
+          "p99": 0.10000002384185791
+        },
+        "model_wall_ms": {
+          "count": 720,
+          "max": 114.69999998807907,
+          "mean": 28.32875000089407,
+          "min": 18.599999964237213,
+          "p50": 27.80000001192093,
+          "p90": 34.30000001192093,
+          "p95": 35.30000001192093,
+          "p99": 40.610000011920874
+        },
+        "paint_wait_ms": {
+          "count": 720,
+          "max": 69.60000002384186,
+          "mean": 11.204583332770401,
+          "min": 0.2999999523162842,
+          "p50": 9.0,
+          "p90": 31.099999964237213,
+          "p95": 32.69999998807907,
+          "p99": 34.28100001871585
+        },
+        "runtime_ttfa_ms": {
+          "count": 720,
+          "max": 114.69999998807907,
+          "mean": 28.300972222619585,
+          "min": 18.599999964237213,
+          "p50": 27.80000001192093,
+          "p90": 34.30000001192093,
+          "p95": 35.30000001192093,
+          "p99": 39.72400001645086
+        },
+        "tool_ms": {
+          "count": 720,
+          "max": 0.20000004768371582,
+          "mean": 0.04375000024835269,
+          "min": 0.0,
+          "p50": 0.0,
+          "p90": 0.10000002384185791,
+          "p95": 0.10000002384185791,
+          "p99": 0.19999998807907104
+        }
+      },
+      "records": 720,
+      "schema_valid_rate": 0.0,
+      "state_transition_rate": 0.0
+    },
+    "pooled_rates": {
+      "closed_loop_success_rate": 0.0,
+      "exact_action_rate": 0.0,
+      "exact_args_rate": 0.0,
+      "exact_tool_rate": 0.0,
+      "final_dom_rate": 0.0,
+      "schema_valid_rate": 0.0,
+      "state_transition_rate": 0.0
+    },
+    "records": 720,
+    "run_count": 3,
+    "run_level_latency_ms": {
+      "closed_loop_ms": {
+        "p50": {
+          "by_run": [
+            33.40000003576279,
+            33.349999994039536,
+            33.30000001192093
+          ],
+          "median": 33.349999994039536,
+          "range": [
+            33.30000001192093,
+            33.40000003576279
+          ]
+        },
+        "p95": {
+          "by_run": [
+            67.72000004351138,
+            66.70999999046325,
+            66.6999999910593
+          ],
+          "median": 66.70999999046325,
+          "range": [
+            66.6999999910593,
+            67.72000004351138
+          ]
+        },
+        "p99": {
+          "by_run": [
+            69.18799999535082,
+            68.5220000052452,
+            68.5220000052452
+          ],
+          "median": 68.5220000052452,
+          "range": [
+            68.5220000052452,
+            69.18799999535082
+          ]
+        }
+      },
+      "harness_ttfa_ms": {
+        "p50": {
+          "by_run": [
+            27.549999982118607,
+            27.400000005960464,
+            28.450000017881393
+          ],
+          "median": 27.549999982118607,
+          "range": [
+            27.400000005960464,
+            28.450000017881393
+          ]
+        },
+        "p95": {
+          "by_run": [
+            35.32000001072883,
+            35.1999999910593,
+            35.30500001013279
+          ],
+          "median": 35.30500001013279,
+          "range": [
+            35.1999999910593,
+            35.32000001072883
+          ]
+        },
+        "p99": {
+          "by_run": [
+            40.410000011920914,
+            38.661000002026555,
+            37.84399998605251
+          ],
+          "median": 38.661000002026555,
+          "range": [
+            37.84399998605251,
+            40.410000011920914
+          ]
+        }
+      },
+      "reported_point_estimate": "median of the three within-run percentiles",
+      "reported_range": "minimum and maximum of the three within-run percentiles",
+      "unit_of_replication": "independent browser page/session run"
+    },
+    "score_counts": {
+      "closed_loop_success": 0,
+      "exact_action": 0,
+      "exact_args": 0,
+      "exact_tool": 0,
+      "final_dom_valid": 0,
+      "schema_valid": 0,
+      "state_transition": 0
+    }
+  },
+  "identity": {
+    "bundle_manifest": {
+      "canonical_sha256": "5fee08dfaf4dab4a4d58f506c3fe55ba38c7168ea929f316f307351db7be3fd5",
+      "raw_bytes": 9294,
+      "raw_sha256": "86bbee00d783ca69af02843a4cf935ff978612b81b6a2fedd47fd943e611bee4",
+      "schema_version": 3
+    },
+    "checkpoint": {
+      "sha256": "79387105de75d332413262e8d8ddb847b6cc13bc03f5e4df3c81663d9897aef1",
+      "stage": "sft",
+      "step": 319
+    },
+    "dispatch_heads": {
+      "bytes": 1178050,
+      "file": "dispatch_heads.json",
+      "sha256": "175a22b30290c9b09758fbd3d0d2182f479cd83a9ec76b93b52eded0ad69a7e5"
+    },
+    "graph": {
+      "bytes": 21430301,
+      "file": "action_model.fp16.onnx",
+      "sha256": "b91e7f84077155640a5e288a7c58c2245c298859ddd86bd7268e71039e65c49a"
+    },
+    "heads": {
+      "bytes": 3337015,
+      "file": "heads.json",
+      "sha256": "3211c0f1d5f2151f7f7c1caab96b99d44abf5349fa4375bbcabb3b6c09f51486"
+    },
+    "held_out_suite": {
+      "bytes": 6285,
+      "file": "browser-task-cases.json",
+      "schema_version": 1,
+      "sha256": "4c46b5b347257b81e716ec0a20a6c6116df716466e1ba8e8a74a117bb5708971"
+    },
+    "model_config": {
+      "canonical_sha256": "06f1e4707906d6bf0eda65764e76f8561a723d46fb829542e4554946680bf454",
+      "name": "webgpu-10m-hybrid",
+      "parameters": 10524544
+    },
+    "model_metadata": {
+      "bytes": 11548,
+      "canonical_sha256": "2399c9d2b857517862529812f1a9fcc35a2474c7dd3e54b079e21eea64ec9a4c",
+      "file": "meta.json",
+      "sha256": "6d6a79b331ce3f60c097f2bd3662a2178345aef68a7ded61e67737ff8e8cb89e"
+    },
+    "tokenizer": {
+      "bytes": 1134224,
+      "file": "tokenizer.json",
+      "sha256": "8365405524329487aea3b087cc999db887d8276115e67e88ebfcf7901b15617c"
+    }
+  },
+  "kind": "localagent_webgpu_single_step_dom_pilot_summary",
+  "protocol": {
+    "backend": "webgpu",
+    "backend_requirement": "explicit-webgpu-no-whole-session-retry",
+    "benchmark": "localagent-single-step-dom-microtasks",
+    "benchmark_version": "rtab-dom-0.2",
+    "browser_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+    "case_order_seed": "dom-loop-v1",
+    "cases": 8,
+    "deadlines_ms": [
+      100,
+      250,
+      500,
+      1000,
+      2000
+    ],
+    "dispatch_contract": {
+      "actions_per_case": 1,
+      "browser_wide_control": false,
+      "event_trust": "synthetic; Event.isTrusted is false",
+      "external_navigation": false,
+      "input_modality": "text-only prompt",
+      "local_navigation": "fragment route in a disposable same-origin iframe",
+      "multi_step_planning": false,
+      "physical_cursor_control": false,
+      "target_resolution": "local data-semantic-target labels",
+      "visual_grounding": false
+    },
+    "dom_success_metric": "score.closed_loop_success",
+    "execution_provider_request": {
+      "note": "ORT Web does not expose per-node placement; this proves the requested session provider and does not claim every node executed on the GPU.",
+      "per_node_fallback_status": "unknown",
+      "per_node_placement": "unknown",
+      "requested": "webgpu",
+      "session_provider_count": 1,
+      "single_provider_session_creation_succeeded": true,
+      "whole_session_retry": false
+    },
+    "fixture_contract": {
+      "name": "localagent-dom-fixtures",
+      "version": 1
+    },
+    "gpu_adapter": {
+      "architecture": "metal-3",
+      "description": null,
+      "device": null,
+      "is_fallback_adapter": false,
+      "vendor": "apple"
+    },
+    "inference_passes_per_record": 1,
+    "latency_boundaries": {
+      "closed_loop": "immediately before policy call through post-paint DOM inspection",
+      "harness_ttfa": "prompt tokenization through independent schema validation; observation readiness excluded",
+      "runtime_ttfa": "runtime prompt tokenization through runtime schema validation",
+      "tool": "synchronous local semantic event dispatch",
+      "ttfa_ms": "backward-compatible exact alias of harness_ttfa_ms; not an additional clock"
+    },
+    "latency_clock": "harness_ttfa_ms",
+    "onnxruntime_web_version": "1.27.0",
+    "paint_barrier": "two consecutive requestAnimationFrame callbacks",
+    "policy": "structured_one_forward",
+    "precision": "fp16",
+    "raw_schema_version": 2,
+    "record_outcome_evidence": {
+      "exact_action": "recomputed from historical raw_model_output and full expected action; stored exact-tool, exact-args, exact-action, and success booleans must agree",
+      "historical_interpretation": "rtab-dom-0.2 raw_model_output is used only as its original structured action object; no generated-text or post-hoc model-output reinterpretation is performed",
+      "mode": "independently_recomputed",
+      "schema_validity": "recomputed from historical raw_model_output and independent_schema.tool_schema; stored validator result, errors, schema-validity, and score aliases must agree"
+    },
+    "records_per_run": 240,
+    "repetitions_per_case": 30,
+    "success_at_deadline_definition": "score.exact_action && score.schema_valid && harness_ttfa_ms <= deadline",
+    "success_at_deadline_includes_dom_success": false,
+    "target_input_tokens": 512,
+    "warmups_per_run": 3
+  },
+  "runs": [
+    {
+      "abstentions": 240,
+      "closed_loop_ms": {
+        "count": 240,
+        "max": 184.5,
+        "mean": 39.61374999980132,
+        "min": 29.19999998807907,
+        "p50": 33.40000003576279,
+        "p90": 64.9100000321865,
+        "p95": 67.72000004351138,
+        "p99": 69.18799999535082
+      },
+      "created_at": "2026-07-28T04:11:30.523Z",
+      "rates": {
+        "closed_loop_success_rate": 0.0,
+        "exact_action_rate": 0.0,
+        "exact_args_rate": 0.0,
+        "exact_tool_rate": 0.0,
+        "final_dom_rate": 0.0,
+        "schema_valid_rate": 0.0,
+        "state_transition_rate": 0.0
+      },
+      "raw_artifact": {
+        "bytes": 1234269,
+        "sha256": "77f2e4aa170a54d2f8435ee00743978df4095d045e28a9f7fb8b4e41f1c253f9",
+        "tracked_path": "docs/paper/results/raw/m5-webgpu-sft-dom-pilot-seed2027-run1.json"
+      },
+      "records": 240,
+      "run": 1,
+      "success_at_deadline_ms": {
+        "100": {
+          "on_time": 239,
+          "on_time_rate": 0.9958333333333333,
+          "opportunities": 240,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        },
+        "1000": {
+          "on_time": 240,
+          "on_time_rate": 1.0,
+          "opportunities": 240,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        },
+        "2000": {
+          "on_time": 240,
+          "on_time_rate": 1.0,
+          "opportunities": 240,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        },
+        "250": {
+          "on_time": 240,
+          "on_time_rate": 1.0,
+          "opportunities": 240,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        },
+        "500": {
+          "on_time": 240,
+          "on_time_rate": 1.0,
+          "opportunities": 240,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        }
+      },
+      "ttfa_ms": {
+        "count": 240,
+        "max": 114.69999998807907,
+        "mean": 28.202916666368644,
+        "min": 18.600000023841858,
+        "p50": 27.549999982118607,
+        "p90": 33.6099999666214,
+        "p95": 35.32000001072883,
+        "p99": 40.410000011920914
+      }
+    },
+    {
+      "abstentions": 240,
+      "closed_loop_ms": {
+        "count": 240,
+        "max": 84.40000003576279,
+        "mean": 39.81791666721304,
+        "min": 30.5,
+        "p50": 33.349999994039536,
+        "p90": 66.4100000321865,
+        "p95": 66.70999999046325,
+        "p99": 68.5220000052452
+      },
+      "created_at": "2026-07-28T04:12:33.474Z",
+      "rates": {
+        "closed_loop_success_rate": 0.0,
+        "exact_action_rate": 0.0,
+        "exact_args_rate": 0.0,
+        "exact_tool_rate": 0.0,
+        "final_dom_rate": 0.0,
+        "schema_valid_rate": 0.0,
+        "state_transition_rate": 0.0
+      },
+      "raw_artifact": {
+        "bytes": 1232271,
+        "sha256": "0f7ba7a63b02182416fced37a1d5321c8700b34ff4f97c0661a3f60da3aca9e5",
+        "tracked_path": "docs/paper/results/raw/m5-webgpu-sft-dom-pilot-seed2027-run2.json"
+      },
+      "records": 240,
+      "run": 2,
+      "success_at_deadline_ms": {
+        "100": {
+          "on_time": 240,
+          "on_time_rate": 1.0,
+          "opportunities": 240,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        },
+        "1000": {
+          "on_time": 240,
+          "on_time_rate": 1.0,
+          "opportunities": 240,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        },
+        "2000": {
+          "on_time": 240,
+          "on_time_rate": 1.0,
+          "opportunities": 240,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        },
+        "250": {
+          "on_time": 240,
+          "on_time_rate": 1.0,
+          "opportunities": 240,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        },
+        "500": {
+          "on_time": 240,
+          "on_time_rate": 1.0,
+          "opportunities": 240,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        }
+      },
+      "ttfa_ms": {
+        "count": 240,
+        "max": 67.90000003576279,
+        "mean": 28.115833335121472,
+        "min": 18.599999964237213,
+        "p50": 27.400000005960464,
+        "p90": 34.5,
+        "p95": 35.1999999910593,
+        "p99": 38.661000002026555
+      }
+    },
+    {
+      "abstentions": 240,
+      "closed_loop_ms": {
+        "count": 240,
+        "max": 82.59999996423721,
+        "mean": 39.48666666746139,
+        "min": 31.19999998807907,
+        "p50": 33.30000001192093,
+        "p90": 65.86000000834464,
+        "p95": 66.6999999910593,
+        "p99": 68.5220000052452
+      },
+      "created_at": "2026-07-28T04:13:15.439Z",
+      "rates": {
+        "closed_loop_success_rate": 0.0,
+        "exact_action_rate": 0.0,
+        "exact_args_rate": 0.0,
+        "exact_tool_rate": 0.0,
+        "final_dom_rate": 0.0,
+        "schema_valid_rate": 0.0,
+        "state_transition_rate": 0.0
+      },
+      "raw_artifact": {
+        "bytes": 1232090,
+        "sha256": "88b0dd770e938b980d04cc25fc0b4d2bbf0732978698cfedf6035d3058133e2f",
+        "tracked_path": "docs/paper/results/raw/m5-webgpu-sft-dom-pilot-seed2027-run3.json"
+      },
+      "records": 240,
+      "run": 3,
+      "success_at_deadline_ms": {
+        "100": {
+          "on_time": 240,
+          "on_time_rate": 1.0,
+          "opportunities": 240,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        },
+        "1000": {
+          "on_time": 240,
+          "on_time_rate": 1.0,
+          "opportunities": 240,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        },
+        "2000": {
+          "on_time": 240,
+          "on_time_rate": 1.0,
+          "opportunities": 240,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        },
+        "250": {
+          "on_time": 240,
+          "on_time_rate": 1.0,
+          "opportunities": 240,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        },
+        "500": {
+          "on_time": 240,
+          "on_time_rate": 1.0,
+          "opportunities": 240,
+          "success_at_deadline": 0.0,
+          "useful": 0,
+          "useful_actions_per_minute": 0.0
+        }
+      },
+      "ttfa_ms": {
+        "count": 240,
+        "max": 55.69999998807907,
+        "mean": 28.592083332439262,
+        "min": 18.80000001192093,
+        "p50": 28.450000017881393,
+        "p90": 34.310000008344645,
+        "p95": 35.30500001013279,
+        "p99": 37.84399998605251
+      }
+    }
+  ],
+  "schema_version": 1,
+  "summary_sha256": "ccaad44a2bd1399ee0a48222d53615e8fab90e2d6883e7fa84f7580a6bb48531",
+  "validation": {
+    "checks": {
+      "embedded_summaries_reproduced": true,
+      "exact_case_repetition_accounting": true,
+      "exact_pilot_artifact_identities": true,
+      "finite_non_negative_ttfa_and_closed_loop_latency": true,
+      "fixed_512_token_context": true,
+      "one_structured_inference_pass_per_record": true,
+      "record_outcome_evidence_scope_labeled": true,
+      "record_scores_reproduced": true,
+      "three_distinct_chronological_runs": true,
+      "three_warmups_per_run": true,
+      "webgpu_only_session_protocol": true
+    },
+    "status": "mechanically_valid"
+  }
+}
