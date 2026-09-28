@@ -12,21 +12,21 @@ import pytest
 import torch
 import yaml
 
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.train.loop import cosine_lr
-from localagent.train.sft import (
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.train.loop import cosine_lr
+from openlocalagent.train.sft import (
     _SFT_RESUME_FORMAT,
     _SFT_RESUME_VERSION,
     _resume_sha256,
     _sealed_resume_sha256,
 )
-from localagent.train.stage_budget import (
+from openlocalagent.train.stage_budget import (
     canonical_plan_bytes,
     seal_stage_budget_plan,
 )
-from localagent.train.stage_data import canonical_sha256
-from localagent.train.update_preflight import seal_preflight_receipt
-from localagent.eval.sft_production_receipt import (
+from openlocalagent.train.stage_data import canonical_sha256
+from openlocalagent.train.update_preflight import seal_preflight_receipt
+from openlocalagent.eval.sft_production_receipt import (
     PRODUCTION_CHECKPOINT_EVERY,
     PRODUCTION_FROZEN_PARAMETERS,
     PRODUCTION_TOTAL_STEPS,
@@ -611,7 +611,7 @@ def production_fixture(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> dict[
         "seed": 2026,
         "conversation_prompt_contract": PROMPT_CONTRACT,
         "tokenizer": {
-            "class": "localagent.model.tokenizer.ByteTokenizer",
+            "class": "openlocalagent.model.tokenizer.ByteTokenizer",
             "vocab_size": 256,
             "pad_id": 0,
             "eos_id": 1,
@@ -1020,7 +1020,7 @@ def production_fixture(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> dict[
     preflight_path = tmp_path / "preflight.json"
     preflight_path.write_bytes(_canonical_json(preflight))
     monkeypatch.setattr(
-        "localagent.eval.sft_production_receipt.verify_stage_budget_plan",
+        "openlocalagent.eval.sft_production_receipt.verify_stage_budget_plan",
         lambda path: copy.deepcopy(plan),
     )
     unbound_identity = copy.deepcopy(data_identity)
@@ -1033,7 +1033,7 @@ def production_fixture(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> dict[
         unbound_evidence["production"]["sampling_contract"]
     )
     monkeypatch.setattr(
-        "localagent.eval.sft_production_receipt._derive_sft_data_identity_and_sampling",
+        "openlocalagent.eval.sft_production_receipt._derive_sft_data_identity_and_sampling",
         lambda source: (copy.deepcopy(unbound_identity), copy.deepcopy(unbound_evidence)),
     )
     materialization = {
@@ -1049,7 +1049,7 @@ def production_fixture(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> dict[
         "heldout_contract": heldout_contract,
     }
     monkeypatch.setattr(
-        "localagent.eval.sft_production_receipt._derive_expected_runner_materialization",
+        "openlocalagent.eval.sft_production_receipt._derive_expected_runner_materialization",
         lambda **kwargs: copy.deepcopy(materialization),
     )
     preflight_sha256 = _sha256_file(preflight_path)
@@ -1086,7 +1086,7 @@ def production_fixture(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> dict[
     }
     for name, value in constant_overrides.items():
         monkeypatch.setattr(
-            f"localagent.eval.sft_production_receipt.{name}",
+            f"openlocalagent.eval.sft_production_receipt.{name}",
             value,
         )
     return {
@@ -1142,11 +1142,11 @@ def _reroot_preflight_after_checkpoint_change(
     fixture["roots"]["preflight_file_sha256"] = file_sha256
     fixture["roots"]["preflight_self_sha256"] = preflight["receipt_self_sha256"]
     monkeypatch.setattr(
-        "localagent.eval.sft_production_receipt.PRODUCTION_PREFLIGHT_FILE_SHA256",
+        "openlocalagent.eval.sft_production_receipt.PRODUCTION_PREFLIGHT_FILE_SHA256",
         file_sha256,
     )
     monkeypatch.setattr(
-        "localagent.eval.sft_production_receipt.PRODUCTION_PREFLIGHT_SELF_SHA256_PREFIX",
+        "openlocalagent.eval.sft_production_receipt.PRODUCTION_PREFLIGHT_SELF_SHA256_PREFIX",
         preflight["receipt_self_sha256"][:8],
     )
 
@@ -1399,11 +1399,11 @@ def test_self_sealed_hand_authored_preflight_is_rejected(
         "receipt_self_sha256"
     ]
     monkeypatch.setattr(
-        "localagent.eval.sft_production_receipt.PRODUCTION_PREFLIGHT_FILE_SHA256",
+        "openlocalagent.eval.sft_production_receipt.PRODUCTION_PREFLIGHT_FILE_SHA256",
         file_sha256,
     )
     monkeypatch.setattr(
-        "localagent.eval.sft_production_receipt.PRODUCTION_PREFLIGHT_SELF_SHA256_PREFIX",
+        "openlocalagent.eval.sft_production_receipt.PRODUCTION_PREFLIGHT_SELF_SHA256_PREFIX",
         forged["receipt_self_sha256"][:8],
     )
 
@@ -1493,7 +1493,7 @@ def test_final_rehash_detects_concurrent_artifact_mutation(
     monkeypatch: pytest.MonkeyPatch,
     artifact: str,
 ) -> None:
-    import localagent.eval.sft_production_receipt as module
+    import openlocalagent.eval.sft_production_receipt as module
 
     original = module._rehash_stable
     target = (

@@ -8,7 +8,7 @@ import hashlib
 from pathlib import Path
 from typing import Sequence
 
-from localagent.eval.sft_production_receipt import (
+from openlocalagent.eval.sft_production_receipt import (
     verify_sft_production_receipt_against_artifacts,
     verify_sft_production_run,
     write_sft_production_receipt,

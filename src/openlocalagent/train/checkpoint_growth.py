@@ -1,4 +1,4 @@
-"""Audited depth growth for compatible LocalAgent checkpoints.
+"""Audited depth growth for compatible OpenLocalAgent checkpoints.
 
 This module deliberately implements one narrow operation: copy every layer in a deeper target
 from an explicitly named source layer while keeping all other model semantics identical. Reusing

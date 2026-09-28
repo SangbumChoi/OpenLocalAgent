@@ -26,7 +26,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.data.mind2web_prompts import (
+from openlocalagent.data.mind2web_prompts import (
     DEFAULT_MAX_ARCHIVE_BYTES,
     DEFAULT_MAX_COMPRESSION_RATIO,
     DEFAULT_MAX_OUTPUT_BYTES,

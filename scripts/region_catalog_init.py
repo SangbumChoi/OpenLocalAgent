@@ -18,7 +18,7 @@ from pathlib import Path
 
 import torch
 
-from localagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model import LocalAgentLM, ModelConfig
 
 
 def region_keys(region: str, donor: dict[str, torch.Tensor], n_layers: int) -> list[str]:

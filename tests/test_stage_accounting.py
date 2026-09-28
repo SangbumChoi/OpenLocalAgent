@@ -10,14 +10,14 @@ import pytest
 import torch
 import yaml
 
-from localagent.data.agent_synth import Sample
-from localagent.data.render import IGNORE, render_sft
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ByteTokenizer
-from localagent.train.midtrain import MixtureSource, ScheduledMixture, midtrain
-from localagent.train.pretrain import pretrain
-from localagent.train.sft import sft
-from localagent.train.stage_data import (
+from openlocalagent.data.agent_synth import Sample
+from openlocalagent.data.render import IGNORE, render_sft
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ByteTokenizer
+from openlocalagent.train.midtrain import MixtureSource, ScheduledMixture, midtrain
+from openlocalagent.train.pretrain import pretrain
+from openlocalagent.train.sft import sft
+from openlocalagent.train.stage_data import (
     assert_checkpoint_tokenizer,
     build_stage_lineage,
     canonical_sha256,
@@ -208,7 +208,7 @@ def test_stage_lineage_hashes_contract_data_tokenizer_parent_and_git(tmp_path, m
     parent = tmp_path / "parent.pt"
     parent.write_bytes(b"checkpoint")
     monkeypatch.setattr(
-        "localagent.train.stage_data.git_identity",
+        "openlocalagent.train.stage_data.git_identity",
         lambda _path: {"commit": "abc", "dirty": False, "worktree_sha256": "def"},
     )
     tokenizer = tokenizer_identity("byte", vocab_size=256)
@@ -465,7 +465,7 @@ def test_midtrain_resume_preserves_original_pre_eval_after_final_periodic_crash(
     tmp_path,
     monkeypatch,
 ):
-    module = importlib.import_module("localagent.train.midtrain")
+    module = importlib.import_module("openlocalagent.train.midtrain")
     train = ScheduledMixture([MixtureSource("train", _CountedRows(65), 1.0, 1.0)])
     heldout = [MixtureSource("heldout", _CountedRows(66), 1.0, 1.0)]
     checkpoint_path = tmp_path / "midtrain.pt"

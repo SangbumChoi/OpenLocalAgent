@@ -578,7 +578,7 @@ class DispatchAdapter:
 
 
 class CatalogAdapter:
-    """A BPE LocalAgent checkpoint trained with the catalog in its prompt.
+    """A BPE OpenLocalAgent checkpoint trained with the catalog in its prompt.
 
     Unlike the byte checkpoints, this model reads its action space from the request, so it can be
     asked about tools that were never in its training set — the same question the instruct

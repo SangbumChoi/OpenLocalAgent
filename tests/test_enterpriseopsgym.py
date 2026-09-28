@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from localagent.eval.enterpriseopsgym import load_tasks, summarize_scores
+from openlocalagent.eval.enterpriseopsgym import load_tasks, summarize_scores
 
 
 def _write_rows(path: Path, rows: list[dict]) -> None:

@@ -20,12 +20,12 @@ from typing import Any
 import numpy as np
 import torch
 
-from localagent.agent.dense_selector import DenseToolSelector, tool_embeddings, train_dense_selector
-from localagent.agent.tool_head import _feat
-from localagent.data.schema import Conversation, ToolSpec
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.stage_data import ProbeDecision, probe_decisions
+from openlocalagent.agent.dense_selector import DenseToolSelector, tool_embeddings, train_dense_selector
+from openlocalagent.agent.tool_head import _feat
+from openlocalagent.data.schema import Conversation, ToolSpec
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.stage_data import ProbeDecision, probe_decisions
 
 SOURCE_URL = "https://github.com/apple/ToolSandbox"
 SEED = 2029

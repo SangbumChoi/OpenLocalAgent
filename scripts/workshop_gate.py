@@ -7,7 +7,7 @@ import argparse
 import json
 import sys
 
-from localagent.eval.workshop_gate import build_workshop_gate, write_workshop_gate
+from openlocalagent.eval.workshop_gate import build_workshop_gate, write_workshop_gate
 
 
 def _receipt(value: str) -> tuple[str, str]:

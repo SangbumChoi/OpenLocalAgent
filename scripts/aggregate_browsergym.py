@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.eval.browsergym import aggregate_browsergym_episodes
+from openlocalagent.eval.browsergym import aggregate_browsergym_episodes
 
 
 def main() -> int:

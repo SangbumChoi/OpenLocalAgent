@@ -780,7 +780,7 @@ uv run --frozen localagent train sft configs/train/sft-paper-hybrid.yaml
 uv run --frozen localagent train sft \
   configs/train/sft-paper-tier-1m-parent-anchor-pulse-pilot.yaml
 PYTHONPATH=src python -c \
-  'from localagent.eval.sft_production_receipt import verify_sft_production_receipt_against_artifacts as verify; verify("data/provenance/paper/production/sft-paper-tier-1m-parent-anchor-pulse-pilot.json", expected_receipt_file_sha256="ab4a0d34b9165a7cf6fbad24b8fc7b16a49342faab074fbd67be9963be2b6b01")'
+  'from openlocalagent.eval.sft_production_receipt import verify_sft_production_receipt_against_artifacts as verify; verify("data/provenance/paper/production/sft-paper-tier-1m-parent-anchor-pulse-pilot.json", expected_receipt_file_sha256="ab4a0d34b9165a7cf6fbad24b8fc7b16a49342faab074fbd67be9963be2b6b01")'
 PYTHONPATH=src python scripts/sweep_sft_checkpoints.py \
   configs/eval/paper-tier-1m-parent-anchor-pulse-sft-sweep.yaml \
   --output runs/eval/paper-tier-1m-parent-anchor-pulse-sft-sweep-20260730-v1.json
@@ -792,7 +792,7 @@ PYTHONPATH=src python scripts/sft_candidate_promotion.py prepare \
     configs/eval/paper-tier-1m-parent-anchor-pulse-selected-confirmatory.yaml \
   --binding-out \
     data/provenance/paper/sft-candidate-parent-anchor-pulse-selected.json
-PYTHONPATH=src python -m localagent.eval.agent_scorecard \
+PYTHONPATH=src python -m openlocalagent.eval.agent_scorecard \
   configs/eval/paper-tier-1m-parent-anchor-pulse-selected-dev.yaml \
   --out runs/eval/paper-tier-1m-parent-anchor-pulse-selected-dev-scorecard-20260730-v1.json
 # Expected exit 1 after atomically writing the development_gate_failed receipt.

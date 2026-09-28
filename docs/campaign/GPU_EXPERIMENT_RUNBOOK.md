@@ -7,8 +7,8 @@ public evaluation matrix, and can bind warm-versus-random checkpoint transfer re
 ## Install and preflight
 
 ```bash
-git clone https://github.com/SangbumChoi/LocalAgent.git
-cd LocalAgent
+git clone https://github.com/SangbumChoi/OpenLocalAgent.git
+cd OpenLocalAgent
 python -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev,data,demo,export]"

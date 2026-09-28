@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Filter, audit, split, tokenize, and pack a LocalAgent pretraining corpus.
+"""Filter, audit, split, tokenize, and pack a OpenLocalAgent pretraining corpus.
 
 Examples:
   python scripts/prepare_corpus.py --sample --out data/shards/sample --seq-len 128
@@ -20,11 +20,11 @@ from pathlib import Path
 
 import yaml
 
-from localagent.data.evaluation_denylist_manifest import (
+from openlocalagent.data.evaluation_denylist_manifest import (
     verify_evaluation_denylist_manifest,
 )
-from localagent.data.hf_corpus import normalize_evaluation_decontamination
-from localagent.data.pretrain_corpus import (
+from openlocalagent.data.hf_corpus import normalize_evaluation_decontamination
+from openlocalagent.data.pretrain_corpus import (
     CorpusDocument,
     build_disk_backed_corpus,
     download_sample,
@@ -33,7 +33,7 @@ from localagent.data.pretrain_corpus import (
     pack_disk_backed_shards,
     read_evaluation_denylist,
 )
-from localagent.model.tokenizer import ByteTokenizer, load_tokenizer, train_bpe
+from openlocalagent.model.tokenizer import ByteTokenizer, load_tokenizer, train_bpe
 
 
 def _file_artifact(path: str | Path) -> dict[str, object]:

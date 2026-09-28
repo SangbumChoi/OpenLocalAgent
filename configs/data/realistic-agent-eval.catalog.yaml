@@ -117,7 +117,7 @@ entries:
     contamination:
       split: train
       rule: retain source revision and exclude BFCL and other evaluation prompts by exact denylist
-    notes: Existing LocalAgent public-agent adapter; acquisition remains operator-owned and hash-pinned.
+    notes: Existing OpenLocalAgent public-agent adapter; acquisition remains operator-owned and hash-pinned.
 
   - id: mind2web_train
     family: browser
@@ -155,7 +155,7 @@ entries:
     contamination:
       split: train
       rule: the official cross-task, cross-website, and cross-domain test archive is never input
-    notes: Existing LocalAgent adapter; only the training files may be acquired for training.
+    notes: Existing OpenLocalAgent adapter; only the training files may be acquired for training.
 
   - id: androidworld
     family: mobile
@@ -379,7 +379,7 @@ entries:
     contamination:
       split: official_test
       rule: encrypted/protected test archive stays out of training and public artifacts
-    notes: Exact LocalAgent denylist and native metrics are required for a credible result.
+    notes: Exact OpenLocalAgent denylist and native metrics are required for a credible result.
 
   - id: webarena
     family: browser
@@ -1258,7 +1258,7 @@ entries:
     contamination:
       split: official_test
       rule: website instances, task configs, trajectories, and success labels remain evaluation-only
-    notes: Visual extension of WebArena; a text-first LocalAgent run is a modality ablation, not an official multimodal score.
+    notes: Visual extension of WebArena; a text-first OpenLocalAgent run is a modality ablation, not an official multimodal score.
 
   - id: omni_act
     family: computer

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Run a matched random-backbone control for the synthetic MCP service-contract probe.
 
-The default transfer arm is the published ``m38`` probe: it freezes a pretrained LocalAgent
+The default transfer arm is the published ``m38`` probe: it freezes a pretrained OpenLocalAgent
 backbone and re-trains only route/selector heads on generated Notion, browser, filesystem, GitHub,
 and database contracts.  Use ``--transfer-report`` to bind a different matched transfer receipt.
 This control keeps the same rows, tokenizer, architecture, and optimization budget but starts the
@@ -20,11 +20,11 @@ from typing import Any
 
 import torch
 
-from localagent.agent.dense_selector import BoundSelector, train_dense_selector
-from localagent.agent.routes import train_route_head
-from localagent.eval.mcpmark_router import evaluate_mcpmark_router
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
+from openlocalagent.agent.dense_selector import BoundSelector, train_dense_selector
+from openlocalagent.agent.routes import train_route_head
+from openlocalagent.eval.mcpmark_router import evaluate_mcpmark_router
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
 from scripts.train_mcp_service_probe import (
     SERVICE_PROMPTS,
     _head_metrics,
@@ -32,7 +32,7 @@ from scripts.train_mcp_service_probe import (
     _synthetic_rows,
     _tool_pool,
 )
-from localagent.train.stage_data import probe_decisions
+from openlocalagent.train.stage_data import probe_decisions
 
 
 MCPMARK_REVISION = "cd45b7f57923b9b3985467f5139927575f83141c"

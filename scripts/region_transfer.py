@@ -24,15 +24,15 @@ from pathlib import Path
 import torch
 from safetensors.torch import load_file
 
-from localagent.agent.pointer_head import PointerHead
-from localagent.agent.tool_head import ToolHead
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
-from localagent.data.agent_synth import Generator
-from localagent.eval.harness import evaluate, evaluate_grounded, multi_turn_eval
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.sft import _evaluate_conversations, sft
-from localagent.train.stage_data import read_conversations
+from openlocalagent.agent.pointer_head import PointerHead
+from openlocalagent.agent.tool_head import ToolHead
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.data.agent_synth import Generator
+from openlocalagent.eval.harness import evaluate, evaluate_grounded, multi_turn_eval
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.sft import _evaluate_conversations, sft
+from openlocalagent.train.stage_data import read_conversations
 
 DONOR_DIR = Path("data/hf-campaign/localagent_tiny_model")
 PUBLIC = Path("data/public")

@@ -54,7 +54,7 @@ current release unless the final anonymous audit records `current_checkpoint_mat
 ## 1. Export the inference bundle from the current checkpoint
 ```bash
 CURRENT_CHECKPOINT=runs/sft-mind2web-public-continuation-20260805/latest.pt
-python -c "from localagent.inference.export.to_onnx import export_web; \
+python -c "from openlocalagent.inference.export.to_onnx import export_web; \
            export_web('${CURRENT_CHECKPOINT}', 'build/web', action_only=True)"
 # writes the full logits graph, hidden-only action graph, heads/meta, and bundle-manifest.json
 # bundle-manifest.json is published only after all fp32/fp16 graphs pass hard PyTorch parity

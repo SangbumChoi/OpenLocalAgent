@@ -19,7 +19,7 @@ byte-level — no tokenizer training needed; FineWeb pretrains on raw UTF-8 byte
 ## Run it
 ```bash
 hf auth login                       # token needs Jobs access + write to the push repo
-bash scripts/launch_hf_job.sh       # defaults: flavor l4x1, push danelcsb/localagent-30m-v2
+bash scripts/launch_hf_job.sh       # defaults: flavor l4x1; set PUSH_REPO for the OpenLocalAgent Hub repo
 # override: FLAVOR=a10g-large PUSH_REPO=you/model bash scripts/launch_hf_job.sh
 hf jobs ps            # running jobs
 hf jobs logs <ID>     # stream logs
@@ -51,7 +51,7 @@ The same `train_job.py` runs on a Colab GPU via the [Colab CLI](https://github.c
 ```bash
 uv tool install google-colab-cli
 colab auth -s la                                   # Google account
-HF_TOKEN=hf_xxx bash scripts/launch_colab.sh       # T4; pushes to danelcsb/localagent-30m-v2
+HF_TOKEN=hf_xxx bash scripts/launch_colab.sh       # T4; set PUSH_REPO for the OpenLocalAgent Hub repo
 #   GPU=A100 PUSH_REPO=you/model bash scripts/launch_colab.sh
 ```
 `launch_colab.sh` provisions the runtime, uploads an HF token, runs `scripts/colab_bootstrap.py`

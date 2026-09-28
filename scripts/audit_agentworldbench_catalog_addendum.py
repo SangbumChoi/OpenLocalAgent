@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from localagent.data.realistic_catalog import load_catalog
+from openlocalagent.data.realistic_catalog import load_catalog
 
 
 DATASET = "Qwen/AgentWorldBench"

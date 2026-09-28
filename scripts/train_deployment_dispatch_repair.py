@@ -23,14 +23,14 @@ from typing import Any
 import torch
 import torch.nn.functional as F
 
-from localagent.agent.dense_selector import BoundSelector, DenseToolSelector, tool_embeddings
-from localagent.agent.routes import ROUTES, ROUTE_INDEX, RouteHead, route_of
-from localagent.agent.toolset import REALISTIC_BROWSER_TOOLS
-from localagent.data.agent_synth import Generator, Sample
-from localagent.data.schema import Conversation
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
-from localagent.train.stage_data import probe_decisions
+from openlocalagent.agent.dense_selector import BoundSelector, DenseToolSelector, tool_embeddings
+from openlocalagent.agent.routes import ROUTES, ROUTE_INDEX, RouteHead, route_of
+from openlocalagent.agent.toolset import REALISTIC_BROWSER_TOOLS
+from openlocalagent.data.agent_synth import Generator, Sample
+from openlocalagent.data.schema import Conversation
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
+from openlocalagent.train.stage_data import probe_decisions
 
 
 CORE_REPAIR_TOOLS = (

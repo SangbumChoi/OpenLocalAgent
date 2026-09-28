@@ -1,4 +1,4 @@
-from localagent.eval.agentnet import score_agentnet_actions, score_agentnet_record
+from openlocalagent.eval.agentnet import score_agentnet_actions, score_agentnet_record
 
 
 def _ground_truth() -> list[dict]:

@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 
-from localagent.data.evaluation_denylist_suite import (
+from openlocalagent.data.evaluation_denylist_suite import (
     freeze_evaluation_denylist_suite,
 )
 

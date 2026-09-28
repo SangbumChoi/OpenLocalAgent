@@ -7,8 +7,8 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.eval.pretrain_compare import compare_pretrain_sidecars
-from localagent.eval.pretrain_scorecard import write_scorecard
+from openlocalagent.eval.pretrain_compare import compare_pretrain_sidecars
+from openlocalagent.eval.pretrain_scorecard import write_scorecard
 
 
 def main() -> None:

@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 
-from localagent.eval.stage_pilot_summary import (
+from openlocalagent.eval.stage_pilot_summary import (
     StagePilotInput,
     summarize_stage_pilot,
     write_stage_pilot_summary,

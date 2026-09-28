@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Run a bounded AppWorld evaluation of a LocalAgent checkpoint.
+"""Run a bounded AppWorld evaluation of a OpenLocalAgent checkpoint.
 
 AppWorld is an optional external dependency.  The selected tasks must be from its train/dev
 splits, where ground-truth verifiers are available in the public data bundle.  By default this
-runner does not translate LocalAgent's compact tool vocabulary into AppWorld Python/API calls: a
+runner does not translate OpenLocalAgent's compact tool vocabulary into AppWorld Python/API calls: a
 zero-action result is therefore a native checkpoint baseline and an explicit interface gap.  The
 optional API-step adapter accepts only one literal AST call with fixture credentials; it is a
 bounded diagnostic, not a claimed AppWorld agent score.  The receipt keeps task text out of
@@ -57,8 +57,8 @@ def _task_ids(root: Path, split: str) -> set[str]:
 
 
 def _registry(capture: list[dict[str, Any]] | None = None):
-    from localagent.agent.tools import ToolRegistry
-    from localagent.agent.toolset import STANDARD_TOOLS
+    from openlocalagent.agent.tools import ToolRegistry
+    from openlocalagent.agent.toolset import STANDARD_TOOLS
 
     registry = ToolRegistry()
     for tool in STANDARD_TOOLS:
@@ -133,8 +133,8 @@ def _schema_ground_appworld_api_step(
 ) -> str | None:
     """Rank bounded API-schema candidates with the checkpoint instead of free-generating code."""
 
-    from localagent.agent.constrained import _best
-    from localagent.model.tokenizer import TOOL_CALL_CLOSE, TOOL_CALL_OPEN
+    from openlocalagent.agent.constrained import _best
+    from openlocalagent.model.tokenizer import TOOL_CALL_CLOSE, TOOL_CALL_OPEN
 
     stopwords = {
         "a", "an", "and", "all", "across", "are", "as", "at", "be", "for", "from", "give",
@@ -174,7 +174,7 @@ def _schema_ground_appworld_api_step(
         else:
             import torch
 
-            from localagent.agent.tool_head import _feat
+            from openlocalagent.agent.tool_head import _feat
 
             with torch.no_grad():
                 feature = _feat(model, tokenizer, prompt, "cpu", framed=False).unsqueeze(0)
@@ -479,8 +479,8 @@ def evaluate(
         ) from error
 
     from appworld import AppWorld, update_root
-    from localagent.agent.runtime import Agent
-    from localagent.eval.appworld_api_head import load_appworld_api_head
+    from openlocalagent.agent.runtime import Agent
+    from openlocalagent.eval.appworld_api_head import load_appworld_api_head
 
     root = root.resolve()
     resolved_root = Path(update_root(str(root))).resolve()
@@ -663,7 +663,7 @@ def evaluate(
             ),
         },
         "claim_boundary": (
-            "Native AppWorld reset/evaluation of the current LocalAgent checkpoint only. When API-step "
+            "Native AppWorld reset/evaluation of the current OpenLocalAgent checkpoint only. When API-step "
             "replay is enabled, a strict AST parser accepts at most one literal "
             "apis.<app>.<api>(...) call and injects credentials from the resettable fixture. An "
             "optional schema-grounding mode ranks API-schema candidates with the checkpoint rather "
@@ -672,8 +672,8 @@ def evaluate(
             "diagnostics, not an AppWorld leaderboard result, AppWorld-UL result, or evidence of "
             "email/SMS/Spotify task success."
             if replay_run_python or replay_appworld_api_step
-            else "Native AppWorld reset/evaluation of the current LocalAgent checkpoint only. The "
-            "model emits LocalAgent tool syntax, while AppWorld expects Python/API actions; no "
+            else "Native AppWorld reset/evaluation of the current OpenLocalAgent checkpoint only. The "
+            "model emits OpenLocalAgent tool syntax, while AppWorld expects Python/API actions; no "
             "action was translated or replayed. The score is a zero-action interface baseline, not "
             "an AppWorld leaderboard result, AppWorld-UL result, or evidence of email/SMS/Spotify "
             "task success."

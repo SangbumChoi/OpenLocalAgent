@@ -6,8 +6,8 @@ from pathlib import Path
 
 import pytest
 
-from localagent.eval.pretrain_compare import compare_pretrain_sidecars
-from localagent.eval.pretrain_scorecard import (
+from openlocalagent.eval.pretrain_compare import compare_pretrain_sidecars
+from openlocalagent.eval.pretrain_scorecard import (
     DOCUMENT_SIDECAR_KIND,
     DOCUMENT_SIDECAR_SCHEMA_VERSION,
     write_document_sidecar,

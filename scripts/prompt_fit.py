@@ -8,9 +8,9 @@ import sys
 sys.path.insert(0, "scripts")
 from eval_suite import SUITES, build_tasks
 
-from localagent.data.prompt_contract import render_agent_decode_prompt
-from localagent.data.schema import Message, Role, ToolSpec
-from localagent.model.tokenizer import load_tokenizer
+from openlocalagent.data.prompt_contract import render_agent_decode_prompt
+from openlocalagent.data.schema import Message, Role, ToolSpec
+from openlocalagent.model.tokenizer import load_tokenizer
 
 tok = load_tokenizer("bpe", "data/tokenizer-h100-16k.json")
 MAX, NEW = 2048, 64

@@ -27,7 +27,7 @@ def test_gpu_campaign_records_matrix_and_model_inventory_without_training(tmp_pa
         hf_sources=None,
         hf_dry_run=False,
         wandb=False,
-        wandb_project="localagent",
+        wandb_project="openlocalagent",
         wandb_entity=None,
         wandb_run_name=None,
         wandb_mode="offline",

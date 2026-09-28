@@ -13,12 +13,12 @@ from typing import Any
 import torch
 import torch.nn.functional as F
 
-from localagent.agent.tool_head import _feat
-from localagent.data.schema import Conversation
-from localagent.eval.appworld_api_head import AppWorldAPIHead, save_appworld_api_head
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ASSISTANT, load_tokenizer
-from localagent.train.stage_data import history_text
+from openlocalagent.agent.tool_head import _feat
+from openlocalagent.data.schema import Conversation
+from openlocalagent.eval.appworld_api_head import AppWorldAPIHead, save_appworld_api_head
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ASSISTANT, load_tokenizer
+from openlocalagent.train.stage_data import history_text
 
 _CODE_RE = re.compile(r"^apis\.([A-Za-z_][A-Za-z0-9_]*)\.([A-Za-z_][A-Za-z0-9_]*)\(")
 

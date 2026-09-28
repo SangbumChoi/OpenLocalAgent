@@ -228,7 +228,7 @@ def download_sample(out_dir: str, *, url: str = SAMPLE_URL) -> Path:
     destination = out / "gutenberg_alice.jsonl"
     if destination.exists():
         return destination
-    request = urllib.request.Request(url, headers={"User-Agent": "LocalAgent/0.0.1 corpus-smoke"})
+    request = urllib.request.Request(url, headers={"User-Agent": "OpenLocalAgent/0.0.1 corpus-smoke"})
     with urllib.request.urlopen(request, timeout=30) as response:
         text = response.read().decode("utf-8", errors="replace")
     # Split at chapter boundaries to exercise document-level splitting and packing.
@@ -1086,7 +1086,7 @@ class DiskBackedCorpus:
                 "SELECT value FROM metadata WHERE key = 'staging_version'"
             ).fetchone()
         if row is None or int(json.loads(row[0])) != STAGING_VERSION:
-            raise ValueError(f"{self.path} is not a supported LocalAgent staging database")
+            raise ValueError(f"{self.path} is not a supported OpenLocalAgent staging database")
 
     @property
     def corpus_audit(self) -> dict[str, Any]:

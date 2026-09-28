@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import argparse
 
-from localagent.eval.structured_context import build_context_audit, write_context_audit
+from openlocalagent.eval.structured_context import build_context_audit, write_context_audit
 
 
 def main() -> None:

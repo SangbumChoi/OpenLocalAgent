@@ -37,15 +37,15 @@ import time
 
 import torch
 
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
-from localagent.data.agent_synth import Generator, curriculum_order, difficulty_score
-from localagent.data.render import build_pretrain_stream
-from localagent.eval.harness import evaluate_grounded, plan_eval
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.device import resolve_device
-from localagent.train.pretrain import pretrain
-from localagent.train.sft import sft
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.data.agent_synth import Generator, curriculum_order, difficulty_score
+from openlocalagent.data.render import build_pretrain_stream
+from openlocalagent.eval.harness import evaluate_grounded, plan_eval
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.device import resolve_device
+from openlocalagent.train.pretrain import pretrain
+from openlocalagent.train.sft import sft
 
 OUT = "runs/curriculum_ab"
 STUDENT_CFG = "configs/model/ultra-tiny-1m.yaml"

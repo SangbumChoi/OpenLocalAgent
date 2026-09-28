@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from localagent.eval.realistic_preflight import preflight_catalog
+from openlocalagent.eval.realistic_preflight import preflight_catalog
 
 
 def _canonical(value: object) -> bytes:

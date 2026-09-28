@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.data.realistic_catalog import eval_entries, load_catalog, train_entries
+from openlocalagent.data.realistic_catalog import eval_entries, load_catalog, train_entries
 
 
 def main() -> int:

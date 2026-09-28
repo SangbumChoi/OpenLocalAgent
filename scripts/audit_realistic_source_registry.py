@@ -18,7 +18,7 @@ from typing import Any, Mapping
 
 import yaml
 
-from localagent.data.public_eval_matrix import load_matrix
+from openlocalagent.data.public_eval_matrix import load_matrix
 
 
 KIND = "localagent_realistic_source_registry_audit"

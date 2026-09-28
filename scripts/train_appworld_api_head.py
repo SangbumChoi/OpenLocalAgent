@@ -15,16 +15,16 @@ from typing import Any
 
 import torch
 
-from localagent.data.schema import Conversation
-from localagent.eval.appworld_api_head import (
+from openlocalagent.data.schema import Conversation
+from openlocalagent.eval.appworld_api_head import (
     _features,
     first_action_examples,
     head_metrics,
     save_appworld_api_head,
     train_appworld_api_head,
 )
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
 
 
 def _identity(path: Path) -> dict[str, Any]:

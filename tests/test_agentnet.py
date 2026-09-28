@@ -5,8 +5,8 @@ from pathlib import Path
 import pytest
 import yaml
 
-from localagent.data.agentnet import normalize_agentnet_record, parse_pyautogui_actions
-from localagent.data.public_agent import build_public_agent_dataset
+from openlocalagent.data.agentnet import normalize_agentnet_record, parse_pyautogui_actions
+from openlocalagent.data.public_agent import build_public_agent_dataset
 from scripts.ingest_agentnet_text import parse_action, project
 
 

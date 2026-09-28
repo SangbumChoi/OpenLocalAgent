@@ -1,7 +1,7 @@
 """AST-based tool-call evaluation for the internal BFCL-style scorecard.
 
 This module does not implement, or claim compatibility with, the official Berkeley Function
-Calling Leaderboard.  It applies BFCL-style ideas to LocalAgent's canonical ``Conversation``
+Calling Leaderboard.  It applies BFCL-style ideas to OpenLocalAgent's canonical ``Conversation``
 schema: strict tool-call parsing, name/argument decomposition, parallel calls, abstention, and
 teacher-forced-history multi-turn scoring.
 """
@@ -191,7 +191,7 @@ def _reserved_json_marker(value: Any) -> str | None:
 
 
 def parse_tool_output(text: str) -> ParsedToolOutput:
-    """Parse the exact LocalAgent tool-call envelope without repairing malformed output."""
+    """Parse the exact OpenLocalAgent tool-call envelope without repairing malformed output."""
 
     if not isinstance(text, str):
         raise TypeError("model output must be text")
@@ -660,13 +660,13 @@ def score_conversations(
 
     return {
         "contract": {
-            "name": "LocalAgent BFCL-style internal agent scorecard",
+            "name": "OpenLocalAgent BFCL-style internal agent scorecard",
             "official_bfcl": False,
             "external_native_benchmark": False,
             "decode": "greedy checkpoint generation supplied by the caller",
             "tool_ast": "order-insensitive exact name plus canonical JSON arguments",
             "format": (
-                "strict LocalAgent <tool_call> envelope; no repair and no non-whitespace "
+                "strict OpenLocalAgent <tool_call> envelope; no repair and no non-whitespace "
                 "outside call blocks; reserved role/catalog/tool-response/EOS marker spill is "
                 "invalid; format credit requires a complete generation"
             ),
@@ -784,7 +784,7 @@ def score_dataset(
     *,
     max_new_tokens: int = 96,
 ) -> dict[str, Any]:
-    """Score a Conversation JSONL with a predictor or autoregressive LocalAgent model.
+    """Score a Conversation JSONL with a predictor or autoregressive OpenLocalAgent model.
 
     This convenience function binds and reports the raw JSONL identity, but it cannot prove a
     sidecar or checkpoint lineage by itself.  Use ``openlocalagent.eval.agent_scorecard`` for the

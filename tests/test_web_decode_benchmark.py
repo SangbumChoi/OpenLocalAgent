@@ -9,7 +9,7 @@ from pathlib import Path
 
 import pytest
 
-from localagent.eval.webgpu_decode_receipt import (
+from openlocalagent.eval.webgpu_decode_receipt import (
     HARNESS_HTML_BYTES,
     HARNESS_HTML_SHA256,
     HARNESS_JAVASCRIPT_BYTES,

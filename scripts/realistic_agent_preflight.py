@@ -11,7 +11,7 @@ from __future__ import annotations
 import argparse
 import sys
 
-from localagent.eval.realistic_preflight import json_report, preflight_catalog
+from openlocalagent.eval.realistic_preflight import json_report, preflight_catalog
 
 
 def main() -> int:

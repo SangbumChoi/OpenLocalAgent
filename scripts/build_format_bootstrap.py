@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.data.format_bootstrap import build_format_bootstrap
+from openlocalagent.data.format_bootstrap import build_format_bootstrap
 
 
 def main() -> None:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run bounded MCPMark Verified Playwright tasks with a LocalAgent checkpoint."""
+"""Run bounded MCPMark Verified Playwright tasks with a OpenLocalAgent checkpoint."""
 
 from __future__ import annotations
 
@@ -63,12 +63,12 @@ async def _run_one(
     executable: Path,
     max_turns: int,
 ) -> dict[str, Any]:
-    from localagent.agent.constrained import hybrid_decode
-    from localagent.agent.parser import extract_tool_calls
-    from localagent.agent.retriever import ToolRetriever
-    from localagent.agent.runtime import Agent
-    from localagent.agent.tools import ToolRegistry
-    from localagent.data.schema import ToolSpec
+    from openlocalagent.agent.constrained import hybrid_decode
+    from openlocalagent.agent.parser import extract_tool_calls
+    from openlocalagent.agent.retriever import ToolRetriever
+    from openlocalagent.agent.runtime import Agent
+    from openlocalagent.agent.tools import ToolRegistry
+    from openlocalagent.data.schema import ToolSpec
 
     category, task_id, description_path, verifier_path = task
     MCPStdioServer = _load_stdio(root)

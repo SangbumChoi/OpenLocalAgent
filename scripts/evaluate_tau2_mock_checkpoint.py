@@ -2,7 +2,7 @@
 """Run a bounded native τ-Bench mock-domain probe.
 
 The optional tau2-bench dependency is loaded only when this command executes.  A public mock
-task is reset, the current LocalAgent checkpoint is exposed to the real tau2 tool schemas, and
+task is reset, the current OpenLocalAgent checkpoint is exposed to the real tau2 tool schemas, and
 the resulting tool calls are replayed through tau2's independent environment evaluator.  The
 first task is also replayed from its public reference actions to prove that the native verifier is
 live.  Task text, tool outputs, and checkpoint internals are hashed rather than retained.
@@ -20,9 +20,9 @@ import json
 from pathlib import Path
 from typing import Any
 
-from localagent.agent.runtime import Agent
-from localagent.agent.tools import ToolRegistry
-from localagent.data.schema import ToolSpec
+from openlocalagent.agent.runtime import Agent
+from openlocalagent.agent.tools import ToolRegistry
+from openlocalagent.data.schema import ToolSpec
 
 
 def _sha256(path: Path) -> dict[str, Any]:
@@ -65,7 +65,7 @@ def _source_files(root: Path) -> dict[str, dict[str, Any]]:
 
 
 def _tool_registry(state: dict[str, Any], environment: Any) -> ToolRegistry:
-    """Expose the native tau2 assistant tools through the LocalAgent registry."""
+    """Expose the native tau2 assistant tools through the OpenLocalAgent registry."""
 
     from tau2.environment.toolkit import get_tool_signatures
 
@@ -214,7 +214,7 @@ def evaluate(
         retrieve_k=max(1, retrieve_k),
     )
     if selector_mode == "retriever":
-        # A learned selector is trained over the public LocalAgent catalog.  For an unseen
+        # A learned selector is trained over the public OpenLocalAgent catalog.  For an unseen
         # benchmark schema, compare it with the zero-training name/description retriever instead
         # of silently treating the learned closed-world prior as generalization.
         agent.selector = None
@@ -340,7 +340,7 @@ def evaluate(
             / len(task_records),
         },
         "claim_boundary": (
-            "Native tau2-bench mock-domain reset/evaluation with one LocalAgent turn per task and "
+            "Native tau2-bench mock-domain reset/evaluation with one OpenLocalAgent turn per task and "
             "an oracle contract replay. This is not the complete tau2 base split, does not run the "
             "user simulator, and is not a tau2 leaderboard, retail/telecom, email, or external "
             "service score. Task text, tool outputs, and checkpoint internals are hash-only."

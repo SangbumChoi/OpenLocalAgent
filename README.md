@@ -1,6 +1,8 @@
-# LocalAgent
+# OpenLocalAgent
 
-A small tool-calling agent trained **from scratch**, in **pure PyTorch**, on **open data**.
+OpenLocalAgent is a small tool-calling agent trained **from scratch**, in **pure PyTorch**, on
+**open data**. The former `localagent` Python namespace is retired; all supported imports use
+`openlocalagent`.
 
 Seven model sizes, three training stages, one evaluation suite of ten public agent benchmarks. No
 training framework, no `transformers` in the training path, no closed corpora.

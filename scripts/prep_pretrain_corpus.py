@@ -75,7 +75,7 @@ def main() -> None:
     ap.add_argument("--min-chars", type=int, default=40)
     args = ap.parse_args()
 
-    from localagent.model.tokenizer import load_tokenizer
+    from openlocalagent.model.tokenizer import load_tokenizer
 
     tok = load_tokenizer("bpe", args.tokenizer)
     files = sorted(path for path in Path(args.source).rglob("*")

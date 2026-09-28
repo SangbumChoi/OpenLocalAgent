@@ -26,11 +26,11 @@ sys.path.insert(0, "scripts")
 from eval_suite import (accepts_system_role, chat_messages, parse_call, render_chat_prompt,
                         task_from_conversation)
 
-from localagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1
-from localagent.data.render import render_conversation_rows
-from localagent.data.schema import ToolCall
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.stage_data import read_conversations
+from openlocalagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1
+from openlocalagent.data.render import render_conversation_rows
+from openlocalagent.data.schema import ToolCall
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.stage_data import read_conversations
 
 
 def relabelled(conversation, name: str, arguments: dict):

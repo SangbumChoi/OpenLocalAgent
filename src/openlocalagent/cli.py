@@ -1,4 +1,4 @@
-"""LocalAgent CLI. `openlocalagent <command> ...`
+"""OpenLocalAgent CLI. `openlocalagent <command> ...`
 
 Commands:
   model-info <model.yaml>      Construct a config and report param count vs the 100M budget.

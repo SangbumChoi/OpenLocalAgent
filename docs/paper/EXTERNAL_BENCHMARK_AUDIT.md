@@ -100,9 +100,9 @@ binds that exact final output.
 
 Use local MiniWoB rather than credentialed, mutable WebArena/WorkArena sites. The prompt is the
 dynamic `goal` returned by environment setup, not a task metadata comment. The pinned metadata has
-63 test task variants. LocalAgent excludes `click-pie`, `click-pie-nodelay`, and `terminal` as an
+63 test task variants. OpenLocalAgent excludes `click-pie`, `click-pie-nodelay`, and `terminal` as an
 operational repeatability policy, leaving 60 variants in 41 similarity groups. This is our policy,
-not an upstream nondeterminism annotation; the frozen receipt records them as LocalAgent policy
+not an upstream nondeterminism annotation; the frozen receipt records them as OpenLocalAgent policy
 exclusions. No similarity group crosses the pinned train/test split. With fixed seeds
 `[11, 17, 23, 29]`, the prompt-acquisition plan has 240 resets. A future scored comparison must
 cluster uncertainty on 41 groups rather than treating the task/seed episodes as independent tasks.

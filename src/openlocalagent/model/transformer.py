@@ -151,7 +151,7 @@ class SparseSwiGLU(nn.Module):
     Router logits are ranked with a stable descending sort, so exact ties prefer the lower expert
     index. Only selected token/expert pairs execute an expert; this PyTorch path deliberately does
     not compute every expert and mask afterward. The dynamic index dispatch is not currently a
-    promise that LocalAgent's ONNX/WebGPU exporter will retain sparse compute -- runtimes need a
+    promise that OpenLocalAgent's ONNX/WebGPU exporter will retain sparse compute -- runtimes need a
     dedicated sparse-dispatch lowering before making that performance claim.
     """
 

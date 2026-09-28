@@ -14,7 +14,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from localagent.data.schema import Conversation, Role
+from openlocalagent.data.schema import Conversation, Role
 
 
 DATASET = "osunlp/Mind2Web"

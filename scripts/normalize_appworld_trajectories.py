@@ -18,8 +18,8 @@ import os
 from pathlib import Path
 from typing import Any
 
-from localagent.agent.toolset import STANDARD_TOOLS
-from localagent.data.schema import Conversation, Message, Role, ToolCall
+from openlocalagent.agent.toolset import STANDARD_TOOLS
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall
 
 _BOOTSTRAP_APPS = {"admin", "api_docs", "supervisor"}
 _BOOTSTRAP_APIS = {

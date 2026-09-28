@@ -9,7 +9,7 @@ description = "A <100M-parameter LLM, pretrained from scratch, that works as a l
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "LocalAgent contributors" }]
+authors = [{ name = "OpenLocalAgent contributors" }]
 keywords = ["llm", "agent", "tool-calling", "tiny", "on-device", "distillation", "pytorch"]
 
 # Deliberately minimal — pure PyTorch + a BPE tokenizer + yaml configs. No training framework.
@@ -39,6 +39,7 @@ openlocalagent-eval-suite = "openlocalagent.eval.suite:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+include = ["openlocalagent*"]
 
 [tool.ruff]
 line-length = 100

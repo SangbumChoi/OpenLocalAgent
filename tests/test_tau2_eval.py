@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from localagent.eval.tau2 import aggregate_tau2_results
+from openlocalagent.eval.tau2 import aggregate_tau2_results
 
 
 def _simulation(task_id: str, trial: int, reward: float, *, termination="agent_stop") -> dict:

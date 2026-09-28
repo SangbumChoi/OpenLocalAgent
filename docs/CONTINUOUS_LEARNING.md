@@ -17,7 +17,7 @@ blow up storage. The **state-of-the-art trick to avoid it is content-addressed s
 hash the bytes (sha256), store each unique blob *once*, and have runs reference the hash. That's
 exactly what Git, DVC, Git-LFS, and the HF Hub do under the hood.
 
-So `localagent/track.py` is deliberately tiny:
+So `openlocalagent/track.py` is deliberately tiny:
 - **SQLite** (`runs.db`) for run / metric / param / artifact **metadata** — queryable, no server.
 - **CAS** (`cas/<sha256>`) for **model + dataset artifacts** — deduped automatically.
 
@@ -46,7 +46,7 @@ run 3: steps 120->180  pool=780  held_out_top1=53.3%   (resumed)
 ```bash
 python scripts/cron_train.py --steps 80              # one nightly chunk
 # crontab -e  (every day at 02:00, logs appended):
-0 2 * * *  cd /path/to/LocalAgent && /usr/bin/python scripts/cron_train.py --steps 80 >> runs/cron.log 2>&1
+0 2 * * *  cd /path/to/OpenLocalAgent && /usr/bin/python scripts/cron_train.py --steps 80 >> runs/cron.log 2>&1
 ```
 
 Inspect runs/metrics with plain SQL:

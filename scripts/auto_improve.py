@@ -18,7 +18,7 @@ import sys
 ap = argparse.ArgumentParser()
 ap.add_argument("--run", action="store_true", help="run dispatch_loop.py before deciding")
 ap.add_argument("--margin", type=float, default=2.0, help="min %-point gain over baseline to count")
-ap.add_argument("--base-repo", default="danelcsb/localagent-tiny-30m-byte")
+ap.add_argument("--base-repo", default="danelcsb/openlocalagent-tiny-30m-byte")
 ap.add_argument("--base-ckpt", default="runs/tiny-30m-dispatch-long.pt")
 args = ap.parse_args()
 

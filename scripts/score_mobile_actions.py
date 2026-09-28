@@ -15,7 +15,7 @@ from collections.abc import Iterator, Mapping, Sequence
 from pathlib import Path
 from typing import Any
 
-from localagent.eval.mobile import score_mobile_row
+from openlocalagent.eval.mobile import score_mobile_row
 
 
 def _jsonl(path: Path) -> Iterator[Any]:

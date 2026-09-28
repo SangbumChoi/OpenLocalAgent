@@ -23,7 +23,7 @@ from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
 
-from localagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
 
 DATASET = "Jakumetsu/mcpmark-trajectory-log"
 DATASET_URL = "https://huggingface.co/datasets/Jakumetsu/mcpmark-trajectory-log"

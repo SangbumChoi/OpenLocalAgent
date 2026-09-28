@@ -11,10 +11,10 @@ from __future__ import annotations
 
 import argparse
 
-from localagent.agent.retriever import ToolRetriever
-from localagent.agent.runtime import Agent
-from localagent.agent.tools import ToolRegistry
-from localagent.data.tool_catalog import build_catalog, gen_usages
+from openlocalagent.agent.retriever import ToolRetriever
+from openlocalagent.agent.runtime import Agent
+from openlocalagent.agent.tools import ToolRegistry
+from openlocalagent.data.tool_catalog import build_catalog, gen_usages
 
 
 def main():

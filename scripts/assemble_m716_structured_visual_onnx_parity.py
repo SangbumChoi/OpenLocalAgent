@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from localagent.inference.export.visual_action import export_visual_action_onnx
+from openlocalagent.inference.export.visual_action import export_visual_action_onnx
 
 
 def identity(path: Path) -> dict[str, Any]:

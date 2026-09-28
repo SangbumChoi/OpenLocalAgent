@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from localagent.data.mcpmark import profile_mcpmark
+from openlocalagent.data.mcpmark import profile_mcpmark
 
 
 def _write_meta(root, service, suite, category, task, task_id="task-1"):

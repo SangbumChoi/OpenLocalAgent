@@ -1,7 +1,7 @@
 # Architecture ideas — going past the open-source playbook
 
 > We don't have to copy what the small-LLM repos do. This doc collects original structural ideas
-> for LocalAgent, says which we **ship now** vs **propose**, and gives a recommendation. The
+> for OpenLocalAgent, says which we **ship now** vs **propose**, and gives a recommendation. The
 > central bet: at the sizes we care about, the *agent-as-controller* framing changes the
 > architecture, and the *vocabulary* is the dominant design lever.
 

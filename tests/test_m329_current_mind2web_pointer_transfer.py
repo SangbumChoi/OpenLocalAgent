@@ -3,8 +3,8 @@ from pathlib import Path
 
 import torch
 
-from localagent.agent.pointer_head import PTR_ARGS
-from localagent.train.stage_data import canonical_sha256
+from openlocalagent.agent.pointer_head import PTR_ARGS
+from openlocalagent.train.stage_data import canonical_sha256
 from scripts.train_mind2web_browser_pointer import _pointer_args
 
 

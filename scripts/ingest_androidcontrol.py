@@ -14,8 +14,8 @@ import json
 from pathlib import Path
 from typing import Any
 
-from localagent.data.androidcontrol import _example_features, _int_list, example_to_intermediate
-from localagent.data.androidcontrol import iter_gzip_tfrecords
+from openlocalagent.data.androidcontrol import _example_features, _int_list, example_to_intermediate
+from openlocalagent.data.androidcontrol import iter_gzip_tfrecords
 
 
 def _sha256(path: Path) -> str:
@@ -157,7 +157,7 @@ def main() -> int:
             "selected_split": args.split,
         },
         "normalization": {
-            "module": "localagent.data.androidcontrol",
+            "module": "openlocalagent.data.androidcontrol",
             "version": 1,
             "interchange": "localagent_v1",
             "text_projection": "android_env_proto_text_v1",

@@ -2,7 +2,7 @@
 """Train and evaluate a closed-loop email/Notion/browser stateful probe.
 
 The probe uses only the local deterministic state machine in
-``localagent.data.stateful_productivity``.  It compares a frozen pretrained WebGPU backbone with
+``openlocalagent.data.stateful_productivity``.  It compares a frozen pretrained WebGPU backbone with
 a shape-matched random-backbone control, trains the same route/dense-selector/pointer budgets, and
 executes each predicted action through the state machine.  It is deliberately not an AndroidWorld,
 BrowserGym, OSWorld, MCPMark, or real-account score.
@@ -23,14 +23,14 @@ from typing import Any
 import torch
 import torch.nn.functional as F
 
-from localagent.agent.constrained import hybrid_decode
-from localagent.agent.dense_selector import BoundSelector, DenseToolSelector, tool_embeddings
-from localagent.agent.pointer_head import PTR_ARGS, PointerHead, gold_span
-from localagent.agent.routes import ROUTE_INDEX, ROUTES, RouteHead, route_of
-from localagent.agent.tool_head import _feat
-from localagent.agent.parser import extract_tool_calls
-from localagent.data.agent_synth import Sample
-from localagent.data.stateful_productivity import (
+from openlocalagent.agent.constrained import hybrid_decode
+from openlocalagent.agent.dense_selector import BoundSelector, DenseToolSelector, tool_embeddings
+from openlocalagent.agent.pointer_head import PTR_ARGS, PointerHead, gold_span
+from openlocalagent.agent.routes import ROUTE_INDEX, ROUTES, RouteHead, route_of
+from openlocalagent.agent.tool_head import _feat
+from openlocalagent.agent.parser import extract_tool_calls
+from openlocalagent.data.agent_synth import Sample
+from openlocalagent.data.stateful_productivity import (
     SUITE_ID,
     apply_action,
     build_tasks,
@@ -42,8 +42,8 @@ from localagent.data.stateful_productivity import (
     task_complete,
     tool_specs,
 )
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
 
 
 STATEFUL_PTR_ARGS = [*PTR_ARGS, "to", "subject", "body", "app_name", "text", "target"]
@@ -145,7 +145,7 @@ def _examples(rows: list[dict[str, Any]]) -> dict[str, list[str]]:
     full conversation or an action-tail query without introducing tool-specific rules.
     """
 
-    from localagent.agent.constrained import _action_tail
+    from openlocalagent.agent.constrained import _action_tail
 
     examples: dict[str, list[str]] = defaultdict(list)
     for row in rows:

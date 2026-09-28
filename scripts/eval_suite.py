@@ -11,7 +11,7 @@ Metrics follow the published definitions:
   grounding accuracy  tap within 14% of screen width of gold (AndroidControl GR)
   parse rate          a syntactically valid call was produced at all
 
-  python scripts/eval_suite.py --model localagent:runs/region/data-union/model.pt --rows 200
+  python scripts/eval_suite.py --model openlocalagent:runs/region/data-union/model.pt --rows 200
   python scripts/eval_suite.py --model hf:data/baselines/SmolLM2-360M-Instruct --rows 200
 """
 
@@ -27,7 +27,7 @@ from pathlib import Path
 
 import torch
 
-from localagent.train.stage_data import read_conversations
+from openlocalagent.train.stage_data import read_conversations
 
 PUBLIC = Path("data/public")
 SUITES = {
@@ -159,11 +159,11 @@ def parse_call(text: str) -> tuple[str, dict] | None:
 class LocalAgentAdapter:
     """The repository's byte-level checkpoints, rendered exactly as they were trained."""
 
-    kind = "localagent"
+    kind = "openlocalagent"
 
     def __init__(self, checkpoint: str, device: str):
-        from localagent.model import LocalAgentLM, ModelConfig
-        from localagent.model.tokenizer import load_tokenizer
+        from openlocalagent.model import LocalAgentLM, ModelConfig
+        from openlocalagent.model.tokenizer import load_tokenizer
 
         payload = torch.load(checkpoint, map_location="cpu", weights_only=False)
         self.cfg = ModelConfig(**payload["cfg"])
@@ -181,8 +181,8 @@ class LocalAgentAdapter:
     BYTES_PER_BPE_TOKEN = 4
 
     def predict(self, task: Task, max_new_tokens: int) -> str:
-        from localagent.inference.generate import generate
-        from localagent.model.tokenizer import ASSISTANT, USER
+        from openlocalagent.inference.generate import generate
+        from openlocalagent.model.tokenizer import ASSISTANT, USER
 
         max_new_tokens = max_new_tokens * self.BYTES_PER_BPE_TOKEN
 
@@ -309,8 +309,8 @@ class DispatchAdapter:
         self._cache: dict[tuple[str, ...], object] = {}
 
     def _caller(self, task: Task):
-        from localagent.agent.caller import ToolCaller
-        from localagent.agent.toolset import ToolSpec
+        from openlocalagent.agent.caller import ToolCaller
+        from openlocalagent.agent.toolset import ToolSpec
 
         key = tuple(sorted(tool["name"] for tool in task.tools))
         if key not in self._cache:
@@ -331,7 +331,7 @@ class DispatchAdapter:
 
 
 class CatalogAdapter:
-    """A BPE LocalAgent checkpoint trained with the catalog in its prompt.
+    """A BPE OpenLocalAgent checkpoint trained with the catalog in its prompt.
 
     Unlike the byte checkpoints, this model reads its action space from the request, so it can be
     asked about tools that were never in its training set — the same question the instruct
@@ -341,8 +341,8 @@ class CatalogAdapter:
     kind = "catalog"
 
     def __init__(self, checkpoint: str, device: str):
-        from localagent.model import LocalAgentLM, ModelConfig
-        from localagent.model.tokenizer import load_tokenizer
+        from openlocalagent.model import LocalAgentLM, ModelConfig
+        from openlocalagent.model.tokenizer import load_tokenizer
 
         payload = torch.load(checkpoint, map_location="cpu", weights_only=False)
         config = payload.get("cfg") or payload.get("config")
@@ -357,9 +357,9 @@ class CatalogAdapter:
         self.parameters = self.model.num_params()
 
     def predict(self, task: Task, max_new_tokens: int) -> str:
-        from localagent.data.prompt_contract import render_agent_decode_prompt
-        from localagent.data.schema import Message, Role, ToolSpec
-        from localagent.inference.generate import generate
+        from openlocalagent.data.prompt_contract import render_agent_decode_prompt
+        from openlocalagent.data.schema import Message, Role, ToolSpec
+        from openlocalagent.inference.generate import generate
 
         tools = [ToolSpec(name=tool["name"], description=tool["description"] or tool["name"],
                           parameters=tool["parameters"] or {"type": "object", "properties": {}})
@@ -468,7 +468,7 @@ def score(adapter, tasks: list[Task], max_new_tokens: int) -> dict[str, float]:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", required=True,
-                    help="localagent:<ckpt> | hf:<path> | lora:<base>|<adapter> | catalog:<ckpt>")
+                    help="openlocalagent:<ckpt> | hf:<path> | lora:<base>|<adapter> | catalog:<ckpt>")
     ap.add_argument("--out", required=True)
     ap.add_argument("--rows", type=int, default=200)
     ap.add_argument("--max-new-tokens", type=int, default=64)
@@ -477,7 +477,8 @@ def main():
     args = ap.parse_args()
 
     kind, _, location = args.model.partition(":")
-    adapters = {"localagent": LocalAgentAdapter, "hf": HuggingFaceAdapter,
+    adapters = {"openlocalagent": LocalAgentAdapter, "localagent": LocalAgentAdapter,
+                "hf": HuggingFaceAdapter,
                 "lora": LoraAdapter, "dispatch": DispatchAdapter, "catalog": CatalogAdapter}
     if kind not in adapters:
         raise SystemExit(f"unknown model kind {kind!r}; expected one of {sorted(adapters)}")

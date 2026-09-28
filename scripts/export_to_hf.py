@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Export a trained LocalAgent checkpoint to a Hugging Face Hub model repo.
+"""Export a trained OpenLocalAgent checkpoint to a Hugging Face Hub model repo.
 
 Builds the bundle (config + weights + heads + model card) and, with --push + a token, uploads it.
 

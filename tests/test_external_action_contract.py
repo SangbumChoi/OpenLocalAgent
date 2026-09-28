@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from localagent.eval.external_action_contract import (
+from openlocalagent.eval.external_action_contract import (
     HARDENED_SCHEMA_VERSION,
     TRAINING_LINEAGE_KIND,
     action_template_sha256,
@@ -15,7 +15,7 @@ from localagent.eval.external_action_contract import (
     normalize_prompt,
     validate_frozen_slice,
 )
-from localagent.eval.realtime import paired_clustered_exact_action_delta_ci
+from openlocalagent.eval.realtime import paired_clustered_exact_action_delta_ci
 
 
 def _canonical_bytes(value: object) -> bytes:

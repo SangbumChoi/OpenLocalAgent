@@ -30,11 +30,11 @@ import os
 
 import torch
 
-from localagent.data.agent_synth import Generator
-from localagent.data.render import IGNORE, assistant_body, prompt_text, render_sft
-from localagent.figs import savefig
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
+from openlocalagent.data.agent_synth import Generator
+from openlocalagent.data.render import IGNORE, assistant_body, prompt_text, render_sft
+from openlocalagent.figs import savefig
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
 
 CKPT = "runs/analyze_tiny-30m-byte/model.pt"
 OUT = "runs/logit_analysis"

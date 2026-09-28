@@ -21,11 +21,11 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any, Callable
 
-from localagent.agent.constrained import hybrid_decode
-from localagent.agent.dense_selector import BoundSelector, DenseToolSelector
-from localagent.agent.parser import extract_tool_calls
-from localagent.agent.routes import RouteHead
-from localagent.data.stateful_productivity import (
+from openlocalagent.agent.constrained import hybrid_decode
+from openlocalagent.agent.dense_selector import BoundSelector, DenseToolSelector
+from openlocalagent.agent.parser import extract_tool_calls
+from openlocalagent.agent.routes import RouteHead
+from openlocalagent.data.stateful_productivity import (
     StatefulRuntime,
     build_tasks,
     canonical_json,

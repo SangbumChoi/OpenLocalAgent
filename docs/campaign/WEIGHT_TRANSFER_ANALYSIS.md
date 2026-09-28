@@ -213,4 +213,4 @@ accuracy ties, browser-head adoption remains pending native BrowserGym replay an
 report alone cannot establish that claim.
 
 This protocol is compatible with the existing strict parent-checkpoint checks in
-`src/localagent/train/stage_data.py` and `src/localagent/train/update_preflight.py`.
+`src/openlocalagent/train/stage_data.py` and `src/openlocalagent/train/update_preflight.py`.

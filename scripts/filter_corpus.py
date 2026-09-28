@@ -16,10 +16,10 @@ import json
 from dataclasses import asdict
 from pathlib import Path
 
-from localagent.data.conversation_artifact import (rendered_assistant_prompts,
+from openlocalagent.data.conversation_artifact import (rendered_assistant_prompts,
                                                    rendered_prompt_sha256)
-from localagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1
-from localagent.train.stage_data import read_conversations
+from openlocalagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1
+from openlocalagent.train.stage_data import read_conversations
 
 
 def prompt_hashes(conversation) -> set[str]:

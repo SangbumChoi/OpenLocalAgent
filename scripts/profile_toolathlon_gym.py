@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.data.toolathlon_gym import TOOLATHLON_GYM_REVISION, profile_toolathlon_gym
+from openlocalagent.data.toolathlon_gym import TOOLATHLON_GYM_REVISION, profile_toolathlon_gym
 
 
 def main() -> int:

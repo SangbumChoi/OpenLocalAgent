@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 import torch
 
-from localagent.agent.toolset import STANDARD_TOOLS
+from openlocalagent.agent.toolset import STANDARD_TOOLS
 from scripts.publish_hf_release import _copy_static_space, _release_tool_specs, _token
 
 

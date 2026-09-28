@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from localagent.data.agent_eval_subset import (
+from openlocalagent.data.agent_eval_subset import (
     PRODUCTION_EPISODE_KINDS,
     PRODUCTION_OUTPUT_BYTES,
     PRODUCTION_OUTPUT_ROWS,

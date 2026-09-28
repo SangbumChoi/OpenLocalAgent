@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 
-from localagent.eval.rl_readiness import (
+from openlocalagent.eval.rl_readiness import (
     reproduce_historical_rl_readiness_v1,
     summarize_rl_readiness,
     write_rl_readiness_summary,

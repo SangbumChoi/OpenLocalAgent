@@ -20,7 +20,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.data.weblinx_prompts import (
+from openlocalagent.data.weblinx_prompts import (
     DEFAULT_MAX_CHAT_SOURCE_BYTES,
     DEFAULT_MAX_DECOMPRESSED_BYTES,
     DEFAULT_MAX_OUTPUT_BYTES,

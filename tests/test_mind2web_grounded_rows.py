@@ -1,7 +1,7 @@
 import importlib.util
 from pathlib import Path
 
-from localagent.data.schema import Conversation, Message, Role, ToolCall
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall
 
 
 _SPEC = importlib.util.spec_from_file_location(

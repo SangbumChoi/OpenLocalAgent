@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.data.bfcl_prompts import BFCLPromptLimits, export_bfcl_prompt_rows
+from openlocalagent.data.bfcl_prompts import BFCLPromptLimits, export_bfcl_prompt_rows
 
 
 def parse_args() -> argparse.Namespace:

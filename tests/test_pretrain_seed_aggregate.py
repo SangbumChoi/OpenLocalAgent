@@ -9,17 +9,17 @@ from pathlib import Path
 import pytest
 import yaml
 
-from localagent.eval.pretrain_compare import (
+from openlocalagent.eval.pretrain_compare import (
     COMPARISON_KIND,
     COMPARISON_SCHEMA_VERSION,
 )
-from localagent.eval.pretrain_seed_aggregate import (
+from openlocalagent.eval.pretrain_seed_aggregate import (
     SEED_AGGREGATE_KIND,
     SeedComparisonSpec,
     aggregate_pretrain_seeds,
 )
-from localagent.model import ModelConfig
-from localagent.train.stage_data import canonical_sha256
+from openlocalagent.model import ModelConfig
+from openlocalagent.train.stage_data import canonical_sha256
 
 
 def _sha(label: str) -> str:

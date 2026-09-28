@@ -39,4 +39,4 @@ entries:
     contamination:
       split: official_test_only
       rule: do not train on AgentWorldBench test rows; preserve source revision and normalized-output hashes
-    notes: Public world-model benchmark covering Android, Web, OS, MCP, terminal, SWE, and search. Official judge/native execution is separate from LocalAgent's teacher-forced projection.
+    notes: Public world-model benchmark covering Android, Web, OS, MCP, terminal, SWE, and search. Official judge/native execution is separate from OpenLocalAgent's teacher-forced projection.

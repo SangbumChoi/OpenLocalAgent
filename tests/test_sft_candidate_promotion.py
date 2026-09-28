@@ -10,19 +10,19 @@ from unittest.mock import patch
 import pytest
 import yaml
 
-import localagent.eval.sft_candidate_promotion as promotion_module
-from localagent.data.conversation_artifact import (
+import openlocalagent.eval.sft_candidate_promotion as promotion_module
+from openlocalagent.data.conversation_artifact import (
     canonical_json_bytes,
     conversation_semantic_sha256,
     self_hashed_manifest,
 )
-from localagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1
-from localagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
-from localagent.data.stratified_eval_selector import (
+from openlocalagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
+from openlocalagent.data.stratified_eval_selector import (
     ALGORITHM as STRATIFIED_EVAL_ALGORITHM,
 )
-from localagent.data.stratified_eval_selector import select_stratified_eval_subset
-from localagent.eval.sft_candidate_promotion import (
+from openlocalagent.data.stratified_eval_selector import select_stratified_eval_subset
+from openlocalagent.eval.sft_candidate_promotion import (
     BINDING_KIND,
     DECISION_KIND,
     PROMOTION_THRESHOLDS,
@@ -32,10 +32,10 @@ from localagent.eval.sft_candidate_promotion import (
     verify_sft_candidate_promotion,
     write_sft_candidate_promotion_decision,
 )
-from localagent.eval.sft_candidate_promotion import main as promotion_main
-from localagent.eval.sft_checkpoint_sweep import RESULT_KIND as SWEEP_RESULT_KIND
-from localagent.model import ModelConfig
-from localagent.train.stage_data import canonical_sha256, tokenizer_identity
+from openlocalagent.eval.sft_candidate_promotion import main as promotion_main
+from openlocalagent.eval.sft_checkpoint_sweep import RESULT_KIND as SWEEP_RESULT_KIND
+from openlocalagent.model import ModelConfig
+from openlocalagent.train.stage_data import canonical_sha256, tokenizer_identity
 
 
 def _sha256(payload: bytes) -> str:
@@ -118,7 +118,7 @@ def _write_conversation_artifact(
         "coverage_contract": {},
         "environment_executed": False,
         "exact_prompt_holdouts": {},
-        "format": "localagent.data.schema.Conversation",
+        "format": "openlocalagent.data.schema.Conversation",
         "generator_config": {
             "bytes": len(config_payload),
             "sha256": _sha256(config_payload),

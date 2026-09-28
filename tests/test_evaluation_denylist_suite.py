@@ -8,22 +8,22 @@ from pathlib import Path
 import pytest
 import yaml
 
-import localagent.data.bfcl_prompts as bfcl_prompts
-import localagent.data.browsergym_capture as browsergym_capture
-import localagent.data.browsergym_prompts as browsergym_prompts
-import localagent.data.evaluation_denylist_suite as denylist_suite
-from localagent.data.bfcl_prompts import (
+import openlocalagent.data.bfcl_prompts as bfcl_prompts
+import openlocalagent.data.browsergym_capture as browsergym_capture
+import openlocalagent.data.browsergym_prompts as browsergym_prompts
+import openlocalagent.data.evaluation_denylist_suite as denylist_suite
+from openlocalagent.data.bfcl_prompts import (
     BFCL_SOURCE_MANIFEST_KIND,
     PRODUCTION_BFCL_REVISION,
     export_bfcl_prompt_rows,
 )
-from localagent.data.evaluation_denylist_suite import (
+from openlocalagent.data.evaluation_denylist_suite import (
     CONTRACT_KIND,
     MANIFEST_KIND,
     freeze_evaluation_denylist_suite,
     verify_evaluation_denylist_suite,
 )
-from localagent.data.browsergym_prompts import (
+from openlocalagent.data.browsergym_prompts import (
     BROWSERGYM_PROMPT_ADAPTER,
     BROWSERGYM_PROMPT_AUDIT_KIND,
     BROWSERGYM_PROMPT_AUDIT_SCHEMA_VERSION,
@@ -36,7 +36,7 @@ from localagent.data.browsergym_prompts import (
     PRODUCTION_RUNTIME_MANIFEST_IDENTITY,
     PRODUCTION_TASK_GROUPS,
 )
-from localagent.data.pretrain_corpus import read_evaluation_denylist
+from openlocalagent.data.pretrain_corpus import read_evaluation_denylist
 
 
 def _canonical_bytes(value: object) -> bytes:

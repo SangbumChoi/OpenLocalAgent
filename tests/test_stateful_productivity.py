@@ -2,7 +2,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from localagent.data.stateful_productivity import (
+from openlocalagent.data.stateful_productivity import (
     SUITE_ID,
     StatefulRuntime,
     apply_action,
@@ -17,7 +17,7 @@ from localagent.data.stateful_productivity import (
     task_complete,
     task_prompts,
 )
-from localagent.data.schema import Role
+from openlocalagent.data.schema import Role
 
 
 def test_train_and_eval_tasks_are_slot_and_prompt_disjoint() -> None:

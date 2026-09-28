@@ -16,7 +16,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from localagent.data.schema import Conversation, Message, Role
+from openlocalagent.data.schema import Conversation, Message, Role
 
 
 DATASET = "Qwen/AgentWorldBench"
@@ -131,7 +131,7 @@ def main() -> int:
         "train_policy": "eval_only",
         "normalization": {
             "module": "scripts.normalize_agentworldbench",
-            "interchange": "localagent.data.schema.Conversation",
+            "interchange": "openlocalagent.data.schema.Conversation",
             "history": "prior_prompt_response_pairs_preserved;last_response_is_target",
             "screenshots": "not_embedded",
         },

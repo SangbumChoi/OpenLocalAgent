@@ -9,7 +9,7 @@ from types import ModuleType
 
 import pytest
 
-from localagent.inference.export import to_onnx
+from openlocalagent.inference.export import to_onnx
 
 
 ROOT = Path(__file__).parents[1]

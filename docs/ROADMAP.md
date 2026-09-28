@@ -8,7 +8,7 @@ Stubs reference these phase numbers in their `TODO(phase-N)` markers.
 - [x] Repo skeleton: package layout, configs, CLI, demos, tests, `pyproject.toml`.
 - [x] Canonical `Conversation` schema and tool registry interface.
 - [x] Model config + param-budget assertion; tiny Llama-style block implemented.
-- Outcome: `pip install -e .`, `localagent --help`, `pytest` (schema/model/config tests) pass.
+- Outcome: `pip install -e .`, `openlocalagent --help`, `pytest` (schema/model/config tests) pass.
 
 ## Phase 1 — Model & tokenizer
 - [x] Finish the decoder (GQA + RoPE + SwiGLU + KV cache), forward/generate.

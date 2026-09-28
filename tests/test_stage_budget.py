@@ -9,37 +9,37 @@ from pathlib import Path
 import pytest
 import yaml
 
-from localagent.data.decision_quota_order import (
+from openlocalagent.data.decision_quota_order import (
     order_assistant_decisions,
     quota_sampling_contract,
 )
-from localagent.data.pretrain_corpus import CorpusDocument, PackedShardDataset, pack_shards
-from localagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1
-from localagent.data.schema import Conversation, Message, Role, ToolCall
-from localagent.data.stratified_eval_selector import (
+from openlocalagent.data.pretrain_corpus import CorpusDocument, PackedShardDataset, pack_shards
+from openlocalagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall
+from openlocalagent.data.stratified_eval_selector import (
     ALGORITHM as STRATIFIED_EVAL_ALGORITHM,
 )
-from localagent.data.stratified_eval_selector import (
+from openlocalagent.data.stratified_eval_selector import (
     select_stratified_eval_subset,
 )
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ByteTokenizer, train_bpe
-from localagent.train.midtrain import (
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ByteTokenizer, train_bpe
+from openlocalagent.train.midtrain import (
     ConversationDataset,
     ConversationTokenCountDataset,
     MixtureSource,
     ScheduledMixture,
     midtrain,
 )
-from localagent.train.rl import (
+from openlocalagent.train.rl import (
     CatalogStringCache,
     _decision_prompt_text,
     _preflight_full_context,
     grpo,
     project_rl_decisions,
 )
-from localagent.train.sft import quota_sampling_window, sft
-from localagent.train.stage_budget import (
+from openlocalagent.train.sft import quota_sampling_window, sft
+from openlocalagent.train.stage_budget import (
     build_stage_budget_plan,
     calibrate_supervised_prefix,
     canonical_plan_bytes,
@@ -47,8 +47,8 @@ from localagent.train.stage_budget import (
     verify_stage_budget_plan,
     write_stage_budget_plan,
 )
-from localagent.train.stage_data import single_turn_samples
-from localagent.train.stage_sampling import (
+from openlocalagent.train.stage_data import single_turn_samples
+from openlocalagent.train.stage_sampling import (
     RLPromptSchedule,
     SFTSamplingSchedule,
     decision_keys_to_row_order,
@@ -1359,7 +1359,7 @@ def test_full_rl_plan_projects_all_decisions_and_matches_runner_context_and_sour
         observed_prompt_lengths.append(len(prompt_ids))
         return [_tok.eos_id]
 
-    monkeypatch.setattr("localagent.train.rl._rollout", record_rollout)
+    monkeypatch.setattr("openlocalagent.train.rl._rollout", record_rollout)
     _, runner_metrics = grpo(
         LocalAgentLM(model_config),
         decisions,

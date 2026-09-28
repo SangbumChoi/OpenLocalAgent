@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from localagent.eval.demo_deploy import BUNDLE_FILES, STATIC_FILES, sync_demo_bundle, verify_demo_deploy
+from openlocalagent.eval.demo_deploy import BUNDLE_FILES, STATIC_FILES, sync_demo_bundle, verify_demo_deploy
 
 
 def _write_valid_bundle(root: Path) -> None:

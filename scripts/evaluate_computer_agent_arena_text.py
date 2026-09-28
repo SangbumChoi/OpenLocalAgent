@@ -20,13 +20,13 @@ from typing import Any
 
 import torch
 
-from localagent.agent.constrained import hybrid_decode
-from localagent.agent.parser import extract_tool_calls
-from localagent.agent.runtime import Agent
-from localagent.agent.routes import ROUTES
-from localagent.agent.tool_head import _feat
-from localagent.agent.toolset import STANDARD_TOOLS
-from localagent.agent.tools import ToolRegistry
+from openlocalagent.agent.constrained import hybrid_decode
+from openlocalagent.agent.parser import extract_tool_calls
+from openlocalagent.agent.runtime import Agent
+from openlocalagent.agent.routes import ROUTES
+from openlocalagent.agent.tool_head import _feat
+from openlocalagent.agent.toolset import STANDARD_TOOLS
+from openlocalagent.agent.tools import ToolRegistry
 from scripts.profile_computer_agent_arena import _action_name, action_family
 
 

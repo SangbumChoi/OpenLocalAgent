@@ -1,8 +1,8 @@
 import gzip
 import struct
 
-from localagent.data.aitw import episode_to_intermediate, iter_aitw_episodes
-from localagent.data.androidcontrol import _masked_crc32c
+from openlocalagent.data.aitw import episode_to_intermediate, iter_aitw_episodes
+from openlocalagent.data.androidcontrol import _masked_crc32c
 
 
 def _varint(value: int) -> bytes:

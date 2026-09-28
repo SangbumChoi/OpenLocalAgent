@@ -16,10 +16,10 @@ from typing import Any
 
 import torch
 
-from localagent.agent.dense_selector import BoundSelector, train_dense_selector
-from localagent.agent.routes import train_route_head
-from localagent.agent.toolset import REALISTIC_BROWSER_TOOLS
-from localagent.train.stage_data import probe_decisions
+from openlocalagent.agent.dense_selector import BoundSelector, train_dense_selector
+from openlocalagent.agent.routes import train_route_head
+from openlocalagent.agent.toolset import REALISTIC_BROWSER_TOOLS
+from openlocalagent.train.stage_data import probe_decisions
 from scripts.analyze_weight_transfer import analyze as analyze_weight_transfer
 from scripts.train_cross_surface_continuation import (
     _assert_source_disjoint,
@@ -87,7 +87,7 @@ def main() -> int:
 
     parent_identity = _identity(args.init)
     parent = torch.load(args.init, map_location="cpu", weights_only=False)
-    from localagent.model import LocalAgentLM, ModelConfig
+    from openlocalagent.model import LocalAgentLM, ModelConfig
 
     config = ModelConfig(**parent["cfg"])
     config.assert_within_budget()

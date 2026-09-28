@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from localagent.eval.agentnet_results import aggregate_agentnet_results
+from openlocalagent.eval.agentnet_results import aggregate_agentnet_results
 
 
 def _record(task_id: str, *, platform: str = "macos") -> dict:

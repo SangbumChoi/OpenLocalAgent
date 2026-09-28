@@ -12,10 +12,10 @@ import os
 import subprocess
 
 # --- config (launch_colab.sh overrides these) ---
-REPO = "https://github.com/sangbumchoi/localagent"
+REPO = "https://github.com/SangbumChoi/OpenLocalAgent"
 BRANCH = "claude/tiny-llm-agents-5C3c0"
-PUSH_REPO = "danelcsb/localagent-30m-v2"
-WORKDIR = "/content/localagent"
+PUSH_REPO = "danelcsb/openlocalagent-30m-v2"
+WORKDIR = "/content/openlocalagent"
 BATCH = 256        # 28M model on a 16GB T4 — fp32 still leaves room; bigger batch => faster
 
 

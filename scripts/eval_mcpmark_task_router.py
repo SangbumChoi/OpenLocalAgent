@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.eval.mcpmark_router import evaluate_mcpmark_router
+from openlocalagent.eval.mcpmark_router import evaluate_mcpmark_router
 
 
 def main() -> int:

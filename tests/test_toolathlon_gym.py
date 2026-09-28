@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from localagent.data.toolathlon_gym import profile_toolathlon_gym
+from openlocalagent.data.toolathlon_gym import profile_toolathlon_gym
 
 
 def _write_config(root, name, servers, local_tools=None):

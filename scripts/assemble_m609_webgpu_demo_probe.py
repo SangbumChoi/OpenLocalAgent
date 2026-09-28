@@ -14,7 +14,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from localagent.eval.demo_deploy import verify_demo_deploy
+from openlocalagent.eval.demo_deploy import verify_demo_deploy
 
 
 KIND = "localagent_m609_webgpu_local_demo_probe"

@@ -19,7 +19,7 @@ from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
 
-from localagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
 
 
 DATASET = "Jakumetsu/mcpmark-trajectory-log"

@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.eval.agentnet_results import aggregate_agentnet_results
+from openlocalagent.eval.agentnet_results import aggregate_agentnet_results
 
 
 def main() -> int:

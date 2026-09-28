@@ -6,9 +6,9 @@ from types import SimpleNamespace
 import pytest
 import torch
 
-from localagent.data.prompt_contract import assistant_training_examples
-from localagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
-from localagent.eval.real_use import (
+from openlocalagent.data.prompt_contract import assistant_training_examples
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
+from openlocalagent.eval.real_use import (
     RealUseRequirements,
     audit_public_real_use_cases,
     collect_router_diagnostics,
@@ -16,8 +16,8 @@ from localagent.eval.real_use import (
     score_public_real_use_dataset,
     summarize_router_diagnostics,
 )
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ByteTokenizer
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ByteTokenizer
 
 
 def _tools() -> list[ToolSpec]:

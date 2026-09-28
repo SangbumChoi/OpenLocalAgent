@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 
-from localagent.train.update_preflight import run_one_update_training_preflight
+from openlocalagent.train.update_preflight import run_one_update_training_preflight
 
 
 def _parser() -> argparse.ArgumentParser:

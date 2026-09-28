@@ -18,10 +18,10 @@ from typing import Any
 import torch
 import torch.nn.functional as F
 
-from localagent.agent.pointer_head import PointerHead
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
-from localagent.train.stage_sampling import encode_with_value_span
+from openlocalagent.agent.pointer_head import PointerHead
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
+from openlocalagent.train.stage_sampling import encode_with_value_span
 from scripts.train_grounded_mind2web import (
     _head_samples,
     _load_rows,

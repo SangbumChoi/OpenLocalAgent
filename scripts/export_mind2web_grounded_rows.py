@@ -2,7 +2,7 @@
 """Enrich normalized Mind2Web Conversations with compact grounded DOM observations.
 
 Mind2Web's action labels include positive/negative DOM candidates and backend node IDs.  The
-original LocalAgent adapter intentionally emitted text-first rows, which made a ``target_id``
+original OpenLocalAgent adapter intentionally emitted text-first rows, which made a ``target_id``
 impossible to copy because the identifier was absent from the prompt.  This adapter keeps the
 source action sequence but adds a bounded, deterministic candidate snapshot before every action.
 It never downloads data or claims official Mind2Web test scoring.
@@ -20,7 +20,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-from localagent.data.schema import Conversation, Role
+from openlocalagent.data.schema import Conversation, Role
 
 
 def _identity(path: Path) -> dict[str, Any]:

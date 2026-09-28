@@ -13,8 +13,8 @@ import json
 import os
 from collections import defaultdict
 
-from localagent.agent.caller import ToolCaller
-from localagent.eval import codebench
+from openlocalagent.agent.caller import ToolCaller
+from openlocalagent.eval import codebench
 
 OUT = "runs/codebench"
 SCALES = [0, 100, 500, 1000]
@@ -51,7 +51,7 @@ def main():
     for N in SCALES:
         tools, exx = base, dict(ex)
         if N:
-            from localagent.data.tool_catalog import build_catalog, gen_usages
+            from openlocalagent.data.tool_catalog import build_catalog, gen_usages
             extra = build_catalog(N, seed=2)
             tools = base + extra
             for u in gen_usages(extra, "train", per_tool=4, seed=3, paraphrase=True):

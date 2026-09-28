@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Publish a verified LocalAgent model and optional train-data acquisition to the Hub.
+"""Publish a verified OpenLocalAgent model and optional train-data acquisition to the Hub.
 
 The command is deliberately opt-in: without ``--push`` it only validates identity and builds a
 local model bundle. With ``--push`` it requires an authenticated Hugging Face account, checks that
@@ -78,7 +78,7 @@ def publish(
             raise RuntimeError("dataset destination owner does not match authenticated user")
     else:
         dataset_manifest = None
-    from localagent.inference.export.to_hf import export_hf
+    from openlocalagent.inference.export.to_hf import export_hf
 
     bundle = export_hf(
         str(checkpoint),
@@ -95,7 +95,7 @@ def publish(
             repo_id=dataset_repo,
             repo_type="dataset",
             folder_path=str(dataset_dir),
-            commit_message="Upload hash-bound LocalAgent training acquisition",
+            commit_message="Upload hash-bound OpenLocalAgent training acquisition",
         )
         dataset_url = f"https://huggingface.co/datasets/{dataset_repo}"
     return {

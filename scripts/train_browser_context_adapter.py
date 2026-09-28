@@ -22,16 +22,16 @@ from typing import Any
 
 import torch
 
-from localagent.agent.constrained import hybrid_decode
-from localagent.agent.dense_selector import BoundSelector, DenseToolSelector, train_dense_selector
-from localagent.agent.parser import extract_tool_calls
-from localagent.agent.routes import ROUTES, RouteHead, train_route_head
-from localagent.agent.toolset import STANDARD_TOOLS
-from localagent.data.schema import Conversation, Message, Role
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.sft import sft
-from localagent.train.stage_data import load_conversation_source, probe_decisions, single_turn_samples
+from openlocalagent.agent.constrained import hybrid_decode
+from openlocalagent.agent.dense_selector import BoundSelector, DenseToolSelector, train_dense_selector
+from openlocalagent.agent.parser import extract_tool_calls
+from openlocalagent.agent.routes import ROUTES, RouteHead, train_route_head
+from openlocalagent.agent.toolset import STANDARD_TOOLS
+from openlocalagent.data.schema import Conversation, Message, Role
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.sft import sft
+from openlocalagent.train.stage_data import load_conversation_source, probe_decisions, single_turn_samples
 
 COMPUTER_TOOLS = frozenset(
     {
@@ -202,7 +202,7 @@ def _score(
 
 
 def _last_feature(model: LocalAgentLM, tokenizer: Any, prompt: str) -> torch.Tensor:
-    from localagent.agent.tool_head import _feat
+    from openlocalagent.agent.tool_head import _feat
 
     return _feat(model, tokenizer, prompt, "cpu")
 

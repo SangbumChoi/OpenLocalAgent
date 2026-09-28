@@ -1,4 +1,4 @@
-from localagent.data.schema import Conversation, Message, Role, ToolCall
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall
 from scripts.evaluate_agentnet_text import _ground_truth, _prediction, _source_action
 
 

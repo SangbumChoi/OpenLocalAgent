@@ -11,7 +11,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.data.browsergym_prompts import (
+from openlocalagent.data.browsergym_prompts import (
     BrowserGymPromptLimits,
     export_browsergym_prompt_rows,
 )

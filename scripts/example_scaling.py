@@ -16,9 +16,9 @@ import json
 import os
 import random
 
-from localagent.agent.caller import ToolCaller
-from localagent.eval import codebench
-from localagent.figs import savefig
+from openlocalagent.agent.caller import ToolCaller
+from openlocalagent.eval import codebench
+from openlocalagent.figs import savefig
 
 OUT = "runs/example_scaling"
 COUNTS = [0, 1, 2, 4, 8, 16, 32]
@@ -44,7 +44,7 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     base = codebench.build_tools()
     gold = codebench.gold_set("eval", seed=7)
-    from localagent.data.tool_catalog import build_catalog, gen_usages
+    from openlocalagent.data.tool_catalog import build_catalog, gen_usages
     extra = build_catalog(DISTRACTORS, seed=2)
     distractor_ex = {}
     for u in gen_usages(extra, "train", per_tool=6, seed=3, paraphrase=True):

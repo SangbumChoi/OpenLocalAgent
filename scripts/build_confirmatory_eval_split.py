@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.eval.confirmatory_eval_split import build_confirmatory_eval_split
+from openlocalagent.eval.confirmatory_eval_split import build_confirmatory_eval_split
 
 
 def _parser() -> argparse.ArgumentParser:

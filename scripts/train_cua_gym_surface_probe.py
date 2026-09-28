@@ -23,9 +23,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from localagent.agent.tool_head import _feat
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
+from openlocalagent.agent.tool_head import _feat
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
 try:  # Direct ``python scripts/...`` invocation keeps ``scripts`` off sys.path.
     from scripts.profile_cua_gym_metadata import _load_rows
 except ModuleNotFoundError:  # pragma: no cover - exercised by the CLI entry point

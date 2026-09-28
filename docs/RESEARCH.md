@@ -18,13 +18,13 @@ these decisions.
 A single, dependency-light codebase covering the model lifecycle. The
 [speedrun at audited commit `92d63d4`](https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/runs/speedrun.sh)
 executes tokenizer → pretrain/base evaluation → SFT/chat evaluation; it does not run RL or a
-separate midtrain stage. LocalAgent retains explicit midtraining because its code/tool
+separate midtrain stage. OpenLocalAgent retains explicit midtraining because its code/tool
 distribution shift is large and must be measurable separately.
 The 2026 speedrun now downloads the
 [`karpathy/climbmix-400b-shuffle`](https://huggingface.co/datasets/karpathy/climbmix-400b-shuffle)
 repack. That is useful evidence about nanochat's current recipe, but it is not a license shortcut:
 the repack card says the content is unchanged from NVIDIA Nemotron-ClimbMix, whose upstream card
-is CC BY-NC 4.0/research-only. LocalAgent therefore transfers the pipeline design but keeps
+is CC BY-NC 4.0/research-only. OpenLocalAgent therefore transfers the pipeline design but keeps
 ClimbMix out of its default distributable corpus unless the rights question is resolved.
 
 The model at that pinned revision is also more than a plain historical GPT-2 block: it combines RoPE,
@@ -33,13 +33,13 @@ sliding/full-attention schedule, value embeddings, learned residual/input-embedd
 Muon+AdamW, and optional FP8 training. Those are useful ablation candidates, not a package to
 copy wholesale. In particular, the reference `base_train.py` currently instantiates
 `n_kv_head == n_head` even though its module supports GQA, and its H100 Flash-Attention/FP8
-choices do not establish a WebGPU optimum. LocalAgent keeps MQA/GQA, SwiGLU, and the matched
+choices do not establish a WebGPU optimum. OpenLocalAgent keeps MQA/GQA, SwiGLU, and the matched
 hybrid-versus-attention experiment as explicit browser-scale decisions.
 
 **We adopt:**
 - The **single cohesive codebase** philosophy — no giant config monsters, no framework. Every
   stage is a readable script you can fork.
-- The **stage ordering**: tokenizer → pretrain → SFT → eval → serve, with LocalAgent's explicit
+- The **stage ordering**: tokenizer → pretrain → SFT → eval → serve, with OpenLocalAgent's explicit
   domain midtrain and optional RL as separately measured extensions.
 - A **`speedrun.sh`** that runs the whole pipeline start-to-finish at toy scale.
 - A **built-in chat UI** as the demo surface.
@@ -70,7 +70,7 @@ unknown rather than inferred.
 
 Kimi K2.5's [official report](https://arxiv.org/abs/2602.02276) describes continual pretraining
 atop K2-Base on approximately 15T mixed visual/text tokens, native multimodal post-training, and
-learned parallel Agent Swarm orchestration. LocalAgent transfers explicit continual-stage
+learned parallel Agent Swarm orchestration. OpenLocalAgent transfers explicit continual-stage
 accounting and verified parallel-task construction only. It does not implement vision, MoE/MLA,
 Agent Swarm, or the reported parallel-agent training as the deployment path: the bounded
 Micro-MoE below is an independent active-matched experiment, not a K2.5 reproduction. It also
@@ -97,12 +97,12 @@ See [`TRAINING_SYSTEM.md`](./TRAINING_SYSTEM.md) for the 2026 source comparison 
 [SOLAR-10.7B](https://arxiv.org/abs/2312.15166) applies depth up-scaling to a compatible
 pretrained transformer: duplicate/expand its layers, then continue pretraining the expanded
 checkpoint. The reusable idea is checkpoint growth without training the deeper topology from its
-initial random state. It is not directly available to LocalAgent's from-scratch sub-100M recipe:
+initial random state. It is not directly available to OpenLocalAgent's from-scratch sub-100M recipe:
 there is no larger compatible parent with the same tokenizer and blocks, so there is no inherited
-knowledge to preserve. Layer duplication after training a smaller LocalAgent checkpoint remains
+knowledge to preserve. Layer duplication after training a smaller OpenLocalAgent checkpoint remains
 an optional continued-training ablation with matched added compute; it is neither a substitute for
 pretraining data nor evidence of lower WebGPU latency. The repository now implements that narrow
-ablation through `localagent grow-checkpoint`: it requires an explicit complete same-kind layer
+ablation through `openlocalagent grow-checkpoint`: it requires an explicit complete same-kind layer
 map and an otherwise identical, same-tokenizer model schema; emits a self-hashed, target-state-
 hashed checkpoint; rejects posttraining auxiliary heads; and enters continued pretraining as a
 fresh-optimizer `init_from`. Repeated residual blocks change the function, so the implementation
@@ -114,7 +114,7 @@ Z.ai's [official GLM-5.2 report](https://z.ai/blog/glm-5.2) discloses IndexShare
 four sparse-attention layers, a verifier-backed MTP acceptance study, extended coding-agent
 midtraining, compaction-aware critic PPO for long trajectories, parallel on-policy distillation,
 and an online anti-hack path for executable coding rewards. The same report states that lower
-per-token FLOPs do not proportionally reduce its KV-cache requirement. At LocalAgent's 4K context
+per-token FLOPs do not proportionally reduce its KV-cache requirement. At OpenLocalAgent's 4K context
 and 1–96M scale, the transferable parts are reward-integrity checks, compacted-trajectory
 accounting, and the rule that speculative speed needs measured accepted drafts plus end-to-end
 latency. Its 1M-context sparse index and serving stack are not browser defaults.
@@ -122,7 +122,7 @@ latency. Its 1M-context sparse index and serving stack are not browser defaults.
 xAI's [official Grok 4.5 release](https://x.ai/news/grok-4-5) discloses strong deduplication,
 quality/domain filtering, hundreds of thousands of technical RL tasks, automated/model grading,
 and asynchronous rollouts that can last hours. It does not disclose a block-level architecture.
-LocalAgent can test the data-curation and executable-rollout principles, but it cannot truthfully
+OpenLocalAgent can test the data-curation and executable-rollout principles, but it cannot truthfully
 copy a hidden Grok topology. The reported hosted 80 tokens/s is also not a WebGPU requirement: it
 does not isolate tokenizer, hardware, prompt, output length, TTFT, or action correctness.
 
@@ -133,7 +133,7 @@ and [GPT-3](https://arxiv.org/abs/2005.14165) establish the decoder-only causal 
 baseline, scaling studies, and task specification through prompts or in-context examples.
 [GPT-4](https://arxiv.org/abs/2303.08774) adds evidence for predictable scaling and staged
 post-training, but does not disclose a transferable block-level architecture or exact data
-recipe. LocalAgent therefore adopts dense causal controls, frozen held-out evaluation, and
+recipe. OpenLocalAgent therefore adopts dense causal controls, frozen held-out evaluation, and
 scaling curves without inventing GPT-4/4.5/5.x topology or treating dense all-attention as a
 browser optimum.
 
@@ -163,7 +163,7 @@ Data-centric training of genuinely small, on-device models.
 Here “dense” means a no-MoE deployment baseline, not that dense all-attention is universally best.
 [MobileLLM](https://arxiv.org/abs/2402.14905) supports a strong dense sub-billion baseline, while
 [Kimi Linear](https://arxiv.org/abs/2510.26692) is direct primary-source evidence that a hybrid
-can beat full attention under its own matched recipe. LocalAgent therefore compares dense
+can beat full attention under its own matched recipe. OpenLocalAgent therefore compares dense
 all-attention and dense hybrid backbones on the target browser rather than deciding by label.
 
 The observed exploratory seed-2026 proxy preserves that distinction. At approximately one loss
@@ -272,11 +272,11 @@ with a clean JSON schema.
 **We adopt:** the **multi-stage verification** idea (format → execution → semantic), the
 **function-calling JSON schema** as our on-disk format for agent samples, and a pinned offline
 TRAIN adapter for the public 60K release. The adapter's rule verification does not upgrade source
-records into a claim that LocalAgent executed them.
+records into a claim that OpenLocalAgent executed them.
 
 ### Mind2Web, WebLINX, and public split policy
 
-Mind2Web contributes crowdsourced, grounded multi-step web tasks. LocalAgent ingests only the
+Mind2Web contributes crowdsourced, grounded multi-step web tasks. OpenLocalAgent ingests only the
 pinned public Mind2Web TRAIN shards and converts positive CLICK/TYPE/SELECT targets into canonical
 browser trajectories; held-out benchmark material remains outside training. WebLINX is retained
 for evaluation/non-default research because its CC-BY-NC-SA-4.0 terms do not fit the default

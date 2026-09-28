@@ -16,7 +16,7 @@ from collections import OrderedDict
 from collections.abc import Sequence
 from pathlib import Path
 
-from localagent.data.derived_corpus import (
+from openlocalagent.data.derived_corpus import (
     parse_group_definition,
     prepare_derived_corpora,
 )

@@ -17,8 +17,8 @@ from run_m714_androidcontrol_structured_visual_pilot import (
     _run_arm,
     OBJECT_URL,
 )
-from localagent.model import ModelConfig
-from localagent.model.vision import ANDROID_ACTIONS, VisualActionHead
+from openlocalagent.model import ModelConfig
+from openlocalagent.model.vision import ANDROID_ACTIONS, VisualActionHead
 
 
 def main() -> int:

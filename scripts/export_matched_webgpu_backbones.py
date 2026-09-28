@@ -15,7 +15,7 @@ import argparse
 from pathlib import Path
 from typing import Sequence
 
-from localagent.inference.export.to_onnx import export_matched_random_backbones
+from openlocalagent.inference.export.to_onnx import export_matched_random_backbones
 
 DEFAULT_HYBRID_CONFIG = "configs/model/webgpu-35m-hybrid.yaml"
 DEFAULT_ATTENTION_CONFIG = "configs/model/webgpu-35m-attn.yaml"

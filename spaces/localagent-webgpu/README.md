@@ -1,5 +1,5 @@
 ---
-title: LocalAgent Tool Calling (WebGPU)
+title: OpenLocalAgent Tool Calling (WebGPU)
 emoji: 🛠️
 colorFrom: indigo
 colorTo: purple
@@ -9,7 +9,7 @@ license: mit
 short_description: Sub-100M from-scratch tool-calling agent in the browser
 ---
 
-# LocalAgent — tool calling in the browser (WebGPU)
+# OpenLocalAgent — tool calling in the browser (WebGPU)
 
 A **sub-100M, pretrained-from-scratch** BPE agent that does **grounded tool
 calling** and **multi-step planning** — running **entirely in your browser** on
@@ -23,7 +23,7 @@ seed-2027 export is 10,524,544 parameters. Do not infer a parameter count from t
 The public Hugging Face model URL is intentionally omitted until authentication and upload are
 verified. The current local paired-release receipt is tracked in
 [`m336-hf-paired-release-local-current-63-tool-v1.json`](../../docs/paper/results/raw/m336-hf-paired-release-local-current-63-tool-v1.json).
-Source: [LocalAgent](https://github.com/sangbumchoi/localagent).
+Source: [OpenLocalAgent](https://github.com/SangbumChoi/OpenLocalAgent).
 
 ## What it shows (generable dispatch — no fixed-N classifier)
 
@@ -142,7 +142,7 @@ reject them rather than silently timing the full logits graph as a structured ac
   tok/s at 128/512/1,024/1,536 tokens were 74.05/64.54/57.53/47.15 for 34.2M,
   90.87/89.26/80.94/79.77 for 15.6M, and 159.23/160.46/143.49/127.57 for 10.5M. Only the 10.5M
   pair clears the 100 tok/s engineering reference at every context. See the tracked
-  [summary/raw/config index](https://github.com/sangbumchoi/localagent/blob/main/docs/paper/results/README.md).
+  [summary/raw/config index](https://github.com/SangbumChoi/OpenLocalAgent/blob/main/docs/paper/results/README.md).
   These are random-weight latency results and are not production model results. `app.js` instead
   requires a separately exported final-RL cached bundle with matching tokenizer, catalog, parity,
   checkpoint lineage, and training-lineage sidecar.
@@ -166,7 +166,7 @@ latest checkpoint and upload the static app plus the generated bundle files into
 Space:
 
 ```bash
-python -c "from localagent.inference.export.to_onnx import export_web; \
+python -c "from openlocalagent.inference.export.to_onnx import export_web; \
            export_web('runs/sft-webgpu-proxy-pilot-hybrid-seed2027/latest.pt', 'build/web', action_only=True)"
 ```
 

@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 import yaml
 
-from localagent.data.realistic_catalog import load_catalog, train_entries, validate_catalog
+from openlocalagent.data.realistic_catalog import load_catalog, train_entries, validate_catalog
 
 
 CATALOG = Path(__file__).parents[1] / "configs/data/realistic-agent-eval.catalog.yaml"

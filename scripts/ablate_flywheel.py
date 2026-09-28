@@ -19,15 +19,15 @@ import random
 import numpy as np
 import torch
 
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
-from localagent.data.agent_synth import Generator
-from localagent.data.render import build_pretrain_stream
-from localagent.eval.harness import evaluate, evaluate_grounded, multi_turn_eval
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.pretrain import pretrain
-from localagent.train.rl import grpo
-from localagent.train.sft import sft
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.data.agent_synth import Generator
+from openlocalagent.data.render import build_pretrain_stream
+from openlocalagent.eval.harness import evaluate, evaluate_grounded, multi_turn_eval
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.pretrain import pretrain
+from openlocalagent.train.rl import grpo
+from openlocalagent.train.sft import sft
 
 
 def fmt(d):

@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from localagent.eval.browsergym import aggregate_browsergym_episodes
+from openlocalagent.eval.browsergym import aggregate_browsergym_episodes
 
 
 def _episode(task_id: str, seed: int, reward: float, *, error=None) -> dict:

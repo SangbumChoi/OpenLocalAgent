@@ -5,7 +5,7 @@ from pathlib import Path
 
 import yaml
 
-from localagent.train.stage_data import canonical_sha256
+from openlocalagent.train.stage_data import canonical_sha256
 
 
 ROOT = Path(__file__).resolve().parents[1]

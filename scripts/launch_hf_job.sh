@@ -10,9 +10,9 @@ set -euo pipefail
 
 FLAVOR="${FLAVOR:-l4x1}"                 # 24GB L4 — ample for a 28M byte model; cheap
 IMAGE="${IMAGE:-pytorch/pytorch:2.4.1-cuda12.1-cudnn9-runtime}"
-REPO_URL="${REPO_URL:-https://github.com/sangbumchoi/localagent}"
+REPO_URL="${REPO_URL:-https://github.com/SangbumChoi/OpenLocalAgent}"
 BRANCH="${BRANCH:-claude/tiny-llm-agents-5C3c0}"
-PUSH_REPO="${PUSH_REPO:-danelcsb/localagent-30m-v2}"
+PUSH_REPO="${PUSH_REPO:-danelcsb/openlocalagent-30m-v2}"
 TIMEOUT="${TIMEOUT:-6h}"
 REAL="${REAL:---real}"                   # set REAL="" to run on the in-repo synthetic data instead
 STAGES="${STAGES:-pretrain,sft,grpo}"

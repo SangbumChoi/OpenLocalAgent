@@ -205,7 +205,7 @@ realistic/WebGPU/RL/release suite passes `38/38`.
 
 ## What the public benchmarks actually measure
 
-| Surface | Public source and method | What LocalAgent may claim locally |
+| Surface | Public source and method | What OpenLocalAgent may claim locally |
 |---|---|---|
 | Mobile UI | [AndroidWorld](https://github.com/google-research/android_world) runs resettable Android emulator tasks with accessibility/screenshot observations and durable task rewards. | Accessibility-tree/text protocol tests are useful for routing; an Android emulator, ADB, official task set, and reward logs are required for a native score. |
 | Personalized mobile UI | [iOSWorld](https://iosworld.io/) provides 133 tasks over 26 interconnected iOS apps with persistent seeded user identity and an optional MCP server. | Treat identity, cross-app state, and MCP-vs-GUI as separate axes; a WebGPU text projection cannot claim native iOS control or personalization. |
@@ -351,7 +351,7 @@ public [MobileWorld](https://github.com/Tongyi-MAI/MobileWorld) checkout at revi
 across `20` apps: calendar, Chrome, Gmail, mall, maps, Mastodon, messages, native apps, settings,
 and work.  The receipt records the source-file hashes and the contract's screenshot,
 accessibility-tree, backend-state, tap/swipe/type/keyevent/wait/MCP interfaces without copying task
-rows into LocalAgent training.
+rows into OpenLocalAgent training.
 
 MobileWorld is especially relevant to the requested email, browser, cross-app, and agent-user
 workflows, but its official runner requires a privileged Docker-in-Docker rooted Android AVD,
@@ -1051,7 +1051,7 @@ verifier succeeds.  The earlier run that silently dropped auxiliary heads is sup
 head-preserving path and remains unadopted.
 
 The [`m236 deployment smoke`](paper/results/raw/m236-stateful-productivity-rl-deployment-smoke-v1.json)
-confirms that the preserved-head child is loadable by the actual LocalAgent runtime, but its
+confirms that the preserved-head child is loadable by the actual OpenLocalAgent runtime, but its
 10-case echo-stub dispatch is only `1/10` exact.  It therefore regresses the older local parent on
 this smoke and is explicitly not exported or promoted; preserving tensors fixes checkpoint
 integrity, not policy quality.
@@ -1084,7 +1084,7 @@ messaging, and Venmo.  Every task reset and ran its ground-truth verifier, but n
 four returned text), and no action was replayed.
 
 This is stronger than a local fixture because the state database and verifier are real AppWorld
-artifacts, but it is deliberately a zero-action interface baseline.  LocalAgent's compact tool
+artifacts, but it is deliberately a zero-action interface baseline.  OpenLocalAgent's compact tool
 syntax still needs a schema-aware AppWorld API translator before an end-to-end agent score is
 meaningful; m241 is not AppWorld-UL, email/SMS success, or a promotion signal.
 
@@ -1159,7 +1159,7 @@ contract (`1.0`), proving the native verifier is live.
 The current 10.52M WebGPU checkpoint was then exposed to the real mock-domain tool schemas for one
 agent turn per task.  It emitted `0/10` tool calls, `0/10` exact first actions, and `0/10` bounded
 native successes.  This is a useful negative result: the checkpoint can load and the environment
-can execute, but the learned LocalAgent catalog/route contract does not transfer to tau2's unseen
+can execute, but the learned OpenLocalAgent catalog/route contract does not transfer to tau2's unseen
 customer-service tool names.  It is not a complete tau2 score, retail/telecom result, user-simulator
 run, or WebGPU adoption signal.
 
@@ -2657,9 +2657,9 @@ MCPMark requires version-pinned MCP services plus isolated state and verificatio
 The refresh also catches a reproducibility hazard: the pinned AgentNet revision
 `d76ee50a63fad81cfdbe576416757d7c2091ed50` is still discoverable on Hugging Face, but the live
 viewer currently reports a `DatasetGenerationCastError` because merged files expose inconsistent
-columns.  LocalAgent therefore treats the raw pinned archive/normalized JSONL projection as the
+columns.  OpenLocalAgent therefore treats the raw pinned archive/normalized JSONL projection as the
 reproducible input and never treats the viewer's apparent row count as a complete dataset.  These
-are source-contract observations, not LocalAgent scores or native execution results.
+are source-contract observations, not OpenLocalAgent scores or native execution results.
 
 ### Upstream realism refresh (2026-08-05)
 
@@ -2669,7 +2669,7 @@ reports `201` tasks across `20` Android applications and explicitly separates ag
 MCP-augmented workflows; [AgentNet](https://huggingface.co/datasets/xlangai/AgentNet) now describes
 `22.6K` cross-platform desktop tasks; and [WebBench](https://www.webbench.ai/) currently advertises
 `5,750` tasks across `452` websites while the repository-era card used a smaller release count.
-These counts are source/release metadata, not LocalAgent scores.  We retain the exact revision,
+These counts are source/release metadata, not OpenLocalAgent scores.  We retain the exact revision,
 split, and native-run requirement for every benchmark rather than mixing counts across releases.
 
 ### Public source and host-capability refresh (m417)
@@ -4470,7 +4470,7 @@ actions (`open_app`, `wait`, `click`).  The source object and original repositor
 size/MD5 metadata, range hash, record hash, screenshot hash, and split membership are all bound in
 the receipt; screenshot pixels are not retained in Git.
 
-This closes the provenance question but confirms a deployment gap: the current LocalAgent
+This closes the provenance question but confirms a deployment gap: the current OpenLocalAgent
 Conversation projection and WebGPU bundle consume text/accessibility/action fields only, not these
 visual bytes.  The receipt therefore admits the visual source as provenance-only until a vision
 encoder, screenshot-aware training split, and native emulator evaluator are implemented; no

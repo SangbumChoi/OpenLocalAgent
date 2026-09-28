@@ -2,7 +2,7 @@
 
 Notes from studying [github.com/burtenshaw/training-agents](https://github.com/burtenshaw/training-agents)
 (the "Codex builder-agent SFTs a 2B Gemma coding agent on `badlogicgames/pi-mono` traces" project).
-Same thesis as LocalAgent — *specialize a small model by SFT on real agent traces* — but at 2B+LoRA
+Same thesis as OpenLocalAgent — *specialize a small model by SFT on real agent traces* — but at 2B+LoRA
 with TRL/HF-Jobs. This is a **techniques extraction**, mapped to our modules. No training implied.
 
 Their stack (TRL/PEFT/HF-Jobs/Trackio/Inspect-AI) is exactly the "heavy framework" set our
@@ -47,7 +47,7 @@ Their stack (TRL/PEFT/HF-Jobs/Trackio/Inspect-AI) is exactly the "heavy framewor
 6. **One trace record → SFT / DPO / GRPO.** Their `trace-schema` stores task id, split, tools, action,
    observation, reward components, verifier output, judge critique, accepted/rejected. From it: SFT =
    accepted assistant actions; **DPO = accepted(chosen) vs failed(rejected)**; GRPO = prompt-only +
-   verifier. LocalAgent has SFT+GRPO but **no preference/DPO path**. → Proposal to extend the
+   verifier. OpenLocalAgent has SFT+GRPO but **no preference/DPO path**. → Proposal to extend the
    `Conversation` schema (a guarded contract — discuss first) with accepted/rejected + reward metadata,
    unlocking a DPO stage in `train/`.
 

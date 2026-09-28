@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.eval.tau2 import aggregate_tau2_results
+from openlocalagent.eval.tau2 import aggregate_tau2_results
 
 
 def main() -> int:

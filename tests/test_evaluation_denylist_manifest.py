@@ -8,12 +8,12 @@ from pathlib import Path
 import pytest
 import yaml
 
-from localagent.data.evaluation_denylist_manifest import (
+from openlocalagent.data.evaluation_denylist_manifest import (
     MANIFEST_KIND,
     build_evaluation_denylist_manifest,
     verify_evaluation_denylist_manifest,
 )
-from localagent.data.evaluation_denylist_suite import (
+from openlocalagent.data.evaluation_denylist_suite import (
     CONTRACT_KIND,
     freeze_evaluation_denylist_suite,
 )

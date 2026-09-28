@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the LocalAgent checkpoint inside the pinned BrowserGym/MiniWoB environment.
+"""Run the OpenLocalAgent checkpoint inside the pinned BrowserGym/MiniWoB environment.
 
 This runner is intentionally optional-dependency guarded.  It imports BrowserGym, Gymnasium, and
 Playwright only when invoked, converts the model's text-grounded actions to BrowserGym high-level
@@ -21,12 +21,12 @@ import time
 from pathlib import Path
 from typing import Any
 
-from localagent.agent.parser import extract_tool_calls
-from localagent.agent.runtime import Agent
-from localagent.agent.tools import ToolRegistry
-from localagent.agent.toolset import REALISTIC_BROWSER_TOOLS, STANDARD_TOOLS
-from localagent.data.browsergym_capture import production_capture_plan
-from localagent.data.browsergym_prompts import (
+from openlocalagent.agent.parser import extract_tool_calls
+from openlocalagent.agent.runtime import Agent
+from openlocalagent.agent.tools import ToolRegistry
+from openlocalagent.agent.toolset import REALISTIC_BROWSER_TOOLS, STANDARD_TOOLS
+from openlocalagent.data.browsergym_capture import production_capture_plan
+from openlocalagent.data.browsergym_prompts import (
     PRODUCTION_BROWSERGYM_REVISION,
     PRODUCTION_BROWSERGYM_VERSION,
     PRODUCTION_CHROMIUM_REVISION,
@@ -249,7 +249,7 @@ def _model_prompt(
 def _predict(agent: Agent, prompt: str, tools: list[Any]) -> tuple[str, str | None, dict[str, Any]]:
     """Run only the model decode, bypassing registry echo dispatch."""
 
-    from localagent.agent.constrained import hybrid_decode
+    from openlocalagent.agent.constrained import hybrid_decode
 
     raw = hybrid_decode(
         agent.model,

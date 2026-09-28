@@ -4,8 +4,8 @@ from pathlib import Path
 
 import torch
 
-from localagent.inference.export.to_hf import export_hf
-from localagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.inference.export.to_hf import export_hf
+from openlocalagent.model import LocalAgentLM, ModelConfig
 
 
 def test_hf_bundle_builds_and_roundtrips(tmp_path):

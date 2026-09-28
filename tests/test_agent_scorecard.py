@@ -10,28 +10,28 @@ import pytest
 import torch
 import yaml
 
-import localagent.eval.agent_scorecard as scorecard_module
-from localagent.data.agent_synth import synthesize
-from localagent.data.conversation_artifact import canonical_json_bytes
-from localagent.data.prompt_contract import (
+import openlocalagent.eval.agent_scorecard as scorecard_module
+from openlocalagent.data.agent_synth import synthesize
+from openlocalagent.data.conversation_artifact import canonical_json_bytes
+from openlocalagent.data.prompt_contract import (
     OPENAI_FULL_CATALOG_V1,
     RESERVED_PROMPT_MARKERS,
     assistant_training_examples,
 )
-from localagent.data.prompt_contract import (
+from openlocalagent.data.prompt_contract import (
     render_agent_decode_prompt as shared_render_agent_decode_prompt,
 )
-from localagent.data.prompt_contract import (
+from openlocalagent.data.prompt_contract import (
     render_function_catalog as shared_render_function_catalog,
 )
-from localagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
-from localagent.data.stratified_eval_selector import select_stratified_eval_subset
-from localagent.eval.agent_scorecard import (
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
+from openlocalagent.data.stratified_eval_selector import select_stratified_eval_subset
+from openlocalagent.eval.agent_scorecard import (
     CONFIG_KIND,
     RESULT_KIND,
     run_scorecard,
 )
-from localagent.eval.tool_eval import (
+from openlocalagent.eval.tool_eval import (
     AssistantPrediction,
     arguments_schema_valid,
     gold_output_token_statistics,
@@ -42,8 +42,8 @@ from localagent.eval.tool_eval import (
     score_conversations,
     score_dataset,
 )
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import (
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import (
     BPE_EOS,
     TOOL_CALL_CLOSE,
     TOOL_CALL_OPEN,
@@ -51,7 +51,7 @@ from localagent.model.tokenizer import (
     ByteTokenizer,
     train_bpe,
 )
-from localagent.train.stage_data import canonical_sha256, tokenizer_identity
+from openlocalagent.train.stage_data import canonical_sha256, tokenizer_identity
 
 
 def _unsafe_pickle_callback(marker_path: str) -> dict:
@@ -559,7 +559,7 @@ def test_score_dataset_propagates_model_decode_termination(
     def capped_generate(*_args, **_kwargs):
         return "OK", Stats()
 
-    monkeypatch.setattr("localagent.inference.generate.generate", capped_generate)
+    monkeypatch.setattr("openlocalagent.inference.generate.generate", capped_generate)
     result = score_dataset(
         dataset,
         object(),

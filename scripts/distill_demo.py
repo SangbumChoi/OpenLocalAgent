@@ -19,14 +19,14 @@ import os
 
 import torch
 
-from localagent.data.agent_synth import Generator
-from localagent.data.render import IGNORE, build_pretrain_stream, render_sft
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.device import resolve_device
-from localagent.train.distill import distill
-from localagent.train.pretrain import pretrain
-from localagent.train.sft import sft
+from openlocalagent.data.agent_synth import Generator
+from openlocalagent.data.render import IGNORE, build_pretrain_stream, render_sft
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.device import resolve_device
+from openlocalagent.train.distill import distill
+from openlocalagent.train.pretrain import pretrain
+from openlocalagent.train.sft import sft
 
 OUT = "runs/distill"
 

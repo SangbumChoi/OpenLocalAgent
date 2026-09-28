@@ -23,7 +23,7 @@ import os
 
 import torch
 
-from localagent.train.merge import merge_checkpoints
+from openlocalagent.train.merge import merge_checkpoints
 
 
 def _load(path: str) -> dict:

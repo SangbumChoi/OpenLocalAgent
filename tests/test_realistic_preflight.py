@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from localagent.eval.realistic_preflight import preflight_catalog
+from openlocalagent.eval.realistic_preflight import preflight_catalog
 
 
 CATALOG = Path(__file__).parents[1] / "configs/data/realistic-agent-eval.catalog.yaml"

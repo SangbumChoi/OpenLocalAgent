@@ -11,7 +11,7 @@ import pytest
 import torch
 import yaml
 
-from localagent.eval.rl_readiness import (
+from openlocalagent.eval.rl_readiness import (
     CONFIG_KIND,
     LEGACY_SCHEMA_VERSION,
     SCHEMA_VERSION,
@@ -85,7 +85,7 @@ def _scorecard(
         "kind": "localagent_internal_agent_scorecard_result",
         "schema_version": 1,
         "benchmark": {
-            "name": "LocalAgent BFCL-style internal agent scorecard",
+            "name": "OpenLocalAgent BFCL-style internal agent scorecard",
             "official_bfcl": False,
             "external_native_benchmark": False,
             "conversation_prompt_contract": _PROMPT_CONTRACT,
@@ -1413,7 +1413,7 @@ def test_guarded_rl_entry_revalidates_summary_and_passes_exact_bindings(
         assert not out_dir.exists()
         calls.append({"config_path": config_path, **kwargs})
 
-    monkeypatch.setattr("localagent.train.rl.run", fake_run)
+    monkeypatch.setattr("openlocalagent.train.rl.run", fake_run)
 
     result = run_ready_rl(summary_path)
 
@@ -1464,7 +1464,7 @@ def test_guarded_rl_entry_rejects_invalid_or_stale_readiness_before_output(
     out_dir = Path(summary["production"]["out_dir"])
     calls: list[object] = []
     monkeypatch.setattr(
-        "localagent.train.rl.run",
+        "openlocalagent.train.rl.run",
         lambda *args, **kwargs: calls.append((args, kwargs)),
     )
 
@@ -1496,7 +1496,7 @@ def test_guarded_rl_entry_rejects_invalid_or_stale_readiness_before_output(
             parent_path.write_bytes(parent_path.read_bytes() + b"-drift")
         elif invalidity == "execution_drift":
             monkeypatch.setattr(
-                "localagent.train.device.resolve_device",
+                "openlocalagent.train.device.resolve_device",
                 lambda _requested: torch.device("mps"),
             )
 
@@ -1521,7 +1521,7 @@ def test_guarded_rl_entry_never_authorizes_historical_schema_v1(
     write_rl_readiness_summary(summary, summary_path)
     calls: list[object] = []
     monkeypatch.setattr(
-        "localagent.train.rl.run",
+        "openlocalagent.train.rl.run",
         lambda *args, **kwargs: calls.append((args, kwargs)),
     )
 

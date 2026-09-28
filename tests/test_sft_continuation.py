@@ -8,8 +8,8 @@ from pathlib import Path
 import pytest
 import yaml
 
-from localagent.model import ModelConfig
-from localagent.train.sft import (
+from openlocalagent.model import ModelConfig
+from openlocalagent.train.sft import (
     resolve_sft_continuation,
     validate_sft_continuation_parent,
 )

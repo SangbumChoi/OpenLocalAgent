@@ -1,7 +1,7 @@
 """Generic mobile/action lexical guard regressions for the constrained local runtime."""
 
-from localagent.agent.constrained import _action_tail, _mobile_lexical_tool
-from localagent.data.stateful_productivity import apply_action, build_tasks, state_prompt, tool_specs
+from openlocalagent.agent.constrained import _action_tail, _mobile_lexical_tool
+from openlocalagent.data.stateful_productivity import apply_action, build_tasks, state_prompt, tool_specs
 
 
 def test_mobile_guard_resolves_disjoint_email_ui_actions() -> None:

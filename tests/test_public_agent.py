@@ -5,18 +5,18 @@ from pathlib import Path
 import pytest
 import yaml
 
-from localagent.data.flywheel import build_training_pool, ingest
-from localagent.data.prompt_contract import assistant_training_turns
-from localagent.data.public_agent import (
+from openlocalagent.data.flywheel import build_training_pool, ingest
+from openlocalagent.data.prompt_contract import assistant_training_turns
+from openlocalagent.data.public_agent import (
     MIND2WEB_REVISION,
     PUBLIC_AGENT_GENERATOR,
     VERIFICATION_SCOPE,
     XLAM_REVISION,
     build_public_agent_dataset,
 )
-from localagent.data.render import IGNORE, render_conversation
-from localagent.data.schema import Conversation, Role
-from localagent.model.tokenizer import ByteTokenizer
+from openlocalagent.data.render import IGNORE, render_conversation
+from openlocalagent.data.schema import Conversation, Role
+from openlocalagent.model.tokenizer import ByteTokenizer
 
 
 def _tools() -> list[dict]:

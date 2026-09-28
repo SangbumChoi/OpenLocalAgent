@@ -18,10 +18,10 @@ from typing import Any
 
 import torch
 
-from localagent.data.schema import Conversation
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.train.sft import _evaluate_conversations, sft
-from localagent.train.stage_data import (
+from openlocalagent.data.schema import Conversation
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.train.sft import _evaluate_conversations, sft
+from openlocalagent.train.stage_data import (
     build_continuation_lineage,
     tokenizer_identity,
 )

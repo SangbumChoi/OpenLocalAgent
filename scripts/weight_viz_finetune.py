@@ -8,7 +8,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from huggingface_hub import hf_hub_download
 
-REPO = "danelcsb/localagent-30m-v2"
+REPO = "danelcsb/openlocalagent-30m-v2"
 
 
 def load(f):

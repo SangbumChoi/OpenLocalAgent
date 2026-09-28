@@ -4,7 +4,7 @@ from pathlib import Path
 
 import yaml
 
-from localagent.eval.agent_scorecard import (
+from openlocalagent.eval.agent_scorecard import (
     CONFIG_KIND,
     SCHEMA_VERSION,
     _CASE_KEYS,
@@ -12,7 +12,7 @@ from localagent.eval.agent_scorecard import (
     _CONFIG_KEYS,
     _GENERATION_KEYS,
 )
-from localagent.model import ModelConfig
+from openlocalagent.model import ModelConfig
 
 ROOT = Path(__file__).resolve().parents[1]
 SCORECARD_PATH = ROOT / "configs" / "eval" / "webgpu-1m-sft-scorecard.yaml"

@@ -25,7 +25,7 @@ from pathlib import Path
 
 import torch
 
-from localagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model import LocalAgentLM, ModelConfig
 
 # Student tensor role -> the donor tensors that play the same role, in concat order.
 ROLE_MAP = {

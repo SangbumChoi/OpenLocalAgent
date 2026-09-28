@@ -18,7 +18,7 @@ from numbers import Integral
 from pathlib import Path
 from typing import Any
 
-from localagent.eval.realtime import (
+from openlocalagent.eval.realtime import (
     calibrate_autoregressive_rate_scenarios,
     latency_summary,
     required_decode_tokens_per_second,

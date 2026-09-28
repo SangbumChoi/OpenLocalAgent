@@ -4,7 +4,7 @@ import zlib
 import pytest
 import torch
 
-from localagent.data.visual import decode_png_rgb
+from openlocalagent.data.visual import decode_png_rgb
 
 
 def _png(width: int, height: int, channels: int, rows: list[bytes]) -> bytes:

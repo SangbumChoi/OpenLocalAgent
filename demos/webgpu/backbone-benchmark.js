@@ -1,4 +1,4 @@
-/* LocalAgent matched-backbone latency benchmark.
+/* OpenLocalAgent matched-backbone latency benchmark.
  *
  * This runner is intentionally narrower than benchmark.js:
  *   - it accepts exactly two hidden-only ONNX graphs;

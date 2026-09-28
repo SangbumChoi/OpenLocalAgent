@@ -5,8 +5,8 @@ runner v0.2 and are never rewritten; v0.4 adds the corrected decision-feature co
 independently rescorable normalized actions, and a fail-stop per-action watchdog.
 Implementation:
 
-- `src/localagent/eval/realtime.py`
-- `src/localagent/eval/external_action_contract.py`
+- `src/openlocalagent/eval/realtime.py`
+- `src/openlocalagent/eval/external_action_contract.py`
 - `scripts/realtime_agent_benchmark.py`
 - `scripts/fresh_action_eval.py`
 - `spaces/localagent-webgpu/benchmark.html`

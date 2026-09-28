@@ -19,15 +19,15 @@ from typing import Any
 
 import torch
 
-from localagent.agent.dense_selector import BoundSelector, DenseToolSelector, train_dense_selector
-from localagent.agent.routes import ROUTES, RouteHead, route_of, train_route_head
-from localagent.agent.tool_head import _feat
-from localagent.agent.toolset import REALISTIC_BROWSER_TOOLS, STANDARD_TOOLS
-from localagent.data.schema import Conversation
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.sft import _evaluate_conversations, sft
-from localagent.train.stage_data import (
+from openlocalagent.agent.dense_selector import BoundSelector, DenseToolSelector, train_dense_selector
+from openlocalagent.agent.routes import ROUTES, RouteHead, route_of, train_route_head
+from openlocalagent.agent.tool_head import _feat
+from openlocalagent.agent.toolset import REALISTIC_BROWSER_TOOLS, STANDARD_TOOLS
+from openlocalagent.data.schema import Conversation
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.sft import _evaluate_conversations, sft
+from openlocalagent.train.stage_data import (
     build_continuation_lineage,
     probe_decisions,
     tokenizer_identity,

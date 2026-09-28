@@ -7,8 +7,8 @@ from pathlib import Path
 import pytest
 import yaml
 
-import localagent.eval.confirmatory_eval_split as confirmatory
-from localagent.data.conversation_artifact import (
+import openlocalagent.eval.confirmatory_eval_split as confirmatory
+from openlocalagent.data.conversation_artifact import (
     CONVERSATION_FORMAT,
     CONVERSATION_SERIALIZATION,
     MANIFEST_KIND,
@@ -20,9 +20,9 @@ from localagent.data.conversation_artifact import (
     load_verified_conversation_artifact,
     self_hashed_manifest,
 )
-from localagent.data.schema import Conversation, Message, Role
-from localagent.data.stratified_eval_selector import select_stratified_eval_subset
-from localagent.model.tokenizer import train_bpe
+from openlocalagent.data.schema import Conversation, Message, Role
+from openlocalagent.data.stratified_eval_selector import select_stratified_eval_subset
+from openlocalagent.model.tokenizer import train_bpe
 
 ROOT = Path(__file__).resolve().parents[1]
 PRODUCTION_CONFIG = ROOT / "configs/eval/paper-confirmatory-eval-split-v2.yaml"

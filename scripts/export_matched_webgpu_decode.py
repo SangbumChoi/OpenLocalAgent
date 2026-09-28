@@ -12,7 +12,7 @@ import argparse
 from pathlib import Path
 from typing import Sequence
 
-from localagent.inference.export.to_onnx import export_matched_cached_decode
+from openlocalagent.inference.export.to_onnx import export_matched_cached_decode
 
 DEFAULT_HYBRID_CONFIG = "configs/model/webgpu-35m-hybrid.yaml"
 DEFAULT_ATTENTION_CONFIG = "configs/model/webgpu-35m-attn.yaml"

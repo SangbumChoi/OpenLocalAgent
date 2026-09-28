@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from localagent.eval.mcpmark import aggregate_mcpmark_results, discover_mcpmark_tasks
+from openlocalagent.eval.mcpmark import aggregate_mcpmark_results, discover_mcpmark_tasks
 
 
 def _write_result(root, service, run, task, success, tokens=10):

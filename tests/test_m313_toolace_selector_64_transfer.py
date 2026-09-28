@@ -2,7 +2,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from localagent.data.conversation_artifact import canonical_json_bytes
+from openlocalagent.data.conversation_artifact import canonical_json_bytes
 
 
 RECEIPT = Path("docs/paper/results/raw/m313-current-toolace-selector-64-transfer-v1.json")

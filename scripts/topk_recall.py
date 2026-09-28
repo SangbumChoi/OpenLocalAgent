@@ -7,8 +7,8 @@ import sys
 sys.path.insert(0, "scripts")
 from eval_suite import SUITES, build_tasks
 
-from localagent.agent.caller import ToolCaller
-from localagent.data.schema import ToolSpec
+from openlocalagent.agent.caller import ToolCaller
+from openlocalagent.data.schema import ToolSpec
 
 KS = (1, 4, 8, 16, 32)
 for suite in ("toolace", "xlam", "androidcontrol", "agentnet"):

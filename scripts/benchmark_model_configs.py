@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Benchmark a matched set of LocalAgent model configurations on one device.
+"""Benchmark a matched set of OpenLocalAgent model configurations on one device.
 
 This is the portable architecture/latency comparison for the GPU machine.  It constructs fresh
 random-weight models, so the result measures architecture, cache, dtype, and device differences;
@@ -20,8 +20,8 @@ from typing import Any, Iterable
 
 import torch
 
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.train.device import resolve_device
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.train.device import resolve_device
 
 DEFAULT_MODELS = (
     "webgpu-10m-attn",

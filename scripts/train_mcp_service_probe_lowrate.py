@@ -21,10 +21,10 @@ from typing import Any
 import torch
 import torch.nn.functional as F
 
-from localagent.agent.dense_selector import BoundSelector, DenseToolSelector, tool_embeddings
-from localagent.agent.routes import ROUTE_INDEX, RouteHead, route_of
-from localagent.model.tokenizer import ASSISTANT, USER
-from localagent.train.stage_data import probe_decisions
+from openlocalagent.agent.dense_selector import BoundSelector, DenseToolSelector, tool_embeddings
+from openlocalagent.agent.routes import ROUTE_INDEX, RouteHead, route_of
+from openlocalagent.model.tokenizer import ASSISTANT, USER
+from openlocalagent.train.stage_data import probe_decisions
 from scripts.train_mcp_service_probe import (
     _head_metrics,
     _identity,
@@ -235,7 +235,7 @@ def main() -> int:
         report["transfer_reference"].update(
             {f"combined_{metric}": value for metric, value in transfer_metrics.items()}
         )
-        from localagent.eval.mcpmark_router import evaluate_mcpmark_router
+        from openlocalagent.eval.mcpmark_router import evaluate_mcpmark_router
 
         for suite in ("standard", "easy"):
             report["mcpmark"][suite] = evaluate_mcpmark_router(

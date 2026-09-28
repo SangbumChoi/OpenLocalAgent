@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from localagent.eval.demo_deploy import verify_demo_deploy
+from openlocalagent.eval.demo_deploy import verify_demo_deploy
 
 
 KIND = "localagent_m611_webgpu_semantic_guard_probe"

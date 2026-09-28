@@ -9,8 +9,8 @@ import json
 from pathlib import Path
 from typing import Any
 
-from localagent.data.conversation_artifact import canonical_json_bytes
-from localagent.data.toolace import (
+from openlocalagent.data.conversation_artifact import canonical_json_bytes
+from openlocalagent.data.toolace import (
     TOOLACE_DATASET,
     TOOLACE_LICENSE,
     TOOLACE_REVISION,

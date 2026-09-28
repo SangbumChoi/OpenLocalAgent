@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from localagent.eval.toolsandbox import aggregate_toolsandbox_results
+from openlocalagent.eval.toolsandbox import aggregate_toolsandbox_results
 
 
 def _row(name: str, similarity: float, categories: list[str] | None = None) -> dict:

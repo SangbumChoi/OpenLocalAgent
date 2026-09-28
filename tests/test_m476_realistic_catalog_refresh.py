@@ -4,7 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from localagent.data.realistic_catalog import load_catalog
+from openlocalagent.data.realistic_catalog import load_catalog
 
 
 ROOT = Path(__file__).parents[1]

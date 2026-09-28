@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from localagent.train.stage_data import canonical_sha256
+from openlocalagent.train.stage_data import canonical_sha256
 
 
 RECEIPT = Path("docs/paper/results/raw/m319-current-rl-preflight-v1.json")

@@ -15,20 +15,20 @@ import time
 
 import torch
 
-from localagent.agent.constrained import hybrid_decode
-from localagent.agent.dense_selector import BoundSelector, DenseToolSelector, tool_embeddings
-from localagent.agent.parser import extract_tool_calls
-from localagent.agent.pointer_head import PointerHead
-from localagent.agent.routes import RouteHead
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
-from localagent.data.contextual import contextual_samples
-from localagent.data.paraphrase import paraphrase_samples
-from localagent.data.render import IGNORE
-from localagent.data.schema import ToolCall
-from localagent.eval.tool_eval import match_calls
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
-from localagent.train.loop import cosine_lr, pad_batch, set_lr
+from openlocalagent.agent.constrained import hybrid_decode
+from openlocalagent.agent.dense_selector import BoundSelector, DenseToolSelector, tool_embeddings
+from openlocalagent.agent.parser import extract_tool_calls
+from openlocalagent.agent.pointer_head import PointerHead
+from openlocalagent.agent.routes import RouteHead
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.data.contextual import contextual_samples
+from openlocalagent.data.paraphrase import paraphrase_samples
+from openlocalagent.data.render import IGNORE
+from openlocalagent.data.schema import ToolCall
+from openlocalagent.eval.tool_eval import match_calls
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
+from openlocalagent.train.loop import cosine_lr, pad_batch, set_lr
 
 QUICK = "--quick" in sys.argv
 torch.set_num_threads(4)
@@ -47,7 +47,7 @@ rh = RouteHead(cfg.d_model); rh.load_state_dict(ck["route_head"]); rh.eval()
 
 
 def freegen(model, prompt, max_new=64):
-    from localagent.inference.generate import generate
+    from openlocalagent.inference.generate import generate
     out, _ = generate(model, tok, f"{USER}{prompt}{ASSISTANT}", max_new_tokens=max_new, temperature=0.0)
     return extract_tool_calls(out)
 

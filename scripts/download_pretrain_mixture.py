@@ -16,7 +16,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.data.hf_corpus import (
+from openlocalagent.data.hf_corpus import (
     audit_mixture_readiness,
     build_mixture_plan,
     stream_mixture,

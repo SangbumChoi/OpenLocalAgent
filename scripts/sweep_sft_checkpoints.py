@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 
-from localagent.eval.sft_checkpoint_sweep import (
+from openlocalagent.eval.sft_checkpoint_sweep import (
     run_sft_checkpoint_sweep,
     write_sft_checkpoint_sweep_result,
 )

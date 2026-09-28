@@ -2,7 +2,7 @@
 license: mit
 language: [en]
 task_categories: [text-generation]
-pretty_name: LocalAgent Dispatch Data
+pretty_name: OpenLocalAgent Dispatch Data
 tags: [tool-calling, function-calling, agent, dispatch, synthetic, routing]
 configs:
 - config_name: paraphrase
@@ -27,11 +27,11 @@ configs:
   - {split: eval,  path: freeform_eval.jsonl}
 ---
 
-# LocalAgent Dispatch Data
+# OpenLocalAgent Dispatch Data
 
 Synthetic data for training/evaluating a **generable tool-dispatch** model over a 50-tool surface
 (route head → dense selector → pointer-copy). A static snapshot of the deterministic generators in
-[LocalAgent](https://github.com/sangbumchoi/localagent) (`src/localagent/data/`). Train/eval are
+[OpenLocalAgent](https://github.com/SangbumChoi/OpenLocalAgent) (`src/openlocalagent/data/`). Train/eval are
 **disjoint in both phrasing and slot values**. Companion model + demo:
 [danelcsb/localagent-tiny-30m-byte](https://huggingface.co/danelcsb/localagent-tiny-30m-byte) ·
 [Space](https://huggingface.co/spaces/danelcsb/localagent-webgpu).
@@ -69,4 +69,4 @@ from datasets import load_dataset
 ds = load_dataset("danelcsb/localagent-dispatch-data", "paraphrase", split="train")
 ```
 
-Regenerate deterministically from source: `python scripts/export_dataset.py` in the LocalAgent repo.
+Regenerate deterministically from source: `python scripts/export_dataset.py` in the OpenLocalAgent repo.

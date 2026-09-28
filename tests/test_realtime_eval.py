@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from localagent.eval.realtime import (
+from openlocalagent.eval.realtime import (
     autoregressive_ttfa_ms,
     bootstrap_success_at_deadline_ci,
     calibrate_autoregressive_rate_scenarios,

@@ -14,15 +14,15 @@ from collections import defaultdict
 
 import torch
 
-from localagent.agent.dense_selector import BoundSelector, train_dense_selector
-from localagent.agent.routes import route_of, train_route_head
-from localagent.agent.tool_head import _feat
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
-from localagent.data.contextual import CONTEXTUAL_EXAMPLES, contextual_samples
-from localagent.data.paraphrase import TOOL_EXAMPLES, paraphrase_samples
-from localagent.eval.freeform import FREEFORM_EVAL, FREEFORM_TRAIN
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
+from openlocalagent.agent.dense_selector import BoundSelector, train_dense_selector
+from openlocalagent.agent.routes import route_of, train_route_head
+from openlocalagent.agent.tool_head import _feat
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.data.contextual import CONTEXTUAL_EXAMPLES, contextual_samples
+from openlocalagent.data.paraphrase import TOOL_EXAMPLES, paraphrase_samples
+from openlocalagent.eval.freeform import FREEFORM_EVAL, FREEFORM_TRAIN
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
 
 QUICK = "--quick" in sys.argv
 MAX_ROUNDS = 2 if QUICK else 6

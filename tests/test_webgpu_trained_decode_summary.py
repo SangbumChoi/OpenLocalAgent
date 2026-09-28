@@ -10,7 +10,7 @@ from typing import Any
 
 import pytest
 
-from localagent.eval.webgpu_decode_summary import build_trained_decode_summary
+from openlocalagent.eval.webgpu_decode_summary import build_trained_decode_summary
 
 
 ROOT = Path(__file__).resolve().parents[1]

@@ -72,7 +72,7 @@ public train split -> source hash + split receipt -> source adapter
 The current public continuations use bounded Mind2Web train and AgentNet train records. They show
 teacher-forced or selector improvements, but not native benchmark success. The stateful email,
 Notion, browser-search, 404-recovery, and abstention probe in
-[`stateful_productivity.py`](../../src/localagent/data/stateful_productivity.py) is deliberately
+[`stateful_productivity.py`](../../src/openlocalagent/data/stateful_productivity.py) is deliberately
 synthetic and local; it tests closed-loop mechanics without copying public benchmark task text or
 touching real accounts.
 

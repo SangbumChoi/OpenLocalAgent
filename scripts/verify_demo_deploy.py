@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Verify or stage a generated LocalAgent WebGPU demo bundle."""
+"""Verify or stage a generated OpenLocalAgent WebGPU demo bundle."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ import hashlib
 import json
 import sys
 
-from localagent.eval.demo_deploy import (
+from openlocalagent.eval.demo_deploy import (
     sync_demo_bundle,
     verify_demo_deploy,
     write_demo_deploy_receipt,

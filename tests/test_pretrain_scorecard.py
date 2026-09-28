@@ -8,20 +8,20 @@ from pathlib import Path
 import pytest
 import torch
 
-from localagent.data.pretrain_corpus import (
+from openlocalagent.data.pretrain_corpus import (
     CorpusDocument,
     _source_family,
     build_disk_backed_corpus,
     pack_disk_backed_shards,
 )
-from localagent.eval.pretrain_scorecard import (
+from openlocalagent.eval.pretrain_scorecard import (
     evaluate_pretrain_checkpoint,
     parse_source_groups,
     write_scorecard,
 )
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ByteTokenizer, train_bpe
-from localagent.train.stage_data import canonical_sha256, tokenizer_identity
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ByteTokenizer, train_bpe
+from openlocalagent.train.stage_data import canonical_sha256, tokenizer_identity
 
 
 def _build_scorecard_artifacts(

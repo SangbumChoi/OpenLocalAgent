@@ -1,4 +1,4 @@
-/* LocalAgent cached-decode latency benchmark.
+/* OpenLocalAgent cached-decode latency benchmark.
  *
  * Accepted artifacts are the legacy deterministic random-weight pair, a strictly pinned trained
  * pair, or one explicitly selected and cryptographically pinned trained-checkpoint export. This

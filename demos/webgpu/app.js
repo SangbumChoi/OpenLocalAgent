@@ -1,9 +1,9 @@
-/* LocalAgent — in-browser tool calling on onnxruntime-web (WebGPU + explicit WASM control).
+/* OpenLocalAgent — in-browser tool calling on onnxruntime-web (WebGPU + explicit WASM control).
  *
  * The transformer forward pass runs as an ONNX graph emitting `hidden` (and optionally `logits`).
  * The GENERABLE
  * dispatch (route head -> dense two-tower selector -> pointer-copy args) is ported here from the
- * Python pipeline. Bundle contract (see localagent.inference.export):
+ * Python pipeline. Bundle contract (see openlocalagent.inference.export):
  *   model.fp16.onnx      inputs: input_ids[int64, 1xT]  outputs: logits[1,T,V], hidden[1,T,d]
  *   dispatch_heads.json  { route_head:{weight:[5][d],bias:[5],routes:[5],stop_index},
  *                          dense_selector:{q_proj_weight:[p][d],q_proj_bias:[p],proj:p,
@@ -482,7 +482,7 @@ function validateCachedGraphContract(metadata) {
     metadata.vocab_size < 1 ||
     metadata.model.config.vocab_size !== metadata.vocab_size
   ) {
-    throw new Error("Cached metadata is not a supported LocalAgent autoregressive bundle.");
+    throw new Error("Cached metadata is not a supported OpenLocalAgent autoregressive bundle.");
   }
   const config = metadata.model.config;
   const contract = metadata.graph_contract;
@@ -1150,7 +1150,7 @@ async function prepareActionPolicy(policy) {
 
 // ---- tokenizer ------------------------------------------------------------
 // Markers are literal strings. The bundle metadata selects UTF-8 bytes or the exact trained
-// ByteLevel BPE tokenizer, both matching localagent.model.tokenizer.
+// ByteLevel BPE tokenizer, both matching openlocalagent.model.tokenizer.
 const enc = new TextEncoder();
 function mark(name) { return META.markers[name].text; } // markers carry { text, ids }
 
@@ -2152,7 +2152,7 @@ function dispatchSelect(
 //
 // The pointer head covers open-ended copy arguments. Enums, numbers, booleans, and string
 // arguments without a learned pointer embedding are grounded deterministically from their JSON
-// Schema, matching localagent.agent.schema_decode. A required value that cannot be grounded makes
+// Schema, matching openlocalagent.agent.schema_decode. A required value that cannot be grounded makes
 // the action incomplete (`args: null`) instead of silently substituting an empty string.
 function matvec(M, v) {
   const d = v.length, out = new Float32Array(d);

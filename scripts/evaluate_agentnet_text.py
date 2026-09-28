@@ -19,13 +19,13 @@ from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
 
-from localagent.agent.constrained import hybrid_decode
-from localagent.agent.parser import extract_tool_calls
-from localagent.agent.runtime import Agent
-from localagent.agent.tools import ToolRegistry
-from localagent.data.agentnet import _tool
-from localagent.data.schema import Conversation, ToolSpec
-from localagent.eval.agentnet_results import aggregate_agentnet_results
+from openlocalagent.agent.constrained import hybrid_decode
+from openlocalagent.agent.parser import extract_tool_calls
+from openlocalagent.agent.runtime import Agent
+from openlocalagent.agent.tools import ToolRegistry
+from openlocalagent.data.agentnet import _tool
+from openlocalagent.data.schema import Conversation, ToolSpec
+from openlocalagent.eval.agentnet_results import aggregate_agentnet_results
 
 _MODEL_TO_ACTION = {
     "agentnet_click": "click",

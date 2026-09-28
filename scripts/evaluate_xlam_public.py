@@ -17,14 +17,14 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
-from localagent.agent.constrained import hybrid_decode
-from localagent.agent.parser import extract_tool_calls
-from localagent.agent.retriever import ToolRetriever
-from localagent.agent.runtime import Agent
-from localagent.agent.tools import ToolRegistry
-from localagent.data.prompt_contract import schema_matches
-from localagent.data.public_agent import _xlam_tool
-from localagent.data.schema import ToolCall, ToolSpec
+from openlocalagent.agent.constrained import hybrid_decode
+from openlocalagent.agent.parser import extract_tool_calls
+from openlocalagent.agent.retriever import ToolRetriever
+from openlocalagent.agent.runtime import Agent
+from openlocalagent.agent.tools import ToolRegistry
+from openlocalagent.data.prompt_contract import schema_matches
+from openlocalagent.data.public_agent import _xlam_tool
+from openlocalagent.data.schema import ToolCall, ToolSpec
 
 
 ALL_MODES = (

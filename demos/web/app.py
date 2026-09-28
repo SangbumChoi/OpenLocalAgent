@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""LocalAgent demo: a retrieval-driven tool-calling agent (Gradio UI + CLI fallback).
+"""OpenLocalAgent demo: a retrieval-driven tool-calling agent (Gradio UI + CLI fallback).
 
 Type a request -> the agent retrieves the most relevant tool from the catalog (which includes the
 newly added write_file / move_file / google_search / click_link / summarize, plus optional 1000s of
@@ -95,7 +95,7 @@ def main():
                 return agent.step(message)
 
             gr.ChatInterface(
-                respond, title="LocalAgent — retrieval-driven tool calling",
+                respond, title="OpenLocalAgent — retrieval-driven tool calling",
                 description=f"A from-scratch byte-level agent over {n} tools "
                             f"(retrieve → ground → execute). New tools need no retraining.",
                 examples=EXAMPLES,
@@ -104,7 +104,7 @@ def main():
         except Exception as e:
             print(f"(gradio unavailable: {e} — falling back to CLI)\n")
 
-    print(f"LocalAgent demo over {n} tools (retrieval-driven)\n")
+    print(f"OpenLocalAgent demo over {n} tools (retrieval-driven)\n")
     for q in EXAMPLES:
         print(f"> {q}\n  {agent.step(q).splitlines()[0]}")
 

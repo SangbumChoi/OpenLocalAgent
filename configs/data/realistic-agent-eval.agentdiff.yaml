@@ -43,4 +43,4 @@ entries:
     contamination:
       split: official_80_20_train_test
       rule: keep test assertions and task IDs out of training; sandbox state-diff execution requires the upstream isolated service replicas
-    notes: Enterprise API benchmark with deterministic state-diff contracts. The LocalAgent projection evaluates assertion text only and never contacts Slack, Linear, Box, or Google Calendar.
+    notes: Enterprise API benchmark with deterministic state-diff contracts. The OpenLocalAgent projection evaluates assertion text only and never contacts Slack, Linear, Box, or Google Calendar.

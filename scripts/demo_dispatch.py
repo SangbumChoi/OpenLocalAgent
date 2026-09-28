@@ -3,14 +3,14 @@ Loads the improved dispatch checkpoint (runs/tiny-30m-dispatch.pt: paraphrase-tr
 example-augmented tool embeddings + route head) if present; else trains inline."""
 import torch
 
-from localagent.agent.constrained import hybrid_decode
-from localagent.agent.dense_selector import BoundSelector, DenseToolSelector
-from localagent.agent.pointer_head import PointerHead
-from localagent.agent.routes import ROUTES, RouteHead
-from localagent.agent.tool_head import _feat
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
+from openlocalagent.agent.constrained import hybrid_decode
+from openlocalagent.agent.dense_selector import BoundSelector, DenseToolSelector
+from openlocalagent.agent.pointer_head import PointerHead
+from openlocalagent.agent.routes import ROUTES, RouteHead
+from openlocalagent.agent.tool_head import _feat
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
 
 torch.set_num_threads(4)
 tok = load_tokenizer()
@@ -21,7 +21,7 @@ ptr = PointerHead(cfg.d_model); ptr.load_state_dict(ck["ptr_head"])
 
 dk = torch.load("runs/tiny-30m-dispatch.pt", map_location="cpu")
 examples = dk["examples"]
-from localagent.agent.dense_selector import tool_embeddings
+from openlocalagent.agent.dense_selector import tool_embeddings
 emb_dim = tool_embeddings(TOOLS[:1]).shape[1]
 sel = DenseToolSelector(cfg.d_model, emb_dim=emb_dim, proj=dk["selector_proj"])
 sel.load_state_dict(dk["dense_selector"])

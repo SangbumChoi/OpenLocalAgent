@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from localagent.eval.workshop_gate import build_workshop_gate
+from openlocalagent.eval.workshop_gate import build_workshop_gate
 
 
 def _load(path: Path) -> dict[str, Any]:

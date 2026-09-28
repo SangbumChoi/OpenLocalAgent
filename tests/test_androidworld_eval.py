@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from localagent.eval.androidworld import aggregate_androidworld_run
+from openlocalagent.eval.androidworld import aggregate_androidworld_run
 
 
 def _write_group(root: Path, filename: str, episodes: list[dict]) -> None:

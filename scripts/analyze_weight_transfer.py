@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Measure pretrained-weight reuse between two LocalAgent checkpoints.
+"""Measure pretrained-weight reuse between two OpenLocalAgent checkpoints.
 
 This is an audit tool, not a training recipe.  It checks model/tokenizer compatibility, quantifies
 how much each shared tensor moved, identifies newly introduced action heads, and emits a

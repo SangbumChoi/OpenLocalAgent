@@ -15,9 +15,9 @@ import json
 import os
 from collections import defaultdict
 
-from localagent.agent.caller import ToolCaller
-from localagent.eval import scenarios_bench as sb
-from localagent.figs import savefig
+from openlocalagent.agent.caller import ToolCaller
+from openlocalagent.eval import scenarios_bench as sb
+from openlocalagent.figs import savefig
 
 OUT = "runs/scenarios"
 SCALES = [0, 200, 1000]
@@ -46,7 +46,7 @@ def main():
     for Nd in SCALES:
         tools, exx = base, dict(ex)
         if Nd:
-            from localagent.data.tool_catalog import build_catalog, gen_usages
+            from openlocalagent.data.tool_catalog import build_catalog, gen_usages
             extra = build_catalog(Nd, seed=2)
             tools = base + extra
             for u in gen_usages(extra, "train", per_tool=4, seed=3, paraphrase=True):

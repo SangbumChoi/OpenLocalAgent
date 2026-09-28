@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.eval.toolsandbox import aggregate_toolsandbox_results
+from openlocalagent.eval.toolsandbox import aggregate_toolsandbox_results
 
 
 def main() -> int:

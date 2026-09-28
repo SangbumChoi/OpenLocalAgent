@@ -29,7 +29,7 @@ def test_m393_is_current_checkpoint_bound_and_fail_closed() -> None:
 
 def test_stateful_training_view_adds_only_train_action_paraphrases() -> None:
     from scripts import train_stateful_productivity_probe as probe
-    from localagent.data.stateful_productivity import build_tasks
+    from openlocalagent.data.stateful_productivity import build_tasks
 
     rows = probe._rows(build_tasks("train"))
     augmented = probe._action_augmented_rows(rows)

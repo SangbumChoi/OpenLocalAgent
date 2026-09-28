@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from localagent.data.public_eval_matrix import load_matrix
+from openlocalagent.data.public_eval_matrix import load_matrix
 from scripts.profile_mobileworld_source import profile
 
 

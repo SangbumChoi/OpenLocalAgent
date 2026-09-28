@@ -1,4 +1,4 @@
-// LocalAgent in the browser: ONNX Runtime Web (WebGPU/WASM) + JS byte tokenizer + char-ngram
+// OpenLocalAgent in the browser: ONNX Runtime Web (WebGPU/WASM) + JS byte tokenizer + char-ngram
 // retriever + grounded tool calling. Mirrors the Python agent (model/tokenizer.py,
 // agent/retriever.py, agent/constrained.py) closely enough for a client-side demo.
 

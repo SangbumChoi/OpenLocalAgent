@@ -1,7 +1,7 @@
 import pytest
 
-from localagent.data.realistic_adapters import normalize_mobile_row
-from localagent.eval.mobile import score_mobile_actions, score_mobile_row
+from openlocalagent.data.realistic_adapters import normalize_mobile_row
+from openlocalagent.eval.mobile import score_mobile_actions, score_mobile_row
 
 
 def _row() -> dict:

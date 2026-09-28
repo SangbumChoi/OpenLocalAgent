@@ -7,7 +7,7 @@ from typing import Any
 
 import yaml
 
-from localagent.data.browsergym_prompts import (
+from openlocalagent.data.browsergym_prompts import (
     PRODUCTION_BROWSERGYM_REVISION,
     PRODUCTION_CAPTURE_BYTES,
     PRODUCTION_CAPTURE_FILE,

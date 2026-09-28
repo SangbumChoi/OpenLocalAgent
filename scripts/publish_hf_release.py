@@ -20,9 +20,9 @@ from typing import Any
 
 import torch
 
-from localagent.eval.demo_deploy import BUNDLE_FILES, sync_demo_bundle, verify_demo_deploy
-from localagent.inference.export.to_hf import export_hf
-from localagent.inference.export.to_onnx import export_web
+from openlocalagent.eval.demo_deploy import BUNDLE_FILES, sync_demo_bundle, verify_demo_deploy
+from openlocalagent.inference.export.to_hf import export_hf
+from openlocalagent.inference.export.to_onnx import export_web
 
 
 def _token(cli_token: str | None) -> str | None:
@@ -69,9 +69,9 @@ def _release_tool_specs(checkpoint: Path) -> list[Any] | None:
     ``dispatch_heads.json`` cannot silently fall back to the legacy 50-tool catalog.
     """
 
-    from localagent.agent.mobile_toolset import mobile_tools, realistic_productivity_tools
-    from localagent.agent.toolset import STANDARD_TOOLS
-    from localagent.inference.export.to_hf import _dispatch_metadata
+    from openlocalagent.agent.mobile_toolset import mobile_tools, realistic_productivity_tools
+    from openlocalagent.agent.toolset import STANDARD_TOOLS
+    from openlocalagent.inference.export.to_hf import _dispatch_metadata
 
     checkpoint_payload = torch.load(checkpoint, map_location="cpu", weights_only=True)
     metadata = _dispatch_metadata(checkpoint_payload)
@@ -208,8 +208,8 @@ def _upload_folder(*, repo_id: str, folder: Path, repo_type: str, token: str, pu
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--checkpoint", type=Path, required=True)
-    parser.add_argument("--model-repo", required=True, help="Hub model repo, e.g. user/localagent-webgpu-10m")
-    parser.add_argument("--space-repo", required=True, help="Hub static Space repo, e.g. user/localagent-webgpu")
+    parser.add_argument("--model-repo", required=True, help="Hub model repo, e.g. user/openlocalagent-webgpu-10m")
+    parser.add_argument("--space-repo", required=True, help="Hub static Space repo, e.g. user/openlocalagent-webgpu")
     parser.add_argument("--model-out", type=Path, required=True)
     parser.add_argument("--web-out", type=Path, required=True)
     parser.add_argument("--space-out", type=Path, required=True)

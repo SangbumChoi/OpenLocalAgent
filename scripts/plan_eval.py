@@ -16,14 +16,14 @@ import argparse
 
 import torch
 
-from localagent.agent.pointer_head import PointerHead
-from localagent.agent.tool_head import ToolHead
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
-from localagent.data.agent_synth import Generator
-from localagent.eval.harness import format_plan_eval, plan_eval
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.device import resolve_device
+from openlocalagent.agent.pointer_head import PointerHead
+from openlocalagent.agent.tool_head import ToolHead
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.data.agent_synth import Generator
+from openlocalagent.eval.harness import format_plan_eval, plan_eval
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.device import resolve_device
 
 
 def _load(checkpoint: str, device: str):

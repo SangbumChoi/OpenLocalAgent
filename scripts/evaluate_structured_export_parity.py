@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import argparse
 
-from localagent.inference.export.structured_action_parity import (
+from openlocalagent.inference.export.structured_action_parity import (
     build_structured_action_parity,
     write_structured_action_parity,
 )

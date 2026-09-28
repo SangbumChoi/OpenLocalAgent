@@ -89,7 +89,7 @@ def main() -> int:
         "native_playwright": native_summary(base, label="current_child_base"),
         "native_selector_warm": native_summary(selector, label="selector_only_warm_child"),
         "abi_guard": {
-            "implementation": "src/localagent/agent/constrained.py",
+            "implementation": "src/openlocalagent/agent/constrained.py",
             "behavior": [
                 "explicit URL task step -> browser_navigate with extracted URL",
                 "after navigation -> browser_snapshot with empty arguments",

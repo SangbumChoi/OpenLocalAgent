@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from localagent.data.schema import Conversation
+from openlocalagent.data.schema import Conversation
 from scripts.compare_cross_surface_controls import compare
 
 

@@ -12,9 +12,9 @@ from typing import Any
 
 import torch
 
-from localagent.data.schema import Conversation
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.train.sft import _evaluate_conversations
+from openlocalagent.data.schema import Conversation
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.train.sft import _evaluate_conversations
 from scripts.train_deployment_dispatch_repair import _checkpoint_tokenizer
 
 

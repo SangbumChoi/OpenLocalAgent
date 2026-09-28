@@ -1,8 +1,8 @@
 # OpenLocalAgent: 에이전트 능력을 소형 언어 모델로 증류하기
 
-> **국문 번역본** · 원문: `~/Downloads/localagent-h100-replication/paper/content.py` (빌드 소스; 표 수치는 run receipt에서 생성)
+> **국문 번역본** · 원문: `docs/campaign/paper/slmw2026/content.py` (빌드 소스; 표 수치는 run receipt에서 생성)
 > 번역 갱신일 2026-08-27 · 수치는 원문과 1:1 대응, 용어는 첫 등장 시 영문 병기
-> 저자: Sangbum Choi (Toss Bank)
+> 저자: Sangbum Choi (OpenLocalAgent 기여자)
 
 ---
 

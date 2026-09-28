@@ -1,12 +1,12 @@
-"""Tests for the SOTA-agent scenario corpus (``localagent.data.scenarios``).
+"""Tests for the SOTA-agent scenario corpus (``openlocalagent.data.scenarios``).
 
 Note: the test file is named ``test_data_scenarios`` (not ``test_scenarios``) because the latter
 already exists for the unrelated ``eval.scenarios_bench`` module; both must stay green.
 """
 
-from localagent.agent.toolset import STANDARD_TOOLS
-from localagent.data.schema import Conversation, Role
-from localagent.data.scenarios import (
+from openlocalagent.agent.toolset import STANDARD_TOOLS
+from openlocalagent.data.schema import Conversation, Role
+from openlocalagent.data.scenarios import (
     _CHAINED,
     _ERROR,
     _WORKFLOW,

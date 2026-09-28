@@ -50,8 +50,8 @@ def measure_hf(path: str, prompt_tokens: int, new_tokens: int, repeats: int) -> 
 
 
 def measure_catalog(checkpoint: str, prompt_tokens: int, new_tokens: int, repeats: int) -> dict:
-    from localagent.model import LocalAgentLM, ModelConfig
-    from localagent.model.tokenizer import load_tokenizer
+    from openlocalagent.model import LocalAgentLM, ModelConfig
+    from openlocalagent.model.tokenizer import load_tokenizer
 
     payload = torch.load(checkpoint, map_location="cpu", weights_only=False)
     fields = {key: value for key, value in payload["cfg"].items()
@@ -60,7 +60,7 @@ def measure_catalog(checkpoint: str, prompt_tokens: int, new_tokens: int, repeat
     model.load_state_dict(payload["state_dict"])
     model.eval()
     tokenizer = load_tokenizer("bpe", "data/tokenizer-h100-16k.json")
-    from localagent.inference.generate import generate
+    from openlocalagent.inference.generate import generate
 
     prompt = " ".join(["the tool catalog and the request"] * 40)
     encoded = len(tokenizer.encode(prompt))

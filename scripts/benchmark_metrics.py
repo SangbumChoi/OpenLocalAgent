@@ -24,10 +24,10 @@ from pathlib import Path
 
 import torch
 
-from localagent.inference.generate import generate
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
-from localagent.train.stage_data import read_conversations
+from openlocalagent.inference.generate import generate
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
+from openlocalagent.train.stage_data import read_conversations
 
 PUBLIC = Path("data/public")
 SUITES = {

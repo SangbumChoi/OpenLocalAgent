@@ -9,11 +9,11 @@ import json
 from pathlib import Path
 from typing import Sequence
 
-from localagent.eval.webgpu_decode_receipt import (
+from openlocalagent.eval.webgpu_decode_receipt import (
     RECEIPT_KIND,
     verify_webgpu_decode_receipt_bytes,
 )
-from localagent.inference.export.to_onnx import export_cached_decode
+from openlocalagent.inference.export.to_onnx import export_cached_decode
 
 
 DEFAULT_SEED = 20260728

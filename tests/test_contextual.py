@@ -9,7 +9,7 @@ the referent type.
 import json
 import random
 
-from localagent.data.contextual import (
+from openlocalagent.data.contextual import (
     CONTEXTUAL_EXAMPLES,
     GROUPS,
     _render,

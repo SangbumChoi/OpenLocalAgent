@@ -20,20 +20,20 @@ from typing import Any
 
 import yaml
 
-from localagent.data.schema import Conversation, Message, Role, ToolCall
-from localagent.data.agent_synth import Sample
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.data.stateful_productivity import (
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall
+from openlocalagent.data.agent_synth import Sample
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.data.stateful_productivity import (
     SUITE_ID,
     apply_action,
     build_tasks,
     state_prompt,
     tool_specs,
 )
-from localagent.train.rl import run as run_rl
-from localagent.train.sft import sft
-from localagent.train.stage_data import canonical_sha256
+from openlocalagent.train.rl import run as run_rl
+from openlocalagent.train.sft import sft
+from openlocalagent.train.stage_data import canonical_sha256
 
 
 _DEPLOYMENT_HEADS = (

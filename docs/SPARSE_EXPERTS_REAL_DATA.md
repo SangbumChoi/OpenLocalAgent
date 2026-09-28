@@ -1,6 +1,6 @@
 # Sparse experts and public real-use data
 
-This document defines LocalAgent's opt-in small-model sparse-expert experiment and the public-data
+This document defines OpenLocalAgent's opt-in small-model sparse-expert experiment and the public-data
 contract used to test it. It is an implementation and evaluation plan, not evidence that the
 sparse model is already trained, faster in WebGPU, or better than the dense baseline.
 
@@ -10,7 +10,7 @@ sparse model is already trained, faster in WebGPU, or better than the dense base
 [DeepSeekMoE](https://arxiv.org/abs/2401.06066),
 [OLMoE](https://arxiv.org/abs/2409.02060), and
 [Kimi K3](https://github.com/MoonshotAI/Kimi-K3/blob/7c5be9599120d7993748de66a76128614f15f210/k3_tech_report.pdf)
-separate stored capacity from the parameters selected for a token. LocalAgent tests the same
+separate stored capacity from the parameters selected for a token. OpenLocalAgent tests the same
 principle at browser scale without copying the frontier serving stack:
 
 - every block has an independent, bias-free router and a bank of SwiGLU experts;

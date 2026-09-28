@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from localagent.eval.mcpmark_router import (
+from openlocalagent.eval.mcpmark_router import (
     SERVICE_ROUTES,
     SERVICE_TOOL_FAMILIES,
     _discover,

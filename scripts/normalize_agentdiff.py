@@ -15,7 +15,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from localagent.data.schema import Conversation, Message, Role
+from openlocalagent.data.schema import Conversation, Message, Role
 
 
 DATASET = "hubertmarek/agent-diff-bench"
@@ -119,7 +119,7 @@ def main() -> int:
         "split": args.split,
         "train_policy": "train" if args.split == "train" else "eval_only",
         "normalization": {
-            "interchange": "localagent.data.schema.Conversation",
+            "interchange": "openlocalagent.data.schema.Conversation",
             "user_target": "question_to_state_diff_assertion",
             "assertions": "canonical_sorted_compact_json",
             "execution": "no service execution; no external side effects",

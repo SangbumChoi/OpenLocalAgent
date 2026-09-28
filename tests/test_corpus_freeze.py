@@ -7,25 +7,25 @@ from pathlib import Path
 import pytest
 import yaml
 
-from localagent.data.corpus_freeze import (
+from openlocalagent.data.corpus_freeze import (
     FREEZE_FORMAT,
     build_corpus_freeze,
     verify_corpus_freeze,
     write_corpus_freeze,
 )
-from localagent.data.hf_corpus import (
+from openlocalagent.data.hf_corpus import (
     acquisition_runtime_identity,
     build_mixture_plan,
     normalize_evaluation_decontamination,
 )
-from localagent.data.pretrain_corpus import (
+from openlocalagent.data.pretrain_corpus import (
     build_disk_backed_corpus,
     iter_documents,
     pack_disk_backed_shards,
     read_evaluation_denylist,
 )
-from localagent.model.tokenizer import ByteTokenizer, train_bpe
-from localagent.train.pretrain import _verify_configured_corpus_freeze
+from openlocalagent.model.tokenizer import ByteTokenizer, train_bpe
+from openlocalagent.train.pretrain import _verify_configured_corpus_freeze
 
 
 def _identity(path: Path) -> dict[str, int | str]:

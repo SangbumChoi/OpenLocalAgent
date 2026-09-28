@@ -1,4 +1,4 @@
-/* Deterministic, single-step DOM microtask harness for LocalAgent.
+/* Deterministic, single-step DOM microtask harness for OpenLocalAgent.
  *
  * Each measured loop is:
  *   fresh versioned fixture -> structured action policy -> independent schema validation ->

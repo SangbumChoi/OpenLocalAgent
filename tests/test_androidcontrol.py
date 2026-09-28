@@ -1,7 +1,7 @@
 import gzip
 import struct
 
-from localagent.data.androidcontrol import (
+from openlocalagent.data.androidcontrol import (
     _masked_crc32c,
     compact_accessibility_tree,
     iter_gzip_tfrecords,

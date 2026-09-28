@@ -13,7 +13,7 @@ from __future__ import annotations
 import argparse
 import json
 
-from localagent.data.corpus_freeze import (
+from openlocalagent.data.corpus_freeze import (
     build_corpus_freeze,
     verify_corpus_freeze,
     write_corpus_freeze,

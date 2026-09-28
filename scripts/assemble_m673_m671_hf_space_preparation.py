@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from localagent.eval.demo_deploy import _bundle_identity
+from openlocalagent.eval.demo_deploy import _bundle_identity
 
 
 def _canonical(value: object) -> bytes:

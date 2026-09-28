@@ -1,7 +1,7 @@
 import torch
 
-from localagent.agent.pointer_head import PointerHead
-from localagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.agent.pointer_head import PointerHead
+from openlocalagent.model import LocalAgentLM, ModelConfig
 from scripts.train_toolace_action_history_pointer import _pointer_from_state
 
 

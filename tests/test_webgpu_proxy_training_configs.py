@@ -5,7 +5,7 @@ from pathlib import Path
 
 import yaml
 
-from localagent.model import ModelConfig
+from openlocalagent.model import ModelConfig
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_ROOT = ROOT / "configs" / "train"

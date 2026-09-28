@@ -18,7 +18,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.eval.pretrain_scorecard import (
+from openlocalagent.eval.pretrain_scorecard import (
     evaluate_pretrain_checkpoint,
     parse_source_groups,
     write_scorecard,

@@ -11,8 +11,8 @@ from typing import Any
 
 import torch
 
-from localagent.data.schema import Conversation
-from localagent.eval.appworld_api_head import (
+from openlocalagent.data.schema import Conversation
+from openlocalagent.eval.appworld_api_head import (
     AppWorldAPINearestNeighbor,
     first_action_argument_fields,
     first_action_examples,

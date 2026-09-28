@@ -8,7 +8,7 @@ CPU and to pick up exactly where it left off.
 
   python scripts/cron_train.py --steps 80
   # crontab (every day at 02:00):
-  #   0 2 * * *  cd /path/to/LocalAgent && /usr/bin/python scripts/cron_train.py --steps 80 >> runs/cron.log 2>&1
+  #   0 2 * * *  cd /path/to/OpenLocalAgent && /usr/bin/python scripts/cron_train.py --steps 80 >> runs/cron.log 2>&1
 """
 
 from __future__ import annotations
@@ -20,12 +20,12 @@ import random
 
 import torch
 
-from localagent.data.agent_synth import Generator
-from localagent.data.render import IGNORE, assistant_body, prompt_text
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.track import Tracker
-from localagent.train.loop import cosine_lr, pad_batch, set_lr
+from openlocalagent.data.agent_synth import Generator
+from openlocalagent.data.render import IGNORE, assistant_body, prompt_text
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.track import Tracker
+from openlocalagent.train.loop import cosine_lr, pad_batch, set_lr
 
 
 def _row(rec, tok):

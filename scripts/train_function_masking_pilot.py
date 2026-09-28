@@ -21,12 +21,12 @@ from typing import Any
 
 import torch
 
-from localagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1, schema_matches, validate_tool_catalog
-from localagent.data.schema import Conversation, Role
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.function_masking import augment_conversations
-from localagent.train.sft import _evaluate_conversations, sft
+from openlocalagent.data.prompt_contract import OPENAI_FULL_CATALOG_V1, schema_matches, validate_tool_catalog
+from openlocalagent.data.schema import Conversation, Role
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.function_masking import augment_conversations
+from openlocalagent.train.sft import _evaluate_conversations, sft
 
 SOURCE_URL = "https://github.com/apple/ToolSandbox"
 DEFAULT_SEED = 2058

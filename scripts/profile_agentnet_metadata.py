@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from localagent.data.agentnet import AGENTNET_REVISION, AGENTNET_URL
+from openlocalagent.data.agentnet import AGENTNET_REVISION, AGENTNET_URL
 
 
 def _sha256(path: Path) -> str:

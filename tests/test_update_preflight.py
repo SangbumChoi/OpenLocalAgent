@@ -11,27 +11,27 @@ import pytest
 import torch
 import yaml
 
-from localagent.data.agent_synth import synthesize
-from localagent.data.conversation_artifact import canonical_json_bytes
-from localagent.data.decision_quota_order import QUOTA_SAMPLING_MODE
-from localagent.data.schema import Conversation, Message, Role
-from localagent.data.stratified_eval_selector import ALGORITHM as STRATIFIED_EVAL_ALGORITHM
-from localagent.data.stratified_eval_selector import (
+from openlocalagent.data.agent_synth import synthesize
+from openlocalagent.data.conversation_artifact import canonical_json_bytes
+from openlocalagent.data.decision_quota_order import QUOTA_SAMPLING_MODE
+from openlocalagent.data.schema import Conversation, Message, Role
+from openlocalagent.data.stratified_eval_selector import ALGORITHM as STRATIFIED_EVAL_ALGORITHM
+from openlocalagent.data.stratified_eval_selector import (
     InsufficientStratumCapacityError,
     select_stratified_eval_subset,
 )
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.train.replay_sampling import (
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.train.replay_sampling import (
     MIXED_REPLAY_SAMPLING_MODE,
     PARENT_ANCHORED_FORMAT_PULSE_SAMPLING_MODE,
 )
-from localagent.train.stage_data import (
+from openlocalagent.train.stage_data import (
     canonical_sha256,
     file_identity,
     load_conversation_source,
     tokenizer_identity,
 )
-from localagent.train.update_preflight import (
+from openlocalagent.train.update_preflight import (
     PREFLIGHT_KIND,
     PREFLIGHT_SCHEMA_VERSION,
     RL_EVAL_COVERAGE_KIND,
@@ -328,7 +328,7 @@ def test_mixed_replay_identity_seals_production_contract_and_first_update(
         return ordered_keys, production_contract
 
     monkeypatch.setattr(
-        "localagent.train.replay_sampling.mixed_replay_sampling_window",
+        "openlocalagent.train.replay_sampling.mixed_replay_sampling_window",
         fake_mixed_replay_sampling_window,
     )
 
@@ -596,8 +596,8 @@ def _write_conversation_rows(path: Path, *, prefix: str, rows: int) -> None:
 
 
 def _write_completed_sft_parent(path: Path, model_config: ModelConfig) -> None:
-    from localagent.data.prompt_contract import LEGACY_CONVERSATION_PROMPT_CONTRACT
-    from localagent.train.sft import _sealed_resume_sha256
+    from openlocalagent.data.prompt_contract import LEGACY_CONVERSATION_PROMPT_CONTRACT
+    from openlocalagent.train.sft import _sealed_resume_sha256
 
     tokenizer = tokenizer_identity("byte", vocab_size=model_config.vocab_size)
     training_contract = {
@@ -616,7 +616,7 @@ def _write_completed_sft_parent(path: Path, model_config: ModelConfig) -> None:
         "sources": {"parent.jsonl": {"input_tokens": 1, "loss_tokens": 1, "rows": 1}},
     }
     payload = {
-        "resume_format": "localagent.sft_resume",
+        "resume_format": "openlocalagent.sft_resume",
         "resume_version": 1,
         "cfg": model_config.__dict__,
         "state_dict": LocalAgentLM(model_config).state_dict(),
@@ -762,12 +762,12 @@ def _write_fake_sft_outputs(
     production_mutation: Path | None = None,
     parent_mutation: Path | None = None,
 ) -> None:
-    from localagent.data.prompt_contract import LEGACY_CONVERSATION_PROMPT_CONTRACT
-    from localagent.train.sft import (
+    from openlocalagent.data.prompt_contract import LEGACY_CONVERSATION_PROMPT_CONTRACT
+    from openlocalagent.train.sft import (
         _sealed_resume_sha256,
         _validate_parent_anchored_sampling_parent,
     )
-    from localagent.train.update_preflight import _derive_sft_data_identity
+    from openlocalagent.train.update_preflight import _derive_sft_data_identity
 
     effective = yaml.safe_load(Path(effective_config_path).read_text(encoding="utf-8"))
     out_dir = Path(effective["log"]["out_dir"])
@@ -966,7 +966,7 @@ def _write_fake_sft_outputs(
     }
     checkpoint_path = out_dir / "latest.pt"
     checkpoint = {
-        "resume_format": "localagent.sft_resume",
+        "resume_format": "openlocalagent.sft_resume",
         "resume_version": 1,
         "cfg": model_config.__dict__,
         "state_dict": state_dict,
@@ -1396,7 +1396,7 @@ def test_run_one_update_rl_preflight_seals_lineage_and_observability(
 ) -> None:
     config_path, production_path = _write_rl_preflight_fixture(tmp_path)
     monkeypatch.setattr(
-        "localagent.train.rl.run",
+        "openlocalagent.train.rl.run",
         lambda config_path, *, resume, _execution_rollout_step_limit: (
             _write_fake_rl_outputs(
                 config_path,
@@ -1483,7 +1483,7 @@ def test_rl_preflight_derives_verified_selector_minimum_instead_of_one_row(
     assert derivation["mandatory_strata"] > derivation["minimum_coverage_rows"]
 
     monkeypatch.setattr(
-        "localagent.train.rl.run",
+        "openlocalagent.train.rl.run",
         lambda config_path, *, resume, _execution_rollout_step_limit: (
             _write_fake_rl_outputs(
                 config_path,
@@ -1530,7 +1530,7 @@ def test_run_one_update_rl_preflight_fails_if_production_output_changes(
 ) -> None:
     config_path, production_path = _write_rl_preflight_fixture(tmp_path)
     monkeypatch.setattr(
-        "localagent.train.rl.run",
+        "openlocalagent.train.rl.run",
         lambda config_path, *, resume, _execution_rollout_step_limit: (
             _write_fake_rl_outputs(
                 config_path,
@@ -1581,7 +1581,7 @@ def test_run_one_update_rl_preflight_requires_real_production_schedule_update(
 ) -> None:
     config_path, production_path = _write_rl_preflight_fixture(tmp_path)
     monkeypatch.setattr(
-        "localagent.train.rl.run",
+        "openlocalagent.train.rl.run",
         lambda config_path, *, resume, _execution_rollout_step_limit: (
             _write_fake_rl_outputs(
                 config_path,
@@ -1632,7 +1632,7 @@ def test_run_one_update_rl_preflight_fails_closed_on_preexisting_destination(
         nonlocal called
         called = True
 
-    monkeypatch.setattr("localagent.train.rl.run", forbidden_run)
+    monkeypatch.setattr("openlocalagent.train.rl.run", forbidden_run)
     with pytest.raises(FileExistsError):
         run_one_update_rl_preflight(
             config_path,
@@ -1654,7 +1654,7 @@ def test_run_one_update_rl_preflight_rejects_receipt_inside_work_directory(
         nonlocal called
         called = True
 
-    monkeypatch.setattr("localagent.train.rl.run", forbidden_run)
+    monkeypatch.setattr("openlocalagent.train.rl.run", forbidden_run)
     work_dir = tmp_path / "isolated"
     with pytest.raises(ValueError, match="must be disjoint"):
         run_one_update_rl_preflight(
@@ -1673,7 +1673,7 @@ def test_run_one_update_sft_preflight_seals_exact_update_and_lineage(
 ) -> None:
     config_path, production_path, parent_path = _write_sft_preflight_fixture(tmp_path)
     monkeypatch.setattr(
-        "localagent.train.sft.run",
+        "openlocalagent.train.sft.run",
         lambda config_path, *, resume, _max_optimizer_updates: _write_fake_sft_outputs(
             config_path
         ),
@@ -1770,7 +1770,7 @@ def test_sft_preflight_validates_and_records_exact_parent_seal_before_run(
     source["continuation"]["parent"] = _sft_parent_pins(parent_path)
     config_path.write_text(yaml.safe_dump(source, sort_keys=False), encoding="utf-8")
     monkeypatch.setattr(
-        "localagent.train.sft.run",
+        "openlocalagent.train.sft.run",
         lambda config_path, *, resume, _max_optimizer_updates: _write_fake_sft_outputs(
             config_path
         ),
@@ -1808,7 +1808,7 @@ def test_sft_preflight_rejects_parent_pin_mismatch_before_run(
         nonlocal called
         called = True
 
-    monkeypatch.setattr("localagent.train.sft.run", forbidden_run)
+    monkeypatch.setattr("openlocalagent.train.sft.run", forbidden_run)
     with pytest.raises(ValueError, match="completed_lm_cursor mismatch"):
         run_one_update_sft_preflight(
             config_path,
@@ -1837,7 +1837,7 @@ def test_parent_anchored_sft_preflight_requires_declared_parent_seal(
         nonlocal called
         called = True
 
-    monkeypatch.setattr("localagent.train.sft.run", forbidden_run)
+    monkeypatch.setattr("openlocalagent.train.sft.run", forbidden_run)
     with pytest.raises(
         ValueError,
         match="parent-anchored SFT preflight requires continuation.parent",
@@ -1873,7 +1873,7 @@ def test_parent_anchored_sft_preflight_rejects_semantic_parent_drift_before_run(
         nonlocal called
         called = True
 
-    monkeypatch.setattr("localagent.train.sft.run", forbidden_run)
+    monkeypatch.setattr("openlocalagent.train.sft.run", forbidden_run)
     with pytest.raises(ValueError, match="parent.*order.*mismatch"):
         run_one_update_sft_preflight(
             config_path,
@@ -1895,7 +1895,7 @@ def test_sft_preflight_proves_freeze_and_optimizer_model_scope(
     source["optim"]["freeze_parameters"] = ["embed.weight", "in_proj.weight"]
     config_path.write_text(yaml.safe_dump(source, sort_keys=False), encoding="utf-8")
     monkeypatch.setattr(
-        "localagent.train.sft.run",
+        "openlocalagent.train.sft.run",
         lambda config_path, *, resume, _max_optimizer_updates: _write_fake_sft_outputs(
             config_path
         ),
@@ -1957,7 +1957,7 @@ def test_sft_preflight_requires_unfrozen_transition_at_nonzero_step_zero_lr(
     source["schedule"]["warmup_steps"] = 0
     config_path.write_text(yaml.safe_dump(source, sort_keys=False), encoding="utf-8")
     monkeypatch.setattr(
-        "localagent.train.sft.run",
+        "openlocalagent.train.sft.run",
         lambda config_path, *, resume, _max_optimizer_updates: _write_fake_sft_outputs(
             config_path
         ),
@@ -2042,7 +2042,7 @@ def test_parent_anchored_sft_preflight_executes_through_first_pulse(
         return identity, evidence
 
     monkeypatch.setattr(
-        "localagent.train.update_preflight._derive_sft_data_identity_and_sampling",
+        "openlocalagent.train.update_preflight._derive_sft_data_identity_and_sampling",
         derive_with_parent_pulse,
     )
     observed_limits = []
@@ -2052,7 +2052,7 @@ def test_parent_anchored_sft_preflight_executes_through_first_pulse(
         observed_limits.append(_max_optimizer_updates)
         _write_fake_sft_outputs(config_path)
 
-    monkeypatch.setattr("localagent.train.sft.run", fake_run)
+    monkeypatch.setattr("openlocalagent.train.sft.run", fake_run)
     receipt = run_one_update_sft_preflight(
         config_path,
         work_dir=tmp_path / "sft-isolated",
@@ -2181,7 +2181,7 @@ def test_sft_preflight_rejects_false_freeze_optimizer_or_learning_evidence(
         ),
     }
     monkeypatch.setattr(
-        "localagent.train.sft.run",
+        "openlocalagent.train.sft.run",
         lambda config_path, *, resume, _max_optimizer_updates: _write_fake_sft_outputs(
             config_path,
             **fake_kwargs,
@@ -2247,11 +2247,11 @@ def test_sft_preflight_receipt_binds_production_mixed_replay_and_exercised_prefi
         return identity, evidence
 
     monkeypatch.setattr(
-        "localagent.train.update_preflight._derive_sft_data_identity_and_sampling",
+        "openlocalagent.train.update_preflight._derive_sft_data_identity_and_sampling",
         derive_with_mixed_replay,
     )
     monkeypatch.setattr(
-        "localagent.train.sft.run",
+        "openlocalagent.train.sft.run",
         lambda config_path, *, resume, _max_optimizer_updates: _write_fake_sft_outputs(
             config_path
         ),
@@ -2317,7 +2317,7 @@ def test_run_one_update_sft_preflight_detects_external_mutation(
             parent_mutation=parent_path if mutation == "parent" else None,
         )
 
-    monkeypatch.setattr("localagent.train.sft.run", fake_run)
+    monkeypatch.setattr("openlocalagent.train.sft.run", fake_run)
     receipt_path = tmp_path / "failed-sft-receipt.json"
     with pytest.raises(RuntimeError, match="SFT preflight failed"):
         run_one_update_sft_preflight(
@@ -2343,7 +2343,7 @@ def test_run_one_update_sft_preflight_rejects_second_adam_update(
 ) -> None:
     config_path, _, _ = _write_sft_preflight_fixture(tmp_path)
     monkeypatch.setattr(
-        "localagent.train.sft.run",
+        "openlocalagent.train.sft.run",
         lambda config_path, *, resume, _max_optimizer_updates: _write_fake_sft_outputs(
             config_path,
             optimizer_step=2,
@@ -2389,7 +2389,7 @@ def test_run_one_update_sft_preflight_fails_closed_on_preexisting_destination(
         nonlocal called
         called = True
 
-    monkeypatch.setattr("localagent.train.sft.run", forbidden_run)
+    monkeypatch.setattr("openlocalagent.train.sft.run", forbidden_run)
     with pytest.raises(FileExistsError):
         run_one_update_sft_preflight(
             config_path,
@@ -2411,7 +2411,7 @@ def test_run_one_update_sft_preflight_rejects_receipt_inside_work_directory(
         nonlocal called
         called = True
 
-    monkeypatch.setattr("localagent.train.sft.run", forbidden_run)
+    monkeypatch.setattr("openlocalagent.train.sft.run", forbidden_run)
     work_dir = tmp_path / "isolated"
     with pytest.raises(ValueError, match="must be disjoint"):
         run_one_update_sft_preflight(

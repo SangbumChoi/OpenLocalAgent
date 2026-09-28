@@ -1,6 +1,6 @@
 import pytest
 
-from localagent.data.realistic_adapters import normalize_mobile_row
+from openlocalagent.data.realistic_adapters import normalize_mobile_row
 
 
 def _row() -> dict:

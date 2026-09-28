@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.eval.webgpu_action_summary import (
+from openlocalagent.eval.webgpu_action_summary import (
     build_webgpu_action_summary,
     write_webgpu_action_summary,
 )

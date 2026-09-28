@@ -8,11 +8,11 @@ import hashlib
 from pathlib import Path
 from typing import Sequence
 
-from localagent.eval.webgpu_decode_campaign import (
+from openlocalagent.eval.webgpu_decode_campaign import (
     build_webgpu_decode_campaign,
     write_webgpu_decode_campaign,
 )
-from localagent.eval.webgpu_decode_receipt import read_stable_webgpu_evidence_file
+from openlocalagent.eval.webgpu_decode_receipt import read_stable_webgpu_evidence_file
 
 
 def build_parser() -> argparse.ArgumentParser:

@@ -5,13 +5,13 @@ computer-use prompts."""
 import time
 import torch
 
-from localagent.agent.tool_head import CLASSES
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
-from localagent.data.agent_synth import Generator
-from localagent.eval.harness import evaluate_grounded
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.sft import sft
+from openlocalagent.agent.tool_head import CLASSES
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.data.agent_synth import Generator
+from openlocalagent.eval.harness import evaluate_grounded
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.sft import sft
 
 torch.set_num_threads(4)
 tok = load_tokenizer()

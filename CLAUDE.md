@@ -6,7 +6,7 @@ file adds only Claude-specific sub-agent routing.
 
 ## TL;DR
 
-Pure-PyTorch tool-calling agent trained from scratch on open data. Seven tiers from `la-10m` to
+OpenLocalAgent is a pure-PyTorch tool-calling agent trained from scratch on open data. Seven tiers from `la-10m` to
 `la-700m`, including a sparse-expert arm with two matched dense controls, through
 `pretrain → midtrain → posttrain`, scored on ten public agent benchmarks. Keep `pytest -q` green
 and `ruff check src tests scripts demos` clean. Never bypass a model config's declared

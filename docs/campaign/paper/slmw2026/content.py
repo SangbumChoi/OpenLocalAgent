@@ -3261,7 +3261,7 @@ suite exactly, so the harness is deterministic under a fixed batch size.</p>
 PAPER = {
     "title": "OpenLocalAgent: Transfer and Task Completion in Small Tool-Calling Models",
     "authors": "Sangbum Choi",
-    "affiliation": "Toss Bank",
+    "affiliation": "OpenLocalAgent contributors",
     "abstract": ABSTRACT.strip(),
     "figures": {
         "pipeline": FIGURES / "pf1_pipeline_v2.png",

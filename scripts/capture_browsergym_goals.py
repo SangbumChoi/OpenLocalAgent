@@ -23,7 +23,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.data.browsergym_capture import capture_browsergym_goals
+from openlocalagent.data.browsergym_capture import capture_browsergym_goals
 
 
 def parse_args() -> argparse.Namespace:

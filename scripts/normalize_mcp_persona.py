@@ -10,7 +10,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from localagent.data.schema import Conversation, Message, Role
+from openlocalagent.data.schema import Conversation, Message, Role
 
 
 DATASET = "MCP-Persona"

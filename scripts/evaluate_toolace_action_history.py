@@ -16,16 +16,16 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
-from localagent.agent.constrained import hybrid_decode
-from localagent.agent.parser import extract_tool_calls
-from localagent.agent.runtime import Agent
-from localagent.agent.tools import ToolRegistry
-from localagent.data.conversation_artifact import canonical_json_bytes
-from localagent.data.prompt_contract import render_function_catalog, schema_matches
-from localagent.data.render import history_text
-from localagent.data.schema import Conversation, Role, ToolSpec
-from localagent.eval.tool_eval import match_calls
-from localagent.model.tokenizer import ASSISTANT, BPE_EOS
+from openlocalagent.agent.constrained import hybrid_decode
+from openlocalagent.agent.parser import extract_tool_calls
+from openlocalagent.agent.runtime import Agent
+from openlocalagent.agent.tools import ToolRegistry
+from openlocalagent.data.conversation_artifact import canonical_json_bytes
+from openlocalagent.data.prompt_contract import render_function_catalog, schema_matches
+from openlocalagent.data.render import history_text
+from openlocalagent.data.schema import Conversation, Role, ToolSpec
+from openlocalagent.eval.tool_eval import match_calls
+from openlocalagent.model.tokenizer import ASSISTANT, BPE_EOS
 
 
 def _identity(path: Path) -> dict[str, Any]:

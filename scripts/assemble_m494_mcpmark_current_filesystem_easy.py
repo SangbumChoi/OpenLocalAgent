@@ -90,7 +90,7 @@ def assemble(*, source: Path, checkpoint: Path) -> dict[str, Any]:
             "official_split_verified": False,
             "promotion": "blocked_pending_official_mcpmark_split_and_broader_tasks",
             "claim_boundary": (
-                "The exact current LocalAgent checkpoint ran ten isolated public MCPMark easy "
+                "The exact current OpenLocalAgent checkpoint ran ten isolated public MCPMark easy "
                 "filesystem fixtures through a real stdio server and pinned verifiers; two "
                 "passed. This is not an official MCPMark split or leaderboard score, and it "
                 "does not establish email, Notion, browser, desktop, user-simulator, or "

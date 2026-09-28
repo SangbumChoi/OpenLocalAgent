@@ -9,8 +9,8 @@ import pytest
 import torch
 import yaml
 
-from localagent.data.agent_synth import Sample
-from localagent.data.conversation_artifact import (
+from openlocalagent.data.agent_synth import Sample
+from openlocalagent.data.conversation_artifact import (
     CONVERSATION_FORMAT,
     CONVERSATION_SERIALIZATION,
     MANIFEST_KIND,
@@ -19,9 +19,9 @@ from localagent.data.conversation_artifact import (
     canonical_json_bytes,
     self_hashed_manifest,
 )
-from localagent.data.prompt_contract import LEGACY_CONVERSATION_PROMPT_CONTRACT
-from localagent.data.schema import Conversation, Message, Role
-from localagent.eval.sft_checkpoint_sweep import (
+from openlocalagent.data.prompt_contract import LEGACY_CONVERSATION_PROMPT_CONTRACT
+from openlocalagent.data.schema import Conversation, Message, Role
+from openlocalagent.eval.sft_checkpoint_sweep import (
     CONFIG_KIND,
     RESULT_KIND,
     SCHEMA_VERSION,
@@ -31,14 +31,14 @@ from localagent.eval.sft_checkpoint_sweep import (
     run_sft_checkpoint_sweep,
     write_sft_checkpoint_sweep_result,
 )
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ByteTokenizer
-from localagent.train.sft import (
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ByteTokenizer
+from openlocalagent.train.sft import (
     _evaluate_conversations,
     _sealed_resume_sha256,
     sft,
 )
-from localagent.train.stage_data import canonical_sha256, tokenizer_identity
+from openlocalagent.train.stage_data import canonical_sha256, tokenizer_identity
 
 
 def _model_config() -> ModelConfig:

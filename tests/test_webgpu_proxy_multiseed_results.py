@@ -6,8 +6,8 @@ from pathlib import Path
 
 import pytest
 
-from localagent.eval.pretrain_compare import compare_pretrain_sidecars
-from localagent.eval.pretrain_seed_aggregate import (
+from openlocalagent.eval.pretrain_compare import compare_pretrain_sidecars
+from openlocalagent.eval.pretrain_seed_aggregate import (
     SeedComparisonSpec,
     aggregate_pretrain_seeds,
 )

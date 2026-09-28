@@ -7,7 +7,7 @@ from typing import Any
 
 import yaml
 
-from localagent.data.mind2web_prompts import (
+from openlocalagent.data.mind2web_prompts import (
     PRODUCTION_MIND2WEB_ARCHIVE_BYTES,
     PRODUCTION_MIND2WEB_ARCHIVE_SHA256,
     PRODUCTION_MIND2WEB_MEMBERS,

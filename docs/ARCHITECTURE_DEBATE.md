@@ -57,7 +57,7 @@ latency/RSS budgets** — and often hurt them.
 GLM-5.2's [official report](https://z.ai/blog/glm-5.2) is a useful boundary case: sharing one
 dynamic-sparse-attention indexer across four layers reduces indexer work at one-million-token
 context, yet the authors explicitly report that KV-cache size does not fall proportionally. That
-solves a long-context serving problem, not LocalAgent's 2K-context browser bottleneck.
+solves a long-context serving problem, not OpenLocalAgent's 2K-context browser bottleneck.
 **Verdict (ours):** **gated short causal conv (k=3, double-gated, LIV-style) as the primary mixer + 1–2
 global GQA layers** for argument-copying. **Do not reach for Mamba/SSM without a measured browser
 kernel** — its fused-CUDA advantage is not portable, and a naive PyTorch scan can also be slower than

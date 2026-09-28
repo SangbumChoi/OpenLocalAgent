@@ -16,9 +16,9 @@ import json
 import os
 import time
 
-from localagent.agent.constrained import _quoted
-from localagent.agent.retriever import ToolRetriever
-from localagent.data.tool_catalog import build_catalog, dump_jsonl, gen_episodes, gen_usages
+from openlocalagent.agent.constrained import _quoted
+from openlocalagent.agent.retriever import ToolRetriever
+from openlocalagent.data.tool_catalog import build_catalog, dump_jsonl, gen_episodes, gen_usages
 
 OUT = "runs/catalog"
 SIZES = [50, 100, 250, 500, 1000, 1350]

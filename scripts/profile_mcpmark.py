@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.data.mcpmark import MCPMARK_REVISION, profile_mcpmark
+from openlocalagent.data.mcpmark import MCPMARK_REVISION, profile_mcpmark
 
 
 def main() -> int:

@@ -58,7 +58,7 @@ def multipliers(profile_path: Path, floor: float, ceiling: float, invert: bool =
 
 
 def install(scales: dict[str, float]) -> None:
-    from localagent.model import LocalAgentLM
+    from openlocalagent.model import LocalAgentLM
 
     models: list[object] = []
     original_init = LocalAgentLM.__init__
@@ -118,8 +118,8 @@ def main() -> None:
     print(json.dumps({"learning_rate_scales": scales}, indent=2), flush=True)
     install(scales)
 
-    sys.argv = ["localagent", "train", args.stage, args.config]
-    runpy.run_module("localagent.cli", run_name="__main__")
+    sys.argv = ["openlocalagent", "train", args.stage, args.config]
+    runpy.run_module("openlocalagent.cli", run_name="__main__")
 
 
 if __name__ == "__main__":

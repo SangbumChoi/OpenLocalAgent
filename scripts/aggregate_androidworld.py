@@ -14,7 +14,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.eval.androidworld import aggregate_androidworld_run
+from openlocalagent.eval.androidworld import aggregate_androidworld_run
 
 
 def main() -> int:

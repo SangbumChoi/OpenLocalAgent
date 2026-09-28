@@ -11,7 +11,7 @@ from scripts.train_cross_surface_continuation import (
     _parse_source_reference,
     _source_profile,
 )
-from localagent.data.schema import Conversation
+from openlocalagent.data.schema import Conversation
 
 
 def test_parse_labeled_path_preserves_equals_in_path() -> None:

@@ -425,7 +425,7 @@ def render_function_catalog(tools: Sequence[ToolSpec]) -> str:
 
 
 def render_tool_calls(calls: Sequence[ToolCall]) -> str:
-    """Render ordered tool calls using the canonical LocalAgent envelope."""
+    """Render ordered tool calls using the canonical OpenLocalAgent envelope."""
 
     if not isinstance(calls, Sequence) or isinstance(calls, (str, bytes)):
         raise TypeError("assistant tool_calls must be a sequence")

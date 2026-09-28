@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Run a bounded free-running AppWorld API trajectory probe.
 
-The model chooses a LocalAgent tool on every step; a strict schema adapter then selects one literal
+The model chooses a OpenLocalAgent tool on every step; a strict schema adapter then selects one literal
 ``apis.<app>.<api>(...)`` candidate and executes it in a resettable AppWorld fixture.  The adapter
 does not inject a ground-truth action, answer, or completion call.  This is a native closed-loop
 diagnostic, not an AppWorld leaderboard implementation.
@@ -58,8 +58,8 @@ def evaluate(
     if max_steps < 1 or retrieve_k < 1:
         raise ValueError("max_steps and retrieve_k must be positive")
     from appworld import AppWorld, update_root
-    from localagent.agent.runtime import Agent
-    from localagent.eval.appworld_api_head import load_appworld_api_head
+    from openlocalagent.agent.runtime import Agent
+    from openlocalagent.eval.appworld_api_head import load_appworld_api_head
 
     root = root.resolve()
     if Path(update_root(str(root))).resolve() != root:

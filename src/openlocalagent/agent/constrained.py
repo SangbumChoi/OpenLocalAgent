@@ -1258,7 +1258,7 @@ def _text_candidates(prompt: str) -> list[str] | None:
     if "morning" in low or "greet" in low:
         return [f"Good morning, {nm}!" for nm in caps] or ["Good morning!"]
     if "your name" in low:
-        return ["I am LocalAgent."]
+        return ["I am OpenLocalAgent."]
     if "thank" in low:
         return ["You're welcome!"]
     return None
@@ -1313,7 +1313,7 @@ def candidates(prompt: str, tools: list[ToolSpec]) -> list[tuple[str, bool, str]
     for tool in tools:
         for b in _tool_bodies(prompt, tool):
             out.append((b, True, group_of.get(tool.name, "tool_call")))
-    return out or [("I am LocalAgent.", False, "text")]
+    return out or [("I am OpenLocalAgent.", False, "text")]
 
 
 def _preselect_tool(model, tok, prompt: str, names: set[str], device) -> str | None:
@@ -1450,7 +1450,7 @@ def hybrid_decode(model, tok, prompt: str, tools: list[ToolSpec], device="cpu", 
     for t in use:
         bodies += _tool_bodies(grounding, t, ptr)
     if not bodies:
-        return "I am LocalAgent."
+        return "I am OpenLocalAgent."
     if blocked_candidates:
         available = [body for body in bodies if body not in blocked_candidates]
         # If every grounded candidate was rejected, fail open and let the model retry rather than
@@ -1491,7 +1491,7 @@ def grounded_decode(model, tok, prompt: str, tools: list[ToolSpec], device="cpu"
         from openlocalagent.agent.tool_head import CLASSES
         picked = CLASSES[int(tool_head(feats[-1]).argmax(-1))]
         if picked == "text":
-            return _best(model, tok, score, _text_candidates(prompt) or ["I am LocalAgent."], device)
+            return _best(model, tok, score, _text_candidates(prompt) or ["I am OpenLocalAgent."], device)
     else:
         txt = _text_candidates(prompt)
         if txt is not None:
@@ -1508,5 +1508,5 @@ def grounded_decode(model, tok, prompt: str, tools: list[ToolSpec], device="cpu"
     for t in use:
         bodies += _tool_bodies(prompt, t, ptr)
     if not bodies:
-        return "I am LocalAgent."
+        return "I am OpenLocalAgent."
     return _best(model, tok, score, bodies, device)

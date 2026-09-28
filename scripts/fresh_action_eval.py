@@ -17,13 +17,13 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
-from localagent.data.prompt_contract import (
+from openlocalagent.data.prompt_contract import (
     OPENAI_FULL_CATALOG_V1,
     schema_matches,
     validate_tool_catalog,
 )
-from localagent.data.schema import ToolCall, ToolSpec
-from localagent.eval.external_action_contract import (
+from openlocalagent.data.schema import ToolCall, ToolSpec
+from openlocalagent.eval.external_action_contract import (
     HARDENED_SCHEMA_VERSION,
     MANIFEST_KIND,
     SCHEMA_VERSION,
@@ -32,8 +32,8 @@ from localagent.eval.external_action_contract import (
     validate_frozen_slice,
     verify_declared_file_identity,
 )
-from localagent.eval.realtime import paired_clustered_exact_action_delta_ci
-from localagent.eval.tool_eval import match_calls, parse_tool_output
+from openlocalagent.eval.realtime import paired_clustered_exact_action_delta_ci
+from openlocalagent.eval.tool_eval import match_calls, parse_tool_output
 
 _MAX_JSON_BYTES = 512 * 1024 * 1024
 _MAX_MODEL_ARTIFACT_BYTES = 8 * 1024 * 1024 * 1024

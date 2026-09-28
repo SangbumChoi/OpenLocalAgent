@@ -18,12 +18,12 @@ from typing import Any
 
 import torch
 
-from localagent.agent.pointer_head import PTR_ARGS, PointerHead
-from localagent.data.schema import Conversation, Role, ToolCall
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.sft import sft
-from localagent.train.stage_data import canonical_sha256
+from openlocalagent.agent.pointer_head import PTR_ARGS, PointerHead
+from openlocalagent.data.schema import Conversation, Role, ToolCall
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.sft import sft
+from openlocalagent.train.stage_data import canonical_sha256
 from scripts.train_grounded_mind2web import _assert_disjoint, _head_samples, _pointer_metrics
 
 

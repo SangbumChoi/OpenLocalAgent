@@ -23,9 +23,9 @@ from typing import Any
 import torch
 import yaml
 
-from localagent.data.public_eval_matrix import load_matrix
-from localagent.model import ModelConfig
-from localagent.train.device import resolve_device
+from openlocalagent.data.public_eval_matrix import load_matrix
+from openlocalagent.model import ModelConfig
+from openlocalagent.train.device import resolve_device
 
 try:  # direct script invocation
     from acquire_hf_sources import acquire
@@ -256,7 +256,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--hf-source", action="append", dest="hf_sources")
     parser.add_argument("--hf-dry-run", action="store_true")
     parser.add_argument("--wandb", action="store_true", help="log campaign scalars to W&B")
-    parser.add_argument("--wandb-project", default="localagent")
+    parser.add_argument("--wandb-project", default="openlocalagent")
     parser.add_argument("--wandb-entity")
     parser.add_argument("--wandb-run-name")
     parser.add_argument("--wandb-mode", choices=("online", "offline"), default="online")

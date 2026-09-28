@@ -19,13 +19,13 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 
-from localagent.agent.dense_selector import DenseToolSelector, tool_embeddings
-from localagent.agent.routes import ROUTE_INDEX, RouteHead
-from localagent.agent.tool_head import _feat
-from localagent.data.schema import Conversation
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.stage_data import ProbeDecision, probe_decisions
+from openlocalagent.agent.dense_selector import DenseToolSelector, tool_embeddings
+from openlocalagent.agent.routes import ROUTE_INDEX, RouteHead
+from openlocalagent.agent.tool_head import _feat
+from openlocalagent.data.schema import Conversation
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.stage_data import ProbeDecision, probe_decisions
 
 SOURCE_URL = "https://github.com/eval-sys/mcpmark"
 SOURCE_REVISION = "cd45b7f57923b9b3985467f5139927575f83141c"

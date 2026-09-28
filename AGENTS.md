@@ -5,7 +5,7 @@ adds sub-agent routing. Cursor rules live in `.cursor/rules/`. Keep all three in
 
 ## What this project is
 
-LocalAgent trains a tool-calling agent **from scratch** in **pure PyTorch** on **open data**, in
+OpenLocalAgent trains a tool-calling agent **from scratch** in **pure PyTorch** on **open data**, in
 seven sizes from `la-10m` to `la-700m` — including a sparse-expert arm with two matched dense
 controls — through three stages, scored on ten public agent benchmarks.
 

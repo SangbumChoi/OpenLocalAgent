@@ -8,8 +8,8 @@ This document does not claim those steps have happened.
 
 Implementation:
 
-- `src/localagent/eval/external_action_contract.py`
-- `src/localagent/eval/realtime.py`
+- `src/openlocalagent/eval/external_action_contract.py`
+- `src/openlocalagent/eval/realtime.py`
 - `scripts/fresh_action_eval.py`
 - `tests/test_external_action_contract.py`
 
@@ -154,7 +154,7 @@ from one named immutable revision and split to:
 
 The hardened lane uses the same case fields with `"schema_version": 2`; the contract and source
 versions must match. Every object envelope has an exact key set. The tool schema is restricted to
-the recursive subset shared with `localagent.data.prompt_contract`: `type`, `description`, `enum`,
+the recursive subset shared with `openlocalagent.data.prompt_contract`: `type`, `description`, `enum`,
 `format`, `properties`, `required`, `additionalProperties`, and `items`. Unsupported schema
 keywords fail instead of being silently ignored.
 
@@ -262,7 +262,7 @@ be listed. Supported formats are:
 
 - `corpus_jsonl`: one object per line with exactly one string-valued `text`, `content`, or `code`
   field; ambiguous multi-text-field rows fail closed;
-- `conversation_jsonl`: one canonical `localagent.data.schema.Conversation` per line; and
+- `conversation_jsonl`: one canonical `openlocalagent.data.schema.Conversation` per line; and
 - `text`: one bounded UTF-8 text file.
 
 Packed token arrays are not a substitute for auditable source text.
@@ -320,7 +320,7 @@ a frozen RL sidecar.
 
 This repository validates the sidecar but does not yet export it directly from a live checkpoint.
 Production collection therefore needs a small checkpoint-to-sidecar migration step that copies
-the already embedded LocalAgent lineage and hashes the same checkpoint descriptor. Do not hand-edit
+the already embedded OpenLocalAgent lineage and hashes the same checkpoint descriptor. Do not hand-edit
 or weaken the sidecar schema. Directory bundles likewise need a deterministic archive or
 self-hashed bundle manifest represented as one regular file; v2 deliberately does not assign a
 portable hash to a mutable directory tree.
@@ -385,7 +385,7 @@ The original unversioned result object is retained only for byte-replay compatib
 ```
 
 This is an adapter-normalized call record, not a raw result. It does not prove that the model
-emitted a valid LocalAgent envelope, produced no outside text, avoided duplicate keys, or reached a
+emitted a valid OpenLocalAgent envelope, produced no outside text, avoided duplicate keys, or reached a
 complete stop. Its claimed checkpoint/bundle hashes are not opened. A new non-raw collection must
 at least use the explicit kind `localagent_external_normalized_call_result`, schema version 1; its
 comparison kind is `localagent_fresh_external_normalized_call_comparison` and retains the same

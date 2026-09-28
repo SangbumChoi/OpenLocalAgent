@@ -1,4 +1,4 @@
-# LocalAgent — development history & detailed results
+# OpenLocalAgent — development history & detailed results
 
 Detailed experimental narrative behind the headline numbers (ultra-tiny 1M flywheel, the
 21-tool scaling study, the 28M training, parallel calls, distillation). The current
@@ -81,7 +81,7 @@ Reproduce: `python scripts/analyze_loop.py --model configs/model/tiny-30m-byte.y
 import json, torch
 from huggingface_hub import hf_hub_download
 from safetensors.torch import load_file
-from localagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model import LocalAgentLM, ModelConfig
 
 repo = "danelcsb/localagent-tiny-30m-byte"
 cfg_d = json.load(open(hf_hub_download(repo, "config.json")))
@@ -126,4 +126,3 @@ Throughput/memory (CPU, 4 threads), showing the KV-cache win:
 
 Reproduce: `python scripts/flywheel.py` (train+enrich loop → `runs/flywheel/accuracy.png`),
 `python scripts/benchmark.py` (→ `runs/bench/throughput.png`, `memory.png`).
-

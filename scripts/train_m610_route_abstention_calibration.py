@@ -20,11 +20,11 @@ from typing import Any
 import torch
 import torch.nn.functional as F
 
-from localagent.agent.routes import ROUTES, ROUTE_INDEX, RouteHead, route_of, route_of_sample
-from localagent.data.agent_synth import Generator, Sample
-from localagent.data.schema import Conversation
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.train.stage_data import probe_decisions
+from openlocalagent.agent.routes import ROUTES, ROUTE_INDEX, RouteHead, route_of, route_of_sample
+from openlocalagent.data.agent_synth import Generator, Sample
+from openlocalagent.data.schema import Conversation
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.train.stage_data import probe_decisions
 from scripts.train_deployment_dispatch_repair import _checkpoint_tokenizer
 
 
@@ -51,7 +51,7 @@ def _identity(path: Path) -> dict[str, Any]:
 
 
 def _features(model: LocalAgentLM, tokenizer: Any, rows: list[Any]) -> torch.Tensor:
-    from localagent.agent.tool_head import _feat
+    from openlocalagent.agent.tool_head import _feat
 
     return torch.stack(
         [

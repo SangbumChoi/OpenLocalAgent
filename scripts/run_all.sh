@@ -3,7 +3,7 @@
 # so the box never OOMs). Waits for the in-flight dispatch run, then chains scenario+extended
 # training and arg audits. Each stage logs to this script's stdout (/tmp/run_all.log).
 set -u
-cd /home/user/LocalAgent
+cd /home/user/OpenLocalAgent
 say(){ echo "=== [orchestrator $(date +%H:%M:%S)] $* ==="; }
 
 say "waiting for dispatch fine-tune to finish (runs/tiny-30m-dispatch-long.pt + LONG_DONE)"

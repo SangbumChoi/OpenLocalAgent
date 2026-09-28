@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 
-from localagent.eval.rl_readiness import run_ready_rl
+from openlocalagent.eval.rl_readiness import run_ready_rl
 
 
 def main(argv: list[str] | None = None) -> int:

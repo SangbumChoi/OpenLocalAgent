@@ -35,7 +35,8 @@ tasks = [task for task in build_tasks(SUITES["androidcontrol"], args.rows)
              json.dumps(task.gold_arguments, sort_keys=True)) not in seen]
 
 kind, _, location = args.model.partition(":")
-adapters = {"localagent": LocalAgentAdapter, "hf": HuggingFaceAdapter, "lora": LoraAdapter,
+adapters = {"openlocalagent": LocalAgentAdapter, "localagent": LocalAgentAdapter,
+            "hf": HuggingFaceAdapter, "lora": LoraAdapter,
             "dispatch": DispatchAdapter, "catalog": CatalogAdapter}
 adapter = adapters[kind](location, args.device)
 report = {"model": adapter.name, "kind": kind, "rows_kept": len(tasks),

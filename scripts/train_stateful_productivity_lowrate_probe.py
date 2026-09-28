@@ -23,17 +23,17 @@ import torch
 import torch.nn.functional as F
 
 import train_stateful_productivity_probe as base
-from localagent.agent.dense_selector import DenseToolSelector, tool_embeddings
-from localagent.agent.routes import ROUTE_INDEX, RouteHead, route_of
-from localagent.data.stateful_productivity import (
+from openlocalagent.agent.dense_selector import DenseToolSelector, tool_embeddings
+from openlocalagent.agent.routes import ROUTE_INDEX, RouteHead, route_of
+from openlocalagent.data.stateful_productivity import (
     SUITE_ID,
     build_tasks,
     canonical_json,
     stateful_reward_spec,
     suite_inventory,
 )
-from localagent.model import LocalAgentLM
-from localagent.model.tokenizer import ASSISTANT, USER
+from openlocalagent.model import LocalAgentLM
+from openlocalagent.model.tokenizer import ASSISTANT, USER
 
 
 def _sha256(path: Path) -> tuple[int, str]:

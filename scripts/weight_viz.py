@@ -7,14 +7,14 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from huggingface_hub import hf_hub_download
 
-from localagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model import LocalAgentLM, ModelConfig
 
 cfg = ModelConfig(**torch.load("runs/tiny-30m-50tools.pt", map_location="cpu")["cfg"])
 models = {
     "random init": LocalAgentLM(cfg).state_dict(),
     "synthetic (tool SFT)": torch.load("runs/tiny-30m-50tools.pt", map_location="cpu")["state_dict"],
     "FineWeb 200M tokens": torch.load(
-        hf_hub_download("danelcsb/localagent-30m-v2", "pretrain.pt"), map_location="cpu")["state_dict"],
+        hf_hub_download("danelcsb/openlocalagent-30m-v2", "pretrain.pt"), map_location="cpu")["state_dict"],
 }
 col = {"random init": "#999999", "synthetic (tool SFT)": "#1f77b4", "FineWeb 200M tokens": "#d62728"}
 nL = cfg.n_layers

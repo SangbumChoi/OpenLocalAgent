@@ -104,7 +104,7 @@ decode latency:
   interactive envelope can be reached on high-end browser hardware; it is not evidence for ordinary
   laptops or for a 200–600 tokens/s requirement.
 
-The proposed LocalAgent service levels are therefore:
+The proposed OpenLocalAgent service levels are therefore:
 
 | Measurement | Proposed target | Status |
 |---|---:|---|
@@ -160,7 +160,7 @@ equal-weight scenario grid. Final calibration must instead use the frozen extern
 distribution, observed decode-step counts and stage costs, independent device runs, task-clustered
 `Success@B` intervals, and median-of-run p95 TTFA.
 
-For LocalAgent's structured path:
+For OpenLocalAgent's structured path:
 
 ```text
 TTFA_structured = tokenize + one_backbone_forward + route/select/copy/validate
@@ -248,7 +248,7 @@ The design rule is “transfer verified principles, not frontier-scale mechanism
 | [Kimi K2](https://arxiv.org/abs/2507.20534) | Agent training at scale and MuonClip/QK-logit clipping | Direct-response action mode and agent evaluation discipline; isolate optimizer/stability tests | Treat MuonClip/QK-Clip as QK-Norm, or copy MoE/MLA into a 35M browser model |
 | [Kimi K2.5](https://arxiv.org/abs/2602.02276) | Continual pretraining atop K2-Base on approximately 15T mixed visual/text tokens, native multimodal post-training, and learned parallel Agent Swarm orchestration | Explicit continual-stage accounting and verified parallel-task construction | Vision, MoE/MLA, Agent Swarm, or vendor swarm latency as a browser result |
 | [Kimi Linear](https://arxiv.org/abs/2510.26692) | Periodic global attention plus efficient local/linear mixers can help at very long context | Test periodic global attention as a hypothesis | KDA custom kernels or 1M-context claims in ONNX WebGPU |
-| [Upstage SOLAR-10.7B](https://arxiv.org/abs/2312.15166) | Depth up-scaling duplicates/expands layers of a compatible pretrained parent, then continues pretraining | Optional checkpoint-growth ablation after a LocalAgent base exists, with matched added compute | Claim inherited knowledge in a from-scratch run, or assume more depth is lower latency |
+| [Upstage SOLAR-10.7B](https://arxiv.org/abs/2312.15166) | Depth up-scaling duplicates/expands layers of a compatible pretrained parent, then continues pretraining | Optional checkpoint-growth ablation after a OpenLocalAgent base exists, with matched added compute | Claim inherited knowledge in a from-scratch run, or assume more depth is lower latency |
 | [GLM-4.5](https://arxiv.org/abs/2508.06471) | Deep/thin design, GQA, QK norm, direct/thinking modes, multi-token prediction | Deep/thin, MQA/GQA, QK norm; test concise action mode | Assume an MTP auxiliary objective supplies free speculative decoding |
 | [GLM-5.2](https://z.ai/blog/glm-5.2) | IndexShare reuses one sparse-attention indexer for four layers; MTP is paired with an explicit verifier/acceptance study; long-horizon RL uses compaction-aware critic PPO and online anti-hack controls | Share only work whose browser kernel cost is measured; add anti-hack checks and preserve compacted-trajectory accounting | Import 1M-context sparse-attention infrastructure into a 2K model, or quote MTP speed without accepted-draft and end-to-end evidence |
 | [DeepSeek-V3](https://arxiv.org/abs/2412.19437) | MTP supplies an auxiliary training objective; its speed result uses speculative verification and accepted draft tokens | Train-only MTP ablation | Keep MTP at inference without a browser verifier, acceptance-rate, and latency win |
@@ -269,7 +269,7 @@ the data domains, Per-Head Muon plus clipping, cosine/1%-warmup schedule, progre
 curriculum, and SFT/RL/MOPD stages. It still omits exact source identities and weights, total
 training tokens, several selected hyperparameter values, and a browser-portable kernel contract.
 Base this paper's implementable choices on those disclosed principles, Kimi Linear, Kimi K2/K2.5,
-MobileLLM, and measured LocalAgent ablations.
+MobileLLM, and measured OpenLocalAgent ablations.
 
 ## Data and training plan
 
@@ -500,7 +500,7 @@ Ranked options:
    and tokenizer agnostic. Combine verified hard actions with concise teacher outputs and on-policy
    student states. Relevant methods: [MiniLLM](https://arxiv.org/abs/2306.08543) and
    [GKD](https://arxiv.org/abs/2306.13649).
-2. **Same-tokenizer LocalAgent teacher** is the cleanest logit-distillation path. Train a larger
+2. **Same-tokenizer OpenLocalAgent teacher** is the cleanest logit-distillation path. Train a larger
    dense teacher with the exact 16K tokenizer, then use the repository's top-k KD during SFT.
 3. **Structured pruning plus KD** can compress a compatible 125–160M dense teacher. The
    [Minitron](https://arxiv.org/abs/2407.14679) result is promising but must be revalidated at 35M.
@@ -509,9 +509,9 @@ Ranked options:
    original pretraining compute.
 5. **Layer expansion** can duplicate compatible blocks before continued pretraining, following
    Upstage SOLAR/Net2Net. SOLAR starts from a pretrained parent and therefore inherits knowledge
-   that a from-scratch LocalAgent run does not have. Here it is only a checkpoint-growth ablation
+   that a from-scratch OpenLocalAgent run does not have. Here it is only a checkpoint-growth ablation
    after a compatible base exists, with matched added compute—not a browser-latency result.
-   `localagent grow-checkpoint SOURCE TARGET_CONFIG OUT --layer-map TARGET:SOURCE,...` now
+   `openlocalagent grow-checkpoint SOURCE TARGET_CONFIG OUT --layer-map TARGET:SOURCE,...` now
    implements the auditable transform. It requires a complete same-tokenizer config match outside
    explicit depth/layer-type changes, verifies every mapped block kind and target-state hash,
    rejects posttraining auxiliary heads, discards optimizer/RNG/progress state, and is explicitly
@@ -524,7 +524,7 @@ Ranked options:
 This ordering is distillation-first, not “RL cannot work.” The
 [DeepSeek-R1 release](https://github.com/deepseek-ai/DeepSeek-R1) reports stronger distilled small
 models than its compared small-model RL setup while also demonstrating RL-induced reasoning at
-frontier scale. LocalAgent therefore spends its scarce capability budget on verified distillation
+frontier scale. OpenLocalAgent therefore spends its scarce capability budget on verified distillation
 first and still evaluates executable-reward RL as a distinct last-mile treatment.
 
 For the August submission, prioritize from-scratch matched backbones plus sequence-level teacher
@@ -622,7 +622,7 @@ Already reusable:
   retaining all document bodies in Python memory; disk and tokenizer-state limits stay explicit.
 - Bounded, deterministic near-deduplication and evaluation-denylist screening before splitting or
   tokenizer training, with explicit non-exhaustive coverage metadata.
-- New complete-action metrics in `src/localagent/eval/realtime.py`.
+- New complete-action metrics in `src/openlocalagent/eval/realtime.py`.
 - New WebGPU action benchmark at `spaces/localagent-webgpu/benchmark.html`.
 - Matched browser policy modes for one-forward structured dispatch, unrestricted greedy JSON, and
   grounded candidate-trie autoregression, including parse/validation failures and TTFT/TPOT/TTFA.

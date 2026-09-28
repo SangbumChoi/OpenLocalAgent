@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from localagent.data.schema import Conversation, Role
+from openlocalagent.data.schema import Conversation, Role
 from scripts.normalize_mcpmark_trajectory import normalize
 
 

@@ -22,8 +22,8 @@ import time
 
 import torch
 
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.train.device import resolve_device
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.train.device import resolve_device
 
 TIERS = ["ultra-tiny-1m", "tiny-30m", "small-90m"]
 OUT = "runs/bench"

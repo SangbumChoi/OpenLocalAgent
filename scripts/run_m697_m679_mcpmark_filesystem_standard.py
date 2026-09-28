@@ -55,12 +55,12 @@ async def _run_one(
     fallback_state: Path | None,
     max_turns: int,
 ) -> dict[str, Any]:
-    from localagent.agent.constrained import hybrid_decode
-    from localagent.agent.parser import extract_tool_calls
-    from localagent.agent.retriever import ToolRetriever
-    from localagent.agent.runtime import Agent
-    from localagent.agent.tools import ToolRegistry
-    from localagent.data.schema import ToolSpec
+    from openlocalagent.agent.constrained import hybrid_decode
+    from openlocalagent.agent.parser import extract_tool_calls
+    from openlocalagent.agent.retriever import ToolRetriever
+    from openlocalagent.agent.runtime import Agent
+    from openlocalagent.agent.tools import ToolRegistry
+    from openlocalagent.data.schema import ToolSpec
 
     category, task_id, description_path, verifier_path = task
     with tempfile.TemporaryDirectory(prefix=f"mcpmark-standard-{category}-{task_id}-", dir="/private/tmp") as td:

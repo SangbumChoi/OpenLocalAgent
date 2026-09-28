@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.data.browsergym_runtime_manifest import (
+from openlocalagent.data.browsergym_runtime_manifest import (
     freeze_active_environment_manifest,
 )
 

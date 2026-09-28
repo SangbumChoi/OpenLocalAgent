@@ -14,8 +14,8 @@ from __future__ import annotations
 
 import argparse
 
-from localagent.agent.caller import ToolCaller
-from localagent.eval.toolcall_bench import IRRELEVANT, build_tools, examples, gold_set
+from openlocalagent.agent.caller import ToolCaller
+from openlocalagent.eval.toolcall_bench import IRRELEVANT, build_tools, examples, gold_set
 
 
 def main():
@@ -27,7 +27,7 @@ def main():
     tools = build_tools()
     ex = examples()
     if args.scale:                                   # distractor tools to test selection at scale
-        from localagent.data.tool_catalog import build_catalog, gen_usages
+        from openlocalagent.data.tool_catalog import build_catalog, gen_usages
         extra = build_catalog(args.scale, seed=1)
         tools = tools + extra
         for u in gen_usages(extra, "train", per_tool=4, seed=3, paraphrase=True):

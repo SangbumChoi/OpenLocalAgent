@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from localagent.data.aitw import episode_to_intermediate, iter_aitw_episodes
+from openlocalagent.data.aitw import episode_to_intermediate, iter_aitw_episodes
 
 
 def _sha256(path: Path) -> str:
@@ -109,7 +109,7 @@ def main() -> None:
         },
         "normalization": {
             "interchange": "localagent_v1",
-            "module": "localagent.data.aitw",
+            "module": "openlocalagent.data.aitw",
             "screen_projection": "aitw_annotations_text_v1",
             "version": 1,
         },

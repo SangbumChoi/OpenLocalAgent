@@ -1,11 +1,11 @@
-/* LocalAgent browser tokenizers.
+/* OpenLocalAgent browser tokenizers.
  *
  * Supports the two tokenizer contracts emitted by the Python exporter:
  *   - utf-8-bytes: one token id per UTF-8 byte.
  *   - bytelevel-bpe: Hugging Face tokenizers ByteLevel + BPE JSON, without transformers.js.
  *
  * The BPE implementation intentionally supports only the exact training configuration in
- * localagent.model.tokenizer.train_bpe. It rejects incompatible tokenizer JSON rather than
+ * openlocalagent.model.tokenizer.train_bpe. It rejects incompatible tokenizer JSON rather than
  * producing plausible but wrong token ids.
  */
 (function installLocalAgentTokenizer(root) {

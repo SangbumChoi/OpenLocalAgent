@@ -134,19 +134,19 @@ time. Counterbalance order to reduce thermal/order bias:
 | 2028 | hybrid | attention |
 
 ```bash
-uv run --frozen localagent train pretrain \
+uv run --frozen openlocalagent train pretrain \
   configs/train/pretrain-paper-5tpp-hybrid-seed2026.yaml
-uv run --frozen localagent train pretrain \
+uv run --frozen openlocalagent train pretrain \
   configs/train/pretrain-paper-5tpp-attn-seed2026.yaml
 
-uv run --frozen localagent train pretrain \
+uv run --frozen openlocalagent train pretrain \
   configs/train/pretrain-paper-5tpp-attn-seed2027.yaml
-uv run --frozen localagent train pretrain \
+uv run --frozen openlocalagent train pretrain \
   configs/train/pretrain-paper-5tpp-hybrid-seed2027.yaml
 
-uv run --frozen localagent train pretrain \
+uv run --frozen openlocalagent train pretrain \
   configs/train/pretrain-paper-5tpp-hybrid-seed2028.yaml
-uv run --frozen localagent train pretrain \
+uv run --frozen openlocalagent train pretrain \
   configs/train/pretrain-paper-5tpp-attn-seed2028.yaml
 ```
 

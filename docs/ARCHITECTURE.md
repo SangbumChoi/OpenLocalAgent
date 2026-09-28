@@ -1,4 +1,4 @@
-# LocalAgent — Architecture
+# OpenLocalAgent — Architecture
 
 A minimal, hackable, **pure-PyTorch** pipeline for an LLM that acts as a local **agent** (tool
 calling + text generation).
@@ -103,7 +103,7 @@ from user-controlled data.
 ### Wire format (ChatML-ish, tool-native)
 ```
 <|tool_catalog|>{"tools":[{"type":"function","function":{...}}]}</|tool_catalog|><|end|>
-<|system|>You are LocalAgent.
+<|system|>You are OpenLocalAgent.
 <|user|>
 What's the weather in Paris?
 <|assistant|>

@@ -7,8 +7,8 @@ import copy
 import pytest
 import torch
 
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.train.merge import (
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.train.merge import (
     merge_checkpoints,
     model_soup,
     ties_merge,
@@ -176,8 +176,8 @@ def _ckpt(seed: int, with_heads: bool = True):
     ck = {"cfg": cfg.__dict__, "state_dict": model.state_dict(),
           "tool_head": None, "ptr_head": None}
     if with_heads:
-        from localagent.agent.pointer_head import PointerHead
-        from localagent.agent.tool_head import ToolHead
+        from openlocalagent.agent.pointer_head import PointerHead
+        from openlocalagent.agent.tool_head import ToolHead
         torch.manual_seed(seed + 100)
         ck["tool_head"] = ToolHead(cfg.d_model).state_dict()
         ck["ptr_head"] = PointerHead(cfg.d_model).state_dict()

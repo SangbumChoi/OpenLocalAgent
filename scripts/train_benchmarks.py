@@ -6,7 +6,7 @@ are *evaluation* benchmarks. This script trains ON them at the user's explicit r
 you later get on these same benchmarks is **contaminated** and must NOT be reported as an honest
 held-out number. Use it to study the training process, not to claim benchmark results.
 
-What actually becomes SFT data (see src/localagent/data/hf_datasets.py for the honest details):
+What actually becomes SFT data (see src/openlocalagent/data/hf_datasets.py for the honest details):
   AIME          Problem            -> Answer (or full Solution)
   BigCodeBench  instruct_prompt    -> code_prompt + canonical_solution
   MTBench       turn-1 prompt      -> reference answer   (open-ended judge rows have none -> skipped)
@@ -29,13 +29,13 @@ import time
 
 import torch
 
-from localagent.data.hf_datasets import benchmark_sft_samples
-from localagent.data.render import build_pretrain_stream, render_sft
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.device import enable_tf32, resolve_device, resolve_dtype
-from localagent.train.pretrain import pretrain
-from localagent.train.sft import sft
+from openlocalagent.data.hf_datasets import benchmark_sft_samples
+from openlocalagent.data.render import build_pretrain_stream, render_sft
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.device import enable_tf32, resolve_device, resolve_dtype
+from openlocalagent.train.pretrain import pretrain
+from openlocalagent.train.sft import sft
 
 SIZES = {
     "ultra-tiny": "configs/model/ultra-tiny-1m.yaml",
@@ -154,7 +154,7 @@ def main() -> None:
 
 
 def benchmark_which(spec: str):
-    from localagent.data.hf_datasets import BENCH_LOADERS
+    from openlocalagent.data.hf_datasets import BENCH_LOADERS
     if spec.strip().lower() == "all":
         return list(BENCH_LOADERS)
     return [s.strip() for s in spec.split(",") if s.strip()]

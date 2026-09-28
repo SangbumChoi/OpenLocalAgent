@@ -2,7 +2,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from localagent.data.realistic_catalog import load_catalog
+from openlocalagent.data.realistic_catalog import load_catalog
 
 
 def test_mcp_trajectory_catalog_is_pinned() -> None:

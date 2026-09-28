@@ -1,4 +1,4 @@
-from localagent.data.schema import ToolCall, ToolSpec
+from openlocalagent.data.schema import ToolCall, ToolSpec
 from scripts.evaluate_toolsandbox_text import _schema_valid
 
 import json

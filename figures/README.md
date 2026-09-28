@@ -2,7 +2,7 @@
 
 Every experiment's plot, in one place. The **why** behind each (motivation, hypothesis, finding) is
 in [`docs/EXPERIMENTS.md`](../docs/EXPERIMENTS.md). Regenerate any plot with the noted script; new
-experiments save here via `from localagent.figs import savefig`.
+experiments save here via `from openlocalagent.figs import savefig`.
 
 | # | figure | finding | script |
 |---|---|---|---|

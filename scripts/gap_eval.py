@@ -6,13 +6,13 @@ sorted by the per-category gap (grounded - puregen) so we can see where the head
 the model vs where the LM already stands on its own."""
 import torch
 
-from localagent.agent.pointer_head import PointerHead
-from localagent.agent.tool_head import ToolHead
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
-from localagent.data.agent_synth import Generator
-from localagent.eval.harness import evaluate, evaluate_grounded
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
+from openlocalagent.agent.pointer_head import PointerHead
+from openlocalagent.agent.tool_head import ToolHead
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.data.agent_synth import Generator
+from openlocalagent.eval.harness import evaluate, evaluate_grounded
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
 
 torch.set_num_threads(4)
 tok = load_tokenizer()

@@ -9,14 +9,14 @@ import pytest
 import torch
 import yaml
 
-from localagent.data.schema import Conversation, Message, Role
-from localagent.eval.stage_pilot_summary import (
+from openlocalagent.data.schema import Conversation, Message, Role
+from openlocalagent.eval.stage_pilot_summary import (
     STAGE_ORDER,
     StagePilotInput,
     summarize_stage_pilot,
     write_stage_pilot_summary,
 )
-from localagent.train.stage_data import canonical_sha256, file_identity, sha256_file
+from openlocalagent.train.stage_data import canonical_sha256, file_identity, sha256_file
 
 
 def _sha256(label: str) -> str:

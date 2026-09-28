@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from localagent.data.schema import Conversation, ToolSpec
+from openlocalagent.data.schema import Conversation, ToolSpec
 
 SOURCE_URL = "https://github.com/apple/ToolSandbox"
 SOURCE_REVISION = "165848b9a78cead7ca7fe7c89c688b58e6501219"

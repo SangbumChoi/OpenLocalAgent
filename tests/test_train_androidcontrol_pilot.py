@@ -2,8 +2,8 @@ import pytest
 import sys
 from pathlib import Path
 
-from localagent.model import ModelConfig
-from localagent.model import tokenizer as tk
+from openlocalagent.model import ModelConfig
+from openlocalagent.model import tokenizer as tk
 
 sys.path.insert(0, str(Path(__file__).parents[1] / "scripts"))
 from train_androidcontrol_pilot import _checkpoint_tokenizer  # noqa: E402

@@ -1,12 +1,12 @@
-"""Tests for the hand-authored free-form dispatch sets (``localagent.eval.freeform``).
+"""Tests for the hand-authored free-form dispatch sets (``openlocalagent.eval.freeform``).
 
 FREEFORM_EVAL is the held-out OOD selection test; FREEFORM_TRAIN trains the selector / route head
 on the same free, varied free-form distribution. The two must be DISJOINT (different phrasings AND
 slot values), the train set must cover every tool, and gold tools must be real STANDARD_TOOLS.
 """
 
-from localagent.agent.toolset import STANDARD_TOOLS
-from localagent.eval.freeform import FREEFORM_EVAL, FREEFORM_TRAIN
+from openlocalagent.agent.toolset import STANDARD_TOOLS
+from openlocalagent.eval.freeform import FREEFORM_EVAL, FREEFORM_TRAIN
 
 TOOL_NAMES = {t.name for t in STANDARD_TOOLS}
 

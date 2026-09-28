@@ -622,7 +622,7 @@ Already reusable:
   retaining all document bodies in Python memory; disk and tokenizer-state limits stay explicit.
 - Bounded, deterministic near-deduplication and evaluation-denylist screening before splitting or
   tokenizer training, with explicit non-exhaustive coverage metadata.
-- New complete-action metrics in `src/localagent/eval/realtime.py`.
+- New complete-action metrics in `src/openlocalagent/eval/realtime.py`.
 - New WebGPU action benchmark at `spaces/localagent-webgpu/benchmark.html`.
 - Matched browser policy modes for one-forward structured dispatch, unrestricted greedy JSON, and
   grounded candidate-trie autoregression, including parse/validation failures and TTFT/TPOT/TTFA.

@@ -15,7 +15,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from localagent.data.public_eval_matrix import load_matrix
+from openlocalagent.data.public_eval_matrix import load_matrix
 
 KIND = "localagent_public_realistic_eval_matrix_audit"
 SCHEMA_VERSION = 1

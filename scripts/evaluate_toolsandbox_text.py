@@ -18,13 +18,13 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-from localagent.agent.constrained import hybrid_decode
-from localagent.agent.parser import extract_tool_calls
-from localagent.agent.retriever import ToolRetriever
-from localagent.agent.runtime import Agent
-from localagent.agent.tools import ToolRegistry
-from localagent.data.prompt_contract import schema_matches
-from localagent.data.schema import Conversation, ToolCall, ToolSpec
+from openlocalagent.agent.constrained import hybrid_decode
+from openlocalagent.agent.parser import extract_tool_calls
+from openlocalagent.agent.retriever import ToolRetriever
+from openlocalagent.agent.runtime import Agent
+from openlocalagent.agent.tools import ToolRegistry
+from openlocalagent.data.prompt_contract import schema_matches
+from openlocalagent.data.schema import Conversation, ToolCall, ToolSpec
 
 
 def _identity(path: Path) -> dict[str, Any]:
@@ -231,8 +231,8 @@ def evaluate(
         "evaluator": {
             "script": _identity(Path(__file__).resolve()),
             "candidate_mode": candidate_mode,
-            "decoder": "localagent.agent.constrained.hybrid_decode",
-            "schema_checker": "localagent.data.prompt_contract.schema_matches",
+            "decoder": "openlocalagent.agent.constrained.hybrid_decode",
+            "schema_checker": "openlocalagent.data.prompt_contract.schema_matches",
         },
         "metrics": metrics,
         "predictions": _identity(predictions_path),

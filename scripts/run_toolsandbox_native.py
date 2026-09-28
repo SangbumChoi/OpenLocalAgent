@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run LocalAgent inside the pinned ToolSandbox simulator and milestone verifier.
+"""Run OpenLocalAgent inside the pinned ToolSandbox simulator and milestone verifier.
 
 This adapter intentionally runs only a caller-selected native smoke set.  The upstream
 ToolSandbox package is loaded from ``--toolsandbox-root`` and is never copied into the
@@ -19,12 +19,12 @@ import traceback
 from pathlib import Path
 from typing import Any
 
-from localagent.agent.constrained import hybrid_decode
-from localagent.agent.parser import extract_tool_calls
-from localagent.agent.retriever import ToolRetriever
-from localagent.agent.runtime import Agent
-from localagent.agent.tools import ToolRegistry
-from localagent.data.schema import ToolSpec
+from openlocalagent.agent.constrained import hybrid_decode
+from openlocalagent.agent.parser import extract_tool_calls
+from openlocalagent.agent.retriever import ToolRetriever
+from openlocalagent.agent.runtime import Agent
+from openlocalagent.agent.tools import ToolRegistry
+from openlocalagent.data.schema import ToolSpec
 
 
 DEFAULT_SCENARIOS = (
@@ -70,7 +70,7 @@ def _render_prompt(messages: list[Any]) -> str:
 
 
 def _tool_specs_and_registry(available: dict[str, Any]) -> tuple[list[ToolSpec], ToolRegistry]:
-    """Convert the current agent-facing ToolSandbox tools to LocalAgent's canonical schema."""
+    """Convert the current agent-facing ToolSandbox tools to OpenLocalAgent's canonical schema."""
 
     from tool_sandbox.common.tool_conversion import convert_to_openai_tool
 

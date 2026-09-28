@@ -6,23 +6,23 @@ that does not.
 
 ## 1. Architecture decision
 
-| System | Publicly supported idea | LocalAgent decision |
+| System | Publicly supported idea | OpenLocalAgent decision |
 |---|---|---|
 | [Kimi K3](https://github.com/MoonshotAI/Kimi-K3/blob/7c5be9599120d7993748de66a76128614f15f210/k3_tech_report.pdf) | The pinned report discloses 69 KDA + 24 Gated MLA layers; 2.8T total/104B active parameters; 16/896 experts; curated web/code/math/knowledge plus vision data; Per-Head Muon; cosine with 1% warmup; progressive context; SFT → RL experts → MOPD; and MXFP4/MXFP8 QAT | Keep the *hybrid sequence-mixing*, small-model mixture-ablation, verified-agent-data, and deployment-aware-training principles. Do not call short-conv “KDA” or estimated Q4 “QAT”; exact corpus identities/weights/token count and several chosen hyperparameters remain unpublished. |
 | [Kimi Linear](https://arxiv.org/abs/2510.26692) | KDA/MLA layerwise hybrid reduces KV memory at extreme context | Retain periodic full attention for verbatim copying and cheap mixers elsewhere. At the current 4K context, one KV head already makes cache cost small. |
 | [Attention Residuals](https://arxiv.org/abs/2603.15031) | content-dependent aggregation across depth mitigates PreNorm dilution | Track as an ablation, not a default. It adds depth-state traffic and needs a measured browser kernel before adoption. |
-| [Kimi K2](https://arxiv.org/abs/2507.20534) | MuonClip adds QK-logit clipping to Muon; large agent synthesis and joint RL use environment feedback | Treat MuonClip/QK-Clip and QK-Norm as distinct mechanisms. Keep LocalAgent's QK-Norm as an independently motivated baseline; test clipping or Muon only in isolated ablations. |
-| [Kimi K2.5](https://arxiv.org/abs/2602.02276) | Continual pretraining atop K2-Base on approximately 15T mixed visual/text tokens, followed by native multimodal post-training and learned parallel Agent Swarm orchestration | Transfer explicit continual-stage accounting and verified parallel-task construction only. LocalAgent does not reproduce K2.5 vision, frontier MoE/MLA, Agent Swarm, or its parallel-agent training; the bounded Micro-MoE is an independent matched experiment, and vendor swarm latency is not a browser measurement. |
+| [Kimi K2](https://arxiv.org/abs/2507.20534) | MuonClip adds QK-logit clipping to Muon; large agent synthesis and joint RL use environment feedback | Treat MuonClip/QK-Clip and QK-Norm as distinct mechanisms. Keep OpenLocalAgent's QK-Norm as an independently motivated baseline; test clipping or Muon only in isolated ablations. |
+| [Kimi K2.5](https://arxiv.org/abs/2602.02276) | Continual pretraining atop K2-Base on approximately 15T mixed visual/text tokens, followed by native multimodal post-training and learned parallel Agent Swarm orchestration | Transfer explicit continual-stage accounting and verified parallel-task construction only. OpenLocalAgent does not reproduce K2.5 vision, frontier MoE/MLA, Agent Swarm, or its parallel-agent training; the bounded Micro-MoE is an independent matched experiment, and vendor swarm latency is not a browser measurement. |
 | [GLM-4.5](https://arxiv.org/abs/2508.06471) | unified agent/reasoning/code data, multistage training, environment RL | A scheduled general/code/agent midtraining mixture and executable agent tasks. |
 | [GLM-5.2](https://z.ai/blog/glm-5.2) | The official release describes 1M context, one IndexShare indexer per four sparse-attention layers, MTP IndexShare/KVShare, a 128K long-context midtraining stage, and critic-assisted PPO for compacted long trajectories with anti-reward-hacking work | Transfer long-horizon data, executable evaluation, and anti-hacking controls. Do not import million-token sparse attention into a 4K browser model. Add critic-assisted online PPO only after a real long-horizon environment exists; the current bounded exact-reward stage remains explicitly offline. |
 | [Grok-1](https://github.com/xai-org/grok-1) | RoPE, strongly grouped KV heads, sparse MoE | Adopt RoPE/GQA. Keep dense as the deployment control, but test an opt-in Micro-MoE with honest total/active accounting; all experts still consume browser memory and WebGPU needs a measured sparse dispatch. |
 | [Grok 4.5](https://x.ai/news/grok-4-5) | xAI reports coding/science/engineering/math data, hundreds of thousands of multi-step software tasks, automated plus model grading, and asynchronous multi-hour RL; the release reports served throughput but does not publish a transferable architecture recipe | Transfer executable multi-step task construction and asynchronous rollout as later environment work. Do not infer architecture or equate frontier served throughput with a local WebGPU decode measurement. |
-| [Upstage SOLAR-10.7B](https://arxiv.org/abs/2312.15166) | Depth up-scaling expands a compatible pretrained transformer by duplicating layers, then continues pretraining | The reported method starts from a larger pretrained parent and inherits its knowledge; LocalAgent trains from scratch and has no compatible parent. Treat layer duplication plus continued training only as a checkpoint-growth ablation, with matched added compute—not as knowledge transfer or a WebGPU-latency claim. |
+| [Upstage SOLAR-10.7B](https://arxiv.org/abs/2312.15166) | Depth up-scaling expands a compatible pretrained transformer by duplicating layers, then continues pretraining | The reported method starts from a larger pretrained parent and inherits its knowledge; OpenLocalAgent trains from scratch and has no compatible parent. Treat layer duplication plus continued training only as a checkpoint-growth ablation, with matched added compute—not as knowledge transfer or a WebGPU-latency claim. |
 | [DeepSeek-V3](https://arxiv.org/abs/2412.19437) | MTP is an auxiliary training objective; its reported decode gain uses a speculative-decoding framework and accepted-token verification | MTP is optional and train-only by default. It is not free speculative decoding: keep a head only after a browser verifier, acceptance, and end-to-end latency ablation. |
 | [MobileLLM](https://arxiv.org/abs/2402.14905) | deep/thin, embedding sharing, and GQA form a strong dense sub-billion baseline | Use no-MoE dense parameterization as the deployment control, not as a claim that all-attention is universally best. Compare dense attention with dense hybrid mixers. |
 | [GPT-2](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) / [GPT-3](https://arxiv.org/abs/2005.14165) | decoder-only causal next-token pretraining, scaling, and in-context task specification | Use the dense causal decoder and frozen-prompt evaluation as baselines. Scaling evidence does not make frontier width, corpus size, or dense all-attention optimal for WebGPU. |
 | [GPT-4 report](https://arxiv.org/abs/2303.08774) | predictable scaling and staged post-training; architecture/data details are not public | Do not invent unpublished GPT-4/4.5/5.x architecture details. Adopt held-out loss/eval gates and scaling experiments. |
-| [nanochat speedrun](https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/runs/speedrun.sh) | at the audited commit, the reference path is tokenizer → pretrain/eval → SFT/eval | Implement the same operational properties in pure PyTorch. LocalAgent retains explicit domain midtrain and optional RL because they are separate experimental questions. |
+| [nanochat speedrun](https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/runs/speedrun.sh) | at the audited commit, the reference path is tokenizer → pretrain/eval → SFT/eval | Implement the same operational properties in pure PyTorch. OpenLocalAgent retains explicit domain midtrain and optional RL because they are separate experimental questions. |
 | [nanochat model/train](https://github.com/karpathy/nanochat/tree/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd) | the pinned `nanochat/gpt.py` and `scripts/base_train.py` test RoPE, QK-Norm, tiled sliding/full attention, value/residual mixing, ReLU², Muon+AdamW, and optional FP8; the audited builder uses one KV head per query head | Treat these as an experiment inventory, not a transferable bundle. Keep the simpler MQA/GQA browser controls and adopt only changes that win matched quality, memory, and exported-latency gates. |
 | [nanochat RL script](https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/scripts/chat_rl.py) | standalone “GRPO” is described as closer to REINFORCE, with no reference KL or PPO ratio/clipping and DAPO-style token normalization | Use it only as a minimal outcome-reward reference; do not relabel it as conventional GRPO or as part of the speedrun. |
 
@@ -146,7 +146,7 @@ The official K3 repository
 now gives the 69-KDA/24-Gated-MLA layer composition, major dimensions, data domains, optimizer,
 schedule, context curriculum, and SFT/RL/MOPD sequence. The exact source inventory, mixture
 weights, token count, selected peak learning rate/batch/TPP values, and a directly runnable
-end-to-end recipe are still not public; LocalAgent does not fill those narrower gaps with
+end-to-end recipe are still not public; OpenLocalAgent does not fill those narrower gaps with
 third-party inference.
 
 The default no-MoE implementation remains “dense” for deployment simplicity, while both the mixer
@@ -336,7 +336,7 @@ it is not a document-level audit of underlying web-content rights. A paper run m
 exact dataset-card/license evidence and revision alongside the manifest and describe this boundary.
 
 NVIDIA ClimbMix is attractive for research comparisons, but the official release is GPT-2-tokenized
-and CC BY-NC 4.0. It is not the default here because LocalAgent needs a trainable 16K tokenizer and
+and CC BY-NC 4.0. It is not the default here because OpenLocalAgent needs a trainable 16K tokenizer and
 a path that does not quietly impose noncommercial-only use. The Stack v2/Python-Edu path is also
 valuable at scale, but its content retrieval and governance workflow are poorly matched to a short
 Colab session. These can be later controlled ablations, with their terms followed explicitly.
@@ -469,7 +469,7 @@ does not reveal adapter identity or per-node placement/fallback.
 The optional SOLAR-style depth-growth ablation is explicit and narrow:
 
 ```bash
-uv run --frozen localagent grow-checkpoint runs/base/latest.pt configs/model/deeper.yaml \
+uv run --frozen openlocalagent grow-checkpoint runs/base/latest.pt configs/model/deeper.yaml \
   runs/growth/deeper-init.pt --layer-map 0:0,1:0,2:1
 ```
 
@@ -534,7 +534,7 @@ These are deterministic plans, not trained-model results.
 - Train the language backbone with tool-selection and pointer/copy heads when used.
 - Gate: exact AST/execution score, abstention, wrong-tool avoidance, and whole-episode success.
 
-`localagent synth configs/data/agent_synth.yaml` and its frozen
+`openlocalagent synth configs/data/agent_synth.yaml` and its frozen
 `agent_synth_eval.yaml` companion write canonical `Conversation` JSONL plus manifests. Their
 generation contracts match while seeds, outputs, declared slot pools, and exact rendered prompts
 are disjoint. The training config also pins the action and DOM suite bytes/hashes and excludes
@@ -632,7 +632,7 @@ step 12 failed before authorization.
 Distillation-first does not mean RL is impossible. The
 [DeepSeek-R1 release](https://github.com/deepseek-ai/DeepSeek-R1) reports stronger small-model
 reasoning from distillation than from its compared small-model RL setup, while also demonstrating
-RL-induced reasoning at frontier scale. LocalAgent therefore prioritizes verified sequence and
+RL-induced reasoning at frontier scale. OpenLocalAgent therefore prioritizes verified sequence and
 trajectory transfer under a small compute budget, then keeps executable-reward RL as a separately
 gated last-mile experiment.
 
@@ -666,13 +666,13 @@ not retroactively promote older checkpoints.
 # Public-domain smoke corpus, byte tokenizer
 python scripts/prepare_corpus.py --sample --out data/shards/sample \
   --seq-len 128 --rows-per-shard 64 --val-fraction 0.1
-uv run --frozen localagent train pretrain configs/train/pretrain-speedrun.yaml
+uv run --frozen openlocalagent train pretrain configs/train/pretrain-speedrun.yaml
 
 # Browser-tier BPE corpus
 python scripts/prepare_corpus.py data/raw/general data/raw/code \
   --tokenizer bpe --vocab-size 16384 --tokenizer-path data/tokenizer-16k.json \
   --out data/shards/webgpu --seq-len 2048
-uv run --frozen localagent model-info configs/model/webgpu-35m-hybrid.yaml
+uv run --frozen openlocalagent model-info configs/model/webgpu-35m-hybrid.yaml
 
 # Before a production tier run, execute exactly one isolated optimizer update on the intended
 # device. The derived config disables resume/evaluation, writes only under /private/tmp, and the
@@ -685,10 +685,10 @@ python scripts/preflight_training_update.py \
 
 # Freeze rule-audited synthetic train/eval artifacts first: the eval artifact is one of the
 # config-owned pretraining/tokenizer denylist inputs. Outcomes are not environment-executed.
-uv run --frozen localagent synth configs/data/agent_synth.yaml
-uv run --frozen localagent synth configs/data/agent_synth_eval.yaml
+uv run --frozen openlocalagent synth configs/data/agent_synth.yaml
+uv run --frozen openlocalagent synth configs/data/agent_synth_eval.yaml
 # Production post-training train-v2; eval-v1 above stays frozen.
-uv run --frozen localagent synth configs/data/agent_synth_paper_train_v2.yaml
+uv run --frozen openlocalagent synth configs/data/agent_synth_paper_train_v2.yaml
 
 # Paper-scale mixture: download first, then stage locally with frozen eval exclusions.
 # PAPER_EVAL_DENYLIST_MANIFEST must be the provenance-bound four-external-suite manifest described
@@ -729,7 +729,7 @@ PYTHONPATH=src python scripts/freeze_corpus.py configs/data/pretrain-paper-freez
 PYTHONPATH=src python scripts/freeze_corpus.py configs/data/pretrain-paper-freeze.yaml \
   --verify data/shards/paper-all/freeze.json
 
-# All eight paper pretraining configs require this path. `uv run --frozen localagent train pretrain`
+# All eight paper pretraining configs require this path. `uv run --frozen openlocalagent train pretrain`
 # rebuilds the
 # audit before model construction and stores its self-hash in lineage, so the CLI gate is not
 # optional.
@@ -755,13 +755,13 @@ PYTHONPATH=src python scripts/plan_stage_budget.py \
 # Run the matched 5-tokens/parameter 34M architecture screen before promoting either treatment to
 # the 20-TPP/downstream comparison. The provisional 10M hybrid pilot is separate.
 # Repeat the paired commands for seeds 2027 and 2028 using the frozen configs.
-uv run --frozen localagent train pretrain \
+uv run --frozen openlocalagent train pretrain \
   configs/train/pretrain-paper-5tpp-hybrid-seed2026.yaml
-uv run --frozen localagent train pretrain \
+uv run --frozen openlocalagent train pretrain \
   configs/train/pretrain-paper-5tpp-attn-seed2026.yaml
 
 # Domain continuation once the configured sources exist
-uv run --frozen localagent train midtrain configs/train/midtrain-paper-hybrid.yaml
+uv run --frozen openlocalagent train midtrain configs/train/midtrain-paper-hybrid.yaml
 
 # Create and independently replay-verify deterministic no-model SFT budget plans before any SFT run.
 PYTHONPATH=src python scripts/plan_stage_budget.py configs/train/sft-paper-hybrid.yaml \
@@ -774,13 +774,13 @@ PYTHONPATH=src python scripts/plan_stage_budget.py \
   --verify data/provenance/paper/stage-budgets/sft-paper-attn.json
 
 # Masked assistant training + one-forward route/select/copy heads
-uv run --frozen localagent train sft configs/train/sft-paper-hybrid.yaml
+uv run --frozen openlocalagent train sft configs/train/sft-paper-hybrid.yaml
 
 # Executed 1M parent-anchor continuation and fail-closed promotion lane
-uv run --frozen localagent train sft \
+uv run --frozen openlocalagent train sft \
   configs/train/sft-paper-tier-1m-parent-anchor-pulse-pilot.yaml
 PYTHONPATH=src python -c \
-  'from localagent.eval.sft_production_receipt import verify_sft_production_receipt_against_artifacts as verify; verify("data/provenance/paper/production/sft-paper-tier-1m-parent-anchor-pulse-pilot.json", expected_receipt_file_sha256="ab4a0d34b9165a7cf6fbad24b8fc7b16a49342faab074fbd67be9963be2b6b01")'
+  'from openlocalagent.eval.sft_production_receipt import verify_sft_production_receipt_against_artifacts as verify; verify("data/provenance/paper/production/sft-paper-tier-1m-parent-anchor-pulse-pilot.json", expected_receipt_file_sha256="ab4a0d34b9165a7cf6fbad24b8fc7b16a49342faab074fbd67be9963be2b6b01")'
 PYTHONPATH=src python scripts/sweep_sft_checkpoints.py \
   configs/eval/paper-tier-1m-parent-anchor-pulse-sft-sweep.yaml \
   --output runs/eval/paper-tier-1m-parent-anchor-pulse-sft-sweep-20260730-v1.json
@@ -792,7 +792,7 @@ PYTHONPATH=src python scripts/sft_candidate_promotion.py prepare \
     configs/eval/paper-tier-1m-parent-anchor-pulse-selected-confirmatory.yaml \
   --binding-out \
     data/provenance/paper/sft-candidate-parent-anchor-pulse-selected.json
-PYTHONPATH=src python -m localagent.eval.agent_scorecard \
+PYTHONPATH=src python -m openlocalagent.eval.agent_scorecard \
   configs/eval/paper-tier-1m-parent-anchor-pulse-selected-dev.yaml \
   --out runs/eval/paper-tier-1m-parent-anchor-pulse-selected-dev-scorecard-20260730-v1.json
 # Expected exit 1 after atomically writing the development_gate_failed receipt.
@@ -804,17 +804,17 @@ PYTHONPATH=src python scripts/sft_candidate_promotion.py verify \
     data/provenance/paper/sft-candidate-parent-anchor-pulse-development-decision.json
 
 # Optional exact-AST tool-call GRPO (offline deterministic reward, not BrowserGym)
-uv run --frozen localagent train rl configs/train/rl-paper-hybrid.yaml
+uv run --frozen openlocalagent train rl configs/train/rl-paper-hybrid.yaml
 ```
 
 The completed bounded seed-2027 pilot used the separate proxy configs:
 
 ```bash
-uv run --frozen localagent train midtrain \
+uv run --frozen openlocalagent train midtrain \
   configs/train/midtrain-webgpu-proxy-pilot-hybrid.yaml
-uv run --frozen localagent train sft \
+uv run --frozen openlocalagent train sft \
   configs/train/sft-webgpu-proxy-pilot-hybrid.yaml
-uv run --frozen localagent train rl \
+uv run --frozen openlocalagent train rl \
   configs/train/rl-webgpu-proxy-pilot-hybrid.yaml
 PYTHONPATH=src python scripts/summarize_stage_pilot.py \
   --midtrain-config configs/train/midtrain-webgpu-proxy-pilot-hybrid.yaml \
@@ -999,7 +999,7 @@ For an actual GPU-backed, Drive-persisted run, upload and execute
 `notebooks/localagent_pretraining_colab.ipynb`. It first performs a 10-update smoke run, then can be
 switched to the resumable 6,000-update preset. Data preparation and memory-mapped shard reads stay
 on `/content`; only manifests, configs, tokenizer, receipts, and atomic `latest.pt` checkpoints are
-mirrored to `MyDrive/LocalAgent/pretraining/`. This follows Colab's recommendation to avoid many
+mirrored to `MyDrive/OpenLocalAgent/pretraining/`. This follows Colab's recommendation to avoid many
 small reads and writes through a mounted Drive filesystem. If Drive authorization is unavailable,
 the notebook creates a downloadable artifact bundle instead of losing the run with the VM.
 

@@ -14,22 +14,22 @@ import random
 import torch
 import torch.nn.functional as F
 
-from localagent.agent.constrained import hybrid_decode
-from localagent.agent.dense_selector import BoundSelector, DenseToolSelector, tool_embeddings
-from localagent.agent.parser import extract_tool_calls
-from localagent.agent.pointer_head import PointerHead
-from localagent.agent.routes import ROUTE_INDEX, ROUTES, RouteHead, route_of, route_of_sample
-from localagent.agent.tool_head import _feat
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
-from localagent.data.agent_synth import Generator
-from localagent.data.contextual import CONTEXTUAL_EXAMPLES, contextual_samples
-from localagent.data.paraphrase import TOOL_EXAMPLES, paraphrase_samples
-from localagent.data.render import history_text
-from localagent.data.scenarios import scenario_episodes, scenario_samples
-from localagent.data.schema import Role
-from localagent.eval.freeform import FREEFORM_EVAL
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ASSISTANT, load_tokenizer
+from openlocalagent.agent.constrained import hybrid_decode
+from openlocalagent.agent.dense_selector import BoundSelector, DenseToolSelector, tool_embeddings
+from openlocalagent.agent.parser import extract_tool_calls
+from openlocalagent.agent.pointer_head import PointerHead
+from openlocalagent.agent.routes import ROUTE_INDEX, ROUTES, RouteHead, route_of, route_of_sample
+from openlocalagent.agent.tool_head import _feat
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.data.agent_synth import Generator
+from openlocalagent.data.contextual import CONTEXTUAL_EXAMPLES, contextual_samples
+from openlocalagent.data.paraphrase import TOOL_EXAMPLES, paraphrase_samples
+from openlocalagent.data.render import history_text
+from openlocalagent.data.scenarios import scenario_episodes, scenario_samples
+from openlocalagent.data.schema import Role
+from openlocalagent.eval.freeform import FREEFORM_EVAL
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ASSISTANT, load_tokenizer
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--init", default="runs/tiny-30m-scenarios.pt")

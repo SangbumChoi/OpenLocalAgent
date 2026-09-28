@@ -2,7 +2,7 @@
 """Normalize public AppWorld train/dev solutions into canonical Conversation JSONL.
 
 The adapter is intentionally code-as-tool: AppWorld solutions are executable Python over its
-``apis`` collection, while LocalAgent already has a schema-compatible ``run_python`` tool.  Train
+``apis`` collection, while OpenLocalAgent already has a schema-compatible ``run_python`` tool.  Train
 and evaluation exports are separate by construction; test splits are rejected because their
 ground-truth programs are protected.  Raw AppWorld task text and solution code stay outside Git;
 the manifest records only source identities and hashes.
@@ -21,8 +21,8 @@ import os
 from pathlib import Path
 from typing import Any
 
-from localagent.data.schema import Conversation, Message, Role, ToolCall
-from localagent.agent.toolset import STANDARD_TOOLS
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall
+from openlocalagent.agent.toolset import STANDARD_TOOLS
 
 
 def _sha256(path: Path) -> dict[str, Any]:

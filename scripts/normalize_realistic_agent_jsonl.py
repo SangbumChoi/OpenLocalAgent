@@ -2,7 +2,7 @@
 """Normalize decoder-produced mobile rows into the audited localagent_v1 JSONL format.
 
 This script does not parse TFRecords or download data.  An upstream-specific decoder must first
-emit the intermediate row documented in ``localagent.data.realistic_adapters``.  The output can
+emit the intermediate row documented in ``openlocalagent.data.realistic_adapters``.  The output can
 then be consumed by the existing hash-pinned public-agent ingestion config.
 """
 
@@ -13,7 +13,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from localagent.data.realistic_adapters import normalize_mobile_row
+from openlocalagent.data.realistic_adapters import normalize_mobile_row
 
 
 def main() -> int:

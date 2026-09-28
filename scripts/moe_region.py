@@ -18,9 +18,9 @@ from pathlib import Path
 
 import torch
 
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.data.pretrain_corpus import PackedShardDataset
-from localagent.train.pretrain import pretrain
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.data.pretrain_corpus import PackedShardDataset
+from openlocalagent.train.pretrain import pretrain
 
 DONOR = Path("runs/moe-donor-seed2026/latest.pt")
 SHARDS = "data/shards/h100-mix"

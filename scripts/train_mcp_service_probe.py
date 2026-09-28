@@ -18,15 +18,15 @@ from typing import Any
 
 import torch
 
-from localagent.agent.dense_selector import BoundSelector, train_dense_selector
-from localagent.agent.mobile_toolset import mobile_tools, realistic_productivity_tools
-from localagent.agent.routes import train_route_head
-from localagent.agent.toolset import STANDARD_TOOLS
-from localagent.data.schema import Conversation, Message, Role, ToolCall
-from localagent.eval.mcpmark_router import evaluate_mcpmark_router
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.stage_data import probe_decisions
+from openlocalagent.agent.dense_selector import BoundSelector, train_dense_selector
+from openlocalagent.agent.mobile_toolset import mobile_tools, realistic_productivity_tools
+from openlocalagent.agent.routes import train_route_head
+from openlocalagent.agent.toolset import STANDARD_TOOLS
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall
+from openlocalagent.eval.mcpmark_router import evaluate_mcpmark_router
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.stage_data import probe_decisions
 
 
 SERVICE_PROMPTS: dict[str, tuple[str, ...]] = {
@@ -147,8 +147,8 @@ def _head_metrics(model, tokenizer, route, selector, rows: list[Conversation], t
     decisions = probe_decisions(rows)
     if not decisions:
         return {"rows": 0, "route_accuracy": 0.0, "selector_top1": 0.0, "selector_top3": 0.0}
-    from localagent.agent.tool_head import _feat
-    from localagent.agent.routes import ROUTES, route_of
+    from openlocalagent.agent.tool_head import _feat
+    from openlocalagent.agent.routes import ROUTES, route_of
 
     features = torch.stack(
         [_feat(model, tokenizer, item.prompt, "cpu", framed=item.framed) for item in decisions]

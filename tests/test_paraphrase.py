@@ -6,9 +6,9 @@ grounding, and a TRUE train/eval split (disjoint in BOTH phrasings AND slot valu
 
 import json
 
-from localagent.agent.toolset import STANDARD_TOOLS
-from localagent.data.contextual import contextual_samples
-from localagent.data.paraphrase import TOOL_EXAMPLES, paraphrase_samples
+from openlocalagent.agent.toolset import STANDARD_TOOLS
+from openlocalagent.data.contextual import contextual_samples
+from openlocalagent.data.paraphrase import TOOL_EXAMPLES, paraphrase_samples
 
 TOOL_NAMES = {t.name for t in STANDARD_TOOLS}
 

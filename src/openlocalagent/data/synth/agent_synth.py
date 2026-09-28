@@ -2417,7 +2417,7 @@ class Generator:
                 "text", "text", f"Greet {name} in the morning.", "text", f"Good morning, {name}!"
             )
         prompt = "What is your name?" if self.split == "train" else "Could you introduce yourself?"
-        return Sample("text", "text", prompt, "text", "I am LocalAgent.")
+        return Sample("text", "text", prompt, "text", "I am OpenLocalAgent.")
 
     def no_tool(self) -> Sample:
         """Diverse restraint examples where calling any tool is wrong."""

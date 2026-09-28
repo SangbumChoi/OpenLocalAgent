@@ -2,7 +2,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from localagent.data.realistic_catalog import load_catalog
+from openlocalagent.data.realistic_catalog import load_catalog
 
 
 def test_clawbench_catalog_addendum_is_pinned_and_eval_only() -> None:

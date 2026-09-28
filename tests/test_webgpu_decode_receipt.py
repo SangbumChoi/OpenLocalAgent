@@ -12,15 +12,15 @@ from typing import Any
 
 import pytest
 
-import localagent.eval.webgpu_decode_campaign as campaign_module
-from localagent.data.conversation_artifact import canonical_json_bytes
-from localagent.eval.webgpu_decode_campaign import (
+import openlocalagent.eval.webgpu_decode_campaign as campaign_module
+from openlocalagent.data.conversation_artifact import canonical_json_bytes
+from openlocalagent.eval.webgpu_decode_campaign import (
     build_webgpu_decode_campaign,
     verify_webgpu_decode_campaign_against_artifacts,
     verify_webgpu_decode_campaign_integrity_bytes,
     write_webgpu_decode_campaign,
 )
-from localagent.eval.webgpu_decode_receipt import (
+from openlocalagent.eval.webgpu_decode_receipt import (
     ACCEPTANCE_BENCHMARK,
     ACCEPTANCE_CONTEXT_LENGTHS,
     ACCEPTANCE_DECISION_ABI,

@@ -1,4 +1,4 @@
-"""Generate LocalAgent promo/listing image assets at exact pixel sizes (PIL, no app capture needed).
+"""Generate OpenLocalAgent promo/listing image assets at exact pixel sizes (PIL, no app capture needed).
 
 Outputs (runs/promo/):
   portrait_1_pipeline.png   636x1048  - generable dispatch pipeline
@@ -94,7 +94,7 @@ def portrait_pipeline():
     W, H = 636, 1048
     img, d = bg(W, H, top=True)
     logo_mark(d, 60, 70, 30)
-    T(d, (104, 56), "LocalAgent", F(KR_B, 34), fill=TX)
+    T(d, (104, 56), "OpenLocalAgent", F(KR_B, 34), fill=TX)
     T(d, (106, 96), "28M · byte-level · from-scratch", F(MONO, 16), fill=MUTED)
 
     T(d, (44, 168), "툴을 추가해도\n재학습이 필요 없다", F(KR_B, 44), fill=TX, spacing=10)
@@ -264,7 +264,7 @@ def thumbnail():
 
     logo_mark(d, 250, H // 2, 120)
     x = 410
-    T(d, (x, H // 2 - 96), "LocalAgent", F(KR_B, 132), fill=TX)
+    T(d, (x, H // 2 - 96), "OpenLocalAgent", F(KR_B, 132), fill=TX)
     T(d, (x + 4, H // 2 + 64), "A  < 100M  from-scratch  tool-calling  agent", F(MONO, 40), fill=ACCENT)
     T(d, (x + 6, H // 2 + 128), "온디바이스 · 순수 PyTorch · 바이트 단위 · 데이터 플라이휠",
       F(KR_R, 34), fill=MUTED)

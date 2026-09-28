@@ -9,14 +9,14 @@ from pathlib import Path
 
 import pytest
 
-import localagent.data.mind2web_prompts as mind2web_prompts
-from localagent.data.mind2web_dom_ranker import (
+import openlocalagent.data.mind2web_prompts as mind2web_prompts
+from openlocalagent.data.mind2web_dom_ranker import (
     MIND2WEB_DOM_RANKER_VERSION,
     MIND2WEB_RANKED_PROMPT_ADAPTER_VERSION,
     load_mind2web_dom_ranker_config,
     rank_mind2web_dom,
 )
-from localagent.data.mind2web_prompts import (
+from openlocalagent.data.mind2web_prompts import (
     MIND2WEB_PROMPT_ADAPTER_VERSION,
     PRODUCTION_MIND2WEB_MEMBERS,
     PRODUCTION_MIND2WEB_REVISION,
@@ -396,10 +396,10 @@ def test_mind2web_production_v2_audit_binds_ranker_and_framed_budget(
         "adapter_implementation"
     ]
     assert ranking["adapter_implementation"]["module"] == (
-        "localagent.data.mind2web_prompts"
+        "openlocalagent.data.mind2web_prompts"
     )
     assert ranking["adapter_implementation"]["path"] == (
-        "src/localagent/data/mind2web_prompts.py"
+        "src/openlocalagent/data/mind2web_prompts.py"
     )
     assert ranking["adapter_implementation"]["sha256"] == hashlib.sha256(
         Path(mind2web_prompts.__file__).read_bytes()

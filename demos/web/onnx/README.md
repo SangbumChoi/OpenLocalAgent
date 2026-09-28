@@ -1,4 +1,4 @@
-# LocalAgent in the browser (ONNX Runtime Web + WebGPU)
+# OpenLocalAgent in the browser (ONNX Runtime Web + WebGPU)
 
 A fully client-side demo: the byte-level model runs in your browser via **ONNX Runtime Web**
 (WebGPU, with a WASM fallback); tool **selection** is an in-page char-n-gram retriever and

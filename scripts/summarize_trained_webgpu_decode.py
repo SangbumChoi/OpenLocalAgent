@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from localagent.eval.webgpu_decode_summary import (
+from openlocalagent.eval.webgpu_decode_summary import (
     build_trained_decode_summary,
     write_summary,
 )

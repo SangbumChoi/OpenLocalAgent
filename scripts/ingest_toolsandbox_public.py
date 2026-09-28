@@ -21,7 +21,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from localagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
 
 SOURCE_URL = "https://github.com/apple/ToolSandbox"
 REVISION = "165848b9a78cead7ca7fe7c89c688b58e6501219"

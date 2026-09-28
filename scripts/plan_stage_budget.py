@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.train.stage_budget import (
+from openlocalagent.train.stage_budget import (
     build_stage_budget_plan,
     verify_stage_budget_plan,
     write_stage_budget_plan,

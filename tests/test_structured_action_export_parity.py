@@ -6,12 +6,12 @@ from pathlib import Path
 
 import pytest
 
-from localagent.inference.export.structured_action_parity import (
+from openlocalagent.inference.export.structured_action_parity import (
     _browser_ground_actions,
     canonical_sha256,
     materialize_trailing_compute,
 )
-from localagent.model.tokenizer import ASSISTANT, USER, ByteTokenizer
+from openlocalagent.model.tokenizer import ASSISTANT, USER, ByteTokenizer
 
 
 ROOT = Path(__file__).resolve().parents[1]

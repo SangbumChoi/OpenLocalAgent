@@ -16,7 +16,7 @@ from pathlib import Path
 
 import yaml
 
-from localagent.train.update_preflight import run_one_update_rl_preflight
+from openlocalagent.train.update_preflight import run_one_update_rl_preflight
 
 from scripts.train_stateful_productivity_rl import _write_rows
 

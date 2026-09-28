@@ -20,7 +20,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from localagent.data.public_agent import PublicSourceSnapshot, _conversation, _xlam_record
+from openlocalagent.data.public_agent import PublicSourceSnapshot, _conversation, _xlam_record
 
 
 DERIVED_DATASET = "product-science/xlam-function-calling-60k-raw"

@@ -68,11 +68,11 @@ PRODUCTION_LOCAL_POLICY_EXCLUSIONS = (
     "terminal",
 )
 # Backward-compatible public alias. The pinned upstream metadata does not itself mark these tasks
-# nondeterministic; their omission is a LocalAgent production-plan policy choice.
+# nondeterministic; their omission is a OpenLocalAgent production-plan policy choice.
 PRODUCTION_EXCLUDED_NONDETERMINISTIC = PRODUCTION_LOCAL_POLICY_EXCLUSIONS
 
 # BrowserGym metadata at PRODUCTION_BROWSERGYM_REVISION, browsergym_split=test, after applying the
-# three LocalAgent production-plan exclusions above.
+# three OpenLocalAgent production-plan exclusions above.
 PRODUCTION_TASK_GROUPS: Mapping[str, int] = {
     "miniwob.ascending-numbers": 0,
     "miniwob.bisect-angle": 1,

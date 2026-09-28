@@ -11,9 +11,9 @@ import json
 import re
 from pathlib import Path
 
-from localagent.agent.runtime import Agent
-from localagent.agent.tools import ToolRegistry
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.agent.runtime import Agent
+from openlocalagent.agent.tools import ToolRegistry
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--ckpt", default="runs/tiny-30m-scenarios-best.pt")

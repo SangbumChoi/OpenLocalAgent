@@ -81,7 +81,7 @@ Reproduce: `python scripts/analyze_loop.py --model configs/model/tiny-30m-byte.y
 import json, torch
 from huggingface_hub import hf_hub_download
 from safetensors.torch import load_file
-from localagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model import LocalAgentLM, ModelConfig
 
 repo = "danelcsb/localagent-tiny-30m-byte"
 cfg_d = json.load(open(hf_hub_download(repo, "config.json")))

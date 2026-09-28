@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from localagent.eval.workshop_gate import build_workshop_gate, write_workshop_gate
+from openlocalagent.eval.workshop_gate import build_workshop_gate, write_workshop_gate
 
 
 ROOT = Path(__file__).parents[1]

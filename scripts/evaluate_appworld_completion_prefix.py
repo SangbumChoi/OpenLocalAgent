@@ -39,7 +39,7 @@ def evaluate(
     experiment_name: str, lexical_first: bool = False,
 ) -> dict[str, Any]:
     from appworld import AppWorld, update_root
-    from localagent.agent.runtime import Agent
+    from openlocalagent.agent.runtime import Agent
     from scripts.evaluate_appworld_checkpoint import _registry
 
     root = root.resolve()

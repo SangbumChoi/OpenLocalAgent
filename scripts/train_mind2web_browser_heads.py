@@ -20,15 +20,15 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 
-from localagent.agent.dense_selector import DenseToolSelector, tool_embeddings
-from localagent.agent.routes import ROUTE_INDEX, RouteHead
-from localagent.agent.tool_head import canonical_tool_name, _feat
-from localagent.agent.toolset import STANDARD_TOOLS
-from localagent.data.agent_synth import Sample
-from localagent.data.schema import Conversation
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.stage_data import probe_decisions
+from openlocalagent.agent.dense_selector import DenseToolSelector, tool_embeddings
+from openlocalagent.agent.routes import ROUTE_INDEX, RouteHead
+from openlocalagent.agent.tool_head import canonical_tool_name, _feat
+from openlocalagent.agent.toolset import STANDARD_TOOLS
+from openlocalagent.data.agent_synth import Sample
+from openlocalagent.data.schema import Conversation
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.stage_data import probe_decisions
 
 SEED = 2047
 

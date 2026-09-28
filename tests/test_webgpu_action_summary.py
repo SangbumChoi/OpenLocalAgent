@@ -6,12 +6,12 @@ from pathlib import Path
 
 import pytest
 
-from localagent.eval.webgpu_action_summary import (
+from openlocalagent.eval.webgpu_action_summary import (
     _validate_v04_action_evidence,
     build_webgpu_action_summary,
     write_webgpu_action_summary,
 )
-from localagent.train.stage_data import canonical_sha256
+from openlocalagent.train.stage_data import canonical_sha256
 
 
 ROOT = Path(__file__).resolve().parents[1]

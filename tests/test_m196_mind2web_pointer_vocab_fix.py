@@ -5,7 +5,7 @@ from pathlib import Path
 import torch
 
 from scripts.train_grounded_mind2web import _pointer_args, _warm_pointer
-from localagent.agent.pointer_head import PointerHead
+from openlocalagent.agent.pointer_head import PointerHead
 
 
 RECEIPT = Path("docs/paper/results/raw/m196-m194-grounded-mind2web-vocab-fix-v1.json")

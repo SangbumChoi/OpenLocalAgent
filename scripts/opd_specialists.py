@@ -15,16 +15,16 @@ import time
 
 import torch
 
-from localagent.agent.dense_selector import BoundSelector, train_dense_selector
-from localagent.agent.routes import route_of
-from localagent.agent.tool_head import _feat
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
-from localagent.data.contextual import CONTEXTUAL_EXAMPLES, contextual_samples
-from localagent.data.paraphrase import TOOL_EXAMPLES, paraphrase_samples
-from localagent.data.render import IGNORE, assistant_body
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
-from localagent.train.loop import cosine_lr, pad_batch, set_lr
+from openlocalagent.agent.dense_selector import BoundSelector, train_dense_selector
+from openlocalagent.agent.routes import route_of
+from openlocalagent.agent.tool_head import _feat
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.data.contextual import CONTEXTUAL_EXAMPLES, contextual_samples
+from openlocalagent.data.paraphrase import TOOL_EXAMPLES, paraphrase_samples
+from openlocalagent.data.render import IGNORE, assistant_body
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
+from openlocalagent.train.loop import cosine_lr, pad_batch, set_lr
 
 QUICK = "--quick" in sys.argv
 torch.set_num_threads(4)

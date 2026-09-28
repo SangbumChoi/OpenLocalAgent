@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Filter, audit, split, tokenize, and pack a LocalAgent pretraining corpus.
+"""Filter, audit, split, tokenize, and pack a OpenLocalAgent pretraining corpus.
 
 Examples:
   python scripts/build_corpus.py --sample --out data/shards/sample --seq-len 128

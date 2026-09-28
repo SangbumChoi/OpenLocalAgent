@@ -7,8 +7,8 @@ public evaluation matrix, and can bind warm-versus-random checkpoint transfer re
 ## Install and preflight
 
 ```bash
-git clone https://github.com/SangbumChoi/LocalAgent.git
-cd LocalAgent
+git clone https://github.com/SangbumChoi/OpenLocalAgent.git
+cd OpenLocalAgent
 python -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev,data,demo,export]"
@@ -60,7 +60,7 @@ To log the same run to Weights & Biases, install the `tracking` extra and authen
 `wandb login` (or `WANDB_API_KEY`), then add:
 
 ```bash
-  --wandb --wandb-project localagent --wandb-mode online
+  --wandb --wandb-project openlocalagent --wandb-mode online
 ```
 
 Use `--wandb-mode offline` when the GPU machine has no network; the run can be synced later with
@@ -95,14 +95,14 @@ with the same seed, corpus freeze, token budget, and output naming convention, t
 mid-training, SFT, and RL configs from the campaign manifest:
 
 ```bash
-localagent train pretrain configs/train/pretrain-paper-tier-10m-attn.yaml
-localagent train pretrain configs/train/pretrain-paper-tier-10m-hybrid.yaml
-localagent train midtrain configs/train/midtrain-paper-tier-10m-attn.yaml
-localagent train midtrain configs/train/midtrain-paper-tier-10m-hybrid.yaml
-localagent train sft configs/train/sft-paper-tier-10m-attn.yaml
-localagent train sft configs/train/sft-paper-tier-10m-hybrid.yaml
-localagent train rl configs/train/rl-paper-tier-10m-attn.yaml
-localagent train rl configs/train/rl-paper-tier-10m-hybrid.yaml
+openlocalagent train pretrain configs/train/pretrain-paper-tier-10m-attn.yaml
+openlocalagent train pretrain configs/train/pretrain-paper-tier-10m-hybrid.yaml
+openlocalagent train midtrain configs/train/midtrain-paper-tier-10m-attn.yaml
+openlocalagent train midtrain configs/train/midtrain-paper-tier-10m-hybrid.yaml
+openlocalagent train sft configs/train/sft-paper-tier-10m-attn.yaml
+openlocalagent train sft configs/train/sft-paper-tier-10m-hybrid.yaml
+openlocalagent train rl configs/train/rl-paper-tier-10m-attn.yaml
+openlocalagent train rl configs/train/rl-paper-tier-10m-hybrid.yaml
 ```
 
 The 96M pair uses the corresponding `*-tier-96m-*` files. These stages may require acquired,
@@ -135,10 +135,10 @@ evaluation-only datasets:
 hf auth login
 PYTHONPATH=src python scripts/publish_hf_campaign.py \
   --checkpoint runs/sft/latest.pt \
-  --model-repo YOUR_ID/localagent-webgpu \
+  --model-repo YOUR_ID/openlocalagent-webgpu \
   --model-out runs/hf_campaign_model \
   --dataset-dir data/hf-campaign \
-  --dataset-repo YOUR_ID/localagent-training-data \
+  --dataset-repo YOUR_ID/openlocalagent-training-data \
   --public --push
 ```
 

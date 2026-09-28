@@ -16,10 +16,10 @@ from pathlib import Path
 
 import torch
 
-from localagent.data.schema import Conversation
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.sft import _evaluate_conversations, sft
+from openlocalagent.data.schema import Conversation
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.sft import _evaluate_conversations, sft
 
 
 def _sha256(path: Path) -> tuple[int, str]:

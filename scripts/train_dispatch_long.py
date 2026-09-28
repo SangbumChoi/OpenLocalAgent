@@ -19,19 +19,19 @@ import time
 
 import torch
 
-from localagent.agent.constrained import hybrid_decode
-from localagent.agent.dense_selector import BoundSelector, train_dense_selector
-from localagent.agent.parser import extract_tool_calls
-from localagent.agent.pointer_head import PointerHead
-from localagent.agent.routes import ROUTES, route_of, train_route_head
-from localagent.agent.tool_head import _feat
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
-from localagent.data.agent_synth import Generator
-from localagent.data.paraphrase import TOOL_EXAMPLES, paraphrase_samples
-from localagent.eval.freeform import FREEFORM_EVAL
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.sft import sft
+from openlocalagent.agent.constrained import hybrid_decode
+from openlocalagent.agent.dense_selector import BoundSelector, train_dense_selector
+from openlocalagent.agent.parser import extract_tool_calls
+from openlocalagent.agent.pointer_head import PointerHead
+from openlocalagent.agent.routes import ROUTES, route_of, train_route_head
+from openlocalagent.agent.tool_head import _feat
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.data.agent_synth import Generator
+from openlocalagent.data.paraphrase import TOOL_EXAMPLES, paraphrase_samples
+from openlocalagent.eval.freeform import FREEFORM_EVAL
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.sft import sft
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--steps", type=int, default=4000)
@@ -51,7 +51,7 @@ templated = Generator(level=3, seed=11).generate_balanced(1 if args.quick else 8
 para = paraphrase_samples(2 if args.quick else 60, seed=11, split="train")
 examples = dict(TOOL_EXAMPLES)
 try:
-    from localagent.data.contextual import CONTEXTUAL_EXAMPLES, contextual_samples
+    from openlocalagent.data.contextual import CONTEXTUAL_EXAMPLES, contextual_samples
     ctx = contextual_samples(1 if args.quick else 30, seed=11, split="train")
     for k, v in CONTEXTUAL_EXAMPLES.items():            # merge ambiguous-case examples
         examples[k] = (examples.get(k, []) + v)[:10]

@@ -8,7 +8,7 @@ import hashlib
 from pathlib import Path
 from typing import Sequence
 
-from localagent.eval.webgpu_decode_receipt import (
+from openlocalagent.eval.webgpu_decode_receipt import (
     build_webgpu_decode_receipt,
     read_stable_webgpu_evidence_file,
     write_webgpu_decode_receipt,

@@ -36,7 +36,7 @@ def _sha256_file(path: Path) -> str:
 
 
 def fetch_url(url: str) -> bytes:
-    request = urllib.request.Request(url, headers={"User-Agent": "LocalAgent-public-audit/1"})
+    request = urllib.request.Request(url, headers={"User-Agent": "OpenLocalAgent-public-audit/1"})
     with urllib.request.urlopen(request, timeout=60) as response:
         return response.read()
 

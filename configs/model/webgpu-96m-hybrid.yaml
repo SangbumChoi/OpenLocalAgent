@@ -7,7 +7,7 @@
 #
 # Theoretical packed weights are 45.45 MiB at 4 bits before runtime metadata/alignment, but the
 # current browser exporter is FP16 and provides no int4/Q4 runtime. The model remains strictly
-# below LocalAgent's 100M hard ceiling: 95,320,448 parameters. No 4K WebGPU throughput is claimed.
+# below OpenLocalAgent's 100M hard ceiling: 95,320,448 parameters. No 4K WebGPU throughput is claimed.
 name: webgpu-96m-hybrid
 vocab_size: 16384
 d_model: 640

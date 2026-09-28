@@ -13,8 +13,8 @@ from typing import Any
 
 import pytest
 
-import localagent.data.browsergym_capture as browsergym_capture
-from localagent.data.browsergym_capture import (
+import openlocalagent.data.browsergym_capture as browsergym_capture
+from openlocalagent.data.browsergym_capture import (
     BROWSERGYM_CAPTURE_PRODUCER,
     BrowserGymCaptureSettings,
     attest_git_checkout,
@@ -24,7 +24,7 @@ from localagent.data.browsergym_capture import (
     production_capture_plan,
     verify_browsergym_capture_receipt,
 )
-from localagent.data.browsergym_prompts import (
+from openlocalagent.data.browsergym_prompts import (
     PRODUCTION_BROWSERGYM_REVISION,
     PRODUCTION_BROWSERGYM_VERSION,
     PRODUCTION_CHROMIUM_REVISION,

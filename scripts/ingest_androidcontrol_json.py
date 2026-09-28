@@ -14,7 +14,7 @@ import json
 from collections import Counter
 from pathlib import Path
 
-from localagent.data.androidcontrol_json import canonical_action_from_conversation, json_row_to_conversation
+from openlocalagent.data.androidcontrol_json import canonical_action_from_conversation, json_row_to_conversation
 
 
 def _sha256(path: Path) -> tuple[int, str]:

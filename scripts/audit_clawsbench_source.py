@@ -89,7 +89,7 @@ def audit(tasks_path: Path, experiments_path: Path, results_path: Path) -> dict[
             "reason": (
                 "The public release exposes task metadata and traces/results, while the "
                 "Dockerized mock services, verifier state, and reproducible task runner are not "
-                "included in this snapshot. The task metadata therefore cannot support a LocalAgent "
+                "included in this snapshot. The task metadata therefore cannot support a OpenLocalAgent "
                 "teacher-forced gold-action target or native score."
             ),
         },

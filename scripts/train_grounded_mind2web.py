@@ -2,7 +2,7 @@
 """Train a small grounded-pointer continuation on public Mind2Web DOM snapshots.
 
 This is a bounded research continuation, not an official Mind2Web scorer.  It warm-starts the
-backbone/tool head from a LocalAgent checkpoint, expands only the pointer argument vocabulary for
+backbone/tool head from a OpenLocalAgent checkpoint, expands only the pointer argument vocabulary for
 browser ``target_id``/``value`` slots, and keeps the normalized public train/eval files separate.
 """
 
@@ -16,13 +16,13 @@ from typing import Any
 
 import torch
 
-from localagent.agent.pointer_head import BROWSER_PTR_ARGS, PTR_ARGS, PointerHead, gold_span
-from localagent.data.agent_synth import Sample
-from localagent.data.schema import Conversation, Role
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
-from localagent.train.sft import sft
-from localagent.train.stage_data import (
+from openlocalagent.agent.pointer_head import BROWSER_PTR_ARGS, PTR_ARGS, PointerHead, gold_span
+from openlocalagent.data.agent_synth import Sample
+from openlocalagent.data.schema import Conversation, Role
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
+from openlocalagent.train.sft import sft
+from openlocalagent.train.stage_data import (
     build_continuation_lineage,
     tokenizer_identity,
 )

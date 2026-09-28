@@ -5,14 +5,14 @@ and reports before/after accuracy on the lookup categories that were failing."""
 import time
 import torch
 
-from localagent.agent.pointer_head import PointerHead
-from localagent.agent.tool_head import ToolHead
-from localagent.agent.toolset import STANDARD_TOOLS as TOOLS
-from localagent.data.agent_synth import REALISTIC_WEIGHTS, Generator
-from localagent.eval.harness import evaluate_grounded
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.sft import sft
+from openlocalagent.agent.pointer_head import PointerHead
+from openlocalagent.agent.tool_head import ToolHead
+from openlocalagent.agent.toolset import STANDARD_TOOLS as TOOLS
+from openlocalagent.data.agent_synth import REALISTIC_WEIGHTS, Generator
+from openlocalagent.eval.harness import evaluate_grounded
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.sft import sft
 
 torch.set_num_threads(4)
 tok = load_tokenizer()

@@ -1,7 +1,7 @@
 kind: localagent_hf_campaign_sources
 schema_version: 1
 description: >-
-  Public or explicitly gated, training-approved Hugging Face sources for the LocalAgent campaign. Evaluation-only
+  Public or explicitly gated, training-approved Hugging Face sources for the OpenLocalAgent campaign. Evaluation-only
   suites are intentionally absent; their prompts/verifiers must never be downloaded into SFT/RL.
 sources:
   - id: xlam_function_calling

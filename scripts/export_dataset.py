@@ -6,10 +6,10 @@ Pure data generation, no model — safe to run anytime.
 import json
 import pathlib
 
-from localagent.data.contextual import contextual_samples
-from localagent.data.paraphrase import paraphrase_samples
-from localagent.data.scenarios import scenario_episodes, scenario_samples
-from localagent.eval.freeform import FREEFORM_EVAL, FREEFORM_TRAIN
+from openlocalagent.data.contextual import contextual_samples
+from openlocalagent.data.paraphrase import paraphrase_samples
+from openlocalagent.data.scenarios import scenario_episodes, scenario_samples
+from openlocalagent.eval.freeform import FREEFORM_EVAL, FREEFORM_TRAIN
 
 OUT = pathlib.Path("data/dumps")
 OUT.mkdir(parents=True, exist_ok=True)

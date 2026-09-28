@@ -1005,7 +1005,7 @@ workshop-ready ToolSandbox score.
 
 ### AgentNet text-observation/action projection evaluation (m62)
 
-The retained eight-parent evaluation projection was then run through the actual LocalAgent
+The retained eight-parent evaluation projection was then run through the actual OpenLocalAgent
 constrained decoder and the repository's AgentNetBench-compatible scorer.  This is a stronger
 checkpoint-in-the-loop test than teacher forcing: each of the 133 retained action rows is decoded
 from its task plus bounded textual observation, grouped back into its parent trajectory, and
@@ -1082,7 +1082,7 @@ Mind2Web bytes remain outside Git; the exact shard, filtered snapshot, normalize
 hashes, and manifest are bound in the [`m31 receipt`](paper/results/raw/m31-mind2web-public-train10-continuation-v1.json).
 
 This run also closes a tool-catalog mismatch without changing the legacy 50-tool checkpoint shape:
-[`REALISTIC_BROWSER_TOOLS`](../src/localagent/agent/toolset.py) extends the dense two-tower pool with
+[`REALISTIC_BROWSER_TOOLS`](../src/openlocalagent/agent/toolset.py) extends the dense two-tower pool with
 `web_click`, `web_type`, and `web_select`, and all three map to the stable `computer_use` route.
 After 32 low-rate backbone updates and 256 frozen-feature head updates, held-out teacher-forced
 token accuracy rose from `69.1%` to `80.0%`; the browser selector rose from `0/6` to `6/6` top-1
@@ -1105,7 +1105,7 @@ no hardware throughput claim is made because timing was not collected in this ru
 ### Realistic browser-tool WebGPU bundle (m32)
 
 The same held-out Mind2Web child was exported with the 53-tool
-[`REALISTIC_BROWSER_TOOLS`](../src/localagent/agent/toolset.py) pool, including `web_click`,
+[`REALISTIC_BROWSER_TOOLS`](../src/openlocalagent/agent/toolset.py) pool, including `web_click`,
 `web_type`, and `web_select` while preserving the 10.5M backbone and the existing pointer-head
 shapes.  The model graph, hidden-only action graph, serialized heads, tokenizer, and tool metadata
 are hash-bound in the [`m32 receipt`](paper/results/raw/m32-webgpu-realistic-browser-tool-pool-v1.json).
@@ -1180,7 +1180,7 @@ receipt is [`m40`](paper/results/raw/m40-webgpu-native-capability-notion-v1.json
 
 ### Offline normalized mobile action protocol
 
-[`src/localagent/eval/mobile.py`](../src/localagent/eval/mobile.py) now provides the common
+[`src/openlocalagent/eval/mobile.py`](../src/openlocalagent/eval/mobile.py) now provides the common
 prediction contract for AndroidControl and AITW rows after normalization. It extracts the
 expected `mobile_*` calls from `localagent_v1`, accepts either `{name, arguments}` or
 `{tool, args}` predictions, and reports tool accuracy, exact action accuracy, trajectory exactness,
@@ -1200,7 +1200,7 @@ The official [AndroidWorld checkpointer](https://github.com/google-research/andr
 writes one `task_template_instance_id.pkl.gz` file per completed task instance under a timestamped
 `run_...` directory. The upstream episode record contains the goal, task template, instance ID,
 binary `is_successful` reward, episode length, runtime, exception information, and the full
-step-level episode payload. [`src/localagent/eval/androidworld.py`](../src/localagent/eval/androidworld.py)
+step-level episode payload. [`src/openlocalagent/eval/androidworld.py`](../src/openlocalagent/eval/androidworld.py)
 consumes that contract without importing AndroidWorld or starting `adb`: it hashes every result
 file, rejects symlinks and malformed/duplicate instances, and reports per-task and overall
 success rates. Supplying the exact expected task list and `n_task_combinations` is required for
@@ -1312,14 +1312,14 @@ The following are important reality checks, not extra SFT rows:
   and explicitly a benchmark, so it is not a training corpus.
 
 The repository now has a fail-closed `agentnet_v1` adapter in
-[`src/localagent/data/agentnet.py`](../src/localagent/data/agentnet.py) and a bounded normalizer in
+[`src/openlocalagent/data/agentnet.py`](../src/openlocalagent/data/agentnet.py) and a bounded normalizer in
 [`scripts/normalize_agentnet.py`](../scripts/normalize_agentnet.py). It accepts both the official
 `steps`/`ground_truth_actions` sample shape and the Hugging Face `traj`/`value.code` JSONL shape,
 parses only literal `pyautogui`/`computer` calls, and requires a textual observation. Coordinate
 actions remain `agentnet_*` tools for offline scoring; they are intentionally not relabeled as the
 text-grounded WebGPU `click` or `type_text` tools. The one-sample integration receipt is
 [`m17-agentnet-offline-adapter-sample-v1.json`](paper/results/raw/m17-agentnet-offline-adapter-sample-v1.json).
-[`src/localagent/eval/agentnet.py`](../src/localagent/eval/agentnet.py) now supplies a dependency-free
+[`src/openlocalagent/eval/agentnet.py`](../src/openlocalagent/eval/agentnet.py) now supplies a dependency-free
 AgentNetBench-compatible proxy for coordinate, text, keyboard, scroll, termination, and action-count
 scoring. A ground-truth replay of the official sample scores `1.0` across 12 actions, which is only
 a scorer sanity check; the pinned receipt is
@@ -1357,7 +1357,7 @@ base split must be used for a complete evaluation, and the leaderboard protocol 
 trials for Pass^k; a single trajectory replay or a historical tau-bench number is not a current
 deployment score.
 
-[`src/localagent/eval/mcpmark.py`](../src/localagent/eval/mcpmark.py) now provides a fail-closed
+[`src/openlocalagent/eval/mcpmark.py`](../src/openlocalagent/eval/mcpmark.py) now provides a fail-closed
 local result aggregator: it requires every expected task for every run before reporting
 pass@1/pass@k/pass^k, mean turns, latency, and token use. No result has been produced here because
 Docker/MCP services are not installed; the implementation is a protocol bridge, not a score.
@@ -1839,7 +1839,7 @@ productivity gate. Its scenarios model implicit tool dependencies, user simulati
 canonicalization, distraction tools, and insufficient-information abstention; the upstream CLI
 writes one JSON result record per scenario with milestone similarity, minefield similarity,
 turn count, exceptions, and a milestone-to-turn mapping. The dependency-free
-[`src/localagent/eval/toolsandbox.py`](../src/localagent/eval/toolsandbox.py) bridge consumes that
+[`src/openlocalagent/eval/toolsandbox.py`](../src/openlocalagent/eval/toolsandbox.py) bridge consumes that
 official `result_summary.json` shape, hashes the source, mirrors the upstream category rule for
 distraction augmentations, and fails closed unless the expected scenario list is present.
 [`scripts/aggregate_toolsandbox.py`](../scripts/aggregate_toolsandbox.py) writes a receipt without
@@ -1849,7 +1849,7 @@ bridge; a live ToolSandbox run and any score remain pending.
 The official [BrowserGym environment](https://github.com/ServiceNow/BrowserGym/blob/main/browsergym/core/src/browsergym/core/env.py)
 uses the Gymnasium episode contract: each browser action is passed to `step(action)` and returns
 observation, reward, terminated, truncated, and info, with task-specific validation supplying the
-reward. [`src/localagent/eval/browsergym.py`](../src/localagent/eval/browsergym.py) defines the
+reward. [`src/openlocalagent/eval/browsergym.py`](../src/openlocalagent/eval/browsergym.py) defines the
 portable JSONL projection of that contract (`task_id`, `seed`, ordered action/reward steps, and
 terminal flags), hashes the log, checks exact task/seed coverage, and reports per-task reward,
 success, step count, and action errors. [`scripts/aggregate_browsergym.py`](../scripts/aggregate_browsergym.py)
@@ -1866,9 +1866,9 @@ low-level action evaluator. Its coordinate, text, keyboard, scroll, and terminat
 useful for a WebGPU policy, but the source trajectories are screenshot-grounded; a text-only
 checkpoint must not convert them into training rows without an accessibility/vision bridge.
 
-The existing [`src/localagent/eval/agentnet.py`](../src/localagent/eval/agentnet.py) mirrors the
+The existing [`src/openlocalagent/eval/agentnet.py`](../src/openlocalagent/eval/agentnet.py) mirrors the
 per-trajectory action protocol without opening screenshots. The new
-[`src/localagent/eval/agentnet_results.py`](../src/localagent/eval/agentnet_results.py) joins a
+[`src/openlocalagent/eval/agentnet_results.py`](../src/openlocalagent/eval/agentnet_results.py) joins a
 ground-truth JSONL export with a prediction JSONL stream, rejects duplicate or mismatched task
 IDs, hashes both inputs, and reports mean action score, exact trajectory rate, action-count
 penalties, action-type scores, and platform breakdowns. The
@@ -1887,7 +1887,7 @@ trajectory, not a required script. The official [leaderboard guide](https://gith
 requires the complete base split, consistent configuration, and at least four trials for a
 publication-quality Pass^k submission.
 
-[`src/localagent/eval/tau2.py`](../src/localagent/eval/tau2.py) consumes the upstream
+[`src/openlocalagent/eval/tau2.py`](../src/openlocalagent/eval/tau2.py) consumes the upstream
 `Results` JSON contract in both supported storage forms: one monolithic `simulations[]` file,
 or `results.json` plus individual `simulations/*.json` files. It validates task/trial IDs,
 reward, termination, duration, and metadata; hashes every source file; excludes
@@ -2264,7 +2264,7 @@ grounding, real account, or hardware-throughput run has been completed.
 
 ### Stateful email/Notion/browser transfer probe (m55)
 
-The reusable [`stateful_productivity.py`](../src/localagent/data/stateful_productivity.py) contract
+The reusable [`stateful_productivity.py`](../src/openlocalagent/data/stateful_productivity.py) contract
 now gives SFT, pointer supervision, selector probes, and future RL one canonical local state
 machine.  It contains disjoint train/evaluation slots and phrasing for five workflows: complete
 Gmail compose/send, Notion page creation, browser search, browser 404 recovery, and no-tool
@@ -2565,7 +2565,7 @@ negative until the same native task set is run with frozen, low-rate, and matche
 ### Resettable local productivity runtime (m66)
 
 The [`m66 receipt`](paper/results/raw/m66-stateful-runtime-evaluation-v1.json) closes a gap in the
-earlier fixed-step stateful probe.  [`StatefulRuntime`](../src/localagent/data/stateful_productivity.py)
+earlier fixed-step stateful probe.  [`StatefulRuntime`](../src/openlocalagent/data/stateful_productivity.py)
 now keeps a current action index, rejects malformed or out-of-order calls without advancing the
 episode, exposes the rejection as the next observation, and records an append-only event log.  The
 receipt runs five held-out workflows—email send, Notion page creation, browser search, browser

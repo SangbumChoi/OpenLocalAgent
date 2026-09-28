@@ -3,7 +3,7 @@
 
 AgentNet is an image-grounded computer-use corpus.  This adapter deliberately drops screenshots
 and keeps only the task, the annotator's textual observation, and actions that map to the existing
-LocalAgent computer-use vocabulary.  It is intended for a reproducible text-only continuation
+OpenLocalAgent computer-use vocabulary.  It is intended for a reproducible text-only continuation
 experiment, not for claiming AgentNetBench or native desktop success.
 """
 
@@ -61,7 +61,7 @@ def _point_target(code: str, *, prefix: str = "") -> str | None:
 
 
 def parse_action(code: str) -> tuple[str, dict[str, Any]] | None:
-    """Map one AgentNet/PyAutoGUI action to a LocalAgent tool call.
+    """Map one AgentNet/PyAutoGUI action to a OpenLocalAgent tool call.
 
     Unsupported actions return ``None`` instead of inventing an equivalent operation.  The
     caller records their names so filtering remains auditable.

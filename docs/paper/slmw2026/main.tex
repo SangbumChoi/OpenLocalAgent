@@ -152,7 +152,7 @@ split, a tokenizer trained on training documents only produces 28,045,897 packed
 and a 240-document validation set.  Exact content hashes bind raw data, split, tokenizer, configs,
 checkpoints, and scorecards.  Training follows a project-owned
 tokenizer--pretrain--midtrain--SFT--RL pipeline.  The end-to-end tokenizer, pretraining, and SFT
-organization is informed by nanochat \citep{karpathy2025nanochat}; LocalAgent independently adds
+organization is informed by nanochat \citep{karpathy2025nanochat}; OpenLocalAgent independently adds
 midtraining and bounded offline agent RL, rather than attributing those stages to nanochat's
 current speedrun.  All stages use the project's canonical conversation schema.  Midtraining masks
 user tokens, SFT

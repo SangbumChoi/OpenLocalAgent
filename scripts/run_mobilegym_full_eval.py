@@ -90,11 +90,11 @@ async def _run(args: argparse.Namespace) -> dict[str, Any]:
     from bench_env.env.mobile_gym import MobileGymEnv
     from bench_env.splits import resolve_split
     from bench_env.task import JudgeInput, load_tasks
-    from localagent.agent.constrained import grounded_decode, hybrid_decode
-    from localagent.agent.mobile_toolset import mobile_tools
-    from localagent.agent.parser import extract_tool_calls
-    from localagent.agent.runtime import Agent
-    from localagent.agent.tools import ToolRegistry
+    from openlocalagent.agent.constrained import grounded_decode, hybrid_decode
+    from openlocalagent.agent.mobile_toolset import mobile_tools
+    from openlocalagent.agent.parser import extract_tool_calls
+    from openlocalagent.agent.runtime import Agent
+    from openlocalagent.agent.tools import ToolRegistry
 
     split_path = source_root / "bench_env" / "splits" / "test.txt"
     train_path = source_root / "bench_env" / "splits" / "train.txt"

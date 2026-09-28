@@ -13,11 +13,11 @@ import time
 
 import torch
 
-from localagent.agent.routes import ROUTES, train_route_head
-from localagent.data.agent_synth import Generator
-from localagent.eval.harness import evaluate_routed
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
+from openlocalagent.agent.routes import ROUTES, train_route_head
+from openlocalagent.data.agent_synth import Generator
+from openlocalagent.eval.harness import evaluate_routed
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
 
 QUICK = "--quick" in sys.argv
 torch.set_num_threads(4)

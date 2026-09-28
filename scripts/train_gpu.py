@@ -22,14 +22,14 @@ import time
 
 import torch
 
-from localagent.data.agent_synth import Generator
-from localagent.data.render import build_pretrain_stream
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import load_tokenizer
-from localagent.train.device import enable_tf32, resolve_device, resolve_dtype
-from localagent.train.pretrain import pretrain
-from localagent.train.rl import grpo
-from localagent.train.sft import sft
+from openlocalagent.data.agent_synth import Generator
+from openlocalagent.data.render import build_pretrain_stream
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import load_tokenizer
+from openlocalagent.train.device import enable_tf32, resolve_device, resolve_dtype
+from openlocalagent.train.pretrain import pretrain
+from openlocalagent.train.rl import grpo
+from openlocalagent.train.sft import sft
 
 SIZES = {
     "ultra-tiny": "configs/model/ultra-tiny-1m.yaml",

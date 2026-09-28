@@ -6,8 +6,8 @@ from pathlib import Path
 import pytest
 import yaml
 
-from localagent.data.agent_synth import Sample
-from localagent.data.prompt_contract import (
+from openlocalagent.data.agent_synth import Sample
+from openlocalagent.data.prompt_contract import (
     OPENAI_FULL_CATALOG_V1,
     RESERVED_PROMPT_MARKERS,
     SYSTEM,
@@ -20,7 +20,7 @@ from localagent.data.prompt_contract import (
     schema_matches,
     validate_json_schema,
 )
-from localagent.data.render import (
+from openlocalagent.data.render import (
     IGNORE,
     CatalogTokenCache,
     LazyCatalogTokenRow,
@@ -31,9 +31,9 @@ from localagent.data.render import (
     shifted_token_counts,
     token_row_length,
 )
-from localagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import (
+from openlocalagent.data.schema import Conversation, Message, Role, ToolCall, ToolSpec
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import (
     ASSISTANT,
     BPE_EOS,
     TOOL,
@@ -44,16 +44,16 @@ from localagent.model.tokenizer import (
     ByteTokenizer,
     train_bpe,
 )
-from localagent.train.midtrain import (
+from openlocalagent.train.midtrain import (
     ConversationDataset,
     MixtureSource,
     ScheduledMixture,
     midtrain,
 )
-from localagent.train.sft import _evaluate_conversations, sft
-from localagent.train.stage_budget import build_stage_budget_plan
-from localagent.train.stage_data import single_turn_samples
-from localagent.train.stage_sampling import encode_with_value_span, prepare_sft_data
+from openlocalagent.train.sft import _evaluate_conversations, sft
+from openlocalagent.train.stage_budget import build_stage_budget_plan
+from openlocalagent.train.stage_data import single_turn_samples
+from openlocalagent.train.stage_sampling import encode_with_value_span, prepare_sft_data
 
 
 @pytest.fixture(scope="module")

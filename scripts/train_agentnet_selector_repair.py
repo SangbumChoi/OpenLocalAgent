@@ -21,11 +21,11 @@ from typing import Any
 import torch
 import torch.nn.functional as F
 
-from localagent.agent.dense_selector import DenseToolSelector, tool_embeddings
-from localagent.data.agentnet import _tool
-from localagent.data.schema import Conversation, ToolSpec
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
+from openlocalagent.agent.dense_selector import DenseToolSelector, tool_embeddings
+from openlocalagent.data.agentnet import _tool
+from openlocalagent.data.schema import Conversation, ToolSpec
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
 
 
 ACTION_TO_TOOL = {

@@ -18,16 +18,16 @@ from pathlib import Path
 import torch
 import torch.nn.functional as F
 
-from localagent.agent.dense_selector import BoundSelector, DenseToolSelector, tool_embeddings
-from localagent.agent.mobile_toolset import mobile_tools, realistic_productivity_tools
-from localagent.agent.pointer_head import PTR_ARGS, PointerHead, gold_span
-from localagent.agent.routes import ROUTE_INDEX, ROUTES, RouteHead, route_of
-from localagent.agent.toolset import STANDARD_TOOLS
-from localagent.data.agent_synth import Generator, Sample
-from localagent.data.paraphrase import paraphrase_samples
-from localagent.data.schema import Conversation, Role
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
+from openlocalagent.agent.dense_selector import BoundSelector, DenseToolSelector, tool_embeddings
+from openlocalagent.agent.mobile_toolset import mobile_tools, realistic_productivity_tools
+from openlocalagent.agent.pointer_head import PTR_ARGS, PointerHead, gold_span
+from openlocalagent.agent.routes import ROUTE_INDEX, ROUTES, RouteHead, route_of
+from openlocalagent.agent.toolset import STANDARD_TOOLS
+from openlocalagent.data.agent_synth import Generator, Sample
+from openlocalagent.data.paraphrase import paraphrase_samples
+from openlocalagent.data.schema import Conversation, Role
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ASSISTANT, USER, load_tokenizer
 
 
 def _sha256(path: Path) -> tuple[int, str]:
@@ -561,7 +561,7 @@ def _state_conditioned_trajectory_samples() -> list[Sample]:
 
 
 def _feature(model: LocalAgentLM, tok, prompt: str, device: str) -> torch.Tensor:
-    from localagent.agent.tool_head import _feat
+    from openlocalagent.agent.tool_head import _feat
 
     return _feat(model, tok, prompt, device)
 

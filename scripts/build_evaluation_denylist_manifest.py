@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 
-from localagent.data.evaluation_denylist_manifest import (
+from openlocalagent.data.evaluation_denylist_manifest import (
     build_evaluation_denylist_manifest,
 )
 

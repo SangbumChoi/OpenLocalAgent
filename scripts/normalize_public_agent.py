@@ -12,7 +12,7 @@ from openlocalagent.data.adapters.public_agent import build_public_agent_dataset
 def main() -> None:
     parser = argparse.ArgumentParser(
         description=(
-            "Build deterministic LocalAgent Conversation splits from already-downloaded, "
+            "Build deterministic OpenLocalAgent Conversation splits from already-downloaded, "
             "byte-pinned public source snapshots."
         )
     )

@@ -29,8 +29,8 @@ from audit_androidcontrol_tfrecord_sample import (  # noqa: E402
     _feature_map,
     _int64_list,
 )
-from localagent.data.visual import decode_png_rgb
-from localagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.data.visual import decode_png_rgb
+from openlocalagent.model import LocalAgentLM, ModelConfig
 
 
 def _sha256(data: bytes) -> str:

@@ -2,7 +2,7 @@
 """Run a bounded native tau2-bench domain probe without retaining task payloads.
 
 This runner covers the local, resettable airline, retail, and telecom environments.  It executes
-one LocalAgent turn per selected base task, replays the resulting calls through tau2's native
+one OpenLocalAgent turn per selected base task, replays the resulting calls through tau2's native
 action/environment evaluators, and hashes task text, outputs, and source files.  It is deliberately
 not a user-simulator or leaderboard runner.
 """
@@ -26,7 +26,7 @@ from evaluate_tau2_mock_checkpoint import (
     _text_hash,
     _tool_registry,
 )
-from localagent.agent.runtime import Agent
+from openlocalagent.agent.runtime import Agent
 
 
 DOMAINS = ("airline", "retail", "telecom")
@@ -227,7 +227,7 @@ def evaluate(
             / len(records),
         },
         "claim_boundary": (
-            "Native resettable tau2-bench domain diagnostic with one LocalAgent turn per task and an "
+            "Native resettable tau2-bench domain diagnostic with one OpenLocalAgent turn per task and an "
             "oracle contract replay. This is not a complete domain split, user-simulator run, "
             "leaderboard score, external-service result, or WebGPU deployment claim. Task text, tool "
             "outputs, and checkpoint internals are hash-only."

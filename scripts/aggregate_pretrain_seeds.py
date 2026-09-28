@@ -6,8 +6,8 @@ from __future__ import annotations
 import argparse
 import json
 
-from localagent.eval.pretrain_scorecard import write_scorecard
-from localagent.eval.pretrain_seed_aggregate import (
+from openlocalagent.eval.pretrain_scorecard import write_scorecard
+from openlocalagent.eval.pretrain_seed_aggregate import (
     SeedComparisonSpec,
     aggregate_pretrain_seeds,
 )

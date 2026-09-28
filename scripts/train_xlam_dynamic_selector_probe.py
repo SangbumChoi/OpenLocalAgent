@@ -2,7 +2,7 @@
 """Train and audit a tool selector over the public xLAM-derived tool catalog.
 
 The xLAM derivative carries a different tool catalog on every row (and many tools are unseen in
-the LocalAgent browser pool).  This probe therefore uses the two-tower selector with a deterministic
+the OpenLocalAgent browser pool).  This probe therefore uses the two-tower selector with a deterministic
 union of row-local ``ToolSpec`` objects.  It is a dispatch diagnostic only: it does not claim the
 gated Salesforce split, generated argument exactness, native API effects, or a benchmark score.
 """
@@ -16,16 +16,16 @@ from typing import Any, Iterable
 
 import torch
 
-from localagent.agent.dense_selector import DenseToolSelector, tool_embeddings, train_dense_selector
-from localagent.data.schema import Conversation, ToolSpec
-from localagent.train.stage_data import probe_decisions
+from openlocalagent.agent.dense_selector import DenseToolSelector, tool_embeddings, train_dense_selector
+from openlocalagent.data.schema import Conversation, ToolSpec
+from openlocalagent.train.stage_data import probe_decisions
 from scripts.train_cross_surface_continuation import (
     _assert_disjoint,
     _checkpoint_tokenizer,
     _identity,
     _load_rows,
 )
-from localagent.agent.tool_head import _feat
+from openlocalagent.agent.tool_head import _feat
 
 
 def _tool_key(tool: ToolSpec) -> str:
@@ -140,7 +140,7 @@ def main() -> int:
 
     parent_identity = _identity(args.init)
     parent = torch.load(args.init, map_location="cpu", weights_only=False)
-    from localagent.model import LocalAgentLM, ModelConfig
+    from openlocalagent.model import LocalAgentLM, ModelConfig
 
     config = ModelConfig(**parent["cfg"])
     config.assert_within_budget()

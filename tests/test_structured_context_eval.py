@@ -6,15 +6,15 @@ from types import SimpleNamespace
 
 import torch
 
-from localagent.eval.structured_context import (
+from openlocalagent.eval.structured_context import (
     _score_rows,
     canonical_sha256,
     evaluate_decisions,
     materialize_context_ids,
     materialize_context_view,
 )
-from localagent.model.tokenizer import ASSISTANT, USER, ByteTokenizer
-from localagent.train.stage_data import ProbeDecision
+from openlocalagent.model.tokenizer import ASSISTANT, USER, ByteTokenizer
+from openlocalagent.train.stage_data import ProbeDecision
 
 
 class _RouteHead(torch.nn.Module):

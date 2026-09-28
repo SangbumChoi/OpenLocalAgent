@@ -21,12 +21,12 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 
-from localagent.agent.pointer_head import PointerHead
-from localagent.data.prompt_contract import render_function_catalog
-from localagent.data.render import history_text
-from localagent.data.schema import Conversation, Role
-from localagent.model import LocalAgentLM, ModelConfig
-from localagent.model.tokenizer import ASSISTANT, BPE_EOS, load_tokenizer
+from openlocalagent.agent.pointer_head import PointerHead
+from openlocalagent.data.prompt_contract import render_function_catalog
+from openlocalagent.data.render import history_text
+from openlocalagent.data.schema import Conversation, Role
+from openlocalagent.model import LocalAgentLM, ModelConfig
+from openlocalagent.model.tokenizer import ASSISTANT, BPE_EOS, load_tokenizer
 
 SOURCE_URL = "https://huggingface.co/datasets/Team-ACE/ToolACE"
 SOURCE_REVISION = "6bda777c88d21e5a204703c1ee45597a8fa4f734"

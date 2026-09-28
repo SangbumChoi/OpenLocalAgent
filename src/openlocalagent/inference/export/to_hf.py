@@ -1,4 +1,4 @@
-"""Export a trained LocalAgent checkpoint to a Hugging Face Hub model repo (Phase 9).
+"""Export a trained OpenLocalAgent checkpoint to a Hugging Face Hub model repo (Phase 9).
 
 Builds a self-contained bundle — `config.json` (the ModelConfig), weights (`model.safetensors`,
 falling back to `pytorch_model.bin`), the tokenizer when a BPE checkpoint records one, all agent
@@ -33,10 +33,10 @@ tags: [tool-calling, agent, tiny-llm, {tokenizer_tag}, on-device, from-scratch]
 pipeline_tag: text-generation
 ---
 
-# {name} — LocalAgent ({params:.2f}M params)
+# {name} — OpenLocalAgent ({params:.2f}M params)
 
 A **from-scratch, {tokenizer_label}** tool-calling agent model from
-[LocalAgent](https://github.com/sangbumchoi/openlocalagent). Pure PyTorch, **{params:.2f}M params**,
+[OpenLocalAgent](https://github.com/SangbumChoi/OpenLocalAgent). Pure PyTorch, **{params:.2f}M params**,
 trained on CPU. It pairs a tiny decoder (GQA + RoPE + SwiGLU{recur}) with a **dual head**
 (tool-selection classifier + pointer/copy argument head) and **prompt-grounded constrained
 decoding** for reliable tool calls across {ntools} tools (general assistant, the Claude Code /
@@ -73,7 +73,7 @@ assistant, a coding agent, computer-use/productivity apps, and **parallel two-ca
 Multi-turn coding (grounds a follow-up arg from a tool response):
 `read_file(tests/test_api.py)` → result → `run_tests()` → "FAILED…" → fix.
 At catalog scale (100s–1000s of tools) selection is done by **retrieval** (top-k) instead of a
-fixed head. See the [LocalAgent repo](https://github.com/sangbumchoi/openlocalagent).
+fixed head. See the [OpenLocalAgent repo](https://github.com/SangbumChoi/OpenLocalAgent).
 
 ## Load (pure PyTorch, no transformers)
 ```python
@@ -92,7 +92,7 @@ if tokenizer_meta.get("kind") == "bpe":
     from openlocalagent.model.tokenizer import load_tokenizer
     tokenizer = load_tokenizer("bpe", hf_hub_download("{repo}", tokenizer_meta["filename"]))
 ```
-See the LocalAgent repo for the grounded decoder / agent runtime (tool head, pointer head,
+See the OpenLocalAgent repo for the grounded decoder / agent runtime (tool head, pointer head,
 retrieval, parallel-call decode).
 """
 

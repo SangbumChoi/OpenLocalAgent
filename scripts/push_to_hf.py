@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Export a trained LocalAgent checkpoint to a Hugging Face Hub model repo.
+"""Export a trained OpenLocalAgent checkpoint to a Hugging Face Hub model repo.
 
 Builds the bundle (config + weights + heads + model card) and, with --push + a token, uploads it.
 
@@ -8,7 +8,7 @@ Builds the bundle (config + weights + heads + model card) and, with --push + a t
 
   # push (needs HF_TOKEN env, --token, or `hf auth login`):
   python scripts/push_to_hf.py --checkpoint runs/flywheel/ultra-tiny.pt \
-      --repo <user>/localagent-ultra-tiny-1m --push
+      --repo <user>/openlocalagent-ultra-tiny-1m --push
 """
 
 from __future__ import annotations
@@ -16,14 +16,14 @@ from __future__ import annotations
 import argparse
 import os
 
-from localagent.inference.export.to_hf import export_hf
+from openlocalagent.inference.export.to_hf import export_hf
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--checkpoint", default="runs/flywheel/ultra-tiny.pt")
     ap.add_argument("--out", default="runs/hf_export")
-    ap.add_argument("--repo", default=None, help="HF repo id, e.g. <user>/localagent-ultra-tiny-1m")
+    ap.add_argument("--repo", default=None, help="HF repo id, e.g. <user>/openlocalagent-ultra-tiny-1m")
     ap.add_argument("--token", default=None, help="HF token (else uses HF_TOKEN env / cached login)")
     ap.add_argument("--public", action="store_true", help="create a public repo (default private)")
     ap.add_argument("--push", action="store_true", help="upload to the Hub (requires a token)")

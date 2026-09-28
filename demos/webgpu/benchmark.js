@@ -1,4 +1,4 @@
-/* Complete-action benchmark for the LocalAgent WebGPU bundle.
+/* Complete-action benchmark for the OpenLocalAgent WebGPU bundle.
  *
  * The measured interval ends only after route selection and pointer argument grounding, when a
  * complete action can be executed.  It therefore reports TTFA rather than treating raw token

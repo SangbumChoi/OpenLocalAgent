@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from localagent.eval.enterpriseopsgym import (
+from openlocalagent.eval.enterpriseopsgym import (
     ENTERPRISEOPSGYM_ADAPTER,
     ENTERPRISEOPSGYM_DATASET,
     ENTERPRISEOPSGYM_REVISION,

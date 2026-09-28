@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from localagent.data.agent_eval_subset import derive_agent_eval_pilot_subset
+from openlocalagent.data.agent_eval_subset import derive_agent_eval_pilot_subset
 
 
 def parse_args() -> argparse.Namespace:
