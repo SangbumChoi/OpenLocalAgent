@@ -14,5 +14,5 @@ rewrites, pack manifest skip. Unit tests: scripts/test_exp.py (pytest, no cluste
 
 Superseded for NEW work (keep for running/queued jobs only):
 skeleton_arm.sh · staged_chain.sh · build_pool_open.sh · build_pool_general.sh ·
-pack_r3_pools.sh · convert_pool.sh · seed_queues.sh · private chain omitted · face_*.sh ·
+pack_r3_pools.sh · convert_pool.sh · seed_queues.sh · face_*.sh ·
 run_bigpretrain.sh · eval_ladder_chain.sh · eval_mobileactions_all.sh
