@@ -7,10 +7,8 @@
 # manifest. Frozen evaluation prompts/pages must then be supplied to prepare_corpus.py's
 # decontamination denylist before tokenizer training or packing.
 #
-# Scope is intentionally literal: the 25% code arm below is permissively licensed Python from
-# CodeParrot Clean, and the 10% structured arm is WebSight HTML text only. JSON, JSON Schema,
-# OpenAPI, YAML, multilingual code, tests, and API documentation require additional configured
-# sources with their own provenance/license records; this file does not claim to include them.
+# Domain-balanced, bounded pretraining mix: general/educational web, Korean web, math, Python,
+# and structured HTML. Tool-use demonstrations remain in post-training datasets, not base LM text.
 version: 1
 seed: 2026
 target_chars: 2200000000
@@ -19,14 +17,11 @@ max_document_chars: 1000000
 require_full_source_budgets: true
 require_license_evidence: true
 
-# The downloader retains one atomic spool per completed source and then assembles the committed
-# JSONL, so peak acquisition storage is larger than the final JSONL. This is an explicit
-# fail-before-network floor and an independent hard cap, not a claim that 2.2B Unicode characters
-# always occupy 2.2GB.
+# HF IterableDataset sources are read with streaming=True and only required columns are selected.
+# CodeParrot retains its verified shard-stream backend because the upstream generic loader is
+# transport-fragile. This floor covers bounded source spools and final assembly, not a Hub mirror.
 storage:
-  # The selected WebSight prefix alone is 25.24 GB. Keep room for its verified Hub cache,
-  # completed-source spools, final assembly, and temporary files before any network work begins.
-  minimum_free_bytes: 60000000000
+  minimum_free_bytes: 40000000000
   max_raw_jsonl_bytes: 13200000000
 
 # Corpus-owned policy for prepare_corpus.py. The downloaded mixture manifest carries this policy,
@@ -54,13 +49,14 @@ evaluation_decontamination:
       sha256: e2c2406865a076f21ca1dd8747187ae2c2a2af0c06888b207b702aa6f2ebfb07
 
 sources:
-  # Near-deduplicated educational web text; the dataset card declares ODC-By.
+  # Near-deduplicated English educational web text; the dataset card declares ODC-By.
   - name: fineweb_edu_dedup
     dataset: HuggingFaceTB/smollm-corpus
     revision: 3ba9d605774198c5868892d7a8deda78031a781f
     subset: fineweb-edu-dedup
     split: train
     text_field: text
+    adapter: web_prose
     license: ODC-By-1.0
     license_evidence:
       id: smollm-card
@@ -68,7 +64,7 @@ sources:
       bytes: 7048
       sha256: e09544d7132303ae6bbc6e156e984db0305d81561615476be49eabd4be4b8bed
       scope: dataset-distribution
-    weight: 0.50
+    weight: 0.40
     shuffle_buffer: 20000
     source_fields: [id]
 
@@ -79,6 +75,7 @@ sources:
     subset: cosmopedia-v2
     split: train
     text_field: text
+    adapter: web_prose
     license: ODC-By-1.0
     license_evidence:
       id: smollm-card
@@ -86,11 +83,50 @@ sources:
       bytes: 7048
       sha256: e09544d7132303ae6bbc6e156e984db0305d81561615476be49eabd4be4b8bed
       scope: dataset-distribution
-    weight: 0.15
+    weight: 0.10
     shuffle_buffer: 20000
     # The subset has no stable row id; content hashing supplies the document id. Avoid embedding
     # long seed-page text in the source label.
     source_fields: []
+
+  # Korean-language, deduplicated web text from FineWeb2. This source is streamed directly from
+  # its pinned Hugging Face revision; the full 60M-row corpus is never mirrored locally.
+  - name: fineweb2_korean
+    dataset: HuggingFaceFW/fineweb-2
+    revision: af9c13333eb981300149d5ca60a8e9d659b276b9
+    subset: kor_Hang
+    split: train
+    text_field: text
+    adapter: web_prose
+    license: ODC-By-1.0
+    license_evidence:
+      id: fineweb2-card
+      url: https://huggingface.co/datasets/HuggingFaceFW/fineweb-2/resolve/af9c13333eb981300149d5ca60a8e9d659b276b9/README.md
+      bytes: 329009
+      sha256: 08d38a7e5cb7aae4b6fcc284fec4dd636ea653e4e5e74ef66a60d9616005b090
+      scope: dataset-distribution
+    weight: 0.10
+    shuffle_buffer: 20000
+    source_fields: [id]
+
+  # Educational mathematical web text curated from Common Crawl; ODC-By and streamed by rows.
+  - name: finemath_3plus
+    dataset: HuggingFaceTB/finemath
+    revision: e92b25a616738fe95dc186b64dfb19f9c8525594
+    subset: finemath-3plus
+    split: train
+    text_field: text
+    adapter: math_prose
+    license: ODC-By-1.0
+    license_evidence:
+      id: finemath-card
+      url: https://huggingface.co/datasets/HuggingFaceTB/finemath/resolve/e92b25a616738fe95dc186b64dfb19f9c8525594/README.md
+      bytes: 12402
+      sha256: 77b9162c99fc6b5944da8793f18fb99c3b520ab7cdce0cc67ec8a1e47871da61
+      scope: dataset-distribution
+    weight: 0.10
+    shuffle_buffer: 20000
+    source_fields: [url]
 
   # Deduplicated Python, restricted by the dataset's row-level license label to straightforward
   # permissive identifiers. This is auditable filtering, not an independent legal determination.
@@ -99,6 +135,7 @@ sources:
     revision: 35a59fb025bc0a102f7d96eac09d145b896d487b
     split: train
     text_field: content
+    adapter: python_code
     # The generic Arrow streaming route proved transport-fragile on this legacy gzip/JSONL
     # dataset. Pin the complete 48-shard LFS inventory, select four shards by the lowest
     # SHA256("<source-seed>:<path>"), verify each compressed SHA-256, and interleave their rows
@@ -124,7 +161,7 @@ sources:
       bytes: 1299
       sha256: e5b9f048922eba1444f5bfcf9059dfa917821d4d9d88516bda0a32e01c098699
       scope: row-level-license-field
-    weight: 0.25
+    weight: 0.20
     shuffle_buffer: 4096
     source_fields: [repo_name, path]
 
@@ -137,19 +174,10 @@ sources:
     subset: v0.2
     split: train
     text_field: text
-    # `subset` is retained as provenance but is not passed to a datasets builder. This backend
-    # verifies the complete 738-file v0.2 inventory, selects the lowest 64
-    # SHA256("<source-seed>:<path>") artifacts, verifies their exact bytes and LFS SHA-256, and
-    # projects only the Parquet `text` column. Two pinned selected shards yielded 4,394,889 and
-    # 4,354,111 Unicode characters; 64 shards project to about 280M characters before the
-    # fail-closed required-budget check.
-    raw_stream:
-      backend: hf-parquet-text-v1
-      files_manifest: websight-v02-7795db7d-files.json
-      files_manifest_bytes: 141431
-      files_manifest_sha256: 16c6db1cd43843a1d5f852d2e676b984d2b651fedab5db9fc08606641f99412b
-      interleave_files: 64
-      selection: sha256-seed-path-v1
+    adapter: html_text
+    # The pinned repository revision contains the v0.2 Parquet export. Keep the subset label in
+    # provenance but do not pass it as a builder config; select only `text` to avoid image bytes.
+    stream_subset: false
     license: CC-BY-4.0
     license_evidence:
       id: websight-card
@@ -159,3 +187,4 @@ sources:
       scope: dataset-card-terms
     weight: 0.10
     shuffle_buffer: 20000
+    source_fields: []

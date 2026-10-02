@@ -1,0 +1,29 @@
+# Bounded online-sampling pilot. Reads revision-pinned HF rows as training consumes them.
+# No JSONL, packed shards, or pre-fetched training corpus is required.
+model_config: configs/model/ultra-tiny-1m.yaml
+data:
+  mixture_config: configs/data/pretrain-paper.yaml
+  sources: [fineweb_edu_dedup, cosmopedia_v2, fineweb2_korean, finemath_3plus]
+  seq_len: 128
+  shuffle_buffer: 32
+  preprocessors:
+    finemath_3plus: openlocalagent.data.adapters.pretrain_finemath:preprocess
+train:
+  steps: 20
+  batch_size: 4
+  accum_steps: 4
+  lr: 0.001
+  warmup: 2
+  checkpoint_every: 1
+runtime:
+  seed: 2026
+  device: cuda
+  dtype: float16
+  resume: false
+  skip_native_shutdown: true
+log:
+  out_dir: results/runs/pretrain-la-1m-online
+tracking:
+  wandb: true
+  mode: online
+  project: openlocalagent-pretrain-stream

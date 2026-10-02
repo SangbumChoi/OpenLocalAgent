@@ -1,0 +1,28 @@
+# First sustained six-source online run; no pre-existing JSONL or shard directory.
+# 100 optimizer steps x 4 micro-batches x 4 rows x 128 targets = 204,800 loss tokens.
+model_config: configs/model/ultra-tiny-1m.yaml
+data:
+  mixture_config: configs/data/pretrain-paper.yaml
+  seq_len: 128
+  shuffle_buffer: 128
+  preprocessors:
+    finemath_3plus: openlocalagent.data.adapters.pretrain_finemath:preprocess
+train:
+  steps: 100
+  batch_size: 4
+  accum_steps: 4
+  lr: 0.001
+  warmup: 5
+  checkpoint_every: 10
+runtime:
+  seed: 2030
+  device: cuda
+  dtype: float16
+  resume: false
+  skip_native_shutdown: true
+log:
+  out_dir: results/runs/pretrain-la-1m-online-100step
+tracking:
+  wandb: true
+  mode: online
+  project: openlocalagent-pretrain-stream

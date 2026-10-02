@@ -705,13 +705,23 @@ def _normalized_source(
         )
     split = source.get("split", "train")
     text_field = source.get("text_field", "text")
+    adapter = source.get("adapter", "plain_text")
     subset = source.get("subset")
+    stream_subset = source.get("stream_subset", True)
     if not isinstance(split, str) or not split:
         raise ValueError(f"source {name!r} split must be a non-empty string")
     if not isinstance(text_field, str) or not text_field:
         raise ValueError(f"source {name!r} text_field must be a non-empty string")
+    from openlocalagent.data.source_adapters import adapter_names
+
+    if not isinstance(adapter, str) or adapter not in adapter_names():
+        raise ValueError(
+            f"source {name!r} adapter must be one of {', '.join(adapter_names())}"
+        )
     if subset is not None and (not isinstance(subset, str) or not subset):
         raise ValueError(f"source {name!r} subset must be a non-empty string or null")
+    if not isinstance(stream_subset, bool):
+        raise ValueError(f"source {name!r} stream_subset must be boolean")
     source_fields = source.get("source_fields", [])
     if (
         not isinstance(source_fields, list)
@@ -787,6 +797,7 @@ def _normalized_source(
     )
     return {
         "allowed_licenses": allowed_licenses,
+        "adapter": adapter,
         "dataset": dataset,
         "license": fixed_license,
         "license_evidence": evidence,
@@ -795,6 +806,7 @@ def _normalized_source(
         "raw_stream": raw_stream,
         "revision": revision,
         "shuffle_buffer": shuffle_buffer,
+        "stream_subset": stream_subset,
         "source_fields": source_fields,
         "split": split,
         "subset": subset,
@@ -1593,9 +1605,20 @@ def _load_stream(source: Mapping[str, Any], seed: int) -> Iterable[Mapping[str, 
         "streaming": True,
         "revision": source["revision"],
     }
-    if source.get("subset"):
+    if source.get("subset") and source.get("stream_subset", True):
         kwargs["name"] = source["subset"]
     stream = load_dataset(**kwargs)
+    required_columns = list(
+        dict.fromkeys(
+            [
+                source["text_field"],
+                *source["source_fields"],
+                *([source["license_field"]] if source["license_field"] else []),
+            ]
+        )
+    )
+    if hasattr(stream, "select_columns"):
+        stream = stream.select_columns(required_columns)
     buffer_size = int(source.get("shuffle_buffer", 10_000))
     if buffer_size > 1:
         stream = stream.shuffle(seed=seed, buffer_size=buffer_size)
@@ -1935,7 +1958,9 @@ def stream_mixture(
                         if not isinstance(text, str):
                             skipped["missing_text"] += 1
                             continue
-                        text = text.replace("\r\n", "\n").replace("\r", "\n").strip()
+                        from openlocalagent.data.source_adapters import adapt_source_text
+
+                        text = adapt_source_text(str(source["adapter"]), text, row)
                         if not int(plan["min_document_chars"]) <= len(text) <= int(
                             plan["max_document_chars"]
                         ):

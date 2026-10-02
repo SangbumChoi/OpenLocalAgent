@@ -36,6 +36,10 @@ tools/
 .pytest_cache/
 .ruff_cache/
 .DS_Store
+.env
+.env.*
+!.env.example
+wandb/
 
 # committed results gallery
 !docs/figures/

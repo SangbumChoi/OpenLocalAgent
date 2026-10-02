@@ -9,6 +9,7 @@ import pytest
 
 import yaml
 
+import openlocalagent.data.hf_corpus as public_hf_corpus
 import openlocalagent.data.corpus.hf_corpus as hf_corpus
 from openlocalagent.data.corpus.hf_corpus import (
     _load_raw_parquet_text,
@@ -91,6 +92,35 @@ def test_stream_mixture_enforces_license_and_records_provenance(tmp_path):
     assert documents[1]["meta"]["revision"] == "b" * 40
 
 
+def test_stream_mixture_uses_configured_dataset_adapter(tmp_path):
+    config = {
+        "seed": 1,
+        "target_chars": 50,
+        "min_document_chars": 1,
+        "require_full_source_budgets": False,
+        "sources": [
+            {
+                "name": "python",
+                "dataset": "example/python",
+                "revision": "c" * 40,
+                "text_field": "content",
+                "adapter": "python_code",
+                "license": "mit",
+                "weight": 1,
+            }
+        ],
+    }
+    config_path = tmp_path / "mixture.yaml"
+    config_path.write_text(yaml.safe_dump(config))
+    row = {"content": "\r\ndef f():\r\n    return 1\r\n\r\n"}
+
+    manifest = stream_mixture(config_path, tmp_path / "out", loader=lambda *_: [row])
+    document = json.loads((tmp_path / "out" / "mixture.jsonl").read_text().splitlines()[0])
+
+    assert document["text"] == "def f():\n    return 1"
+    assert manifest["sources"]["python"]["accepted_documents"] == 1
+
+
 def test_stream_mixture_carries_config_owned_decontamination_policy(tmp_path):
     config = {
         "seed": 3,
@@ -167,23 +197,31 @@ def test_paper_policy_requires_frozen_agent_and_tracked_local_suites():
 
     plan = build_mixture_plan(root / "configs/data/pretrain-paper.yaml")
     assert [source["requested_chars"] for source in plan["sources"]] == [
-        1_100_000_000,
-        330_000_000,
-        550_000_000,
+        880_000_000,
+        220_000_000,
+        220_000_000,
+        220_000_000,
+        440_000_000,
         220_000_000,
     ]
     assert sum(source["requested_chars"] for source in plan["sources"]) == 2_200_000_000
     assert {item["id"] for item in plan["license_evidence"]} == {
         "codeparrot-card",
+        "finemath-card",
+        "fineweb2-card",
         "smollm-card",
         "websight-card",
     }
     assert plan["require_full_source_budgets"] is True
     assert plan["storage"] == {
         "max_raw_jsonl_bytes": 13_200_000_000,
-        "minimum_free_bytes": 60_000_000_000,
+        "minimum_free_bytes": 40_000_000_000,
     }
-    code_source = plan["sources"][2]
+    assert plan["sources"][2]["dataset"] == "HuggingFaceFW/fineweb-2"
+    assert plan["sources"][2]["subset"] == "kor_Hang"
+    assert plan["sources"][3]["dataset"] == "HuggingFaceTB/finemath"
+    assert plan["sources"][3]["subset"] == "finemath-3plus"
+    code_source = plan["sources"][4]
     assert code_source["raw_stream"]["backend"] == "hf-jsonl-gzip-v1"
     assert len(code_source["raw_stream"]["file_inventory"]["files"]) == 48
     assert code_source["raw_stream"]["file_inventory"]["total_compressed_bytes"] == 11_501_025_766
@@ -195,36 +233,60 @@ def test_paper_policy_requires_frozen_agent_and_tracked_local_suites():
         "file-000000000014.json.gz",
         "file-000000000034.json.gz",
     ]
-    html_source = plan["sources"][3]
+    html_source = plan["sources"][5]
     assert html_source["subset"] == "v0.2"
-    assert html_source["raw_stream"]["backend"] == "hf-parquet-text-v1"
-    assert html_source["raw_stream"]["reader_runtime"] == {
-        "library": "pyarrow",
-        "version": "25.0.0",
+    assert html_source["raw_stream"] is None
+    assert html_source["stream_subset"] is False
+    assert html_source["text_field"] == "text"
+
+
+@pytest.mark.parametrize("module", [public_hf_corpus, hf_corpus])
+def test_hf_streaming_projects_only_required_columns_and_can_skip_subset_builder(
+    monkeypatch, module
+):
+    calls = {}
+
+    class FakeStream:
+        def select_columns(self, columns):
+            calls["columns"] = columns
+            return self
+
+        def shuffle(self, *, seed, buffer_size):
+            calls["shuffle"] = (seed, buffer_size)
+            return self
+
+    def fake_load_dataset(**kwargs):
+        calls["load"] = kwargs
+        return FakeStream()
+
+    monkeypatch.setitem(
+        __import__("sys").modules,
+        "datasets",
+        SimpleNamespace(load_dataset=fake_load_dataset),
+    )
+    source = {
+        "dataset": "example/stream",
+        "revision": "a" * 40,
+        "split": "train",
+        "subset": "v0.2",
+        "stream_subset": False,
+        "text_field": "text",
+        "source_fields": ["id"],
+        "license_field": None,
+        "shuffle_buffer": 16,
+        "raw_stream": None,
     }
-    inventory = html_source["raw_stream"]["file_inventory"]
-    assert inventory["bytes"] == 141_431
-    assert inventory["sha256"] == (
-        "16c6db1cd43843a1d5f852d2e676b984d2b651fedab5db9fc08606641f99412b"
-    )
-    assert inventory["manifest_sha256"] == (
-        "cf331bfe2fb13628487b9dd078aaf2adc2dd2fbae1ea8138e8214627ffca85c5"
-    )
-    assert inventory["shard_count"] == 738
-    assert inventory["total_artifact_bytes"] == 285_785_923_573
-    selected_html = _selected_raw_files(html_source, plan["seed"] + 3)
-    assert len(selected_html) == 64
-    assert sum(item["bytes"] for item in selected_html) == 25_243_071_432
-    assert [item["path"] for item in selected_html[:8]] == [
-        "v0.2/train-00109-of-00738-b8b861dc04695181.parquet",
-        "v0.2/train-00082-of-00738-69973ef14928e568.parquet",
-        "v0.2/train-00400-of-00738-dc2f03d7d0db093f.parquet",
-        "v0.2/train-00275-of-00738-b7d629db0646f03f.parquet",
-        "v0.2/train-00591-of-00738-6777aeee7499115a.parquet",
-        "v0.2/train-00202-of-00738-f2e985be28875937.parquet",
-        "v0.2/train-00130-of-00738-07859e5316ba3d6b.parquet",
-        "v0.2/train-00542-of-00738-f7949ba50dd19e17.parquet",
-    ]
+
+    module._load_stream(source, 23)
+
+    assert calls["load"] == {
+        "path": "example/stream",
+        "split": "train",
+        "streaming": True,
+        "revision": "a" * 40,
+    }
+    assert calls["columns"] == ["text", "id"]
+    assert calls["shuffle"] == (23, 16)
 
 
 def test_stream_mixture_rejects_unpinned_source(tmp_path):
@@ -788,7 +850,7 @@ def test_pinned_parquet_loader_rejects_runtime_and_schema_drift(tmp_path, monkey
         list(_load_raw_parquet_text(source, 19))
 
 
-def test_paper_readiness_checks_pinned_parquet_runtime_and_disk_floor(
+def test_paper_readiness_checks_stream_runtime_and_disk_floor(
     tmp_path,
     monkeypatch,
 ):
@@ -845,9 +907,9 @@ def test_paper_readiness_checks_pinned_parquet_runtime_and_disk_floor(
         require_stream_runtime=True,
     )
     assert ready["ready"] is True
-    assert ready["disk"]["minimum_free_bytes"] == 60_000_000_000
+    assert ready["disk"]["minimum_free_bytes"] == 40_000_000_000
 
-    runtime["packages"]["pyarrow"] = "24.0.0"
+    runtime["packages"]["datasets"] = None
     drifted = audit_mixture_readiness(
         plan,
         tmp_path / "not-created",
@@ -855,7 +917,7 @@ def test_paper_readiness_checks_pinned_parquet_runtime_and_disk_floor(
         require_stream_runtime=True,
     )
     assert drifted["ready"] is False
-    assert "requires pyarrow 25.0.0, found 24.0.0" in drifted["blockers"][0]
+    assert "missing datasets runtime" in drifted["blockers"][0]
 
 
 def test_readiness_verifies_pinned_license_evidence_without_streaming(tmp_path):

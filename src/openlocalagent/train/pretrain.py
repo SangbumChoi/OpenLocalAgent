@@ -180,7 +180,8 @@ def pretrain(model, stream, tok, *, steps=400, batch_size=32, seq_len=128, lr=3e
              checkpoint_every=0, resume_from=None, amp_dtype=torch.float32,
              store=None, matrix=None,
              checkpoint_mirror_path=None, lineage=None, tokenizer_metadata=None,
-             data_metadata=None, execution=None, return_metrics=False, curve=None):
+             data_metadata=None, execution=None, return_metrics=False, curve=None,
+             metrics_callback=None):
     """Next-token CE over a packed byte stream. `lr_schedule="wsd"` (opt-in, MiniCPM) replaces the
     cosine LR with Warmup-Stable-Decay (warmup -> flat plateau -> exponential `lr*0.5^((s-S)/T)`
     over the last `decay_frac` of steps); default "cosine" is the legacy schedule.
@@ -279,6 +280,7 @@ def pretrain(model, stream, tok, *, steps=400, batch_size=32, seq_len=128, lr=3e
                 destination.extend(float(value) for value in values)
         validation_history = [
             {
+                **dict(record),
                 "step": int(record["step"]),
                 "loss": float(record["loss"]),
                 "batches": int(record.get("batches", eval_batches)),
@@ -433,11 +435,20 @@ def pretrain(model, stream, tok, *, steps=400, batch_size=32, seq_len=128, lr=3e
             step % eval_every == 0 or step == steps - 1
         ))
         val_loss = None
+        val_source_losses: dict[str, float] | None = None
         if should_eval:
-            val_loss = evaluate(val_data)
-            validation_history.append(
-                {"step": step, "loss": val_loss, "batches": eval_batches}
-            )
+            if isinstance(val_data, Mapping):
+                val_source_losses = {
+                    str(name): evaluate(source_data)
+                    for name, source_data in val_data.items()
+                }
+                val_loss = sum(val_source_losses.values()) / len(val_source_losses)
+            else:
+                val_loss = evaluate(val_data)
+            validation_record = {"step": step, "loss": val_loss, "batches": eval_batches}
+            if val_source_losses is not None:
+                validation_record["sources"] = val_source_losses
+            validation_history.append(validation_record)
         should_log = step % max(1, steps // 8) == 0 or step == steps - 1 or should_eval
         if should_log:
             message = (
@@ -466,8 +477,32 @@ def pretrain(model, stream, tok, *, steps=400, batch_size=32, seq_len=128, lr=3e
                 loss_tokens=loss_tokens_seen,
                 validation_loss=val_loss,
                 lm_loss=step_lm_loss,
+                **(
+                    {"validation_sources": val_source_losses}
+                    if val_source_losses is not None
+                    else {}
+                ),
                 **router,
             )
+        if metrics_callback is not None:
+            callback_record = {
+                "step": step,
+                "train/loss": step_loss,
+                "train/lm_loss": step_lm_loss,
+                "train/loss_tokens": loss_tokens_seen,
+                "train/learning_rate": step_lr,
+                "train/validation_loss": val_loss,
+            }
+            if step_sources is not None:
+                for source_name, stats in step_sources.items():
+                    if stats.mean_loss is not None:
+                        callback_record[f"loss/dataset/{source_name}"] = stats.mean_loss
+                    callback_record[f"tokens/dataset/{source_name}"] = stats.tokens
+                    callback_record[f"draws/dataset/{source_name}"] = stats.draws
+            if val_source_losses is not None:
+                for source_name, source_loss in val_source_losses.items():
+                    callback_record[f"validation_loss/dataset/{source_name}"] = source_loss
+            metrics_callback(callback_record)
         if checkpoint_every and (step + 1) % checkpoint_every == 0:
             save(step)
             # Keep a way back. save() has just replaced latest.pt with a new inode, so linking a
@@ -516,6 +551,7 @@ def run(config_path: str, *, resume: bool | None = None) -> None:
     import json
 
     import yaml
+    from openlocalagent.env import load_env_file
 
     from openlocalagent.data.corpus.pretrain_corpus import PackedShardDataset
     from openlocalagent.model import LocalAgentLM, ModelConfig
@@ -533,6 +569,7 @@ def run(config_path: str, *, resume: bool | None = None) -> None:
         tokenizer_identity,
     )
 
+    load_env_file()
     config = yaml.safe_load(Path(config_path).read_text())
     cfg = ModelConfig.from_yaml(config["model_config"])
     cfg.assert_within_budget()
@@ -548,7 +585,14 @@ def run(config_path: str, *, resume: bool | None = None) -> None:
         train_data = matrix.sources[0].dataset
     else:
         train_data = PackedShardDataset(data_cfg["shards_dir"], "train")
-    available_train_tokens = int(train_data.manifest["splits"]["train"]["tokens"])
+    available_train_tokens = (
+        sum(
+            int(source.dataset.manifest["splits"]["train"]["tokens"])
+            for source in matrix.sources
+        )
+        if matrix is not None
+        else int(train_data.manifest["splits"]["train"]["tokens"])
+    )
     minimum_train_tokens = data_cfg.get("min_train_tokens")
     if minimum_train_tokens is not None:
         if (
@@ -564,10 +608,23 @@ def run(config_path: str, *, resume: bool | None = None) -> None:
                 f"required={minimum_train_tokens:,}"
             )
     val_data = None
-    if train_data.manifest["splits"].get("val", {}).get("rows", 0):
-        val_data = (PackedShardDataset(data_cfg["sources"][0]["path"], "val")
-                    if matrix is not None
-                    else PackedShardDataset(data_cfg["shards_dir"], "val"))
+    if matrix is not None:
+        validation_sources = {}
+        sources_without_validation = []
+        for source in matrix.sources:
+            if not source.dataset.manifest["splits"].get("val", {}).get("rows", 0):
+                sources_without_validation.append(source.name)
+            else:
+                validation_sources[source.name] = PackedShardDataset(source.dataset.root, "val")
+        if validation_sources and sources_without_validation:
+            raise ValueError(
+                "mixture validation split must be present for every source or none; missing: "
+                + ", ".join(sources_without_validation)
+            )
+        if validation_sources:
+            val_data = validation_sources
+    elif train_data.manifest["splits"].get("val", {}).get("rows", 0):
+        val_data = PackedShardDataset(data_cfg["shards_dir"], "val")
     if train_data.seq_len > cfg.max_seq_len:
         raise ValueError(
             f"packed seq_len {train_data.seq_len} exceeds model max_seq_len {cfg.max_seq_len}"
@@ -603,6 +660,7 @@ def run(config_path: str, *, resume: bool | None = None) -> None:
     optim = config.get("optim", {})
     log_cfg = config.get("log", {})
     out_dir = Path(log_cfg.get("out_dir", "results/runs/pretrain"))
+    wandb_run = None
     checkpoint = out_dir / "latest.pt"
     mirror_dir = log_cfg.get("mirror_dir")
     mirror_checkpoint = Path(mirror_dir) / "latest.pt" if mirror_dir else None
@@ -647,16 +705,37 @@ def run(config_path: str, *, resume: bool | None = None) -> None:
             raise ValueError("pretrain init_from checkpoint has no state_dict/model mapping")
         model.load_state_dict(state)
     manifest_sha256 = canonical_sha256(train_data.manifest)
+    source_manifest_identities = (
+        {
+            source.name: {
+                "manifest_sha256": canonical_sha256(source.dataset.manifest),
+                "tokens": source.tokens,
+                "weight": source.weight,
+            }
+            for source in matrix.sources
+        }
+        if matrix is not None
+        else None
+    )
     lineage = build_stage_lineage(
         stage="pretrain",
         config=config,
         model_config=cfg.__dict__,
-        data_identity={
-            "kind": "packed_shards",
-            "manifest_sha256": manifest_sha256,
-            "split": train_data.split,
-            "corpus_freeze": corpus_freeze,
-        },
+        data_identity=(
+            {
+                "kind": "packed_source_matrix",
+                "sources": source_manifest_identities,
+                "split": train_data.split,
+                "corpus_freeze": corpus_freeze,
+            }
+            if matrix is not None
+            else {
+                "kind": "packed_shards",
+                "manifest_sha256": manifest_sha256,
+                "split": train_data.split,
+                "corpus_freeze": corpus_freeze,
+            }
+        ),
         tokenizer=tokenizer_lineage,
         workspace=Path(__file__).resolve(),
         parent_checkpoint=init_from,
@@ -666,6 +745,26 @@ def run(config_path: str, *, resume: bool | None = None) -> None:
         and lineage.get("parent_checkpoint_sha256") != loaded_parent_sha256
     ):
         raise ValueError("pretrain init_from checkpoint changed while it was being validated")
+    if log_cfg.get("wandb", False):
+        try:
+            import wandb
+        except ImportError as error:  # pragma: no cover - optional runtime
+            raise RuntimeError('install W&B tracking with: pip install -e ".[tracking]"') from error
+        wandb_run = wandb.init(
+            project=str(log_cfg.get("wandb_project", "openlocalagent-pretrain")),
+            entity=log_cfg.get("wandb_entity") or None,
+            name=log_cfg.get("wandb_run_name") or None,
+            mode=str(log_cfg.get("wandb_mode", "online")),
+            config={
+                "config_path": str(Path(config_path).resolve()),
+                "model_config": str(config["model_config"]),
+                "data_sources": matrix.composition() if matrix is not None else "single-corpus",
+                "source_manifest_identities": source_manifest_identities,
+                "seed": seed,
+                "total_steps": int(schedule.get("total_steps", 20_000)),
+                "device": str(device),
+            },
+        )
     loss_history, metrics = pretrain(
         model,
         train_data,
@@ -705,6 +804,7 @@ def run(config_path: str, *, resume: bool | None = None) -> None:
             "sources": (matrix.composition() if matrix is not None else None),
             "split": train_data.split,
             "manifest_sha256": manifest_sha256,
+            "source_manifest_identities": source_manifest_identities,
             "available_train_tokens": available_train_tokens,
             "minimum_train_tokens": minimum_train_tokens,
             "corpus_freeze": corpus_freeze,
@@ -712,9 +812,20 @@ def run(config_path: str, *, resume: bool | None = None) -> None:
         execution=execution,
         return_metrics=True,
         curve=LossCurve(out_dir, Stage.PRETRAIN),
+        metrics_callback=wandb_run.log if wandb_run is not None else None,
     )
     out_dir.mkdir(parents=True, exist_ok=True)
     metrics_path = out_dir / "metrics.json"
+    tracking_metadata = (
+        {
+            "enabled": True,
+            "project": log_cfg.get("wandb_project", "openlocalagent-pretrain"),
+            "run_id": getattr(wandb_run, "id", None),
+            "url": getattr(wandb_run, "url", None),
+        }
+        if wandb_run is not None
+        else {"enabled": False}
+    )
     metrics_path.write_text(
         json.dumps(
             {
@@ -725,6 +836,7 @@ def run(config_path: str, *, resume: bool | None = None) -> None:
                 **metrics,
                 "lineage": lineage,
                 "execution": execution,
+                "wandb": tracking_metadata,
             },
             indent=2,
             sort_keys=True,
@@ -732,3 +844,7 @@ def run(config_path: str, *, resume: bool | None = None) -> None:
         + "\n",
         encoding="utf-8",
     )
+    if wandb_run is not None:
+        wandb_run.summary["loss_last"] = loss_history[-1] if loss_history else None
+        wandb_run.summary["loss_steps"] = len(loss_history)
+        wandb_run.finish()

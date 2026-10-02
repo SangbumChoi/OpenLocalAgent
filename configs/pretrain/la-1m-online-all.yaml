@@ -1,0 +1,29 @@
+# Six-source online mixture; no local JSONL or packed shards.
+# Start after the four-source pilot proves the remote runtime and network path.
+model_config: configs/model/ultra-tiny-1m.yaml
+data:
+  mixture_config: configs/data/pretrain-paper.yaml
+  # Omit sources to draw from all six pinned public sources at their declared weights.
+  seq_len: 128
+  shuffle_buffer: 128
+  preprocessors:
+    finemath_3plus: openlocalagent.data.adapters.pretrain_finemath:preprocess
+train:
+  steps: 20
+  batch_size: 4
+  accum_steps: 4
+  lr: 0.001
+  warmup: 2
+  checkpoint_every: 1
+runtime:
+  seed: 2026
+  device: cuda
+  dtype: float16
+  resume: false
+  skip_native_shutdown: true
+log:
+  out_dir: results/runs/pretrain-la-1m-online-all-http
+tracking:
+  wandb: true
+  mode: online
+  project: openlocalagent-pretrain-stream

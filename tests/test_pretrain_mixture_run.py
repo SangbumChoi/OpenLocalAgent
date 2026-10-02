@@ -7,7 +7,9 @@ pretrain.run() can, and this is that run: two tiny packed corpora, two steps, on
 """
 
 import json
+import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 import torch
 import yaml
@@ -20,12 +22,30 @@ from openlocalagent.train.pretrain import run as run_pretrain
 
 def _tiny_corpus(root: Path, name: str, text: str) -> Path:
     shards = root / name
-    pack_shards([text * 8], ByteTokenizer(), seq_len=8, shards_dir=str(shards),
-                rows_per_shard=8, val_fraction=0.0)
+    pack_shards([f"{text} sample-{index}" for index in range(16)], ByteTokenizer(),
+                seq_len=8, shards_dir=str(shards),
+                rows_per_shard=8, val_fraction=0.2)
     return shards
 
 
-def test_mixture_config_runs_and_records_its_sources(tmp_path: Path):
+def test_mixture_config_runs_and_records_its_sources(tmp_path: Path, monkeypatch):
+    wandb_logs = []
+
+    class FakeRun:
+        summary = {}
+
+        def log(self, record):
+            wandb_logs.append(record)
+
+        def finish(self):
+            return None
+
+    fake_run = FakeRun()
+    monkeypatch.setitem(
+        sys.modules,
+        "wandb",
+        SimpleNamespace(init=lambda **kwargs: fake_run),
+    )
     cfg = ModelConfig(name="mix", vocab_size=256, d_model=16, n_layers=1, n_heads=2,
                       n_kv_heads=1, ffn_hidden=32, max_seq_len=8)
     model_path = tmp_path / "model.yaml"
@@ -48,7 +68,9 @@ def test_mixture_config_runs_and_records_its_sources(tmp_path: Path):
         "schedule": {"type": "cosine", "warmup_steps": 0, "total_steps": 2},
         "batch": {"micro_batch_size": 1, "grad_accum_steps": 4},
         "runtime": {"device": "cpu", "dtype": "fp32", "seed": 7},
-        "log": {"out_dir": str(out_dir)},
+        "log": {
+            "out_dir": str(out_dir), "wandb": True, "eval_every": 1, "eval_batches": 1,
+        },
     }, sort_keys=False), encoding="utf-8")
 
     run_pretrain(str(config_path))
@@ -67,3 +89,13 @@ def test_mixture_config_runs_and_records_its_sources(tmp_path: Path):
         assert "sources" in row, "mixture run wrote a curve record with no per-source block"
         seen |= {k for k, v in row["sources"].items() if v.get("loss") is not None}
     assert seen <= {"web", "math"} and seen, f"unexpected/empty per-source keys: {seen}"
+    assert wandb_logs, "no W&B metrics were logged"
+    assert any("loss/dataset/web" in row for row in wandb_logs)
+    assert any("loss/dataset/math" in row for row in wandb_logs)
+    assert any("validation_loss/dataset/web" in row for row in wandb_logs)
+    assert any("validation_loss/dataset/math" in row for row in wandb_logs)
+    run_metrics = json.loads((out_dir / "metrics.json").read_text())
+    assert run_metrics["wandb"]["enabled"] is True
+    source_identities = ck["data"]["source_manifest_identities"]
+    assert set(source_identities) == {"web", "math"}
+    assert all(len(source["manifest_sha256"]) == 64 for source in source_identities.values())
